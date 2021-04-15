@@ -31,6 +31,7 @@
 #include <aws/dms/model/DescribeApplicableIndividualAssessmentsResult.h>
 #include <aws/dms/model/DescribeCertificatesResult.h>
 #include <aws/dms/model/DescribeConnectionsResult.h>
+#include <aws/dms/model/DescribeEndpointSettingsResult.h>
 #include <aws/dms/model/DescribeEndpointTypesResult.h>
 #include <aws/dms/model/DescribeEndpointsResult.h>
 #include <aws/dms/model/DescribeEventCategoriesResult.h>
@@ -124,6 +125,7 @@ namespace Model
         class DescribeApplicableIndividualAssessmentsRequest;
         class DescribeCertificatesRequest;
         class DescribeConnectionsRequest;
+        class DescribeEndpointSettingsRequest;
         class DescribeEndpointTypesRequest;
         class DescribeEndpointsRequest;
         class DescribeEventCategoriesRequest;
@@ -179,6 +181,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeApplicableIndividualAssessmentsResult, DatabaseMigrationServiceError> DescribeApplicableIndividualAssessmentsOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificatesResult, DatabaseMigrationServiceError> DescribeCertificatesOutcome;
         typedef Aws::Utils::Outcome<DescribeConnectionsResult, DatabaseMigrationServiceError> DescribeConnectionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeEndpointSettingsResult, DatabaseMigrationServiceError> DescribeEndpointSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointTypesResult, DatabaseMigrationServiceError> DescribeEndpointTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointsResult, DatabaseMigrationServiceError> DescribeEndpointsOutcome;
         typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, DatabaseMigrationServiceError> DescribeEventCategoriesOutcome;
@@ -234,6 +237,7 @@ namespace Model
         typedef std::future<DescribeApplicableIndividualAssessmentsOutcome> DescribeApplicableIndividualAssessmentsOutcomeCallable;
         typedef std::future<DescribeCertificatesOutcome> DescribeCertificatesOutcomeCallable;
         typedef std::future<DescribeConnectionsOutcome> DescribeConnectionsOutcomeCallable;
+        typedef std::future<DescribeEndpointSettingsOutcome> DescribeEndpointSettingsOutcomeCallable;
         typedef std::future<DescribeEndpointTypesOutcome> DescribeEndpointTypesOutcomeCallable;
         typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
         typedef std::future<DescribeEventCategoriesOutcome> DescribeEventCategoriesOutcomeCallable;
@@ -292,6 +296,7 @@ namespace Model
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeApplicableIndividualAssessmentsRequest&, const Model::DescribeApplicableIndividualAssessmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicableIndividualAssessmentsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeCertificatesRequest&, const Model::DescribeCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificatesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeConnectionsRequest&, const Model::DescribeConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConnectionsResponseReceivedHandler;
+    typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointSettingsRequest&, const Model::DescribeEndpointSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointSettingsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointTypesRequest&, const Model::DescribeEndpointTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointTypesResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
     typedef std::function<void(const DatabaseMigrationServiceClient*, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventCategoriesResponseReceivedHandler;
@@ -1073,6 +1078,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeConnectionsAsync(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the possible endpoint settings available when you
+         * create an endpoint for a specific database engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEndpointSettingsOutcome DescribeEndpointSettings(const Model::DescribeEndpointSettingsRequest& request) const;
+
+        /**
+         * <p>Returns information about the possible endpoint settings available when you
+         * create an endpoint for a specific database engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeEndpointSettingsOutcomeCallable DescribeEndpointSettingsCallable(const Model::DescribeEndpointSettingsRequest& request) const;
+
+        /**
+         * <p>Returns information about the possible endpoint settings available when you
+         * create an endpoint for a specific database engine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEndpointSettings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeEndpointSettingsAsync(const Model::DescribeEndpointSettingsRequest& request, const DescribeEndpointSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about the type of endpoints available.</p><p><h3>See
@@ -2176,6 +2209,7 @@ namespace Model
         void DescribeApplicableIndividualAssessmentsAsyncHelper(const Model::DescribeApplicableIndividualAssessmentsRequest& request, const DescribeApplicableIndividualAssessmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificatesAsyncHelper(const Model::DescribeCertificatesRequest& request, const DescribeCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConnectionsAsyncHelper(const Model::DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeEndpointSettingsAsyncHelper(const Model::DescribeEndpointSettingsRequest& request, const DescribeEndpointSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointTypesAsyncHelper(const Model::DescribeEndpointTypesRequest& request, const DescribeEndpointTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

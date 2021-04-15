@@ -20,6 +20,8 @@ namespace Model
 
 MySQLSettings::MySQLSettings() : 
     m_afterConnectScriptHasBeenSet(false),
+    m_cleanSourceMetadataOnMismatch(false),
+    m_cleanSourceMetadataOnMismatchHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_eventsPollInterval(0),
     m_eventsPollIntervalHasBeenSet(false),
@@ -42,6 +44,8 @@ MySQLSettings::MySQLSettings() :
 
 MySQLSettings::MySQLSettings(JsonView jsonValue) : 
     m_afterConnectScriptHasBeenSet(false),
+    m_cleanSourceMetadataOnMismatch(false),
+    m_cleanSourceMetadataOnMismatchHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_eventsPollInterval(0),
     m_eventsPollIntervalHasBeenSet(false),
@@ -70,6 +74,13 @@ MySQLSettings& MySQLSettings::operator =(JsonView jsonValue)
     m_afterConnectScript = jsonValue.GetString("AfterConnectScript");
 
     m_afterConnectScriptHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CleanSourceMetadataOnMismatch"))
+  {
+    m_cleanSourceMetadataOnMismatch = jsonValue.GetBool("CleanSourceMetadataOnMismatch");
+
+    m_cleanSourceMetadataOnMismatchHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DatabaseName"))
@@ -166,6 +177,12 @@ JsonValue MySQLSettings::Jsonize() const
   if(m_afterConnectScriptHasBeenSet)
   {
    payload.WithString("AfterConnectScript", m_afterConnectScript);
+
+  }
+
+  if(m_cleanSourceMetadataOnMismatchHasBeenSet)
+  {
+   payload.WithBool("CleanSourceMetadataOnMismatch", m_cleanSourceMetadataOnMismatch);
 
   }
 

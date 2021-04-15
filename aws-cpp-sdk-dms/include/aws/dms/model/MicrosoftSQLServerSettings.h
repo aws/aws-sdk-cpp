@@ -225,6 +225,39 @@ namespace Model
 
 
     /**
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. An example is a situation where running an alter DDL
+     * statement on a table might result in different information about the table
+     * cached in the replication instance.</p>
+     */
+    inline bool GetQuerySingleAlwaysOnNode() const{ return m_querySingleAlwaysOnNode; }
+
+    /**
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. An example is a situation where running an alter DDL
+     * statement on a table might result in different information about the table
+     * cached in the replication instance.</p>
+     */
+    inline bool QuerySingleAlwaysOnNodeHasBeenSet() const { return m_querySingleAlwaysOnNodeHasBeenSet; }
+
+    /**
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. An example is a situation where running an alter DDL
+     * statement on a table might result in different information about the table
+     * cached in the replication instance.</p>
+     */
+    inline void SetQuerySingleAlwaysOnNode(bool value) { m_querySingleAlwaysOnNodeHasBeenSet = true; m_querySingleAlwaysOnNode = value; }
+
+    /**
+     * <p>Cleans and recreates table metadata information on the replication instance
+     * when a mismatch occurs. An example is a situation where running an alter DDL
+     * statement on a table might result in different information about the table
+     * cached in the replication instance.</p>
+     */
+    inline MicrosoftSQLServerSettings& WithQuerySingleAlwaysOnNode(bool value) { SetQuerySingleAlwaysOnNode(value); return *this;}
+
+
+    /**
      * <p>When this attribute is set to <code>Y</code>, AWS DMS only reads changes from
      * transaction log backups and doesn't read from the active transaction log file
      * during ongoing replication. Setting this parameter to <code>Y</code> enables you
@@ -486,6 +519,31 @@ namespace Model
 
 
     /**
+     * <p>When this attribute is set to <code>Y</code>, DMS processes third-party
+     * transaction log backups if they are created in native format.</p>
+     */
+    inline bool GetUseThirdPartyBackupDevice() const{ return m_useThirdPartyBackupDevice; }
+
+    /**
+     * <p>When this attribute is set to <code>Y</code>, DMS processes third-party
+     * transaction log backups if they are created in native format.</p>
+     */
+    inline bool UseThirdPartyBackupDeviceHasBeenSet() const { return m_useThirdPartyBackupDeviceHasBeenSet; }
+
+    /**
+     * <p>When this attribute is set to <code>Y</code>, DMS processes third-party
+     * transaction log backups if they are created in native format.</p>
+     */
+    inline void SetUseThirdPartyBackupDevice(bool value) { m_useThirdPartyBackupDeviceHasBeenSet = true; m_useThirdPartyBackupDevice = value; }
+
+    /**
+     * <p>When this attribute is set to <code>Y</code>, DMS processes third-party
+     * transaction log backups if they are created in native format.</p>
+     */
+    inline MicrosoftSQLServerSettings& WithUseThirdPartyBackupDevice(bool value) { SetUseThirdPartyBackupDevice(value); return *this;}
+
+
+    /**
      * <p>The full Amazon Resource Name (ARN) of the IAM role that specifies AWS DMS as
      * the trusted entity and grants the required permissions to access the value in
      * <code>SecretsManagerSecret</code>. <code>SecretsManagerSecret</code> has the
@@ -711,6 +769,9 @@ namespace Model
     Aws::String m_password;
     bool m_passwordHasBeenSet;
 
+    bool m_querySingleAlwaysOnNode;
+    bool m_querySingleAlwaysOnNodeHasBeenSet;
+
     bool m_readBackupOnly;
     bool m_readBackupOnlyHasBeenSet;
 
@@ -725,6 +786,9 @@ namespace Model
 
     bool m_useBcpFullLoad;
     bool m_useBcpFullLoadHasBeenSet;
+
+    bool m_useThirdPartyBackupDevice;
+    bool m_useThirdPartyBackupDeviceHasBeenSet;
 
     Aws::String m_secretsManagerAccessRoleArn;
     bool m_secretsManagerAccessRoleArnHasBeenSet;

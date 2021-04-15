@@ -184,65 +184,65 @@ namespace Model
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline void SetTableMappings(const Aws::String& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = value; }
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline void SetTableMappings(Aws::String&& value) { m_tableMappingsHasBeenSet = true; m_tableMappings = std::move(value); }
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline void SetTableMappings(const char* value) { m_tableMappingsHasBeenSet = true; m_tableMappings.assign(value); }
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(const Aws::String& value) { SetTableMappings(value); return *this;}
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(Aws::String&& value) { SetTableMappings(std::move(value)); return *this;}
 
     /**
      * <p>When using the AWS CLI or boto3, provide the path of the JSON file that
-     * contains the table mappings. Precede the path with <code>file://</code>. When
-     * working with the DMS API, provide the JSON as the parameter value, for example:
-     * <code>--table-mappings file://mappingfile.json</code> </p>
+     * contains the table mappings. Precede the path with <code>file://</code>. For
+     * example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value. </p>
      */
     inline ModifyReplicationTaskRequest& WithTableMappings(const char* value) { SetTableMappings(value); return *this;}
 

@@ -40,6 +40,7 @@
 #include <aws/dms/model/DescribeApplicableIndividualAssessmentsRequest.h>
 #include <aws/dms/model/DescribeCertificatesRequest.h>
 #include <aws/dms/model/DescribeConnectionsRequest.h>
+#include <aws/dms/model/DescribeEndpointSettingsRequest.h>
 #include <aws/dms/model/DescribeEndpointTypesRequest.h>
 #include <aws/dms/model/DescribeEndpointsRequest.h>
 #include <aws/dms/model/DescribeEventCategoriesRequest.h>
@@ -686,6 +687,33 @@ void DatabaseMigrationServiceClient::DescribeConnectionsAsync(const DescribeConn
 void DatabaseMigrationServiceClient::DescribeConnectionsAsyncHelper(const DescribeConnectionsRequest& request, const DescribeConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeConnections(request), context);
+}
+
+DescribeEndpointSettingsOutcome DatabaseMigrationServiceClient::DescribeEndpointSettings(const DescribeEndpointSettingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeEndpointSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeEndpointSettingsOutcomeCallable DatabaseMigrationServiceClient::DescribeEndpointSettingsCallable(const DescribeEndpointSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEndpointSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEndpointSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DatabaseMigrationServiceClient::DescribeEndpointSettingsAsync(const DescribeEndpointSettingsRequest& request, const DescribeEndpointSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEndpointSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void DatabaseMigrationServiceClient::DescribeEndpointSettingsAsyncHelper(const DescribeEndpointSettingsRequest& request, const DescribeEndpointSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEndpointSettings(request), context);
 }
 
 DescribeEndpointTypesOutcome DatabaseMigrationServiceClient::DescribeEndpointTypes(const DescribeEndpointTypesRequest& request) const

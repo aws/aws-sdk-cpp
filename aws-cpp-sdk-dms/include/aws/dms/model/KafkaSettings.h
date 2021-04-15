@@ -7,6 +7,7 @@
 #include <aws/dms/DatabaseMigrationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dms/model/MessageFormatValue.h>
+#include <aws/dms/model/KafkaSecurityProtocol.h>
 #include <utility>
 
 namespace Aws
@@ -42,66 +43,98 @@ namespace Model
 
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline const Aws::String& GetBroker() const{ return m_broker; }
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline bool BrokerHasBeenSet() const { return m_brokerHasBeenSet; }
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline void SetBroker(const Aws::String& value) { m_brokerHasBeenSet = true; m_broker = value; }
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline void SetBroker(Aws::String&& value) { m_brokerHasBeenSet = true; m_broker = std::move(value); }
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline void SetBroker(const char* value) { m_brokerHasBeenSet = true; m_broker.assign(value); }
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline KafkaSettings& WithBroker(const Aws::String& value) { SetBroker(value); return *this;}
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline KafkaSettings& WithBroker(Aws::String&& value) { SetBroker(std::move(value)); return *this;}
 
     /**
-     * <p>The broker location and port of the Kafka broker that hosts your Kafka
-     * instance. Specify the broker in the form <code>
+     * <p>A comma-separated list of one or more broker locations in your Kafka cluster
+     * that host your Kafka instance. Specify each broker location in the form <code>
      * <i>broker-hostname-or-ip</i>:<i>port</i> </code>. For example,
-     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.</p>
+     * <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>. For more
+     * information and examples of specifying a list of broker locations, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using
+     * Apache Kafka as a target for AWS Database Migration Service</a> in the <i>AWS
+     * Data Migration Service User Guide</i>. </p>
      */
     inline KafkaSettings& WithBroker(const char* value) { SetBroker(value); return *this;}
 
@@ -416,6 +449,371 @@ namespace Model
      */
     inline KafkaSettings& WithIncludeNullAndEmpty(bool value) { SetIncludeNullAndEmpty(value); return *this;}
 
+
+    /**
+     * <p>Set secure connection to a Kafka target endpoint using Transport Layer
+     * Security (TLS). Options include <code>ssl-encryption</code>,
+     * <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     * <code>sasl-ssl</code> requires <code>SaslUsername</code> and
+     * <code>SaslPassword</code>.</p>
+     */
+    inline const KafkaSecurityProtocol& GetSecurityProtocol() const{ return m_securityProtocol; }
+
+    /**
+     * <p>Set secure connection to a Kafka target endpoint using Transport Layer
+     * Security (TLS). Options include <code>ssl-encryption</code>,
+     * <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     * <code>sasl-ssl</code> requires <code>SaslUsername</code> and
+     * <code>SaslPassword</code>.</p>
+     */
+    inline bool SecurityProtocolHasBeenSet() const { return m_securityProtocolHasBeenSet; }
+
+    /**
+     * <p>Set secure connection to a Kafka target endpoint using Transport Layer
+     * Security (TLS). Options include <code>ssl-encryption</code>,
+     * <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     * <code>sasl-ssl</code> requires <code>SaslUsername</code> and
+     * <code>SaslPassword</code>.</p>
+     */
+    inline void SetSecurityProtocol(const KafkaSecurityProtocol& value) { m_securityProtocolHasBeenSet = true; m_securityProtocol = value; }
+
+    /**
+     * <p>Set secure connection to a Kafka target endpoint using Transport Layer
+     * Security (TLS). Options include <code>ssl-encryption</code>,
+     * <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     * <code>sasl-ssl</code> requires <code>SaslUsername</code> and
+     * <code>SaslPassword</code>.</p>
+     */
+    inline void SetSecurityProtocol(KafkaSecurityProtocol&& value) { m_securityProtocolHasBeenSet = true; m_securityProtocol = std::move(value); }
+
+    /**
+     * <p>Set secure connection to a Kafka target endpoint using Transport Layer
+     * Security (TLS). Options include <code>ssl-encryption</code>,
+     * <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     * <code>sasl-ssl</code> requires <code>SaslUsername</code> and
+     * <code>SaslPassword</code>.</p>
+     */
+    inline KafkaSettings& WithSecurityProtocol(const KafkaSecurityProtocol& value) { SetSecurityProtocol(value); return *this;}
+
+    /**
+     * <p>Set secure connection to a Kafka target endpoint using Transport Layer
+     * Security (TLS). Options include <code>ssl-encryption</code>,
+     * <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+     * <code>sasl-ssl</code> requires <code>SaslUsername</code> and
+     * <code>SaslPassword</code>.</p>
+     */
+    inline KafkaSettings& WithSecurityProtocol(KafkaSecurityProtocol&& value) { SetSecurityProtocol(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline const Aws::String& GetSslClientCertificateArn() const{ return m_sslClientCertificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline bool SslClientCertificateArnHasBeenSet() const { return m_sslClientCertificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline void SetSslClientCertificateArn(const Aws::String& value) { m_sslClientCertificateArnHasBeenSet = true; m_sslClientCertificateArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline void SetSslClientCertificateArn(Aws::String&& value) { m_sslClientCertificateArnHasBeenSet = true; m_sslClientCertificateArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline void SetSslClientCertificateArn(const char* value) { m_sslClientCertificateArnHasBeenSet = true; m_sslClientCertificateArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientCertificateArn(const Aws::String& value) { SetSslClientCertificateArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientCertificateArn(Aws::String&& value) { SetSslClientCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the client certificate used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientCertificateArn(const char* value) { SetSslClientCertificateArn(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline const Aws::String& GetSslClientKeyArn() const{ return m_sslClientKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline bool SslClientKeyArnHasBeenSet() const { return m_sslClientKeyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline void SetSslClientKeyArn(const Aws::String& value) { m_sslClientKeyArnHasBeenSet = true; m_sslClientKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline void SetSslClientKeyArn(Aws::String&& value) { m_sslClientKeyArnHasBeenSet = true; m_sslClientKeyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline void SetSslClientKeyArn(const char* value) { m_sslClientKeyArnHasBeenSet = true; m_sslClientKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientKeyArn(const Aws::String& value) { SetSslClientKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientKeyArn(Aws::String&& value) { SetSslClientKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the client private key used to securely
+     * connect to a Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientKeyArn(const char* value) { SetSslClientKeyArn(value); return *this;}
+
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline const Aws::String& GetSslClientKeyPassword() const{ return m_sslClientKeyPassword; }
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline bool SslClientKeyPasswordHasBeenSet() const { return m_sslClientKeyPasswordHasBeenSet; }
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline void SetSslClientKeyPassword(const Aws::String& value) { m_sslClientKeyPasswordHasBeenSet = true; m_sslClientKeyPassword = value; }
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline void SetSslClientKeyPassword(Aws::String&& value) { m_sslClientKeyPasswordHasBeenSet = true; m_sslClientKeyPassword = std::move(value); }
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline void SetSslClientKeyPassword(const char* value) { m_sslClientKeyPasswordHasBeenSet = true; m_sslClientKeyPassword.assign(value); }
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientKeyPassword(const Aws::String& value) { SetSslClientKeyPassword(value); return *this;}
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientKeyPassword(Aws::String&& value) { SetSslClientKeyPassword(std::move(value)); return *this;}
+
+    /**
+     * <p> The password for the client private key used to securely connect to a Kafka
+     * target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslClientKeyPassword(const char* value) { SetSslClientKeyPassword(value); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline const Aws::String& GetSslCaCertificateArn() const{ return m_sslCaCertificateArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline bool SslCaCertificateArnHasBeenSet() const { return m_sslCaCertificateArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline void SetSslCaCertificateArn(const Aws::String& value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline void SetSslCaCertificateArn(Aws::String&& value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline void SetSslCaCertificateArn(const char* value) { m_sslCaCertificateArnHasBeenSet = true; m_sslCaCertificateArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslCaCertificateArn(const Aws::String& value) { SetSslCaCertificateArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslCaCertificateArn(Aws::String&& value) { SetSslCaCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA)
+     * cert that AWS DMS uses to securely connect to your Kafka target endpoint.</p>
+     */
+    inline KafkaSettings& WithSslCaCertificateArn(const char* value) { SetSslCaCertificateArn(value); return *this;}
+
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline const Aws::String& GetSaslUsername() const{ return m_saslUsername; }
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline bool SaslUsernameHasBeenSet() const { return m_saslUsernameHasBeenSet; }
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline void SetSaslUsername(const Aws::String& value) { m_saslUsernameHasBeenSet = true; m_saslUsername = value; }
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline void SetSaslUsername(Aws::String&& value) { m_saslUsernameHasBeenSet = true; m_saslUsername = std::move(value); }
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline void SetSaslUsername(const char* value) { m_saslUsernameHasBeenSet = true; m_saslUsername.assign(value); }
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline KafkaSettings& WithSaslUsername(const Aws::String& value) { SetSaslUsername(value); return *this;}
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline KafkaSettings& WithSaslUsername(Aws::String&& value) { SetSaslUsername(std::move(value)); return *this;}
+
+    /**
+     * <p> The secure username you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline KafkaSettings& WithSaslUsername(const char* value) { SetSaslUsername(value); return *this;}
+
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline const Aws::String& GetSaslPassword() const{ return m_saslPassword; }
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline bool SaslPasswordHasBeenSet() const { return m_saslPasswordHasBeenSet; }
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline void SetSaslPassword(const Aws::String& value) { m_saslPasswordHasBeenSet = true; m_saslPassword = value; }
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline void SetSaslPassword(Aws::String&& value) { m_saslPasswordHasBeenSet = true; m_saslPassword = std::move(value); }
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline void SetSaslPassword(const char* value) { m_saslPasswordHasBeenSet = true; m_saslPassword.assign(value); }
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline KafkaSettings& WithSaslPassword(const Aws::String& value) { SetSaslPassword(value); return *this;}
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline KafkaSettings& WithSaslPassword(Aws::String&& value) { SetSaslPassword(std::move(value)); return *this;}
+
+    /**
+     * <p>The secure password you created when you first set up your MSK cluster to
+     * validate a client identity and make an encrypted connection between server and
+     * client using SASL-SSL authentication.</p>
+     */
+    inline KafkaSettings& WithSaslPassword(const char* value) { SetSaslPassword(value); return *this;}
+
   private:
 
     Aws::String m_broker;
@@ -447,6 +845,27 @@ namespace Model
 
     bool m_includeNullAndEmpty;
     bool m_includeNullAndEmptyHasBeenSet;
+
+    KafkaSecurityProtocol m_securityProtocol;
+    bool m_securityProtocolHasBeenSet;
+
+    Aws::String m_sslClientCertificateArn;
+    bool m_sslClientCertificateArnHasBeenSet;
+
+    Aws::String m_sslClientKeyArn;
+    bool m_sslClientKeyArnHasBeenSet;
+
+    Aws::String m_sslClientKeyPassword;
+    bool m_sslClientKeyPasswordHasBeenSet;
+
+    Aws::String m_sslCaCertificateArn;
+    bool m_sslCaCertificateArnHasBeenSet;
+
+    Aws::String m_saslUsername;
+    bool m_saslUsernameHasBeenSet;
+
+    Aws::String m_saslPassword;
+    bool m_saslPasswordHasBeenSet;
   };
 
 } // namespace Model
