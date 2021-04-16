@@ -7,6 +7,7 @@ macro(verify_tools)
     cmake_minimum_required (VERSION 3.1.2)
 
     # TODO: don't do this if the user is supplying their own curl/openssl/zlib
+    find_package(Git)
     if(NOT GIT_FOUND)
         find_package(Git)
         message(FATAL_ERROR "Unable to find git; git is required in order to build for Android")

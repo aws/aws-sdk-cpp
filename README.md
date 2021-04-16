@@ -4,12 +4,24 @@ The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface fo
 AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
-## Version 1.8 is now Available!
+## Version 1.9 is now Available!
 
-Version 1.8 introduces much asked for new features and changes to the SDK but, because this might also cause compatibility issues with previous versions we've decided to keep it as a seperate branch to make the transition less jarring.
+This release introduces a new Amazon S3 client, providing high throughput for Amazon S3 GET and PUT operations. The all new S3 Client is implemented on the top of the AWS Common Runtime (CRT) libraries, and is aptly named the "S3 CRT client". Lastly, there are also configuration updates related to Endpoint Discovery.
 
-For more information see the [What’s New in AWS SDK for CPP Version 1.8](https://github.com/aws/aws-sdk-cpp/wiki/What%E2%80%99s-New-in-AWS-SDK-for-CPP-Version-1.8) entry of the wiki, and also please provide any feedback you may have of these changes on our pinned [issue](https://github.com/aws/aws-sdk-cpp/issues/1373).
+All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
+* New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
+   ```
+   git clone --recurse-submodules https://github.com/aws/aws-sdk-cpp
+   ```
+* Existing users: If you’ve already downloaded source code for SDK for C++, e.g. in directory `aws-sdk-cpp`, you can update the git submodule by:
+   ```
+   cd aws-sdk-cpp
+   git checkout main
+   git pull origin main
+   git submodule update --init --recursive
+   ```
 
+See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) for more details, and create a new [issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) or [pull request](https://github.com/aws/aws-sdk-cpp/compare) if you have any feedback on this new version.
 
 __Jump To:__
 * [Getting Started](#Getting-Started)
