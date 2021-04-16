@@ -78,7 +78,7 @@ OutpostsClient::~OutpostsClient()
 {
 }
 
-void OutpostsClient::init(const ClientConfiguration& config)
+void OutpostsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Outposts");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -72,7 +72,7 @@ IdentityStoreClient::~IdentityStoreClient()
 {
 }
 
-void IdentityStoreClient::init(const ClientConfiguration& config)
+void IdentityStoreClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("identitystore");
   m_configScheme = SchemeMapper::ToString(config.scheme);

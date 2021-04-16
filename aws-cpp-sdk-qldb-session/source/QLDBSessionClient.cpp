@@ -69,7 +69,7 @@ QLDBSessionClient::~QLDBSessionClient()
 {
 }
 
-void QLDBSessionClient::init(const ClientConfiguration& config)
+void QLDBSessionClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("QLDB Session");
   m_configScheme = SchemeMapper::ToString(config.scheme);

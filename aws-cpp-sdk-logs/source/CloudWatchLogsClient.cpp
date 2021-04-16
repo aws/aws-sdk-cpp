@@ -110,7 +110,7 @@ CloudWatchLogsClient::~CloudWatchLogsClient()
 {
 }
 
-void CloudWatchLogsClient::init(const ClientConfiguration& config)
+void CloudWatchLogsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudWatch Logs");
   m_configScheme = SchemeMapper::ToString(config.scheme);

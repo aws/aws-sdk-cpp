@@ -153,7 +153,7 @@ ConfigServiceClient::~ConfigServiceClient()
 {
 }
 
-void ConfigServiceClient::init(const ClientConfiguration& config)
+void ConfigServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Config Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);

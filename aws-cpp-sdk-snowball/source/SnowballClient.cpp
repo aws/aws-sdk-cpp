@@ -90,7 +90,7 @@ SnowballClient::~SnowballClient()
 {
 }
 
-void SnowballClient::init(const ClientConfiguration& config)
+void SnowballClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Snowball");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -93,7 +93,7 @@ LookoutMetricsClient::~LookoutMetricsClient()
 {
 }
 
-void LookoutMetricsClient::init(const ClientConfiguration& config)
+void LookoutMetricsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("LookoutMetrics");
   m_configScheme = SchemeMapper::ToString(config.scheme);

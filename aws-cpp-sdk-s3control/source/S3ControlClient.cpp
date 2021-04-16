@@ -120,7 +120,7 @@ S3ControlClient::~S3ControlClient()
 {
 }
 
-void S3ControlClient::init(const ClientConfiguration& config)
+void S3ControlClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("S3 Control");
   LoadS3ControlSpecificConfig(config.profileName);
@@ -3031,8 +3031,6 @@ void S3ControlClient::UpdateJobStatusAsyncHelper(const UpdateJobStatusRequest& r
 {
   handler(this, request, UpdateJobStatus(request), context);
 }
-
-
 
 
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";

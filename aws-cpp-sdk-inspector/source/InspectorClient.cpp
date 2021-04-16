@@ -104,7 +104,7 @@ InspectorClient::~InspectorClient()
 {
 }
 
-void InspectorClient::init(const ClientConfiguration& config)
+void InspectorClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Inspector");
   m_configScheme = SchemeMapper::ToString(config.scheme);

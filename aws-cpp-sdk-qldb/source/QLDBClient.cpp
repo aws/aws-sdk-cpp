@@ -87,7 +87,7 @@ QLDBClient::~QLDBClient()
 {
 }
 
-void QLDBClient::init(const ClientConfiguration& config)
+void QLDBClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("QLDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);

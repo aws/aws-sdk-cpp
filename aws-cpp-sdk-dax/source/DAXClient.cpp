@@ -89,7 +89,7 @@ DAXClient::~DAXClient()
 {
 }
 
-void DAXClient::init(const ClientConfiguration& config)
+void DAXClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DAX");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -85,7 +85,7 @@ MigrationHubClient::~MigrationHubClient()
 {
 }
 
-void MigrationHubClient::init(const ClientConfiguration& config)
+void MigrationHubClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Migration Hub");
   m_configScheme = SchemeMapper::ToString(config.scheme);

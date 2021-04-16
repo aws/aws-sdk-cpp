@@ -75,7 +75,7 @@ MacieClient::~MacieClient()
 {
 }
 
-void MacieClient::init(const ClientConfiguration& config)
+void MacieClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Macie");
   m_configScheme = SchemeMapper::ToString(config.scheme);

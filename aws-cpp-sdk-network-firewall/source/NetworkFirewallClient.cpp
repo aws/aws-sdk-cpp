@@ -97,7 +97,7 @@ NetworkFirewallClient::~NetworkFirewallClient()
 {
 }
 
-void NetworkFirewallClient::init(const ClientConfiguration& config)
+void NetworkFirewallClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Network Firewall");
   m_configScheme = SchemeMapper::ToString(config.scheme);

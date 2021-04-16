@@ -71,7 +71,7 @@ S3OutpostsClient::~S3OutpostsClient()
 {
 }
 
-void S3OutpostsClient::init(const ClientConfiguration& config)
+void S3OutpostsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("S3Outposts");
   m_configScheme = SchemeMapper::ToString(config.scheme);

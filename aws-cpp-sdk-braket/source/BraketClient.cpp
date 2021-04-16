@@ -77,7 +77,7 @@ BraketClient::~BraketClient()
 {
 }
 
-void BraketClient::init(const ClientConfiguration& config)
+void BraketClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Braket");
   m_configScheme = SchemeMapper::ToString(config.scheme);

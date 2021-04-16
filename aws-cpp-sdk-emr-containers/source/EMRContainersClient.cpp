@@ -83,7 +83,7 @@ EMRContainersClient::~EMRContainersClient()
 {
 }
 
-void EMRContainersClient::init(const ClientConfiguration& config)
+void EMRContainersClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EMR containers");
   m_configScheme = SchemeMapper::ToString(config.scheme);

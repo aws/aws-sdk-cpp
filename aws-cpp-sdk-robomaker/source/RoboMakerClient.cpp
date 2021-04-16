@@ -125,7 +125,7 @@ RoboMakerClient::~RoboMakerClient()
 {
 }
 
-void RoboMakerClient::init(const ClientConfiguration& config)
+void RoboMakerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("RoboMaker");
   m_configScheme = SchemeMapper::ToString(config.scheme);

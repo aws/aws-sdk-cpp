@@ -76,7 +76,7 @@ DLMClient::~DLMClient()
 {
 }
 
-void DLMClient::init(const ClientConfiguration& config)
+void DLMClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DLM");
   m_configScheme = SchemeMapper::ToString(config.scheme);

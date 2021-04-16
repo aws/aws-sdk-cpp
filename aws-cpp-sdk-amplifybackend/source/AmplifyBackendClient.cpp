@@ -92,7 +92,7 @@ AmplifyBackendClient::~AmplifyBackendClient()
 {
 }
 
-void AmplifyBackendClient::init(const ClientConfiguration& config)
+void AmplifyBackendClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AmplifyBackend");
   m_configScheme = SchemeMapper::ToString(config.scheme);

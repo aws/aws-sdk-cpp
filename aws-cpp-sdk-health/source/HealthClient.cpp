@@ -78,7 +78,7 @@ HealthClient::~HealthClient()
 {
 }
 
-void HealthClient::init(const ClientConfiguration& config)
+void HealthClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Health");
   m_configScheme = SchemeMapper::ToString(config.scheme);

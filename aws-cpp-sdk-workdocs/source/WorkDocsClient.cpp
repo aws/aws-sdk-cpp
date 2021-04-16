@@ -109,7 +109,7 @@ WorkDocsClient::~WorkDocsClient()
 {
 }
 
-void WorkDocsClient::init(const ClientConfiguration& config)
+void WorkDocsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WorkDocs");
   m_configScheme = SchemeMapper::ToString(config.scheme);

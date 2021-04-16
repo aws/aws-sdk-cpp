@@ -134,7 +134,7 @@ ElastiCacheClient::~ElastiCacheClient()
 {
 }
 
-void ElastiCacheClient::init(const ClientConfiguration& config)
+void ElastiCacheClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ElastiCache");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1924,6 +1924,4 @@ void ElastiCacheClient::TestFailoverAsyncHelper(const TestFailoverRequest& reque
 {
   handler(this, request, TestFailover(request), context);
 }
-
-
 

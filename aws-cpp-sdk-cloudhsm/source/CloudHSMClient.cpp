@@ -88,7 +88,7 @@ CloudHSMClient::~CloudHSMClient()
 {
 }
 
-void CloudHSMClient::init(const ClientConfiguration& config)
+void CloudHSMClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudHSM");
   m_configScheme = SchemeMapper::ToString(config.scheme);

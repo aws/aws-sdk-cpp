@@ -119,7 +119,7 @@ CloudWatchEventsClient::~CloudWatchEventsClient()
 {
 }
 
-void CloudWatchEventsClient::init(const ClientConfiguration& config)
+void CloudWatchEventsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudWatch Events");
   m_configScheme = SchemeMapper::ToString(config.scheme);

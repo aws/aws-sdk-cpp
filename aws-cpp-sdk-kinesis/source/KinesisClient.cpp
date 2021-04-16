@@ -97,7 +97,7 @@ KinesisClient::~KinesisClient()
 {
 }
 
-void KinesisClient::init(const ClientConfiguration& config)
+void KinesisClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Kinesis");
   m_configScheme = SchemeMapper::ToString(config.scheme);

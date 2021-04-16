@@ -88,7 +88,7 @@ TransferClient::~TransferClient()
 {
 }
 
-void TransferClient::init(const ClientConfiguration& config)
+void TransferClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Transfer");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -70,7 +70,7 @@ SagemakerEdgeManagerClient::~SagemakerEdgeManagerClient()
 {
 }
 
-void SagemakerEdgeManagerClient::init(const ClientConfiguration& config)
+void SagemakerEdgeManagerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Sagemaker Edge");
   m_configScheme = SchemeMapper::ToString(config.scheme);

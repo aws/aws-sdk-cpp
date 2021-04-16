@@ -180,7 +180,7 @@ PinpointClient::~PinpointClient()
 {
 }
 
-void PinpointClient::init(const ClientConfiguration& config)
+void PinpointClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Pinpoint");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -105,7 +105,7 @@ CloudWatchClient::~CloudWatchClient()
 {
 }
 
-void CloudWatchClient::init(const ClientConfiguration& config)
+void CloudWatchClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudWatch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1112,6 +1112,4 @@ void CloudWatchClient::UntagResourceAsyncHelper(const UntagResourceRequest& requ
 {
   handler(this, request, UntagResource(request), context);
 }
-
-
 

@@ -91,7 +91,7 @@ ECRPublicClient::~ECRPublicClient()
 {
 }
 
-void ECRPublicClient::init(const ClientConfiguration& config)
+void ECRPublicClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ECR PUBLIC");
   m_configScheme = SchemeMapper::ToString(config.scheme);

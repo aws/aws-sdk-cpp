@@ -76,7 +76,7 @@ ConnectParticipantClient::~ConnectParticipantClient()
 {
 }
 
-void ConnectParticipantClient::init(const ClientConfiguration& config)
+void ConnectParticipantClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ConnectParticipant");
   m_configScheme = SchemeMapper::ToString(config.scheme);

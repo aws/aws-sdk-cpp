@@ -93,7 +93,7 @@ MgnClient::~MgnClient()
 {
 }
 
-void MgnClient::init(const ClientConfiguration& config)
+void MgnClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("mgn");
   m_configScheme = SchemeMapper::ToString(config.scheme);

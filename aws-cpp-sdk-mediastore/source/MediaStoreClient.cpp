@@ -89,7 +89,7 @@ MediaStoreClient::~MediaStoreClient()
 {
 }
 
-void MediaStoreClient::init(const ClientConfiguration& config)
+void MediaStoreClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MediaStore");
   m_configScheme = SchemeMapper::ToString(config.scheme);

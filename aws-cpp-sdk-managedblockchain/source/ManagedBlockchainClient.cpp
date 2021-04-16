@@ -91,7 +91,7 @@ ManagedBlockchainClient::~ManagedBlockchainClient()
 {
 }
 
-void ManagedBlockchainClient::init(const ClientConfiguration& config)
+void ManagedBlockchainClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ManagedBlockchain");
   m_configScheme = SchemeMapper::ToString(config.scheme);

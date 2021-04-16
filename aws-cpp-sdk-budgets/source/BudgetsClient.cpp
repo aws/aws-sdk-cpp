@@ -90,7 +90,7 @@ BudgetsClient::~BudgetsClient()
 {
 }
 
-void BudgetsClient::init(const ClientConfiguration& config)
+void BudgetsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Budgets");
   m_configScheme = SchemeMapper::ToString(config.scheme);

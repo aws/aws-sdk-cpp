@@ -75,7 +75,7 @@ IoTSecureTunnelingClient::~IoTSecureTunnelingClient()
 {
 }
 
-void IoTSecureTunnelingClient::init(const ClientConfiguration& config)
+void IoTSecureTunnelingClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTSecureTunneling");
   m_configScheme = SchemeMapper::ToString(config.scheme);

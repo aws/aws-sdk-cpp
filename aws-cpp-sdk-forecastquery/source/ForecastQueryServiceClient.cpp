@@ -69,7 +69,7 @@ ForecastQueryServiceClient::~ForecastQueryServiceClient()
 {
 }
 
-void ForecastQueryServiceClient::init(const ClientConfiguration& config)
+void ForecastQueryServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("forecastquery");
   m_configScheme = SchemeMapper::ToString(config.scheme);

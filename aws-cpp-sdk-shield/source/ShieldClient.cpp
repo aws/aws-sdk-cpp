@@ -100,7 +100,7 @@ ShieldClient::~ShieldClient()
 {
 }
 
-void ShieldClient::init(const ClientConfiguration& config)
+void ShieldClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Shield");
   m_configScheme = SchemeMapper::ToString(config.scheme);

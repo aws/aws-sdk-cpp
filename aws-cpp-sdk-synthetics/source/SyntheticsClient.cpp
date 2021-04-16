@@ -81,7 +81,7 @@ SyntheticsClient::~SyntheticsClient()
 {
 }
 
-void SyntheticsClient::init(const ClientConfiguration& config)
+void SyntheticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("synthetics");
   m_configScheme = SchemeMapper::ToString(config.scheme);

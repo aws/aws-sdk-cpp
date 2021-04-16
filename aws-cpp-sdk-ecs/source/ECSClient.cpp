@@ -120,7 +120,7 @@ ECSClient::~ECSClient()
 {
 }
 
-void ECSClient::init(const ClientConfiguration& config)
+void ECSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ECS");
   m_configScheme = SchemeMapper::ToString(config.scheme);

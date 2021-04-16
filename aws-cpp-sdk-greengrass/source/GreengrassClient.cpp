@@ -160,7 +160,7 @@ GreengrassClient::~GreengrassClient()
 {
 }
 
-void GreengrassClient::init(const ClientConfiguration& config)
+void GreengrassClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Greengrass");
   m_configScheme = SchemeMapper::ToString(config.scheme);

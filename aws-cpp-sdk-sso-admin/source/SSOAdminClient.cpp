@@ -99,7 +99,7 @@ SSOAdminClient::~SSOAdminClient()
 {
 }
 
-void SSOAdminClient::init(const ClientConfiguration& config)
+void SSOAdminClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SSO Admin");
   m_configScheme = SchemeMapper::ToString(config.scheme);

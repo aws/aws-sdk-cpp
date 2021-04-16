@@ -85,7 +85,7 @@ CognitoSyncClient::~CognitoSyncClient()
 {
 }
 
-void CognitoSyncClient::init(const ClientConfiguration& config)
+void CognitoSyncClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Cognito Sync");
   m_configScheme = SchemeMapper::ToString(config.scheme);

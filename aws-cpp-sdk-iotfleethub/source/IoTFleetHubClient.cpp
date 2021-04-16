@@ -76,7 +76,7 @@ IoTFleetHubClient::~IoTFleetHubClient()
 {
 }
 
-void IoTFleetHubClient::init(const ClientConfiguration& config)
+void IoTFleetHubClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTFleetHub");
   m_configScheme = SchemeMapper::ToString(config.scheme);

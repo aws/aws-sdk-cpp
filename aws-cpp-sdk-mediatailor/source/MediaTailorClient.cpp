@@ -99,7 +99,7 @@ MediaTailorClient::~MediaTailorClient()
 {
 }
 
-void MediaTailorClient::init(const ClientConfiguration& config)
+void MediaTailorClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MediaTailor");
   m_configScheme = SchemeMapper::ToString(config.scheme);

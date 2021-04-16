@@ -88,7 +88,7 @@ ComprehendMedicalClient::~ComprehendMedicalClient()
 {
 }
 
-void ComprehendMedicalClient::init(const ClientConfiguration& config)
+void ComprehendMedicalClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ComprehendMedical");
   m_configScheme = SchemeMapper::ToString(config.scheme);

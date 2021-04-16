@@ -87,7 +87,7 @@ DataPipelineClient::~DataPipelineClient()
 {
 }
 
-void DataPipelineClient::init(const ClientConfiguration& config)
+void DataPipelineClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Data Pipeline");
   m_configScheme = SchemeMapper::ToString(config.scheme);

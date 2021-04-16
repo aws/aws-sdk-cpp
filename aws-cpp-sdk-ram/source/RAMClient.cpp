@@ -92,7 +92,7 @@ RAMClient::~RAMClient()
 {
 }
 
-void RAMClient::init(const ClientConfiguration& config)
+void RAMClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("RAM");
   m_configScheme = SchemeMapper::ToString(config.scheme);

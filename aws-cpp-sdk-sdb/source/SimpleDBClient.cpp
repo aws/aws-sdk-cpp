@@ -79,7 +79,7 @@ SimpleDBClient::~SimpleDBClient()
 {
 }
 
-void SimpleDBClient::init(const ClientConfiguration& config)
+void SimpleDBClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("sdb");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -384,6 +384,4 @@ void SimpleDBClient::SelectAsyncHelper(const SelectRequest& request, const Selec
 {
   handler(this, request, Select(request), context);
 }
-
-
 

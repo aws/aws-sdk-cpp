@@ -78,7 +78,7 @@ ApplicationAutoScalingClient::~ApplicationAutoScalingClient()
 {
 }
 
-void ApplicationAutoScalingClient::init(const ClientConfiguration& config)
+void ApplicationAutoScalingClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Application Auto Scaling");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -145,7 +145,7 @@ WAFClient::~WAFClient()
 {
 }
 
-void WAFClient::init(const ClientConfiguration& config)
+void WAFClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WAF");
   m_configScheme = SchemeMapper::ToString(config.scheme);

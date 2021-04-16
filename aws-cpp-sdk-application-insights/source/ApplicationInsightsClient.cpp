@@ -95,7 +95,7 @@ ApplicationInsightsClient::~ApplicationInsightsClient()
 {
 }
 
-void ApplicationInsightsClient::init(const ClientConfiguration& config)
+void ApplicationInsightsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Application Insights");
   m_configScheme = SchemeMapper::ToString(config.scheme);

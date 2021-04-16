@@ -74,7 +74,7 @@ TextractClient::~TextractClient()
 {
 }
 
-void TextractClient::init(const ClientConfiguration& config)
+void TextractClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Textract");
   m_configScheme = SchemeMapper::ToString(config.scheme);

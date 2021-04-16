@@ -102,7 +102,7 @@ CodeArtifactClient::~CodeArtifactClient()
 {
 }
 
-void CodeArtifactClient::init(const ClientConfiguration& config)
+void CodeArtifactClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("codeartifact");
   m_configScheme = SchemeMapper::ToString(config.scheme);

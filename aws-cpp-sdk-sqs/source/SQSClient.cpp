@@ -89,7 +89,7 @@ SQSClient::~SQSClient()
 {
 }
 
-void SQSClient::init(const ClientConfiguration& config)
+void SQSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SQS");
   m_configScheme = SchemeMapper::ToString(config.scheme);

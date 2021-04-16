@@ -76,7 +76,7 @@ PinpointSMSVoiceClient::~PinpointSMSVoiceClient()
 {
 }
 
-void PinpointSMSVoiceClient::init(const ClientConfiguration& config)
+void PinpointSMSVoiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Pinpoint SMS Voice");
   m_configScheme = SchemeMapper::ToString(config.scheme);

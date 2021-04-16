@@ -72,7 +72,7 @@ SSOClient::~SSOClient()
 {
 }
 
-void SSOClient::init(const ClientConfiguration& config)
+void SSOClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SSO");
   m_configScheme = SchemeMapper::ToString(config.scheme);

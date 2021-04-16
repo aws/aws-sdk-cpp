@@ -200,7 +200,7 @@ SSMClient::~SSMClient()
 {
 }
 
-void SSMClient::init(const ClientConfiguration& config)
+void SSMClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SSM");
   m_configScheme = SchemeMapper::ToString(config.scheme);

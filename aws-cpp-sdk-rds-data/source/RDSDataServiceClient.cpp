@@ -73,7 +73,7 @@ RDSDataServiceClient::~RDSDataServiceClient()
 {
 }
 
-void RDSDataServiceClient::init(const ClientConfiguration& config)
+void RDSDataServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("RDS Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);

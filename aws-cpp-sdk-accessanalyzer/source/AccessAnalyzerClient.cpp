@@ -96,7 +96,7 @@ AccessAnalyzerClient::~AccessAnalyzerClient()
 {
 }
 
-void AccessAnalyzerClient::init(const ClientConfiguration& config)
+void AccessAnalyzerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AccessAnalyzer");
   m_configScheme = SchemeMapper::ToString(config.scheme);

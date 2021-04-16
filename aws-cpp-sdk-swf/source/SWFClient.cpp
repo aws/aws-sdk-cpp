@@ -105,7 +105,7 @@ SWFClient::~SWFClient()
 {
 }
 
-void SWFClient::init(const ClientConfiguration& config)
+void SWFClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SWF");
   m_configScheme = SchemeMapper::ToString(config.scheme);

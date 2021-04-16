@@ -149,7 +149,7 @@ WAFRegionalClient::~WAFRegionalClient()
 {
 }
 
-void WAFRegionalClient::init(const ClientConfiguration& config)
+void WAFRegionalClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WAF Regional");
   m_configScheme = SchemeMapper::ToString(config.scheme);

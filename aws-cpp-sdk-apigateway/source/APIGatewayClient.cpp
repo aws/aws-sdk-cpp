@@ -188,7 +188,7 @@ APIGatewayClient::~APIGatewayClient()
 {
 }
 
-void APIGatewayClient::init(const ClientConfiguration& config)
+void APIGatewayClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("API Gateway");
   m_configScheme = SchemeMapper::ToString(config.scheme);

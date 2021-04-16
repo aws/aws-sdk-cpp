@@ -155,7 +155,7 @@ ServiceCatalogClient::~ServiceCatalogClient()
 {
 }
 
-void ServiceCatalogClient::init(const ClientConfiguration& config)
+void ServiceCatalogClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Service Catalog");
   m_configScheme = SchemeMapper::ToString(config.scheme);

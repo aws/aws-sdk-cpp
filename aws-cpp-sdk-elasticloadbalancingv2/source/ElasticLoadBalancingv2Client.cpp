@@ -103,7 +103,7 @@ ElasticLoadBalancingv2Client::~ElasticLoadBalancingv2Client()
 {
 }
 
-void ElasticLoadBalancingv2Client::init(const ClientConfiguration& config)
+void ElasticLoadBalancingv2Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elastic Load Balancing v2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1056,6 +1056,4 @@ void ElasticLoadBalancingv2Client::SetSubnetsAsyncHelper(const SetSubnetsRequest
 {
   handler(this, request, SetSubnets(request), context);
 }
-
-
 

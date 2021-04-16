@@ -124,7 +124,7 @@ CloudFormationClient::~CloudFormationClient()
 {
 }
 
-void CloudFormationClient::init(const ClientConfiguration& config)
+void CloudFormationClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudFormation");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1644,6 +1644,4 @@ void CloudFormationClient::ValidateTemplateAsyncHelper(const ValidateTemplateReq
 {
   handler(this, request, ValidateTemplate(request), context);
 }
-
-
 

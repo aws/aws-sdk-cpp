@@ -71,7 +71,7 @@ SageMakerFeatureStoreRuntimeClient::~SageMakerFeatureStoreRuntimeClient()
 {
 }
 
-void SageMakerFeatureStoreRuntimeClient::init(const ClientConfiguration& config)
+void SageMakerFeatureStoreRuntimeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SageMaker FeatureStore Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -15,6 +15,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/machinelearning/MachineLearningClient.h>
 #include <aws/machinelearning/MachineLearningEndpoint.h>
 #include <aws/machinelearning/MachineLearningErrorMarshaller.h>
@@ -95,7 +96,7 @@ MachineLearningClient::~MachineLearningClient()
 {
 }
 
-void MachineLearningClient::init(const ClientConfiguration& config)
+void MachineLearningClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Machine Learning");
   m_configScheme = SchemeMapper::ToString(config.scheme);

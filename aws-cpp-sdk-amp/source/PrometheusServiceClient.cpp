@@ -73,7 +73,7 @@ PrometheusServiceClient::~PrometheusServiceClient()
 {
 }
 
-void PrometheusServiceClient::init(const ClientConfiguration& config)
+void PrometheusServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("amp");
   m_configScheme = SchemeMapper::ToString(config.scheme);

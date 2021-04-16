@@ -140,7 +140,7 @@ SESClient::~SESClient()
 {
 }
 
-void SESClient::init(const ClientConfiguration& config)
+void SESClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SES");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -2092,6 +2092,4 @@ void SESClient::VerifyEmailIdentityAsyncHelper(const VerifyEmailIdentityRequest&
 {
   handler(this, request, VerifyEmailIdentity(request), context);
 }
-
-
 

@@ -84,7 +84,7 @@ ElasticTranscoderClient::~ElasticTranscoderClient()
 {
 }
 
-void ElasticTranscoderClient::init(const ClientConfiguration& config)
+void ElasticTranscoderClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elastic Transcoder");
   m_configScheme = SchemeMapper::ToString(config.scheme);

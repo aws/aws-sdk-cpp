@@ -122,7 +122,7 @@ WorkMailClient::~WorkMailClient()
 {
 }
 
-void WorkMailClient::init(const ClientConfiguration& config)
+void WorkMailClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WorkMail");
   m_configScheme = SchemeMapper::ToString(config.scheme);

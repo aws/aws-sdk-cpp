@@ -518,7 +518,7 @@ EC2Client::~EC2Client()
 {
 }
 
-void EC2Client::init(const ClientConfiguration& config)
+void EC2Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EC2");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -12666,6 +12666,4 @@ void EC2Client::WithdrawByoipCidrAsyncHelper(const WithdrawByoipCidrRequest& req
 {
   handler(this, request, WithdrawByoipCidr(request), context);
 }
-
-
 

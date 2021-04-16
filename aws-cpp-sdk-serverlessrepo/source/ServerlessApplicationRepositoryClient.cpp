@@ -82,7 +82,7 @@ ServerlessApplicationRepositoryClient::~ServerlessApplicationRepositoryClient()
 {
 }
 
-void ServerlessApplicationRepositoryClient::init(const ClientConfiguration& config)
+void ServerlessApplicationRepositoryClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ServerlessApplicationRepository");
   m_configScheme = SchemeMapper::ToString(config.scheme);

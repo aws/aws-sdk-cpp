@@ -81,7 +81,7 @@ IoTDeviceAdvisorClient::~IoTDeviceAdvisorClient()
 {
 }
 
-void IoTDeviceAdvisorClient::init(const ClientConfiguration& config)
+void IoTDeviceAdvisorClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IotDeviceAdvisor");
   m_configScheme = SchemeMapper::ToString(config.scheme);

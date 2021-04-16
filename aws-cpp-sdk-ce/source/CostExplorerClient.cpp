@@ -98,7 +98,7 @@ CostExplorerClient::~CostExplorerClient()
 {
 }
 
-void CostExplorerClient::init(const ClientConfiguration& config)
+void CostExplorerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Cost Explorer");
   m_configScheme = SchemeMapper::ToString(config.scheme);

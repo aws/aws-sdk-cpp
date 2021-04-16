@@ -117,7 +117,7 @@ ImagebuilderClient::~ImagebuilderClient()
 {
 }
 
-void ImagebuilderClient::init(const ClientConfiguration& config)
+void ImagebuilderClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("imagebuilder");
   m_configScheme = SchemeMapper::ToString(config.scheme);

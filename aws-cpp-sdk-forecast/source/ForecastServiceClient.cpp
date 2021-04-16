@@ -102,7 +102,7 @@ ForecastServiceClient::~ForecastServiceClient()
 {
 }
 
-void ForecastServiceClient::init(const ClientConfiguration& config)
+void ForecastServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("forecast");
   m_configScheme = SchemeMapper::ToString(config.scheme);

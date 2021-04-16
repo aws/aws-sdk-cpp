@@ -87,7 +87,7 @@ LookoutforVisionClient::~LookoutforVisionClient()
 {
 }
 
-void LookoutforVisionClient::init(const ClientConfiguration& config)
+void LookoutforVisionClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("LookoutVision");
   m_configScheme = SchemeMapper::ToString(config.scheme);

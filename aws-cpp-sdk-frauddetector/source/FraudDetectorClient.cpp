@@ -124,7 +124,7 @@ FraudDetectorClient::~FraudDetectorClient()
 {
 }
 
-void FraudDetectorClient::init(const ClientConfiguration& config)
+void FraudDetectorClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("FraudDetector");
   m_configScheme = SchemeMapper::ToString(config.scheme);

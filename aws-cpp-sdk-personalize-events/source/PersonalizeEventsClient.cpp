@@ -71,7 +71,7 @@ PersonalizeEventsClient::~PersonalizeEventsClient()
 {
 }
 
-void PersonalizeEventsClient::init(const ClientConfiguration& config)
+void PersonalizeEventsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Personalize Events");
   m_configScheme = SchemeMapper::ToString(config.scheme);

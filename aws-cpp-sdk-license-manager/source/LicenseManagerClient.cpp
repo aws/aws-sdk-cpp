@@ -108,7 +108,7 @@ LicenseManagerClient::~LicenseManagerClient()
 {
 }
 
-void LicenseManagerClient::init(const ClientConfiguration& config)
+void LicenseManagerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("License Manager");
   m_configScheme = SchemeMapper::ToString(config.scheme);

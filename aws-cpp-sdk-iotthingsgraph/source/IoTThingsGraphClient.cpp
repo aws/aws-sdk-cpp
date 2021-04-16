@@ -103,7 +103,7 @@ IoTThingsGraphClient::~IoTThingsGraphClient()
 {
 }
 
-void IoTThingsGraphClient::init(const ClientConfiguration& config)
+void IoTThingsGraphClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTThingsGraph");
   m_configScheme = SchemeMapper::ToString(config.scheme);

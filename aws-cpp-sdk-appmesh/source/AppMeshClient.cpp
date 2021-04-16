@@ -106,7 +106,7 @@ AppMeshClient::~AppMeshClient()
 {
 }
 
-void AppMeshClient::init(const ClientConfiguration& config)
+void AppMeshClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("App Mesh");
   m_configScheme = SchemeMapper::ToString(config.scheme);

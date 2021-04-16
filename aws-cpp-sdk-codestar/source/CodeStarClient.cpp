@@ -86,7 +86,7 @@ CodeStarClient::~CodeStarClient()
 {
 }
 
-void CodeStarClient::init(const ClientConfiguration& config)
+void CodeStarClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CodeStar");
   m_configScheme = SchemeMapper::ToString(config.scheme);

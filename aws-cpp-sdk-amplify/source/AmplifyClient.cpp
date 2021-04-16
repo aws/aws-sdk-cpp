@@ -105,7 +105,7 @@ AmplifyClient::~AmplifyClient()
 {
 }
 
-void AmplifyClient::init(const ClientConfiguration& config)
+void AmplifyClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Amplify");
   m_configScheme = SchemeMapper::ToString(config.scheme);

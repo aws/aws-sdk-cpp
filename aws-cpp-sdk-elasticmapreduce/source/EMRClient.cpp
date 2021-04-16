@@ -114,7 +114,7 @@ EMRClient::~EMRClient()
 {
 }
 
-void EMRClient::init(const ClientConfiguration& config)
+void EMRClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EMR");
   m_configScheme = SchemeMapper::ToString(config.scheme);

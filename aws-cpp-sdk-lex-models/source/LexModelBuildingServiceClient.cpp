@@ -107,7 +107,7 @@ LexModelBuildingServiceClient::~LexModelBuildingServiceClient()
 {
 }
 
-void LexModelBuildingServiceClient::init(const ClientConfiguration& config)
+void LexModelBuildingServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Lex Model Building Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);

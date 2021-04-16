@@ -71,7 +71,7 @@ CloudSearchDomainClient::~CloudSearchDomainClient()
 {
 }
 
-void CloudSearchDomainClient::init(const ClientConfiguration& config)
+void CloudSearchDomainClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("cloudsearchdomain");
   m_configScheme = SchemeMapper::ToString(config.scheme);

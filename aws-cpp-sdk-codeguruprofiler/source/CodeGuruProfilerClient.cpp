@@ -91,7 +91,7 @@ CodeGuruProfilerClient::~CodeGuruProfilerClient()
 {
 }
 
-void CodeGuruProfilerClient::init(const ClientConfiguration& config)
+void CodeGuruProfilerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CodeGuruProfiler");
   m_configScheme = SchemeMapper::ToString(config.scheme);

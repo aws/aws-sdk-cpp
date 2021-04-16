@@ -90,7 +90,7 @@ EFSClient::~EFSClient()
 {
 }
 
-void EFSClient::init(const ClientConfiguration& config)
+void EFSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EFS");
   m_configScheme = SchemeMapper::ToString(config.scheme);

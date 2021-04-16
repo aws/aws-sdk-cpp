@@ -206,7 +206,7 @@ RDSClient::~RDSClient()
 {
 }
 
-void RDSClient::init(const ClientConfiguration& config)
+void RDSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("RDS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -3971,8 +3971,6 @@ void RDSClient::StopDBInstanceAutomatedBackupsReplicationAsyncHelper(const StopD
 {
   handler(this, request, StopDBInstanceAutomatedBackupsReplication(request), context);
 }
-
-
 
 Aws::String RDSClient::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const
 {

@@ -81,7 +81,7 @@ LakeFormationClient::~LakeFormationClient()
 {
 }
 
-void LakeFormationClient::init(const ClientConfiguration& config)
+void LakeFormationClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("LakeFormation");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -85,7 +85,7 @@ SignerClient::~SignerClient()
 {
 }
 
-void SignerClient::init(const ClientConfiguration& config)
+void SignerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("signer");
   m_configScheme = SchemeMapper::ToString(config.scheme);

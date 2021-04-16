@@ -70,7 +70,7 @@ PIClient::~PIClient()
 {
 }
 
-void PIClient::init(const ClientConfiguration& config)
+void PIClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("PI");
   m_configScheme = SchemeMapper::ToString(config.scheme);

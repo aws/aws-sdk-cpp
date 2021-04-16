@@ -130,7 +130,7 @@ DirectoryServiceClient::~DirectoryServiceClient()
 {
 }
 
-void DirectoryServiceClient::init(const ClientConfiguration& config)
+void DirectoryServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Directory Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -82,7 +82,7 @@ SupportClient::~SupportClient()
 {
 }
 
-void SupportClient::init(const ClientConfiguration& config)
+void SupportClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Support");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -70,7 +70,7 @@ WorkMailMessageFlowClient::~WorkMailMessageFlowClient()
 {
 }
 
-void WorkMailMessageFlowClient::init(const ClientConfiguration& config)
+void WorkMailMessageFlowClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WorkMailMessageFlow");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -99,7 +99,7 @@ WellArchitectedClient::~WellArchitectedClient()
 {
 }
 
-void WellArchitectedClient::init(const ClientConfiguration& config)
+void WellArchitectedClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WellArchitected");
   m_configScheme = SchemeMapper::ToString(config.scheme);

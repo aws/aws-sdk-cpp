@@ -100,7 +100,7 @@ EKSClient::~EKSClient()
 {
 }
 
-void EKSClient::init(const ClientConfiguration& config)
+void EKSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EKS");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -167,7 +167,7 @@ QuickSightClient::~QuickSightClient()
 {
 }
 
-void QuickSightClient::init(const ClientConfiguration& config)
+void QuickSightClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("QuickSight");
   m_configScheme = SchemeMapper::ToString(config.scheme);

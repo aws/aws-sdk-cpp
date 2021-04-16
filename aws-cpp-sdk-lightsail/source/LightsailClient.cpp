@@ -210,7 +210,7 @@ LightsailClient::~LightsailClient()
 {
 }
 
-void LightsailClient::init(const ClientConfiguration& config)
+void LightsailClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Lightsail");
   m_configScheme = SchemeMapper::ToString(config.scheme);

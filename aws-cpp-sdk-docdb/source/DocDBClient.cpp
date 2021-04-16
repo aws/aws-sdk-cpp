@@ -117,7 +117,7 @@ DocDBClient::~DocDBClient()
 {
 }
 
-void DocDBClient::init(const ClientConfiguration& config)
+void DocDBClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DocDB");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1461,6 +1461,4 @@ void DocDBClient::StopDBClusterAsyncHelper(const StopDBClusterRequest& request, 
 {
   handler(this, request, StopDBCluster(request), context);
 }
-
-
 

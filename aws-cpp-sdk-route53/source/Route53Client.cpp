@@ -133,7 +133,7 @@ Route53Client::~Route53Client()
 {
 }
 
-void Route53Client::init(const ClientConfiguration& config)
+void Route53Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Route 53");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -2251,6 +2251,4 @@ void Route53Client::UpdateTrafficPolicyInstanceAsyncHelper(const UpdateTrafficPo
 {
   handler(this, request, UpdateTrafficPolicyInstance(request), context);
 }
-
-
 

@@ -132,7 +132,7 @@ NeptuneClient::~NeptuneClient()
 {
 }
 
-void NeptuneClient::init(const ClientConfiguration& config)
+void NeptuneClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Neptune");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1881,6 +1881,4 @@ void NeptuneClient::StopDBClusterAsyncHelper(const StopDBClusterRequest& request
 {
   handler(this, request, StopDBCluster(request), context);
 }
-
-
 

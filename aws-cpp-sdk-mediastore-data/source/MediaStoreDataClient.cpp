@@ -73,7 +73,7 @@ MediaStoreDataClient::~MediaStoreDataClient()
 {
 }
 
-void MediaStoreDataClient::init(const ClientConfiguration& config)
+void MediaStoreDataClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MediaStore Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -84,7 +84,7 @@ ResourceGroupsClient::~ResourceGroupsClient()
 {
 }
 
-void ResourceGroupsClient::init(const ClientConfiguration& config)
+void ResourceGroupsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Resource Groups");
   m_configScheme = SchemeMapper::ToString(config.scheme);

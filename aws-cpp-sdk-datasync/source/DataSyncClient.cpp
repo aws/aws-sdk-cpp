@@ -103,7 +103,7 @@ DataSyncClient::~DataSyncClient()
 {
 }
 
-void DataSyncClient::init(const ClientConfiguration& config)
+void DataSyncClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DataSync");
   m_configScheme = SchemeMapper::ToString(config.scheme);

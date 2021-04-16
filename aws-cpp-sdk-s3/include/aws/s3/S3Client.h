@@ -74,15 +74,15 @@
 #include <aws/core/http/HttpTypes.h>
 #include <future>
 #include <functional>
+
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
 namespace Aws
 {
-
-  namespace Http
-  {
-    class HttpClient;
-    class HttpClientFactory;
-  } // namespace Http
-
   namespace Utils
   {
     template< typename R, typename E> class Outcome;
@@ -103,11 +103,6 @@ namespace Aws
     class AWSCredentials;
     class AWSCredentialsProvider;
   } // namespace Auth
-
-  namespace Client
-  {
-    class RetryStrategy;
-  } // namespace Client
 
   namespace S3
   {
@@ -524,7 +519,6 @@ namespace Aws
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
-
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -545,7 +539,6 @@ namespace Aws
             const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration(), Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::Never, bool useVirtualAddressing = true, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET);
 
         virtual ~S3Client();
-
 
         /**
          * <p>This action aborts a multipart upload. After a multipart upload is aborted,

@@ -112,7 +112,7 @@ CodeBuildClient::~CodeBuildClient()
 {
 }
 
-void CodeBuildClient::init(const ClientConfiguration& config)
+void CodeBuildClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CodeBuild");
   m_configScheme = SchemeMapper::ToString(config.scheme);

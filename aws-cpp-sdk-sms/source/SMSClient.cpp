@@ -103,7 +103,7 @@ SMSClient::~SMSClient()
 {
 }
 
-void SMSClient::init(const ClientConfiguration& config)
+void SMSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);

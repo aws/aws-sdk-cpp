@@ -103,7 +103,7 @@ LocationServiceClient::~LocationServiceClient()
 {
 }
 
-void LocationServiceClient::init(const ClientConfiguration& config)
+void LocationServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Location");
   m_configScheme = SchemeMapper::ToString(config.scheme);

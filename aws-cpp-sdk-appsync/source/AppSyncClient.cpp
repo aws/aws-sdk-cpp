@@ -109,7 +109,7 @@ AppSyncClient::~AppSyncClient()
 {
 }
 
-void AppSyncClient::init(const ClientConfiguration& config)
+void AppSyncClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AppSync");
   m_configScheme = SchemeMapper::ToString(config.scheme);

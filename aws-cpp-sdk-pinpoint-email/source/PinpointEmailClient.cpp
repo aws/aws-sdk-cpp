@@ -110,7 +110,7 @@ PinpointEmailClient::~PinpointEmailClient()
 {
 }
 
-void PinpointEmailClient::init(const ClientConfiguration& config)
+void PinpointEmailClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Pinpoint Email");
   m_configScheme = SchemeMapper::ToString(config.scheme);

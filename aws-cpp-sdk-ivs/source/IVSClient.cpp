@@ -94,7 +94,7 @@ IVSClient::~IVSClient()
 {
 }
 
-void IVSClient::init(const ClientConfiguration& config)
+void IVSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ivs");
   m_configScheme = SchemeMapper::ToString(config.scheme);

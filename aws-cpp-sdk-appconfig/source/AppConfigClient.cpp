@@ -101,7 +101,7 @@ AppConfigClient::~AppConfigClient()
 {
 }
 
-void AppConfigClient::init(const ClientConfiguration& config)
+void AppConfigClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AppConfig");
   m_configScheme = SchemeMapper::ToString(config.scheme);

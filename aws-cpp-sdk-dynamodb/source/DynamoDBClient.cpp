@@ -119,7 +119,7 @@ DynamoDBClient::~DynamoDBClient()
 {
 }
 
-void DynamoDBClient::init(const ClientConfiguration& config)
+void DynamoDBClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DynamoDB");
   LoadDynamoDBSpecificConfig(config);
@@ -164,9 +164,9 @@ void DynamoDBClient::LoadDynamoDBSpecificConfig(const Aws::Client::ClientConfigu
     }
     else if (!enableEndpointDiscovery.empty())
     {
-      AWS_LOGSTREAM_WARN("DynamoDBClient", "Using the SDK default configuration for Endpoint Discovery. "
-        << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\" or "
-        << "your config file's variable \"endpoint_discovery_enabled\" are explicitly set to \"true\" or \"false\" (case-sensitive) or not set at all.");
+      AWS_LOGSTREAM_WARN("DynamoDBClient", R"(Using the SDK default configuration for Endpoint Discovery. )"
+        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
+        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
     }
   }
 }

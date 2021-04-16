@@ -77,7 +77,7 @@ PollyClient::~PollyClient()
 {
 }
 
-void PollyClient::init(const ClientConfiguration& config)
+void PollyClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Polly");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -86,7 +86,7 @@ FSxClient::~FSxClient()
 {
 }
 
-void FSxClient::init(const ClientConfiguration& config)
+void FSxClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("FSx");
   m_configScheme = SchemeMapper::ToString(config.scheme);

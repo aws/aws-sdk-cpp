@@ -86,7 +86,7 @@ AppflowClient::~AppflowClient()
 {
 }
 
-void AppflowClient::init(const ClientConfiguration& config)
+void AppflowClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Appflow");
   m_configScheme = SchemeMapper::ToString(config.scheme);

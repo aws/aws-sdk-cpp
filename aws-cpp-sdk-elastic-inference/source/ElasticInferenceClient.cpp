@@ -74,7 +74,7 @@ ElasticInferenceClient::~ElasticInferenceClient()
 {
 }
 
-void ElasticInferenceClient::init(const ClientConfiguration& config)
+void ElasticInferenceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elastic Inference");
   m_configScheme = SchemeMapper::ToString(config.scheme);

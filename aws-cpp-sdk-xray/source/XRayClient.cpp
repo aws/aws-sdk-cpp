@@ -95,7 +95,7 @@ XRayClient::~XRayClient()
 {
 }
 
-void XRayClient::init(const ClientConfiguration& config)
+void XRayClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("XRay");
   m_configScheme = SchemeMapper::ToString(config.scheme);

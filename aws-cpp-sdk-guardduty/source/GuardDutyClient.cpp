@@ -126,7 +126,7 @@ GuardDutyClient::~GuardDutyClient()
 {
 }
 
-void GuardDutyClient::init(const ClientConfiguration& config)
+void GuardDutyClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("GuardDuty");
   m_configScheme = SchemeMapper::ToString(config.scheme);

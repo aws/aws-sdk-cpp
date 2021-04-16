@@ -77,7 +77,7 @@ AppIntegrationsServiceClient::~AppIntegrationsServiceClient()
 {
 }
 
-void AppIntegrationsServiceClient::init(const ClientConfiguration& config)
+void AppIntegrationsServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AppIntegrations");
   m_configScheme = SchemeMapper::ToString(config.scheme);

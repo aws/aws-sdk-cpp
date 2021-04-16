@@ -103,7 +103,7 @@ NetworkManagerClient::~NetworkManagerClient()
 {
 }
 
-void NetworkManagerClient::init(const ClientConfiguration& config)
+void NetworkManagerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("NetworkManager");
   m_configScheme = SchemeMapper::ToString(config.scheme);

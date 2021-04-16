@@ -90,7 +90,7 @@ MQClient::~MQClient()
 {
 }
 
-void MQClient::init(const ClientConfiguration& config)
+void MQClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("mq");
   m_configScheme = SchemeMapper::ToString(config.scheme);

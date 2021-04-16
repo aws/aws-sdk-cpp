@@ -129,7 +129,7 @@ ComprehendClient::~ComprehendClient()
 {
 }
 
-void ComprehendClient::init(const ClientConfiguration& config)
+void ComprehendClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Comprehend");
   m_configScheme = SchemeMapper::ToString(config.scheme);

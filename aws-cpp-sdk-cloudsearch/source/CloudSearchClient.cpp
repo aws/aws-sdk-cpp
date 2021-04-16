@@ -95,7 +95,7 @@ CloudSearchClient::~CloudSearchClient()
 {
 }
 
-void CloudSearchClient::init(const ClientConfiguration& config)
+void CloudSearchClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudSearch");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -832,6 +832,4 @@ void CloudSearchClient::UpdateServiceAccessPoliciesAsyncHelper(const UpdateServi
 {
   handler(this, request, UpdateServiceAccessPolicies(request), context);
 }
-
-
 

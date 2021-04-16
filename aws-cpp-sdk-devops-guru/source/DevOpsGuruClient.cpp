@@ -87,7 +87,7 @@ DevOpsGuruClient::~DevOpsGuruClient()
 {
 }
 
-void DevOpsGuruClient::init(const ClientConfiguration& config)
+void DevOpsGuruClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DevOps Guru");
   m_configScheme = SchemeMapper::ToString(config.scheme);

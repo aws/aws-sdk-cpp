@@ -125,7 +125,7 @@ IoTSiteWiseClient::~IoTSiteWiseClient()
 {
 }
 
-void IoTSiteWiseClient::init(const ClientConfiguration& config)
+void IoTSiteWiseClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTSiteWise");
   m_configScheme = SchemeMapper::ToString(config.scheme);

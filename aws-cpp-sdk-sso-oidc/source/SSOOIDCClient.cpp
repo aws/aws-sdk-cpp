@@ -71,7 +71,7 @@ SSOOIDCClient::~SSOOIDCClient()
 {
 }
 
-void SSOOIDCClient::init(const ClientConfiguration& config)
+void SSOOIDCClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SSO OIDC");
   m_configScheme = SchemeMapper::ToString(config.scheme);

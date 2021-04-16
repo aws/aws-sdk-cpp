@@ -107,7 +107,7 @@ GlueDataBrewClient::~GlueDataBrewClient()
 {
 }
 
-void GlueDataBrewClient::init(const ClientConfiguration& config)
+void GlueDataBrewClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DataBrew");
   m_configScheme = SchemeMapper::ToString(config.scheme);

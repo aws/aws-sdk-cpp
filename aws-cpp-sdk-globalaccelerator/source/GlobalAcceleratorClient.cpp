@@ -115,7 +115,7 @@ GlobalAcceleratorClient::~GlobalAcceleratorClient()
 {
 }
 
-void GlobalAcceleratorClient::init(const ClientConfiguration& config)
+void GlobalAcceleratorClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Global Accelerator");
   m_configScheme = SchemeMapper::ToString(config.scheme);

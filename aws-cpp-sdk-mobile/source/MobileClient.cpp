@@ -77,7 +77,7 @@ MobileClient::~MobileClient()
 {
 }
 
-void MobileClient::init(const ClientConfiguration& config)
+void MobileClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("mobile");
   m_configScheme = SchemeMapper::ToString(config.scheme);

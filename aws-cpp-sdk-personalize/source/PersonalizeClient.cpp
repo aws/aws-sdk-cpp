@@ -111,7 +111,7 @@ PersonalizeClient::~PersonalizeClient()
 {
 }
 
-void PersonalizeClient::init(const ClientConfiguration& config)
+void PersonalizeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Personalize");
   m_configScheme = SchemeMapper::ToString(config.scheme);

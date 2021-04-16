@@ -121,7 +121,7 @@ WorkSpacesClient::~WorkSpacesClient()
 {
 }
 
-void WorkSpacesClient::init(const ClientConfiguration& config)
+void WorkSpacesClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("WorkSpaces");
   m_configScheme = SchemeMapper::ToString(config.scheme);

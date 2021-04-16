@@ -87,7 +87,7 @@ IoTEventsClient::~IoTEventsClient()
 {
 }
 
-void IoTEventsClient::init(const ClientConfiguration& config)
+void IoTEventsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT Events");
   m_configScheme = SchemeMapper::ToString(config.scheme);

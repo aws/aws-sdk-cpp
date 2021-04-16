@@ -88,7 +88,7 @@ AppRegistryClient::~AppRegistryClient()
 {
 }
 
-void AppRegistryClient::init(const ClientConfiguration& config)
+void AppRegistryClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Service Catalog AppRegistry");
   m_configScheme = SchemeMapper::ToString(config.scheme);

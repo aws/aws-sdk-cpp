@@ -91,7 +91,7 @@ ServiceDiscoveryClient::~ServiceDiscoveryClient()
 {
 }
 
-void ServiceDiscoveryClient::init(const ClientConfiguration& config)
+void ServiceDiscoveryClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ServiceDiscovery");
   m_configScheme = SchemeMapper::ToString(config.scheme);

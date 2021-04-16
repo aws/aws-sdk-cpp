@@ -72,7 +72,7 @@ MarketplaceMeteringClient::~MarketplaceMeteringClient()
 {
 }
 
-void MarketplaceMeteringClient::init(const ClientConfiguration& config)
+void MarketplaceMeteringClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Marketplace Metering");
   m_configScheme = SchemeMapper::ToString(config.scheme);

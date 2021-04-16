@@ -98,7 +98,7 @@ ElasticLoadBalancingClient::~ElasticLoadBalancingClient()
 {
 }
 
-void ElasticLoadBalancingClient::init(const ClientConfiguration& config)
+void ElasticLoadBalancingClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elastic Load Balancing");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -916,6 +916,4 @@ void ElasticLoadBalancingClient::SetLoadBalancerPoliciesOfListenerAsyncHelper(co
 {
   handler(this, request, SetLoadBalancerPoliciesOfListener(request), context);
 }
-
-
 

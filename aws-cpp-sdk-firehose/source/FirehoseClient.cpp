@@ -80,7 +80,7 @@ FirehoseClient::~FirehoseClient()
 {
 }
 
-void FirehoseClient::init(const ClientConfiguration& config)
+void FirehoseClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Firehose");
   m_configScheme = SchemeMapper::ToString(config.scheme);

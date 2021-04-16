@@ -69,7 +69,7 @@ MarketplaceEntitlementServiceClient::~MarketplaceEntitlementServiceClient()
 {
 }
 
-void MarketplaceEntitlementServiceClient::init(const ClientConfiguration& config)
+void MarketplaceEntitlementServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("entitlement.marketplace");
   m_configScheme = SchemeMapper::ToString(config.scheme);

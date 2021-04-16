@@ -76,7 +76,7 @@ HealthLakeClient::~HealthLakeClient()
 {
 }
 
-void HealthLakeClient::init(const ClientConfiguration& config)
+void HealthLakeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("HealthLake");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -97,7 +97,7 @@ KendraClient::~KendraClient()
 {
 }
 
-void KendraClient::init(const ClientConfiguration& config)
+void KendraClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("kendra");
   m_configScheme = SchemeMapper::ToString(config.scheme);

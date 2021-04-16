@@ -116,7 +116,7 @@ ElasticBeanstalkClient::~ElasticBeanstalkClient()
 {
 }
 
-void ElasticBeanstalkClient::init(const ClientConfiguration& config)
+void ElasticBeanstalkClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Elastic Beanstalk");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1420,6 +1420,4 @@ void ElasticBeanstalkClient::ValidateConfigurationSettingsAsyncHelper(const Vali
 {
   handler(this, request, ValidateConfigurationSettings(request), context);
 }
-
-
 

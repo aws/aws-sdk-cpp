@@ -72,7 +72,7 @@ TimestreamQueryClient::~TimestreamQueryClient()
 {
 }
 
-void TimestreamQueryClient::init(const ClientConfiguration& config)
+void TimestreamQueryClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Timestream Query");
   LoadTimestreamQuerySpecificConfig(config);
@@ -117,9 +117,9 @@ void TimestreamQueryClient::LoadTimestreamQuerySpecificConfig(const Aws::Client:
     }
     else if (!enableEndpointDiscovery.empty())
     {
-      AWS_LOGSTREAM_WARN("TimestreamQueryClient", "Using the SDK default configuration for Endpoint Discovery. "
-        << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\" or "
-        << "your config file's variable \"endpoint_discovery_enabled\" are explicitly set to \"true\" or \"false\" (case-sensitive) or not set at all.");
+      AWS_LOGSTREAM_WARN("TimestreamQueryClient", R"(Using the SDK default configuration for Endpoint Discovery. )"
+        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
+        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
     }
   }
 }
@@ -170,12 +170,11 @@ CancelQueryOutcome TimestreamQueryClient::CancelQuery(const CancelQueryRequest& 
   }
   else
   {
-    Aws::StringStream ss;
-    ss << "Unable to perform \"CancelQuery\" without endpoint discovery. "
-      << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\", "
-      << "your config file's variable \"endpoint_discovery_enabled\" and "
-      << "ClientConfiguration's \"enableEndpointDiscovery\" are explicitly set to true or not set at all.";
-    return CancelQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", ss.str(), false));
+    Aws::String errorMessage = R"(Unable to perform "CancelQuery" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return CancelQueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
   Aws::StringStream ss;
   ss << "/";
@@ -261,12 +260,11 @@ QueryOutcome TimestreamQueryClient::Query(const QueryRequest& request) const
   }
   else
   {
-    Aws::StringStream ss;
-    ss << "Unable to perform \"Query\" without endpoint discovery. "
-      << "Make sure your environment variable \"AWS_ENABLE_ENDPOINT_DISCOVERY\", "
-      << "your config file's variable \"endpoint_discovery_enabled\" and "
-      << "ClientConfiguration's \"enableEndpointDiscovery\" are explicitly set to true or not set at all.";
-    return QueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", ss.str(), false));
+    Aws::String errorMessage = R"(Unable to perform "Query" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return QueryOutcome(Aws::Client::AWSError<TimestreamQueryErrors>(TimestreamQueryErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
   }
   Aws::StringStream ss;
   ss << "/";

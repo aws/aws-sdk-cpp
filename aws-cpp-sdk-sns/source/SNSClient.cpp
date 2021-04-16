@@ -102,7 +102,7 @@ SNSClient::~SNSClient()
 {
 }
 
-void SNSClient::init(const ClientConfiguration& config)
+void SNSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SNS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1028,6 +1028,4 @@ void SNSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
 {
   handler(this, request, UntagResource(request), context);
 }
-
-
 

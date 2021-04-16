@@ -71,7 +71,7 @@ TranscribeStreamingServiceClient::~TranscribeStreamingServiceClient()
 {
 }
 
-void TranscribeStreamingServiceClient::init(const ClientConfiguration& config)
+void TranscribeStreamingServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Transcribe Streaming");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -88,7 +88,7 @@ KinesisAnalyticsClient::~KinesisAnalyticsClient()
 {
 }
 
-void KinesisAnalyticsClient::init(const ClientConfiguration& config)
+void KinesisAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Kinesis Analytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -163,7 +163,7 @@ GameLiftClient::~GameLiftClient()
 {
 }
 
-void GameLiftClient::init(const ClientConfiguration& config)
+void GameLiftClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("GameLift");
   m_configScheme = SchemeMapper::ToString(config.scheme);

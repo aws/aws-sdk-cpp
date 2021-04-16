@@ -91,7 +91,7 @@ ApplicationDiscoveryServiceClient::~ApplicationDiscoveryServiceClient()
 {
 }
 
-void ApplicationDiscoveryServiceClient::init(const ClientConfiguration& config)
+void ApplicationDiscoveryServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Application Discovery Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -81,7 +81,7 @@ CodeStarNotificationsClient::~CodeStarNotificationsClient()
 {
 }
 
-void CodeStarNotificationsClient::init(const ClientConfiguration& config)
+void CodeStarNotificationsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("codestar notifications");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -74,7 +74,7 @@ EBSClient::~EBSClient()
 {
 }
 
-void EBSClient::init(const ClientConfiguration& config)
+void EBSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EBS");
   m_configScheme = SchemeMapper::ToString(config.scheme);

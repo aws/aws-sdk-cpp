@@ -107,7 +107,7 @@ CodePipelineClient::~CodePipelineClient()
 {
 }
 
-void CodePipelineClient::init(const ClientConfiguration& config)
+void CodePipelineClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CodePipeline");
   m_configScheme = SchemeMapper::ToString(config.scheme);

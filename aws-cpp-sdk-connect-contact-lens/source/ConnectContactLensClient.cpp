@@ -69,7 +69,7 @@ ConnectContactLensClient::~ConnectContactLensClient()
 {
 }
 
-void ConnectContactLensClient::init(const ClientConfiguration& config)
+void ConnectContactLensClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Connect Contact Lens");
   m_configScheme = SchemeMapper::ToString(config.scheme);

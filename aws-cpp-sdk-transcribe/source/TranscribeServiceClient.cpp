@@ -95,7 +95,7 @@ TranscribeServiceClient::~TranscribeServiceClient()
 {
 }
 
-void TranscribeServiceClient::init(const ClientConfiguration& config)
+void TranscribeServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Transcribe");
   m_configScheme = SchemeMapper::ToString(config.scheme);

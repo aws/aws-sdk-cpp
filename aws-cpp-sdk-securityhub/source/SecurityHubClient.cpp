@@ -116,7 +116,7 @@ SecurityHubClient::~SecurityHubClient()
 {
 }
 
-void SecurityHubClient::init(const ClientConfiguration& config)
+void SecurityHubClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SecurityHub");
   m_configScheme = SchemeMapper::ToString(config.scheme);

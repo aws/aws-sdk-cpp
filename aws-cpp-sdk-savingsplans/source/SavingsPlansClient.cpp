@@ -77,7 +77,7 @@ SavingsPlansClient::~SavingsPlansClient()
 {
 }
 
-void SavingsPlansClient::init(const ClientConfiguration& config)
+void SavingsPlansClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("savingsplans");
   m_configScheme = SchemeMapper::ToString(config.scheme);

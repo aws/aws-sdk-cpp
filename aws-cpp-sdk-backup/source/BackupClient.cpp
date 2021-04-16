@@ -118,7 +118,7 @@ BackupClient::~BackupClient()
 {
 }
 
-void BackupClient::init(const ClientConfiguration& config)
+void BackupClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Backup");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -129,7 +129,7 @@ AutoScalingClient::~AutoScalingClient()
 {
 }
 
-void AutoScalingClient::init(const ClientConfiguration& config)
+void AutoScalingClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Auto Scaling");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -1784,6 +1784,4 @@ void AutoScalingClient::UpdateAutoScalingGroupAsyncHelper(const UpdateAutoScalin
 {
   handler(this, request, UpdateAutoScalingGroup(request), context);
 }
-
-
 

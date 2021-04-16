@@ -75,7 +75,7 @@ LexRuntimeV2Client::~LexRuntimeV2Client()
 {
 }
 
-void LexRuntimeV2Client::init(const ClientConfiguration& config)
+void LexRuntimeV2Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Lex Runtime V2");
   m_configScheme = SchemeMapper::ToString(config.scheme);

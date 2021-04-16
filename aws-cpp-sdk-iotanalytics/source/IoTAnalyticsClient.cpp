@@ -102,7 +102,7 @@ IoTAnalyticsClient::~IoTAnalyticsClient()
 {
 }
 
-void IoTAnalyticsClient::init(const ClientConfiguration& config)
+void IoTAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTAnalytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);

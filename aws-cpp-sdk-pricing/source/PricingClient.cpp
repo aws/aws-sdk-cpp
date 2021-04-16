@@ -71,7 +71,7 @@ PricingClient::~PricingClient()
 {
 }
 
-void PricingClient::init(const ClientConfiguration& config)
+void PricingClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Pricing");
   m_configScheme = SchemeMapper::ToString(config.scheme);

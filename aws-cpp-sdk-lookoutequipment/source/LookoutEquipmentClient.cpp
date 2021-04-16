@@ -90,7 +90,7 @@ LookoutEquipmentClient::~LookoutEquipmentClient()
 {
 }
 
-void LookoutEquipmentClient::init(const ClientConfiguration& config)
+void LookoutEquipmentClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("LookoutEquipment");
   m_configScheme = SchemeMapper::ToString(config.scheme);

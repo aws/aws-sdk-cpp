@@ -247,7 +247,7 @@ ChimeClient::~ChimeClient()
 {
 }
 
-void ChimeClient::init(const ClientConfiguration& config)
+void ChimeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Chime");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -82,7 +82,7 @@ TranslateClient::~TranslateClient()
 {
 }
 
-void TranslateClient::init(const ClientConfiguration& config)
+void TranslateClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Translate");
   m_configScheme = SchemeMapper::ToString(config.scheme);

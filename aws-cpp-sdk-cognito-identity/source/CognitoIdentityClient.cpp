@@ -91,7 +91,7 @@ CognitoIdentityClient::~CognitoIdentityClient()
 {
 }
 
-void CognitoIdentityClient::init(const ClientConfiguration& config)
+void CognitoIdentityClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Cognito Identity");
   m_configScheme = SchemeMapper::ToString(config.scheme);

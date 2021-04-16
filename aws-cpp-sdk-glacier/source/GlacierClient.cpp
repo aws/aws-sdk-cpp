@@ -101,7 +101,7 @@ GlacierClient::~GlacierClient()
 {
 }
 
-void GlacierClient::init(const ClientConfiguration& config)
+void GlacierClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Glacier");
   m_configScheme = SchemeMapper::ToString(config.scheme);

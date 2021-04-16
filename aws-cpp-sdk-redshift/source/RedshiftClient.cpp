@@ -169,7 +169,7 @@ RedshiftClient::~RedshiftClient()
 {
 }
 
-void RedshiftClient::init(const ClientConfiguration& config)
+void RedshiftClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Redshift");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -2904,6 +2904,4 @@ void RedshiftClient::RotateEncryptionKeyAsyncHelper(const RotateEncryptionKeyReq
 {
   handler(this, request, RotateEncryptionKey(request), context);
 }
-
-
 

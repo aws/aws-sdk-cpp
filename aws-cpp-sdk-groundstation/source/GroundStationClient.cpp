@@ -93,7 +93,7 @@ GroundStationClient::~GroundStationClient()
 {
 }
 
-void GroundStationClient::init(const ClientConfiguration& config)
+void GroundStationClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("GroundStation");
   m_configScheme = SchemeMapper::ToString(config.scheme);

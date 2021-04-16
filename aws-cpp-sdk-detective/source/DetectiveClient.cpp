@@ -83,7 +83,7 @@ DetectiveClient::~DetectiveClient()
 {
 }
 
-void DetectiveClient::init(const ClientConfiguration& config)
+void DetectiveClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Detective");
   m_configScheme = SchemeMapper::ToString(config.scheme);

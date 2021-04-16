@@ -123,7 +123,7 @@ DatabaseMigrationServiceClient::~DatabaseMigrationServiceClient()
 {
 }
 
-void DatabaseMigrationServiceClient::init(const ClientConfiguration& config)
+void DatabaseMigrationServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Database Migration Service");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -145,7 +145,7 @@ DeviceFarmClient::~DeviceFarmClient()
 {
 }
 
-void DeviceFarmClient::init(const ClientConfiguration& config)
+void DeviceFarmClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Device Farm");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -227,7 +227,7 @@ IAMClient::~IAMClient()
 {
 }
 
-void IAMClient::init(const ClientConfiguration& config)
+void IAMClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IAM");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -4528,6 +4528,4 @@ void IAMClient::UploadSigningCertificateAsyncHelper(const UploadSigningCertifica
 {
   handler(this, request, UploadSigningCertificate(request), context);
 }
-
-
 

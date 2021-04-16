@@ -157,7 +157,7 @@ StorageGatewayClient::~StorageGatewayClient()
 {
 }
 
-void StorageGatewayClient::init(const ClientConfiguration& config)
+void StorageGatewayClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Storage Gateway");
   m_configScheme = SchemeMapper::ToString(config.scheme);

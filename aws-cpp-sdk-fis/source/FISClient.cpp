@@ -82,7 +82,7 @@ FISClient::~FISClient()
 {
 }
 
-void FISClient::init(const ClientConfiguration& config)
+void FISClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("fis");
   m_configScheme = SchemeMapper::ToString(config.scheme);

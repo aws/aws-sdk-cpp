@@ -119,7 +119,7 @@ AuditManagerClient::~AuditManagerClient()
 {
 }
 
-void AuditManagerClient::init(const ClientConfiguration& config)
+void AuditManagerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AuditManager");
   m_configScheme = SchemeMapper::ToString(config.scheme);

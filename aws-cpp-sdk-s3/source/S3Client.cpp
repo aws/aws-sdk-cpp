@@ -163,7 +163,7 @@ S3Client::~S3Client()
 {
 }
 
-void S3Client::init(const ClientConfiguration& config)
+void S3Client::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("S3");
   LoadS3SpecificConfig(config.profileName);
@@ -3887,8 +3887,6 @@ void S3Client::WriteGetObjectResponseAsyncHelper(const WriteGetObjectResponseReq
 {
   handler(this, request, WriteGetObjectResponse(request), context);
 }
-
-
 
 
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";

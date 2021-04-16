@@ -124,7 +124,7 @@ MediaLiveClient::~MediaLiveClient()
 {
 }
 
-void MediaLiveClient::init(const ClientConfiguration& config)
+void MediaLiveClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MediaLive");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -116,7 +116,7 @@ AppStreamClient::~AppStreamClient()
 {
 }
 
-void AppStreamClient::init(const ClientConfiguration& config)
+void AppStreamClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AppStream");
   m_configScheme = SchemeMapper::ToString(config.scheme);

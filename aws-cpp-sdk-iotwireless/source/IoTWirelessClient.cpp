@@ -119,7 +119,7 @@ IoTWirelessClient::~IoTWirelessClient()
 {
 }
 
-void IoTWirelessClient::init(const ClientConfiguration& config)
+void IoTWirelessClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT Wireless");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -98,7 +98,7 @@ KafkaClient::~KafkaClient()
 {
 }
 
-void KafkaClient::init(const ClientConfiguration& config)
+void KafkaClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Kafka");
   m_configScheme = SchemeMapper::ToString(config.scheme);

@@ -79,7 +79,7 @@ MWAAClient::~MWAAClient()
 {
 }
 
-void MWAAClient::init(const ClientConfiguration& config)
+void MWAAClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MWAA");
   m_configScheme = SchemeMapper::ToString(config.scheme);

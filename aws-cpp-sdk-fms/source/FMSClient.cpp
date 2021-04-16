@@ -94,7 +94,7 @@ FMSClient::~FMSClient()
 {
 }
 
-void FMSClient::init(const ClientConfiguration& config)
+void FMSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("FMS");
   m_configScheme = SchemeMapper::ToString(config.scheme);

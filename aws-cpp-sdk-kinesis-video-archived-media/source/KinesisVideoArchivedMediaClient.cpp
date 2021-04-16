@@ -73,7 +73,7 @@ KinesisVideoArchivedMediaClient::~KinesisVideoArchivedMediaClient()
 {
 }
 
-void KinesisVideoArchivedMediaClient::init(const ClientConfiguration& config)
+void KinesisVideoArchivedMediaClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Kinesis Video Archived Media");
   m_configScheme = SchemeMapper::ToString(config.scheme);

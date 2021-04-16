@@ -102,7 +102,7 @@ ECRClient::~ECRClient()
 {
 }
 
-void ECRClient::init(const ClientConfiguration& config)
+void ECRClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ECR");
   m_configScheme = SchemeMapper::ToString(config.scheme);

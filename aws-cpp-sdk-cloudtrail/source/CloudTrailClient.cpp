@@ -86,7 +86,7 @@ CloudTrailClient::~CloudTrailClient()
 {
 }
 
-void CloudTrailClient::init(const ClientConfiguration& config)
+void CloudTrailClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudTrail");
   m_configScheme = SchemeMapper::ToString(config.scheme);

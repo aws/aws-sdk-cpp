@@ -87,7 +87,7 @@ BatchClient::~BatchClient()
 {
 }
 
-void BatchClient::init(const ClientConfiguration& config)
+void BatchClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Batch");
   m_configScheme = SchemeMapper::ToString(config.scheme);

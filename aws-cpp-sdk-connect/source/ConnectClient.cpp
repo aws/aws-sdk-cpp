@@ -167,7 +167,7 @@ ConnectClient::~ConnectClient()
 {
 }
 
-void ConnectClient::init(const ClientConfiguration& config)
+void ConnectClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Connect");
   m_configScheme = SchemeMapper::ToString(config.scheme);

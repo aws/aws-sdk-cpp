@@ -91,7 +91,7 @@ SFNClient::~SFNClient()
 {
 }
 
-void SFNClient::init(const ClientConfiguration& config)
+void SFNClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SFN");
   m_configScheme = SchemeMapper::ToString(config.scheme);

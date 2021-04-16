@@ -125,7 +125,7 @@ LambdaClient::~LambdaClient()
 {
 }
 
-void LambdaClient::init(const ClientConfiguration& config)
+void LambdaClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Lambda");
   m_configScheme = SchemeMapper::ToString(config.scheme);

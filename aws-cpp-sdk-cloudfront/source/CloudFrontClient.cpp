@@ -144,7 +144,7 @@ CloudFrontClient::~CloudFrontClient()
 {
 }
 
-void CloudFrontClient::init(const ClientConfiguration& config)
+void CloudFrontClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudFront");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -2520,6 +2520,4 @@ void CloudFrontClient::UpdateStreamingDistribution2020_05_31AsyncHelper(const Up
 {
   handler(this, request, UpdateStreamingDistribution2020_05_31(request), context);
 }
-
-
 

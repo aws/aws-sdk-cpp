@@ -75,7 +75,7 @@ ImportExportClient::~ImportExportClient()
 {
 }
 
-void ImportExportClient::init(const ClientConfiguration& config)
+void ImportExportClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("importexport");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -284,6 +284,4 @@ void ImportExportClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, c
 {
   handler(this, request, UpdateJob(request), context);
 }
-
-
 

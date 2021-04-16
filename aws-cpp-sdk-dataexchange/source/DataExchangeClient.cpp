@@ -90,7 +90,7 @@ DataExchangeClient::~DataExchangeClient()
 {
 }
 
-void DataExchangeClient::init(const ClientConfiguration& config)
+void DataExchangeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("DataExchange");
   m_configScheme = SchemeMapper::ToString(config.scheme);

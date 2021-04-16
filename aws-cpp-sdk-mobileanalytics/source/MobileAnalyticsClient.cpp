@@ -69,7 +69,7 @@ MobileAnalyticsClient::~MobileAnalyticsClient()
 {
 }
 
-void MobileAnalyticsClient::init(const ClientConfiguration& config)
+void MobileAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("mobileanalytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);

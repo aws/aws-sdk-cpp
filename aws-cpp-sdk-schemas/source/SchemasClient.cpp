@@ -99,7 +99,7 @@ SchemasClient::~SchemasClient()
 {
 }
 
-void SchemasClient::init(const ClientConfiguration& config)
+void SchemasClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("schemas");
   m_configScheme = SchemeMapper::ToString(config.scheme);

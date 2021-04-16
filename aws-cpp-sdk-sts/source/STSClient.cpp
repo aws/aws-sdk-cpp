@@ -77,7 +77,7 @@ STSClient::~STSClient()
 {
 }
 
-void STSClient::init(const ClientConfiguration& config)
+void STSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("STS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -328,6 +328,4 @@ void STSClient::GetSessionTokenAsyncHelper(const GetSessionTokenRequest& request
 {
   handler(this, request, GetSessionToken(request), context);
 }
-
-
 

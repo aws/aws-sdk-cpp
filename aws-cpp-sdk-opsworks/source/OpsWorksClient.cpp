@@ -140,7 +140,7 @@ OpsWorksClient::~OpsWorksClient()
 {
 }
 
-void OpsWorksClient::init(const ClientConfiguration& config)
+void OpsWorksClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("OpsWorks");
   m_configScheme = SchemeMapper::ToString(config.scheme);

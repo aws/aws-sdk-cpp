@@ -77,7 +77,7 @@ RedshiftDataAPIServiceClient::~RedshiftDataAPIServiceClient()
 {
 }
 
-void RedshiftDataAPIServiceClient::init(const ClientConfiguration& config)
+void RedshiftDataAPIServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Redshift Data");
   m_configScheme = SchemeMapper::ToString(config.scheme);

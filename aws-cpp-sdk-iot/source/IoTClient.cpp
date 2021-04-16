@@ -287,7 +287,7 @@ IoTClient::~IoTClient()
 {
 }
 
-void IoTClient::init(const ClientConfiguration& config)
+void IoTClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT");
   m_configScheme = SchemeMapper::ToString(config.scheme);
