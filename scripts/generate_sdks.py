@@ -74,6 +74,13 @@ def DiscoverAllAvailableSDKs(discoveryPath):
             sdk['filePath'] = join(discoveryPath, file)
             sdks['{}-{}'.format(sdk['serviceName'], sdk['apiVersion'])] = sdk
 
+            if serviceName == "s3":
+                s3crt = {}
+                s3crt['serviceName'] = "s3-crt"
+                s3crt['apiVersion'] = sdk['apiVersion']
+                s3crt['filePath'] = sdk['filePath']
+                sdks['s3-crt-{}'.format(s3crt['apiVersion'])] = s3crt
+
     return sdks
 
 def PrepareGenerator(generatorPath):

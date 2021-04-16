@@ -134,6 +134,10 @@ public class C2jModelToGeneratorModelTransformer {
             metadata.setNamespace(sanitizeServiceAbbreviation(metadata.getNamespace()));
         }
 
+        if ("S3-CRT".equalsIgnoreCase(c2jServiceModel.getServiceName())) {
+            metadata.setNamespace("S3Crt");
+        }
+
         metadata.setClassNamePrefix(CppViewHelper.convertToUpperCamel(ifNotNullOrEmpty(c2jMetadata.getClientClassNamePrefix(), metadata.getNamespace())));
 
         c2jServiceModel.setServiceName(ifNotNullOrEmpty(c2jServiceModel.getServiceName(), c2jMetadata.getEndpointPrefix()));

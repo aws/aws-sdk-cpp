@@ -53,6 +53,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-lambda", new LambdaRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-sqs", new SQSQueryXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3", new S3RestXmlCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-s3-crt", new S3RestXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3control", new S3ControlRestXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-cloudfront", new CloudfrontCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2", new Ec2CppClientGenerator());

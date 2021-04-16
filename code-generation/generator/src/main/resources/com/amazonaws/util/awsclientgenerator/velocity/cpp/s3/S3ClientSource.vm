@@ -2,10 +2,11 @@
 #set($virtualAddressingSupported = true)
 #set($arnEndpointSupported = true)
 #set($vpcEndpointSupported = true)
-#set($USEast1RegionalEndpointArgString = ", Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption")
+#set($serviceNamespace = $serviceModel.metadata.namespace)
+#set($USEast1RegionalEndpointArgString = ", Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption")
 #set($USEast1RegionalEndpointInitString = ", m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)")
-#set($AdditionalServiceSpecificConfigLoadString = "LoadS3SpecificConfig(config.profileName);")
-#set($ForRegionExtraArgsString = ", m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL")
+#set($AdditionalServiceSpecificConfigLoadString = "Load${serviceNamespace}SpecificConfig(config.profileName);")
+#set($ForRegionExtraArgsString = ", m_USEast1RegionalEndpointOption == Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
@@ -15,7 +16,7 @@ static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 
 void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile)
 {
-  if (m_USEast1RegionalEndpointOption == Aws::${metadata.classNamePrefix}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET)
+  if (m_USEast1RegionalEndpointOption == Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET)
   {
     Aws::String option = Aws::Environment::GetEnv(US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR);
     if (option.empty())
@@ -25,11 +26,11 @@ void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::Stri
 
     if (Aws::Utils::StringUtils::ToLower(option.c_str()) == "legacy")
     {
-      m_USEast1RegionalEndpointOption = Aws::${metadata.classNamePrefix}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+      m_USEast1RegionalEndpointOption = Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
     }
     else // defaults is regional
     {
-      m_USEast1RegionalEndpointOption = Aws::${metadata.classNamePrefix}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
+      m_USEast1RegionalEndpointOption = Aws::${serviceNamespace}::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
     }
   }
 
@@ -83,7 +84,7 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket, const 
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
@@ -95,11 +96,11 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, c
     ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
-    headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
+    headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
 {
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
@@ -110,11 +111,11 @@ Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, c
     Aws::StringStream ss;
     ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
-    customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
+    customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
@@ -126,12 +127,12 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, 
     ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
-    headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
-    headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
+    headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::aws_kms));
+    headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
@@ -142,12 +143,12 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, 
     Aws::StringStream ss;
     ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
-    customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
-    customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
+    customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::aws_kms));
+    customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
@@ -159,15 +160,15 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, co
     ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
-    headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
+    headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
+    headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
-    headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
+    headers.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String ${className}::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
     ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
     if (!computeEndpointOutcome.IsSuccess())
@@ -178,11 +179,11 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, co
     Aws::StringStream ss;
     ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
     URI uri(ss.str());
-    customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
+    customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::${serviceNamespace}::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::${serviceNamespace}::Model::ServerSideEncryption::AES256));
+    customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
-    customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
+    customizedHeaders.emplace(Aws::${serviceNamespace}::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
     return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
 }
 

@@ -11,24 +11,29 @@
 #if(!$USEast1RegionalEndpointArgString)
 #set($USEast1RegionalEndpointArgString = "")
 #end
+#if($serviceNamespace == "S3Crt")
+#set($clientConfigurationNamespace = $serviceNamespace)
+#else
+#set($clientConfigurationNamespace = "Client")
+#end
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ${className}(const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
+        ${className}(const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
-        ${className}(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
+        ${className}(const Aws::Auth::AWSCredentials& credentials, const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
 
        /**
         * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
         * the default http client factory will be used
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
+            const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
 
 #if($metadata.standalone || $metadata.apigateway)
        /**
@@ -36,7 +41,7 @@
         * is not specified, it will be initialized to default values.
         */
         ${className}(const std::shared_ptr<Aws::Auth::AWSAuthSignerProvider>& signerProvider,
-            const Aws::Client::ClientConfiguration& clientConfiguration = Aws::Client::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
+            const Aws::${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration = Aws::${clientConfigurationNamespace}::ClientConfiguration()${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString});
 
 #end
         virtual ~${className}();

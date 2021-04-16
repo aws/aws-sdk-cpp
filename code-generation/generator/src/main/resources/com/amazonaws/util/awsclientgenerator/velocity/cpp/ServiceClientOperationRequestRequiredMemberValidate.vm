@@ -5,7 +5,15 @@
   {
     AWS_LOGSTREAM_ERROR("${operation.name}", "Required field: ${memberKeyWithFirstLetterCapitalized}, is not set");
 #if(!$operation.request.shape.hasEventStreamMembers())
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+    return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), context);
+#else
+    return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), context);
+#end
+#else
     return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false));
+#end
 #else
     responseHandler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [${memberKeyWithFirstLetterCapitalized}]", false)), handlerContext);
     return;
@@ -18,12 +26,32 @@
   ${metadata.classNamePrefix}ARN arn(request.Get${CppViewHelper.capitalizeFirstChar($operation.arnEndpointMemberName)}());
   if (!arn && request.Get${accountIdMemberWithFirstLetterCapitalized}().empty())
   {
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+      return handlder(this, request, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false)), context);
+#else
+      return handlder(this, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
+          "Account ID should be specified via either accountId field or an ARN", false)), context);
+#end
+#else
       return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::MISSING_PARAMETER, "MISSING_PARAMETER",
           "Account ID should be specified via either accountId field or an ARN", false));
+#end
   }
   if (arn && !request.Get${accountIdMemberWithFirstLetterCapitalized}().empty() && request.Get${accountIdMemberWithFirstLetterCapitalized}() != arn.GetAccountId())
   {
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+      return handler(this, request, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), context);
+#else
+      return handler(this, ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+          "Account ID mismath: the Account ID specified in an ARN and in the accountId field are different.", false)), context);
+#end
+#else
       return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
           "Account ID mismatch: the Account ID specified in an ARN and in the accountId field are different.", false));
+#end
   }
 #end

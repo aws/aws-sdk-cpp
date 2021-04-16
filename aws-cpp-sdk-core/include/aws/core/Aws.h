@@ -12,6 +12,8 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/crt/io/Bootstrap.h>
+#include <aws/crt/io/TlsOptions.h>
 
 namespace Aws
 {
@@ -62,6 +64,15 @@ namespace Aws
          * at startup time.
          */
         Aws::Utils::Memory::MemorySystemInterface* memoryManager;
+    };
+
+    /**
+     * SDK wide options for I/O: client bootstrap and TLS connection options
+     */
+    struct IoOptions
+    {
+        std::function<std::shared_ptr<Aws::Crt::Io::ClientBootstrap>()> clientBootstrap_create_fn;
+        std::function<std::shared_ptr<Aws::Crt::Io::TlsConnectionOptions>()> tlsConnectionOptions_create_fn;
     };
 
     /**
@@ -200,6 +211,10 @@ namespace Aws
      */
     struct SDKOptions
     {
+        /**
+         * SDK wide options for I/O: client bootstrap and TLS connection options
+         */
+        IoOptions ioOptions;
         /**
          * SDK wide options for logging
          */

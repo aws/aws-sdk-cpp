@@ -1,0 +1,385 @@
+static const int SUCCESS_RESPONSE_MIN = 200;
+static const int SUCCESS_RESPONSE_MAX = 299;
+
+static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
+{
+    if (response->HasClientError()) return true;
+
+    int responseCode = static_cast<int>(response->GetResponseCode());
+    return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
+}
+
+static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request, const struct aws_http_headers *headers,
+    int response_status, void *user_data)
+{
+  AWS_UNREFERENCED_PARAM(meta_request);
+  auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  size_t headersCount = aws_http_headers_count(headers);
+  for (size_t i = 0; i < headersCount; i++)
+  {
+    struct aws_http_header header;
+    aws_http_headers_get_index(headers, i, &header);
+    userData->response->AddHeader(StringUtils::FromByteCursor(header.name), StringUtils::FromByteCursor(header.value));
+  }
+  userData->response->SetResponseCode(static_cast<HttpResponseCode>(response_status));
+  return AWS_OP_SUCCESS;
+}
+
+static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request, const struct aws_byte_cursor *body, uint64_t range_start, void *user_data)
+{
+  AWS_UNREFERENCED_PARAM(meta_request);
+  AWS_UNREFERENCED_PARAM(range_start);
+
+  auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  auto& bodyStream = userData->response->GetResponseBody();
+
+  bodyStream.seekp(range_start);
+  bodyStream.write(reinterpret_cast<char*>(body->ptr), static_cast<std::streamsize>(body->len));
+  if (userData->request->IsEventStreamRequest())
+  {
+    bodyStream.flush();
+  }
+
+  // data sent handler and continuation handler will be supported later when aws_c_s3 support it.
+  auto& receivedHandler = userData->request->GetDataReceivedEventHandler();
+  if (receivedHandler)
+  {
+      receivedHandler(userData->request.get(), userData->response.get(), static_cast<long long>(body->len));
+  }
+  AWS_LOGSTREAM_TRACE(ALLOCATION_TAG, body->len << " bytes written to response.");
+
+  return AWS_OP_SUCCESS;
+}
+
+static void S3CrtRequestFinishCallback(struct aws_s3_meta_request *meta_request,
+    const struct aws_s3_meta_request_result *meta_request_result, void *user_data)
+{
+  AWS_UNREFERENCED_PARAM(meta_request);
+  auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  userData->response->SetResponseCode(static_cast<HttpResponseCode>(meta_request_result->response_status));
+  if (meta_request_result->error_response_headers)
+  {
+    size_t headersCount = aws_http_headers_count(meta_request_result->error_response_headers);
+    for (size_t i = 0; i < headersCount; i++)
+    {
+      struct aws_http_header header;
+      aws_http_headers_get_index(meta_request_result->error_response_headers, i, &header);
+      userData->response->AddHeader(StringUtils::FromByteCursor(header.name), StringUtils::FromByteCursor(header.value));
+    }
+  }
+
+  if (meta_request_result->error_code || meta_request_result->response_status != static_cast<int>(Aws::Http::HttpResponseCode::OK))
+  {
+    AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "S3CrtClient received error response for s3_meta_request with response code: " << meta_request_result->response_status
+      << ", with error_code: " << meta_request_result->error_code);
+  }
+
+  auto& bodyStream = userData->response->GetResponseBody();
+
+  if (meta_request_result->error_response_body)
+  {
+    // clean up previously received body data.
+    bodyStream.seekg(0);
+    bodyStream.seekp(0);
+    bodyStream.write(reinterpret_cast<char*>(meta_request_result->error_response_body->buffer), static_cast<std::streamsize>(meta_request_result->error_response_body->len));
+  }
+
+  aws_s3_meta_request_release(userData->underlyingS3Request);
+}
+
+Aws::Client::XmlOutcome S3CrtClient::GenerateXmlOutcome(const std::shared_ptr<HttpResponse>& response) const
+{
+  Aws::Client::HttpResponseOutcome httpOutcome;
+  if (DoesResponseGenerateError(response))
+  {
+    AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+    auto error = BuildAWSError(response);
+    httpOutcome = HttpResponseOutcome(std::move(error));
+  }
+  else
+  {
+    httpOutcome = HttpResponseOutcome(std::move(response));
+  }
+
+  if (!httpOutcome.IsSuccess())
+  {
+      return XmlOutcome(std::move(httpOutcome));
+  }
+
+  if (httpOutcome.GetResult()->GetResponseBody().tellp() > 0)
+  {
+      XmlDocument xmlDoc = XmlDocument::CreateFromXmlStream(httpOutcome.GetResult()->GetResponseBody());
+
+      if (!xmlDoc.WasParseSuccessful())
+      {
+          AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Xml parsing for error failed with message " << xmlDoc.GetErrorMessage().c_str());
+          return AWSError<CoreErrors>(CoreErrors::UNKNOWN, "Xml Parse Error", xmlDoc.GetErrorMessage(), false);
+      }
+
+      return XmlOutcome(AmazonWebServiceResult<XmlDocument>(std::move(xmlDoc),
+          httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode()));
+  }
+
+  return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
+}
+
+Aws::Client::StreamOutcome S3CrtClient::GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const
+{
+  Aws::Client::HttpResponseOutcome httpOutcome;
+  if (DoesResponseGenerateError(response))
+  {
+    AWS_LOGSTREAM_DEBUG(ALLOCATION_TAG, "Request returned error. Attempting to generate appropriate error codes from response");
+    auto error = BuildAWSError(response);
+    httpOutcome = HttpResponseOutcome(std::move(error));
+  }
+  else
+  {
+    httpOutcome = HttpResponseOutcome(std::move(response));
+  }
+
+  if (httpOutcome.IsSuccess())
+  {
+      return StreamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(
+          httpOutcome.GetResult()->SwapResponseStreamOwnership(),
+          httpOutcome.GetResult()->GetHeaders(), httpOutcome.GetResult()->GetResponseCode()));
+  }
+
+  return StreamOutcome(std::move(httpOutcome));
+}
+
+void S3CrtClient::InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData, aws_s3_meta_request_options *options, const Aws::AmazonWebServiceRequest *request, const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const
+{
+  std::shared_ptr<HttpRequest> httpRequest(nullptr);
+  if (request)
+  {
+    httpRequest = CreateHttpRequest(uri, method, request->GetResponseStreamFactory());
+    BuildHttpRequest(*request, httpRequest);
+  }
+  else
+  {
+    httpRequest = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  }
+
+  std::shared_ptr<HttpResponse> httpResponse = Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(ALLOCATION_TAG, httpRequest);
+
+  userData->s3CrtClient = this;
+  userData->originalRequest = request;
+  userData->request = httpRequest;
+  userData->response = httpResponse;
+
+  options->user_data = static_cast<void*>(userData);
+  options->headers_callback = S3CrtRequestHeadersCallback;
+  options->body_callback = S3CrtRequestGetBodyCallback;
+  options->finish_callback = S3CrtRequestFinishCallback;
+}
+
+#foreach($operation in $serviceModel.operations)
+#if($operation.s3CrtSpecific)
+static void ${operation.name}RequestShutdownCallback(void *user_data)
+{
+  auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
+  // call user callback and release user_data
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateStreamOutcome(userData->response));
+#else
+  S3Crt::Model::${operation.name}Outcome outcome(userData->s3CrtClient->GenerateXmlOutcome(userData->response));
+#end
+  auto handler = static_cast<const ${operation.name}ResponseReceivedHandler*>(userData->userCallback);
+#if($operation.request)
+  (*handler)(userData->s3CrtClient, *(reinterpret_cast<const ${operation.request.shape.name}*>(userData->originalRequest)), std::move(outcome), userData->userCallbackContext);
+#else
+  (*handler)(userData->s3CrtClient, outcome, userData->userCallbackContext);
+#end
+
+  Aws::Delete(userData);
+}
+
+#if($arnEndpointSupported)
+#set($signerName = ", Aws::Auth::SIGV4_SIGNER")
+#set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
+#set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
+#else
+#set($signerName = "")
+#set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#set($refText = "&")
+#else
+#set($constText = "const ")
+#set($refText = "")
+#end
+#if($operation.request)
+void ${className}::${operation.name}Async(${constText}${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
+  Aws::StringStream ss;
+#set($uriParts = $operation.http.requestUriParts)
+#set($uriVars = $operation.http.requestParameters)
+#set($partIndex = 1)
+#set($queryStart = false)
+#if($uriParts.size() > $startIndex)
+#set($uriPartString = ${uriParts.get($startIndex)})
+#if($uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+  uri.SetPath(uri.GetPath() + ss.str());
+#end
+  ss.str("${pathAndQuery.get(1)}");
+#else
+  ss << "$uriPartString";
+#end
+#foreach($var in $uriVars)
+#set($varIndex = $partIndex - 1)
+#if(!$skipFirst)
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
+#if($partShapeMember.shape.enum)
+  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
+#else
+  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
+#end
+#if($uriParts.size() > $partIndex)
+#set($uriPartString = "${uriParts.get($partIndex)}")
+#if(!$queryStart && $uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+#end
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("${pathAndQuery.get(1)}");
+#else
+  ss << "$uriPartString";
+#end
+#end
+#end
+#set($partIndex = $partIndex + 1)
+#set($skipFirst = false)
+#end
+#end
+#if(!$queryStart)
+  uri.SetPath(uri.GetPath() + ss.str());
+#else
+  uri.SetQueryString(ss.str());
+#end
+#if($operation.result && $operation.result.shape.hasEventStreamMembers())
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+  // Todo: Support EventStream
+  //return ${operation.name}Outcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride}));
+#end
+
+  // make aws_s3_meta_request with callbacks
+  CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
+  aws_s3_meta_request_options options;
+  AWS_ZERO_STRUCT(options);
+
+  userData->userCallback = static_cast<const void*>(&handler);
+  userData->userCallbackContext = context;
+  InitCommonCrtRequestOption(userData, &options, &request, uri, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  options.shutdown_callback = ${operation.name}RequestShutdownCallback;
+#if($operation.name == "PutObject")
+  options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
+#elseif($operation.name == "GetObject")
+  options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
+#else
+  options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
+#end
+  struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
+  signing_config_override.region = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerRegion);
+  signing_config_override.service = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerServiceName);
+  options.signing_config = &signing_config_override;
+
+  std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
+  options.message= crtHttpRequest->GetUnderlyingMessage();
+  userData->crtHttpRequest = crtHttpRequest;
+  aws_s3_meta_request *rawRequest = aws_s3_client_make_meta_request(m_s3CrtClient, &options);
+  userData->underlyingS3Request = rawRequest;
+}
+
+${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
+{
+  Aws::Utils::Threading::Semaphore sem(0, 1);
+  ${operation.name}Outcome res;
+
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.request.shape.name}&, ${operation.name}Outcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
+#else
+  auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.request.shape.name}&, const ${operation.name}Outcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
+#end
+      res = std::move(outcome);
+      sem.ReleaseAll();
+  }};
+
+  ${className}::${operation.name}Async(request, handler, nullptr);
+  sem.WaitOne();
+  return res;
+}
+
+#else## no request
+void ${className}::${operation.name}Async(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  Aws::StringStream ss;
+#if($virtualAddressingSupported || $arnEndpointSupported)
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return handler(this, ${operation.name}Outcome(computeEndpointOutcome.GetError()), context);
+  }
+  ss << computeEndpointOutcome.GetResult().endpoint;
+#end
+
+  // make aws_s3_meta_request with callbacks
+  CrtRequestCallbackUserData *userData = Aws::New<CrtRequestCallbackUserData>(ALLOCATION_TAG);
+  aws_s3_meta_request_options options;
+  AWS_ZERO_STRUCT(options);
+
+  userData->userCallback = static_cast<const void*>(&handler);
+  userData->userCallbackContext = context;
+  InitCommonCrtRequestOption(userData, &options, nullptr, ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+  options.shutdown_callback = ${operation.name}RequestShutdownCallback;
+#if($operation.name == "PutObject")
+  options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
+#elseif($operation.name == "GetObject")
+  options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
+#else
+  options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
+#end
+  struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
+  signing_config_override.region = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerRegion);
+  signing_config_override.service = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerServiceName);
+  options.signing_config = &signing_config_override;
+
+  std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
+  options.message= crtHttpRequest->GetUnderlyingMessage();
+  userData->crtHttpRequest = crtHttpRequest;
+  aws_s3_meta_request *rawRequest = aws_s3_client_make_meta_request(m_s3CrtClient, &options);
+  userData->underlyingS3Request = rawRequest;
+}
+
+${operation.name}Outcome ${className}::${operation.name}() const
+{
+  Aws::Utils::Threading::Semaphore sem(0, 1);
+  ${operation.name}Outcome res;
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+  auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, ${operation.name}Outcome outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
+#else
+  auto handler = ${operation.name}ResponseReceivedHandler{[&](const S3CrtClient*, const ${operation.name}Outcome& outcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext> &) {
+#end
+      res = std::move(outcome);
+      sem.ReleaseAll();
+  }};
+
+  ${className}::${operation.name}Async(handler, nullptr);
+  sem.WaitOne();
+  return res;
+}
+
+#end
+#end
+#end

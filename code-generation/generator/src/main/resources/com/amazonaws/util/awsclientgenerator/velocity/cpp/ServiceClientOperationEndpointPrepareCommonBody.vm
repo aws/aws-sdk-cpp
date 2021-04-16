@@ -31,7 +31,15 @@
 #end
   if (!computeEndpointOutcome.IsSuccess())
   {
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+    return handler(this, request, ${operation.name}Outcome(computeEndpointOutcome.GetError()), context);
+#else
+    return handler(this, ${operation.name}Outcome(computeEndpointOutcome.GetError()), context);
+#end
+#else
     return ${operation.name}Outcome(computeEndpointOutcome.GetError());
+#end
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
 #else
@@ -91,7 +99,15 @@
       {
 #if($operation.requireEndpointDiscovery)
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+        return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)), context);
+#else
+        return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)), context);
+#end
+#else
         return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+#end
 #else
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
 #end
@@ -121,14 +137,30 @@
     if (request.Get${member}().empty())
     {
       AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+      return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), context);
+#else
+      return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), context);
+#end
+#else
       return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+#end
     }
 #end
     uri.SetAuthority(${operation.endpoint.constructHostPrefixString("request")} + uri.GetAuthority());
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
     {
       AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
+#if($operation.s3CrtSpecific)
+#if($operation.request)
+      return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), context);
+#else
+      return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), context);
+#end
+#else
       return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+#end
     }
   }
 #end

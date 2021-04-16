@@ -1,4 +1,5 @@
 #foreach($operation in $serviceModel.operations)
+#if(!$operation.s3CrtSpecific)
 #if($arnEndpointSupported)
 #set($signerName = ", Aws::Auth::SIGV4_SIGNER")
 #set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
@@ -145,5 +146,6 @@ void ${className}::${operation.name}AsyncHelper(${constText}${operation.name}Res
   handler(this, ${operation.name}(), context);
 }
 
+#end
 #end
 #end

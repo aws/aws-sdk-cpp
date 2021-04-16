@@ -185,7 +185,7 @@ if (BUILD_DEPS)
 
     set(IN_SOURCE_BUILD ON)
     set(BUILD_TESTING_PREV ${BUILD_TESTING})
-    set(BUILD_TESTING OFF)
+    set(BUILD_TESTING OFF CACHE BOOL "Disable all tests in dependencies.")
     # Always build deps statically for Android
     if (PLATFORM_ANDROID)
         set(BUILD_SHARED_LIBS_PREV ${BUILD_SHARED_LIBS})

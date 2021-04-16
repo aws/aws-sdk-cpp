@@ -60,6 +60,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateClientSourceFile(serviceModel));
         fileList.add(generateARNHeaderFile(serviceModel));
         fileList.add(generateARNSourceFile(serviceModel));
+        fileList.add(generateClientConfigurationFile(serviceModel));
         fileList.add(generateRegionHeaderFile(serviceModel));
         fileList.add(generateRegionSourceFile(serviceModel));
         fileList.add(generateErrorsHeaderFile(serviceModel));
@@ -322,6 +323,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
     protected SdkFileEntry generateARNSourceFile(final ServiceModel serviceModel) throws Exception {
         // no-op for services other than S3.
+        return null;
+    }
+
+    protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
+        // no-op for services other than S3Crt.
         return null;
     }
 

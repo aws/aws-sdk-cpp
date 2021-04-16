@@ -25,6 +25,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     private static Set<String> opsThatDoNotSupportVirtualAddressing = new HashSet<>();
     private static Set<String> opsThatDoNotSupportArnEndpoint = new HashSet<>();
+    private static Set<String> opsThatDoNotSupportFutureInS3CRT = new HashSet<>();
     private static Set<String> bucketLocationConstraints = new HashSet<>();
 
     static {
@@ -35,6 +36,9 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         opsThatDoNotSupportArnEndpoint.add("CreateBucket");
         opsThatDoNotSupportArnEndpoint.add("ListBuckets");
         opsThatDoNotSupportArnEndpoint.add("WriteGetObjectResponse");
+
+        opsThatDoNotSupportFutureInS3CRT.add("GetObject");
+        opsThatDoNotSupportFutureInS3CRT.add("PutObject");
 
         bucketLocationConstraints.add("us-east-1");
         bucketLocationConstraints.add("us-east-2");
@@ -96,6 +100,11 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
                 });
 
 
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry ->
+                        serviceModel.getMetadata().getNamespace().equals("S3Crt") && opsThatDoNotSupportFutureInS3CRT.contains(operationEntry.getName()))
+                .forEach(operationEntry -> operationEntry.setS3CrtSpecific(true));
 
         Shape locationConstraints = serviceModel.getShapes().get("BucketLocationConstraint");
 
@@ -326,5 +335,20 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
         return makeFile(template, context, fileName, true);
     }
-}
 
+    @Override
+    protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
+        if ("S3-CRT".equalsIgnoreCase(serviceModel.getMetadata().getProjectName())) {
+            Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/S3CrtClientConfig.vm", StandardCharsets.UTF_8.name());
+
+            VelocityContext context = createContext(serviceModel);
+            context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
+
+            String fileName = String.format("include/aws/%s/ClientConfiguration.h", serviceModel.getMetadata().getProjectName());
+
+            return makeFile(template, context, fileName, true);
+        }
+
+        return null;
+    }
+}

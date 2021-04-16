@@ -12,6 +12,13 @@ namespace Aws
     namespace Crt
     {
         class ApiHandle;
+
+        namespace Io
+        {
+            class ClientBootstrap;
+            class TlsConnectionOptions;
+
+        }
     }
 
     /**
@@ -19,6 +26,26 @@ namespace Aws
      * We will wrap the memory management system and pass it to common runtime libraries via ApiHandle.
      */
     AWS_CORE_API Aws::Crt::ApiHandle* GetApiHandle();
+
+    /**
+     * Set the default ClientBootStrap for AWS common runtime libraries in the global scope.
+     */
+    AWS_CORE_API void SetDefaultClientBootstrap(const std::shared_ptr<Aws::Crt::Io::ClientBootstrap>& clientBootstrap);
+
+    /**
+     * Get the default ClientBootStrap for AWS common runtime libraries in the global scope.
+     */
+    AWS_CORE_API Aws::Crt::Io::ClientBootstrap* GetDefaultClientBootstrap();
+
+    /**
+     * Set the default TlsConnectionOptions for AWS common runtime libraries in the global scope.
+     */
+    AWS_CORE_API void SetDefaultTlsConnectionOptions(const std::shared_ptr<Aws::Crt::Io::TlsConnectionOptions>& tlsConnectionOptions);
+
+    /**
+     * Get the default TlsConnectionOptions for AWS common runtime libraries in the global scope.
+     */
+    AWS_CORE_API Aws::Crt::Io::TlsConnectionOptions* GetDefaultTlsConnectionOptions();
 
     /**
      * Initialize ApiHandle in aws-crt-cpp.

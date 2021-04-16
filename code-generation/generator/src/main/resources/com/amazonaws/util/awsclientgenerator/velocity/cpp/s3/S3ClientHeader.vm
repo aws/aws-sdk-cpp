@@ -1,11 +1,20 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
 #set($metadata = $serviceModel.metadata)
+#set($serviceNamespace = $metadata.namespace)
 #pragma once
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/$metadata.projectName/${metadata.classNamePrefix}Errors.h>
 \#include <aws/core/client/AWSError.h>
 \#include <aws/core/client/ClientConfiguration.h>
+#if($serviceNamespace == "S3Crt")
+\#include <aws/core/utils/crypto/Factories.h>
+\#include <aws/s3-crt/ClientConfiguration.h>
+\#include <aws/s3-crt/S3CrtErrorMarshaller.h>
+\#include <aws/s3/s3_client.h>
+\#include <aws/crt/auth/Sigv4Signing.h>
+\#include <aws/crt/http/HttpRequestResponse.h>
+#end
 \#include <aws/core/client/AWSClient.h>
 \#include <aws/core/auth/AWSAuthSigner.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
@@ -22,16 +31,13 @@
 #set($signPayloadsOptional = true)
 #set($virtualAddressingSupported = true)
 #set($arnEndpointSupported = true)
-#set($USEast1RegionalEndpointArgString = ", Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET")
+#set($USEast1RegionalEndpointArgString = ", Aws::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET")
+
+#if($serviceNamespace == "S3Crt")
+struct aws_s3_client;
+#end
 namespace Aws
 {
-
-  namespace Http
-  {
-    class HttpClient;
-    class HttpClientFactory;
-  } // namespace Http
-
   namespace Utils
   {
     template< typename R, typename E> class Outcome;
@@ -52,11 +58,6 @@ namespace Aws
     class AWSCredentials;
     class AWSCredentialsProvider;
   } // namespace Auth
-
-  namespace Client
-  {
-    class RetryStrategy;
-  } // namespace Client
 
   namespace ${metadata.namespace}
   {
@@ -113,9 +114,7 @@ namespace Aws
     {
     public:
         typedef Aws::Client::AWSXMLClient BASECLASS;
-
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
-
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
         Aws::String GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds = MAX_EXPIRATION_SECONDS);
@@ -172,8 +171,46 @@ namespace Aws
 
         void OverrideEndpoint(const Aws::String& endpoint);
 
+#if($serviceNamespace == "S3Crt")
+
+        struct CrtRequestCallbackUserData {
+          const S3CrtClient *s3CrtClient;
+          const void *userCallback;
+          std::shared_ptr<const Aws::Client::AsyncCallerContext> userCallbackContext;
+          const Aws::AmazonWebServiceRequest *originalRequest;
+          std::shared_ptr<Aws::Http::HttpRequest> request;
+          std::shared_ptr<Aws::Http::HttpResponse> response;
+          std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest;
+          aws_s3_meta_request *underlyingS3Request;
+        };
+
+        Aws::Client::XmlOutcome GenerateXmlOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+        Aws::Client::StreamOutcome GenerateStreamOutcome(const std::shared_ptr<Http::HttpResponse>& response) const;
+
+#end
     private:
+#if($serviceNamespace == "S3Crt")
+        void init(const S3Crt::ClientConfiguration& clientConfiguration, const Aws::Auth::AWSCredentials* credentials = nullptr);
+
+        struct CrtClientShutdownCallbackDataWrapper {
+          void *data;
+          std::function<void(void*)> fn;
+          std::shared_ptr<Aws::Utils::Threading::Semaphore> clientShutdownSem;
+        };
+
+        static void CrtClientShutdownCallback(void *data) {
+          auto *wrappedData = static_cast<CrtClientShutdownCallbackDataWrapper*>(data);
+          if (wrappedData->fn)
+          {
+            wrappedData->fn(wrappedData->data);
+          }
+          wrappedData->clientShutdownSem->Release();
+        }
+
+        void InitCommonCrtRequestOption(CrtRequestCallbackUserData *userData, aws_s3_meta_request_options *options, const Aws::AmazonWebServiceRequest *requset, const Aws::Http::URI &uri, Aws::Http::HttpMethod method) const;
+#else
         void init(const Client::ClientConfiguration& clientConfiguration);
+#end
         void Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile);
         ComputeEndpointOutcome ComputeEndpointString(const Aws::String& bucket) const;
         ComputeEndpointOutcome ComputeEndpointString() const;
@@ -186,6 +223,13 @@ namespace Aws
         bool m_enableHostPrefixInjection;
         Aws::String m_configScheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
+#if($serviceNamespace == "S3Crt")
+        struct aws_s3_client* m_s3CrtClient;
+        struct aws_signing_config_aws m_s3CrtSigningConfig;
+        struct CrtClientShutdownCallbackDataWrapper m_wrappedData;
+        std::shared_ptr<Aws::Utils::Threading::Semaphore> m_clientShutdownSem;
+        Aws::String m_userAgent;
+#end
         bool m_useVirtualAddressing;
         bool m_useDualStack;
         bool m_useArnRegion;
@@ -194,7 +238,7 @@ namespace Aws
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
         bool m_enableEndpointDiscovery;
 #end
-        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption;
+        Aws::$serviceNamespace::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption;
     };
 
   } // namespace ${metadata.namespace}
