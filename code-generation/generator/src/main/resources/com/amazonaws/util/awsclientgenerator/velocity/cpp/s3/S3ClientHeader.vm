@@ -36,6 +36,12 @@
 #if($serviceNamespace == "S3Crt")
 struct aws_s3_client;
 #end
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetObject
+#undef GetObject
+#endif
+#endif
 namespace Aws
 {
   namespace Utils

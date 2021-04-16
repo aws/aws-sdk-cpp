@@ -6,6 +6,14 @@
 #pragma once
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/core/utils/memory/stl/AWSString.h>
+#foreach($enumMember in $enumModel.members)
+#if(${serviceNamespace.equals("S3Crt")} && ${enumMember.memberName.equals("IGNORE")})
+
+#ifdef IGNORE
+#undef IGNORE
+#endif
+#end
+#end
 
 namespace ${rootNamespace}
 {

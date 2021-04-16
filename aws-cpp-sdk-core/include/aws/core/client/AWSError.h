@@ -12,6 +12,13 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#endif
+
 namespace Aws
 {
     namespace Client
