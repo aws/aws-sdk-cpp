@@ -44,6 +44,13 @@ elseif(ENABLE_OPENSSL_ENCRYPTION)
         else()
             message(STATUS "  Openssl include directory: ${OPENSSL_INCLUDE_DIR}")
             message(STATUS "  Openssl library: ${OPENSSL_LIBRARIES}")
+            # LibCrypto_INCLUDE_DIR, LibCrypto_STATIC_LIBRARY and LibCrypto_SHARED_LIBRARY
+            # are defined here for s2n and aws-c-cal to use the same libcrypto and libssl used by C++ SDK.
+            # They could either be static or dynamic, depends on which are found by include(FindOpenSSL),
+            # no matter if C++ SDK itself is built statically or dynamically.
+            set(LibCrypto_INCLUDE_DIR "${OPENSSL_INCLUDE_DIR}" CACHE INTERNAL "The OpenSSL include directory")
+            set(LibCrypto_STATIC_LIBRARY "${OPENSSL_CRYPTO_LIBRARY}" CACHE INTERNAL "The OpenSSL crypto static library")
+            set(LibCrypto_SHARED_LIBRARY "${OPENSSL_CRYPTO_LIBRARY}" CACHE INTERNAL "The OpenSSL crypto shared library")
         endif()
         List(APPEND EXTERNAL_DEPS_INCLUDE_DIRS ${OPENSSL_INCLUDE_DIR})
     endif()
