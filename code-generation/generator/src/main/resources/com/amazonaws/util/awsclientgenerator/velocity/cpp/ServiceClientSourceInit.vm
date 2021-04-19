@@ -181,7 +181,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   // initialize aws_s3_client;
   aws_s3_client_config s3CrtConfig;
   memset(&s3CrtConfig, 0, sizeof(s3CrtConfig));
-  s3CrtConfig.region = Aws::Crt::ByteCursorFromString(config.region);
+  s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
 
@@ -189,9 +189,9 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   if (credentials)
   {
     Aws::Crt::Auth::CredentialsProviderStaticConfig staticCreds;
-    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromString(credentials->GetAWSAccessKeyId());
-    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromString(credentials->GetAWSSecretKey());
-    staticCreds.SessionToken = Aws::Crt::ByteCursorFromString(credentials->GetSessionToken());
+    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromCString(credentials->GetAWSAccessKeyId().c_str());
+    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromCString(credentials->GetAWSSecretKey().c_str());
+    staticCreds.SessionToken = Aws::Crt::ByteCursorFromCString(credentials->GetSessionToken().c_str());
     provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderStatic(staticCreds);
   }
   else
@@ -201,7 +201,7 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
     provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderChainDefault(credsConfig);
   }
 
-  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromString(config.region), provider->GetUnderlyingHandle());
+  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), provider->GetUnderlyingHandle());
   m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
   s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
 

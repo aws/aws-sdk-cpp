@@ -291,8 +291,8 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
 #end
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
-  signing_config_override.region = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerRegion);
-  signing_config_override.service = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerServiceName);
+  signing_config_override.region = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerRegion.c_str());
+  signing_config_override.service = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerServiceName.c_str());
   options.signing_config = &signing_config_override;
 
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
@@ -351,8 +351,8 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
   options.type = AWS_S3_META_REQUEST_TYPE_DEFAULT;
 #end
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
-  signing_config_override.region = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerRegion);
-  signing_config_override.service = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerServiceName);
+  signing_config_override.region = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerRegion.c_str());
+  signing_config_override.service = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerServiceName.c_str());
   options.signing_config = &signing_config_override;
 
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
