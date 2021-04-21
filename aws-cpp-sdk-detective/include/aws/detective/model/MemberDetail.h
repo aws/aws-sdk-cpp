@@ -488,79 +488,55 @@ namespace Model
 
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline double GetPercentOfGraphUtilization() const{ return m_percentOfGraphUtilization; }
+    inline long long GetVolumeUsageInBytes() const{ return m_volumeUsageInBytes; }
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline bool PercentOfGraphUtilizationHasBeenSet() const { return m_percentOfGraphUtilizationHasBeenSet; }
+    inline bool VolumeUsageInBytesHasBeenSet() const { return m_volumeUsageInBytesHasBeenSet; }
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline void SetPercentOfGraphUtilization(double value) { m_percentOfGraphUtilizationHasBeenSet = true; m_percentOfGraphUtilization = value; }
+    inline void SetVolumeUsageInBytes(long long value) { m_volumeUsageInBytesHasBeenSet = true; m_volumeUsageInBytes = value; }
 
     /**
-     * <p>The member account data volume as a percentage of the maximum allowed data
-     * volume. 0 indicates 0 percent, and 100 indicates 100 percent.</p> <p>Note that
-     * this is not the percentage of the behavior graph data volume.</p> <p>For
-     * example, the data volume for the behavior graph is 80 GB per day. The maximum
-     * data volume is 160 GB per day. If the data volume for the member account is 40
-     * GB per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25%
-     * of the maximum allowed data volume. </p>
+     * <p>The data volume in bytes per day for the member account.</p>
      */
-    inline MemberDetail& WithPercentOfGraphUtilization(double value) { SetPercentOfGraphUtilization(value); return *this;}
+    inline MemberDetail& WithVolumeUsageInBytes(long long value) { SetVolumeUsageInBytes(value); return *this;}
 
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetPercentOfGraphUtilizationUpdatedTime() const{ return m_percentOfGraphUtilizationUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetVolumeUsageUpdatedTime() const{ return m_volumeUsageUpdatedTime; }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated.</p>
      */
-    inline bool PercentOfGraphUtilizationUpdatedTimeHasBeenSet() const { return m_percentOfGraphUtilizationUpdatedTimeHasBeenSet; }
+    inline bool VolumeUsageUpdatedTimeHasBeenSet() const { return m_volumeUsageUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated.</p>
      */
-    inline void SetPercentOfGraphUtilizationUpdatedTime(const Aws::Utils::DateTime& value) { m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true; m_percentOfGraphUtilizationUpdatedTime = value; }
+    inline void SetVolumeUsageUpdatedTime(const Aws::Utils::DateTime& value) { m_volumeUsageUpdatedTimeHasBeenSet = true; m_volumeUsageUpdatedTime = value; }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated.</p>
      */
-    inline void SetPercentOfGraphUtilizationUpdatedTime(Aws::Utils::DateTime&& value) { m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true; m_percentOfGraphUtilizationUpdatedTime = std::move(value); }
+    inline void SetVolumeUsageUpdatedTime(Aws::Utils::DateTime&& value) { m_volumeUsageUpdatedTimeHasBeenSet = true; m_volumeUsageUpdatedTime = std::move(value); }
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated.</p>
      */
-    inline MemberDetail& WithPercentOfGraphUtilizationUpdatedTime(const Aws::Utils::DateTime& value) { SetPercentOfGraphUtilizationUpdatedTime(value); return *this;}
+    inline MemberDetail& WithVolumeUsageUpdatedTime(const Aws::Utils::DateTime& value) { SetVolumeUsageUpdatedTime(value); return *this;}
 
     /**
-     * <p>The date and time when the graph utilization percentage was last updated.</p>
+     * <p>The data and time when the member account data volume was last updated.</p>
      */
-    inline MemberDetail& WithPercentOfGraphUtilizationUpdatedTime(Aws::Utils::DateTime&& value) { SetPercentOfGraphUtilizationUpdatedTime(std::move(value)); return *this;}
+    inline MemberDetail& WithVolumeUsageUpdatedTime(Aws::Utils::DateTime&& value) { SetVolumeUsageUpdatedTime(std::move(value)); return *this;}
 
   private:
 
@@ -588,11 +564,11 @@ namespace Model
     Aws::Utils::DateTime m_updatedTime;
     bool m_updatedTimeHasBeenSet;
 
-    double m_percentOfGraphUtilization;
-    bool m_percentOfGraphUtilizationHasBeenSet;
+    long long m_volumeUsageInBytes;
+    bool m_volumeUsageInBytesHasBeenSet;
 
-    Aws::Utils::DateTime m_percentOfGraphUtilizationUpdatedTime;
-    bool m_percentOfGraphUtilizationUpdatedTimeHasBeenSet;
+    Aws::Utils::DateTime m_volumeUsageUpdatedTime;
+    bool m_volumeUsageUpdatedTimeHasBeenSet;
   };
 
 } // namespace Model

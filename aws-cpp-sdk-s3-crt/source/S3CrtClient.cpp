@@ -200,7 +200,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth
   // initialize aws_s3_client;
   aws_s3_client_config s3CrtConfig;
   memset(&s3CrtConfig, 0, sizeof(s3CrtConfig));
-  s3CrtConfig.region = Aws::Crt::ByteCursorFromString(config.region);
+  s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
   Aws::Crt::Io::ClientBootstrap* clientBootstrap = config.clientBootstrap ? config.clientBootstrap.get() : Aws::GetDefaultClientBootstrap();
   s3CrtConfig.client_bootstrap = clientBootstrap->GetUnderlyingHandle();
 
@@ -208,9 +208,9 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth
   if (credentials)
   {
     Aws::Crt::Auth::CredentialsProviderStaticConfig staticCreds;
-    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromString(credentials->GetAWSAccessKeyId());
-    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromString(credentials->GetAWSSecretKey());
-    staticCreds.SessionToken = Aws::Crt::ByteCursorFromString(credentials->GetSessionToken());
+    staticCreds.AccessKeyId = Aws::Crt::ByteCursorFromCString(credentials->GetAWSAccessKeyId().c_str());
+    staticCreds.SecretAccessKey = Aws::Crt::ByteCursorFromCString(credentials->GetAWSSecretKey().c_str());
+    staticCreds.SessionToken = Aws::Crt::ByteCursorFromCString(credentials->GetSessionToken().c_str());
     provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderStatic(staticCreds);
   }
   else
@@ -220,7 +220,7 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const Aws::Auth
     provider = Aws::Crt::Auth::CredentialsProvider::CreateCredentialsProviderChainDefault(credsConfig);
   }
 
-  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromString(config.region), provider->GetUnderlyingHandle());
+  aws_s3_init_default_signing_config(&m_s3CrtSigningConfig, Aws::Crt::ByteCursorFromCString(config.region.c_str()), provider->GetUnderlyingHandle());
   m_s3CrtSigningConfig.flags.use_double_uri_encode = false;
   s3CrtConfig.signing_config = &m_s3CrtSigningConfig;
 
@@ -499,8 +499,8 @@ void S3CrtClient::GetObjectAsync(const GetObjectRequest& request, const GetObjec
   options.shutdown_callback = GetObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_GET_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
-  signing_config_override.region = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerRegion);
-  signing_config_override.service = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerServiceName);
+  signing_config_override.region = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerRegion.c_str());
+  signing_config_override.service = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerServiceName.c_str());
   options.signing_config = &signing_config_override;
 
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();
@@ -570,8 +570,8 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
   options.shutdown_callback = PutObjectRequestShutdownCallback;
   options.type = AWS_S3_META_REQUEST_TYPE_PUT_OBJECT;
   struct aws_signing_config_aws signing_config_override = m_s3CrtSigningConfig;
-  signing_config_override.region = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerRegion);
-  signing_config_override.service = Aws::Crt::ByteCursorFromString(computeEndpointOutcome.GetResult().signerServiceName);
+  signing_config_override.region = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerRegion.c_str());
+  signing_config_override.service = Aws::Crt::ByteCursorFromCString(computeEndpointOutcome.GetResult().signerServiceName.c_str());
   options.signing_config = &signing_config_override;
 
   std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = userData->request->ToCrtHttpRequest();

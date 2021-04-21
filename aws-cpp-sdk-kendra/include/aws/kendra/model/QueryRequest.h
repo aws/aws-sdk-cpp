@@ -13,6 +13,7 @@
 #include <aws/kendra/model/SortingConfiguration.h>
 #include <aws/kendra/model/UserContext.h>
 #include <aws/kendra/model/Facet.h>
+#include <aws/kendra/model/DocumentRelevanceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -350,6 +351,119 @@ namespace Model
 
 
     /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline const Aws::Vector<DocumentRelevanceConfiguration>& GetDocumentRelevanceOverrideConfigurations() const{ return m_documentRelevanceOverrideConfigurations; }
+
+    /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline bool DocumentRelevanceOverrideConfigurationsHasBeenSet() const { return m_documentRelevanceOverrideConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline void SetDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = value; }
+
+    /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline void SetDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations = std::move(value); }
+
+    /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline QueryRequest& WithDocumentRelevanceOverrideConfigurations(const Aws::Vector<DocumentRelevanceConfiguration>& value) { SetDocumentRelevanceOverrideConfigurations(value); return *this;}
+
+    /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline QueryRequest& WithDocumentRelevanceOverrideConfigurations(Aws::Vector<DocumentRelevanceConfiguration>&& value) { SetDocumentRelevanceOverrideConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline QueryRequest& AddDocumentRelevanceOverrideConfigurations(const DocumentRelevanceConfiguration& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Overrides relevance tuning configurations of fields or attributes set at the
+     * index level.</p> <p>If you use this API to override the relevance tuning
+     * configured at the index level, but there is no relevance tuning configured at
+     * the index level, then Amazon Kendra does not apply any relevance tuning.</p>
+     * <p>If there is relevance tuning configured at the index level, but you do not
+     * use this API to override any relevance tuning in the index, then Amazon Kendra
+     * uses the relevance tuning that is configured at the index level.</p> <p>If there
+     * is relevance tuning configured for fields at the index level, but you use this
+     * API to override only some of these fields, then for the fields you did not
+     * override, the importance is set to 1.</p>
+     */
+    inline QueryRequest& AddDocumentRelevanceOverrideConfigurations(DocumentRelevanceConfiguration&& value) { m_documentRelevanceOverrideConfigurationsHasBeenSet = true; m_documentRelevanceOverrideConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Query results are returned in pages the size of the <code>PageSize</code>
      * parameter. By default, Amazon Kendra returns the first page of results. Use this
      * parameter to get result pages after the first one.</p>
@@ -582,6 +696,9 @@ namespace Model
 
     QueryResultType m_queryResultTypeFilter;
     bool m_queryResultTypeFilterHasBeenSet;
+
+    Aws::Vector<DocumentRelevanceConfiguration> m_documentRelevanceOverrideConfigurations;
+    bool m_documentRelevanceOverrideConfigurationsHasBeenSet;
 
     int m_pageNumber;
     bool m_pageNumberHasBeenSet;

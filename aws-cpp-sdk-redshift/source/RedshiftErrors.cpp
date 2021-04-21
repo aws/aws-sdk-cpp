@@ -66,6 +66,7 @@ static const int INVALID_V_P_C_NETWORK_STATE_FAULT_HASH = HashingUtils::HashStri
 static const int AUTHORIZATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("AuthorizationNotFound");
 static const int AUTHORIZATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("AuthorizationQuotaExceeded");
 static const int HSM_CONFIGURATION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("HsmConfigurationAlreadyExistsFault");
+static const int UNAUTHORIZED_PARTNER_INTEGRATION_FAULT_HASH = HashingUtils::HashString("UnauthorizedPartnerIntegration");
 static const int RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedNodeAlreadyExists");
 static const int HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateQuotaExceededFault");
 static const int HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmConfigurationQuotaExceededFault");
@@ -78,6 +79,7 @@ static const int UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH = HashingUtils::HashStr
 static const int SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleNotFound");
 static const int USAGE_LIMIT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("UsageLimitAlreadyExists");
 static const int INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH = HashingUtils::HashString("InvalidTableRestoreArgument");
+static const int PARTNER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("PartnerNotFound");
 static const int ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("EndpointAuthorizationNotFound");
 static const int ACCESS_TO_CLUSTER_DENIED_FAULT_HASH = HashingUtils::HashString("AccessToClusterDenied");
 static const int UNSUPPORTED_OPTION_FAULT_HASH = HashingUtils::HashString("UnsupportedOptionFault");
@@ -333,6 +335,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_ALREADY_EXISTS_FAULT), false);
   }
+  else if (hashCode == UNAUTHORIZED_PARTNER_INTEGRATION_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::UNAUTHORIZED_PARTNER_INTEGRATION_FAULT), false);
+  }
   else if (hashCode == RESERVED_NODE_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESERVED_NODE_ALREADY_EXISTS_FAULT), false);
@@ -380,6 +386,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_TABLE_RESTORE_ARGUMENT_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_TABLE_RESTORE_ARGUMENT_FAULT), false);
+  }
+  else if (hashCode == PARTNER_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::PARTNER_NOT_FOUND_FAULT), false);
   }
   else if (hashCode == ENDPOINT_AUTHORIZATION_NOT_FOUND_FAULT_HASH)
   {

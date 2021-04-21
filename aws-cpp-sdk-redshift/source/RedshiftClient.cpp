@@ -21,6 +21,7 @@
 #include <aws/redshift/RedshiftEndpoint.h>
 #include <aws/redshift/RedshiftErrorMarshaller.h>
 #include <aws/redshift/model/AcceptReservedNodeExchangeRequest.h>
+#include <aws/redshift/model/AddPartnerRequest.h>
 #include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressRequest.h>
 #include <aws/redshift/model/AuthorizeEndpointAccessRequest.h>
 #include <aws/redshift/model/AuthorizeSnapshotAccessRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/redshift/model/DeleteEventSubscriptionRequest.h>
 #include <aws/redshift/model/DeleteHsmClientCertificateRequest.h>
 #include <aws/redshift/model/DeleteHsmConfigurationRequest.h>
+#include <aws/redshift/model/DeletePartnerRequest.h>
 #include <aws/redshift/model/DeleteScheduledActionRequest.h>
 #include <aws/redshift/model/DeleteSnapshotCopyGrantRequest.h>
 #include <aws/redshift/model/DeleteSnapshotScheduleRequest.h>
@@ -77,6 +79,7 @@
 #include <aws/redshift/model/DescribeLoggingStatusRequest.h>
 #include <aws/redshift/model/DescribeNodeConfigurationOptionsRequest.h>
 #include <aws/redshift/model/DescribeOrderableClusterOptionsRequest.h>
+#include <aws/redshift/model/DescribePartnersRequest.h>
 #include <aws/redshift/model/DescribeReservedNodeOfferingsRequest.h>
 #include <aws/redshift/model/DescribeReservedNodesRequest.h>
 #include <aws/redshift/model/DescribeResizeRequest.h>
@@ -120,6 +123,7 @@
 #include <aws/redshift/model/RevokeEndpointAccessRequest.h>
 #include <aws/redshift/model/RevokeSnapshotAccessRequest.h>
 #include <aws/redshift/model/RotateEncryptionKeyRequest.h>
+#include <aws/redshift/model/UpdatePartnerStatusRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -230,6 +234,33 @@ void RedshiftClient::AcceptReservedNodeExchangeAsync(const AcceptReservedNodeExc
 void RedshiftClient::AcceptReservedNodeExchangeAsyncHelper(const AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AcceptReservedNodeExchange(request), context);
+}
+
+AddPartnerOutcome RedshiftClient::AddPartner(const AddPartnerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AddPartnerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+AddPartnerOutcomeCallable RedshiftClient::AddPartnerCallable(const AddPartnerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddPartnerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddPartner(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::AddPartnerAsync(const AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddPartnerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::AddPartnerAsyncHelper(const AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddPartner(request), context);
 }
 
 AuthorizeClusterSecurityGroupIngressOutcome RedshiftClient::AuthorizeClusterSecurityGroupIngress(const AuthorizeClusterSecurityGroupIngressRequest& request) const
@@ -1042,6 +1073,33 @@ void RedshiftClient::DeleteHsmConfigurationAsyncHelper(const DeleteHsmConfigurat
   handler(this, request, DeleteHsmConfiguration(request), context);
 }
 
+DeletePartnerOutcome RedshiftClient::DeletePartner(const DeletePartnerRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeletePartnerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeletePartnerOutcomeCallable RedshiftClient::DeletePartnerCallable(const DeletePartnerRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePartnerOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePartner(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DeletePartnerAsync(const DeletePartnerRequest& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePartnerAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DeletePartnerAsyncHelper(const DeletePartnerRequest& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePartner(request), context);
+}
+
 DeleteScheduledActionOutcome RedshiftClient::DeleteScheduledAction(const DeleteScheduledActionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1742,6 +1800,33 @@ void RedshiftClient::DescribeOrderableClusterOptionsAsync(const DescribeOrderabl
 void RedshiftClient::DescribeOrderableClusterOptionsAsyncHelper(const DescribeOrderableClusterOptionsRequest& request, const DescribeOrderableClusterOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeOrderableClusterOptions(request), context);
+}
+
+DescribePartnersOutcome RedshiftClient::DescribePartners(const DescribePartnersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribePartnersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribePartnersOutcomeCallable RedshiftClient::DescribePartnersCallable(const DescribePartnersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePartnersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePartners(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::DescribePartnersAsync(const DescribePartnersRequest& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePartnersAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::DescribePartnersAsyncHelper(const DescribePartnersRequest& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePartners(request), context);
 }
 
 DescribeReservedNodeOfferingsOutcome RedshiftClient::DescribeReservedNodeOfferings(const DescribeReservedNodeOfferingsRequest& request) const
@@ -2903,5 +2988,32 @@ void RedshiftClient::RotateEncryptionKeyAsync(const RotateEncryptionKeyRequest& 
 void RedshiftClient::RotateEncryptionKeyAsyncHelper(const RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RotateEncryptionKey(request), context);
+}
+
+UpdatePartnerStatusOutcome RedshiftClient::UpdatePartnerStatus(const UpdatePartnerStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdatePartnerStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+UpdatePartnerStatusOutcomeCallable RedshiftClient::UpdatePartnerStatusCallable(const UpdatePartnerStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePartnerStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePartnerStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RedshiftClient::UpdatePartnerStatusAsync(const UpdatePartnerStatusRequest& request, const UpdatePartnerStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePartnerStatusAsyncHelper( request, handler, context ); } );
+}
+
+void RedshiftClient::UpdatePartnerStatusAsyncHelper(const UpdatePartnerStatusRequest& request, const UpdatePartnerStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePartnerStatus(request), context);
 }
 

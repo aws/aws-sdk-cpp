@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/redshift/model/AcceptReservedNodeExchangeResult.h>
+#include <aws/redshift/model/AddPartnerResult.h>
 #include <aws/redshift/model/AuthorizeClusterSecurityGroupIngressResult.h>
 #include <aws/redshift/model/AuthorizeEndpointAccessResult.h>
 #include <aws/redshift/model/AuthorizeSnapshotAccessResult.h>
@@ -36,6 +37,7 @@
 #include <aws/redshift/model/DeleteClusterResult.h>
 #include <aws/redshift/model/DeleteClusterSnapshotResult.h>
 #include <aws/redshift/model/DeleteEndpointAccessResult.h>
+#include <aws/redshift/model/DeletePartnerResult.h>
 #include <aws/redshift/model/DescribeAccountAttributesResult.h>
 #include <aws/redshift/model/DescribeClusterDbRevisionsResult.h>
 #include <aws/redshift/model/DescribeClusterParameterGroupsResult.h>
@@ -57,6 +59,7 @@
 #include <aws/redshift/model/DescribeLoggingStatusResult.h>
 #include <aws/redshift/model/DescribeNodeConfigurationOptionsResult.h>
 #include <aws/redshift/model/DescribeOrderableClusterOptionsResult.h>
+#include <aws/redshift/model/DescribePartnersResult.h>
 #include <aws/redshift/model/DescribeReservedNodeOfferingsResult.h>
 #include <aws/redshift/model/DescribeReservedNodesResult.h>
 #include <aws/redshift/model/DescribeResizeResult.h>
@@ -99,6 +102,7 @@
 #include <aws/redshift/model/RevokeEndpointAccessResult.h>
 #include <aws/redshift/model/RevokeSnapshotAccessResult.h>
 #include <aws/redshift/model/RotateEncryptionKeyResult.h>
+#include <aws/redshift/model/UpdatePartnerStatusResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -146,6 +150,7 @@ namespace Redshift
 namespace Model
 {
         class AcceptReservedNodeExchangeRequest;
+        class AddPartnerRequest;
         class AuthorizeClusterSecurityGroupIngressRequest;
         class AuthorizeEndpointAccessRequest;
         class AuthorizeSnapshotAccessRequest;
@@ -176,6 +181,7 @@ namespace Model
         class DeleteEventSubscriptionRequest;
         class DeleteHsmClientCertificateRequest;
         class DeleteHsmConfigurationRequest;
+        class DeletePartnerRequest;
         class DeleteScheduledActionRequest;
         class DeleteSnapshotCopyGrantRequest;
         class DeleteSnapshotScheduleRequest;
@@ -202,6 +208,7 @@ namespace Model
         class DescribeLoggingStatusRequest;
         class DescribeNodeConfigurationOptionsRequest;
         class DescribeOrderableClusterOptionsRequest;
+        class DescribePartnersRequest;
         class DescribeReservedNodeOfferingsRequest;
         class DescribeReservedNodesRequest;
         class DescribeResizeRequest;
@@ -245,8 +252,10 @@ namespace Model
         class RevokeEndpointAccessRequest;
         class RevokeSnapshotAccessRequest;
         class RotateEncryptionKeyRequest;
+        class UpdatePartnerStatusRequest;
 
         typedef Aws::Utils::Outcome<AcceptReservedNodeExchangeResult, RedshiftError> AcceptReservedNodeExchangeOutcome;
+        typedef Aws::Utils::Outcome<AddPartnerResult, RedshiftError> AddPartnerOutcome;
         typedef Aws::Utils::Outcome<AuthorizeClusterSecurityGroupIngressResult, RedshiftError> AuthorizeClusterSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<AuthorizeEndpointAccessResult, RedshiftError> AuthorizeEndpointAccessOutcome;
         typedef Aws::Utils::Outcome<AuthorizeSnapshotAccessResult, RedshiftError> AuthorizeSnapshotAccessOutcome;
@@ -277,6 +286,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteEventSubscriptionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteHsmClientCertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteHsmConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeletePartnerResult, RedshiftError> DeletePartnerOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteScheduledActionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteSnapshotCopyGrantOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, RedshiftError> DeleteSnapshotScheduleOutcome;
@@ -303,6 +313,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLoggingStatusResult, RedshiftError> DescribeLoggingStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeNodeConfigurationOptionsResult, RedshiftError> DescribeNodeConfigurationOptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeOrderableClusterOptionsResult, RedshiftError> DescribeOrderableClusterOptionsOutcome;
+        typedef Aws::Utils::Outcome<DescribePartnersResult, RedshiftError> DescribePartnersOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedNodeOfferingsResult, RedshiftError> DescribeReservedNodeOfferingsOutcome;
         typedef Aws::Utils::Outcome<DescribeReservedNodesResult, RedshiftError> DescribeReservedNodesOutcome;
         typedef Aws::Utils::Outcome<DescribeResizeResult, RedshiftError> DescribeResizeOutcome;
@@ -346,8 +357,10 @@ namespace Model
         typedef Aws::Utils::Outcome<RevokeEndpointAccessResult, RedshiftError> RevokeEndpointAccessOutcome;
         typedef Aws::Utils::Outcome<RevokeSnapshotAccessResult, RedshiftError> RevokeSnapshotAccessOutcome;
         typedef Aws::Utils::Outcome<RotateEncryptionKeyResult, RedshiftError> RotateEncryptionKeyOutcome;
+        typedef Aws::Utils::Outcome<UpdatePartnerStatusResult, RedshiftError> UpdatePartnerStatusOutcome;
 
         typedef std::future<AcceptReservedNodeExchangeOutcome> AcceptReservedNodeExchangeOutcomeCallable;
+        typedef std::future<AddPartnerOutcome> AddPartnerOutcomeCallable;
         typedef std::future<AuthorizeClusterSecurityGroupIngressOutcome> AuthorizeClusterSecurityGroupIngressOutcomeCallable;
         typedef std::future<AuthorizeEndpointAccessOutcome> AuthorizeEndpointAccessOutcomeCallable;
         typedef std::future<AuthorizeSnapshotAccessOutcome> AuthorizeSnapshotAccessOutcomeCallable;
@@ -378,6 +391,7 @@ namespace Model
         typedef std::future<DeleteEventSubscriptionOutcome> DeleteEventSubscriptionOutcomeCallable;
         typedef std::future<DeleteHsmClientCertificateOutcome> DeleteHsmClientCertificateOutcomeCallable;
         typedef std::future<DeleteHsmConfigurationOutcome> DeleteHsmConfigurationOutcomeCallable;
+        typedef std::future<DeletePartnerOutcome> DeletePartnerOutcomeCallable;
         typedef std::future<DeleteScheduledActionOutcome> DeleteScheduledActionOutcomeCallable;
         typedef std::future<DeleteSnapshotCopyGrantOutcome> DeleteSnapshotCopyGrantOutcomeCallable;
         typedef std::future<DeleteSnapshotScheduleOutcome> DeleteSnapshotScheduleOutcomeCallable;
@@ -404,6 +418,7 @@ namespace Model
         typedef std::future<DescribeLoggingStatusOutcome> DescribeLoggingStatusOutcomeCallable;
         typedef std::future<DescribeNodeConfigurationOptionsOutcome> DescribeNodeConfigurationOptionsOutcomeCallable;
         typedef std::future<DescribeOrderableClusterOptionsOutcome> DescribeOrderableClusterOptionsOutcomeCallable;
+        typedef std::future<DescribePartnersOutcome> DescribePartnersOutcomeCallable;
         typedef std::future<DescribeReservedNodeOfferingsOutcome> DescribeReservedNodeOfferingsOutcomeCallable;
         typedef std::future<DescribeReservedNodesOutcome> DescribeReservedNodesOutcomeCallable;
         typedef std::future<DescribeResizeOutcome> DescribeResizeOutcomeCallable;
@@ -447,11 +462,13 @@ namespace Model
         typedef std::future<RevokeEndpointAccessOutcome> RevokeEndpointAccessOutcomeCallable;
         typedef std::future<RevokeSnapshotAccessOutcome> RevokeSnapshotAccessOutcomeCallable;
         typedef std::future<RotateEncryptionKeyOutcome> RotateEncryptionKeyOutcomeCallable;
+        typedef std::future<UpdatePartnerStatusOutcome> UpdatePartnerStatusOutcomeCallable;
 } // namespace Model
 
   class RedshiftClient;
 
     typedef std::function<void(const RedshiftClient*, const Model::AcceptReservedNodeExchangeRequest&, const Model::AcceptReservedNodeExchangeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptReservedNodeExchangeResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::AddPartnerRequest&, const Model::AddPartnerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPartnerResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeClusterSecurityGroupIngressRequest&, const Model::AuthorizeClusterSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeClusterSecurityGroupIngressResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeEndpointAccessRequest&, const Model::AuthorizeEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::AuthorizeSnapshotAccessRequest&, const Model::AuthorizeSnapshotAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeSnapshotAccessResponseReceivedHandler;
@@ -482,6 +499,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DeleteEventSubscriptionRequest&, const Model::DeleteEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteHsmClientCertificateRequest&, const Model::DeleteHsmClientCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHsmClientCertificateResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteHsmConfigurationRequest&, const Model::DeleteHsmConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteHsmConfigurationResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DeletePartnerRequest&, const Model::DeletePartnerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePartnerResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteScheduledActionRequest&, const Model::DeleteScheduledActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduledActionResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteSnapshotCopyGrantRequest&, const Model::DeleteSnapshotCopyGrantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotCopyGrantResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DeleteSnapshotScheduleRequest&, const Model::DeleteSnapshotScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotScheduleResponseReceivedHandler;
@@ -508,6 +526,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::DescribeLoggingStatusRequest&, const Model::DescribeLoggingStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoggingStatusResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeNodeConfigurationOptionsRequest&, const Model::DescribeNodeConfigurationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodeConfigurationOptionsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeOrderableClusterOptionsRequest&, const Model::DescribeOrderableClusterOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrderableClusterOptionsResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::DescribePartnersRequest&, const Model::DescribePartnersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePartnersResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeReservedNodeOfferingsRequest&, const Model::DescribeReservedNodeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedNodeOfferingsResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeReservedNodesRequest&, const Model::DescribeReservedNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedNodesResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::DescribeResizeRequest&, const Model::DescribeResizeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResizeResponseReceivedHandler;
@@ -551,6 +570,7 @@ namespace Model
     typedef std::function<void(const RedshiftClient*, const Model::RevokeEndpointAccessRequest&, const Model::RevokeEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeEndpointAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RevokeSnapshotAccessRequest&, const Model::RevokeSnapshotAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSnapshotAccessResponseReceivedHandler;
     typedef std::function<void(const RedshiftClient*, const Model::RotateEncryptionKeyRequest&, const Model::RotateEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateEncryptionKeyResponseReceivedHandler;
+    typedef std::function<void(const RedshiftClient*, const Model::UpdatePartnerStatusRequest&, const Model::UpdatePartnerStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartnerStatusResponseReceivedHandler;
 
   /**
    * <fullname>Amazon Redshift</fullname> <p> <b>Overview</b> </p> <p>This is an
@@ -639,6 +659,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptReservedNodeExchangeAsync(const Model::AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a partner integration to a cluster. This operation authorizes a partner
+         * to push status updates for the specified database. To complete the integration,
+         * you also set up the integration on the partner website.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddPartnerOutcome AddPartner(const Model::AddPartnerRequest& request) const;
+
+        /**
+         * <p>Adds a partner integration to a cluster. This operation authorizes a partner
+         * to push status updates for the specified database. To complete the integration,
+         * you also set up the integration on the partner website.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddPartnerOutcomeCallable AddPartnerCallable(const Model::AddPartnerRequest& request) const;
+
+        /**
+         * <p>Adds a partner integration to a cluster. This operation authorizes a partner
+         * to push status updates for the specified database. To complete the integration,
+         * you also set up the integration on the partner website.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AddPartner">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddPartnerAsync(const Model::AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds an inbound (ingress) rule to an Amazon Redshift security group.
@@ -1838,6 +1892,37 @@ namespace Model
         virtual void DeleteHsmConfigurationAsync(const Model::DeleteHsmConfigurationRequest& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a partner integration from a cluster. Data can still flow to the
+         * cluster until the integration is deleted at the partner's website.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePartnerOutcome DeletePartner(const Model::DeletePartnerRequest& request) const;
+
+        /**
+         * <p>Deletes a partner integration from a cluster. Data can still flow to the
+         * cluster until the integration is deleted at the partner's website.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePartnerOutcomeCallable DeletePartnerCallable(const Model::DeletePartnerRequest& request) const;
+
+        /**
+         * <p>Deletes a partner integration from a cluster. Data can still flow to the
+         * cluster until the integration is deleted at the partner's website.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePartnerAsync(const Model::DeletePartnerRequest& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a scheduled action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteScheduledAction">AWS
          * API Reference</a></p>
@@ -2912,6 +2997,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeOrderableClusterOptionsAsync(const Model::DescribeOrderableClusterOptionsRequest& request, const DescribeOrderableClusterOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the partner integrations defined for a
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePartnersOutcome DescribePartners(const Model::DescribePartnersRequest& request) const;
+
+        /**
+         * <p>Returns information about the partner integrations defined for a
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePartnersOutcomeCallable DescribePartnersCallable(const Model::DescribePartnersRequest& request) const;
+
+        /**
+         * <p>Returns information about the partner integrations defined for a
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePartnersAsync(const Model::DescribePartnersRequest& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of the available reserved node offerings by Amazon Redshift
@@ -4543,11 +4656,37 @@ namespace Model
          */
         virtual void RotateEncryptionKeyAsync(const Model::RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the status of a partner integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePartnerStatusOutcome UpdatePartnerStatus(const Model::UpdatePartnerStatusRequest& request) const;
+
+        /**
+         * <p>Updates the status of a partner integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePartnerStatusOutcomeCallable UpdatePartnerStatusCallable(const Model::UpdatePartnerStatusRequest& request) const;
+
+        /**
+         * <p>Updates the status of a partner integration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/UpdatePartnerStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePartnerStatusAsync(const Model::UpdatePartnerStatusRequest& request, const UpdatePartnerStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptReservedNodeExchangeAsyncHelper(const Model::AcceptReservedNodeExchangeRequest& request, const AcceptReservedNodeExchangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AddPartnerAsyncHelper(const Model::AddPartnerRequest& request, const AddPartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeClusterSecurityGroupIngressAsyncHelper(const Model::AuthorizeClusterSecurityGroupIngressRequest& request, const AuthorizeClusterSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeEndpointAccessAsyncHelper(const Model::AuthorizeEndpointAccessRequest& request, const AuthorizeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeSnapshotAccessAsyncHelper(const Model::AuthorizeSnapshotAccessRequest& request, const AuthorizeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4578,6 +4717,7 @@ namespace Model
         void DeleteEventSubscriptionAsyncHelper(const Model::DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHsmClientCertificateAsyncHelper(const Model::DeleteHsmClientCertificateRequest& request, const DeleteHsmClientCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteHsmConfigurationAsyncHelper(const Model::DeleteHsmConfigurationRequest& request, const DeleteHsmConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePartnerAsyncHelper(const Model::DeletePartnerRequest& request, const DeletePartnerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteScheduledActionAsyncHelper(const Model::DeleteScheduledActionRequest& request, const DeleteScheduledActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSnapshotCopyGrantAsyncHelper(const Model::DeleteSnapshotCopyGrantRequest& request, const DeleteSnapshotCopyGrantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSnapshotScheduleAsyncHelper(const Model::DeleteSnapshotScheduleRequest& request, const DeleteSnapshotScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4604,6 +4744,7 @@ namespace Model
         void DescribeLoggingStatusAsyncHelper(const Model::DescribeLoggingStatusRequest& request, const DescribeLoggingStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNodeConfigurationOptionsAsyncHelper(const Model::DescribeNodeConfigurationOptionsRequest& request, const DescribeNodeConfigurationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOrderableClusterOptionsAsyncHelper(const Model::DescribeOrderableClusterOptionsRequest& request, const DescribeOrderableClusterOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePartnersAsyncHelper(const Model::DescribePartnersRequest& request, const DescribePartnersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedNodeOfferingsAsyncHelper(const Model::DescribeReservedNodeOfferingsRequest& request, const DescribeReservedNodeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservedNodesAsyncHelper(const Model::DescribeReservedNodesRequest& request, const DescribeReservedNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResizeAsyncHelper(const Model::DescribeResizeRequest& request, const DescribeResizeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4647,6 +4788,7 @@ namespace Model
         void RevokeEndpointAccessAsyncHelper(const Model::RevokeEndpointAccessRequest& request, const RevokeEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeSnapshotAccessAsyncHelper(const Model::RevokeSnapshotAccessRequest& request, const RevokeSnapshotAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RotateEncryptionKeyAsyncHelper(const Model::RotateEncryptionKeyRequest& request, const RotateEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePartnerStatusAsyncHelper(const Model::UpdatePartnerStatusRequest& request, const UpdatePartnerStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
         Aws::String m_uri;
         Aws::String m_configScheme;

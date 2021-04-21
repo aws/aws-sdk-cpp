@@ -29,9 +29,9 @@ MemberDetail::MemberDetail() :
     m_disabledReasonHasBeenSet(false),
     m_invitedTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_percentOfGraphUtilization(0.0),
-    m_percentOfGraphUtilizationHasBeenSet(false),
-    m_percentOfGraphUtilizationUpdatedTimeHasBeenSet(false)
+    m_volumeUsageInBytes(0),
+    m_volumeUsageInBytesHasBeenSet(false),
+    m_volumeUsageUpdatedTimeHasBeenSet(false)
 {
 }
 
@@ -46,9 +46,9 @@ MemberDetail::MemberDetail(JsonView jsonValue) :
     m_disabledReasonHasBeenSet(false),
     m_invitedTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_percentOfGraphUtilization(0.0),
-    m_percentOfGraphUtilizationHasBeenSet(false),
-    m_percentOfGraphUtilizationUpdatedTimeHasBeenSet(false)
+    m_volumeUsageInBytes(0),
+    m_volumeUsageInBytesHasBeenSet(false),
+    m_volumeUsageUpdatedTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,18 +111,18 @@ MemberDetail& MemberDetail::operator =(JsonView jsonValue)
     m_updatedTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PercentOfGraphUtilization"))
+  if(jsonValue.ValueExists("VolumeUsageInBytes"))
   {
-    m_percentOfGraphUtilization = jsonValue.GetDouble("PercentOfGraphUtilization");
+    m_volumeUsageInBytes = jsonValue.GetInt64("VolumeUsageInBytes");
 
-    m_percentOfGraphUtilizationHasBeenSet = true;
+    m_volumeUsageInBytesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("PercentOfGraphUtilizationUpdatedTime"))
+  if(jsonValue.ValueExists("VolumeUsageUpdatedTime"))
   {
-    m_percentOfGraphUtilizationUpdatedTime = jsonValue.GetString("PercentOfGraphUtilizationUpdatedTime");
+    m_volumeUsageUpdatedTime = jsonValue.GetString("VolumeUsageUpdatedTime");
 
-    m_percentOfGraphUtilizationUpdatedTimeHasBeenSet = true;
+    m_volumeUsageUpdatedTimeHasBeenSet = true;
   }
 
   return *this;
@@ -176,15 +176,15 @@ JsonValue MemberDetail::Jsonize() const
    payload.WithString("UpdatedTime", m_updatedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
-  if(m_percentOfGraphUtilizationHasBeenSet)
+  if(m_volumeUsageInBytesHasBeenSet)
   {
-   payload.WithDouble("PercentOfGraphUtilization", m_percentOfGraphUtilization);
+   payload.WithInt64("VolumeUsageInBytes", m_volumeUsageInBytes);
 
   }
 
-  if(m_percentOfGraphUtilizationUpdatedTimeHasBeenSet)
+  if(m_volumeUsageUpdatedTimeHasBeenSet)
   {
-   payload.WithString("PercentOfGraphUtilizationUpdatedTime", m_percentOfGraphUtilizationUpdatedTime.ToGmtString(DateFormat::ISO_8601));
+   payload.WithString("VolumeUsageUpdatedTime", m_volumeUsageUpdatedTime.ToGmtString(DateFormat::ISO_8601));
   }
 
   return payload;

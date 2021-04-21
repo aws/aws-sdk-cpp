@@ -168,63 +168,99 @@ namespace Model
 
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a <code>Marker</code> is included in the response so that the remaining
+     * results can be retrieved.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a <code>Marker</code> is included in the response so that the remaining
+     * results can be retrieved.</p>
      */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a <code>Marker</code> is included in the response so that the remaining
+     * results can be retrieved.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a <code>Marker</code> is included in the response so that the remaining
+     * results can be retrieved.</p>
      */
     inline DescribeEndpointAuthorizationRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline DescribeEndpointAuthorizationRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline DescribeEndpointAuthorizationRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for Amazon Redshift internal use.</p>
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeEndpointAuthorization</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to the value
+     * specified by the <code>MaxRecords</code> parameter.</p>
      */
     inline DescribeEndpointAuthorizationRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
