@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/GetMasterAccountResult.h>
+#include <aws/securityhub/model/AcceptAdministratorInvitationResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -16,24 +16,18 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMasterAccountResult::GetMasterAccountResult()
+AcceptAdministratorInvitationResult::AcceptAdministratorInvitationResult()
 {
 }
 
-GetMasterAccountResult::GetMasterAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+AcceptAdministratorInvitationResult::AcceptAdministratorInvitationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-GetMasterAccountResult& GetMasterAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+AcceptAdministratorInvitationResult& AcceptAdministratorInvitationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Master"))
-  {
-    m_master = jsonValue.GetObject("Master");
-
-  }
-
+  AWS_UNREFERENCED_PARAM(result);
 
 
   return *this;

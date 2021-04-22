@@ -22,12 +22,12 @@ namespace SecurityHub
 {
 namespace Model
 {
-  class AWS_SECURITYHUB_API AcceptInvitationResult
+  class AWS_SECURITYHUB_API DisassociateFromAdministratorAccountResult
   {
   public:
-    AcceptInvitationResult();
-    AcceptInvitationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AcceptInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateFromAdministratorAccountResult();
+    DisassociateFromAdministratorAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DisassociateFromAdministratorAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
   };
 

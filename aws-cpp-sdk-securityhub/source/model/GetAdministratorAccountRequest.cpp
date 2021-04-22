@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/GetMasterAccountRequest.h>
+#include <aws/securityhub/model/GetAdministratorAccountRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -12,11 +12,11 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMasterAccountRequest::GetMasterAccountRequest()
+GetAdministratorAccountRequest::GetAdministratorAccountRequest()
 {
 }
 
-Aws::String GetMasterAccountRequest::SerializePayload() const
+Aws::String GetAdministratorAccountRequest::SerializePayload() const
 {
   return {};
 }

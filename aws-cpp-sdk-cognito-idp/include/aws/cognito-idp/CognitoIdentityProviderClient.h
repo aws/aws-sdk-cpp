@@ -552,7 +552,9 @@ namespace Model
    * directories and users. You can authenticate a user to obtain tokens related to
    * user identity and access policies.</p> <p>This API reference provides
    * information about user pools in Amazon Cognito User Pools.</p> <p>For more
-   * information, see the Amazon Cognito Documentation.</p>
+   * information, see the <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon
+   * Cognito Documentation</a>.</p>
    */
   class AWS_COGNITOIDENTITYPROVIDER_API CognitoIdentityProviderClient : public Aws::Client::AWSJsonClient
   {
@@ -1923,18 +1925,16 @@ namespace Model
         virtual void CreateUserPoolDomainAsync(const Model::CreateUserPoolDomainRequest& request, const CreateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Deletes a group.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Deletes a group.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
          * API Reference</a></p>
          *
@@ -1943,9 +1943,8 @@ namespace Model
         virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
 
         /**
-         * <p>Deletes a group. Currently only groups with no members can be deleted.</p>
-         * <p>Calling this action requires developer credentials.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Deletes a group.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteGroup">AWS
          * API Reference</a></p>
          *

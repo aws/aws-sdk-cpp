@@ -15,6 +15,7 @@
 #include <aws/elasticache/model/Endpoint.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/elasticache/model/NodeGroup.h>
+#include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1064,6 +1065,47 @@ namespace Model
      */
     inline ReplicationGroup& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline const Aws::Vector<LogDeliveryConfiguration>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& AddLogDeliveryConfigurations(const LogDeliveryConfiguration& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs. </p>
+     */
+    inline ReplicationGroup& AddLogDeliveryConfigurations(LogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1134,6 +1176,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userGroupIds;
     bool m_userGroupIdsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

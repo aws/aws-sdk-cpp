@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/securityhub/model/AcceptInvitationResult.h>
+#include <aws/securityhub/model/DisassociateFromAdministratorAccountResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -16,16 +16,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptInvitationResult::AcceptInvitationResult()
+DisassociateFromAdministratorAccountResult::DisassociateFromAdministratorAccountResult()
 {
 }
 
-AcceptInvitationResult::AcceptInvitationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DisassociateFromAdministratorAccountResult::DisassociateFromAdministratorAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-AcceptInvitationResult& AcceptInvitationResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DisassociateFromAdministratorAccountResult& DisassociateFromAdministratorAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   AWS_UNREFERENCED_PARAM(result);
 

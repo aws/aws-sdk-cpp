@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the request to disable any user as an administrator.</p><p><h3>See
+   * <p>Represents the request to disable the user as an administrator.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDisableUserRequest">AWS
    * API Reference</a></p>

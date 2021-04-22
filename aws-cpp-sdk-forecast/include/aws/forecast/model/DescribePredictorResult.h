@@ -541,6 +541,22 @@ namespace Model
 
 
     /**
+     * <p>The estimated time in minutes for the predictor training job to complete.</p>
+     */
+    inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
+
+    /**
+     * <p>The estimated time in minutes for the predictor training job to complete.</p>
+     */
+    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
+
+    /**
+     * <p>The estimated time in minutes for the predictor training job to complete.</p>
+     */
+    inline DescribePredictorResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
+
+
+    /**
      * <p>An array of the ARNs of the dataset import jobs used to import training data
      * for the predictor.</p>
      */
@@ -869,6 +885,8 @@ namespace Model
     EncryptionConfig m_encryptionConfig;
 
     PredictorExecutionDetails m_predictorExecutionDetails;
+
+    long long m_estimatedTimeRemainingInMinutes;
 
     Aws::Vector<Aws::String> m_datasetImportJobArns;
 

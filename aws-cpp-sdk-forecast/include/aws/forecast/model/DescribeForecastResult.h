@@ -227,6 +227,22 @@ namespace Model
 
 
     /**
+     * <p>The estimated time in minutes for the forecast job to complete.</p>
+     */
+    inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
+
+    /**
+     * <p>The estimated time in minutes for the forecast job to complete.</p>
+     */
+    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
+
+    /**
+     * <p>The estimated time in minutes for the forecast job to complete.</p>
+     */
+    inline DescribeForecastResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
+
+
+    /**
      * <p>The status of the forecast. States include:</p> <ul> <li> <p>
      * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
@@ -439,6 +455,8 @@ namespace Model
     Aws::String m_predictorArn;
 
     Aws::String m_datasetGroupArn;
+
+    long long m_estimatedTimeRemainingInMinutes;
 
     Aws::String m_status;
 

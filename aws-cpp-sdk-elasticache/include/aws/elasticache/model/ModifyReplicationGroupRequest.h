@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -1332,6 +1333,47 @@ namespace Model
      */
     inline ModifyReplicationGroupRequest& WithRemoveUserGroups(bool value) { SetRemoveUserGroups(value); return *this;}
 
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_replicationGroupId;
@@ -1402,6 +1444,9 @@ namespace Model
 
     bool m_removeUserGroups;
     bool m_removeUserGroupsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -20,7 +20,7 @@
 #include <aws/securityhub/SecurityHubClient.h>
 #include <aws/securityhub/SecurityHubEndpoint.h>
 #include <aws/securityhub/SecurityHubErrorMarshaller.h>
-#include <aws/securityhub/model/AcceptInvitationRequest.h>
+#include <aws/securityhub/model/AcceptAdministratorInvitationRequest.h>
 #include <aws/securityhub/model/BatchDisableStandardsRequest.h>
 #include <aws/securityhub/model/BatchEnableStandardsRequest.h>
 #include <aws/securityhub/model/BatchImportFindingsRequest.h>
@@ -42,17 +42,17 @@
 #include <aws/securityhub/model/DisableImportFindingsForProductRequest.h>
 #include <aws/securityhub/model/DisableOrganizationAdminAccountRequest.h>
 #include <aws/securityhub/model/DisableSecurityHubRequest.h>
-#include <aws/securityhub/model/DisassociateFromMasterAccountRequest.h>
+#include <aws/securityhub/model/DisassociateFromAdministratorAccountRequest.h>
 #include <aws/securityhub/model/DisassociateMembersRequest.h>
 #include <aws/securityhub/model/EnableImportFindingsForProductRequest.h>
 #include <aws/securityhub/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/securityhub/model/EnableSecurityHubRequest.h>
+#include <aws/securityhub/model/GetAdministratorAccountRequest.h>
 #include <aws/securityhub/model/GetEnabledStandardsRequest.h>
 #include <aws/securityhub/model/GetFindingsRequest.h>
 #include <aws/securityhub/model/GetInsightResultsRequest.h>
 #include <aws/securityhub/model/GetInsightsRequest.h>
 #include <aws/securityhub/model/GetInvitationsCountRequest.h>
-#include <aws/securityhub/model/GetMasterAccountRequest.h>
 #include <aws/securityhub/model/GetMembersRequest.h>
 #include <aws/securityhub/model/InviteMembersRequest.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportRequest.h>
@@ -142,31 +142,31 @@ void SecurityHubClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
-AcceptInvitationOutcome SecurityHubClient::AcceptInvitation(const AcceptInvitationRequest& request) const
+AcceptAdministratorInvitationOutcome SecurityHubClient::AcceptAdministratorInvitation(const AcceptAdministratorInvitationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/master";
+  ss << "/administrator";
   uri.SetPath(uri.GetPath() + ss.str());
-  return AcceptInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  return AcceptAdministratorInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-AcceptInvitationOutcomeCallable SecurityHubClient::AcceptInvitationCallable(const AcceptInvitationRequest& request) const
+AcceptAdministratorInvitationOutcomeCallable SecurityHubClient::AcceptAdministratorInvitationCallable(const AcceptAdministratorInvitationRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< AcceptInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptInvitation(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< AcceptAdministratorInvitationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptAdministratorInvitation(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void SecurityHubClient::AcceptInvitationAsync(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecurityHubClient::AcceptAdministratorInvitationAsync(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->AcceptInvitationAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptAdministratorInvitationAsyncHelper( request, handler, context ); } );
 }
 
-void SecurityHubClient::AcceptInvitationAsyncHelper(const AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecurityHubClient::AcceptAdministratorInvitationAsyncHelper(const AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, AcceptInvitation(request), context);
+  handler(this, request, AcceptAdministratorInvitation(request), context);
 }
 
 BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const BatchDisableStandardsRequest& request) const
@@ -760,31 +760,31 @@ void SecurityHubClient::DisableSecurityHubAsyncHelper(const DisableSecurityHubRe
   handler(this, request, DisableSecurityHub(request), context);
 }
 
-DisassociateFromMasterAccountOutcome SecurityHubClient::DisassociateFromMasterAccount(const DisassociateFromMasterAccountRequest& request) const
+DisassociateFromAdministratorAccountOutcome SecurityHubClient::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/master/disassociate";
+  ss << "/administrator/disassociate";
   uri.SetPath(uri.GetPath() + ss.str());
-  return DisassociateFromMasterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+  return DisassociateFromAdministratorAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
-DisassociateFromMasterAccountOutcomeCallable SecurityHubClient::DisassociateFromMasterAccountCallable(const DisassociateFromMasterAccountRequest& request) const
+DisassociateFromAdministratorAccountOutcomeCallable SecurityHubClient::DisassociateFromAdministratorAccountCallable(const DisassociateFromAdministratorAccountRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< DisassociateFromMasterAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateFromMasterAccount(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateFromAdministratorAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateFromAdministratorAccount(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void SecurityHubClient::DisassociateFromMasterAccountAsync(const DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecurityHubClient::DisassociateFromAdministratorAccountAsync(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFromMasterAccountAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateFromAdministratorAccountAsyncHelper( request, handler, context ); } );
 }
 
-void SecurityHubClient::DisassociateFromMasterAccountAsyncHelper(const DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void SecurityHubClient::DisassociateFromAdministratorAccountAsyncHelper(const DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, DisassociateFromMasterAccount(request), context);
+  handler(this, request, DisassociateFromAdministratorAccount(request), context);
 }
 
 DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const DisassociateMembersRequest& request) const
@@ -893,6 +893,33 @@ void SecurityHubClient::EnableSecurityHubAsync(const EnableSecurityHubRequest& r
 void SecurityHubClient::EnableSecurityHubAsyncHelper(const EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableSecurityHub(request), context);
+}
+
+GetAdministratorAccountOutcome SecurityHubClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/administrator";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetAdministratorAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetAdministratorAccountOutcomeCallable SecurityHubClient::GetAdministratorAccountCallable(const GetAdministratorAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAdministratorAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAdministratorAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::GetAdministratorAccountAsync(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAdministratorAccountAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::GetAdministratorAccountAsyncHelper(const GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAdministratorAccount(request), context);
 }
 
 GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabledStandardsRequest& request) const
@@ -1034,33 +1061,6 @@ void SecurityHubClient::GetInvitationsCountAsync(const GetInvitationsCountReques
 void SecurityHubClient::GetInvitationsCountAsyncHelper(const GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetInvitationsCount(request), context);
-}
-
-GetMasterAccountOutcome SecurityHubClient::GetMasterAccount(const GetMasterAccountRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/master";
-  uri.SetPath(uri.GetPath() + ss.str());
-  return GetMasterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-}
-
-GetMasterAccountOutcomeCallable SecurityHubClient::GetMasterAccountCallable(const GetMasterAccountRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< GetMasterAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMasterAccount(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void SecurityHubClient::GetMasterAccountAsync(const GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->GetMasterAccountAsyncHelper( request, handler, context ); } );
-}
-
-void SecurityHubClient::GetMasterAccountAsyncHelper(const GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, GetMasterAccount(request), context);
 }
 
 GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request) const

@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p> A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+     * <p> A time unit in ���seconds”, “minutes”, “hours” or “days” for the value in
      * AccessTokenValidity, defaults to hours.</p>
      */
     inline const TimeUnitsType& GetAccessToken() const{ return m_accessToken; }
 
     /**
-     * <p> A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+     * <p> A time unit in ���seconds”, “minutes”, “hours” or “days” for the value in
      * AccessTokenValidity, defaults to hours.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
-     * <p> A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+     * <p> A time unit in ���seconds”, “minutes”, “hours” or “days” for the value in
      * AccessTokenValidity, defaults to hours.</p>
      */
     inline void SetAccessToken(const TimeUnitsType& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
-     * <p> A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+     * <p> A time unit in ���seconds”, “minutes”, “hours” or “days” for the value in
      * AccessTokenValidity, defaults to hours.</p>
      */
     inline void SetAccessToken(TimeUnitsType&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
-     * <p> A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+     * <p> A time unit in ���seconds”, “minutes”, “hours” or “days” for the value in
      * AccessTokenValidity, defaults to hours.</p>
      */
     inline TokenValidityUnitsType& WithAccessToken(const TimeUnitsType& value) { SetAccessToken(value); return *this;}
 
     /**
-     * <p> A time unit in “seconds”, “minutes”, “hours” or “days” for the value in
+     * <p> A time unit in ���seconds”, “minutes”, “hours” or “days” for the value in
      * AccessTokenValidity, defaults to hours.</p>
      */
     inline TokenValidityUnitsType& WithAccessToken(TimeUnitsType&& value) { SetAccessToken(std::move(value)); return *this;}

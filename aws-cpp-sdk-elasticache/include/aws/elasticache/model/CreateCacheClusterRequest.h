@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/OutpostMode.h>
 #include <aws/elasticache/model/Tag.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -472,7 +473,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -482,7 +483,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -492,7 +493,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -502,7 +503,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -2138,6 +2139,47 @@ namespace Model
      */
     inline CreateCacheClusterRequest& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -2217,6 +2259,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_preferredOutpostArns;
     bool m_preferredOutpostArnsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

@@ -16,6 +16,7 @@
 #include <aws/elasticache/model/CacheSecurityGroupMembership.h>
 #include <aws/elasticache/model/CacheNode.h>
 #include <aws/elasticache/model/SecurityGroupMembership.h>
+#include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -859,28 +860,28 @@ namespace Model
     /**
      * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis,
      * this value must be 1. For clusters running Memcached, this value must be between
-     * 1 and 20.</p>
+     * 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis,
      * this value must be 1. For clusters running Memcached, this value must be between
-     * 1 and 20.</p>
+     * 1 and 40.</p>
      */
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
 
     /**
      * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis,
      * this value must be 1. For clusters running Memcached, this value must be between
-     * 1 and 20.</p>
+     * 1 and 40.</p>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis,
      * this value must be 1. For clusters running Memcached, this value must be between
-     * 1 and 20.</p>
+     * 1 and 40.</p>
      */
     inline CacheCluster& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 
@@ -1714,6 +1715,72 @@ namespace Model
      */
     inline CacheCluster& WithARN(const char* value) { SetARN(value); return *this;}
 
+
+    /**
+     * <p>A boolean value indicating whether log delivery is enabled for the
+     * replication group.</p>
+     */
+    inline bool GetReplicationGroupLogDeliveryEnabled() const{ return m_replicationGroupLogDeliveryEnabled; }
+
+    /**
+     * <p>A boolean value indicating whether log delivery is enabled for the
+     * replication group.</p>
+     */
+    inline bool ReplicationGroupLogDeliveryEnabledHasBeenSet() const { return m_replicationGroupLogDeliveryEnabledHasBeenSet; }
+
+    /**
+     * <p>A boolean value indicating whether log delivery is enabled for the
+     * replication group.</p>
+     */
+    inline void SetReplicationGroupLogDeliveryEnabled(bool value) { m_replicationGroupLogDeliveryEnabledHasBeenSet = true; m_replicationGroupLogDeliveryEnabled = value; }
+
+    /**
+     * <p>A boolean value indicating whether log delivery is enabled for the
+     * replication group.</p>
+     */
+    inline CacheCluster& WithReplicationGroupLogDeliveryEnabled(bool value) { SetReplicationGroupLogDeliveryEnabled(value); return *this;}
+
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline const Aws::Vector<LogDeliveryConfiguration>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline CacheCluster& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfiguration>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline CacheCluster& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfiguration>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline CacheCluster& AddLogDeliveryConfigurations(const LogDeliveryConfiguration& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Returns the destination, format and type of the logs.</p>
+     */
+    inline CacheCluster& AddLogDeliveryConfigurations(LogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -1799,6 +1866,12 @@ namespace Model
 
     Aws::String m_aRN;
     bool m_aRNHasBeenSet;
+
+    bool m_replicationGroupLogDeliveryEnabled;
+    bool m_replicationGroupLogDeliveryEnabledHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfiguration> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

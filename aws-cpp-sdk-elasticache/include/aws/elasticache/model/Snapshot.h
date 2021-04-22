@@ -920,28 +920,28 @@ namespace Model
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline int GetNumCacheNodes() const{ return m_numCacheNodes; }
 
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
 
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
      * <p>The number of cache nodes in the source cluster.</p> <p>For clusters running
      * Redis, this value must be 1. For clusters running Memcached, this value must be
-     * between 1 and 20.</p>
+     * between 1 and 40.</p>
      */
     inline Snapshot& WithNumCacheNodes(int value) { SetNumCacheNodes(value); return *this;}
 

@@ -52,7 +52,8 @@ CreateReplicationGroupRequest::CreateReplicationGroupRequest() :
     m_atRestEncryptionEnabled(false),
     m_atRestEncryptionEnabledHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false)
+    m_userGroupIdsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,16 @@ Aws::String CreateReplicationGroupRequest::SerializePayload() const
       ss << "UserGroupIds.member." << userGroupIdsCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       userGroupIdsCount++;
+    }
+  }
+
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+    unsigned logDeliveryConfigurationsCount = 1;
+    for(auto& item : m_logDeliveryConfigurations)
+    {
+      item.OutputToStream(ss, "LogDeliveryConfigurations.member.", logDeliveryConfigurationsCount, "");
+      logDeliveryConfigurationsCount++;
     }
   }
 

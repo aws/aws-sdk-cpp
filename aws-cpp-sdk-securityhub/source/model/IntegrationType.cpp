@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SEND_FINDINGS_TO_SECURITY_HUB_HASH = HashingUtils::HashString("SEND_FINDINGS_TO_SECURITY_HUB");
         static const int RECEIVE_FINDINGS_FROM_SECURITY_HUB_HASH = HashingUtils::HashString("RECEIVE_FINDINGS_FROM_SECURITY_HUB");
+        static const int UPDATE_FINDINGS_IN_SECURITY_HUB_HASH = HashingUtils::HashString("UPDATE_FINDINGS_IN_SECURITY_HUB");
 
 
         IntegrationType GetIntegrationTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == RECEIVE_FINDINGS_FROM_SECURITY_HUB_HASH)
           {
             return IntegrationType::RECEIVE_FINDINGS_FROM_SECURITY_HUB;
+          }
+          else if (hashCode == UPDATE_FINDINGS_IN_SECURITY_HUB_HASH)
+          {
+            return IntegrationType::UPDATE_FINDINGS_IN_SECURITY_HUB;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "SEND_FINDINGS_TO_SECURITY_HUB";
           case IntegrationType::RECEIVE_FINDINGS_FROM_SECURITY_HUB:
             return "RECEIVE_FINDINGS_FROM_SECURITY_HUB";
+          case IntegrationType::UPDATE_FINDINGS_IN_SECURITY_HUB:
+            return "UPDATE_FINDINGS_IN_SECURITY_HUB";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

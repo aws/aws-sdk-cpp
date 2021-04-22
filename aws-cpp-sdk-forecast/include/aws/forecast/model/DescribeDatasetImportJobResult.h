@@ -362,6 +362,22 @@ namespace Model
 
 
     /**
+     * <p>The estimated time in minutes for the dataset import job to complete.</p>
+     */
+    inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
+
+    /**
+     * <p>The estimated time in minutes for the dataset import job to complete.</p>
+     */
+    inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
+
+    /**
+     * <p>The estimated time in minutes for the dataset import job to complete.</p>
+     */
+    inline DescribeDatasetImportJobResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
+
+
+    /**
      * <p>Statistical information about each field in the input data.</p>
      */
     inline const Aws::Map<Aws::String, Statistics>& GetFieldStatistics() const{ return m_fieldStatistics; }
@@ -641,6 +657,8 @@ namespace Model
     Aws::String m_geolocationFormat;
 
     DataSource m_dataSource;
+
+    long long m_estimatedTimeRemainingInMinutes;
 
     Aws::Map<Aws::String, Statistics> m_fieldStatistics;
 
