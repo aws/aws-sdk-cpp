@@ -28,7 +28,8 @@ namespace Model
 {
 
   /**
-   * Selector for video.<p><h3>See Also:</h3>   <a
+   * Input video selectors contain the video settings for the input. Each of your
+   * inputs can have up to one video selector.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoSelector">AWS
    * API Reference</a></p>
    */

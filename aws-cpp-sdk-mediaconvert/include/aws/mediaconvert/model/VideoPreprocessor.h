@@ -46,81 +46,87 @@ namespace Model
 
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline const ColorCorrector& GetColorCorrector() const{ return m_colorCorrector; }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline bool ColorCorrectorHasBeenSet() const { return m_colorCorrectorHasBeenSet; }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline void SetColorCorrector(const ColorCorrector& value) { m_colorCorrectorHasBeenSet = true; m_colorCorrector = value; }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline void SetColorCorrector(ColorCorrector&& value) { m_colorCorrectorHasBeenSet = true; m_colorCorrector = std::move(value); }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline VideoPreprocessor& WithColorCorrector(const ColorCorrector& value) { SetColorCorrector(value); return *this;}
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by
-     * default.
+     * Use these settings to convert the color space or to modify properties such as
+     * hue and contrast for this output. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     inline VideoPreprocessor& WithColorCorrector(ColorCorrector&& value) { SetColorCorrector(std::move(value)); return *this;}
 
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline const Deinterlacer& GetDeinterlacer() const{ return m_deinterlacer; }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline bool DeinterlacerHasBeenSet() const { return m_deinterlacerHasBeenSet; }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline void SetDeinterlacer(const Deinterlacer& value) { m_deinterlacerHasBeenSet = true; m_deinterlacer = value; }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline void SetDeinterlacer(Deinterlacer&& value) { m_deinterlacerHasBeenSet = true; m_deinterlacer = std::move(value); }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline VideoPreprocessor& WithDeinterlacer(const Deinterlacer& value) { SetDeinterlacer(value); return *this;}
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer
-     * picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
     inline VideoPreprocessor& WithDeinterlacer(Deinterlacer&& value) { SetDeinterlacer(std::move(value)); return *this;}
 
@@ -286,38 +292,32 @@ namespace Model
 
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline const TimecodeBurnin& GetTimecodeBurnin() const{ return m_timecodeBurnin; }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline bool TimecodeBurninHasBeenSet() const { return m_timecodeBurninHasBeenSet; }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline void SetTimecodeBurnin(const TimecodeBurnin& value) { m_timecodeBurninHasBeenSet = true; m_timecodeBurnin = value; }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline void SetTimecodeBurnin(TimecodeBurnin&& value) { m_timecodeBurninHasBeenSet = true; m_timecodeBurnin = std::move(value); }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline VideoPreprocessor& WithTimecodeBurnin(const TimecodeBurnin& value) { SetTimecodeBurnin(value); return *this;}
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified
-     * prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      */
     inline VideoPreprocessor& WithTimecodeBurnin(TimecodeBurnin&& value) { SetTimecodeBurnin(std::move(value)); return *this;}
 

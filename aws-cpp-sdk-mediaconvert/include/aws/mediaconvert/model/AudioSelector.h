@@ -29,7 +29,9 @@ namespace Model
 {
 
   /**
-   * Selector for Audio<p><h3>See Also:</h3>   <a
+   * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from
+   * the input that you will use in your outputs. You can use multiple Audio
+   * selectors per input.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioSelector">AWS
    * API Reference</a></p>
    */

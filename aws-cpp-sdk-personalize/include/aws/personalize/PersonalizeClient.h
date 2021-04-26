@@ -14,6 +14,7 @@
 #include <aws/personalize/model/CreateBatchInferenceJobResult.h>
 #include <aws/personalize/model/CreateCampaignResult.h>
 #include <aws/personalize/model/CreateDatasetResult.h>
+#include <aws/personalize/model/CreateDatasetExportJobResult.h>
 #include <aws/personalize/model/CreateDatasetGroupResult.h>
 #include <aws/personalize/model/CreateDatasetImportJobResult.h>
 #include <aws/personalize/model/CreateEventTrackerResult.h>
@@ -25,6 +26,7 @@
 #include <aws/personalize/model/DescribeBatchInferenceJobResult.h>
 #include <aws/personalize/model/DescribeCampaignResult.h>
 #include <aws/personalize/model/DescribeDatasetResult.h>
+#include <aws/personalize/model/DescribeDatasetExportJobResult.h>
 #include <aws/personalize/model/DescribeDatasetGroupResult.h>
 #include <aws/personalize/model/DescribeDatasetImportJobResult.h>
 #include <aws/personalize/model/DescribeEventTrackerResult.h>
@@ -37,6 +39,7 @@
 #include <aws/personalize/model/GetSolutionMetricsResult.h>
 #include <aws/personalize/model/ListBatchInferenceJobsResult.h>
 #include <aws/personalize/model/ListCampaignsResult.h>
+#include <aws/personalize/model/ListDatasetExportJobsResult.h>
 #include <aws/personalize/model/ListDatasetGroupsResult.h>
 #include <aws/personalize/model/ListDatasetImportJobsResult.h>
 #include <aws/personalize/model/ListDatasetsResult.h>
@@ -90,6 +93,7 @@ namespace Model
         class CreateBatchInferenceJobRequest;
         class CreateCampaignRequest;
         class CreateDatasetRequest;
+        class CreateDatasetExportJobRequest;
         class CreateDatasetGroupRequest;
         class CreateDatasetImportJobRequest;
         class CreateEventTrackerRequest;
@@ -108,6 +112,7 @@ namespace Model
         class DescribeBatchInferenceJobRequest;
         class DescribeCampaignRequest;
         class DescribeDatasetRequest;
+        class DescribeDatasetExportJobRequest;
         class DescribeDatasetGroupRequest;
         class DescribeDatasetImportJobRequest;
         class DescribeEventTrackerRequest;
@@ -120,6 +125,7 @@ namespace Model
         class GetSolutionMetricsRequest;
         class ListBatchInferenceJobsRequest;
         class ListCampaignsRequest;
+        class ListDatasetExportJobsRequest;
         class ListDatasetGroupsRequest;
         class ListDatasetImportJobsRequest;
         class ListDatasetsRequest;
@@ -134,6 +140,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateBatchInferenceJobResult, PersonalizeError> CreateBatchInferenceJobOutcome;
         typedef Aws::Utils::Outcome<CreateCampaignResult, PersonalizeError> CreateCampaignOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetResult, PersonalizeError> CreateDatasetOutcome;
+        typedef Aws::Utils::Outcome<CreateDatasetExportJobResult, PersonalizeError> CreateDatasetExportJobOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetGroupResult, PersonalizeError> CreateDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<CreateDatasetImportJobResult, PersonalizeError> CreateDatasetImportJobOutcome;
         typedef Aws::Utils::Outcome<CreateEventTrackerResult, PersonalizeError> CreateEventTrackerOutcome;
@@ -152,6 +159,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeBatchInferenceJobResult, PersonalizeError> DescribeBatchInferenceJobOutcome;
         typedef Aws::Utils::Outcome<DescribeCampaignResult, PersonalizeError> DescribeCampaignOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, PersonalizeError> DescribeDatasetOutcome;
+        typedef Aws::Utils::Outcome<DescribeDatasetExportJobResult, PersonalizeError> DescribeDatasetExportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetGroupResult, PersonalizeError> DescribeDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetImportJobResult, PersonalizeError> DescribeDatasetImportJobOutcome;
         typedef Aws::Utils::Outcome<DescribeEventTrackerResult, PersonalizeError> DescribeEventTrackerOutcome;
@@ -164,6 +172,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSolutionMetricsResult, PersonalizeError> GetSolutionMetricsOutcome;
         typedef Aws::Utils::Outcome<ListBatchInferenceJobsResult, PersonalizeError> ListBatchInferenceJobsOutcome;
         typedef Aws::Utils::Outcome<ListCampaignsResult, PersonalizeError> ListCampaignsOutcome;
+        typedef Aws::Utils::Outcome<ListDatasetExportJobsResult, PersonalizeError> ListDatasetExportJobsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetGroupsResult, PersonalizeError> ListDatasetGroupsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetImportJobsResult, PersonalizeError> ListDatasetImportJobsOutcome;
         typedef Aws::Utils::Outcome<ListDatasetsResult, PersonalizeError> ListDatasetsOutcome;
@@ -178,6 +187,7 @@ namespace Model
         typedef std::future<CreateBatchInferenceJobOutcome> CreateBatchInferenceJobOutcomeCallable;
         typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
         typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
+        typedef std::future<CreateDatasetExportJobOutcome> CreateDatasetExportJobOutcomeCallable;
         typedef std::future<CreateDatasetGroupOutcome> CreateDatasetGroupOutcomeCallable;
         typedef std::future<CreateDatasetImportJobOutcome> CreateDatasetImportJobOutcomeCallable;
         typedef std::future<CreateEventTrackerOutcome> CreateEventTrackerOutcomeCallable;
@@ -196,6 +206,7 @@ namespace Model
         typedef std::future<DescribeBatchInferenceJobOutcome> DescribeBatchInferenceJobOutcomeCallable;
         typedef std::future<DescribeCampaignOutcome> DescribeCampaignOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
+        typedef std::future<DescribeDatasetExportJobOutcome> DescribeDatasetExportJobOutcomeCallable;
         typedef std::future<DescribeDatasetGroupOutcome> DescribeDatasetGroupOutcomeCallable;
         typedef std::future<DescribeDatasetImportJobOutcome> DescribeDatasetImportJobOutcomeCallable;
         typedef std::future<DescribeEventTrackerOutcome> DescribeEventTrackerOutcomeCallable;
@@ -208,6 +219,7 @@ namespace Model
         typedef std::future<GetSolutionMetricsOutcome> GetSolutionMetricsOutcomeCallable;
         typedef std::future<ListBatchInferenceJobsOutcome> ListBatchInferenceJobsOutcomeCallable;
         typedef std::future<ListCampaignsOutcome> ListCampaignsOutcomeCallable;
+        typedef std::future<ListDatasetExportJobsOutcome> ListDatasetExportJobsOutcomeCallable;
         typedef std::future<ListDatasetGroupsOutcome> ListDatasetGroupsOutcomeCallable;
         typedef std::future<ListDatasetImportJobsOutcome> ListDatasetImportJobsOutcomeCallable;
         typedef std::future<ListDatasetsOutcome> ListDatasetsOutcomeCallable;
@@ -225,6 +237,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::CreateBatchInferenceJobRequest&, const Model::CreateBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBatchInferenceJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateCampaignRequest&, const Model::CreateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCampaignResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetExportJobRequest&, const Model::CreateDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetExportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetGroupRequest&, const Model::CreateDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateDatasetImportJobRequest&, const Model::CreateDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetImportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::CreateEventTrackerRequest&, const Model::CreateEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventTrackerResponseReceivedHandler;
@@ -243,6 +256,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeBatchInferenceJobRequest&, const Model::DescribeBatchInferenceJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBatchInferenceJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeCampaignRequest&, const Model::DescribeCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCampaignResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetExportJobRequest&, const Model::DescribeDatasetExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetExportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetGroupRequest&, const Model::DescribeDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeDatasetImportJobRequest&, const Model::DescribeDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetImportJobResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::DescribeEventTrackerRequest&, const Model::DescribeEventTrackerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventTrackerResponseReceivedHandler;
@@ -255,6 +269,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::GetSolutionMetricsRequest&, const Model::GetSolutionMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSolutionMetricsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListBatchInferenceJobsRequest&, const Model::ListBatchInferenceJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBatchInferenceJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListCampaignsRequest&, const Model::ListCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCampaignsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetExportJobsRequest&, const Model::ListDatasetExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetExportJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetGroupsRequest&, const Model::ListDatasetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetGroupsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetImportJobsRequest&, const Model::ListDatasetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetImportJobsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListDatasetsRequest&, const Model::ListDatasetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasetsResponseReceivedHandler;
@@ -502,6 +517,73 @@ namespace Model
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Creates a job that exports data from your dataset to an Amazon S3 bucket. To
+         * allow Amazon Personalize to export the training data, you must specify an
+         * service-linked AWS Identity and Access Management (IAM) role that gives Amazon
+         * Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
+         * export job permissions requirements</a> in the Amazon Personalize developer
+         * guide. </p> <p> <b>Status</b> </p> <p>A dataset export job can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> </ul> <p> To get the status of the export
+         * job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
+         * (ARN) of the dataset export job. The dataset export is complete when the status
+         * shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a
+         * <code>failureReason</code> key, which describes why the job failed.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDatasetExportJobOutcome CreateDatasetExportJob(const Model::CreateDatasetExportJobRequest& request) const;
+
+        /**
+         * <p> Creates a job that exports data from your dataset to an Amazon S3 bucket. To
+         * allow Amazon Personalize to export the training data, you must specify an
+         * service-linked AWS Identity and Access Management (IAM) role that gives Amazon
+         * Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
+         * export job permissions requirements</a> in the Amazon Personalize developer
+         * guide. </p> <p> <b>Status</b> </p> <p>A dataset export job can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> </ul> <p> To get the status of the export
+         * job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
+         * (ARN) of the dataset export job. The dataset export is complete when the status
+         * shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a
+         * <code>failureReason</code> key, which describes why the job failed.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDatasetExportJobOutcomeCallable CreateDatasetExportJobCallable(const Model::CreateDatasetExportJobRequest& request) const;
+
+        /**
+         * <p> Creates a job that exports data from your dataset to an Amazon S3 bucket. To
+         * allow Amazon Personalize to export the training data, you must specify an
+         * service-linked AWS Identity and Access Management (IAM) role that gives Amazon
+         * Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For
+         * information, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
+         * export job permissions requirements</a> in the Amazon Personalize developer
+         * guide. </p> <p> <b>Status</b> </p> <p>A dataset export job can be in one of the
+         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
+         * ACTIVE -or- CREATE FAILED</p> </li> </ul> <p> To get the status of the export
+         * job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
+         * (ARN) of the dataset export job. The dataset export is complete when the status
+         * shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a
+         * <code>failureReason</code> key, which describes why the job failed.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDatasetExportJobAsync(const Model::CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an empty dataset group. A dataset group contains related datasets
          * that supply data for training a model. A dataset group can contain at most three
          * datasets, one for each type of dataset:</p> <ul> <li> <p>Interactions</p> </li>
@@ -596,19 +678,22 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source, as Amazon Personalize
-         * makes a copy of your data and processes it in an internal AWS system.</p>
-         *  <p>The dataset import job replaces any existing data in the dataset
-         * that you imported in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset
-         * import job can be in one of the following states:</p> <ul> <li> <p>CREATE
-         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
-         * <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>,
-         * providing the Amazon Resource Name (ARN) of the dataset import job. The dataset
-         * import is complete when the status shows as ACTIVE. If the status shows as
-         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the job failed.</p>  <p>Importing takes time. You must wait
-         * until the status shows as ACTIVE before training a model using the dataset.</p>
-         *  <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * service role that has permission to read from the data source, as Amazon
+         * Personalize makes a copy of your data and processes it in an internal AWS
+         * system. For information on granting access to your Amazon S3 bucket, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+         * Amazon Personalize Access to Amazon S3 Resources</a>. </p>  <p>The
+         * dataset import job replaces any existing data in the dataset that you imported
+         * in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
+         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
+         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
+         * Resource Name (ARN) of the dataset import job. The dataset import is complete
+         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
+         * response includes a <code>failureReason</code> key, which describes why the job
+         * failed.</p>  <p>Importing takes time. You must wait until the status shows
+         * as ACTIVE before training a model using the dataset.</p>  <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -620,19 +705,22 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source, as Amazon Personalize
-         * makes a copy of your data and processes it in an internal AWS system.</p>
-         *  <p>The dataset import job replaces any existing data in the dataset
-         * that you imported in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset
-         * import job can be in one of the following states:</p> <ul> <li> <p>CREATE
-         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
-         * <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>,
-         * providing the Amazon Resource Name (ARN) of the dataset import job. The dataset
-         * import is complete when the status shows as ACTIVE. If the status shows as
-         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the job failed.</p>  <p>Importing takes time. You must wait
-         * until the status shows as ACTIVE before training a model using the dataset.</p>
-         *  <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * service role that has permission to read from the data source, as Amazon
+         * Personalize makes a copy of your data and processes it in an internal AWS
+         * system. For information on granting access to your Amazon S3 bucket, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+         * Amazon Personalize Access to Amazon S3 Resources</a>. </p>  <p>The
+         * dataset import job replaces any existing data in the dataset that you imported
+         * in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
+         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
+         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
+         * Resource Name (ARN) of the dataset import job. The dataset import is complete
+         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
+         * response includes a <code>failureReason</code> key, which describes why the job
+         * failed.</p>  <p>Importing takes time. You must wait until the status shows
+         * as ACTIVE before training a model using the dataset.</p>  <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -646,19 +734,22 @@ namespace Model
          * <p>Creates a job that imports training data from your data source (an Amazon S3
          * bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import
          * the training data, you must specify an AWS Identity and Access Management (IAM)
-         * role that has permission to read from the data source, as Amazon Personalize
-         * makes a copy of your data and processes it in an internal AWS system.</p>
-         *  <p>The dataset import job replaces any existing data in the dataset
-         * that you imported in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset
-         * import job can be in one of the following states:</p> <ul> <li> <p>CREATE
-         * PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
-         * <p>To get the status of the import job, call <a>DescribeDatasetImportJob</a>,
-         * providing the Amazon Resource Name (ARN) of the dataset import job. The dataset
-         * import is complete when the status shows as ACTIVE. If the status shows as
-         * CREATE FAILED, the response includes a <code>failureReason</code> key, which
-         * describes why the job failed.</p>  <p>Importing takes time. You must wait
-         * until the status shows as ACTIVE before training a model using the dataset.</p>
-         *  <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * service role that has permission to read from the data source, as Amazon
+         * Personalize makes a copy of your data and processes it in an internal AWS
+         * system. For information on granting access to your Amazon S3 bucket, see <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving
+         * Amazon Personalize Access to Amazon S3 Resources</a>. </p>  <p>The
+         * dataset import job replaces any existing data in the dataset that you imported
+         * in bulk.</p>  <p> <b>Status</b> </p> <p>A dataset import job can be
+         * in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
+         * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get the status
+         * of the import job, call <a>DescribeDatasetImportJob</a>, providing the Amazon
+         * Resource Name (ARN) of the dataset import job. The dataset import is complete
+         * when the status shows as ACTIVE. If the status shows as CREATE FAILED, the
+         * response includes a <code>failureReason</code> key, which describes why the job
+         * failed.</p>  <p>Importing takes time. You must wait until the status shows
+         * as ACTIVE before training a model using the dataset.</p>  <p
+         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListDatasetImportJobs</a> </p> </li> <li> <p> <a>DescribeDatasetImportJob</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob">AWS
@@ -1357,6 +1448,34 @@ namespace Model
         virtual void DescribeDatasetAsync(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the dataset export job created by <a>CreateDatasetExportJob</a>,
+         * including the export job status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDatasetExportJobOutcome DescribeDatasetExportJob(const Model::DescribeDatasetExportJobRequest& request) const;
+
+        /**
+         * <p>Describes the dataset export job created by <a>CreateDatasetExportJob</a>,
+         * including the export job status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDatasetExportJobOutcomeCallable DescribeDatasetExportJobCallable(const Model::DescribeDatasetExportJobRequest& request) const;
+
+        /**
+         * <p>Describes the dataset export job created by <a>CreateDatasetExportJob</a>,
+         * including the export job status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDatasetExportJobAsync(const Model::DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the given dataset group. For more information on dataset groups,
          * see <a>CreateDatasetGroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetGroup">AWS
@@ -1723,6 +1842,46 @@ namespace Model
         virtual void ListCampaignsAsync(const Model::ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of dataset export jobs that use the given dataset. When a
+         * dataset is not specified, all the dataset export jobs associated with the
+         * account are listed. The response provides the properties for each dataset export
+         * job, including the Amazon Resource Name (ARN). For more information on dataset
+         * export jobs, see <a>CreateDatasetExportJob</a>. For more information on
+         * datasets, see <a>CreateDataset</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDatasetExportJobsOutcome ListDatasetExportJobs(const Model::ListDatasetExportJobsRequest& request) const;
+
+        /**
+         * <p>Returns a list of dataset export jobs that use the given dataset. When a
+         * dataset is not specified, all the dataset export jobs associated with the
+         * account are listed. The response provides the properties for each dataset export
+         * job, including the Amazon Resource Name (ARN). For more information on dataset
+         * export jobs, see <a>CreateDatasetExportJob</a>. For more information on
+         * datasets, see <a>CreateDataset</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDatasetExportJobsOutcomeCallable ListDatasetExportJobsCallable(const Model::ListDatasetExportJobsRequest& request) const;
+
+        /**
+         * <p>Returns a list of dataset export jobs that use the given dataset. When a
+         * dataset is not specified, all the dataset export jobs associated with the
+         * account are listed. The response provides the properties for each dataset export
+         * job, including the Amazon Resource Name (ARN). For more information on dataset
+         * export jobs, see <a>CreateDatasetExportJob</a>. For more information on
+         * datasets, see <a>CreateDataset</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDatasetExportJobsAsync(const Model::ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of dataset groups. The response provides the properties for
          * each dataset group, including the Amazon Resource Name (ARN). For more
          * information on dataset groups, see <a>CreateDatasetGroup</a>.</p><p><h3>See
@@ -2084,6 +2243,7 @@ namespace Model
         void CreateBatchInferenceJobAsyncHelper(const Model::CreateBatchInferenceJobRequest& request, const CreateBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCampaignAsyncHelper(const Model::CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetAsyncHelper(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDatasetExportJobAsyncHelper(const Model::CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetGroupAsyncHelper(const Model::CreateDatasetGroupRequest& request, const CreateDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDatasetImportJobAsyncHelper(const Model::CreateDatasetImportJobRequest& request, const CreateDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventTrackerAsyncHelper(const Model::CreateEventTrackerRequest& request, const CreateEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2102,6 +2262,7 @@ namespace Model
         void DescribeBatchInferenceJobAsyncHelper(const Model::DescribeBatchInferenceJobRequest& request, const DescribeBatchInferenceJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCampaignAsyncHelper(const Model::DescribeCampaignRequest& request, const DescribeCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDatasetExportJobAsyncHelper(const Model::DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetGroupAsyncHelper(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetImportJobAsyncHelper(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventTrackerAsyncHelper(const Model::DescribeEventTrackerRequest& request, const DescribeEventTrackerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2114,6 +2275,7 @@ namespace Model
         void GetSolutionMetricsAsyncHelper(const Model::GetSolutionMetricsRequest& request, const GetSolutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBatchInferenceJobsAsyncHelper(const Model::ListBatchInferenceJobsRequest& request, const ListBatchInferenceJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCampaignsAsyncHelper(const Model::ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDatasetExportJobsAsyncHelper(const Model::ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetGroupsAsyncHelper(const Model::ListDatasetGroupsRequest& request, const ListDatasetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetImportJobsAsyncHelper(const Model::ListDatasetImportJobsRequest& request, const ListDatasetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDatasetsAsyncHelper(const Model::ListDatasetsRequest& request, const ListDatasetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -347,75 +347,99 @@ namespace Model
 
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline const DvbNitSettings& GetDvbNitSettings() const{ return m_dvbNitSettings; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline bool DvbNitSettingsHasBeenSet() const { return m_dvbNitSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbNitSettings(const DvbNitSettings& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = value; }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbNitSettings(DvbNitSettings&& value) { m_dvbNitSettingsHasBeenSet = true; m_dvbNitSettings = std::move(value); }
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbNitSettings(const DvbNitSettings& value) { SetDvbNitSettings(value); return *this;}
 
     /**
-     * Inserts DVB Network Information Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Network Information Table (NIT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbNitSettings(DvbNitSettings&& value) { SetDvbNitSettings(std::move(value)); return *this;}
 
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline const DvbSdtSettings& GetDvbSdtSettings() const{ return m_dvbSdtSettings; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline bool DvbSdtSettingsHasBeenSet() const { return m_dvbSdtSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbSdtSettings(const DvbSdtSettings& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = value; }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline void SetDvbSdtSettings(DvbSdtSettings&& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = std::move(value); }
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbSdtSettings(const DvbSdtSettings& value) { SetDvbSdtSettings(value); return *this;}
 
     /**
-     * Inserts DVB Service Description Table (NIT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Service Description Table (SDT) in the
+     * transport stream of this output. When you work directly in your JSON job
+     * specification, include this object only when your job has a transport stream
+     * output and the container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbSdtSettings(DvbSdtSettings&& value) { SetDvbSdtSettings(std::move(value)); return *this;}
 
@@ -464,38 +488,50 @@ namespace Model
 
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline const DvbTdtSettings& GetDvbTdtSettings() const{ return m_dvbTdtSettings; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline bool DvbTdtSettingsHasBeenSet() const { return m_dvbTdtSettingsHasBeenSet; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline void SetDvbTdtSettings(const DvbTdtSettings& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = value; }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline void SetDvbTdtSettings(DvbTdtSettings&& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = std::move(value); }
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbTdtSettings(const DvbTdtSettings& value) { SetDvbTdtSettings(value); return *this;}
 
     /**
-     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
-     * interval.
+     * Use these settings to insert a DVB Time and Date Table (TDT) in the transport
+     * stream of this output. When you work directly in your JSON job specification,
+     * include this object only when your job has a transport stream output and the
+     * container settings contain the object M2tsSettings.
      */
     inline M2tsSettings& WithDvbTdtSettings(DvbTdtSettings&& value) { SetDvbTdtSettings(std::move(value)); return *this;}
 

@@ -30,7 +30,8 @@ namespace Model
 {
 
   /**
-   * Settings for MP4 segments in CMAF<p><h3>See Also:</h3>   <a
+   * These settings relate to the fragmented MP4 container for the segments in your
+   * CMAF outputs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmfcSettings">AWS
    * API Reference</a></p>
    */

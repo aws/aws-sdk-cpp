@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationConfigurationDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationMaintenanceConfigurationDescription.h>
 #include <aws/kinesisanalyticsv2/model/CloudWatchLoggingOptionDescription.h>
 #include <utility>
 
@@ -169,38 +170,38 @@ namespace Model
 
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
-     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
-     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
-     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
-     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
-     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
 
     /**
-     * <p>The runtime environment for the application (<code>SQL-1.0</code>,
-     * <code>FLINK-1_6</code>, or <code>FLINK-1_8</code>).</p>
+     * <p>The runtime environment for the application (<code>SQL-1_0</code>,
+     * <code>FLINK-1_6</code>, <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).</p>
      */
     inline ApplicationDetail& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
 
@@ -449,6 +450,37 @@ namespace Model
      */
     inline ApplicationDetail& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true; m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Describes the time window for automatic application maintenance.</p>
+     */
+    inline const ApplicationMaintenanceConfigurationDescription& GetApplicationMaintenanceConfigurationDescription() const{ return m_applicationMaintenanceConfigurationDescription; }
+
+    /**
+     * <p>Describes the time window for automatic application maintenance.</p>
+     */
+    inline bool ApplicationMaintenanceConfigurationDescriptionHasBeenSet() const { return m_applicationMaintenanceConfigurationDescriptionHasBeenSet; }
+
+    /**
+     * <p>Describes the time window for automatic application maintenance.</p>
+     */
+    inline void SetApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = value; }
+
+    /**
+     * <p>Describes the time window for automatic application maintenance.</p>
+     */
+    inline void SetApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = std::move(value); }
+
+    /**
+     * <p>Describes the time window for automatic application maintenance.</p>
+     */
+    inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { SetApplicationMaintenanceConfigurationDescription(value); return *this;}
+
+    /**
+     * <p>Describes the time window for automatic application maintenance.</p>
+     */
+    inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { SetApplicationMaintenanceConfigurationDescription(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationARN;
@@ -483,6 +515,9 @@ namespace Model
 
     Aws::Vector<CloudWatchLoggingOptionDescription> m_cloudWatchLoggingOptionDescriptions;
     bool m_cloudWatchLoggingOptionDescriptionsHasBeenSet;
+
+    ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
+    bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet;
   };
 
 } // namespace Model

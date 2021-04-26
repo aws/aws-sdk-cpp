@@ -26,7 +26,9 @@ namespace Model
 {
 
   /**
-   * Settings for Dolby Vision<p><h3>See Also:</h3>   <a
+   * With AWS Elemental MediaConvert, you can create profile 5 Dolby Vision outputs
+   * from MXF and IMF sources that contain mastering information as frame-interleaved
+   * Dolby Vision metadata.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVision">AWS
    * API Reference</a></p>
    */

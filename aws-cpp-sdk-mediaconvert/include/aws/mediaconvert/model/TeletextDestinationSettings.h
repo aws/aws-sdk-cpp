@@ -26,7 +26,12 @@ namespace Model
 {
 
   /**
-   * Settings for Teletext caption output<p><h3>See Also:</h3>   <a
+   * Settings related to teletext captions. Set up teletext captions in the same
+   * output as your video. For more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
+   * When you work directly in your JSON job specification, include this object and
+   * any required children when you set destinationType to TELETEXT.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TeletextDestinationSettings">AWS
    * API Reference</a></p>
    */

@@ -28,6 +28,8 @@ namespace Model
     MinSize,
     ReleaseVersion,
     PublicAccessCidrs,
+    LaunchTemplateName,
+    LaunchTemplateVersion,
     IdentityProviderConfig,
     EncryptionConfig,
     AddonVersion,

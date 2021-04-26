@@ -129,49 +129,65 @@ namespace Model
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline CreateBatchInferenceJobRequest& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline CreateBatchInferenceJobRequest& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the filter to apply to the batch inference job. For more
-     * information on using filters, see Using Filters with Amazon Personalize.</p>
+     * information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering
+     * Batch Recommendations</a>..</p>
      */
     inline CreateBatchInferenceJobRequest& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
 
@@ -267,56 +283,56 @@ namespace Model
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline CreateBatchInferenceJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline CreateBatchInferenceJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon Identity and Access Management role that has
-     * permissions to read and write to your input and out Amazon S3 buckets
+     * permissions to read and write to your input and output Amazon S3 buckets
      * respectively.</p>
      */
     inline CreateBatchInferenceJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}

@@ -26,12 +26,12 @@ namespace Model
   /**
    * <p> The type of a code review. There are two code review types: </p> <ul> <li>
    * <p> <code>PullRequest</code> - A code review that is automatically triggered by
-   * a pull request on an assocaited repository. Because this type of code review is
+   * a pull request on an associated repository. Because this type of code review is
    * automatically generated, you cannot specify this code review type using <a
    * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
    * <code>CreateCodeReview</code> </a>. </p> </li> <li> <p>
    * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a
-   * specified branch in an associated respository. The assocated repository is
+   * specified branch in an associated repository. The associated repository is
    * specified using its ARN in <a
    * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
    * <code>CreateCodeReview</code> </a>. </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -67,7 +67,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p> A code review that analyzes all code under a specified branch in an
-     * associated respository. The assocated repository is specified using its ARN in
+     * associated repository. The associated repository is specified using its ARN in
      * <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">
      * <code>CreateCodeReview</code> </a>. </p>

@@ -16,7 +16,8 @@ AssociateRepositoryRequest::AssociateRepositoryRequest() :
     m_repositoryHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kMSKeyDetailsHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,12 @@ Aws::String AssociateRepositoryRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kMSKeyDetailsHasBeenSet)
+  {
+   payload.WithObject("KMSKeyDetails", m_kMSKeyDetails.Jsonize());
 
   }
 

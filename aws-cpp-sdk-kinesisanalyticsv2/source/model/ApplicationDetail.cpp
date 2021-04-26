@@ -32,7 +32,8 @@ ApplicationDetail::ApplicationDetail() :
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ ApplicationDetail::ApplicationDetail(JsonView jsonValue) :
     m_createTimestampHasBeenSet(false),
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
-    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +139,13 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_cloudWatchLoggingOptionDescriptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationMaintenanceConfigurationDescription"))
+  {
+    m_applicationMaintenanceConfigurationDescription = jsonValue.GetObject("ApplicationMaintenanceConfigurationDescription");
+
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -208,6 +217,12 @@ JsonValue ApplicationDetail::Jsonize() const
      cloudWatchLoggingOptionDescriptionsJsonList[cloudWatchLoggingOptionDescriptionsIndex].AsObject(m_cloudWatchLoggingOptionDescriptions[cloudWatchLoggingOptionDescriptionsIndex].Jsonize());
    }
    payload.WithArray("CloudWatchLoggingOptionDescriptions", std::move(cloudWatchLoggingOptionDescriptionsJsonList));
+
+  }
+
+  if(m_applicationMaintenanceConfigurationDescriptionHasBeenSet)
+  {
+   payload.WithObject("ApplicationMaintenanceConfigurationDescription", m_applicationMaintenanceConfigurationDescription.Jsonize());
 
   }
 

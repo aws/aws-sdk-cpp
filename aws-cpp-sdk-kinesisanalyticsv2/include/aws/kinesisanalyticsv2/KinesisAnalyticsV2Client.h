@@ -38,6 +38,7 @@
 #include <aws/kinesisanalyticsv2/model/TagResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/UntagResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/UpdateApplicationResult.h>
+#include <aws/kinesisanalyticsv2/model/UpdateApplicationMaintenanceConfigurationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -104,6 +105,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateApplicationRequest;
+        class UpdateApplicationMaintenanceConfigurationRequest;
 
         typedef Aws::Utils::Outcome<AddApplicationCloudWatchLoggingOptionResult, KinesisAnalyticsV2Error> AddApplicationCloudWatchLoggingOptionOutcome;
         typedef Aws::Utils::Outcome<AddApplicationInputResult, KinesisAnalyticsV2Error> AddApplicationInputOutcome;
@@ -132,6 +134,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, KinesisAnalyticsV2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, KinesisAnalyticsV2Error> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, KinesisAnalyticsV2Error> UpdateApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateApplicationMaintenanceConfigurationResult, KinesisAnalyticsV2Error> UpdateApplicationMaintenanceConfigurationOutcome;
 
         typedef std::future<AddApplicationCloudWatchLoggingOptionOutcome> AddApplicationCloudWatchLoggingOptionOutcomeCallable;
         typedef std::future<AddApplicationInputOutcome> AddApplicationInputOutcomeCallable;
@@ -160,6 +163,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
+        typedef std::future<UpdateApplicationMaintenanceConfigurationOutcome> UpdateApplicationMaintenanceConfigurationOutcomeCallable;
 } // namespace Model
 
   class KinesisAnalyticsV2Client;
@@ -191,6 +195,7 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::UpdateApplicationMaintenanceConfigurationRequest&, const Model::UpdateApplicationMaintenanceConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationMaintenanceConfigurationResponseReceivedHandler;
 
   /**
    * <p>Amazon Kinesis Data Analytics is a fully managed service that you can use to
@@ -525,10 +530,13 @@ namespace Model
          * <p>Creates and returns a URL that you can use to connect to an application's
          * extension. Currently, the only available extension is the Apache Flink
          * dashboard.</p> <p>The IAM role or user used to call this API defines the
-         * permissions to access the extension. Once the presigned URL is created, no
+         * permissions to access the extension. After the presigned URL is created, no
          * additional permission is required to access this URL. IAM authorization policies
          * for this API are also enforced for every HTTP request that attempts to connect
-         * to the extension. </p>  <p>The URL that you get from a call to
+         * to the extension. </p> <p>You control the amount of time that the URL will be
+         * valid using the <code>SessionExpirationDurationInSeconds</code> parameter. If
+         * you do not provide this parameter, the returned URL is valid for twelve
+         * hours.</p>  <p>The URL that you get from a call to
          * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
          * first try to use the URL after the 3-minute limit expires, the service returns
          * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
@@ -541,10 +549,13 @@ namespace Model
          * <p>Creates and returns a URL that you can use to connect to an application's
          * extension. Currently, the only available extension is the Apache Flink
          * dashboard.</p> <p>The IAM role or user used to call this API defines the
-         * permissions to access the extension. Once the presigned URL is created, no
+         * permissions to access the extension. After the presigned URL is created, no
          * additional permission is required to access this URL. IAM authorization policies
          * for this API are also enforced for every HTTP request that attempts to connect
-         * to the extension. </p>  <p>The URL that you get from a call to
+         * to the extension. </p> <p>You control the amount of time that the URL will be
+         * valid using the <code>SessionExpirationDurationInSeconds</code> parameter. If
+         * you do not provide this parameter, the returned URL is valid for twelve
+         * hours.</p>  <p>The URL that you get from a call to
          * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
          * first try to use the URL after the 3-minute limit expires, the service returns
          * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
@@ -559,10 +570,13 @@ namespace Model
          * <p>Creates and returns a URL that you can use to connect to an application's
          * extension. Currently, the only available extension is the Apache Flink
          * dashboard.</p> <p>The IAM role or user used to call this API defines the
-         * permissions to access the extension. Once the presigned URL is created, no
+         * permissions to access the extension. After the presigned URL is created, no
          * additional permission is required to access this URL. IAM authorization policies
          * for this API are also enforced for every HTTP request that attempts to connect
-         * to the extension. </p>  <p>The URL that you get from a call to
+         * to the extension. </p> <p>You control the amount of time that the URL will be
+         * valid using the <code>SessionExpirationDurationInSeconds</code> parameter. If
+         * you do not provide this parameter, the returned URL is valid for twelve
+         * hours.</p>  <p>The URL that you get from a call to
          * CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If you
          * first try to use the URL after the 3-minute limit expires, the service returns
          * an HTTP 403 Forbidden error.</p> <p><h3>See Also:</h3>   <a
@@ -1201,6 +1215,43 @@ namespace Model
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the configuration for the automatic maintenance that Kinesis Data
+         * Analytics performs on the application. For information about automatic
+         * application maintenance, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+         * Data Analytics for Apache Flink Maintenance</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApplicationMaintenanceConfigurationOutcome UpdateApplicationMaintenanceConfiguration(const Model::UpdateApplicationMaintenanceConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the configuration for the automatic maintenance that Kinesis Data
+         * Analytics performs on the application. For information about automatic
+         * application maintenance, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+         * Data Analytics for Apache Flink Maintenance</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApplicationMaintenanceConfigurationOutcomeCallable UpdateApplicationMaintenanceConfigurationCallable(const Model::UpdateApplicationMaintenanceConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the configuration for the automatic maintenance that Kinesis Data
+         * Analytics performs on the application. For information about automatic
+         * application maintenance, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
+         * Data Analytics for Apache Flink Maintenance</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApplicationMaintenanceConfigurationAsync(const Model::UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1232,6 +1283,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApplicationMaintenanceConfigurationAsyncHelper(const Model::UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

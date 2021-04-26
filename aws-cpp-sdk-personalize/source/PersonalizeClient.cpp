@@ -23,6 +23,7 @@
 #include <aws/personalize/model/CreateBatchInferenceJobRequest.h>
 #include <aws/personalize/model/CreateCampaignRequest.h>
 #include <aws/personalize/model/CreateDatasetRequest.h>
+#include <aws/personalize/model/CreateDatasetExportJobRequest.h>
 #include <aws/personalize/model/CreateDatasetGroupRequest.h>
 #include <aws/personalize/model/CreateDatasetImportJobRequest.h>
 #include <aws/personalize/model/CreateEventTrackerRequest.h>
@@ -41,6 +42,7 @@
 #include <aws/personalize/model/DescribeBatchInferenceJobRequest.h>
 #include <aws/personalize/model/DescribeCampaignRequest.h>
 #include <aws/personalize/model/DescribeDatasetRequest.h>
+#include <aws/personalize/model/DescribeDatasetExportJobRequest.h>
 #include <aws/personalize/model/DescribeDatasetGroupRequest.h>
 #include <aws/personalize/model/DescribeDatasetImportJobRequest.h>
 #include <aws/personalize/model/DescribeEventTrackerRequest.h>
@@ -53,6 +55,7 @@
 #include <aws/personalize/model/GetSolutionMetricsRequest.h>
 #include <aws/personalize/model/ListBatchInferenceJobsRequest.h>
 #include <aws/personalize/model/ListCampaignsRequest.h>
+#include <aws/personalize/model/ListDatasetExportJobsRequest.h>
 #include <aws/personalize/model/ListDatasetGroupsRequest.h>
 #include <aws/personalize/model/ListDatasetImportJobsRequest.h>
 #include <aws/personalize/model/ListDatasetsRequest.h>
@@ -216,6 +219,33 @@ void PersonalizeClient::CreateDatasetAsync(const CreateDatasetRequest& request, 
 void PersonalizeClient::CreateDatasetAsyncHelper(const CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDataset(request), context);
+}
+
+CreateDatasetExportJobOutcome PersonalizeClient::CreateDatasetExportJob(const CreateDatasetExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateDatasetExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateDatasetExportJobOutcomeCallable PersonalizeClient::CreateDatasetExportJobCallable(const CreateDatasetExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDatasetExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDatasetExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::CreateDatasetExportJobAsync(const CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDatasetExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::CreateDatasetExportJobAsyncHelper(const CreateDatasetExportJobRequest& request, const CreateDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDatasetExportJob(request), context);
 }
 
 CreateDatasetGroupOutcome PersonalizeClient::CreateDatasetGroup(const CreateDatasetGroupRequest& request) const
@@ -704,6 +734,33 @@ void PersonalizeClient::DescribeDatasetAsyncHelper(const DescribeDatasetRequest&
   handler(this, request, DescribeDataset(request), context);
 }
 
+DescribeDatasetExportJobOutcome PersonalizeClient::DescribeDatasetExportJob(const DescribeDatasetExportJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeDatasetExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDatasetExportJobOutcomeCallable PersonalizeClient::DescribeDatasetExportJobCallable(const DescribeDatasetExportJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDatasetExportJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDatasetExportJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::DescribeDatasetExportJobAsync(const DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDatasetExportJobAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::DescribeDatasetExportJobAsyncHelper(const DescribeDatasetExportJobRequest& request, const DescribeDatasetExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDatasetExportJob(request), context);
+}
+
 DescribeDatasetGroupOutcome PersonalizeClient::DescribeDatasetGroup(const DescribeDatasetGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1026,6 +1083,33 @@ void PersonalizeClient::ListCampaignsAsync(const ListCampaignsRequest& request, 
 void PersonalizeClient::ListCampaignsAsyncHelper(const ListCampaignsRequest& request, const ListCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCampaigns(request), context);
+}
+
+ListDatasetExportJobsOutcome PersonalizeClient::ListDatasetExportJobs(const ListDatasetExportJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListDatasetExportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListDatasetExportJobsOutcomeCallable PersonalizeClient::ListDatasetExportJobsCallable(const ListDatasetExportJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDatasetExportJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDatasetExportJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::ListDatasetExportJobsAsync(const ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDatasetExportJobsAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::ListDatasetExportJobsAsyncHelper(const ListDatasetExportJobsRequest& request, const ListDatasetExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDatasetExportJobs(request), context);
 }
 
 ListDatasetGroupsOutcome PersonalizeClient::ListDatasetGroups(const ListDatasetGroupsRequest& request) const

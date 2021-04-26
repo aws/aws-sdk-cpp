@@ -43,191 +43,281 @@ namespace Model
 
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-     * single video, audio, or caption output.
+     * Settings related to your CMAF output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
+     * CMAF_GROUP_SETTINGS.
      */
     inline const CmafGroupSettings& GetCmafGroupSettings() const{ return m_cmafGroupSettings; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-     * single video, audio, or caption output.
+     * Settings related to your CMAF output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
+     * CMAF_GROUP_SETTINGS.
      */
     inline bool CmafGroupSettingsHasBeenSet() const { return m_cmafGroupSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-     * single video, audio, or caption output.
+     * Settings related to your CMAF output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
+     * CMAF_GROUP_SETTINGS.
      */
     inline void SetCmafGroupSettings(const CmafGroupSettings& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = value; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-     * single video, audio, or caption output.
+     * Settings related to your CMAF output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
+     * CMAF_GROUP_SETTINGS.
      */
     inline void SetCmafGroupSettings(CmafGroupSettings&& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = std::move(value); }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-     * single video, audio, or caption output.
+     * Settings related to your CMAF output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
+     * CMAF_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithCmafGroupSettings(const CmafGroupSettings& value) { SetCmafGroupSettings(value); return *this;}
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-     * single video, audio, or caption output.
+     * Settings related to your CMAF output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
+     * CMAF_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithCmafGroupSettings(CmafGroupSettings&& value) { SetCmafGroupSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your DASH output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * DASH_ISO_GROUP_SETTINGS.
      */
     inline const DashIsoGroupSettings& GetDashIsoGroupSettings() const{ return m_dashIsoGroupSettings; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your DASH output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * DASH_ISO_GROUP_SETTINGS.
      */
     inline bool DashIsoGroupSettingsHasBeenSet() const { return m_dashIsoGroupSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your DASH output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * DASH_ISO_GROUP_SETTINGS.
      */
     inline void SetDashIsoGroupSettings(const DashIsoGroupSettings& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = value; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your DASH output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * DASH_ISO_GROUP_SETTINGS.
      */
     inline void SetDashIsoGroupSettings(DashIsoGroupSettings&& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = std::move(value); }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your DASH output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * DASH_ISO_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithDashIsoGroupSettings(const DashIsoGroupSettings& value) { SetDashIsoGroupSettings(value); return *this;}
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your DASH output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * DASH_ISO_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithDashIsoGroupSettings(DashIsoGroupSettings&& value) { SetDashIsoGroupSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your File output group. MediaConvert uses this group of
+     * settings to generate a single standalone file, rather than a streaming package.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set Type, under OutputGroupSettings, to
      * FILE_GROUP_SETTINGS.
      */
     inline const FileGroupSettings& GetFileGroupSettings() const{ return m_fileGroupSettings; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your File output group. MediaConvert uses this group of
+     * settings to generate a single standalone file, rather than a streaming package.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set Type, under OutputGroupSettings, to
      * FILE_GROUP_SETTINGS.
      */
     inline bool FileGroupSettingsHasBeenSet() const { return m_fileGroupSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your File output group. MediaConvert uses this group of
+     * settings to generate a single standalone file, rather than a streaming package.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set Type, under OutputGroupSettings, to
      * FILE_GROUP_SETTINGS.
      */
     inline void SetFileGroupSettings(const FileGroupSettings& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = value; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your File output group. MediaConvert uses this group of
+     * settings to generate a single standalone file, rather than a streaming package.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set Type, under OutputGroupSettings, to
      * FILE_GROUP_SETTINGS.
      */
     inline void SetFileGroupSettings(FileGroupSettings&& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = std::move(value); }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your File output group. MediaConvert uses this group of
+     * settings to generate a single standalone file, rather than a streaming package.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set Type, under OutputGroupSettings, to
      * FILE_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithFileGroupSettings(const FileGroupSettings& value) { SetFileGroupSettings(value); return *this;}
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your File output group. MediaConvert uses this group of
+     * settings to generate a single standalone file, rather than a streaming package.
+     * When you work directly in your JSON job specification, include this object and
+     * any required children when you set Type, under OutputGroupSettings, to
      * FILE_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithFileGroupSettings(FileGroupSettings&& value) { SetFileGroupSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your HLS output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * HLS_GROUP_SETTINGS.
      */
     inline const HlsGroupSettings& GetHlsGroupSettings() const{ return m_hlsGroupSettings; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your HLS output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * HLS_GROUP_SETTINGS.
      */
     inline bool HlsGroupSettingsHasBeenSet() const { return m_hlsGroupSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your HLS output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * HLS_GROUP_SETTINGS.
      */
     inline void SetHlsGroupSettings(const HlsGroupSettings& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = value; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your HLS output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * HLS_GROUP_SETTINGS.
      */
     inline void SetHlsGroupSettings(HlsGroupSettings&& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = std::move(value); }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your HLS output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * HLS_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithHlsGroupSettings(const HlsGroupSettings& value) { SetHlsGroupSettings(value); return *this;}
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your HLS output package. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * HLS_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithHlsGroupSettings(HlsGroupSettings&& value) { SetHlsGroupSettings(std::move(value)); return *this;}
 
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your Microsoft Smooth Streaming output package. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * MS_SMOOTH_GROUP_SETTINGS.
      */
     inline const MsSmoothGroupSettings& GetMsSmoothGroupSettings() const{ return m_msSmoothGroupSettings; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your Microsoft Smooth Streaming output package. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * MS_SMOOTH_GROUP_SETTINGS.
      */
     inline bool MsSmoothGroupSettingsHasBeenSet() const { return m_msSmoothGroupSettingsHasBeenSet; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your Microsoft Smooth Streaming output package. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * MS_SMOOTH_GROUP_SETTINGS.
      */
     inline void SetMsSmoothGroupSettings(const MsSmoothGroupSettings& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = value; }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your Microsoft Smooth Streaming output package. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * MS_SMOOTH_GROUP_SETTINGS.
      */
     inline void SetMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = std::move(value); }
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your Microsoft Smooth Streaming output package. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * MS_SMOOTH_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithMsSmoothGroupSettings(const MsSmoothGroupSettings& value) { SetMsSmoothGroupSettings(value); return *this;}
 
     /**
-     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * Settings related to your Microsoft Smooth Streaming output package. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+     * you work directly in your JSON job specification, include this object and any
+     * required children when you set Type, under OutputGroupSettings, to
      * MS_SMOOTH_GROUP_SETTINGS.
      */
     inline OutputGroupSettings& WithMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { SetMsSmoothGroupSettings(std::move(value)); return *this;}

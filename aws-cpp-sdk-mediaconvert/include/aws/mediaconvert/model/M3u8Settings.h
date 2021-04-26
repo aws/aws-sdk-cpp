@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * Settings for TS segments in HLS<p><h3>See Also:</h3>   <a
+   * These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for
+   * the MPEG2-TS segments in your HLS outputs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M3u8Settings">AWS
    * API Reference</a></p>
    */

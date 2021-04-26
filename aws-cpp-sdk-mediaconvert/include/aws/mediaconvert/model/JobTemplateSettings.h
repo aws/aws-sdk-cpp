@@ -110,32 +110,38 @@ namespace Model
 
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline const EsamSettings& GetEsam() const{ return m_esam; }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline bool EsamHasBeenSet() const { return m_esamHasBeenSet; }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline void SetEsam(const EsamSettings& value) { m_esamHasBeenSet = true; m_esam = value; }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline void SetEsam(EsamSettings&& value) { m_esamHasBeenSet = true; m_esam = std::move(value); }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline JobTemplateSettings& WithEsam(const EsamSettings& value) { SetEsam(value); return *this;}
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline JobTemplateSettings& WithEsam(EsamSettings&& value) { SetEsam(std::move(value)); return *this;}
 
@@ -199,37 +205,49 @@ namespace Model
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline const MotionImageInserter& GetMotionImageInserter() const{ return m_motionImageInserter; }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline bool MotionImageInserterHasBeenSet() const { return m_motionImageInserterHasBeenSet; }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline void SetMotionImageInserter(const MotionImageInserter& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = value; }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline void SetMotionImageInserter(MotionImageInserter&& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = std::move(value); }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline JobTemplateSettings& WithMotionImageInserter(const MotionImageInserter& value) { SetMotionImageInserter(value); return *this;}
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline JobTemplateSettings& WithMotionImageInserter(MotionImageInserter&& value) { SetMotionImageInserter(std::move(value)); return *this;}
 
@@ -482,32 +500,38 @@ namespace Model
 
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline const TimecodeConfig& GetTimecodeConfig() const{ return m_timecodeConfig; }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline bool TimecodeConfigHasBeenSet() const { return m_timecodeConfigHasBeenSet; }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline void SetTimecodeConfig(const TimecodeConfig& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = value; }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline void SetTimecodeConfig(TimecodeConfig&& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = std::move(value); }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline JobTemplateSettings& WithTimecodeConfig(const TimecodeConfig& value) { SetTimecodeConfig(value); return *this;}
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline JobTemplateSettings& WithTimecodeConfig(TimecodeConfig&& value) { SetTimecodeConfig(std::move(value)); return *this;}
 

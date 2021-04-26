@@ -38,44 +38,44 @@ namespace Model
 
 
     /**
-     * If your input captions format is teletext or teletext inside of STL, enable this
-     * setting to pass through style, color, and position information to your WebVTT
-     * output captions.
+     * Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and
+     * position information from the captions source in the input. Keep the default
+     * value, Disabled (DISABLED), for simplified output captions.
      */
     inline const WebvttStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
 
     /**
-     * If your input captions format is teletext or teletext inside of STL, enable this
-     * setting to pass through style, color, and position information to your WebVTT
-     * output captions.
+     * Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and
+     * position information from the captions source in the input. Keep the default
+     * value, Disabled (DISABLED), for simplified output captions.
      */
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
 
     /**
-     * If your input captions format is teletext or teletext inside of STL, enable this
-     * setting to pass through style, color, and position information to your WebVTT
-     * output captions.
+     * Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and
+     * position information from the captions source in the input. Keep the default
+     * value, Disabled (DISABLED), for simplified output captions.
      */
     inline void SetStylePassthrough(const WebvttStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
 
     /**
-     * If your input captions format is teletext or teletext inside of STL, enable this
-     * setting to pass through style, color, and position information to your WebVTT
-     * output captions.
+     * Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and
+     * position information from the captions source in the input. Keep the default
+     * value, Disabled (DISABLED), for simplified output captions.
      */
     inline void SetStylePassthrough(WebvttStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
 
     /**
-     * If your input captions format is teletext or teletext inside of STL, enable this
-     * setting to pass through style, color, and position information to your WebVTT
-     * output captions.
+     * Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and
+     * position information from the captions source in the input. Keep the default
+     * value, Disabled (DISABLED), for simplified output captions.
      */
     inline WebvttDestinationSettings& WithStylePassthrough(const WebvttStylePassthrough& value) { SetStylePassthrough(value); return *this;}
 
     /**
-     * If your input captions format is teletext or teletext inside of STL, enable this
-     * setting to pass through style, color, and position information to your WebVTT
-     * output captions.
+     * Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and
+     * position information from the captions source in the input. Keep the default
+     * value, Disabled (DISABLED), for simplified output captions.
      */
     inline WebvttDestinationSettings& WithStylePassthrough(WebvttStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
 

@@ -47,6 +47,7 @@
 #include <aws/kinesisanalyticsv2/model/TagResourceRequest.h>
 #include <aws/kinesisanalyticsv2/model/UntagResourceRequest.h>
 #include <aws/kinesisanalyticsv2/model/UpdateApplicationRequest.h>
+#include <aws/kinesisanalyticsv2/model/UpdateApplicationMaintenanceConfigurationRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -848,5 +849,32 @@ void KinesisAnalyticsV2Client::UpdateApplicationAsync(const UpdateApplicationReq
 void KinesisAnalyticsV2Client::UpdateApplicationAsyncHelper(const UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateApplication(request), context);
+}
+
+UpdateApplicationMaintenanceConfigurationOutcome KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfiguration(const UpdateApplicationMaintenanceConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateApplicationMaintenanceConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateApplicationMaintenanceConfigurationOutcomeCallable KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfigurationCallable(const UpdateApplicationMaintenanceConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApplicationMaintenanceConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApplicationMaintenanceConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfigurationAsync(const UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApplicationMaintenanceConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsV2Client::UpdateApplicationMaintenanceConfigurationAsyncHelper(const UpdateApplicationMaintenanceConfigurationRequest& request, const UpdateApplicationMaintenanceConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApplicationMaintenanceConfiguration(request), context);
 }
 
