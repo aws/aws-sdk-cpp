@@ -22,6 +22,9 @@ phases:
       - echo "Updating $VERSION to $VERSION_BUMP"
       # Write new version to VersionConfig.h
       - sed -i "s/AWS_SDK_VERSION_STRING.*/AWS_SDK_VERSION_STRING \"$VERSION_BUMP\"/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+      - sed -i "s/AWS_SDK_VERSION_MAJOR.*/AWS_SDK_VERSION_MAJOR $VERSION_MAJOR/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+      - sed -i "s/AWS_SDK_VERSION_MINOR.*/AWS_SDK_VERSION_MINOR $VERSION_MINOR/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
+      - sed -i "s/AWS_SDK_VERSION_PATCH.*/AWS_SDK_VERSION_PATCH $VERSION_PATCH/" aws-cpp-sdk-core/include/aws/core/VersionConfig.h
       # git add
       - git add --all
       - git status

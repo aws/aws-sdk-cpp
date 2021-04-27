@@ -2,6 +2,7 @@ add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK"
 
 if(VERSION_STRING)
     set(AWSSDK_VERSION_STRING ${VERSION_STRING})
+
     message(STATUS "Updating version info to ${VERSION_STRING}")
     if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
         FILE(REMOVE ${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h})
@@ -9,8 +10,14 @@ if(VERSION_STRING)
     string(REPLACE "." ";" VERSION_LIST ${VERSION_STRING})
     list(GET VERSION_LIST 0 AWSSDK_VERSION_MAJOR)
     list(GET VERSION_LIST 1 AWSSDK_VERSION_MINOR)
-    list(GET VERSION_LIST 2 AWSSDK_VERSION_PATCH)
+    list(GET VERSION_LIST 2 AWSSDK_VERSION_FULLPATCH)
+    string(REPLACE "-" ";" AWSSDK_VERSION_PRERELEASE ${AWSSDK_VERSION_FULLPATCH})
+    list(GET AWSSDK_VERSION_PRERELEASE 0 AWSSDK_VERSION_PATCH)
+    list(GET AWSSDK_VERSION_PRERELEASE -1 AWSSDK_VERSION_PRERELEASE)
 
+    set(AWSSDK_VERSION_MAJOR ${AWSSDK_VERSION_MAJOR})
+    set(AWSSDK_VERSION_MINOR ${AWSSDK_VERSION_MINOR})
+    set(AWSSDK_VERSION_PATCH ${AWSSDK_VERSION_PATCH})
     configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
         "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")

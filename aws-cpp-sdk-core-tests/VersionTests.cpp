@@ -20,8 +20,10 @@ TEST(VersionTest, TestMajorMinorPatch)
     version += Aws::Utils::StringUtils::to_string(minor);
     version += ".";
     version += Aws::Utils::StringUtils::to_string(patch);
-    auto versionString = GetVersionString();
-    ASSERT_STREQ(versionString, version.c_str());
+    Aws::String versionString = GetVersionString();
+    versionString = versionString.substr(0,versionString.find('-'));
+    std::cout << versionString << std::endl;
+    ASSERT_STREQ(versionString.c_str(), version.c_str());
 }
 
 TEST(VersionTest, TestCompilerVersionString)
