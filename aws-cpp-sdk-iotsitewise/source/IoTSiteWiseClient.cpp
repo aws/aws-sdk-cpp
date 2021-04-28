@@ -53,6 +53,7 @@
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueRequest.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryRequest.h>
+#include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesRequest.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesRequest.h>
 #include <aws/iotsitewise/model/ListAssetModelsRequest.h>
 #include <aws/iotsitewise/model/ListAssetRelationshipsRequest.h>
@@ -1495,6 +1496,67 @@ void IoTSiteWiseClient::GetAssetPropertyValueHistoryAsync(const GetAssetProperty
 void IoTSiteWiseClient::GetAssetPropertyValueHistoryAsyncHelper(const GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAssetPropertyValueHistory(request), context);
+}
+
+GetInterpolatedAssetPropertyValuesOutcome IoTSiteWiseClient::GetInterpolatedAssetPropertyValues(const GetInterpolatedAssetPropertyValuesRequest& request) const
+{
+  if (!request.StartTimeInSecondsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Required field: StartTimeInSeconds, is not set");
+    return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTimeInSeconds]", false));
+  }
+  if (!request.EndTimeInSecondsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Required field: EndTimeInSeconds, is not set");
+    return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndTimeInSeconds]", false));
+  }
+  if (!request.QualityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Required field: Quality, is not set");
+    return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Quality]", false));
+  }
+  if (!request.IntervalInSecondsHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Required field: IntervalInSeconds, is not set");
+    return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntervalInSeconds]", false));
+  }
+  if (!request.TypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Required field: Type, is not set");
+    return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("data." + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("GetInterpolatedAssetPropertyValues", "Invalid DNS host: " << uri.GetAuthority());
+      return GetInterpolatedAssetPropertyValuesOutcome(Aws::Client::AWSError<IoTSiteWiseErrors>(IoTSiteWiseErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/properties/interpolated";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetInterpolatedAssetPropertyValuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetInterpolatedAssetPropertyValuesOutcomeCallable IoTSiteWiseClient::GetInterpolatedAssetPropertyValuesCallable(const GetInterpolatedAssetPropertyValuesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInterpolatedAssetPropertyValuesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInterpolatedAssetPropertyValues(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTSiteWiseClient::GetInterpolatedAssetPropertyValuesAsync(const GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInterpolatedAssetPropertyValuesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTSiteWiseClient::GetInterpolatedAssetPropertyValuesAsyncHelper(const GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInterpolatedAssetPropertyValues(request), context);
 }
 
 ListAccessPoliciesOutcome IoTSiteWiseClient::ListAccessPolicies(const ListAccessPoliciesRequest& request) const

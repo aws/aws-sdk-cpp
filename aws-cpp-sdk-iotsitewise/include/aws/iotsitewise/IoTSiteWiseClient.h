@@ -41,6 +41,7 @@
 #include <aws/iotsitewise/model/GetAssetPropertyAggregatesResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueResult.h>
 #include <aws/iotsitewise/model/GetAssetPropertyValueHistoryResult.h>
+#include <aws/iotsitewise/model/GetInterpolatedAssetPropertyValuesResult.h>
 #include <aws/iotsitewise/model/ListAccessPoliciesResult.h>
 #include <aws/iotsitewise/model/ListAssetModelsResult.h>
 #include <aws/iotsitewise/model/ListAssetRelationshipsResult.h>
@@ -136,6 +137,7 @@ namespace Model
         class GetAssetPropertyAggregatesRequest;
         class GetAssetPropertyValueRequest;
         class GetAssetPropertyValueHistoryRequest;
+        class GetInterpolatedAssetPropertyValuesRequest;
         class ListAccessPoliciesRequest;
         class ListAssetModelsRequest;
         class ListAssetRelationshipsRequest;
@@ -194,6 +196,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetAssetPropertyAggregatesResult, IoTSiteWiseError> GetAssetPropertyAggregatesOutcome;
         typedef Aws::Utils::Outcome<GetAssetPropertyValueResult, IoTSiteWiseError> GetAssetPropertyValueOutcome;
         typedef Aws::Utils::Outcome<GetAssetPropertyValueHistoryResult, IoTSiteWiseError> GetAssetPropertyValueHistoryOutcome;
+        typedef Aws::Utils::Outcome<GetInterpolatedAssetPropertyValuesResult, IoTSiteWiseError> GetInterpolatedAssetPropertyValuesOutcome;
         typedef Aws::Utils::Outcome<ListAccessPoliciesResult, IoTSiteWiseError> ListAccessPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListAssetModelsResult, IoTSiteWiseError> ListAssetModelsOutcome;
         typedef Aws::Utils::Outcome<ListAssetRelationshipsResult, IoTSiteWiseError> ListAssetRelationshipsOutcome;
@@ -252,6 +255,7 @@ namespace Model
         typedef std::future<GetAssetPropertyAggregatesOutcome> GetAssetPropertyAggregatesOutcomeCallable;
         typedef std::future<GetAssetPropertyValueOutcome> GetAssetPropertyValueOutcomeCallable;
         typedef std::future<GetAssetPropertyValueHistoryOutcome> GetAssetPropertyValueHistoryOutcomeCallable;
+        typedef std::future<GetInterpolatedAssetPropertyValuesOutcome> GetInterpolatedAssetPropertyValuesOutcomeCallable;
         typedef std::future<ListAccessPoliciesOutcome> ListAccessPoliciesOutcomeCallable;
         typedef std::future<ListAssetModelsOutcome> ListAssetModelsOutcomeCallable;
         typedef std::future<ListAssetRelationshipsOutcome> ListAssetRelationshipsOutcomeCallable;
@@ -313,6 +317,7 @@ namespace Model
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyAggregatesRequest&, const Model::GetAssetPropertyAggregatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyAggregatesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyValueRequest&, const Model::GetAssetPropertyValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyValueResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::GetAssetPropertyValueHistoryRequest&, const Model::GetAssetPropertyValueHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssetPropertyValueHistoryResponseReceivedHandler;
+    typedef std::function<void(const IoTSiteWiseClient*, const Model::GetInterpolatedAssetPropertyValuesRequest&, const Model::GetInterpolatedAssetPropertyValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInterpolatedAssetPropertyValuesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAccessPoliciesRequest&, const Model::ListAccessPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPoliciesResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetModelsRequest&, const Model::ListAssetModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetModelsResponseReceivedHandler;
     typedef std::function<void(const IoTSiteWiseClient*, const Model::ListAssetRelationshipsRequest&, const Model::ListAssetRelationshipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssetRelationshipsResponseReceivedHandler;
@@ -1565,6 +1570,61 @@ namespace Model
         virtual void GetAssetPropertyValueHistoryAsync(const Model::GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Get interpolated values for an asset property for a specified time interval,
+         * during a period of time. For example, you can use the this operation to return
+         * the interpolated temperature values for a wind turbine every 24 hours over a
+         * duration of 7 days.</p> <p>To identify an asset property, you must specify one
+         * of the following:</p> <ul> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> of an asset property.</p> </li> <li> <p>A
+         * <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInterpolatedAssetPropertyValuesOutcome GetInterpolatedAssetPropertyValues(const Model::GetInterpolatedAssetPropertyValuesRequest& request) const;
+
+        /**
+         * <p>Get interpolated values for an asset property for a specified time interval,
+         * during a period of time. For example, you can use the this operation to return
+         * the interpolated temperature values for a wind turbine every 24 hours over a
+         * duration of 7 days.</p> <p>To identify an asset property, you must specify one
+         * of the following:</p> <ul> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> of an asset property.</p> </li> <li> <p>A
+         * <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInterpolatedAssetPropertyValuesOutcomeCallable GetInterpolatedAssetPropertyValuesCallable(const Model::GetInterpolatedAssetPropertyValuesRequest& request) const;
+
+        /**
+         * <p>Get interpolated values for an asset property for a specified time interval,
+         * during a period of time. For example, you can use the this operation to return
+         * the interpolated temperature values for a wind turbine every 24 hours over a
+         * duration of 7 days.</p> <p>To identify an asset property, you must specify one
+         * of the following:</p> <ul> <li> <p>The <code>assetId</code> and
+         * <code>propertyId</code> of an asset property.</p> </li> <li> <p>A
+         * <code>propertyAlias</code>, which is a data stream alias (for example,
+         * <code>/company/windfarm/3/turbine/7/temperature</code>). To define an asset
+         * property's alias, see <a
+         * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/GetInterpolatedAssetPropertyValues">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInterpolatedAssetPropertyValuesAsync(const Model::GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves a paginated list of access policies for an identity (an AWS SSO
          * user, an AWS SSO group, or an IAM user) or an AWS IoT SiteWise Monitor resource
          * (a portal or project).</p><p><h3>See Also:</h3>   <a
@@ -2375,6 +2435,7 @@ namespace Model
         void GetAssetPropertyAggregatesAsyncHelper(const Model::GetAssetPropertyAggregatesRequest& request, const GetAssetPropertyAggregatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetPropertyValueAsyncHelper(const Model::GetAssetPropertyValueRequest& request, const GetAssetPropertyValueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAssetPropertyValueHistoryAsyncHelper(const Model::GetAssetPropertyValueHistoryRequest& request, const GetAssetPropertyValueHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInterpolatedAssetPropertyValuesAsyncHelper(const Model::GetInterpolatedAssetPropertyValuesRequest& request, const GetInterpolatedAssetPropertyValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccessPoliciesAsyncHelper(const Model::ListAccessPoliciesRequest& request, const ListAccessPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssetModelsAsyncHelper(const Model::ListAssetModelsRequest& request, const ListAssetModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssetRelationshipsAsyncHelper(const Model::ListAssetRelationshipsRequest& request, const ListAssetRelationshipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

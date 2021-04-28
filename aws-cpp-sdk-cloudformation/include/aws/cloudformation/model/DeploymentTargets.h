@@ -101,28 +101,44 @@ namespace Model
     inline DeploymentTargets& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline const Aws::String& GetAccountsUrl() const{ return m_accountsUrl; }
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline bool AccountsUrlHasBeenSet() const { return m_accountsUrlHasBeenSet; }
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline void SetAccountsUrl(const Aws::String& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = value; }
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline void SetAccountsUrl(Aws::String&& value) { m_accountsUrlHasBeenSet = true; m_accountsUrl = std::move(value); }
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline void SetAccountsUrl(const char* value) { m_accountsUrlHasBeenSet = true; m_accountsUrl.assign(value); }
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline DeploymentTargets& WithAccountsUrl(const Aws::String& value) { SetAccountsUrl(value); return *this;}
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline DeploymentTargets& WithAccountsUrl(Aws::String&& value) { SetAccountsUrl(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Returns the value of the AccountsUrl property.</p>
+     */
     inline DeploymentTargets& WithAccountsUrl(const char* value) { SetAccountsUrl(value); return *this;}
 
 

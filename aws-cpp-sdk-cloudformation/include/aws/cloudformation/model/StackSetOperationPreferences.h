@@ -45,22 +45,40 @@ namespace Model
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
-    
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
     inline const RegionConcurrencyType& GetRegionConcurrencyType() const{ return m_regionConcurrencyType; }
 
-    
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
     inline bool RegionConcurrencyTypeHasBeenSet() const { return m_regionConcurrencyTypeHasBeenSet; }
 
-    
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
     inline void SetRegionConcurrencyType(const RegionConcurrencyType& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = value; }
 
-    
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
     inline void SetRegionConcurrencyType(RegionConcurrencyType&& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = std::move(value); }
 
-    
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
     inline StackSetOperationPreferences& WithRegionConcurrencyType(const RegionConcurrencyType& value) { SetRegionConcurrencyType(value); return *this;}
 
-    
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
     inline StackSetOperationPreferences& WithRegionConcurrencyType(RegionConcurrencyType&& value) { SetRegionConcurrencyType(std::move(value)); return *this;}
 
 
