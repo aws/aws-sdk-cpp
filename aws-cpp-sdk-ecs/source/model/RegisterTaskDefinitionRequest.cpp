@@ -30,7 +30,8 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_ipcMode(IpcMode::NOT_SET),
     m_ipcModeHasBeenSet(false),
     m_proxyConfigurationHasBeenSet(false),
-    m_inferenceAcceleratorsHasBeenSet(false)
+    m_inferenceAcceleratorsHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,12 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
      inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());
    }
    payload.WithArray("inferenceAccelerators", std::move(inferenceAcceleratorsJsonList));
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

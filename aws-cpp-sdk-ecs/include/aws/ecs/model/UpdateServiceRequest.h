@@ -482,22 +482,34 @@ namespace Model
     inline UpdateServiceRequest& WithDeploymentConfiguration(DeploymentConfiguration&& value) { SetDeploymentConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object representing the network configuration for the service.</p>
+     */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
-    
+    /**
+     * <p>An object representing the network configuration for the service.</p>
+     */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>An object representing the network configuration for the service.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
-    
+    /**
+     * <p>An object representing the network configuration for the service.</p>
+     */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>An object representing the network configuration for the service.</p>
+     */
     inline UpdateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>An object representing the network configuration for the service.</p>
+     */
     inline UpdateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 

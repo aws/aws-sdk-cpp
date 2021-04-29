@@ -58,7 +58,8 @@ Task::Task() :
     m_taskArnHasBeenSet(false),
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -102,7 +103,8 @@ Task::Task(JsonView jsonValue) :
     m_taskArnHasBeenSet(false),
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -362,6 +364,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ephemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -583,6 +592,12 @@ JsonValue Task::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInt64("version", m_version);
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

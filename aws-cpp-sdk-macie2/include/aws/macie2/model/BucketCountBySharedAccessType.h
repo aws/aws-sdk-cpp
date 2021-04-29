@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the number of S3 buckets that are shared with
-   * other AWS accounts.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about the number of S3 buckets that are and aren't
+   * shared with other AWS accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountBySharedAccessType">AWS
    * API Reference</a></p>
    */

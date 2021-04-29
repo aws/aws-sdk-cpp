@@ -7,6 +7,7 @@
 #include <aws/macie2/Macie2_EXPORTS.h>
 #include <aws/macie2/model/BucketCountByEffectivePermission.h>
 #include <aws/macie2/model/BucketCountByEncryptionType.h>
+#include <aws/macie2/model/BucketCountPolicyAllowsUnencryptedObjectUploads.h>
 #include <aws/macie2/model/BucketCountBySharedAccessType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/macie2/model/ObjectLevelStatistics.h>
@@ -84,63 +85,99 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets, grouped by default server-side encryption type.
-     * This object also reports the total number of buckets that don't encrypt new
-     * objects by default.</p>
+     * <p>The total number of buckets that use certain types of server-side encryption
+     * to encrypt new objects by default. This object also reports the total number of
+     * buckets that don't encrypt new objects by default.</p>
      */
     inline const BucketCountByEncryptionType& GetBucketCountByEncryptionType() const{ return m_bucketCountByEncryptionType; }
 
     /**
-     * <p>The total number of buckets, grouped by default server-side encryption type.
-     * This object also reports the total number of buckets that don't encrypt new
-     * objects by default.</p>
+     * <p>The total number of buckets that use certain types of server-side encryption
+     * to encrypt new objects by default. This object also reports the total number of
+     * buckets that don't encrypt new objects by default.</p>
      */
     inline void SetBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { m_bucketCountByEncryptionType = value; }
 
     /**
-     * <p>The total number of buckets, grouped by default server-side encryption type.
-     * This object also reports the total number of buckets that don't encrypt new
-     * objects by default.</p>
+     * <p>The total number of buckets that use certain types of server-side encryption
+     * to encrypt new objects by default. This object also reports the total number of
+     * buckets that don't encrypt new objects by default.</p>
      */
     inline void SetBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { m_bucketCountByEncryptionType = std::move(value); }
 
     /**
-     * <p>The total number of buckets, grouped by default server-side encryption type.
-     * This object also reports the total number of buckets that don't encrypt new
-     * objects by default.</p>
+     * <p>The total number of buckets that use certain types of server-side encryption
+     * to encrypt new objects by default. This object also reports the total number of
+     * buckets that don't encrypt new objects by default.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(const BucketCountByEncryptionType& value) { SetBucketCountByEncryptionType(value); return *this;}
 
     /**
-     * <p>The total number of buckets, grouped by default server-side encryption type.
-     * This object also reports the total number of buckets that don't encrypt new
-     * objects by default.</p>
+     * <p>The total number of buckets that use certain types of server-side encryption
+     * to encrypt new objects by default. This object also reports the total number of
+     * buckets that don't encrypt new objects by default.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByEncryptionType(BucketCountByEncryptionType&& value) { SetBucketCountByEncryptionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account.</p>
+     * <p>The total number of buckets whose bucket policies do and don't require
+     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     */
+    inline const BucketCountPolicyAllowsUnencryptedObjectUploads& GetBucketCountByObjectEncryptionRequirement() const{ return m_bucketCountByObjectEncryptionRequirement; }
+
+    /**
+     * <p>The total number of buckets whose bucket policies do and don't require
+     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     */
+    inline void SetBucketCountByObjectEncryptionRequirement(const BucketCountPolicyAllowsUnencryptedObjectUploads& value) { m_bucketCountByObjectEncryptionRequirement = value; }
+
+    /**
+     * <p>The total number of buckets whose bucket policies do and don't require
+     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     */
+    inline void SetBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploads&& value) { m_bucketCountByObjectEncryptionRequirement = std::move(value); }
+
+    /**
+     * <p>The total number of buckets whose bucket policies do and don't require
+     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     */
+    inline GetBucketStatisticsResult& WithBucketCountByObjectEncryptionRequirement(const BucketCountPolicyAllowsUnencryptedObjectUploads& value) { SetBucketCountByObjectEncryptionRequirement(value); return *this;}
+
+    /**
+     * <p>The total number of buckets whose bucket policies do and don't require
+     * server-side encryption of objects when objects are uploaded to the buckets.</p>
+     */
+    inline GetBucketStatisticsResult& WithBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploads&& value) { SetBucketCountByObjectEncryptionRequirement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The total number of buckets that are and aren't shared with another AWS
+     * account.</p>
      */
     inline const BucketCountBySharedAccessType& GetBucketCountBySharedAccessType() const{ return m_bucketCountBySharedAccessType; }
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account.</p>
+     * <p>The total number of buckets that are and aren't shared with another AWS
+     * account.</p>
      */
     inline void SetBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { m_bucketCountBySharedAccessType = value; }
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account.</p>
+     * <p>The total number of buckets that are and aren't shared with another AWS
+     * account.</p>
      */
     inline void SetBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { m_bucketCountBySharedAccessType = std::move(value); }
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account.</p>
+     * <p>The total number of buckets that are and aren't shared with another AWS
+     * account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { SetBucketCountBySharedAccessType(value); return *this;}
 
     /**
-     * <p>The total number of buckets that are shared with another AWS account.</p>
+     * <p>The total number of buckets that are and aren't shared with another AWS
+     * account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { SetBucketCountBySharedAccessType(std::move(value)); return *this;}
 
@@ -384,6 +421,8 @@ namespace Model
     BucketCountByEffectivePermission m_bucketCountByEffectivePermission;
 
     BucketCountByEncryptionType m_bucketCountByEncryptionType;
+
+    BucketCountPolicyAllowsUnencryptedObjectUploads m_bucketCountByObjectEncryptionRequirement;
 
     BucketCountBySharedAccessType m_bucketCountBySharedAccessType;
 

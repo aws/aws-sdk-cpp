@@ -140,6 +140,35 @@ namespace Model
      */
     inline ObjectCountByEncryptionType& WithUnencrypted(long long value) { SetUnencrypted(value); return *this;}
 
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline long long GetUnknown() const{ return m_unknown; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
+
+    /**
+     * <p>The total number of objects that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the encryption settings for
+     * these objects.</p>
+     */
+    inline ObjectCountByEncryptionType& WithUnknown(long long value) { SetUnknown(value); return *this;}
+
   private:
 
     long long m_customerManaged;
@@ -153,6 +182,9 @@ namespace Model
 
     long long m_unencrypted;
     bool m_unencryptedHasBeenSet;
+
+    long long m_unknown;
+    bool m_unknownHasBeenSet;
   };
 
 } // namespace Model

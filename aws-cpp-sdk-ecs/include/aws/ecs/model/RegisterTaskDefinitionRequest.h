@@ -12,6 +12,7 @@
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/ProxyConfiguration.h>
+#include <aws/ecs/model/EphemeralStorage.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
@@ -1584,22 +1585,94 @@ namespace Model
     inline RegisterTaskDefinitionRequest& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline RegisterTaskDefinitionRequest& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline RegisterTaskDefinitionRequest& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
 
 
@@ -1642,6 +1715,73 @@ namespace Model
      * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
      */
     inline RegisterTaskDefinitionRequest& AddInferenceAccelerators(InferenceAccelerator&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline RegisterTaskDefinitionRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
   private:
 
@@ -1689,6 +1829,9 @@ namespace Model
 
     Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
     bool m_inferenceAcceleratorsHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model

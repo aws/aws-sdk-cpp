@@ -13,6 +13,7 @@
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/ProxyConfiguration.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecs/model/EphemeralStorage.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/Attribute.h>
@@ -2007,6 +2008,43 @@ namespace Model
      */
     inline TaskDefinition& WithRegisteredBy(const char* value) { SetRegisteredBy(value); return *this;}
 
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline TaskDefinition& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline TaskDefinition& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_taskDefinitionArn;
@@ -2074,6 +2112,9 @@ namespace Model
 
     Aws::String m_registeredBy;
     bool m_registeredByHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model

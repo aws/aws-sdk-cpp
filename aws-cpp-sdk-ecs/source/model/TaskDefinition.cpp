@@ -45,7 +45,8 @@ TaskDefinition::TaskDefinition() :
     m_proxyConfigurationHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
     m_deregisteredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false)
+    m_registeredByHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_proxyConfigurationHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
     m_deregisteredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false)
+    m_registeredByHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -258,6 +260,13 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_registeredByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ephemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -423,6 +432,12 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_registeredByHasBeenSet)
   {
    payload.WithString("registeredBy", m_registeredBy);
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

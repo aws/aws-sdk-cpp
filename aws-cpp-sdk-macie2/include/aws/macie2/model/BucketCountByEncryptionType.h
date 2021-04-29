@@ -23,8 +23,11 @@ namespace Model
 
   /**
    * <p>Provides information about the number of S3 buckets that use certain types of
-   * server-side encryption by default or don't encrypt new objects by
-   * default.</p><p><h3>See Also:</h3>   <a
+   * server-side encryption by default or don't encrypt new objects by default. For
+   * detailed information about these settings, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting
+   * default server-side encryption behavior for Amazon S3 buckets</a> in the
+   * <i>Amazon Simple Storage Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEncryptionType">AWS
    * API Reference</a></p>
    */
@@ -41,7 +44,7 @@ namespace Model
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
      * customer master key (CMK) to encrypt new objects by default. These buckets use
      * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
-     * (SSE-KMS).</p>
+     * (SSE-KMS) by default.</p>
      */
     inline long long GetKmsManaged() const{ return m_kmsManaged; }
 
@@ -49,7 +52,7 @@ namespace Model
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
      * customer master key (CMK) to encrypt new objects by default. These buckets use
      * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
-     * (SSE-KMS).</p>
+     * (SSE-KMS) by default.</p>
      */
     inline bool KmsManagedHasBeenSet() const { return m_kmsManagedHasBeenSet; }
 
@@ -57,7 +60,7 @@ namespace Model
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
      * customer master key (CMK) to encrypt new objects by default. These buckets use
      * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
-     * (SSE-KMS).</p>
+     * (SSE-KMS) by default.</p>
      */
     inline void SetKmsManaged(long long value) { m_kmsManagedHasBeenSet = true; m_kmsManaged = value; }
 
@@ -65,32 +68,36 @@ namespace Model
      * <p>The total number of buckets that use an AWS Key Management Service (AWS KMS)
      * customer master key (CMK) to encrypt new objects by default. These buckets use
      * AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption
-     * (SSE-KMS).</p>
+     * (SSE-KMS) by default.</p>
      */
     inline BucketCountByEncryptionType& WithKmsManaged(long long value) { SetKmsManaged(value); return *this;}
 
 
     /**
      * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
-     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by
+     * default.</p>
      */
     inline long long GetS3Managed() const{ return m_s3Managed; }
 
     /**
      * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
-     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by
+     * default.</p>
      */
     inline bool S3ManagedHasBeenSet() const { return m_s3ManagedHasBeenSet; }
 
     /**
      * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
-     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by
+     * default.</p>
      */
     inline void SetS3Managed(long long value) { m_s3ManagedHasBeenSet = true; m_s3Managed = value; }
 
     /**
      * <p>The total number of buckets that use an Amazon S3 managed key to encrypt new
-     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3).</p>
+     * objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by
+     * default.</p>
      */
     inline BucketCountByEncryptionType& WithS3Managed(long long value) { SetS3Managed(value); return *this;}
 
@@ -119,6 +126,35 @@ namespace Model
      */
     inline BucketCountByEncryptionType& WithUnencrypted(long long value) { SetUnencrypted(value); return *this;}
 
+
+    /**
+     * <p>The total number of buckets that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the default encryption
+     * settings for these buckets.</p>
+     */
+    inline long long GetUnknown() const{ return m_unknown; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the default encryption
+     * settings for these buckets.</p>
+     */
+    inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the default encryption
+     * settings for these buckets.</p>
+     */
+    inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
+
+    /**
+     * <p>The total number of buckets that Amazon Macie doesn't have current encryption
+     * metadata for. Macie can't provide current data about the default encryption
+     * settings for these buckets.</p>
+     */
+    inline BucketCountByEncryptionType& WithUnknown(long long value) { SetUnknown(value); return *this;}
+
   private:
 
     long long m_kmsManaged;
@@ -129,6 +165,9 @@ namespace Model
 
     long long m_unencrypted;
     bool m_unencryptedHasBeenSet;
+
+    long long m_unknown;
+    bool m_unknownHasBeenSet;
   };
 
 } // namespace Model

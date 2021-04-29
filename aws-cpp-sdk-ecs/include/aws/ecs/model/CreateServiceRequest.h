@@ -636,90 +636,74 @@ namespace Model
 
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate platform versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -1683,32 +1667,38 @@ namespace Model
 
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline const DeploymentController& GetDeploymentController() const{ return m_deploymentController; }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline bool DeploymentControllerHasBeenSet() const { return m_deploymentControllerHasBeenSet; }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline void SetDeploymentController(const DeploymentController& value) { m_deploymentControllerHasBeenSet = true; m_deploymentController = value; }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline void SetDeploymentController(DeploymentController&& value) { m_deploymentControllerHasBeenSet = true; m_deploymentController = std::move(value); }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline CreateServiceRequest& WithDeploymentController(const DeploymentController& value) { SetDeploymentController(value); return *this;}
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline CreateServiceRequest& WithDeploymentController(DeploymentController&& value) { SetDeploymentController(std::move(value)); return *this;}
 

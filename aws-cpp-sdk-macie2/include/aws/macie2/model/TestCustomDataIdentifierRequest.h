@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeywords() const{ return m_keywords; }
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(const Aws::Vector<Aws::String>& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline void SetKeywords(Aws::Vector<Aws::String>&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
@@ -150,7 +150,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline TestCustomDataIdentifierRequest& WithKeywords(const Aws::Vector<Aws::String>& value) { SetKeywords(value); return *this;}
@@ -158,7 +158,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline TestCustomDataIdentifierRequest& WithKeywords(Aws::Vector<Aws::String>&& value) { SetKeywords(std::move(value)); return *this;}
@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline TestCustomDataIdentifierRequest& AddKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }
@@ -174,7 +174,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline TestCustomDataIdentifierRequest& AddKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords.push_back(std::move(value)); return *this; }
@@ -182,7 +182,7 @@ namespace Model
     /**
      * <p>An array that lists specific character sequences (keywords), one of which
      * must be within proximity (maximumMatchDistance) of the regular expression to
-     * match. The array can contain as many as 50 keywords. Each keyword can contain 4
+     * match. The array can contain as many as 50 keywords. Each keyword can contain 3
      * - 90 characters. Keywords aren't case sensitive.</p>
      */
     inline TestCustomDataIdentifierRequest& AddKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.push_back(value); return *this; }

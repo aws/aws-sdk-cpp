@@ -13,6 +13,7 @@
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/ecs/model/TaskStopCode.h>
+#include <aws/ecs/model/EphemeralStorage.h>
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/Container.h>
@@ -1924,6 +1925,37 @@ namespace Model
      */
     inline Task& WithVersion(long long value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline Task& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline Task& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Attachment> m_attachments;
@@ -2027,6 +2059,9 @@ namespace Model
 
     long long m_version;
     bool m_versionHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model
