@@ -7,6 +7,7 @@
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/customer-profiles/CustomerProfilesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/model/MatchingRequest.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -218,6 +219,43 @@ namespace Model
 
 
     /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline const MatchingRequest& GetMatching() const{ return m_matching; }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline bool MatchingHasBeenSet() const { return m_matchingHasBeenSet; }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline void SetMatching(const MatchingRequest& value) { m_matchingHasBeenSet = true; m_matching = value; }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline void SetMatching(MatchingRequest&& value) { m_matchingHasBeenSet = true; m_matching = std::move(value); }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline CreateDomainRequest& WithMatching(const MatchingRequest& value) { SetMatching(value); return *this;}
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline CreateDomainRequest& WithMatching(MatchingRequest&& value) { SetMatching(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -295,6 +333,9 @@ namespace Model
 
     Aws::String m_deadLetterQueueUrl;
     bool m_deadLetterQueueUrlHasBeenSet;
+
+    MatchingRequest m_matching;
+    bool m_matchingHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

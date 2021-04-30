@@ -91,6 +91,7 @@ namespace Model
         class DeleteForecastExportJobRequest;
         class DeletePredictorRequest;
         class DeletePredictorBacktestExportJobRequest;
+        class DeleteResourceTreeRequest;
         class DescribeDatasetRequest;
         class DescribeDatasetGroupRequest;
         class DescribeDatasetImportJobRequest;
@@ -126,6 +127,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteForecastExportJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeletePredictorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeletePredictorBacktestExportJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ForecastServiceError> DeleteResourceTreeOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetResult, ForecastServiceError> DescribeDatasetOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetGroupResult, ForecastServiceError> DescribeDatasetGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeDatasetImportJobResult, ForecastServiceError> DescribeDatasetImportJobOutcome;
@@ -161,6 +163,7 @@ namespace Model
         typedef std::future<DeleteForecastExportJobOutcome> DeleteForecastExportJobOutcomeCallable;
         typedef std::future<DeletePredictorOutcome> DeletePredictorOutcomeCallable;
         typedef std::future<DeletePredictorBacktestExportJobOutcome> DeletePredictorBacktestExportJobOutcomeCallable;
+        typedef std::future<DeleteResourceTreeOutcome> DeleteResourceTreeOutcomeCallable;
         typedef std::future<DescribeDatasetOutcome> DescribeDatasetOutcomeCallable;
         typedef std::future<DescribeDatasetGroupOutcome> DescribeDatasetGroupOutcomeCallable;
         typedef std::future<DescribeDatasetImportJobOutcome> DescribeDatasetImportJobOutcomeCallable;
@@ -199,6 +202,7 @@ namespace Model
     typedef std::function<void(const ForecastServiceClient*, const Model::DeleteForecastExportJobRequest&, const Model::DeleteForecastExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteForecastExportJobResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeletePredictorRequest&, const Model::DeletePredictorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePredictorResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DeletePredictorBacktestExportJobRequest&, const Model::DeletePredictorBacktestExportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePredictorBacktestExportJobResponseReceivedHandler;
+    typedef std::function<void(const ForecastServiceClient*, const Model::DeleteResourceTreeRequest&, const Model::DeleteResourceTreeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceTreeResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetRequest&, const Model::DescribeDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetGroupRequest&, const Model::DescribeDatasetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetGroupResponseReceivedHandler;
     typedef std::function<void(const ForecastServiceClient*, const Model::DescribeDatasetImportJobRequest&, const Model::DescribeDatasetImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDatasetImportJobResponseReceivedHandler;
@@ -1037,6 +1041,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePredictorBacktestExportJobAsync(const Model::DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an entire resource tree. This operation will delete the parent
+         * resource and its child resources.</p> <p>Child resources are resources that were
+         * created from another resource. For example, when a forecast is generated from a
+         * predictor, the forecast is the child resource and the predictor is the parent
+         * resource.</p> <p>Amazon Forecast resources possess the following parent-child
+         * resource hierarchies:</p> <ul> <li> <p> <b>Dataset Group</b>: predictors,
+         * predictor backtest export jobs, forecasts, forecast export jobs</p> </li> <li>
+         * <p> <b>Dataset</b>: dataset import jobs</p> </li> <li> <p> <b>Predictor</b>:
+         * predictor backtest export jobs, forecasts, forecast export jobs</p> </li> <li>
+         * <p> <b>Forecast</b>: forecast export jobs</p> </li> </ul>  <p>
+         * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and
+         * will not delete datasets or exported files stored in Amazon S3. </p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceTreeOutcome DeleteResourceTree(const Model::DeleteResourceTreeRequest& request) const;
+
+        /**
+         * <p>Deletes an entire resource tree. This operation will delete the parent
+         * resource and its child resources.</p> <p>Child resources are resources that were
+         * created from another resource. For example, when a forecast is generated from a
+         * predictor, the forecast is the child resource and the predictor is the parent
+         * resource.</p> <p>Amazon Forecast resources possess the following parent-child
+         * resource hierarchies:</p> <ul> <li> <p> <b>Dataset Group</b>: predictors,
+         * predictor backtest export jobs, forecasts, forecast export jobs</p> </li> <li>
+         * <p> <b>Dataset</b>: dataset import jobs</p> </li> <li> <p> <b>Predictor</b>:
+         * predictor backtest export jobs, forecasts, forecast export jobs</p> </li> <li>
+         * <p> <b>Forecast</b>: forecast export jobs</p> </li> </ul>  <p>
+         * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and
+         * will not delete datasets or exported files stored in Amazon S3. </p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourceTreeOutcomeCallable DeleteResourceTreeCallable(const Model::DeleteResourceTreeRequest& request) const;
+
+        /**
+         * <p>Deletes an entire resource tree. This operation will delete the parent
+         * resource and its child resources.</p> <p>Child resources are resources that were
+         * created from another resource. For example, when a forecast is generated from a
+         * predictor, the forecast is the child resource and the predictor is the parent
+         * resource.</p> <p>Amazon Forecast resources possess the following parent-child
+         * resource hierarchies:</p> <ul> <li> <p> <b>Dataset Group</b>: predictors,
+         * predictor backtest export jobs, forecasts, forecast export jobs</p> </li> <li>
+         * <p> <b>Dataset</b>: dataset import jobs</p> </li> <li> <p> <b>Predictor</b>:
+         * predictor backtest export jobs, forecasts, forecast export jobs</p> </li> <li>
+         * <p> <b>Forecast</b>: forecast export jobs</p> </li> </ul>  <p>
+         * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and
+         * will not delete datasets or exported files stored in Amazon S3. </p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourceTreeAsync(const Model::DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes an Amazon Forecast dataset created using the <a>CreateDataset</a>
@@ -1898,6 +1963,7 @@ namespace Model
         void DeleteForecastExportJobAsyncHelper(const Model::DeleteForecastExportJobRequest& request, const DeleteForecastExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePredictorAsyncHelper(const Model::DeletePredictorRequest& request, const DeletePredictorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePredictorBacktestExportJobAsyncHelper(const Model::DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourceTreeAsyncHelper(const Model::DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetAsyncHelper(const Model::DescribeDatasetRequest& request, const DescribeDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetGroupAsyncHelper(const Model::DescribeDatasetGroupRequest& request, const DescribeDatasetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDatasetImportJobAsyncHelper(const Model::DescribeDatasetImportJobRequest& request, const DescribeDatasetImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

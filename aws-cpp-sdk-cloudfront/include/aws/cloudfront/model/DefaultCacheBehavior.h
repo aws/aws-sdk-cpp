@@ -11,6 +11,7 @@
 #include <aws/cloudfront/model/ViewerProtocolPolicy.h>
 #include <aws/cloudfront/model/AllowedMethods.h>
 #include <aws/cloudfront/model/LambdaFunctionAssociations.h>
+#include <aws/cloudfront/model/FunctionAssociations.h>
 #include <utility>
 
 namespace Aws
@@ -556,6 +557,49 @@ namespace Model
 
 
     /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline const FunctionAssociations& GetFunctionAssociations() const{ return m_functionAssociations; }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline bool FunctionAssociationsHasBeenSet() const { return m_functionAssociationsHasBeenSet; }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline void SetFunctionAssociations(const FunctionAssociations& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = value; }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline void SetFunctionAssociations(FunctionAssociations&& value) { m_functionAssociationsHasBeenSet = true; m_functionAssociations = std::move(value); }
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline DefaultCacheBehavior& WithFunctionAssociations(const FunctionAssociations& value) { SetFunctionAssociations(value); return *this;}
+
+    /**
+     * <p>A list of CloudFront functions that are associated with this cache behavior.
+     * CloudFront functions must be published to the <code>LIVE</code> stage to
+     * associate them with a cache behavior.</p>
+     */
+    inline DefaultCacheBehavior& WithFunctionAssociations(FunctionAssociations&& value) { SetFunctionAssociations(std::move(value)); return *this;}
+
+
+    /**
      * <p>The value of <code>ID</code> for the field-level encryption configuration
      * that you want CloudFront to use for encrypting specific fields of data for the
      * default cache behavior.</p>
@@ -684,7 +728,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline const Aws::String& GetCachePolicyId() const{ return m_cachePolicyId; }
 
@@ -695,7 +741,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline bool CachePolicyIdHasBeenSet() const { return m_cachePolicyIdHasBeenSet; }
 
@@ -706,7 +754,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline void SetCachePolicyId(const Aws::String& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = value; }
 
@@ -717,7 +767,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline void SetCachePolicyId(Aws::String&& value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId = std::move(value); }
 
@@ -728,7 +780,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline void SetCachePolicyId(const char* value) { m_cachePolicyIdHasBeenSet = true; m_cachePolicyId.assign(value); }
 
@@ -739,7 +793,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(const Aws::String& value) { SetCachePolicyId(value); return *this;}
 
@@ -750,7 +806,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(Aws::String&& value) { SetCachePolicyId(std::move(value)); return *this;}
 
@@ -761,7 +819,9 @@ namespace Model
      * cache policies</a> or <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
      * the managed cache policies</a> in the <i>Amazon CloudFront Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>A <code>DefaultCacheBehavior</code> must include either a
+     * <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that
+     * you use a <code>CachePolicyId</code>.</p>
      */
     inline DefaultCacheBehavior& WithCachePolicyId(const char* value) { SetCachePolicyId(value); return *this;}
 
@@ -879,6 +939,9 @@ namespace Model
 
     LambdaFunctionAssociations m_lambdaFunctionAssociations;
     bool m_lambdaFunctionAssociationsHasBeenSet;
+
+    FunctionAssociations m_functionAssociations;
+    bool m_functionAssociationsHasBeenSet;
 
     Aws::String m_fieldLevelEncryptionId;
     bool m_fieldLevelEncryptionIdHasBeenSet;

@@ -541,17 +541,20 @@ namespace Model
 
 
     /**
-     * <p>The estimated time in minutes for the predictor training job to complete.</p>
+     * <p>The estimated time remaining in minutes for the predictor training job to
+     * complete.</p>
      */
     inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
 
     /**
-     * <p>The estimated time in minutes for the predictor training job to complete.</p>
+     * <p>The estimated time remaining in minutes for the predictor training job to
+     * complete.</p>
      */
     inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
 
     /**
-     * <p>The estimated time in minutes for the predictor training job to complete.</p>
+     * <p>The estimated time remaining in minutes for the predictor training job to
+     * complete.</p>
      */
     inline DescribePredictorResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
 

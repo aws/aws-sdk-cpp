@@ -227,17 +227,17 @@ namespace Model
 
 
     /**
-     * <p>The estimated time in minutes for the forecast job to complete.</p>
+     * <p>The estimated time remaining in minutes for the forecast job to complete.</p>
      */
     inline long long GetEstimatedTimeRemainingInMinutes() const{ return m_estimatedTimeRemainingInMinutes; }
 
     /**
-     * <p>The estimated time in minutes for the forecast job to complete.</p>
+     * <p>The estimated time remaining in minutes for the forecast job to complete.</p>
      */
     inline void SetEstimatedTimeRemainingInMinutes(long long value) { m_estimatedTimeRemainingInMinutes = value; }
 
     /**
-     * <p>The estimated time in minutes for the forecast job to complete.</p>
+     * <p>The estimated time remaining in minutes for the forecast job to complete.</p>
      */
     inline DescribeForecastResult& WithEstimatedTimeRemainingInMinutes(long long value) { SetEstimatedTimeRemainingInMinutes(value); return *this;}
 

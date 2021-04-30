@@ -26,6 +26,7 @@
 #include <aws/cloudfront/model/CreateDistributionWithTags2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/CreateFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateInvalidation2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/CreateMonitoringSubscription2020_05_31Request.h>
@@ -39,12 +40,14 @@
 #include <aws/cloudfront/model/DeleteDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/DeleteFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteMonitoringSubscription2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/DeletePublicKey2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteRealtimeLogConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/DeleteStreamingDistribution2020_05_31Request.h>
+#include <aws/cloudfront/model/DescribeFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCachePolicyConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetCloudFrontOriginAccessIdentity2020_05_31Request.h>
@@ -55,6 +58,7 @@
 #include <aws/cloudfront/model/GetFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/GetFieldLevelEncryptionProfile2020_05_31Request.h>
 #include <aws/cloudfront/model/GetFieldLevelEncryptionProfileConfig2020_05_31Request.h>
+#include <aws/cloudfront/model/GetFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/GetInvalidation2020_05_31Request.h>
 #include <aws/cloudfront/model/GetKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/GetKeyGroupConfig2020_05_31Request.h>
@@ -76,6 +80,7 @@
 #include <aws/cloudfront/model/ListDistributionsByWebACLId2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionConfigs2020_05_31Request.h>
 #include <aws/cloudfront/model/ListFieldLevelEncryptionProfiles2020_05_31Request.h>
+#include <aws/cloudfront/model/ListFunctions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListInvalidations2020_05_31Request.h>
 #include <aws/cloudfront/model/ListKeyGroups2020_05_31Request.h>
 #include <aws/cloudfront/model/ListOriginRequestPolicies2020_05_31Request.h>
@@ -83,13 +88,16 @@
 #include <aws/cloudfront/model/ListRealtimeLogConfigs2020_05_31Request.h>
 #include <aws/cloudfront/model/ListStreamingDistributions2020_05_31Request.h>
 #include <aws/cloudfront/model/ListTagsForResource2020_05_31Request.h>
+#include <aws/cloudfront/model/PublishFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/TagResource2020_05_31Request.h>
+#include <aws/cloudfront/model/TestFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/UntagResource2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCachePolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateCloudFrontOriginAccessIdentity2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateDistribution2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionConfig2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateFieldLevelEncryptionProfile2020_05_31Request.h>
+#include <aws/cloudfront/model/UpdateFunction2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateKeyGroup2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdateOriginRequestPolicy2020_05_31Request.h>
 #include <aws/cloudfront/model/UpdatePublicKey2020_05_31Request.h>
@@ -332,6 +340,33 @@ void CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31Async(const Cr
 void CloudFrontClient::CreateFieldLevelEncryptionProfile2020_05_31AsyncHelper(const CreateFieldLevelEncryptionProfile2020_05_31Request& request, const CreateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateFieldLevelEncryptionProfile2020_05_31(request), context);
+}
+
+CreateFunction2020_05_31Outcome CloudFrontClient::CreateFunction2020_05_31(const CreateFunction2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateFunction2020_05_31OutcomeCallable CloudFrontClient::CreateFunction2020_05_31Callable(const CreateFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::CreateFunction2020_05_31Async(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::CreateFunction2020_05_31AsyncHelper(const CreateFunction2020_05_31Request& request, const CreateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFunction2020_05_31(request), context);
 }
 
 CreateInvalidation2020_05_31Outcome CloudFrontClient::CreateInvalidation2020_05_31(const CreateInvalidation2020_05_31Request& request) const
@@ -731,6 +766,44 @@ void CloudFrontClient::DeleteFieldLevelEncryptionProfile2020_05_31AsyncHelper(co
   handler(this, request, DeleteFieldLevelEncryptionProfile2020_05_31(request), context);
 }
 
+DeleteFunction2020_05_31Outcome CloudFrontClient::DeleteFunction2020_05_31(const DeleteFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunction2020_05_31", "Required field: Name, is not set");
+    return DeleteFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunction2020_05_31", "Required field: IfMatch, is not set");
+    return DeleteFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function/";
+  ss << request.GetName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
+}
+
+DeleteFunction2020_05_31OutcomeCallable CloudFrontClient::DeleteFunction2020_05_31Callable(const DeleteFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DeleteFunction2020_05_31Async(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DeleteFunction2020_05_31AsyncHelper(const DeleteFunction2020_05_31Request& request, const DeleteFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFunction2020_05_31(request), context);
+}
+
 DeleteKeyGroup2020_05_31Outcome CloudFrontClient::DeleteKeyGroup2020_05_31(const DeleteKeyGroup2020_05_31Request& request) const
 {
   if (!request.IdHasBeenSet())
@@ -922,6 +995,40 @@ void CloudFrontClient::DeleteStreamingDistribution2020_05_31Async(const DeleteSt
 void CloudFrontClient::DeleteStreamingDistribution2020_05_31AsyncHelper(const DeleteStreamingDistribution2020_05_31Request& request, const DeleteStreamingDistribution2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteStreamingDistribution2020_05_31(request), context);
+}
+
+DescribeFunction2020_05_31Outcome CloudFrontClient::DescribeFunction2020_05_31(const DescribeFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFunction2020_05_31", "Required field: Name, is not set");
+    return DescribeFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function/";
+  ss << request.GetName();
+  ss << "/describe";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+DescribeFunction2020_05_31OutcomeCallable CloudFrontClient::DescribeFunction2020_05_31Callable(const DescribeFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::DescribeFunction2020_05_31Async(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::DescribeFunction2020_05_31AsyncHelper(const DescribeFunction2020_05_31Request& request, const DescribeFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFunction2020_05_31(request), context);
 }
 
 GetCachePolicy2020_05_31Outcome CloudFrontClient::GetCachePolicy2020_05_31(const GetCachePolicy2020_05_31Request& request) const
@@ -1257,6 +1364,39 @@ void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31Async(const
 void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2020_05_31AsyncHelper(const GetFieldLevelEncryptionProfileConfig2020_05_31Request& request, const GetFieldLevelEncryptionProfileConfig2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFieldLevelEncryptionProfileConfig2020_05_31(request), context);
+}
+
+GetFunction2020_05_31Outcome CloudFrontClient::GetFunction2020_05_31(const GetFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunction2020_05_31", "Required field: Name, is not set");
+    return GetFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function/";
+  ss << request.GetName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetFunction2020_05_31Outcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+GetFunction2020_05_31OutcomeCallable CloudFrontClient::GetFunction2020_05_31Callable(const GetFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::GetFunction2020_05_31Async(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::GetFunction2020_05_31AsyncHelper(const GetFunction2020_05_31Request& request, const GetFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFunction2020_05_31(request), context);
 }
 
 GetInvalidation2020_05_31Outcome CloudFrontClient::GetInvalidation2020_05_31(const GetInvalidation2020_05_31Request& request) const
@@ -1922,6 +2062,33 @@ void CloudFrontClient::ListFieldLevelEncryptionProfiles2020_05_31AsyncHelper(con
   handler(this, request, ListFieldLevelEncryptionProfiles2020_05_31(request), context);
 }
 
+ListFunctions2020_05_31Outcome CloudFrontClient::ListFunctions2020_05_31(const ListFunctions2020_05_31Request& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListFunctions2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET));
+}
+
+ListFunctions2020_05_31OutcomeCallable CloudFrontClient::ListFunctions2020_05_31Callable(const ListFunctions2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFunctions2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctions2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::ListFunctions2020_05_31Async(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFunctions2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::ListFunctions2020_05_31AsyncHelper(const ListFunctions2020_05_31Request& request, const ListFunctions2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFunctions2020_05_31(request), context);
+}
+
 ListInvalidations2020_05_31Outcome CloudFrontClient::ListInvalidations2020_05_31(const ListInvalidations2020_05_31Request& request) const
 {
   if (!request.DistributionIdHasBeenSet())
@@ -2123,6 +2290,45 @@ void CloudFrontClient::ListTagsForResource2020_05_31AsyncHelper(const ListTagsFo
   handler(this, request, ListTagsForResource2020_05_31(request), context);
 }
 
+PublishFunction2020_05_31Outcome CloudFrontClient::PublishFunction2020_05_31(const PublishFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PublishFunction2020_05_31", "Required field: Name, is not set");
+    return PublishFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PublishFunction2020_05_31", "Required field: IfMatch, is not set");
+    return PublishFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function/";
+  ss << request.GetName();
+  ss << "/publish";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PublishFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PublishFunction2020_05_31OutcomeCallable CloudFrontClient::PublishFunction2020_05_31Callable(const PublishFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PublishFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::PublishFunction2020_05_31Async(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PublishFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::PublishFunction2020_05_31AsyncHelper(const PublishFunction2020_05_31Request& request, const PublishFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PublishFunction2020_05_31(request), context);
+}
+
 TagResource2020_05_31Outcome CloudFrontClient::TagResource2020_05_31(const TagResource2020_05_31Request& request) const
 {
   if (!request.ResourceHasBeenSet())
@@ -2155,6 +2361,45 @@ void CloudFrontClient::TagResource2020_05_31Async(const TagResource2020_05_31Req
 void CloudFrontClient::TagResource2020_05_31AsyncHelper(const TagResource2020_05_31Request& request, const TagResource2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagResource2020_05_31(request), context);
+}
+
+TestFunction2020_05_31Outcome CloudFrontClient::TestFunction2020_05_31(const TestFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestFunction2020_05_31", "Required field: Name, is not set");
+    return TestFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestFunction2020_05_31", "Required field: IfMatch, is not set");
+    return TestFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function/";
+  ss << request.GetName();
+  ss << "/test";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return TestFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+TestFunction2020_05_31OutcomeCallable CloudFrontClient::TestFunction2020_05_31Callable(const TestFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::TestFunction2020_05_31Async(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::TestFunction2020_05_31AsyncHelper(const TestFunction2020_05_31Request& request, const TestFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestFunction2020_05_31(request), context);
 }
 
 UntagResource2020_05_31Outcome CloudFrontClient::UntagResource2020_05_31(const UntagResource2020_05_31Request& request) const
@@ -2358,6 +2603,44 @@ void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31Async(const Up
 void CloudFrontClient::UpdateFieldLevelEncryptionProfile2020_05_31AsyncHelper(const UpdateFieldLevelEncryptionProfile2020_05_31Request& request, const UpdateFieldLevelEncryptionProfile2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFieldLevelEncryptionProfile2020_05_31(request), context);
+}
+
+UpdateFunction2020_05_31Outcome CloudFrontClient::UpdateFunction2020_05_31(const UpdateFunction2020_05_31Request& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunction2020_05_31", "Required field: Name, is not set");
+    return UpdateFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  if (!request.IfMatchHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunction2020_05_31", "Required field: IfMatch, is not set");
+    return UpdateFunction2020_05_31Outcome(Aws::Client::AWSError<CloudFrontErrors>(CloudFrontErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IfMatch]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2020-05-31/function/";
+  ss << request.GetName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateFunction2020_05_31Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT));
+}
+
+UpdateFunction2020_05_31OutcomeCallable CloudFrontClient::UpdateFunction2020_05_31Callable(const UpdateFunction2020_05_31Request& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFunction2020_05_31Outcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunction2020_05_31(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFrontClient::UpdateFunction2020_05_31Async(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunction2020_05_31AsyncHelper( request, handler, context ); } );
+}
+
+void CloudFrontClient::UpdateFunction2020_05_31AsyncHelper(const UpdateFunction2020_05_31Request& request, const UpdateFunction2020_05_31ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFunction2020_05_31(request), context);
 }
 
 UpdateKeyGroup2020_05_31Outcome CloudFrontClient::UpdateKeyGroup2020_05_31(const UpdateKeyGroup2020_05_31Request& request) const

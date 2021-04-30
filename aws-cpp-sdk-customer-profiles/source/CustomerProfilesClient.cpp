@@ -31,6 +31,7 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetDomainRequest.h>
 #include <aws/customer-profiles/model/GetIntegrationRequest.h>
+#include <aws/customer-profiles/model/GetMatchesRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/customer-profiles/model/ListProfileObjectTypesRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectsRequest.h>
 #include <aws/customer-profiles/model/ListTagsForResourceRequest.h>
+#include <aws/customer-profiles/model/MergeProfilesRequest.h>
 #include <aws/customer-profiles/model/PutIntegrationRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeRequest.h>
@@ -499,6 +501,40 @@ void CustomerProfilesClient::GetIntegrationAsyncHelper(const GetIntegrationReque
   handler(this, request, GetIntegration(request), context);
 }
 
+GetMatchesOutcome CustomerProfilesClient::GetMatches(const GetMatchesRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMatches", "Required field: DomainName, is not set");
+    return GetMatchesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/domains/";
+  ss << request.GetDomainName();
+  ss << "/matches";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetMatchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMatchesOutcomeCallable CustomerProfilesClient::GetMatchesCallable(const GetMatchesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMatchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMatches(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CustomerProfilesClient::GetMatchesAsync(const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMatchesAsyncHelper( request, handler, context ); } );
+}
+
+void CustomerProfilesClient::GetMatchesAsyncHelper(const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMatches(request), context);
+}
+
 GetProfileObjectTypeOutcome CustomerProfilesClient::GetProfileObjectType(const GetProfileObjectTypeRequest& request) const
 {
   if (!request.DomainNameHasBeenSet())
@@ -786,6 +822,40 @@ void CustomerProfilesClient::ListTagsForResourceAsync(const ListTagsForResourceR
 void CustomerProfilesClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+MergeProfilesOutcome CustomerProfilesClient::MergeProfiles(const MergeProfilesRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("MergeProfiles", "Required field: DomainName, is not set");
+    return MergeProfilesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/domains/";
+  ss << request.GetDomainName();
+  ss << "/profiles/objects/merge";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return MergeProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+MergeProfilesOutcomeCallable CustomerProfilesClient::MergeProfilesCallable(const MergeProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergeProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergeProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CustomerProfilesClient::MergeProfilesAsync(const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergeProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void CustomerProfilesClient::MergeProfilesAsyncHelper(const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergeProfiles(request), context);
 }
 
 PutIntegrationOutcome CustomerProfilesClient::PutIntegration(const PutIntegrationRequest& request) const

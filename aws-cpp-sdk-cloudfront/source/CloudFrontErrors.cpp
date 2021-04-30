@@ -30,7 +30,10 @@ static const int TOO_MANY_HEADERS_IN_FORWARDED_VALUES_HASH = HashingUtils::HashS
 static const int INCONSISTENT_QUANTITIES_HASH = HashingUtils::HashString("InconsistentQuantities");
 static const int TOO_MANY_COOKIES_IN_ORIGIN_REQUEST_POLICY_HASH = HashingUtils::HashString("TooManyCookiesInOriginRequestPolicy");
 static const int INVALID_IF_MATCH_VERSION_HASH = HashingUtils::HashString("InvalidIfMatchVersion");
+static const int FUNCTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("FunctionAlreadyExists");
 static const int INVALID_TAGGING_HASH = HashingUtils::HashString("InvalidTagging");
+static const int NO_SUCH_FUNCTION_EXISTS_HASH = HashingUtils::HashString("NoSuchFunctionExists");
+static const int REALTIME_LOG_CONFIG_OWNER_MISMATCH_HASH = HashingUtils::HashString("RealtimeLogConfigOwnerMismatch");
 static const int TOO_MANY_DISTRIBUTIONS_HASH = HashingUtils::HashString("TooManyDistributions");
 static const int CACHE_POLICY_IN_USE_HASH = HashingUtils::HashString("CachePolicyInUse");
 static const int INVALID_LOCATION_CODE_HASH = HashingUtils::HashString("InvalidLocationCode");
@@ -39,6 +42,7 @@ static const int TOO_MANY_QUERY_STRING_PARAMETERS_HASH = HashingUtils::HashStrin
 static const int TOO_MANY_CERTIFICATES_HASH = HashingUtils::HashString("TooManyCertificates");
 static const int REALTIME_LOG_CONFIG_ALREADY_EXISTS_HASH = HashingUtils::HashString("RealtimeLogConfigAlreadyExists");
 static const int NO_SUCH_PUBLIC_KEY_HASH = HashingUtils::HashString("NoSuchPublicKey");
+static const int TOO_MANY_DISTRIBUTIONS_WITH_FUNCTION_ASSOCIATIONS_HASH = HashingUtils::HashString("TooManyDistributionsWithFunctionAssociations");
 static const int TOO_MANY_CACHE_POLICIES_HASH = HashingUtils::HashString("TooManyCachePolicies");
 static const int ORIGIN_REQUEST_POLICY_IN_USE_HASH = HashingUtils::HashString("OriginRequestPolicyInUse");
 static const int NO_SUCH_CACHE_POLICY_HASH = HashingUtils::HashString("NoSuchCachePolicy");
@@ -64,7 +68,11 @@ static const int C_N_A_M_E_ALREADY_EXISTS_HASH = HashingUtils::HashString("CNAME
 static const int TOO_MANY_COOKIES_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyCookiesInCachePolicy");
 static const int INVALID_REQUIRED_PROTOCOL_HASH = HashingUtils::HashString("InvalidRequiredProtocol");
 static const int TOO_MANY_DISTRIBUTIONS_WITH_LAMBDA_ASSOCIATIONS_HASH = HashingUtils::HashString("TooManyDistributionsWithLambdaAssociations");
+static const int FUNCTION_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FunctionSizeLimitExceeded");
+static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperation");
+static const int INVALID_FUNCTION_ASSOCIATION_HASH = HashingUtils::HashString("InvalidFunctionAssociation");
 static const int TOO_MANY_LAMBDA_FUNCTION_ASSOCIATIONS_HASH = HashingUtils::HashString("TooManyLambdaFunctionAssociations");
+static const int TOO_MANY_FUNCTION_ASSOCIATIONS_HASH = HashingUtils::HashString("TooManyFunctionAssociations");
 static const int TOO_MANY_QUERY_STRINGS_IN_ORIGIN_REQUEST_POLICY_HASH = HashingUtils::HashString("TooManyQueryStringsInOriginRequestPolicy");
 static const int TOO_MANY_PUBLIC_KEYS_HASH = HashingUtils::HashString("TooManyPublicKeys");
 static const int TOO_MANY_STREAMING_DISTRIBUTIONS_HASH = HashingUtils::HashString("TooManyStreamingDistributions");
@@ -77,6 +85,8 @@ static const int NO_SUCH_REALTIME_LOG_CONFIG_HASH = HashingUtils::HashString("No
 static const int TOO_MANY_ORIGINS_HASH = HashingUtils::HashString("TooManyOrigins");
 static const int TOO_MANY_QUERY_STRINGS_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyQueryStringsInCachePolicy");
 static const int DISTRIBUTION_ALREADY_EXISTS_HASH = HashingUtils::HashString("DistributionAlreadyExists");
+static const int FUNCTION_IN_USE_HASH = HashingUtils::HashString("FunctionInUse");
+static const int TOO_MANY_FUNCTIONS_HASH = HashingUtils::HashString("TooManyFunctions");
 static const int FIELD_LEVEL_ENCRYPTION_PROFILE_SIZE_EXCEEDED_HASH = HashingUtils::HashString("FieldLevelEncryptionProfileSizeExceeded");
 static const int TOO_MANY_CACHE_BEHAVIORS_HASH = HashingUtils::HashString("TooManyCacheBehaviors");
 static const int TOO_MANY_HEADERS_IN_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyHeadersInCachePolicy");
@@ -101,6 +111,7 @@ static const int QUERY_ARG_PROFILE_EMPTY_HASH = HashingUtils::HashString("QueryA
 static const int TOO_MANY_DISTRIBUTIONS_ASSOCIATED_TO_CACHE_POLICY_HASH = HashingUtils::HashString("TooManyDistributionsAssociatedToCachePolicy");
 static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailed");
 static const int TOO_MANY_COOKIE_NAMES_IN_WHITE_LIST_HASH = HashingUtils::HashString("TooManyCookieNamesInWhiteList");
+static const int TEST_FUNCTION_FAILED_HASH = HashingUtils::HashString("TestFunctionFailed");
 static const int INVALID_LAMBDA_FUNCTION_ASSOCIATION_HASH = HashingUtils::HashString("InvalidLambdaFunctionAssociation");
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_CONTENT_TYPE_PROFILES_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionContentTypeProfiles");
 static const int TOO_MANY_FIELD_LEVEL_ENCRYPTION_ENCRYPTION_ENTITIES_HASH = HashingUtils::HashString("TooManyFieldLevelEncryptionEncryptionEntities");
@@ -181,9 +192,21 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_IF_MATCH_VERSION), false);
   }
+  else if (hashCode == FUNCTION_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::FUNCTION_ALREADY_EXISTS), false);
+  }
   else if (hashCode == INVALID_TAGGING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_TAGGING), false);
+  }
+  else if (hashCode == NO_SUCH_FUNCTION_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_FUNCTION_EXISTS), false);
+  }
+  else if (hashCode == REALTIME_LOG_CONFIG_OWNER_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::REALTIME_LOG_CONFIG_OWNER_MISMATCH), false);
   }
   else if (hashCode == TOO_MANY_DISTRIBUTIONS_HASH)
   {
@@ -216,6 +239,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_SUCH_PUBLIC_KEY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::NO_SUCH_PUBLIC_KEY), false);
+  }
+  else if (hashCode == TOO_MANY_DISTRIBUTIONS_WITH_FUNCTION_ASSOCIATIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_WITH_FUNCTION_ASSOCIATIONS), false);
   }
   else if (hashCode == TOO_MANY_CACHE_POLICIES_HASH)
   {
@@ -317,9 +344,25 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_DISTRIBUTIONS_WITH_LAMBDA_ASSOCIATIONS), false);
   }
+  else if (hashCode == FUNCTION_SIZE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::FUNCTION_SIZE_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::UNSUPPORTED_OPERATION), false);
+  }
+  else if (hashCode == INVALID_FUNCTION_ASSOCIATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::INVALID_FUNCTION_ASSOCIATION), false);
+  }
   else if (hashCode == TOO_MANY_LAMBDA_FUNCTION_ASSOCIATIONS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_LAMBDA_FUNCTION_ASSOCIATIONS), false);
+  }
+  else if (hashCode == TOO_MANY_FUNCTION_ASSOCIATIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_FUNCTION_ASSOCIATIONS), false);
   }
   else if (hashCode == TOO_MANY_QUERY_STRINGS_IN_ORIGIN_REQUEST_POLICY_HASH)
   {
@@ -368,6 +411,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DISTRIBUTION_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::DISTRIBUTION_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == FUNCTION_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::FUNCTION_IN_USE), false);
+  }
+  else if (hashCode == TOO_MANY_FUNCTIONS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_FUNCTIONS), false);
   }
   else if (hashCode == FIELD_LEVEL_ENCRYPTION_PROFILE_SIZE_EXCEEDED_HASH)
   {
@@ -464,6 +515,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_COOKIE_NAMES_IN_WHITE_LIST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TOO_MANY_COOKIE_NAMES_IN_WHITE_LIST), false);
+  }
+  else if (hashCode == TEST_FUNCTION_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFrontErrors::TEST_FUNCTION_FAILED), false);
   }
   else if (hashCode == INVALID_LAMBDA_FUNCTION_ASSOCIATION_HASH)
   {

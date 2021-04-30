@@ -522,14 +522,14 @@ namespace Model
          * service-linked AWS Identity and Access Management (IAM) role that gives Amazon
          * Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For
          * information, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
-         * export job permissions requirements</a> in the Amazon Personalize developer
-         * guide. </p> <p> <b>Status</b> </p> <p>A dataset export job can be in one of the
-         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-         * ACTIVE -or- CREATE FAILED</p> </li> </ul> <p> To get the status of the export
-         * job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
-         * (ARN) of the dataset export job. The dataset export is complete when the status
-         * shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+         * a dataset</a> in the Amazon Personalize developer guide. </p> <p> <b>Status</b>
+         * </p> <p>A dataset export job can be in one of the following states:</p> <ul>
+         * <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
+         * FAILED</p> </li> </ul> <p> To get the status of the export job, call
+         * <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name (ARN) of
+         * the dataset export job. The dataset export is complete when the status shows as
+         * ACTIVE. If the status shows as CREATE FAILED, the response includes a
          * <code>failureReason</code> key, which describes why the job failed.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">AWS
@@ -543,14 +543,14 @@ namespace Model
          * service-linked AWS Identity and Access Management (IAM) role that gives Amazon
          * Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For
          * information, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
-         * export job permissions requirements</a> in the Amazon Personalize developer
-         * guide. </p> <p> <b>Status</b> </p> <p>A dataset export job can be in one of the
-         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-         * ACTIVE -or- CREATE FAILED</p> </li> </ul> <p> To get the status of the export
-         * job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
-         * (ARN) of the dataset export job. The dataset export is complete when the status
-         * shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+         * a dataset</a> in the Amazon Personalize developer guide. </p> <p> <b>Status</b>
+         * </p> <p>A dataset export job can be in one of the following states:</p> <ul>
+         * <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
+         * FAILED</p> </li> </ul> <p> To get the status of the export job, call
+         * <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name (ARN) of
+         * the dataset export job. The dataset export is complete when the status shows as
+         * ACTIVE. If the status shows as CREATE FAILED, the response includes a
          * <code>failureReason</code> key, which describes why the job failed.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">AWS
@@ -566,14 +566,14 @@ namespace Model
          * service-linked AWS Identity and Access Management (IAM) role that gives Amazon
          * Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For
          * information, see <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-permissions.html">Dataset
-         * export job permissions requirements</a> in the Amazon Personalize developer
-         * guide. </p> <p> <b>Status</b> </p> <p>A dataset export job can be in one of the
-         * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
-         * ACTIVE -or- CREATE FAILED</p> </li> </ul> <p> To get the status of the export
-         * job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
-         * (ARN) of the dataset export job. The dataset export is complete when the status
-         * shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+         * a dataset</a> in the Amazon Personalize developer guide. </p> <p> <b>Status</b>
+         * </p> <p>A dataset export job can be in one of the following states:</p> <ul>
+         * <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE
+         * FAILED</p> </li> </ul> <p> To get the status of the export job, call
+         * <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name (ARN) of
+         * the dataset export job. The dataset export is complete when the status shows as
+         * ACTIVE. If the status shows as CREATE FAILED, the response includes a
          * <code>failureReason</code> key, which describes why the job failed.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob">AWS

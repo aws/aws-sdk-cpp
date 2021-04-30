@@ -22,6 +22,7 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetDomainResult.h>
 #include <aws/customer-profiles/model/GetIntegrationResult.h>
+#include <aws/customer-profiles/model/GetMatchesResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateResult.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsResult.h>
@@ -31,6 +32,7 @@
 #include <aws/customer-profiles/model/ListProfileObjectTypesResult.h>
 #include <aws/customer-profiles/model/ListProfileObjectsResult.h>
 #include <aws/customer-profiles/model/ListTagsForResourceResult.h>
+#include <aws/customer-profiles/model/MergeProfilesResult.h>
 #include <aws/customer-profiles/model/PutIntegrationResult.h>
 #include <aws/customer-profiles/model/PutProfileObjectResult.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeResult.h>
@@ -89,6 +91,7 @@ namespace Model
         class DeleteProfileObjectTypeRequest;
         class GetDomainRequest;
         class GetIntegrationRequest;
+        class GetMatchesRequest;
         class GetProfileObjectTypeRequest;
         class GetProfileObjectTypeTemplateRequest;
         class ListAccountIntegrationsRequest;
@@ -98,6 +101,7 @@ namespace Model
         class ListProfileObjectTypesRequest;
         class ListProfileObjectsRequest;
         class ListTagsForResourceRequest;
+        class MergeProfilesRequest;
         class PutIntegrationRequest;
         class PutProfileObjectRequest;
         class PutProfileObjectTypeRequest;
@@ -118,6 +122,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteProfileObjectTypeResult, CustomerProfilesError> DeleteProfileObjectTypeOutcome;
         typedef Aws::Utils::Outcome<GetDomainResult, CustomerProfilesError> GetDomainOutcome;
         typedef Aws::Utils::Outcome<GetIntegrationResult, CustomerProfilesError> GetIntegrationOutcome;
+        typedef Aws::Utils::Outcome<GetMatchesResult, CustomerProfilesError> GetMatchesOutcome;
         typedef Aws::Utils::Outcome<GetProfileObjectTypeResult, CustomerProfilesError> GetProfileObjectTypeOutcome;
         typedef Aws::Utils::Outcome<GetProfileObjectTypeTemplateResult, CustomerProfilesError> GetProfileObjectTypeTemplateOutcome;
         typedef Aws::Utils::Outcome<ListAccountIntegrationsResult, CustomerProfilesError> ListAccountIntegrationsOutcome;
@@ -127,6 +132,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListProfileObjectTypesResult, CustomerProfilesError> ListProfileObjectTypesOutcome;
         typedef Aws::Utils::Outcome<ListProfileObjectsResult, CustomerProfilesError> ListProfileObjectsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, CustomerProfilesError> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<MergeProfilesResult, CustomerProfilesError> MergeProfilesOutcome;
         typedef Aws::Utils::Outcome<PutIntegrationResult, CustomerProfilesError> PutIntegrationOutcome;
         typedef Aws::Utils::Outcome<PutProfileObjectResult, CustomerProfilesError> PutProfileObjectOutcome;
         typedef Aws::Utils::Outcome<PutProfileObjectTypeResult, CustomerProfilesError> PutProfileObjectTypeOutcome;
@@ -147,6 +153,7 @@ namespace Model
         typedef std::future<DeleteProfileObjectTypeOutcome> DeleteProfileObjectTypeOutcomeCallable;
         typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
         typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
+        typedef std::future<GetMatchesOutcome> GetMatchesOutcomeCallable;
         typedef std::future<GetProfileObjectTypeOutcome> GetProfileObjectTypeOutcomeCallable;
         typedef std::future<GetProfileObjectTypeTemplateOutcome> GetProfileObjectTypeTemplateOutcomeCallable;
         typedef std::future<ListAccountIntegrationsOutcome> ListAccountIntegrationsOutcomeCallable;
@@ -156,6 +163,7 @@ namespace Model
         typedef std::future<ListProfileObjectTypesOutcome> ListProfileObjectTypesOutcomeCallable;
         typedef std::future<ListProfileObjectsOutcome> ListProfileObjectsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<MergeProfilesOutcome> MergeProfilesOutcomeCallable;
         typedef std::future<PutIntegrationOutcome> PutIntegrationOutcomeCallable;
         typedef std::future<PutProfileObjectOutcome> PutProfileObjectOutcomeCallable;
         typedef std::future<PutProfileObjectTypeOutcome> PutProfileObjectTypeOutcomeCallable;
@@ -179,6 +187,7 @@ namespace Model
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectTypeRequest&, const Model::DeleteProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetIntegrationRequest&, const Model::GetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntegrationResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::GetMatchesRequest&, const Model::GetMatchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMatchesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeRequest&, const Model::GetProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetProfileObjectTypeTemplateRequest&, const Model::GetProfileObjectTypeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProfileObjectTypeTemplateResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListAccountIntegrationsRequest&, const Model::ListAccountIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountIntegrationsResponseReceivedHandler;
@@ -188,6 +197,7 @@ namespace Model
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectTypesRequest&, const Model::ListProfileObjectTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectTypesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListProfileObjectsRequest&, const Model::ListProfileObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProfileObjectsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::MergeProfilesRequest&, const Model::MergeProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MergeProfilesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::PutIntegrationRequest&, const Model::PutIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutIntegrationResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::PutProfileObjectRequest&, const Model::PutProfileObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProfileObjectResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::PutProfileObjectTypeRequest&, const Model::PutProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutProfileObjectTypeResponseReceivedHandler;
@@ -568,6 +578,76 @@ namespace Model
         virtual void GetIntegrationAsync(const Model::GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
+         * <p>Before calling this API, use <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
+         * to enable identity resolution: set <code>Matching</code> to true.</p>
+         * <p>GetMatches returns potentially matching profiles, based on the results of the
+         * latest run of a machine learning process. </p>  <p>Amazon Connect
+         * runs a batch process every Saturday at 12AM UTC to identify matching profiles.
+         * The results are returned up to seven days after the Saturday run.</p>
+         *  <p>Amazon Connect uses the following profile attributes to identify
+         * matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p>
+         * </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li>
+         * <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
+         * <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li>
+         * <p>BusinessName</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMatchesOutcome GetMatches(const Model::GetMatchesRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
+         * <p>Before calling this API, use <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
+         * to enable identity resolution: set <code>Matching</code> to true.</p>
+         * <p>GetMatches returns potentially matching profiles, based on the results of the
+         * latest run of a machine learning process. </p>  <p>Amazon Connect
+         * runs a batch process every Saturday at 12AM UTC to identify matching profiles.
+         * The results are returned up to seven days after the Saturday run.</p>
+         *  <p>Amazon Connect uses the following profile attributes to identify
+         * matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p>
+         * </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li>
+         * <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
+         * <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li>
+         * <p>BusinessName</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMatchesOutcomeCallable GetMatchesCallable(const Model::GetMatchesRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
+         * <p>Before calling this API, use <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
+         * to enable identity resolution: set <code>Matching</code> to true.</p>
+         * <p>GetMatches returns potentially matching profiles, based on the results of the
+         * latest run of a machine learning process. </p>  <p>Amazon Connect
+         * runs a batch process every Saturday at 12AM UTC to identify matching profiles.
+         * The results are returned up to seven days after the Saturday run.</p>
+         *  <p>Amazon Connect uses the following profile attributes to identify
+         * matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p>
+         * </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li>
+         * <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li>
+         * <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> <li>
+         * <p>BusinessName</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetMatches">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMatchesAsync(const Model::GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the object types for a specific domain.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetProfileObjectType">AWS
          * API Reference</a></p>
@@ -829,6 +909,85 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
+         * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the
+         * profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
+         * profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code>
+         * will be moved to the main profile.</p> </li> <li> <p>All the
+         * <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All
+         * the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the
+         * main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol>
+         * <li> <p>Fields are always "union"-ed if there are no conflicts in standard
+         * fields or attributeKeys.</p> </li> <li> <p>When there are conflicting
+         * fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified,
+         * the main Profile value is always taken. </p> </li> <li> <p>If a
+         * <code>SourceProfileIds</code> entry is specified, the specified profileId is
+         * always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li>
+         * </ol> <p>You can use MergeProfiles together with <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>,
+         * which returns potentially matching profiles, or use it with the results of
+         * another matching system. After profiles have been merged, they cannot be
+         * separated (unmerged).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MergeProfilesOutcome MergeProfiles(const Model::MergeProfilesRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
+         * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the
+         * profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
+         * profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code>
+         * will be moved to the main profile.</p> </li> <li> <p>All the
+         * <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All
+         * the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the
+         * main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol>
+         * <li> <p>Fields are always "union"-ed if there are no conflicts in standard
+         * fields or attributeKeys.</p> </li> <li> <p>When there are conflicting
+         * fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified,
+         * the main Profile value is always taken. </p> </li> <li> <p>If a
+         * <code>SourceProfileIds</code> entry is specified, the specified profileId is
+         * always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li>
+         * </ol> <p>You can use MergeProfiles together with <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>,
+         * which returns potentially matching profiles, or use it with the results of
+         * another matching system. After profiles have been merged, they cannot be
+         * separated (unmerged).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MergeProfilesOutcomeCallable MergeProfilesCallable(const Model::MergeProfilesRequest& request) const;
+
+        /**
+         * <p>This API is in preview release for Amazon Connect and subject to change.</p>
+         * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the
+         * profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
+         * profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code>
+         * will be moved to the main profile.</p> </li> <li> <p>All the
+         * <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All
+         * the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the
+         * main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol>
+         * <li> <p>Fields are always "union"-ed if there are no conflicts in standard
+         * fields or attributeKeys.</p> </li> <li> <p>When there are conflicting
+         * fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified,
+         * the main Profile value is always taken. </p> </li> <li> <p>If a
+         * <code>SourceProfileIds</code> entry is specified, the specified profileId is
+         * always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li>
+         * </ol> <p>You can use MergeProfiles together with <a
+         * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>,
+         * which returns potentially matching profiles, or use it with the results of
+         * another matching system. After profiles have been merged, they cannot be
+         * separated (unmerged).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/MergeProfiles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MergeProfilesAsync(const Model::MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds an integration between the service and a third-party service, which
          * includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to
          * only one domain.</p><p><h3>See Also:</h3>   <a
@@ -1058,7 +1217,7 @@ namespace Model
 
         /**
          * <p>Updates the properties of a domain, including creating or selecting a dead
-         * letter queue or an encryption key.</p> <p>Once a domain is created, the name
+         * letter queue or an encryption key.</p> <p>After a domain is created, the name
          * can’t be changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
@@ -1067,7 +1226,7 @@ namespace Model
 
         /**
          * <p>Updates the properties of a domain, including creating or selecting a dead
-         * letter queue or an encryption key.</p> <p>Once a domain is created, the name
+         * letter queue or an encryption key.</p> <p>After a domain is created, the name
          * can’t be changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
@@ -1078,7 +1237,7 @@ namespace Model
 
         /**
          * <p>Updates the properties of a domain, including creating or selecting a dead
-         * letter queue or an encryption key.</p> <p>Once a domain is created, the name
+         * letter queue or an encryption key.</p> <p>After a domain is created, the name
          * can’t be changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateDomain">AWS
          * API Reference</a></p>
@@ -1139,6 +1298,7 @@ namespace Model
         void DeleteProfileObjectTypeAsyncHelper(const Model::DeleteProfileObjectTypeRequest& request, const DeleteProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainAsyncHelper(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntegrationAsyncHelper(const Model::GetIntegrationRequest& request, const GetIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMatchesAsyncHelper(const Model::GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProfileObjectTypeAsyncHelper(const Model::GetProfileObjectTypeRequest& request, const GetProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetProfileObjectTypeTemplateAsyncHelper(const Model::GetProfileObjectTypeTemplateRequest& request, const GetProfileObjectTypeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountIntegrationsAsyncHelper(const Model::ListAccountIntegrationsRequest& request, const ListAccountIntegrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1148,6 +1308,7 @@ namespace Model
         void ListProfileObjectTypesAsyncHelper(const Model::ListProfileObjectTypesRequest& request, const ListProfileObjectTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProfileObjectsAsyncHelper(const Model::ListProfileObjectsRequest& request, const ListProfileObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MergeProfilesAsyncHelper(const Model::MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutIntegrationAsyncHelper(const Model::PutIntegrationRequest& request, const PutIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutProfileObjectAsyncHelper(const Model::PutProfileObjectRequest& request, const PutProfileObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutProfileObjectTypeAsyncHelper(const Model::PutProfileObjectTypeRequest& request, const PutProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

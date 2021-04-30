@@ -34,6 +34,7 @@
 #include <aws/forecast/model/DeleteForecastExportJobRequest.h>
 #include <aws/forecast/model/DeletePredictorRequest.h>
 #include <aws/forecast/model/DeletePredictorBacktestExportJobRequest.h>
+#include <aws/forecast/model/DeleteResourceTreeRequest.h>
 #include <aws/forecast/model/DescribeDatasetRequest.h>
 #include <aws/forecast/model/DescribeDatasetGroupRequest.h>
 #include <aws/forecast/model/DescribeDatasetImportJobRequest.h>
@@ -504,6 +505,33 @@ void ForecastServiceClient::DeletePredictorBacktestExportJobAsync(const DeletePr
 void ForecastServiceClient::DeletePredictorBacktestExportJobAsyncHelper(const DeletePredictorBacktestExportJobRequest& request, const DeletePredictorBacktestExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePredictorBacktestExportJob(request), context);
+}
+
+DeleteResourceTreeOutcome ForecastServiceClient::DeleteResourceTree(const DeleteResourceTreeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteResourceTreeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteResourceTreeOutcomeCallable ForecastServiceClient::DeleteResourceTreeCallable(const DeleteResourceTreeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourceTreeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourceTree(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ForecastServiceClient::DeleteResourceTreeAsync(const DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourceTreeAsyncHelper( request, handler, context ); } );
+}
+
+void ForecastServiceClient::DeleteResourceTreeAsyncHelper(const DeleteResourceTreeRequest& request, const DeleteResourceTreeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourceTree(request), context);
 }
 
 DescribeDatasetOutcome ForecastServiceClient::DescribeDataset(const DescribeDatasetRequest& request) const
