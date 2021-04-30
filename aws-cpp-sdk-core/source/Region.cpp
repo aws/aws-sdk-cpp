@@ -15,6 +15,10 @@ namespace Aws
             {
                 return Aws::Region::US_EAST_1;
             }
+            else if (region == "fips-aws-global")
+            {
+                return Aws::Region::US_EAST_1;
+            }
             else if (region == "s3-external-1")
             {
                 return Aws::Region::US_EAST_1;

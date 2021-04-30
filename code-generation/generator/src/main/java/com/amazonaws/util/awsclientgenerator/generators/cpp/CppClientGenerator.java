@@ -400,14 +400,20 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
+            endpoints.put("fips-aws-global", "organizations-fips.us-east-1.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("route53")) {
             endpoints.put("us-gov-west-1", "route53.us-gov.amazonaws.com");
             endpoints.put("us-iso-east-1", "route53.c2s.ic.gov");
+            endpoints.put("fips-aws-global", "route53-fips.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("route53.amazonaws.com");
 
-        } else if (serviceModel.getServiceName().equals("sts")) {
+        } else if (serviceModel.getServiceName().equals("shield")) {
+            endpoints.put("fips-aws-global", "shield-fips.us-east-1.amazonaws.com");
+        }
+
+        else if (serviceModel.getServiceName().equals("sts")) {
              serviceModel.getMetadata().setGlobalEndpoint(null);
         }
 

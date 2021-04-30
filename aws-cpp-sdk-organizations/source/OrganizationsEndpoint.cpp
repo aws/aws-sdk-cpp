@@ -18,6 +18,7 @@ namespace OrganizationsEndpoint
 {
 
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
+  static const int FIPS_AWS_GLOBAL_HASH = Aws::Utils::HashingUtils::HashString("fips-aws-global");
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
@@ -28,6 +29,10 @@ namespace OrganizationsEndpoint
       if(hash == US_GOV_WEST_1_HASH)
       {
         return "organizations.us-gov-west-1.amazonaws.com";
+      }
+      if(hash == FIPS_AWS_GLOBAL_HASH)
+      {
+        return "organizations-fips.us-east-1.amazonaws.com";
       }
     }
     return "organizations.us-east-1.amazonaws.com";
