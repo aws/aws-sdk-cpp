@@ -14,7 +14,10 @@
 #include <aws/securityhub/model/AwsEc2VolumeDetails.h>
 #include <aws/securityhub/model/AwsEc2VpcDetails.h>
 #include <aws/securityhub/model/AwsEc2EipDetails.h>
+#include <aws/securityhub/model/AwsEc2SubnetDetails.h>
+#include <aws/securityhub/model/AwsEc2NetworkAclDetails.h>
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
+#include <aws/securityhub/model/AwsElasticBeanstalkEnvironmentDetails.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/securityhub/model/AwsS3BucketDetails.h>
 #include <aws/securityhub/model/AwsS3AccountPublicAccessBlockDetails.h>
@@ -367,6 +370,68 @@ namespace Model
 
 
     /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline const AwsEc2SubnetDetails& GetAwsEc2Subnet() const{ return m_awsEc2Subnet; }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline bool AwsEc2SubnetHasBeenSet() const { return m_awsEc2SubnetHasBeenSet; }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline void SetAwsEc2Subnet(const AwsEc2SubnetDetails& value) { m_awsEc2SubnetHasBeenSet = true; m_awsEc2Subnet = value; }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline void SetAwsEc2Subnet(AwsEc2SubnetDetails&& value) { m_awsEc2SubnetHasBeenSet = true; m_awsEc2Subnet = std::move(value); }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Subnet(const AwsEc2SubnetDetails& value) { SetAwsEc2Subnet(value); return *this;}
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Subnet(AwsEc2SubnetDetails&& value) { SetAwsEc2Subnet(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline const AwsEc2NetworkAclDetails& GetAwsEc2NetworkAcl() const{ return m_awsEc2NetworkAcl; }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline bool AwsEc2NetworkAclHasBeenSet() const { return m_awsEc2NetworkAclHasBeenSet; }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline void SetAwsEc2NetworkAcl(const AwsEc2NetworkAclDetails& value) { m_awsEc2NetworkAclHasBeenSet = true; m_awsEc2NetworkAcl = value; }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline void SetAwsEc2NetworkAcl(AwsEc2NetworkAclDetails&& value) { m_awsEc2NetworkAclHasBeenSet = true; m_awsEc2NetworkAcl = std::move(value); }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline ResourceDetails& WithAwsEc2NetworkAcl(const AwsEc2NetworkAclDetails& value) { SetAwsEc2NetworkAcl(value); return *this;}
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline ResourceDetails& WithAwsEc2NetworkAcl(AwsEc2NetworkAclDetails&& value) { SetAwsEc2NetworkAcl(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about a load balancer.</p>
      */
     inline const AwsElbv2LoadBalancerDetails& GetAwsElbv2LoadBalancer() const{ return m_awsElbv2LoadBalancer; }
@@ -395,6 +460,37 @@ namespace Model
      * <p>Details about a load balancer.</p>
      */
     inline ResourceDetails& WithAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetails&& value) { SetAwsElbv2LoadBalancer(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline const AwsElasticBeanstalkEnvironmentDetails& GetAwsElasticBeanstalkEnvironment() const{ return m_awsElasticBeanstalkEnvironment; }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline bool AwsElasticBeanstalkEnvironmentHasBeenSet() const { return m_awsElasticBeanstalkEnvironmentHasBeenSet; }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline void SetAwsElasticBeanstalkEnvironment(const AwsElasticBeanstalkEnvironmentDetails& value) { m_awsElasticBeanstalkEnvironmentHasBeenSet = true; m_awsElasticBeanstalkEnvironment = value; }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline void SetAwsElasticBeanstalkEnvironment(AwsElasticBeanstalkEnvironmentDetails&& value) { m_awsElasticBeanstalkEnvironmentHasBeenSet = true; m_awsElasticBeanstalkEnvironment = std::move(value); }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline ResourceDetails& WithAwsElasticBeanstalkEnvironment(const AwsElasticBeanstalkEnvironmentDetails& value) { SetAwsElasticBeanstalkEnvironment(value); return *this;}
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline ResourceDetails& WithAwsElasticBeanstalkEnvironment(AwsElasticBeanstalkEnvironmentDetails&& value) { SetAwsElasticBeanstalkEnvironment(std::move(value)); return *this;}
 
 
     /**
@@ -1555,8 +1651,17 @@ namespace Model
     AwsEc2EipDetails m_awsEc2Eip;
     bool m_awsEc2EipHasBeenSet;
 
+    AwsEc2SubnetDetails m_awsEc2Subnet;
+    bool m_awsEc2SubnetHasBeenSet;
+
+    AwsEc2NetworkAclDetails m_awsEc2NetworkAcl;
+    bool m_awsEc2NetworkAclHasBeenSet;
+
     AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
     bool m_awsElbv2LoadBalancerHasBeenSet;
+
+    AwsElasticBeanstalkEnvironmentDetails m_awsElasticBeanstalkEnvironment;
+    bool m_awsElasticBeanstalkEnvironmentHasBeenSet;
 
     AwsElasticsearchDomainDetails m_awsElasticsearchDomain;
     bool m_awsElasticsearchDomainHasBeenSet;

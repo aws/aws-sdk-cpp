@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p> The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+     * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
      * <code>PRIVATE</code> retrieves private channels. Only an
      * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline const ChannelPrivacy& GetPrivacy() const{ return m_privacy; }
 
     /**
-     * <p> The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+     * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
      * <code>PRIVATE</code> retrieves private channels. Only an
      * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline bool PrivacyHasBeenSet() const { return m_privacyHasBeenSet; }
 
     /**
-     * <p> The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+     * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
      * <code>PRIVATE</code> retrieves private channels. Only an
      * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline void SetPrivacy(const ChannelPrivacy& value) { m_privacyHasBeenSet = true; m_privacy = value; }
 
     /**
-     * <p> The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+     * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
      * <code>PRIVATE</code> retrieves private channels. Only an
      * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline void SetPrivacy(ChannelPrivacy&& value) { m_privacyHasBeenSet = true; m_privacy = std::move(value); }
 
     /**
-     * <p> The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+     * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
      * <code>PRIVATE</code> retrieves private channels. Only an
      * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */
     inline ListChannelsRequest& WithPrivacy(const ChannelPrivacy& value) { SetPrivacy(value); return *this;}
 
     /**
-     * <p> The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+     * <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
      * <code>PRIVATE</code> retrieves private channels. Only an
      * <code>AppInstanceAdmin</code> can retrieve private channels. </p>
      */

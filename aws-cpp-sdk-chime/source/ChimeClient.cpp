@@ -25,6 +25,7 @@
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/AssociateSigninDelegateGroupsWithAccountRequest.h>
 #include <aws/chime/model/BatchCreateAttendeeRequest.h>
+#include <aws/chime/model/BatchCreateChannelMembershipRequest.h>
 #include <aws/chime/model/BatchCreateRoomMembershipRequest.h>
 #include <aws/chime/model/BatchDeletePhoneNumberRequest.h>
 #include <aws/chime/model/BatchSuspendUserRequest.h>
@@ -463,6 +464,51 @@ void ChimeClient::BatchCreateAttendeeAsync(const BatchCreateAttendeeRequest& req
 void ChimeClient::BatchCreateAttendeeAsyncHelper(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchCreateAttendee(request), context);
+}
+
+BatchCreateChannelMembershipOutcome ChimeClient::BatchCreateChannelMembership(const BatchCreateChannelMembershipRequest& request) const
+{
+  if (!request.ChannelArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchCreateChannelMembership", "Required field: ChannelArn, is not set");
+    return BatchCreateChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelArn]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  if (m_enableHostPrefixInjection)
+  {
+    uri.SetAuthority("messaging-" + uri.GetAuthority());
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("BatchCreateChannelMembership", "Invalid DNS host: " << uri.GetAuthority());
+      return BatchCreateChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+  Aws::StringStream ss;
+  ss << "/channels/";
+  ss << request.GetChannelArn();
+  ss << "/memberships";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=batch-create");
+  uri.SetQueryString(ss.str());
+  return BatchCreateChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchCreateChannelMembershipOutcomeCallable ChimeClient::BatchCreateChannelMembershipCallable(const BatchCreateChannelMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchCreateChannelMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateChannelMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::BatchCreateChannelMembershipAsync(const BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchCreateChannelMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::BatchCreateChannelMembershipAsyncHelper(const BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchCreateChannelMembership(request), context);
 }
 
 BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const BatchCreateRoomMembershipRequest& request) const

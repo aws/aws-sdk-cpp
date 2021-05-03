@@ -28,7 +28,10 @@ ResourceDetails::ResourceDetails() :
     m_awsEc2VolumeHasBeenSet(false),
     m_awsEc2VpcHasBeenSet(false),
     m_awsEc2EipHasBeenSet(false),
+    m_awsEc2SubnetHasBeenSet(false),
+    m_awsEc2NetworkAclHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
+    m_awsElasticBeanstalkEnvironmentHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
     m_awsS3AccountPublicAccessBlockHasBeenSet(false),
@@ -74,7 +77,10 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEc2VolumeHasBeenSet(false),
     m_awsEc2VpcHasBeenSet(false),
     m_awsEc2EipHasBeenSet(false),
+    m_awsEc2SubnetHasBeenSet(false),
+    m_awsEc2NetworkAclHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
+    m_awsElasticBeanstalkEnvironmentHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
     m_awsS3AccountPublicAccessBlockHasBeenSet(false),
@@ -176,11 +182,32 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEc2EipHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEc2Subnet"))
+  {
+    m_awsEc2Subnet = jsonValue.GetObject("AwsEc2Subnet");
+
+    m_awsEc2SubnetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2NetworkAcl"))
+  {
+    m_awsEc2NetworkAcl = jsonValue.GetObject("AwsEc2NetworkAcl");
+
+    m_awsEc2NetworkAclHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AwsElbv2LoadBalancer"))
   {
     m_awsElbv2LoadBalancer = jsonValue.GetObject("AwsElbv2LoadBalancer");
 
     m_awsElbv2LoadBalancerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsElasticBeanstalkEnvironment"))
+  {
+    m_awsElasticBeanstalkEnvironment = jsonValue.GetObject("AwsElasticBeanstalkEnvironment");
+
+    m_awsElasticBeanstalkEnvironmentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsElasticsearchDomain"))
@@ -471,9 +498,27 @@ JsonValue ResourceDetails::Jsonize() const
 
   }
 
+  if(m_awsEc2SubnetHasBeenSet)
+  {
+   payload.WithObject("AwsEc2Subnet", m_awsEc2Subnet.Jsonize());
+
+  }
+
+  if(m_awsEc2NetworkAclHasBeenSet)
+  {
+   payload.WithObject("AwsEc2NetworkAcl", m_awsEc2NetworkAcl.Jsonize());
+
+  }
+
   if(m_awsElbv2LoadBalancerHasBeenSet)
   {
    payload.WithObject("AwsElbv2LoadBalancer", m_awsElbv2LoadBalancer.Jsonize());
+
+  }
+
+  if(m_awsElasticBeanstalkEnvironmentHasBeenSet)
+  {
+   payload.WithObject("AwsElasticBeanstalkEnvironment", m_awsElasticBeanstalkEnvironment.Jsonize());
 
   }
 

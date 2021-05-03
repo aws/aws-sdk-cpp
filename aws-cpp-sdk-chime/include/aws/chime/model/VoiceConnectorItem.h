@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p> For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors
-   * to which to route inbound calls. Includes priority configuration settings.
-   * Limit: 3 <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector
-   * group. </p><p><h3>See Also:</h3>   <a
+   * <p>For Amazon Chime Voice Connector groups, the Amazon Chime Voice Connectors to
+   * which to route inbound calls. Includes priority configuration settings. Limit: 3
+   * <code>VoiceConnectorItems</code> per Amazon Chime Voice Connector
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/VoiceConnectorItem">AWS
    * API Reference</a></p>
    */

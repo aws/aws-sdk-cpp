@@ -16,6 +16,7 @@
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorGroupResult.h>
 #include <aws/chime/model/AssociateSigninDelegateGroupsWithAccountResult.h>
 #include <aws/chime/model/BatchCreateAttendeeResult.h>
+#include <aws/chime/model/BatchCreateChannelMembershipResult.h>
 #include <aws/chime/model/BatchCreateRoomMembershipResult.h>
 #include <aws/chime/model/BatchDeletePhoneNumberResult.h>
 #include <aws/chime/model/BatchSuspendUserResult.h>
@@ -201,6 +202,7 @@ namespace Model
         class AssociatePhoneNumbersWithVoiceConnectorGroupRequest;
         class AssociateSigninDelegateGroupsWithAccountRequest;
         class BatchCreateAttendeeRequest;
+        class BatchCreateChannelMembershipRequest;
         class BatchCreateRoomMembershipRequest;
         class BatchDeletePhoneNumberRequest;
         class BatchSuspendUserRequest;
@@ -381,6 +383,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociatePhoneNumbersWithVoiceConnectorGroupResult, ChimeError> AssociatePhoneNumbersWithVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<AssociateSigninDelegateGroupsWithAccountResult, ChimeError> AssociateSigninDelegateGroupsWithAccountOutcome;
         typedef Aws::Utils::Outcome<BatchCreateAttendeeResult, ChimeError> BatchCreateAttendeeOutcome;
+        typedef Aws::Utils::Outcome<BatchCreateChannelMembershipResult, ChimeError> BatchCreateChannelMembershipOutcome;
         typedef Aws::Utils::Outcome<BatchCreateRoomMembershipResult, ChimeError> BatchCreateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<BatchDeletePhoneNumberResult, ChimeError> BatchDeletePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<BatchSuspendUserResult, ChimeError> BatchSuspendUserOutcome;
@@ -563,6 +566,7 @@ namespace Model
         typedef std::future<AssociatePhoneNumbersWithVoiceConnectorGroupOutcome> AssociatePhoneNumbersWithVoiceConnectorGroupOutcomeCallable;
         typedef std::future<AssociateSigninDelegateGroupsWithAccountOutcome> AssociateSigninDelegateGroupsWithAccountOutcomeCallable;
         typedef std::future<BatchCreateAttendeeOutcome> BatchCreateAttendeeOutcomeCallable;
+        typedef std::future<BatchCreateChannelMembershipOutcome> BatchCreateChannelMembershipOutcomeCallable;
         typedef std::future<BatchCreateRoomMembershipOutcome> BatchCreateRoomMembershipOutcomeCallable;
         typedef std::future<BatchDeletePhoneNumberOutcome> BatchDeletePhoneNumberOutcomeCallable;
         typedef std::future<BatchSuspendUserOutcome> BatchSuspendUserOutcomeCallable;
@@ -748,6 +752,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest&, const Model::AssociatePhoneNumbersWithVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::AssociateSigninDelegateGroupsWithAccountRequest&, const Model::AssociateSigninDelegateGroupsWithAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSigninDelegateGroupsWithAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchCreateAttendeeRequest&, const Model::BatchCreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateAttendeeResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::BatchCreateChannelMembershipRequest&, const Model::BatchCreateChannelMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateChannelMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchCreateRoomMembershipRequest&, const Model::BatchCreateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchDeletePhoneNumberRequest&, const Model::BatchDeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeletePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchSuspendUserRequest&, const Model::BatchSuspendUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchSuspendUserResponseReceivedHandler;
@@ -1138,6 +1143,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchCreateAttendeeAsync(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateChannelMembershipOutcome BatchCreateChannelMembership(const Model::BatchCreateChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchCreateChannelMembershipOutcomeCallable BatchCreateChannelMembershipCallable(const Model::BatchCreateChannelMembershipRequest& request) const;
+
+        /**
+         * <p>Adds a specified number of users to a channel. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchCreateChannelMembershipAsync(const Model::BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account.
@@ -2260,8 +2290,8 @@ namespace Model
          * all users under that account are suspended.</p> <p>Deleted accounts appear in
          * your <code>Disabled</code> accounts list for 90 days. To restore deleted account
          * from your <code>Disabled</code> accounts list, you must contact AWS Support.</p>
-         * <p> After 90 days, deleted accounts are permanently removed from your
-         * <code>Disabled</code> accounts list. </p><p><h3>See Also:</h3>   <a
+         * <p>After 90 days, deleted accounts are permanently removed from your
+         * <code>Disabled</code> accounts list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">AWS
          * API Reference</a></p>
          */
@@ -2276,8 +2306,8 @@ namespace Model
          * all users under that account are suspended.</p> <p>Deleted accounts appear in
          * your <code>Disabled</code> accounts list for 90 days. To restore deleted account
          * from your <code>Disabled</code> accounts list, you must contact AWS Support.</p>
-         * <p> After 90 days, deleted accounts are permanently removed from your
-         * <code>Disabled</code> accounts list. </p><p><h3>See Also:</h3>   <a
+         * <p>After 90 days, deleted accounts are permanently removed from your
+         * <code>Disabled</code> accounts list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">AWS
          * API Reference</a></p>
          *
@@ -2294,8 +2324,8 @@ namespace Model
          * all users under that account are suspended.</p> <p>Deleted accounts appear in
          * your <code>Disabled</code> accounts list for 90 days. To restore deleted account
          * from your <code>Disabled</code> accounts list, you must contact AWS Support.</p>
-         * <p> After 90 days, deleted accounts are permanently removed from your
-         * <code>Disabled</code> accounts list. </p><p><h3>See Also:</h3>   <a
+         * <p>After 90 days, deleted accounts are permanently removed from your
+         * <code>Disabled</code> accounts list.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAccount">AWS
          * API Reference</a></p>
          *
@@ -2413,12 +2443,12 @@ namespace Model
         virtual void DeleteAppInstanceUserAsync(const Model::DeleteAppInstanceUserRequest& request, const DeleteAppInstanceUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
-         * their <code>JoinToken</code> . Attendees are automatically deleted when a Amazon
+         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
          * API Reference</a></p>
@@ -2426,12 +2456,12 @@ namespace Model
         virtual Model::DeleteAttendeeOutcome DeleteAttendee(const Model::DeleteAttendeeRequest& request) const;
 
         /**
-         * <p> Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
-         * their <code>JoinToken</code> . Attendees are automatically deleted when a Amazon
+         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
          * API Reference</a></p>
@@ -2441,12 +2471,12 @@ namespace Model
         virtual Model::DeleteAttendeeOutcomeCallable DeleteAttendeeCallable(const Model::DeleteAttendeeRequest& request) const;
 
         /**
-         * <p> Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
-         * their <code>JoinToken</code> . Attendees are automatically deleted when a Amazon
+         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
          * API Reference</a></p>
@@ -2663,10 +2693,9 @@ namespace Model
         virtual void DeleteEventsConfigurationAsync(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
-         * its attendees are also deleted, clients connected to the meeting are
-         * disconnected, and clients can no longer join the meeting. For more information
-         * about the Amazon Chime SDK, see <a
+         * <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all
+         * attendees, disconnects all clients, and prevents new clients from joining the
+         * meeting. For more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2676,10 +2705,9 @@ namespace Model
         virtual Model::DeleteMeetingOutcome DeleteMeeting(const Model::DeleteMeetingRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
-         * its attendees are also deleted, clients connected to the meeting are
-         * disconnected, and clients can no longer join the meeting. For more information
-         * about the Amazon Chime SDK, see <a
+         * <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all
+         * attendees, disconnects all clients, and prevents new clients from joining the
+         * meeting. For more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2691,10 +2719,9 @@ namespace Model
         virtual Model::DeleteMeetingOutcomeCallable DeleteMeetingCallable(const Model::DeleteMeetingRequest& request) const;
 
         /**
-         * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
-         * its attendees are also deleted, clients connected to the meeting are
-         * disconnected, and clients can no longer join the meeting. For more information
-         * about the Amazon Chime SDK, see <a
+         * <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all
+         * attendees, disconnects all clients, and prevents new clients from joining the
+         * meeting. For more information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
          * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2708,9 +2735,9 @@ namespace Model
         /**
          * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
-         * before it can be deleted.</p> <p> Deleted phone numbers remain in the
-         * <b>Deletion queue</b> for 7 days before they are deleted permanently.
-         * </p><p><h3>See Also:</h3>   <a
+         * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
+         * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -2719,9 +2746,9 @@ namespace Model
         /**
          * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
-         * before it can be deleted.</p> <p> Deleted phone numbers remain in the
-         * <b>Deletion queue</b> for 7 days before they are deleted permanently.
-         * </p><p><h3>See Also:</h3>   <a
+         * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
+         * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -2732,9 +2759,9 @@ namespace Model
         /**
          * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
-         * before it can be deleted.</p> <p> Deleted phone numbers remain in the
-         * <b>Deletion queue</b> for 7 days before they are deleted permanently.
-         * </p><p><h3>See Also:</h3>   <a
+         * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
+         * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeletePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -2939,18 +2966,18 @@ namespace Model
         virtual void DeleteVoiceConnectorEmergencyCallingConfigurationAsync(const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request, const DeleteVoiceConnectorEmergencyCallingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deletes the specified Amazon Chime Voice Connector group. Any
+         * <p>Deletes the specified Amazon Chime Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
-         * must be removed before it can be deleted. </p><p><h3>See Also:</h3>   <a
+         * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorGroupOutcome DeleteVoiceConnectorGroup(const Model::DeleteVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p> Deletes the specified Amazon Chime Voice Connector group. Any
+         * <p>Deletes the specified Amazon Chime Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
-         * must be removed before it can be deleted. </p><p><h3>See Also:</h3>   <a
+         * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -2959,9 +2986,9 @@ namespace Model
         virtual Model::DeleteVoiceConnectorGroupOutcomeCallable DeleteVoiceConnectorGroupCallable(const Model::DeleteVoiceConnectorGroupRequest& request) const;
 
         /**
-         * <p> Deletes the specified Amazon Chime Voice Connector group. Any
+         * <p>Deletes the specified Amazon Chime Voice Connector group. Any
          * <code>VoiceConnectorItems</code> and phone numbers associated with the group
-         * must be removed before it can be deleted. </p><p><h3>See Also:</h3>   <a
+         * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -4505,7 +4532,7 @@ namespace Model
         /**
          * <p>Lists the Amazon Chime accounts under the administrator's AWS account. You
          * can filter accounts by account name prefix. To find out which Amazon Chime
-         * account a user belongs to, toucan filter by the user's email address, which
+         * account a user belongs to, you can filter by the user's email address, which
          * returns one account result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">AWS
          * API Reference</a></p>
@@ -4515,7 +4542,7 @@ namespace Model
         /**
          * <p>Lists the Amazon Chime accounts under the administrator's AWS account. You
          * can filter accounts by account name prefix. To find out which Amazon Chime
-         * account a user belongs to, toucan filter by the user's email address, which
+         * account a user belongs to, you can filter by the user's email address, which
          * returns one account result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">AWS
          * API Reference</a></p>
@@ -4527,7 +4554,7 @@ namespace Model
         /**
          * <p>Lists the Amazon Chime accounts under the administrator's AWS account. You
          * can filter accounts by account name prefix. To find out which Amazon Chime
-         * account a user belongs to, toucan filter by the user's email address, which
+         * account a user belongs to, you can filter by the user's email address, which
          * returns one account result.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAccounts">AWS
          * API Reference</a></p>
@@ -4904,8 +4931,8 @@ namespace Model
         /**
          * <p>Lists all Channels created under a single Chime App as a paginated list. You
          * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
-         * &amp; restrictions</b> </p> <ul> <li> <p> Use privacy = <code>PUBLIC</code> to
-         * retrieve all public channels in the account </p> </li> <li> <p>Only an
+         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account.</p> </li> <li> <p>Only an
          * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
          * private channels in an account.</p> </li> </ul>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
@@ -4919,8 +4946,8 @@ namespace Model
         /**
          * <p>Lists all Channels created under a single Chime App as a paginated list. You
          * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
-         * &amp; restrictions</b> </p> <ul> <li> <p> Use privacy = <code>PUBLIC</code> to
-         * retrieve all public channels in the account </p> </li> <li> <p>Only an
+         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account.</p> </li> <li> <p>Only an
          * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
          * private channels in an account.</p> </li> </ul>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
@@ -4936,8 +4963,8 @@ namespace Model
         /**
          * <p>Lists all Channels created under a single Chime App as a paginated list. You
          * can specify filters to narrow results.</p> <p class="title"> <b>Functionality
-         * &amp; restrictions</b> </p> <ul> <li> <p> Use privacy = <code>PUBLIC</code> to
-         * retrieve all public channels in the account </p> </li> <li> <p>Only an
+         * &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to
+         * retrieve all public channels in the account.</p> </li> <li> <p>Only an
          * <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
          * private channels in an account.</p> </li> </ul>  <p>The
          * <code>x-amz-chime-bearer</code> request header is mandatory. Use the
@@ -6869,6 +6896,7 @@ namespace Model
         void AssociatePhoneNumbersWithVoiceConnectorGroupAsyncHelper(const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request, const AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSigninDelegateGroupsWithAccountAsyncHelper(const Model::AssociateSigninDelegateGroupsWithAccountRequest& request, const AssociateSigninDelegateGroupsWithAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchCreateAttendeeAsyncHelper(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchCreateChannelMembershipAsyncHelper(const Model::BatchCreateChannelMembershipRequest& request, const BatchCreateChannelMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchCreateRoomMembershipAsyncHelper(const Model::BatchCreateRoomMembershipRequest& request, const BatchCreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDeletePhoneNumberAsyncHelper(const Model::BatchDeletePhoneNumberRequest& request, const BatchDeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchSuspendUserAsyncHelper(const Model::BatchSuspendUserRequest& request, const BatchSuspendUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p> The phone number ID, product type, or calling name fields to update, used
-   * with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>The phone number ID, product type, or calling name fields to update, used
+   * with the <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a>
+   * actions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberRequestItem">AWS
    * API Reference</a></p>
    */
