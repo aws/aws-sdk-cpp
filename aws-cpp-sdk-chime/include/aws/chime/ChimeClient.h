@@ -115,6 +115,7 @@
 #include <aws/chime/model/ListRoomsResult.h>
 #include <aws/chime/model/ListSipMediaApplicationsResult.h>
 #include <aws/chime/model/ListSipRulesResult.h>
+#include <aws/chime/model/ListSupportedPhoneNumberCountriesResult.h>
 #include <aws/chime/model/ListTagsForResourceResult.h>
 #include <aws/chime/model/ListUsersResult.h>
 #include <aws/chime/model/ListVoiceConnectorGroupsResult.h>
@@ -325,6 +326,7 @@ namespace Model
         class ListRoomsRequest;
         class ListSipMediaApplicationsRequest;
         class ListSipRulesRequest;
+        class ListSupportedPhoneNumberCountriesRequest;
         class ListTagsForResourceRequest;
         class ListUsersRequest;
         class ListVoiceConnectorGroupsRequest;
@@ -508,6 +510,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRoomsResult, ChimeError> ListRoomsOutcome;
         typedef Aws::Utils::Outcome<ListSipMediaApplicationsResult, ChimeError> ListSipMediaApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListSipRulesResult, ChimeError> ListSipRulesOutcome;
+        typedef Aws::Utils::Outcome<ListSupportedPhoneNumberCountriesResult, ChimeError> ListSupportedPhoneNumberCountriesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, ChimeError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, ChimeError> ListUsersOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorGroupsResult, ChimeError> ListVoiceConnectorGroupsOutcome;
@@ -691,6 +694,7 @@ namespace Model
         typedef std::future<ListRoomsOutcome> ListRoomsOutcomeCallable;
         typedef std::future<ListSipMediaApplicationsOutcome> ListSipMediaApplicationsOutcomeCallable;
         typedef std::future<ListSipRulesOutcome> ListSipRulesOutcomeCallable;
+        typedef std::future<ListSupportedPhoneNumberCountriesOutcome> ListSupportedPhoneNumberCountriesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<ListVoiceConnectorGroupsOutcome> ListVoiceConnectorGroupsOutcomeCallable;
@@ -877,6 +881,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::ListRoomsRequest&, const Model::ListRoomsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListSipMediaApplicationsRequest&, const Model::ListSipMediaApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSipMediaApplicationsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListSipRulesRequest&, const Model::ListSipRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSipRulesResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListSupportedPhoneNumberCountriesRequest&, const Model::ListSupportedPhoneNumberCountriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSupportedPhoneNumberCountriesResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorGroupsRequest&, const Model::ListVoiceConnectorGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorGroupsResponseReceivedHandler;
@@ -1354,28 +1359,28 @@ namespace Model
         virtual void BatchUnsuspendUserAsync(const Model::BatchUnsuspendUserRequest& request, const BatchUnsuspendUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates phone number product types or calling names. You can update one
-         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code> . For
-         * example, you can update either the product type or the calling name. </p> <p>For
-         * product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
-         * Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector
-         * product type.</p> <p>Updates to outbound calling names can take up to 72 hours
-         * to complete. Pending updates to outbound calling names must be complete before
-         * you can request another update.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates phone number product types or calling names. You can update one
+         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
+         * example, you can update the product type or the calling name.</p> <p>For
+         * toll-free numbers, you cannot use the Amazon Chime Business Calling product
+         * type. For numbers outside the US, you must use the Amazon Chime SIP Media
+         * Application Dial-In product type.</p> <p>Updates to outbound calling names can
+         * take 72 hours to complete. Pending updates to outbound calling names must be
+         * complete before you can request another update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchUpdatePhoneNumberOutcome BatchUpdatePhoneNumber(const Model::BatchUpdatePhoneNumberRequest& request) const;
 
         /**
-         * <p> Updates phone number product types or calling names. You can update one
-         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code> . For
-         * example, you can update either the product type or the calling name. </p> <p>For
-         * product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
-         * Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector
-         * product type.</p> <p>Updates to outbound calling names can take up to 72 hours
-         * to complete. Pending updates to outbound calling names must be complete before
-         * you can request another update.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates phone number product types or calling names. You can update one
+         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
+         * example, you can update the product type or the calling name.</p> <p>For
+         * toll-free numbers, you cannot use the Amazon Chime Business Calling product
+         * type. For numbers outside the US, you must use the Amazon Chime SIP Media
+         * Application Dial-In product type.</p> <p>Updates to outbound calling names can
+         * take 72 hours to complete. Pending updates to outbound calling names must be
+         * complete before you can request another update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -1384,14 +1389,14 @@ namespace Model
         virtual Model::BatchUpdatePhoneNumberOutcomeCallable BatchUpdatePhoneNumberCallable(const Model::BatchUpdatePhoneNumberRequest& request) const;
 
         /**
-         * <p> Updates phone number product types or calling names. You can update one
-         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code> . For
-         * example, you can update either the product type or the calling name. </p> <p>For
-         * product types, choose from Amazon Chime Business Calling and Amazon Chime Voice
-         * Connector. For toll-free numbers, you must use the Amazon Chime Voice Connector
-         * product type.</p> <p>Updates to outbound calling names can take up to 72 hours
-         * to complete. Pending updates to outbound calling names must be complete before
-         * you can request another update.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates phone number product types or calling names. You can update one
+         * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
+         * example, you can update the product type or the calling name.</p> <p>For
+         * toll-free numbers, you cannot use the Amazon Chime Business Calling product
+         * type. For numbers outside the US, you must use the Amazon Chime SIP Media
+         * Application Dial-In product type.</p> <p>Updates to outbound calling names can
+         * take 72 hours to complete. Pending updates to outbound calling names must be
+         * complete before you can request another update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -1963,20 +1968,20 @@ namespace Model
         virtual void CreateMeetingWithAttendeesAsync(const Model::CreateMeetingWithAttendeesRequest& request, const CreateMeetingWithAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
-         * Chime Business Calling and Amazon Chime Voice Connector product types. For
-         * toll-free numbers, you must use the Amazon Chime Voice Connector product
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an order for phone numbers to be provisioned. For toll-free numbers,
+         * you cannot use the Amazon Chime Business Calling product type. For numbers
+         * outside the US, you must use the Amazon Chime SIP Media Application Dial-In
+         * product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePhoneNumberOrderOutcome CreatePhoneNumberOrder(const Model::CreatePhoneNumberOrderRequest& request) const;
 
         /**
-         * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
-         * Chime Business Calling and Amazon Chime Voice Connector product types. For
-         * toll-free numbers, you must use the Amazon Chime Voice Connector product
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an order for phone numbers to be provisioned. For toll-free numbers,
+         * you cannot use the Amazon Chime Business Calling product type. For numbers
+         * outside the US, you must use the Amazon Chime SIP Media Application Dial-In
+         * product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
          *
@@ -1985,10 +1990,10 @@ namespace Model
         virtual Model::CreatePhoneNumberOrderOutcomeCallable CreatePhoneNumberOrderCallable(const Model::CreatePhoneNumberOrderRequest& request) const;
 
         /**
-         * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
-         * Chime Business Calling and Amazon Chime Voice Connector product types. For
-         * toll-free numbers, you must use the Amazon Chime Voice Connector product
-         * type.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an order for phone numbers to be provisioned. For toll-free numbers,
+         * you cannot use the Amazon Chime Business Calling product type. For numbers
+         * outside the US, you must use the Amazon Chime SIP Media Application Dial-In
+         * product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
          *
@@ -2733,7 +2738,7 @@ namespace Model
         virtual void DeleteMeetingAsync(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
+         * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
          * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
          * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
@@ -2744,7 +2749,7 @@ namespace Model
         virtual Model::DeletePhoneNumberOutcome DeletePhoneNumber(const Model::DeletePhoneNumberRequest& request) const;
 
         /**
-         * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
+         * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
          * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
          * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
@@ -2757,7 +2762,7 @@ namespace Model
         virtual Model::DeletePhoneNumberOutcomeCallable DeletePhoneNumberCallable(const Model::DeletePhoneNumberRequest& request) const;
 
         /**
-         * <p>Moves the specified phone number into the <b>Deletionqueue</b>. A phone
+         * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
          * number must be disassociated from any users or Amazon Chime Voice Connectors
          * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
          * queue</b> for 7 days before they are deleted permanently.</p><p><h3>See
@@ -4851,7 +4856,7 @@ namespace Model
         /**
          * <p>List all the messages in a channel. Returns a paginated list of
          * <code>ChannelMessages</code>. By default, sorted by creation timestamp in
-         * descending order .</p>  <p>Redacted messages appear in the results as
+         * descending order.</p>  <p>Redacted messages appear in the results as
          * empty, since they are only redacted, not deleted. Deleted messages do not appear
          * in the results. This action always returns the latest version of an edited
          * message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use
@@ -4865,7 +4870,7 @@ namespace Model
         /**
          * <p>List all the messages in a channel. Returns a paginated list of
          * <code>ChannelMessages</code>. By default, sorted by creation timestamp in
-         * descending order .</p>  <p>Redacted messages appear in the results as
+         * descending order.</p>  <p>Redacted messages appear in the results as
          * empty, since they are only redacted, not deleted. Deleted messages do not appear
          * in the results. This action always returns the latest version of an edited
          * message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use
@@ -4881,7 +4886,7 @@ namespace Model
         /**
          * <p>List all the messages in a channel. Returns a paginated list of
          * <code>ChannelMessages</code>. By default, sorted by creation timestamp in
-         * descending order .</p>  <p>Redacted messages appear in the results as
+         * descending order.</p>  <p>Redacted messages appear in the results as
          * empty, since they are only redacted, not deleted. Deleted messages do not appear
          * in the results. This action always returns the latest version of an edited
          * message.</p> <p>Also, the x-amz-chime-bearer request header is mandatory. Use
@@ -5280,6 +5285,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSipRulesAsync(const Model::ListSipRulesRequest& request, const ListSipRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists supported phone number countries.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSupportedPhoneNumberCountriesOutcome ListSupportedPhoneNumberCountries(const Model::ListSupportedPhoneNumberCountriesRequest& request) const;
+
+        /**
+         * <p>Lists supported phone number countries.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSupportedPhoneNumberCountriesOutcomeCallable ListSupportedPhoneNumberCountriesCallable(const Model::ListSupportedPhoneNumberCountriesRequest& request) const;
+
+        /**
+         * <p>Lists supported phone number countries.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSupportedPhoneNumberCountriesAsync(const Model::ListSupportedPhoneNumberCountriesRequest& request, const ListSupportedPhoneNumberCountriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the tags applied to an Amazon Chime SDK meeting resource.</p><p><h3>See
@@ -6029,14 +6059,24 @@ namespace Model
         virtual void RestorePhoneNumberAsync(const Model::RestorePhoneNumberRequest& request, const RestorePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Searches phone numbers that can be ordered.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches for phone numbers that can be ordered. For US numbers, provide at
+         * least one of the following search filters: <code>AreaCode</code>,
+         * <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+         * provide <code>City</code>, you must also provide <code>State</code>. Numbers
+         * outside the US only support the <code>PhoneNumberType</code> filter, which you
+         * must use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SearchAvailablePhoneNumbers">AWS
          * API Reference</a></p>
          */
         virtual Model::SearchAvailablePhoneNumbersOutcome SearchAvailablePhoneNumbers(const Model::SearchAvailablePhoneNumbersRequest& request) const;
 
         /**
-         * <p>Searches phone numbers that can be ordered.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches for phone numbers that can be ordered. For US numbers, provide at
+         * least one of the following search filters: <code>AreaCode</code>,
+         * <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+         * provide <code>City</code>, you must also provide <code>State</code>. Numbers
+         * outside the US only support the <code>PhoneNumberType</code> filter, which you
+         * must use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SearchAvailablePhoneNumbers">AWS
          * API Reference</a></p>
          *
@@ -6045,7 +6085,12 @@ namespace Model
         virtual Model::SearchAvailablePhoneNumbersOutcomeCallable SearchAvailablePhoneNumbersCallable(const Model::SearchAvailablePhoneNumbersRequest& request) const;
 
         /**
-         * <p>Searches phone numbers that can be ordered.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches for phone numbers that can be ordered. For US numbers, provide at
+         * least one of the following search filters: <code>AreaCode</code>,
+         * <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+         * provide <code>City</code>, you must also provide <code>State</code>. Numbers
+         * outside the US only support the <code>PhoneNumberType</code> filter, which you
+         * must use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SearchAvailablePhoneNumbers">AWS
          * API Reference</a></p>
          *
@@ -6553,10 +6598,12 @@ namespace Model
          * <p>Updates phone number details, such as product type or calling name, for the
          * specified phone number ID. You can update one phone number detail at a time. For
          * example, you can update either the product type or the calling name in one
-         * action.</p> <p>For toll-free numbers, you must use the Amazon Chime Voice
-         * Connector product type.</p> <p>Updates to outbound calling names can take up to
-         * 72 hours to complete. Pending updates to outbound calling names must be complete
-         * before you can request another update.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p>For toll-free numbers, you cannot use the Amazon Chime Business
+         * Calling product type. For numbers outside the U.S., you must use the Amazon
+         * Chime SIP Media Application Dial-In product type.</p> <p>Updates to outbound
+         * calling names can take 72 hours to complete. Pending updates to outbound calling
+         * names must be complete before you can request another update.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -6566,10 +6613,12 @@ namespace Model
          * <p>Updates phone number details, such as product type or calling name, for the
          * specified phone number ID. You can update one phone number detail at a time. For
          * example, you can update either the product type or the calling name in one
-         * action.</p> <p>For toll-free numbers, you must use the Amazon Chime Voice
-         * Connector product type.</p> <p>Updates to outbound calling names can take up to
-         * 72 hours to complete. Pending updates to outbound calling names must be complete
-         * before you can request another update.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p>For toll-free numbers, you cannot use the Amazon Chime Business
+         * Calling product type. For numbers outside the U.S., you must use the Amazon
+         * Chime SIP Media Application Dial-In product type.</p> <p>Updates to outbound
+         * calling names can take 72 hours to complete. Pending updates to outbound calling
+         * names must be complete before you can request another update.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -6581,10 +6630,12 @@ namespace Model
          * <p>Updates phone number details, such as product type or calling name, for the
          * specified phone number ID. You can update one phone number detail at a time. For
          * example, you can update either the product type or the calling name in one
-         * action.</p> <p>For toll-free numbers, you must use the Amazon Chime Voice
-         * Connector product type.</p> <p>Updates to outbound calling names can take up to
-         * 72 hours to complete. Pending updates to outbound calling names must be complete
-         * before you can request another update.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p>For toll-free numbers, you cannot use the Amazon Chime Business
+         * Calling product type. For numbers outside the U.S., you must use the Amazon
+         * Chime SIP Media Application Dial-In product type.</p> <p>Updates to outbound
+         * calling names can take 72 hours to complete. Pending updates to outbound calling
+         * names must be complete before you can request another update.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -7021,6 +7072,7 @@ namespace Model
         void ListRoomsAsyncHelper(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSipMediaApplicationsAsyncHelper(const Model::ListSipMediaApplicationsRequest& request, const ListSipMediaApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSipRulesAsyncHelper(const Model::ListSipRulesRequest& request, const ListSipRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSupportedPhoneNumberCountriesAsyncHelper(const Model::ListSupportedPhoneNumberCountriesRequest& request, const ListSupportedPhoneNumberCountriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorGroupsAsyncHelper(const Model::ListVoiceConnectorGroupsRequest& request, const ListVoiceConnectorGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

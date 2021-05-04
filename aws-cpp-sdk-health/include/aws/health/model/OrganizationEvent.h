@@ -44,115 +44,123 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline OrganizationEvent& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline OrganizationEvent& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the event. Format:
+     * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code>. Example: <code>Example:
-     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </code> format.</p> <p>For example, an event ARN might look like the
+     * following:</p> <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     inline OrganizationEvent& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline OrganizationEvent& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline OrganizationEvent& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS service that is affected by the event. For example, EC2, RDS.</p>
+     * <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
      */
     inline OrganizationEvent& WithService(const char* value) { SetService(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/devops-guru/model/DescribeInsightResult.h>
 #include <aws/devops-guru/model/DescribeResourceCollectionHealthResult.h>
 #include <aws/devops-guru/model/DescribeServiceIntegrationResult.h>
+#include <aws/devops-guru/model/GetCostEstimationResult.h>
 #include <aws/devops-guru/model/GetResourceCollectionResult.h>
 #include <aws/devops-guru/model/ListAnomaliesForInsightResult.h>
 #include <aws/devops-guru/model/ListEventsResult.h>
@@ -28,6 +29,7 @@
 #include <aws/devops-guru/model/PutFeedbackResult.h>
 #include <aws/devops-guru/model/RemoveNotificationChannelResult.h>
 #include <aws/devops-guru/model/SearchInsightsResult.h>
+#include <aws/devops-guru/model/StartCostEstimationResult.h>
 #include <aws/devops-guru/model/UpdateResourceCollectionResult.h>
 #include <aws/devops-guru/model/UpdateServiceIntegrationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -77,6 +79,7 @@ namespace Model
         class DescribeInsightRequest;
         class DescribeResourceCollectionHealthRequest;
         class DescribeServiceIntegrationRequest;
+        class GetCostEstimationRequest;
         class GetResourceCollectionRequest;
         class ListAnomaliesForInsightRequest;
         class ListEventsRequest;
@@ -86,6 +89,7 @@ namespace Model
         class PutFeedbackRequest;
         class RemoveNotificationChannelRequest;
         class SearchInsightsRequest;
+        class StartCostEstimationRequest;
         class UpdateResourceCollectionRequest;
         class UpdateServiceIntegrationRequest;
 
@@ -97,6 +101,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInsightResult, DevOpsGuruError> DescribeInsightOutcome;
         typedef Aws::Utils::Outcome<DescribeResourceCollectionHealthResult, DevOpsGuruError> DescribeResourceCollectionHealthOutcome;
         typedef Aws::Utils::Outcome<DescribeServiceIntegrationResult, DevOpsGuruError> DescribeServiceIntegrationOutcome;
+        typedef Aws::Utils::Outcome<GetCostEstimationResult, DevOpsGuruError> GetCostEstimationOutcome;
         typedef Aws::Utils::Outcome<GetResourceCollectionResult, DevOpsGuruError> GetResourceCollectionOutcome;
         typedef Aws::Utils::Outcome<ListAnomaliesForInsightResult, DevOpsGuruError> ListAnomaliesForInsightOutcome;
         typedef Aws::Utils::Outcome<ListEventsResult, DevOpsGuruError> ListEventsOutcome;
@@ -106,6 +111,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutFeedbackResult, DevOpsGuruError> PutFeedbackOutcome;
         typedef Aws::Utils::Outcome<RemoveNotificationChannelResult, DevOpsGuruError> RemoveNotificationChannelOutcome;
         typedef Aws::Utils::Outcome<SearchInsightsResult, DevOpsGuruError> SearchInsightsOutcome;
+        typedef Aws::Utils::Outcome<StartCostEstimationResult, DevOpsGuruError> StartCostEstimationOutcome;
         typedef Aws::Utils::Outcome<UpdateResourceCollectionResult, DevOpsGuruError> UpdateResourceCollectionOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceIntegrationResult, DevOpsGuruError> UpdateServiceIntegrationOutcome;
 
@@ -117,6 +123,7 @@ namespace Model
         typedef std::future<DescribeInsightOutcome> DescribeInsightOutcomeCallable;
         typedef std::future<DescribeResourceCollectionHealthOutcome> DescribeResourceCollectionHealthOutcomeCallable;
         typedef std::future<DescribeServiceIntegrationOutcome> DescribeServiceIntegrationOutcomeCallable;
+        typedef std::future<GetCostEstimationOutcome> GetCostEstimationOutcomeCallable;
         typedef std::future<GetResourceCollectionOutcome> GetResourceCollectionOutcomeCallable;
         typedef std::future<ListAnomaliesForInsightOutcome> ListAnomaliesForInsightOutcomeCallable;
         typedef std::future<ListEventsOutcome> ListEventsOutcomeCallable;
@@ -126,6 +133,7 @@ namespace Model
         typedef std::future<PutFeedbackOutcome> PutFeedbackOutcomeCallable;
         typedef std::future<RemoveNotificationChannelOutcome> RemoveNotificationChannelOutcomeCallable;
         typedef std::future<SearchInsightsOutcome> SearchInsightsOutcomeCallable;
+        typedef std::future<StartCostEstimationOutcome> StartCostEstimationOutcomeCallable;
         typedef std::future<UpdateResourceCollectionOutcome> UpdateResourceCollectionOutcomeCallable;
         typedef std::future<UpdateServiceIntegrationOutcome> UpdateServiceIntegrationOutcomeCallable;
 } // namespace Model
@@ -140,6 +148,7 @@ namespace Model
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeInsightRequest&, const Model::DescribeInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInsightResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeResourceCollectionHealthRequest&, const Model::DescribeResourceCollectionHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourceCollectionHealthResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::DescribeServiceIntegrationRequest&, const Model::DescribeServiceIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceIntegrationResponseReceivedHandler;
+    typedef std::function<void(const DevOpsGuruClient*, const Model::GetCostEstimationRequest&, const Model::GetCostEstimationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostEstimationResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::GetResourceCollectionRequest&, const Model::GetResourceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceCollectionResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListAnomaliesForInsightRequest&, const Model::ListAnomaliesForInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnomaliesForInsightResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::ListEventsRequest&, const Model::ListEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventsResponseReceivedHandler;
@@ -149,6 +158,7 @@ namespace Model
     typedef std::function<void(const DevOpsGuruClient*, const Model::PutFeedbackRequest&, const Model::PutFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFeedbackResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::RemoveNotificationChannelRequest&, const Model::RemoveNotificationChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveNotificationChannelResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::SearchInsightsRequest&, const Model::SearchInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchInsightsResponseReceivedHandler;
+    typedef std::function<void(const DevOpsGuruClient*, const Model::StartCostEstimationRequest&, const Model::StartCostEstimationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCostEstimationResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::UpdateResourceCollectionRequest&, const Model::UpdateResourceCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourceCollectionResponseReceivedHandler;
     typedef std::function<void(const DevOpsGuruClient*, const Model::UpdateServiceIntegrationRequest&, const Model::UpdateServiceIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceIntegrationResponseReceivedHandler;
 
@@ -414,7 +424,8 @@ namespace Model
          * in your account. You specify the type of AWS resources collection. The one type
          * of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru
          * can be configured to analyze only the AWS resources that are defined in the
-         * stacks. </p><p><h3>See Also:</h3>   <a
+         * stacks. You can specify up to 500 AWS CloudFormation stacks. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeResourceCollectionHealth">AWS
          * API Reference</a></p>
          */
@@ -426,7 +437,8 @@ namespace Model
          * in your account. You specify the type of AWS resources collection. The one type
          * of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru
          * can be configured to analyze only the AWS resources that are defined in the
-         * stacks. </p><p><h3>See Also:</h3>   <a
+         * stacks. You can specify up to 500 AWS CloudFormation stacks. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeResourceCollectionHealth">AWS
          * API Reference</a></p>
          *
@@ -440,7 +452,8 @@ namespace Model
          * in your account. You specify the type of AWS resources collection. The one type
          * of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru
          * can be configured to analyze only the AWS resources that are defined in the
-         * stacks. </p><p><h3>See Also:</h3>   <a
+         * stacks. You can specify up to 500 AWS CloudFormation stacks. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/DescribeResourceCollectionHealth">AWS
          * API Reference</a></p>
          *
@@ -483,10 +496,51 @@ namespace Model
         virtual void DescribeServiceIntegrationAsync(const Model::DescribeServiceIntegrationRequest& request, const DescribeServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS
+         * resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+         * your Amazon DevOps Guru costs</a> and <a
+         * href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru
+         * pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCostEstimationOutcome GetCostEstimation(const Model::GetCostEstimationRequest& request) const;
+
+        /**
+         * <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS
+         * resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+         * your Amazon DevOps Guru costs</a> and <a
+         * href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru
+         * pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCostEstimationOutcomeCallable GetCostEstimationCallable(const Model::GetCostEstimationRequest& request) const;
+
+        /**
+         * <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your AWS
+         * resources. For more information, see <a
+         * href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate
+         * your Amazon DevOps Guru costs</a> and <a
+         * href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru
+         * pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetCostEstimation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCostEstimationAsync(const Model::GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns lists AWS resources that are of the specified resource collection
          * type. The one type of AWS resource collection supported is AWS CloudFormation
          * stacks. DevOps Guru can be configured to analyze only the AWS resources that are
-         * defined in the stacks. </p><p><h3>See Also:</h3>   <a
+         * defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetResourceCollection">AWS
          * API Reference</a></p>
          */
@@ -496,7 +550,8 @@ namespace Model
          * <p> Returns lists AWS resources that are of the specified resource collection
          * type. The one type of AWS resource collection supported is AWS CloudFormation
          * stacks. DevOps Guru can be configured to analyze only the AWS resources that are
-         * defined in the stacks. </p><p><h3>See Also:</h3>   <a
+         * defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetResourceCollection">AWS
          * API Reference</a></p>
          *
@@ -508,7 +563,8 @@ namespace Model
          * <p> Returns lists AWS resources that are of the specified resource collection
          * type. The one type of AWS resource collection supported is AWS CloudFormation
          * stacks. DevOps Guru can be configured to analyze only the AWS resources that are
-         * defined in the stacks. </p><p><h3>See Also:</h3>   <a
+         * defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/GetResourceCollection">AWS
          * API Reference</a></p>
          *
@@ -780,11 +836,40 @@ namespace Model
         virtual void SearchInsightsAsync(const Model::SearchInsightsRequest& request, const SearchInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts the creation of an estimate of the monthly cost to analyze your AWS
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCostEstimationOutcome StartCostEstimation(const Model::StartCostEstimationRequest& request) const;
+
+        /**
+         * <p>Starts the creation of an estimate of the monthly cost to analyze your AWS
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartCostEstimationOutcomeCallable StartCostEstimationCallable(const Model::StartCostEstimationRequest& request) const;
+
+        /**
+         * <p>Starts the creation of an estimate of the monthly cost to analyze your AWS
+         * resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/StartCostEstimation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartCostEstimationAsync(const Model::StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Updates the collection of resources that DevOps Guru analyzes. The one type
          * of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru
          * can be configured to analyze only the AWS resources that are defined in the
-         * stacks. This method also creates the IAM role required for you to use DevOps
-         * Guru. </p><p><h3>See Also:</h3>   <a
+         * stacks. You can specify up to 500 AWS CloudFormation stacks. This method also
+         * creates the IAM role required for you to use DevOps Guru. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollection">AWS
          * API Reference</a></p>
          */
@@ -794,8 +879,9 @@ namespace Model
          * <p> Updates the collection of resources that DevOps Guru analyzes. The one type
          * of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru
          * can be configured to analyze only the AWS resources that are defined in the
-         * stacks. This method also creates the IAM role required for you to use DevOps
-         * Guru. </p><p><h3>See Also:</h3>   <a
+         * stacks. You can specify up to 500 AWS CloudFormation stacks. This method also
+         * creates the IAM role required for you to use DevOps Guru. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollection">AWS
          * API Reference</a></p>
          *
@@ -807,8 +893,9 @@ namespace Model
          * <p> Updates the collection of resources that DevOps Guru analyzes. The one type
          * of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru
          * can be configured to analyze only the AWS resources that are defined in the
-         * stacks. This method also creates the IAM role required for you to use DevOps
-         * Guru. </p><p><h3>See Also:</h3>   <a
+         * stacks. You can specify up to 500 AWS CloudFormation stacks. This method also
+         * creates the IAM role required for you to use DevOps Guru. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/UpdateResourceCollection">AWS
          * API Reference</a></p>
          *
@@ -862,6 +949,7 @@ namespace Model
         void DescribeInsightAsyncHelper(const Model::DescribeInsightRequest& request, const DescribeInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourceCollectionHealthAsyncHelper(const Model::DescribeResourceCollectionHealthRequest& request, const DescribeResourceCollectionHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeServiceIntegrationAsyncHelper(const Model::DescribeServiceIntegrationRequest& request, const DescribeServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCostEstimationAsyncHelper(const Model::GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceCollectionAsyncHelper(const Model::GetResourceCollectionRequest& request, const GetResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAnomaliesForInsightAsyncHelper(const Model::ListAnomaliesForInsightRequest& request, const ListAnomaliesForInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventsAsyncHelper(const Model::ListEventsRequest& request, const ListEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -871,6 +959,7 @@ namespace Model
         void PutFeedbackAsyncHelper(const Model::PutFeedbackRequest& request, const PutFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveNotificationChannelAsyncHelper(const Model::RemoveNotificationChannelRequest& request, const RemoveNotificationChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchInsightsAsyncHelper(const Model::SearchInsightsRequest& request, const SearchInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartCostEstimationAsyncHelper(const Model::StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResourceCollectionAsyncHelper(const Model::UpdateResourceCollectionRequest& request, const UpdateResourceCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceIntegrationAsyncHelper(const Model::UpdateServiceIntegrationRequest& request, const UpdateServiceIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

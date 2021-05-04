@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilingStatus.h>
+#include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
@@ -832,8 +833,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -843,8 +844,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -854,8 +855,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -865,8 +866,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -876,8 +877,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -1527,6 +1528,37 @@ namespace Model
 
 
     /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategy = value; }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategy = std::move(value); }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+
+
+    /**
      * <p>The environment variables to set in the Docker container.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
@@ -1663,6 +1695,8 @@ namespace Model
     Aws::Vector<ProfilerRuleEvaluationStatus> m_profilerRuleEvaluationStatuses;
 
     ProfilingStatus m_profilingStatus;
+
+    RetryStrategy m_retryStrategy;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
   };

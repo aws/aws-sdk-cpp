@@ -37,22 +37,38 @@ namespace Model
 
 
     /**
-     * <p>The maximum runtime allowed in seconds.</p>
+     * <p>The maximum runtime allowed in seconds.</p>  <p>The
+     * <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For
+     * data quality and model explainability, this can be up to 3600 seconds for an
+     * hourly schedule. For model bias and model quality hourly schedules, this can be
+     * up to 1800 seconds.</p> 
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
 
     /**
-     * <p>The maximum runtime allowed in seconds.</p>
+     * <p>The maximum runtime allowed in seconds.</p>  <p>The
+     * <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For
+     * data quality and model explainability, this can be up to 3600 seconds for an
+     * hourly schedule. For model bias and model quality hourly schedules, this can be
+     * up to 1800 seconds.</p> 
      */
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum runtime allowed in seconds.</p>
+     * <p>The maximum runtime allowed in seconds.</p>  <p>The
+     * <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For
+     * data quality and model explainability, this can be up to 3600 seconds for an
+     * hourly schedule. For model bias and model quality hourly schedules, this can be
+     * up to 1800 seconds.</p> 
      */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
 
     /**
-     * <p>The maximum runtime allowed in seconds.</p>
+     * <p>The maximum runtime allowed in seconds.</p>  <p>The
+     * <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For
+     * data quality and model explainability, this can be up to 3600 seconds for an
+     * hourly schedule. For model bias and model quality hourly schedules, this can be
+     * up to 1800 seconds.</p> 
      */
     inline MonitoringStoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
 

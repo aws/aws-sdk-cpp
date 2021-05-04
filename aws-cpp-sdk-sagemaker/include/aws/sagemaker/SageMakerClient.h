@@ -1365,7 +1365,11 @@ namespace Model
          * Generally, an action involves at least one input or output artifact. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateAction</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateAction</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">AWS
          * API Reference</a></p>
          */
@@ -1377,7 +1381,11 @@ namespace Model
          * Generally, an action involves at least one input or output artifact. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateAction</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateAction</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">AWS
          * API Reference</a></p>
          *
@@ -1391,7 +1399,11 @@ namespace Model
          * Generally, an action involves at least one input or output artifact. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateAction</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateAction</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAction">AWS
          * API Reference</a></p>
          *
@@ -1503,7 +1515,11 @@ namespace Model
          * represents a URI addressable object or data. Some examples are the S3 URI of a
          * dataset and the ECR registry path of an image. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateArtifact</code>
+         * can only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateArtifact</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">AWS
          * API Reference</a></p>
          */
@@ -1514,7 +1530,11 @@ namespace Model
          * represents a URI addressable object or data. Some examples are the S3 URI of a
          * dataset and the ECR registry path of an image. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateArtifact</code>
+         * can only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateArtifact</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">AWS
          * API Reference</a></p>
          *
@@ -1527,7 +1547,11 @@ namespace Model
          * represents a URI addressable object or data. Some examples are the S3 URI of a
          * dataset and the ECR registry path of an image. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateArtifact</code>
+         * can only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateArtifact</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateArtifact">AWS
          * API Reference</a></p>
          *
@@ -1705,7 +1729,11 @@ namespace Model
          * represents a logical grouping of other tracking or experiment entities. Some
          * examples are an endpoint and a model package. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateContext</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateContext</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">AWS
          * API Reference</a></p>
          */
@@ -1716,7 +1744,11 @@ namespace Model
          * represents a logical grouping of other tracking or experiment entities. Some
          * examples are an endpoint and a model package. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateContext</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateContext</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">AWS
          * API Reference</a></p>
          *
@@ -1729,7 +1761,11 @@ namespace Model
          * represents a logical grouping of other tracking or experiment entities. Some
          * examples are an endpoint and a model package. For more information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon
-         * SageMaker ML Lineage Tracking</a>.</p><p><h3>See Also:</h3>   <a
+         * SageMaker ML Lineage Tracking</a>.</p>  <p> <code>CreateContext</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateContext</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateContext">AWS
          * API Reference</a></p>
          *
@@ -2260,14 +2296,14 @@ namespace Model
          * model.</p> <p>The goal of an experiment is to determine the components that
          * produce the best model. Multiple trials are performed, each one isolating and
          * measuring the impact of a change to one or more inputs, while keeping the
-         * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
-         * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
-         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
-         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
-         * tags to experiments, trials, trial components and then use the <a>Search</a> API
-         * to search for the tags.</p> <p>To add a description to an experiment, specify
-         * the optional <code>Description</code> parameter. To add a description later, or
-         * to change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
+         * remaining inputs constant.</p> <p>When you use SageMaker Studio or the SageMaker
+         * Python SDK, all experiments, trials, and trial components are automatically
+         * tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you
+         * must use the logging APIs provided by the SDK.</p> <p>You can add tags to
+         * experiments, trials, trial components and then use the <a>Search</a> API to
+         * search for the tags.</p> <p>To add a description to an experiment, specify the
+         * optional <code>Description</code> parameter. To add a description later, or to
+         * change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
          * list of all your experiments, call the <a>ListExperiments</a> API. To view an
          * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
          * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
@@ -2284,14 +2320,14 @@ namespace Model
          * model.</p> <p>The goal of an experiment is to determine the components that
          * produce the best model. Multiple trials are performed, each one isolating and
          * measuring the impact of a change to one or more inputs, while keeping the
-         * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
-         * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
-         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
-         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
-         * tags to experiments, trials, trial components and then use the <a>Search</a> API
-         * to search for the tags.</p> <p>To add a description to an experiment, specify
-         * the optional <code>Description</code> parameter. To add a description later, or
-         * to change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
+         * remaining inputs constant.</p> <p>When you use SageMaker Studio or the SageMaker
+         * Python SDK, all experiments, trials, and trial components are automatically
+         * tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you
+         * must use the logging APIs provided by the SDK.</p> <p>You can add tags to
+         * experiments, trials, trial components and then use the <a>Search</a> API to
+         * search for the tags.</p> <p>To add a description to an experiment, specify the
+         * optional <code>Description</code> parameter. To add a description later, or to
+         * change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
          * list of all your experiments, call the <a>ListExperiments</a> API. To view an
          * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
          * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
@@ -2310,14 +2346,14 @@ namespace Model
          * model.</p> <p>The goal of an experiment is to determine the components that
          * produce the best model. Multiple trials are performed, each one isolating and
          * measuring the impact of a change to one or more inputs, while keeping the
-         * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
-         * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
-         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
-         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
-         * tags to experiments, trials, trial components and then use the <a>Search</a> API
-         * to search for the tags.</p> <p>To add a description to an experiment, specify
-         * the optional <code>Description</code> parameter. To add a description later, or
-         * to change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
+         * remaining inputs constant.</p> <p>When you use SageMaker Studio or the SageMaker
+         * Python SDK, all experiments, trials, and trial components are automatically
+         * tracked, logged, and indexed. When you use the AWS SDK for Python (Boto), you
+         * must use the logging APIs provided by the SDK.</p> <p>You can add tags to
+         * experiments, trials, trial components and then use the <a>Search</a> API to
+         * search for the tags.</p> <p>To add a description to an experiment, specify the
+         * optional <code>Description</code> parameter. To add a description later, or to
+         * change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
          * list of all your experiments, call the <a>ListExperiments</a> API. To view an
          * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
          * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
@@ -3384,8 +3420,8 @@ namespace Model
          * </p> </li> <li> <p> <code>InputDataConfig</code> - Describes the training
          * dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
          * <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where
-         * you want Amazon SageMaker to save the results of model training. </p> <p/> </li>
-         * <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
+         * you want Amazon SageMaker to save the results of model training. </p> </li> <li>
+         * <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
          * instances, and ML storage volumes to deploy for model training. In distributed
          * training, you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
@@ -3398,12 +3434,14 @@ namespace Model
          * so that Amazon SageMaker can successfully complete model training. </p> </li>
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
-         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
-         * for a managed spot training job to complete. </p> </li> <li> <p>
-         * <code>Environment</code> - The environment variables to set in the Docker
-         * container.</p> </li> </ul> <p> For more information about Amazon SageMaker, see
-         * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
-         * It Works</a>. </p><p><h3>See Also:</h3>   <a
+         * <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training
+         * job has to complete. </p> </li> <li> <p> <code>Environment</code> - The
+         * environment variables to set in the Docker container.</p> </li> <li> <p>
+         * <code>RetryStrategy</code> - The number of times to retry the job when the job
+         * fails due to an <code>InternalServerError</code>.</p> </li> </ul> <p> For more
+         * information about Amazon SageMaker, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
+         * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
          * API Reference</a></p>
          */
@@ -3426,8 +3464,8 @@ namespace Model
          * </p> </li> <li> <p> <code>InputDataConfig</code> - Describes the training
          * dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
          * <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where
-         * you want Amazon SageMaker to save the results of model training. </p> <p/> </li>
-         * <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
+         * you want Amazon SageMaker to save the results of model training. </p> </li> <li>
+         * <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
          * instances, and ML storage volumes to deploy for model training. In distributed
          * training, you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
@@ -3440,12 +3478,14 @@ namespace Model
          * so that Amazon SageMaker can successfully complete model training. </p> </li>
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
-         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
-         * for a managed spot training job to complete. </p> </li> <li> <p>
-         * <code>Environment</code> - The environment variables to set in the Docker
-         * container.</p> </li> </ul> <p> For more information about Amazon SageMaker, see
-         * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
-         * It Works</a>. </p><p><h3>See Also:</h3>   <a
+         * <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training
+         * job has to complete. </p> </li> <li> <p> <code>Environment</code> - The
+         * environment variables to set in the Docker container.</p> </li> <li> <p>
+         * <code>RetryStrategy</code> - The number of times to retry the job when the job
+         * fails due to an <code>InternalServerError</code>.</p> </li> </ul> <p> For more
+         * information about Amazon SageMaker, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
+         * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
          * API Reference</a></p>
          *
@@ -3470,8 +3510,8 @@ namespace Model
          * </p> </li> <li> <p> <code>InputDataConfig</code> - Describes the training
          * dataset and the Amazon S3, EFS, or FSx location where it is stored.</p> </li>
          * <li> <p> <code>OutputDataConfig</code> - Identifies the Amazon S3 bucket where
-         * you want Amazon SageMaker to save the results of model training. </p> <p/> </li>
-         * <li> <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
+         * you want Amazon SageMaker to save the results of model training. </p> </li> <li>
+         * <p> <code>ResourceConfig</code> - Identifies the resources, ML compute
          * instances, and ML storage volumes to deploy for model training. In distributed
          * training, you specify more than one instance. </p> </li> <li> <p>
          * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine
@@ -3484,12 +3524,14 @@ namespace Model
          * so that Amazon SageMaker can successfully complete model training. </p> </li>
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
-         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
-         * for a managed spot training job to complete. </p> </li> <li> <p>
-         * <code>Environment</code> - The environment variables to set in the Docker
-         * container.</p> </li> </ul> <p> For more information about Amazon SageMaker, see
-         * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How
-         * It Works</a>. </p><p><h3>See Also:</h3>   <a
+         * <code>MaxWaitTimeInSeconds</code> to specify how long a managed spot training
+         * job has to complete. </p> </li> <li> <p> <code>Environment</code> - The
+         * environment variables to set in the Docker container.</p> </li> <li> <p>
+         * <code>RetryStrategy</code> - The number of times to retry the job when the job
+         * fails due to an <code>InternalServerError</code>.</p> </li> </ul> <p> For more
+         * information about Amazon SageMaker, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
+         * Works</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS
          * API Reference</a></p>
          *
@@ -3574,34 +3616,34 @@ namespace Model
         virtual void CreateTransformJobAsync(const Model::CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called
-         * <i>trial components</i> that produce a machine learning model. A trial is part
-         * of a single Amazon SageMaker <i>experiment</i>.</p> <p>When you use Amazon
-         * SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials,
-         * and trial components are automatically tracked, logged, and indexed. When you
-         * use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-         * SDK.</p> <p>You can add tags to a trial and then use the <a>Search</a> API to
-         * search for the tags.</p> <p>To get a list of all your trials, call the
-         * <a>ListTrials</a> API. To view a trial's properties, call the
-         * <a>DescribeTrial</a> API. To create a trial component, call the
-         * <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial
+         * components</i> that produce a machine learning model. A trial is part of a
+         * single SageMaker <i>experiment</i>.</p> <p>When you use SageMaker Studio or the
+         * SageMaker Python SDK, all experiments, trials, and trial components are
+         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
+         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
+         * tags to a trial and then use the <a>Search</a> API to search for the tags.</p>
+         * <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
+         * trial's properties, call the <a>DescribeTrial</a> API. To create a trial
+         * component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateTrialOutcome CreateTrial(const Model::CreateTrialRequest& request) const;
 
         /**
-         * <p>Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called
-         * <i>trial components</i> that produce a machine learning model. A trial is part
-         * of a single Amazon SageMaker <i>experiment</i>.</p> <p>When you use Amazon
-         * SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials,
-         * and trial components are automatically tracked, logged, and indexed. When you
-         * use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-         * SDK.</p> <p>You can add tags to a trial and then use the <a>Search</a> API to
-         * search for the tags.</p> <p>To get a list of all your trials, call the
-         * <a>ListTrials</a> API. To view a trial's properties, call the
-         * <a>DescribeTrial</a> API. To create a trial component, call the
-         * <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial
+         * components</i> that produce a machine learning model. A trial is part of a
+         * single SageMaker <i>experiment</i>.</p> <p>When you use SageMaker Studio or the
+         * SageMaker Python SDK, all experiments, trials, and trial components are
+         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
+         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
+         * tags to a trial and then use the <a>Search</a> API to search for the tags.</p>
+         * <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
+         * trial's properties, call the <a>DescribeTrial</a> API. To create a trial
+         * component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
          * API Reference</a></p>
          *
@@ -3610,17 +3652,17 @@ namespace Model
         virtual Model::CreateTrialOutcomeCallable CreateTrialCallable(const Model::CreateTrialRequest& request) const;
 
         /**
-         * <p>Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called
-         * <i>trial components</i> that produce a machine learning model. A trial is part
-         * of a single Amazon SageMaker <i>experiment</i>.</p> <p>When you use Amazon
-         * SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials,
-         * and trial components are automatically tracked, logged, and indexed. When you
-         * use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
-         * SDK.</p> <p>You can add tags to a trial and then use the <a>Search</a> API to
-         * search for the tags.</p> <p>To get a list of all your trials, call the
-         * <a>ListTrials</a> API. To view a trial's properties, call the
-         * <a>DescribeTrial</a> API. To create a trial component, call the
-         * <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial
+         * components</i> that produce a machine learning model. A trial is part of a
+         * single SageMaker <i>experiment</i>.</p> <p>When you use SageMaker Studio or the
+         * SageMaker Python SDK, all experiments, trials, and trial components are
+         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
+         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
+         * tags to a trial and then use the <a>Search</a> API to search for the tags.</p>
+         * <p>To get a list of all your trials, call the <a>ListTrials</a> API. To view a
+         * trial's properties, call the <a>DescribeTrial</a> API. To create a trial
+         * component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
          * API Reference</a></p>
          *
@@ -3633,16 +3675,15 @@ namespace Model
          * <i>trial</i>. A trial is composed of one or more trial components. A trial
          * component can be used in multiple trials.</p> <p>Trial components include
          * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
-         * use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
-         * trials, and trial components are automatically tracked, logged, and indexed.
-         * When you use the AWS SDK for Python (Boto), you must use the logging APIs
-         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p>  <p>
-         * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
-         * SageMaker managed environment. This includes Amazon SageMaker training jobs,
-         * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
-         * <code>CreateTrialComponent</code> from outside one of these environments results
-         * in an error.</p> <p><h3>See Also:</h3>   <a
+         * use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and
+         * trial components are automatically tracked, logged, and indexed. When you use
+         * the AWS SDK for Python (Boto), you must use the logging APIs provided by the
+         * SDK.</p> <p>You can add tags to a trial component and then use the <a>Search</a>
+         * API to search for the tags.</p>  <p> <code>CreateTrialComponent</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateTrialComponent</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -3653,16 +3694,15 @@ namespace Model
          * <i>trial</i>. A trial is composed of one or more trial components. A trial
          * component can be used in multiple trials.</p> <p>Trial components include
          * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
-         * use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
-         * trials, and trial components are automatically tracked, logged, and indexed.
-         * When you use the AWS SDK for Python (Boto), you must use the logging APIs
-         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p>  <p>
-         * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
-         * SageMaker managed environment. This includes Amazon SageMaker training jobs,
-         * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
-         * <code>CreateTrialComponent</code> from outside one of these environments results
-         * in an error.</p> <p><h3>See Also:</h3>   <a
+         * use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and
+         * trial components are automatically tracked, logged, and indexed. When you use
+         * the AWS SDK for Python (Boto), you must use the logging APIs provided by the
+         * SDK.</p> <p>You can add tags to a trial component and then use the <a>Search</a>
+         * API to search for the tags.</p>  <p> <code>CreateTrialComponent</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateTrialComponent</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -3675,16 +3715,15 @@ namespace Model
          * <i>trial</i>. A trial is composed of one or more trial components. A trial
          * component can be used in multiple trials.</p> <p>Trial components include
          * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
-         * use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
-         * trials, and trial components are automatically tracked, logged, and indexed.
-         * When you use the AWS SDK for Python (Boto), you must use the logging APIs
-         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p>  <p>
-         * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
-         * SageMaker managed environment. This includes Amazon SageMaker training jobs,
-         * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
-         * <code>CreateTrialComponent</code> from outside one of these environments results
-         * in an error.</p> <p><h3>See Also:</h3>   <a
+         * use SageMaker Studio or the SageMaker Python SDK, all experiments, trials, and
+         * trial components are automatically tracked, logged, and indexed. When you use
+         * the AWS SDK for Python (Boto), you must use the logging APIs provided by the
+         * SDK.</p> <p>You can add tags to a trial component and then use the <a>Search</a>
+         * API to search for the tags.</p>  <p> <code>CreateTrialComponent</code> can
+         * only be invoked from within an SageMaker managed environment. This includes
+         * SageMaker training jobs, processing jobs, transform jobs, and SageMaker
+         * notebooks. A call to <code>CreateTrialComponent</code> from outside one of these
+         * environments results in an error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -4231,18 +4270,18 @@ namespace Model
         virtual void DeleteEndpointConfigAsync(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an Amazon SageMaker experiment. All trials associated with the
-         * experiment must be deleted first. Use the <a>ListTrials</a> API to get a list of
-         * the trials associated with the experiment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an SageMaker experiment. All trials associated with the experiment
+         * must be deleted first. Use the <a>ListTrials</a> API to get a list of the trials
+         * associated with the experiment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteExperimentOutcome DeleteExperiment(const Model::DeleteExperimentRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon SageMaker experiment. All trials associated with the
-         * experiment must be deleted first. Use the <a>ListTrials</a> API to get a list of
-         * the trials associated with the experiment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an SageMaker experiment. All trials associated with the experiment
+         * must be deleted first. Use the <a>ListTrials</a> API to get a list of the trials
+         * associated with the experiment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">AWS
          * API Reference</a></p>
          *
@@ -4251,9 +4290,9 @@ namespace Model
         virtual Model::DeleteExperimentOutcomeCallable DeleteExperimentCallable(const Model::DeleteExperimentRequest& request) const;
 
         /**
-         * <p>Deletes an Amazon SageMaker experiment. All trials associated with the
-         * experiment must be deleted first. Use the <a>ListTrials</a> API to get a list of
-         * the trials associated with the experiment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an SageMaker experiment. All trials associated with the experiment
+         * must be deleted first. Use the <a>ListTrials</a> API to get a list of the trials
+         * associated with the experiment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">AWS
          * API Reference</a></p>
          *
@@ -4727,16 +4766,20 @@ namespace Model
         virtual void DeleteNotebookInstanceLifecycleConfigAsync(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a pipeline if there are no in-progress executions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a pipeline if there are no running instances of the pipeline. To
+         * delete a pipeline, you must stop all running instances of the pipeline using the
+         * <code>StopPipelineExecution</code> API. When you delete a pipeline, all
+         * instances of the pipeline are deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePipelineOutcome DeletePipeline(const Model::DeletePipelineRequest& request) const;
 
         /**
-         * <p>Deletes a pipeline if there are no in-progress executions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a pipeline if there are no running instances of the pipeline. To
+         * delete a pipeline, you must stop all running instances of the pipeline using the
+         * <code>StopPipelineExecution</code> API. When you delete a pipeline, all
+         * instances of the pipeline are deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">AWS
          * API Reference</a></p>
          *
@@ -4745,8 +4788,10 @@ namespace Model
         virtual Model::DeletePipelineOutcomeCallable DeletePipelineCallable(const Model::DeletePipelineRequest& request) const;
 
         /**
-         * <p>Deletes a pipeline if there are no in-progress executions.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a pipeline if there are no running instances of the pipeline. To
+         * delete a pipeline, you must stop all running instances of the pipeline using the
+         * <code>StopPipelineExecution</code> API. When you delete a pipeline, all
+         * instances of the pipeline are deleted.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeletePipeline">AWS
          * API Reference</a></p>
          *
@@ -7772,14 +7817,14 @@ namespace Model
          * <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
          * number of training jobs are first retrieved ignoring the
          * <code>StatusEquals</code> parameter and then they are filtered by the
-         * <code>StatusEquals</code> parameter, which is returned as a response. For
+         * <code>StatusEquals</code> parameter, which is returned as a response.</p> <p>For
          * example, if <code>ListTrainingJobs</code> is invoked with the following
          * parameters:</p> <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ...
-         * }</code> </p> <p>Then, 100 trainings jobs with any status including those other
-         * than <code>InProgress</code> are selected first (sorted according the creation
-         * time, from the latest to the oldest) and those with status
-         * <code>InProgress</code> are returned.</p> <p>You can quickly test the API using
-         * the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
+         * }</code> </p> <p>First, 100 trainings jobs with any status, including those
+         * other than <code>InProgress</code>, are selected (sorted according to the
+         * creation time, from the most current to the oldest). Next, those with a status
+         * of <code>InProgress</code> are returned.</p> <p>You can quickly test the API
+         * using the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
          * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
@@ -7792,14 +7837,14 @@ namespace Model
          * <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
          * number of training jobs are first retrieved ignoring the
          * <code>StatusEquals</code> parameter and then they are filtered by the
-         * <code>StatusEquals</code> parameter, which is returned as a response. For
+         * <code>StatusEquals</code> parameter, which is returned as a response.</p> <p>For
          * example, if <code>ListTrainingJobs</code> is invoked with the following
          * parameters:</p> <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ...
-         * }</code> </p> <p>Then, 100 trainings jobs with any status including those other
-         * than <code>InProgress</code> are selected first (sorted according the creation
-         * time, from the latest to the oldest) and those with status
-         * <code>InProgress</code> are returned.</p> <p>You can quickly test the API using
-         * the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
+         * }</code> </p> <p>First, 100 trainings jobs with any status, including those
+         * other than <code>InProgress</code>, are selected (sorted according to the
+         * creation time, from the most current to the oldest). Next, those with a status
+         * of <code>InProgress</code> are returned.</p> <p>You can quickly test the API
+         * using the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
          * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS
@@ -7814,14 +7859,14 @@ namespace Model
          * <code>MaxResults</code> are set at the same time, the <code>MaxResults</code>
          * number of training jobs are first retrieved ignoring the
          * <code>StatusEquals</code> parameter and then they are filtered by the
-         * <code>StatusEquals</code> parameter, which is returned as a response. For
+         * <code>StatusEquals</code> parameter, which is returned as a response.</p> <p>For
          * example, if <code>ListTrainingJobs</code> is invoked with the following
          * parameters:</p> <p> <code>{ ... MaxResults: 100, StatusEquals: InProgress ...
-         * }</code> </p> <p>Then, 100 trainings jobs with any status including those other
-         * than <code>InProgress</code> are selected first (sorted according the creation
-         * time, from the latest to the oldest) and those with status
-         * <code>InProgress</code> are returned.</p> <p>You can quickly test the API using
-         * the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
+         * }</code> </p> <p>First, 100 trainings jobs with any status, including those
+         * other than <code>InProgress</code>, are selected (sorted according to the
+         * creation time, from the most current to the oldest). Next, those with a status
+         * of <code>InProgress</code> are returned.</p> <p>You can quickly test the API
+         * using the following AWS CLI code.</p> <p> <code>aws sagemaker list-training-jobs
          * --max-results 100 --status-equals InProgress</code> </p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobs">AWS

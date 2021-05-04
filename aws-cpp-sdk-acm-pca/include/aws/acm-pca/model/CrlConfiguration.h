@@ -32,7 +32,7 @@ namespace Model
    * hide the name of your bucket by specifying a value for the <b>CustomCname</b>
    * parameter. Your private CA copies the CNAME or the S3 bucket name to the <b>CRL
    * Distribution Points</b> extension of each certificate it issues. Your S3 bucket
-   * policy must give write permission to ACM Private CA. </p> <p>ACM Private CAA
+   * policy must give write permission to ACM Private CA. </p> <p>ACM Private CA
    * assets that are stored in Amazon S3 can be protected with encryption. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting

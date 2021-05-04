@@ -308,56 +308,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use
+     * this 120-second window to save the model artifacts.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use
+     * this 120-second window to save the model artifacts.</p>
      */
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use
+     * this 120-second window to save the model artifacts.</p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use
+     * this 120-second window to save the model artifacts.</p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use
+     * this 120-second window to save the model artifacts.</p>
      */
     inline TrainingJobDefinition& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
-     * <p>Specifies a limit to how long a model training job can run. When the job
-     * reaches the time limit, Amazon SageMaker ends the training job. Use this API to
-     * cap model training costs.</p> <p>To stop a job, Amazon SageMaker sends the
-     * algorithm the SIGTERM signal, which delays job termination for 120 seconds.
-     * Algorithms can use this 120-second window to save the model artifacts.</p>
+     * <p>Specifies a limit to how long a model training job can run. It also specifies
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+     * SIGTERM signal, which delays job termination for 120 seconds. Algorithms can use
+     * this 120-second window to save the model artifacts.</p>
      */
     inline TrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 

@@ -39,48 +39,54 @@ namespace Model
 
 
     /**
-     * <p> Information about AWS CloudFormation stacks. You can use stacks to specify
-     * which AWS resources in your account to analyze. For more information, see <a
+     * <p> Information about AWS CloudFormation stacks. You can use up to 500 stacks to
+     * specify which AWS resources in your account to analyze. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
      * in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline const CloudFormationCollectionFilter& GetCloudFormation() const{ return m_cloudFormation; }
 
     /**
-     * <p> Information about AWS CloudFormation stacks. You can use stacks to specify
-     * which AWS resources in your account to analyze. For more information, see <a
+     * <p> Information about AWS CloudFormation stacks. You can use up to 500 stacks to
+     * specify which AWS resources in your account to analyze. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
      * in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
 
     /**
-     * <p> Information about AWS CloudFormation stacks. You can use stacks to specify
-     * which AWS resources in your account to analyze. For more information, see <a
+     * <p> Information about AWS CloudFormation stacks. You can use up to 500 stacks to
+     * specify which AWS resources in your account to analyze. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
      * in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline void SetCloudFormation(const CloudFormationCollectionFilter& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
 
     /**
-     * <p> Information about AWS CloudFormation stacks. You can use stacks to specify
-     * which AWS resources in your account to analyze. For more information, see <a
+     * <p> Information about AWS CloudFormation stacks. You can use up to 500 stacks to
+     * specify which AWS resources in your account to analyze. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
      * in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline void SetCloudFormation(CloudFormationCollectionFilter&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
 
     /**
-     * <p> Information about AWS CloudFormation stacks. You can use stacks to specify
-     * which AWS resources in your account to analyze. For more information, see <a
+     * <p> Information about AWS CloudFormation stacks. You can use up to 500 stacks to
+     * specify which AWS resources in your account to analyze. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
      * in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline ResourceCollectionFilter& WithCloudFormation(const CloudFormationCollectionFilter& value) { SetCloudFormation(value); return *this;}
 
     /**
-     * <p> Information about AWS CloudFormation stacks. You can use stacks to specify
-     * which AWS resources in your account to analyze. For more information, see <a
+     * <p> Information about AWS CloudFormation stacks. You can use up to 500 stacks to
+     * specify which AWS resources in your account to analyze. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
      * in the <i>AWS CloudFormation User Guide</i>. </p>
      */

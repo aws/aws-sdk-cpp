@@ -28,6 +28,7 @@
 #include <aws/devops-guru/model/DescribeInsightRequest.h>
 #include <aws/devops-guru/model/DescribeResourceCollectionHealthRequest.h>
 #include <aws/devops-guru/model/DescribeServiceIntegrationRequest.h>
+#include <aws/devops-guru/model/GetCostEstimationRequest.h>
 #include <aws/devops-guru/model/GetResourceCollectionRequest.h>
 #include <aws/devops-guru/model/ListAnomaliesForInsightRequest.h>
 #include <aws/devops-guru/model/ListEventsRequest.h>
@@ -37,6 +38,7 @@
 #include <aws/devops-guru/model/PutFeedbackRequest.h>
 #include <aws/devops-guru/model/RemoveNotificationChannelRequest.h>
 #include <aws/devops-guru/model/SearchInsightsRequest.h>
+#include <aws/devops-guru/model/StartCostEstimationRequest.h>
 #include <aws/devops-guru/model/UpdateResourceCollectionRequest.h>
 #include <aws/devops-guru/model/UpdateServiceIntegrationRequest.h>
 
@@ -347,6 +349,33 @@ void DevOpsGuruClient::DescribeServiceIntegrationAsyncHelper(const DescribeServi
   handler(this, request, DescribeServiceIntegration(request), context);
 }
 
+GetCostEstimationOutcome DevOpsGuruClient::GetCostEstimation(const GetCostEstimationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/cost-estimation";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetCostEstimationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetCostEstimationOutcomeCallable DevOpsGuruClient::GetCostEstimationCallable(const GetCostEstimationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCostEstimationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCostEstimation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::GetCostEstimationAsync(const GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCostEstimationAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::GetCostEstimationAsyncHelper(const GetCostEstimationRequest& request, const GetCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCostEstimation(request), context);
+}
+
 GetResourceCollectionOutcome DevOpsGuruClient::GetResourceCollection(const GetResourceCollectionRequest& request) const
 {
   if (!request.ResourceCollectionTypeHasBeenSet())
@@ -606,6 +635,33 @@ void DevOpsGuruClient::SearchInsightsAsync(const SearchInsightsRequest& request,
 void DevOpsGuruClient::SearchInsightsAsyncHelper(const SearchInsightsRequest& request, const SearchInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SearchInsights(request), context);
+}
+
+StartCostEstimationOutcome DevOpsGuruClient::StartCostEstimation(const StartCostEstimationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/cost-estimation";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartCostEstimationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartCostEstimationOutcomeCallable DevOpsGuruClient::StartCostEstimationCallable(const StartCostEstimationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartCostEstimationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCostEstimation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DevOpsGuruClient::StartCostEstimationAsync(const StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartCostEstimationAsyncHelper( request, handler, context ); } );
+}
+
+void DevOpsGuruClient::StartCostEstimationAsyncHelper(const StartCostEstimationRequest& request, const StartCostEstimationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartCostEstimation(request), context);
 }
 
 UpdateResourceCollectionOutcome DevOpsGuruClient::UpdateResourceCollection(const UpdateResourceCollectionRequest& request) const

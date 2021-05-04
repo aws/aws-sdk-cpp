@@ -36,7 +36,8 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_experimentConfigHasBeenSet(false),
     m_profilerConfigHasBeenSet(false),
     m_profilerRuleConfigurationsHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,12 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
      environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
    }
    payload.WithObject("Environment", std::move(environmentJsonMap));
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 

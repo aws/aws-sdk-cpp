@@ -10,6 +10,7 @@
 #include <aws/acm-pca/model/RevocationConfiguration.h>
 #include <aws/acm-pca/model/CertificateAuthorityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/acm-pca/model/KeyStorageSecurityStandard.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/acm-pca/model/Tag.h>
 #include <utility>
@@ -272,6 +273,73 @@ namespace Model
 
 
     /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
+     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+     * explicitly specify this parameter and value when creating a CA in that Region.
+     * Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline const KeyStorageSecurityStandard& GetKeyStorageSecurityStandard() const{ return m_keyStorageSecurityStandard; }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
+     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+     * explicitly specify this parameter and value when creating a CA in that Region.
+     * Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline bool KeyStorageSecurityStandardHasBeenSet() const { return m_keyStorageSecurityStandardHasBeenSet; }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
+     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+     * explicitly specify this parameter and value when creating a CA in that Region.
+     * Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = value; }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
+     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+     * explicitly specify this parameter and value when creating a CA in that Region.
+     * Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline void SetKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = std::move(value); }
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
+     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+     * explicitly specify this parameter and value when creating a CA in that Region.
+     * Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { SetKeyStorageSecurityStandard(value); return *this;}
+
+    /**
+     * <p>Specifies a cryptographic key management compliance standard used for
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
+     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
+     * explicitly specify this parameter and value when creating a CA in that Region.
+     * Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * cannot be created in this region with the specified security standard."</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { SetKeyStorageSecurityStandard(std::move(value)); return *this;}
+
+
+    /**
      * <p>Key-value pairs that will be attached to the new private CA. You can
      * associate up to 50 tags with a private CA. For information using tags with IAM
      * to manage permissions, see <a
@@ -356,6 +424,9 @@ namespace Model
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
+    KeyStorageSecurityStandard m_keyStorageSecurityStandard;
+    bool m_keyStorageSecurityStandardHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

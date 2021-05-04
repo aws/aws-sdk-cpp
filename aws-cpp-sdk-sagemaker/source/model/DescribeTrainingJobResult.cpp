@@ -296,6 +296,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("RetryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
+
+  }
+
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();

@@ -46,8 +46,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
      * information is supplied during certificate issuance, ACM Private CA applies <a
-     * href="xxxxx">order of operation rules</a> to determine what information is
-     * used.</p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+     * of operation rules</a> to determine what information is used.</p>
      */
     inline const ApiPassthrough& GetApiPassthrough() const{ return m_apiPassthrough; }
 
@@ -59,8 +59,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
      * information is supplied during certificate issuance, ACM Private CA applies <a
-     * href="xxxxx">order of operation rules</a> to determine what information is
-     * used.</p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+     * of operation rules</a> to determine what information is used.</p>
      */
     inline bool ApiPassthroughHasBeenSet() const { return m_apiPassthroughHasBeenSet; }
 
@@ -72,8 +72,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
      * information is supplied during certificate issuance, ACM Private CA applies <a
-     * href="xxxxx">order of operation rules</a> to determine what information is
-     * used.</p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+     * of operation rules</a> to determine what information is used.</p>
      */
     inline void SetApiPassthrough(const ApiPassthrough& value) { m_apiPassthroughHasBeenSet = true; m_apiPassthrough = value; }
 
@@ -85,8 +85,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
      * information is supplied during certificate issuance, ACM Private CA applies <a
-     * href="xxxxx">order of operation rules</a> to determine what information is
-     * used.</p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+     * of operation rules</a> to determine what information is used.</p>
      */
     inline void SetApiPassthrough(ApiPassthrough&& value) { m_apiPassthroughHasBeenSet = true; m_apiPassthrough = std::move(value); }
 
@@ -98,8 +98,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
      * information is supplied during certificate issuance, ACM Private CA applies <a
-     * href="xxxxx">order of operation rules</a> to determine what information is
-     * used.</p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+     * of operation rules</a> to determine what information is used.</p>
      */
     inline IssueCertificateRequest& WithApiPassthrough(const ApiPassthrough& value) { SetApiPassthrough(value); return *this;}
 
@@ -111,8 +111,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p> <p>If conflicting or duplicate certificate
      * information is supplied during certificate issuance, ACM Private CA applies <a
-     * href="xxxxx">order of operation rules</a> to determine what information is
-     * used.</p>
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
+     * of operation rules</a> to determine what information is used.</p>
      */
     inline IssueCertificateRequest& WithApiPassthrough(ApiPassthrough&& value) { SetApiPassthrough(std::move(value)); return *this;}
 

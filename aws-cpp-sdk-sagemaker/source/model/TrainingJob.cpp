@@ -61,6 +61,7 @@ TrainingJob::TrainingJob() :
     m_tensorBoardOutputConfigHasBeenSet(false),
     m_debugRuleEvaluationStatusesHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -108,6 +109,7 @@ TrainingJob::TrainingJob(JsonView jsonValue) :
     m_tensorBoardOutputConfigHasBeenSet(false),
     m_debugRuleEvaluationStatusesHasBeenSet(false),
     m_environmentHasBeenSet(false),
+    m_retryStrategyHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -381,6 +383,13 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     m_environmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RetryStrategy"))
+  {
+    m_retryStrategy = jsonValue.GetObject("RetryStrategy");
+
+    m_retryStrategyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -634,6 +643,12 @@ JsonValue TrainingJob::Jsonize() const
      environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
    }
    payload.WithObject("Environment", std::move(environmentJsonMap));
+
+  }
+
+  if(m_retryStrategyHasBeenSet)
+  {
+   payload.WithObject("RetryStrategy", m_retryStrategy.Jsonize());
 
   }
 

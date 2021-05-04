@@ -205,7 +205,7 @@ namespace Model
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
      * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline const SplitType& GetSplitType() const{ return m_splitType; }
@@ -237,7 +237,7 @@ namespace Model
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
      * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline bool SplitTypeHasBeenSet() const { return m_splitTypeHasBeenSet; }
@@ -269,7 +269,7 @@ namespace Model
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
      * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline void SetSplitType(const SplitType& value) { m_splitTypeHasBeenSet = true; m_splitType = value; }
@@ -301,7 +301,7 @@ namespace Model
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
      * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline void SetSplitType(SplitType&& value) { m_splitTypeHasBeenSet = true; m_splitType = std::move(value); }
@@ -333,7 +333,7 @@ namespace Model
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
      * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline TransformInput& WithSplitType(const SplitType& value) { SetSplitType(value); return *this;}
@@ -365,7 +365,7 @@ namespace Model
      * href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using
      * RecordIO</a> in the MXNet documentation. For more information about
      * <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
      * TFRecord data</a> in the TensorFlow documentation.</p> 
      */
     inline TransformInput& WithSplitType(SplitType&& value) { SetSplitType(std::move(value)); return *this;}

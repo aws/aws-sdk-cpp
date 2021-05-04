@@ -39,32 +39,38 @@ namespace Model
 
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. </p>
+     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline const UpdateCloudFormationCollectionFilter& GetCloudFormation() const{ return m_cloudFormation; }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. </p>
+     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. </p>
+     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline void SetCloudFormation(const UpdateCloudFormationCollectionFilter& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. </p>
+     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline void SetCloudFormation(UpdateCloudFormationCollectionFilter&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. </p>
+     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline UpdateResourceCollectionFilter& WithCloudFormation(const UpdateCloudFormationCollectionFilter& value) { SetCloudFormation(value); return *this;}
 
     /**
-     * <p> An collection of AWS CloudFormation stacks. </p>
+     * <p> An collection of AWS CloudFormation stacks. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline UpdateResourceCollectionFilter& WithCloudFormation(UpdateCloudFormationCollectionFilter&& value) { SetCloudFormation(std::move(value)); return *this;}
 

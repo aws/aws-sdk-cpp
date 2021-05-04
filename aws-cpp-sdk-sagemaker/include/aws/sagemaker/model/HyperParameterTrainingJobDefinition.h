@@ -16,6 +16,7 @@
 #include <aws/sagemaker/model/ResourceConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/sagemaker/model/CheckpointConfig.h>
+#include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <utility>
 
@@ -515,49 +516,49 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
-     * also specifies how long you are willing to wait for a managed spot training job
-     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
-     * training job. Use this API to cap model training costs.</p>
+     * also specifies how long a managed spot training job has to complete. When the
+     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
+     * to cap model training costs.</p>
      */
     inline const StoppingCondition& GetStoppingCondition() const{ return m_stoppingCondition; }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
-     * also specifies how long you are willing to wait for a managed spot training job
-     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
-     * training job. Use this API to cap model training costs.</p>
+     * also specifies how long a managed spot training job has to complete. When the
+     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
+     * to cap model training costs.</p>
      */
     inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
-     * also specifies how long you are willing to wait for a managed spot training job
-     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
-     * training job. Use this API to cap model training costs.</p>
+     * also specifies how long a managed spot training job has to complete. When the
+     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
+     * to cap model training costs.</p>
      */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
-     * also specifies how long you are willing to wait for a managed spot training job
-     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
-     * training job. Use this API to cap model training costs.</p>
+     * also specifies how long a managed spot training job has to complete. When the
+     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
+     * to cap model training costs.</p>
      */
     inline void SetStoppingCondition(StoppingCondition&& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = std::move(value); }
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
-     * also specifies how long you are willing to wait for a managed spot training job
-     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
-     * training job. Use this API to cap model training costs.</p>
+     * also specifies how long a managed spot training job has to complete. When the
+     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
+     * to cap model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(const StoppingCondition& value) { SetStoppingCondition(value); return *this;}
 
     /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
-     * also specifies how long you are willing to wait for a managed spot training job
-     * to complete. When the job reaches the a limit, Amazon SageMaker ends the
-     * training job. Use this API to cap model training costs.</p>
+     * also specifies how long a managed spot training job has to complete. When the
+     * job reaches the time limit, Amazon SageMaker ends the training job. Use this API
+     * to cap model training costs.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
@@ -683,6 +684,43 @@ namespace Model
     
     inline HyperParameterTrainingJobDefinition& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline bool RetryStrategyHasBeenSet() const { return m_retryStrategyHasBeenSet; }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = value; }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategyHasBeenSet = true; m_retryStrategy = std::move(value); }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_definitionName;
@@ -729,6 +767,9 @@ namespace Model
 
     CheckpointConfig m_checkpointConfig;
     bool m_checkpointConfigHasBeenSet;
+
+    RetryStrategy m_retryStrategy;
+    bool m_retryStrategyHasBeenSet;
   };
 
 } // namespace Model

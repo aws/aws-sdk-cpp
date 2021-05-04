@@ -148,6 +148,7 @@
 #include <aws/chime/model/ListRoomsRequest.h>
 #include <aws/chime/model/ListSipMediaApplicationsRequest.h>
 #include <aws/chime/model/ListSipRulesRequest.h>
+#include <aws/chime/model/ListSupportedPhoneNumberCountriesRequest.h>
 #include <aws/chime/model/ListTagsForResourceRequest.h>
 #include <aws/chime/model/ListUsersRequest.h>
 #include <aws/chime/model/ListVoiceConnectorGroupsRequest.h>
@@ -5069,6 +5070,38 @@ void ChimeClient::ListSipRulesAsync(const ListSipRulesRequest& request, const Li
 void ChimeClient::ListSipRulesAsyncHelper(const ListSipRulesRequest& request, const ListSipRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListSipRules(request), context);
+}
+
+ListSupportedPhoneNumberCountriesOutcome ChimeClient::ListSupportedPhoneNumberCountries(const ListSupportedPhoneNumberCountriesRequest& request) const
+{
+  if (!request.ProductTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSupportedPhoneNumberCountries", "Required field: ProductType, is not set");
+    return ListSupportedPhoneNumberCountriesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductType]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  Aws::StringStream ss;
+  ss << "/phone-number-countries";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListSupportedPhoneNumberCountriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListSupportedPhoneNumberCountriesOutcomeCallable ChimeClient::ListSupportedPhoneNumberCountriesCallable(const ListSupportedPhoneNumberCountriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSupportedPhoneNumberCountriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSupportedPhoneNumberCountries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListSupportedPhoneNumberCountriesAsync(const ListSupportedPhoneNumberCountriesRequest& request, const ListSupportedPhoneNumberCountriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSupportedPhoneNumberCountriesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListSupportedPhoneNumberCountriesAsyncHelper(const ListSupportedPhoneNumberCountriesRequest& request, const ListSupportedPhoneNumberCountriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSupportedPhoneNumberCountries(request), context);
 }
 
 ListTagsForResourceOutcome ChimeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const

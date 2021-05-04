@@ -34,7 +34,9 @@ CertificateAuthority::CertificateAuthority() :
     m_failureReasonHasBeenSet(false),
     m_certificateAuthorityConfigurationHasBeenSet(false),
     m_revocationConfigurationHasBeenSet(false),
-    m_restorableUntilHasBeenSet(false)
+    m_restorableUntilHasBeenSet(false),
+    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
+    m_keyStorageSecurityStandardHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ CertificateAuthority::CertificateAuthority(JsonView jsonValue) :
     m_failureReasonHasBeenSet(false),
     m_certificateAuthorityConfigurationHasBeenSet(false),
     m_revocationConfigurationHasBeenSet(false),
-    m_restorableUntilHasBeenSet(false)
+    m_restorableUntilHasBeenSet(false),
+    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
+    m_keyStorageSecurityStandardHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -152,6 +156,13 @@ CertificateAuthority& CertificateAuthority::operator =(JsonView jsonValue)
     m_restorableUntilHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KeyStorageSecurityStandard"))
+  {
+    m_keyStorageSecurityStandard = KeyStorageSecurityStandardMapper::GetKeyStorageSecurityStandardForName(jsonValue.GetString("KeyStorageSecurityStandard"));
+
+    m_keyStorageSecurityStandardHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -227,6 +238,11 @@ JsonValue CertificateAuthority::Jsonize() const
   if(m_restorableUntilHasBeenSet)
   {
    payload.WithDouble("RestorableUntil", m_restorableUntil.SecondsWithMSPrecision());
+  }
+
+  if(m_keyStorageSecurityStandardHasBeenSet)
+  {
+   payload.WithString("KeyStorageSecurityStandard", KeyStorageSecurityStandardMapper::GetNameForKeyStorageSecurityStandard(m_keyStorageSecurityStandard));
   }
 
   return payload;
