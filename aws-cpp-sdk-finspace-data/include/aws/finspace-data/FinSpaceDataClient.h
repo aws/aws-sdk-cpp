@@ -73,7 +73,7 @@ namespace Model
     typedef std::function<void(const FinSpaceDataClient*, const Model::GetWorkingLocationRequest&, const Model::GetWorkingLocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkingLocationResponseReceivedHandler;
 
   /**
-   * <p> The FinSpace APIs let you take actions inside FinSpace. </p>
+   * <p> The FinSpace APIs let you take actions inside the FinSpace environment. </p>
    */
   class AWS_FINSPACEDATA_API FinSpaceDataClient : public Aws::Client::AWSJsonClient
   {
