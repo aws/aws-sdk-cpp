@@ -380,7 +380,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
@@ -412,7 +412,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
@@ -444,7 +444,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
@@ -476,7 +476,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
@@ -508,7 +508,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}

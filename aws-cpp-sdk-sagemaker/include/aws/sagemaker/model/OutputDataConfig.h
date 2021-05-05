@@ -58,7 +58,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
@@ -90,7 +90,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
@@ -122,7 +122,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
@@ -154,7 +154,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
@@ -186,7 +186,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
@@ -218,7 +218,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
@@ -250,7 +250,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
@@ -282,7 +282,7 @@ namespace Model
      * encryption, set the condition key of
      * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/mazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,

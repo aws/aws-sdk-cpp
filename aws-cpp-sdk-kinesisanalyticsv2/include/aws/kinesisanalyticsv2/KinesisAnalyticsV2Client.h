@@ -33,6 +33,7 @@
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListTagsForResourceResult.h>
+#include <aws/kinesisanalyticsv2/model/RollbackApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/StartApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/StopApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/TagResourceResult.h>
@@ -100,6 +101,7 @@ namespace Model
         class ListApplicationSnapshotsRequest;
         class ListApplicationsRequest;
         class ListTagsForResourceRequest;
+        class RollbackApplicationRequest;
         class StartApplicationRequest;
         class StopApplicationRequest;
         class TagResourceRequest;
@@ -129,6 +131,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListApplicationSnapshotsResult, KinesisAnalyticsV2Error> ListApplicationSnapshotsOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, KinesisAnalyticsV2Error> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisAnalyticsV2Error> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<RollbackApplicationResult, KinesisAnalyticsV2Error> RollbackApplicationOutcome;
         typedef Aws::Utils::Outcome<StartApplicationResult, KinesisAnalyticsV2Error> StartApplicationOutcome;
         typedef Aws::Utils::Outcome<StopApplicationResult, KinesisAnalyticsV2Error> StopApplicationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, KinesisAnalyticsV2Error> TagResourceOutcome;
@@ -158,6 +161,7 @@ namespace Model
         typedef std::future<ListApplicationSnapshotsOutcome> ListApplicationSnapshotsOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<RollbackApplicationOutcome> RollbackApplicationOutcomeCallable;
         typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
         typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -190,6 +194,7 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationSnapshotsRequest&, const Model::ListApplicationSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationSnapshotsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::RollbackApplicationRequest&, const Model::RollbackApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RollbackApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::StartApplicationRequest&, const Model::StartApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::StopApplicationRequest&, const Model::StopApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -1031,6 +1036,52 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Reverts the application to the previous running version. You can roll back an
+         * application if you suspect it is stuck in a transient status. </p> <p>You can
+         * roll back an application only if it is in the <code>UPDATING</code> or
+         * <code>AUTOSCALING</code> status.</p> <p>When you rollback an application, it
+         * loads state data from the last successful snapshot. If the application has no
+         * snapshots, Kinesis Data Analytics rejects the rollback request.</p> <p>This
+         * action is not supported for Kinesis Data Analytics for SQL
+         * applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RollbackApplicationOutcome RollbackApplication(const Model::RollbackApplicationRequest& request) const;
+
+        /**
+         * <p>Reverts the application to the previous running version. You can roll back an
+         * application if you suspect it is stuck in a transient status. </p> <p>You can
+         * roll back an application only if it is in the <code>UPDATING</code> or
+         * <code>AUTOSCALING</code> status.</p> <p>When you rollback an application, it
+         * loads state data from the last successful snapshot. If the application has no
+         * snapshots, Kinesis Data Analytics rejects the rollback request.</p> <p>This
+         * action is not supported for Kinesis Data Analytics for SQL
+         * applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RollbackApplicationOutcomeCallable RollbackApplicationCallable(const Model::RollbackApplicationRequest& request) const;
+
+        /**
+         * <p>Reverts the application to the previous running version. You can roll back an
+         * application if you suspect it is stuck in a transient status. </p> <p>You can
+         * roll back an application only if it is in the <code>UPDATING</code> or
+         * <code>AUTOSCALING</code> status.</p> <p>When you rollback an application, it
+         * loads state data from the last successful snapshot. If the application has no
+         * snapshots, Kinesis Data Analytics rejects the rollback request.</p> <p>This
+         * action is not supported for Kinesis Data Analytics for SQL
+         * applications.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RollbackApplicationAsync(const Model::RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts the specified Kinesis Data Analytics application. After creating an
          * application, you must exclusively call this operation to start your
          * application.</p><p><h3>See Also:</h3>   <a
@@ -1278,6 +1329,7 @@ namespace Model
         void ListApplicationSnapshotsAsyncHelper(const Model::ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RollbackApplicationAsyncHelper(const Model::RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartApplicationAsyncHelper(const Model::StartApplicationRequest& request, const StartApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopApplicationAsyncHelper(const Model::StopApplicationRequest& request, const StopApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

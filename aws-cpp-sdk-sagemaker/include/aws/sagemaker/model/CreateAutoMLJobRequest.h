@@ -12,6 +12,7 @@
 #include <aws/sagemaker/model/ProblemType.h>
 #include <aws/sagemaker/model/AutoMLJobObjective.h>
 #include <aws/sagemaker/model/AutoMLJobConfig.h>
+#include <aws/sagemaker/model/ModelDeployConfig.h>
 #include <aws/sagemaker/model/AutoMLChannel.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -150,44 +151,63 @@ namespace Model
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline const AutoMLOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline void SetOutputDataConfig(const AutoMLOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline void SetOutputDataConfig(AutoMLOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithOutputDataConfig(const AutoMLOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithOutputDataConfig(AutoMLOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
 
     /**
      * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: BinaryClassification, MulticlassClassification, and Regression. For
-     * more information, see <a
+     * include: <code>BinaryClassification</code>,
+     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -195,8 +215,9 @@ namespace Model
 
     /**
      * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: BinaryClassification, MulticlassClassification, and Regression. For
-     * more information, see <a
+     * include: <code>BinaryClassification</code>,
+     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -204,8 +225,9 @@ namespace Model
 
     /**
      * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: BinaryClassification, MulticlassClassification, and Regression. For
-     * more information, see <a
+     * include: <code>BinaryClassification</code>,
+     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -213,8 +235,9 @@ namespace Model
 
     /**
      * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: BinaryClassification, MulticlassClassification, and Regression. For
-     * more information, see <a
+     * include: <code>BinaryClassification</code>,
+     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -222,8 +245,9 @@ namespace Model
 
     /**
      * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: BinaryClassification, MulticlassClassification, and Regression. For
-     * more information, see <a
+     * include: <code>BinaryClassification</code>,
+     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -231,8 +255,9 @@ namespace Model
 
     /**
      * <p>Defines the type of supervised learning available for the candidates. Options
-     * include: BinaryClassification, MulticlassClassification, and Regression. For
-     * more information, see <a
+     * include: <code>BinaryClassification</code>,
+     * <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
      * Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
      */
@@ -241,121 +266,145 @@ namespace Model
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
      * infers whether to minimize or maximize it.</p>
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
      * infers whether to minimize or maximize it.</p>
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
      * infers whether to minimize or maximize it.</p>
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
      * infers whether to minimize or maximize it.</p>
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
      * infers whether to minimize or maximize it.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     * AutoML job. You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot
      * infers whether to minimize or maximize it.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contains CompletionCriteria and SecurityConfig settings for the AutoML
-     * job.</p>
+     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
+     * settings for the AutoML job.</p>
      */
     inline const AutoMLJobConfig& GetAutoMLJobConfig() const{ return m_autoMLJobConfig; }
 
     /**
-     * <p>Contains CompletionCriteria and SecurityConfig settings for the AutoML
-     * job.</p>
+     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
+     * settings for the AutoML job.</p>
      */
     inline bool AutoMLJobConfigHasBeenSet() const { return m_autoMLJobConfigHasBeenSet; }
 
     /**
-     * <p>Contains CompletionCriteria and SecurityConfig settings for the AutoML
-     * job.</p>
+     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
+     * settings for the AutoML job.</p>
      */
     inline void SetAutoMLJobConfig(const AutoMLJobConfig& value) { m_autoMLJobConfigHasBeenSet = true; m_autoMLJobConfig = value; }
 
     /**
-     * <p>Contains CompletionCriteria and SecurityConfig settings for the AutoML
-     * job.</p>
+     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
+     * settings for the AutoML job.</p>
      */
     inline void SetAutoMLJobConfig(AutoMLJobConfig&& value) { m_autoMLJobConfigHasBeenSet = true; m_autoMLJobConfig = std::move(value); }
 
     /**
-     * <p>Contains CompletionCriteria and SecurityConfig settings for the AutoML
-     * job.</p>
+     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
+     * settings for the AutoML job.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobConfig(const AutoMLJobConfig& value) { SetAutoMLJobConfig(value); return *this;}
 
     /**
-     * <p>Contains CompletionCriteria and SecurityConfig settings for the AutoML
-     * job.</p>
+     * <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code>
+     * settings for the AutoML job.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobConfig(AutoMLJobConfig&& value) { SetAutoMLJobConfig(std::move(value)); return *this;}
 
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
+     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
+     * model to an endpoint and the name of that endpoint if deployed
+     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -437,6 +486,43 @@ namespace Model
      */
     inline CreateAutoMLJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies how to generate the endpoint name for an automatic one-click
+     * Autopilot model deployment.</p>
+     */
+    inline const ModelDeployConfig& GetModelDeployConfig() const{ return m_modelDeployConfig; }
+
+    /**
+     * <p>Specifies how to generate the endpoint name for an automatic one-click
+     * Autopilot model deployment.</p>
+     */
+    inline bool ModelDeployConfigHasBeenSet() const { return m_modelDeployConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies how to generate the endpoint name for an automatic one-click
+     * Autopilot model deployment.</p>
+     */
+    inline void SetModelDeployConfig(const ModelDeployConfig& value) { m_modelDeployConfigHasBeenSet = true; m_modelDeployConfig = value; }
+
+    /**
+     * <p>Specifies how to generate the endpoint name for an automatic one-click
+     * Autopilot model deployment.</p>
+     */
+    inline void SetModelDeployConfig(ModelDeployConfig&& value) { m_modelDeployConfigHasBeenSet = true; m_modelDeployConfig = std::move(value); }
+
+    /**
+     * <p>Specifies how to generate the endpoint name for an automatic one-click
+     * Autopilot model deployment.</p>
+     */
+    inline CreateAutoMLJobRequest& WithModelDeployConfig(const ModelDeployConfig& value) { SetModelDeployConfig(value); return *this;}
+
+    /**
+     * <p>Specifies how to generate the endpoint name for an automatic one-click
+     * Autopilot model deployment.</p>
+     */
+    inline CreateAutoMLJobRequest& WithModelDeployConfig(ModelDeployConfig&& value) { SetModelDeployConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoMLJobName;
@@ -465,6 +551,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ModelDeployConfig m_modelDeployConfig;
+    bool m_modelDeployConfigHasBeenSet;
   };
 
 } // namespace Model

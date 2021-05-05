@@ -558,9 +558,9 @@ namespace Model
 
     /**
      * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance will
-     * be able to access resources only in your VPC, and will not be able to connect to
-     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * instance. If you set this to <code>Disabled</code> this notebook instance is
+     * able to access resources only in your VPC, and is not be able to connect to
+     * Amazon SageMaker training and endpoint services unless you configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
@@ -571,9 +571,9 @@ namespace Model
 
     /**
      * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance will
-     * be able to access resources only in your VPC, and will not be able to connect to
-     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * instance. If you set this to <code>Disabled</code> this notebook instance is
+     * able to access resources only in your VPC, and is not be able to connect to
+     * Amazon SageMaker training and endpoint services unless you configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
@@ -584,9 +584,9 @@ namespace Model
 
     /**
      * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance will
-     * be able to access resources only in your VPC, and will not be able to connect to
-     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * instance. If you set this to <code>Disabled</code> this notebook instance is
+     * able to access resources only in your VPC, and is not be able to connect to
+     * Amazon SageMaker training and endpoint services unless you configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
@@ -597,9 +597,9 @@ namespace Model
 
     /**
      * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance will
-     * be able to access resources only in your VPC, and will not be able to connect to
-     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * instance. If you set this to <code>Disabled</code> this notebook instance is
+     * able to access resources only in your VPC, and is not be able to connect to
+     * Amazon SageMaker training and endpoint services unless you configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
@@ -610,9 +610,9 @@ namespace Model
 
     /**
      * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance will
-     * be able to access resources only in your VPC, and will not be able to connect to
-     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * instance. If you set this to <code>Disabled</code> this notebook instance is
+     * able to access resources only in your VPC, and is not be able to connect to
+     * Amazon SageMaker training and endpoint services unless you configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
@@ -623,9 +623,9 @@ namespace Model
 
     /**
      * <p>Sets whether Amazon SageMaker provides internet access to the notebook
-     * instance. If you set this to <code>Disabled</code> this notebook instance will
-     * be able to access resources only in your VPC, and will not be able to connect to
-     * Amazon SageMaker training and endpoint services unless your configure a NAT
+     * instance. If you set this to <code>Disabled</code> this notebook instance is
+     * able to access resources only in your VPC, and is not be able to connect to
+     * Amazon SageMaker training and endpoint services unless you configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this

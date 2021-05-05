@@ -29,6 +29,7 @@ namespace Aws
         static const int AUTOSCALING_HASH = HashingUtils::HashString("AUTOSCALING");
         static const int FORCE_STOPPING_HASH = HashingUtils::HashString("FORCE_STOPPING");
         static const int MAINTENANCE_HASH = HashingUtils::HashString("MAINTENANCE");
+        static const int ROLLING_BACK_HASH = HashingUtils::HashString("ROLLING_BACK");
 
 
         ApplicationStatus GetApplicationStatusForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return ApplicationStatus::MAINTENANCE;
           }
+          else if (hashCode == ROLLING_BACK_HASH)
+          {
+            return ApplicationStatus::ROLLING_BACK;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "FORCE_STOPPING";
           case ApplicationStatus::MAINTENANCE:
             return "MAINTENANCE";
+          case ApplicationStatus::ROLLING_BACK:
+            return "ROLLING_BACK";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

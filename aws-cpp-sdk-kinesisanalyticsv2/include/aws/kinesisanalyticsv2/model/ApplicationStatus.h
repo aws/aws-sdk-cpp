@@ -24,7 +24,8 @@ namespace Model
     UPDATING,
     AUTOSCALING,
     FORCE_STOPPING,
-    MAINTENANCE
+    MAINTENANCE,
+    ROLLING_BACK
   };
 
 namespace ApplicationStatusMapper

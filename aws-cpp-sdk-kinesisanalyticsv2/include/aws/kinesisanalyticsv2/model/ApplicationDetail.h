@@ -481,6 +481,97 @@ namespace Model
      */
     inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { SetApplicationMaintenanceConfigurationDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline long long GetApplicationVersionUpdatedFrom() const{ return m_applicationVersionUpdatedFrom; }
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline bool ApplicationVersionUpdatedFromHasBeenSet() const { return m_applicationVersionUpdatedFromHasBeenSet; }
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline void SetApplicationVersionUpdatedFrom(long long value) { m_applicationVersionUpdatedFromHasBeenSet = true; m_applicationVersionUpdatedFrom = value; }
+
+    /**
+     * <p>The previous application version before the latest application update.
+     * <a>RollbackApplication</a> reverts the application to this version.</p>
+     */
+    inline ApplicationDetail& WithApplicationVersionUpdatedFrom(long long value) { SetApplicationVersionUpdatedFrom(value); return *this;}
+
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline long long GetApplicationVersionRolledBackFrom() const{ return m_applicationVersionRolledBackFrom; }
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline bool ApplicationVersionRolledBackFromHasBeenSet() const { return m_applicationVersionRolledBackFromHasBeenSet; }
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline void SetApplicationVersionRolledBackFrom(long long value) { m_applicationVersionRolledBackFromHasBeenSet = true; m_applicationVersionRolledBackFrom = value; }
+
+    /**
+     * <p>If you reverted the application using <a>RollbackApplication</a>, the
+     * application version when <code>RollbackApplication</code> was called.</p>
+     */
+    inline ApplicationDetail& WithApplicationVersionRolledBackFrom(long long value) { SetApplicationVersionRolledBackFrom(value); return *this;}
+
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline ApplicationDetail& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline ApplicationDetail& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates.</p>
+     */
+    inline ApplicationDetail& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
+
   private:
 
     Aws::String m_applicationARN;
@@ -518,6 +609,15 @@ namespace Model
 
     ApplicationMaintenanceConfigurationDescription m_applicationMaintenanceConfigurationDescription;
     bool m_applicationMaintenanceConfigurationDescriptionHasBeenSet;
+
+    long long m_applicationVersionUpdatedFrom;
+    bool m_applicationVersionUpdatedFromHasBeenSet;
+
+    long long m_applicationVersionRolledBackFrom;
+    bool m_applicationVersionRolledBackFromHasBeenSet;
+
+    Aws::String m_conditionalToken;
+    bool m_conditionalTokenHasBeenSet;
   };
 
 } // namespace Model

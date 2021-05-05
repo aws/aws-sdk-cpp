@@ -28,7 +28,9 @@ namespace Model
     CandidateDefinitionsGenerated,
     GeneratingExplainabilityReport,
     Completed,
-    ExplainabilityError
+    ExplainabilityError,
+    DeployingModel,
+    ModelDeploymentError
   };
 
 namespace AutoMLJobSecondaryStatusMapper

@@ -156,6 +156,18 @@ DescribeAutoMLJobResult& DescribeAutoMLJobResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("ModelDeployConfig"))
+  {
+    m_modelDeployConfig = jsonValue.GetObject("ModelDeployConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ModelDeployResult"))
+  {
+    m_modelDeployResult = jsonValue.GetObject("ModelDeployResult");
+
+  }
+
 
 
   return *this;

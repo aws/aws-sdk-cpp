@@ -77,32 +77,32 @@ namespace Model
 
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline const AutoMLSecurityConfig& GetSecurityConfig() const{ return m_securityConfig; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline bool SecurityConfigHasBeenSet() const { return m_securityConfigHasBeenSet; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline void SetSecurityConfig(const AutoMLSecurityConfig& value) { m_securityConfigHasBeenSet = true; m_securityConfig = value; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline void SetSecurityConfig(AutoMLSecurityConfig&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::move(value); }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline AutoMLJobConfig& WithSecurityConfig(const AutoMLSecurityConfig& value) { SetSecurityConfig(value); return *this;}
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline AutoMLJobConfig& WithSecurityConfig(AutoMLSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
 

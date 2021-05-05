@@ -42,6 +42,7 @@
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListTagsForResourceRequest.h>
+#include <aws/kinesisanalyticsv2/model/RollbackApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/StartApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/StopApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/TagResourceRequest.h>
@@ -714,6 +715,33 @@ void KinesisAnalyticsV2Client::ListTagsForResourceAsync(const ListTagsForResourc
 void KinesisAnalyticsV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+RollbackApplicationOutcome KinesisAnalyticsV2Client::RollbackApplication(const RollbackApplicationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RollbackApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RollbackApplicationOutcomeCallable KinesisAnalyticsV2Client::RollbackApplicationCallable(const RollbackApplicationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RollbackApplicationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RollbackApplication(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsV2Client::RollbackApplicationAsync(const RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RollbackApplicationAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsV2Client::RollbackApplicationAsyncHelper(const RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RollbackApplication(request), context);
 }
 
 StartApplicationOutcome KinesisAnalyticsV2Client::StartApplication(const StartApplicationRequest& request) const

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Location of artifacts for an AutoML candidate job.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The location of artifacts for an AutoML candidate job.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CandidateArtifactLocations">AWS
    * API Reference</a></p>
    */
@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline const Aws::String& GetExplainability() const{ return m_explainability; }
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline bool ExplainabilityHasBeenSet() const { return m_explainabilityHasBeenSet; }
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline void SetExplainability(const Aws::String& value) { m_explainabilityHasBeenSet = true; m_explainability = value; }
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline void SetExplainability(Aws::String&& value) { m_explainabilityHasBeenSet = true; m_explainability = std::move(value); }
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline void SetExplainability(const char* value) { m_explainabilityHasBeenSet = true; m_explainability.assign(value); }
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline CandidateArtifactLocations& WithExplainability(const Aws::String& value) { SetExplainability(value); return *this;}
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline CandidateArtifactLocations& WithExplainability(Aws::String&& value) { SetExplainability(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 prefix to the explainability artifacts generated for the AutoML
+     * <p>The Amazon S3 prefix to the explainability artifacts generated for the AutoML
      * candidate.</p>
      */
     inline CandidateArtifactLocations& WithExplainability(const char* value) { SetExplainability(value); return *this;}

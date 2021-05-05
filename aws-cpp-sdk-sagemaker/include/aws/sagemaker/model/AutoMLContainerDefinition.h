@@ -123,79 +123,79 @@ namespace Model
 
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Environment variables to set in the container. For more information, see
+     * <p>The environment variables to set in the container. For more information, see
      * .</p>
      */
     inline AutoMLContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }

@@ -17,6 +17,8 @@
 #include <aws/sagemaker/model/AutoMLJobSecondaryStatus.h>
 #include <aws/sagemaker/model/AutoMLJobArtifacts.h>
 #include <aws/sagemaker/model/ResolvedAttributes.h>
+#include <aws/sagemaker/model/ModelDeployConfig.h>
+#include <aws/sagemaker/model/ModelDeployResult.h>
 #include <aws/sagemaker/model/AutoMLChannel.h>
 #include <aws/sagemaker/model/AutoMLPartialFailureReason.h>
 #include <utility>
@@ -386,125 +388,125 @@ namespace Model
 
 
     /**
-     * <p>Returns the job's FailureReason.</p>
+     * <p>Returns the failure reason for an AutoML job, when applicable.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>Returns the job's FailureReason.</p>
+     * <p>Returns the failure reason for an AutoML job, when applicable.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p>Returns the job's FailureReason.</p>
+     * <p>Returns the failure reason for an AutoML job, when applicable.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p>Returns the job's FailureReason.</p>
+     * <p>Returns the failure reason for an AutoML job, when applicable.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p>Returns the job's FailureReason.</p>
+     * <p>Returns the failure reason for an AutoML job, when applicable.</p>
      */
     inline DescribeAutoMLJobResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>Returns the job's FailureReason.</p>
+     * <p>Returns the failure reason for an AutoML job, when applicable.</p>
      */
     inline DescribeAutoMLJobResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the job's FailureReason.</p>
+     * <p>Returns the failure reason for an AutoML job, when applicable.</p>
      */
     inline DescribeAutoMLJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
     /**
-     * <p>Returns a list of reasons for partial failures within an AutoML job. </p>
+     * <p>Returns a list of reasons for partial failures within an AutoML job.</p>
      */
     inline const Aws::Vector<AutoMLPartialFailureReason>& GetPartialFailureReasons() const{ return m_partialFailureReasons; }
 
     /**
-     * <p>Returns a list of reasons for partial failures within an AutoML job. </p>
+     * <p>Returns a list of reasons for partial failures within an AutoML job.</p>
      */
     inline void SetPartialFailureReasons(const Aws::Vector<AutoMLPartialFailureReason>& value) { m_partialFailureReasons = value; }
 
     /**
-     * <p>Returns a list of reasons for partial failures within an AutoML job. </p>
+     * <p>Returns a list of reasons for partial failures within an AutoML job.</p>
      */
     inline void SetPartialFailureReasons(Aws::Vector<AutoMLPartialFailureReason>&& value) { m_partialFailureReasons = std::move(value); }
 
     /**
-     * <p>Returns a list of reasons for partial failures within an AutoML job. </p>
+     * <p>Returns a list of reasons for partial failures within an AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& WithPartialFailureReasons(const Aws::Vector<AutoMLPartialFailureReason>& value) { SetPartialFailureReasons(value); return *this;}
 
     /**
-     * <p>Returns a list of reasons for partial failures within an AutoML job. </p>
+     * <p>Returns a list of reasons for partial failures within an AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& WithPartialFailureReasons(Aws::Vector<AutoMLPartialFailureReason>&& value) { SetPartialFailureReasons(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a list of reasons for partial failures within an AutoML job. </p>
+     * <p>Returns a list of reasons for partial failures within an AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& AddPartialFailureReasons(const AutoMLPartialFailureReason& value) { m_partialFailureReasons.push_back(value); return *this; }
 
     /**
-     * <p>Returns a list of reasons for partial failures within an AutoML job. </p>
+     * <p>Returns a list of reasons for partial failures within an AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& AddPartialFailureReasons(AutoMLPartialFailureReason&& value) { m_partialFailureReasons.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Returns the job's BestCandidate.</p>
+     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
      */
     inline const AutoMLCandidate& GetBestCandidate() const{ return m_bestCandidate; }
 
     /**
-     * <p>Returns the job's BestCandidate.</p>
+     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
      */
     inline void SetBestCandidate(const AutoMLCandidate& value) { m_bestCandidate = value; }
 
     /**
-     * <p>Returns the job's BestCandidate.</p>
+     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
      */
     inline void SetBestCandidate(AutoMLCandidate&& value) { m_bestCandidate = std::move(value); }
 
     /**
-     * <p>Returns the job's BestCandidate.</p>
+     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
      */
     inline DescribeAutoMLJobResult& WithBestCandidate(const AutoMLCandidate& value) { SetBestCandidate(value); return *this;}
 
     /**
-     * <p>Returns the job's BestCandidate.</p>
+     * <p>Returns the job's best <code>AutoMLCandidate</code>.</p>
      */
     inline DescribeAutoMLJobResult& WithBestCandidate(AutoMLCandidate&& value) { SetBestCandidate(std::move(value)); return *this;}
 
 
     /**
-     * <p>Returns the status of the AutoML job's AutoMLJobStatus.</p>
+     * <p>Returns the status of the AutoML job.</p>
      */
     inline const AutoMLJobStatus& GetAutoMLJobStatus() const{ return m_autoMLJobStatus; }
 
     /**
-     * <p>Returns the status of the AutoML job's AutoMLJobStatus.</p>
+     * <p>Returns the status of the AutoML job.</p>
      */
     inline void SetAutoMLJobStatus(const AutoMLJobStatus& value) { m_autoMLJobStatus = value; }
 
     /**
-     * <p>Returns the status of the AutoML job's AutoMLJobStatus.</p>
+     * <p>Returns the status of the AutoML job.</p>
      */
     inline void SetAutoMLJobStatus(AutoMLJobStatus&& value) { m_autoMLJobStatus = std::move(value); }
 
     /**
-     * <p>Returns the status of the AutoML job's AutoMLJobStatus.</p>
+     * <p>Returns the status of the AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& WithAutoMLJobStatus(const AutoMLJobStatus& value) { SetAutoMLJobStatus(value); return *this;}
 
     /**
-     * <p>Returns the status of the AutoML job's AutoMLJobStatus.</p>
+     * <p>Returns the status of the AutoML job.</p>
      */
     inline DescribeAutoMLJobResult& WithAutoMLJobStatus(AutoMLJobStatus&& value) { SetAutoMLJobStatus(std::move(value)); return *this;}
 
@@ -536,81 +538,151 @@ namespace Model
 
 
     /**
-     * <p>Returns the job's output from GenerateCandidateDefinitionsOnly.</p>
+     * <p>Indicates whether the output for an AutoML job generates candidate
+     * definitions only.</p>
      */
     inline bool GetGenerateCandidateDefinitionsOnly() const{ return m_generateCandidateDefinitionsOnly; }
 
     /**
-     * <p>Returns the job's output from GenerateCandidateDefinitionsOnly.</p>
+     * <p>Indicates whether the output for an AutoML job generates candidate
+     * definitions only.</p>
      */
     inline void SetGenerateCandidateDefinitionsOnly(bool value) { m_generateCandidateDefinitionsOnly = value; }
 
     /**
-     * <p>Returns the job's output from GenerateCandidateDefinitionsOnly.</p>
+     * <p>Indicates whether the output for an AutoML job generates candidate
+     * definitions only.</p>
      */
     inline DescribeAutoMLJobResult& WithGenerateCandidateDefinitionsOnly(bool value) { SetGenerateCandidateDefinitionsOnly(value); return *this;}
 
 
     /**
-     * <p>Returns information on the job's artifacts found in AutoMLJobArtifacts.</p>
+     * <p>Returns information on the job's artifacts found in
+     * <code>AutoMLJobArtifacts</code>.</p>
      */
     inline const AutoMLJobArtifacts& GetAutoMLJobArtifacts() const{ return m_autoMLJobArtifacts; }
 
     /**
-     * <p>Returns information on the job's artifacts found in AutoMLJobArtifacts.</p>
+     * <p>Returns information on the job's artifacts found in
+     * <code>AutoMLJobArtifacts</code>.</p>
      */
     inline void SetAutoMLJobArtifacts(const AutoMLJobArtifacts& value) { m_autoMLJobArtifacts = value; }
 
     /**
-     * <p>Returns information on the job's artifacts found in AutoMLJobArtifacts.</p>
+     * <p>Returns information on the job's artifacts found in
+     * <code>AutoMLJobArtifacts</code>.</p>
      */
     inline void SetAutoMLJobArtifacts(AutoMLJobArtifacts&& value) { m_autoMLJobArtifacts = std::move(value); }
 
     /**
-     * <p>Returns information on the job's artifacts found in AutoMLJobArtifacts.</p>
+     * <p>Returns information on the job's artifacts found in
+     * <code>AutoMLJobArtifacts</code>.</p>
      */
     inline DescribeAutoMLJobResult& WithAutoMLJobArtifacts(const AutoMLJobArtifacts& value) { SetAutoMLJobArtifacts(value); return *this;}
 
     /**
-     * <p>Returns information on the job's artifacts found in AutoMLJobArtifacts.</p>
+     * <p>Returns information on the job's artifacts found in
+     * <code>AutoMLJobArtifacts</code>.</p>
      */
     inline DescribeAutoMLJobResult& WithAutoMLJobArtifacts(AutoMLJobArtifacts&& value) { SetAutoMLJobArtifacts(std::move(value)); return *this;}
 
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you
-     * do not provide these values, they are auto-inferred. If you do provide them,
-     * they are the values you provide.</p>
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <code>CompletionCriteria</code>. If you do not provide these values, they are
+     * auto-inferred. If you do provide them, the values used are the ones you
+     * provide.</p>
      */
     inline const ResolvedAttributes& GetResolvedAttributes() const{ return m_resolvedAttributes; }
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you
-     * do not provide these values, they are auto-inferred. If you do provide them,
-     * they are the values you provide.</p>
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <code>CompletionCriteria</code>. If you do not provide these values, they are
+     * auto-inferred. If you do provide them, the values used are the ones you
+     * provide.</p>
      */
     inline void SetResolvedAttributes(const ResolvedAttributes& value) { m_resolvedAttributes = value; }
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you
-     * do not provide these values, they are auto-inferred. If you do provide them,
-     * they are the values you provide.</p>
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <code>CompletionCriteria</code>. If you do not provide these values, they are
+     * auto-inferred. If you do provide them, the values used are the ones you
+     * provide.</p>
      */
     inline void SetResolvedAttributes(ResolvedAttributes&& value) { m_resolvedAttributes = std::move(value); }
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you
-     * do not provide these values, they are auto-inferred. If you do provide them,
-     * they are the values you provide.</p>
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <code>CompletionCriteria</code>. If you do not provide these values, they are
+     * auto-inferred. If you do provide them, the values used are the ones you
+     * provide.</p>
      */
     inline DescribeAutoMLJobResult& WithResolvedAttributes(const ResolvedAttributes& value) { SetResolvedAttributes(value); return *this;}
 
     /**
-     * <p>This contains ProblemType, AutoMLJobObjective and CompletionCriteria. If you
-     * do not provide these values, they are auto-inferred. If you do provide them,
-     * they are the values you provide.</p>
+     * <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+     * <code>CompletionCriteria</code>. If you do not provide these values, they are
+     * auto-inferred. If you do provide them, the values used are the ones you
+     * provide.</p>
      */
     inline DescribeAutoMLJobResult& WithResolvedAttributes(ResolvedAttributes&& value) { SetResolvedAttributes(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether the model was deployed automatically to an endpoint and the
+     * name of that endpoint if deployed automatically.</p>
+     */
+    inline const ModelDeployConfig& GetModelDeployConfig() const{ return m_modelDeployConfig; }
+
+    /**
+     * <p>Indicates whether the model was deployed automatically to an endpoint and the
+     * name of that endpoint if deployed automatically.</p>
+     */
+    inline void SetModelDeployConfig(const ModelDeployConfig& value) { m_modelDeployConfig = value; }
+
+    /**
+     * <p>Indicates whether the model was deployed automatically to an endpoint and the
+     * name of that endpoint if deployed automatically.</p>
+     */
+    inline void SetModelDeployConfig(ModelDeployConfig&& value) { m_modelDeployConfig = std::move(value); }
+
+    /**
+     * <p>Indicates whether the model was deployed automatically to an endpoint and the
+     * name of that endpoint if deployed automatically.</p>
+     */
+    inline DescribeAutoMLJobResult& WithModelDeployConfig(const ModelDeployConfig& value) { SetModelDeployConfig(value); return *this;}
+
+    /**
+     * <p>Indicates whether the model was deployed automatically to an endpoint and the
+     * name of that endpoint if deployed automatically.</p>
+     */
+    inline DescribeAutoMLJobResult& WithModelDeployConfig(ModelDeployConfig&& value) { SetModelDeployConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information about endpoint for the model deployment.</p>
+     */
+    inline const ModelDeployResult& GetModelDeployResult() const{ return m_modelDeployResult; }
+
+    /**
+     * <p>Provides information about endpoint for the model deployment.</p>
+     */
+    inline void SetModelDeployResult(const ModelDeployResult& value) { m_modelDeployResult = value; }
+
+    /**
+     * <p>Provides information about endpoint for the model deployment.</p>
+     */
+    inline void SetModelDeployResult(ModelDeployResult&& value) { m_modelDeployResult = std::move(value); }
+
+    /**
+     * <p>Provides information about endpoint for the model deployment.</p>
+     */
+    inline DescribeAutoMLJobResult& WithModelDeployResult(const ModelDeployResult& value) { SetModelDeployResult(value); return *this;}
+
+    /**
+     * <p>Provides information about endpoint for the model deployment.</p>
+     */
+    inline DescribeAutoMLJobResult& WithModelDeployResult(ModelDeployResult&& value) { SetModelDeployResult(std::move(value)); return *this;}
 
   private:
 
@@ -651,6 +723,10 @@ namespace Model
     AutoMLJobArtifacts m_autoMLJobArtifacts;
 
     ResolvedAttributes m_resolvedAttributes;
+
+    ModelDeployConfig m_modelDeployConfig;
+
+    ModelDeployResult m_modelDeployResult;
   };
 
 } // namespace Model

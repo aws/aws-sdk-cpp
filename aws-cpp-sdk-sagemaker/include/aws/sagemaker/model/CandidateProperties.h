@@ -38,32 +38,32 @@ namespace Model
 
 
     /**
-     * <p>The S3 prefix to the artifacts generated for an AutoML candidate.</p>
+     * <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
      */
     inline const CandidateArtifactLocations& GetCandidateArtifactLocations() const{ return m_candidateArtifactLocations; }
 
     /**
-     * <p>The S3 prefix to the artifacts generated for an AutoML candidate.</p>
+     * <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
      */
     inline bool CandidateArtifactLocationsHasBeenSet() const { return m_candidateArtifactLocationsHasBeenSet; }
 
     /**
-     * <p>The S3 prefix to the artifacts generated for an AutoML candidate.</p>
+     * <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
      */
     inline void SetCandidateArtifactLocations(const CandidateArtifactLocations& value) { m_candidateArtifactLocationsHasBeenSet = true; m_candidateArtifactLocations = value; }
 
     /**
-     * <p>The S3 prefix to the artifacts generated for an AutoML candidate.</p>
+     * <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
      */
     inline void SetCandidateArtifactLocations(CandidateArtifactLocations&& value) { m_candidateArtifactLocationsHasBeenSet = true; m_candidateArtifactLocations = std::move(value); }
 
     /**
-     * <p>The S3 prefix to the artifacts generated for an AutoML candidate.</p>
+     * <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
      */
     inline CandidateProperties& WithCandidateArtifactLocations(const CandidateArtifactLocations& value) { SetCandidateArtifactLocations(value); return *this;}
 
     /**
-     * <p>The S3 prefix to the artifacts generated for an AutoML candidate.</p>
+     * <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
      */
     inline CandidateProperties& WithCandidateArtifactLocations(CandidateArtifactLocations&& value) { SetCandidateArtifactLocations(std::move(value)); return *this;}
 

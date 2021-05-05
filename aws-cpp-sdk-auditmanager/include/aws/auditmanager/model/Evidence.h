@@ -700,42 +700,42 @@ namespace Model
 
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline const Aws::String& GetAssessmentReportSelection() const{ return m_assessmentReportSelection; }
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline bool AssessmentReportSelectionHasBeenSet() const { return m_assessmentReportSelectionHasBeenSet; }
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline void SetAssessmentReportSelection(const Aws::String& value) { m_assessmentReportSelectionHasBeenSet = true; m_assessmentReportSelection = value; }
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline void SetAssessmentReportSelection(Aws::String&& value) { m_assessmentReportSelectionHasBeenSet = true; m_assessmentReportSelection = std::move(value); }
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline void SetAssessmentReportSelection(const char* value) { m_assessmentReportSelectionHasBeenSet = true; m_assessmentReportSelection.assign(value); }
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline Evidence& WithAssessmentReportSelection(const Aws::String& value) { SetAssessmentReportSelection(value); return *this;}
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline Evidence& WithAssessmentReportSelection(Aws::String&& value) { SetAssessmentReportSelection(std::move(value)); return *this;}
 
     /**
-     * <p> Specifies whether the evidence is inclded in the assessment report. </p>
+     * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
     inline Evidence& WithAssessmentReportSelection(const char* value) { SetAssessmentReportSelection(value); return *this;}
 

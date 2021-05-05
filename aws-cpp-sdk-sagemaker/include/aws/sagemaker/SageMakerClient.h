@@ -1273,8 +1273,16 @@ namespace Model
          * make sure that the tags associated with a hyperparameter tuning job are also
          * added to all training jobs that the hyperparameter tuning job launches, add the
          * tags when you first create the tuning job by specifying them in the
-         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p> 
+         *  <p>Tags that you add to a SageMaker Studio Domain or User Profile by
+         * calling this API are also added to any Apps that the Domain or User Profile
+         * launches after you call this API, but not to Apps that the Domain or User
+         * Profile launched before you called this API. To make sure that the tags
+         * associated with a Domain or User Profile are also added to all Apps that the
+         * Domain or User Profile launches, add the tags when you first create the Domain
+         * or User Profile by specifying them in the <code>Tags</code> parameter of
+         * <a>CreateDomain</a> or <a>CreateUserProfile</a>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">AWS
          * API Reference</a></p>
          */
@@ -1295,8 +1303,16 @@ namespace Model
          * make sure that the tags associated with a hyperparameter tuning job are also
          * added to all training jobs that the hyperparameter tuning job launches, add the
          * tags when you first create the tuning job by specifying them in the
-         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p> 
+         *  <p>Tags that you add to a SageMaker Studio Domain or User Profile by
+         * calling this API are also added to any Apps that the Domain or User Profile
+         * launches after you call this API, but not to Apps that the Domain or User
+         * Profile launched before you called this API. To make sure that the tags
+         * associated with a Domain or User Profile are also added to all Apps that the
+         * Domain or User Profile launches, add the tags when you first create the Domain
+         * or User Profile by specifying them in the <code>Tags</code> parameter of
+         * <a>CreateDomain</a> or <a>CreateUserProfile</a>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">AWS
          * API Reference</a></p>
          *
@@ -1319,8 +1335,16 @@ namespace Model
          * make sure that the tags associated with a hyperparameter tuning job are also
          * added to all training jobs that the hyperparameter tuning job launches, add the
          * tags when you first create the tuning job by specifying them in the
-         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p>
-         * <p><h3>See Also:</h3>   <a
+         * <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a> </p> 
+         *  <p>Tags that you add to a SageMaker Studio Domain or User Profile by
+         * calling this API are also added to any Apps that the Domain or User Profile
+         * launches after you call this API, but not to Apps that the Domain or User
+         * Profile launched before you called this API. To make sure that the tags
+         * associated with a Domain or User Profile are also added to all Apps that the
+         * Domain or User Profile launches, add the tags when you first create the Domain
+         * or User Profile by specifying them in the <code>Tags</code> parameter of
+         * <a>CreateDomain</a> or <a>CreateUserProfile</a>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">AWS
          * API Reference</a></p>
          *
@@ -4829,6 +4853,9 @@ namespace Model
          * a resource's tags, use the <code>ListTags</code> API. </p>  <p>When you
          * call this API to delete tags from a hyperparameter tuning job, the deleted tags
          * are not removed from training jobs that the hyperparameter tuning job launched
+         * before you called this API.</p>   <p>When you call this API to
+         * delete tags from a SageMaker Studio Domain or User Profile, the deleted tags are
+         * not removed from Apps that the SageMaker Studio Domain or User Profile launched
          * before you called this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">AWS
          * API Reference</a></p>
@@ -4840,6 +4867,9 @@ namespace Model
          * a resource's tags, use the <code>ListTags</code> API. </p>  <p>When you
          * call this API to delete tags from a hyperparameter tuning job, the deleted tags
          * are not removed from training jobs that the hyperparameter tuning job launched
+         * before you called this API.</p>   <p>When you call this API to
+         * delete tags from a SageMaker Studio Domain or User Profile, the deleted tags are
+         * not removed from Apps that the SageMaker Studio Domain or User Profile launched
          * before you called this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">AWS
          * API Reference</a></p>
@@ -4853,6 +4883,9 @@ namespace Model
          * a resource's tags, use the <code>ListTags</code> API. </p>  <p>When you
          * call this API to delete tags from a hyperparameter tuning job, the deleted tags
          * are not removed from training jobs that the hyperparameter tuning job launched
+         * before you called this API.</p>   <p>When you call this API to
+         * delete tags from a SageMaker Studio Domain or User Profile, the deleted tags are
+         * not removed from Apps that the SageMaker Studio Domain or User Profile launched
          * before you called this API.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTags">AWS
          * API Reference</a></p>

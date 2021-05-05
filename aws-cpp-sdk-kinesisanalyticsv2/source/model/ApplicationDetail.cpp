@@ -33,7 +33,12 @@ ApplicationDetail::ApplicationDetail() :
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
-    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false)
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false),
+    m_applicationVersionUpdatedFrom(0),
+    m_applicationVersionUpdatedFromHasBeenSet(false),
+    m_applicationVersionRolledBackFrom(0),
+    m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
 }
 
@@ -52,7 +57,12 @@ ApplicationDetail::ApplicationDetail(JsonView jsonValue) :
     m_lastUpdateTimestampHasBeenSet(false),
     m_applicationConfigurationDescriptionHasBeenSet(false),
     m_cloudWatchLoggingOptionDescriptionsHasBeenSet(false),
-    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false)
+    m_applicationMaintenanceConfigurationDescriptionHasBeenSet(false),
+    m_applicationVersionUpdatedFrom(0),
+    m_applicationVersionUpdatedFromHasBeenSet(false),
+    m_applicationVersionRolledBackFrom(0),
+    m_applicationVersionRolledBackFromHasBeenSet(false),
+    m_conditionalTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +156,27 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationVersionUpdatedFrom"))
+  {
+    m_applicationVersionUpdatedFrom = jsonValue.GetInt64("ApplicationVersionUpdatedFrom");
+
+    m_applicationVersionUpdatedFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApplicationVersionRolledBackFrom"))
+  {
+    m_applicationVersionRolledBackFrom = jsonValue.GetInt64("ApplicationVersionRolledBackFrom");
+
+    m_applicationVersionRolledBackFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConditionalToken"))
+  {
+    m_conditionalToken = jsonValue.GetString("ConditionalToken");
+
+    m_conditionalTokenHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -223,6 +254,24 @@ JsonValue ApplicationDetail::Jsonize() const
   if(m_applicationMaintenanceConfigurationDescriptionHasBeenSet)
   {
    payload.WithObject("ApplicationMaintenanceConfigurationDescription", m_applicationMaintenanceConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_applicationVersionUpdatedFromHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionUpdatedFrom", m_applicationVersionUpdatedFrom);
+
+  }
+
+  if(m_applicationVersionRolledBackFromHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionRolledBackFrom", m_applicationVersionRolledBackFrom);
+
+  }
+
+  if(m_conditionalTokenHasBeenSet)
+  {
+   payload.WithString("ConditionalToken", m_conditionalToken);
 
   }
 

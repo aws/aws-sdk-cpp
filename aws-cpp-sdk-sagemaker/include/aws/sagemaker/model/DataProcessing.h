@@ -245,17 +245,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
+     * input JSON object in an attribute called <code>SageMakerOutput</code>. The
+     * joined result for JSON must be a key-value pair object. If the input is not a
+     * key-value pair object, Amazon SageMaker creates a new JSON file. In the new JSON
+     * file, and the input data is stored under the <code>SageMakerInput</code> key and
+     * the results are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data,
+     * Amazon SageMaker takes each row as a JSON array and joins the transformed data
+     * with the input by appending each transformed row to the end of the input. The
+     * joined data has the original input data followed by the transformed data and the
+     * output is a CSV file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline const JoinSource& GetJoinSource() const{ return m_joinSource; }
 
@@ -264,17 +268,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
+     * input JSON object in an attribute called <code>SageMakerOutput</code>. The
+     * joined result for JSON must be a key-value pair object. If the input is not a
+     * key-value pair object, Amazon SageMaker creates a new JSON file. In the new JSON
+     * file, and the input data is stored under the <code>SageMakerInput</code> key and
+     * the results are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data,
+     * Amazon SageMaker takes each row as a JSON array and joins the transformed data
+     * with the input by appending each transformed row to the end of the input. The
+     * joined data has the original input data followed by the transformed data and the
+     * output is a CSV file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline bool JoinSourceHasBeenSet() const { return m_joinSourceHasBeenSet; }
 
@@ -283,17 +291,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
+     * input JSON object in an attribute called <code>SageMakerOutput</code>. The
+     * joined result for JSON must be a key-value pair object. If the input is not a
+     * key-value pair object, Amazon SageMaker creates a new JSON file. In the new JSON
+     * file, and the input data is stored under the <code>SageMakerInput</code> key and
+     * the results are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data,
+     * Amazon SageMaker takes each row as a JSON array and joins the transformed data
+     * with the input by appending each transformed row to the end of the input. The
+     * joined data has the original input data followed by the transformed data and the
+     * output is a CSV file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline void SetJoinSource(const JoinSource& value) { m_joinSourceHasBeenSet = true; m_joinSource = value; }
 
@@ -302,17 +314,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
+     * input JSON object in an attribute called <code>SageMakerOutput</code>. The
+     * joined result for JSON must be a key-value pair object. If the input is not a
+     * key-value pair object, Amazon SageMaker creates a new JSON file. In the new JSON
+     * file, and the input data is stored under the <code>SageMakerInput</code> key and
+     * the results are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data,
+     * Amazon SageMaker takes each row as a JSON array and joins the transformed data
+     * with the input by appending each transformed row to the end of the input. The
+     * joined data has the original input data followed by the transformed data and the
+     * output is a CSV file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline void SetJoinSource(JoinSource&& value) { m_joinSourceHasBeenSet = true; m_joinSource = std::move(value); }
 
@@ -321,17 +337,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
+     * input JSON object in an attribute called <code>SageMakerOutput</code>. The
+     * joined result for JSON must be a key-value pair object. If the input is not a
+     * key-value pair object, Amazon SageMaker creates a new JSON file. In the new JSON
+     * file, and the input data is stored under the <code>SageMakerInput</code> key and
+     * the results are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data,
+     * Amazon SageMaker takes each row as a JSON array and joins the transformed data
+     * with the input by appending each transformed row to the end of the input. The
+     * joined data has the original input data followed by the transformed data and the
+     * output is a CSV file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline DataProcessing& WithJoinSource(const JoinSource& value) { SetJoinSource(value); return *this;}
 
@@ -340,17 +360,21 @@ namespace Model
      * values are <code>None</code> and <code>Input</code>. The default value is
      * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
-     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
-     * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
-     * the transformed data to the input JSON object in an attribute called
-     * <code>SageMakerOutput</code>. The joined result for JSON must be a key-value
-     * pair object. If the input is not a key-value pair object, Amazon SageMaker
-     * creates a new JSON file. In the new JSON file, and the input data is stored
-     * under the <code>SageMakerInput</code> key and the results are stored in
-     * <code>SageMakerOutput</code>.</p> <p>For CSV files, Amazon SageMaker combines
-     * the transformed data with the input data at the end of the input data and stores
-     * it in the output file. The joined data has the joined input data followed by the
-     * transformed data and the output is a CSV file. </p>
+     * the transformed data, set <code>JoinSource</code> to <code>Input</code>. You can
+     * specify <code>OutputFilter</code> as an additional filter to select a portion of
+     * the joined dataset and store it in the output file.</p> <p>For JSON or JSONLines
+     * objects, such as a JSON array, Amazon SageMaker adds the transformed data to the
+     * input JSON object in an attribute called <code>SageMakerOutput</code>. The
+     * joined result for JSON must be a key-value pair object. If the input is not a
+     * key-value pair object, Amazon SageMaker creates a new JSON file. In the new JSON
+     * file, and the input data is stored under the <code>SageMakerInput</code> key and
+     * the results are stored in <code>SageMakerOutput</code>.</p> <p>For CSV data,
+     * Amazon SageMaker takes each row as a JSON array and joins the transformed data
+     * with the input by appending each transformed row to the end of the input. The
+     * joined data has the original input data followed by the transformed data and the
+     * output is a CSV file.</p> <p>For information on how joining in applied, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#batch-transform-data-processing-workflow">Workflow
+     * for Associating Inferences with Input Records</a>.</p>
      */
     inline DataProcessing& WithJoinSource(JoinSource&& value) { SetJoinSource(std::move(value)); return *this;}
 
