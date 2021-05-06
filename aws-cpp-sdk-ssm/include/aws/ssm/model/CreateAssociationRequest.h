@@ -985,40 +985,127 @@ namespace Model
 
 
     /**
-     * <p>By default, when you create a new associations, the system runs it
-     * immediately after it is created and then according to the schedule you
-     * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
-     * expressions.</p>
+     * <p>By default, when you create a new association, the system runs it immediately
+     * after it is created and then according to the schedule you specified. Specify
+     * this option if you don't want an association to run immediately after you create
+     * it. This parameter is not supported for rate expressions.</p>
      */
     inline bool GetApplyOnlyAtCronInterval() const{ return m_applyOnlyAtCronInterval; }
 
     /**
-     * <p>By default, when you create a new associations, the system runs it
-     * immediately after it is created and then according to the schedule you
-     * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
-     * expressions.</p>
+     * <p>By default, when you create a new association, the system runs it immediately
+     * after it is created and then according to the schedule you specified. Specify
+     * this option if you don't want an association to run immediately after you create
+     * it. This parameter is not supported for rate expressions.</p>
      */
     inline bool ApplyOnlyAtCronIntervalHasBeenSet() const { return m_applyOnlyAtCronIntervalHasBeenSet; }
 
     /**
-     * <p>By default, when you create a new associations, the system runs it
-     * immediately after it is created and then according to the schedule you
-     * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
-     * expressions.</p>
+     * <p>By default, when you create a new association, the system runs it immediately
+     * after it is created and then according to the schedule you specified. Specify
+     * this option if you don't want an association to run immediately after you create
+     * it. This parameter is not supported for rate expressions.</p>
      */
     inline void SetApplyOnlyAtCronInterval(bool value) { m_applyOnlyAtCronIntervalHasBeenSet = true; m_applyOnlyAtCronInterval = value; }
 
     /**
-     * <p>By default, when you create a new associations, the system runs it
-     * immediately after it is created and then according to the schedule you
-     * specified. Specify this option if you don't want an association to run
-     * immediately after you create it. This parameter is not supported for rate
-     * expressions.</p>
+     * <p>By default, when you create a new association, the system runs it immediately
+     * after it is created and then according to the schedule you specified. Specify
+     * this option if you don't want an association to run immediately after you create
+     * it. This parameter is not supported for rate expressions.</p>
      */
     inline CreateAssociationRequest& WithApplyOnlyAtCronInterval(bool value) { SetApplyOnlyAtCronInterval(value); return *this;}
+
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline void SetCalendarNames(const Aws::Vector<Aws::String>& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = value; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline void SetCalendarNames(Aws::Vector<Aws::String>&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::move(value); }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline CreateAssociationRequest& WithCalendarNames(const Aws::Vector<Aws::String>& value) { SetCalendarNames(value); return *this;}
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline CreateAssociationRequest& WithCalendarNames(Aws::Vector<Aws::String>&& value) { SetCalendarNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline CreateAssociationRequest& AddCalendarNames(const Aws::String& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline CreateAssociationRequest& AddCalendarNames(Aws::String&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline CreateAssociationRequest& AddCalendarNames(const char* value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
 
 
     /**
@@ -1120,6 +1207,9 @@ namespace Model
 
     bool m_applyOnlyAtCronInterval;
     bool m_applyOnlyAtCronIntervalHasBeenSet;
+
+    Aws::Vector<Aws::String> m_calendarNames;
+    bool m_calendarNamesHasBeenSet;
 
     Aws::Vector<TargetLocation> m_targetLocations;
     bool m_targetLocationsHasBeenSet;

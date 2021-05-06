@@ -37,50 +37,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the namespace that you specified when you registered the
-     * instance.</p>
+     * <p>The <code>HttpName</code> name of the namespace, found in the
+     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
+     * namespace.</p>
      */
     inline DiscoverInstancesRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
 
@@ -170,91 +178,91 @@ namespace Model
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameters() const{ return m_queryParameters; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline void SetQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline void SetQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& WithQueryParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetQueryParameters(value); return *this;}
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& WithQueryParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParameters(std::move(value)); return *this;}
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const Aws::String& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const char* key, Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(Aws::String&& key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Filters to scope the results based on custom attributes for the instance. For
      * example, <code>{version=v1, az=1a}</code>. Only instances that match all the
-     * specified key-value pairs will be returned.</p>
+     * specified key-value pairs are returned.</p>
      */
     inline DiscoverInstancesRequest& AddQueryParameters(const char* key, const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace(key, value); return *this; }
 

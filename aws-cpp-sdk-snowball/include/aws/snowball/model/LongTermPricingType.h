@@ -13,25 +13,19 @@ namespace Snowball
 {
 namespace Model
 {
-  enum class SnowballCapacity
+  enum class LongTermPricingType
   {
     NOT_SET,
-    T50,
-    T80,
-    T100,
-    T42,
-    T98,
-    T8,
-    T14,
-    NoPreference
+    OneYear,
+    ThreeYear
   };
 
-namespace SnowballCapacityMapper
+namespace LongTermPricingTypeMapper
 {
-AWS_SNOWBALL_API SnowballCapacity GetSnowballCapacityForName(const Aws::String& name);
+AWS_SNOWBALL_API LongTermPricingType GetLongTermPricingTypeForName(const Aws::String& name);
 
-AWS_SNOWBALL_API Aws::String GetNameForSnowballCapacity(SnowballCapacity value);
-} // namespace SnowballCapacityMapper
+AWS_SNOWBALL_API Aws::String GetNameForLongTermPricingType(LongTermPricingType value);
+} // namespace LongTermPricingTypeMapper
 } // namespace Model
 } // namespace Snowball
 } // namespace Aws

@@ -309,60 +309,180 @@ namespace Model
     inline ServiceSummary& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
 
-    
+    /**
+     * <p>Information about the Route 53 DNS records that you want AWS Cloud Map to
+     * create when you register an instance.</p>
+     */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
-    
+    /**
+     * <p>Information about the Route 53 DNS records that you want AWS Cloud Map to
+     * create when you register an instance.</p>
+     */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
-    
+    /**
+     * <p>Information about the Route 53 DNS records that you want AWS Cloud Map to
+     * create when you register an instance.</p>
+     */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
-    
+    /**
+     * <p>Information about the Route 53 DNS records that you want AWS Cloud Map to
+     * create when you register an instance.</p>
+     */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
-    
+    /**
+     * <p>Information about the Route 53 DNS records that you want AWS Cloud Map to
+     * create when you register an instance.</p>
+     */
     inline ServiceSummary& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
-    
+    /**
+     * <p>Information about the Route 53 DNS records that you want AWS Cloud Map to
+     * create when you register an instance.</p>
+     */
     inline ServiceSummary& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline ServiceSummary& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
-    
+    /**
+     * <p> <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health
+     * check. If you specify settings for a health check, AWS Cloud Map associates the
+     * health check with the records that you specify in <code>DnsConfig</code>.</p>
+     */
     inline ServiceSummary& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Information about an optional custom health check. A custom health check,
+     * which requires that you use a third-party health checker to evaluate the health
+     * of your resources, is useful in the following circumstances:</p> <ul> <li>
+     * <p>You can't use a health check that is defined by
+     * <code>HealthCheckConfig</code> because the resource isn't available over the
+     * internet. For example, you can use a custom health check when the instance is in
+     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
+     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
+     * checker regardless of where your resources are.</p> </li> </ul> 
+     * <p>If you specify a health check configuration, you can specify either
+     * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
+     * both.</p> 
+     */
     inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
 
-    
+    /**
+     * <p>Information about an optional custom health check. A custom health check,
+     * which requires that you use a third-party health checker to evaluate the health
+     * of your resources, is useful in the following circumstances:</p> <ul> <li>
+     * <p>You can't use a health check that is defined by
+     * <code>HealthCheckConfig</code> because the resource isn't available over the
+     * internet. For example, you can use a custom health check when the instance is in
+     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
+     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
+     * checker regardless of where your resources are.</p> </li> </ul> 
+     * <p>If you specify a health check configuration, you can specify either
+     * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
+     * both.</p> 
+     */
     inline bool HealthCheckCustomConfigHasBeenSet() const { return m_healthCheckCustomConfigHasBeenSet; }
 
-    
+    /**
+     * <p>Information about an optional custom health check. A custom health check,
+     * which requires that you use a third-party health checker to evaluate the health
+     * of your resources, is useful in the following circumstances:</p> <ul> <li>
+     * <p>You can't use a health check that is defined by
+     * <code>HealthCheckConfig</code> because the resource isn't available over the
+     * internet. For example, you can use a custom health check when the instance is in
+     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
+     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
+     * checker regardless of where your resources are.</p> </li> </ul> 
+     * <p>If you specify a health check configuration, you can specify either
+     * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
+     * both.</p> 
+     */
     inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
 
-    
+    /**
+     * <p>Information about an optional custom health check. A custom health check,
+     * which requires that you use a third-party health checker to evaluate the health
+     * of your resources, is useful in the following circumstances:</p> <ul> <li>
+     * <p>You can't use a health check that is defined by
+     * <code>HealthCheckConfig</code> because the resource isn't available over the
+     * internet. For example, you can use a custom health check when the instance is in
+     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
+     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
+     * checker regardless of where your resources are.</p> </li> </ul> 
+     * <p>If you specify a health check configuration, you can specify either
+     * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
+     * both.</p> 
+     */
     inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
 
-    
+    /**
+     * <p>Information about an optional custom health check. A custom health check,
+     * which requires that you use a third-party health checker to evaluate the health
+     * of your resources, is useful in the following circumstances:</p> <ul> <li>
+     * <p>You can't use a health check that is defined by
+     * <code>HealthCheckConfig</code> because the resource isn't available over the
+     * internet. For example, you can use a custom health check when the instance is in
+     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
+     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
+     * checker regardless of where your resources are.</p> </li> </ul> 
+     * <p>If you specify a health check configuration, you can specify either
+     * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
+     * both.</p> 
+     */
     inline ServiceSummary& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
 
-    
+    /**
+     * <p>Information about an optional custom health check. A custom health check,
+     * which requires that you use a third-party health checker to evaluate the health
+     * of your resources, is useful in the following circumstances:</p> <ul> <li>
+     * <p>You can't use a health check that is defined by
+     * <code>HealthCheckConfig</code> because the resource isn't available over the
+     * internet. For example, you can use a custom health check when the instance is in
+     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
+     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
+     * checker regardless of where your resources are.</p> </li> </ul> 
+     * <p>If you specify a health check configuration, you can specify either
+     * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
+     * both.</p> 
+     */
     inline ServiceSummary& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
 
 

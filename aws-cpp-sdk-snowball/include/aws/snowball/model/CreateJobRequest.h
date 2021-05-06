@@ -369,42 +369,66 @@ namespace Model
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
      * specifying what size Snow device you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
      * specifying what size Snow device you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
      * specifying what size Snow device you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
      * specifying what size Snow device you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
      * specifying what size Snow device you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
      * <p>If your job is being created in one of the US regions, you have the option of
      * specifying what size Snow device you'd like for this job. In all other regions,
-     * Snowballs come with 80 TB in storage capacity.</p>
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
@@ -601,7 +625,12 @@ namespace Model
      * Currently, the only supported device type for cluster jobs is
      * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
@@ -612,7 +641,12 @@ namespace Model
      * Currently, the only supported device type for cluster jobs is
      * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
@@ -623,7 +657,12 @@ namespace Model
      * Currently, the only supported device type for cluster jobs is
      * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
@@ -634,7 +673,12 @@ namespace Model
      * Currently, the only supported device type for cluster jobs is
      * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
@@ -645,7 +689,12 @@ namespace Model
      * Currently, the only supported device type for cluster jobs is
      * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
@@ -656,7 +705,12 @@ namespace Model
      * Currently, the only supported device type for cluster jobs is
      * <code>EDGE</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball
-     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p>
+     * Edge Device Options</a> in the Snowball Edge Developer Guide.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
@@ -742,34 +796,105 @@ namespace Model
 
 
     /**
-     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     * <p>Defines the device configuration for an AWS Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const DeviceConfiguration& GetDeviceConfiguration() const{ return m_deviceConfiguration; }
 
     /**
-     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     * <p>Defines the device configuration for an AWS Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
 
     /**
-     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     * <p>Defines the device configuration for an AWS Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetDeviceConfiguration(const DeviceConfiguration& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
 
     /**
-     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     * <p>Defines the device configuration for an AWS Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetDeviceConfiguration(DeviceConfiguration&& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = std::move(value); }
 
     /**
-     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     * <p>Defines the device configuration for an AWS Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithDeviceConfiguration(const DeviceConfiguration& value) { SetDeviceConfiguration(value); return *this;}
 
     /**
-     * <p>Defines the device configuration for an AWS Snowcone job.</p>
+     * <p>Defines the device configuration for an AWS Snowcone job.</p> <p>For more
+     * information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateJobRequest& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline const Aws::String& GetLongTermPricingId() const{ return m_longTermPricingId; }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline bool LongTermPricingIdHasBeenSet() const { return m_longTermPricingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const Aws::String& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = value; }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(Aws::String&& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = std::move(value); }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const char* value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId.assign(value); }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline CreateJobRequest& WithLongTermPricingId(const Aws::String& value) { SetLongTermPricingId(value); return *this;}
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline CreateJobRequest& WithLongTermPricingId(Aws::String&& value) { SetLongTermPricingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline CreateJobRequest& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
 
   private:
 
@@ -814,6 +939,9 @@ namespace Model
 
     DeviceConfiguration m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
+
+    Aws::String m_longTermPricingId;
+    bool m_longTermPricingIdHasBeenSet;
   };
 
 } // namespace Model

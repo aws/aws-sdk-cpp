@@ -46,6 +46,12 @@ GetBootstrapBrokersResult& GetBootstrapBrokersResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("bootstrapBrokerStringSaslIam"))
+  {
+    m_bootstrapBrokerStringSaslIam = jsonValue.GetString("bootstrapBrokerStringSaslIam");
+
+  }
+
 
 
   return *this;

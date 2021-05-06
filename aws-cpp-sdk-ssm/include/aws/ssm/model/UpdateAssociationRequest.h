@@ -1023,6 +1023,97 @@ namespace Model
 
 
     /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCalendarNames() const{ return m_calendarNames; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline bool CalendarNamesHasBeenSet() const { return m_calendarNamesHasBeenSet; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline void SetCalendarNames(const Aws::Vector<Aws::String>& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = value; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline void SetCalendarNames(Aws::Vector<Aws::String>&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames = std::move(value); }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline UpdateAssociationRequest& WithCalendarNames(const Aws::Vector<Aws::String>& value) { SetCalendarNames(value); return *this;}
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline UpdateAssociationRequest& WithCalendarNames(Aws::Vector<Aws::String>&& value) { SetCalendarNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline UpdateAssociationRequest& AddCalendarNames(const Aws::String& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline UpdateAssociationRequest& AddCalendarNames(Aws::String&& value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change
+     * Calendar type documents you want to gate your associations under. The
+     * associations only run when that Change Calendar is open. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS
+     * Systems Manager Change Calendar</a>.</p>
+     */
+    inline UpdateAssociationRequest& AddCalendarNames(const char* value) { m_calendarNamesHasBeenSet = true; m_calendarNames.push_back(value); return *this; }
+
+
+    /**
      * <p>A location is a combination of AWS Regions and AWS accounts where you want to
      * run the association. Use this action to update an association in multiple
      * Regions and multiple accounts.</p>
@@ -1124,6 +1215,9 @@ namespace Model
 
     bool m_applyOnlyAtCronInterval;
     bool m_applyOnlyAtCronIntervalHasBeenSet;
+
+    Aws::Vector<Aws::String> m_calendarNames;
+    bool m_calendarNamesHasBeenSet;
 
     Aws::Vector<TargetLocation> m_targetLocations;
     bool m_targetLocationsHasBeenSet;

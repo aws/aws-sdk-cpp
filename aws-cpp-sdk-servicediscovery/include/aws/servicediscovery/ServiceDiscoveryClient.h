@@ -173,13 +173,13 @@ namespace Model
     typedef std::function<void(const ServiceDiscoveryClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
 
   /**
-   * <p>AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces
-   * that your microservice applications run in. When an instance of the service
-   * becomes available, you can call the AWS Cloud Map API to register the instance
-   * with AWS Cloud Map. For public or private DNS namespaces, AWS Cloud Map
-   * automatically creates DNS records and an optional health check. Clients that
-   * submit public or private DNS queries, or HTTP requests, for the service receive
-   * an answer that contains up to eight healthy records. </p>
+   * <p>With AWS Cloud Map, you can configure public DNS, private DNS, or HTTP
+   * namespaces that your microservice applications run in. When an instance becomes
+   * available, you can call the AWS Cloud Map API to register the instance with AWS
+   * Cloud Map. For public or private DNS namespaces, AWS Cloud Map automatically
+   * creates DNS records and an optional health check. Clients that submit public or
+   * private DNS queries, or HTTP requests, for the service receive an answer that
+   * contains up to eight healthy records. </p>
    */
   class AWS_SERVICEDISCOVERY_API ServiceDiscoveryClient : public Aws::Client::AWSJsonClient
   {
@@ -252,10 +252,10 @@ namespace Model
         virtual void CreateHttpNamespaceAsync(const Model::CreateHttpNamespaceRequest& request, const CreateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a private namespace based on DNS, which will be visible only inside a
+         * <p>Creates a private namespace based on DNS, which is visible only inside a
          * specified Amazon VPC. The namespace defines your service naming scheme. For
          * example, if you name your namespace <code>example.com</code> and name your
-         * service <code>backend</code>, the resulting DNS name for the service will be
+         * service <code>backend</code>, the resulting DNS name for the service is
          * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
@@ -267,10 +267,10 @@ namespace Model
         virtual Model::CreatePrivateDnsNamespaceOutcome CreatePrivateDnsNamespace(const Model::CreatePrivateDnsNamespaceRequest& request) const;
 
         /**
-         * <p>Creates a private namespace based on DNS, which will be visible only inside a
+         * <p>Creates a private namespace based on DNS, which is visible only inside a
          * specified Amazon VPC. The namespace defines your service naming scheme. For
          * example, if you name your namespace <code>example.com</code> and name your
-         * service <code>backend</code>, the resulting DNS name for the service will be
+         * service <code>backend</code>, the resulting DNS name for the service is
          * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
@@ -284,10 +284,10 @@ namespace Model
         virtual Model::CreatePrivateDnsNamespaceOutcomeCallable CreatePrivateDnsNamespaceCallable(const Model::CreatePrivateDnsNamespaceRequest& request) const;
 
         /**
-         * <p>Creates a private namespace based on DNS, which will be visible only inside a
+         * <p>Creates a private namespace based on DNS, which is visible only inside a
          * specified Amazon VPC. The namespace defines your service naming scheme. For
          * example, if you name your namespace <code>example.com</code> and name your
-         * service <code>backend</code>, the resulting DNS name for the service will be
+         * service <code>backend</code>, the resulting DNS name for the service is
          * <code>backend.example.com</code>. For the current quota on the number of
          * namespaces that you can create using the same AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
@@ -301,12 +301,12 @@ namespace Model
         virtual void CreatePrivateDnsNamespaceAsync(const Model::CreatePrivateDnsNamespaceRequest& request, const CreatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a public namespace based on DNS, which will be visible on the
-         * internet. The namespace defines your service naming scheme. For example, if you
-         * name your namespace <code>example.com</code> and name your service
-         * <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current quota on the number of
-         * namespaces that you can create using the same AWS account, see <a
+         * <p>Creates a public namespace based on DNS, which is visible on the internet.
+         * The namespace defines your service naming scheme. For example, if you name your
+         * namespace <code>example.com</code> and name your service <code>backend</code>,
+         * the resulting DNS name for the service is <code>backend.example.com</code>. For
+         * the current quota on the number of namespaces that you can create using the same
+         * AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -316,12 +316,12 @@ namespace Model
         virtual Model::CreatePublicDnsNamespaceOutcome CreatePublicDnsNamespace(const Model::CreatePublicDnsNamespaceRequest& request) const;
 
         /**
-         * <p>Creates a public namespace based on DNS, which will be visible on the
-         * internet. The namespace defines your service naming scheme. For example, if you
-         * name your namespace <code>example.com</code> and name your service
-         * <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current quota on the number of
-         * namespaces that you can create using the same AWS account, see <a
+         * <p>Creates a public namespace based on DNS, which is visible on the internet.
+         * The namespace defines your service naming scheme. For example, if you name your
+         * namespace <code>example.com</code> and name your service <code>backend</code>,
+         * the resulting DNS name for the service is <code>backend.example.com</code>. For
+         * the current quota on the number of namespaces that you can create using the same
+         * AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -333,12 +333,12 @@ namespace Model
         virtual Model::CreatePublicDnsNamespaceOutcomeCallable CreatePublicDnsNamespaceCallable(const Model::CreatePublicDnsNamespaceRequest& request) const;
 
         /**
-         * <p>Creates a public namespace based on DNS, which will be visible on the
-         * internet. The namespace defines your service naming scheme. For example, if you
-         * name your namespace <code>example.com</code> and name your service
-         * <code>backend</code>, the resulting DNS name for the service will be
-         * <code>backend.example.com</code>. For the current quota on the number of
-         * namespaces that you can create using the same AWS account, see <a
+         * <p>Creates a public namespace based on DNS, which is visible on the internet.
+         * The namespace defines your service naming scheme. For example, if you name your
+         * namespace <code>example.com</code> and name your service <code>backend</code>,
+         * the resulting DNS name for the service is <code>backend.example.com</code>. For
+         * the current quota on the number of namespaces that you can create using the same
+         * AWS account, see <a
          * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
          * Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1030,7 +1030,7 @@ namespace Model
          * <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code>
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
          * you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-         * <code>UpdateService</code> request, the configuration is not deleted from the
+         * <code>UpdateService</code> request, the configuration isn't deleted from the
          * service.</p> </li> </ul> <p>When you update settings for a service, AWS Cloud
          * Map also updates the corresponding settings in all the records and health checks
          * that were created by using the specified service.</p><p><h3>See Also:</h3>   <a
@@ -1050,7 +1050,7 @@ namespace Model
          * <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code>
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
          * you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-         * <code>UpdateService</code> request, the configuration is not deleted from the
+         * <code>UpdateService</code> request, the configuration isn't deleted from the
          * service.</p> </li> </ul> <p>When you update settings for a service, AWS Cloud
          * Map also updates the corresponding settings in all the records and health checks
          * that were created by using the specified service.</p><p><h3>See Also:</h3>   <a
@@ -1072,7 +1072,7 @@ namespace Model
          * <code>HealthCheckConfig</code> configurations from an <code>UpdateService</code>
          * request, the configurations are deleted from the service.</p> </li> <li> <p>If
          * you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-         * <code>UpdateService</code> request, the configuration is not deleted from the
+         * <code>UpdateService</code> request, the configuration isn't deleted from the
          * service.</p> </li> </ul> <p>When you update settings for a service, AWS Cloud
          * Map also updates the corresponding settings in all the records and health checks
          * that were created by using the specified service.</p><p><h3>See Also:</h3>   <a

@@ -281,22 +281,34 @@ namespace Model
     inline NamespaceSummary& WithServiceCount(int value) { SetServiceCount(value); return *this;}
 
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline const NamespaceProperties& GetProperties() const{ return m_properties; }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline void SetProperties(const NamespaceProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline void SetProperties(NamespaceProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline NamespaceSummary& WithProperties(const NamespaceProperties& value) { SetProperties(value); return *this;}
 
-    
+    /**
+     * <p>The properties of the namespace.</p>
+     */
     inline NamespaceSummary& WithProperties(NamespaceProperties&& value) { SetProperties(std::move(value)); return *this;}
 
 

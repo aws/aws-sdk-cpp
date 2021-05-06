@@ -342,42 +342,66 @@ namespace Model
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
      * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-     * regions.</p>
+     * regions.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
      * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-     * regions.</p>
+     * regions.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
      * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-     * regions.</p>
+     * regions.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
      * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-     * regions.</p>
+     * regions.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
      * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-     * regions.</p>
+     * regions.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline UpdateJobRequest& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
      * <p>The updated <code>SnowballCapacityPreference</code> of this job's
      * <a>JobMetadata</a> object. The 50 TB Snowballs are only available in the US
-     * regions.</p>
+     * regions.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline UpdateJobRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 

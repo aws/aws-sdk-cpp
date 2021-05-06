@@ -81,64 +81,64 @@ namespace Model
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/time stamp.</p>
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/timestamp.</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -186,57 +186,57 @@ namespace Model
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreatePublicDnsNamespaceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tags to add to the namespace. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreatePublicDnsNamespaceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

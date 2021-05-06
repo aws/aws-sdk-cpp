@@ -41,7 +41,8 @@ JobMetadata::JobMetadata() :
     m_clusterIdHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
     m_taxDocumentsHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false)
+    m_deviceConfigurationHasBeenSet(false),
+    m_longTermPricingIdHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ JobMetadata::JobMetadata(JsonView jsonValue) :
     m_clusterIdHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
     m_taxDocumentsHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false)
+    m_deviceConfigurationHasBeenSet(false),
+    m_longTermPricingIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -208,6 +210,13 @@ JobMetadata& JobMetadata::operator =(JsonView jsonValue)
     m_deviceConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LongTermPricingId"))
+  {
+    m_longTermPricingId = jsonValue.GetString("LongTermPricingId");
+
+    m_longTermPricingIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -321,6 +330,12 @@ JsonValue JobMetadata::Jsonize() const
   if(m_deviceConfigurationHasBeenSet)
   {
    payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
+
+  }
+
+  if(m_longTermPricingIdHasBeenSet)
+  {
+   payload.WithString("LongTermPricingId", m_longTermPricingId);
 
   }
 

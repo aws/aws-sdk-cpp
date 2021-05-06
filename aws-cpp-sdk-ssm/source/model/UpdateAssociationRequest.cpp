@@ -31,6 +31,7 @@ UpdateAssociationRequest::UpdateAssociationRequest() :
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
     m_applyOnlyAtCronIntervalHasBeenSet(false),
+    m_calendarNamesHasBeenSet(false),
     m_targetLocationsHasBeenSet(false)
 {
 }
@@ -139,6 +140,17 @@ Aws::String UpdateAssociationRequest::SerializePayload() const
   if(m_applyOnlyAtCronIntervalHasBeenSet)
   {
    payload.WithBool("ApplyOnlyAtCronInterval", m_applyOnlyAtCronInterval);
+
+  }
+
+  if(m_calendarNamesHasBeenSet)
+  {
+   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
+   {
+     calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);
+   }
+   payload.WithArray("CalendarNames", std::move(calendarNamesJsonList));
 
   }
 
