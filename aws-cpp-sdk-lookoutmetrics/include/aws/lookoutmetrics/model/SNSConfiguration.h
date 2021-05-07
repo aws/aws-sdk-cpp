@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline SNSConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline SNSConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>THe ARN of the IAM role that has access to the target SNS topic.</p>
+     * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
     inline SNSConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

@@ -825,8 +825,12 @@ namespace Model
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
          * channels enabled. It does not attach any storage, such as Amazon Simple Storage
          * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
-         * configurations on features, such as Contact Lens for Amazon Connect.
-         * </p><p><h3>See Also:</h3>   <a
+         * configurations on features, such as Contact Lens for Amazon Connect. </p>
+         * <p>Amazon Connect enforces a limit on the total number of instances that you can
+         * create or delete in 30 days. If you exceed this limit, you will get an error
+         * message indicating there has been an excessive number of attempts at creating or
+         * deleting instances. You must wait 30 days before you can restart creating and
+         * deleting instances in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">AWS
          * API Reference</a></p>
          */
@@ -837,8 +841,12 @@ namespace Model
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
          * channels enabled. It does not attach any storage, such as Amazon Simple Storage
          * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
-         * configurations on features, such as Contact Lens for Amazon Connect.
-         * </p><p><h3>See Also:</h3>   <a
+         * configurations on features, such as Contact Lens for Amazon Connect. </p>
+         * <p>Amazon Connect enforces a limit on the total number of instances that you can
+         * create or delete in 30 days. If you exceed this limit, you will get an error
+         * message indicating there has been an excessive number of attempts at creating or
+         * deleting instances. You must wait 30 days before you can restart creating and
+         * deleting instances in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">AWS
          * API Reference</a></p>
          *
@@ -851,8 +859,12 @@ namespace Model
          * change.</p> <p>Initiates an Amazon Connect instance with all the supported
          * channels enabled. It does not attach any storage, such as Amazon Simple Storage
          * Service (Amazon S3) or Amazon Kinesis. It also does not allow for any
-         * configurations on features, such as Contact Lens for Amazon Connect.
-         * </p><p><h3>See Also:</h3>   <a
+         * configurations on features, such as Contact Lens for Amazon Connect. </p>
+         * <p>Amazon Connect enforces a limit on the total number of instances that you can
+         * create or delete in 30 days. If you exceed this limit, you will get an error
+         * message indicating there has been an excessive number of attempts at creating or
+         * deleting instances. You must wait 30 days before you can restart creating and
+         * deleting instances in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateInstance">AWS
          * API Reference</a></p>
          *
@@ -861,8 +873,7 @@ namespace Model
         virtual void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Create an AppIntegration association with an Amazon Connect
+         * <p>Create an AppIntegration association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -870,8 +881,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcome CreateIntegrationAssociation(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Create an AppIntegration association with an Amazon Connect
+         * <p>Create an AppIntegration association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -881,8 +891,7 @@ namespace Model
         virtual Model::CreateIntegrationAssociationOutcomeCallable CreateIntegrationAssociationCallable(const Model::CreateIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Create an AppIntegration association with an Amazon Connect
+         * <p>Create an AppIntegration association with an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">AWS
          * API Reference</a></p>
@@ -979,18 +988,16 @@ namespace Model
         virtual void CreateRoutingProfileAsync(const Model::CreateRoutingProfileRequest& request, const CreateRoutingProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates a use case for an AppIntegration
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a use case for an AppIntegration association.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateUseCaseOutcome CreateUseCase(const Model::CreateUseCaseRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates a use case for an AppIntegration
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a use case for an AppIntegration association.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">AWS
          * API Reference</a></p>
          *
@@ -999,9 +1006,8 @@ namespace Model
         virtual Model::CreateUseCaseOutcomeCallable CreateUseCaseCallable(const Model::CreateUseCaseRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates a use case for an AppIntegration
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a use case for an AppIntegration association.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateUseCase">AWS
          * API Reference</a></p>
          *
@@ -1076,8 +1082,12 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes the Amazon Connect instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * change.</p> <p>Deletes the Amazon Connect instance.</p> <p>Amazon Connect
+         * enforces a limit on the total number of instances that you can create or delete
+         * in 30 days. If you exceed this limit, you will get an error message indicating
+         * there has been an excessive number of attempts at creating or deleting
+         * instances. You must wait 30 days before you can restart creating and deleting
+         * instances in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">AWS
          * API Reference</a></p>
          */
@@ -1085,8 +1095,12 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes the Amazon Connect instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * change.</p> <p>Deletes the Amazon Connect instance.</p> <p>Amazon Connect
+         * enforces a limit on the total number of instances that you can create or delete
+         * in 30 days. If you exceed this limit, you will get an error message indicating
+         * there has been an excessive number of attempts at creating or deleting
+         * instances. You must wait 30 days before you can restart creating and deleting
+         * instances in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">AWS
          * API Reference</a></p>
          *
@@ -1096,8 +1110,12 @@ namespace Model
 
         /**
          * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes the Amazon Connect instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * change.</p> <p>Deletes the Amazon Connect instance.</p> <p>Amazon Connect
+         * enforces a limit on the total number of instances that you can create or delete
+         * in 30 days. If you exceed this limit, you will get an error message indicating
+         * there has been an excessive number of attempts at creating or deleting
+         * instances. You must wait 30 days before you can restart creating and deleting
+         * instances in your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteInstance">AWS
          * API Reference</a></p>
          *
@@ -1106,20 +1124,18 @@ namespace Model
         virtual void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes an AppIntegration association from an Amazon Connect
-         * instance. The association must not have any use cases associated with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AppIntegration association from an Amazon Connect instance. The
+         * association must not have any use cases associated with it.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIntegrationAssociationOutcome DeleteIntegrationAssociation(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes an AppIntegration association from an Amazon Connect
-         * instance. The association must not have any use cases associated with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AppIntegration association from an Amazon Connect instance. The
+         * association must not have any use cases associated with it.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          *
@@ -1128,10 +1144,9 @@ namespace Model
         virtual Model::DeleteIntegrationAssociationOutcomeCallable DeleteIntegrationAssociationCallable(const Model::DeleteIntegrationAssociationRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes an AppIntegration association from an Amazon Connect
-         * instance. The association must not have any use cases associated with
-         * it.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AppIntegration association from an Amazon Connect instance. The
+         * association must not have any use cases associated with it.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">AWS
          * API Reference</a></p>
          *
@@ -1168,18 +1183,16 @@ namespace Model
         virtual void DeleteQuickConnectAsync(const Model::DeleteQuickConnectRequest& request, const DeleteQuickConnectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes a use case from an AppIntegration
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a use case from an AppIntegration association.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteUseCaseOutcome DeleteUseCase(const Model::DeleteUseCaseRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes a use case from an AppIntegration
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a use case from an AppIntegration association.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">AWS
          * API Reference</a></p>
          *
@@ -1188,9 +1201,8 @@ namespace Model
         virtual Model::DeleteUseCaseOutcomeCallable DeleteUseCaseCallable(const Model::DeleteUseCaseRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes a use case from an AppIntegration
-         * association.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a use case from an AppIntegration association.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteUseCase">AWS
          * API Reference</a></p>
          *
@@ -1878,14 +1890,22 @@ namespace Model
         virtual void GetCurrentMetricDataAsync(const Model::GetCurrentMetricDataRequest& request, const GetCurrentMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a token for federation.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a token for federation.</p>  <p>This API doesn't support root
+         * users. If you try to invoke GetFederationToken with root credentials, an error
+         * message similar to the following one appears: </p> <p> <code>Provided identity:
+         * Principal: .... User: .... cannot be used for federation with Amazon
+         * Connect</code> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">AWS
          * API Reference</a></p>
          */
         virtual Model::GetFederationTokenOutcome GetFederationToken(const Model::GetFederationTokenRequest& request) const;
 
         /**
-         * <p>Retrieves a token for federation.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a token for federation.</p>  <p>This API doesn't support root
+         * users. If you try to invoke GetFederationToken with root credentials, an error
+         * message similar to the following one appears: </p> <p> <code>Provided identity:
+         * Principal: .... User: .... cannot be used for federation with Amazon
+         * Connect</code> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">AWS
          * API Reference</a></p>
          *
@@ -1894,7 +1914,11 @@ namespace Model
         virtual Model::GetFederationTokenOutcomeCallable GetFederationTokenCallable(const Model::GetFederationTokenRequest& request) const;
 
         /**
-         * <p>Retrieves a token for federation.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a token for federation.</p>  <p>This API doesn't support root
+         * users. If you try to invoke GetFederationToken with root credentials, an error
+         * message similar to the following one appears: </p> <p> <code>Provided identity:
+         * Principal: .... User: .... cannot be used for federation with Amazon
+         * Connect</code> </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetFederationToken">AWS
          * API Reference</a></p>
          *
@@ -2153,20 +2177,16 @@ namespace Model
         virtual void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Provides summary information about the AppIntegration
-         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Provides summary information about the AppIntegration associations for the
+         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIntegrationAssociationsOutcome ListIntegrationAssociations(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Provides summary information about the AppIntegration
-         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Provides summary information about the AppIntegration associations for the
+         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          *
@@ -2175,10 +2195,8 @@ namespace Model
         virtual Model::ListIntegrationAssociationsOutcomeCallable ListIntegrationAssociationsCallable(const Model::ListIntegrationAssociationsRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Provides summary information about the AppIntegration
-         * associations for the specified Amazon Connect instance.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Provides summary information about the AppIntegration associations for the
+         * specified Amazon Connect instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListIntegrationAssociations">AWS
          * API Reference</a></p>
          *
@@ -2349,7 +2367,11 @@ namespace Model
 
         /**
          * <p>Provides information about the queues for the specified Amazon Connect
-         * instance.</p> <p>For more information about queues, see <a
+         * instance.</p> <p>If you do not specify a <code>QueueTypes</code> parameter, both
+         * standard and agent queues are returned. This might cause an unexpected
+         * truncation of results if you have more than 1000 agents and you limit the number
+         * of results of the API call in code.</p> <p>For more information about queues,
+         * see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
          * Standard and Agent</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2360,7 +2382,11 @@ namespace Model
 
         /**
          * <p>Provides information about the queues for the specified Amazon Connect
-         * instance.</p> <p>For more information about queues, see <a
+         * instance.</p> <p>If you do not specify a <code>QueueTypes</code> parameter, both
+         * standard and agent queues are returned. This might cause an unexpected
+         * truncation of results if you have more than 1000 agents and you limit the number
+         * of results of the API call in code.</p> <p>For more information about queues,
+         * see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
          * Standard and Agent</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2373,7 +2399,11 @@ namespace Model
 
         /**
          * <p>Provides information about the queues for the specified Amazon Connect
-         * instance.</p> <p>For more information about queues, see <a
+         * instance.</p> <p>If you do not specify a <code>QueueTypes</code> parameter, both
+         * standard and agent queues are returned. This might cause an unexpected
+         * truncation of results if you have more than 1000 agents and you limit the number
+         * of results of the API call in code.</p> <p>For more information about queues,
+         * see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues:
          * Standard and Agent</a> in the <i>Amazon Connect Administrator
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2598,16 +2628,14 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          */
         virtual Model::ListUseCasesOutcome ListUseCases(const Model::ListUseCasesRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          *
@@ -2616,8 +2644,7 @@ namespace Model
         virtual Model::ListUseCasesOutcomeCallable ListUseCasesCallable(const Model::ListUseCasesRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the use cases. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListUseCases">AWS
          * API Reference</a></p>
          *
@@ -2734,8 +2761,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
          * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception from the API Gateway.</p> </li>
-         * <li> <p>The <a
+         * returns a <code>TooManyRequests</code> exception.</p> </li> <li> <p>The <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
@@ -2757,8 +2783,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
          * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception from the API Gateway.</p> </li>
-         * <li> <p>The <a
+         * returns a <code>TooManyRequests</code> exception.</p> </li> <li> <p>The <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
@@ -2782,8 +2807,7 @@ namespace Model
          * href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
          * with WEBSOCKET and CONNECTION_CREDENTIALS. </p> <p>A 429 error occurs in two
          * situations:</p> <ul> <li> <p>API rate limit is exceeded. API TPS throttling
-         * returns a <code>TooManyRequests</code> exception from the API Gateway.</p> </li>
-         * <li> <p>The <a
+         * returns a <code>TooManyRequests</code> exception.</p> </li> <li> <p>The <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
          * for concurrent active chats</a> is exceeded. Active chat throttling returns a
          * <code>LimitExceededException</code>.</p> </li> </ul> <p>For more information
@@ -3115,46 +3139,52 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates the contact attributes associated with the specified
-         * contact.</p> <p>You can add or update attributes for both ongoing and completed
-         * contacts. For example, while the call is active, you can update the customer's
-         * name or the reason the customer called. You can add notes about steps that the
-         * agent took during the call that display to the next agent that takes the call.
-         * You can also update attributes for a contact using data from your CRM
-         * application and save the data with the contact in Amazon Connect. You could also
-         * flag calls for additional analysis, such as legal review or to identify abusive
-         * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
-         * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
-         * operation to update attributes for contacts that occurred prior to the release
-         * of the API, which was September 12, 2018. You can update attributes only for
-         * contacts that started after the release of the API. If you attempt to update
-         * attributes for a contact that occurred prior to the release of the API, a 400
-         * error is returned. This applies also to queued callbacks that were initiated
-         * prior to the release of the API but are still active in your
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates user-defined contact attributes associated with the
+         * specified contact.</p> <p>You can create or update user-defined attributes for
+         * both ongoing and completed contacts. For example, while the call is active, you
+         * can update the customer's name or the reason the customer called. You can add
+         * notes about steps that the agent took during the call that display to the next
+         * agent that takes the call. You can also update attributes for a contact using
+         * data from your CRM application and save the data with the contact in Amazon
+         * Connect. You could also flag calls for additional analysis, such as legal review
+         * or to identify abusive callers.</p> <p>Contact attributes are available in
+         * Amazon Connect for 24 months, and are then deleted. For information about CTR
+         * retention and the maximum size of the CTR attributes section, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+         * specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <p>
+         * <b>Important:</b> You cannot use the operation to update attributes for contacts
+         * that occurred prior to the release of the API, which was September 12, 2018. You
+         * can update attributes only for contacts that started after the release of the
+         * API. If you attempt to update attributes for a contact that occurred prior to
+         * the release of the API, a 400 error is returned. This applies also to queued
+         * callbacks that were initiated prior to the release of the API but are still
+         * active in your instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateContactAttributesOutcome UpdateContactAttributes(const Model::UpdateContactAttributesRequest& request) const;
 
         /**
-         * <p>Creates or updates the contact attributes associated with the specified
-         * contact.</p> <p>You can add or update attributes for both ongoing and completed
-         * contacts. For example, while the call is active, you can update the customer's
-         * name or the reason the customer called. You can add notes about steps that the
-         * agent took during the call that display to the next agent that takes the call.
-         * You can also update attributes for a contact using data from your CRM
-         * application and save the data with the contact in Amazon Connect. You could also
-         * flag calls for additional analysis, such as legal review or to identify abusive
-         * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
-         * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
-         * operation to update attributes for contacts that occurred prior to the release
-         * of the API, which was September 12, 2018. You can update attributes only for
-         * contacts that started after the release of the API. If you attempt to update
-         * attributes for a contact that occurred prior to the release of the API, a 400
-         * error is returned. This applies also to queued callbacks that were initiated
-         * prior to the release of the API but are still active in your
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates user-defined contact attributes associated with the
+         * specified contact.</p> <p>You can create or update user-defined attributes for
+         * both ongoing and completed contacts. For example, while the call is active, you
+         * can update the customer's name or the reason the customer called. You can add
+         * notes about steps that the agent took during the call that display to the next
+         * agent that takes the call. You can also update attributes for a contact using
+         * data from your CRM application and save the data with the contact in Amazon
+         * Connect. You could also flag calls for additional analysis, such as legal review
+         * or to identify abusive callers.</p> <p>Contact attributes are available in
+         * Amazon Connect for 24 months, and are then deleted. For information about CTR
+         * retention and the maximum size of the CTR attributes section, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+         * specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <p>
+         * <b>Important:</b> You cannot use the operation to update attributes for contacts
+         * that occurred prior to the release of the API, which was September 12, 2018. You
+         * can update attributes only for contacts that started after the release of the
+         * API. If you attempt to update attributes for a contact that occurred prior to
+         * the release of the API, a 400 error is returned. This applies also to queued
+         * callbacks that were initiated prior to the release of the API but are still
+         * active in your instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          *
@@ -3163,23 +3193,26 @@ namespace Model
         virtual Model::UpdateContactAttributesOutcomeCallable UpdateContactAttributesCallable(const Model::UpdateContactAttributesRequest& request) const;
 
         /**
-         * <p>Creates or updates the contact attributes associated with the specified
-         * contact.</p> <p>You can add or update attributes for both ongoing and completed
-         * contacts. For example, while the call is active, you can update the customer's
-         * name or the reason the customer called. You can add notes about steps that the
-         * agent took during the call that display to the next agent that takes the call.
-         * You can also update attributes for a contact using data from your CRM
-         * application and save the data with the contact in Amazon Connect. You could also
-         * flag calls for additional analysis, such as legal review or to identify abusive
-         * callers.</p> <p>Contact attributes are available in Amazon Connect for 24
-         * months, and are then deleted.</p> <p> <b>Important:</b> You cannot use the
-         * operation to update attributes for contacts that occurred prior to the release
-         * of the API, which was September 12, 2018. You can update attributes only for
-         * contacts that started after the release of the API. If you attempt to update
-         * attributes for a contact that occurred prior to the release of the API, a 400
-         * error is returned. This applies also to queued callbacks that were initiated
-         * prior to the release of the API but are still active in your
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or updates user-defined contact attributes associated with the
+         * specified contact.</p> <p>You can create or update user-defined attributes for
+         * both ongoing and completed contacts. For example, while the call is active, you
+         * can update the customer's name or the reason the customer called. You can add
+         * notes about steps that the agent took during the call that display to the next
+         * agent that takes the call. You can also update attributes for a contact using
+         * data from your CRM application and save the data with the contact in Amazon
+         * Connect. You could also flag calls for additional analysis, such as legal review
+         * or to identify abusive callers.</p> <p>Contact attributes are available in
+         * Amazon Connect for 24 months, and are then deleted. For information about CTR
+         * retention and the maximum size of the CTR attributes section, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature
+         * specifications</a> in the <i>Amazon Connect Administrator Guide</i>. </p> <p>
+         * <b>Important:</b> You cannot use the operation to update attributes for contacts
+         * that occurred prior to the release of the API, which was September 12, 2018. You
+         * can update attributes only for contacts that started after the release of the
+         * API. If you attempt to update attributes for a contact that occurred prior to
+         * the release of the API, a 400 error is returned. This applies also to queued
+         * callbacks that were initiated prior to the release of the API but are still
+         * active in your instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactAttributes">AWS
          * API Reference</a></p>
          *

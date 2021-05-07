@@ -370,8 +370,8 @@ namespace Model
 
         /**
          * <p>Deletes a detector. Deleting an anomaly detector will delete all of its
-         * corresponding resources including any configured datasets and alerts.
-         * </p><p><h3>See Also:</h3>   <a
+         * corresponding resources including any configured datasets and
+         * alerts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAnomalyDetector">AWS
          * API Reference</a></p>
          */
@@ -379,8 +379,8 @@ namespace Model
 
         /**
          * <p>Deletes a detector. Deleting an anomaly detector will delete all of its
-         * corresponding resources including any configured datasets and alerts.
-         * </p><p><h3>See Also:</h3>   <a
+         * corresponding resources including any configured datasets and
+         * alerts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAnomalyDetector">AWS
          * API Reference</a></p>
          *
@@ -390,8 +390,8 @@ namespace Model
 
         /**
          * <p>Deletes a detector. Deleting an anomaly detector will delete all of its
-         * corresponding resources including any configured datasets and alerts.
-         * </p><p><h3>See Also:</h3>   <a
+         * corresponding resources including any configured datasets and
+         * alerts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DeleteAnomalyDetector">AWS
          * API Reference</a></p>
          *
@@ -400,14 +400,20 @@ namespace Model
         virtual void DeleteAnomalyDetectorAsync(const Model::DeleteAnomalyDetectorRequest& request, const DeleteAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an alert.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an alert.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAlert">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAlertOutcome DescribeAlert(const Model::DescribeAlertRequest& request) const;
 
         /**
-         * <p>Describes an alert.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an alert.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAlert">AWS
          * API Reference</a></p>
          *
@@ -416,7 +422,10 @@ namespace Model
         virtual Model::DescribeAlertOutcomeCallable DescribeAlertCallable(const Model::DescribeAlertRequest& request) const;
 
         /**
-         * <p>Describes an alert.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an alert.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAlert">AWS
          * API Reference</a></p>
          *
@@ -453,14 +462,20 @@ namespace Model
         virtual void DescribeAnomalyDetectionExecutionsAsync(const Model::DescribeAnomalyDetectionExecutionsRequest& request, const DescribeAnomalyDetectionExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a detector.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetector">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAnomalyDetectorOutcome DescribeAnomalyDetector(const Model::DescribeAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Describes a detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a detector.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetector">AWS
          * API Reference</a></p>
          *
@@ -469,7 +484,10 @@ namespace Model
         virtual Model::DescribeAnomalyDetectorOutcomeCallable DescribeAnomalyDetectorCallable(const Model::DescribeAnomalyDetectorRequest& request) const;
 
         /**
-         * <p>Describes a detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a detector.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeAnomalyDetector">AWS
          * API Reference</a></p>
          *
@@ -478,14 +496,20 @@ namespace Model
         virtual void DescribeAnomalyDetectorAsync(const Model::DescribeAnomalyDetectorRequest& request, const DescribeAnomalyDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a dataset.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeMetricSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMetricSetOutcome DescribeMetricSet(const Model::DescribeMetricSetRequest& request) const;
 
         /**
-         * <p>Describes a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a dataset.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeMetricSet">AWS
          * API Reference</a></p>
          *
@@ -494,7 +518,10 @@ namespace Model
         virtual Model::DescribeMetricSetOutcomeCallable DescribeMetricSetCallable(const Model::DescribeMetricSetRequest& request) const;
 
         /**
-         * <p>Describes a dataset.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes a dataset.</p> <p>Amazon Lookout for Metrics API actions are
+         * eventually consistent. If you do a read operation on a resource immediately
+         * after creating or modifying it, use retries to allow time for the write
+         * operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/DescribeMetricSet">AWS
          * API Reference</a></p>
          *
@@ -584,14 +611,20 @@ namespace Model
         virtual void GetSampleDataAsync(const Model::GetSampleDataRequest& request, const GetSampleDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the alerts attached to a detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the alerts attached to a detector.</p> <p>Amazon Lookout for Metrics
+         * API actions are eventually consistent. If you do a read operation on a resource
+         * immediately after creating or modifying it, use retries to allow time for the
+         * write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAlertsOutcome ListAlerts(const Model::ListAlertsRequest& request) const;
 
         /**
-         * <p>Lists the alerts attached to a detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the alerts attached to a detector.</p> <p>Amazon Lookout for Metrics
+         * API actions are eventually consistent. If you do a read operation on a resource
+         * immediately after creating or modifying it, use retries to allow time for the
+         * write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">AWS
          * API Reference</a></p>
          *
@@ -600,7 +633,10 @@ namespace Model
         virtual Model::ListAlertsOutcomeCallable ListAlertsCallable(const Model::ListAlertsRequest& request) const;
 
         /**
-         * <p>Lists the alerts attached to a detector.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the alerts attached to a detector.</p> <p>Amazon Lookout for Metrics
+         * API actions are eventually consistent. If you do a read operation on a resource
+         * immediately after creating or modifying it, use retries to allow time for the
+         * write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAlerts">AWS
          * API Reference</a></p>
          *
@@ -609,14 +645,20 @@ namespace Model
         virtual void ListAlertsAsync(const Model::ListAlertsRequest& request, const ListAlertsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the detectors in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the detectors in the current AWS Region.</p> <p>Amazon Lookout for
+         * Metrics API actions are eventually consistent. If you do a read operation on a
+         * resource immediately after creating or modifying it, use retries to allow time
+         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAnomalyDetectorsOutcome ListAnomalyDetectors(const Model::ListAnomalyDetectorsRequest& request) const;
 
         /**
-         * <p>Lists the detectors in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the detectors in the current AWS Region.</p> <p>Amazon Lookout for
+         * Metrics API actions are eventually consistent. If you do a read operation on a
+         * resource immediately after creating or modifying it, use retries to allow time
+         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">AWS
          * API Reference</a></p>
          *
@@ -625,7 +667,10 @@ namespace Model
         virtual Model::ListAnomalyDetectorsOutcomeCallable ListAnomalyDetectorsCallable(const Model::ListAnomalyDetectorsRequest& request) const;
 
         /**
-         * <p>Lists the detectors in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the detectors in the current AWS Region.</p> <p>Amazon Lookout for
+         * Metrics API actions are eventually consistent. If you do a read operation on a
+         * resource immediately after creating or modifying it, use retries to allow time
+         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListAnomalyDetectors">AWS
          * API Reference</a></p>
          *
@@ -687,14 +732,20 @@ namespace Model
         virtual void ListAnomalyGroupTimeSeriesAsync(const Model::ListAnomalyGroupTimeSeriesRequest& request, const ListAnomalyGroupTimeSeriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the datasets in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the datasets in the current AWS Region.</p> <p>Amazon Lookout for
+         * Metrics API actions are eventually consistent. If you do a read operation on a
+         * resource immediately after creating or modifying it, use retries to allow time
+         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMetricSetsOutcome ListMetricSets(const Model::ListMetricSetsRequest& request) const;
 
         /**
-         * <p>Lists the datasets in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the datasets in the current AWS Region.</p> <p>Amazon Lookout for
+         * Metrics API actions are eventually consistent. If you do a read operation on a
+         * resource immediately after creating or modifying it, use retries to allow time
+         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">AWS
          * API Reference</a></p>
          *
@@ -703,7 +754,10 @@ namespace Model
         virtual Model::ListMetricSetsOutcomeCallable ListMetricSetsCallable(const Model::ListMetricSetsRequest& request) const;
 
         /**
-         * <p>Lists the datasets in the current AWS Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the datasets in the current AWS Region.</p> <p>Amazon Lookout for
+         * Metrics API actions are eventually consistent. If you do a read operation on a
+         * resource immediately after creating or modifying it, use retries to allow time
+         * for the write operation to complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/ListMetricSets">AWS
          * API Reference</a></p>
          *

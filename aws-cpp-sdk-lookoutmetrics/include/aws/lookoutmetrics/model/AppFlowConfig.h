@@ -88,42 +88,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline const Aws::String& GetFlowName() const{ return m_flowName; }
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline bool FlowNameHasBeenSet() const { return m_flowNameHasBeenSet; }
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline void SetFlowName(const Aws::String& value) { m_flowNameHasBeenSet = true; m_flowName = value; }
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline void SetFlowName(Aws::String&& value) { m_flowNameHasBeenSet = true; m_flowName = std::move(value); }
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline void SetFlowName(const char* value) { m_flowNameHasBeenSet = true; m_flowName.assign(value); }
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline AppFlowConfig& WithFlowName(const Aws::String& value) { SetFlowName(value); return *this;}
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline AppFlowConfig& WithFlowName(Aws::String&& value) { SetFlowName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the flow.</p>
+     * <p> name of the flow.</p>
      */
     inline AppFlowConfig& WithFlowName(const char* value) { SetFlowName(value); return *this;}
 

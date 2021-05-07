@@ -10,6 +10,8 @@
 #include <aws/lakeformation/model/TableResource.h>
 #include <aws/lakeformation/model/TableWithColumnsResource.h>
 #include <aws/lakeformation/model/DataLocationResource.h>
+#include <aws/lakeformation/model/LFTagKeyResource.h>
+#include <aws/lakeformation/model/LFTagPolicyResource.h>
 #include <utility>
 
 namespace Aws
@@ -249,6 +251,68 @@ namespace Model
      */
     inline Resource& WithDataLocation(DataLocationResource&& value) { SetDataLocation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tag key and values attached to a resource.</p>
+     */
+    inline const LFTagKeyResource& GetLFTag() const{ return m_lFTag; }
+
+    /**
+     * <p>The tag key and values attached to a resource.</p>
+     */
+    inline bool LFTagHasBeenSet() const { return m_lFTagHasBeenSet; }
+
+    /**
+     * <p>The tag key and values attached to a resource.</p>
+     */
+    inline void SetLFTag(const LFTagKeyResource& value) { m_lFTagHasBeenSet = true; m_lFTag = value; }
+
+    /**
+     * <p>The tag key and values attached to a resource.</p>
+     */
+    inline void SetLFTag(LFTagKeyResource&& value) { m_lFTagHasBeenSet = true; m_lFTag = std::move(value); }
+
+    /**
+     * <p>The tag key and values attached to a resource.</p>
+     */
+    inline Resource& WithLFTag(const LFTagKeyResource& value) { SetLFTag(value); return *this;}
+
+    /**
+     * <p>The tag key and values attached to a resource.</p>
+     */
+    inline Resource& WithLFTag(LFTagKeyResource&& value) { SetLFTag(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     */
+    inline const LFTagPolicyResource& GetLFTagPolicy() const{ return m_lFTagPolicy; }
+
+    /**
+     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     */
+    inline bool LFTagPolicyHasBeenSet() const { return m_lFTagPolicyHasBeenSet; }
+
+    /**
+     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     */
+    inline void SetLFTagPolicy(const LFTagPolicyResource& value) { m_lFTagPolicyHasBeenSet = true; m_lFTagPolicy = value; }
+
+    /**
+     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     */
+    inline void SetLFTagPolicy(LFTagPolicyResource&& value) { m_lFTagPolicyHasBeenSet = true; m_lFTagPolicy = std::move(value); }
+
+    /**
+     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     */
+    inline Resource& WithLFTagPolicy(const LFTagPolicyResource& value) { SetLFTagPolicy(value); return *this;}
+
+    /**
+     * <p>A list of tag conditions that define a resource's tag policy.</p>
+     */
+    inline Resource& WithLFTagPolicy(LFTagPolicyResource&& value) { SetLFTagPolicy(std::move(value)); return *this;}
+
   private:
 
     CatalogResource m_catalog;
@@ -265,6 +329,12 @@ namespace Model
 
     DataLocationResource m_dataLocation;
     bool m_dataLocationHasBeenSet;
+
+    LFTagKeyResource m_lFTag;
+    bool m_lFTagHasBeenSet;
+
+    LFTagPolicyResource m_lFTagPolicy;
+    bool m_lFTagPolicyHasBeenSet;
   };
 
 } // namespace Model
