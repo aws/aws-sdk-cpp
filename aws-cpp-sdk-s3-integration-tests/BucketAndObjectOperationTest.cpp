@@ -543,7 +543,8 @@ namespace
             CleanUpPresignedUrlTest();
         }
 
-        void DoTestGetObjectWithObjectLambdaARN(const ClientConfiguration& config, const Aws::String& bucketArn, const Aws::String& expectedEndpoint, const Aws::String& expectedSignerRegion, bool arnExpectedToBeValid)
+        void DoTestGetObjectWithBucketARN(const ClientConfiguration& config, const Aws::String& bucketArn, const Aws::String& expectedEndpoint,
+            const Aws::String& expectedSignerRegion, const Aws::String& expectedSignerServiceName, bool arnExpectedToBeValid)
         {
             S3Client s3Client(config);
             GetObjectRequest getObjectRequest;
@@ -557,8 +558,8 @@ namespace
                 Aws::StringStream ss;
                 ss << "https://" << expectedEndpoint << "/fakeObjectKey";
                 ASSERT_STREQ(ss.str().c_str(), TestingMonitoringMetrics::s_lastUriString.c_str());
-                ASSERT_STREQ("s3-object-lambda", TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
                 ASSERT_STREQ(expectedSignerRegion.c_str(), TestingMonitoringMetrics::s_lastSigningRegion.c_str());
+                ASSERT_STREQ(expectedSignerServiceName.c_str(), TestingMonitoringMetrics::s_lastSigningServiceName.c_str());
             }
             else
             {
@@ -1882,83 +1883,281 @@ namespace
         ASSERT_EQ(S3Errors::VALIDATION, listObjectsOutcome.GetError().GetErrorType());
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARN)
+    {
+        Aws::String awsS3UseArnRegionBackup = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+
+        // Invalid ARNs
+        DoTestGetObjectWithBucketARN(config, "arn:aws:sqs:us-west-2:123456789012:someresource", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:bucket_name:mybucket", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3::123456789012:accesspoint:myendpoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2::accesspoint:myendpoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123.45678.9012:accesspoint:mybucket", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:*", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:my.bucket", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:mybucket:object:foo", "", "", "", false);
+
+        // US regions
+        config.region = Aws::Region::US_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3, true);
+
+        // s3-external-1 and aws-global are not regional endpoints.
+        config.region = "s3-external-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // Cross region Access Point ARN
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // China regions
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3, true);
+
+        // US Gov regions
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+
+        // Cross US Gov region Access Point ARN
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // Use ARN region
+        Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+
+        // US regions
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+
+        // s3-external-1 and aws-global in client configuration.
+        config.region = "s3-external-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+        config.region = Aws::Region::AWS_GLOBAL;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3, true);
+
+        // US regions with dual-stack
+        config.region = Aws::Region::US_WEST_2;
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3:us-west-2:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.dualstack.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3, true);
+        config.useDualStack = false;
+
+        // TODO Cross partition Access Point ARN
+        // config.region = Aws::Region::US_WEST_2;
+        // DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // China regions
+        config.region = Aws::Region::CN_NORTH_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-north-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3:cn-northwest-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.cn-northwest-1.amazonaws.com.cn", Aws::Region::CN_NORTHWEST_1, ARNService::S3, true);
+
+        // US Gov regions
+        config.region = Aws::Region::US_GOV_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+
+        // Cross FIPS region Access Point ARN is not allowed even though use ARN region. It's different from non FIPS regions.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // US Gov regions with dual-stack
+        config.region = "fips-us-gov-east-1";
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-east-1:123456789012:accesspoint:myendpoint",
+            "myendpoint-123456789012.s3-accesspoint-fips.dualstack.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3, true);
+
+        if (awsS3UseArnRegionBackup.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", awsS3UseArnRegionBackup.c_str(), 1);
+        }
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3OutpostsAccessPointARN)
+    {
+        Aws::String awsS3UseArnRegionBackup = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
+        ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
+
+        // Invalid ARN
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost::accesspoint:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:mybucket:object:foo", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-0123456.890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // US regions
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OUTPOSTS, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OUTPOSTS, true);
+
+        // dual-stack is not supported
+        config.useDualStack = true;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        config.useDualStack = false;
+
+        // Cross region Outposts Access Point ARN
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // FIPS regions are not supported.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // Use ARN region
+        Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
+
+        // US regions
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OUTPOSTS, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/accesspoint/myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OUTPOSTS, true);
+
+        // TODO Cross partition Access Point ARN
+        // config.region = Aws::Region::US_WEST_2;
+        // DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        // US Gov regions
+        config.region = Aws::Region::US_GOV_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint",
+            "myaccesspoint-123456789012.op-01234567890123456.s3-outposts.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OUTPOSTS, true);
+
+        // FIPS regions are not supported.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+
+        if (awsS3UseArnRegionBackup.empty())
+        {
+            Aws::Environment::UnSetEnv("AWS_S3_USE_ARN_REGION");
+        }
+        else
+        {
+            Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", awsS3UseArnRegionBackup.c_str(), 1);
+        }
+    }
+
     TEST_F(BucketAndObjectOperationTest, TestS3ObjectLambdaARN)
     {
         Aws::String awsS3UseArnRegionBackup = Aws::Environment::GetEnv("AWS_S3_USE_ARN_REGION");
 
         ClientConfiguration config;
-        config.region = Aws::Region::US_EAST_1;
         config.retryStrategy = Aws::MakeShared<Aws::Client::DefaultRetryStrategy>(ALLOCATION_TAG, 0 /* don't retry */, 25);
 
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, true);
-
+        // US regions
+        config.region = Aws::Region::US_EAST_1;
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
         config.region = Aws::Region::US_WEST_2;
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OBJECT_LAMBDA, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, ARNService::S3_OBJECT_LAMBDA, true);
 
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-west-2.amazonaws.com", Aws::Region::US_WEST_2, true);
+        // Cross region Object Lambda Access Point ARN
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "", "", "", false);
 
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "", "", false);
-
+        // Custom endpoint
         config.endpointOverride = "my-endpoint.com";
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.my-endpoint.com", Aws::Region::US_WEST_2, true);
-
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.my-endpoint.com", Aws::Region::US_WEST_2, ARNService::S3_OBJECT_LAMBDA, true);
         config.endpointOverride = "";
+
+        // // s3-external-1 and aws-global are not regional endpoints.
         config.region = "s3-external-1";
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.s3-external-1.amazonaws.com", Aws::Region::US_EAST_1, true);
-
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "", "", "", false);
         config.region = Aws::Region::AWS_GLOBAL;
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.aws-global.amazonaws.com", Aws::Region::US_EAST_1, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner", "", "", "", false);
 
+        // China regions
         config.region = Aws::Region::CN_NORTH_1;
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3_OBJECT_LAMBDA, true);
 
+        // US Gov regions
         config.region = "fips-us-gov-east-1";
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
 
-        config.region = "us-gov-east-1-fips";
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, true);
+        // Cross US Gov region Lambda Object Access Point ARN
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
 
+        // FIPS region
+        config.region = "us-east-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda-fips.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // Cross FIPS region Object Lambda Access Point ARN
+        config.region = "us-east-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
+
+        // Use ARN region
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
 
+        // US regions
         config.region = Aws::Region::US_WEST_2;
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
 
+        // dual-stack is not supported
         config.useDualStack = true;
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "", "", false);
-
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner", "", "", "", false);
         config.useDualStack = false;
+
+        // // s3-external-1 and aws-global in client configuration.
         config.region = "s3-external-1";
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, true);
-
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
         config.region = Aws::Region::AWS_GLOBAL;
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com", Aws::Region::US_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
 
+        // China regions
         config.region = Aws::Region::CN_NORTH_1;
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn", Aws::Region::CN_NORTH_1, ARNService::S3_OBJECT_LAMBDA, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.cn-northwest-1.amazonaws.com.cn", Aws::Region::CN_NORTHWEST_1, ARNService::S3_OBJECT_LAMBDA, true);
 
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.cn-northwest-1.amazonaws.com.cn", Aws::Region::CN_NORTHWEST_1, true);
-
+        // US Gov regions
         config.region = Aws::Region::US_GOV_EAST_1;
-         DoTestGetObjectWithObjectLambdaARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, true);
-
+         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
         config.region = "fips-us-gov-east-1";
-        DoTestGetObjectWithObjectLambdaARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
-            "mybanner-123456789012.s3-object-lambda.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, true);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner",
+            "mybanner-123456789012.s3-object-lambda-fips.us-gov-east-1.amazonaws.com", Aws::Region::US_GOV_EAST_1, ARNService::S3_OBJECT_LAMBDA, true);
+
+        // Cross FIPS region Object Lambda Access Point ARN is not allowed even though use ARN region. It's different from non FIPS regions.
+        config.region = "fips-us-gov-east-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
 
         config.region = Aws::Region::US_WEST_2;
         DoTestWriteGetObjectResponse(config, "s3-object-lambda.us-west-2.amazonaws.com");
@@ -2000,8 +2199,8 @@ namespace
         // The followings are examples for valid S3 ARN:
         ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
         ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint").Validate().IsSuccess());
-        // Pseudo region in client configuration
-        ASSERT_TRUE(S3ARN("arn:aws:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
+        // FIPS region in client configuration
+        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
         ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("us-east-1-fips").IsSuccess());
 
         // The followings are examples for invalid S3 ARN:
@@ -2020,8 +2219,13 @@ namespace
         ASSERT_FALSE(S3ARN("arn:aws:S3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
 
         // S3ARN region
+        // Non regional endpoints
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("s3-external-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("aws-global").IsSuccess());
         // Cross region ARN when useArnRegion = false
         ASSERT_FALSE(S3ARN("arn:aws:s3:us-west-1:123456789120:accesspoint:endpoint").Validate("us-east-1").IsSuccess());
+        // Cross region ARN using FIPS regions
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-east-1").IsSuccess());
         // Empty region name
         ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint").Validate().IsSuccess());
 
@@ -2058,11 +2262,11 @@ namespace
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", false).c_str());
         ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.cn-north-1.amazonaws.com.cn",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", true).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1-fips.amazonaws.com",
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint-fips.us-east-1.amazonaws.com",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "us-east-1-fips", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.fips-us-gov-west-1.amazonaws.com",
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint-fips.us-gov-west-1.amazonaws.com",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", false).c_str());
-        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.fips-us-gov-west-1.amazonaws.com",
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint-fips.dualstack.us-gov-west-1.amazonaws.com",
             S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", true).c_str());
     }
 
@@ -2088,6 +2292,9 @@ namespace
         ASSERT_FALSE(S3ARN("arn:aws:S3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
 
         // S3ARN region
+        // Non regional endpoints
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("s3-external-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-outposts:us-east-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("aws-global").IsSuccess());
         // Outposts ARN doesn't support fips region right now
         ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-outposts:fips-us-gov-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate().IsSuccess());
         ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-outposts:us-gov-west-1:123456789120:outpost:outpost-id:accesspoint:access-point-name").Validate("fips-us-gov-west-1").IsSuccess());
@@ -2137,14 +2344,12 @@ namespace
         // The followings are examples for valid S3 ARN:
         ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner").Validate().IsSuccess());
         ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
-        // Pseudo region in client configuration
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("s3-external-1").IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("aws-global").IsSuccess());
         ASSERT_TRUE(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
         ASSERT_TRUE(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint:mybanner").Validate("cn-north-1").IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
-        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate("us-gov-east-1-fips").IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
+        // FIPS region in client configuration
+        ASSERT_TRUE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("us-east-1-fips").IsSuccess());
 
         // The followings are examples for invalid S3 ARN:
         // S3ARN partition
@@ -2162,8 +2367,13 @@ namespace
         ASSERT_FALSE(S3ARN("arn:aws:S3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate().IsSuccess());
 
         // S3ARN region
+        // Non regional endpoints
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("s3-external-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint:mybanner").Validate("aws-global").IsSuccess());
         // Cross region ARN when useArnRegion = false
         ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate("us-east-1").IsSuccess());
+        // Cross region ARN when using FIPS regions
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
         // Empty region name
         ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda::123456789012:accesspoint:mybanner").Validate().IsSuccess());
 
@@ -2201,12 +2411,8 @@ namespace
             S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner")).c_str());
         ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com",
             S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner")).c_str());
-        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.s3-external-1.amazonaws.com",
-            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"), "s3-external-1").c_str());
         ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.us-east-1.amazonaws.com",
             S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner")).c_str());
-        ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.aws-global.amazonaws.com",
-            S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"), "aws-global").c_str());
         ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn",
             S3Endpoint::ForObjectLambdaAccessPointArn(S3ARN("arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner")).c_str());
         ASSERT_STREQ("mybanner-123456789012.s3-object-lambda.cn-north-1.amazonaws.com.cn",

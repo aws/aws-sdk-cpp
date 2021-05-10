@@ -36,5 +36,18 @@ namespace Aws
                 return region;
             }
         }
+
+        bool IsFipsRegion(const Aws::String& region)
+        {
+            if (region.size() >= 5 && region.compare(0, 5, "fips-") == 0)
+            {
+                return true;
+            }
+            else if (region.size() >= 5 && region.compare(region.size() - 5, 5, "-fips") == 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

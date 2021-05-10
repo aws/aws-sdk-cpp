@@ -39,15 +39,13 @@ namespace S3Endpoint
     }
 
     const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
+    Aws::String fipsSuffix = Aws::Region::IsFipsRegion(region) ? "-fips" : "";
+    Aws::String dualstackSuffix = useDualStack ? "dualstack." : "";
+
+    ss << arn.GetResourceId() << "-" << arn.GetAccountId() << ".s3-accesspoint" << fipsSuffix << "."
+      << dualstackSuffix << Aws::Region::ComputeSignerRegion(region) << "." << "amazonaws.com";
+
     auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
-
-    ss << arn.GetResourceId() << "-" << arn.GetAccountId() << ".s3-accesspoint.";
-    if (useDualStack)
-    {
-      ss << "dualstack.";
-    }
-    ss << region << "." << "amazonaws.com";
-
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {
       ss << ".cn";
@@ -60,6 +58,7 @@ namespace S3Endpoint
   {
     AWS_UNREFERENCED_PARAM(useDualStack);
     assert(!useDualStack);
+    assert(!Aws::Region::IsFipsRegion(regionNameOverride));
     Aws::StringStream ss;
 
     if (!endpointOverride.empty())
@@ -93,20 +92,11 @@ namespace S3Endpoint
       return ss.str();
     }
 
-    Aws::String region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
-    Aws::String fipsSuffix = "";
-    if (region.size() >= 5 && region.compare(0, 5, "fips-") == 0)
-    {
-      region = region.substr(5);
-      fipsSuffix = "-fips";
-    }
-    else if (region.size() >= 5 && region.compare(region.size() - 5, 5, "-fips") == 0)
-    {
-      region = region.substr(0, region.size() - 5);
-      fipsSuffix = "-fips";
-    }
+    const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
+    Aws::String fipsSuffix = Aws::Region::IsFipsRegion(region) ? "-fips" : "";
 
-    ss << arn.GetResourceId() << "-" << arn.GetAccountId() << "." << ARNService::S3_OBJECT_LAMBDA << fipsSuffix << "." << region << "." << "amazonaws.com";
+    ss << arn.GetResourceId() << "-" << arn.GetAccountId() << "." << ARNService::S3_OBJECT_LAMBDA << fipsSuffix << "."
+      << Aws::Region::ComputeSignerRegion(region) << "." << "amazonaws.com";
 
     auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
@@ -125,26 +115,10 @@ namespace S3Endpoint
     {
       assert(!useDualStack);
 
+      Aws::String fipsSuffix = Aws::Region::IsFipsRegion(regionName) ? "-fips" : "";
       Aws::StringStream ss;
-      ss << serviceName;
+      ss << serviceName << fipsSuffix << "." << Aws::Region::ComputeSignerRegion(regionName) << ".amazonaws.com";
 
-      if (regionName.size() >= 5 && regionName.compare(0, 5, "fips-") == 0)
-      {
-        ss << "-fips." << regionName.substr(5);
-      }
-      else if (regionName.size() >= 5 && regionName.compare(regionName.size() - 5, 5, "-fips") == 0)
-      {
-        ss << "-fips." << regionName.substr(0, regionName.size() - 5);
-      }
-      else if (hash == AWS_GLOBAL_HASH || hash == S3_EXTERNAL_1_HASH)
-      {
-        ss << "." << Aws::Region::US_EAST_1;
-      }
-      else
-      {
-        ss << "." << regionName;
-      }
-      ss << ".amazonaws.com";
       if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
       {
         ss << ".cn";
