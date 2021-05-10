@@ -25,6 +25,7 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_remoteAccessHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
@@ -105,6 +106,17 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
      labelsJsonMap.WithString(labelsItem.first, labelsItem.second);
    }
    payload.WithObject("labels", std::move(labelsJsonMap));
+
+  }
+
+  if(m_taintsHasBeenSet)
+  {
+   Array<JsonValue> taintsJsonList(m_taints.size());
+   for(unsigned taintsIndex = 0; taintsIndex < taintsJsonList.GetLength(); ++taintsIndex)
+   {
+     taintsJsonList[taintsIndex].AsObject(m_taints[taintsIndex].Jsonize());
+   }
+   payload.WithArray("taints", std::move(taintsJsonList));
 
   }
 

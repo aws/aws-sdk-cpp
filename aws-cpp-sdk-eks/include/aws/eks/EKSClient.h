@@ -1360,12 +1360,12 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p>  <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p>  <p>Cluster updates
-         * are asynchronous, and they should finish within a few minutes. During an update,
-         * the cluster status moves to <code>UPDATING</code> (this status transition is
-         * eventually consistent). When the update is complete (either <code>Failed</code>
-         * or <code>Successful</code>), the cluster status moves to
+         * </i>. </p>  <p>You can't update the subnets or security group IDs for
+         * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
+         * they should finish within a few minutes. During an update, the cluster status
+         * moves to <code>UPDATING</code> (this status transition is eventually
+         * consistent). When the update is complete (either <code>Failed</code> or
+         * <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>
@@ -1391,12 +1391,12 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p>  <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p>  <p>Cluster updates
-         * are asynchronous, and they should finish within a few minutes. During an update,
-         * the cluster status moves to <code>UPDATING</code> (this status transition is
-         * eventually consistent). When the update is complete (either <code>Failed</code>
-         * or <code>Successful</code>), the cluster status moves to
+         * </i>. </p>  <p>You can't update the subnets or security group IDs for
+         * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
+         * they should finish within a few minutes. During an update, the cluster status
+         * moves to <code>UPDATING</code> (this status transition is eventually
+         * consistent). When the update is complete (either <code>Failed</code> or
+         * <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>
@@ -1424,12 +1424,12 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p>  <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p>  <p>Cluster updates
-         * are asynchronous, and they should finish within a few minutes. During an update,
-         * the cluster status moves to <code>UPDATING</code> (this status transition is
-         * eventually consistent). When the update is complete (either <code>Failed</code>
-         * or <code>Successful</code>), the cluster status moves to
+         * </i>. </p>  <p>You can't update the subnets or security group IDs for
+         * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
+         * they should finish within a few minutes. During an update, the cluster status
+         * moves to <code>UPDATING</code> (this status transition is eventually
+         * consistent). When the update is complete (either <code>Failed</code> or
+         * <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>

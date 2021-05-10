@@ -28,6 +28,8 @@ namespace Aws
         static const int DesiredSize_HASH = HashingUtils::HashString("DesiredSize");
         static const int LabelsToAdd_HASH = HashingUtils::HashString("LabelsToAdd");
         static const int LabelsToRemove_HASH = HashingUtils::HashString("LabelsToRemove");
+        static const int TaintsToAdd_HASH = HashingUtils::HashString("TaintsToAdd");
+        static const int TaintsToRemove_HASH = HashingUtils::HashString("TaintsToRemove");
         static const int MaxSize_HASH = HashingUtils::HashString("MaxSize");
         static const int MinSize_HASH = HashingUtils::HashString("MinSize");
         static const int ReleaseVersion_HASH = HashingUtils::HashString("ReleaseVersion");
@@ -75,6 +77,14 @@ namespace Aws
           else if (hashCode == LabelsToRemove_HASH)
           {
             return UpdateParamType::LabelsToRemove;
+          }
+          else if (hashCode == TaintsToAdd_HASH)
+          {
+            return UpdateParamType::TaintsToAdd;
+          }
+          else if (hashCode == TaintsToRemove_HASH)
+          {
+            return UpdateParamType::TaintsToRemove;
           }
           else if (hashCode == MaxSize_HASH)
           {
@@ -150,6 +160,10 @@ namespace Aws
             return "LabelsToAdd";
           case UpdateParamType::LabelsToRemove:
             return "LabelsToRemove";
+          case UpdateParamType::TaintsToAdd:
+            return "TaintsToAdd";
+          case UpdateParamType::TaintsToRemove:
+            return "TaintsToRemove";
           case UpdateParamType::MaxSize:
             return "MaxSize";
           case UpdateParamType::MinSize:

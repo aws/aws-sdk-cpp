@@ -29,8 +29,10 @@
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationVpcConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationSnapshotResult.h>
+#include <aws/kinesisanalyticsv2/model/DescribeApplicationVersionResult.h>
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsResult.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationVersionsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsResult.h>
 #include <aws/kinesisanalyticsv2/model/ListTagsForResourceResult.h>
 #include <aws/kinesisanalyticsv2/model/RollbackApplicationResult.h>
@@ -97,8 +99,10 @@ namespace Model
         class DeleteApplicationVpcConfigurationRequest;
         class DescribeApplicationRequest;
         class DescribeApplicationSnapshotRequest;
+        class DescribeApplicationVersionRequest;
         class DiscoverInputSchemaRequest;
         class ListApplicationSnapshotsRequest;
+        class ListApplicationVersionsRequest;
         class ListApplicationsRequest;
         class ListTagsForResourceRequest;
         class RollbackApplicationRequest;
@@ -127,8 +131,10 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteApplicationVpcConfigurationResult, KinesisAnalyticsV2Error> DeleteApplicationVpcConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationResult, KinesisAnalyticsV2Error> DescribeApplicationOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationSnapshotResult, KinesisAnalyticsV2Error> DescribeApplicationSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DescribeApplicationVersionResult, KinesisAnalyticsV2Error> DescribeApplicationVersionOutcome;
         typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, KinesisAnalyticsV2Error> DiscoverInputSchemaOutcome;
         typedef Aws::Utils::Outcome<ListApplicationSnapshotsResult, KinesisAnalyticsV2Error> ListApplicationSnapshotsOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationVersionsResult, KinesisAnalyticsV2Error> ListApplicationVersionsOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, KinesisAnalyticsV2Error> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, KinesisAnalyticsV2Error> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RollbackApplicationResult, KinesisAnalyticsV2Error> RollbackApplicationOutcome;
@@ -157,8 +163,10 @@ namespace Model
         typedef std::future<DeleteApplicationVpcConfigurationOutcome> DeleteApplicationVpcConfigurationOutcomeCallable;
         typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
         typedef std::future<DescribeApplicationSnapshotOutcome> DescribeApplicationSnapshotOutcomeCallable;
+        typedef std::future<DescribeApplicationVersionOutcome> DescribeApplicationVersionOutcomeCallable;
         typedef std::future<DiscoverInputSchemaOutcome> DiscoverInputSchemaOutcomeCallable;
         typedef std::future<ListApplicationSnapshotsOutcome> ListApplicationSnapshotsOutcomeCallable;
+        typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RollbackApplicationOutcome> RollbackApplicationOutcomeCallable;
@@ -190,8 +198,10 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationVpcConfigurationRequest&, const Model::DeleteApplicationVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationVpcConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationRequest&, const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationSnapshotRequest&, const Model::DescribeApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationSnapshotResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationVersionRequest&, const Model::DescribeApplicationVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationVersionResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DiscoverInputSchemaRequest&, const Model::DiscoverInputSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInputSchemaResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationSnapshotsRequest&, const Model::ListApplicationSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationSnapshotsResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationVersionsRequest&, const Model::ListApplicationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationVersionsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::RollbackApplicationRequest&, const Model::RollbackApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RollbackApplicationResponseReceivedHandler;
@@ -888,6 +898,43 @@ namespace Model
         virtual void DescribeApplicationSnapshotAsync(const Model::DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides a detailed description of a specified version of the application. To
+         * see a list of all the versions of an application, invoke the
+         * <a>ListApplicationVersions</a> operation.</p>  <p>This operation is
+         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeApplicationVersionOutcome DescribeApplicationVersion(const Model::DescribeApplicationVersionRequest& request) const;
+
+        /**
+         * <p>Provides a detailed description of a specified version of the application. To
+         * see a list of all the versions of an application, invoke the
+         * <a>ListApplicationVersions</a> operation.</p>  <p>This operation is
+         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeApplicationVersionOutcomeCallable DescribeApplicationVersionCallable(const Model::DescribeApplicationVersionRequest& request) const;
+
+        /**
+         * <p>Provides a detailed description of a specified version of the application. To
+         * see a list of all the versions of an application, invoke the
+         * <a>ListApplicationVersions</a> operation.</p>  <p>This operation is
+         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeApplicationVersionAsync(const Model::DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Infers a schema for a SQL-based Kinesis Data Analytics application by
          * evaluating sample records on the specified streaming source (Kinesis data stream
          * or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response,
@@ -963,6 +1010,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListApplicationSnapshotsAsync(const Model::ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the versions for the specified application, including versions that
+         * were rolled back. The response also includes a summary of the configuration
+         * associated with each version.</p> <p>To get the complete description of a
+         * specific application version, invoke the <a>DescribeApplicationVersion</a>
+         * operation.</p>  <p>This operation is supported only for Amazon Kinesis
+         * Data Analytics for Apache Flink.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationVersionsOutcome ListApplicationVersions(const Model::ListApplicationVersionsRequest& request) const;
+
+        /**
+         * <p>Lists all the versions for the specified application, including versions that
+         * were rolled back. The response also includes a summary of the configuration
+         * associated with each version.</p> <p>To get the complete description of a
+         * specific application version, invoke the <a>DescribeApplicationVersion</a>
+         * operation.</p>  <p>This operation is supported only for Amazon Kinesis
+         * Data Analytics for Apache Flink.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListApplicationVersionsOutcomeCallable ListApplicationVersionsCallable(const Model::ListApplicationVersionsRequest& request) const;
+
+        /**
+         * <p>Lists all the versions for the specified application, including versions that
+         * were rolled back. The response also includes a summary of the configuration
+         * associated with each version.</p> <p>To get the complete description of a
+         * specific application version, invoke the <a>DescribeApplicationVersion</a>
+         * operation.</p>  <p>This operation is supported only for Amazon Kinesis
+         * Data Analytics for Apache Flink.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListApplicationVersionsAsync(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Kinesis Data Analytics applications in your account. For
@@ -1267,22 +1354,48 @@ namespace Model
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the configuration for the automatic maintenance that Kinesis Data
-         * Analytics performs on the application. For information about automatic
-         * application maintenance, see <a
+         * <p>Updates the maintenance configuration of the Kinesis Data Analytics
+         * application. </p> <p>You can invoke this operation on an application that is in
+         * one of the two following states: <code>READY</code> or <code>RUNNING</code>. If
+         * you invoke it when the application is in a state other than these two states, it
+         * throws a <code>ResourceInUseException</code>. The service makes use of the
+         * updated configuration the next time it schedules maintenance for the
+         * application. If you invoke this operation after the service schedules
+         * maintenance, the service will apply the configuration update the next time it
+         * schedules maintenance for the application. This means that you might not see the
+         * maintenance configuration update applied to the maintenance process that follows
+         * a successful invocation of this operation, but to the following maintenance
+         * process instead.</p> <p>To see the current maintenance configuration of your
+         * application, invoke the <a>DescribeApplication</a> operation.</p> <p>For
+         * information about application maintenance, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
-         * Data Analytics for Apache Flink Maintenance</a>.</p><p><h3>See Also:</h3>   <a
+         * Data Analytics for Apache Flink Maintenance</a>.</p>  <p>This operation is
+         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateApplicationMaintenanceConfigurationOutcome UpdateApplicationMaintenanceConfiguration(const Model::UpdateApplicationMaintenanceConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the configuration for the automatic maintenance that Kinesis Data
-         * Analytics performs on the application. For information about automatic
-         * application maintenance, see <a
+         * <p>Updates the maintenance configuration of the Kinesis Data Analytics
+         * application. </p> <p>You can invoke this operation on an application that is in
+         * one of the two following states: <code>READY</code> or <code>RUNNING</code>. If
+         * you invoke it when the application is in a state other than these two states, it
+         * throws a <code>ResourceInUseException</code>. The service makes use of the
+         * updated configuration the next time it schedules maintenance for the
+         * application. If you invoke this operation after the service schedules
+         * maintenance, the service will apply the configuration update the next time it
+         * schedules maintenance for the application. This means that you might not see the
+         * maintenance configuration update applied to the maintenance process that follows
+         * a successful invocation of this operation, but to the following maintenance
+         * process instead.</p> <p>To see the current maintenance configuration of your
+         * application, invoke the <a>DescribeApplication</a> operation.</p> <p>For
+         * information about application maintenance, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
-         * Data Analytics for Apache Flink Maintenance</a>.</p><p><h3>See Also:</h3>   <a
+         * Data Analytics for Apache Flink Maintenance</a>.</p>  <p>This operation is
+         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1291,11 +1404,24 @@ namespace Model
         virtual Model::UpdateApplicationMaintenanceConfigurationOutcomeCallable UpdateApplicationMaintenanceConfigurationCallable(const Model::UpdateApplicationMaintenanceConfigurationRequest& request) const;
 
         /**
-         * <p>Updates the configuration for the automatic maintenance that Kinesis Data
-         * Analytics performs on the application. For information about automatic
-         * application maintenance, see <a
+         * <p>Updates the maintenance configuration of the Kinesis Data Analytics
+         * application. </p> <p>You can invoke this operation on an application that is in
+         * one of the two following states: <code>READY</code> or <code>RUNNING</code>. If
+         * you invoke it when the application is in a state other than these two states, it
+         * throws a <code>ResourceInUseException</code>. The service makes use of the
+         * updated configuration the next time it schedules maintenance for the
+         * application. If you invoke this operation after the service schedules
+         * maintenance, the service will apply the configuration update the next time it
+         * schedules maintenance for the application. This means that you might not see the
+         * maintenance configuration update applied to the maintenance process that follows
+         * a successful invocation of this operation, but to the following maintenance
+         * process instead.</p> <p>To see the current maintenance configuration of your
+         * application, invoke the <a>DescribeApplication</a> operation.</p> <p>For
+         * information about application maintenance, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
-         * Data Analytics for Apache Flink Maintenance</a>.</p><p><h3>See Also:</h3>   <a
+         * Data Analytics for Apache Flink Maintenance</a>.</p>  <p>This operation is
+         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1325,8 +1451,10 @@ namespace Model
         void DeleteApplicationVpcConfigurationAsyncHelper(const Model::DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApplicationAsyncHelper(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApplicationSnapshotAsyncHelper(const Model::DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeApplicationVersionAsyncHelper(const Model::DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DiscoverInputSchemaAsyncHelper(const Model::DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationSnapshotsAsyncHelper(const Model::ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListApplicationVersionsAsyncHelper(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RollbackApplicationAsyncHelper(const Model::RollbackApplicationRequest& request, const RollbackApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

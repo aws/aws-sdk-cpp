@@ -31,7 +31,9 @@ VideoSelector::VideoSelector() :
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_rotate(InputRotate::NOT_SET),
-    m_rotateHasBeenSet(false)
+    m_rotateHasBeenSet(false),
+    m_sampleRange(InputSampleRange::NOT_SET),
+    m_sampleRangeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ VideoSelector::VideoSelector(JsonView jsonValue) :
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
     m_rotate(InputRotate::NOT_SET),
-    m_rotateHasBeenSet(false)
+    m_rotateHasBeenSet(false),
+    m_sampleRange(InputSampleRange::NOT_SET),
+    m_sampleRangeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +108,13 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_rotateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sampleRange"))
+  {
+    m_sampleRange = InputSampleRangeMapper::GetInputSampleRangeForName(jsonValue.GetString("sampleRange"));
+
+    m_sampleRangeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +158,11 @@ JsonValue VideoSelector::Jsonize() const
   if(m_rotateHasBeenSet)
   {
    payload.WithString("rotate", InputRotateMapper::GetNameForInputRotate(m_rotate));
+  }
+
+  if(m_sampleRangeHasBeenSet)
+  {
+   payload.WithString("sampleRange", InputSampleRangeMapper::GetNameForInputSampleRange(m_sampleRange));
   }
 
   return payload;

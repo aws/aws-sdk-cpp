@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
 #include <aws/eks/model/CapacityTypes.h>
+#include <aws/eks/model/Taint.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -202,11 +203,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -218,11 +215,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -234,11 +227,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -250,11 +239,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -266,11 +251,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -282,11 +263,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -298,11 +275,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -314,11 +287,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -330,11 +299,7 @@ namespace Model
 
     /**
      * <p>The subnets to use for the Auto Scaling group that is created for your node
-     * group. These subnets must have the tag key
-     * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
-     * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
-     * of your cluster. If you specify <code>launchTemplate</code>, then don't specify
-     * <a
+     * group. If you specify <code>launchTemplate</code>, then don't specify <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">
      * <code>SubnetId</code> </a> in your launch template, or the node group deployment
      * will fail. For more information about using launch templates with Amazon EKS,
@@ -896,6 +861,47 @@ namespace Model
 
 
     /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline CreateNodegroupRequest& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline CreateNodegroupRequest& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline CreateNodegroupRequest& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group.</p>
+     */
+    inline CreateNodegroupRequest& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The metadata to apply to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
@@ -1383,6 +1389,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_labels;
     bool m_labelsHasBeenSet;
+
+    Aws::Vector<Taint> m_taints;
+    bool m_taintsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

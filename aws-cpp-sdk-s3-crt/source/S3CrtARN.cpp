@@ -24,17 +24,23 @@ namespace Aws
             // Take pseudo region into consideration here.
             Aws::String region = clientRegion ? clientRegion : "";
             Aws::StringStream ss;
-            if (this->GetResourceType() == ARNResourceType::OUTPOST && region.find("fips") != Aws::String::npos)
+            if (this->GetResourceType() == ARNResourceType::OUTPOST && Aws::Region::IsFipsRegion(region))
             {
                 ss.str("");
                 ss << "Outposts ARN do not support fips regions right now.";
                 return S3CrtARNOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION", ss.str(), false));
             }
-            else if (this->GetRegion() != Aws::Region::ComputeSignerRegion(clientRegion))
+            else if (region == Aws::Region::AWS_GLOBAL || region == "s3-external-1")
+            {
+                ss.str("");
+                ss << "Region: \"" << region << "\" is not a regional endpoint.";
+                return S3CrtARNOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION", ss.str(), false));
+            }
+            else if (this->GetRegion() != Aws::Region::ComputeSignerRegion(region))
             {
                 ss.str("");
                 ss << "Region mismatch between \"" << this->GetRegion() << "\" defined in ARN and \""
-                    << clientRegion << "\" defined in client configuration. "
+                    << region << "\" defined in client configuration. "
                     << "You can specify AWS_S3_USE_ARN_REGION to ignore region defined in client configuration.";
                 return S3CrtARNOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION", ss.str(), false));
             }
@@ -115,7 +121,7 @@ namespace Aws
             // Validation on Outposts ARN:
             else if (this->GetResourceType() == ARNResourceType::OUTPOST)
             {
-                if (this->GetRegion().find("fips") != Aws::String::npos)
+                if (Aws::Region::IsFipsRegion(this->GetRegion()))
                 {
                     ss.str("");
                     ss << "Outposts ARN do not support fips regions right now.";

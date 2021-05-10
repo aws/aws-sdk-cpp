@@ -688,9 +688,9 @@ namespace Model
 
         /**
          * <p> Returns a <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">
-         * <code>DomainDescription</code> </a> object that contains information about the
-         * requested domain. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a>
+         * object that contains information about the requested domain. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeDomain">AWS
          * API Reference</a></p>
          */
@@ -698,9 +698,9 @@ namespace Model
 
         /**
          * <p> Returns a <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">
-         * <code>DomainDescription</code> </a> object that contains information about the
-         * requested domain. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a>
+         * object that contains information about the requested domain. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeDomain">AWS
          * API Reference</a></p>
          *
@@ -710,9 +710,9 @@ namespace Model
 
         /**
          * <p> Returns a <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">
-         * <code>DomainDescription</code> </a> object that contains information about the
-         * requested domain. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html">DomainDescription</a>
+         * object that contains information about the requested domain. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribeDomain">AWS
          * API Reference</a></p>
          *
@@ -722,9 +722,9 @@ namespace Model
 
         /**
          * <p> Returns a <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
-         * <code>PackageVersionDescription</code> </a> object that contains information
-         * about the requested package version. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+         * object that contains information about the requested package version.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageVersion">AWS
          * API Reference</a></p>
          */
@@ -732,9 +732,9 @@ namespace Model
 
         /**
          * <p> Returns a <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
-         * <code>PackageVersionDescription</code> </a> object that contains information
-         * about the requested package version. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+         * object that contains information about the requested package version.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageVersion">AWS
          * API Reference</a></p>
          *
@@ -744,9 +744,9 @@ namespace Model
 
         /**
          * <p> Returns a <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">
-         * <code>PackageVersionDescription</code> </a> object that contains information
-         * about the requested package version. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+         * object that contains information about the requested package version.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageVersion">AWS
          * API Reference</a></p>
          *
@@ -815,13 +815,13 @@ namespace Model
          * to <code>Disposed</code>. A disposed package version cannot be restored in your
          * repository because its assets are deleted. </p> <p> To view all disposed package
          * versions in a repository, use <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-         * <code>ListPackageVersions</code> </a> and set the <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
-         * <code>status</code> </a> parameter to <code>Disposed</code>. </p> <p> To view
-         * information about a disposed package version, use <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
-         * <code>DescribePackageVersion</code> </a>.. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+         * and set the <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
+         * parameter to <code>Disposed</code>. </p> <p> To view information about a
+         * disposed package version, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">AWS
          * API Reference</a></p>
          */
@@ -832,13 +832,13 @@ namespace Model
          * to <code>Disposed</code>. A disposed package version cannot be restored in your
          * repository because its assets are deleted. </p> <p> To view all disposed package
          * versions in a repository, use <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-         * <code>ListPackageVersions</code> </a> and set the <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
-         * <code>status</code> </a> parameter to <code>Disposed</code>. </p> <p> To view
-         * information about a disposed package version, use <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
-         * <code>DescribePackageVersion</code> </a>.. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+         * and set the <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
+         * parameter to <code>Disposed</code>. </p> <p> To view information about a
+         * disposed package version, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">AWS
          * API Reference</a></p>
          *
@@ -851,13 +851,13 @@ namespace Model
          * to <code>Disposed</code>. A disposed package version cannot be restored in your
          * repository because its assets are deleted. </p> <p> To view all disposed package
          * versions in a repository, use <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">
-         * <code>ListPackageVersions</code> </a> and set the <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">
-         * <code>status</code> </a> parameter to <code>Disposed</code>. </p> <p> To view
-         * information about a disposed package version, use <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">
-         * <code>DescribePackageVersion</code> </a>.. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
+         * and set the <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
+         * parameter to <code>Disposed</code>. </p> <p> To view information about a
+         * disposed package version, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DescribePackageVersion.html">DescribePackageVersion</a>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">AWS
          * API Reference</a></p>
          *
@@ -1168,9 +1168,8 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-         * <code>AssetSummary</code> </a> objects for assets in a package version.
-         * </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+         * objects for assets in a package version. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionAssets">AWS
          * API Reference</a></p>
          */
@@ -1178,9 +1177,8 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-         * <code>AssetSummary</code> </a> objects for assets in a package version.
-         * </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+         * objects for assets in a package version. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionAssets">AWS
          * API Reference</a></p>
          *
@@ -1190,9 +1188,8 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-         * <code>AssetSummary</code> </a> objects for assets in a package version.
-         * </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+         * objects for assets in a package version. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionAssets">AWS
          * API Reference</a></p>
          *
@@ -1203,13 +1200,12 @@ namespace Model
         /**
          * <p> Returns the direct dependencies for a package version. The dependencies are
          * returned as <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-         * <code>PackageDependency</code> </a> objects. CodeArtifact extracts the
-         * dependencies for a package version from the metadata file for the package format
-         * (for example, the <code>package.json</code> file for npm packages and the
-         * <code>pom.xml</code> file for Maven). Any package version dependencies that are
-         * not listed in the configuration file are not returned. </p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+         * objects. CodeArtifact extracts the dependencies for a package version from the
+         * metadata file for the package format (for example, the <code>package.json</code>
+         * file for npm packages and the <code>pom.xml</code> file for Maven). Any package
+         * version dependencies that are not listed in the configuration file are not
+         * returned. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionDependencies">AWS
          * API Reference</a></p>
          */
@@ -1218,13 +1214,12 @@ namespace Model
         /**
          * <p> Returns the direct dependencies for a package version. The dependencies are
          * returned as <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-         * <code>PackageDependency</code> </a> objects. CodeArtifact extracts the
-         * dependencies for a package version from the metadata file for the package format
-         * (for example, the <code>package.json</code> file for npm packages and the
-         * <code>pom.xml</code> file for Maven). Any package version dependencies that are
-         * not listed in the configuration file are not returned. </p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+         * objects. CodeArtifact extracts the dependencies for a package version from the
+         * metadata file for the package format (for example, the <code>package.json</code>
+         * file for npm packages and the <code>pom.xml</code> file for Maven). Any package
+         * version dependencies that are not listed in the configuration file are not
+         * returned. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionDependencies">AWS
          * API Reference</a></p>
          *
@@ -1235,13 +1230,12 @@ namespace Model
         /**
          * <p> Returns the direct dependencies for a package version. The dependencies are
          * returned as <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-         * <code>PackageDependency</code> </a> objects. CodeArtifact extracts the
-         * dependencies for a package version from the metadata file for the package format
-         * (for example, the <code>package.json</code> file for npm packages and the
-         * <code>pom.xml</code> file for Maven). Any package version dependencies that are
-         * not listed in the configuration file are not returned. </p><p><h3>See Also:</h3>
-         * <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+         * objects. CodeArtifact extracts the dependencies for a package version from the
+         * metadata file for the package format (for example, the <code>package.json</code>
+         * file for npm packages and the <code>pom.xml</code> file for Maven). Any package
+         * version dependencies that are not listed in the configuration file are not
+         * returned. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersionDependencies">AWS
          * API Reference</a></p>
          *
@@ -1251,9 +1245,9 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-         * <code>PackageVersionSummary</code> </a> objects for package versions in a
-         * repository that match the request parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+         * objects for package versions in a repository that match the request parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersions">AWS
          * API Reference</a></p>
          */
@@ -1261,9 +1255,9 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-         * <code>PackageVersionSummary</code> </a> objects for package versions in a
-         * repository that match the request parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+         * objects for package versions in a repository that match the request parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersions">AWS
          * API Reference</a></p>
          *
@@ -1273,9 +1267,9 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-         * <code>PackageVersionSummary</code> </a> objects for package versions in a
-         * repository that match the request parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+         * objects for package versions in a repository that match the request parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageVersions">AWS
          * API Reference</a></p>
          *
@@ -1285,9 +1279,9 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-         * <code>PackageSummary</code> </a> objects for packages in a repository that match
-         * the request parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+         * objects for packages in a repository that match the request parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackages">AWS
          * API Reference</a></p>
          */
@@ -1295,9 +1289,9 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-         * <code>PackageSummary</code> </a> objects for packages in a repository that match
-         * the request parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+         * objects for packages in a repository that match the request parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackages">AWS
          * API Reference</a></p>
          *
@@ -1307,9 +1301,9 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">
-         * <code>PackageSummary</code> </a> objects for packages in a repository that match
-         * the request parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
+         * objects for packages in a repository that match the request parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackages">AWS
          * API Reference</a></p>
          *
@@ -1319,10 +1313,10 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-         * <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code>
-         * contains information about a repository in the specified AWS account and that
-         * matches the input parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+         * objects. Each <code>RepositorySummary</code> contains information about a
+         * repository in the specified AWS account and that matches the input parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">AWS
          * API Reference</a></p>
          */
@@ -1330,10 +1324,10 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-         * <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code>
-         * contains information about a repository in the specified AWS account and that
-         * matches the input parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+         * objects. Each <code>RepositorySummary</code> contains information about a
+         * repository in the specified AWS account and that matches the input parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">AWS
          * API Reference</a></p>
          *
@@ -1343,10 +1337,10 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-         * <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code>
-         * contains information about a repository in the specified AWS account and that
-         * matches the input parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+         * objects. Each <code>RepositorySummary</code> contains information about a
+         * repository in the specified AWS account and that matches the input parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositories">AWS
          * API Reference</a></p>
          *
@@ -1356,10 +1350,10 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-         * <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code>
-         * contains information about a repository in the specified domain and that matches
-         * the input parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+         * objects. Each <code>RepositorySummary</code> contains information about a
+         * repository in the specified domain and that matches the input parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositoriesInDomain">AWS
          * API Reference</a></p>
          */
@@ -1367,10 +1361,10 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-         * <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code>
-         * contains information about a repository in the specified domain and that matches
-         * the input parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+         * objects. Each <code>RepositorySummary</code> contains information about a
+         * repository in the specified domain and that matches the input parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositoriesInDomain">AWS
          * API Reference</a></p>
          *
@@ -1380,10 +1374,10 @@ namespace Model
 
         /**
          * <p> Returns a list of <a
-         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">
-         * <code>RepositorySummary</code> </a> objects. Each <code>RepositorySummary</code>
-         * contains information about a repository in the specified domain and that matches
-         * the input parameters. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
+         * objects. Each <code>RepositorySummary</code> contains information about a
+         * repository in the specified domain and that matches the input parameters.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositoriesInDomain">AWS
          * API Reference</a></p>
          *

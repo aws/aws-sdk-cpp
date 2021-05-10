@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the application for which you want to update the maintenance time
-     * window.</p>
+     * <p>The name of the application for which you want to update the maintenance
+     * configuration.</p>
      */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 

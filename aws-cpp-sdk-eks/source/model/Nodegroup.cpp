@@ -38,6 +38,7 @@ Nodegroup::Nodegroup() :
     m_amiTypeHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
@@ -67,6 +68,7 @@ Nodegroup::Nodegroup(JsonView jsonValue) :
     m_amiTypeHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
@@ -198,6 +200,16 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
       m_labels[labelsItem.first] = labelsItem.second.AsString();
     }
     m_labelsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("taints"))
+  {
+    Array<JsonView> taintsJsonList = jsonValue.GetArray("taints");
+    for(unsigned taintsIndex = 0; taintsIndex < taintsJsonList.GetLength(); ++taintsIndex)
+    {
+      m_taints.push_back(taintsJsonList[taintsIndex].AsObject());
+    }
+    m_taintsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resources"))
@@ -348,6 +360,17 @@ JsonValue Nodegroup::Jsonize() const
      labelsJsonMap.WithString(labelsItem.first, labelsItem.second);
    }
    payload.WithObject("labels", std::move(labelsJsonMap));
+
+  }
+
+  if(m_taintsHasBeenSet)
+  {
+   Array<JsonValue> taintsJsonList(m_taints.size());
+   for(unsigned taintsIndex = 0; taintsIndex < taintsJsonList.GetLength(); ++taintsIndex)
+   {
+     taintsJsonList[taintsIndex].AsObject(m_taints[taintsIndex].Jsonize());
+   }
+   payload.WithArray("taints", std::move(taintsJsonList));
 
   }
 

@@ -218,6 +218,31 @@ namespace Model
 
 
     /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline int GetMaxPcrInterval() const{ return m_maxPcrInterval; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline bool MaxPcrIntervalHasBeenSet() const { return m_maxPcrIntervalHasBeenSet; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline void SetMaxPcrInterval(int value) { m_maxPcrIntervalHasBeenSet = true; m_maxPcrInterval = value; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline M3u8Settings& WithMaxPcrInterval(int value) { SetMaxPcrInterval(value); return *this;}
+
+
+    /**
      * If INSERT, Nielsen inaudible tones for media tracking will be detected in the
      * input audio and an equivalent ID3 tag will be inserted in the output.
      */
@@ -642,6 +667,9 @@ namespace Model
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet;
+
+    int m_maxPcrInterval;
+    bool m_maxPcrIntervalHasBeenSet;
 
     M3u8NielsenId3 m_nielsenId3;
     bool m_nielsenId3HasBeenSet;

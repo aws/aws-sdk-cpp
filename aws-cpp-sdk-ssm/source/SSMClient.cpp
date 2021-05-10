@@ -21,6 +21,7 @@
 #include <aws/ssm/SSMEndpoint.h>
 #include <aws/ssm/SSMErrorMarshaller.h>
 #include <aws/ssm/model/AddTagsToResourceRequest.h>
+#include <aws/ssm/model/AssociateOpsItemRelatedItemRequest.h>
 #include <aws/ssm/model/CancelCommandRequest.h>
 #include <aws/ssm/model/CancelMaintenanceWindowExecutionRequest.h>
 #include <aws/ssm/model/CreateActivationRequest.h>
@@ -78,6 +79,7 @@
 #include <aws/ssm/model/DescribePatchGroupsRequest.h>
 #include <aws/ssm/model/DescribePatchPropertiesRequest.h>
 #include <aws/ssm/model/DescribeSessionsRequest.h>
+#include <aws/ssm/model/DisassociateOpsItemRelatedItemRequest.h>
 #include <aws/ssm/model/GetAutomationExecutionRequest.h>
 #include <aws/ssm/model/GetCalendarStateRequest.h>
 #include <aws/ssm/model/GetCommandInvocationRequest.h>
@@ -114,6 +116,7 @@
 #include <aws/ssm/model/ListDocumentsRequest.h>
 #include <aws/ssm/model/ListInventoryEntriesRequest.h>
 #include <aws/ssm/model/ListOpsItemEventsRequest.h>
+#include <aws/ssm/model/ListOpsItemRelatedItemsRequest.h>
 #include <aws/ssm/model/ListOpsMetadataRequest.h>
 #include <aws/ssm/model/ListResourceComplianceSummariesRequest.h>
 #include <aws/ssm/model/ListResourceDataSyncRequest.h>
@@ -251,6 +254,33 @@ void SSMClient::AddTagsToResourceAsync(const AddTagsToResourceRequest& request, 
 void SSMClient::AddTagsToResourceAsyncHelper(const AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddTagsToResource(request), context);
+}
+
+AssociateOpsItemRelatedItemOutcome SSMClient::AssociateOpsItemRelatedItem(const AssociateOpsItemRelatedItemRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AssociateOpsItemRelatedItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateOpsItemRelatedItemOutcomeCallable SSMClient::AssociateOpsItemRelatedItemCallable(const AssociateOpsItemRelatedItemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateOpsItemRelatedItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateOpsItemRelatedItem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::AssociateOpsItemRelatedItemAsync(const AssociateOpsItemRelatedItemRequest& request, const AssociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateOpsItemRelatedItemAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::AssociateOpsItemRelatedItemAsyncHelper(const AssociateOpsItemRelatedItemRequest& request, const AssociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateOpsItemRelatedItem(request), context);
 }
 
 CancelCommandOutcome SSMClient::CancelCommand(const CancelCommandRequest& request) const
@@ -1792,6 +1822,33 @@ void SSMClient::DescribeSessionsAsyncHelper(const DescribeSessionsRequest& reque
   handler(this, request, DescribeSessions(request), context);
 }
 
+DisassociateOpsItemRelatedItemOutcome SSMClient::DisassociateOpsItemRelatedItem(const DisassociateOpsItemRelatedItemRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DisassociateOpsItemRelatedItemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateOpsItemRelatedItemOutcomeCallable SSMClient::DisassociateOpsItemRelatedItemCallable(const DisassociateOpsItemRelatedItemRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateOpsItemRelatedItemOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateOpsItemRelatedItem(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::DisassociateOpsItemRelatedItemAsync(const DisassociateOpsItemRelatedItemRequest& request, const DisassociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateOpsItemRelatedItemAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::DisassociateOpsItemRelatedItemAsyncHelper(const DisassociateOpsItemRelatedItemRequest& request, const DisassociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateOpsItemRelatedItem(request), context);
+}
+
 GetAutomationExecutionOutcome SSMClient::GetAutomationExecution(const GetAutomationExecutionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2762,6 +2819,33 @@ void SSMClient::ListOpsItemEventsAsync(const ListOpsItemEventsRequest& request, 
 void SSMClient::ListOpsItemEventsAsyncHelper(const ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListOpsItemEvents(request), context);
+}
+
+ListOpsItemRelatedItemsOutcome SSMClient::ListOpsItemRelatedItems(const ListOpsItemRelatedItemsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListOpsItemRelatedItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListOpsItemRelatedItemsOutcomeCallable SSMClient::ListOpsItemRelatedItemsCallable(const ListOpsItemRelatedItemsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOpsItemRelatedItemsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOpsItemRelatedItems(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ListOpsItemRelatedItemsAsync(const ListOpsItemRelatedItemsRequest& request, const ListOpsItemRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOpsItemRelatedItemsAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ListOpsItemRelatedItemsAsyncHelper(const ListOpsItemRelatedItemsRequest& request, const ListOpsItemRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOpsItemRelatedItems(request), context);
 }
 
 ListOpsMetadataOutcome SSMClient::ListOpsMetadata(const ListOpsMetadataRequest& request) const

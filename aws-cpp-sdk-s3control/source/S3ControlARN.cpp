@@ -24,7 +24,7 @@ namespace Aws
             // Take pseudo region into consideration here.
             Aws::String region = clientRegion ? clientRegion : "";
             Aws::StringStream ss;
-            if (this->GetResourceType() == ARNResourceType::OUTPOST && region.find("fips") != Aws::String::npos)
+            if (this->GetResourceType() == ARNResourceType::OUTPOST && Aws::Region::IsFipsRegion(region))
             {
                 ss.str("");
                 ss << "Outposts ARN do not support fips regions right now.";
@@ -89,7 +89,7 @@ namespace Aws
             // Validation on Outposts ARN:
             else if (this->GetResourceType() == ARNResourceType::OUTPOST)
             {
-                if (this->GetRegion().find("fips") != Aws::String::npos)
+                if (Aws::Region::IsFipsRegion(this->GetRegion()))
                 {
                     ss.str("");
                     ss << "Outposts ARN do not support fips regions right now.";

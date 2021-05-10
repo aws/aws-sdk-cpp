@@ -297,50 +297,50 @@ namespace Model
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects. </p>
      */
     inline const Aws::Vector<AssetSummary>& GetAssets() const{ return m_assets; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects. </p>
      */
     inline void SetAssets(const Aws::Vector<AssetSummary>& value) { m_assets = value; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects. </p>
      */
     inline void SetAssets(Aws::Vector<AssetSummary>&& value) { m_assets = std::move(value); }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionAssetsResult& WithAssets(const Aws::Vector<AssetSummary>& value) { SetAssets(value); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionAssetsResult& WithAssets(Aws::Vector<AssetSummary>&& value) { SetAssets(std::move(value)); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionAssetsResult& AddAssets(const AssetSummary& value) { m_assets.push_back(value); return *this; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">
-     * <code>AssetSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionAssetsResult& AddAssets(AssetSummary&& value) { m_assets.push_back(std::move(value)); return *this; }
 

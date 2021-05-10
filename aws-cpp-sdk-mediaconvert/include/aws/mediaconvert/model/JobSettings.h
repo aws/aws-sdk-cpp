@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/AvailBlanking.h>
 #include <aws/mediaconvert/model/EsamSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/KantarWatermarkSettings.h>
 #include <aws/mediaconvert/model/MotionImageInserter.h>
 #include <aws/mediaconvert/model/NielsenConfiguration.h>
 #include <aws/mediaconvert/model/NielsenNonLinearWatermarkSettings.h>
@@ -201,6 +202,67 @@ namespace Model
      * create the output.
      */
     inline JobSettings& AddInputs(Input&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline const KantarWatermarkSettings& GetKantarWatermark() const{ return m_kantarWatermark; }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline bool KantarWatermarkHasBeenSet() const { return m_kantarWatermarkHasBeenSet; }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline void SetKantarWatermark(const KantarWatermarkSettings& value) { m_kantarWatermarkHasBeenSet = true; m_kantarWatermark = value; }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline void SetKantarWatermark(KantarWatermarkSettings&& value) { m_kantarWatermarkHasBeenSet = true; m_kantarWatermark = std::move(value); }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline JobSettings& WithKantarWatermark(const KantarWatermarkSettings& value) { SetKantarWatermark(value); return *this;}
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline JobSettings& WithKantarWatermark(KantarWatermarkSettings&& value) { SetKantarWatermark(std::move(value)); return *this;}
 
 
     /**
@@ -597,6 +659,9 @@ namespace Model
 
     Aws::Vector<Input> m_inputs;
     bool m_inputsHasBeenSet;
+
+    KantarWatermarkSettings m_kantarWatermark;
+    bool m_kantarWatermarkHasBeenSet;
 
     MotionImageInserter m_motionImageInserter;
     bool m_motionImageInserterHasBeenSet;

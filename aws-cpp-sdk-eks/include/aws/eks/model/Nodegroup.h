@@ -17,6 +17,7 @@
 #include <aws/eks/model/NodegroupResources.h>
 #include <aws/eks/model/NodegroupHealth.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
+#include <aws/eks/model/Taint.h>
 #include <utility>
 
 namespace Aws
@@ -820,6 +821,79 @@ namespace Model
 
 
     /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The resources associated with the node group, such as Auto Scaling groups and
      * security groups for remote access.</p>
      */
@@ -1112,6 +1186,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_labels;
     bool m_labelsHasBeenSet;
+
+    Aws::Vector<Taint> m_taints;
+    bool m_taintsHasBeenSet;
 
     NodegroupResources m_resources;
     bool m_resourcesHasBeenSet;

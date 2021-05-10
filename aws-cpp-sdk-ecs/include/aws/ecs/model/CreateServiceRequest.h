@@ -106,65 +106,65 @@ namespace Model
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 

@@ -30,6 +30,8 @@ namespace Aws
         static const int DeploymentStrategy_HASH = HashingUtils::HashString("DeploymentStrategy");
         static const int ChangeCalendar_HASH = HashingUtils::HashString("ChangeCalendar");
         static const int Automation_ChangeTemplate_HASH = HashingUtils::HashString("Automation.ChangeTemplate");
+        static const int ProblemAnalysis_HASH = HashingUtils::HashString("ProblemAnalysis");
+        static const int ProblemAnalysisTemplate_HASH = HashingUtils::HashString("ProblemAnalysisTemplate");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return DocumentType::Automation_ChangeTemplate;
           }
+          else if (hashCode == ProblemAnalysis_HASH)
+          {
+            return DocumentType::ProblemAnalysis;
+          }
+          else if (hashCode == ProblemAnalysisTemplate_HASH)
+          {
+            return DocumentType::ProblemAnalysisTemplate;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +119,10 @@ namespace Aws
             return "ChangeCalendar";
           case DocumentType::Automation_ChangeTemplate:
             return "Automation.ChangeTemplate";
+          case DocumentType::ProblemAnalysis:
+            return "ProblemAnalysis";
+          case DocumentType::ProblemAnalysisTemplate:
+            return "ProblemAnalysisTemplate";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/DocumentStatus.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
@@ -73,6 +74,82 @@ namespace Model
      * <p>The name of the Systems Manager document.</p>
      */
     inline GetDocumentResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline GetDocumentResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline GetDocumentResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline GetDocumentResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline GetDocumentResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline GetDocumentResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
@@ -488,6 +565,10 @@ namespace Model
   private:
 
     Aws::String m_name;
+
+    Aws::Utils::DateTime m_createdDate;
+
+    Aws::String m_displayName;
 
     Aws::String m_versionName;
 

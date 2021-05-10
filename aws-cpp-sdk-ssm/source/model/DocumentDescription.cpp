@@ -24,6 +24,7 @@ DocumentDescription::DocumentDescription() :
     m_hashType(DocumentHashType::NOT_SET),
     m_hashTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -60,6 +61,7 @@ DocumentDescription::DocumentDescription(JsonView jsonValue) :
     m_hashType(DocumentHashType::NOT_SET),
     m_hashTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_createdDateHasBeenSet(false),
@@ -119,6 +121,13 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DisplayName"))
+  {
+    m_displayName = jsonValue.GetString("DisplayName");
+
+    m_displayNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VersionName"))
@@ -327,6 +336,12 @@ JsonValue DocumentDescription::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 

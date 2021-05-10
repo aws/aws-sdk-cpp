@@ -24,6 +24,8 @@ namespace Model
     DesiredSize,
     LabelsToAdd,
     LabelsToRemove,
+    TaintsToAdd,
+    TaintsToRemove,
     MaxSize,
     MinSize,
     ReleaseVersion,

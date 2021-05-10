@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */

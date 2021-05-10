@@ -373,6 +373,71 @@ namespace Model
 
 
     /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline CreateDocumentRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline CreateDocumentRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. You
+     * can update this value at a later time using the <a>UpdateDocument</a>
+     * action.</p>
+     */
+    inline CreateDocumentRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
      * <p>An optional field specifying the version of the artifact you are creating
      * with the document. For example, "Release 12, Update 6". This value is unique
      * across all versions of a document, and cannot be changed.</p>
@@ -711,6 +776,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_versionName;
     bool m_versionNameHasBeenSet;

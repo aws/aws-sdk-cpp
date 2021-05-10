@@ -38,8 +38,10 @@
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationVpcConfigurationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationSnapshotRequest.h>
+#include <aws/kinesisanalyticsv2/model/DescribeApplicationVersionRequest.h>
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationSnapshotsRequest.h>
+#include <aws/kinesisanalyticsv2/model/ListApplicationVersionsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListApplicationsRequest.h>
 #include <aws/kinesisanalyticsv2/model/ListTagsForResourceRequest.h>
 #include <aws/kinesisanalyticsv2/model/RollbackApplicationRequest.h>
@@ -609,6 +611,33 @@ void KinesisAnalyticsV2Client::DescribeApplicationSnapshotAsyncHelper(const Desc
   handler(this, request, DescribeApplicationSnapshot(request), context);
 }
 
+DescribeApplicationVersionOutcome KinesisAnalyticsV2Client::DescribeApplicationVersion(const DescribeApplicationVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeApplicationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeApplicationVersionOutcomeCallable KinesisAnalyticsV2Client::DescribeApplicationVersionCallable(const DescribeApplicationVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeApplicationVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeApplicationVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsV2Client::DescribeApplicationVersionAsync(const DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeApplicationVersionAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsV2Client::DescribeApplicationVersionAsyncHelper(const DescribeApplicationVersionRequest& request, const DescribeApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeApplicationVersion(request), context);
+}
+
 DiscoverInputSchemaOutcome KinesisAnalyticsV2Client::DiscoverInputSchema(const DiscoverInputSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -661,6 +690,33 @@ void KinesisAnalyticsV2Client::ListApplicationSnapshotsAsync(const ListApplicati
 void KinesisAnalyticsV2Client::ListApplicationSnapshotsAsyncHelper(const ListApplicationSnapshotsRequest& request, const ListApplicationSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListApplicationSnapshots(request), context);
+}
+
+ListApplicationVersionsOutcome KinesisAnalyticsV2Client::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListApplicationVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListApplicationVersionsOutcomeCallable KinesisAnalyticsV2Client::ListApplicationVersionsCallable(const ListApplicationVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsV2Client::ListApplicationVersionsAsync(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsV2Client::ListApplicationVersionsAsyncHelper(const ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListApplicationVersions(request), context);
 }
 
 ListApplicationsOutcome KinesisAnalyticsV2Client::ListApplications(const ListApplicationsRequest& request) const

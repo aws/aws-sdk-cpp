@@ -307,50 +307,50 @@ namespace Model
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline const Aws::Vector<PackageDependency>& GetDependencies() const{ return m_dependencies; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline void SetDependencies(const Aws::Vector<PackageDependency>& value) { m_dependencies = value; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline void SetDependencies(Aws::Vector<PackageDependency>&& value) { m_dependencies = std::move(value); }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& WithDependencies(const Aws::Vector<PackageDependency>& value) { SetDependencies(value); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& WithDependencies(Aws::Vector<PackageDependency>&& value) { SetDependencies(std::move(value)); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& AddDependencies(const PackageDependency& value) { m_dependencies.push_back(value); return *this; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">
-     * <code>PackageDependency</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
+     * objects. </p>
      */
     inline ListPackageVersionDependenciesResult& AddDependencies(PackageDependency&& value) { m_dependencies.push_back(std::move(value)); return *this; }
 

@@ -452,32 +452,32 @@ namespace Model
 
 
     /**
-     * <p>Describes the time window for automatic application maintenance.</p>
+     * <p>The details of the maintenance configuration for the application.</p>
      */
     inline const ApplicationMaintenanceConfigurationDescription& GetApplicationMaintenanceConfigurationDescription() const{ return m_applicationMaintenanceConfigurationDescription; }
 
     /**
-     * <p>Describes the time window for automatic application maintenance.</p>
+     * <p>The details of the maintenance configuration for the application.</p>
      */
     inline bool ApplicationMaintenanceConfigurationDescriptionHasBeenSet() const { return m_applicationMaintenanceConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>Describes the time window for automatic application maintenance.</p>
+     * <p>The details of the maintenance configuration for the application.</p>
      */
     inline void SetApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = value; }
 
     /**
-     * <p>Describes the time window for automatic application maintenance.</p>
+     * <p>The details of the maintenance configuration for the application.</p>
      */
     inline void SetApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { m_applicationMaintenanceConfigurationDescriptionHasBeenSet = true; m_applicationMaintenanceConfigurationDescription = std::move(value); }
 
     /**
-     * <p>Describes the time window for automatic application maintenance.</p>
+     * <p>The details of the maintenance configuration for the application.</p>
      */
     inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(const ApplicationMaintenanceConfigurationDescription& value) { SetApplicationMaintenanceConfigurationDescription(value); return *this;}
 
     /**
-     * <p>Describes the time window for automatic application maintenance.</p>
+     * <p>The details of the maintenance configuration for the application.</p>
      */
     inline ApplicationDetail& WithApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription&& value) { SetApplicationMaintenanceConfigurationDescription(std::move(value)); return *this;}
 
@@ -572,6 +572,27 @@ namespace Model
      */
     inline ApplicationDetail& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
 
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline long long GetApplicationVersionRolledBackTo() const{ return m_applicationVersionRolledBackTo; }
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline bool ApplicationVersionRolledBackToHasBeenSet() const { return m_applicationVersionRolledBackToHasBeenSet; }
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline void SetApplicationVersionRolledBackTo(long long value) { m_applicationVersionRolledBackToHasBeenSet = true; m_applicationVersionRolledBackTo = value; }
+
+    /**
+     * <p>The version to which you want to roll back the application.</p>
+     */
+    inline ApplicationDetail& WithApplicationVersionRolledBackTo(long long value) { SetApplicationVersionRolledBackTo(value); return *this;}
+
   private:
 
     Aws::String m_applicationARN;
@@ -618,6 +639,9 @@ namespace Model
 
     Aws::String m_conditionalToken;
     bool m_conditionalTokenHasBeenSet;
+
+    long long m_applicationVersionRolledBackTo;
+    bool m_applicationVersionRolledBackToHasBeenSet;
   };
 
 } // namespace Model

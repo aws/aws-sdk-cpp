@@ -50,7 +50,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline const Aws::String& GetFamily() const{ return m_family; }
 
@@ -58,7 +59,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
 
@@ -66,7 +68,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
@@ -74,7 +77,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
 
@@ -82,7 +86,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
 
@@ -90,7 +95,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
 
@@ -98,7 +104,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
 
@@ -106,7 +113,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
 

@@ -16,6 +16,7 @@ UpdateDocumentRequest::UpdateDocumentRequest() :
     m_contentHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_displayNameHasBeenSet(false),
     m_versionNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_documentFormat(DocumentFormat::NOT_SET),
@@ -48,6 +49,12 @@ Aws::String UpdateDocumentRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_displayNameHasBeenSet)
+  {
+   payload.WithString("DisplayName", m_displayName);
 
   }
 

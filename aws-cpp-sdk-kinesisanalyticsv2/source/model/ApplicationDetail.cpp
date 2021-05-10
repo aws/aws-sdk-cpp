@@ -38,7 +38,9 @@ ApplicationDetail::ApplicationDetail() :
     m_applicationVersionUpdatedFromHasBeenSet(false),
     m_applicationVersionRolledBackFrom(0),
     m_applicationVersionRolledBackFromHasBeenSet(false),
-    m_conditionalTokenHasBeenSet(false)
+    m_conditionalTokenHasBeenSet(false),
+    m_applicationVersionRolledBackTo(0),
+    m_applicationVersionRolledBackToHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ ApplicationDetail::ApplicationDetail(JsonView jsonValue) :
     m_applicationVersionUpdatedFromHasBeenSet(false),
     m_applicationVersionRolledBackFrom(0),
     m_applicationVersionRolledBackFromHasBeenSet(false),
-    m_conditionalTokenHasBeenSet(false)
+    m_conditionalTokenHasBeenSet(false),
+    m_applicationVersionRolledBackTo(0),
+    m_applicationVersionRolledBackToHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -177,6 +181,13 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_conditionalTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationVersionRolledBackTo"))
+  {
+    m_applicationVersionRolledBackTo = jsonValue.GetInt64("ApplicationVersionRolledBackTo");
+
+    m_applicationVersionRolledBackToHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -272,6 +283,12 @@ JsonValue ApplicationDetail::Jsonize() const
   if(m_conditionalTokenHasBeenSet)
   {
    payload.WithString("ConditionalToken", m_conditionalToken);
+
+  }
+
+  if(m_applicationVersionRolledBackToHasBeenSet)
+  {
+   payload.WithInt64("ApplicationVersionRolledBackTo", m_applicationVersionRolledBackTo);
 
   }
 

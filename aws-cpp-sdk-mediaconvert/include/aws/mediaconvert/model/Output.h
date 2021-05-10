@@ -444,42 +444,42 @@ namespace Model
     /**
      * VideoDescription contains a group of video encoding settings. The specific video
      * settings depend on the video codec that you choose for the property codec.
-     * Include one instance of  VideoDescription per output.
+     * Include one instance of VideoDescription per output.
      */
     inline const VideoDescription& GetVideoDescription() const{ return m_videoDescription; }
 
     /**
      * VideoDescription contains a group of video encoding settings. The specific video
      * settings depend on the video codec that you choose for the property codec.
-     * Include one instance of  VideoDescription per output.
+     * Include one instance of VideoDescription per output.
      */
     inline bool VideoDescriptionHasBeenSet() const { return m_videoDescriptionHasBeenSet; }
 
     /**
      * VideoDescription contains a group of video encoding settings. The specific video
      * settings depend on the video codec that you choose for the property codec.
-     * Include one instance of  VideoDescription per output.
+     * Include one instance of VideoDescription per output.
      */
     inline void SetVideoDescription(const VideoDescription& value) { m_videoDescriptionHasBeenSet = true; m_videoDescription = value; }
 
     /**
      * VideoDescription contains a group of video encoding settings. The specific video
      * settings depend on the video codec that you choose for the property codec.
-     * Include one instance of  VideoDescription per output.
+     * Include one instance of VideoDescription per output.
      */
     inline void SetVideoDescription(VideoDescription&& value) { m_videoDescriptionHasBeenSet = true; m_videoDescription = std::move(value); }
 
     /**
      * VideoDescription contains a group of video encoding settings. The specific video
      * settings depend on the video codec that you choose for the property codec.
-     * Include one instance of  VideoDescription per output.
+     * Include one instance of VideoDescription per output.
      */
     inline Output& WithVideoDescription(const VideoDescription& value) { SetVideoDescription(value); return *this;}
 
     /**
      * VideoDescription contains a group of video encoding settings. The specific video
      * settings depend on the video codec that you choose for the property codec.
-     * Include one instance of  VideoDescription per output.
+     * Include one instance of VideoDescription per output.
      */
     inline Output& WithVideoDescription(VideoDescription&& value) { SetVideoDescription(std::move(value)); return *this;}
 

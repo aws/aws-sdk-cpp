@@ -244,50 +244,50 @@ namespace Model
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline const Aws::Vector<PackageVersionSummary>& GetVersions() const{ return m_versions; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline void SetVersions(const Aws::Vector<PackageVersionSummary>& value) { m_versions = value; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline void SetVersions(Aws::Vector<PackageVersionSummary>&& value) { m_versions = std::move(value); }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& WithVersions(const Aws::Vector<PackageVersionSummary>& value) { SetVersions(value); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& WithVersions(Aws::Vector<PackageVersionSummary>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& AddVersions(const PackageVersionSummary& value) { m_versions.push_back(value); return *this; }
 
     /**
      * <p> The returned list of <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">
-     * <code>PackageVersionSummary</code> </a> objects. </p>
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
+     * objects. </p>
      */
     inline ListPackageVersionsResult& AddVersions(PackageVersionSummary&& value) { m_versions.push_back(std::move(value)); return *this; }
 

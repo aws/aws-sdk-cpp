@@ -4397,7 +4397,8 @@ ComputeEndpointOutcome S3CrtClient::ComputeEndpointString(const Aws::String& buc
                 "Path style addressing is not compatible with Access Point ARN or Outposts ARN in Bucket field, please consider using virtual addressing for this client instead.", false));
         }
 
-        S3CrtARNOutcome s3ArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
+        bool useClientRegion = !m_useArnRegion || Aws::Region::IsFipsRegion(m_region);
+        S3CrtARNOutcome s3ArnOutcome = useClientRegion ? arn.Validate(m_region.c_str()) : arn.Validate();
         if (!s3ArnOutcome.IsSuccess())
         {
             return ComputeEndpointOutcome(s3ArnOutcome.GetError());
@@ -4410,12 +4411,12 @@ ComputeEndpointOutcome S3CrtClient::ComputeEndpointString(const Aws::String& buc
                 return ComputeEndpointOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION",
                     "S3 Object Lambda Access Point ARNs do not support dualstack right now.", false));
             }
-            ss << S3CrtEndpoint::ForObjectLambdaAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
+            ss << S3CrtEndpoint::ForObjectLambdaAccessPointArn(arn, useClientRegion ? m_region : "", m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, ARNService::S3_OBJECT_LAMBDA));
         }
         else if (arn.GetResourceType() == ARNResourceType::ACCESSPOINT)
         {
-            ss << S3CrtEndpoint::ForAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
+            ss << S3CrtEndpoint::ForAccessPointArn(arn, useClientRegion ? m_region : "", m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, SERVICE_NAME));
         }
         else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
@@ -4425,7 +4426,7 @@ ComputeEndpointOutcome S3CrtClient::ComputeEndpointString(const Aws::String& buc
                 return ComputeEndpointOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION",
                     "Outposts Access Points do not support dualstack right now.", false));
             }
-            ss << S3CrtEndpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
+            ss << S3CrtEndpoint::ForOutpostsArn(arn, useClientRegion ? m_region : "", m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, "s3-outposts"));
         }
     }

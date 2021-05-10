@@ -16,6 +16,7 @@ UpdateNodegroupConfigRequest::UpdateNodegroupConfigRequest() :
     m_clusterNameHasBeenSet(false),
     m_nodegroupNameHasBeenSet(false),
     m_labelsHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
@@ -29,6 +30,12 @@ Aws::String UpdateNodegroupConfigRequest::SerializePayload() const
   if(m_labelsHasBeenSet)
   {
    payload.WithObject("labels", m_labels.Jsonize());
+
+  }
+
+  if(m_taintsHasBeenSet)
+  {
+   payload.WithObject("taints", m_taints.Jsonize());
 
   }
 
