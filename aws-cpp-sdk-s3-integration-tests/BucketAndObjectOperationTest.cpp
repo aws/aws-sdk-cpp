@@ -33,6 +33,7 @@
 #include <aws/s3/model/CopyObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/DeleteObjectsRequest.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/CreateMultipartUploadRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
@@ -71,7 +72,8 @@ namespace
     static std::string BASE_CREATE_BUCKET_TEST_NAME = "createbuckettest";
     static std::string BASE_DNS_UNFRIENDLY_TEST_NAME = "dns.unfriendly";
     static std::string BASE_LOCATION_BUCKET_TEST_NAME = "locbuckettest";
-    static std::string BASE_OBJECTS_BUCKET_NAME = "putobjecttest";
+    static std::string BASE_OBJECTS_BUCKET_NAME = "objecttest";
+    static std::string BASE_OBJECTS_NEWLINE_BUCKET_NAME = "newlinetest";
     static std::string BASE_PUT_OBJECTS_BUCKET_NAME = "putobjecttest";
     static std::string BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME = "charsetstest";
     static std::string BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME = "presignedtest";
@@ -86,6 +88,7 @@ namespace
     static std::string BASE_ENDPOINT_OVERRIDE_BUCKET_NAME = "endpointoverride";
     static const char* ALLOCATION_TAG = "BucketAndObjectOperationTest";
     static const char* TEST_OBJ_KEY = "TestObjectKey";
+    static const char* TEST_NEWLINE_KEY = "TestNewlineKey";
     static const char* TEST_NOT_MODIFIED_OBJ_KEY = "TestNotModifiedObjectKey";
     static const char* TEST_OBJECT_LOCK_OBJ_KEY = "TestObjectLock";
     static const char* TEST_DNS_UNFRIENDLY_OBJ_KEY = "WhySoHostile";
@@ -112,6 +115,7 @@ namespace
         AppendUUID(BASE_DNS_UNFRIENDLY_TEST_NAME);
         AppendUUID(BASE_LOCATION_BUCKET_TEST_NAME);
         AppendUUID(BASE_OBJECTS_BUCKET_NAME);
+        AppendUUID(BASE_OBJECTS_NEWLINE_BUCKET_NAME);
         AppendUUID(BASE_PUT_OBJECTS_BUCKET_NAME);
         AppendUUID(BASE_PUT_WEIRD_CHARSETS_OBJECTS_BUCKET_NAME);
         AppendUUID(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME);
@@ -198,6 +202,7 @@ namespace
             DeleteBucket(CalculateBucketName(BASE_DNS_UNFRIENDLY_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_LOCATION_BUCKET_TEST_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_OBJECTS_BUCKET_NAME.c_str()));
+            DeleteBucket(CalculateBucketName(BASE_OBJECTS_NEWLINE_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_OBJECTS_PRESIGNED_URLS_BUCKET_NAME.c_str()));
             DeleteBucket(CalculateBucketName(BASE_PUT_MULTIPART_BUCKET_NAME.c_str()));
@@ -767,6 +772,74 @@ namespace
         putObjectRequest.SetKey("foo;jsessionid=40+2");
         PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
         ASSERT_TRUE(putObjectOutcome.IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestKeysWithNewlineCharacterSets)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_OBJECTS_NEWLINE_BUCKET_NAME.c_str());
+
+        CreateBucketRequest createBucketRequest;
+        createBucketRequest.SetBucket(fullBucketName);
+        createBucketRequest.SetACL(BucketCannedACL::private_);
+
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_TRUE(createBucketOutcome.IsSuccess());
+        const CreateBucketResult& createBucketResult = createBucketOutcome.GetResult();
+        ASSERT_TRUE(!createBucketResult.GetLocation().empty());
+
+        ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName));
+
+        Aws::Vector<Aws::String> objectKeysWithNewlineCharacter;
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-\n-LF");
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-\r-CR");
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-" + StringUtils::URLDecode("%c2%85") + "-NEXTLINE");
+        objectKeysWithNewlineCharacter.push_back(Aws::String(TEST_NEWLINE_KEY) + "-" + StringUtils::URLDecode("%e2%80%a8") + "-LINESEPARATOR");
+
+        for (const Aws::String& key : objectKeysWithNewlineCharacter)
+        {
+            PutObjectRequest putObjectRequest;
+            putObjectRequest.SetBucket(fullBucketName);
+            std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
+            *objectStream << "Object Key: " << key;
+            putObjectRequest.SetBody(objectStream);
+            putObjectRequest.SetContentType("text/plain");
+            putObjectRequest.SetKey(key);
+            PutObjectOutcome putObjectOutcome = Client->PutObject(putObjectRequest);
+            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+        }
+
+        for (const Aws::String& key : objectKeysWithNewlineCharacter)
+        {
+            GetObjectRequest getObjectRequest;
+            getObjectRequest.SetBucket(fullBucketName);
+            getObjectRequest.SetKey(key);
+            GetObjectOutcome getObjectOutcome = Client->GetObject(getObjectRequest);
+            ASSERT_TRUE(getObjectOutcome.IsSuccess());
+            Aws::StringStream ss;
+            ss << getObjectOutcome.GetResult().GetBody().rdbuf();
+            ASSERT_NE(Aws::String::npos, ss.str().find(key));
+        }
+
+        Aws::Vector<ObjectIdentifier> objectIdentifiers;
+        for (const Aws::String& key : objectKeysWithNewlineCharacter)
+        {
+            ObjectIdentifier objectIdentifier;
+            objectIdentifier.SetKey(key);
+            objectIdentifiers.push_back(objectIdentifier);
+        }
+        DeleteObjectsRequest deleteObjectsRequest;
+        deleteObjectsRequest.SetBucket(fullBucketName);
+        S3::Model::Delete deleteObjects;
+        deleteObjects.SetObjects(objectIdentifiers);
+        deleteObjectsRequest.SetDelete(deleteObjects);
+        DeleteObjectsOutcome deleteObjectsOutcome = Client->DeleteObjects(deleteObjectsRequest);
+        ASSERT_TRUE(deleteObjectsOutcome.IsSuccess());
+
+        ListObjectsRequest listObjectsRequest;
+        listObjectsRequest.SetBucket(fullBucketName);
+        ListObjectsOutcome listObjectsOutcome = Client->ListObjects(listObjectsRequest);
+        ASSERT_TRUE(listObjectsOutcome.IsSuccess());
+        ASSERT_EQ(0u, listObjectsOutcome.GetResult().GetContents().size());
     }
 
     TEST_F(BucketAndObjectOperationTest, TestObjectOperations)
