@@ -30,7 +30,9 @@ Item::Item() :
     m_vocabularyFilterMatchHasBeenSet(false),
     m_speakerHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_stable(false),
+    m_stableHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ Item::Item(JsonView jsonValue) :
     m_vocabularyFilterMatchHasBeenSet(false),
     m_speakerHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_stable(false),
+    m_stableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +106,13 @@ Item& Item::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Stable"))
+  {
+    m_stable = jsonValue.GetBool("Stable");
+
+    m_stableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -147,6 +158,12 @@ JsonValue Item::Jsonize() const
   if(m_confidenceHasBeenSet)
   {
    payload.WithDouble("Confidence", m_confidence);
+
+  }
+
+  if(m_stableHasBeenSet)
+  {
+   payload.WithBool("Stable", m_stable);
 
   }
 

@@ -114,7 +114,7 @@ namespace Model
      * <p>The action that you want this job to perform on every object listed in the
      * manifest. For more information about the available actions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const JobOperation& GetOperation() const{ return m_operation; }
 
@@ -122,7 +122,7 @@ namespace Model
      * <p>The action that you want this job to perform on every object listed in the
      * manifest. For more information about the available actions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
@@ -130,7 +130,7 @@ namespace Model
      * <p>The action that you want this job to perform on every object listed in the
      * manifest. For more information about the available actions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetOperation(const JobOperation& value) { m_operationHasBeenSet = true; m_operation = value; }
 
@@ -138,7 +138,7 @@ namespace Model
      * <p>The action that you want this job to perform on every object listed in the
      * manifest. For more information about the available actions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetOperation(JobOperation&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
@@ -146,7 +146,7 @@ namespace Model
      * <p>The action that you want this job to perform on every object listed in the
      * manifest. For more information about the available actions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateJobRequest& WithOperation(const JobOperation& value) { SetOperation(value); return *this;}
 
@@ -154,7 +154,7 @@ namespace Model
      * <p>The action that you want this job to perform on every object listed in the
      * manifest. For more information about the available actions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-actions.html">Operations</a>
-     * in the <i>Amazon Simple Storage Service User Guide</i>.</p>
+     * in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateJobRequest& WithOperation(JobOperation&& value) { SetOperation(std::move(value)); return *this;}
 

@@ -275,6 +275,35 @@ namespace Model
      */
     inline Item& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline bool GetStable() const{ return m_stable; }
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline bool StableHasBeenSet() const { return m_stableHasBeenSet; }
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline void SetStable(bool value) { m_stableHasBeenSet = true; m_stable = value; }
+
+    /**
+     * <p>If partial result stabilization has been enabled, indicates whether the word
+     * or phrase in the item is stable. If <code>Stable</code> is <code>true</code>,
+     * the result is stable.</p>
+     */
+    inline Item& WithStable(bool value) { SetStable(value); return *this;}
+
   private:
 
     double m_startTime;
@@ -297,6 +326,9 @@ namespace Model
 
     double m_confidence;
     bool m_confidenceHasBeenSet;
+
+    bool m_stable;
+    bool m_stableHasBeenSet;
   };
 
 } // namespace Model
