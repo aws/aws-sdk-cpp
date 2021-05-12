@@ -22,17 +22,14 @@ endif()
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
 # Cmake invocation variables:
-#   CUSTOM_MEMORY_MANAGEMENT - if set to ON, generates the sdk project files with custom memory management enabled, otherwise disables it
 #   BUILD_ONLY - only build project identified by this variable, a semi-colon delimited list, if this is set we will build only the projects listed. Core will always be built as will its unit tests.
 #                    Also if a high level client is specified then we will build its dependencies as well. If a project has tests, the tests will be built.
-#   REGENERATE_CLIENTS - all clients being built on this run will be regenerated from the api definitions, this option involves some setup of python, java 8, jdk 1.8, and maven
 #   ADD_CUSTOM_CLIENTS - semi-colon delimited list of format serviceName=<yourServiceName>,version=<theVersionNumber>;serviceName2=<yourOtherServiceName>,version=<versionNumber2>
 #                          to use these arguments, you should add the api definition .normal.json file for your service to the api-description folder in the generator.
 #   NDK_DIR - directory where the android NDK is installed; if not set, the location will be read from the ANDROID_NDK environment variable
 #   CUSTOM_PLATFORM_DIR - directory where custom platform scripts, modules, and source resides
 #   AWS_SDK_ADDITIONAL_LIBRARIES - names of additional libraries to link into aws-cpp-sdk-core in order to support unusual/unanticipated linking setups (static curl against static-something-other-than-openssl for example)
 
-# TODO: convert boolean invocation variables to options
 option(ENABLE_UNITY_BUILD "If enabled, the SDK will be built using a single unified .cpp file for each service library.  Reduces the size of static library binaries on Windows and Linux" ON)
 option(MINIMIZE_SIZE "If enabled, the SDK will be built via a unity aggregation process that results in smaller static libraries; additionally, release binaries will favor size optimizations over speed" OFF)
 option(BUILD_SHARED_LIBS "If enabled, all aws sdk libraries will be build as shared objects; otherwise all Aws libraries will be built as static objects" ON)
@@ -53,6 +50,8 @@ option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when us
 option(BUILD_DEPS "Build third-party dependencies" ON)
 option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" ON)
 option(ENABLE_HTTP_CLIENT_TESTING "If enabled, corresponding http client test suites will be built and run" OFF)
+option(CUSTOM_MEMORY_MANAGEMENT "If set to ON, generates the sdk project files with custom memory management enabled, otherwise disables it" OFF)
+option(REGENERATE_CLIENTS "If set to ON, all clients being built on this run will be regenerated from the api definitions, this option involves some setup of python, java 8+, and maven" OFF)
 option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIENTS. \
                                 If enabled when doing code generation, operation related functions in service clients will be marked as virtual. \
                                 If disabled when doing code generation, virtual will not be added to operation functions and service client class will be marked as final. \
@@ -247,12 +246,11 @@ else()
 endif()
 
 if (ENABLE_ADDRESS_SANITIZER)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
     if (CMAKE_COMPILER_IS_GNUCXX AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 7.1)
         message(STATUS "adding libasan as static explicitly for GCC 7+")
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libasan")
     endif()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -fno-omit-frame-pointer")
 endif()
 
 include(CheckCXXSymbolExists)
