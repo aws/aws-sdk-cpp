@@ -247,7 +247,12 @@ else()
 endif()
 
 if (ENABLE_ADDRESS_SANITIZER)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+    if (CMAKE_COMPILER_IS_GNUCXX AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 7.1)
+        message(STATUS "adding libasan as static explicitly for GCC 7+")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libasan")
+    endif()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -fno-omit-frame-pointer")
 endif()
 
 include(CheckCXXSymbolExists)
