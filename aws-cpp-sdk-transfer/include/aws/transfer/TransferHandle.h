@@ -266,6 +266,14 @@ namespace Aws
             inline void SetBytesTotalSize(uint64_t value) { m_bytesTotalSize.store(value); }
 
             /**
+             * Gets the total size of contigious bytes from the file begining that is already transferred, and available to users.
+             * For multiple-part downloads, it's guaranteed that these bytes are commited to the underlying stream already.
+             * For single-part downloads, it's also true since we write() directly to the underlying stream.
+             * A potential use case is to poll and stream bytes to users as we are still doing multi-part downloading.
+             */
+            inline uint64_t GetBytesAvailableFromStart() const { return m_bytesAvailableFromStart.load(std::memory_order_relaxed); }
+
+            /**
              * Bucket portion of the object location in Amazon S3.
              */
             inline const Aws::String& GetBucketName() const { return m_bucket; }
@@ -378,6 +386,9 @@ namespace Aws
             std::atomic<uint64_t> m_bytesTransferred;
             std::atomic<bool> m_lastPart;
             std::atomic<uint64_t> m_bytesTotalSize;
+            std::atomic<uint64_t> m_bytesAvailableFromStart;
+            /* The next part number to watch, that is able to grow m_bytesAvailableFromStart. */
+            size_t m_nextPartToWatch;
             uint64_t m_offset;
             Aws::String m_bucket;
             Aws::String m_key;
