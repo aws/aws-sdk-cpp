@@ -4,13 +4,13 @@
 
 cmake_minimum_required (VERSION 3.1)
 if(POLICY CMP0056)
-    cmake_policy(SET CMP0056 NEW)
+    cmake_policy(SET CMP0056 NEW) # CMP0056: Honor link flags in try_compile() source-file signature. Introduced in 3.2
 endif()
 if(POLICY CMP0057)
-    cmake_policy(SET CMP0057 NEW) # support IN_LIST
+    cmake_policy(SET CMP0057 NEW) # CMP0057: Support new IN_LIST if() operator. Introduced in 3.3.
 endif()
 if (POLICY CMP0077)
-    cmake_policy(SET CMP0077 OLD) # Enable options to get their values from normal variables
+    cmake_policy(SET CMP0077 OLD) # CMP0077: option() honors normal variables. Introduced in 3.13
 endif()
 
 # 3.12 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
