@@ -106,17 +106,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -138,17 +137,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -170,17 +168,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -202,17 +199,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -234,17 +230,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -266,17 +261,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -298,17 +292,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -330,17 +323,16 @@ namespace Model
      * are for use with Amazon VPC. (<code>Linux/UNIX</code> | <code>Linux/UNIX (Amazon
      * VPC)</code> | <code>SUSE Linux</code> | <code>SUSE Linux (Amazon VPC)</code> |
      * <code>Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux (Amazon
-     * VPC)</code> | <code>Red Hat Enterprise Linux with HA (Amazon VPC)</code> |
-     * <code>Windows</code> | <code>Windows (Amazon VPC)</code> | <code>Windows with
-     * SQL Server Standard</code> | <code>Windows with SQL Server Standard (Amazon
-     * VPC)</code> | <code>Windows with SQL Server Web</code> | <code> Windows with SQL
-     * Server Web (Amazon VPC)</code> | <code>Windows with SQL Server Enterprise</code>
-     * | <code>Windows with SQL Server Enterprise (Amazon VPC)</code>) </p> </li> <li>
-     * <p> <code>reserved-instances-offering-id</code> - The Reserved Instances
-     * offering ID.</p> </li> <li> <p> <code>scope</code> - The scope of the Reserved
-     * Instance (<code>Availability Zone</code> or <code>Region</code>).</p> </li> <li>
-     * <p> <code>usage-price</code> - The usage price of the Reserved Instance, per
-     * hour (for example, 0.84).</p> </li> </ul>
+     * VPC)</code> | <code>Windows</code> | <code>Windows (Amazon VPC)</code> |
+     * <code>Windows with SQL Server Standard</code> | <code>Windows with SQL Server
+     * Standard (Amazon VPC)</code> | <code>Windows with SQL Server Web</code> | <code>
+     * Windows with SQL Server Web (Amazon VPC)</code> | <code>Windows with SQL Server
+     * Enterprise</code> | <code>Windows with SQL Server Enterprise (Amazon
+     * VPC)</code>) </p> </li> <li> <p> <code>reserved-instances-offering-id</code> -
+     * The Reserved Instances offering ID.</p> </li> <li> <p> <code>scope</code> - The
+     * scope of the Reserved Instance (<code>Availability Zone</code> or
+     * <code>Region</code>).</p> </li> <li> <p> <code>usage-price</code> - The usage
+     * price of the Reserved Instance, per hour (for example, 0.84).</p> </li> </ul>
      */
     inline DescribeReservedInstancesOfferingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
