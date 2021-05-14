@@ -28,8 +28,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a tag-based condition that determines whether an object is included
-   * or excluded from a classification job.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a tag-based condition that determines whether an S3 object is
+   * included or excluded from a classification job. Tag keys and values are case
+   * sensitive. Also, Amazon Macie doesn't support use of partial values or wildcard
+   * characters in tag-based conditions.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/TagScopeTerm">AWS
    * API Reference</a></p>
    */

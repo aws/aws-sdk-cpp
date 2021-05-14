@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a property-based condition that determines whether an object is
+   * <p>Specifies a property-based condition that determines whether an S3 object is
    * included or excluded from a classification job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SimpleScopeTerm">AWS
    * API Reference</a></p>
@@ -148,9 +148,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
@@ -169,9 +169,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
@@ -190,9 +190,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
@@ -211,9 +211,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
@@ -232,9 +232,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline SimpleScopeTerm& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
@@ -253,9 +253,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline SimpleScopeTerm& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
@@ -274,9 +274,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline SimpleScopeTerm& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
@@ -295,9 +295,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline SimpleScopeTerm& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
@@ -316,9 +316,9 @@ namespace Model
      * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li> <li><p>TAG - A
      * string that represents a tag key for an object. For advanced options, use a
-     * TagScopeTerm object, instead of a SimpleScopeTerm object, to define a tag-based
+     * TagScopeTerm object instead of a SimpleScopeTerm object to define a tag-based
      * condition for the job.</p></li></ul> <p>Macie doesn't support use of wildcard
-     * characters in values. Also, string values are case sensitive.</p>
+     * characters in these values. Also, string values are case sensitive.</p>
      */
     inline SimpleScopeTerm& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

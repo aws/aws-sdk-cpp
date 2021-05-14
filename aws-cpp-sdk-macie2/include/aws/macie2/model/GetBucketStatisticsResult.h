@@ -121,62 +121,62 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets whose bucket policies do and don't require
+     * <p>The total number of buckets whose bucket policies do or don't require
      * server-side encryption of objects when objects are uploaded to the buckets.</p>
      */
     inline const BucketCountPolicyAllowsUnencryptedObjectUploads& GetBucketCountByObjectEncryptionRequirement() const{ return m_bucketCountByObjectEncryptionRequirement; }
 
     /**
-     * <p>The total number of buckets whose bucket policies do and don't require
+     * <p>The total number of buckets whose bucket policies do or don't require
      * server-side encryption of objects when objects are uploaded to the buckets.</p>
      */
     inline void SetBucketCountByObjectEncryptionRequirement(const BucketCountPolicyAllowsUnencryptedObjectUploads& value) { m_bucketCountByObjectEncryptionRequirement = value; }
 
     /**
-     * <p>The total number of buckets whose bucket policies do and don't require
+     * <p>The total number of buckets whose bucket policies do or don't require
      * server-side encryption of objects when objects are uploaded to the buckets.</p>
      */
     inline void SetBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploads&& value) { m_bucketCountByObjectEncryptionRequirement = std::move(value); }
 
     /**
-     * <p>The total number of buckets whose bucket policies do and don't require
+     * <p>The total number of buckets whose bucket policies do or don't require
      * server-side encryption of objects when objects are uploaded to the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByObjectEncryptionRequirement(const BucketCountPolicyAllowsUnencryptedObjectUploads& value) { SetBucketCountByObjectEncryptionRequirement(value); return *this;}
 
     /**
-     * <p>The total number of buckets whose bucket policies do and don't require
+     * <p>The total number of buckets whose bucket policies do or don't require
      * server-side encryption of objects when objects are uploaded to the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountByObjectEncryptionRequirement(BucketCountPolicyAllowsUnencryptedObjectUploads&& value) { SetBucketCountByObjectEncryptionRequirement(std::move(value)); return *this;}
 
 
     /**
-     * <p>The total number of buckets that are and aren't shared with another AWS
+     * <p>The total number of buckets that are or aren't shared with another AWS
      * account.</p>
      */
     inline const BucketCountBySharedAccessType& GetBucketCountBySharedAccessType() const{ return m_bucketCountBySharedAccessType; }
 
     /**
-     * <p>The total number of buckets that are and aren't shared with another AWS
+     * <p>The total number of buckets that are or aren't shared with another AWS
      * account.</p>
      */
     inline void SetBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { m_bucketCountBySharedAccessType = value; }
 
     /**
-     * <p>The total number of buckets that are and aren't shared with another AWS
+     * <p>The total number of buckets that are or aren't shared with another AWS
      * account.</p>
      */
     inline void SetBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { m_bucketCountBySharedAccessType = std::move(value); }
 
     /**
-     * <p>The total number of buckets that are and aren't shared with another AWS
+     * <p>The total number of buckets that are or aren't shared with another AWS
      * account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { SetBucketCountBySharedAccessType(value); return *this;}
 
     /**
-     * <p>The total number of buckets that are and aren't shared with another AWS
+     * <p>The total number of buckets that are or aren't shared with another AWS
      * account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { SetBucketCountBySharedAccessType(std::move(value)); return *this;}
@@ -316,29 +316,29 @@ namespace Model
 
 
     /**
-     * <p>The total compressed storage size, in bytes, of the buckets.</p> <p>If
-     * versioning is enabled for any of the buckets, Macie calculates this value based
-     * on the size of the latest version of each object in those buckets. This value
-     * doesn't reflect the storage size of all versions of the objects in the
-     * buckets.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of
+     * the buckets, Macie calculates this value based on the size of the latest version
+     * of each applicable object in those buckets. This value doesn't reflect the
+     * storage size of all versions of the applicable objects in the buckets.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the buckets.</p> <p>If
-     * versioning is enabled for any of the buckets, Macie calculates this value based
-     * on the size of the latest version of each object in those buckets. This value
-     * doesn't reflect the storage size of all versions of the objects in the
-     * buckets.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of
+     * the buckets, Macie calculates this value based on the size of the latest version
+     * of each applicable object in those buckets. This value doesn't reflect the
+     * storage size of all versions of the applicable objects in the buckets.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressed = value; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the buckets.</p> <p>If
-     * versioning is enabled for any of the buckets, Macie calculates this value based
-     * on the size of the latest version of each object in those buckets. This value
-     * doesn't reflect the storage size of all versions of the objects in the
-     * buckets.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the buckets.</p> <p>If versioning is enabled for any of
+     * the buckets, Macie calculates this value based on the size of the latest version
+     * of each applicable object in those buckets. This value doesn't reflect the
+     * storage size of all versions of the applicable objects in the buckets.</p>
      */
     inline GetBucketStatisticsResult& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
 

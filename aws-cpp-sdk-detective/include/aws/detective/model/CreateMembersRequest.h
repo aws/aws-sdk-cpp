@@ -163,57 +163,65 @@ namespace Model
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline const Aws::Vector<Account>& GetAccounts() const{ return m_accounts; }
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline void SetAccounts(const Aws::Vector<Account>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline void SetAccounts(Aws::Vector<Account>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline CreateMembersRequest& WithAccounts(const Aws::Vector<Account>& value) { SetAccounts(value); return *this;}
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline CreateMembersRequest& WithAccounts(Aws::Vector<Account>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline CreateMembersRequest& AddAccounts(const Account& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
      * <p>The list of AWS accounts to invite to become member accounts in the behavior
-     * graph. For each invited account, the account list contains the account
-     * identifier and the AWS account root user email address.</p>
+     * graph. You can invite up to 50 accounts at a time. For each invited account, the
+     * account list contains the account identifier and the AWS account root user email
+     * address.</p>
      */
     inline CreateMembersRequest& AddAccounts(Account&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 

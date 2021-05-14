@@ -11,6 +11,7 @@
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/MedicalTranscriptionSetting.h>
+#include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Specialty.h>
 #include <aws/transcribe/model/Type.h>
 #include <utility>
@@ -722,6 +723,55 @@ namespace Model
 
 
     /**
+     * <p>You can configure Amazon Transcribe Medical to label content in the
+     * transcription output. If you specify <code>PHI</code>, Amazon Transcribe Medical
+     * labels the personal health information (PHI) that it identifies in the
+     * transcription output.</p>
+     */
+    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+
+    /**
+     * <p>You can configure Amazon Transcribe Medical to label content in the
+     * transcription output. If you specify <code>PHI</code>, Amazon Transcribe Medical
+     * labels the personal health information (PHI) that it identifies in the
+     * transcription output.</p>
+     */
+    inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
+
+    /**
+     * <p>You can configure Amazon Transcribe Medical to label content in the
+     * transcription output. If you specify <code>PHI</code>, Amazon Transcribe Medical
+     * labels the personal health information (PHI) that it identifies in the
+     * transcription output.</p>
+     */
+    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+
+    /**
+     * <p>You can configure Amazon Transcribe Medical to label content in the
+     * transcription output. If you specify <code>PHI</code>, Amazon Transcribe Medical
+     * labels the personal health information (PHI) that it identifies in the
+     * transcription output.</p>
+     */
+    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
+
+    /**
+     * <p>You can configure Amazon Transcribe Medical to label content in the
+     * transcription output. If you specify <code>PHI</code>, Amazon Transcribe Medical
+     * labels the personal health information (PHI) that it identifies in the
+     * transcription output.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
+
+    /**
+     * <p>You can configure Amazon Transcribe Medical to label content in the
+     * transcription output. If you specify <code>PHI</code>, Amazon Transcribe Medical
+     * labels the personal health information (PHI) that it identifies in the
+     * transcription output.</p>
+     */
+    inline StartMedicalTranscriptionJobRequest& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The medical specialty of any clinician speaking in the input media.</p>
      */
     inline const Specialty& GetSpecialty() const{ return m_specialty; }
@@ -828,6 +878,9 @@ namespace Model
 
     MedicalTranscriptionSetting m_settings;
     bool m_settingsHasBeenSet;
+
+    MedicalContentIdentificationType m_contentIdentificationType;
+    bool m_contentIdentificationTypeHasBeenSet;
 
     Specialty m_specialty;
     bool m_specialtyHasBeenSet;

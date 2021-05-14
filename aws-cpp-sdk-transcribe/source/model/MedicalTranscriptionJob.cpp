@@ -35,6 +35,8 @@ MedicalTranscriptionJob::MedicalTranscriptionJob() :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
@@ -59,6 +61,8 @@ MedicalTranscriptionJob::MedicalTranscriptionJob(JsonView jsonValue) :
     m_completionTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
@@ -153,6 +157,13 @@ MedicalTranscriptionJob& MedicalTranscriptionJob::operator =(JsonView jsonValue)
     m_settingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ContentIdentificationType"))
+  {
+    m_contentIdentificationType = MedicalContentIdentificationTypeMapper::GetMedicalContentIdentificationTypeForName(jsonValue.GetString("ContentIdentificationType"));
+
+    m_contentIdentificationTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Specialty"))
   {
     m_specialty = SpecialtyMapper::GetSpecialtyForName(jsonValue.GetString("Specialty"));
@@ -238,6 +249,11 @@ JsonValue MedicalTranscriptionJob::Jsonize() const
   {
    payload.WithObject("Settings", m_settings.Jsonize());
 
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+   payload.WithString("ContentIdentificationType", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
   }
 
   if(m_specialtyHasBeenSet)

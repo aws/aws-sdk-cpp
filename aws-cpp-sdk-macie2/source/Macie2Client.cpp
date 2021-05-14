@@ -67,6 +67,7 @@
 #include <aws/macie2/model/ListTagsForResourceRequest.h>
 #include <aws/macie2/model/PutClassificationExportConfigurationRequest.h>
 #include <aws/macie2/model/PutFindingsPublicationConfigurationRequest.h>
+#include <aws/macie2/model/SearchResourcesRequest.h>
 #include <aws/macie2/model/TagResourceRequest.h>
 #include <aws/macie2/model/TestCustomDataIdentifierRequest.h>
 #include <aws/macie2/model/UntagResourceRequest.h>
@@ -1475,6 +1476,33 @@ void Macie2Client::PutFindingsPublicationConfigurationAsync(const PutFindingsPub
 void Macie2Client::PutFindingsPublicationConfigurationAsyncHelper(const PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutFindingsPublicationConfiguration(request), context);
+}
+
+SearchResourcesOutcome Macie2Client::SearchResources(const SearchResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/datasources/search-resources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return SearchResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchResourcesOutcomeCallable Macie2Client::SearchResourcesCallable(const SearchResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void Macie2Client::SearchResourcesAsync(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void Macie2Client::SearchResourcesAsyncHelper(const SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchResources(request), context);
 }
 
 TagResourceOutcome Macie2Client::TagResource(const TagResourceRequest& request) const

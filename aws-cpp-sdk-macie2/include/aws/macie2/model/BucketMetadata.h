@@ -789,34 +789,38 @@ namespace Model
 
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
-     * versioning is enabled for the bucket, Macie calculates this value based on the
-     * size of the latest version of each object in the bucket. This value doesn't
-     * reflect the storage size of all versions of each object in the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage
+     * size of all versions of each applicable object in the bucket.</p>
      */
     inline long long GetSizeInBytesCompressed() const{ return m_sizeInBytesCompressed; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
-     * versioning is enabled for the bucket, Macie calculates this value based on the
-     * size of the latest version of each object in the bucket. This value doesn't
-     * reflect the storage size of all versions of each object in the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage
+     * size of all versions of each applicable object in the bucket.</p>
      */
     inline bool SizeInBytesCompressedHasBeenSet() const { return m_sizeInBytesCompressedHasBeenSet; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
-     * versioning is enabled for the bucket, Macie calculates this value based on the
-     * size of the latest version of each object in the bucket. This value doesn't
-     * reflect the storage size of all versions of each object in the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage
+     * size of all versions of each applicable object in the bucket.</p>
      */
     inline void SetSizeInBytesCompressed(long long value) { m_sizeInBytesCompressedHasBeenSet = true; m_sizeInBytesCompressed = value; }
 
     /**
-     * <p>The total compressed storage size, in bytes, of the bucket.</p> <p>If
-     * versioning is enabled for the bucket, Macie calculates this value based on the
-     * size of the latest version of each object in the bucket. This value doesn't
-     * reflect the storage size of all versions of each object in the bucket.</p>
+     * <p>The total storage size, in bytes, of the objects that are compressed (.gz,
+     * .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the
+     * bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage
+     * size of all versions of each applicable object in the bucket.</p>
      */
     inline BucketMetadata& WithSizeInBytesCompressed(long long value) { SetSizeInBytesCompressed(value); return *this;}
 

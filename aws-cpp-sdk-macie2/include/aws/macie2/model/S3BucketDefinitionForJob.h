@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies which AWS account owns the S3 buckets that a classification job
-   * analyzes, and the buckets to analyze for the account.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Specifies an AWS account that owns S3 buckets for a classification job to
+   * analyze, and one or more specific buckets to analyze for that
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/S3BucketDefinitionForJob">AWS
    * API Reference</a></p>
    */

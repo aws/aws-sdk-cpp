@@ -449,8 +449,9 @@ namespace Model
 
         /**
          * <p> Creates a new image. This request will create a new image along with all of
-         * the configured output resources defined in the distribution
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * the configured output resources defined in the distribution configuration. You
+         * must specify exactly one recipe for your image, using either a
+         * ContainerRecipeArn or an ImageRecipeArn.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
          * API Reference</a></p>
          */
@@ -458,8 +459,9 @@ namespace Model
 
         /**
          * <p> Creates a new image. This request will create a new image along with all of
-         * the configured output resources defined in the distribution
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * the configured output resources defined in the distribution configuration. You
+         * must specify exactly one recipe for your image, using either a
+         * ContainerRecipeArn or an ImageRecipeArn.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
          * API Reference</a></p>
          *
@@ -469,8 +471,9 @@ namespace Model
 
         /**
          * <p> Creates a new image. This request will create a new image along with all of
-         * the configured output resources defined in the distribution
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * the configured output resources defined in the distribution configuration. You
+         * must specify exactly one recipe for your image, using either a
+         * ContainerRecipeArn or an ImageRecipeArn.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImage">AWS
          * API Reference</a></p>
          *
@@ -1655,16 +1658,22 @@ namespace Model
         virtual void UpdateDistributionConfigurationAsync(const Model::UpdateDistributionConfigurationRequest& request, const UpdateDistributionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
+         * <p> Updates an image pipeline. Image pipelines enable you to automate the
+         * creation and distribution of images.</p>  <p>UpdateImagePipeline does not
+         * support selective updates for the pipeline. You must specify all of the required
+         * properties in the update request, not just the properties that have changed.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateImagePipelineOutcome UpdateImagePipeline(const Model::UpdateImagePipelineRequest& request) const;
 
         /**
-         * <p> Updates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
+         * <p> Updates an image pipeline. Image pipelines enable you to automate the
+         * creation and distribution of images.</p>  <p>UpdateImagePipeline does not
+         * support selective updates for the pipeline. You must specify all of the required
+         * properties in the update request, not just the properties that have changed.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">AWS
          * API Reference</a></p>
          *
@@ -1673,8 +1682,11 @@ namespace Model
         virtual Model::UpdateImagePipelineOutcomeCallable UpdateImagePipelineCallable(const Model::UpdateImagePipelineRequest& request) const;
 
         /**
-         * <p> Updates a new image pipeline. Image pipelines enable you to automate the
-         * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
+         * <p> Updates an image pipeline. Image pipelines enable you to automate the
+         * creation and distribution of images.</p>  <p>UpdateImagePipeline does not
+         * support selective updates for the pipeline. You must specify all of the required
+         * properties in the update request, not just the properties that have changed.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateImagePipeline">AWS
          * API Reference</a></p>
          *

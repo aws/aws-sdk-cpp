@@ -25,6 +25,8 @@ StartMedicalTranscriptionJobRequest::StartMedicalTranscriptionJobRequest() :
     m_outputKeyHasBeenSet(false),
     m_outputEncryptionKMSKeyIdHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_contentIdentificationType(MedicalContentIdentificationType::NOT_SET),
+    m_contentIdentificationTypeHasBeenSet(false),
     m_specialty(Specialty::NOT_SET),
     m_specialtyHasBeenSet(false),
     m_type(Type::NOT_SET),
@@ -86,6 +88,11 @@ Aws::String StartMedicalTranscriptionJobRequest::SerializePayload() const
   {
    payload.WithObject("Settings", m_settings.Jsonize());
 
+  }
+
+  if(m_contentIdentificationTypeHasBeenSet)
+  {
+   payload.WithString("ContentIdentificationType", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
   }
 
   if(m_specialtyHasBeenSet)

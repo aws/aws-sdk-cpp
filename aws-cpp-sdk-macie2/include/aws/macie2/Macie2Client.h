@@ -58,6 +58,7 @@
 #include <aws/macie2/model/ListTagsForResourceResult.h>
 #include <aws/macie2/model/PutClassificationExportConfigurationResult.h>
 #include <aws/macie2/model/PutFindingsPublicationConfigurationResult.h>
+#include <aws/macie2/model/SearchResourcesResult.h>
 #include <aws/macie2/model/TagResourceResult.h>
 #include <aws/macie2/model/TestCustomDataIdentifierResult.h>
 #include <aws/macie2/model/UntagResourceResult.h>
@@ -152,6 +153,7 @@ namespace Model
         class ListTagsForResourceRequest;
         class PutClassificationExportConfigurationRequest;
         class PutFindingsPublicationConfigurationRequest;
+        class SearchResourcesRequest;
         class TagResourceRequest;
         class TestCustomDataIdentifierRequest;
         class UntagResourceRequest;
@@ -208,6 +210,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Macie2Error> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutClassificationExportConfigurationResult, Macie2Error> PutClassificationExportConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutFindingsPublicationConfigurationResult, Macie2Error> PutFindingsPublicationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<SearchResourcesResult, Macie2Error> SearchResourcesOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Macie2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestCustomDataIdentifierResult, Macie2Error> TestCustomDataIdentifierOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Macie2Error> UntagResourceOutcome;
@@ -264,6 +267,7 @@ namespace Model
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutClassificationExportConfigurationOutcome> PutClassificationExportConfigurationOutcomeCallable;
         typedef std::future<PutFindingsPublicationConfigurationOutcome> PutFindingsPublicationConfigurationOutcomeCallable;
+        typedef std::future<SearchResourcesOutcome> SearchResourcesOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestCustomDataIdentifierOutcome> TestCustomDataIdentifierOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -323,6 +327,7 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::PutClassificationExportConfigurationRequest&, const Model::PutClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutClassificationExportConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::PutFindingsPublicationConfigurationRequest&, const Model::PutFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFindingsPublicationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::SearchResourcesRequest&, const Model::SearchResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResourcesResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TestCustomDataIdentifierRequest&, const Model::TestCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestCustomDataIdentifierResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -1692,6 +1697,34 @@ namespace Model
         virtual void PutFindingsPublicationConfigurationAsync(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves (queries) statistical data and other information about AWS
+         * resources that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchResourcesOutcome SearchResources(const Model::SearchResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) statistical data and other information about AWS
+         * resources that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchResourcesOutcomeCallable SearchResourcesCallable(const Model::SearchResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) statistical data and other information about AWS
+         * resources that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchResourcesAsync(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates one or more tags (keys and values) that are associated with a
          * classification job, custom data identifier, findings filter, or member
          * account.</p><p><h3>See Also:</h3>   <a
@@ -1966,6 +1999,7 @@ namespace Model
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutClassificationExportConfigurationAsyncHelper(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFindingsPublicationConfigurationAsyncHelper(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchResourcesAsyncHelper(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestCustomDataIdentifierAsyncHelper(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

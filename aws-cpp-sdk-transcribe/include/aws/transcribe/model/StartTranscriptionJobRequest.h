@@ -116,32 +116,44 @@ namespace Model
 
 
     /**
-     * <p>The language code for the language used in the input media file.</p>
+     * <p>The language code for the language used in the input media file.</p> <p>To
+     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
+     * must be encoded at a sample rate of 16000 Hz or higher.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code for the language used in the input media file.</p>
+     * <p>The language code for the language used in the input media file.</p> <p>To
+     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
+     * must be encoded at a sample rate of 16000 Hz or higher.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code for the language used in the input media file.</p>
+     * <p>The language code for the language used in the input media file.</p> <p>To
+     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
+     * must be encoded at a sample rate of 16000 Hz or higher.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code for the language used in the input media file.</p>
+     * <p>The language code for the language used in the input media file.</p> <p>To
+     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
+     * must be encoded at a sample rate of 16000 Hz or higher.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code for the language used in the input media file.</p>
+     * <p>The language code for the language used in the input media file.</p> <p>To
+     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
+     * must be encoded at a sample rate of 16000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code for the language used in the input media file.</p>
+     * <p>The language code for the language used in the input media file.</p> <p>To
+     * transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file
+     * must be encoded at a sample rate of 16000 Hz or higher.</p>
      */
     inline StartTranscriptionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
