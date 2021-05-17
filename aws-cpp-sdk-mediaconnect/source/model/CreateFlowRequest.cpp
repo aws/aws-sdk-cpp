@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 CreateFlowRequest::CreateFlowRequest() : 
     m_availabilityZoneHasBeenSet(false),
     m_entitlementsHasBeenSet(false),
+    m_mediaStreamsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -42,6 +43,17 @@ Aws::String CreateFlowRequest::SerializePayload() const
      entitlementsJsonList[entitlementsIndex].AsObject(m_entitlements[entitlementsIndex].Jsonize());
    }
    payload.WithArray("entitlements", std::move(entitlementsJsonList));
+
+  }
+
+  if(m_mediaStreamsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
+   for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
+   {
+     mediaStreamsJsonList[mediaStreamsIndex].AsObject(m_mediaStreams[mediaStreamsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreams", std::move(mediaStreamsJsonList));
 
   }
 

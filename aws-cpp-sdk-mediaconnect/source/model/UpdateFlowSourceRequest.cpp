@@ -23,6 +23,9 @@ UpdateFlowSourceRequest::UpdateFlowSourceRequest() :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_maxSyncBuffer(0),
+    m_maxSyncBufferHasBeenSet(false),
+    m_mediaStreamSourceConfigurationsHasBeenSet(false),
     m_minLatency(0),
     m_minLatencyHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
@@ -71,6 +74,23 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const
   if(m_maxLatencyHasBeenSet)
   {
    payload.WithInteger("maxLatency", m_maxLatency);
+
+  }
+
+  if(m_maxSyncBufferHasBeenSet)
+  {
+   payload.WithInteger("maxSyncBuffer", m_maxSyncBuffer);
+
+  }
+
+  if(m_mediaStreamSourceConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamSourceConfigurationsJsonList(m_mediaStreamSourceConfigurations.size());
+   for(unsigned mediaStreamSourceConfigurationsIndex = 0; mediaStreamSourceConfigurationsIndex < mediaStreamSourceConfigurationsJsonList.GetLength(); ++mediaStreamSourceConfigurationsIndex)
+   {
+     mediaStreamSourceConfigurationsJsonList[mediaStreamSourceConfigurationsIndex].AsObject(m_mediaStreamSourceConfigurations[mediaStreamSourceConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreamSourceConfigurations", std::move(mediaStreamSourceConfigurationsJsonList));
 
   }
 

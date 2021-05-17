@@ -151,6 +151,27 @@ namespace Model
 
 
     /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+    inline int GetMaxSyncBuffer() const{ return m_maxSyncBuffer; }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+    inline bool MaxSyncBufferHasBeenSet() const { return m_maxSyncBufferHasBeenSet; }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+    inline void SetMaxSyncBuffer(int value) { m_maxSyncBufferHasBeenSet = true; m_maxSyncBuffer = value; }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+    inline Transport& WithMaxSyncBuffer(int value) { SetMaxSyncBuffer(value); return *this;}
+
+
+    /**
      * The minimum latency in milliseconds for SRT-based streams. In streams that use
      * the SRT protocol, this value that you set on your MediaConnect source or output
      * represents the minimal potential latency of that connection. The latency of the
@@ -338,6 +359,9 @@ namespace Model
 
     int m_maxLatency;
     bool m_maxLatencyHasBeenSet;
+
+    int m_maxSyncBuffer;
+    bool m_maxSyncBufferHasBeenSet;
 
     int m_minLatency;
     bool m_minLatencyHasBeenSet;

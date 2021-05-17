@@ -80,56 +80,56 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster snapshot attribute to modify.</p> <p>To manage
-     * authorization for other AWS accounts to copy or restore a manual DB cluster
+     * authorization for other Amazon accounts to copy or restore a manual DB cluster
      * snapshot, set this value to <code>restore</code>.</p>
      */
     inline ModifyDBClusterSnapshotAttributeRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
@@ -137,10 +137,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -148,10 +148,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -159,10 +159,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -170,10 +170,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -181,10 +181,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -192,10 +192,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -203,10 +203,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -214,10 +214,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -225,10 +225,10 @@ namespace Model
 
     /**
      * <p>A list of DB cluster snapshot attributes to add to the attribute specified by
-     * <code>AttributeName</code>.</p> <p>To authorize other AWS accounts to copy or
-     * restore a manual DB cluster snapshot, set this list to include one or more AWS
-     * account IDs, or <code>all</code> to make the manual DB cluster snapshot
-     * restorable by any AWS account. Do not add the <code>all</code> value for any
+     * <code>AttributeName</code>.</p> <p>To authorize other Amazon accounts to copy or
+     * restore a manual DB cluster snapshot, set this list to include one or more
+     * Amazon account IDs, or <code>all</code> to make the manual DB cluster snapshot
+     * restorable by any Amazon account. Do not add the <code>all</code> value for any
      * manual DB cluster snapshots that contain private information that you don't want
      * available to all AWS accounts.</p>
      */
@@ -238,10 +238,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -250,10 +250,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -262,10 +262,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -274,10 +274,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -286,10 +286,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -298,10 +298,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -310,10 +310,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -322,10 +322,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */
@@ -334,10 +334,10 @@ namespace Model
     /**
      * <p>A list of DB cluster snapshot attributes to remove from the attribute
      * specified by <code>AttributeName</code>.</p> <p>To remove authorization for
-     * other AWS accounts to copy or restore a manual DB cluster snapshot, set this
-     * list to include one or more AWS account identifiers, or <code>all</code> to
-     * remove authorization for any AWS account to copy or restore the DB cluster
-     * snapshot. If you specify <code>all</code>, an AWS account whose account ID is
+     * other Amazon accounts to copy or restore a manual DB cluster snapshot, set this
+     * list to include one or more Amazon account identifiers, or <code>all</code> to
+     * remove authorization for any Amazon account to copy or restore the DB cluster
+     * snapshot. If you specify <code>all</code>, an Amazon account whose account ID is
      * explicitly added to the <code>restore</code> attribute can still copy or restore
      * a manual DB cluster snapshot.</p>
      */

@@ -96,26 +96,22 @@ namespace Model
 
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
-     * <p>The new amount of storage (in gibibytes) to allocate for the DB instance.</p>
-     * <p>Not applicable. Storage is managed by the DB Cluster.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -491,42 +487,42 @@ namespace Model
 
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
 
     /**
-     * <p>Not applicable.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
 
@@ -1028,42 +1024,42 @@ namespace Model
 
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
 
     /**
-     * <p>Not supported.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline ModifyDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
 
@@ -1719,38 +1715,42 @@ namespace Model
 
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     * information, see <a>ModifyDBCluster</a>.</p> <p>Default: <code>false</code> </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>You can enable IAM
+     * database authentication for the following database engines</p> <p>Not
+     * applicable. Mapping Amazon IAM accounts to database accounts is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     * information, see <a>ModifyDBCluster</a>.</p> <p>Default: <code>false</code> </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>You can enable IAM
+     * database authentication for the following database engines</p> <p>Not
+     * applicable. Mapping Amazon IAM accounts to database accounts is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     * information, see <a>ModifyDBCluster</a>.</p> <p>Default: <code>false</code> </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>You can enable IAM
+     * database authentication for the following database engines</p> <p>Not
+     * applicable. Mapping Amazon IAM accounts to database accounts is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
-     * to database accounts, and otherwise false.</p> <p>You can enable IAM database
-     * authentication for the following database engines</p> <p>Not applicable. Mapping
-     * AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     * information, see <a>ModifyDBCluster</a>.</p> <p>Default: <code>false</code> </p>
+     * <p>True to enable mapping of Amazon Identity and Access Management (IAM)
+     * accounts to database accounts, and otherwise false.</p> <p>You can enable IAM
+     * database authentication for the following database engines</p> <p>Not
+     * applicable. Mapping Amazon IAM accounts to database accounts is managed by the
+     * DB cluster. For more information, see <a>ModifyDBCluster</a>.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline ModifyDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 

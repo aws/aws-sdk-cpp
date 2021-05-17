@@ -473,7 +473,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -483,7 +483,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -493,7 +493,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -503,7 +503,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 40.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>

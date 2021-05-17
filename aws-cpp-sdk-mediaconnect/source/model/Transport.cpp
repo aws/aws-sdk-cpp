@@ -24,6 +24,8 @@ Transport::Transport() :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_maxSyncBuffer(0),
+    m_maxSyncBufferHasBeenSet(false),
     m_minLatency(0),
     m_minLatencyHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
@@ -41,6 +43,8 @@ Transport::Transport(JsonView jsonValue) :
     m_maxBitrateHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_maxSyncBuffer(0),
+    m_maxSyncBufferHasBeenSet(false),
     m_minLatency(0),
     m_minLatencyHasBeenSet(false),
     m_protocol(Protocol::NOT_SET),
@@ -77,6 +81,13 @@ Transport& Transport::operator =(JsonView jsonValue)
     m_maxLatency = jsonValue.GetInteger("maxLatency");
 
     m_maxLatencyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxSyncBuffer"))
+  {
+    m_maxSyncBuffer = jsonValue.GetInteger("maxSyncBuffer");
+
+    m_maxSyncBufferHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("minLatency"))
@@ -141,6 +152,12 @@ JsonValue Transport::Jsonize() const
   if(m_maxLatencyHasBeenSet)
   {
    payload.WithInteger("maxLatency", m_maxLatency);
+
+  }
+
+  if(m_maxSyncBufferHasBeenSet)
+  {
+   payload.WithInteger("maxSyncBuffer", m_maxSyncBuffer);
 
   }
 

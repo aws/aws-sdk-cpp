@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/UpdateEncryption.h>
 #include <aws/mediaconnect/model/Protocol.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
+#include <aws/mediaconnect/model/MediaStreamOutputConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -290,6 +291,55 @@ namespace Model
      * The maximum latency in milliseconds for Zixi-based streams.
      */
     inline UpdateFlowOutputRequest& WithMaxLatency(int value) { SetMaxLatency(value); return *this;}
+
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline const Aws::Vector<MediaStreamOutputConfigurationRequest>& GetMediaStreamOutputConfigurations() const{ return m_mediaStreamOutputConfigurations; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfigurationRequest>& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = value; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline void SetMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfigurationRequest>&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = std::move(value); }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& WithMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfigurationRequest>& value) { SetMediaStreamOutputConfigurations(value); return *this;}
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& WithMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfigurationRequest>&& value) { SetMediaStreamOutputConfigurations(std::move(value)); return *this;}
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& AddMediaStreamOutputConfigurations(const MediaStreamOutputConfigurationRequest& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(value); return *this; }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for
+     * those associations.
+     */
+    inline UpdateFlowOutputRequest& AddMediaStreamOutputConfigurations(MediaStreamOutputConfigurationRequest&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -582,6 +632,9 @@ namespace Model
 
     int m_maxLatency;
     bool m_maxLatencyHasBeenSet;
+
+    Aws::Vector<MediaStreamOutputConfigurationRequest> m_mediaStreamOutputConfigurations;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet;
 
     int m_minLatency;
     bool m_minLatencyHasBeenSet;

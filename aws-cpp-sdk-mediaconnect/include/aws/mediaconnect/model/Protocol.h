@@ -21,6 +21,8 @@ namespace Model
     rtp,
     zixi_pull,
     rist,
+    st2110_jpegxs,
+    cdi,
     srt_listener
   };
 

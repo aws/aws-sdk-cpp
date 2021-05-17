@@ -28,8 +28,8 @@
 #include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsRequest.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteRunsRequest.h>
 #include <aws/iotdeviceadvisor/model/ListTagsForResourceRequest.h>
-#include <aws/iotdeviceadvisor/model/ListTestCasesRequest.h>
 #include <aws/iotdeviceadvisor/model/StartSuiteRunRequest.h>
+#include <aws/iotdeviceadvisor/model/StopSuiteRunRequest.h>
 #include <aws/iotdeviceadvisor/model/TagResourceRequest.h>
 #include <aws/iotdeviceadvisor/model/UntagResourceRequest.h>
 #include <aws/iotdeviceadvisor/model/UpdateSuiteDefinitionRequest.h>
@@ -368,33 +368,6 @@ void IoTDeviceAdvisorClient::ListTagsForResourceAsyncHelper(const ListTagsForRes
   handler(this, request, ListTagsForResource(request), context);
 }
 
-ListTestCasesOutcome IoTDeviceAdvisorClient::ListTestCases(const ListTestCasesRequest& request) const
-{
-  Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/testCases";
-  uri.SetPath(uri.GetPath() + ss.str());
-  return ListTestCasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-}
-
-ListTestCasesOutcomeCallable IoTDeviceAdvisorClient::ListTestCasesCallable(const ListTestCasesRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< ListTestCasesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTestCases(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void IoTDeviceAdvisorClient::ListTestCasesAsync(const ListTestCasesRequest& request, const ListTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->ListTestCasesAsyncHelper( request, handler, context ); } );
-}
-
-void IoTDeviceAdvisorClient::ListTestCasesAsyncHelper(const ListTestCasesRequest& request, const ListTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, ListTestCases(request), context);
-}
-
 StartSuiteRunOutcome IoTDeviceAdvisorClient::StartSuiteRun(const StartSuiteRunRequest& request) const
 {
   if (!request.SuiteDefinitionIdHasBeenSet())
@@ -427,6 +400,47 @@ void IoTDeviceAdvisorClient::StartSuiteRunAsync(const StartSuiteRunRequest& requ
 void IoTDeviceAdvisorClient::StartSuiteRunAsyncHelper(const StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartSuiteRun(request), context);
+}
+
+StopSuiteRunOutcome IoTDeviceAdvisorClient::StopSuiteRun(const StopSuiteRunRequest& request) const
+{
+  if (!request.SuiteDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopSuiteRun", "Required field: SuiteDefinitionId, is not set");
+    return StopSuiteRunOutcome(Aws::Client::AWSError<IoTDeviceAdvisorErrors>(IoTDeviceAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SuiteDefinitionId]", false));
+  }
+  if (!request.SuiteRunIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopSuiteRun", "Required field: SuiteRunId, is not set");
+    return StopSuiteRunOutcome(Aws::Client::AWSError<IoTDeviceAdvisorErrors>(IoTDeviceAdvisorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SuiteRunId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/suiteDefinitions/";
+  ss << request.GetSuiteDefinitionId();
+  ss << "/suiteRuns/";
+  ss << request.GetSuiteRunId();
+  ss << "/stop";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StopSuiteRunOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopSuiteRunOutcomeCallable IoTDeviceAdvisorClient::StopSuiteRunCallable(const StopSuiteRunRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopSuiteRunOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSuiteRun(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTDeviceAdvisorClient::StopSuiteRunAsync(const StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopSuiteRunAsyncHelper( request, handler, context ); } );
+}
+
+void IoTDeviceAdvisorClient::StopSuiteRunAsyncHelper(const StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopSuiteRun(request), context);
 }
 
 TagResourceOutcome IoTDeviceAdvisorClient::TagResource(const TagResourceRequest& request) const

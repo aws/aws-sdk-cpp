@@ -20,6 +20,7 @@
 #include <aws/mediaconnect/MediaConnectClient.h>
 #include <aws/mediaconnect/MediaConnectEndpoint.h>
 #include <aws/mediaconnect/MediaConnectErrorMarshaller.h>
+#include <aws/mediaconnect/model/AddFlowMediaStreamsRequest.h>
 #include <aws/mediaconnect/model/AddFlowOutputsRequest.h>
 #include <aws/mediaconnect/model/AddFlowSourcesRequest.h>
 #include <aws/mediaconnect/model/AddFlowVpcInterfacesRequest.h>
@@ -35,6 +36,7 @@
 #include <aws/mediaconnect/model/ListReservationsRequest.h>
 #include <aws/mediaconnect/model/ListTagsForResourceRequest.h>
 #include <aws/mediaconnect/model/PurchaseOfferingRequest.h>
+#include <aws/mediaconnect/model/RemoveFlowMediaStreamRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowOutputRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowSourceRequest.h>
 #include <aws/mediaconnect/model/RemoveFlowVpcInterfaceRequest.h>
@@ -45,6 +47,7 @@
 #include <aws/mediaconnect/model/UntagResourceRequest.h>
 #include <aws/mediaconnect/model/UpdateFlowRequest.h>
 #include <aws/mediaconnect/model/UpdateFlowEntitlementRequest.h>
+#include <aws/mediaconnect/model/UpdateFlowMediaStreamRequest.h>
 #include <aws/mediaconnect/model/UpdateFlowOutputRequest.h>
 #include <aws/mediaconnect/model/UpdateFlowSourceRequest.h>
 
@@ -119,6 +122,40 @@ void MediaConnectClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+AddFlowMediaStreamsOutcome MediaConnectClient::AddFlowMediaStreams(const AddFlowMediaStreamsRequest& request) const
+{
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddFlowMediaStreams", "Required field: FlowArn, is not set");
+    return AddFlowMediaStreamsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/flows/";
+  ss << request.GetFlowArn();
+  ss << "/mediaStreams";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return AddFlowMediaStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AddFlowMediaStreamsOutcomeCallable MediaConnectClient::AddFlowMediaStreamsCallable(const AddFlowMediaStreamsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddFlowMediaStreamsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddFlowMediaStreams(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::AddFlowMediaStreamsAsync(const AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddFlowMediaStreamsAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::AddFlowMediaStreamsAsyncHelper(const AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddFlowMediaStreams(request), context);
 }
 
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const
@@ -590,6 +627,46 @@ void MediaConnectClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingReque
   handler(this, request, PurchaseOffering(request), context);
 }
 
+RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const RemoveFlowMediaStreamRequest& request) const
+{
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveFlowMediaStream", "Required field: FlowArn, is not set");
+    return RemoveFlowMediaStreamOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  if (!request.MediaStreamNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveFlowMediaStream", "Required field: MediaStreamName, is not set");
+    return RemoveFlowMediaStreamOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaStreamName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/flows/";
+  ss << request.GetFlowArn();
+  ss << "/mediaStreams/";
+  ss << request.GetMediaStreamName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return RemoveFlowMediaStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+RemoveFlowMediaStreamOutcomeCallable MediaConnectClient::RemoveFlowMediaStreamCallable(const RemoveFlowMediaStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveFlowMediaStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFlowMediaStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::RemoveFlowMediaStreamAsync(const RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveFlowMediaStreamAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::RemoveFlowMediaStreamAsyncHelper(const RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveFlowMediaStream(request), context);
+}
+
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const
 {
   if (!request.FlowArnHasBeenSet())
@@ -958,6 +1035,46 @@ void MediaConnectClient::UpdateFlowEntitlementAsync(const UpdateFlowEntitlementR
 void MediaConnectClient::UpdateFlowEntitlementAsyncHelper(const UpdateFlowEntitlementRequest& request, const UpdateFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFlowEntitlement(request), context);
+}
+
+UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const UpdateFlowMediaStreamRequest& request) const
+{
+  if (!request.FlowArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowMediaStream", "Required field: FlowArn, is not set");
+    return UpdateFlowMediaStreamOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
+  }
+  if (!request.MediaStreamNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFlowMediaStream", "Required field: MediaStreamName, is not set");
+    return UpdateFlowMediaStreamOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaStreamName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/flows/";
+  ss << request.GetFlowArn();
+  ss << "/mediaStreams/";
+  ss << request.GetMediaStreamName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateFlowMediaStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFlowMediaStreamOutcomeCallable MediaConnectClient::UpdateFlowMediaStreamCallable(const UpdateFlowMediaStreamRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFlowMediaStreamOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFlowMediaStream(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConnectClient::UpdateFlowMediaStreamAsync(const UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFlowMediaStreamAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConnectClient::UpdateFlowMediaStreamAsyncHelper(const UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFlowMediaStream(request), context);
 }
 
 UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOutputRequest& request) const

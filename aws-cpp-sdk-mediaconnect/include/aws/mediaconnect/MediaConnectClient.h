@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconnect/model/AddFlowMediaStreamsResult.h>
 #include <aws/mediaconnect/model/AddFlowOutputsResult.h>
 #include <aws/mediaconnect/model/AddFlowSourcesResult.h>
 #include <aws/mediaconnect/model/AddFlowVpcInterfacesResult.h>
@@ -26,6 +27,7 @@
 #include <aws/mediaconnect/model/ListReservationsResult.h>
 #include <aws/mediaconnect/model/ListTagsForResourceResult.h>
 #include <aws/mediaconnect/model/PurchaseOfferingResult.h>
+#include <aws/mediaconnect/model/RemoveFlowMediaStreamResult.h>
 #include <aws/mediaconnect/model/RemoveFlowOutputResult.h>
 #include <aws/mediaconnect/model/RemoveFlowSourceResult.h>
 #include <aws/mediaconnect/model/RemoveFlowVpcInterfaceResult.h>
@@ -34,6 +36,7 @@
 #include <aws/mediaconnect/model/StopFlowResult.h>
 #include <aws/mediaconnect/model/UpdateFlowResult.h>
 #include <aws/mediaconnect/model/UpdateFlowEntitlementResult.h>
+#include <aws/mediaconnect/model/UpdateFlowMediaStreamResult.h>
 #include <aws/mediaconnect/model/UpdateFlowOutputResult.h>
 #include <aws/mediaconnect/model/UpdateFlowSourceResult.h>
 #include <aws/core/NoResult.h>
@@ -76,6 +79,7 @@ namespace MediaConnect
 
 namespace Model
 {
+        class AddFlowMediaStreamsRequest;
         class AddFlowOutputsRequest;
         class AddFlowSourcesRequest;
         class AddFlowVpcInterfacesRequest;
@@ -91,6 +95,7 @@ namespace Model
         class ListReservationsRequest;
         class ListTagsForResourceRequest;
         class PurchaseOfferingRequest;
+        class RemoveFlowMediaStreamRequest;
         class RemoveFlowOutputRequest;
         class RemoveFlowSourceRequest;
         class RemoveFlowVpcInterfaceRequest;
@@ -101,9 +106,11 @@ namespace Model
         class UntagResourceRequest;
         class UpdateFlowRequest;
         class UpdateFlowEntitlementRequest;
+        class UpdateFlowMediaStreamRequest;
         class UpdateFlowOutputRequest;
         class UpdateFlowSourceRequest;
 
+        typedef Aws::Utils::Outcome<AddFlowMediaStreamsResult, MediaConnectError> AddFlowMediaStreamsOutcome;
         typedef Aws::Utils::Outcome<AddFlowOutputsResult, MediaConnectError> AddFlowOutputsOutcome;
         typedef Aws::Utils::Outcome<AddFlowSourcesResult, MediaConnectError> AddFlowSourcesOutcome;
         typedef Aws::Utils::Outcome<AddFlowVpcInterfacesResult, MediaConnectError> AddFlowVpcInterfacesOutcome;
@@ -119,6 +126,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListReservationsResult, MediaConnectError> ListReservationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, MediaConnectError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PurchaseOfferingResult, MediaConnectError> PurchaseOfferingOutcome;
+        typedef Aws::Utils::Outcome<RemoveFlowMediaStreamResult, MediaConnectError> RemoveFlowMediaStreamOutcome;
         typedef Aws::Utils::Outcome<RemoveFlowOutputResult, MediaConnectError> RemoveFlowOutputOutcome;
         typedef Aws::Utils::Outcome<RemoveFlowSourceResult, MediaConnectError> RemoveFlowSourceOutcome;
         typedef Aws::Utils::Outcome<RemoveFlowVpcInterfaceResult, MediaConnectError> RemoveFlowVpcInterfaceOutcome;
@@ -129,9 +137,11 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, MediaConnectError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFlowResult, MediaConnectError> UpdateFlowOutcome;
         typedef Aws::Utils::Outcome<UpdateFlowEntitlementResult, MediaConnectError> UpdateFlowEntitlementOutcome;
+        typedef Aws::Utils::Outcome<UpdateFlowMediaStreamResult, MediaConnectError> UpdateFlowMediaStreamOutcome;
         typedef Aws::Utils::Outcome<UpdateFlowOutputResult, MediaConnectError> UpdateFlowOutputOutcome;
         typedef Aws::Utils::Outcome<UpdateFlowSourceResult, MediaConnectError> UpdateFlowSourceOutcome;
 
+        typedef std::future<AddFlowMediaStreamsOutcome> AddFlowMediaStreamsOutcomeCallable;
         typedef std::future<AddFlowOutputsOutcome> AddFlowOutputsOutcomeCallable;
         typedef std::future<AddFlowSourcesOutcome> AddFlowSourcesOutcomeCallable;
         typedef std::future<AddFlowVpcInterfacesOutcome> AddFlowVpcInterfacesOutcomeCallable;
@@ -147,6 +157,7 @@ namespace Model
         typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
+        typedef std::future<RemoveFlowMediaStreamOutcome> RemoveFlowMediaStreamOutcomeCallable;
         typedef std::future<RemoveFlowOutputOutcome> RemoveFlowOutputOutcomeCallable;
         typedef std::future<RemoveFlowSourceOutcome> RemoveFlowSourceOutcomeCallable;
         typedef std::future<RemoveFlowVpcInterfaceOutcome> RemoveFlowVpcInterfaceOutcomeCallable;
@@ -157,12 +168,14 @@ namespace Model
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateFlowOutcome> UpdateFlowOutcomeCallable;
         typedef std::future<UpdateFlowEntitlementOutcome> UpdateFlowEntitlementOutcomeCallable;
+        typedef std::future<UpdateFlowMediaStreamOutcome> UpdateFlowMediaStreamOutcomeCallable;
         typedef std::future<UpdateFlowOutputOutcome> UpdateFlowOutputOutcomeCallable;
         typedef std::future<UpdateFlowSourceOutcome> UpdateFlowSourceOutcomeCallable;
 } // namespace Model
 
   class MediaConnectClient;
 
+    typedef std::function<void(const MediaConnectClient*, const Model::AddFlowMediaStreamsRequest&, const Model::AddFlowMediaStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddFlowMediaStreamsResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::AddFlowOutputsRequest&, const Model::AddFlowOutputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddFlowOutputsResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::AddFlowSourcesRequest&, const Model::AddFlowSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddFlowSourcesResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::AddFlowVpcInterfacesRequest&, const Model::AddFlowVpcInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddFlowVpcInterfacesResponseReceivedHandler;
@@ -178,6 +191,7 @@ namespace Model
     typedef std::function<void(const MediaConnectClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReservationsResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowMediaStreamRequest&, const Model::RemoveFlowMediaStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowMediaStreamResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowOutputRequest&, const Model::RemoveFlowOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowOutputResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowSourceRequest&, const Model::RemoveFlowSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowSourceResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::RemoveFlowVpcInterfaceRequest&, const Model::RemoveFlowVpcInterfaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveFlowVpcInterfaceResponseReceivedHandler;
@@ -188,6 +202,7 @@ namespace Model
     typedef std::function<void(const MediaConnectClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::UpdateFlowRequest&, const Model::UpdateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::UpdateFlowEntitlementRequest&, const Model::UpdateFlowEntitlementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowEntitlementResponseReceivedHandler;
+    typedef std::function<void(const MediaConnectClient*, const Model::UpdateFlowMediaStreamRequest&, const Model::UpdateFlowMediaStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowMediaStreamResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::UpdateFlowOutputRequest&, const Model::UpdateFlowOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowOutputResponseReceivedHandler;
     typedef std::function<void(const MediaConnectClient*, const Model::UpdateFlowSourceRequest&, const Model::UpdateFlowSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFlowSourceResponseReceivedHandler;
 
@@ -220,6 +235,37 @@ namespace Model
 
         virtual ~MediaConnectClient();
 
+
+        /**
+         * Adds media streams to an existing flow. After you add a media stream to a flow,
+         * you can associate it with a source and/or an output that uses the ST 2110 JPEG
+         * XS or CDI protocol.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddFlowMediaStreamsOutcome AddFlowMediaStreams(const Model::AddFlowMediaStreamsRequest& request) const;
+
+        /**
+         * Adds media streams to an existing flow. After you add a media stream to a flow,
+         * you can associate it with a source and/or an output that uses the ST 2110 JPEG
+         * XS or CDI protocol.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddFlowMediaStreamsOutcomeCallable AddFlowMediaStreamsCallable(const Model::AddFlowMediaStreamsRequest& request) const;
+
+        /**
+         * Adds media streams to an existing flow. After you add a media stream to a flow,
+         * you can associate it with a source and/or an output that uses the ST 2110 JPEG
+         * XS or CDI protocol.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowMediaStreams">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddFlowMediaStreamsAsync(const Model::AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Adds outputs to an existing flow. You can create up to 50 outputs per
@@ -657,6 +703,34 @@ namespace Model
         virtual void PurchaseOfferingAsync(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Removes a media stream from a flow. This action is only available if the media
+         * stream is not associated with a source or output.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveFlowMediaStreamOutcome RemoveFlowMediaStream(const Model::RemoveFlowMediaStreamRequest& request) const;
+
+        /**
+         * Removes a media stream from a flow. This action is only available if the media
+         * stream is not associated with a source or output.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveFlowMediaStreamOutcomeCallable RemoveFlowMediaStreamCallable(const Model::RemoveFlowMediaStreamRequest& request) const;
+
+        /**
+         * Removes a media stream from a flow. This action is only available if the media
+         * stream is not associated with a source or output.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveFlowMediaStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveFlowMediaStreamAsync(const Model::RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Removes an output from an existing flow. This request can be made only on an
          * output that does not have an entitlement associated with it. If the output has
          * an entitlement, you must revoke the entitlement instead. When an entitlement is
@@ -955,6 +1029,31 @@ namespace Model
         virtual void UpdateFlowEntitlementAsync(const Model::UpdateFlowEntitlementRequest& request, const UpdateFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Updates an existing media stream.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFlowMediaStreamOutcome UpdateFlowMediaStream(const Model::UpdateFlowMediaStreamRequest& request) const;
+
+        /**
+         * Updates an existing media stream.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFlowMediaStreamOutcomeCallable UpdateFlowMediaStreamCallable(const Model::UpdateFlowMediaStreamRequest& request) const;
+
+        /**
+         * Updates an existing media stream.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowMediaStream">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFlowMediaStreamAsync(const Model::UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Updates an existing flow output.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlowOutput">AWS
          * API Reference</a></p>
@@ -1008,6 +1107,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AddFlowMediaStreamsAsyncHelper(const Model::AddFlowMediaStreamsRequest& request, const AddFlowMediaStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddFlowOutputsAsyncHelper(const Model::AddFlowOutputsRequest& request, const AddFlowOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddFlowSourcesAsyncHelper(const Model::AddFlowSourcesRequest& request, const AddFlowSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddFlowVpcInterfacesAsyncHelper(const Model::AddFlowVpcInterfacesRequest& request, const AddFlowVpcInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1023,6 +1123,7 @@ namespace Model
         void ListReservationsAsyncHelper(const Model::ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveFlowMediaStreamAsyncHelper(const Model::RemoveFlowMediaStreamRequest& request, const RemoveFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowOutputAsyncHelper(const Model::RemoveFlowOutputRequest& request, const RemoveFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowSourceAsyncHelper(const Model::RemoveFlowSourceRequest& request, const RemoveFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveFlowVpcInterfaceAsyncHelper(const Model::RemoveFlowVpcInterfaceRequest& request, const RemoveFlowVpcInterfaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1033,6 +1134,7 @@ namespace Model
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFlowAsyncHelper(const Model::UpdateFlowRequest& request, const UpdateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFlowEntitlementAsyncHelper(const Model::UpdateFlowEntitlementRequest& request, const UpdateFlowEntitlementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFlowMediaStreamAsyncHelper(const Model::UpdateFlowMediaStreamRequest& request, const UpdateFlowMediaStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFlowOutputAsyncHelper(const Model::UpdateFlowOutputRequest& request, const UpdateFlowOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFlowSourceAsyncHelper(const Model::UpdateFlowSourceRequest& request, const UpdateFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

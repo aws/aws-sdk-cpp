@@ -7,8 +7,10 @@
 #include <aws/mediaconnect/MediaConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconnect/model/Encryption.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Transport.h>
 #include <aws/mediaconnect/model/VpcInterfaceAttachment.h>
+#include <aws/mediaconnect/model/MediaStreamOutputConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -352,6 +354,47 @@ namespace Model
 
 
     /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline const Aws::Vector<MediaStreamOutputConfiguration>& GetMediaStreamOutputConfigurations() const{ return m_mediaStreamOutputConfigurations; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline bool MediaStreamOutputConfigurationsHasBeenSet() const { return m_mediaStreamOutputConfigurationsHasBeenSet; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline void SetMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfiguration>& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = value; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline void SetMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfiguration>&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations = std::move(value); }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& WithMediaStreamOutputConfigurations(const Aws::Vector<MediaStreamOutputConfiguration>& value) { SetMediaStreamOutputConfigurations(value); return *this;}
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& WithMediaStreamOutputConfigurations(Aws::Vector<MediaStreamOutputConfiguration>&& value) { SetMediaStreamOutputConfigurations(std::move(value)); return *this;}
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& AddMediaStreamOutputConfigurations(const MediaStreamOutputConfiguration& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(value); return *this; }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     */
+    inline Output& AddMediaStreamOutputConfigurations(MediaStreamOutputConfiguration&& value) { m_mediaStreamOutputConfigurationsHasBeenSet = true; m_mediaStreamOutputConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The name of the output. This value must be unique within the current flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -537,6 +580,9 @@ namespace Model
 
     Aws::String m_mediaLiveInputArn;
     bool m_mediaLiveInputArnHasBeenSet;
+
+    Aws::Vector<MediaStreamOutputConfiguration> m_mediaStreamOutputConfigurations;
+    bool m_mediaStreamOutputConfigurationsHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

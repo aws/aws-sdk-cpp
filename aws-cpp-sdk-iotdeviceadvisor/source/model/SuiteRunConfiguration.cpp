@@ -20,14 +20,12 @@ namespace Model
 
 SuiteRunConfiguration::SuiteRunConfiguration() : 
     m_primaryDeviceHasBeenSet(false),
-    m_secondaryDeviceHasBeenSet(false),
     m_selectedTestListHasBeenSet(false)
 {
 }
 
 SuiteRunConfiguration::SuiteRunConfiguration(JsonView jsonValue) : 
     m_primaryDeviceHasBeenSet(false),
-    m_secondaryDeviceHasBeenSet(false),
     m_selectedTestListHasBeenSet(false)
 {
   *this = jsonValue;
@@ -40,13 +38,6 @@ SuiteRunConfiguration& SuiteRunConfiguration::operator =(JsonView jsonValue)
     m_primaryDevice = jsonValue.GetObject("primaryDevice");
 
     m_primaryDeviceHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("secondaryDevice"))
-  {
-    m_secondaryDevice = jsonValue.GetObject("secondaryDevice");
-
-    m_secondaryDeviceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("selectedTestList"))
@@ -69,12 +60,6 @@ JsonValue SuiteRunConfiguration::Jsonize() const
   if(m_primaryDeviceHasBeenSet)
   {
    payload.WithObject("primaryDevice", m_primaryDevice.Jsonize());
-
-  }
-
-  if(m_secondaryDeviceHasBeenSet)
-  {
-   payload.WithObject("secondaryDevice", m_secondaryDevice.Jsonize());
 
   }
 

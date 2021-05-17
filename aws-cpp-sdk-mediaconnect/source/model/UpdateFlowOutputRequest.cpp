@@ -20,6 +20,7 @@ UpdateFlowOutputRequest::UpdateFlowOutputRequest() :
     m_flowArnHasBeenSet(false),
     m_maxLatency(0),
     m_maxLatencyHasBeenSet(false),
+    m_mediaStreamOutputConfigurationsHasBeenSet(false),
     m_minLatency(0),
     m_minLatencyHasBeenSet(false),
     m_outputArnHasBeenSet(false),
@@ -71,6 +72,17 @@ Aws::String UpdateFlowOutputRequest::SerializePayload() const
   if(m_maxLatencyHasBeenSet)
   {
    payload.WithInteger("maxLatency", m_maxLatency);
+
+  }
+
+  if(m_mediaStreamOutputConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamOutputConfigurationsJsonList(m_mediaStreamOutputConfigurations.size());
+   for(unsigned mediaStreamOutputConfigurationsIndex = 0; mediaStreamOutputConfigurationsIndex < mediaStreamOutputConfigurationsJsonList.GetLength(); ++mediaStreamOutputConfigurationsIndex)
+   {
+     mediaStreamOutputConfigurationsJsonList[mediaStreamOutputConfigurationsIndex].AsObject(m_mediaStreamOutputConfigurations[mediaStreamOutputConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreamOutputConfigurations", std::move(mediaStreamOutputConfigurationsJsonList));
 
   }
 

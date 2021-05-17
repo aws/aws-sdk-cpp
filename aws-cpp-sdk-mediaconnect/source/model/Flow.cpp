@@ -24,6 +24,7 @@ Flow::Flow() :
     m_egressIpHasBeenSet(false),
     m_entitlementsHasBeenSet(false),
     m_flowArnHasBeenSet(false),
+    m_mediaStreamsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -41,6 +42,7 @@ Flow::Flow(JsonView jsonValue) :
     m_egressIpHasBeenSet(false),
     m_entitlementsHasBeenSet(false),
     m_flowArnHasBeenSet(false),
+    m_mediaStreamsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_outputsHasBeenSet(false),
     m_sourceHasBeenSet(false),
@@ -91,6 +93,16 @@ Flow& Flow::operator =(JsonView jsonValue)
     m_flowArn = jsonValue.GetString("flowArn");
 
     m_flowArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaStreams"))
+  {
+    Array<JsonView> mediaStreamsJsonList = jsonValue.GetArray("mediaStreams");
+    for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
+    {
+      m_mediaStreams.push_back(mediaStreamsJsonList[mediaStreamsIndex].AsObject());
+    }
+    m_mediaStreamsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -190,6 +202,17 @@ JsonValue Flow::Jsonize() const
   if(m_flowArnHasBeenSet)
   {
    payload.WithString("flowArn", m_flowArn);
+
+  }
+
+  if(m_mediaStreamsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamsJsonList(m_mediaStreams.size());
+   for(unsigned mediaStreamsIndex = 0; mediaStreamsIndex < mediaStreamsJsonList.GetLength(); ++mediaStreamsIndex)
+   {
+     mediaStreamsJsonList[mediaStreamsIndex].AsObject(m_mediaStreams[mediaStreamsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreams", std::move(mediaStreamsJsonList));
 
   }
 
