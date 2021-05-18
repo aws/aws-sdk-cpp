@@ -351,7 +351,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline const Aws::String& GetLocaleId() const{ return m_localeId; }
 
@@ -359,7 +360,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
 
@@ -367,7 +369,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
 
@@ -375,7 +378,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
 
@@ -383,7 +387,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
 
@@ -391,7 +396,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline CreateSlotRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
 
@@ -399,7 +405,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline CreateSlotRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
 
@@ -407,7 +414,8 @@ namespace Model
      * <p>The identifier of the language and locale that the slot will be used in. The
      * string must match one of the supported locales. All of the bots, intents, slot
      * types used by the slot must have the same locale. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline CreateSlotRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 

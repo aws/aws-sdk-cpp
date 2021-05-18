@@ -25,13 +25,17 @@
 #include <aws/lexv2-models/model/CreateBotAliasRequest.h>
 #include <aws/lexv2-models/model/CreateBotLocaleRequest.h>
 #include <aws/lexv2-models/model/CreateBotVersionRequest.h>
+#include <aws/lexv2-models/model/CreateExportRequest.h>
 #include <aws/lexv2-models/model/CreateIntentRequest.h>
 #include <aws/lexv2-models/model/CreateSlotRequest.h>
 #include <aws/lexv2-models/model/CreateSlotTypeRequest.h>
+#include <aws/lexv2-models/model/CreateUploadUrlRequest.h>
 #include <aws/lexv2-models/model/DeleteBotRequest.h>
 #include <aws/lexv2-models/model/DeleteBotAliasRequest.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DeleteBotVersionRequest.h>
+#include <aws/lexv2-models/model/DeleteExportRequest.h>
+#include <aws/lexv2-models/model/DeleteImportRequest.h>
 #include <aws/lexv2-models/model/DeleteIntentRequest.h>
 #include <aws/lexv2-models/model/DeleteSlotRequest.h>
 #include <aws/lexv2-models/model/DeleteSlotTypeRequest.h>
@@ -39,6 +43,8 @@
 #include <aws/lexv2-models/model/DescribeBotAliasRequest.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DescribeBotVersionRequest.h>
+#include <aws/lexv2-models/model/DescribeExportRequest.h>
+#include <aws/lexv2-models/model/DescribeImportRequest.h>
 #include <aws/lexv2-models/model/DescribeIntentRequest.h>
 #include <aws/lexv2-models/model/DescribeSlotRequest.h>
 #include <aws/lexv2-models/model/DescribeSlotTypeRequest.h>
@@ -48,15 +54,19 @@
 #include <aws/lexv2-models/model/ListBotsRequest.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsRequest.h>
 #include <aws/lexv2-models/model/ListBuiltInSlotTypesRequest.h>
+#include <aws/lexv2-models/model/ListExportsRequest.h>
+#include <aws/lexv2-models/model/ListImportsRequest.h>
 #include <aws/lexv2-models/model/ListIntentsRequest.h>
 #include <aws/lexv2-models/model/ListSlotTypesRequest.h>
 #include <aws/lexv2-models/model/ListSlotsRequest.h>
 #include <aws/lexv2-models/model/ListTagsForResourceRequest.h>
+#include <aws/lexv2-models/model/StartImportRequest.h>
 #include <aws/lexv2-models/model/TagResourceRequest.h>
 #include <aws/lexv2-models/model/UntagResourceRequest.h>
 #include <aws/lexv2-models/model/UpdateBotRequest.h>
 #include <aws/lexv2-models/model/UpdateBotAliasRequest.h>
 #include <aws/lexv2-models/model/UpdateBotLocaleRequest.h>
+#include <aws/lexv2-models/model/UpdateExportRequest.h>
 #include <aws/lexv2-models/model/UpdateIntentRequest.h>
 #include <aws/lexv2-models/model/UpdateSlotRequest.h>
 #include <aws/lexv2-models/model/UpdateSlotTypeRequest.h>
@@ -318,6 +328,33 @@ void LexModelsV2Client::CreateBotVersionAsyncHelper(const CreateBotVersionReques
   handler(this, request, CreateBotVersion(request), context);
 }
 
+CreateExportOutcome LexModelsV2Client::CreateExport(const CreateExportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/exports/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateExportOutcomeCallable LexModelsV2Client::CreateExportCallable(const CreateExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::CreateExportAsync(const CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateExportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::CreateExportAsyncHelper(const CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateExport(request), context);
+}
+
 CreateIntentOutcome LexModelsV2Client::CreateIntent(const CreateIntentRequest& request) const
 {
   if (!request.BotIdHasBeenSet())
@@ -467,6 +504,33 @@ void LexModelsV2Client::CreateSlotTypeAsync(const CreateSlotTypeRequest& request
 void LexModelsV2Client::CreateSlotTypeAsyncHelper(const CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSlotType(request), context);
+}
+
+CreateUploadUrlOutcome LexModelsV2Client::CreateUploadUrl(const CreateUploadUrlRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/createuploadurl/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateUploadUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateUploadUrlOutcomeCallable LexModelsV2Client::CreateUploadUrlCallable(const CreateUploadUrlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUploadUrlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUploadUrl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::CreateUploadUrlAsync(const CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUploadUrlAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::CreateUploadUrlAsyncHelper(const CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUploadUrl(request), context);
 }
 
 DeleteBotOutcome LexModelsV2Client::DeleteBot(const DeleteBotRequest& request) const
@@ -631,6 +695,74 @@ void LexModelsV2Client::DeleteBotVersionAsync(const DeleteBotVersionRequest& req
 void LexModelsV2Client::DeleteBotVersionAsyncHelper(const DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBotVersion(request), context);
+}
+
+DeleteExportOutcome LexModelsV2Client::DeleteExport(const DeleteExportRequest& request) const
+{
+  if (!request.ExportIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteExport", "Required field: ExportId, is not set");
+    return DeleteExportOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/exports/";
+  ss << request.GetExportId();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteExportOutcomeCallable LexModelsV2Client::DeleteExportCallable(const DeleteExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DeleteExportAsync(const DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteExportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DeleteExportAsyncHelper(const DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteExport(request), context);
+}
+
+DeleteImportOutcome LexModelsV2Client::DeleteImport(const DeleteImportRequest& request) const
+{
+  if (!request.ImportIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteImport", "Required field: ImportId, is not set");
+    return DeleteImportOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImportId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/imports/";
+  ss << request.GetImportId();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteImportOutcomeCallable LexModelsV2Client::DeleteImportCallable(const DeleteImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DeleteImportAsync(const DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteImportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DeleteImportAsyncHelper(const DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteImport(request), context);
 }
 
 DeleteIntentOutcome LexModelsV2Client::DeleteIntent(const DeleteIntentRequest& request) const
@@ -967,6 +1099,74 @@ void LexModelsV2Client::DescribeBotVersionAsync(const DescribeBotVersionRequest&
 void LexModelsV2Client::DescribeBotVersionAsyncHelper(const DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBotVersion(request), context);
+}
+
+DescribeExportOutcome LexModelsV2Client::DescribeExport(const DescribeExportRequest& request) const
+{
+  if (!request.ExportIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeExport", "Required field: ExportId, is not set");
+    return DescribeExportOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/exports/";
+  ss << request.GetExportId();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeExportOutcomeCallable LexModelsV2Client::DescribeExportCallable(const DescribeExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DescribeExportAsync(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeExportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DescribeExportAsyncHelper(const DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeExport(request), context);
+}
+
+DescribeImportOutcome LexModelsV2Client::DescribeImport(const DescribeImportRequest& request) const
+{
+  if (!request.ImportIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeImport", "Required field: ImportId, is not set");
+    return DescribeImportOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ImportId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/imports/";
+  ss << request.GetImportId();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeImportOutcomeCallable LexModelsV2Client::DescribeImportCallable(const DescribeImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DescribeImportAsync(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeImportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DescribeImportAsyncHelper(const DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeImport(request), context);
 }
 
 DescribeIntentOutcome LexModelsV2Client::DescribeIntent(const DescribeIntentRequest& request) const
@@ -1345,6 +1545,60 @@ void LexModelsV2Client::ListBuiltInSlotTypesAsyncHelper(const ListBuiltInSlotTyp
   handler(this, request, ListBuiltInSlotTypes(request), context);
 }
 
+ListExportsOutcome LexModelsV2Client::ListExports(const ListExportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/exports/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListExportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListExportsOutcomeCallable LexModelsV2Client::ListExportsCallable(const ListExportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListExportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListExports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::ListExportsAsync(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListExportsAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::ListExportsAsyncHelper(const ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListExports(request), context);
+}
+
+ListImportsOutcome LexModelsV2Client::ListImports(const ListImportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/imports/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListImportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImportsOutcomeCallable LexModelsV2Client::ListImportsCallable(const ListImportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListImportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListImports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::ListImportsAsync(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListImportsAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::ListImportsAsyncHelper(const ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListImports(request), context);
+}
+
 ListIntentsOutcome LexModelsV2Client::ListIntents(const ListIntentsRequest& request) const
 {
   if (!request.BotIdHasBeenSet())
@@ -1527,6 +1781,33 @@ void LexModelsV2Client::ListTagsForResourceAsync(const ListTagsForResourceReques
 void LexModelsV2Client::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+StartImportOutcome LexModelsV2Client::StartImport(const StartImportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/imports/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StartImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartImportOutcomeCallable LexModelsV2Client::StartImportCallable(const StartImportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartImportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartImport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::StartImportAsync(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartImportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::StartImportAsyncHelper(const StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartImport(request), context);
 }
 
 TagResourceOutcome LexModelsV2Client::TagResource(const TagResourceRequest& request) const
@@ -1721,6 +2002,40 @@ void LexModelsV2Client::UpdateBotLocaleAsync(const UpdateBotLocaleRequest& reque
 void LexModelsV2Client::UpdateBotLocaleAsyncHelper(const UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateBotLocale(request), context);
+}
+
+UpdateExportOutcome LexModelsV2Client::UpdateExport(const UpdateExportRequest& request) const
+{
+  if (!request.ExportIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateExport", "Required field: ExportId, is not set");
+    return UpdateExportOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExportId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/exports/";
+  ss << request.GetExportId();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateExportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateExportOutcomeCallable LexModelsV2Client::UpdateExportCallable(const UpdateExportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateExportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateExport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::UpdateExportAsync(const UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateExportAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::UpdateExportAsyncHelper(const UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateExport(request), context);
 }
 
 UpdateIntentOutcome LexModelsV2Client::UpdateIntent(const UpdateIntentRequest& request) const

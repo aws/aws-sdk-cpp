@@ -13,7 +13,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/compute-optimizer/model/DescribeRecommendationExportJobsResult.h>
 #include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsResult.h>
+#include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsResult.h>
 #include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsResult.h>
+#include <aws/compute-optimizer/model/ExportLambdaFunctionRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetAutoScalingGroupRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsResult.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsResult.h>
@@ -63,7 +65,9 @@ namespace Model
 {
         class DescribeRecommendationExportJobsRequest;
         class ExportAutoScalingGroupRecommendationsRequest;
+        class ExportEBSVolumeRecommendationsRequest;
         class ExportEC2InstanceRecommendationsRequest;
+        class ExportLambdaFunctionRecommendationsRequest;
         class GetAutoScalingGroupRecommendationsRequest;
         class GetEBSVolumeRecommendationsRequest;
         class GetEC2InstanceRecommendationsRequest;
@@ -75,7 +79,9 @@ namespace Model
 
         typedef Aws::Utils::Outcome<DescribeRecommendationExportJobsResult, ComputeOptimizerError> DescribeRecommendationExportJobsOutcome;
         typedef Aws::Utils::Outcome<ExportAutoScalingGroupRecommendationsResult, ComputeOptimizerError> ExportAutoScalingGroupRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<ExportEBSVolumeRecommendationsResult, ComputeOptimizerError> ExportEBSVolumeRecommendationsOutcome;
         typedef Aws::Utils::Outcome<ExportEC2InstanceRecommendationsResult, ComputeOptimizerError> ExportEC2InstanceRecommendationsOutcome;
+        typedef Aws::Utils::Outcome<ExportLambdaFunctionRecommendationsResult, ComputeOptimizerError> ExportLambdaFunctionRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetAutoScalingGroupRecommendationsResult, ComputeOptimizerError> GetAutoScalingGroupRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEBSVolumeRecommendationsResult, ComputeOptimizerError> GetEBSVolumeRecommendationsOutcome;
         typedef Aws::Utils::Outcome<GetEC2InstanceRecommendationsResult, ComputeOptimizerError> GetEC2InstanceRecommendationsOutcome;
@@ -87,7 +93,9 @@ namespace Model
 
         typedef std::future<DescribeRecommendationExportJobsOutcome> DescribeRecommendationExportJobsOutcomeCallable;
         typedef std::future<ExportAutoScalingGroupRecommendationsOutcome> ExportAutoScalingGroupRecommendationsOutcomeCallable;
+        typedef std::future<ExportEBSVolumeRecommendationsOutcome> ExportEBSVolumeRecommendationsOutcomeCallable;
         typedef std::future<ExportEC2InstanceRecommendationsOutcome> ExportEC2InstanceRecommendationsOutcomeCallable;
+        typedef std::future<ExportLambdaFunctionRecommendationsOutcome> ExportLambdaFunctionRecommendationsOutcomeCallable;
         typedef std::future<GetAutoScalingGroupRecommendationsOutcome> GetAutoScalingGroupRecommendationsOutcomeCallable;
         typedef std::future<GetEBSVolumeRecommendationsOutcome> GetEBSVolumeRecommendationsOutcomeCallable;
         typedef std::future<GetEC2InstanceRecommendationsOutcome> GetEC2InstanceRecommendationsOutcomeCallable;
@@ -102,7 +110,9 @@ namespace Model
 
     typedef std::function<void(const ComputeOptimizerClient*, const Model::DescribeRecommendationExportJobsRequest&, const Model::DescribeRecommendationExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecommendationExportJobsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportAutoScalingGroupRecommendationsRequest&, const Model::ExportAutoScalingGroupRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportAutoScalingGroupRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEBSVolumeRecommendationsRequest&, const Model::ExportEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEBSVolumeRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportEC2InstanceRecommendationsRequest&, const Model::ExportEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportEC2InstanceRecommendationsResponseReceivedHandler;
+    typedef std::function<void(const ComputeOptimizerClient*, const Model::ExportLambdaFunctionRecommendationsRequest&, const Model::ExportLambdaFunctionRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportLambdaFunctionRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetAutoScalingGroupRecommendationsRequest&, const Model::GetAutoScalingGroupRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoScalingGroupRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEBSVolumeRecommendationsRequest&, const Model::GetEBSVolumeRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEBSVolumeRecommendationsResponseReceivedHandler;
     typedef std::function<void(const ComputeOptimizerClient*, const Model::GetEC2InstanceRecommendationsRequest&, const Model::GetEC2InstanceRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEC2InstanceRecommendationsResponseReceivedHandler;
@@ -241,6 +251,55 @@ namespace Model
         virtual void ExportAutoScalingGroupRecommendationsAsync(const Model::ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Exports optimization recommendations for Amazon EBS volumes.</p>
+         * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
+         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Amazon EBS volume export job in progress per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportEBSVolumeRecommendationsOutcome ExportEBSVolumeRecommendations(const Model::ExportEBSVolumeRecommendationsRequest& request) const;
+
+        /**
+         * <p>Exports optimization recommendations for Amazon EBS volumes.</p>
+         * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
+         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Amazon EBS volume export job in progress per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportEBSVolumeRecommendationsOutcomeCallable ExportEBSVolumeRecommendationsCallable(const Model::ExportEBSVolumeRecommendationsRequest& request) const;
+
+        /**
+         * <p>Exports optimization recommendations for Amazon EBS volumes.</p>
+         * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
+         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Amazon EBS volume export job in progress per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportEBSVolumeRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportEBSVolumeRecommendationsAsync(const Model::ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Exports optimization recommendations for Amazon EC2 instances.</p>
          * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
          * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
@@ -288,6 +347,55 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExportEC2InstanceRecommendationsAsync(const Model::ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Exports optimization recommendations for AWS Lambda functions.</p>
+         * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
+         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Lambda function export job in progress per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportLambdaFunctionRecommendationsOutcome ExportLambdaFunctionRecommendations(const Model::ExportLambdaFunctionRecommendationsRequest& request) const;
+
+        /**
+         * <p>Exports optimization recommendations for AWS Lambda functions.</p>
+         * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
+         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Lambda function export job in progress per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportLambdaFunctionRecommendationsOutcomeCallable ExportLambdaFunctionRecommendationsCallable(const Model::ExportLambdaFunctionRecommendationsRequest& request) const;
+
+        /**
+         * <p>Exports optimization recommendations for AWS Lambda functions.</p>
+         * <p>Recommendations are exported in a comma-separated values (.csv) file, and its
+         * metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+         * Simple Storage Service (Amazon S3) bucket that you specify. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+         * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.</p> <p>You can
+         * have only one Lambda function export job in progress per AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportLambdaFunctionRecommendations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportLambdaFunctionRecommendationsAsync(const Model::ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns Auto Scaling group recommendations.</p> <p>AWS Compute Optimizer
@@ -591,14 +699,14 @@ namespace Model
          * organization.</p> <p>You must have the appropriate permissions to opt in to
          * Compute Optimizer, to view its recommendations, and to opt out. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling
-         * access with AWS Identity and Access Management</a> in the <i>Compute Optimizer
-         * User Guide</i>.</p> <p>When you opt in, Compute Optimizer automatically creates
-         * a Service-Linked Role in your account to access its data. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using
-         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
+         * access with AWS Identity and Access Management</a> in the <i>AWS Compute
+         * Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
+         * automatically creates a Service-Linked Role in your account to access its data.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute
+         * Optimizer User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
          */
@@ -611,14 +719,14 @@ namespace Model
          * organization.</p> <p>You must have the appropriate permissions to opt in to
          * Compute Optimizer, to view its recommendations, and to opt out. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling
-         * access with AWS Identity and Access Management</a> in the <i>Compute Optimizer
-         * User Guide</i>.</p> <p>When you opt in, Compute Optimizer automatically creates
-         * a Service-Linked Role in your account to access its data. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using
-         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
+         * access with AWS Identity and Access Management</a> in the <i>AWS Compute
+         * Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
+         * automatically creates a Service-Linked Role in your account to access its data.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute
+         * Optimizer User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
          *
@@ -633,14 +741,14 @@ namespace Model
          * organization.</p> <p>You must have the appropriate permissions to opt in to
          * Compute Optimizer, to view its recommendations, and to opt out. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/compute-optimizer/ug/security-iam.html">Controlling
-         * access with AWS Identity and Access Management</a> in the <i>Compute Optimizer
-         * User Guide</i>.</p> <p>When you opt in, Compute Optimizer automatically creates
-         * a Service-Linked Role in your account to access its data. For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/compute-optimizer/ug/using-service-linked-roles.html">Using
-         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>Compute Optimizer
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html">Controlling
+         * access with AWS Identity and Access Management</a> in the <i>AWS Compute
+         * Optimizer User Guide</i>.</p> <p>When you opt in, Compute Optimizer
+         * automatically creates a Service-Linked Role in your account to access its data.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/using-service-linked-roles.html">Using
+         * Service-Linked Roles for AWS Compute Optimizer</a> in the <i>AWS Compute
+         * Optimizer User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/UpdateEnrollmentStatus">AWS
          * API Reference</a></p>
          *
@@ -654,7 +762,9 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void DescribeRecommendationExportJobsAsyncHelper(const Model::DescribeRecommendationExportJobsRequest& request, const DescribeRecommendationExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportAutoScalingGroupRecommendationsAsyncHelper(const Model::ExportAutoScalingGroupRecommendationsRequest& request, const ExportAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportEBSVolumeRecommendationsAsyncHelper(const Model::ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportEC2InstanceRecommendationsAsyncHelper(const Model::ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportLambdaFunctionRecommendationsAsyncHelper(const Model::ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAutoScalingGroupRecommendationsAsyncHelper(const Model::GetAutoScalingGroupRecommendationsRequest& request, const GetAutoScalingGroupRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEBSVolumeRecommendationsAsyncHelper(const Model::GetEBSVolumeRecommendationsRequest& request, const GetEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEC2InstanceRecommendationsAsyncHelper(const Model::GetEC2InstanceRecommendationsRequest& request, const GetEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

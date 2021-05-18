@@ -28,23 +28,27 @@
 #include <aws/license-manager/model/CreateGrantVersionRequest.h>
 #include <aws/license-manager/model/CreateLicenseRequest.h>
 #include <aws/license-manager/model/CreateLicenseConfigurationRequest.h>
+#include <aws/license-manager/model/CreateLicenseManagerReportGeneratorRequest.h>
 #include <aws/license-manager/model/CreateLicenseVersionRequest.h>
 #include <aws/license-manager/model/CreateTokenRequest.h>
 #include <aws/license-manager/model/DeleteGrantRequest.h>
 #include <aws/license-manager/model/DeleteLicenseRequest.h>
 #include <aws/license-manager/model/DeleteLicenseConfigurationRequest.h>
+#include <aws/license-manager/model/DeleteLicenseManagerReportGeneratorRequest.h>
 #include <aws/license-manager/model/DeleteTokenRequest.h>
 #include <aws/license-manager/model/ExtendLicenseConsumptionRequest.h>
 #include <aws/license-manager/model/GetAccessTokenRequest.h>
 #include <aws/license-manager/model/GetGrantRequest.h>
 #include <aws/license-manager/model/GetLicenseRequest.h>
 #include <aws/license-manager/model/GetLicenseConfigurationRequest.h>
+#include <aws/license-manager/model/GetLicenseManagerReportGeneratorRequest.h>
 #include <aws/license-manager/model/GetLicenseUsageRequest.h>
 #include <aws/license-manager/model/GetServiceSettingsRequest.h>
 #include <aws/license-manager/model/ListAssociationsForLicenseConfigurationRequest.h>
 #include <aws/license-manager/model/ListDistributedGrantsRequest.h>
 #include <aws/license-manager/model/ListFailuresForLicenseConfigurationOperationsRequest.h>
 #include <aws/license-manager/model/ListLicenseConfigurationsRequest.h>
+#include <aws/license-manager/model/ListLicenseManagerReportGeneratorsRequest.h>
 #include <aws/license-manager/model/ListLicenseSpecificationsForResourceRequest.h>
 #include <aws/license-manager/model/ListLicenseVersionsRequest.h>
 #include <aws/license-manager/model/ListLicensesRequest.h>
@@ -58,6 +62,7 @@
 #include <aws/license-manager/model/TagResourceRequest.h>
 #include <aws/license-manager/model/UntagResourceRequest.h>
 #include <aws/license-manager/model/UpdateLicenseConfigurationRequest.h>
+#include <aws/license-manager/model/UpdateLicenseManagerReportGeneratorRequest.h>
 #include <aws/license-manager/model/UpdateLicenseSpecificationsForResourceRequest.h>
 #include <aws/license-manager/model/UpdateServiceSettingsRequest.h>
 
@@ -350,6 +355,33 @@ void LicenseManagerClient::CreateLicenseConfigurationAsyncHelper(const CreateLic
   handler(this, request, CreateLicenseConfiguration(request), context);
 }
 
+CreateLicenseManagerReportGeneratorOutcome LicenseManagerClient::CreateLicenseManagerReportGenerator(const CreateLicenseManagerReportGeneratorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateLicenseManagerReportGeneratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::CreateLicenseManagerReportGeneratorCallable(const CreateLicenseManagerReportGeneratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLicenseManagerReportGenerator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::CreateLicenseManagerReportGeneratorAsync(const CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+}
+
+void LicenseManagerClient::CreateLicenseManagerReportGeneratorAsyncHelper(const CreateLicenseManagerReportGeneratorRequest& request, const CreateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLicenseManagerReportGenerator(request), context);
+}
+
 CreateLicenseVersionOutcome LicenseManagerClient::CreateLicenseVersion(const CreateLicenseVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -483,6 +515,33 @@ void LicenseManagerClient::DeleteLicenseConfigurationAsync(const DeleteLicenseCo
 void LicenseManagerClient::DeleteLicenseConfigurationAsyncHelper(const DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteLicenseConfiguration(request), context);
+}
+
+DeleteLicenseManagerReportGeneratorOutcome LicenseManagerClient::DeleteLicenseManagerReportGenerator(const DeleteLicenseManagerReportGeneratorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteLicenseManagerReportGeneratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::DeleteLicenseManagerReportGeneratorCallable(const DeleteLicenseManagerReportGeneratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLicenseManagerReportGenerator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::DeleteLicenseManagerReportGeneratorAsync(const DeleteLicenseManagerReportGeneratorRequest& request, const DeleteLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+}
+
+void LicenseManagerClient::DeleteLicenseManagerReportGeneratorAsyncHelper(const DeleteLicenseManagerReportGeneratorRequest& request, const DeleteLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLicenseManagerReportGenerator(request), context);
 }
 
 DeleteTokenOutcome LicenseManagerClient::DeleteToken(const DeleteTokenRequest& request) const
@@ -647,6 +706,33 @@ void LicenseManagerClient::GetLicenseConfigurationAsyncHelper(const GetLicenseCo
   handler(this, request, GetLicenseConfiguration(request), context);
 }
 
+GetLicenseManagerReportGeneratorOutcome LicenseManagerClient::GetLicenseManagerReportGenerator(const GetLicenseManagerReportGeneratorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetLicenseManagerReportGeneratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::GetLicenseManagerReportGeneratorCallable(const GetLicenseManagerReportGeneratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLicenseManagerReportGenerator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::GetLicenseManagerReportGeneratorAsync(const GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+}
+
+void LicenseManagerClient::GetLicenseManagerReportGeneratorAsyncHelper(const GetLicenseManagerReportGeneratorRequest& request, const GetLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLicenseManagerReportGenerator(request), context);
+}
+
 GetLicenseUsageOutcome LicenseManagerClient::GetLicenseUsage(const GetLicenseUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -807,6 +893,33 @@ void LicenseManagerClient::ListLicenseConfigurationsAsync(const ListLicenseConfi
 void LicenseManagerClient::ListLicenseConfigurationsAsyncHelper(const ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListLicenseConfigurations(request), context);
+}
+
+ListLicenseManagerReportGeneratorsOutcome LicenseManagerClient::ListLicenseManagerReportGenerators(const ListLicenseManagerReportGeneratorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListLicenseManagerReportGeneratorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLicenseManagerReportGeneratorsOutcomeCallable LicenseManagerClient::ListLicenseManagerReportGeneratorsCallable(const ListLicenseManagerReportGeneratorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLicenseManagerReportGeneratorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLicenseManagerReportGenerators(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::ListLicenseManagerReportGeneratorsAsync(const ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLicenseManagerReportGeneratorsAsyncHelper( request, handler, context ); } );
+}
+
+void LicenseManagerClient::ListLicenseManagerReportGeneratorsAsyncHelper(const ListLicenseManagerReportGeneratorsRequest& request, const ListLicenseManagerReportGeneratorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLicenseManagerReportGenerators(request), context);
 }
 
 ListLicenseSpecificationsForResourceOutcome LicenseManagerClient::ListLicenseSpecificationsForResource(const ListLicenseSpecificationsForResourceRequest& request) const
@@ -1158,6 +1271,33 @@ void LicenseManagerClient::UpdateLicenseConfigurationAsync(const UpdateLicenseCo
 void LicenseManagerClient::UpdateLicenseConfigurationAsyncHelper(const UpdateLicenseConfigurationRequest& request, const UpdateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLicenseConfiguration(request), context);
+}
+
+UpdateLicenseManagerReportGeneratorOutcome LicenseManagerClient::UpdateLicenseManagerReportGenerator(const UpdateLicenseManagerReportGeneratorRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateLicenseManagerReportGeneratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLicenseManagerReportGeneratorOutcomeCallable LicenseManagerClient::UpdateLicenseManagerReportGeneratorCallable(const UpdateLicenseManagerReportGeneratorRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLicenseManagerReportGeneratorOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLicenseManagerReportGenerator(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::UpdateLicenseManagerReportGeneratorAsync(const UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLicenseManagerReportGeneratorAsyncHelper( request, handler, context ); } );
+}
+
+void LicenseManagerClient::UpdateLicenseManagerReportGeneratorAsyncHelper(const UpdateLicenseManagerReportGeneratorRequest& request, const UpdateLicenseManagerReportGeneratorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLicenseManagerReportGenerator(request), context);
 }
 
 UpdateLicenseSpecificationsForResourceOutcome LicenseManagerClient::UpdateLicenseSpecificationsForResource(const UpdateLicenseSpecificationsForResourceRequest& request) const

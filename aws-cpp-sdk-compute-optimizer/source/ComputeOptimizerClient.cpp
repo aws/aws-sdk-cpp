@@ -22,7 +22,9 @@
 #include <aws/compute-optimizer/ComputeOptimizerErrorMarshaller.h>
 #include <aws/compute-optimizer/model/DescribeRecommendationExportJobsRequest.h>
 #include <aws/compute-optimizer/model/ExportAutoScalingGroupRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/ExportEBSVolumeRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/ExportEC2InstanceRecommendationsRequest.h>
+#include <aws/compute-optimizer/model/ExportLambdaFunctionRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetAutoScalingGroupRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEBSVolumeRecommendationsRequest.h>
 #include <aws/compute-optimizer/model/GetEC2InstanceRecommendationsRequest.h>
@@ -159,6 +161,33 @@ void ComputeOptimizerClient::ExportAutoScalingGroupRecommendationsAsyncHelper(co
   handler(this, request, ExportAutoScalingGroupRecommendations(request), context);
 }
 
+ExportEBSVolumeRecommendationsOutcome ComputeOptimizerClient::ExportEBSVolumeRecommendations(const ExportEBSVolumeRecommendationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExportEBSVolumeRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportEBSVolumeRecommendationsOutcomeCallable ComputeOptimizerClient::ExportEBSVolumeRecommendationsCallable(const ExportEBSVolumeRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportEBSVolumeRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportEBSVolumeRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::ExportEBSVolumeRecommendationsAsync(const ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportEBSVolumeRecommendationsAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::ExportEBSVolumeRecommendationsAsyncHelper(const ExportEBSVolumeRecommendationsRequest& request, const ExportEBSVolumeRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportEBSVolumeRecommendations(request), context);
+}
+
 ExportEC2InstanceRecommendationsOutcome ComputeOptimizerClient::ExportEC2InstanceRecommendations(const ExportEC2InstanceRecommendationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -184,6 +213,33 @@ void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsync(const ExportE
 void ComputeOptimizerClient::ExportEC2InstanceRecommendationsAsyncHelper(const ExportEC2InstanceRecommendationsRequest& request, const ExportEC2InstanceRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ExportEC2InstanceRecommendations(request), context);
+}
+
+ExportLambdaFunctionRecommendationsOutcome ComputeOptimizerClient::ExportLambdaFunctionRecommendations(const ExportLambdaFunctionRecommendationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ExportLambdaFunctionRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ExportLambdaFunctionRecommendationsOutcomeCallable ComputeOptimizerClient::ExportLambdaFunctionRecommendationsCallable(const ExportLambdaFunctionRecommendationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportLambdaFunctionRecommendationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportLambdaFunctionRecommendations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComputeOptimizerClient::ExportLambdaFunctionRecommendationsAsync(const ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportLambdaFunctionRecommendationsAsyncHelper( request, handler, context ); } );
+}
+
+void ComputeOptimizerClient::ExportLambdaFunctionRecommendationsAsyncHelper(const ExportLambdaFunctionRecommendationsRequest& request, const ExportLambdaFunctionRecommendationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportLambdaFunctionRecommendations(request), context);
 }
 
 GetAutoScalingGroupRecommendationsOutcome ComputeOptimizerClient::GetAutoScalingGroupRecommendations(const GetAutoScalingGroupRecommendationsRequest& request) const

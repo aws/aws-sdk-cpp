@@ -36,56 +36,64 @@ namespace Model
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline const Aws::String& GetLocaleId() const{ return m_localeId; }
 
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
 
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
 
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
 
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
 
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline ListBuiltInSlotTypesRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
 
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline ListBuiltInSlotTypesRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the language and locale of the slot types to list. The
      * string must match one of the supported locales. For more information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html">https://docs.aws.amazon.com/lex/latest/dg/supported-locales.html</a>.</p>
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+     * languages</a>.</p>
      */
     inline ListBuiltInSlotTypesRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
 

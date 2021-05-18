@@ -29,34 +29,34 @@ namespace Model
    * <p>A JSON-formatted object that contains the metadata for a support case. It is
    * contained in the response from a <a>DescribeCases</a> request.
    * <b>CaseDetails</b> contains the following fields:</p> <ul> <li> <p>
-   * <b>caseId.</b> The AWS Support case ID requested or returned in the call. The
-   * case ID is an alphanumeric string formatted as shown in this example:
+   * <b>caseId</b> - The support case ID requested or returned in the call. The case
+   * ID is an alphanumeric string formatted as shown in this example:
    * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p>
-   * <b>categoryCode.</b> The category of problem for the AWS Support case.
-   * Corresponds to the CategoryCode values returned by a call to
-   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId.</b> The identifier for
-   * the case on pages in the AWS Support Center.</p> </li> <li> <p> <b>language.</b>
-   * The ISO 639-1 code for the language in which AWS provides support. AWS Support
-   * currently supports English ("en") and Japanese ("ja"). Language parameters must
-   * be passed explicitly for operations that take them.</p> </li> <li> <p>
-   * <b>nextToken.</b> A resumption point for pagination.</p> </li> <li> <p>
-   * <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of
-   * these objects are <code>attachments</code>, <code>body</code>,
+   * <b>categoryCode</b> - The category of problem for the support case. Corresponds
+   * to the <code>CategoryCode</code> values returned by a call to
+   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId</b> - The identifier
+   * for the case on pages in the AWS Support Center.</p> </li> <li> <p>
+   * <b>language</b> - The ISO 639-1 code for the language in which AWS provides
+   * support. AWS Support currently supports English ("en") and Japanese ("ja").
+   * Language parameters must be passed explicitly for operations that take them.</p>
+   * </li> <li> <p> <b>nextToken</b> - A resumption point for pagination.</p> </li>
+   * <li> <p> <b>recentCommunications</b> - One or more <a>Communication</a> objects.
+   * Fields of these objects are <code>attachments</code>, <code>body</code>,
    * <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p>
-   * </li> <li> <p> <b>serviceCode.</b> The identifier for the AWS service that
+   * </li> <li> <p> <b>serviceCode</b> - The identifier for the AWS service that
    * corresponds to the service code defined in the call to
-   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode.</b> The severity
+   * <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode</b> - The severity
    * code assigned to the case. Contains one of the values returned by the call to
    * <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>,
    * <code>normal</code>, <code>high</code>, <code>urgent</code>, and
-   * <code>critical</code>.</p> </li> <li> <p> <b>status.</b> The status of the case
+   * <code>critical</code>.</p> </li> <li> <p> <b>status</b> - The status of the case
    * in the AWS Support Center. Valid values:</p> <ul> <li> <p> <code>opened</code>
    * </p> </li> <li> <p> <code>pending-customer-action</code> </p> </li> <li> <p>
    * <code>reopened</code> </p> </li> <li> <p> <code>resolved</code> </p> </li> <li>
    * <p> <code>unassigned</code> </p> </li> <li> <p> <code>work-in-progress</code>
-   * </p> </li> </ul> </li> <li> <p> <b>subject.</b> The subject line of the
-   * case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of the account
-   * that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the
+   * </p> </li> </ul> </li> <li> <p> <b>subject</b> - The subject line of the
+   * case.</p> </li> <li> <p> <b>submittedBy</b> - The email address of the account
+   * that submitted the case.</p> </li> <li> <p> <b>timeCreated</b> - The time the
    * case was created, in ISO-8601 format.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CaseDetails">AWS
    * API Reference</a></p>
@@ -71,56 +71,56 @@ namespace Model
 
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CaseDetails& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
     inline CaseDetails& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * <p>The support case ID requested or returned in the call. The case ID is an
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
@@ -340,42 +340,42 @@ namespace Model
 
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline const Aws::String& GetCategoryCode() const{ return m_categoryCode; }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline bool CategoryCodeHasBeenSet() const { return m_categoryCodeHasBeenSet; }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline void SetCategoryCode(const Aws::String& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline void SetCategoryCode(Aws::String&& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = std::move(value); }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline void SetCategoryCode(const char* value) { m_categoryCodeHasBeenSet = true; m_categoryCode.assign(value); }
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline CaseDetails& WithCategoryCode(const Aws::String& value) { SetCategoryCode(value); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline CaseDetails& WithCategoryCode(Aws::String&& value) { SetCategoryCode(std::move(value)); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case.</p>
+     * <p>The category of problem for the support case.</p>
      */
     inline CaseDetails& WithCategoryCode(const char* value) { SetCategoryCode(value); return *this;}
 

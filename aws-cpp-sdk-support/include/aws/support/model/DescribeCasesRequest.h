@@ -379,25 +379,25 @@ namespace Model
 
     /**
      * <p>Specifies whether to include communications in the <code>DescribeCases</code>
-     * response. By default, communications are incuded.</p>
+     * response. By default, communications are included.</p>
      */
     inline bool GetIncludeCommunications() const{ return m_includeCommunications; }
 
     /**
      * <p>Specifies whether to include communications in the <code>DescribeCases</code>
-     * response. By default, communications are incuded.</p>
+     * response. By default, communications are included.</p>
      */
     inline bool IncludeCommunicationsHasBeenSet() const { return m_includeCommunicationsHasBeenSet; }
 
     /**
      * <p>Specifies whether to include communications in the <code>DescribeCases</code>
-     * response. By default, communications are incuded.</p>
+     * response. By default, communications are included.</p>
      */
     inline void SetIncludeCommunications(bool value) { m_includeCommunicationsHasBeenSet = true; m_includeCommunications = value; }
 
     /**
      * <p>Specifies whether to include communications in the <code>DescribeCases</code>
-     * response. By default, communications are incuded.</p>
+     * response. By default, communications are included.</p>
      */
     inline DescribeCasesRequest& WithIncludeCommunications(bool value) { SetIncludeCommunications(value); return *this;}
 

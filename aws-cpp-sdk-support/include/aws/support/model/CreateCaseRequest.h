@@ -36,64 +36,64 @@ namespace Model
 
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
     inline CreateCaseRequest& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
     inline CreateCaseRequest& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
 
     /**
-     * <p>The title of the AWS Support case. The title appears in the <b>Subject</b>
-     * field on the AWS Support Center <a
+     * <p>The title of the support case. The title appears in the <b>Subject</b> field
+     * on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a>
      * page.</p>
      */
@@ -255,56 +255,56 @@ namespace Model
 
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */
     inline const Aws::String& GetCategoryCode() const{ return m_categoryCode; }
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */
     inline bool CategoryCodeHasBeenSet() const { return m_categoryCodeHasBeenSet; }
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */
     inline void SetCategoryCode(const Aws::String& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = value; }
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */
     inline void SetCategoryCode(Aws::String&& value) { m_categoryCodeHasBeenSet = true; m_categoryCode = std::move(value); }
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */
     inline void SetCategoryCode(const char* value) { m_categoryCodeHasBeenSet = true; m_categoryCode.assign(value); }
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */
     inline CreateCaseRequest& WithCategoryCode(const Aws::String& value) { SetCategoryCode(value); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */
     inline CreateCaseRequest& WithCategoryCode(Aws::String&& value) { SetCategoryCode(std::move(value)); return *this;}
 
     /**
-     * <p>The category of problem for the AWS Support case. You also use the
+     * <p>The category of problem for the support case. You also use the
      * <a>DescribeServices</a> operation to get the category code for a service. Each
      * AWS service defines its own set of category codes.</p>
      */

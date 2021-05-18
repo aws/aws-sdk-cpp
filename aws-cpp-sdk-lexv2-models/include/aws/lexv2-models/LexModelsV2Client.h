@@ -16,17 +16,23 @@
 #include <aws/lexv2-models/model/CreateBotAliasResult.h>
 #include <aws/lexv2-models/model/CreateBotLocaleResult.h>
 #include <aws/lexv2-models/model/CreateBotVersionResult.h>
+#include <aws/lexv2-models/model/CreateExportResult.h>
 #include <aws/lexv2-models/model/CreateIntentResult.h>
 #include <aws/lexv2-models/model/CreateSlotResult.h>
 #include <aws/lexv2-models/model/CreateSlotTypeResult.h>
+#include <aws/lexv2-models/model/CreateUploadUrlResult.h>
 #include <aws/lexv2-models/model/DeleteBotResult.h>
 #include <aws/lexv2-models/model/DeleteBotAliasResult.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleResult.h>
 #include <aws/lexv2-models/model/DeleteBotVersionResult.h>
+#include <aws/lexv2-models/model/DeleteExportResult.h>
+#include <aws/lexv2-models/model/DeleteImportResult.h>
 #include <aws/lexv2-models/model/DescribeBotResult.h>
 #include <aws/lexv2-models/model/DescribeBotAliasResult.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
 #include <aws/lexv2-models/model/DescribeBotVersionResult.h>
+#include <aws/lexv2-models/model/DescribeExportResult.h>
+#include <aws/lexv2-models/model/DescribeImportResult.h>
 #include <aws/lexv2-models/model/DescribeIntentResult.h>
 #include <aws/lexv2-models/model/DescribeSlotResult.h>
 #include <aws/lexv2-models/model/DescribeSlotTypeResult.h>
@@ -36,15 +42,19 @@
 #include <aws/lexv2-models/model/ListBotsResult.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsResult.h>
 #include <aws/lexv2-models/model/ListBuiltInSlotTypesResult.h>
+#include <aws/lexv2-models/model/ListExportsResult.h>
+#include <aws/lexv2-models/model/ListImportsResult.h>
 #include <aws/lexv2-models/model/ListIntentsResult.h>
 #include <aws/lexv2-models/model/ListSlotTypesResult.h>
 #include <aws/lexv2-models/model/ListSlotsResult.h>
 #include <aws/lexv2-models/model/ListTagsForResourceResult.h>
+#include <aws/lexv2-models/model/StartImportResult.h>
 #include <aws/lexv2-models/model/TagResourceResult.h>
 #include <aws/lexv2-models/model/UntagResourceResult.h>
 #include <aws/lexv2-models/model/UpdateBotResult.h>
 #include <aws/lexv2-models/model/UpdateBotAliasResult.h>
 #include <aws/lexv2-models/model/UpdateBotLocaleResult.h>
+#include <aws/lexv2-models/model/UpdateExportResult.h>
 #include <aws/lexv2-models/model/UpdateIntentResult.h>
 #include <aws/lexv2-models/model/UpdateSlotResult.h>
 #include <aws/lexv2-models/model/UpdateSlotTypeResult.h>
@@ -93,13 +103,17 @@ namespace Model
         class CreateBotAliasRequest;
         class CreateBotLocaleRequest;
         class CreateBotVersionRequest;
+        class CreateExportRequest;
         class CreateIntentRequest;
         class CreateSlotRequest;
         class CreateSlotTypeRequest;
+        class CreateUploadUrlRequest;
         class DeleteBotRequest;
         class DeleteBotAliasRequest;
         class DeleteBotLocaleRequest;
         class DeleteBotVersionRequest;
+        class DeleteExportRequest;
+        class DeleteImportRequest;
         class DeleteIntentRequest;
         class DeleteSlotRequest;
         class DeleteSlotTypeRequest;
@@ -107,6 +121,8 @@ namespace Model
         class DescribeBotAliasRequest;
         class DescribeBotLocaleRequest;
         class DescribeBotVersionRequest;
+        class DescribeExportRequest;
+        class DescribeImportRequest;
         class DescribeIntentRequest;
         class DescribeSlotRequest;
         class DescribeSlotTypeRequest;
@@ -116,15 +132,19 @@ namespace Model
         class ListBotsRequest;
         class ListBuiltInIntentsRequest;
         class ListBuiltInSlotTypesRequest;
+        class ListExportsRequest;
+        class ListImportsRequest;
         class ListIntentsRequest;
         class ListSlotTypesRequest;
         class ListSlotsRequest;
         class ListTagsForResourceRequest;
+        class StartImportRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateBotRequest;
         class UpdateBotAliasRequest;
         class UpdateBotLocaleRequest;
+        class UpdateExportRequest;
         class UpdateIntentRequest;
         class UpdateSlotRequest;
         class UpdateSlotTypeRequest;
@@ -134,13 +154,17 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateBotAliasResult, LexModelsV2Error> CreateBotAliasOutcome;
         typedef Aws::Utils::Outcome<CreateBotLocaleResult, LexModelsV2Error> CreateBotLocaleOutcome;
         typedef Aws::Utils::Outcome<CreateBotVersionResult, LexModelsV2Error> CreateBotVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateExportResult, LexModelsV2Error> CreateExportOutcome;
         typedef Aws::Utils::Outcome<CreateIntentResult, LexModelsV2Error> CreateIntentOutcome;
         typedef Aws::Utils::Outcome<CreateSlotResult, LexModelsV2Error> CreateSlotOutcome;
         typedef Aws::Utils::Outcome<CreateSlotTypeResult, LexModelsV2Error> CreateSlotTypeOutcome;
+        typedef Aws::Utils::Outcome<CreateUploadUrlResult, LexModelsV2Error> CreateUploadUrlOutcome;
         typedef Aws::Utils::Outcome<DeleteBotResult, LexModelsV2Error> DeleteBotOutcome;
         typedef Aws::Utils::Outcome<DeleteBotAliasResult, LexModelsV2Error> DeleteBotAliasOutcome;
         typedef Aws::Utils::Outcome<DeleteBotLocaleResult, LexModelsV2Error> DeleteBotLocaleOutcome;
         typedef Aws::Utils::Outcome<DeleteBotVersionResult, LexModelsV2Error> DeleteBotVersionOutcome;
+        typedef Aws::Utils::Outcome<DeleteExportResult, LexModelsV2Error> DeleteExportOutcome;
+        typedef Aws::Utils::Outcome<DeleteImportResult, LexModelsV2Error> DeleteImportOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteIntentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotTypeOutcome;
@@ -148,6 +172,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeBotAliasResult, LexModelsV2Error> DescribeBotAliasOutcome;
         typedef Aws::Utils::Outcome<DescribeBotLocaleResult, LexModelsV2Error> DescribeBotLocaleOutcome;
         typedef Aws::Utils::Outcome<DescribeBotVersionResult, LexModelsV2Error> DescribeBotVersionOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportResult, LexModelsV2Error> DescribeExportOutcome;
+        typedef Aws::Utils::Outcome<DescribeImportResult, LexModelsV2Error> DescribeImportOutcome;
         typedef Aws::Utils::Outcome<DescribeIntentResult, LexModelsV2Error> DescribeIntentOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotResult, LexModelsV2Error> DescribeSlotOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotTypeResult, LexModelsV2Error> DescribeSlotTypeOutcome;
@@ -157,15 +183,19 @@ namespace Model
         typedef Aws::Utils::Outcome<ListBotsResult, LexModelsV2Error> ListBotsOutcome;
         typedef Aws::Utils::Outcome<ListBuiltInIntentsResult, LexModelsV2Error> ListBuiltInIntentsOutcome;
         typedef Aws::Utils::Outcome<ListBuiltInSlotTypesResult, LexModelsV2Error> ListBuiltInSlotTypesOutcome;
+        typedef Aws::Utils::Outcome<ListExportsResult, LexModelsV2Error> ListExportsOutcome;
+        typedef Aws::Utils::Outcome<ListImportsResult, LexModelsV2Error> ListImportsOutcome;
         typedef Aws::Utils::Outcome<ListIntentsResult, LexModelsV2Error> ListIntentsOutcome;
         typedef Aws::Utils::Outcome<ListSlotTypesResult, LexModelsV2Error> ListSlotTypesOutcome;
         typedef Aws::Utils::Outcome<ListSlotsResult, LexModelsV2Error> ListSlotsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, LexModelsV2Error> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<StartImportResult, LexModelsV2Error> StartImportOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, LexModelsV2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, LexModelsV2Error> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateBotResult, LexModelsV2Error> UpdateBotOutcome;
         typedef Aws::Utils::Outcome<UpdateBotAliasResult, LexModelsV2Error> UpdateBotAliasOutcome;
         typedef Aws::Utils::Outcome<UpdateBotLocaleResult, LexModelsV2Error> UpdateBotLocaleOutcome;
+        typedef Aws::Utils::Outcome<UpdateExportResult, LexModelsV2Error> UpdateExportOutcome;
         typedef Aws::Utils::Outcome<UpdateIntentResult, LexModelsV2Error> UpdateIntentOutcome;
         typedef Aws::Utils::Outcome<UpdateSlotResult, LexModelsV2Error> UpdateSlotOutcome;
         typedef Aws::Utils::Outcome<UpdateSlotTypeResult, LexModelsV2Error> UpdateSlotTypeOutcome;
@@ -175,13 +205,17 @@ namespace Model
         typedef std::future<CreateBotAliasOutcome> CreateBotAliasOutcomeCallable;
         typedef std::future<CreateBotLocaleOutcome> CreateBotLocaleOutcomeCallable;
         typedef std::future<CreateBotVersionOutcome> CreateBotVersionOutcomeCallable;
+        typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
         typedef std::future<CreateIntentOutcome> CreateIntentOutcomeCallable;
         typedef std::future<CreateSlotOutcome> CreateSlotOutcomeCallable;
         typedef std::future<CreateSlotTypeOutcome> CreateSlotTypeOutcomeCallable;
+        typedef std::future<CreateUploadUrlOutcome> CreateUploadUrlOutcomeCallable;
         typedef std::future<DeleteBotOutcome> DeleteBotOutcomeCallable;
         typedef std::future<DeleteBotAliasOutcome> DeleteBotAliasOutcomeCallable;
         typedef std::future<DeleteBotLocaleOutcome> DeleteBotLocaleOutcomeCallable;
         typedef std::future<DeleteBotVersionOutcome> DeleteBotVersionOutcomeCallable;
+        typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
+        typedef std::future<DeleteImportOutcome> DeleteImportOutcomeCallable;
         typedef std::future<DeleteIntentOutcome> DeleteIntentOutcomeCallable;
         typedef std::future<DeleteSlotOutcome> DeleteSlotOutcomeCallable;
         typedef std::future<DeleteSlotTypeOutcome> DeleteSlotTypeOutcomeCallable;
@@ -189,6 +223,8 @@ namespace Model
         typedef std::future<DescribeBotAliasOutcome> DescribeBotAliasOutcomeCallable;
         typedef std::future<DescribeBotLocaleOutcome> DescribeBotLocaleOutcomeCallable;
         typedef std::future<DescribeBotVersionOutcome> DescribeBotVersionOutcomeCallable;
+        typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
+        typedef std::future<DescribeImportOutcome> DescribeImportOutcomeCallable;
         typedef std::future<DescribeIntentOutcome> DescribeIntentOutcomeCallable;
         typedef std::future<DescribeSlotOutcome> DescribeSlotOutcomeCallable;
         typedef std::future<DescribeSlotTypeOutcome> DescribeSlotTypeOutcomeCallable;
@@ -198,15 +234,19 @@ namespace Model
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
         typedef std::future<ListBuiltInIntentsOutcome> ListBuiltInIntentsOutcomeCallable;
         typedef std::future<ListBuiltInSlotTypesOutcome> ListBuiltInSlotTypesOutcomeCallable;
+        typedef std::future<ListExportsOutcome> ListExportsOutcomeCallable;
+        typedef std::future<ListImportsOutcome> ListImportsOutcomeCallable;
         typedef std::future<ListIntentsOutcome> ListIntentsOutcomeCallable;
         typedef std::future<ListSlotTypesOutcome> ListSlotTypesOutcomeCallable;
         typedef std::future<ListSlotsOutcome> ListSlotsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<StartImportOutcome> StartImportOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateBotOutcome> UpdateBotOutcomeCallable;
         typedef std::future<UpdateBotAliasOutcome> UpdateBotAliasOutcomeCallable;
         typedef std::future<UpdateBotLocaleOutcome> UpdateBotLocaleOutcomeCallable;
+        typedef std::future<UpdateExportOutcome> UpdateExportOutcomeCallable;
         typedef std::future<UpdateIntentOutcome> UpdateIntentOutcomeCallable;
         typedef std::future<UpdateSlotOutcome> UpdateSlotOutcomeCallable;
         typedef std::future<UpdateSlotTypeOutcome> UpdateSlotTypeOutcomeCallable;
@@ -219,13 +259,17 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotAliasRequest&, const Model::CreateBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotLocaleRequest&, const Model::CreateBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotVersionRequest&, const Model::CreateBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotVersionResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::CreateExportRequest&, const Model::CreateExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateIntentRequest&, const Model::CreateIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateSlotRequest&, const Model::CreateSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateSlotTypeRequest&, const Model::CreateSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSlotTypeResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::CreateUploadUrlRequest&, const Model::CreateUploadUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUploadUrlResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotRequest&, const Model::DeleteBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotAliasRequest&, const Model::DeleteBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotLocaleRequest&, const Model::DeleteBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteBotVersionRequest&, const Model::DeleteBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBotVersionResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteExportRequest&, const Model::DeleteExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExportResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteImportRequest&, const Model::DeleteImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteIntentRequest&, const Model::DeleteIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotRequest&, const Model::DeleteSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotTypeRequest&, const Model::DeleteSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotTypeResponseReceivedHandler;
@@ -233,6 +277,8 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotAliasRequest&, const Model::DescribeBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotLocaleRequest&, const Model::DescribeBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotVersionRequest&, const Model::DescribeBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotVersionResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DescribeExportRequest&, const Model::DescribeExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DescribeImportRequest&, const Model::DescribeImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeIntentRequest&, const Model::DescribeIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotRequest&, const Model::DescribeSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotTypeRequest&, const Model::DescribeSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotTypeResponseReceivedHandler;
@@ -242,15 +288,19 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBuiltInIntentsRequest&, const Model::ListBuiltInIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuiltInIntentsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBuiltInSlotTypesRequest&, const Model::ListBuiltInSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuiltInSlotTypesResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListExportsRequest&, const Model::ListExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExportsResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::ListImportsRequest&, const Model::ListImportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListIntentsRequest&, const Model::ListIntentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntentsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListSlotTypesRequest&, const Model::ListSlotTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlotTypesResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListSlotsRequest&, const Model::ListSlotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSlotsResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::StartImportRequest&, const Model::StartImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotRequest&, const Model::UpdateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotAliasRequest&, const Model::UpdateBotAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotAliasResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotLocaleRequest&, const Model::UpdateBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotLocaleResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::UpdateExportRequest&, const Model::UpdateExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateIntentRequest&, const Model::UpdateIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIntentResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateSlotRequest&, const Model::UpdateSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateSlotTypeRequest&, const Model::UpdateSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSlotTypeResponseReceivedHandler;
@@ -450,6 +500,52 @@ namespace Model
         virtual void CreateBotVersionAsync(const Model::CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a zip archive containing the contents of a bot or a bot locale. The
+         * archive contains a directory structure that contains JSON files that define the
+         * bot.</p> <p>You can create an archive that contains the complete definition of a
+         * bot, or you can specify that the archive contain only the definition of a single
+         * bot locale.</p> <p>For more information about exporting bots, and about the
+         * structure of the export archive, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html">
+         * Importing and exporting bots </a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExportOutcome CreateExport(const Model::CreateExportRequest& request) const;
+
+        /**
+         * <p>Creates a zip archive containing the contents of a bot or a bot locale. The
+         * archive contains a directory structure that contains JSON files that define the
+         * bot.</p> <p>You can create an archive that contains the complete definition of a
+         * bot, or you can specify that the archive contain only the definition of a single
+         * bot locale.</p> <p>For more information about exporting bots, and about the
+         * structure of the export archive, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html">
+         * Importing and exporting bots </a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExportOutcomeCallable CreateExportCallable(const Model::CreateExportRequest& request) const;
+
+        /**
+         * <p>Creates a zip archive containing the contents of a bot or a bot locale. The
+         * archive contains a directory structure that contains JSON files that define the
+         * bot.</p> <p>You can create an archive that contains the complete definition of a
+         * bot, or you can specify that the archive contain only the definition of a single
+         * bot locale.</p> <p>For more information about exporting bots, and about the
+         * structure of the export archive, see <a
+         * href="https://docs.aws.amazon.com/lexv2/latest/dg/importing-exporting.html">
+         * Importing and exporting bots </a> </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExportAsync(const Model::CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an intent.</p> <p>To define the interaction between the user and your
          * bot, you define one or more intents. For example, for a pizza ordering bot you
          * would create an <code>OrderPizza</code> intent.</p> <p>When you create an
@@ -594,6 +690,34 @@ namespace Model
         virtual void CreateSlotTypeAsync(const Model::CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when
+         * importing a bot or a bot locale. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUploadUrlOutcome CreateUploadUrl(const Model::CreateUploadUrlRequest& request) const;
+
+        /**
+         * <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when
+         * importing a bot or a bot locale. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUploadUrlOutcomeCallable CreateUploadUrlCallable(const Model::CreateUploadUrlRequest& request) const;
+
+        /**
+         * <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when
+         * importing a bot or a bot locale. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateUploadUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUploadUrlAsync(const Model::CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes all versions of a bot, including the <code>Draft</code> version. To
          * delete a specific version, use the <code>DeleteBotVersion</code> operation.</p>
          * <p>When you delete a bot, all of the resources contained in the bot are also
@@ -722,6 +846,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteBotVersionAsync(const Model::DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a previous export and the associated files stored in an S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExportOutcome DeleteExport(const Model::DeleteExportRequest& request) const;
+
+        /**
+         * <p>Removes a previous export and the associated files stored in an S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExportOutcomeCallable DeleteExportCallable(const Model::DeleteExportRequest& request) const;
+
+        /**
+         * <p>Removes a previous export and the associated files stored in an S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExportAsync(const Model::DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a previous import and the associated file stored in an S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteImportOutcome DeleteImport(const Model::DeleteImportRequest& request) const;
+
+        /**
+         * <p>Removes a previous import and the associated file stored in an S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteImportOutcomeCallable DeleteImportCallable(const Model::DeleteImportRequest& request) const;
+
+        /**
+         * <p>Removes a previous import and the associated file stored in an S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteImport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteImportAsync(const Model::DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified intent.</p> <p>Deleting an intent also deletes the
@@ -912,6 +1092,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBotVersionAsync(const Model::DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about a specific export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExportOutcome DescribeExport(const Model::DescribeExportRequest& request) const;
+
+        /**
+         * <p>Gets information about a specific export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExportOutcomeCallable DescribeExportCallable(const Model::DescribeExportRequest& request) const;
+
+        /**
+         * <p>Gets information about a specific export.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExportAsync(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about a specific import.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImportOutcome DescribeImport(const Model::DescribeImportRequest& request) const;
+
+        /**
+         * <p>Gets information about a specific import.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeImportOutcomeCallable DescribeImportCallable(const Model::DescribeImportRequest& request) const;
+
+        /**
+         * <p>Gets information about a specific import.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeImport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeImportAsync(const Model::DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about an intent.</p><p><h3>See Also:</h3>   <a
@@ -1172,6 +1402,62 @@ namespace Model
         virtual void ListBuiltInSlotTypesAsync(const Model::ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExportsOutcome ListExports(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExportsOutcomeCallable ListExportsCallable(const Model::ListExportsRequest& request) const;
+
+        /**
+         * <p>Lists the exports for a bot or bot locale. Exports are kept in the list for 7
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListExports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExportsAsync(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImportsOutcome ListImports(const Model::ListImportsRequest& request) const;
+
+        /**
+         * <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListImportsOutcomeCallable ListImportsCallable(const Model::ListImportsRequest& request) const;
+
+        /**
+         * <p>Lists the imports for a bot or bot locale. Imports are kept in the list for 7
+         * days.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListImports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListImportsAsync(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Get a list of intents that meet the specified criteria.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntents">AWS
@@ -1282,6 +1568,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Starts importing a bot or bot locale from a zip archive that you uploaded to
+         * an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImportOutcome StartImport(const Model::StartImportRequest& request) const;
+
+        /**
+         * <p>Starts importing a bot or bot locale from a zip archive that you uploaded to
+         * an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImportOutcomeCallable StartImportCallable(const Model::StartImportRequest& request) const;
+
+        /**
+         * <p>Starts importing a bot or bot locale from a zip archive that you uploaded to
+         * an S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartImport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImportAsync(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds the specified tags to the specified resource. If a tag key already
@@ -1424,6 +1738,34 @@ namespace Model
         virtual void UpdateBotLocaleAsync(const Model::UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the password used to encrypt an export zip archive.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateExportOutcome UpdateExport(const Model::UpdateExportRequest& request) const;
+
+        /**
+         * <p>Updates the password used to encrypt an export zip archive.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateExportOutcomeCallable UpdateExportCallable(const Model::UpdateExportRequest& request) const;
+
+        /**
+         * <p>Updates the password used to encrypt an export zip archive.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateExportAsync(const Model::UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the settings for an intent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateIntent">AWS
          * API Reference</a></p>
@@ -1510,13 +1852,17 @@ namespace Model
         void CreateBotAliasAsyncHelper(const Model::CreateBotAliasRequest& request, const CreateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBotLocaleAsyncHelper(const Model::CreateBotLocaleRequest& request, const CreateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBotVersionAsyncHelper(const Model::CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateExportAsyncHelper(const Model::CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIntentAsyncHelper(const Model::CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSlotAsyncHelper(const Model::CreateSlotRequest& request, const CreateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSlotTypeAsyncHelper(const Model::CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUploadUrlAsyncHelper(const Model::CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotAsyncHelper(const Model::DeleteBotRequest& request, const DeleteBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotAliasAsyncHelper(const Model::DeleteBotAliasRequest& request, const DeleteBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotLocaleAsyncHelper(const Model::DeleteBotLocaleRequest& request, const DeleteBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBotVersionAsyncHelper(const Model::DeleteBotVersionRequest& request, const DeleteBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteExportAsyncHelper(const Model::DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteImportAsyncHelper(const Model::DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntentAsyncHelper(const Model::DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotAsyncHelper(const Model::DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotTypeAsyncHelper(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1524,6 +1870,8 @@ namespace Model
         void DescribeBotAliasAsyncHelper(const Model::DescribeBotAliasRequest& request, const DescribeBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotLocaleAsyncHelper(const Model::DescribeBotLocaleRequest& request, const DescribeBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotVersionAsyncHelper(const Model::DescribeBotVersionRequest& request, const DescribeBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExportAsyncHelper(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeImportAsyncHelper(const Model::DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIntentAsyncHelper(const Model::DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotAsyncHelper(const Model::DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotTypeAsyncHelper(const Model::DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1533,15 +1881,19 @@ namespace Model
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuiltInIntentsAsyncHelper(const Model::ListBuiltInIntentsRequest& request, const ListBuiltInIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuiltInSlotTypesAsyncHelper(const Model::ListBuiltInSlotTypesRequest& request, const ListBuiltInSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExportsAsyncHelper(const Model::ListExportsRequest& request, const ListExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListImportsAsyncHelper(const Model::ListImportsRequest& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIntentsAsyncHelper(const Model::ListIntentsRequest& request, const ListIntentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSlotTypesAsyncHelper(const Model::ListSlotTypesRequest& request, const ListSlotTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSlotsAsyncHelper(const Model::ListSlotsRequest& request, const ListSlotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartImportAsyncHelper(const Model::StartImportRequest& request, const StartImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotAsyncHelper(const Model::UpdateBotRequest& request, const UpdateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotAliasAsyncHelper(const Model::UpdateBotAliasRequest& request, const UpdateBotAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBotLocaleAsyncHelper(const Model::UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateExportAsyncHelper(const Model::UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIntentAsyncHelper(const Model::UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSlotAsyncHelper(const Model::UpdateSlotRequest& request, const UpdateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSlotTypeAsyncHelper(const Model::UpdateSlotTypeRequest& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

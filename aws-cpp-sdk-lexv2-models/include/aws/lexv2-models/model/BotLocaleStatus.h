@@ -22,7 +22,8 @@ namespace Model
     ReadyExpressTesting,
     Failed,
     Deleting,
-    NotBuilt
+    NotBuilt,
+    Importing
   };
 
 namespace BotLocaleStatusMapper
