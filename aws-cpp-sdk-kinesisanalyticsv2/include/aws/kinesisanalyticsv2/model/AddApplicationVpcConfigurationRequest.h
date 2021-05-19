@@ -78,41 +78,45 @@ namespace Model
 
     /**
      * <p>The version of the application to which you want to add the VPC
-     * configuration. You must provide the <code>ApplicationVersionID</code> or the
-     * <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
+     * configuration. You must provide the <code>CurrentApplicationVersionId</code> or
+     * the <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
      * operation to get the current application version. If the version specified is
      * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.</p>
+     * returned. For better concurrency support, use the <code>ConditionalToken</code>
+     * parameter instead of <code>CurrentApplicationVersionId</code>.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
      * <p>The version of the application to which you want to add the VPC
-     * configuration. You must provide the <code>ApplicationVersionID</code> or the
-     * <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
+     * configuration. You must provide the <code>CurrentApplicationVersionId</code> or
+     * the <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
      * operation to get the current application version. If the version specified is
      * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.</p>
+     * returned. For better concurrency support, use the <code>ConditionalToken</code>
+     * parameter instead of <code>CurrentApplicationVersionId</code>.</p>
      */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
      * <p>The version of the application to which you want to add the VPC
-     * configuration. You must provide the <code>ApplicationVersionID</code> or the
-     * <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
+     * configuration. You must provide the <code>CurrentApplicationVersionId</code> or
+     * the <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
      * operation to get the current application version. If the version specified is
      * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.</p>
+     * returned. For better concurrency support, use the <code>ConditionalToken</code>
+     * parameter instead of <code>CurrentApplicationVersionId</code>.</p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
      * <p>The version of the application to which you want to add the VPC
-     * configuration. You must provide the <code>ApplicationVersionID</code> or the
-     * <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
+     * configuration. You must provide the <code>CurrentApplicationVersionId</code> or
+     * the <code>ConditionalToken</code>. You can use the <a>DescribeApplication</a>
      * operation to get the current application version. If the version specified is
      * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned.</p>
+     * returned. For better concurrency support, use the <code>ConditionalToken</code>
+     * parameter instead of <code>CurrentApplicationVersionId</code>.</p>
      */
     inline AddApplicationVpcConfigurationRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 
@@ -152,7 +156,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
 
@@ -160,7 +166,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
 
@@ -168,7 +176,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
 
@@ -176,7 +186,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
 
@@ -184,7 +196,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
 
@@ -192,7 +206,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline AddApplicationVpcConfigurationRequest& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
 
@@ -200,7 +216,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline AddApplicationVpcConfigurationRequest& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
 
@@ -208,7 +226,9 @@ namespace Model
      * <p>A value you use to implement strong concurrency for application updates. You
      * must provide the <code>ApplicationVersionID</code> or the
      * <code>ConditionalToken</code>. You get the application's current
-     * <code>ConditionalToken</code> using <a>DescribeApplication</a>.</p>
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline AddApplicationVpcConfigurationRequest& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
 

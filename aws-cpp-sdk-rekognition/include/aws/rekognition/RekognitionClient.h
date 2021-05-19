@@ -505,8 +505,9 @@ namespace Model
          * user-specific container. </p> <p>When you create a collection, it is associated
          * with the latest version of the face model version.</p>  <p>Collection
          * names are case-sensitive.</p>  <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * perform the <code>rekognition:CreateCollection</code> action. If you want to tag
+         * your collection, you also require permission to perform the
+         * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          */
@@ -521,8 +522,9 @@ namespace Model
          * user-specific container. </p> <p>When you create a collection, it is associated
          * with the latest version of the face model version.</p>  <p>Collection
          * names are case-sensitive.</p>  <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * perform the <code>rekognition:CreateCollection</code> action. If you want to tag
+         * your collection, you also require permission to perform the
+         * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          *
@@ -539,8 +541,9 @@ namespace Model
          * user-specific container. </p> <p>When you create a collection, it is associated
          * with the latest version of the face model version.</p>  <p>Collection
          * names are case-sensitive.</p>  <p>This operation requires permissions to
-         * perform the <code>rekognition:CreateCollection</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * perform the <code>rekognition:CreateCollection</code> action. If you want to tag
+         * your collection, you also require permission to perform the
+         * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          *
@@ -657,7 +660,10 @@ namespace Model
          * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>After you
          * have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
          * stop processing. You can delete the stream processor by calling
-         * <a>DeleteStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>DeleteStreamProcessor</a>.</p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateStreamProcessor</code> action. If you want
+         * to tag your stream processor, you also require permission to perform the
+         * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">AWS
          * API Reference</a></p>
          */
@@ -677,7 +683,10 @@ namespace Model
          * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>After you
          * have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
          * stop processing. You can delete the stream processor by calling
-         * <a>DeleteStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>DeleteStreamProcessor</a>.</p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateStreamProcessor</code> action. If you want
+         * to tag your stream processor, you also require permission to perform the
+         * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">AWS
          * API Reference</a></p>
          *
@@ -699,7 +708,10 @@ namespace Model
          * <a>StartStreamProcessor</a> with the <code>Name</code> field. </p> <p>After you
          * have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
          * stop processing. You can delete the stream processor by calling
-         * <a>DeleteStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>DeleteStreamProcessor</a>.</p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateStreamProcessor</code> action. If you want
+         * to tag your stream processor, you also require permission to perform the
+         * <code>rekognition:TagResource</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateStreamProcessor">AWS
          * API Reference</a></p>
          *
@@ -2819,7 +2831,9 @@ namespace Model
 
         /**
          * <p> Returns a list of tags in an Amazon Rekognition collection, stream
-         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * processor, or Custom Labels model. </p> <p>This operation requires permissions
+         * to perform the <code>rekognition:ListTagsForResource</code> action.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -2827,7 +2841,9 @@ namespace Model
 
         /**
          * <p> Returns a list of tags in an Amazon Rekognition collection, stream
-         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * processor, or Custom Labels model. </p> <p>This operation requires permissions
+         * to perform the <code>rekognition:ListTagsForResource</code> action.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -2837,7 +2853,9 @@ namespace Model
 
         /**
          * <p> Returns a list of tags in an Amazon Rekognition collection, stream
-         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * processor, or Custom Labels model. </p> <p>This operation requires permissions
+         * to perform the <code>rekognition:ListTagsForResource</code> action.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -3025,18 +3043,20 @@ namespace Model
          * the metadata, the response also includes a <code>similarity</code> indicating
          * how similar the face is to the input face. In the response, the operation also
          * returns the bounding box (and a confidence level that the bounding box contains
-         * a face) of the face that Amazon Rekognition used for the input image. </p>
-         * <p>For an example, Searching for a Face Using an Image in the Amazon Rekognition
-         * Developer Guide.</p> <p>The <code>QualityFilter</code> input parameter allows
-         * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. Use
-         * <code>QualityFilter</code> to set the quality bar for filtering by specifying
-         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
-         * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>.</p>  <p>To use quality filtering, you need a collection
-         * associated with version 3 of the face model or higher. To get the version of the
-         * face model associated with a collection, call <a>DescribeCollection</a>. </p>
-         *  <p>This operation requires permissions to perform the
+         * a face) of the face that Amazon Rekognition used for the input image. </p> <p>If
+         * no faces are detected in the input image, <code>SearchFacesByImage</code>
+         * returns an <code>InvalidParameterException</code> error. </p> <p>For an example,
+         * Searching for a Face Using an Image in the Amazon Rekognition Developer
+         * Guide.</p> <p>The <code>QualityFilter</code> input parameter allows you to
+         * filter out detected faces that don’t meet a required quality bar. The quality
+         * bar is based on a variety of common use cases. Use <code>QualityFilter</code> to
+         * set the quality bar for filtering by specifying <code>LOW</code>,
+         * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected
+         * faces, specify <code>NONE</code>. The default value is <code>NONE</code>.</p>
+         *  <p>To use quality filtering, you need a collection associated with
+         * version 3 of the face model or higher. To get the version of the face model
+         * associated with a collection, call <a>DescribeCollection</a>. </p> 
+         * <p>This operation requires permissions to perform the
          * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
@@ -3063,18 +3083,20 @@ namespace Model
          * the metadata, the response also includes a <code>similarity</code> indicating
          * how similar the face is to the input face. In the response, the operation also
          * returns the bounding box (and a confidence level that the bounding box contains
-         * a face) of the face that Amazon Rekognition used for the input image. </p>
-         * <p>For an example, Searching for a Face Using an Image in the Amazon Rekognition
-         * Developer Guide.</p> <p>The <code>QualityFilter</code> input parameter allows
-         * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. Use
-         * <code>QualityFilter</code> to set the quality bar for filtering by specifying
-         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
-         * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>.</p>  <p>To use quality filtering, you need a collection
-         * associated with version 3 of the face model or higher. To get the version of the
-         * face model associated with a collection, call <a>DescribeCollection</a>. </p>
-         *  <p>This operation requires permissions to perform the
+         * a face) of the face that Amazon Rekognition used for the input image. </p> <p>If
+         * no faces are detected in the input image, <code>SearchFacesByImage</code>
+         * returns an <code>InvalidParameterException</code> error. </p> <p>For an example,
+         * Searching for a Face Using an Image in the Amazon Rekognition Developer
+         * Guide.</p> <p>The <code>QualityFilter</code> input parameter allows you to
+         * filter out detected faces that don’t meet a required quality bar. The quality
+         * bar is based on a variety of common use cases. Use <code>QualityFilter</code> to
+         * set the quality bar for filtering by specifying <code>LOW</code>,
+         * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected
+         * faces, specify <code>NONE</code>. The default value is <code>NONE</code>.</p>
+         *  <p>To use quality filtering, you need a collection associated with
+         * version 3 of the face model or higher. To get the version of the face model
+         * associated with a collection, call <a>DescribeCollection</a>. </p> 
+         * <p>This operation requires permissions to perform the
          * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
@@ -3103,18 +3125,20 @@ namespace Model
          * the metadata, the response also includes a <code>similarity</code> indicating
          * how similar the face is to the input face. In the response, the operation also
          * returns the bounding box (and a confidence level that the bounding box contains
-         * a face) of the face that Amazon Rekognition used for the input image. </p>
-         * <p>For an example, Searching for a Face Using an Image in the Amazon Rekognition
-         * Developer Guide.</p> <p>The <code>QualityFilter</code> input parameter allows
-         * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. Use
-         * <code>QualityFilter</code> to set the quality bar for filtering by specifying
-         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
-         * to filter detected faces, specify <code>NONE</code>. The default value is
-         * <code>NONE</code>.</p>  <p>To use quality filtering, you need a collection
-         * associated with version 3 of the face model or higher. To get the version of the
-         * face model associated with a collection, call <a>DescribeCollection</a>. </p>
-         *  <p>This operation requires permissions to perform the
+         * a face) of the face that Amazon Rekognition used for the input image. </p> <p>If
+         * no faces are detected in the input image, <code>SearchFacesByImage</code>
+         * returns an <code>InvalidParameterException</code> error. </p> <p>For an example,
+         * Searching for a Face Using an Image in the Amazon Rekognition Developer
+         * Guide.</p> <p>The <code>QualityFilter</code> input parameter allows you to
+         * filter out detected faces that don’t meet a required quality bar. The quality
+         * bar is based on a variety of common use cases. Use <code>QualityFilter</code> to
+         * set the quality bar for filtering by specifying <code>LOW</code>,
+         * <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to filter detected
+         * faces, specify <code>NONE</code>. The default value is <code>NONE</code>.</p>
+         *  <p>To use quality filtering, you need a collection associated with
+         * version 3 of the face model or higher. To get the version of the face model
+         * associated with a collection, call <a>DescribeCollection</a>. </p> 
+         * <p>This operation requires permissions to perform the
          * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
@@ -3788,7 +3812,8 @@ namespace Model
          * <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream
          * processor, or Custom Labels model. For more information, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-         * AWS Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * AWS Resources</a>. </p> <p>This operation requires permissions to perform the
+         * <code>rekognition:TagResource</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">AWS
          * API Reference</a></p>
          */
@@ -3798,7 +3823,8 @@ namespace Model
          * <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream
          * processor, or Custom Labels model. For more information, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-         * AWS Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * AWS Resources</a>. </p> <p>This operation requires permissions to perform the
+         * <code>rekognition:TagResource</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">AWS
          * API Reference</a></p>
          *
@@ -3810,7 +3836,8 @@ namespace Model
          * <p> Adds one or more key-value tags to an Amazon Rekognition collection, stream
          * processor, or Custom Labels model. For more information, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-         * AWS Resources</a>. </p><p><h3>See Also:</h3>   <a
+         * AWS Resources</a>. </p> <p>This operation requires permissions to perform the
+         * <code>rekognition:TagResource</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/TagResource">AWS
          * API Reference</a></p>
          *
@@ -3820,7 +3847,9 @@ namespace Model
 
         /**
          * <p> Removes one or more tags from an Amazon Rekognition collection, stream
-         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * processor, or Custom Labels model. </p> <p>This operation requires permissions
+         * to perform the <code>rekognition:UntagResource</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -3828,7 +3857,9 @@ namespace Model
 
         /**
          * <p> Removes one or more tags from an Amazon Rekognition collection, stream
-         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * processor, or Custom Labels model. </p> <p>This operation requires permissions
+         * to perform the <code>rekognition:UntagResource</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -3838,7 +3869,9 @@ namespace Model
 
         /**
          * <p> Removes one or more tags from an Amazon Rekognition collection, stream
-         * processor, or Custom Labels model. </p><p><h3>See Also:</h3>   <a
+         * processor, or Custom Labels model. </p> <p>This operation requires permissions
+         * to perform the <code>rekognition:UntagResource</code> action. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UntagResource">AWS
          * API Reference</a></p>
          *

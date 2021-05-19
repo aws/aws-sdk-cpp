@@ -12,6 +12,7 @@
 #include <aws/kinesisanalyticsv2/model/ApplicationConfigurationDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationMaintenanceConfigurationDescription.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationMode.h>
 #include <aws/kinesisanalyticsv2/model/CloudWatchLoggingOptionDescription.h>
 #include <utility>
 
@@ -374,38 +375,38 @@ namespace Model
 
 
     /**
-     * <p>Provides details about the application's Java, SQL, or Scala code and
-     * starting parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline const ApplicationConfigurationDescription& GetApplicationConfigurationDescription() const{ return m_applicationConfigurationDescription; }
 
     /**
-     * <p>Provides details about the application's Java, SQL, or Scala code and
-     * starting parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline bool ApplicationConfigurationDescriptionHasBeenSet() const { return m_applicationConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>Provides details about the application's Java, SQL, or Scala code and
-     * starting parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = value; }
 
     /**
-     * <p>Provides details about the application's Java, SQL, or Scala code and
-     * starting parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = std::move(value); }
 
     /**
-     * <p>Provides details about the application's Java, SQL, or Scala code and
-     * starting parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { SetApplicationConfigurationDescription(value); return *this;}
 
     /**
-     * <p>Provides details about the application's Java, SQL, or Scala code and
-     * starting parameters.</p>
+     * <p>Describes details about the application code and starting parameters for a
+     * Kinesis Data Analytics application.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { SetApplicationConfigurationDescription(std::move(value)); return *this;}
 
@@ -593,6 +594,49 @@ namespace Model
      */
     inline ApplicationDetail& WithApplicationVersionRolledBackTo(long long value) { SetApplicationVersionRolledBackTo(value); return *this;}
 
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline ApplicationDetail& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
+
+    /**
+     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
+     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
+     * application, the mode is optional.</p>
+     */
+    inline ApplicationDetail& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationARN;
@@ -642,6 +686,9 @@ namespace Model
 
     long long m_applicationVersionRolledBackTo;
     bool m_applicationVersionRolledBackToHasBeenSet;
+
+    ApplicationMode m_applicationMode;
+    bool m_applicationModeHasBeenSet;
   };
 
 } // namespace Model

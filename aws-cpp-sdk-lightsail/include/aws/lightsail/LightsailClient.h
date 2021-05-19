@@ -5092,14 +5092,16 @@ namespace Model
         virtual void GetRelationalDatabasesAsync(const Model::GetRelationalDatabasesRequest& request, const GetRelationalDatabasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a specific static IP.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about an Amazon Lightsail static IP.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">AWS
          * API Reference</a></p>
          */
         virtual Model::GetStaticIpOutcome GetStaticIp(const Model::GetStaticIpRequest& request) const;
 
         /**
-         * <p>Returns information about a specific static IP.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about an Amazon Lightsail static IP.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">AWS
          * API Reference</a></p>
          *
@@ -5108,7 +5110,8 @@ namespace Model
         virtual Model::GetStaticIpOutcomeCallable GetStaticIpCallable(const Model::GetStaticIpRequest& request) const;
 
         /**
-         * <p>Returns information about a specific static IP.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about an Amazon Lightsail static IP.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetStaticIp">AWS
          * API Reference</a></p>
          *

@@ -439,6 +439,55 @@ namespace Model
      */
     inline ProjectVersionDescription& WithManifestSummary(GroundTruthManifest&& value) { SetManifestSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifer for the AWS Key Management Service (AWS KMS) customer master
+     * key that was used to encrypt the model during training. </p>
+     */
+    inline ProjectVersionDescription& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_projectVersionArn;
@@ -476,6 +525,9 @@ namespace Model
 
     GroundTruthManifest m_manifestSummary;
     bool m_manifestSummaryHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

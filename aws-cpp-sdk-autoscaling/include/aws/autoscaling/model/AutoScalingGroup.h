@@ -297,6 +297,31 @@ namespace Model
 
 
     /**
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline int GetPredictedCapacity() const{ return m_predictedCapacity; }
+
+    /**
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline bool PredictedCapacityHasBeenSet() const { return m_predictedCapacityHasBeenSet; }
+
+    /**
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline void SetPredictedCapacity(int value) { m_predictedCapacityHasBeenSet = true; m_predictedCapacity = value; }
+
+    /**
+     * <p>The predicted capacity of the group when it has a predictive scaling
+     * policy.</p>
+     */
+    inline AutoScalingGroup& WithPredictedCapacity(int value) { SetPredictedCapacity(value); return *this;}
+
+
+    /**
      * <p>The duration of the default cooldown period, in seconds.</p>
      */
     inline int GetDefaultCooldown() const{ return m_defaultCooldown; }
@@ -1130,6 +1155,9 @@ namespace Model
 
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
+
+    int m_predictedCapacity;
+    bool m_predictedCapacityHasBeenSet;
 
     int m_defaultCooldown;
     bool m_defaultCooldownHasBeenSet;

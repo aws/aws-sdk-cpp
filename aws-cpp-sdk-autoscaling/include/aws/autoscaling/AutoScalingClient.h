@@ -45,6 +45,7 @@
 #include <aws/autoscaling/model/DetachLoadBalancersResult.h>
 #include <aws/autoscaling/model/EnterStandbyResult.h>
 #include <aws/autoscaling/model/ExitStandbyResult.h>
+#include <aws/autoscaling/model/GetPredictiveScalingForecastResult.h>
 #include <aws/autoscaling/model/PutLifecycleHookResult.h>
 #include <aws/autoscaling/model/PutScalingPolicyResult.h>
 #include <aws/autoscaling/model/PutWarmPoolResult.h>
@@ -144,6 +145,7 @@ namespace Model
         class EnterStandbyRequest;
         class ExecutePolicyRequest;
         class ExitStandbyRequest;
+        class GetPredictiveScalingForecastRequest;
         class PutLifecycleHookRequest;
         class PutNotificationConfigurationRequest;
         class PutScalingPolicyRequest;
@@ -205,6 +207,7 @@ namespace Model
         typedef Aws::Utils::Outcome<EnterStandbyResult, AutoScalingError> EnterStandbyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> ExecutePolicyOutcome;
         typedef Aws::Utils::Outcome<ExitStandbyResult, AutoScalingError> ExitStandbyOutcome;
+        typedef Aws::Utils::Outcome<GetPredictiveScalingForecastResult, AutoScalingError> GetPredictiveScalingForecastOutcome;
         typedef Aws::Utils::Outcome<PutLifecycleHookResult, AutoScalingError> PutLifecycleHookOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, AutoScalingError> PutNotificationConfigurationOutcome;
         typedef Aws::Utils::Outcome<PutScalingPolicyResult, AutoScalingError> PutScalingPolicyOutcome;
@@ -266,6 +269,7 @@ namespace Model
         typedef std::future<EnterStandbyOutcome> EnterStandbyOutcomeCallable;
         typedef std::future<ExecutePolicyOutcome> ExecutePolicyOutcomeCallable;
         typedef std::future<ExitStandbyOutcome> ExitStandbyOutcomeCallable;
+        typedef std::future<GetPredictiveScalingForecastOutcome> GetPredictiveScalingForecastOutcomeCallable;
         typedef std::future<PutLifecycleHookOutcome> PutLifecycleHookOutcomeCallable;
         typedef std::future<PutNotificationConfigurationOutcome> PutNotificationConfigurationOutcomeCallable;
         typedef std::future<PutScalingPolicyOutcome> PutScalingPolicyOutcomeCallable;
@@ -330,6 +334,7 @@ namespace Model
     typedef std::function<void(const AutoScalingClient*, const Model::EnterStandbyRequest&, const Model::EnterStandbyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnterStandbyResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::ExecutePolicyRequest&, const Model::ExecutePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecutePolicyResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::ExitStandbyRequest&, const Model::ExitStandbyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExitStandbyResponseReceivedHandler;
+    typedef std::function<void(const AutoScalingClient*, const Model::GetPredictiveScalingForecastRequest&, const Model::GetPredictiveScalingForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPredictiveScalingForecastResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::PutLifecycleHookRequest&, const Model::PutLifecycleHookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleHookResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::PutNotificationConfigurationRequest&, const Model::PutNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationConfigurationResponseReceivedHandler;
     typedef std::function<void(const AutoScalingClient*, const Model::PutScalingPolicyRequest&, const Model::PutScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutScalingPolicyResponseReceivedHandler;
@@ -348,12 +353,14 @@ namespace Model
   /**
    * <fullname>Amazon EC2 Auto Scaling</fullname> <p>Amazon EC2 Auto Scaling is
    * designed to automatically launch or terminate EC2 instances based on
-   * user-defined scaling policies, scheduled actions, and health checks. Use this
-   * service with AWS Auto Scaling, Amazon CloudWatch, and Elastic Load
-   * Balancing.</p> <p>For more information, including information about granting IAM
-   * users required permissions for Amazon EC2 Auto Scaling actions, see the <a
+   * user-defined scaling policies, scheduled actions, and health checks.</p> <p>For
+   * more information about Amazon EC2 Auto Scaling, see the <a
    * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon
-   * EC2 Auto Scaling User Guide</a>.</p>
+   * EC2 Auto Scaling User Guide</a>. For information about granting IAM users
+   * required permissions for calls to Amazon EC2 Auto Scaling, see <a
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/ec2-auto-scaling-api-permissions.html">Granting
+   * IAM users required permissions for Amazon EC2 Auto Scaling resources</a> in the
+   * <i>Amazon EC2 Auto Scaling API Reference</i>.</p>
    */
   class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient
   {
@@ -1264,14 +1271,20 @@ namespace Model
         virtual void DescribeAdjustmentTypesAsync(const Model::DescribeAdjustmentTypesRequest& request, const DescribeAdjustmentTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more Auto Scaling groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more Auto Scaling groups.</p> <p>This operation returns
+         * information about instances in Auto Scaling groups. To retrieve information
+         * about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAutoScalingGroupsOutcome DescribeAutoScalingGroups(const Model::DescribeAutoScalingGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more Auto Scaling groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more Auto Scaling groups.</p> <p>This operation returns
+         * information about instances in Auto Scaling groups. To retrieve information
+         * about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">AWS
          * API Reference</a></p>
          *
@@ -1280,7 +1293,10 @@ namespace Model
         virtual Model::DescribeAutoScalingGroupsOutcomeCallable DescribeAutoScalingGroupsCallable(const Model::DescribeAutoScalingGroupsRequest& request) const;
 
         /**
-         * <p>Describes one or more Auto Scaling groups.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more Auto Scaling groups.</p> <p>This operation returns
+         * information about instances in Auto Scaling groups. To retrieve information
+         * about the instances in a warm pool, you must call the <a>DescribeWarmPool</a>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAutoScalingGroups">AWS
          * API Reference</a></p>
          *
@@ -2196,6 +2212,61 @@ namespace Model
         virtual void ExitStandbyAsync(const Model::ExitStandbyRequest& request, const ExitStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the forecast data for a predictive scaling policy.</p> <p>Load
+         * forecasts are predictions of the hourly load values using historical load data
+         * from CloudWatch and an analysis of historical trends. Capacity forecasts are
+         * represented as predicted values for the minimum capacity that is needed on an
+         * hourly basis, based on the hourly load forecast.</p> <p>A minimum of 24 hours of
+         * data is required to create the initial forecasts. However, having a full 14 days
+         * of historical data results in more accurate forecasts.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+         * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/GetPredictiveScalingForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPredictiveScalingForecastOutcome GetPredictiveScalingForecast(const Model::GetPredictiveScalingForecastRequest& request) const;
+
+        /**
+         * <p>Retrieves the forecast data for a predictive scaling policy.</p> <p>Load
+         * forecasts are predictions of the hourly load values using historical load data
+         * from CloudWatch and an analysis of historical trends. Capacity forecasts are
+         * represented as predicted values for the minimum capacity that is needed on an
+         * hourly basis, based on the hourly load forecast.</p> <p>A minimum of 24 hours of
+         * data is required to create the initial forecasts. However, having a full 14 days
+         * of historical data results in more accurate forecasts.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+         * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/GetPredictiveScalingForecast">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPredictiveScalingForecastOutcomeCallable GetPredictiveScalingForecastCallable(const Model::GetPredictiveScalingForecastRequest& request) const;
+
+        /**
+         * <p>Retrieves the forecast data for a predictive scaling policy.</p> <p>Load
+         * forecasts are predictions of the hourly load values using historical load data
+         * from CloudWatch and an analysis of historical trends. Capacity forecasts are
+         * represented as predicted values for the minimum capacity that is needed on an
+         * hourly basis, based on the hourly load forecast.</p> <p>A minimum of 24 hours of
+         * data is required to create the initial forecasts. However, having a full 14 days
+         * of historical data results in more accurate forecasts.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+         * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/GetPredictiveScalingForecast">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPredictiveScalingForecastAsync(const Model::GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
          * <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an
          * instance when the instance launches (before it is put into service) or as the
@@ -2345,28 +2416,42 @@ namespace Model
         virtual void PutNotificationConfigurationAsync(const Model::PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a scaling policy for an Auto Scaling group.</p> <p>For
-         * more information about using scaling policies to scale your Auto Scaling group,
-         * see <a
+         * <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling
+         * policies are used to scale an Auto Scaling group based on configurable metrics.
+         * If no policies are defined, the dynamic scaling and predictive scaling features
+         * are not used. </p> <p>For more information about using dynamic scaling, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
          * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
          * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>For more information about using predictive scaling, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+         * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>You can view the scaling policies for an Auto Scaling group
+         * using the <a>DescribePolicies</a> API call. If you are no longer using a scaling
+         * policy, you can delete it by calling the <a>DeletePolicy</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::PutScalingPolicyOutcome PutScalingPolicy(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a scaling policy for an Auto Scaling group.</p> <p>For
-         * more information about using scaling policies to scale your Auto Scaling group,
-         * see <a
+         * <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling
+         * policies are used to scale an Auto Scaling group based on configurable metrics.
+         * If no policies are defined, the dynamic scaling and predictive scaling features
+         * are not used. </p> <p>For more information about using dynamic scaling, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
          * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
          * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>For more information about using predictive scaling, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+         * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>You can view the scaling policies for an Auto Scaling group
+         * using the <a>DescribePolicies</a> API call. If you are no longer using a scaling
+         * policy, you can delete it by calling the <a>DeletePolicy</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">AWS
          * API Reference</a></p>
          *
@@ -2375,14 +2460,21 @@ namespace Model
         virtual Model::PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request) const;
 
         /**
-         * <p>Creates or updates a scaling policy for an Auto Scaling group.</p> <p>For
-         * more information about using scaling policies to scale your Auto Scaling group,
-         * see <a
+         * <p>Creates or updates a scaling policy for an Auto Scaling group. Scaling
+         * policies are used to scale an Auto Scaling group based on configurable metrics.
+         * If no policies are defined, the dynamic scaling and predictive scaling features
+         * are not used. </p> <p>For more information about using dynamic scaling, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html">Target
          * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html">Step
          * and simple scaling policies</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>For more information about using predictive scaling, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-predictive-scaling.html">Predictive
+         * scaling for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>You can view the scaling policies for an Auto Scaling group
+         * using the <a>DescribePolicies</a> API call. If you are no longer using a scaling
+         * policy, you can delete it by calling the <a>DeletePolicy</a> API.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">AWS
          * API Reference</a></p>
          *
@@ -2394,8 +2486,11 @@ namespace Model
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
-         * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can
+         * view the scheduled actions for an Auto Scaling group using the
+         * <a>DescribeScheduledActions</a> API call. If you are no longer using a scheduled
+         * action, you can delete it by calling the <a>DeleteScheduledAction</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">AWS
          * API Reference</a></p>
          */
@@ -2405,8 +2500,11 @@ namespace Model
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
-         * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can
+         * view the scheduled actions for an Auto Scaling group using the
+         * <a>DescribeScheduledActions</a> API call. If you are no longer using a scheduled
+         * action, you can delete it by calling the <a>DeleteScheduledAction</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">AWS
          * API Reference</a></p>
          *
@@ -2418,8 +2516,11 @@ namespace Model
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>
          * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
-         * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> <p>You can
+         * view the scheduled actions for an Auto Scaling group using the
+         * <a>DescribeScheduledActions</a> API call. If you are no longer using a scheduled
+         * action, you can delete it by calling the <a>DeleteScheduledAction</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">AWS
          * API Reference</a></p>
          *
@@ -2428,10 +2529,11 @@ namespace Model
         virtual void PutScheduledUpdateGroupActionAsync(const Model::PutScheduledUpdateGroupActionRequest& request, const PutScheduledUpdateGroupActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool
-         * of pre-initialized EC2 instances that sits alongside the Auto Scaling group.
-         * Whenever your application needs to scale out, the Auto Scaling group can draw on
-         * the warm pool to meet its new desired capacity. For more information, see <a
+         * <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm
+         * pool is a pool of pre-initialized EC2 instances that sits alongside the Auto
+         * Scaling group. Whenever your application needs to scale out, the Auto Scaling
+         * group can draw on the warm pool to meet its new desired capacity. For more
+         * information and example configurations, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
          * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>This operation must be called from the Region in which the
@@ -2447,10 +2549,11 @@ namespace Model
         virtual Model::PutWarmPoolOutcome PutWarmPool(const Model::PutWarmPoolRequest& request) const;
 
         /**
-         * <p>Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool
-         * of pre-initialized EC2 instances that sits alongside the Auto Scaling group.
-         * Whenever your application needs to scale out, the Auto Scaling group can draw on
-         * the warm pool to meet its new desired capacity. For more information, see <a
+         * <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm
+         * pool is a pool of pre-initialized EC2 instances that sits alongside the Auto
+         * Scaling group. Whenever your application needs to scale out, the Auto Scaling
+         * group can draw on the warm pool to meet its new desired capacity. For more
+         * information and example configurations, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
          * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>This operation must be called from the Region in which the
@@ -2468,10 +2571,11 @@ namespace Model
         virtual Model::PutWarmPoolOutcomeCallable PutWarmPoolCallable(const Model::PutWarmPoolRequest& request) const;
 
         /**
-         * <p>Adds a warm pool to the specified Auto Scaling group. A warm pool is a pool
-         * of pre-initialized EC2 instances that sits alongside the Auto Scaling group.
-         * Whenever your application needs to scale out, the Auto Scaling group can draw on
-         * the warm pool to meet its new desired capacity. For more information, see <a
+         * <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm
+         * pool is a pool of pre-initialized EC2 instances that sits alongside the Auto
+         * Scaling group. Whenever your application needs to scale out, the Auto Scaling
+         * group can draw on the warm pool to meet its new desired capacity. For more
+         * information and example configurations, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm
          * pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>This operation must be called from the Region in which the
@@ -3081,6 +3185,7 @@ namespace Model
         void EnterStandbyAsyncHelper(const Model::EnterStandbyRequest& request, const EnterStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExecutePolicyAsyncHelper(const Model::ExecutePolicyRequest& request, const ExecutePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExitStandbyAsyncHelper(const Model::ExitStandbyRequest& request, const ExitStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPredictiveScalingForecastAsyncHelper(const Model::GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecycleHookAsyncHelper(const Model::PutLifecycleHookRequest& request, const PutLifecycleHookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutNotificationConfigurationAsyncHelper(const Model::PutNotificationConfigurationRequest& request, const PutNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutScalingPolicyAsyncHelper(const Model::PutScalingPolicyRequest& request, const PutScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

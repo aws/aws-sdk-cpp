@@ -286,6 +286,103 @@ namespace Model
      */
     inline CreateProjectVersionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline CreateProjectVersionRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline CreateProjectVersionRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for your AWS Key Management Service (AWS KMS) customer master
+     * key (CMK). You can supply the Amazon Resource Name (ARN) of your CMK, the ID of
+     * your CMK, or an alias for your CMK. The key is used to encrypt training and test
+     * images copied into the service for model training. Your source images are
+     * unaffected. The key is also used to encrypt training results and manifest files
+     * written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p> <p>If
+     * you don't specify a value for <code>KmsKeyId</code>, images copied into the
+     * service are encrypted using a key that AWS owns and manages.</p>
+     */
+    inline CreateProjectVersionRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -305,6 +402,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet;
   };
 
 } // namespace Model

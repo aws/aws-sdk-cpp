@@ -19,7 +19,8 @@ namespace Model
     SQL_1_0,
     FLINK_1_6,
     FLINK_1_8,
-    FLINK_1_11
+    FLINK_1_11,
+    ZEPPELIN_FLINK_1_0
   };
 
 namespace RuntimeEnvironmentMapper

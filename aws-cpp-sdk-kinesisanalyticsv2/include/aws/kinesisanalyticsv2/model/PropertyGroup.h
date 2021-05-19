@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Property key-value pairs passed into a Flink-based Kinesis Data Analytics
-   * application.</p><p><h3>See Also:</h3>   <a
+   * <p>Property key-value pairs passed into an application.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/PropertyGroup">AWS
    * API Reference</a></p>
    */

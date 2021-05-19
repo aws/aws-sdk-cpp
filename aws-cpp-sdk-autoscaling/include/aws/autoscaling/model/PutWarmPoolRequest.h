@@ -79,82 +79,86 @@ namespace Model
 
 
     /**
-     * <p>Specifies the total maximum number of instances that are allowed to be in the
-     * warm pool or in any state except <code>Terminated</code> for the Auto Scaling
-     * group. This is an optional property. Specify it only if the warm pool size
-     * should not be determined by the difference between the group's maximum capacity
-     * and its desired capacity. </p>  <p>Amazon EC2 Auto Scaling will
-     * launch and maintain either the difference between the group's maximum capacity
-     * and its desired capacity, if a value for <code>MaxGroupPreparedCapacity</code>
-     * is not specified, or the difference between the
-     * <code>MaxGroupPreparedCapacity</code> and the desired capacity, if a value for
-     * <code>MaxGroupPreparedCapacity</code> is specified. </p> <p>The size of the warm
-     * pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and
-     * <code>MinSize</code> are set to the same value does the warm pool have an
-     * absolute size.</p>  <p>If the desired capacity of the Auto Scaling
-     * group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of
-     * the warm pool is 0. To remove a value that you previously set, include the
-     * property but specify -1 for the value. </p>
+     * <p>Specifies the maximum number of instances that are allowed to be in the warm
+     * pool or in any state except <code>Terminated</code> for the Auto Scaling group.
+     * This is an optional property. Specify it only if you do not want the warm pool
+     * size to be determined by the difference between the group's maximum capacity and
+     * its desired capacity. </p>  <p>If a value for
+     * <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling
+     * launches and maintains the difference between the group's maximum capacity and
+     * its desired capacity. If you specify a value for
+     * <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the
+     * difference between the <code>MaxGroupPreparedCapacity</code> and the desired
+     * capacity instead. </p> <p>The size of the warm pool is dynamic. Only when
+     * <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the
+     * same value does the warm pool have an absolute size.</p>  <p>If the
+     * desired capacity of the Auto Scaling group is higher than the
+     * <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0,
+     * unless you specify a value for <code>MinSize</code>. To remove a value that you
+     * previously set, include the property but specify -1 for the value. </p>
      */
     inline int GetMaxGroupPreparedCapacity() const{ return m_maxGroupPreparedCapacity; }
 
     /**
-     * <p>Specifies the total maximum number of instances that are allowed to be in the
-     * warm pool or in any state except <code>Terminated</code> for the Auto Scaling
-     * group. This is an optional property. Specify it only if the warm pool size
-     * should not be determined by the difference between the group's maximum capacity
-     * and its desired capacity. </p>  <p>Amazon EC2 Auto Scaling will
-     * launch and maintain either the difference between the group's maximum capacity
-     * and its desired capacity, if a value for <code>MaxGroupPreparedCapacity</code>
-     * is not specified, or the difference between the
-     * <code>MaxGroupPreparedCapacity</code> and the desired capacity, if a value for
-     * <code>MaxGroupPreparedCapacity</code> is specified. </p> <p>The size of the warm
-     * pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and
-     * <code>MinSize</code> are set to the same value does the warm pool have an
-     * absolute size.</p>  <p>If the desired capacity of the Auto Scaling
-     * group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of
-     * the warm pool is 0. To remove a value that you previously set, include the
-     * property but specify -1 for the value. </p>
+     * <p>Specifies the maximum number of instances that are allowed to be in the warm
+     * pool or in any state except <code>Terminated</code> for the Auto Scaling group.
+     * This is an optional property. Specify it only if you do not want the warm pool
+     * size to be determined by the difference between the group's maximum capacity and
+     * its desired capacity. </p>  <p>If a value for
+     * <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling
+     * launches and maintains the difference between the group's maximum capacity and
+     * its desired capacity. If you specify a value for
+     * <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the
+     * difference between the <code>MaxGroupPreparedCapacity</code> and the desired
+     * capacity instead. </p> <p>The size of the warm pool is dynamic. Only when
+     * <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the
+     * same value does the warm pool have an absolute size.</p>  <p>If the
+     * desired capacity of the Auto Scaling group is higher than the
+     * <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0,
+     * unless you specify a value for <code>MinSize</code>. To remove a value that you
+     * previously set, include the property but specify -1 for the value. </p>
      */
     inline bool MaxGroupPreparedCapacityHasBeenSet() const { return m_maxGroupPreparedCapacityHasBeenSet; }
 
     /**
-     * <p>Specifies the total maximum number of instances that are allowed to be in the
-     * warm pool or in any state except <code>Terminated</code> for the Auto Scaling
-     * group. This is an optional property. Specify it only if the warm pool size
-     * should not be determined by the difference between the group's maximum capacity
-     * and its desired capacity. </p>  <p>Amazon EC2 Auto Scaling will
-     * launch and maintain either the difference between the group's maximum capacity
-     * and its desired capacity, if a value for <code>MaxGroupPreparedCapacity</code>
-     * is not specified, or the difference between the
-     * <code>MaxGroupPreparedCapacity</code> and the desired capacity, if a value for
-     * <code>MaxGroupPreparedCapacity</code> is specified. </p> <p>The size of the warm
-     * pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and
-     * <code>MinSize</code> are set to the same value does the warm pool have an
-     * absolute size.</p>  <p>If the desired capacity of the Auto Scaling
-     * group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of
-     * the warm pool is 0. To remove a value that you previously set, include the
-     * property but specify -1 for the value. </p>
+     * <p>Specifies the maximum number of instances that are allowed to be in the warm
+     * pool or in any state except <code>Terminated</code> for the Auto Scaling group.
+     * This is an optional property. Specify it only if you do not want the warm pool
+     * size to be determined by the difference between the group's maximum capacity and
+     * its desired capacity. </p>  <p>If a value for
+     * <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling
+     * launches and maintains the difference between the group's maximum capacity and
+     * its desired capacity. If you specify a value for
+     * <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the
+     * difference between the <code>MaxGroupPreparedCapacity</code> and the desired
+     * capacity instead. </p> <p>The size of the warm pool is dynamic. Only when
+     * <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the
+     * same value does the warm pool have an absolute size.</p>  <p>If the
+     * desired capacity of the Auto Scaling group is higher than the
+     * <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0,
+     * unless you specify a value for <code>MinSize</code>. To remove a value that you
+     * previously set, include the property but specify -1 for the value. </p>
      */
     inline void SetMaxGroupPreparedCapacity(int value) { m_maxGroupPreparedCapacityHasBeenSet = true; m_maxGroupPreparedCapacity = value; }
 
     /**
-     * <p>Specifies the total maximum number of instances that are allowed to be in the
-     * warm pool or in any state except <code>Terminated</code> for the Auto Scaling
-     * group. This is an optional property. Specify it only if the warm pool size
-     * should not be determined by the difference between the group's maximum capacity
-     * and its desired capacity. </p>  <p>Amazon EC2 Auto Scaling will
-     * launch and maintain either the difference between the group's maximum capacity
-     * and its desired capacity, if a value for <code>MaxGroupPreparedCapacity</code>
-     * is not specified, or the difference between the
-     * <code>MaxGroupPreparedCapacity</code> and the desired capacity, if a value for
-     * <code>MaxGroupPreparedCapacity</code> is specified. </p> <p>The size of the warm
-     * pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code> and
-     * <code>MinSize</code> are set to the same value does the warm pool have an
-     * absolute size.</p>  <p>If the desired capacity of the Auto Scaling
-     * group is higher than the <code>MaxGroupPreparedCapacity</code>, the capacity of
-     * the warm pool is 0. To remove a value that you previously set, include the
-     * property but specify -1 for the value. </p>
+     * <p>Specifies the maximum number of instances that are allowed to be in the warm
+     * pool or in any state except <code>Terminated</code> for the Auto Scaling group.
+     * This is an optional property. Specify it only if you do not want the warm pool
+     * size to be determined by the difference between the group's maximum capacity and
+     * its desired capacity. </p>  <p>If a value for
+     * <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling
+     * launches and maintains the difference between the group's maximum capacity and
+     * its desired capacity. If you specify a value for
+     * <code>MaxGroupPreparedCapacity</code>, Amazon EC2 Auto Scaling uses the
+     * difference between the <code>MaxGroupPreparedCapacity</code> and the desired
+     * capacity instead. </p> <p>The size of the warm pool is dynamic. Only when
+     * <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the
+     * same value does the warm pool have an absolute size.</p>  <p>If the
+     * desired capacity of the Auto Scaling group is higher than the
+     * <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0,
+     * unless you specify a value for <code>MinSize</code>. To remove a value that you
+     * previously set, include the property but specify -1 for the value. </p>
      */
     inline PutWarmPoolRequest& WithMaxGroupPreparedCapacity(int value) { SetMaxGroupPreparedCapacity(value); return *this;}
 
@@ -189,38 +193,38 @@ namespace Model
 
 
     /**
-     * <p>Sets the instance state to transition to after the lifecycle hooks finish.
-     * Valid values are: <code>Stopped</code> (default) or <code>Running</code>.</p>
+     * <p>Sets the instance state to transition to after the lifecycle actions are
+     * complete. Default is <code>Stopped</code>.</p>
      */
     inline const WarmPoolState& GetPoolState() const{ return m_poolState; }
 
     /**
-     * <p>Sets the instance state to transition to after the lifecycle hooks finish.
-     * Valid values are: <code>Stopped</code> (default) or <code>Running</code>.</p>
+     * <p>Sets the instance state to transition to after the lifecycle actions are
+     * complete. Default is <code>Stopped</code>.</p>
      */
     inline bool PoolStateHasBeenSet() const { return m_poolStateHasBeenSet; }
 
     /**
-     * <p>Sets the instance state to transition to after the lifecycle hooks finish.
-     * Valid values are: <code>Stopped</code> (default) or <code>Running</code>.</p>
+     * <p>Sets the instance state to transition to after the lifecycle actions are
+     * complete. Default is <code>Stopped</code>.</p>
      */
     inline void SetPoolState(const WarmPoolState& value) { m_poolStateHasBeenSet = true; m_poolState = value; }
 
     /**
-     * <p>Sets the instance state to transition to after the lifecycle hooks finish.
-     * Valid values are: <code>Stopped</code> (default) or <code>Running</code>.</p>
+     * <p>Sets the instance state to transition to after the lifecycle actions are
+     * complete. Default is <code>Stopped</code>.</p>
      */
     inline void SetPoolState(WarmPoolState&& value) { m_poolStateHasBeenSet = true; m_poolState = std::move(value); }
 
     /**
-     * <p>Sets the instance state to transition to after the lifecycle hooks finish.
-     * Valid values are: <code>Stopped</code> (default) or <code>Running</code>.</p>
+     * <p>Sets the instance state to transition to after the lifecycle actions are
+     * complete. Default is <code>Stopped</code>.</p>
      */
     inline PutWarmPoolRequest& WithPoolState(const WarmPoolState& value) { SetPoolState(value); return *this;}
 
     /**
-     * <p>Sets the instance state to transition to after the lifecycle hooks finish.
-     * Valid values are: <code>Stopped</code> (default) or <code>Running</code>.</p>
+     * <p>Sets the instance state to transition to after the lifecycle actions are
+     * complete. Default is <code>Stopped</code>.</p>
      */
     inline PutWarmPoolRequest& WithPoolState(WarmPoolState&& value) { SetPoolState(std::move(value)); return *this;}
 

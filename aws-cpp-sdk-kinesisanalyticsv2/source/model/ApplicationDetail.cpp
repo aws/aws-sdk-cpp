@@ -40,7 +40,9 @@ ApplicationDetail::ApplicationDetail() :
     m_applicationVersionRolledBackFromHasBeenSet(false),
     m_conditionalTokenHasBeenSet(false),
     m_applicationVersionRolledBackTo(0),
-    m_applicationVersionRolledBackToHasBeenSet(false)
+    m_applicationVersionRolledBackToHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ ApplicationDetail::ApplicationDetail(JsonView jsonValue) :
     m_applicationVersionRolledBackFromHasBeenSet(false),
     m_conditionalTokenHasBeenSet(false),
     m_applicationVersionRolledBackTo(0),
-    m_applicationVersionRolledBackToHasBeenSet(false)
+    m_applicationVersionRolledBackToHasBeenSet(false),
+    m_applicationMode(ApplicationMode::NOT_SET),
+    m_applicationModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -188,6 +192,13 @@ ApplicationDetail& ApplicationDetail::operator =(JsonView jsonValue)
     m_applicationVersionRolledBackToHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ApplicationMode"))
+  {
+    m_applicationMode = ApplicationModeMapper::GetApplicationModeForName(jsonValue.GetString("ApplicationMode"));
+
+    m_applicationModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -290,6 +301,11 @@ JsonValue ApplicationDetail::Jsonize() const
   {
    payload.WithInt64("ApplicationVersionRolledBackTo", m_applicationVersionRolledBackTo);
 
+  }
+
+  if(m_applicationModeHasBeenSet)
+  {
+   payload.WithString("ApplicationMode", ApplicationModeMapper::GetNameForApplicationMode(m_applicationMode));
   }
 
   return payload;

@@ -66,6 +66,7 @@
 #include <aws/autoscaling/model/EnterStandbyRequest.h>
 #include <aws/autoscaling/model/ExecutePolicyRequest.h>
 #include <aws/autoscaling/model/ExitStandbyRequest.h>
+#include <aws/autoscaling/model/GetPredictiveScalingForecastRequest.h>
 #include <aws/autoscaling/model/PutLifecycleHookRequest.h>
 #include <aws/autoscaling/model/PutNotificationConfigurationRequest.h>
 #include <aws/autoscaling/model/PutScalingPolicyRequest.h>
@@ -1405,6 +1406,33 @@ void AutoScalingClient::ExitStandbyAsync(const ExitStandbyRequest& request, cons
 void AutoScalingClient::ExitStandbyAsyncHelper(const ExitStandbyRequest& request, const ExitStandbyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ExitStandby(request), context);
+}
+
+GetPredictiveScalingForecastOutcome AutoScalingClient::GetPredictiveScalingForecast(const GetPredictiveScalingForecastRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return GetPredictiveScalingForecastOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetPredictiveScalingForecastOutcomeCallable AutoScalingClient::GetPredictiveScalingForecastCallable(const GetPredictiveScalingForecastRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPredictiveScalingForecastOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPredictiveScalingForecast(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingClient::GetPredictiveScalingForecastAsync(const GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPredictiveScalingForecastAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingClient::GetPredictiveScalingForecastAsyncHelper(const GetPredictiveScalingForecastRequest& request, const GetPredictiveScalingForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPredictiveScalingForecast(request), context);
 }
 
 PutLifecycleHookOutcome AutoScalingClient::PutLifecycleHook(const PutLifecycleHookRequest& request) const

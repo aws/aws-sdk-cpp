@@ -41,7 +41,8 @@ ScalingPolicy::ScalingPolicy() :
     m_alarmsHasBeenSet(false),
     m_targetTrackingConfigurationHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_predictiveScalingConfigurationHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ ScalingPolicy::ScalingPolicy(const XmlNode& xmlNode) :
     m_alarmsHasBeenSet(false),
     m_targetTrackingConfigurationHasBeenSet(false),
     m_enabled(false),
-    m_enabledHasBeenSet(false)
+    m_enabledHasBeenSet(false),
+    m_predictiveScalingConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -179,6 +181,12 @@ ScalingPolicy& ScalingPolicy::operator =(const XmlNode& xmlNode)
       m_enabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enabledNode.GetText()).c_str()).c_str());
       m_enabledHasBeenSet = true;
     }
+    XmlNode predictiveScalingConfigurationNode = resultNode.FirstChild("PredictiveScalingConfiguration");
+    if(!predictiveScalingConfigurationNode.IsNull())
+    {
+      m_predictiveScalingConfiguration = predictiveScalingConfigurationNode;
+      m_predictiveScalingConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -275,6 +283,13 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Enabled=" << std::boolalpha << m_enabled << "&";
   }
 
+  if(m_predictiveScalingConfigurationHasBeenSet)
+  {
+      Aws::StringStream predictiveScalingConfigurationLocationAndMemberSs;
+      predictiveScalingConfigurationLocationAndMemberSs << location << index << locationValue << ".PredictiveScalingConfiguration";
+      m_predictiveScalingConfiguration.OutputToStream(oStream, predictiveScalingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -352,6 +367,12 @@ void ScalingPolicy::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_enabledHasBeenSet)
   {
       oStream << location << ".Enabled=" << std::boolalpha << m_enabled << "&";
+  }
+  if(m_predictiveScalingConfigurationHasBeenSet)
+  {
+      Aws::String predictiveScalingConfigurationLocationAndMember(location);
+      predictiveScalingConfigurationLocationAndMember += ".PredictiveScalingConfiguration";
+      m_predictiveScalingConfiguration.OutputToStream(oStream, predictiveScalingConfigurationLocationAndMember.c_str());
   }
 }
 

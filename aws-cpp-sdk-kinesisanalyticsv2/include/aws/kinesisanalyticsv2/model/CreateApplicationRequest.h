@@ -10,6 +10,7 @@
 #include <aws/kinesisanalyticsv2/model/RuntimeEnvironment.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalyticsv2/model/ApplicationMode.h>
 #include <aws/kinesisanalyticsv2/model/CloudWatchLoggingOption.h>
 #include <aws/kinesisanalyticsv2/model/Tag.h>
 #include <utility>
@@ -375,6 +376,49 @@ namespace Model
      */
     inline CreateApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
+     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <code>INTERACTIVE</code> mode.</p>
+     */
+    inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
+
+    /**
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
+     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <code>INTERACTIVE</code> mode.</p>
+     */
+    inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
+
+    /**
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
+     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <code>INTERACTIVE</code> mode.</p>
+     */
+    inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
+
+    /**
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
+     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <code>INTERACTIVE</code> mode.</p>
+     */
+    inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
+
+    /**
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
+     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <code>INTERACTIVE</code> mode.</p>
+     */
+    inline CreateApplicationRequest& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
+
+    /**
+     * <p>Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics Studio
+     * notebook. To create a Kinesis Data Analytics Studio notebook, use the
+     * <code>INTERACTIVE</code> mode.</p>
+     */
+    inline CreateApplicationRequest& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -397,6 +441,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ApplicationMode m_applicationMode;
+    bool m_applicationModeHasBeenSet;
   };
 
 } // namespace Model

@@ -41,26 +41,26 @@ namespace Model
 
 
     /**
-     * <p>The total maximum number of instances that are allowed to be in the warm pool
-     * or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
+     * <p>The maximum number of instances that are allowed to be in the warm pool or in
+     * any state except <code>Terminated</code> for the Auto Scaling group.</p>
      */
     inline int GetMaxGroupPreparedCapacity() const{ return m_maxGroupPreparedCapacity; }
 
     /**
-     * <p>The total maximum number of instances that are allowed to be in the warm pool
-     * or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
+     * <p>The maximum number of instances that are allowed to be in the warm pool or in
+     * any state except <code>Terminated</code> for the Auto Scaling group.</p>
      */
     inline bool MaxGroupPreparedCapacityHasBeenSet() const { return m_maxGroupPreparedCapacityHasBeenSet; }
 
     /**
-     * <p>The total maximum number of instances that are allowed to be in the warm pool
-     * or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
+     * <p>The maximum number of instances that are allowed to be in the warm pool or in
+     * any state except <code>Terminated</code> for the Auto Scaling group.</p>
      */
     inline void SetMaxGroupPreparedCapacity(int value) { m_maxGroupPreparedCapacityHasBeenSet = true; m_maxGroupPreparedCapacity = value; }
 
     /**
-     * <p>The total maximum number of instances that are allowed to be in the warm pool
-     * or in any state except <code>Terminated</code> for the Auto Scaling group.</p>
+     * <p>The maximum number of instances that are allowed to be in the warm pool or in
+     * any state except <code>Terminated</code> for the Auto Scaling group.</p>
      */
     inline WarmPoolConfiguration& WithMaxGroupPreparedCapacity(int value) { SetMaxGroupPreparedCapacity(value); return *this;}
 
@@ -87,38 +87,38 @@ namespace Model
 
 
     /**
-     * <p>The instance state to transition to after the lifecycle actions are complete:
-     * <code>Stopped</code> or <code>Running</code>.</p>
+     * <p>The instance state to transition to after the lifecycle actions are
+     * complete.</p>
      */
     inline const WarmPoolState& GetPoolState() const{ return m_poolState; }
 
     /**
-     * <p>The instance state to transition to after the lifecycle actions are complete:
-     * <code>Stopped</code> or <code>Running</code>.</p>
+     * <p>The instance state to transition to after the lifecycle actions are
+     * complete.</p>
      */
     inline bool PoolStateHasBeenSet() const { return m_poolStateHasBeenSet; }
 
     /**
-     * <p>The instance state to transition to after the lifecycle actions are complete:
-     * <code>Stopped</code> or <code>Running</code>.</p>
+     * <p>The instance state to transition to after the lifecycle actions are
+     * complete.</p>
      */
     inline void SetPoolState(const WarmPoolState& value) { m_poolStateHasBeenSet = true; m_poolState = value; }
 
     /**
-     * <p>The instance state to transition to after the lifecycle actions are complete:
-     * <code>Stopped</code> or <code>Running</code>.</p>
+     * <p>The instance state to transition to after the lifecycle actions are
+     * complete.</p>
      */
     inline void SetPoolState(WarmPoolState&& value) { m_poolStateHasBeenSet = true; m_poolState = std::move(value); }
 
     /**
-     * <p>The instance state to transition to after the lifecycle actions are complete:
-     * <code>Stopped</code> or <code>Running</code>.</p>
+     * <p>The instance state to transition to after the lifecycle actions are
+     * complete.</p>
      */
     inline WarmPoolConfiguration& WithPoolState(const WarmPoolState& value) { SetPoolState(value); return *this;}
 
     /**
-     * <p>The instance state to transition to after the lifecycle actions are complete:
-     * <code>Stopped</code> or <code>Running</code>.</p>
+     * <p>The instance state to transition to after the lifecycle actions are
+     * complete.</p>
      */
     inline WarmPoolConfiguration& WithPoolState(WarmPoolState&& value) { SetPoolState(std::move(value)); return *this;}
 

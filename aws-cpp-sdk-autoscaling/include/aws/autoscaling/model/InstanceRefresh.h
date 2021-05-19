@@ -323,8 +323,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline int GetPercentageComplete() const{ return m_percentageComplete; }
 
@@ -332,8 +332,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline bool PercentageCompleteHasBeenSet() const { return m_percentageCompleteHasBeenSet; }
 
@@ -341,8 +341,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline void SetPercentageComplete(int value) { m_percentageCompleteHasBeenSet = true; m_percentageComplete = value; }
 
@@ -350,8 +350,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline InstanceRefresh& WithPercentageComplete(int value) { SetPercentageComplete(value); return *this;}
 

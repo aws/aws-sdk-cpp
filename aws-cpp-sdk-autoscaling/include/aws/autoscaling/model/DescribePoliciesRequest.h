@@ -153,55 +153,64 @@ namespace Model
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyTypes() const{ return m_policyTypes; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline bool PolicyTypesHasBeenSet() const { return m_policyTypesHasBeenSet; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline void SetPolicyTypes(const Aws::Vector<Aws::String>& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline void SetPolicyTypes(Aws::Vector<Aws::String>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::move(value); }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& WithPolicyTypes(const Aws::Vector<Aws::String>& value) { SetPolicyTypes(value); return *this;}
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& WithPolicyTypes(Aws::Vector<Aws::String>&& value) { SetPolicyTypes(std::move(value)); return *this;}
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(const Aws::String& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(Aws::String&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
-     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     * <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+     * <code>PredictiveScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(const char* value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
