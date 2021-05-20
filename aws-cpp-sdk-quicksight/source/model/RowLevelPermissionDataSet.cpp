@@ -22,7 +22,9 @@ RowLevelPermissionDataSet::RowLevelPermissionDataSet() :
     m_namespaceHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
-    m_permissionPolicyHasBeenSet(false)
+    m_permissionPolicyHasBeenSet(false),
+    m_formatVersion(RowLevelPermissionFormatVersion::NOT_SET),
+    m_formatVersionHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ RowLevelPermissionDataSet::RowLevelPermissionDataSet(JsonView jsonValue) :
     m_namespaceHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_permissionPolicy(RowLevelPermissionPolicy::NOT_SET),
-    m_permissionPolicyHasBeenSet(false)
+    m_permissionPolicyHasBeenSet(false),
+    m_formatVersion(RowLevelPermissionFormatVersion::NOT_SET),
+    m_formatVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ RowLevelPermissionDataSet& RowLevelPermissionDataSet::operator =(JsonView jsonVa
     m_permissionPolicyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FormatVersion"))
+  {
+    m_formatVersion = RowLevelPermissionFormatVersionMapper::GetRowLevelPermissionFormatVersionForName(jsonValue.GetString("FormatVersion"));
+
+    m_formatVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +91,11 @@ JsonValue RowLevelPermissionDataSet::Jsonize() const
   if(m_permissionPolicyHasBeenSet)
   {
    payload.WithString("PermissionPolicy", RowLevelPermissionPolicyMapper::GetNameForRowLevelPermissionPolicy(m_permissionPolicy));
+  }
+
+  if(m_formatVersionHasBeenSet)
+  {
+   payload.WithString("FormatVersion", RowLevelPermissionFormatVersionMapper::GetNameForRowLevelPermissionFormatVersion(m_formatVersion));
   }
 
   return payload;

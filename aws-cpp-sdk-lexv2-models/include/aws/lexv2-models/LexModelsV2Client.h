@@ -18,6 +18,8 @@
 #include <aws/lexv2-models/model/CreateBotVersionResult.h>
 #include <aws/lexv2-models/model/CreateExportResult.h>
 #include <aws/lexv2-models/model/CreateIntentResult.h>
+#include <aws/lexv2-models/model/CreateResourcePolicyResult.h>
+#include <aws/lexv2-models/model/CreateResourcePolicyStatementResult.h>
 #include <aws/lexv2-models/model/CreateSlotResult.h>
 #include <aws/lexv2-models/model/CreateSlotTypeResult.h>
 #include <aws/lexv2-models/model/CreateUploadUrlResult.h>
@@ -27,6 +29,8 @@
 #include <aws/lexv2-models/model/DeleteBotVersionResult.h>
 #include <aws/lexv2-models/model/DeleteExportResult.h>
 #include <aws/lexv2-models/model/DeleteImportResult.h>
+#include <aws/lexv2-models/model/DeleteResourcePolicyResult.h>
+#include <aws/lexv2-models/model/DeleteResourcePolicyStatementResult.h>
 #include <aws/lexv2-models/model/DescribeBotResult.h>
 #include <aws/lexv2-models/model/DescribeBotAliasResult.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleResult.h>
@@ -34,6 +38,7 @@
 #include <aws/lexv2-models/model/DescribeExportResult.h>
 #include <aws/lexv2-models/model/DescribeImportResult.h>
 #include <aws/lexv2-models/model/DescribeIntentResult.h>
+#include <aws/lexv2-models/model/DescribeResourcePolicyResult.h>
 #include <aws/lexv2-models/model/DescribeSlotResult.h>
 #include <aws/lexv2-models/model/DescribeSlotTypeResult.h>
 #include <aws/lexv2-models/model/ListBotAliasesResult.h>
@@ -56,6 +61,7 @@
 #include <aws/lexv2-models/model/UpdateBotLocaleResult.h>
 #include <aws/lexv2-models/model/UpdateExportResult.h>
 #include <aws/lexv2-models/model/UpdateIntentResult.h>
+#include <aws/lexv2-models/model/UpdateResourcePolicyResult.h>
 #include <aws/lexv2-models/model/UpdateSlotResult.h>
 #include <aws/lexv2-models/model/UpdateSlotTypeResult.h>
 #include <aws/core/NoResult.h>
@@ -105,6 +111,8 @@ namespace Model
         class CreateBotVersionRequest;
         class CreateExportRequest;
         class CreateIntentRequest;
+        class CreateResourcePolicyRequest;
+        class CreateResourcePolicyStatementRequest;
         class CreateSlotRequest;
         class CreateSlotTypeRequest;
         class CreateUploadUrlRequest;
@@ -115,6 +123,8 @@ namespace Model
         class DeleteExportRequest;
         class DeleteImportRequest;
         class DeleteIntentRequest;
+        class DeleteResourcePolicyRequest;
+        class DeleteResourcePolicyStatementRequest;
         class DeleteSlotRequest;
         class DeleteSlotTypeRequest;
         class DescribeBotRequest;
@@ -124,6 +134,7 @@ namespace Model
         class DescribeExportRequest;
         class DescribeImportRequest;
         class DescribeIntentRequest;
+        class DescribeResourcePolicyRequest;
         class DescribeSlotRequest;
         class DescribeSlotTypeRequest;
         class ListBotAliasesRequest;
@@ -146,6 +157,7 @@ namespace Model
         class UpdateBotLocaleRequest;
         class UpdateExportRequest;
         class UpdateIntentRequest;
+        class UpdateResourcePolicyRequest;
         class UpdateSlotRequest;
         class UpdateSlotTypeRequest;
 
@@ -156,6 +168,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateBotVersionResult, LexModelsV2Error> CreateBotVersionOutcome;
         typedef Aws::Utils::Outcome<CreateExportResult, LexModelsV2Error> CreateExportOutcome;
         typedef Aws::Utils::Outcome<CreateIntentResult, LexModelsV2Error> CreateIntentOutcome;
+        typedef Aws::Utils::Outcome<CreateResourcePolicyResult, LexModelsV2Error> CreateResourcePolicyOutcome;
+        typedef Aws::Utils::Outcome<CreateResourcePolicyStatementResult, LexModelsV2Error> CreateResourcePolicyStatementOutcome;
         typedef Aws::Utils::Outcome<CreateSlotResult, LexModelsV2Error> CreateSlotOutcome;
         typedef Aws::Utils::Outcome<CreateSlotTypeResult, LexModelsV2Error> CreateSlotTypeOutcome;
         typedef Aws::Utils::Outcome<CreateUploadUrlResult, LexModelsV2Error> CreateUploadUrlOutcome;
@@ -166,6 +180,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteExportResult, LexModelsV2Error> DeleteExportOutcome;
         typedef Aws::Utils::Outcome<DeleteImportResult, LexModelsV2Error> DeleteImportOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteIntentOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, LexModelsV2Error> DeleteResourcePolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourcePolicyStatementResult, LexModelsV2Error> DeleteResourcePolicyStatementOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, LexModelsV2Error> DeleteSlotTypeOutcome;
         typedef Aws::Utils::Outcome<DescribeBotResult, LexModelsV2Error> DescribeBotOutcome;
@@ -175,6 +191,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeExportResult, LexModelsV2Error> DescribeExportOutcome;
         typedef Aws::Utils::Outcome<DescribeImportResult, LexModelsV2Error> DescribeImportOutcome;
         typedef Aws::Utils::Outcome<DescribeIntentResult, LexModelsV2Error> DescribeIntentOutcome;
+        typedef Aws::Utils::Outcome<DescribeResourcePolicyResult, LexModelsV2Error> DescribeResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotResult, LexModelsV2Error> DescribeSlotOutcome;
         typedef Aws::Utils::Outcome<DescribeSlotTypeResult, LexModelsV2Error> DescribeSlotTypeOutcome;
         typedef Aws::Utils::Outcome<ListBotAliasesResult, LexModelsV2Error> ListBotAliasesOutcome;
@@ -197,6 +214,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateBotLocaleResult, LexModelsV2Error> UpdateBotLocaleOutcome;
         typedef Aws::Utils::Outcome<UpdateExportResult, LexModelsV2Error> UpdateExportOutcome;
         typedef Aws::Utils::Outcome<UpdateIntentResult, LexModelsV2Error> UpdateIntentOutcome;
+        typedef Aws::Utils::Outcome<UpdateResourcePolicyResult, LexModelsV2Error> UpdateResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<UpdateSlotResult, LexModelsV2Error> UpdateSlotOutcome;
         typedef Aws::Utils::Outcome<UpdateSlotTypeResult, LexModelsV2Error> UpdateSlotTypeOutcome;
 
@@ -207,6 +225,8 @@ namespace Model
         typedef std::future<CreateBotVersionOutcome> CreateBotVersionOutcomeCallable;
         typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
         typedef std::future<CreateIntentOutcome> CreateIntentOutcomeCallable;
+        typedef std::future<CreateResourcePolicyOutcome> CreateResourcePolicyOutcomeCallable;
+        typedef std::future<CreateResourcePolicyStatementOutcome> CreateResourcePolicyStatementOutcomeCallable;
         typedef std::future<CreateSlotOutcome> CreateSlotOutcomeCallable;
         typedef std::future<CreateSlotTypeOutcome> CreateSlotTypeOutcomeCallable;
         typedef std::future<CreateUploadUrlOutcome> CreateUploadUrlOutcomeCallable;
@@ -217,6 +237,8 @@ namespace Model
         typedef std::future<DeleteExportOutcome> DeleteExportOutcomeCallable;
         typedef std::future<DeleteImportOutcome> DeleteImportOutcomeCallable;
         typedef std::future<DeleteIntentOutcome> DeleteIntentOutcomeCallable;
+        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
+        typedef std::future<DeleteResourcePolicyStatementOutcome> DeleteResourcePolicyStatementOutcomeCallable;
         typedef std::future<DeleteSlotOutcome> DeleteSlotOutcomeCallable;
         typedef std::future<DeleteSlotTypeOutcome> DeleteSlotTypeOutcomeCallable;
         typedef std::future<DescribeBotOutcome> DescribeBotOutcomeCallable;
@@ -226,6 +248,7 @@ namespace Model
         typedef std::future<DescribeExportOutcome> DescribeExportOutcomeCallable;
         typedef std::future<DescribeImportOutcome> DescribeImportOutcomeCallable;
         typedef std::future<DescribeIntentOutcome> DescribeIntentOutcomeCallable;
+        typedef std::future<DescribeResourcePolicyOutcome> DescribeResourcePolicyOutcomeCallable;
         typedef std::future<DescribeSlotOutcome> DescribeSlotOutcomeCallable;
         typedef std::future<DescribeSlotTypeOutcome> DescribeSlotTypeOutcomeCallable;
         typedef std::future<ListBotAliasesOutcome> ListBotAliasesOutcomeCallable;
@@ -248,6 +271,7 @@ namespace Model
         typedef std::future<UpdateBotLocaleOutcome> UpdateBotLocaleOutcomeCallable;
         typedef std::future<UpdateExportOutcome> UpdateExportOutcomeCallable;
         typedef std::future<UpdateIntentOutcome> UpdateIntentOutcomeCallable;
+        typedef std::future<UpdateResourcePolicyOutcome> UpdateResourcePolicyOutcomeCallable;
         typedef std::future<UpdateSlotOutcome> UpdateSlotOutcomeCallable;
         typedef std::future<UpdateSlotTypeOutcome> UpdateSlotTypeOutcomeCallable;
 } // namespace Model
@@ -261,6 +285,8 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateBotVersionRequest&, const Model::CreateBotVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotVersionResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateExportRequest&, const Model::CreateExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateIntentRequest&, const Model::CreateIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntentResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::CreateResourcePolicyRequest&, const Model::CreateResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourcePolicyResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::CreateResourcePolicyStatementRequest&, const Model::CreateResourcePolicyStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResourcePolicyStatementResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateSlotRequest&, const Model::CreateSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateSlotTypeRequest&, const Model::CreateSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSlotTypeResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::CreateUploadUrlRequest&, const Model::CreateUploadUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUploadUrlResponseReceivedHandler;
@@ -271,6 +297,8 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteExportRequest&, const Model::DeleteExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteImportRequest&, const Model::DeleteImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteIntentRequest&, const Model::DeleteIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntentResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DeleteResourcePolicyStatementRequest&, const Model::DeleteResourcePolicyStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyStatementResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotRequest&, const Model::DeleteSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DeleteSlotTypeRequest&, const Model::DeleteSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSlotTypeResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeBotRequest&, const Model::DescribeBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBotResponseReceivedHandler;
@@ -280,6 +308,7 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeExportRequest&, const Model::DescribeExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeImportRequest&, const Model::DescribeImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeIntentRequest&, const Model::DescribeIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIntentResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::DescribeResourcePolicyRequest&, const Model::DescribeResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotRequest&, const Model::DescribeSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::DescribeSlotTypeRequest&, const Model::DescribeSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSlotTypeResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::ListBotAliasesRequest&, const Model::ListBotAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotAliasesResponseReceivedHandler;
@@ -302,6 +331,7 @@ namespace Model
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateBotLocaleRequest&, const Model::UpdateBotLocaleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBotLocaleResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateExportRequest&, const Model::UpdateExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExportResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateIntentRequest&, const Model::UpdateIntentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIntentResponseReceivedHandler;
+    typedef std::function<void(const LexModelsV2Client*, const Model::UpdateResourcePolicyRequest&, const Model::UpdateResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateSlotRequest&, const Model::UpdateSlotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSlotResponseReceivedHandler;
     typedef std::function<void(const LexModelsV2Client*, const Model::UpdateSlotTypeRequest&, const Model::UpdateSlotTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSlotTypeResponseReceivedHandler;
 
@@ -622,6 +652,68 @@ namespace Model
         virtual void CreateIntentAsync(const Model::CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new resource policy with the specified policy
+         * statements.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourcePolicyOutcome CreateResourcePolicy(const Model::CreateResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Creates a new resource policy with the specified policy
+         * statements.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateResourcePolicyOutcomeCallable CreateResourcePolicyCallable(const Model::CreateResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Creates a new resource policy with the specified policy
+         * statements.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateResourcePolicyAsync(const Model::CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a new resource policy statement to a bot or bot alias. If a resource
+         * policy exists, the statement is added to the current resource policy. If a
+         * policy doesn't exist, a new policy is created.</p> <p>You can create a resource
+         * policy statement that allows cross-account access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateResourcePolicyStatementOutcome CreateResourcePolicyStatement(const Model::CreateResourcePolicyStatementRequest& request) const;
+
+        /**
+         * <p>Adds a new resource policy statement to a bot or bot alias. If a resource
+         * policy exists, the statement is added to the current resource policy. If a
+         * policy doesn't exist, a new policy is created.</p> <p>You can create a resource
+         * policy statement that allows cross-account access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateResourcePolicyStatementOutcomeCallable CreateResourcePolicyStatementCallable(const Model::CreateResourcePolicyStatementRequest& request) const;
+
+        /**
+         * <p>Adds a new resource policy statement to a bot or bot alias. If a resource
+         * policy exists, the statement is added to the current resource policy. If a
+         * policy doesn't exist, a new policy is created.</p> <p>You can create a resource
+         * policy statement that allows cross-account access.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateResourcePolicyStatementAsync(const Model::CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a slot in an intent. A slot is a variable needed to fulfill an
          * intent. For example, an <code>OrderPizza</code> intent might need slots for
          * size, crust, and number of pizzas. For each slot, you define one or more
@@ -932,6 +1024,71 @@ namespace Model
         virtual void DeleteIntentAsync(const Model::DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes an existing policy from a bot or bot alias. If the resource doesn't
+         * have a policy attached, Amazon Lex returns an exception.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Removes an existing policy from a bot or bot alias. If the resource doesn't
+         * have a policy attached, Amazon Lex returns an exception.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Removes an existing policy from a bot or bot alias. If the resource doesn't
+         * have a policy attached, Amazon Lex returns an exception.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a policy statement from a resource policy. If you delete the last
+         * statement from a policy, the policy is deleted. If you specify a statement ID
+         * that doesn't exist in the policy, or if the bot or bot alias doesn't have a
+         * policy attached, Amazon Lex returns an exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicyStatement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyStatementOutcome DeleteResourcePolicyStatement(const Model::DeleteResourcePolicyStatementRequest& request) const;
+
+        /**
+         * <p>Deletes a policy statement from a resource policy. If you delete the last
+         * statement from a policy, the policy is deleted. If you specify a statement ID
+         * that doesn't exist in the policy, or if the bot or bot alias doesn't have a
+         * policy attached, Amazon Lex returns an exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicyStatement">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyStatementOutcomeCallable DeleteResourcePolicyStatementCallable(const Model::DeleteResourcePolicyStatementRequest& request) const;
+
+        /**
+         * <p>Deletes a policy statement from a resource policy. If you delete the last
+         * statement from a policy, the policy is deleted. If you specify a statement ID
+         * that doesn't exist in the policy, or if the bot or bot alias doesn't have a
+         * policy attached, Amazon Lex returns an exception.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteResourcePolicyStatement">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyStatementAsync(const Model::DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified slot from an intent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteSlot">AWS
          * API Reference</a></p>
@@ -1167,6 +1324,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeIntentAsync(const Model::DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the resource policy and policy revision for a bot or bot
+         * alias.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourcePolicyOutcome DescribeResourcePolicy(const Model::DescribeResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Gets the resource policy and policy revision for a bot or bot
+         * alias.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeResourcePolicyOutcomeCallable DescribeResourcePolicyCallable(const Model::DescribeResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Gets the resource policy and policy revision for a bot or bot
+         * alias.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeResourcePolicyAsync(const Model::DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets metadata information about a slot.</p><p><h3>See Also:</h3>   <a
@@ -1791,6 +1976,37 @@ namespace Model
         virtual void UpdateIntentAsync(const Model::UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Replaces the existing resource policy for a bot or bot alias with a new one.
+         * If the policy doesn't exist, Amazon Lex returns an exception.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateResourcePolicyOutcome UpdateResourcePolicy(const Model::UpdateResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Replaces the existing resource policy for a bot or bot alias with a new one.
+         * If the policy doesn't exist, Amazon Lex returns an exception.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateResourcePolicyOutcomeCallable UpdateResourcePolicyCallable(const Model::UpdateResourcePolicyRequest& request) const;
+
+        /**
+         * <p>Replaces the existing resource policy for a bot or bot alias with a new one.
+         * If the policy doesn't exist, Amazon Lex returns an exception.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateResourcePolicyAsync(const Model::UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the settings for a slot.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateSlot">AWS
          * API Reference</a></p>
@@ -1854,6 +2070,8 @@ namespace Model
         void CreateBotVersionAsyncHelper(const Model::CreateBotVersionRequest& request, const CreateBotVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateExportAsyncHelper(const Model::CreateExportRequest& request, const CreateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIntentAsyncHelper(const Model::CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateResourcePolicyAsyncHelper(const Model::CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateResourcePolicyStatementAsyncHelper(const Model::CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSlotAsyncHelper(const Model::CreateSlotRequest& request, const CreateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSlotTypeAsyncHelper(const Model::CreateSlotTypeRequest& request, const CreateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUploadUrlAsyncHelper(const Model::CreateUploadUrlRequest& request, const CreateUploadUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1864,6 +2082,8 @@ namespace Model
         void DeleteExportAsyncHelper(const Model::DeleteExportRequest& request, const DeleteExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteImportAsyncHelper(const Model::DeleteImportRequest& request, const DeleteImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIntentAsyncHelper(const Model::DeleteIntentRequest& request, const DeleteIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourcePolicyStatementAsyncHelper(const Model::DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotAsyncHelper(const Model::DeleteSlotRequest& request, const DeleteSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSlotTypeAsyncHelper(const Model::DeleteSlotTypeRequest& request, const DeleteSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBotAsyncHelper(const Model::DescribeBotRequest& request, const DescribeBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1873,6 +2093,7 @@ namespace Model
         void DescribeExportAsyncHelper(const Model::DescribeExportRequest& request, const DescribeExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeImportAsyncHelper(const Model::DescribeImportRequest& request, const DescribeImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIntentAsyncHelper(const Model::DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeResourcePolicyAsyncHelper(const Model::DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotAsyncHelper(const Model::DescribeSlotRequest& request, const DescribeSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSlotTypeAsyncHelper(const Model::DescribeSlotTypeRequest& request, const DescribeSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotAliasesAsyncHelper(const Model::ListBotAliasesRequest& request, const ListBotAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1895,6 +2116,7 @@ namespace Model
         void UpdateBotLocaleAsyncHelper(const Model::UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateExportAsyncHelper(const Model::UpdateExportRequest& request, const UpdateExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIntentAsyncHelper(const Model::UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateResourcePolicyAsyncHelper(const Model::UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSlotAsyncHelper(const Model::UpdateSlotRequest& request, const UpdateSlotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSlotTypeAsyncHelper(const Model::UpdateSlotTypeRequest& request, const UpdateSlotTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

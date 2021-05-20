@@ -1412,8 +1412,15 @@ namespace Model
          * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.</p> <p>The OIDC
          * provider that you create with this operation can be used as a principal in a
          * role's trust policy. Such a policy establishes a trust relationship between AWS
-         * and the OIDC provider.</p> <p>When you create the IAM OIDC provider, you specify
-         * the following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
+         * and the OIDC provider.</p> <p>If you are using an OIDC identity provider from
+         * Google, Facebook, or Amazon Cognito, you don't need to create a separate IAM
+         * identity provider. These OIDC identity providers are already built-in to AWS and
+         * are available for your use. Instead, you can move directly to creating new roles
+         * using your identity provider. To learn more, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html">Creating
+         * a role for web identity or OpenID connect federation</a> in the <i>IAM User
+         * Guide</i>.</p> <p>When you create the IAM OIDC provider, you specify the
+         * following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
          * trust</p> </li> <li> <p>A list of client IDs (also known as audiences) that
          * identify the application or applications that are allowed to authenticate using
          * the OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server
@@ -1433,8 +1440,15 @@ namespace Model
          * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.</p> <p>The OIDC
          * provider that you create with this operation can be used as a principal in a
          * role's trust policy. Such a policy establishes a trust relationship between AWS
-         * and the OIDC provider.</p> <p>When you create the IAM OIDC provider, you specify
-         * the following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
+         * and the OIDC provider.</p> <p>If you are using an OIDC identity provider from
+         * Google, Facebook, or Amazon Cognito, you don't need to create a separate IAM
+         * identity provider. These OIDC identity providers are already built-in to AWS and
+         * are available for your use. Instead, you can move directly to creating new roles
+         * using your identity provider. To learn more, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html">Creating
+         * a role for web identity or OpenID connect federation</a> in the <i>IAM User
+         * Guide</i>.</p> <p>When you create the IAM OIDC provider, you specify the
+         * following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
          * trust</p> </li> <li> <p>A list of client IDs (also known as audiences) that
          * identify the application or applications that are allowed to authenticate using
          * the OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server
@@ -1456,8 +1470,15 @@ namespace Model
          * href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.</p> <p>The OIDC
          * provider that you create with this operation can be used as a principal in a
          * role's trust policy. Such a policy establishes a trust relationship between AWS
-         * and the OIDC provider.</p> <p>When you create the IAM OIDC provider, you specify
-         * the following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
+         * and the OIDC provider.</p> <p>If you are using an OIDC identity provider from
+         * Google, Facebook, or Amazon Cognito, you don't need to create a separate IAM
+         * identity provider. These OIDC identity providers are already built-in to AWS and
+         * are available for your use. Instead, you can move directly to creating new roles
+         * using your identity provider. To learn more, see <a
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-idp_oidc.html">Creating
+         * a role for web identity or OpenID connect federation</a> in the <i>IAM User
+         * Guide</i>.</p> <p>When you create the IAM OIDC provider, you specify the
+         * following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
          * trust</p> </li> <li> <p>A list of client IDs (also known as audiences) that
          * identify the application or applications that are allowed to authenticate using
          * the OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server

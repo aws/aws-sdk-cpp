@@ -27,6 +27,8 @@
 #include <aws/lexv2-models/model/CreateBotVersionRequest.h>
 #include <aws/lexv2-models/model/CreateExportRequest.h>
 #include <aws/lexv2-models/model/CreateIntentRequest.h>
+#include <aws/lexv2-models/model/CreateResourcePolicyRequest.h>
+#include <aws/lexv2-models/model/CreateResourcePolicyStatementRequest.h>
 #include <aws/lexv2-models/model/CreateSlotRequest.h>
 #include <aws/lexv2-models/model/CreateSlotTypeRequest.h>
 #include <aws/lexv2-models/model/CreateUploadUrlRequest.h>
@@ -37,6 +39,8 @@
 #include <aws/lexv2-models/model/DeleteExportRequest.h>
 #include <aws/lexv2-models/model/DeleteImportRequest.h>
 #include <aws/lexv2-models/model/DeleteIntentRequest.h>
+#include <aws/lexv2-models/model/DeleteResourcePolicyRequest.h>
+#include <aws/lexv2-models/model/DeleteResourcePolicyStatementRequest.h>
 #include <aws/lexv2-models/model/DeleteSlotRequest.h>
 #include <aws/lexv2-models/model/DeleteSlotTypeRequest.h>
 #include <aws/lexv2-models/model/DescribeBotRequest.h>
@@ -46,6 +50,7 @@
 #include <aws/lexv2-models/model/DescribeExportRequest.h>
 #include <aws/lexv2-models/model/DescribeImportRequest.h>
 #include <aws/lexv2-models/model/DescribeIntentRequest.h>
+#include <aws/lexv2-models/model/DescribeResourcePolicyRequest.h>
 #include <aws/lexv2-models/model/DescribeSlotRequest.h>
 #include <aws/lexv2-models/model/DescribeSlotTypeRequest.h>
 #include <aws/lexv2-models/model/ListBotAliasesRequest.h>
@@ -68,6 +73,7 @@
 #include <aws/lexv2-models/model/UpdateBotLocaleRequest.h>
 #include <aws/lexv2-models/model/UpdateExportRequest.h>
 #include <aws/lexv2-models/model/UpdateIntentRequest.h>
+#include <aws/lexv2-models/model/UpdateResourcePolicyRequest.h>
 #include <aws/lexv2-models/model/UpdateSlotRequest.h>
 #include <aws/lexv2-models/model/UpdateSlotTypeRequest.h>
 
@@ -401,6 +407,74 @@ void LexModelsV2Client::CreateIntentAsync(const CreateIntentRequest& request, co
 void LexModelsV2Client::CreateIntentAsyncHelper(const CreateIntentRequest& request, const CreateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateIntent(request), context);
+}
+
+CreateResourcePolicyOutcome LexModelsV2Client::CreateResourcePolicy(const CreateResourcePolicyRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateResourcePolicy", "Required field: ResourceArn, is not set");
+    return CreateResourcePolicyOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/";
+  ss << request.GetResourceArn();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateResourcePolicyOutcomeCallable LexModelsV2Client::CreateResourcePolicyCallable(const CreateResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::CreateResourcePolicyAsync(const CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::CreateResourcePolicyAsyncHelper(const CreateResourcePolicyRequest& request, const CreateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResourcePolicy(request), context);
+}
+
+CreateResourcePolicyStatementOutcome LexModelsV2Client::CreateResourcePolicyStatement(const CreateResourcePolicyStatementRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateResourcePolicyStatement", "Required field: ResourceArn, is not set");
+    return CreateResourcePolicyStatementOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/";
+  ss << request.GetResourceArn();
+  ss << "/statements/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateResourcePolicyStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateResourcePolicyStatementOutcomeCallable LexModelsV2Client::CreateResourcePolicyStatementCallable(const CreateResourcePolicyStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateResourcePolicyStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateResourcePolicyStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::CreateResourcePolicyStatementAsync(const CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateResourcePolicyStatementAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::CreateResourcePolicyStatementAsyncHelper(const CreateResourcePolicyStatementRequest& request, const CreateResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateResourcePolicyStatement(request), context);
 }
 
 CreateSlotOutcome LexModelsV2Client::CreateSlot(const CreateSlotRequest& request) const
@@ -820,6 +894,81 @@ void LexModelsV2Client::DeleteIntentAsyncHelper(const DeleteIntentRequest& reque
   handler(this, request, DeleteIntent(request), context);
 }
 
+DeleteResourcePolicyOutcome LexModelsV2Client::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Required field: ResourceArn, is not set");
+    return DeleteResourcePolicyOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/";
+  ss << request.GetResourceArn();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteResourcePolicyOutcomeCallable LexModelsV2Client::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourcePolicy(request), context);
+}
+
+DeleteResourcePolicyStatementOutcome LexModelsV2Client::DeleteResourcePolicyStatement(const DeleteResourcePolicyStatementRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteResourcePolicyStatement", "Required field: ResourceArn, is not set");
+    return DeleteResourcePolicyStatementOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.StatementIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteResourcePolicyStatement", "Required field: StatementId, is not set");
+    return DeleteResourcePolicyStatementOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/";
+  ss << request.GetResourceArn();
+  ss << "/statements/";
+  ss << request.GetStatementId();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteResourcePolicyStatementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteResourcePolicyStatementOutcomeCallable LexModelsV2Client::DeleteResourcePolicyStatementCallable(const DeleteResourcePolicyStatementRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyStatementOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicyStatement(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DeleteResourcePolicyStatementAsync(const DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyStatementAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DeleteResourcePolicyStatementAsyncHelper(const DeleteResourcePolicyStatementRequest& request, const DeleteResourcePolicyStatementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourcePolicyStatement(request), context);
+}
+
 DeleteSlotOutcome LexModelsV2Client::DeleteSlot(const DeleteSlotRequest& request) const
 {
   if (!request.SlotIdHasBeenSet())
@@ -1222,6 +1371,40 @@ void LexModelsV2Client::DescribeIntentAsync(const DescribeIntentRequest& request
 void LexModelsV2Client::DescribeIntentAsyncHelper(const DescribeIntentRequest& request, const DescribeIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeIntent(request), context);
+}
+
+DescribeResourcePolicyOutcome LexModelsV2Client::DescribeResourcePolicy(const DescribeResourcePolicyRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeResourcePolicy", "Required field: ResourceArn, is not set");
+    return DescribeResourcePolicyOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/";
+  ss << request.GetResourceArn();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeResourcePolicyOutcomeCallable LexModelsV2Client::DescribeResourcePolicyCallable(const DescribeResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::DescribeResourcePolicyAsync(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::DescribeResourcePolicyAsyncHelper(const DescribeResourcePolicyRequest& request, const DescribeResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeResourcePolicy(request), context);
 }
 
 DescribeSlotOutcome LexModelsV2Client::DescribeSlot(const DescribeSlotRequest& request) const
@@ -2091,6 +2274,40 @@ void LexModelsV2Client::UpdateIntentAsync(const UpdateIntentRequest& request, co
 void LexModelsV2Client::UpdateIntentAsyncHelper(const UpdateIntentRequest& request, const UpdateIntentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIntent(request), context);
+}
+
+UpdateResourcePolicyOutcome LexModelsV2Client::UpdateResourcePolicy(const UpdateResourcePolicyRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourcePolicy", "Required field: ResourceArn, is not set");
+    return UpdateResourcePolicyOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/policy/";
+  ss << request.GetResourceArn();
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateResourcePolicyOutcomeCallable LexModelsV2Client::UpdateResourcePolicyCallable(const UpdateResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LexModelsV2Client::UpdateResourcePolicyAsync(const UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void LexModelsV2Client::UpdateResourcePolicyAsyncHelper(const UpdateResourcePolicyRequest& request, const UpdateResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateResourcePolicy(request), context);
 }
 
 UpdateSlotOutcome LexModelsV2Client::UpdateSlot(const UpdateSlotRequest& request) const

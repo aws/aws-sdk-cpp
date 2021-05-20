@@ -135,6 +135,7 @@ namespace Model
         class ListSchemasRequest;
         class ListSolutionVersionsRequest;
         class ListSolutionsRequest;
+        class StopSolutionVersionCreationRequest;
         class UpdateCampaignRequest;
 
         typedef Aws::Utils::Outcome<CreateBatchInferenceJobResult, PersonalizeError> CreateBatchInferenceJobOutcome;
@@ -182,6 +183,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSchemasResult, PersonalizeError> ListSchemasOutcome;
         typedef Aws::Utils::Outcome<ListSolutionVersionsResult, PersonalizeError> ListSolutionVersionsOutcome;
         typedef Aws::Utils::Outcome<ListSolutionsResult, PersonalizeError> ListSolutionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, PersonalizeError> StopSolutionVersionCreationOutcome;
         typedef Aws::Utils::Outcome<UpdateCampaignResult, PersonalizeError> UpdateCampaignOutcome;
 
         typedef std::future<CreateBatchInferenceJobOutcome> CreateBatchInferenceJobOutcomeCallable;
@@ -229,6 +231,7 @@ namespace Model
         typedef std::future<ListSchemasOutcome> ListSchemasOutcomeCallable;
         typedef std::future<ListSolutionVersionsOutcome> ListSolutionVersionsOutcomeCallable;
         typedef std::future<ListSolutionsOutcome> ListSolutionsOutcomeCallable;
+        typedef std::future<StopSolutionVersionCreationOutcome> StopSolutionVersionCreationOutcomeCallable;
         typedef std::future<UpdateCampaignOutcome> UpdateCampaignOutcomeCallable;
 } // namespace Model
 
@@ -279,6 +282,7 @@ namespace Model
     typedef std::function<void(const PersonalizeClient*, const Model::ListSchemasRequest&, const Model::ListSchemasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSchemasResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionVersionsRequest&, const Model::ListSolutionVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionVersionsResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::ListSolutionsRequest&, const Model::ListSolutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSolutionsResponseReceivedHandler;
+    typedef std::function<void(const PersonalizeClient*, const Model::StopSolutionVersionCreationRequest&, const Model::StopSolutionVersionCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSolutionVersionCreationResponseReceivedHandler;
     typedef std::function<void(const PersonalizeClient*, const Model::UpdateCampaignRequest&, const Model::UpdateCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCampaignResponseReceivedHandler;
 
   /**
@@ -1020,13 +1024,14 @@ namespace Model
          * <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
          * <code>CreateSolutionVersion</code>. A new version of the solution is created
          * every time you call this operation.</p> <p> <b>Status</b> </p> <p>A solution
-         * version can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING
-         * &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get
-         * the status of the version, call <a>DescribeSolutionVersion</a>. Wait until the
-         * status shows as ACTIVE before calling <code>CreateCampaign</code>.</p> <p>If the
-         * status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> <p
-         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * version can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li>
+         * <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE
+         * STOPPED</p> </li> </ul> <p>To get the status of the version, call
+         * <a>DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before
+         * calling <code>CreateCampaign</code>.</p> <p>If the status shows as CREATE
+         * FAILED, the response includes a <code>failureReason</code> key, which describes
+         * why the job failed.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListSolutionVersions</a> </p> </li> <li> <p> <a>DescribeSolutionVersion</a>
          * </p> </li> </ul> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
          * <a>CreateSolution</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p> </li>
@@ -1041,13 +1046,14 @@ namespace Model
          * <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
          * <code>CreateSolutionVersion</code>. A new version of the solution is created
          * every time you call this operation.</p> <p> <b>Status</b> </p> <p>A solution
-         * version can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING
-         * &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get
-         * the status of the version, call <a>DescribeSolutionVersion</a>. Wait until the
-         * status shows as ACTIVE before calling <code>CreateCampaign</code>.</p> <p>If the
-         * status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> <p
-         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * version can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li>
+         * <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE
+         * STOPPED</p> </li> </ul> <p>To get the status of the version, call
+         * <a>DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before
+         * calling <code>CreateCampaign</code>.</p> <p>If the status shows as CREATE
+         * FAILED, the response includes a <code>failureReason</code> key, which describes
+         * why the job failed.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListSolutionVersions</a> </p> </li> <li> <p> <a>DescribeSolutionVersion</a>
          * </p> </li> </ul> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
          * <a>CreateSolution</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p> </li>
@@ -1064,13 +1070,14 @@ namespace Model
          * <a>CreateSolution</a> operation and must be in the ACTIVE state before calling
          * <code>CreateSolutionVersion</code>. A new version of the solution is created
          * every time you call this operation.</p> <p> <b>Status</b> </p> <p>A solution
-         * version can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING
-         * &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul> <p>To get
-         * the status of the version, call <a>DescribeSolutionVersion</a>. Wait until the
-         * status shows as ACTIVE before calling <code>CreateCampaign</code>.</p> <p>If the
-         * status shows as CREATE FAILED, the response includes a
-         * <code>failureReason</code> key, which describes why the job failed.</p> <p
-         * class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
+         * version can be in one of the following states:</p> <ul> <li> <p>CREATE
+         * PENDING</p> </li> <li> <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li>
+         * <li> <p>CREATE FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE
+         * STOPPED</p> </li> </ul> <p>To get the status of the version, call
+         * <a>DescribeSolutionVersion</a>. Wait until the status shows as ACTIVE before
+         * calling <code>CreateCampaign</code>.</p> <p>If the status shows as CREATE
+         * FAILED, the response includes a <code>failureReason</code> key, which describes
+         * why the job failed.</p> <p class="title"> <b>Related APIs</b> </p> <ul> <li> <p>
          * <a>ListSolutionVersions</a> </p> </li> <li> <p> <a>DescribeSolutionVersion</a>
          * </p> </li> </ul> <ul> <li> <p> <a>ListSolutions</a> </p> </li> <li> <p>
          * <a>CreateSolution</a> </p> </li> <li> <p> <a>DescribeSolution</a> </p> </li>
@@ -2191,6 +2198,52 @@ namespace Model
         virtual void ListSolutionsAsync(const Model::ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stops creating a solution version that is in a state of CREATE_PENDING or
+         * CREATE IN_PROGRESS. </p> <p>Depending on the current state of the solution
+         * version, the solution version state changes as follows:</p> <ul> <li>
+         * <p>CREATE_PENDING &gt; CREATE_STOPPED</p> <p>or</p> </li> <li>
+         * <p>CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED</p> </li> </ul>
+         * <p>You are billed for all of the training completed up until you stop the
+         * solution version creation. You cannot resume creating a solution version once it
+         * has been stopped.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopSolutionVersionCreationOutcome StopSolutionVersionCreation(const Model::StopSolutionVersionCreationRequest& request) const;
+
+        /**
+         * <p>Stops creating a solution version that is in a state of CREATE_PENDING or
+         * CREATE IN_PROGRESS. </p> <p>Depending on the current state of the solution
+         * version, the solution version state changes as follows:</p> <ul> <li>
+         * <p>CREATE_PENDING &gt; CREATE_STOPPED</p> <p>or</p> </li> <li>
+         * <p>CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED</p> </li> </ul>
+         * <p>You are billed for all of the training completed up until you stop the
+         * solution version creation. You cannot resume creating a solution version once it
+         * has been stopped.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopSolutionVersionCreationOutcomeCallable StopSolutionVersionCreationCallable(const Model::StopSolutionVersionCreationRequest& request) const;
+
+        /**
+         * <p>Stops creating a solution version that is in a state of CREATE_PENDING or
+         * CREATE IN_PROGRESS. </p> <p>Depending on the current state of the solution
+         * version, the solution version state changes as follows:</p> <ul> <li>
+         * <p>CREATE_PENDING &gt; CREATE_STOPPED</p> <p>or</p> </li> <li>
+         * <p>CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED</p> </li> </ul>
+         * <p>You are billed for all of the training completed up until you stop the
+         * solution version creation. You cannot resume creating a solution version once it
+         * has been stopped.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopSolutionVersionCreationAsync(const Model::StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a campaign by either deploying a new solution or changing the value
          * of the campaign's <code>minProvisionedTPS</code> parameter.</p> <p>To update a
          * campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the
@@ -2285,6 +2338,7 @@ namespace Model
         void ListSchemasAsyncHelper(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSolutionVersionsAsyncHelper(const Model::ListSolutionVersionsRequest& request, const ListSolutionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSolutionsAsyncHelper(const Model::ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopSolutionVersionCreationAsyncHelper(const Model::StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCampaignAsyncHelper(const Model::UpdateCampaignRequest& request, const UpdateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

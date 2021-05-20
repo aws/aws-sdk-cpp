@@ -65,6 +65,7 @@
 #include <aws/personalize/model/ListSchemasRequest.h>
 #include <aws/personalize/model/ListSolutionVersionsRequest.h>
 #include <aws/personalize/model/ListSolutionsRequest.h>
+#include <aws/personalize/model/StopSolutionVersionCreationRequest.h>
 #include <aws/personalize/model/UpdateCampaignRequest.h>
 
 using namespace Aws;
@@ -1353,6 +1354,33 @@ void PersonalizeClient::ListSolutionsAsync(const ListSolutionsRequest& request, 
 void PersonalizeClient::ListSolutionsAsyncHelper(const ListSolutionsRequest& request, const ListSolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListSolutions(request), context);
+}
+
+StopSolutionVersionCreationOutcome PersonalizeClient::StopSolutionVersionCreation(const StopSolutionVersionCreationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return StopSolutionVersionCreationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopSolutionVersionCreationOutcomeCallable PersonalizeClient::StopSolutionVersionCreationCallable(const StopSolutionVersionCreationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopSolutionVersionCreationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopSolutionVersionCreation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PersonalizeClient::StopSolutionVersionCreationAsync(const StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopSolutionVersionCreationAsyncHelper( request, handler, context ); } );
+}
+
+void PersonalizeClient::StopSolutionVersionCreationAsyncHelper(const StopSolutionVersionCreationRequest& request, const StopSolutionVersionCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopSolutionVersionCreation(request), context);
 }
 
 UpdateCampaignOutcome PersonalizeClient::UpdateCampaign(const UpdateCampaignRequest& request) const

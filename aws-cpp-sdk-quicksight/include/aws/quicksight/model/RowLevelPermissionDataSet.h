@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/RowLevelPermissionPolicy.h>
+#include <aws/quicksight/model/RowLevelPermissionFormatVersion.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +180,73 @@ namespace Model
      */
     inline RowLevelPermissionDataSet& WithPermissionPolicy(RowLevelPermissionPolicy&& value) { SetPermissionPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The user or group rules associated with the dataset that contains permissions
+     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
+     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
+     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
+     * <code>UserARN</code> and <code>GroupARN</code> are required, and
+     * <code>Namespace</code> must not exist.</p>
+     */
+    inline const RowLevelPermissionFormatVersion& GetFormatVersion() const{ return m_formatVersion; }
+
+    /**
+     * <p>The user or group rules associated with the dataset that contains permissions
+     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
+     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
+     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
+     * <code>UserARN</code> and <code>GroupARN</code> are required, and
+     * <code>Namespace</code> must not exist.</p>
+     */
+    inline bool FormatVersionHasBeenSet() const { return m_formatVersionHasBeenSet; }
+
+    /**
+     * <p>The user or group rules associated with the dataset that contains permissions
+     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
+     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
+     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
+     * <code>UserARN</code> and <code>GroupARN</code> are required, and
+     * <code>Namespace</code> must not exist.</p>
+     */
+    inline void SetFormatVersion(const RowLevelPermissionFormatVersion& value) { m_formatVersionHasBeenSet = true; m_formatVersion = value; }
+
+    /**
+     * <p>The user or group rules associated with the dataset that contains permissions
+     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
+     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
+     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
+     * <code>UserARN</code> and <code>GroupARN</code> are required, and
+     * <code>Namespace</code> must not exist.</p>
+     */
+    inline void SetFormatVersion(RowLevelPermissionFormatVersion&& value) { m_formatVersionHasBeenSet = true; m_formatVersion = std::move(value); }
+
+    /**
+     * <p>The user or group rules associated with the dataset that contains permissions
+     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
+     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
+     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
+     * <code>UserARN</code> and <code>GroupARN</code> are required, and
+     * <code>Namespace</code> must not exist.</p>
+     */
+    inline RowLevelPermissionDataSet& WithFormatVersion(const RowLevelPermissionFormatVersion& value) { SetFormatVersion(value); return *this;}
+
+    /**
+     * <p>The user or group rules associated with the dataset that contains permissions
+     * for RLS.</p> <p>By default, <code>FormatVersion</code> is
+     * <code>VERSION_1</code>. When <code>FormatVersion</code> is
+     * <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are
+     * required. When <code>FormatVersion</code> is <code>VERSION_2</code>,
+     * <code>UserARN</code> and <code>GroupARN</code> are required, and
+     * <code>Namespace</code> must not exist.</p>
+     */
+    inline RowLevelPermissionDataSet& WithFormatVersion(RowLevelPermissionFormatVersion&& value) { SetFormatVersion(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_namespace;
@@ -189,6 +257,9 @@ namespace Model
 
     RowLevelPermissionPolicy m_permissionPolicy;
     bool m_permissionPolicyHasBeenSet;
+
+    RowLevelPermissionFormatVersion m_formatVersion;
+    bool m_formatVersionHasBeenSet;
   };
 
 } // namespace Model
