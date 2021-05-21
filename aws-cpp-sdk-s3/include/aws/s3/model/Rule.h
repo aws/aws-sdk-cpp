@@ -32,8 +32,8 @@ namespace Model
    * <p>Specifies lifecycle rules for an Amazon S3 bucket. For more information, see
    * <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html">Put
-   * Bucket Lifecycle Configuration</a> in the <i>Amazon Simple Storage Service API
-   * Reference</i>. For examples, see <a
+   * Bucket Lifecycle Configuration</a> in the <i>Amazon S3 API Reference</i>. For
+   * examples, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples">Put
    * Bucket Lifecycle Configuration Examples</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Rule">AWS API

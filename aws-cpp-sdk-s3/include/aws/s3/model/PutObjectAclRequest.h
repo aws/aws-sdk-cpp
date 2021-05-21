@@ -135,7 +135,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -148,7 +148,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -161,7 +161,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -174,7 +174,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -187,7 +187,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -200,7 +200,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -213,7 +213,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -226,7 +226,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectAclRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -460,42 +460,58 @@ namespace Model
 
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline const Aws::String& GetGrantWrite() const{ return m_grantWrite; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline bool GrantWriteHasBeenSet() const { return m_grantWriteHasBeenSet; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(Aws::String&& value) { m_grantWriteHasBeenSet = true; m_grantWrite = std::move(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const char* value) { m_grantWriteHasBeenSet = true; m_grantWrite.assign(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline PutObjectAclRequest& WithGrantWrite(const Aws::String& value) { SetGrantWrite(value); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline PutObjectAclRequest& WithGrantWrite(Aws::String&& value) { SetGrantWrite(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline PutObjectAclRequest& WithGrantWrite(const char* value) { SetGrantWrite(value); return *this;}
 
@@ -558,7 +574,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -579,7 +595,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -600,7 +616,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -621,7 +637,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -642,7 +658,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -663,7 +679,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -684,7 +700,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -705,7 +721,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.

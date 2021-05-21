@@ -50,7 +50,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -63,7 +63,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -76,7 +76,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -89,7 +89,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -102,7 +102,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -115,7 +115,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline GetObjectLockConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -128,7 +128,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline GetObjectLockConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -141,7 +141,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline GetObjectLockConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

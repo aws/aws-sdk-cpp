@@ -868,8 +868,8 @@ namespace Aws
          * key to enforce certain metadata behavior when objects are uploaded. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying
-         * Conditions in a Policy</a> in the <i>Amazon S3 Developer Guide</i>. For a
-         * complete list of Amazon S3-specific condition keys, see <a
+         * Conditions in a Policy</a> in the <i>Amazon S3 User Guide</i>. For a complete
+         * list of Amazon S3-specific condition keys, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
          * Resources, and Condition Keys for Amazon S3</a>.</p> <p> <b>
          * <code>x-amz-copy-source-if</code> Headers</b> </p> <p>To only copy an object
@@ -921,14 +921,14 @@ namespace Aws
          * object that is already stored in Amazon S3 using the <code>StorageClass</code>
          * parameter. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-         * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
-         * <b>Versioning</b> </p> <p>By default, <code>x-amz-copy-source</code> identifies
-         * the current version of an object to copy. If the current version is a delete
-         * marker, Amazon S3 behaves as if the object was deleted. To copy a different
-         * version, use the <code>versionId</code> subresource.</p> <p>If you enable
-         * versioning on the target bucket, Amazon S3 generates a unique version ID for the
-         * object being copied. This version ID is different from the version ID of the
-         * source object. Amazon S3 returns the version ID of the copied object in the
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Versioning</b> </p>
+         * <p>By default, <code>x-amz-copy-source</code> identifies the current version of
+         * an object to copy. If the current version is a delete marker, Amazon S3 behaves
+         * as if the object was deleted. To copy a different version, use the
+         * <code>versionId</code> subresource.</p> <p>If you enable versioning on the
+         * target bucket, Amazon S3 generates a unique version ID for the object being
+         * copied. This version ID is different from the version ID of the source object.
+         * Amazon S3 returns the version ID of the copied object in the
          * <code>x-amz-version-id</code> response header in the response.</p> <p>If you do
          * not enable versioning or suspend it on the target bucket, the version ID that
          * Amazon S3 generates is always null.</p> <p>If the source object's storage class
@@ -993,8 +993,8 @@ namespace Aws
          * key to enforce certain metadata behavior when objects are uploaded. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying
-         * Conditions in a Policy</a> in the <i>Amazon S3 Developer Guide</i>. For a
-         * complete list of Amazon S3-specific condition keys, see <a
+         * Conditions in a Policy</a> in the <i>Amazon S3 User Guide</i>. For a complete
+         * list of Amazon S3-specific condition keys, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
          * Resources, and Condition Keys for Amazon S3</a>.</p> <p> <b>
          * <code>x-amz-copy-source-if</code> Headers</b> </p> <p>To only copy an object
@@ -1046,14 +1046,14 @@ namespace Aws
          * object that is already stored in Amazon S3 using the <code>StorageClass</code>
          * parameter. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-         * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
-         * <b>Versioning</b> </p> <p>By default, <code>x-amz-copy-source</code> identifies
-         * the current version of an object to copy. If the current version is a delete
-         * marker, Amazon S3 behaves as if the object was deleted. To copy a different
-         * version, use the <code>versionId</code> subresource.</p> <p>If you enable
-         * versioning on the target bucket, Amazon S3 generates a unique version ID for the
-         * object being copied. This version ID is different from the version ID of the
-         * source object. Amazon S3 returns the version ID of the copied object in the
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Versioning</b> </p>
+         * <p>By default, <code>x-amz-copy-source</code> identifies the current version of
+         * an object to copy. If the current version is a delete marker, Amazon S3 behaves
+         * as if the object was deleted. To copy a different version, use the
+         * <code>versionId</code> subresource.</p> <p>If you enable versioning on the
+         * target bucket, Amazon S3 generates a unique version ID for the object being
+         * copied. This version ID is different from the version ID of the source object.
+         * Amazon S3 returns the version ID of the copied object in the
          * <code>x-amz-version-id</code> response header in the response.</p> <p>If you do
          * not enable versioning or suspend it on the target bucket, the version ID that
          * Amazon S3 generates is always null.</p> <p>If the source object's storage class
@@ -1120,8 +1120,8 @@ namespace Aws
          * key to enforce certain metadata behavior when objects are uploaded. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html">Specifying
-         * Conditions in a Policy</a> in the <i>Amazon S3 Developer Guide</i>. For a
-         * complete list of Amazon S3-specific condition keys, see <a
+         * Conditions in a Policy</a> in the <i>Amazon S3 User Guide</i>. For a complete
+         * list of Amazon S3-specific condition keys, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
          * Resources, and Condition Keys for Amazon S3</a>.</p> <p> <b>
          * <code>x-amz-copy-source-if</code> Headers</b> </p> <p>To only copy an object
@@ -1173,14 +1173,14 @@ namespace Aws
          * object that is already stored in Amazon S3 using the <code>StorageClass</code>
          * parameter. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-         * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
-         * <b>Versioning</b> </p> <p>By default, <code>x-amz-copy-source</code> identifies
-         * the current version of an object to copy. If the current version is a delete
-         * marker, Amazon S3 behaves as if the object was deleted. To copy a different
-         * version, use the <code>versionId</code> subresource.</p> <p>If you enable
-         * versioning on the target bucket, Amazon S3 generates a unique version ID for the
-         * object being copied. This version ID is different from the version ID of the
-         * source object. Amazon S3 returns the version ID of the copied object in the
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Versioning</b> </p>
+         * <p>By default, <code>x-amz-copy-source</code> identifies the current version of
+         * an object to copy. If the current version is a delete marker, Amazon S3 behaves
+         * as if the object was deleted. To copy a different version, use the
+         * <code>versionId</code> subresource.</p> <p>If you enable versioning on the
+         * target bucket, Amazon S3 generates a unique version ID for the object being
+         * copied. This version ID is different from the version ID of the source object.
+         * Amazon S3 returns the version ID of the copied object in the
          * <code>x-amz-version-id</code> response header in the response.</p> <p>If you do
          * not enable versioning or suspend it on the target bucket, the version ID that
          * Amazon S3 generates is always null.</p> <p>If the source object's storage class
@@ -1208,9 +1208,9 @@ namespace Aws
          * are never allowed to create buckets. By creating the bucket, you become the
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
          * information about bucket naming restrictions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 buckets</a>. </p> <p>If you want to create an Amazon S3 on
-         * Outposts bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket
+         * naming rules</a>.</p> <p>If you want to create an Amazon S3 on Outposts bucket,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
          * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
          * Virginia) Region. You can optionally specify a Region in the request body. You
@@ -1276,9 +1276,9 @@ namespace Aws
          * are never allowed to create buckets. By creating the bucket, you become the
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
          * information about bucket naming restrictions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 buckets</a>. </p> <p>If you want to create an Amazon S3 on
-         * Outposts bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket
+         * naming rules</a>.</p> <p>If you want to create an Amazon S3 on Outposts bucket,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
          * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
          * Virginia) Region. You can optionally specify a Region in the request body. You
@@ -1346,9 +1346,9 @@ namespace Aws
          * are never allowed to create buckets. By creating the bucket, you become the
          * bucket owner.</p> <p>Not every string is an acceptable bucket name. For
          * information about bucket naming restrictions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html">Working
-         * with Amazon S3 buckets</a>. </p> <p>If you want to create an Amazon S3 on
-         * Outposts bucket, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket
+         * naming rules</a>.</p> <p>If you want to create an Amazon S3 on Outposts bucket,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create
          * Bucket</a>. </p> <p>By default, the bucket is created in the US East (N.
          * Virginia) Region. You can optionally specify a Region in the request body. You
@@ -1453,16 +1453,17 @@ namespace Aws
          * requests must match the headers you used in the request to initiate the upload
          * by using <code>CreateMultipartUpload</code>. </p> <p>To perform a multipart
          * upload with encryption using an AWS KMS CMK, the requester must have permission
-         * to the <code>kms:Encrypt</code>, <code>kms:Decrypt</code>,
-         * <code>kms:ReEncrypt*</code>, <code>kms:GenerateDataKey*</code>, and
-         * <code>kms:DescribeKey</code> actions on the key. These permissions are required
-         * because Amazon S3 must decrypt and read data from the encrypted file parts
-         * before it completes the multipart upload.</p> <p>If your AWS Identity and Access
-         * Management (IAM) user or role is in the same AWS account as the AWS KMS CMK,
-         * then you must have these permissions on the key policy. If your IAM user or role
-         * belongs to a different account than the key, then you must have the permissions
-         * on both the key policy and your IAM user or role.</p> <p> For more information,
-         * see <a
+         * to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code> actions on
+         * the key. These permissions are required because Amazon S3 must decrypt and read
+         * data from the encrypted file parts before it completes the multipart upload. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+         * upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
+         * your AWS Identity and Access Management (IAM) user or role is in the same AWS
+         * account as the AWS KMS CMK, then you must have these permissions on the key
+         * policy. If your IAM user or role belongs to a different account than the key,
+         * then you must have the permissions on both the key policy and your IAM user or
+         * role.</p> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
          * Data Using Server-Side Encryption</a>.</p> <dl> <dt>Access Permissions</dt> <dd>
          * <p>When copying an object, you can optionally specify the accounts or groups
@@ -1609,16 +1610,17 @@ namespace Aws
          * requests must match the headers you used in the request to initiate the upload
          * by using <code>CreateMultipartUpload</code>. </p> <p>To perform a multipart
          * upload with encryption using an AWS KMS CMK, the requester must have permission
-         * to the <code>kms:Encrypt</code>, <code>kms:Decrypt</code>,
-         * <code>kms:ReEncrypt*</code>, <code>kms:GenerateDataKey*</code>, and
-         * <code>kms:DescribeKey</code> actions on the key. These permissions are required
-         * because Amazon S3 must decrypt and read data from the encrypted file parts
-         * before it completes the multipart upload.</p> <p>If your AWS Identity and Access
-         * Management (IAM) user or role is in the same AWS account as the AWS KMS CMK,
-         * then you must have these permissions on the key policy. If your IAM user or role
-         * belongs to a different account than the key, then you must have the permissions
-         * on both the key policy and your IAM user or role.</p> <p> For more information,
-         * see <a
+         * to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code> actions on
+         * the key. These permissions are required because Amazon S3 must decrypt and read
+         * data from the encrypted file parts before it completes the multipart upload. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+         * upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
+         * your AWS Identity and Access Management (IAM) user or role is in the same AWS
+         * account as the AWS KMS CMK, then you must have these permissions on the key
+         * policy. If your IAM user or role belongs to a different account than the key,
+         * then you must have the permissions on both the key policy and your IAM user or
+         * role.</p> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
          * Data Using Server-Side Encryption</a>.</p> <dl> <dt>Access Permissions</dt> <dd>
          * <p>When copying an object, you can optionally specify the accounts or groups
@@ -1767,16 +1769,17 @@ namespace Aws
          * requests must match the headers you used in the request to initiate the upload
          * by using <code>CreateMultipartUpload</code>. </p> <p>To perform a multipart
          * upload with encryption using an AWS KMS CMK, the requester must have permission
-         * to the <code>kms:Encrypt</code>, <code>kms:Decrypt</code>,
-         * <code>kms:ReEncrypt*</code>, <code>kms:GenerateDataKey*</code>, and
-         * <code>kms:DescribeKey</code> actions on the key. These permissions are required
-         * because Amazon S3 must decrypt and read data from the encrypted file parts
-         * before it completes the multipart upload.</p> <p>If your AWS Identity and Access
-         * Management (IAM) user or role is in the same AWS account as the AWS KMS CMK,
-         * then you must have these permissions on the key policy. If your IAM user or role
-         * belongs to a different account than the key, then you must have the permissions
-         * on both the key policy and your IAM user or role.</p> <p> For more information,
-         * see <a
+         * to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code> actions on
+         * the key. These permissions are required because Amazon S3 must decrypt and read
+         * data from the encrypted file parts before it completes the multipart upload. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
+         * upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
+         * your AWS Identity and Access Management (IAM) user or role is in the same AWS
+         * account as the AWS KMS CMK, then you must have these permissions on the key
+         * policy. If your IAM user or role belongs to a different account than the key,
+         * then you must have the permissions on both the key policy and your IAM user or
+         * role.</p> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
          * Data Using Server-Side Encryption</a>.</p> <dl> <dt>Access Permissions</dt> <dd>
          * <p>When copying an object, you can optionally specify the accounts or groups
@@ -2616,8 +2619,8 @@ namespace Aws
          * while for the deletion of a replication configuration to fully propagate.</p>
          *  <p> For information about replication configuration, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-         * in the <i>Amazon S3 Developer Guide</i>. </p> <p>The following operations are
-         * related to <code>DeleteBucketReplication</code>:</p> <ul> <li> <p> <a
+         * in the <i>Amazon S3 User Guide</i>.</p> <p>The following operations are related
+         * to <code>DeleteBucketReplication</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
@@ -2640,8 +2643,8 @@ namespace Aws
          * while for the deletion of a replication configuration to fully propagate.</p>
          *  <p> For information about replication configuration, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-         * in the <i>Amazon S3 Developer Guide</i>. </p> <p>The following operations are
-         * related to <code>DeleteBucketReplication</code>:</p> <ul> <li> <p> <a
+         * in the <i>Amazon S3 User Guide</i>.</p> <p>The following operations are related
+         * to <code>DeleteBucketReplication</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
@@ -2666,8 +2669,8 @@ namespace Aws
          * while for the deletion of a replication configuration to fully propagate.</p>
          *  <p> For information about replication configuration, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-         * in the <i>Amazon S3 Developer Guide</i>. </p> <p>The following operations are
-         * related to <code>DeleteBucketReplication</code>:</p> <ul> <li> <p> <a
+         * in the <i>Amazon S3 User Guide</i>.</p> <p>The following operations are related
+         * to <code>DeleteBucketReplication</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketReplication.html">PutBucketReplication</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
@@ -6162,12 +6165,15 @@ namespace Aws
         virtual void ListObjectsAsync(const Model::ListObjectsRequest& request, const ListObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns some or all (up to 1,000) of the objects in a bucket. You can use the
-         * request parameters as selection criteria to return a subset of the objects in a
-         * bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make
-         * sure to design your application to parse the contents of the response and handle
-         * it appropriately. Objects are returned sorted in an ascending order of the
-         * respective key names in the list.</p> <p>To use this operation, you must have
+         * <p>Returns some or all (up to 1,000) of the objects in a bucket with each
+         * request. You can use the request parameters as selection criteria to return a
+         * subset of the objects in a bucket. A <code>200 OK</code> response can contain
+         * valid or invalid XML. Make sure to design your application to parse the contents
+         * of the response and handle it appropriately. Objects are returned sorted in an
+         * ascending order of the respective key names in the list. For more information
+         * about listing objects, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
+         * object keys programmatically</a> </p> <p>To use this operation, you must have
          * READ access to the bucket.</p> <p>To use this action in an AWS Identity and
          * Access Management (IAM) policy, you must have permissions to perform the
          * <code>s3:ListBucket</code> action. The bucket owner has this permission by
@@ -6197,12 +6203,15 @@ namespace Aws
         virtual Model::ListObjectsV2Outcome ListObjectsV2(const Model::ListObjectsV2Request& request) const;
 
         /**
-         * <p>Returns some or all (up to 1,000) of the objects in a bucket. You can use the
-         * request parameters as selection criteria to return a subset of the objects in a
-         * bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make
-         * sure to design your application to parse the contents of the response and handle
-         * it appropriately. Objects are returned sorted in an ascending order of the
-         * respective key names in the list.</p> <p>To use this operation, you must have
+         * <p>Returns some or all (up to 1,000) of the objects in a bucket with each
+         * request. You can use the request parameters as selection criteria to return a
+         * subset of the objects in a bucket. A <code>200 OK</code> response can contain
+         * valid or invalid XML. Make sure to design your application to parse the contents
+         * of the response and handle it appropriately. Objects are returned sorted in an
+         * ascending order of the respective key names in the list. For more information
+         * about listing objects, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
+         * object keys programmatically</a> </p> <p>To use this operation, you must have
          * READ access to the bucket.</p> <p>To use this action in an AWS Identity and
          * Access Management (IAM) policy, you must have permissions to perform the
          * <code>s3:ListBucket</code> action. The bucket owner has this permission by
@@ -6234,12 +6243,15 @@ namespace Aws
         virtual Model::ListObjectsV2OutcomeCallable ListObjectsV2Callable(const Model::ListObjectsV2Request& request) const;
 
         /**
-         * <p>Returns some or all (up to 1,000) of the objects in a bucket. You can use the
-         * request parameters as selection criteria to return a subset of the objects in a
-         * bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make
-         * sure to design your application to parse the contents of the response and handle
-         * it appropriately. Objects are returned sorted in an ascending order of the
-         * respective key names in the list.</p> <p>To use this operation, you must have
+         * <p>Returns some or all (up to 1,000) of the objects in a bucket with each
+         * request. You can use the request parameters as selection criteria to return a
+         * subset of the objects in a bucket. A <code>200 OK</code> response can contain
+         * valid or invalid XML. Make sure to design your application to parse the contents
+         * of the response and handle it appropriately. Objects are returned sorted in an
+         * ascending order of the respective key names in the list. For more information
+         * about listing objects, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing
+         * object keys programmatically</a> </p> <p>To use this operation, you must have
          * READ access to the bucket.</p> <p>To use this action in an AWS Identity and
          * Access Management (IAM) policy, you must have permissions to perform the
          * <code>s3:ListBucket</code> action. The bucket owner has this permission by
@@ -7427,13 +7439,13 @@ namespace Aws
         /**
          * <p>Creates a new lifecycle configuration for the bucket or replaces an existing
          * lifecycle configuration. For information about lifecycle configuration, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p>  <p>Bucket
-         * lifecycle configuration now supports specifying a lifecycle rule using an object
-         * key name prefix, one or more object tags, or a combination of both. Accordingly,
-         * this section describes the latest API. The previous version of the API supported
-         * filtering based only on an object key name prefix, which is supported for
-         * backward compatibility. For the related API description, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+         * your storage lifecycle</a>.</p>  <p>Bucket lifecycle configuration now
+         * supports specifying a lifecycle rule using an object key name prefix, one or
+         * more object tags, or a combination of both. Accordingly, this section describes
+         * the latest API. The previous version of the API supported filtering based only
+         * on an object key name prefix, which is supported for backward compatibility. For
+         * the related API description, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
          *  <p> <b>Rules</b> </p> <p>You specify the lifecycle configuration in your
          * request body. The lifecycle configuration is specified as XML consisting of one
@@ -7480,13 +7492,13 @@ namespace Aws
         /**
          * <p>Creates a new lifecycle configuration for the bucket or replaces an existing
          * lifecycle configuration. For information about lifecycle configuration, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p>  <p>Bucket
-         * lifecycle configuration now supports specifying a lifecycle rule using an object
-         * key name prefix, one or more object tags, or a combination of both. Accordingly,
-         * this section describes the latest API. The previous version of the API supported
-         * filtering based only on an object key name prefix, which is supported for
-         * backward compatibility. For the related API description, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+         * your storage lifecycle</a>.</p>  <p>Bucket lifecycle configuration now
+         * supports specifying a lifecycle rule using an object key name prefix, one or
+         * more object tags, or a combination of both. Accordingly, this section describes
+         * the latest API. The previous version of the API supported filtering based only
+         * on an object key name prefix, which is supported for backward compatibility. For
+         * the related API description, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
          *  <p> <b>Rules</b> </p> <p>You specify the lifecycle configuration in your
          * request body. The lifecycle configuration is specified as XML consisting of one
@@ -7535,13 +7547,13 @@ namespace Aws
         /**
          * <p>Creates a new lifecycle configuration for the bucket or replaces an existing
          * lifecycle configuration. For information about lifecycle configuration, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p>  <p>Bucket
-         * lifecycle configuration now supports specifying a lifecycle rule using an object
-         * key name prefix, one or more object tags, or a combination of both. Accordingly,
-         * this section describes the latest API. The previous version of the API supported
-         * filtering based only on an object key name prefix, which is supported for
-         * backward compatibility. For the related API description, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+         * your storage lifecycle</a>.</p>  <p>Bucket lifecycle configuration now
+         * supports specifying a lifecycle rule using an object key name prefix, one or
+         * more object tags, or a combination of both. Accordingly, this section describes
+         * the latest API. The previous version of the API supported filtering based only
+         * on an object key name prefix, which is supported for backward compatibility. For
+         * the related API description, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
          *  <p> <b>Rules</b> </p> <p>You specify the lifecycle configuration in your
          * request body. The lifecycle configuration is specified as XML consisting of one
@@ -8109,8 +8121,8 @@ namespace Aws
          * <p> Creates a replication configuration or replaces an existing one. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-         * in the <i>Amazon S3 Developer Guide</i>. </p>  <p>To perform this
-         * operation, the user or role performing the action must have the <a
+         * in the <i>Amazon S3 User Guide</i>. </p>  <p>To perform this operation,
+         * the user or role performing the action must have the <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
          * permission.</p>  <p>Specify the replication configuration in the request
          * body. In the replication configuration, you provide the name of the destination
@@ -8166,8 +8178,8 @@ namespace Aws
          * <p> Creates a replication configuration or replaces an existing one. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-         * in the <i>Amazon S3 Developer Guide</i>. </p>  <p>To perform this
-         * operation, the user or role performing the action must have the <a
+         * in the <i>Amazon S3 User Guide</i>. </p>  <p>To perform this operation,
+         * the user or role performing the action must have the <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
          * permission.</p>  <p>Specify the replication configuration in the request
          * body. In the replication configuration, you provide the name of the destination
@@ -8225,8 +8237,8 @@ namespace Aws
          * <p> Creates a replication configuration or replaces an existing one. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-         * in the <i>Amazon S3 Developer Guide</i>. </p>  <p>To perform this
-         * operation, the user or role performing the action must have the <a
+         * in the <i>Amazon S3 User Guide</i>. </p>  <p>To perform this operation,
+         * the user or role performing the action must have the <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
          * permission.</p>  <p>Specify the replication configuration in the request
          * body. In the replication configuration, you provide the name of the destination
@@ -8767,13 +8779,12 @@ namespace Aws
          * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-         * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
-         * <b>Versioning</b> </p> <p>If you enable versioning for a bucket, Amazon S3
-         * automatically generates a unique version ID for the object being stored. Amazon
-         * S3 returns this ID in the response. When you enable versioning for a bucket, if
-         * Amazon S3 receives multiple write requests for the same object simultaneously,
-         * it stores all of the objects.</p> <p>For more information about versioning, see
-         * <a
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Versioning</b> </p>
+         * <p>If you enable versioning for a bucket, Amazon S3 automatically generates a
+         * unique version ID for the object being stored. Amazon S3 returns this ID in the
+         * response. When you enable versioning for a bucket, if Amazon S3 receives
+         * multiple write requests for the same object simultaneously, it stores all of the
+         * objects.</p> <p>For more information about versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
          * Objects to Versioning Enabled Buckets</a>. For information about returning the
          * versioning state of a bucket, see <a
@@ -8834,13 +8845,12 @@ namespace Aws
          * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-         * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p> <p>
-         * <b>Versioning</b> </p> <p>If you enable versioning for a bucket, Amazon S3
-         * automatically generates a unique version ID for the object being stored. Amazon
-         * S3 returns this ID in the response. When you enable versioning for a bucket, if
-         * Amazon S3 receives multiple write requests for the same object simultaneously,
-         * it stores all of the objects.</p> <p>For more information about versioning, see
-         * <a
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Versioning</b> </p>
+         * <p>If you enable versioning for a bucket, Amazon S3 automatically generates a
+         * unique version ID for the object being stored. Amazon S3 returns this ID in the
+         * response. When you enable versioning for a bucket, if Amazon S3 receives
+         * multiple write requests for the same object simultaneously, it stores all of the
+         * objects.</p> <p>For more information about versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
          * Objects to Versioning Enabled Buckets</a>. For information about returning the
          * versioning state of a bucket, see <a
@@ -8870,7 +8880,7 @@ namespace Aws
          * that updates a bucket ACL using the request body, you can continue to use that
          * approach. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-         * Control List (ACL) Overview</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>
+         * Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p> <p>
          * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
          * the following methods:</p> <ul> <li> <p>Specify a canned ACL with the
          * <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
@@ -8956,7 +8966,7 @@ namespace Aws
          * that updates a bucket ACL using the request body, you can continue to use that
          * approach. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-         * Control List (ACL) Overview</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>
+         * Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p> <p>
          * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
          * the following methods:</p> <ul> <li> <p>Specify a canned ACL with the
          * <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
@@ -9044,7 +9054,7 @@ namespace Aws
          * that updates a bucket ACL using the request body, you can continue to use that
          * approach. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
-         * Control List (ACL) Overview</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>
+         * Control List (ACL) Overview</a> in the <i>Amazon S3 User Guide</i>.</p> <p>
          * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
          * the following methods:</p> <ul> <li> <p>Specify a canned ACL with the
          * <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined

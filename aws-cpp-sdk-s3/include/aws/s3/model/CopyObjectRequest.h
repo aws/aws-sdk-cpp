@@ -96,7 +96,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -117,7 +117,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -138,7 +138,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -159,7 +159,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -180,7 +180,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -201,7 +201,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -222,7 +222,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -243,7 +243,7 @@ namespace Model
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
@@ -1370,7 +1370,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
@@ -1381,7 +1381,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
@@ -1392,7 +1392,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
@@ -1403,7 +1403,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
@@ -1414,7 +1414,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
@@ -1425,7 +1425,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -1672,8 +1672,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
@@ -1683,8 +1683,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
@@ -1694,8 +1694,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
@@ -1705,8 +1705,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
@@ -1716,8 +1716,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
@@ -1727,8 +1727,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1738,8 +1738,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
@@ -1749,8 +1749,8 @@ namespace Model
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

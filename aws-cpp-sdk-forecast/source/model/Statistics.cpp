@@ -32,7 +32,15 @@ Statistics::Statistics() :
     m_avg(0.0),
     m_avgHasBeenSet(false),
     m_stddev(0.0),
-    m_stddevHasBeenSet(false)
+    m_stddevHasBeenSet(false),
+    m_countLong(0),
+    m_countLongHasBeenSet(false),
+    m_countDistinctLong(0),
+    m_countDistinctLongHasBeenSet(false),
+    m_countNullLong(0),
+    m_countNullLongHasBeenSet(false),
+    m_countNanLong(0),
+    m_countNanLongHasBeenSet(false)
 {
 }
 
@@ -50,7 +58,15 @@ Statistics::Statistics(JsonView jsonValue) :
     m_avg(0.0),
     m_avgHasBeenSet(false),
     m_stddev(0.0),
-    m_stddevHasBeenSet(false)
+    m_stddevHasBeenSet(false),
+    m_countLong(0),
+    m_countLongHasBeenSet(false),
+    m_countDistinctLong(0),
+    m_countDistinctLongHasBeenSet(false),
+    m_countNullLong(0),
+    m_countNullLongHasBeenSet(false),
+    m_countNanLong(0),
+    m_countNanLongHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +129,34 @@ Statistics& Statistics::operator =(JsonView jsonValue)
     m_stddevHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CountLong"))
+  {
+    m_countLong = jsonValue.GetInt64("CountLong");
+
+    m_countLongHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CountDistinctLong"))
+  {
+    m_countDistinctLong = jsonValue.GetInt64("CountDistinctLong");
+
+    m_countDistinctLongHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CountNullLong"))
+  {
+    m_countNullLong = jsonValue.GetInt64("CountNullLong");
+
+    m_countNullLongHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CountNanLong"))
+  {
+    m_countNanLong = jsonValue.GetInt64("CountNanLong");
+
+    m_countNanLongHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -165,6 +209,30 @@ JsonValue Statistics::Jsonize() const
   if(m_stddevHasBeenSet)
   {
    payload.WithDouble("Stddev", m_stddev);
+
+  }
+
+  if(m_countLongHasBeenSet)
+  {
+   payload.WithInt64("CountLong", m_countLong);
+
+  }
+
+  if(m_countDistinctLongHasBeenSet)
+  {
+   payload.WithInt64("CountDistinctLong", m_countDistinctLong);
+
+  }
+
+  if(m_countNullLongHasBeenSet)
+  {
+   payload.WithInt64("CountNullLong", m_countNullLong);
+
+  }
+
+  if(m_countNanLongHasBeenSet)
+  {
+   payload.WithInt64("CountNanLong", m_countNanLong);
 
   }
 

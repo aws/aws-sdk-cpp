@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Specifies the configuration and any analyses for the analytics filter of an
+   * <p>Specifies the configuration and any analyses for the analytics filter of an
    * Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsConfiguration">AWS
    * API Reference</a></p>

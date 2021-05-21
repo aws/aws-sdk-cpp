@@ -28,6 +28,7 @@
 #include <aws/elasticfilesystem/model/DeleteFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DeleteMountTargetRequest.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeAccountPreferencesRequest.h>
 #include <aws/elasticfilesystem/model/DescribeBackupPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsRequest.h>
@@ -36,6 +37,7 @@
 #include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceRequest.h>
 #include <aws/elasticfilesystem/model/ModifyMountTargetSecurityGroupsRequest.h>
+#include <aws/elasticfilesystem/model/PutAccountPreferencesRequest.h>
 #include <aws/elasticfilesystem/model/PutBackupPolicyRequest.h>
 #include <aws/elasticfilesystem/model/PutFileSystemPolicyRequest.h>
 #include <aws/elasticfilesystem/model/PutLifecycleConfigurationRequest.h>
@@ -357,6 +359,33 @@ void EFSClient::DescribeAccessPointsAsyncHelper(const DescribeAccessPointsReques
   handler(this, request, DescribeAccessPoints(request), context);
 }
 
+DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const DescribeAccountPreferencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/account-preferences";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAccountPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAccountPreferencesOutcomeCallable EFSClient::DescribeAccountPreferencesCallable(const DescribeAccountPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccountPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccountPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::DescribeAccountPreferencesAsync(const DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccountPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::DescribeAccountPreferencesAsyncHelper(const DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccountPreferences(request), context);
+}
+
 DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackupPolicyRequest& request) const
 {
   if (!request.FileSystemIdHasBeenSet())
@@ -612,6 +641,33 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsync(const ModifyMountTargetSecu
 void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyMountTargetSecurityGroups(request), context);
+}
+
+PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPreferencesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/account-preferences";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return PutAccountPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutAccountPreferencesOutcomeCallable EFSClient::PutAccountPreferencesCallable(const PutAccountPreferencesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccountPreferencesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccountPreferences(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::PutAccountPreferencesAsync(const PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAccountPreferencesAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::PutAccountPreferencesAsyncHelper(const PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAccountPreferences(request), context);
 }
 
 PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& request) const

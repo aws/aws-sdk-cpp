@@ -32,8 +32,8 @@ namespace Model
    * <p>Specifies the inventory configuration for an Amazon S3 bucket. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET
-   * Bucket inventory</a> in the <i>Amazon Simple Storage Service API Reference</i>.
-   * </p><p><h3>See Also:</h3>   <a
+   * Bucket inventory</a> in the <i>Amazon S3 API Reference</i>. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryConfiguration">AWS
    * API Reference</a></p>
    */

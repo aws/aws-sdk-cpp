@@ -44,8 +44,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3
+     * User Guide</i>.</p>
      */
     inline int GetNoncurrentDays() const{ return m_noncurrentDays; }
 
@@ -54,8 +54,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3
+     * User Guide</i>.</p>
      */
     inline bool NoncurrentDaysHasBeenSet() const { return m_noncurrentDaysHasBeenSet; }
 
@@ -64,8 +64,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3
+     * User Guide</i>.</p>
      */
     inline void SetNoncurrentDays(int value) { m_noncurrentDaysHasBeenSet = true; m_noncurrentDays = value; }
 
@@ -74,8 +74,8 @@ namespace Model
      * perform the associated action. For information about the noncurrent days
      * calculations, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations">How
-     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * Amazon S3 Calculates When an Object Became Noncurrent</a> in the <i>Amazon S3
+     * User Guide</i>.</p>
      */
     inline NoncurrentVersionExpiration& WithNoncurrentDays(int value) { SetNoncurrentDays(value); return *this;}
 

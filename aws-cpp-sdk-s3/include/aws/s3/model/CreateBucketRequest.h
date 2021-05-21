@@ -278,42 +278,58 @@ namespace Model
 
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline const Aws::String& GetGrantWrite() const{ return m_grantWrite; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline bool GrantWriteHasBeenSet() const { return m_grantWriteHasBeenSet; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(Aws::String&& value) { m_grantWriteHasBeenSet = true; m_grantWrite = std::move(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const char* value) { m_grantWriteHasBeenSet = true; m_grantWrite.assign(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(const Aws::String& value) { SetGrantWrite(value); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(Aws::String&& value) { SetGrantWrite(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline CreateBucketRequest& WithGrantWrite(const char* value) { SetGrantWrite(value); return *this;}
 

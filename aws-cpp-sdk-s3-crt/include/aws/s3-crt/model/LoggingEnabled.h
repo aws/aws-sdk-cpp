@@ -28,8 +28,8 @@ namespace Model
    * <p>Describes where logs are stored and the prefix that Amazon S3 assigns to all
    * log object keys for a bucket. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html">PUT
-   * Bucket logging</a> in the <i>Amazon Simple Storage Service API
-   * Reference</i>.</p><p><h3>See Also:</h3>   <a
+   * Bucket logging</a> in the <i>Amazon S3 API Reference</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LoggingEnabled">AWS
    * API Reference</a></p>
    */
