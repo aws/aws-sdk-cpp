@@ -859,11 +859,10 @@ public:
 
         // setting up token file for tests
         Aws::StringStream ssToken;
-        ssToken << profileDirectory;
-        ssToken << PATH_DELIM << "sso" << PATH_DELIM << "cache" << PATH_DELIM;
+        ssToken << ssCachedTokenDirectory.str();
         auto ssoTokenDirectory = ssToken.str();
         // SHA1 of "https://d-92671207e4.awsapps.com/start" -> 13f9d35043871d073ab260e020f0ffde092cb14b
-        ssToken << "13f9d35043871d073ab260e020f0ffde092cb14b.json";
+        ssToken << PATH_DELIM << "13f9d35043871d073ab260e020f0ffde092cb14b.json";
         m_ssoTokenFileName = ssToken.str();
 
         mockHttpClient = Aws::MakeShared<MockHttpClient>(AllocationTag);
@@ -880,6 +879,9 @@ public:
 
         CleanupHttp();
         InitHttp();
+
+        Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+        Aws::FileSystem::RemoveFileIfExists(m_ssoTokenFileName.c_str());
     }
 
     Aws::String m_ssoTokenFileName;
@@ -891,13 +893,14 @@ TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromConfigCorrectly)
 {
     AWS_LOGSTREAM_DEBUG("TEST_SSO", "Preparing Test Token file in: " << m_ssoTokenFileName);
     Aws::OFStream tokenFile(m_ssoTokenFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-    Aws::String token = R"({
+    tokenFile << R"({
     "accessToken": "base64string",
-    "expiresAt": "2042-12-12T00:00:00Z",
+    "expiresAt": ")";
+    tokenFile << DateTime::Now().GetYear() + 1;
+    tokenFile << R"(-01-02T00:00:00Z",
     "region": "us-west-2",
     "startUrl": "https://d-92671207e4.awsapps.com/start"
 })";
-    tokenFile << token;
     tokenFile.close();
 
     Aws::OFStream configFile(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
@@ -947,8 +950,6 @@ sso_start_url = https://d-92671207e4.awsapps.com/start
     ASSERT_EQ("secret", creds.GetAWSSecretKey());
     ASSERT_EQ("token", creds.GetSessionToken());
     ASSERT_EQ(DateTime((int64_t) 2303614800000), creds.GetExpiration());
-    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
-    Aws::FileSystem::RemoveFileIfExists(m_ssoTokenFileName.c_str());
 }
 
 TEST_F(SSOCredentialsProviderTest, TestParseCredentialsFromExpiredTokenProvidesNoCredentials)
