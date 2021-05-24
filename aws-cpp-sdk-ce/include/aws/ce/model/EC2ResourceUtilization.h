@@ -7,6 +7,8 @@
 #include <aws/ce/CostExplorer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ce/model/EBSResourceUtilization.h>
+#include <aws/ce/model/DiskResourceUtilization.h>
+#include <aws/ce/model/NetworkResourceUtilization.h>
 #include <utility>
 
 namespace Aws
@@ -205,6 +207,80 @@ namespace Model
      */
     inline EC2ResourceUtilization& WithEBSResourceUtilization(EBSResourceUtilization&& value) { SetEBSResourceUtilization(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The field that contains a list of disk (local storage) metrics associated
+     * with the current instance. </p>
+     */
+    inline const DiskResourceUtilization& GetDiskResourceUtilization() const{ return m_diskResourceUtilization; }
+
+    /**
+     * <p> The field that contains a list of disk (local storage) metrics associated
+     * with the current instance. </p>
+     */
+    inline bool DiskResourceUtilizationHasBeenSet() const { return m_diskResourceUtilizationHasBeenSet; }
+
+    /**
+     * <p> The field that contains a list of disk (local storage) metrics associated
+     * with the current instance. </p>
+     */
+    inline void SetDiskResourceUtilization(const DiskResourceUtilization& value) { m_diskResourceUtilizationHasBeenSet = true; m_diskResourceUtilization = value; }
+
+    /**
+     * <p> The field that contains a list of disk (local storage) metrics associated
+     * with the current instance. </p>
+     */
+    inline void SetDiskResourceUtilization(DiskResourceUtilization&& value) { m_diskResourceUtilizationHasBeenSet = true; m_diskResourceUtilization = std::move(value); }
+
+    /**
+     * <p> The field that contains a list of disk (local storage) metrics associated
+     * with the current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithDiskResourceUtilization(const DiskResourceUtilization& value) { SetDiskResourceUtilization(value); return *this;}
+
+    /**
+     * <p> The field that contains a list of disk (local storage) metrics associated
+     * with the current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithDiskResourceUtilization(DiskResourceUtilization&& value) { SetDiskResourceUtilization(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The network field that contains a list of network metrics associated with
+     * the current instance. </p>
+     */
+    inline const NetworkResourceUtilization& GetNetworkResourceUtilization() const{ return m_networkResourceUtilization; }
+
+    /**
+     * <p> The network field that contains a list of network metrics associated with
+     * the current instance. </p>
+     */
+    inline bool NetworkResourceUtilizationHasBeenSet() const { return m_networkResourceUtilizationHasBeenSet; }
+
+    /**
+     * <p> The network field that contains a list of network metrics associated with
+     * the current instance. </p>
+     */
+    inline void SetNetworkResourceUtilization(const NetworkResourceUtilization& value) { m_networkResourceUtilizationHasBeenSet = true; m_networkResourceUtilization = value; }
+
+    /**
+     * <p> The network field that contains a list of network metrics associated with
+     * the current instance. </p>
+     */
+    inline void SetNetworkResourceUtilization(NetworkResourceUtilization&& value) { m_networkResourceUtilizationHasBeenSet = true; m_networkResourceUtilization = std::move(value); }
+
+    /**
+     * <p> The network field that contains a list of network metrics associated with
+     * the current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithNetworkResourceUtilization(const NetworkResourceUtilization& value) { SetNetworkResourceUtilization(value); return *this;}
+
+    /**
+     * <p> The network field that contains a list of network metrics associated with
+     * the current instance. </p>
+     */
+    inline EC2ResourceUtilization& WithNetworkResourceUtilization(NetworkResourceUtilization&& value) { SetNetworkResourceUtilization(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_maxCpuUtilizationPercentage;
@@ -218,6 +294,12 @@ namespace Model
 
     EBSResourceUtilization m_eBSResourceUtilization;
     bool m_eBSResourceUtilizationHasBeenSet;
+
+    DiskResourceUtilization m_diskResourceUtilization;
+    bool m_diskResourceUtilizationHasBeenSet;
+
+    NetworkResourceUtilization m_networkResourceUtilization;
+    bool m_networkResourceUtilizationHasBeenSet;
   };
 
 } // namespace Model

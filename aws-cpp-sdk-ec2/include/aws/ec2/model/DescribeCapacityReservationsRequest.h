@@ -177,14 +177,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -229,14 +231,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -281,14 +285,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -333,14 +339,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -385,14 +393,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -437,14 +447,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -489,14 +501,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid
@@ -541,14 +555,16 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled.
-     * The reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
      * <code>pending</code> - The Capacity Reservation request was successful but the
      * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
      * The Capacity Reservation request has failed. A request might fail due to invalid

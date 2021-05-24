@@ -233,32 +233,28 @@ namespace Model
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
-     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
+     * returned.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
-     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
+     * returned.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
-     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
+     * returned.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
      * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
-     * returned.</p> <p>If you omit <code>startTime</code> and <code>endTime</code> the
-     * most recent log events are retrieved, to up 1 MB or 10,000 log events.</p>
+     * returned.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 

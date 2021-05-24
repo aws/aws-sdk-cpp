@@ -25,6 +25,8 @@ namespace Aws
         static const int Complete_HASH = HashingUtils::HashString("Complete");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+        static const int Timeout_HASH = HashingUtils::HashString("Timeout");
+        static const int Unknown_HASH = HashingUtils::HashString("Unknown");
 
 
         QueryStatus GetQueryStatusForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return QueryStatus::Cancelled;
           }
+          else if (hashCode == Timeout_HASH)
+          {
+            return QueryStatus::Timeout;
+          }
+          else if (hashCode == Unknown_HASH)
+          {
+            return QueryStatus::Unknown;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +84,10 @@ namespace Aws
             return "Failed";
           case QueryStatus::Cancelled:
             return "Cancelled";
+          case QueryStatus::Timeout:
+            return "Timeout";
+          case QueryStatus::Unknown:
+            return "Unknown";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

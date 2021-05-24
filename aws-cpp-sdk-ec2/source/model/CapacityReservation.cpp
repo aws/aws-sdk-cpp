@@ -48,7 +48,8 @@ CapacityReservation::CapacityReservation() :
     m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
     m_instanceMatchCriteriaHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ CapacityReservation::CapacityReservation(const XmlNode& xmlNode) :
     m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
     m_instanceMatchCriteriaHasBeenSet(false),
     m_createDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -211,6 +213,12 @@ CapacityReservation& CapacityReservation::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -319,6 +327,11 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
       }
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
 }
 
 void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -404,6 +417,10 @@ void CapacityReservation::OutputToStream(Aws::OStream& oStream, const char* loca
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 }
 

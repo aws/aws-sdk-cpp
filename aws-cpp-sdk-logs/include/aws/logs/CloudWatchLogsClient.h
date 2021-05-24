@@ -252,7 +252,7 @@ namespace Model
 
   /**
    * <p>You can use Amazon CloudWatch Logs to monitor, store, and access your log
-   * files from EC2 instances, AWS CloudTrail, or other sources. You can then
+   * files from EC2 instances, AWS CloudTrail, and other sources. You can then
    * retrieve the associated log data from CloudWatch Logs using the CloudWatch
    * console, CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or
    * CloudWatch Logs SDK.</p> <p>You can use CloudWatch Logs to:</p> <ul> <li> <p>
@@ -1520,7 +1520,11 @@ namespace Model
          * An access policy is an <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
          * policy document</a> that is used to authorize claims to register a subscription
-         * filter against a given destination.</p><p><h3>See Also:</h3>   <a
+         * filter against a given destination.</p> <p>If multiple AWS accounts are sending
+         * logs to this destination, each sender account must be listed separately in the
+         * policy. The policy does not support specifying <code>*</code> as the Principal
+         * or the use of the <code>aws:PrincipalOrgId</code> global key.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">AWS
          * API Reference</a></p>
          */
@@ -1531,7 +1535,11 @@ namespace Model
          * An access policy is an <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
          * policy document</a> that is used to authorize claims to register a subscription
-         * filter against a given destination.</p><p><h3>See Also:</h3>   <a
+         * filter against a given destination.</p> <p>If multiple AWS accounts are sending
+         * logs to this destination, each sender account must be listed separately in the
+         * policy. The policy does not support specifying <code>*</code> as the Principal
+         * or the use of the <code>aws:PrincipalOrgId</code> global key.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">AWS
          * API Reference</a></p>
          *
@@ -1544,7 +1552,11 @@ namespace Model
          * An access policy is an <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM
          * policy document</a> that is used to authorize claims to register a subscription
-         * filter against a given destination.</p><p><h3>See Also:</h3>   <a
+         * filter against a given destination.</p> <p>If multiple AWS accounts are sending
+         * logs to this destination, each sender account must be listed separately in the
+         * policy. The policy does not support specifying <code>*</code> as the Principal
+         * or the use of the <code>aws:PrincipalOrgId</code> global key.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestinationPolicy">AWS
          * API Reference</a></p>
          *
@@ -1655,7 +1667,20 @@ namespace Model
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>The maximum number of metric filters that can be associated with a log group
-         * is 100.</p><p><h3>See Also:</h3>   <a
+         * is 100.</p> <p>When you create a metric filter, you can also optionally assign a
+         * unit and dimensions to the metric that is created.</p>  <p>Metrics
+         * extracted from log events are charged as custom metrics. To prevent unexpected
+         * high charges, do not specify high-cardinality fields such as
+         * <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different
+         * value found for a dimension is treated as a separate metric and accrues charges
+         * as a separate custom metric. </p> <p>To help prevent accidental high charges,
+         * Amazon disables a metric filter if it generates 1000 different name/value pairs
+         * for the dimensions that you have specified within a certain amount of time.</p>
+         * <p>You can also set up a billing alarm to alert you if your charges are higher
+         * than expected. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+         * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">AWS
          * API Reference</a></p>
          */
@@ -1667,7 +1692,20 @@ namespace Model
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>The maximum number of metric filters that can be associated with a log group
-         * is 100.</p><p><h3>See Also:</h3>   <a
+         * is 100.</p> <p>When you create a metric filter, you can also optionally assign a
+         * unit and dimensions to the metric that is created.</p>  <p>Metrics
+         * extracted from log events are charged as custom metrics. To prevent unexpected
+         * high charges, do not specify high-cardinality fields such as
+         * <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different
+         * value found for a dimension is treated as a separate metric and accrues charges
+         * as a separate custom metric. </p> <p>To help prevent accidental high charges,
+         * Amazon disables a metric filter if it generates 1000 different name/value pairs
+         * for the dimensions that you have specified within a certain amount of time.</p>
+         * <p>You can also set up a billing alarm to alert you if your charges are higher
+         * than expected. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+         * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">AWS
          * API Reference</a></p>
          *
@@ -1681,7 +1719,20 @@ namespace Model
          * log events ingested through <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>
          * <p>The maximum number of metric filters that can be associated with a log group
-         * is 100.</p><p><h3>See Also:</h3>   <a
+         * is 100.</p> <p>When you create a metric filter, you can also optionally assign a
+         * unit and dimensions to the metric that is created.</p>  <p>Metrics
+         * extracted from log events are charged as custom metrics. To prevent unexpected
+         * high charges, do not specify high-cardinality fields such as
+         * <code>IPAddress</code> or <code>requestID</code> as dimensions. Each different
+         * value found for a dimension is treated as a separate metric and accrues charges
+         * as a separate custom metric. </p> <p>To help prevent accidental high charges,
+         * Amazon disables a metric filter if it generates 1000 different name/value pairs
+         * for the dimensions that you have specified within a certain amount of time.</p>
+         * <p>You can also set up a billing alarm to alert you if your charges are higher
+         * than expected. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
+         * Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>. </p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutMetricFilter">AWS
          * API Reference</a></p>
          *
@@ -1827,12 +1878,11 @@ namespace Model
          * belongs to the same account as the subscription filter, for same-account
          * delivery.</p> </li> <li> <p>An AWS Lambda function that belongs to the same
          * account as the subscription filter, for same-account delivery.</p> </li> </ul>
-         * <p>There can only be one subscription filter associated with a log group. If you
-         * are updating an existing filter, you must specify the correct name in
-         * <code>filterName</code>. Otherwise, the call fails because you cannot associate
-         * a second filter with a log group.</p> <p>To perform a
-         * <code>PutSubscriptionFilter</code> operation, you must also have the
-         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
+         * <p>Each log group can have up to two subscription filters associated with it. If
+         * you are updating an existing filter, you must specify the correct name in
+         * <code>filterName</code>. </p> <p>To perform a <code>PutSubscriptionFilter</code>
+         * operation, you must also have the <code>iam:PassRole</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          */
@@ -1853,12 +1903,11 @@ namespace Model
          * belongs to the same account as the subscription filter, for same-account
          * delivery.</p> </li> <li> <p>An AWS Lambda function that belongs to the same
          * account as the subscription filter, for same-account delivery.</p> </li> </ul>
-         * <p>There can only be one subscription filter associated with a log group. If you
-         * are updating an existing filter, you must specify the correct name in
-         * <code>filterName</code>. Otherwise, the call fails because you cannot associate
-         * a second filter with a log group.</p> <p>To perform a
-         * <code>PutSubscriptionFilter</code> operation, you must also have the
-         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
+         * <p>Each log group can have up to two subscription filters associated with it. If
+         * you are updating an existing filter, you must specify the correct name in
+         * <code>filterName</code>. </p> <p>To perform a <code>PutSubscriptionFilter</code>
+         * operation, you must also have the <code>iam:PassRole</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          *
@@ -1881,12 +1930,11 @@ namespace Model
          * belongs to the same account as the subscription filter, for same-account
          * delivery.</p> </li> <li> <p>An AWS Lambda function that belongs to the same
          * account as the subscription filter, for same-account delivery.</p> </li> </ul>
-         * <p>There can only be one subscription filter associated with a log group. If you
-         * are updating an existing filter, you must specify the correct name in
-         * <code>filterName</code>. Otherwise, the call fails because you cannot associate
-         * a second filter with a log group.</p> <p>To perform a
-         * <code>PutSubscriptionFilter</code> operation, you must also have the
-         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
+         * <p>Each log group can have up to two subscription filters associated with it. If
+         * you are updating an existing filter, you must specify the correct name in
+         * <code>filterName</code>. </p> <p>To perform a <code>PutSubscriptionFilter</code>
+         * operation, you must also have the <code>iam:PassRole</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          *

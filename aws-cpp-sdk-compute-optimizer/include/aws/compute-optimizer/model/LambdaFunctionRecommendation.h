@@ -319,7 +319,7 @@ namespace Model
 
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -343,7 +343,7 @@ namespace Model
     inline const LambdaFunctionRecommendationFinding& GetFinding() const{ return m_finding; }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -367,7 +367,7 @@ namespace Model
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -391,7 +391,7 @@ namespace Model
     inline void SetFinding(const LambdaFunctionRecommendationFinding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -415,7 +415,7 @@ namespace Model
     inline void SetFinding(LambdaFunctionRecommendationFinding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -439,7 +439,7 @@ namespace Model
     inline LambdaFunctionRecommendation& WithFinding(const LambdaFunctionRecommendationFinding& value) { SetFinding(value); return *this;}
 
     /**
-     * <p>The finding classification for the function.</p> <p>Findings for functions
+     * <p>The finding classification of the function.</p> <p>Findings for functions
      * include:</p> <ul> <li> <p> <b> <code>Optimized</code> </b> — The function is
      * correctly provisioned to run your workload based on its current configuration
      * and its utilization history. This finding classification does not include
@@ -466,18 +466,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -494,18 +494,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -522,18 +522,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -550,18 +550,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -578,18 +578,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -606,18 +606,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -634,18 +634,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
@@ -662,18 +662,18 @@ namespace Model
     /**
      * <p>The reason for the finding classification of the function.</p> 
      * <p>Functions that have a finding classification of <code>Optimized</code> don't
-     * have a finding reason code.</p>  <p>Reason codes include:</p> <ul> <li>
-     * <p> <b> <code>MemoryOverprovisioned</code> </b> — The function is
-     * over-provisioned when its memory configuration can be sized down while still
-     * meeting the performance requirements of your workload. An over-provisioned
-     * function might lead to unnecessary infrastructure cost. This finding reason code
-     * is part of the <code>NotOptimized</code> finding classification.</p> </li> <li>
-     * <p> <b> <code>MemoryUnderprovisioned</code> </b> — The function is
-     * under-provisioned when its memory configuration doesn't meet the performance
-     * requirements of the workload. An under-provisioned function might lead to poor
-     * application performance. This finding reason code is part of the
-     * <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
-     * <code>InsufficientData</code> </b> — The function does not have sufficient
+     * have a finding reason code.</p>  <p>Finding reason codes for functions
+     * include:</p> <ul> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The
+     * function is over-provisioned when its memory configuration can be sized down
+     * while still meeting the performance requirements of your workload. An
+     * over-provisioned function might lead to unnecessary infrastructure cost. This
+     * finding reason code is part of the <code>NotOptimized</code> finding
+     * classification.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b>
+     * — The function is under-provisioned when its memory configuration doesn't meet
+     * the performance requirements of the workload. An under-provisioned function
+     * might lead to poor application performance. This finding reason code is part of
+     * the <code>NotOptimized</code> finding classification.</p> </li> <li> <p> <b>
+     * <code>InsufficientData</code> </b> �� The function does not have sufficient
      * metric data for Compute Optimizer to generate a recommendation. For more
      * information, see the <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported

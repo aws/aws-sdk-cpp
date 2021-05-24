@@ -905,6 +905,55 @@ namespace Model
      */
     inline CapacityReservation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline CapacityReservation& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline CapacityReservation& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     * Reservation was created.</p>
+     */
+    inline CapacityReservation& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
   private:
 
     Aws::String m_capacityReservationId;
@@ -963,6 +1012,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
   };
 
 } // namespace Model

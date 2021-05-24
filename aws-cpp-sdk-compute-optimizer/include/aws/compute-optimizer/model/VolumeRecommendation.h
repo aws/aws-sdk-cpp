@@ -164,7 +164,7 @@ namespace Model
 
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
      * considered not optimized when AWS Compute Optimizer identifies a recommendation
      * that can provide better performance for your workload.</p> </li> <li> <p> <b>
@@ -176,7 +176,7 @@ namespace Model
     inline const EBSFinding& GetFinding() const{ return m_finding; }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
      * considered not optimized when AWS Compute Optimizer identifies a recommendation
      * that can provide better performance for your workload.</p> </li> <li> <p> <b>
@@ -188,7 +188,7 @@ namespace Model
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
      * considered not optimized when AWS Compute Optimizer identifies a recommendation
      * that can provide better performance for your workload.</p> </li> <li> <p> <b>
@@ -200,7 +200,7 @@ namespace Model
     inline void SetFinding(const EBSFinding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
      * considered not optimized when AWS Compute Optimizer identifies a recommendation
      * that can provide better performance for your workload.</p> </li> <li> <p> <b>
@@ -212,7 +212,7 @@ namespace Model
     inline void SetFinding(EBSFinding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
      * considered not optimized when AWS Compute Optimizer identifies a recommendation
      * that can provide better performance for your workload.</p> </li> <li> <p> <b>
@@ -224,7 +224,7 @@ namespace Model
     inline VolumeRecommendation& WithFinding(const EBSFinding& value) { SetFinding(value); return *this;}
 
     /**
-     * <p>The finding classification for the volume.</p> <p>Findings for volumes
+     * <p>The finding classification of the volume.</p> <p>Findings for volumes
      * include:</p> <ul> <li> <p> <b> <code>NotOptimized</code> </b>—A volume is
      * considered not optimized when AWS Compute Optimizer identifies a recommendation
      * that can provide better performance for your workload.</p> </li> <li> <p> <b>

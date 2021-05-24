@@ -752,6 +752,55 @@ namespace Model
      */
     inline CreateCapacityReservationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline CreateCapacityReservationRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline CreateCapacityReservationRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost on which to create the Capacity
+     * Reservation.</p>
+     */
+    inline CreateCapacityReservationRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -795,6 +844,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
   };
 
 } // namespace Model

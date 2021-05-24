@@ -167,7 +167,7 @@ namespace Model
 
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
      * </b>—An Auto Scaling group is considered not optimized when AWS Compute
      * Optimizer identifies a recommendation that can provide better performance for
@@ -180,7 +180,7 @@ namespace Model
     inline const Finding& GetFinding() const{ return m_finding; }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
      * </b>—An Auto Scaling group is considered not optimized when AWS Compute
      * Optimizer identifies a recommendation that can provide better performance for
@@ -193,7 +193,7 @@ namespace Model
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
      * </b>—An Auto Scaling group is considered not optimized when AWS Compute
      * Optimizer identifies a recommendation that can provide better performance for
@@ -206,7 +206,7 @@ namespace Model
     inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
      * </b>—An Auto Scaling group is considered not optimized when AWS Compute
      * Optimizer identifies a recommendation that can provide better performance for
@@ -219,7 +219,7 @@ namespace Model
     inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
      * </b>—An Auto Scaling group is considered not optimized when AWS Compute
      * Optimizer identifies a recommendation that can provide better performance for
@@ -232,7 +232,7 @@ namespace Model
     inline AutoScalingGroupRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
 
     /**
-     * <p>The finding classification for the Auto Scaling group.</p> <p>Findings for
+     * <p>The finding classification of the Auto Scaling group.</p> <p>Findings for
      * Auto Scaling groups include:</p> <ul> <li> <p> <b> <code>NotOptimized</code>
      * </b>—An Auto Scaling group is considered not optimized when AWS Compute
      * Optimizer identifies a recommendation that can provide better performance for

@@ -25,6 +25,7 @@ InstanceRecommendation::InstanceRecommendation() :
     m_currentInstanceTypeHasBeenSet(false),
     m_finding(Finding::NOT_SET),
     m_findingHasBeenSet(false),
+    m_findingReasonCodesHasBeenSet(false),
     m_utilizationMetricsHasBeenSet(false),
     m_lookBackPeriodInDays(0.0),
     m_lookBackPeriodInDaysHasBeenSet(false),
@@ -41,6 +42,7 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_currentInstanceTypeHasBeenSet(false),
     m_finding(Finding::NOT_SET),
     m_findingHasBeenSet(false),
+    m_findingReasonCodesHasBeenSet(false),
     m_utilizationMetricsHasBeenSet(false),
     m_lookBackPeriodInDays(0.0),
     m_lookBackPeriodInDaysHasBeenSet(false),
@@ -86,6 +88,16 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_finding = FindingMapper::GetFindingForName(jsonValue.GetString("finding"));
 
     m_findingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("findingReasonCodes"))
+  {
+    Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("findingReasonCodes");
+    for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
+    {
+      m_findingReasonCodes.push_back(InstanceRecommendationFindingReasonCodeMapper::GetInstanceRecommendationFindingReasonCodeForName(findingReasonCodesJsonList[findingReasonCodesIndex].AsString()));
+    }
+    m_findingReasonCodesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("utilizationMetrics"))
@@ -166,6 +178,17 @@ JsonValue InstanceRecommendation::Jsonize() const
   if(m_findingHasBeenSet)
   {
    payload.WithString("finding", FindingMapper::GetNameForFinding(m_finding));
+  }
+
+  if(m_findingReasonCodesHasBeenSet)
+  {
+   Array<JsonValue> findingReasonCodesJsonList(m_findingReasonCodes.size());
+   for(unsigned findingReasonCodesIndex = 0; findingReasonCodesIndex < findingReasonCodesJsonList.GetLength(); ++findingReasonCodesIndex)
+   {
+     findingReasonCodesJsonList[findingReasonCodesIndex].AsString(InstanceRecommendationFindingReasonCodeMapper::GetNameForInstanceRecommendationFindingReasonCode(m_findingReasonCodes[findingReasonCodesIndex]));
+   }
+   payload.WithArray("findingReasonCodes", std::move(findingReasonCodesJsonList));
+
   }
 
   if(m_utilizationMetricsHasBeenSet)

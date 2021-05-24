@@ -30,6 +30,14 @@ namespace Aws
         static const int UtilizationMetricsEbsWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
         static const int UtilizationMetricsEbsReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsReadBytesPerSecondMaximum");
         static const int UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
+        static const int UtilizationMetricsDiskReadOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskReadOpsPerSecondMaximum");
+        static const int UtilizationMetricsDiskWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskWriteOpsPerSecondMaximum");
+        static const int UtilizationMetricsDiskReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskReadBytesPerSecondMaximum");
+        static const int UtilizationMetricsDiskWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskWriteBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkInBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkInBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkOutBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkPacketsInPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkPacketsInPerSecondMaximum");
+        static const int UtilizationMetricsNetworkPacketsOutPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkPacketsOutPerSecondMaximum");
         static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
         static const int CurrentConfigurationInstanceType_HASH = HashingUtils::HashString("CurrentConfigurationInstanceType");
         static const int CurrentConfigurationDesiredCapacity_HASH = HashingUtils::HashString("CurrentConfigurationDesiredCapacity");
@@ -101,6 +109,38 @@ namespace Aws
           else if (hashCode == UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH)
           {
             return ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskReadOpsPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskWriteOpsPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskReadBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskWriteBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkInBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkOutBytesPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkPacketsInPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkPacketsOutPerSecondMaximum_HASH)
+          {
+            return ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum;
           }
           else if (hashCode == LookbackPeriodInDays_HASH)
           {
@@ -244,6 +284,22 @@ namespace Aws
             return "UtilizationMetricsEbsReadBytesPerSecondMaximum";
           case ExportableAutoScalingGroupField::UtilizationMetricsEbsWriteBytesPerSecondMaximum:
             return "UtilizationMetricsEbsWriteBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskReadOpsPerSecondMaximum:
+            return "UtilizationMetricsDiskReadOpsPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteOpsPerSecondMaximum:
+            return "UtilizationMetricsDiskWriteOpsPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskReadBytesPerSecondMaximum:
+            return "UtilizationMetricsDiskReadBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsDiskWriteBytesPerSecondMaximum:
+            return "UtilizationMetricsDiskWriteBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkInBytesPerSecondMaximum:
+            return "UtilizationMetricsNetworkInBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkOutBytesPerSecondMaximum:
+            return "UtilizationMetricsNetworkOutBytesPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsInPerSecondMaximum:
+            return "UtilizationMetricsNetworkPacketsInPerSecondMaximum";
+          case ExportableAutoScalingGroupField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum:
+            return "UtilizationMetricsNetworkPacketsOutPerSecondMaximum";
           case ExportableAutoScalingGroupField::LookbackPeriodInDays:
             return "LookbackPeriodInDays";
           case ExportableAutoScalingGroupField::CurrentConfigurationInstanceType:

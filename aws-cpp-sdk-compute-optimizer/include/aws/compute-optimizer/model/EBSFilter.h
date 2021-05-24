@@ -27,8 +27,14 @@ namespace Model
 
   /**
    * <p>Describes a filter that returns a more specific list of Amazon Elastic Block
-   * Store (Amazon EBS) volume recommendations.</p> <p>This filter is used with the
-   * <code>GetEBSVolumeRecommendations</code> action.</p><p><h3>See Also:</h3>   <a
+   * Store (Amazon EBS) volume recommendations. Use this filter with the
+   * <code>GetEBSVolumeRecommendations</code> action.</p> <p>You can use
+   * <code>LambdaFunctionRecommendationFilter</code> with the
+   * <code>GetLambdaFunctionRecommendations</code> action, <code>JobFilter</code>
+   * with the <code>DescribeRecommendationExportJobs</code> action, and
+   * <code>Filter</code> with the <code>GetAutoScalingGroupRecommendations</code> and
+   * <code>GetEC2InstanceRecommendations</code> actions.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/EBSFilter">AWS
    * API Reference</a></p>
    */
@@ -44,42 +50,42 @@ namespace Model
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
      * recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).</p>
+     * <code>NotOptimized</code>).</p>
      */
     inline const EBSFilterName& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
      * recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).</p>
+     * <code>NotOptimized</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
      * recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).</p>
+     * <code>NotOptimized</code>).</p>
      */
     inline void SetName(const EBSFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
      * recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).</p>
+     * <code>NotOptimized</code>).</p>
      */
     inline void SetName(EBSFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
      * recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).</p>
+     * <code>NotOptimized</code>).</p>
      */
     inline EBSFilter& WithName(const EBSFilterName& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
      * recommendations with a specific finding classification (e.g.,
-     * <code>Optimized</code>).</p>
+     * <code>NotOptimized</code>).</p>
      */
     inline EBSFilter& WithName(EBSFilterName&& value) { SetName(std::move(value)); return *this;}
 

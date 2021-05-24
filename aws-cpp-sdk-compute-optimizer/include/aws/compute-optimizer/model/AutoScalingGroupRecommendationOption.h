@@ -170,37 +170,69 @@ namespace Model
 
     /**
      * <p>The performance risk of the Auto Scaling group configuration
-     * recommendation.</p> <p>Performance risk is the likelihood of the recommended
-     * instance type not meeting the performance requirement of your workload.</p>
-     * <p>The lowest performance risk is categorized as <code>0</code>, and the highest
-     * as <code>5</code>.</p>
+     * recommendation.</p> <p>Performance risk indicates the likelihood of the
+     * recommended instance type not meeting the resource needs of your workload.
+     * Compute Optimizer calculates an individual performance risk score for each
+     * specification of the recommended instance, including CPU, memory, EBS
+     * throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and
+     * network PPS. The performance risk of the recommended instance is calculated as
+     * the maximum performance risk score across the analyzed resource
+     * specifications.</p> <p>The value ranges from 0 to 5, with 0 meaning that the
+     * recommended resource is predicted to always provide enough hardware capability.
+     * The higher the performance risk is, the more likely you should validate whether
+     * the recommended resource meets the performance requirements of your workload
+     * before migrating your resource.</p>
      */
     inline double GetPerformanceRisk() const{ return m_performanceRisk; }
 
     /**
      * <p>The performance risk of the Auto Scaling group configuration
-     * recommendation.</p> <p>Performance risk is the likelihood of the recommended
-     * instance type not meeting the performance requirement of your workload.</p>
-     * <p>The lowest performance risk is categorized as <code>0</code>, and the highest
-     * as <code>5</code>.</p>
+     * recommendation.</p> <p>Performance risk indicates the likelihood of the
+     * recommended instance type not meeting the resource needs of your workload.
+     * Compute Optimizer calculates an individual performance risk score for each
+     * specification of the recommended instance, including CPU, memory, EBS
+     * throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and
+     * network PPS. The performance risk of the recommended instance is calculated as
+     * the maximum performance risk score across the analyzed resource
+     * specifications.</p> <p>The value ranges from 0 to 5, with 0 meaning that the
+     * recommended resource is predicted to always provide enough hardware capability.
+     * The higher the performance risk is, the more likely you should validate whether
+     * the recommended resource meets the performance requirements of your workload
+     * before migrating your resource.</p>
      */
     inline bool PerformanceRiskHasBeenSet() const { return m_performanceRiskHasBeenSet; }
 
     /**
      * <p>The performance risk of the Auto Scaling group configuration
-     * recommendation.</p> <p>Performance risk is the likelihood of the recommended
-     * instance type not meeting the performance requirement of your workload.</p>
-     * <p>The lowest performance risk is categorized as <code>0</code>, and the highest
-     * as <code>5</code>.</p>
+     * recommendation.</p> <p>Performance risk indicates the likelihood of the
+     * recommended instance type not meeting the resource needs of your workload.
+     * Compute Optimizer calculates an individual performance risk score for each
+     * specification of the recommended instance, including CPU, memory, EBS
+     * throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and
+     * network PPS. The performance risk of the recommended instance is calculated as
+     * the maximum performance risk score across the analyzed resource
+     * specifications.</p> <p>The value ranges from 0 to 5, with 0 meaning that the
+     * recommended resource is predicted to always provide enough hardware capability.
+     * The higher the performance risk is, the more likely you should validate whether
+     * the recommended resource meets the performance requirements of your workload
+     * before migrating your resource.</p>
      */
     inline void SetPerformanceRisk(double value) { m_performanceRiskHasBeenSet = true; m_performanceRisk = value; }
 
     /**
      * <p>The performance risk of the Auto Scaling group configuration
-     * recommendation.</p> <p>Performance risk is the likelihood of the recommended
-     * instance type not meeting the performance requirement of your workload.</p>
-     * <p>The lowest performance risk is categorized as <code>0</code>, and the highest
-     * as <code>5</code>.</p>
+     * recommendation.</p> <p>Performance risk indicates the likelihood of the
+     * recommended instance type not meeting the resource needs of your workload.
+     * Compute Optimizer calculates an individual performance risk score for each
+     * specification of the recommended instance, including CPU, memory, EBS
+     * throughput, EBS IOPS, disk throughput, disk IOPS, network throughput, and
+     * network PPS. The performance risk of the recommended instance is calculated as
+     * the maximum performance risk score across the analyzed resource
+     * specifications.</p> <p>The value ranges from 0 to 5, with 0 meaning that the
+     * recommended resource is predicted to always provide enough hardware capability.
+     * The higher the performance risk is, the more likely you should validate whether
+     * the recommended resource meets the performance requirements of your workload
+     * before migrating your resource.</p>
      */
     inline AutoScalingGroupRecommendationOption& WithPerformanceRisk(double value) { SetPerformanceRisk(value); return *this;}
 

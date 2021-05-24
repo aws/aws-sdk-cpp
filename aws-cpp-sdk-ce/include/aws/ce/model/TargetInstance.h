@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ce/model/ResourceDetails.h>
 #include <aws/ce/model/ResourceUtilization.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ce/model/PlatformDifference.h>
 #include <utility>
 
 namespace Aws
@@ -256,6 +258,63 @@ namespace Model
      */
     inline TargetInstance& WithExpectedResourceUtilization(ResourceUtilization&& value) { SetExpectedResourceUtilization(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline const Aws::Vector<PlatformDifference>& GetPlatformDifferences() const{ return m_platformDifferences; }
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline bool PlatformDifferencesHasBeenSet() const { return m_platformDifferencesHasBeenSet; }
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline void SetPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = value; }
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline void SetPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences = std::move(value); }
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline TargetInstance& WithPlatformDifferences(const Aws::Vector<PlatformDifference>& value) { SetPlatformDifferences(value); return *this;}
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline TargetInstance& WithPlatformDifferences(Aws::Vector<PlatformDifference>&& value) { SetPlatformDifferences(std::move(value)); return *this;}
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline TargetInstance& AddPlatformDifferences(const PlatformDifference& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(value); return *this; }
+
+    /**
+     * <p> Explains the actions you might need to take in order to successfully migrate
+     * your workloads from the current instance type to the recommended instance type.
+     * </p>
+     */
+    inline TargetInstance& AddPlatformDifferences(PlatformDifference&& value) { m_platformDifferencesHasBeenSet = true; m_platformDifferences.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_estimatedMonthlyCost;
@@ -275,6 +334,9 @@ namespace Model
 
     ResourceUtilization m_expectedResourceUtilization;
     bool m_expectedResourceUtilizationHasBeenSet;
+
+    Aws::Vector<PlatformDifference> m_platformDifferences;
+    bool m_platformDifferencesHasBeenSet;
   };
 
 } // namespace Model
