@@ -203,7 +203,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
@@ -212,7 +217,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
@@ -221,7 +231,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
@@ -230,7 +245,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
@@ -239,7 +259,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
@@ -248,7 +273,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline ListedUser& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
@@ -257,7 +287,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline ListedUser& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
@@ -266,7 +301,12 @@ namespace Model
      * Identity and Access Management (IAM) entity that, in this case, allows a file
      * transfer protocol-enabled server to act on a user's behalf. It allows the server
      * to inherit the trust relationship that enables that user to perform file
-     * operations to their Amazon S3 bucket.</p>
+     * operations to their Amazon S3 bucket.</p>  <p>The IAM role that controls
+     * your users' access to your Amazon S3 bucket for servers with
+     * <code>Domain=S3</code>, or your EFS file system for servers with
+     * <code>Domain=EFS</code>. </p> <p>The policies attached to this role determine
+     * the level of access you want to provide your users when transferring files into
+     * and out of your S3 buckets or EFS file systems.</p> 
      */
     inline ListedUser& WithRole(const char* value) { SetRole(value); return *this;}
 

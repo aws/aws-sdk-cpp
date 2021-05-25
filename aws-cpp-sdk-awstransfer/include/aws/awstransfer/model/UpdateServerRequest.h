@@ -288,10 +288,19 @@ namespace Model
 
 
     /**
-     * <p>The type of endpoint that you want your server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
-     * can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After March 31,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before March 31, 2021. If you have already created
+     * servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or
+     * before March 31, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -301,10 +310,19 @@ namespace Model
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of endpoint that you want your server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
-     * can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After March 31,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before March 31, 2021. If you have already created
+     * servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or
+     * before March 31, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -314,10 +332,19 @@ namespace Model
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of endpoint that you want your server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
-     * can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After March 31,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before March 31, 2021. If you have already created
+     * servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or
+     * before March 31, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -327,10 +354,19 @@ namespace Model
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of endpoint that you want your server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
-     * can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After March 31,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before March 31, 2021. If you have already created
+     * servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or
+     * before March 31, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -340,10 +376,19 @@ namespace Model
     inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of endpoint that you want your server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
-     * can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After March 31,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before March 31, 2021. If you have already created
+     * servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or
+     * before March 31, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -353,10 +398,19 @@ namespace Model
     inline UpdateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of endpoint that you want your server to connect to. You can choose
-     * to connect to the public internet or a VPC endpoint. With a VPC endpoint, you
-     * can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After March 31,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before March 31, 2021. If you have already created
+     * servers with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or
+     * before March 31, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -502,49 +556,57 @@ namespace Model
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
      * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 events to be logged in Amazon CloudWatch, turning logging on or off.</p>
+     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
+     * off.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
@@ -561,10 +623,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -582,10 +645,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -603,10 +667,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -624,10 +689,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -645,10 +711,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -666,10 +733,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -687,10 +755,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -708,10 +777,11 @@ namespace Model
      * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
      * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
      * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
-     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
-     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
-     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
-     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
+     * <code>Protocol</code> includes <code>FTP</code>, then
+     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
+     * <code>Protocol</code> is set only to <code>SFTP</code>, the
+     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */

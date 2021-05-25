@@ -44,6 +44,7 @@
 #include <aws/iot/model/CreateDomainConfigurationRequest.h>
 #include <aws/iot/model/CreateDynamicThingGroupRequest.h>
 #include <aws/iot/model/CreateJobRequest.h>
+#include <aws/iot/model/CreateJobTemplateRequest.h>
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
 #include <aws/iot/model/CreateMitigationActionRequest.h>
 #include <aws/iot/model/CreateOTAUpdateRequest.h>
@@ -73,6 +74,7 @@
 #include <aws/iot/model/DeleteDynamicThingGroupRequest.h>
 #include <aws/iot/model/DeleteJobRequest.h>
 #include <aws/iot/model/DeleteJobExecutionRequest.h>
+#include <aws/iot/model/DeleteJobTemplateRequest.h>
 #include <aws/iot/model/DeleteMitigationActionRequest.h>
 #include <aws/iot/model/DeleteOTAUpdateRequest.h>
 #include <aws/iot/model/DeletePolicyRequest.h>
@@ -110,6 +112,7 @@
 #include <aws/iot/model/DescribeIndexRequest.h>
 #include <aws/iot/model/DescribeJobRequest.h>
 #include <aws/iot/model/DescribeJobExecutionRequest.h>
+#include <aws/iot/model/DescribeJobTemplateRequest.h>
 #include <aws/iot/model/DescribeMitigationActionRequest.h>
 #include <aws/iot/model/DescribeProvisioningTemplateRequest.h>
 #include <aws/iot/model/DescribeProvisioningTemplateVersionRequest.h>
@@ -161,6 +164,7 @@
 #include <aws/iot/model/ListIndicesRequest.h>
 #include <aws/iot/model/ListJobExecutionsForJobRequest.h>
 #include <aws/iot/model/ListJobExecutionsForThingRequest.h>
+#include <aws/iot/model/ListJobTemplatesRequest.h>
 #include <aws/iot/model/ListJobsRequest.h>
 #include <aws/iot/model/ListMitigationActionsRequest.h>
 #include <aws/iot/model/ListOTAUpdatesRequest.h>
@@ -1098,6 +1102,39 @@ void IoTClient::CreateJobAsync(const CreateJobRequest& request, const CreateJobR
 void IoTClient::CreateJobAsyncHelper(const CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateJob(request), context);
+}
+
+CreateJobTemplateOutcome IoTClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
+{
+  if (!request.JobTemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateJobTemplate", "Required field: JobTemplateId, is not set");
+    return CreateJobTemplateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobTemplateId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/job-templates/";
+  ss << request.GetJobTemplateId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateJobTemplateOutcomeCallable IoTClient::CreateJobTemplateCallable(const CreateJobTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateJobTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateJobTemplateAsync(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateJobTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateJobTemplateAsyncHelper(const CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateJobTemplate(request), context);
 }
 
 CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const CreateKeysAndCertificateRequest& request) const
@@ -2042,6 +2079,39 @@ void IoTClient::DeleteJobExecutionAsync(const DeleteJobExecutionRequest& request
 void IoTClient::DeleteJobExecutionAsyncHelper(const DeleteJobExecutionRequest& request, const DeleteJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteJobExecution(request), context);
+}
+
+DeleteJobTemplateOutcome IoTClient::DeleteJobTemplate(const DeleteJobTemplateRequest& request) const
+{
+  if (!request.JobTemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobTemplate", "Required field: JobTemplateId, is not set");
+    return DeleteJobTemplateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobTemplateId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/job-templates/";
+  ss << request.GetJobTemplateId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteJobTemplateOutcomeCallable IoTClient::DeleteJobTemplateCallable(const DeleteJobTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteJobTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteJobTemplateAsync(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteJobTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteJobTemplateAsyncHelper(const DeleteJobTemplateRequest& request, const DeleteJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteJobTemplate(request), context);
 }
 
 DeleteMitigationActionOutcome IoTClient::DeleteMitigationAction(const DeleteMitigationActionRequest& request) const
@@ -3253,6 +3323,39 @@ void IoTClient::DescribeJobExecutionAsync(const DescribeJobExecutionRequest& req
 void IoTClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionRequest& request, const DescribeJobExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeJobExecution(request), context);
+}
+
+DescribeJobTemplateOutcome IoTClient::DescribeJobTemplate(const DescribeJobTemplateRequest& request) const
+{
+  if (!request.JobTemplateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobTemplate", "Required field: JobTemplateId, is not set");
+    return DescribeJobTemplateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobTemplateId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/job-templates/";
+  ss << request.GetJobTemplateId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeJobTemplateOutcomeCallable IoTClient::DescribeJobTemplateCallable(const DescribeJobTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeJobTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeJobTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeJobTemplateAsync(const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeJobTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeJobTemplateAsyncHelper(const DescribeJobTemplateRequest& request, const DescribeJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeJobTemplate(request), context);
 }
 
 DescribeMitigationActionOutcome IoTClient::DescribeMitigationAction(const DescribeMitigationActionRequest& request) const
@@ -4857,6 +4960,33 @@ void IoTClient::ListJobExecutionsForThingAsync(const ListJobExecutionsForThingRe
 void IoTClient::ListJobExecutionsForThingAsyncHelper(const ListJobExecutionsForThingRequest& request, const ListJobExecutionsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListJobExecutionsForThing(request), context);
+}
+
+ListJobTemplatesOutcome IoTClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/job-templates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListJobTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListJobTemplatesOutcomeCallable IoTClient::ListJobTemplatesCallable(const ListJobTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListJobTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListJobTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListJobTemplatesAsync(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListJobTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListJobTemplatesAsyncHelper(const ListJobTemplatesRequest& request, const ListJobTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListJobTemplates(request), context);
 }
 
 ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const

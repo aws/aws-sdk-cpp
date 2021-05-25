@@ -22,6 +22,7 @@ namespace Aws
 
         static const int SERVICE_MANAGED_HASH = HashingUtils::HashString("SERVICE_MANAGED");
         static const int API_GATEWAY_HASH = HashingUtils::HashString("API_GATEWAY");
+        static const int AWS_DIRECTORY_SERVICE_HASH = HashingUtils::HashString("AWS_DIRECTORY_SERVICE");
 
 
         IdentityProviderType GetIdentityProviderTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == API_GATEWAY_HASH)
           {
             return IdentityProviderType::API_GATEWAY;
+          }
+          else if (hashCode == AWS_DIRECTORY_SERVICE_HASH)
+          {
+            return IdentityProviderType::AWS_DIRECTORY_SERVICE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "SERVICE_MANAGED";
           case IdentityProviderType::API_GATEWAY:
             return "API_GATEWAY";
+          case IdentityProviderType::AWS_DIRECTORY_SERVICE:
+            return "AWS_DIRECTORY_SERVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

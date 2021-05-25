@@ -221,7 +221,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */
@@ -229,7 +229,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */
@@ -237,7 +237,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */
@@ -245,7 +245,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */
@@ -253,7 +253,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */
@@ -261,7 +261,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */
@@ -269,7 +269,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */
@@ -277,7 +277,7 @@ namespace Model
 
     /**
      * <p>The tags associated with the bundle.</p>  <p>To add tags at the same
-     * time that you're creating the bundle, you must create an IAM policy that grants
+     * time when you're creating the bundle, you must create an IAM policy that grants
      * your IAM user permissions to use <code>workspaces:CreateTags</code>. </p>
      * 
      */

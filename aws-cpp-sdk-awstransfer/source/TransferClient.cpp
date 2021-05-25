@@ -20,15 +20,19 @@
 #include <aws/awstransfer/TransferClient.h>
 #include <aws/awstransfer/TransferEndpoint.h>
 #include <aws/awstransfer/TransferErrorMarshaller.h>
+#include <aws/awstransfer/model/CreateAccessRequest.h>
 #include <aws/awstransfer/model/CreateServerRequest.h>
 #include <aws/awstransfer/model/CreateUserRequest.h>
+#include <aws/awstransfer/model/DeleteAccessRequest.h>
 #include <aws/awstransfer/model/DeleteServerRequest.h>
 #include <aws/awstransfer/model/DeleteSshPublicKeyRequest.h>
 #include <aws/awstransfer/model/DeleteUserRequest.h>
+#include <aws/awstransfer/model/DescribeAccessRequest.h>
 #include <aws/awstransfer/model/DescribeSecurityPolicyRequest.h>
 #include <aws/awstransfer/model/DescribeServerRequest.h>
 #include <aws/awstransfer/model/DescribeUserRequest.h>
 #include <aws/awstransfer/model/ImportSshPublicKeyRequest.h>
+#include <aws/awstransfer/model/ListAccessesRequest.h>
 #include <aws/awstransfer/model/ListSecurityPoliciesRequest.h>
 #include <aws/awstransfer/model/ListServersRequest.h>
 #include <aws/awstransfer/model/ListTagsForResourceRequest.h>
@@ -38,6 +42,7 @@
 #include <aws/awstransfer/model/TagResourceRequest.h>
 #include <aws/awstransfer/model/TestIdentityProviderRequest.h>
 #include <aws/awstransfer/model/UntagResourceRequest.h>
+#include <aws/awstransfer/model/UpdateAccessRequest.h>
 #include <aws/awstransfer/model/UpdateServerRequest.h>
 #include <aws/awstransfer/model/UpdateUserRequest.h>
 
@@ -114,6 +119,33 @@ void TransferClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateAccessOutcome TransferClient::CreateAccess(const CreateAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return CreateAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAccessOutcomeCallable TransferClient::CreateAccessCallable(const CreateAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::CreateAccessAsync(const CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAccessAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::CreateAccessAsyncHelper(const CreateAccessRequest& request, const CreateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAccess(request), context);
+}
+
 CreateServerOutcome TransferClient::CreateServer(const CreateServerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -166,6 +198,33 @@ void TransferClient::CreateUserAsync(const CreateUserRequest& request, const Cre
 void TransferClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateUser(request), context);
+}
+
+DeleteAccessOutcome TransferClient::DeleteAccess(const DeleteAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DeleteAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAccessOutcomeCallable TransferClient::DeleteAccessCallable(const DeleteAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DeleteAccessAsync(const DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAccessAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DeleteAccessAsyncHelper(const DeleteAccessRequest& request, const DeleteAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAccess(request), context);
 }
 
 DeleteServerOutcome TransferClient::DeleteServer(const DeleteServerRequest& request) const
@@ -247,6 +306,33 @@ void TransferClient::DeleteUserAsync(const DeleteUserRequest& request, const Del
 void TransferClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUser(request), context);
+}
+
+DescribeAccessOutcome TransferClient::DescribeAccess(const DescribeAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return DescribeAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAccessOutcomeCallable TransferClient::DescribeAccessCallable(const DescribeAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::DescribeAccessAsync(const DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAccessAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::DescribeAccessAsyncHelper(const DescribeAccessRequest& request, const DescribeAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAccess(request), context);
 }
 
 DescribeSecurityPolicyOutcome TransferClient::DescribeSecurityPolicy(const DescribeSecurityPolicyRequest& request) const
@@ -355,6 +441,33 @@ void TransferClient::ImportSshPublicKeyAsync(const ImportSshPublicKeyRequest& re
 void TransferClient::ImportSshPublicKeyAsyncHelper(const ImportSshPublicKeyRequest& request, const ImportSshPublicKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ImportSshPublicKey(request), context);
+}
+
+ListAccessesOutcome TransferClient::ListAccesses(const ListAccessesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return ListAccessesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAccessesOutcomeCallable TransferClient::ListAccessesCallable(const ListAccessesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAccessesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAccesses(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::ListAccessesAsync(const ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAccessesAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::ListAccessesAsyncHelper(const ListAccessesRequest& request, const ListAccessesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAccesses(request), context);
 }
 
 ListSecurityPoliciesOutcome TransferClient::ListSecurityPolicies(const ListSecurityPoliciesRequest& request) const
@@ -598,6 +711,33 @@ void TransferClient::UntagResourceAsync(const UntagResourceRequest& request, con
 void TransferClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAccessOutcome TransferClient::UpdateAccess(const UpdateAccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAccessOutcomeCallable TransferClient::UpdateAccessCallable(const UpdateAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TransferClient::UpdateAccessAsync(const UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAccessAsyncHelper( request, handler, context ); } );
+}
+
+void TransferClient::UpdateAccessAsyncHelper(const UpdateAccessRequest& request, const UpdateAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAccess(request), context);
 }
 
 UpdateServerOutcome TransferClient::UpdateServer(const UpdateServerRequest& request) const
