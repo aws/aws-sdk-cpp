@@ -505,55 +505,55 @@ namespace Model
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The IDs of the security groups. Required for security groups in a nondefault
-     * VPC.</p> <p>Default: Describes all your security groups.</p>
+     * VPC.</p> <p>Default: Describes all of your security groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
@@ -562,7 +562,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
 
@@ -570,7 +571,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
 
@@ -578,7 +580,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
 
@@ -586,7 +589,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
 
@@ -594,7 +598,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
 
@@ -602,7 +607,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
 
@@ -610,7 +616,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
@@ -618,7 +625,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
 
@@ -626,7 +634,8 @@ namespace Model
      * <p>[EC2-Classic and default VPC only] The names of the security groups. You can
      * specify either the security group name or the security group ID. For security
      * groups in a nondefault VPC, use the <code>group-name</code> filter to describe
-     * security groups by name.</p> <p>Default: Describes all your security groups.</p>
+     * security groups by name.</p> <p>Default: Describes all of your security
+     * groups.</p>
      */
     inline DescribeSecurityGroupsRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 

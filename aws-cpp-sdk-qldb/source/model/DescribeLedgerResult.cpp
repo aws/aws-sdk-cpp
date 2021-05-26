@@ -18,12 +18,14 @@ using namespace Aws;
 
 DescribeLedgerResult::DescribeLedgerResult() : 
     m_state(LedgerState::NOT_SET),
+    m_permissionsMode(PermissionsMode::NOT_SET),
     m_deletionProtection(false)
 {
 }
 
 DescribeLedgerResult::DescribeLedgerResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_state(LedgerState::NOT_SET),
+    m_permissionsMode(PermissionsMode::NOT_SET),
     m_deletionProtection(false)
 {
   *this = result;
@@ -53,6 +55,12 @@ DescribeLedgerResult& DescribeLedgerResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("CreationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("CreationDateTime");
+
+  }
+
+  if(jsonValue.ValueExists("PermissionsMode"))
+  {
+    m_permissionsMode = PermissionsModeMapper::GetPermissionsModeForName(jsonValue.GetString("PermissionsMode"));
 
   }
 

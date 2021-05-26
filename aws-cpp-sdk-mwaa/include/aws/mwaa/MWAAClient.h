@@ -172,16 +172,16 @@ namespace Model
         virtual void CreateCliTokenAsync(const Model::CreateCliTokenRequest& request, const CreateCliTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>JSON blob that describes the environment to create.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p>JSON blob that describes the environment to create.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -190,8 +190,8 @@ namespace Model
         virtual Model::CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request) const;
 
         /**
-         * <p>JSON blob that describes the environment to create.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/CreateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -228,14 +228,16 @@ namespace Model
         virtual void CreateWebLoginTokenAsync(const Model::CreateWebLoginTokenRequest& request, const CreateWebLoginTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Delete an existing environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/DeleteEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteEnvironmentOutcome DeleteEnvironment(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Delete an existing environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/DeleteEnvironment">AWS
          * API Reference</a></p>
          *
@@ -244,7 +246,8 @@ namespace Model
         virtual Model::DeleteEnvironmentOutcomeCallable DeleteEnvironmentCallable(const Model::DeleteEnvironmentRequest& request) const;
 
         /**
-         * <p>Delete an existing environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/DeleteEnvironment">AWS
          * API Reference</a></p>
          *
@@ -253,14 +256,16 @@ namespace Model
         virtual void DeleteEnvironmentAsync(const Model::DeleteEnvironmentRequest& request, const DeleteEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get details of an existing environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the details of an Amazon Managed Workflows for Apache Airflow
+         * (MWAA) environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEnvironmentOutcome GetEnvironment(const Model::GetEnvironmentRequest& request) const;
 
         /**
-         * <p>Get details of an existing environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the details of an Amazon Managed Workflows for Apache Airflow
+         * (MWAA) environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment">AWS
          * API Reference</a></p>
          *
@@ -269,7 +274,8 @@ namespace Model
         virtual Model::GetEnvironmentOutcomeCallable GetEnvironmentCallable(const Model::GetEnvironmentRequest& request) const;
 
         /**
-         * <p>Get details of an existing environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the details of an Amazon Managed Workflows for Apache Airflow
+         * (MWAA) environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/GetEnvironment">AWS
          * API Reference</a></p>
          *
@@ -278,14 +284,16 @@ namespace Model
         virtual void GetEnvironmentAsync(const Model::GetEnvironmentRequest& request, const GetEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List Amazon MWAA Environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environments.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments">AWS
          * API Reference</a></p>
          */
         virtual Model::ListEnvironmentsOutcome ListEnvironments(const Model::ListEnvironmentsRequest& request) const;
 
         /**
-         * <p>List Amazon MWAA Environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environments.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments">AWS
          * API Reference</a></p>
          *
@@ -294,7 +302,8 @@ namespace Model
         virtual Model::ListEnvironmentsOutcomeCallable ListEnvironmentsCallable(const Model::ListEnvironmentsRequest& request) const;
 
         /**
-         * <p>List Amazon MWAA Environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environments.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListEnvironments">AWS
          * API Reference</a></p>
          *
@@ -303,14 +312,18 @@ namespace Model
         virtual void ListEnvironmentsAsync(const Model::ListEnvironmentsRequest& request, const ListEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the tags for MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the key-value tag pairs associated to the Amazon Managed Workflows for
+         * Apache Airflow (MWAA) environment. For example, <code>"Environment":
+         * "Staging"</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List the tags for MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the key-value tag pairs associated to the Amazon Managed Workflows for
+         * Apache Airflow (MWAA) environment. For example, <code>"Environment":
+         * "Staging"</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -319,7 +332,9 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>List the tags for MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the key-value tag pairs associated to the Amazon Managed Workflows for
+         * Apache Airflow (MWAA) environment. For example, <code>"Environment":
+         * "Staging"</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -356,14 +371,16 @@ namespace Model
         virtual void PublishMetricsAsync(const Model::PublishMetricsRequest& request, const PublishMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Add tag to the MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates key-value tag pairs to your Amazon Managed Workflows for Apache
+         * Airflow (MWAA) environment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add tag to the MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates key-value tag pairs to your Amazon Managed Workflows for Apache
+         * Airflow (MWAA) environment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -372,7 +389,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Add tag to the MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Associates key-value tag pairs to your Amazon Managed Workflows for Apache
+         * Airflow (MWAA) environment. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -381,14 +399,18 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove a tag from the MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes key-value tag pairs associated to your Amazon Managed Workflows for
+         * Apache Airflow (MWAA) environment. For example, <code>"Environment":
+         * "Staging"</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove a tag from the MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes key-value tag pairs associated to your Amazon Managed Workflows for
+         * Apache Airflow (MWAA) environment. For example, <code>"Environment":
+         * "Staging"</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -397,7 +419,9 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove a tag from the MWAA environments.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes key-value tag pairs associated to your Amazon Managed Workflows for
+         * Apache Airflow (MWAA) environment. For example, <code>"Environment":
+         * "Staging"</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -406,14 +430,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update an MWAA environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateEnvironment">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEnvironmentOutcome UpdateEnvironment(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p>Update an MWAA environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateEnvironment">AWS
          * API Reference</a></p>
          *
@@ -422,7 +448,8 @@ namespace Model
         virtual Model::UpdateEnvironmentOutcomeCallable UpdateEnvironmentCallable(const Model::UpdateEnvironmentRequest& request) const;
 
         /**
-         * <p>Update an MWAA environment.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Managed Workflows for Apache Airflow (MWAA)
+         * environment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/UpdateEnvironment">AWS
          * API Reference</a></p>
          *

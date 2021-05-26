@@ -559,6 +559,52 @@ namespace Model
      */
     inline RevokeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupRuleIds() const{ return m_securityGroupRuleIds; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline bool SecurityGroupRuleIdsHasBeenSet() const { return m_securityGroupRuleIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline void SetSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = value; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline void SetSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds = std::move(value); }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& WithSecurityGroupRuleIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupRuleIds(value); return *this;}
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& WithSecurityGroupRuleIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupRuleIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(const Aws::String& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(Aws::String&& value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of the security group rules.</p>
+     */
+    inline RevokeSecurityGroupIngressRequest& AddSecurityGroupRuleIds(const char* value) { m_securityGroupRuleIdsHasBeenSet = true; m_securityGroupRuleIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_cidrIp;
@@ -590,6 +636,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
+
+    Aws::Vector<Aws::String> m_securityGroupRuleIds;
+    bool m_securityGroupRuleIdsHasBeenSet;
   };
 
 } // namespace Model

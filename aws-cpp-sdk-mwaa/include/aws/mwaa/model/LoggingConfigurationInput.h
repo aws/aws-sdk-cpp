@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>The Logging Configuration of your Amazon MWAA environment.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Defines the Apache Airflow logs to send to CloudWatch Logs:
+   * <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>,
+   * <code>TaskLogs</code>, <code>WebserverLogs</code>,
+   * <code>WorkerLogs</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LoggingConfigurationInput">AWS
    * API Reference</a></p>
    */

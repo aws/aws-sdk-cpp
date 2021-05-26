@@ -160,47 +160,47 @@ namespace Model
 
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeyNames() const{ return m_keyNames; }
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline bool KeyNamesHasBeenSet() const { return m_keyNamesHasBeenSet; }
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline void SetKeyNames(const Aws::Vector<Aws::String>& value) { m_keyNamesHasBeenSet = true; m_keyNames = value; }
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline void SetKeyNames(Aws::Vector<Aws::String>&& value) { m_keyNamesHasBeenSet = true; m_keyNames = std::move(value); }
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline DescribeKeyPairsRequest& WithKeyNames(const Aws::Vector<Aws::String>& value) { SetKeyNames(value); return *this;}
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline DescribeKeyPairsRequest& WithKeyNames(Aws::Vector<Aws::String>&& value) { SetKeyNames(std::move(value)); return *this;}
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline DescribeKeyPairsRequest& AddKeyNames(const Aws::String& value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(value); return *this; }
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline DescribeKeyPairsRequest& AddKeyNames(Aws::String&& value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The key pair names.</p> <p>Default: Describes all your key pairs.</p>
+     * <p>The key pair names.</p> <p>Default: Describes all of your key pairs.</p>
      */
     inline DescribeKeyPairsRequest& AddKeyNames(const char* value) { m_keyNamesHasBeenSet = true; m_keyNames.push_back(value); return *this; }
 

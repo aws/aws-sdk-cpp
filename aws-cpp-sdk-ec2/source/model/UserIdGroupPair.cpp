@@ -27,7 +27,8 @@ UserIdGroupPair::UserIdGroupPair() :
     m_peeringStatusHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_securityGroupRuleIdHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ UserIdGroupPair::UserIdGroupPair(const XmlNode& xmlNode) :
     m_peeringStatusHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
+    m_vpcPeeringConnectionIdHasBeenSet(false),
+    m_securityGroupRuleIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -91,6 +93,12 @@ UserIdGroupPair& UserIdGroupPair::operator =(const XmlNode& xmlNode)
       m_vpcPeeringConnectionId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcPeeringConnectionIdNode.GetText());
       m_vpcPeeringConnectionIdHasBeenSet = true;
     }
+    XmlNode securityGroupRuleIdNode = resultNode.FirstChild("securityGroupRuleId");
+    if(!securityGroupRuleIdNode.IsNull())
+    {
+      m_securityGroupRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupRuleIdNode.GetText());
+      m_securityGroupRuleIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -133,6 +141,11 @@ void UserIdGroupPair::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
   }
 
+  if(m_securityGroupRuleIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SecurityGroupRuleId=" << StringUtils::URLEncode(m_securityGroupRuleId.c_str()) << "&";
+  }
+
 }
 
 void UserIdGroupPair::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -164,6 +177,10 @@ void UserIdGroupPair::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_vpcPeeringConnectionIdHasBeenSet)
   {
       oStream << location << ".VpcPeeringConnectionId=" << StringUtils::URLEncode(m_vpcPeeringConnectionId.c_str()) << "&";
+  }
+  if(m_securityGroupRuleIdHasBeenSet)
+  {
+      oStream << location << ".SecurityGroupRuleId=" << StringUtils::URLEncode(m_securityGroupRuleId.c_str()) << "&";
   }
 }
 

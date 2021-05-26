@@ -29,6 +29,7 @@
 #include <aws/qldb/model/TagResourceResult.h>
 #include <aws/qldb/model/UntagResourceResult.h>
 #include <aws/qldb/model/UpdateLedgerResult.h>
+#include <aws/qldb/model/UpdateLedgerPermissionsModeResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -88,6 +89,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateLedgerRequest;
+        class UpdateLedgerPermissionsModeRequest;
 
         typedef Aws::Utils::Outcome<CancelJournalKinesisStreamResult, QLDBError> CancelJournalKinesisStreamOutcome;
         typedef Aws::Utils::Outcome<CreateLedgerResult, QLDBError> CreateLedgerOutcome;
@@ -108,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, QLDBError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, QLDBError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateLedgerResult, QLDBError> UpdateLedgerOutcome;
+        typedef Aws::Utils::Outcome<UpdateLedgerPermissionsModeResult, QLDBError> UpdateLedgerPermissionsModeOutcome;
 
         typedef std::future<CancelJournalKinesisStreamOutcome> CancelJournalKinesisStreamOutcomeCallable;
         typedef std::future<CreateLedgerOutcome> CreateLedgerOutcomeCallable;
@@ -128,6 +131,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateLedgerOutcome> UpdateLedgerOutcomeCallable;
+        typedef std::future<UpdateLedgerPermissionsModeOutcome> UpdateLedgerPermissionsModeOutcomeCallable;
 } // namespace Model
 
   class QLDBClient;
@@ -151,6 +155,7 @@ namespace Model
     typedef std::function<void(const QLDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::UpdateLedgerRequest&, const Model::UpdateLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLedgerResponseReceivedHandler;
+    typedef std::function<void(const QLDBClient*, const Model::UpdateLedgerPermissionsModeRequest&, const Model::UpdateLedgerPermissionsModeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLedgerPermissionsModeResponseReceivedHandler;
 
   /**
    * <p>The control plane for Amazon QLDB</p>
@@ -888,6 +893,31 @@ namespace Model
          */
         virtual void UpdateLedgerAsync(const Model::UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the permissions mode of a ledger.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLedgerPermissionsModeOutcome UpdateLedgerPermissionsMode(const Model::UpdateLedgerPermissionsModeRequest& request) const;
+
+        /**
+         * <p>Updates the permissions mode of a ledger.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLedgerPermissionsModeOutcomeCallable UpdateLedgerPermissionsModeCallable(const Model::UpdateLedgerPermissionsModeRequest& request) const;
+
+        /**
+         * <p>Updates the permissions mode of a ledger.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLedgerPermissionsModeAsync(const Model::UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -911,6 +941,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLedgerAsyncHelper(const Model::UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLedgerPermissionsModeAsyncHelper(const Model::UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

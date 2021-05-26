@@ -187,32 +187,122 @@ namespace Model
 
 
     /**
-     * <p>The permissions mode to assign to the ledger that you want to create.</p>
+     * <p>The permissions mode to assign to the ledger that you want to create. This
+     * parameter can have one of the following values:</p> <ul> <li> <p>
+     * <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control
+     * with API-level granularity for ledgers.</p> <p>This mode allows users who have
+     * <code>SendCommand</code> permissions for this ledger to run all PartiQL commands
+     * (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode
+     * disregards any table-level or command-level IAM permissions policies that you
+     * create for the ledger.</p> </li> <li> <p> <code>STANDARD</code>:
+     * (<i>Recommended</i>) A permissions mode that enables access control with finer
+     * granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this
+     * mode denies all user requests to run any PartiQL commands on any tables in this
+     * ledger. To allow PartiQL commands to run, you must create IAM permissions
+     * policies for specific table resources and PartiQL actions, in addition to
+     * <code>SendCommand</code> API permissions for the ledger.</p> </li> </ul> 
+     * <p>We strongly recommend using the <code>STANDARD</code> permissions mode to
+     * maximize the security of your ledger data.</p> 
      */
     inline const PermissionsMode& GetPermissionsMode() const{ return m_permissionsMode; }
 
     /**
-     * <p>The permissions mode to assign to the ledger that you want to create.</p>
+     * <p>The permissions mode to assign to the ledger that you want to create. This
+     * parameter can have one of the following values:</p> <ul> <li> <p>
+     * <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control
+     * with API-level granularity for ledgers.</p> <p>This mode allows users who have
+     * <code>SendCommand</code> permissions for this ledger to run all PartiQL commands
+     * (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode
+     * disregards any table-level or command-level IAM permissions policies that you
+     * create for the ledger.</p> </li> <li> <p> <code>STANDARD</code>:
+     * (<i>Recommended</i>) A permissions mode that enables access control with finer
+     * granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this
+     * mode denies all user requests to run any PartiQL commands on any tables in this
+     * ledger. To allow PartiQL commands to run, you must create IAM permissions
+     * policies for specific table resources and PartiQL actions, in addition to
+     * <code>SendCommand</code> API permissions for the ledger.</p> </li> </ul> 
+     * <p>We strongly recommend using the <code>STANDARD</code> permissions mode to
+     * maximize the security of your ledger data.</p> 
      */
     inline bool PermissionsModeHasBeenSet() const { return m_permissionsModeHasBeenSet; }
 
     /**
-     * <p>The permissions mode to assign to the ledger that you want to create.</p>
+     * <p>The permissions mode to assign to the ledger that you want to create. This
+     * parameter can have one of the following values:</p> <ul> <li> <p>
+     * <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control
+     * with API-level granularity for ledgers.</p> <p>This mode allows users who have
+     * <code>SendCommand</code> permissions for this ledger to run all PartiQL commands
+     * (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode
+     * disregards any table-level or command-level IAM permissions policies that you
+     * create for the ledger.</p> </li> <li> <p> <code>STANDARD</code>:
+     * (<i>Recommended</i>) A permissions mode that enables access control with finer
+     * granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this
+     * mode denies all user requests to run any PartiQL commands on any tables in this
+     * ledger. To allow PartiQL commands to run, you must create IAM permissions
+     * policies for specific table resources and PartiQL actions, in addition to
+     * <code>SendCommand</code> API permissions for the ledger.</p> </li> </ul> 
+     * <p>We strongly recommend using the <code>STANDARD</code> permissions mode to
+     * maximize the security of your ledger data.</p> 
      */
     inline void SetPermissionsMode(const PermissionsMode& value) { m_permissionsModeHasBeenSet = true; m_permissionsMode = value; }
 
     /**
-     * <p>The permissions mode to assign to the ledger that you want to create.</p>
+     * <p>The permissions mode to assign to the ledger that you want to create. This
+     * parameter can have one of the following values:</p> <ul> <li> <p>
+     * <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control
+     * with API-level granularity for ledgers.</p> <p>This mode allows users who have
+     * <code>SendCommand</code> permissions for this ledger to run all PartiQL commands
+     * (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode
+     * disregards any table-level or command-level IAM permissions policies that you
+     * create for the ledger.</p> </li> <li> <p> <code>STANDARD</code>:
+     * (<i>Recommended</i>) A permissions mode that enables access control with finer
+     * granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this
+     * mode denies all user requests to run any PartiQL commands on any tables in this
+     * ledger. To allow PartiQL commands to run, you must create IAM permissions
+     * policies for specific table resources and PartiQL actions, in addition to
+     * <code>SendCommand</code> API permissions for the ledger.</p> </li> </ul> 
+     * <p>We strongly recommend using the <code>STANDARD</code> permissions mode to
+     * maximize the security of your ledger data.</p> 
      */
     inline void SetPermissionsMode(PermissionsMode&& value) { m_permissionsModeHasBeenSet = true; m_permissionsMode = std::move(value); }
 
     /**
-     * <p>The permissions mode to assign to the ledger that you want to create.</p>
+     * <p>The permissions mode to assign to the ledger that you want to create. This
+     * parameter can have one of the following values:</p> <ul> <li> <p>
+     * <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control
+     * with API-level granularity for ledgers.</p> <p>This mode allows users who have
+     * <code>SendCommand</code> permissions for this ledger to run all PartiQL commands
+     * (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode
+     * disregards any table-level or command-level IAM permissions policies that you
+     * create for the ledger.</p> </li> <li> <p> <code>STANDARD</code>:
+     * (<i>Recommended</i>) A permissions mode that enables access control with finer
+     * granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this
+     * mode denies all user requests to run any PartiQL commands on any tables in this
+     * ledger. To allow PartiQL commands to run, you must create IAM permissions
+     * policies for specific table resources and PartiQL actions, in addition to
+     * <code>SendCommand</code> API permissions for the ledger.</p> </li> </ul> 
+     * <p>We strongly recommend using the <code>STANDARD</code> permissions mode to
+     * maximize the security of your ledger data.</p> 
      */
     inline CreateLedgerRequest& WithPermissionsMode(const PermissionsMode& value) { SetPermissionsMode(value); return *this;}
 
     /**
-     * <p>The permissions mode to assign to the ledger that you want to create.</p>
+     * <p>The permissions mode to assign to the ledger that you want to create. This
+     * parameter can have one of the following values:</p> <ul> <li> <p>
+     * <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control
+     * with API-level granularity for ledgers.</p> <p>This mode allows users who have
+     * <code>SendCommand</code> permissions for this ledger to run all PartiQL commands
+     * (hence, <code>ALLOW_ALL</code>) on any tables in the specified ledger. This mode
+     * disregards any table-level or command-level IAM permissions policies that you
+     * create for the ledger.</p> </li> <li> <p> <code>STANDARD</code>:
+     * (<i>Recommended</i>) A permissions mode that enables access control with finer
+     * granularity for ledgers, tables, and PartiQL commands.</p> <p>By default, this
+     * mode denies all user requests to run any PartiQL commands on any tables in this
+     * ledger. To allow PartiQL commands to run, you must create IAM permissions
+     * policies for specific table resources and PartiQL actions, in addition to
+     * <code>SendCommand</code> API permissions for the ledger.</p> </li> </ul> 
+     * <p>We strongly recommend using the <code>STANDARD</code> permissions mode to
+     * maximize the security of your ledger data.</p> 
      */
     inline CreateLedgerRequest& WithPermissionsMode(PermissionsMode&& value) { SetPermissionsMode(std::move(value)); return *this;}
 

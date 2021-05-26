@@ -1637,16 +1637,16 @@ namespace Model
         virtual void ListContainerInstancesAsync(const Model::ListContainerInstancesRequest& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of services. You can filter the results by cluster, launch
+         * type, and scheduling strategy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
          * API Reference</a></p>
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of services. You can filter the results by cluster, launch
+         * type, and scheduling strategy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
          * API Reference</a></p>
          *
@@ -1655,8 +1655,8 @@ namespace Model
         virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of services. You can filter the results by cluster, launch
+         * type, and scheduling strategy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
          * API Reference</a></p>
          *
@@ -1767,24 +1767,22 @@ namespace Model
         virtual void ListTaskDefinitionsAsync(const Model::ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of tasks for a specified cluster. You can filter the results
-         * by family name, by a particular container instance, or by the desired status of
-         * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
-         * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tasks. You can filter the results by cluster, task
+         * definition family, container instance, launch type, what IAM principal started
+         * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
+         * might appear in the returned results. Currently, stopped tasks appear in the
+         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          */
         virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
 
         /**
-         * <p>Returns a list of tasks for a specified cluster. You can filter the results
-         * by family name, by a particular container instance, or by the desired status of
-         * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
-         * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tasks. You can filter the results by cluster, task
+         * definition family, container instance, launch type, what IAM principal started
+         * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
+         * might appear in the returned results. Currently, stopped tasks appear in the
+         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          *
@@ -1793,12 +1791,11 @@ namespace Model
         virtual Model::ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request) const;
 
         /**
-         * <p>Returns a list of tasks for a specified cluster. You can filter the results
-         * by family name, by a particular container instance, or by the desired status of
-         * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
-         * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tasks. You can filter the results by cluster, task
+         * definition family, container instance, launch type, what IAM principal started
+         * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
+         * might appear in the returned results. Currently, stopped tasks appear in the
+         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          *

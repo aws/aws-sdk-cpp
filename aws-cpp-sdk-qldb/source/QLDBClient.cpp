@@ -39,6 +39,7 @@
 #include <aws/qldb/model/TagResourceRequest.h>
 #include <aws/qldb/model/UntagResourceRequest.h>
 #include <aws/qldb/model/UpdateLedgerRequest.h>
+#include <aws/qldb/model/UpdateLedgerPermissionsModeRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -753,5 +754,39 @@ void QLDBClient::UpdateLedgerAsync(const UpdateLedgerRequest& request, const Upd
 void QLDBClient::UpdateLedgerAsyncHelper(const UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateLedger(request), context);
+}
+
+UpdateLedgerPermissionsModeOutcome QLDBClient::UpdateLedgerPermissionsMode(const UpdateLedgerPermissionsModeRequest& request) const
+{
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLedgerPermissionsMode", "Required field: Name, is not set");
+    return UpdateLedgerPermissionsModeOutcome(Aws::Client::AWSError<QLDBErrors>(QLDBErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ledgers/";
+  ss << request.GetName();
+  ss << "/permissions-mode";
+  uri.SetPath(uri.GetPath() + ss.str());
+  return UpdateLedgerPermissionsModeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLedgerPermissionsModeOutcomeCallable QLDBClient::UpdateLedgerPermissionsModeCallable(const UpdateLedgerPermissionsModeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLedgerPermissionsModeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLedgerPermissionsMode(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QLDBClient::UpdateLedgerPermissionsModeAsync(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLedgerPermissionsModeAsyncHelper( request, handler, context ); } );
+}
+
+void QLDBClient::UpdateLedgerPermissionsModeAsyncHelper(const UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLedgerPermissionsMode(request), context);
 }
 

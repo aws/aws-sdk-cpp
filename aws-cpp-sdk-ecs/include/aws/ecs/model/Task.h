@@ -997,49 +997,55 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline Task& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline Task& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}

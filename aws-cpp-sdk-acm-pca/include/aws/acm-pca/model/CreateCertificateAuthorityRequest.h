@@ -274,66 +274,72 @@ namespace Model
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
-     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-     * explicitly specify this parameter and value when creating a CA in that Region.
-     * Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
      */
     inline const KeyStorageSecurityStandard& GetKeyStorageSecurityStandard() const{ return m_keyStorageSecurityStandard; }
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
-     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-     * explicitly specify this parameter and value when creating a CA in that Region.
-     * Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
      */
     inline bool KeyStorageSecurityStandardHasBeenSet() const { return m_keyStorageSecurityStandardHasBeenSet; }
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
-     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-     * explicitly specify this parameter and value when creating a CA in that Region.
-     * Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
      */
     inline void SetKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = value; }
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
-     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-     * explicitly specify this parameter and value when creating a CA in that Region.
-     * Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
      */
     inline void SetKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { m_keyStorageSecurityStandardHasBeenSet = true; m_keyStorageSecurityStandard = std::move(value); }
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
-     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-     * explicitly specify this parameter and value when creating a CA in that Region.
-     * Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
      */
     inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(const KeyStorageSecurityStandard& value) { SetKeyStorageSecurityStandard(value); return *this;}
 
     /**
      * <p>Specifies a cryptographic key management compliance standard used for
-     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note: AWS
-     * Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must
-     * explicitly specify this parameter and value when creating a CA in that Region.
-     * Specifying a different value (or no value) results in an
-     * <code>InvalidArgsException</code> with the message "A certificate authority
+     * handling CA keys.</p> <p>Default: FIPS_140_2_LEVEL_3_OR_HIGHER</p> <p>Note:
+     * <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in Region
+     * ap-northeast-3. When creating a CA in the ap-northeast-3, you must provide
+     * <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument for
+     * <code>KeyStorageSecurityStandard</code>. Failure to do this results in an
+     * <code>InvalidArgsException</code> with the message, "A certificate authority
      * cannot be created in this region with the specified security standard."</p>
      */
     inline CreateCertificateAuthorityRequest& WithKeyStorageSecurityStandard(KeyStorageSecurityStandard&& value) { SetKeyStorageSecurityStandard(std::move(value)); return *this;}

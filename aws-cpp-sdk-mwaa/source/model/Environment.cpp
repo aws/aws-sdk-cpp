@@ -39,6 +39,8 @@ Environment::Environment() :
     m_pluginsS3PathHasBeenSet(false),
     m_requirementsS3ObjectVersionHasBeenSet(false),
     m_requirementsS3PathHasBeenSet(false),
+    m_schedulers(0),
+    m_schedulersHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
     m_status(EnvironmentStatus::NOT_SET),
@@ -72,6 +74,8 @@ Environment::Environment(JsonView jsonValue) :
     m_pluginsS3PathHasBeenSet(false),
     m_requirementsS3ObjectVersionHasBeenSet(false),
     m_requirementsS3PathHasBeenSet(false),
+    m_schedulers(0),
+    m_schedulersHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
     m_status(EnvironmentStatus::NOT_SET),
@@ -214,6 +218,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_requirementsS3Path = jsonValue.GetString("RequirementsS3Path");
 
     m_requirementsS3PathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Schedulers"))
+  {
+    m_schedulers = jsonValue.GetInteger("Schedulers");
+
+    m_schedulersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ServiceRoleArn"))
@@ -384,6 +395,12 @@ JsonValue Environment::Jsonize() const
   if(m_requirementsS3PathHasBeenSet)
   {
    payload.WithString("RequirementsS3Path", m_requirementsS3Path);
+
+  }
+
+  if(m_schedulersHasBeenSet)
+  {
+   payload.WithInteger("Schedulers", m_schedulers);
 
   }
 
