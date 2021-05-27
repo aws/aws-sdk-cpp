@@ -103,11 +103,9 @@ InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpoin
     return InvokeEndpointOutcome(Aws::Client::AWSError<SageMakerRuntimeErrors>(SageMakerRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/endpoints/";
-  ss << request.GetEndpointName();
-  ss << "/invocations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/endpoints/");
+  uri.AddPathSegment(request.GetEndpointName());
+  uri.AddPathSegments("/invocations");
   return InvokeEndpointOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 

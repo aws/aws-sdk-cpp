@@ -45,7 +45,6 @@ namespace Model
     reserved_instances,
     route_table,
     security_group,
-    security_group_rule,
     snapshot,
     spot_fleet_request,
     spot_instances_request,

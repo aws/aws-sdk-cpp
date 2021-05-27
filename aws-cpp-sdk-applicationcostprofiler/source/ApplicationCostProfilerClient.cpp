@@ -108,10 +108,8 @@ DeleteReportDefinitionOutcome ApplicationCostProfilerClient::DeleteReportDefinit
     return DeleteReportDefinitionOutcome(Aws::Client::AWSError<ApplicationCostProfilerErrors>(ApplicationCostProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/reportDefinition/";
-  ss << request.GetReportId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/reportDefinition/");
+  uri.AddPathSegment(request.GetReportId());
   return DeleteReportDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -141,10 +139,8 @@ GetReportDefinitionOutcome ApplicationCostProfilerClient::GetReportDefinition(co
     return GetReportDefinitionOutcome(Aws::Client::AWSError<ApplicationCostProfilerErrors>(ApplicationCostProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/reportDefinition/";
-  ss << request.GetReportId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/reportDefinition/");
+  uri.AddPathSegment(request.GetReportId());
   return GetReportDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -169,9 +165,7 @@ void ApplicationCostProfilerClient::GetReportDefinitionAsyncHelper(const GetRepo
 ImportApplicationUsageOutcome ApplicationCostProfilerClient::ImportApplicationUsage(const ImportApplicationUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/importApplicationUsage";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/importApplicationUsage");
   return ImportApplicationUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -196,9 +190,7 @@ void ApplicationCostProfilerClient::ImportApplicationUsageAsyncHelper(const Impo
 ListReportDefinitionsOutcome ApplicationCostProfilerClient::ListReportDefinitions(const ListReportDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/reportDefinition";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/reportDefinition");
   return ListReportDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -223,9 +215,7 @@ void ApplicationCostProfilerClient::ListReportDefinitionsAsyncHelper(const ListR
 PutReportDefinitionOutcome ApplicationCostProfilerClient::PutReportDefinition(const PutReportDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/reportDefinition";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/reportDefinition");
   return PutReportDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -255,10 +245,8 @@ UpdateReportDefinitionOutcome ApplicationCostProfilerClient::UpdateReportDefinit
     return UpdateReportDefinitionOutcome(Aws::Client::AWSError<ApplicationCostProfilerErrors>(ApplicationCostProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/reportDefinition/";
-  ss << request.GetReportId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/reportDefinition/");
+  uri.AddPathSegment(request.GetReportId());
   return UpdateReportDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

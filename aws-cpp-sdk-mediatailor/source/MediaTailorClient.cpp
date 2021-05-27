@@ -133,10 +133,8 @@ CreateChannelOutcome MediaTailorClient::CreateChannel(const CreateChannelRequest
     return CreateChannelOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
   return CreateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,12 +169,10 @@ CreateProgramOutcome MediaTailorClient::CreateProgram(const CreateProgramRequest
     return CreateProgramOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/program/";
-  ss << request.GetProgramName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/program/");
+  uri.AddPathSegment(request.GetProgramName());
   return CreateProgramOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -206,10 +202,8 @@ CreateSourceLocationOutcome MediaTailorClient::CreateSourceLocation(const Create
     return CreateSourceLocationOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
   return CreateSourceLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -244,12 +238,10 @@ CreateVodSourceOutcome MediaTailorClient::CreateVodSource(const CreateVodSourceR
     return CreateVodSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VodSourceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  ss << "/vodSource/";
-  ss << request.GetVodSourceName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/vodSource/");
+  uri.AddPathSegment(request.GetVodSourceName());
   return CreateVodSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -279,10 +271,8 @@ DeleteChannelOutcome MediaTailorClient::DeleteChannel(const DeleteChannelRequest
     return DeleteChannelOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
   return DeleteChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -312,11 +302,9 @@ DeleteChannelPolicyOutcome MediaTailorClient::DeleteChannelPolicy(const DeleteCh
     return DeleteChannelPolicyOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/policy");
   return DeleteChannelPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -346,10 +334,8 @@ DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguratio
     return DeletePlaybackConfigurationOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/playbackConfiguration/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/playbackConfiguration/");
+  uri.AddPathSegment(request.GetName());
   return DeletePlaybackConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -384,12 +370,10 @@ DeleteProgramOutcome MediaTailorClient::DeleteProgram(const DeleteProgramRequest
     return DeleteProgramOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/program/";
-  ss << request.GetProgramName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/program/");
+  uri.AddPathSegment(request.GetProgramName());
   return DeleteProgramOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -419,10 +403,8 @@ DeleteSourceLocationOutcome MediaTailorClient::DeleteSourceLocation(const Delete
     return DeleteSourceLocationOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
   return DeleteSourceLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -457,12 +439,10 @@ DeleteVodSourceOutcome MediaTailorClient::DeleteVodSource(const DeleteVodSourceR
     return DeleteVodSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VodSourceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  ss << "/vodSource/";
-  ss << request.GetVodSourceName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/vodSource/");
+  uri.AddPathSegment(request.GetVodSourceName());
   return DeleteVodSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -492,10 +472,8 @@ DescribeChannelOutcome MediaTailorClient::DescribeChannel(const DescribeChannelR
     return DescribeChannelOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
   return DescribeChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -530,12 +508,10 @@ DescribeProgramOutcome MediaTailorClient::DescribeProgram(const DescribeProgramR
     return DescribeProgramOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProgramName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/program/";
-  ss << request.GetProgramName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/program/");
+  uri.AddPathSegment(request.GetProgramName());
   return DescribeProgramOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -565,10 +541,8 @@ DescribeSourceLocationOutcome MediaTailorClient::DescribeSourceLocation(const De
     return DescribeSourceLocationOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
   return DescribeSourceLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -603,12 +577,10 @@ DescribeVodSourceOutcome MediaTailorClient::DescribeVodSource(const DescribeVodS
     return DescribeVodSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VodSourceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  ss << "/vodSource/";
-  ss << request.GetVodSourceName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/vodSource/");
+  uri.AddPathSegment(request.GetVodSourceName());
   return DescribeVodSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -638,11 +610,9 @@ GetChannelPolicyOutcome MediaTailorClient::GetChannelPolicy(const GetChannelPoli
     return GetChannelPolicyOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/policy");
   return GetChannelPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -672,11 +642,9 @@ GetChannelScheduleOutcome MediaTailorClient::GetChannelSchedule(const GetChannel
     return GetChannelScheduleOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/schedule";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/schedule");
   return GetChannelScheduleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -706,10 +674,8 @@ GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(cons
     return GetPlaybackConfigurationOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/playbackConfiguration/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/playbackConfiguration/");
+  uri.AddPathSegment(request.GetName());
   return GetPlaybackConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -734,9 +700,7 @@ void MediaTailorClient::GetPlaybackConfigurationAsyncHelper(const GetPlaybackCon
 ListChannelsOutcome MediaTailorClient::ListChannels(const ListChannelsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -761,9 +725,7 @@ void MediaTailorClient::ListChannelsAsyncHelper(const ListChannelsRequest& reque
 ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(const ListPlaybackConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/playbackConfigurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/playbackConfigurations");
   return ListPlaybackConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -788,9 +750,7 @@ void MediaTailorClient::ListPlaybackConfigurationsAsyncHelper(const ListPlayback
 ListSourceLocationsOutcome MediaTailorClient::ListSourceLocations(const ListSourceLocationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocations");
   return ListSourceLocationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -820,10 +780,8 @@ ListTagsForResourceOutcome MediaTailorClient::ListTagsForResource(const ListTags
     return ListTagsForResourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -853,11 +811,9 @@ ListVodSourcesOutcome MediaTailorClient::ListVodSources(const ListVodSourcesRequ
     return ListVodSourcesOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  ss << "/vodSources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/vodSources");
   return ListVodSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -887,11 +843,9 @@ PutChannelPolicyOutcome MediaTailorClient::PutChannelPolicy(const PutChannelPoli
     return PutChannelPolicyOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/policy");
   return PutChannelPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -916,9 +870,7 @@ void MediaTailorClient::PutChannelPolicyAsyncHelper(const PutChannelPolicyReques
 PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(const PutPlaybackConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/playbackConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/playbackConfiguration");
   return PutPlaybackConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -948,11 +900,9 @@ StartChannelOutcome MediaTailorClient::StartChannel(const StartChannelRequest& r
     return StartChannelOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/start";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/start");
   return StartChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -982,11 +932,9 @@ StopChannelOutcome MediaTailorClient::StopChannel(const StopChannelRequest& requ
     return StopChannelOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  ss << "/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/stop");
   return StopChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1016,10 +964,8 @@ TagResourceOutcome MediaTailorClient::TagResource(const TagResourceRequest& requ
     return TagResourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1054,10 +1000,8 @@ UntagResourceOutcome MediaTailorClient::UntagResource(const UntagResourceRequest
     return UntagResourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1087,10 +1031,8 @@ UpdateChannelOutcome MediaTailorClient::UpdateChannel(const UpdateChannelRequest
     return UpdateChannelOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channel/";
-  ss << request.GetChannelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channel/");
+  uri.AddPathSegment(request.GetChannelName());
   return UpdateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1120,10 +1062,8 @@ UpdateSourceLocationOutcome MediaTailorClient::UpdateSourceLocation(const Update
     return UpdateSourceLocationOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceLocationName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
   return UpdateSourceLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1158,12 +1098,10 @@ UpdateVodSourceOutcome MediaTailorClient::UpdateVodSource(const UpdateVodSourceR
     return UpdateVodSourceOutcome(Aws::Client::AWSError<MediaTailorErrors>(MediaTailorErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VodSourceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sourceLocation/";
-  ss << request.GetSourceLocationName();
-  ss << "/vodSource/";
-  ss << request.GetVodSourceName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sourceLocation/");
+  uri.AddPathSegment(request.GetSourceLocationName());
+  uri.AddPathSegments("/vodSource/");
+  uri.AddPathSegment(request.GetVodSourceName());
   return UpdateVodSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

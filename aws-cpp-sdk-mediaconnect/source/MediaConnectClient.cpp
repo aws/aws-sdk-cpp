@@ -132,11 +132,9 @@ AddFlowMediaStreamsOutcome MediaConnectClient::AddFlowMediaStreams(const AddFlow
     return AddFlowMediaStreamsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/mediaStreams";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/mediaStreams");
   return AddFlowMediaStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -166,11 +164,9 @@ AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsReq
     return AddFlowOutputsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/outputs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/outputs");
   return AddFlowOutputsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,11 +196,9 @@ AddFlowSourcesOutcome MediaConnectClient::AddFlowSources(const AddFlowSourcesReq
     return AddFlowSourcesOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/source";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/source");
   return AddFlowSourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -234,11 +228,9 @@ AddFlowVpcInterfacesOutcome MediaConnectClient::AddFlowVpcInterfaces(const AddFl
     return AddFlowVpcInterfacesOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/vpcInterfaces";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/vpcInterfaces");
   return AddFlowVpcInterfacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,9 +255,7 @@ void MediaConnectClient::AddFlowVpcInterfacesAsyncHelper(const AddFlowVpcInterfa
 CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows");
   return CreateFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -295,10 +285,8 @@ DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& reques
     return DeleteFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
   return DeleteFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -328,10 +316,8 @@ DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& 
     return DescribeFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
   return DescribeFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -361,10 +347,8 @@ DescribeOfferingOutcome MediaConnectClient::DescribeOffering(const DescribeOffer
     return DescribeOfferingOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OfferingArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/offerings/";
-  ss << request.GetOfferingArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/offerings/");
+  uri.AddPathSegment(request.GetOfferingArn());
   return DescribeOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -394,10 +378,8 @@ DescribeReservationOutcome MediaConnectClient::DescribeReservation(const Describ
     return DescribeReservationOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReservationArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/reservations/";
-  ss << request.GetReservationArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/reservations/");
+  uri.AddPathSegment(request.GetReservationArn());
   return DescribeReservationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -427,11 +409,9 @@ GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const Gra
     return GrantFlowEntitlementsOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/entitlements";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/entitlements");
   return GrantFlowEntitlementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -456,9 +436,7 @@ void MediaConnectClient::GrantFlowEntitlementsAsyncHelper(const GrantFlowEntitle
 ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitlementsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/entitlements";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/entitlements");
   return ListEntitlementsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -483,9 +461,7 @@ void MediaConnectClient::ListEntitlementsAsyncHelper(const ListEntitlementsReque
 ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows");
   return ListFlowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -510,9 +486,7 @@ void MediaConnectClient::ListFlowsAsyncHelper(const ListFlowsRequest& request, c
 ListOfferingsOutcome MediaConnectClient::ListOfferings(const ListOfferingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/offerings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/offerings");
   return ListOfferingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -537,9 +511,7 @@ void MediaConnectClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& re
 ListReservationsOutcome MediaConnectClient::ListReservations(const ListReservationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/reservations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/reservations");
   return ListReservationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -569,10 +541,8 @@ ListTagsForResourceOutcome MediaConnectClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -602,10 +572,8 @@ PurchaseOfferingOutcome MediaConnectClient::PurchaseOffering(const PurchaseOffer
     return PurchaseOfferingOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OfferingArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/offerings/";
-  ss << request.GetOfferingArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/offerings/");
+  uri.AddPathSegment(request.GetOfferingArn());
   return PurchaseOfferingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -640,12 +608,10 @@ RemoveFlowMediaStreamOutcome MediaConnectClient::RemoveFlowMediaStream(const Rem
     return RemoveFlowMediaStreamOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaStreamName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/mediaStreams/";
-  ss << request.GetMediaStreamName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/mediaStreams/");
+  uri.AddPathSegment(request.GetMediaStreamName());
   return RemoveFlowMediaStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -680,12 +646,10 @@ RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOut
     return RemoveFlowOutputOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutputArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/outputs/";
-  ss << request.GetOutputArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/outputs/");
+  uri.AddPathSegment(request.GetOutputArn());
   return RemoveFlowOutputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -720,12 +684,10 @@ RemoveFlowSourceOutcome MediaConnectClient::RemoveFlowSource(const RemoveFlowSou
     return RemoveFlowSourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/source/";
-  ss << request.GetSourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/source/");
+  uri.AddPathSegment(request.GetSourceArn());
   return RemoveFlowSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -760,12 +722,10 @@ RemoveFlowVpcInterfaceOutcome MediaConnectClient::RemoveFlowVpcInterface(const R
     return RemoveFlowVpcInterfaceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VpcInterfaceName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/vpcInterfaces/";
-  ss << request.GetVpcInterfaceName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/vpcInterfaces/");
+  uri.AddPathSegment(request.GetVpcInterfaceName());
   return RemoveFlowVpcInterfaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -800,12 +760,10 @@ RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const Rev
     return RevokeFlowEntitlementOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/entitlements/";
-  ss << request.GetEntitlementArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/entitlements/");
+  uri.AddPathSegment(request.GetEntitlementArn());
   return RevokeFlowEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -835,10 +793,8 @@ StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) 
     return StartFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/start/";
-  ss << request.GetFlowArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/start/");
+  uri.AddPathSegment(request.GetFlowArn());
   return StartFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -868,10 +824,8 @@ StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) con
     return StopFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/stop/";
-  ss << request.GetFlowArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/stop/");
+  uri.AddPathSegment(request.GetFlowArn());
   return StopFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -901,10 +855,8 @@ TagResourceOutcome MediaConnectClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -939,10 +891,8 @@ UntagResourceOutcome MediaConnectClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -972,10 +922,8 @@ UpdateFlowOutcome MediaConnectClient::UpdateFlow(const UpdateFlowRequest& reques
     return UpdateFlowOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
   return UpdateFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1010,12 +958,10 @@ UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const Upd
     return UpdateFlowEntitlementOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/entitlements/";
-  ss << request.GetEntitlementArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/entitlements/");
+  uri.AddPathSegment(request.GetEntitlementArn());
   return UpdateFlowEntitlementOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1050,12 +996,10 @@ UpdateFlowMediaStreamOutcome MediaConnectClient::UpdateFlowMediaStream(const Upd
     return UpdateFlowMediaStreamOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaStreamName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/mediaStreams/";
-  ss << request.GetMediaStreamName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/mediaStreams/");
+  uri.AddPathSegment(request.GetMediaStreamName());
   return UpdateFlowMediaStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1090,12 +1034,10 @@ UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOut
     return UpdateFlowOutputOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutputArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/outputs/";
-  ss << request.GetOutputArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/outputs/");
+  uri.AddPathSegment(request.GetOutputArn());
   return UpdateFlowOutputOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1130,12 +1072,10 @@ UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSou
     return UpdateFlowSourceOutcome(Aws::Client::AWSError<MediaConnectErrors>(MediaConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/flows/";
-  ss << request.GetFlowArn();
-  ss << "/source/";
-  ss << request.GetSourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/flows/");
+  uri.AddPathSegment(request.GetFlowArn());
+  uri.AddPathSegments("/source/");
+  uri.AddPathSegment(request.GetSourceArn());
   return UpdateFlowSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

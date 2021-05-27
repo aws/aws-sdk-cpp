@@ -15,7 +15,6 @@ AuthorizeSecurityGroupEgressRequest::AuthorizeSecurityGroupEgressRequest() :
     m_dryRunHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_ipPermissionsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
     m_cidrIpHasBeenSet(false),
     m_fromPort(0),
     m_fromPortHasBeenSet(false),
@@ -48,16 +47,6 @@ Aws::String AuthorizeSecurityGroupEgressRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
       ipPermissionsCount++;
-    }
-  }
-
-  if(m_tagSpecificationsHasBeenSet)
-  {
-    unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
-      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
-      tagSpecificationsCount++;
     }
   }
 

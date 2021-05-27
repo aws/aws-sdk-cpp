@@ -152,47 +152,6 @@ namespace Model
      */
     inline Ipv6Range& WithDescription(const char* value) { SetDescription(value); return *this;}
 
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline const Aws::String& GetSecurityGroupRuleId() const{ return m_securityGroupRuleId; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline bool SecurityGroupRuleIdHasBeenSet() const { return m_securityGroupRuleIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline void SetSecurityGroupRuleId(const Aws::String& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = value; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline void SetSecurityGroupRuleId(Aws::String&& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = std::move(value); }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline void SetSecurityGroupRuleId(const char* value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId.assign(value); }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline Ipv6Range& WithSecurityGroupRuleId(const Aws::String& value) { SetSecurityGroupRuleId(value); return *this;}
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline Ipv6Range& WithSecurityGroupRuleId(Aws::String&& value) { SetSecurityGroupRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline Ipv6Range& WithSecurityGroupRuleId(const char* value) { SetSecurityGroupRuleId(value); return *this;}
-
   private:
 
     Aws::String m_cidrIpv6;
@@ -200,9 +159,6 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
-
-    Aws::String m_securityGroupRuleId;
-    bool m_securityGroupRuleIdHasBeenSet;
   };
 
 } // namespace Model

@@ -115,9 +115,7 @@ void AppflowClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateConnectorProfileOutcome AppflowClient::CreateConnectorProfile(const CreateConnectorProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/create-connector-profile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/create-connector-profile");
   return CreateConnectorProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -142,9 +140,7 @@ void AppflowClient::CreateConnectorProfileAsyncHelper(const CreateConnectorProfi
 CreateFlowOutcome AppflowClient::CreateFlow(const CreateFlowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/create-flow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/create-flow");
   return CreateFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -169,9 +165,7 @@ void AppflowClient::CreateFlowAsyncHelper(const CreateFlowRequest& request, cons
 DeleteConnectorProfileOutcome AppflowClient::DeleteConnectorProfile(const DeleteConnectorProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/delete-connector-profile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/delete-connector-profile");
   return DeleteConnectorProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -196,9 +190,7 @@ void AppflowClient::DeleteConnectorProfileAsyncHelper(const DeleteConnectorProfi
 DeleteFlowOutcome AppflowClient::DeleteFlow(const DeleteFlowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/delete-flow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/delete-flow");
   return DeleteFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -223,9 +215,7 @@ void AppflowClient::DeleteFlowAsyncHelper(const DeleteFlowRequest& request, cons
 DescribeConnectorEntityOutcome AppflowClient::DescribeConnectorEntity(const DescribeConnectorEntityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-connector-entity";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-connector-entity");
   return DescribeConnectorEntityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -250,9 +240,7 @@ void AppflowClient::DescribeConnectorEntityAsyncHelper(const DescribeConnectorEn
 DescribeConnectorProfilesOutcome AppflowClient::DescribeConnectorProfiles(const DescribeConnectorProfilesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-connector-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-connector-profiles");
   return DescribeConnectorProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -277,9 +265,7 @@ void AppflowClient::DescribeConnectorProfilesAsyncHelper(const DescribeConnector
 DescribeConnectorsOutcome AppflowClient::DescribeConnectors(const DescribeConnectorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-connectors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-connectors");
   return DescribeConnectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -304,9 +290,7 @@ void AppflowClient::DescribeConnectorsAsyncHelper(const DescribeConnectorsReques
 DescribeFlowOutcome AppflowClient::DescribeFlow(const DescribeFlowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-flow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-flow");
   return DescribeFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -331,9 +315,7 @@ void AppflowClient::DescribeFlowAsyncHelper(const DescribeFlowRequest& request, 
 DescribeFlowExecutionRecordsOutcome AppflowClient::DescribeFlowExecutionRecords(const DescribeFlowExecutionRecordsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describe-flow-execution-records";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describe-flow-execution-records");
   return DescribeFlowExecutionRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -358,9 +340,7 @@ void AppflowClient::DescribeFlowExecutionRecordsAsyncHelper(const DescribeFlowEx
 ListConnectorEntitiesOutcome AppflowClient::ListConnectorEntities(const ListConnectorEntitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/list-connector-entities";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/list-connector-entities");
   return ListConnectorEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -385,9 +365,7 @@ void AppflowClient::ListConnectorEntitiesAsyncHelper(const ListConnectorEntities
 ListFlowsOutcome AppflowClient::ListFlows(const ListFlowsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/list-flows";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/list-flows");
   return ListFlowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -417,10 +395,8 @@ ListTagsForResourceOutcome AppflowClient::ListTagsForResource(const ListTagsForR
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AppflowErrors>(AppflowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -445,9 +421,7 @@ void AppflowClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequ
 StartFlowOutcome AppflowClient::StartFlow(const StartFlowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/start-flow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/start-flow");
   return StartFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -472,9 +446,7 @@ void AppflowClient::StartFlowAsyncHelper(const StartFlowRequest& request, const 
 StopFlowOutcome AppflowClient::StopFlow(const StopFlowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/stop-flow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/stop-flow");
   return StopFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -504,10 +476,8 @@ TagResourceOutcome AppflowClient::TagResource(const TagResourceRequest& request)
     return TagResourceOutcome(Aws::Client::AWSError<AppflowErrors>(AppflowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -542,10 +512,8 @@ UntagResourceOutcome AppflowClient::UntagResource(const UntagResourceRequest& re
     return UntagResourceOutcome(Aws::Client::AWSError<AppflowErrors>(AppflowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -570,9 +538,7 @@ void AppflowClient::UntagResourceAsyncHelper(const UntagResourceRequest& request
 UpdateConnectorProfileOutcome AppflowClient::UpdateConnectorProfile(const UpdateConnectorProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/update-connector-profile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/update-connector-profile");
   return UpdateConnectorProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -597,9 +563,7 @@ void AppflowClient::UpdateConnectorProfileAsyncHelper(const UpdateConnectorProfi
 UpdateFlowOutcome AppflowClient::UpdateFlow(const UpdateFlowRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/update-flow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/update-flow");
   return UpdateFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

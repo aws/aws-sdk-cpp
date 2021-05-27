@@ -22,15 +22,13 @@ namespace Model
 
 Ipv6Range::Ipv6Range() : 
     m_cidrIpv6HasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_securityGroupRuleIdHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
 }
 
 Ipv6Range::Ipv6Range(const XmlNode& xmlNode) : 
     m_cidrIpv6HasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_securityGroupRuleIdHasBeenSet(false)
+    m_descriptionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,12 +51,6 @@ Ipv6Range& Ipv6Range::operator =(const XmlNode& xmlNode)
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
-    XmlNode securityGroupRuleIdNode = resultNode.FirstChild("securityGroupRuleId");
-    if(!securityGroupRuleIdNode.IsNull())
-    {
-      m_securityGroupRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupRuleIdNode.GetText());
-      m_securityGroupRuleIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -76,11 +68,6 @@ void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_securityGroupRuleIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SecurityGroupRuleId=" << StringUtils::URLEncode(m_securityGroupRuleId.c_str()) << "&";
-  }
-
 }
 
 void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -92,10 +79,6 @@ void Ipv6Range::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
-  }
-  if(m_securityGroupRuleIdHasBeenSet)
-  {
-      oStream << location << ".SecurityGroupRuleId=" << StringUtils::URLEncode(m_securityGroupRuleId.c_str()) << "&";
   }
 }
 

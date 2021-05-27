@@ -155,11 +155,9 @@ AssociateTrackerConsumerOutcome LocationServiceClient::AssociateTrackerConsumer(
       return AssociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/consumers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/consumers");
   return AssociateTrackerConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,11 +196,9 @@ BatchDeleteGeofenceOutcome LocationServiceClient::BatchDeleteGeofence(const Batc
       return BatchDeleteGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/delete-geofences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/delete-geofences");
   return BatchDeleteGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -241,11 +237,9 @@ BatchEvaluateGeofencesOutcome LocationServiceClient::BatchEvaluateGeofences(cons
       return BatchEvaluateGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/positions");
   return BatchEvaluateGeofencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -284,11 +278,9 @@ BatchGetDevicePositionOutcome LocationServiceClient::BatchGetDevicePosition(cons
       return BatchGetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/get-positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/get-positions");
   return BatchGetDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -327,11 +319,9 @@ BatchPutGeofenceOutcome LocationServiceClient::BatchPutGeofence(const BatchPutGe
       return BatchPutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/put-geofences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/put-geofences");
   return BatchPutGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -370,11 +360,9 @@ BatchUpdateDevicePositionOutcome LocationServiceClient::BatchUpdateDevicePositio
       return BatchUpdateDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/positions");
   return BatchUpdateDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -408,9 +396,7 @@ CreateGeofenceCollectionOutcome LocationServiceClient::CreateGeofenceCollection(
       return CreateGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections");
   return CreateGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -444,9 +430,7 @@ CreateMapOutcome LocationServiceClient::CreateMap(const CreateMapRequest& reques
       return CreateMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps");
   return CreateMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -480,9 +464,7 @@ CreatePlaceIndexOutcome LocationServiceClient::CreatePlaceIndex(const CreatePlac
       return CreatePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes");
   return CreatePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -516,9 +498,7 @@ CreateTrackerOutcome LocationServiceClient::CreateTracker(const CreateTrackerReq
       return CreateTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers");
   return CreateTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -557,10 +537,8 @@ DeleteGeofenceCollectionOutcome LocationServiceClient::DeleteGeofenceCollection(
       return DeleteGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
   return DeleteGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -599,10 +577,8 @@ DeleteMapOutcome LocationServiceClient::DeleteMap(const DeleteMapRequest& reques
       return DeleteMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
   return DeleteMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -641,10 +617,8 @@ DeletePlaceIndexOutcome LocationServiceClient::DeletePlaceIndex(const DeletePlac
       return DeletePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
   return DeletePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -683,10 +657,8 @@ DeleteTrackerOutcome LocationServiceClient::DeleteTracker(const DeleteTrackerReq
       return DeleteTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
   return DeleteTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -725,10 +697,8 @@ DescribeGeofenceCollectionOutcome LocationServiceClient::DescribeGeofenceCollect
       return DescribeGeofenceCollectionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
   return DescribeGeofenceCollectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -767,10 +737,8 @@ DescribeMapOutcome LocationServiceClient::DescribeMap(const DescribeMapRequest& 
       return DescribeMapOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
   return DescribeMapOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -809,10 +777,8 @@ DescribePlaceIndexOutcome LocationServiceClient::DescribePlaceIndex(const Descri
       return DescribePlaceIndexOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
   return DescribePlaceIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -851,10 +817,8 @@ DescribeTrackerOutcome LocationServiceClient::DescribeTracker(const DescribeTrac
       return DescribeTrackerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
   return DescribeTrackerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -898,12 +862,10 @@ DisassociateTrackerConsumerOutcome LocationServiceClient::DisassociateTrackerCon
       return DisassociateTrackerConsumerOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/consumers/";
-  ss << request.GetConsumerArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/consumers/");
+  uri.AddPathSegment(request.GetConsumerArn());
   return DisassociateTrackerConsumerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -947,13 +909,11 @@ GetDevicePositionOutcome LocationServiceClient::GetDevicePosition(const GetDevic
       return GetDevicePositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/positions/latest";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/positions/latest");
   return GetDevicePositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -997,13 +957,11 @@ GetDevicePositionHistoryOutcome LocationServiceClient::GetDevicePositionHistory(
       return GetDevicePositionHistoryOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  ss << "/list-positions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
+  uri.AddPathSegments("/list-positions");
   return GetDevicePositionHistoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1047,12 +1005,10 @@ GetGeofenceOutcome LocationServiceClient::GetGeofence(const GetGeofenceRequest& 
       return GetGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/geofences/";
-  ss << request.GetGeofenceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/geofences/");
+  uri.AddPathSegment(request.GetGeofenceId());
   return GetGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1101,14 +1057,11 @@ GetMapGlyphsOutcome LocationServiceClient::GetMapGlyphs(const GetMapGlyphsReques
       return GetMapGlyphsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/glyphs/";
-  ss << request.GetFontStack();
-  ss << "/";
-  ss << request.GetFontUnicodeRange();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/glyphs/");
+  uri.AddPathSegment(request.GetFontStack());
+  uri.AddPathSegment(request.GetFontUnicodeRange());
   return GetMapGlyphsOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1152,12 +1105,10 @@ GetMapSpritesOutcome LocationServiceClient::GetMapSprites(const GetMapSpritesReq
       return GetMapSpritesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/sprites/";
-  ss << request.GetFileName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/sprites/");
+  uri.AddPathSegment(request.GetFileName());
   return GetMapSpritesOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1196,11 +1147,9 @@ GetMapStyleDescriptorOutcome LocationServiceClient::GetMapStyleDescriptor(const 
       return GetMapStyleDescriptorOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/style-descriptor";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/style-descriptor");
   return GetMapStyleDescriptorOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1254,16 +1203,12 @@ GetMapTileOutcome LocationServiceClient::GetMapTile(const GetMapTileRequest& req
       return GetMapTileOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/maps/";
-  ss << request.GetMapName();
-  ss << "/tiles/";
-  ss << request.GetZ();
-  ss << "/";
-  ss << request.GetX();
-  ss << "/";
-  ss << request.GetY();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/maps/");
+  uri.AddPathSegment(request.GetMapName());
+  uri.AddPathSegments("/tiles/");
+  uri.AddPathSegment(request.GetZ());
+  uri.AddPathSegment(request.GetX());
+  uri.AddPathSegment(request.GetY());
   return GetMapTileOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -1297,9 +1242,7 @@ ListGeofenceCollectionsOutcome LocationServiceClient::ListGeofenceCollections(co
       return ListGeofenceCollectionsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/list-collections";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/list-collections");
   return ListGeofenceCollectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1338,11 +1281,9 @@ ListGeofencesOutcome LocationServiceClient::ListGeofences(const ListGeofencesReq
       return ListGeofencesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/list-geofences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/list-geofences");
   return ListGeofencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1376,9 +1317,7 @@ ListMapsOutcome LocationServiceClient::ListMaps(const ListMapsRequest& request) 
       return ListMapsOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/maps/v0/list-maps";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/maps/v0/list-maps");
   return ListMapsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1412,9 +1351,7 @@ ListPlaceIndexesOutcome LocationServiceClient::ListPlaceIndexes(const ListPlaceI
       return ListPlaceIndexesOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/list-indexes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/list-indexes");
   return ListPlaceIndexesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1453,11 +1390,9 @@ ListTrackerConsumersOutcome LocationServiceClient::ListTrackerConsumers(const Li
       return ListTrackerConsumersOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/trackers/";
-  ss << request.GetTrackerName();
-  ss << "/list-consumers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/trackers/");
+  uri.AddPathSegment(request.GetTrackerName());
+  uri.AddPathSegments("/list-consumers");
   return ListTrackerConsumersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1491,9 +1426,7 @@ ListTrackersOutcome LocationServiceClient::ListTrackers(const ListTrackersReques
       return ListTrackersOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tracking/v0/list-trackers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tracking/v0/list-trackers");
   return ListTrackersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1537,12 +1470,10 @@ PutGeofenceOutcome LocationServiceClient::PutGeofence(const PutGeofenceRequest& 
       return PutGeofenceOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/geofencing/v0/collections/";
-  ss << request.GetCollectionName();
-  ss << "/geofences/";
-  ss << request.GetGeofenceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/geofencing/v0/collections/");
+  uri.AddPathSegment(request.GetCollectionName());
+  uri.AddPathSegments("/geofences/");
+  uri.AddPathSegment(request.GetGeofenceId());
   return PutGeofenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1581,11 +1512,9 @@ SearchPlaceIndexForPositionOutcome LocationServiceClient::SearchPlaceIndexForPos
       return SearchPlaceIndexForPositionOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  ss << "/search/position";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  uri.AddPathSegments("/search/position");
   return SearchPlaceIndexForPositionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1624,11 +1553,9 @@ SearchPlaceIndexForTextOutcome LocationServiceClient::SearchPlaceIndexForText(co
       return SearchPlaceIndexForTextOutcome(Aws::Client::AWSError<LocationServiceErrors>(LocationServiceErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/places/v0/indexes/";
-  ss << request.GetIndexName();
-  ss << "/search/text";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/places/v0/indexes/");
+  uri.AddPathSegment(request.GetIndexName());
+  uri.AddPathSegments("/search/text");
   return SearchPlaceIndexForTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

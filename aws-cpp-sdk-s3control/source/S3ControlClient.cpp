@@ -197,10 +197,8 @@ CreateAccessPointOutcome S3ControlClient::CreateAccessPoint(const CreateAccessPo
       return CreateAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/accesspoint/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/accesspoint/");
+  uri.AddPathSegment(request.GetName());
   return CreateAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -260,8 +258,6 @@ CreateAccessPointForObjectLambdaOutcome S3ControlClient::CreateAccessPointForObj
       return CreateAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateAccessPointForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -296,10 +292,8 @@ CreateBucketOutcome S3ControlClient::CreateBucket(const CreateBucketRequest& req
     return CreateBucketOutcome(computeEndpointOutcome.GetError());
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
-  Aws::StringStream ss;
-  ss << "/v20180820/bucket/";
-  ss << request.GetBucket();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/bucket/");
+  uri.AddPathSegment(request.GetBucket());
   return CreateBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -348,9 +342,7 @@ CreateJobOutcome S3ControlClient::CreateJob(const CreateJobRequest& request) con
       return CreateJobOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs");
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -410,8 +402,6 @@ DeleteAccessPointOutcome S3ControlClient::DeleteAccessPoint(const DeleteAccessPo
       return DeleteAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -471,8 +461,6 @@ DeleteAccessPointForObjectLambdaOutcome S3ControlClient::DeleteAccessPointForObj
       return DeleteAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteAccessPointForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -532,9 +520,7 @@ DeleteAccessPointPolicyOutcome S3ControlClient::DeleteAccessPointPolicy(const De
       return DeleteAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return DeleteAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -594,9 +580,7 @@ DeleteAccessPointPolicyForObjectLambdaOutcome S3ControlClient::DeleteAccessPoint
       return DeleteAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return DeleteAccessPointPolicyForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -656,8 +640,6 @@ DeleteBucketOutcome S3ControlClient::DeleteBucket(const DeleteBucketRequest& req
       return DeleteBucketOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return DeleteBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -717,9 +699,7 @@ DeleteBucketLifecycleConfigurationOutcome S3ControlClient::DeleteBucketLifecycle
       return DeleteBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/lifecycleconfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/lifecycleconfiguration");
   return DeleteBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -779,9 +759,7 @@ DeleteBucketPolicyOutcome S3ControlClient::DeleteBucketPolicy(const DeleteBucket
       return DeleteBucketPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return DeleteBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -841,9 +819,7 @@ DeleteBucketTaggingOutcome S3ControlClient::DeleteBucketTagging(const DeleteBuck
       return DeleteBucketTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagging");
   return DeleteBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -897,11 +873,9 @@ DeleteJobTaggingOutcome S3ControlClient::DeleteJobTagging(const DeleteJobTagging
       return DeleteJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/tagging");
   return DeleteJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -950,9 +924,7 @@ DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const De
       return DeletePublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/configuration/publicAccessBlock";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/configuration/publicAccessBlock");
   return DeletePublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1006,10 +978,8 @@ DeleteStorageLensConfigurationOutcome S3ControlClient::DeleteStorageLensConfigur
       return DeleteStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
   return DeleteStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1063,11 +1033,9 @@ DeleteStorageLensConfigurationTaggingOutcome S3ControlClient::DeleteStorageLensC
       return DeleteStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
+  uri.AddPathSegments("/tagging");
   return DeleteStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1121,10 +1089,8 @@ DescribeJobOutcome S3ControlClient::DescribeJob(const DescribeJobRequest& reques
       return DescribeJobOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return DescribeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1184,8 +1150,6 @@ GetAccessPointOutcome S3ControlClient::GetAccessPoint(const GetAccessPointReques
       return GetAccessPointOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1245,9 +1209,7 @@ GetAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::GetAccessPoin
       return GetAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/configuration");
   return GetAccessPointConfigurationForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1307,8 +1269,6 @@ GetAccessPointForObjectLambdaOutcome S3ControlClient::GetAccessPointForObjectLam
       return GetAccessPointForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetAccessPointForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1368,9 +1328,7 @@ GetAccessPointPolicyOutcome S3ControlClient::GetAccessPointPolicy(const GetAcces
       return GetAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return GetAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1430,9 +1388,7 @@ GetAccessPointPolicyForObjectLambdaOutcome S3ControlClient::GetAccessPointPolicy
       return GetAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return GetAccessPointPolicyForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1492,9 +1448,7 @@ GetAccessPointPolicyStatusOutcome S3ControlClient::GetAccessPointPolicyStatus(co
       return GetAccessPointPolicyStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policyStatus";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policyStatus");
   return GetAccessPointPolicyStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1554,9 +1508,7 @@ GetAccessPointPolicyStatusForObjectLambdaOutcome S3ControlClient::GetAccessPoint
       return GetAccessPointPolicyStatusForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policyStatus";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policyStatus");
   return GetAccessPointPolicyStatusForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1616,8 +1568,6 @@ GetBucketOutcome S3ControlClient::GetBucket(const GetBucketRequest& request) con
       return GetBucketOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1677,9 +1627,7 @@ GetBucketLifecycleConfigurationOutcome S3ControlClient::GetBucketLifecycleConfig
       return GetBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/lifecycleconfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/lifecycleconfiguration");
   return GetBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1739,9 +1687,7 @@ GetBucketPolicyOutcome S3ControlClient::GetBucketPolicy(const GetBucketPolicyReq
       return GetBucketPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return GetBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1801,9 +1747,7 @@ GetBucketTaggingOutcome S3ControlClient::GetBucketTagging(const GetBucketTagging
       return GetBucketTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagging");
   return GetBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1857,11 +1801,9 @@ GetJobTaggingOutcome S3ControlClient::GetJobTagging(const GetJobTaggingRequest& 
       return GetJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/tagging");
   return GetJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1910,9 +1852,7 @@ GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPubli
       return GetPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/configuration/publicAccessBlock";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/configuration/publicAccessBlock");
   return GetPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -1966,10 +1906,8 @@ GetStorageLensConfigurationOutcome S3ControlClient::GetStorageLensConfiguration(
       return GetStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
   return GetStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2023,11 +1961,9 @@ GetStorageLensConfigurationTaggingOutcome S3ControlClient::GetStorageLensConfigu
       return GetStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
+  uri.AddPathSegments("/tagging");
   return GetStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2082,9 +2018,7 @@ ListAccessPointsOutcome S3ControlClient::ListAccessPoints(const ListAccessPoints
       return ListAccessPointsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/accesspoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/accesspoint");
   return ListAccessPointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2133,9 +2067,7 @@ ListAccessPointsForObjectLambdaOutcome S3ControlClient::ListAccessPointsForObjec
       return ListAccessPointsForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/accesspointforobjectlambda";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/accesspointforobjectlambda");
   return ListAccessPointsForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2184,9 +2116,7 @@ ListJobsOutcome S3ControlClient::ListJobs(const ListJobsRequest& request) const
       return ListJobsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2235,9 +2165,7 @@ ListRegionalBucketsOutcome S3ControlClient::ListRegionalBuckets(const ListRegion
       return ListRegionalBucketsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/bucket";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/bucket");
   return ListRegionalBucketsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2286,9 +2214,7 @@ ListStorageLensConfigurationsOutcome S3ControlClient::ListStorageLensConfigurati
       return ListStorageLensConfigurationsOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens");
   return ListStorageLensConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2348,9 +2274,7 @@ PutAccessPointConfigurationForObjectLambdaOutcome S3ControlClient::PutAccessPoin
       return PutAccessPointConfigurationForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/configuration");
   return PutAccessPointConfigurationForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2410,9 +2334,7 @@ PutAccessPointPolicyOutcome S3ControlClient::PutAccessPointPolicy(const PutAcces
       return PutAccessPointPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return PutAccessPointPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2472,9 +2394,7 @@ PutAccessPointPolicyForObjectLambdaOutcome S3ControlClient::PutAccessPointPolicy
       return PutAccessPointPolicyForObjectLambdaOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return PutAccessPointPolicyForObjectLambdaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2534,9 +2454,7 @@ PutBucketLifecycleConfigurationOutcome S3ControlClient::PutBucketLifecycleConfig
       return PutBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/lifecycleconfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/lifecycleconfiguration");
   return PutBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2596,9 +2514,7 @@ PutBucketPolicyOutcome S3ControlClient::PutBucketPolicy(const PutBucketPolicyReq
       return PutBucketPolicyOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/policy");
   return PutBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2658,9 +2574,7 @@ PutBucketTaggingOutcome S3ControlClient::PutBucketTagging(const PutBucketTagging
       return PutBucketTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagging");
   return PutBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2714,11 +2628,9 @@ PutJobTaggingOutcome S3ControlClient::PutJobTagging(const PutJobTaggingRequest& 
       return PutJobTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/tagging");
   return PutJobTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2767,9 +2679,7 @@ PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPubli
       return PutPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/configuration/publicAccessBlock";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/configuration/publicAccessBlock");
   return PutPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2823,10 +2733,8 @@ PutStorageLensConfigurationOutcome S3ControlClient::PutStorageLensConfiguration(
       return PutStorageLensConfigurationOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
   return PutStorageLensConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2880,11 +2788,9 @@ PutStorageLensConfigurationTaggingOutcome S3ControlClient::PutStorageLensConfigu
       return PutStorageLensConfigurationTaggingOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/storagelens/";
-  ss << request.GetConfigId();
-  ss << "/tagging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/storagelens/");
+  uri.AddPathSegment(request.GetConfigId());
+  uri.AddPathSegments("/tagging");
   return PutStorageLensConfigurationTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -2943,11 +2849,9 @@ UpdateJobPriorityOutcome S3ControlClient::UpdateJobPriority(const UpdateJobPrior
       return UpdateJobPriorityOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/priority";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/priority");
   return UpdateJobPriorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
@@ -3006,11 +2910,9 @@ UpdateJobStatusOutcome S3ControlClient::UpdateJobStatus(const UpdateJobStatusReq
       return UpdateJobStatusOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/v20180820/jobs/";
-  ss << request.GetJobId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v20180820/jobs/");
+  uri.AddPathSegment(request.GetJobId());
+  uri.AddPathSegments("/status");
   return UpdateJobStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 

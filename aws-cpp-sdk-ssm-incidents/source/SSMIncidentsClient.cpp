@@ -126,9 +126,7 @@ void SSMIncidentsClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateReplicationSetOutcome SSMIncidentsClient::CreateReplicationSet(const CreateReplicationSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createReplicationSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createReplicationSet");
   return CreateReplicationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -153,9 +151,7 @@ void SSMIncidentsClient::CreateReplicationSetAsyncHelper(const CreateReplication
 CreateResponsePlanOutcome SSMIncidentsClient::CreateResponsePlan(const CreateResponsePlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createResponsePlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createResponsePlan");
   return CreateResponsePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -180,9 +176,7 @@ void SSMIncidentsClient::CreateResponsePlanAsyncHelper(const CreateResponsePlanR
 CreateTimelineEventOutcome SSMIncidentsClient::CreateTimelineEvent(const CreateTimelineEventRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createTimelineEvent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createTimelineEvent");
   return CreateTimelineEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -207,9 +201,7 @@ void SSMIncidentsClient::CreateTimelineEventAsyncHelper(const CreateTimelineEven
 DeleteIncidentRecordOutcome SSMIncidentsClient::DeleteIncidentRecord(const DeleteIncidentRecordRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteIncidentRecord";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteIncidentRecord");
   return DeleteIncidentRecordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -239,9 +231,7 @@ DeleteReplicationSetOutcome SSMIncidentsClient::DeleteReplicationSet(const Delet
     return DeleteReplicationSetOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteReplicationSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteReplicationSet");
   return DeleteReplicationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -266,9 +256,7 @@ void SSMIncidentsClient::DeleteReplicationSetAsyncHelper(const DeleteReplication
 DeleteResourcePolicyOutcome SSMIncidentsClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteResourcePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteResourcePolicy");
   return DeleteResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -293,9 +281,7 @@ void SSMIncidentsClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePol
 DeleteResponsePlanOutcome SSMIncidentsClient::DeleteResponsePlan(const DeleteResponsePlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteResponsePlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteResponsePlan");
   return DeleteResponsePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -320,9 +306,7 @@ void SSMIncidentsClient::DeleteResponsePlanAsyncHelper(const DeleteResponsePlanR
 DeleteTimelineEventOutcome SSMIncidentsClient::DeleteTimelineEvent(const DeleteTimelineEventRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteTimelineEvent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteTimelineEvent");
   return DeleteTimelineEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -352,9 +336,7 @@ GetIncidentRecordOutcome SSMIncidentsClient::GetIncidentRecord(const GetIncident
     return GetIncidentRecordOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getIncidentRecord";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getIncidentRecord");
   return GetIncidentRecordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -384,9 +366,7 @@ GetReplicationSetOutcome SSMIncidentsClient::GetReplicationSet(const GetReplicat
     return GetReplicationSetOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getReplicationSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getReplicationSet");
   return GetReplicationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -416,9 +396,7 @@ GetResourcePoliciesOutcome SSMIncidentsClient::GetResourcePolicies(const GetReso
     return GetResourcePoliciesOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getResourcePolicies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getResourcePolicies");
   return GetResourcePoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -448,9 +426,7 @@ GetResponsePlanOutcome SSMIncidentsClient::GetResponsePlan(const GetResponsePlan
     return GetResponsePlanOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getResponsePlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getResponsePlan");
   return GetResponsePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -485,9 +461,7 @@ GetTimelineEventOutcome SSMIncidentsClient::GetTimelineEvent(const GetTimelineEv
     return GetTimelineEventOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IncidentRecordArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getTimelineEvent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getTimelineEvent");
   return GetTimelineEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -512,9 +486,7 @@ void SSMIncidentsClient::GetTimelineEventAsyncHelper(const GetTimelineEventReque
 ListIncidentRecordsOutcome SSMIncidentsClient::ListIncidentRecords(const ListIncidentRecordsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listIncidentRecords";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listIncidentRecords");
   return ListIncidentRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -539,9 +511,7 @@ void SSMIncidentsClient::ListIncidentRecordsAsyncHelper(const ListIncidentRecord
 ListRelatedItemsOutcome SSMIncidentsClient::ListRelatedItems(const ListRelatedItemsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listRelatedItems";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listRelatedItems");
   return ListRelatedItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -566,9 +536,7 @@ void SSMIncidentsClient::ListRelatedItemsAsyncHelper(const ListRelatedItemsReque
 ListReplicationSetsOutcome SSMIncidentsClient::ListReplicationSets(const ListReplicationSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listReplicationSets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listReplicationSets");
   return ListReplicationSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -593,9 +561,7 @@ void SSMIncidentsClient::ListReplicationSetsAsyncHelper(const ListReplicationSet
 ListResponsePlansOutcome SSMIncidentsClient::ListResponsePlans(const ListResponsePlansRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listResponsePlans";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listResponsePlans");
   return ListResponsePlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -625,10 +591,8 @@ ListTagsForResourceOutcome SSMIncidentsClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -653,9 +617,7 @@ void SSMIncidentsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 ListTimelineEventsOutcome SSMIncidentsClient::ListTimelineEvents(const ListTimelineEventsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listTimelineEvents";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listTimelineEvents");
   return ListTimelineEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -680,9 +642,7 @@ void SSMIncidentsClient::ListTimelineEventsAsyncHelper(const ListTimelineEventsR
 PutResourcePolicyOutcome SSMIncidentsClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/putResourcePolicy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/putResourcePolicy");
   return PutResourcePolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -707,9 +667,7 @@ void SSMIncidentsClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyReq
 StartIncidentOutcome SSMIncidentsClient::StartIncident(const StartIncidentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/startIncident";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/startIncident");
   return StartIncidentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -739,10 +697,8 @@ TagResourceOutcome SSMIncidentsClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -777,10 +733,8 @@ UntagResourceOutcome SSMIncidentsClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<SSMIncidentsErrors>(SSMIncidentsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -805,9 +759,7 @@ void SSMIncidentsClient::UntagResourceAsyncHelper(const UntagResourceRequest& re
 UpdateDeletionProtectionOutcome SSMIncidentsClient::UpdateDeletionProtection(const UpdateDeletionProtectionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateDeletionProtection";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateDeletionProtection");
   return UpdateDeletionProtectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -832,9 +784,7 @@ void SSMIncidentsClient::UpdateDeletionProtectionAsyncHelper(const UpdateDeletio
 UpdateIncidentRecordOutcome SSMIncidentsClient::UpdateIncidentRecord(const UpdateIncidentRecordRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateIncidentRecord";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateIncidentRecord");
   return UpdateIncidentRecordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -859,9 +809,7 @@ void SSMIncidentsClient::UpdateIncidentRecordAsyncHelper(const UpdateIncidentRec
 UpdateRelatedItemsOutcome SSMIncidentsClient::UpdateRelatedItems(const UpdateRelatedItemsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateRelatedItems";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateRelatedItems");
   return UpdateRelatedItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -886,9 +834,7 @@ void SSMIncidentsClient::UpdateRelatedItemsAsyncHelper(const UpdateRelatedItemsR
 UpdateReplicationSetOutcome SSMIncidentsClient::UpdateReplicationSet(const UpdateReplicationSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateReplicationSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateReplicationSet");
   return UpdateReplicationSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -913,9 +859,7 @@ void SSMIncidentsClient::UpdateReplicationSetAsyncHelper(const UpdateReplication
 UpdateResponsePlanOutcome SSMIncidentsClient::UpdateResponsePlan(const UpdateResponsePlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateResponsePlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateResponsePlan");
   return UpdateResponsePlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -940,9 +884,7 @@ void SSMIncidentsClient::UpdateResponsePlanAsyncHelper(const UpdateResponsePlanR
 UpdateTimelineEventOutcome SSMIncidentsClient::UpdateTimelineEvent(const UpdateTimelineEventRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateTimelineEvent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateTimelineEvent");
   return UpdateTimelineEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

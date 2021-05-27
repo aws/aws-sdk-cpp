@@ -105,11 +105,9 @@ CreateChangesetOutcome FinSpaceDataClient::CreateChangeset(const CreateChangeset
     return CreateChangesetOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetId();
-  ss << "/changesets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetId());
+  uri.AddPathSegments("/changesets");
   return CreateChangesetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -139,9 +137,7 @@ GetProgrammaticAccessCredentialsOutcome FinSpaceDataClient::GetProgrammaticAcces
     return GetProgrammaticAccessCredentialsOutcome(Aws::Client::AWSError<FinSpaceDataErrors>(FinSpaceDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/credentials/programmatic";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/credentials/programmatic");
   return GetProgrammaticAccessCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -166,9 +162,7 @@ void FinSpaceDataClient::GetProgrammaticAccessCredentialsAsyncHelper(const GetPr
 GetWorkingLocationOutcome FinSpaceDataClient::GetWorkingLocation(const GetWorkingLocationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workingLocationV1";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workingLocationV1");
   return GetWorkingLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

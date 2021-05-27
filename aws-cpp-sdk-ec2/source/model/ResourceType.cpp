@@ -49,7 +49,6 @@ namespace Aws
         static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
         static const int route_table_HASH = HashingUtils::HashString("route-table");
         static const int security_group_HASH = HashingUtils::HashString("security-group");
-        static const int security_group_rule_HASH = HashingUtils::HashString("security-group-rule");
         static const int snapshot_HASH = HashingUtils::HashString("snapshot");
         static const int spot_fleet_request_HASH = HashingUtils::HashString("spot-fleet-request");
         static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
@@ -188,10 +187,6 @@ namespace Aws
           else if (hashCode == security_group_HASH)
           {
             return ResourceType::security_group;
-          }
-          else if (hashCode == security_group_rule_HASH)
-          {
-            return ResourceType::security_group_rule;
           }
           else if (hashCode == snapshot_HASH)
           {
@@ -337,8 +332,6 @@ namespace Aws
             return "route-table";
           case ResourceType::security_group:
             return "security-group";
-          case ResourceType::security_group_rule:
-            return "security-group-rule";
           case ResourceType::snapshot:
             return "snapshot";
           case ResourceType::spot_fleet_request:

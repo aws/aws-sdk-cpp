@@ -147,11 +147,9 @@ AcceptEulasOutcome NimbleStudioClient::AcceptEulas(const AcceptEulasRequest& req
     return AcceptEulasOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/eula-acceptances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/eula-acceptances");
   return AcceptEulasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -181,11 +179,9 @@ CreateLaunchProfileOutcome NimbleStudioClient::CreateLaunchProfile(const CreateL
     return CreateLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles");
   return CreateLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -215,11 +211,9 @@ CreateStreamingImageOutcome NimbleStudioClient::CreateStreamingImage(const Creat
     return CreateStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-images";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-images");
   return CreateStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -249,11 +243,9 @@ CreateStreamingSessionOutcome NimbleStudioClient::CreateStreamingSession(const C
     return CreateStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-sessions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions");
   return CreateStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -288,13 +280,11 @@ CreateStreamingSessionStreamOutcome NimbleStudioClient::CreateStreamingSessionSt
     return CreateStreamingSessionStreamOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-sessions/";
-  ss << request.GetSessionId();
-  ss << "/streams";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions/");
+  uri.AddPathSegment(request.GetSessionId());
+  uri.AddPathSegments("/streams");
   return CreateStreamingSessionStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -319,9 +309,7 @@ void NimbleStudioClient::CreateStreamingSessionStreamAsyncHelper(const CreateStr
 CreateStudioOutcome NimbleStudioClient::CreateStudio(const CreateStudioRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios");
   return CreateStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -351,11 +339,9 @@ CreateStudioComponentOutcome NimbleStudioClient::CreateStudioComponent(const Cre
     return CreateStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/studio-components";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/studio-components");
   return CreateStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -390,12 +376,10 @@ DeleteLaunchProfileOutcome NimbleStudioClient::DeleteLaunchProfile(const DeleteL
     return DeleteLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
   return DeleteLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -435,14 +419,12 @@ DeleteLaunchProfileMemberOutcome NimbleStudioClient::DeleteLaunchProfileMember(c
     return DeleteLaunchProfileMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  ss << "/membership/";
-  ss << request.GetPrincipalId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
+  uri.AddPathSegments("/membership/");
+  uri.AddPathSegment(request.GetPrincipalId());
   return DeleteLaunchProfileMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -477,12 +459,10 @@ DeleteStreamingImageOutcome NimbleStudioClient::DeleteStreamingImage(const Delet
     return DeleteStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-images/";
-  ss << request.GetStreamingImageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-images/");
+  uri.AddPathSegment(request.GetStreamingImageId());
   return DeleteStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -517,12 +497,10 @@ DeleteStreamingSessionOutcome NimbleStudioClient::DeleteStreamingSession(const D
     return DeleteStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-sessions/";
-  ss << request.GetSessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions/");
+  uri.AddPathSegment(request.GetSessionId());
   return DeleteStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -552,10 +530,8 @@ DeleteStudioOutcome NimbleStudioClient::DeleteStudio(const DeleteStudioRequest& 
     return DeleteStudioOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
   return DeleteStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -590,12 +566,10 @@ DeleteStudioComponentOutcome NimbleStudioClient::DeleteStudioComponent(const Del
     return DeleteStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/studio-components/";
-  ss << request.GetStudioComponentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/studio-components/");
+  uri.AddPathSegment(request.GetStudioComponentId());
   return DeleteStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -630,12 +604,10 @@ DeleteStudioMemberOutcome NimbleStudioClient::DeleteStudioMember(const DeleteStu
     return DeleteStudioMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/membership/";
-  ss << request.GetPrincipalId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/membership/");
+  uri.AddPathSegment(request.GetPrincipalId());
   return DeleteStudioMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -665,10 +637,8 @@ GetEulaOutcome NimbleStudioClient::GetEula(const GetEulaRequest& request) const
     return GetEulaOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EulaId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/eulas/";
-  ss << request.GetEulaId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/eulas/");
+  uri.AddPathSegment(request.GetEulaId());
   return GetEulaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -703,12 +673,10 @@ GetLaunchProfileOutcome NimbleStudioClient::GetLaunchProfile(const GetLaunchProf
     return GetLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
   return GetLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -743,13 +711,11 @@ GetLaunchProfileDetailsOutcome NimbleStudioClient::GetLaunchProfileDetails(const
     return GetLaunchProfileDetailsOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  ss << "/details";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
+  uri.AddPathSegments("/details");
   return GetLaunchProfileDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -799,13 +765,11 @@ GetLaunchProfileInitializationOutcome NimbleStudioClient::GetLaunchProfileInitia
     return GetLaunchProfileInitializationOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  ss << "/init";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
+  uri.AddPathSegments("/init");
   return GetLaunchProfileInitializationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -845,14 +809,12 @@ GetLaunchProfileMemberOutcome NimbleStudioClient::GetLaunchProfileMember(const G
     return GetLaunchProfileMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  ss << "/membership/";
-  ss << request.GetPrincipalId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
+  uri.AddPathSegments("/membership/");
+  uri.AddPathSegment(request.GetPrincipalId());
   return GetLaunchProfileMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -887,12 +849,10 @@ GetStreamingImageOutcome NimbleStudioClient::GetStreamingImage(const GetStreamin
     return GetStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-images/";
-  ss << request.GetStreamingImageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-images/");
+  uri.AddPathSegment(request.GetStreamingImageId());
   return GetStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -927,12 +887,10 @@ GetStreamingSessionOutcome NimbleStudioClient::GetStreamingSession(const GetStre
     return GetStreamingSessionOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-sessions/";
-  ss << request.GetSessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions/");
+  uri.AddPathSegment(request.GetSessionId());
   return GetStreamingSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -972,14 +930,12 @@ GetStreamingSessionStreamOutcome NimbleStudioClient::GetStreamingSessionStream(c
     return GetStreamingSessionStreamOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-sessions/";
-  ss << request.GetSessionId();
-  ss << "/streams/";
-  ss << request.GetStreamId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions/");
+  uri.AddPathSegment(request.GetSessionId());
+  uri.AddPathSegments("/streams/");
+  uri.AddPathSegment(request.GetStreamId());
   return GetStreamingSessionStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1009,10 +965,8 @@ GetStudioOutcome NimbleStudioClient::GetStudio(const GetStudioRequest& request) 
     return GetStudioOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
   return GetStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1047,12 +1001,10 @@ GetStudioComponentOutcome NimbleStudioClient::GetStudioComponent(const GetStudio
     return GetStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/studio-components/";
-  ss << request.GetStudioComponentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/studio-components/");
+  uri.AddPathSegment(request.GetStudioComponentId());
   return GetStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1087,12 +1039,10 @@ GetStudioMemberOutcome NimbleStudioClient::GetStudioMember(const GetStudioMember
     return GetStudioMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/membership/";
-  ss << request.GetPrincipalId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/membership/");
+  uri.AddPathSegment(request.GetPrincipalId());
   return GetStudioMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1122,11 +1072,9 @@ ListEulaAcceptancesOutcome NimbleStudioClient::ListEulaAcceptances(const ListEul
     return ListEulaAcceptancesOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/eula-acceptances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/eula-acceptances");
   return ListEulaAcceptancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1151,9 +1099,7 @@ void NimbleStudioClient::ListEulaAcceptancesAsyncHelper(const ListEulaAcceptance
 ListEulasOutcome NimbleStudioClient::ListEulas(const ListEulasRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/eulas";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/eulas");
   return ListEulasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1188,13 +1134,11 @@ ListLaunchProfileMembersOutcome NimbleStudioClient::ListLaunchProfileMembers(con
     return ListLaunchProfileMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  ss << "/membership";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
+  uri.AddPathSegments("/membership");
   return ListLaunchProfileMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1224,11 +1168,9 @@ ListLaunchProfilesOutcome NimbleStudioClient::ListLaunchProfiles(const ListLaunc
     return ListLaunchProfilesOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles");
   return ListLaunchProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1258,11 +1200,9 @@ ListStreamingImagesOutcome NimbleStudioClient::ListStreamingImages(const ListStr
     return ListStreamingImagesOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-images";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-images");
   return ListStreamingImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1292,11 +1232,9 @@ ListStreamingSessionsOutcome NimbleStudioClient::ListStreamingSessions(const Lis
     return ListStreamingSessionsOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-sessions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-sessions");
   return ListStreamingSessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1326,11 +1264,9 @@ ListStudioComponentsOutcome NimbleStudioClient::ListStudioComponents(const ListS
     return ListStudioComponentsOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/studio-components";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/studio-components");
   return ListStudioComponentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1360,11 +1296,9 @@ ListStudioMembersOutcome NimbleStudioClient::ListStudioMembers(const ListStudioM
     return ListStudioMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/membership";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/membership");
   return ListStudioMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1389,9 +1323,7 @@ void NimbleStudioClient::ListStudioMembersAsyncHelper(const ListStudioMembersReq
 ListStudiosOutcome NimbleStudioClient::ListStudios(const ListStudiosRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios");
   return ListStudiosOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1421,10 +1353,8 @@ ListTagsForResourceOutcome NimbleStudioClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1459,13 +1389,11 @@ PutLaunchProfileMembersOutcome NimbleStudioClient::PutLaunchProfileMembers(const
     return PutLaunchProfileMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  ss << "/membership";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
+  uri.AddPathSegments("/membership");
   return PutLaunchProfileMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1495,11 +1423,9 @@ PutStudioMembersOutcome NimbleStudioClient::PutStudioMembers(const PutStudioMemb
     return PutStudioMembersOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/membership";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/membership");
   return PutStudioMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1529,11 +1455,9 @@ StartStudioSSOConfigurationRepairOutcome NimbleStudioClient::StartStudioSSOConfi
     return StartStudioSSOConfigurationRepairOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/sso-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/sso-configuration");
   return StartStudioSSOConfigurationRepairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1563,10 +1487,8 @@ TagResourceOutcome NimbleStudioClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1601,10 +1523,8 @@ UntagResourceOutcome NimbleStudioClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1639,12 +1559,10 @@ UpdateLaunchProfileOutcome NimbleStudioClient::UpdateLaunchProfile(const UpdateL
     return UpdateLaunchProfileOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
   return UpdateLaunchProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1684,14 +1602,12 @@ UpdateLaunchProfileMemberOutcome NimbleStudioClient::UpdateLaunchProfileMember(c
     return UpdateLaunchProfileMemberOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/launch-profiles/";
-  ss << request.GetLaunchProfileId();
-  ss << "/membership/";
-  ss << request.GetPrincipalId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/launch-profiles/");
+  uri.AddPathSegment(request.GetLaunchProfileId());
+  uri.AddPathSegments("/membership/");
+  uri.AddPathSegment(request.GetPrincipalId());
   return UpdateLaunchProfileMemberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1726,12 +1642,10 @@ UpdateStreamingImageOutcome NimbleStudioClient::UpdateStreamingImage(const Updat
     return UpdateStreamingImageOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/streaming-images/";
-  ss << request.GetStreamingImageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/streaming-images/");
+  uri.AddPathSegment(request.GetStreamingImageId());
   return UpdateStreamingImageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1761,10 +1675,8 @@ UpdateStudioOutcome NimbleStudioClient::UpdateStudio(const UpdateStudioRequest& 
     return UpdateStudioOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
   return UpdateStudioOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1799,12 +1711,10 @@ UpdateStudioComponentOutcome NimbleStudioClient::UpdateStudioComponent(const Upd
     return UpdateStudioComponentOutcome(Aws::Client::AWSError<NimbleStudioErrors>(NimbleStudioErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StudioId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-08-01/studios/";
-  ss << request.GetStudioId();
-  ss << "/studio-components/";
-  ss << request.GetStudioComponentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-08-01/studios/");
+  uri.AddPathSegment(request.GetStudioId());
+  uri.AddPathSegments("/studio-components/");
+  uri.AddPathSegment(request.GetStudioComponentId());
   return UpdateStudioComponentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -116,9 +116,7 @@ void KinesisVideoClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateSignalingChannelOutcome KinesisVideoClient::CreateSignalingChannel(const CreateSignalingChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createSignalingChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createSignalingChannel");
   return CreateSignalingChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -143,9 +141,7 @@ void KinesisVideoClient::CreateSignalingChannelAsyncHelper(const CreateSignaling
 CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createStream");
   return CreateStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,9 +166,7 @@ void KinesisVideoClient::CreateStreamAsyncHelper(const CreateStreamRequest& requ
 DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const DeleteSignalingChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteSignalingChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteSignalingChannel");
   return DeleteSignalingChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -197,9 +191,7 @@ void KinesisVideoClient::DeleteSignalingChannelAsyncHelper(const DeleteSignaling
 DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteStream");
   return DeleteStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -224,9 +216,7 @@ void KinesisVideoClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& requ
 DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(const DescribeSignalingChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeSignalingChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeSignalingChannel");
   return DescribeSignalingChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -251,9 +241,7 @@ void KinesisVideoClient::DescribeSignalingChannelAsyncHelper(const DescribeSigna
 DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeStream");
   return DescribeStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -278,9 +266,7 @@ void KinesisVideoClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& 
 GetDataEndpointOutcome KinesisVideoClient::GetDataEndpoint(const GetDataEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getDataEndpoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getDataEndpoint");
   return GetDataEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -305,9 +291,7 @@ void KinesisVideoClient::GetDataEndpointAsyncHelper(const GetDataEndpointRequest
 GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoint(const GetSignalingChannelEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getSignalingChannelEndpoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getSignalingChannelEndpoint");
   return GetSignalingChannelEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -332,9 +316,7 @@ void KinesisVideoClient::GetSignalingChannelEndpointAsyncHelper(const GetSignali
 ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const ListSignalingChannelsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listSignalingChannels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listSignalingChannels");
   return ListSignalingChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -359,9 +341,7 @@ void KinesisVideoClient::ListSignalingChannelsAsyncHelper(const ListSignalingCha
 ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listStreams";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listStreams");
   return ListStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -386,9 +366,7 @@ void KinesisVideoClient::ListStreamsAsyncHelper(const ListStreamsRequest& reques
 ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListTagsForResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListTagsForResource");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -413,9 +391,7 @@ void KinesisVideoClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsForStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listTagsForStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listTagsForStream");
   return ListTagsForStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -440,9 +416,7 @@ void KinesisVideoClient::ListTagsForStreamAsyncHelper(const ListTagsForStreamReq
 TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TagResource");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -467,9 +441,7 @@ void KinesisVideoClient::TagResourceAsyncHelper(const TagResourceRequest& reques
 TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tagStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tagStream");
   return TagStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -494,9 +466,7 @@ void KinesisVideoClient::TagStreamAsyncHelper(const TagStreamRequest& request, c
 UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UntagResource";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UntagResource");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -521,9 +491,7 @@ void KinesisVideoClient::UntagResourceAsyncHelper(const UntagResourceRequest& re
 UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/untagStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/untagStream");
   return UntagStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -548,9 +516,7 @@ void KinesisVideoClient::UntagStreamAsyncHelper(const UntagStreamRequest& reques
 UpdateDataRetentionOutcome KinesisVideoClient::UpdateDataRetention(const UpdateDataRetentionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateDataRetention";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateDataRetention");
   return UpdateDataRetentionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -575,9 +541,7 @@ void KinesisVideoClient::UpdateDataRetentionAsyncHelper(const UpdateDataRetentio
 UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const UpdateSignalingChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateSignalingChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateSignalingChannel");
   return UpdateSignalingChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -602,9 +566,7 @@ void KinesisVideoClient::UpdateSignalingChannelAsyncHelper(const UpdateSignaling
 UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateStream");
   return UpdateStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

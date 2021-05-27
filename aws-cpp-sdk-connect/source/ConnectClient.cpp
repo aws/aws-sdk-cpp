@@ -201,11 +201,9 @@ AssociateApprovedOriginOutcome ConnectClient::AssociateApprovedOrigin(const Asso
     return AssociateApprovedOriginOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/approved-origin";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/approved-origin");
   return AssociateApprovedOriginOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -235,11 +233,9 @@ AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageCon
     return AssociateInstanceStorageConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/storage-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/storage-config");
   return AssociateInstanceStorageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -269,11 +265,9 @@ AssociateLambdaFunctionOutcome ConnectClient::AssociateLambdaFunction(const Asso
     return AssociateLambdaFunctionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/lambda-function";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/lambda-function");
   return AssociateLambdaFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -303,11 +297,9 @@ AssociateLexBotOutcome ConnectClient::AssociateLexBot(const AssociateLexBotReque
     return AssociateLexBotOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/lex-bot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/lex-bot");
   return AssociateLexBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -342,13 +334,10 @@ AssociateQueueQuickConnectsOutcome ConnectClient::AssociateQueueQuickConnects(co
     return AssociateQueueQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/associate-quick-connects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/associate-quick-connects");
   return AssociateQueueQuickConnectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -383,13 +372,10 @@ AssociateRoutingProfileQueuesOutcome ConnectClient::AssociateRoutingProfileQueue
     return AssociateRoutingProfileQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  ss << "/associate-queues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
+  uri.AddPathSegments("/associate-queues");
   return AssociateRoutingProfileQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -419,11 +405,9 @@ AssociateSecurityKeyOutcome ConnectClient::AssociateSecurityKey(const AssociateS
     return AssociateSecurityKeyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/security-key";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/security-key");
   return AssociateSecurityKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -453,10 +437,8 @@ CreateContactFlowOutcome ConnectClient::CreateContactFlow(const CreateContactFlo
     return CreateContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact-flows/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact-flows/");
+  uri.AddPathSegment(request.GetInstanceId());
   return CreateContactFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -481,9 +463,7 @@ void ConnectClient::CreateContactFlowAsyncHelper(const CreateContactFlowRequest&
 CreateInstanceOutcome ConnectClient::CreateInstance(const CreateInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance");
   return CreateInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -513,11 +493,9 @@ CreateIntegrationAssociationOutcome ConnectClient::CreateIntegrationAssociation(
     return CreateIntegrationAssociationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/integration-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/integration-associations");
   return CreateIntegrationAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -547,10 +525,8 @@ CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request)
     return CreateQueueOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
   return CreateQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -580,10 +556,8 @@ CreateQuickConnectOutcome ConnectClient::CreateQuickConnect(const CreateQuickCon
     return CreateQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quick-connects/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quick-connects/");
+  uri.AddPathSegment(request.GetInstanceId());
   return CreateQuickConnectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -613,10 +587,8 @@ CreateRoutingProfileOutcome ConnectClient::CreateRoutingProfile(const CreateRout
     return CreateRoutingProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
   return CreateRoutingProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -651,13 +623,11 @@ CreateUseCaseOutcome ConnectClient::CreateUseCase(const CreateUseCaseRequest& re
     return CreateUseCaseOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationAssociationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/integration-associations/";
-  ss << request.GetIntegrationAssociationId();
-  ss << "/use-cases";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/integration-associations/");
+  uri.AddPathSegment(request.GetIntegrationAssociationId());
+  uri.AddPathSegments("/use-cases");
   return CreateUseCaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -687,10 +657,8 @@ CreateUserOutcome ConnectClient::CreateUser(const CreateUserRequest& request) co
     return CreateUserOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
   return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -720,10 +688,8 @@ CreateUserHierarchyGroupOutcome ConnectClient::CreateUserHierarchyGroup(const Cr
     return CreateUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user-hierarchy-groups/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user-hierarchy-groups/");
+  uri.AddPathSegment(request.GetInstanceId());
   return CreateUserHierarchyGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -753,10 +719,8 @@ DeleteInstanceOutcome ConnectClient::DeleteInstance(const DeleteInstanceRequest&
     return DeleteInstanceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
   return DeleteInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -791,12 +755,10 @@ DeleteIntegrationAssociationOutcome ConnectClient::DeleteIntegrationAssociation(
     return DeleteIntegrationAssociationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationAssociationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/integration-associations/";
-  ss << request.GetIntegrationAssociationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/integration-associations/");
+  uri.AddPathSegment(request.GetIntegrationAssociationId());
   return DeleteIntegrationAssociationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -831,12 +793,9 @@ DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickCon
     return DeleteQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quick-connects/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQuickConnectId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quick-connects/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQuickConnectId());
   return DeleteQuickConnectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -876,14 +835,12 @@ DeleteUseCaseOutcome ConnectClient::DeleteUseCase(const DeleteUseCaseRequest& re
     return DeleteUseCaseOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UseCaseId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/integration-associations/";
-  ss << request.GetIntegrationAssociationId();
-  ss << "/use-cases/";
-  ss << request.GetUseCaseId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/integration-associations/");
+  uri.AddPathSegment(request.GetIntegrationAssociationId());
+  uri.AddPathSegments("/use-cases/");
+  uri.AddPathSegment(request.GetUseCaseId());
   return DeleteUseCaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -918,12 +875,9 @@ DeleteUserOutcome ConnectClient::DeleteUser(const DeleteUserRequest& request) co
     return DeleteUserOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
   return DeleteUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -958,12 +912,9 @@ DeleteUserHierarchyGroupOutcome ConnectClient::DeleteUserHierarchyGroup(const De
     return DeleteUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user-hierarchy-groups/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetHierarchyGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user-hierarchy-groups/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetHierarchyGroupId());
   return DeleteUserHierarchyGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -998,12 +949,9 @@ DescribeContactFlowOutcome ConnectClient::DescribeContactFlow(const DescribeCont
     return DescribeContactFlowOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact-flows/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetContactFlowId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact-flows/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowId());
   return DescribeContactFlowOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1038,12 +986,9 @@ DescribeHoursOfOperationOutcome ConnectClient::DescribeHoursOfOperation(const De
     return DescribeHoursOfOperationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HoursOfOperationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/hours-of-operations/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetHoursOfOperationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/hours-of-operations/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetHoursOfOperationId());
   return DescribeHoursOfOperationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1073,10 +1018,8 @@ DescribeInstanceOutcome ConnectClient::DescribeInstance(const DescribeInstanceRe
     return DescribeInstanceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
   return DescribeInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1111,12 +1054,10 @@ DescribeInstanceAttributeOutcome ConnectClient::DescribeInstanceAttribute(const 
     return DescribeInstanceAttributeOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/attribute/";
-  ss << InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(request.GetAttributeType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/attribute/");
+  uri.AddPathSegment(InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(request.GetAttributeType()));
   return DescribeInstanceAttributeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1156,12 +1097,10 @@ DescribeInstanceStorageConfigOutcome ConnectClient::DescribeInstanceStorageConfi
     return DescribeInstanceStorageConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/storage-config/";
-  ss << request.GetAssociationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/storage-config/");
+  uri.AddPathSegment(request.GetAssociationId());
   return DescribeInstanceStorageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1196,12 +1135,9 @@ DescribeQueueOutcome ConnectClient::DescribeQueue(const DescribeQueueRequest& re
     return DescribeQueueOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
   return DescribeQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1236,12 +1172,9 @@ DescribeQuickConnectOutcome ConnectClient::DescribeQuickConnect(const DescribeQu
     return DescribeQuickConnectOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quick-connects/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQuickConnectId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quick-connects/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQuickConnectId());
   return DescribeQuickConnectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1276,12 +1209,9 @@ DescribeRoutingProfileOutcome ConnectClient::DescribeRoutingProfile(const Descri
     return DescribeRoutingProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
   return DescribeRoutingProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1316,12 +1246,9 @@ DescribeUserOutcome ConnectClient::DescribeUser(const DescribeUserRequest& reque
     return DescribeUserOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
   return DescribeUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1356,12 +1283,9 @@ DescribeUserHierarchyGroupOutcome ConnectClient::DescribeUserHierarchyGroup(cons
     return DescribeUserHierarchyGroupOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user-hierarchy-groups/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetHierarchyGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user-hierarchy-groups/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetHierarchyGroupId());
   return DescribeUserHierarchyGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1391,10 +1315,8 @@ DescribeUserHierarchyStructureOutcome ConnectClient::DescribeUserHierarchyStruct
     return DescribeUserHierarchyStructureOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user-hierarchy-structure/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user-hierarchy-structure/");
+  uri.AddPathSegment(request.GetInstanceId());
   return DescribeUserHierarchyStructureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1429,11 +1351,9 @@ DisassociateApprovedOriginOutcome ConnectClient::DisassociateApprovedOrigin(cons
     return DisassociateApprovedOriginOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Origin]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/approved-origin";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/approved-origin");
   return DisassociateApprovedOriginOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1473,12 +1393,10 @@ DisassociateInstanceStorageConfigOutcome ConnectClient::DisassociateInstanceStor
     return DisassociateInstanceStorageConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/storage-config/";
-  ss << request.GetAssociationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/storage-config/");
+  uri.AddPathSegment(request.GetAssociationId());
   return DisassociateInstanceStorageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1513,11 +1431,9 @@ DisassociateLambdaFunctionOutcome ConnectClient::DisassociateLambdaFunction(cons
     return DisassociateLambdaFunctionOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/lambda-function";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/lambda-function");
   return DisassociateLambdaFunctionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1557,11 +1473,9 @@ DisassociateLexBotOutcome ConnectClient::DisassociateLexBot(const DisassociateLe
     return DisassociateLexBotOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LexRegion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/lex-bot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/lex-bot");
   return DisassociateLexBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1596,13 +1510,10 @@ DisassociateQueueQuickConnectsOutcome ConnectClient::DisassociateQueueQuickConne
     return DisassociateQueueQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/disassociate-quick-connects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/disassociate-quick-connects");
   return DisassociateQueueQuickConnectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1637,13 +1548,10 @@ DisassociateRoutingProfileQueuesOutcome ConnectClient::DisassociateRoutingProfil
     return DisassociateRoutingProfileQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  ss << "/disassociate-queues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
+  uri.AddPathSegments("/disassociate-queues");
   return DisassociateRoutingProfileQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1678,12 +1586,10 @@ DisassociateSecurityKeyOutcome ConnectClient::DisassociateSecurityKey(const Disa
     return DisassociateSecurityKeyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/security-key/";
-  ss << request.GetAssociationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/security-key/");
+  uri.AddPathSegment(request.GetAssociationId());
   return DisassociateSecurityKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1718,12 +1624,9 @@ GetContactAttributesOutcome ConnectClient::GetContactAttributes(const GetContact
     return GetContactAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InitialContactId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/attributes/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetInitialContactId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/attributes/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetInitialContactId());
   return GetContactAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1753,10 +1656,8 @@ GetCurrentMetricDataOutcome ConnectClient::GetCurrentMetricData(const GetCurrent
     return GetCurrentMetricDataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/metrics/current/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/metrics/current/");
+  uri.AddPathSegment(request.GetInstanceId());
   return GetCurrentMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1786,10 +1687,8 @@ GetFederationTokenOutcome ConnectClient::GetFederationToken(const GetFederationT
     return GetFederationTokenOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user/federate/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user/federate/");
+  uri.AddPathSegment(request.GetInstanceId());
   return GetFederationTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1819,10 +1718,8 @@ GetMetricDataOutcome ConnectClient::GetMetricData(const GetMetricDataRequest& re
     return GetMetricDataOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/metrics/historical/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/metrics/historical/");
+  uri.AddPathSegment(request.GetInstanceId());
   return GetMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1852,11 +1749,9 @@ ListApprovedOriginsOutcome ConnectClient::ListApprovedOrigins(const ListApproved
     return ListApprovedOriginsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/approved-origins";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/approved-origins");
   return ListApprovedOriginsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1886,10 +1781,8 @@ ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRe
     return ListContactFlowsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact-flows-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact-flows-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListContactFlowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1919,10 +1812,8 @@ ListHoursOfOperationsOutcome ConnectClient::ListHoursOfOperations(const ListHour
     return ListHoursOfOperationsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/hours-of-operations-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/hours-of-operations-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListHoursOfOperationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1952,11 +1843,9 @@ ListInstanceAttributesOutcome ConnectClient::ListInstanceAttributes(const ListIn
     return ListInstanceAttributesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/attributes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/attributes");
   return ListInstanceAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1991,11 +1880,9 @@ ListInstanceStorageConfigsOutcome ConnectClient::ListInstanceStorageConfigs(cons
     return ListInstanceStorageConfigsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/storage-configs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/storage-configs");
   return ListInstanceStorageConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2020,9 +1907,7 @@ void ConnectClient::ListInstanceStorageConfigsAsyncHelper(const ListInstanceStor
 ListInstancesOutcome ConnectClient::ListInstances(const ListInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance");
   return ListInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2052,11 +1937,9 @@ ListIntegrationAssociationsOutcome ConnectClient::ListIntegrationAssociations(co
     return ListIntegrationAssociationsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/integration-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/integration-associations");
   return ListIntegrationAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2086,11 +1969,9 @@ ListLambdaFunctionsOutcome ConnectClient::ListLambdaFunctions(const ListLambdaFu
     return ListLambdaFunctionsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/lambda-functions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/lambda-functions");
   return ListLambdaFunctionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2120,11 +2001,9 @@ ListLexBotsOutcome ConnectClient::ListLexBots(const ListLexBotsRequest& request)
     return ListLexBotsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/lex-bots";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/lex-bots");
   return ListLexBotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2154,10 +2033,8 @@ ListPhoneNumbersOutcome ConnectClient::ListPhoneNumbers(const ListPhoneNumbersRe
     return ListPhoneNumbersOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/phone-numbers-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListPhoneNumbersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2187,10 +2064,8 @@ ListPromptsOutcome ConnectClient::ListPrompts(const ListPromptsRequest& request)
     return ListPromptsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/prompts-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/prompts-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListPromptsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2225,13 +2100,10 @@ ListQueueQuickConnectsOutcome ConnectClient::ListQueueQuickConnects(const ListQu
     return ListQueueQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/quick-connects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/quick-connects");
   return ListQueueQuickConnectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2261,10 +2133,8 @@ ListQueuesOutcome ConnectClient::ListQueues(const ListQueuesRequest& request) co
     return ListQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2294,10 +2164,8 @@ ListQuickConnectsOutcome ConnectClient::ListQuickConnects(const ListQuickConnect
     return ListQuickConnectsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quick-connects/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quick-connects/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListQuickConnectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2332,13 +2200,10 @@ ListRoutingProfileQueuesOutcome ConnectClient::ListRoutingProfileQueues(const Li
     return ListRoutingProfileQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  ss << "/queues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
+  uri.AddPathSegments("/queues");
   return ListRoutingProfileQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2368,10 +2233,8 @@ ListRoutingProfilesOutcome ConnectClient::ListRoutingProfiles(const ListRoutingP
     return ListRoutingProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListRoutingProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2401,11 +2264,9 @@ ListSecurityKeysOutcome ConnectClient::ListSecurityKeys(const ListSecurityKeysRe
     return ListSecurityKeysOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/security-keys";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/security-keys");
   return ListSecurityKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2435,10 +2296,8 @@ ListSecurityProfilesOutcome ConnectClient::ListSecurityProfiles(const ListSecuri
     return ListSecurityProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/security-profiles-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/security-profiles-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListSecurityProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2468,10 +2327,8 @@ ListTagsForResourceOutcome ConnectClient::ListTagsForResource(const ListTagsForR
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2506,13 +2363,11 @@ ListUseCasesOutcome ConnectClient::ListUseCases(const ListUseCasesRequest& reque
     return ListUseCasesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IntegrationAssociationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/integration-associations/";
-  ss << request.GetIntegrationAssociationId();
-  ss << "/use-cases";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/integration-associations/");
+  uri.AddPathSegment(request.GetIntegrationAssociationId());
+  uri.AddPathSegments("/use-cases");
   return ListUseCasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2542,10 +2397,8 @@ ListUserHierarchyGroupsOutcome ConnectClient::ListUserHierarchyGroups(const List
     return ListUserHierarchyGroupsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user-hierarchy-groups-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user-hierarchy-groups-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListUserHierarchyGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2575,10 +2428,8 @@ ListUsersOutcome ConnectClient::ListUsers(const ListUsersRequest& request) const
     return ListUsersOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users-summary/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users-summary/");
+  uri.AddPathSegment(request.GetInstanceId());
   return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2603,9 +2454,7 @@ void ConnectClient::ListUsersAsyncHelper(const ListUsersRequest& request, const 
 ResumeContactRecordingOutcome ConnectClient::ResumeContactRecording(const ResumeContactRecordingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/resume-recording";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/resume-recording");
   return ResumeContactRecordingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2630,9 +2479,7 @@ void ConnectClient::ResumeContactRecordingAsyncHelper(const ResumeContactRecordi
 StartChatContactOutcome ConnectClient::StartChatContact(const StartChatContactRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/chat";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/chat");
   return StartChatContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2657,9 +2504,7 @@ void ConnectClient::StartChatContactAsyncHelper(const StartChatContactRequest& r
 StartContactRecordingOutcome ConnectClient::StartContactRecording(const StartContactRecordingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/start-recording";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/start-recording");
   return StartContactRecordingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2684,9 +2529,7 @@ void ConnectClient::StartContactRecordingAsyncHelper(const StartContactRecording
 StartOutboundVoiceContactOutcome ConnectClient::StartOutboundVoiceContact(const StartOutboundVoiceContactRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/outbound-voice";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/outbound-voice");
   return StartOutboundVoiceContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2711,9 +2554,7 @@ void ConnectClient::StartOutboundVoiceContactAsyncHelper(const StartOutboundVoic
 StartTaskContactOutcome ConnectClient::StartTaskContact(const StartTaskContactRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/task";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/task");
   return StartTaskContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2738,9 +2579,7 @@ void ConnectClient::StartTaskContactAsyncHelper(const StartTaskContactRequest& r
 StopContactOutcome ConnectClient::StopContact(const StopContactRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/stop");
   return StopContactOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2765,9 +2604,7 @@ void ConnectClient::StopContactAsyncHelper(const StopContactRequest& request, co
 StopContactRecordingOutcome ConnectClient::StopContactRecording(const StopContactRecordingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/stop-recording";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/stop-recording");
   return StopContactRecordingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2792,9 +2629,7 @@ void ConnectClient::StopContactRecordingAsyncHelper(const StopContactRecordingRe
 SuspendContactRecordingOutcome ConnectClient::SuspendContactRecording(const SuspendContactRecordingRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/suspend-recording";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/suspend-recording");
   return SuspendContactRecordingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2824,10 +2659,8 @@ TagResourceOutcome ConnectClient::TagResource(const TagResourceRequest& request)
     return TagResourceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2862,10 +2695,8 @@ UntagResourceOutcome ConnectClient::UntagResource(const UntagResourceRequest& re
     return UntagResourceOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2890,9 +2721,7 @@ void ConnectClient::UntagResourceAsyncHelper(const UntagResourceRequest& request
 UpdateContactAttributesOutcome ConnectClient::UpdateContactAttributes(const UpdateContactAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact/attributes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact/attributes");
   return UpdateContactAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2927,13 +2756,10 @@ UpdateContactFlowContentOutcome ConnectClient::UpdateContactFlowContent(const Up
     return UpdateContactFlowContentOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact-flows/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetContactFlowId();
-  ss << "/content";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact-flows/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowId());
+  uri.AddPathSegments("/content");
   return UpdateContactFlowContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2968,13 +2794,10 @@ UpdateContactFlowNameOutcome ConnectClient::UpdateContactFlowName(const UpdateCo
     return UpdateContactFlowNameOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ContactFlowId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/contact-flows/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetContactFlowId();
-  ss << "/name";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/contact-flows/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetContactFlowId());
+  uri.AddPathSegments("/name");
   return UpdateContactFlowNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3009,12 +2832,10 @@ UpdateInstanceAttributeOutcome ConnectClient::UpdateInstanceAttribute(const Upda
     return UpdateInstanceAttributeOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/attribute/";
-  ss << InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(request.GetAttributeType());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/attribute/");
+  uri.AddPathSegment(InstanceAttributeTypeMapper::GetNameForInstanceAttributeType(request.GetAttributeType()));
   return UpdateInstanceAttributeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3054,12 +2875,10 @@ UpdateInstanceStorageConfigOutcome ConnectClient::UpdateInstanceStorageConfig(co
     return UpdateInstanceStorageConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/instance/";
-  ss << request.GetInstanceId();
-  ss << "/storage-config/";
-  ss << request.GetAssociationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/storage-config/");
+  uri.AddPathSegment(request.GetAssociationId());
   return UpdateInstanceStorageConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3094,13 +2913,10 @@ UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(co
     return UpdateQueueHoursOfOperationOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/hours-of-operation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/hours-of-operation");
   return UpdateQueueHoursOfOperationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3135,13 +2951,10 @@ UpdateQueueMaxContactsOutcome ConnectClient::UpdateQueueMaxContacts(const Update
     return UpdateQueueMaxContactsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/max-contacts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/max-contacts");
   return UpdateQueueMaxContactsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3176,13 +2989,10 @@ UpdateQueueNameOutcome ConnectClient::UpdateQueueName(const UpdateQueueNameReque
     return UpdateQueueNameOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/name";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/name");
   return UpdateQueueNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3217,13 +3027,10 @@ UpdateQueueOutboundCallerConfigOutcome ConnectClient::UpdateQueueOutboundCallerC
     return UpdateQueueOutboundCallerConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/outbound-caller-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/outbound-caller-config");
   return UpdateQueueOutboundCallerConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3258,13 +3065,10 @@ UpdateQueueStatusOutcome ConnectClient::UpdateQueueStatus(const UpdateQueueStatu
     return UpdateQueueStatusOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QueueId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/queues/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQueueId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/queues/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQueueId());
+  uri.AddPathSegments("/status");
   return UpdateQueueStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3299,13 +3103,10 @@ UpdateQuickConnectConfigOutcome ConnectClient::UpdateQuickConnectConfig(const Up
     return UpdateQuickConnectConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quick-connects/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQuickConnectId();
-  ss << "/config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quick-connects/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQuickConnectId());
+  uri.AddPathSegments("/config");
   return UpdateQuickConnectConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3340,13 +3141,10 @@ UpdateQuickConnectNameOutcome ConnectClient::UpdateQuickConnectName(const Update
     return UpdateQuickConnectNameOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuickConnectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quick-connects/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetQuickConnectId();
-  ss << "/name";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quick-connects/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetQuickConnectId());
+  uri.AddPathSegments("/name");
   return UpdateQuickConnectNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3381,13 +3179,10 @@ UpdateRoutingProfileConcurrencyOutcome ConnectClient::UpdateRoutingProfileConcur
     return UpdateRoutingProfileConcurrencyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  ss << "/concurrency";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
+  uri.AddPathSegments("/concurrency");
   return UpdateRoutingProfileConcurrencyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3422,13 +3217,10 @@ UpdateRoutingProfileDefaultOutboundQueueOutcome ConnectClient::UpdateRoutingProf
     return UpdateRoutingProfileDefaultOutboundQueueOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  ss << "/default-outbound-queue";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
+  uri.AddPathSegments("/default-outbound-queue");
   return UpdateRoutingProfileDefaultOutboundQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3463,13 +3255,10 @@ UpdateRoutingProfileNameOutcome ConnectClient::UpdateRoutingProfileName(const Up
     return UpdateRoutingProfileNameOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  ss << "/name";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
+  uri.AddPathSegments("/name");
   return UpdateRoutingProfileNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3504,13 +3293,10 @@ UpdateRoutingProfileQueuesOutcome ConnectClient::UpdateRoutingProfileQueues(cons
     return UpdateRoutingProfileQueuesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoutingProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/routing-profiles/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetRoutingProfileId();
-  ss << "/queues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/routing-profiles/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetRoutingProfileId());
+  uri.AddPathSegments("/queues");
   return UpdateRoutingProfileQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3545,13 +3331,10 @@ UpdateUserHierarchyOutcome ConnectClient::UpdateUserHierarchy(const UpdateUserHi
     return UpdateUserHierarchyOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetUserId();
-  ss << "/hierarchy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/hierarchy");
   return UpdateUserHierarchyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3586,13 +3369,10 @@ UpdateUserHierarchyGroupNameOutcome ConnectClient::UpdateUserHierarchyGroupName(
     return UpdateUserHierarchyGroupNameOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user-hierarchy-groups/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetHierarchyGroupId();
-  ss << "/name";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user-hierarchy-groups/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetHierarchyGroupId());
+  uri.AddPathSegments("/name");
   return UpdateUserHierarchyGroupNameOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3622,10 +3402,8 @@ UpdateUserHierarchyStructureOutcome ConnectClient::UpdateUserHierarchyStructure(
     return UpdateUserHierarchyStructureOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/user-hierarchy-structure/";
-  ss << request.GetInstanceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/user-hierarchy-structure/");
+  uri.AddPathSegment(request.GetInstanceId());
   return UpdateUserHierarchyStructureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3660,13 +3438,10 @@ UpdateUserIdentityInfoOutcome ConnectClient::UpdateUserIdentityInfo(const Update
     return UpdateUserIdentityInfoOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetUserId();
-  ss << "/identity-info";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/identity-info");
   return UpdateUserIdentityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3701,13 +3476,10 @@ UpdateUserPhoneConfigOutcome ConnectClient::UpdateUserPhoneConfig(const UpdateUs
     return UpdateUserPhoneConfigOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetUserId();
-  ss << "/phone-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/phone-config");
   return UpdateUserPhoneConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3742,13 +3514,10 @@ UpdateUserRoutingProfileOutcome ConnectClient::UpdateUserRoutingProfile(const Up
     return UpdateUserRoutingProfileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetUserId();
-  ss << "/routing-profile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/routing-profile");
   return UpdateUserRoutingProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3783,13 +3552,10 @@ UpdateUserSecurityProfilesOutcome ConnectClient::UpdateUserSecurityProfiles(cons
     return UpdateUserSecurityProfilesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users/";
-  ss << request.GetInstanceId();
-  ss << "/";
-  ss << request.GetUserId();
-  ss << "/security-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/security-profiles");
   return UpdateUserSecurityProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -122,9 +122,7 @@ void MgnClient::OverrideEndpoint(const Aws::String& endpoint)
 ChangeServerLifeCycleStateOutcome MgnClient::ChangeServerLifeCycleState(const ChangeServerLifeCycleStateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ChangeServerLifeCycleState";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ChangeServerLifeCycleState");
   return ChangeServerLifeCycleStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -149,9 +147,7 @@ void MgnClient::ChangeServerLifeCycleStateAsyncHelper(const ChangeServerLifeCycl
 CreateReplicationConfigurationTemplateOutcome MgnClient::CreateReplicationConfigurationTemplate(const CreateReplicationConfigurationTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateReplicationConfigurationTemplate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateReplicationConfigurationTemplate");
   return CreateReplicationConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -176,9 +172,7 @@ void MgnClient::CreateReplicationConfigurationTemplateAsyncHelper(const CreateRe
 DeleteJobOutcome MgnClient::DeleteJob(const DeleteJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteJob");
   return DeleteJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -203,9 +197,7 @@ void MgnClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const Dele
 DeleteReplicationConfigurationTemplateOutcome MgnClient::DeleteReplicationConfigurationTemplate(const DeleteReplicationConfigurationTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteReplicationConfigurationTemplate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteReplicationConfigurationTemplate");
   return DeleteReplicationConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -230,9 +222,7 @@ void MgnClient::DeleteReplicationConfigurationTemplateAsyncHelper(const DeleteRe
 DeleteSourceServerOutcome MgnClient::DeleteSourceServer(const DeleteSourceServerRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteSourceServer";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteSourceServer");
   return DeleteSourceServerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -257,9 +247,7 @@ void MgnClient::DeleteSourceServerAsyncHelper(const DeleteSourceServerRequest& r
 DescribeJobLogItemsOutcome MgnClient::DescribeJobLogItems(const DescribeJobLogItemsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeJobLogItems";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeJobLogItems");
   return DescribeJobLogItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -284,9 +272,7 @@ void MgnClient::DescribeJobLogItemsAsyncHelper(const DescribeJobLogItemsRequest&
 DescribeJobsOutcome MgnClient::DescribeJobs(const DescribeJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeJobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeJobs");
   return DescribeJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -311,9 +297,7 @@ void MgnClient::DescribeJobsAsyncHelper(const DescribeJobsRequest& request, cons
 DescribeReplicationConfigurationTemplatesOutcome MgnClient::DescribeReplicationConfigurationTemplates(const DescribeReplicationConfigurationTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeReplicationConfigurationTemplates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeReplicationConfigurationTemplates");
   return DescribeReplicationConfigurationTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -338,9 +322,7 @@ void MgnClient::DescribeReplicationConfigurationTemplatesAsyncHelper(const Descr
 DescribeSourceServersOutcome MgnClient::DescribeSourceServers(const DescribeSourceServersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeSourceServers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeSourceServers");
   return DescribeSourceServersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -365,9 +347,7 @@ void MgnClient::DescribeSourceServersAsyncHelper(const DescribeSourceServersRequ
 DisconnectFromServiceOutcome MgnClient::DisconnectFromService(const DisconnectFromServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DisconnectFromService";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DisconnectFromService");
   return DisconnectFromServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -392,9 +372,7 @@ void MgnClient::DisconnectFromServiceAsyncHelper(const DisconnectFromServiceRequ
 FinalizeCutoverOutcome MgnClient::FinalizeCutover(const FinalizeCutoverRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/FinalizeCutover";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/FinalizeCutover");
   return FinalizeCutoverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -419,9 +397,7 @@ void MgnClient::FinalizeCutoverAsyncHelper(const FinalizeCutoverRequest& request
 GetLaunchConfigurationOutcome MgnClient::GetLaunchConfiguration(const GetLaunchConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetLaunchConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetLaunchConfiguration");
   return GetLaunchConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -446,9 +422,7 @@ void MgnClient::GetLaunchConfigurationAsyncHelper(const GetLaunchConfigurationRe
 GetReplicationConfigurationOutcome MgnClient::GetReplicationConfiguration(const GetReplicationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetReplicationConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetReplicationConfiguration");
   return GetReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -473,9 +447,7 @@ void MgnClient::GetReplicationConfigurationAsyncHelper(const GetReplicationConfi
 InitializeServiceOutcome MgnClient::InitializeService(const InitializeServiceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/InitializeService";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/InitializeService");
   return InitializeServiceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -505,10 +477,8 @@ ListTagsForResourceOutcome MgnClient::ListTagsForResource(const ListTagsForResou
     return ListTagsForResourceOutcome(Aws::Client::AWSError<MgnErrors>(MgnErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -533,9 +503,7 @@ void MgnClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
 MarkAsArchivedOutcome MgnClient::MarkAsArchived(const MarkAsArchivedRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/MarkAsArchived";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/MarkAsArchived");
   return MarkAsArchivedOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -560,9 +528,7 @@ void MgnClient::MarkAsArchivedAsyncHelper(const MarkAsArchivedRequest& request, 
 RetryDataReplicationOutcome MgnClient::RetryDataReplication(const RetryDataReplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/RetryDataReplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/RetryDataReplication");
   return RetryDataReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -587,9 +553,7 @@ void MgnClient::RetryDataReplicationAsyncHelper(const RetryDataReplicationReques
 StartCutoverOutcome MgnClient::StartCutover(const StartCutoverRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/StartCutover";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/StartCutover");
   return StartCutoverOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -614,9 +578,7 @@ void MgnClient::StartCutoverAsyncHelper(const StartCutoverRequest& request, cons
 StartTestOutcome MgnClient::StartTest(const StartTestRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/StartTest";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/StartTest");
   return StartTestOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -646,10 +608,8 @@ TagResourceOutcome MgnClient::TagResource(const TagResourceRequest& request) con
     return TagResourceOutcome(Aws::Client::AWSError<MgnErrors>(MgnErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -674,9 +634,7 @@ void MgnClient::TagResourceAsyncHelper(const TagResourceRequest& request, const 
 TerminateTargetInstancesOutcome MgnClient::TerminateTargetInstances(const TerminateTargetInstancesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/TerminateTargetInstances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/TerminateTargetInstances");
   return TerminateTargetInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -711,10 +669,8 @@ UntagResourceOutcome MgnClient::UntagResource(const UntagResourceRequest& reques
     return UntagResourceOutcome(Aws::Client::AWSError<MgnErrors>(MgnErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -739,9 +695,7 @@ void MgnClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
 UpdateLaunchConfigurationOutcome MgnClient::UpdateLaunchConfiguration(const UpdateLaunchConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateLaunchConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateLaunchConfiguration");
   return UpdateLaunchConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -766,9 +720,7 @@ void MgnClient::UpdateLaunchConfigurationAsyncHelper(const UpdateLaunchConfigura
 UpdateReplicationConfigurationOutcome MgnClient::UpdateReplicationConfiguration(const UpdateReplicationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateReplicationConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateReplicationConfiguration");
   return UpdateReplicationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -793,9 +745,7 @@ void MgnClient::UpdateReplicationConfigurationAsyncHelper(const UpdateReplicatio
 UpdateReplicationConfigurationTemplateOutcome MgnClient::UpdateReplicationConfigurationTemplate(const UpdateReplicationConfigurationTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateReplicationConfigurationTemplate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateReplicationConfigurationTemplate");
   return UpdateReplicationConfigurationTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

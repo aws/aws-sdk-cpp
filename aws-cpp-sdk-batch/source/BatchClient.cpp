@@ -116,9 +116,7 @@ void BatchClient::OverrideEndpoint(const Aws::String& endpoint)
 CancelJobOutcome BatchClient::CancelJob(const CancelJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/canceljob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/canceljob");
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -143,9 +141,7 @@ void BatchClient::CancelJobAsyncHelper(const CancelJobRequest& request, const Ca
 CreateComputeEnvironmentOutcome BatchClient::CreateComputeEnvironment(const CreateComputeEnvironmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/createcomputeenvironment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/createcomputeenvironment");
   return CreateComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,9 +166,7 @@ void BatchClient::CreateComputeEnvironmentAsyncHelper(const CreateComputeEnviron
 CreateJobQueueOutcome BatchClient::CreateJobQueue(const CreateJobQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/createjobqueue";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/createjobqueue");
   return CreateJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -197,9 +191,7 @@ void BatchClient::CreateJobQueueAsyncHelper(const CreateJobQueueRequest& request
 DeleteComputeEnvironmentOutcome BatchClient::DeleteComputeEnvironment(const DeleteComputeEnvironmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/deletecomputeenvironment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/deletecomputeenvironment");
   return DeleteComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -224,9 +216,7 @@ void BatchClient::DeleteComputeEnvironmentAsyncHelper(const DeleteComputeEnviron
 DeleteJobQueueOutcome BatchClient::DeleteJobQueue(const DeleteJobQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/deletejobqueue";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/deletejobqueue");
   return DeleteJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -251,9 +241,7 @@ void BatchClient::DeleteJobQueueAsyncHelper(const DeleteJobQueueRequest& request
 DeregisterJobDefinitionOutcome BatchClient::DeregisterJobDefinition(const DeregisterJobDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/deregisterjobdefinition";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/deregisterjobdefinition");
   return DeregisterJobDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -278,9 +266,7 @@ void BatchClient::DeregisterJobDefinitionAsyncHelper(const DeregisterJobDefiniti
 DescribeComputeEnvironmentsOutcome BatchClient::DescribeComputeEnvironments(const DescribeComputeEnvironmentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describecomputeenvironments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describecomputeenvironments");
   return DescribeComputeEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -305,9 +291,7 @@ void BatchClient::DescribeComputeEnvironmentsAsyncHelper(const DescribeComputeEn
 DescribeJobDefinitionsOutcome BatchClient::DescribeJobDefinitions(const DescribeJobDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describejobdefinitions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describejobdefinitions");
   return DescribeJobDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -332,9 +316,7 @@ void BatchClient::DescribeJobDefinitionsAsyncHelper(const DescribeJobDefinitions
 DescribeJobQueuesOutcome BatchClient::DescribeJobQueues(const DescribeJobQueuesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describejobqueues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describejobqueues");
   return DescribeJobQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -359,9 +341,7 @@ void BatchClient::DescribeJobQueuesAsyncHelper(const DescribeJobQueuesRequest& r
 DescribeJobsOutcome BatchClient::DescribeJobs(const DescribeJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/describejobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/describejobs");
   return DescribeJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -386,9 +366,7 @@ void BatchClient::DescribeJobsAsyncHelper(const DescribeJobsRequest& request, co
 ListJobsOutcome BatchClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/listjobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/listjobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -418,10 +396,8 @@ ListTagsForResourceOutcome BatchClient::ListTagsForResource(const ListTagsForRes
     return ListTagsForResourceOutcome(Aws::Client::AWSError<BatchErrors>(BatchErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -446,9 +422,7 @@ void BatchClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceReques
 RegisterJobDefinitionOutcome BatchClient::RegisterJobDefinition(const RegisterJobDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/registerjobdefinition";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/registerjobdefinition");
   return RegisterJobDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -473,9 +447,7 @@ void BatchClient::RegisterJobDefinitionAsyncHelper(const RegisterJobDefinitionRe
 SubmitJobOutcome BatchClient::SubmitJob(const SubmitJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/submitjob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/submitjob");
   return SubmitJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -505,10 +477,8 @@ TagResourceOutcome BatchClient::TagResource(const TagResourceRequest& request) c
     return TagResourceOutcome(Aws::Client::AWSError<BatchErrors>(BatchErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -533,9 +503,7 @@ void BatchClient::TagResourceAsyncHelper(const TagResourceRequest& request, cons
 TerminateJobOutcome BatchClient::TerminateJob(const TerminateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/terminatejob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/terminatejob");
   return TerminateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -570,10 +538,8 @@ UntagResourceOutcome BatchClient::UntagResource(const UntagResourceRequest& requ
     return UntagResourceOutcome(Aws::Client::AWSError<BatchErrors>(BatchErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -598,9 +564,7 @@ void BatchClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, 
 UpdateComputeEnvironmentOutcome BatchClient::UpdateComputeEnvironment(const UpdateComputeEnvironmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/updatecomputeenvironment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/updatecomputeenvironment");
   return UpdateComputeEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -625,9 +589,7 @@ void BatchClient::UpdateComputeEnvironmentAsyncHelper(const UpdateComputeEnviron
 UpdateJobQueueOutcome BatchClient::UpdateJobQueue(const UpdateJobQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/updatejobqueue";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/updatejobqueue");
   return UpdateJobQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

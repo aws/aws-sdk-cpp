@@ -136,47 +136,6 @@ namespace Model
      */
     inline PrefixListId& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
 
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline const Aws::String& GetSecurityGroupRuleId() const{ return m_securityGroupRuleId; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline bool SecurityGroupRuleIdHasBeenSet() const { return m_securityGroupRuleIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline void SetSecurityGroupRuleId(const Aws::String& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = value; }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline void SetSecurityGroupRuleId(Aws::String&& value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId = std::move(value); }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline void SetSecurityGroupRuleId(const char* value) { m_securityGroupRuleIdHasBeenSet = true; m_securityGroupRuleId.assign(value); }
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline PrefixListId& WithSecurityGroupRuleId(const Aws::String& value) { SetSecurityGroupRuleId(value); return *this;}
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline PrefixListId& WithSecurityGroupRuleId(Aws::String&& value) { SetSecurityGroupRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the security group rule.</p>
-     */
-    inline PrefixListId& WithSecurityGroupRuleId(const char* value) { SetSecurityGroupRuleId(value); return *this;}
-
   private:
 
     Aws::String m_description;
@@ -184,9 +143,6 @@ namespace Model
 
     Aws::String m_prefixListId;
     bool m_prefixListIdHasBeenSet;
-
-    Aws::String m_securityGroupRuleId;
-    bool m_securityGroupRuleIdHasBeenSet;
   };
 
 } // namespace Model

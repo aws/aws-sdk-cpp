@@ -101,9 +101,7 @@ void IoTEventsDataClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchPutMessageOutcome IoTEventsDataClient::BatchPutMessage(const BatchPutMessageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/inputs/messages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/inputs/messages");
   return BatchPutMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -128,9 +126,7 @@ void IoTEventsDataClient::BatchPutMessageAsyncHelper(const BatchPutMessageReques
 BatchUpdateDetectorOutcome IoTEventsDataClient::BatchUpdateDetector(const BatchUpdateDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detectors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detectors");
   return BatchUpdateDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -160,11 +156,9 @@ DescribeDetectorOutcome IoTEventsDataClient::DescribeDetector(const DescribeDete
     return DescribeDetectorOutcome(Aws::Client::AWSError<IoTEventsDataErrors>(IoTEventsDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorModelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detectors/";
-  ss << request.GetDetectorModelName();
-  ss << "/keyValues/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detectors/");
+  uri.AddPathSegment(request.GetDetectorModelName());
+  uri.AddPathSegments("/keyValues/");
   return DescribeDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -194,10 +188,8 @@ ListDetectorsOutcome IoTEventsDataClient::ListDetectors(const ListDetectorsReque
     return ListDetectorsOutcome(Aws::Client::AWSError<IoTEventsDataErrors>(IoTEventsDataErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorModelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/detectors/";
-  ss << request.GetDetectorModelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/detectors/");
+  uri.AddPathSegment(request.GetDetectorModelName());
   return ListDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -23,8 +23,7 @@ AuthorizeSecurityGroupIngressRequest::AuthorizeSecurityGroupIngressRequest() :
     m_toPort(0),
     m_toPortHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -85,16 +84,6 @@ Aws::String AuthorizeSecurityGroupIngressRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
-  }
-
-  if(m_tagSpecificationsHasBeenSet)
-  {
-    unsigned tagSpecificationsCount = 1;
-    for(auto& item : m_tagSpecifications)
-    {
-      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
-      tagSpecificationsCount++;
-    }
   }
 
   ss << "Version=2016-11-15";

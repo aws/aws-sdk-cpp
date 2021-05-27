@@ -480,10 +480,9 @@ BatchCreateChannelMembershipOutcome ChimeClient::BatchCreateChannelMembership(co
     }
   }
   Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/memberships";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/memberships");
   ss.str("?operation=batch-create");
   uri.SetQueryString(ss.str());
   return BatchCreateChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -4848,9 +4847,7 @@ ListSupportedPhoneNumberCountriesOutcome ChimeClient::ListSupportedPhoneNumberCo
     return ListSupportedPhoneNumberCountriesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductType]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-number-countries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-number-countries");
   return ListSupportedPhoneNumberCountriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 

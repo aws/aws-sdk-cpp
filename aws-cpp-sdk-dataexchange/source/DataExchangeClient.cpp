@@ -124,10 +124,8 @@ CancelJobOutcome DataExchangeClient::CancelJob(const CancelJobRequest& request) 
     return CancelJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -152,9 +150,7 @@ void DataExchangeClient::CancelJobAsyncHelper(const CancelJobRequest& request, c
 CreateDataSetOutcome DataExchangeClient::CreateDataSet(const CreateDataSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets");
   return CreateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -179,9 +175,7 @@ void DataExchangeClient::CreateDataSetAsyncHelper(const CreateDataSetRequest& re
 CreateJobOutcome DataExchangeClient::CreateJob(const CreateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/jobs");
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -211,11 +205,9 @@ CreateRevisionOutcome DataExchangeClient::CreateRevision(const CreateRevisionReq
     return CreateRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions");
   return CreateRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -255,14 +247,12 @@ DeleteAssetOutcome DataExchangeClient::DeleteAsset(const DeleteAssetRequest& req
     return DeleteAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions/";
-  ss << request.GetRevisionId();
-  ss << "/assets/";
-  ss << request.GetAssetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
+  uri.AddPathSegments("/assets/");
+  uri.AddPathSegment(request.GetAssetId());
   return DeleteAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -292,10 +282,8 @@ DeleteDataSetOutcome DataExchangeClient::DeleteDataSet(const DeleteDataSetReques
     return DeleteDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
   return DeleteDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -330,12 +318,10 @@ DeleteRevisionOutcome DataExchangeClient::DeleteRevision(const DeleteRevisionReq
     return DeleteRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions/";
-  ss << request.GetRevisionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
   return DeleteRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -375,14 +361,12 @@ GetAssetOutcome DataExchangeClient::GetAsset(const GetAssetRequest& request) con
     return GetAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions/";
-  ss << request.GetRevisionId();
-  ss << "/assets/";
-  ss << request.GetAssetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
+  uri.AddPathSegments("/assets/");
+  uri.AddPathSegment(request.GetAssetId());
   return GetAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -412,10 +396,8 @@ GetDataSetOutcome DataExchangeClient::GetDataSet(const GetDataSetRequest& reques
     return GetDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
   return GetDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -445,10 +427,8 @@ GetJobOutcome DataExchangeClient::GetJob(const GetJobRequest& request) const
     return GetJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -483,12 +463,10 @@ GetRevisionOutcome DataExchangeClient::GetRevision(const GetRevisionRequest& req
     return GetRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions/";
-  ss << request.GetRevisionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
   return GetRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -518,11 +496,9 @@ ListDataSetRevisionsOutcome DataExchangeClient::ListDataSetRevisions(const ListD
     return ListDataSetRevisionsOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions");
   return ListDataSetRevisionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -547,9 +523,7 @@ void DataExchangeClient::ListDataSetRevisionsAsyncHelper(const ListDataSetRevisi
 ListDataSetsOutcome DataExchangeClient::ListDataSets(const ListDataSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets");
   return ListDataSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -574,9 +548,7 @@ void DataExchangeClient::ListDataSetsAsyncHelper(const ListDataSetsRequest& requ
 ListJobsOutcome DataExchangeClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -611,13 +583,11 @@ ListRevisionAssetsOutcome DataExchangeClient::ListRevisionAssets(const ListRevis
     return ListRevisionAssetsOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions/";
-  ss << request.GetRevisionId();
-  ss << "/assets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
+  uri.AddPathSegments("/assets");
   return ListRevisionAssetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -647,10 +617,8 @@ ListTagsForResourceOutcome DataExchangeClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -680,10 +648,8 @@ StartJobOutcome DataExchangeClient::StartJob(const StartJobRequest& request) con
     return StartJobOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return StartJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -713,10 +679,8 @@ TagResourceOutcome DataExchangeClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -751,10 +715,8 @@ UntagResourceOutcome DataExchangeClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -794,14 +756,12 @@ UpdateAssetOutcome DataExchangeClient::UpdateAsset(const UpdateAssetRequest& req
     return UpdateAssetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions/";
-  ss << request.GetRevisionId();
-  ss << "/assets/";
-  ss << request.GetAssetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
+  uri.AddPathSegments("/assets/");
+  uri.AddPathSegment(request.GetAssetId());
   return UpdateAssetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -831,10 +791,8 @@ UpdateDataSetOutcome DataExchangeClient::UpdateDataSet(const UpdateDataSetReques
     return UpdateDataSetOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
   return UpdateDataSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -869,12 +827,10 @@ UpdateRevisionOutcome DataExchangeClient::UpdateRevision(const UpdateRevisionReq
     return UpdateRevisionOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/data-sets/";
-  ss << request.GetDataSetId();
-  ss << "/revisions/";
-  ss << request.GetRevisionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/data-sets/");
+  uri.AddPathSegment(request.GetDataSetId());
+  uri.AddPathSegments("/revisions/");
+  uri.AddPathSegment(request.GetRevisionId());
   return UpdateRevisionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

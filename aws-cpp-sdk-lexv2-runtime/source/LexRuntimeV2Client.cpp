@@ -124,16 +124,14 @@ DeleteSessionOutcome LexRuntimeV2Client::DeleteSession(const DeleteSessionReques
     return DeleteSessionOutcome(Aws::Client::AWSError<LexRuntimeV2Errors>(LexRuntimeV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/botAliases/";
-  ss << request.GetBotAliasId();
-  ss << "/botLocales/";
-  ss << request.GetLocaleId();
-  ss << "/sessions/";
-  ss << request.GetSessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botAliases/");
+  uri.AddPathSegment(request.GetBotAliasId());
+  uri.AddPathSegments("/botLocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/sessions/");
+  uri.AddPathSegment(request.GetSessionId());
   return DeleteSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -178,16 +176,14 @@ GetSessionOutcome LexRuntimeV2Client::GetSession(const GetSessionRequest& reques
     return GetSessionOutcome(Aws::Client::AWSError<LexRuntimeV2Errors>(LexRuntimeV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/botAliases/";
-  ss << request.GetBotAliasId();
-  ss << "/botLocales/";
-  ss << request.GetLocaleId();
-  ss << "/sessions/";
-  ss << request.GetSessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botAliases/");
+  uri.AddPathSegment(request.GetBotAliasId());
+  uri.AddPathSegments("/botLocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/sessions/");
+  uri.AddPathSegment(request.GetSessionId());
   return GetSessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -232,16 +228,14 @@ PutSessionOutcome LexRuntimeV2Client::PutSession(const PutSessionRequest& reques
     return PutSessionOutcome(Aws::Client::AWSError<LexRuntimeV2Errors>(LexRuntimeV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/botAliases/";
-  ss << request.GetBotAliasId();
-  ss << "/botLocales/";
-  ss << request.GetLocaleId();
-  ss << "/sessions/";
-  ss << request.GetSessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botAliases/");
+  uri.AddPathSegment(request.GetBotAliasId());
+  uri.AddPathSegments("/botLocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/sessions/");
+  uri.AddPathSegment(request.GetSessionId());
   return PutSessionOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -286,17 +280,15 @@ RecognizeTextOutcome LexRuntimeV2Client::RecognizeText(const RecognizeTextReques
     return RecognizeTextOutcome(Aws::Client::AWSError<LexRuntimeV2Errors>(LexRuntimeV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/botAliases/";
-  ss << request.GetBotAliasId();
-  ss << "/botLocales/";
-  ss << request.GetLocaleId();
-  ss << "/sessions/";
-  ss << request.GetSessionId();
-  ss << "/text";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botAliases/");
+  uri.AddPathSegment(request.GetBotAliasId());
+  uri.AddPathSegments("/botLocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/sessions/");
+  uri.AddPathSegment(request.GetSessionId());
+  uri.AddPathSegments("/text");
   return RecognizeTextOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -346,17 +338,15 @@ RecognizeUtteranceOutcome LexRuntimeV2Client::RecognizeUtterance(const Recognize
     return RecognizeUtteranceOutcome(Aws::Client::AWSError<LexRuntimeV2Errors>(LexRuntimeV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RequestContentType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/botAliases/";
-  ss << request.GetBotAliasId();
-  ss << "/botLocales/";
-  ss << request.GetLocaleId();
-  ss << "/sessions/";
-  ss << request.GetSessionId();
-  ss << "/utterance";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botAliases/");
+  uri.AddPathSegment(request.GetBotAliasId());
+  uri.AddPathSegments("/botLocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/sessions/");
+  uri.AddPathSegment(request.GetSessionId());
+  uri.AddPathSegments("/utterance");
   return RecognizeUtteranceOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -408,17 +398,15 @@ void LexRuntimeV2Client::StartConversationAsync(Model::StartConversationRequest&
     responseHandler(this, request, StartConversationOutcome(Aws::Client::AWSError<LexRuntimeV2Errors>(LexRuntimeV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SessionId]", false)), handlerContext);
     return;
   }
-  Aws::StringStream ss;
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/botAliases/";
-  ss << request.GetBotAliasId();
-  ss << "/botLocales/";
-  ss << request.GetLocaleId();
-  ss << "/sessions/";
-  ss << request.GetSessionId();
-  ss << "/conversation";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/botAliases/");
+  uri.AddPathSegment(request.GetBotAliasId());
+  uri.AddPathSegments("/botLocales/");
+  uri.AddPathSegment(request.GetLocaleId());
+  uri.AddPathSegments("/sessions/");
+  uri.AddPathSegment(request.GetSessionId());
+  uri.AddPathSegments("/conversation");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );

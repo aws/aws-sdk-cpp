@@ -22,15 +22,13 @@ namespace Model
 
 PrefixListId::PrefixListId() : 
     m_descriptionHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_securityGroupRuleIdHasBeenSet(false)
+    m_prefixListIdHasBeenSet(false)
 {
 }
 
 PrefixListId::PrefixListId(const XmlNode& xmlNode) : 
     m_descriptionHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_securityGroupRuleIdHasBeenSet(false)
+    m_prefixListIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,12 +51,6 @@ PrefixListId& PrefixListId::operator =(const XmlNode& xmlNode)
       m_prefixListId = Aws::Utils::Xml::DecodeEscapedXmlText(prefixListIdNode.GetText());
       m_prefixListIdHasBeenSet = true;
     }
-    XmlNode securityGroupRuleIdNode = resultNode.FirstChild("securityGroupRuleId");
-    if(!securityGroupRuleIdNode.IsNull())
-    {
-      m_securityGroupRuleId = Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupRuleIdNode.GetText());
-      m_securityGroupRuleIdHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -76,11 +68,6 @@ void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
   }
 
-  if(m_securityGroupRuleIdHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".SecurityGroupRuleId=" << StringUtils::URLEncode(m_securityGroupRuleId.c_str()) << "&";
-  }
-
 }
 
 void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -92,10 +79,6 @@ void PrefixListId::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_prefixListIdHasBeenSet)
   {
       oStream << location << ".PrefixListId=" << StringUtils::URLEncode(m_prefixListId.c_str()) << "&";
-  }
-  if(m_securityGroupRuleIdHasBeenSet)
-  {
-      oStream << location << ".SecurityGroupRuleId=" << StringUtils::URLEncode(m_securityGroupRuleId.c_str()) << "&";
   }
 }
 

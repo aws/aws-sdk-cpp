@@ -107,11 +107,9 @@ DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThing
     return DeleteThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/shadow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/shadow");
   return DeleteThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_DELETE));
 }
 
@@ -141,11 +139,9 @@ GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowReq
     return GetThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/shadow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/shadow");
   return GetThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -175,10 +171,8 @@ ListNamedShadowsForThingOutcome IoTDataPlaneClient::ListNamedShadowsForThing(con
     return ListNamedShadowsForThingOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/api/things/shadow/ListNamedShadowsForThing/";
-  ss << request.GetThingName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/api/things/shadow/ListNamedShadowsForThing/");
+  uri.AddPathSegment(request.GetThingName());
   return ListNamedShadowsForThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -208,10 +202,8 @@ PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
     return PublishOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Topic]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/topics/";
-  ss << request.GetTopic();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/topics/");
+  uri.AddPathSegment(request.GetTopic());
   return PublishOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -241,11 +233,9 @@ UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThing
     return UpdateThingShadowOutcome(Aws::Client::AWSError<IoTDataPlaneErrors>(IoTDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/shadow";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/shadow");
   return UpdateThingShadowOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 

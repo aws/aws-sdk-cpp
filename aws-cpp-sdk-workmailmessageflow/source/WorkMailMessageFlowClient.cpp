@@ -104,10 +104,8 @@ GetRawMessageContentOutcome WorkMailMessageFlowClient::GetRawMessageContent(cons
     return GetRawMessageContentOutcome(Aws::Client::AWSError<WorkMailMessageFlowErrors>(WorkMailMessageFlowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   return GetRawMessageContentOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -137,10 +135,8 @@ PutRawMessageContentOutcome WorkMailMessageFlowClient::PutRawMessageContent(cons
     return PutRawMessageContentOutcome(Aws::Client::AWSError<WorkMailMessageFlowErrors>(WorkMailMessageFlowErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MessageId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   return PutRawMessageContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

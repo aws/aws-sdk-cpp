@@ -9,7 +9,6 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/IpPermission.h>
-#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -295,9 +294,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
@@ -308,9 +307,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
 
@@ -321,9 +320,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
@@ -334,9 +333,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
@@ -347,9 +346,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
@@ -360,9 +359,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
@@ -373,9 +372,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
@@ -386,9 +385,9 @@ namespace Model
      * Numbers</a>). To specify <code>icmpv6</code>, use a set of IP permissions.</p>
      * <p>[VPC only] Use <code>-1</code> to specify all protocols. If you specify
      * <code>-1</code> or a protocol other than <code>tcp</code>, <code>udp</code>, or
-     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports that
-     * you specify.</p> <p>Alternatively, use a set of IP permissions to specify
-     * multiple rules and a description for the rule.</p>
+     * <code>icmp</code>, traffic on all ports is allowed, regardless of any ports you
+     * specify.</p> <p>Alternatively, use a set of IP permissions to specify multiple
+     * rules and a description for the rule.</p>
      */
     inline AuthorizeSecurityGroupIngressRequest& WithIpProtocol(const char* value) { SetIpProtocol(value); return *this;}
 
@@ -632,47 +631,6 @@ namespace Model
      */
     inline AuthorizeSecurityGroupIngressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline AuthorizeSecurityGroupIngressRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline AuthorizeSecurityGroupIngressRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline AuthorizeSecurityGroupIngressRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>[VPC Only] The tags applied to the security group rule.</p>
-     */
-    inline AuthorizeSecurityGroupIngressRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::String m_cidrIp;
@@ -704,9 +662,6 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;
-
-    Aws::Vector<TagSpecification> m_tagSpecifications;
-    bool m_tagSpecificationsHasBeenSet;
   };
 
 } // namespace Model

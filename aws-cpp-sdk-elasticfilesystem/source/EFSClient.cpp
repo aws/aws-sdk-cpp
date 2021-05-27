@@ -121,9 +121,7 @@ void EFSClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateAccessPointOutcome EFSClient::CreateAccessPoint(const CreateAccessPointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/access-points";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/access-points");
   return CreateAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -148,9 +146,7 @@ void EFSClient::CreateAccessPointAsyncHelper(const CreateAccessPointRequest& req
 CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems");
   return CreateFileSystemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -175,9 +171,7 @@ void EFSClient::CreateFileSystemAsyncHelper(const CreateFileSystemRequest& reque
 CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/mount-targets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/mount-targets");
   return CreateMountTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -207,10 +201,8 @@ DeleteAccessPointOutcome EFSClient::DeleteAccessPoint(const DeleteAccessPointReq
     return DeleteAccessPointOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccessPointId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/access-points/";
-  ss << request.GetAccessPointId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/access-points/");
+  uri.AddPathSegment(request.GetAccessPointId());
   return DeleteAccessPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -240,10 +232,8 @@ DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemReques
     return DeleteFileSystemOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
   return DeleteFileSystemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -273,11 +263,9 @@ DeleteFileSystemPolicyOutcome EFSClient::DeleteFileSystemPolicy(const DeleteFile
     return DeleteFileSystemPolicyOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
+  uri.AddPathSegments("/policy");
   return DeleteFileSystemPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -307,10 +295,8 @@ DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetReq
     return DeleteMountTargetOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/mount-targets/";
-  ss << request.GetMountTargetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/mount-targets/");
+  uri.AddPathSegment(request.GetMountTargetId());
   return DeleteMountTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -335,9 +321,7 @@ void EFSClient::DeleteMountTargetAsyncHelper(const DeleteMountTargetRequest& req
 DescribeAccessPointsOutcome EFSClient::DescribeAccessPoints(const DescribeAccessPointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/access-points";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/access-points");
   return DescribeAccessPointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -362,9 +346,7 @@ void EFSClient::DescribeAccessPointsAsyncHelper(const DescribeAccessPointsReques
 DescribeAccountPreferencesOutcome EFSClient::DescribeAccountPreferences(const DescribeAccountPreferencesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/account-preferences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/account-preferences");
   return DescribeAccountPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -394,11 +376,9 @@ DescribeBackupPolicyOutcome EFSClient::DescribeBackupPolicy(const DescribeBackup
     return DescribeBackupPolicyOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  ss << "/backup-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
+  uri.AddPathSegments("/backup-policy");
   return DescribeBackupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -428,11 +408,9 @@ DescribeFileSystemPolicyOutcome EFSClient::DescribeFileSystemPolicy(const Descri
     return DescribeFileSystemPolicyOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
+  uri.AddPathSegments("/policy");
   return DescribeFileSystemPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -457,9 +435,7 @@ void EFSClient::DescribeFileSystemPolicyAsyncHelper(const DescribeFileSystemPoli
 DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems");
   return DescribeFileSystemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -489,11 +465,9 @@ DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(
     return DescribeLifecycleConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  ss << "/lifecycle-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
+  uri.AddPathSegments("/lifecycle-configuration");
   return DescribeLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -523,11 +497,9 @@ DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityG
     return DescribeMountTargetSecurityGroupsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/mount-targets/";
-  ss << request.GetMountTargetId();
-  ss << "/security-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/mount-targets/");
+  uri.AddPathSegment(request.GetMountTargetId());
+  uri.AddPathSegments("/security-groups");
   return DescribeMountTargetSecurityGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -552,9 +524,7 @@ void EFSClient::DescribeMountTargetSecurityGroupsAsyncHelper(const DescribeMount
 DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountTargetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/mount-targets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/mount-targets");
   return DescribeMountTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -584,10 +554,8 @@ ListTagsForResourceOutcome EFSClient::ListTagsForResource(const ListTagsForResou
     return ListTagsForResourceOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/resource-tags/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/resource-tags/");
+  uri.AddPathSegment(request.GetResourceId());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -617,11 +585,9 @@ ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroup
     return ModifyMountTargetSecurityGroupsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/mount-targets/";
-  ss << request.GetMountTargetId();
-  ss << "/security-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/mount-targets/");
+  uri.AddPathSegment(request.GetMountTargetId());
+  uri.AddPathSegments("/security-groups");
   return ModifyMountTargetSecurityGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -646,9 +612,7 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTarg
 PutAccountPreferencesOutcome EFSClient::PutAccountPreferences(const PutAccountPreferencesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/account-preferences";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/account-preferences");
   return PutAccountPreferencesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -678,11 +642,9 @@ PutBackupPolicyOutcome EFSClient::PutBackupPolicy(const PutBackupPolicyRequest& 
     return PutBackupPolicyOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  ss << "/backup-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
+  uri.AddPathSegments("/backup-policy");
   return PutBackupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -712,11 +674,9 @@ PutFileSystemPolicyOutcome EFSClient::PutFileSystemPolicy(const PutFileSystemPol
     return PutFileSystemPolicyOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
+  uri.AddPathSegments("/policy");
   return PutFileSystemPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -746,11 +706,9 @@ PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutL
     return PutLifecycleConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  ss << "/lifecycle-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
+  uri.AddPathSegments("/lifecycle-configuration");
   return PutLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -780,10 +738,8 @@ TagResourceOutcome EFSClient::TagResource(const TagResourceRequest& request) con
     return TagResourceOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/resource-tags/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/resource-tags/");
+  uri.AddPathSegment(request.GetResourceId());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -818,10 +774,8 @@ UntagResourceOutcome EFSClient::UntagResource(const UntagResourceRequest& reques
     return UntagResourceOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/resource-tags/";
-  ss << request.GetResourceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/resource-tags/");
+  uri.AddPathSegment(request.GetResourceId());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -851,10 +805,8 @@ UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemReques
     return UpdateFileSystemOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2015-02-01/file-systems/";
-  ss << request.GetFileSystemId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2015-02-01/file-systems/");
+  uri.AddPathSegment(request.GetFileSystemId());
   return UpdateFileSystemOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

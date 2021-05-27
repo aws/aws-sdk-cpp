@@ -127,12 +127,10 @@ AssociateAttributeGroupOutcome AppRegistryClient::AssociateAttributeGroup(const 
     return AssociateAttributeGroupOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeGroup]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  ss << "/attribute-groups/";
-  ss << request.GetAttributeGroup();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/attribute-groups/");
+  uri.AddPathSegment(request.GetAttributeGroup());
   return AssociateAttributeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -172,14 +170,11 @@ AssociateResourceOutcome AppRegistryClient::AssociateResource(const AssociateRes
     return AssociateResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  ss << "/resources/";
-  ss << ResourceTypeMapper::GetNameForResourceType(request.GetResourceType());
-  ss << "/";
-  ss << request.GetResource();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(ResourceTypeMapper::GetNameForResourceType(request.GetResourceType()));
+  uri.AddPathSegment(request.GetResource());
   return AssociateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -204,9 +199,7 @@ void AppRegistryClient::AssociateResourceAsyncHelper(const AssociateResourceRequ
 CreateApplicationOutcome AppRegistryClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -231,9 +224,7 @@ void AppRegistryClient::CreateApplicationAsyncHelper(const CreateApplicationRequ
 CreateAttributeGroupOutcome AppRegistryClient::CreateAttributeGroup(const CreateAttributeGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/attribute-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/attribute-groups");
   return CreateAttributeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,10 +254,8 @@ DeleteApplicationOutcome AppRegistryClient::DeleteApplication(const DeleteApplic
     return DeleteApplicationOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
   return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -296,10 +285,8 @@ DeleteAttributeGroupOutcome AppRegistryClient::DeleteAttributeGroup(const Delete
     return DeleteAttributeGroupOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeGroup]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/attribute-groups/";
-  ss << request.GetAttributeGroup();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/attribute-groups/");
+  uri.AddPathSegment(request.GetAttributeGroup());
   return DeleteAttributeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,12 +321,10 @@ DisassociateAttributeGroupOutcome AppRegistryClient::DisassociateAttributeGroup(
     return DisassociateAttributeGroupOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeGroup]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  ss << "/attribute-groups/";
-  ss << request.GetAttributeGroup();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/attribute-groups/");
+  uri.AddPathSegment(request.GetAttributeGroup());
   return DisassociateAttributeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -379,14 +364,11 @@ DisassociateResourceOutcome AppRegistryClient::DisassociateResource(const Disass
     return DisassociateResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  ss << "/resources/";
-  ss << ResourceTypeMapper::GetNameForResourceType(request.GetResourceType());
-  ss << "/";
-  ss << request.GetResource();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(ResourceTypeMapper::GetNameForResourceType(request.GetResourceType()));
+  uri.AddPathSegment(request.GetResource());
   return DisassociateResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -416,10 +398,8 @@ GetApplicationOutcome AppRegistryClient::GetApplication(const GetApplicationRequ
     return GetApplicationOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
   return GetApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -449,10 +429,8 @@ GetAttributeGroupOutcome AppRegistryClient::GetAttributeGroup(const GetAttribute
     return GetAttributeGroupOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeGroup]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/attribute-groups/";
-  ss << request.GetAttributeGroup();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/attribute-groups/");
+  uri.AddPathSegment(request.GetAttributeGroup());
   return GetAttributeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -477,9 +455,7 @@ void AppRegistryClient::GetAttributeGroupAsyncHelper(const GetAttributeGroupRequ
 ListApplicationsOutcome AppRegistryClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return ListApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -509,11 +485,9 @@ ListAssociatedAttributeGroupsOutcome AppRegistryClient::ListAssociatedAttributeG
     return ListAssociatedAttributeGroupsOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  ss << "/attribute-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/attribute-groups");
   return ListAssociatedAttributeGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -543,11 +517,9 @@ ListAssociatedResourcesOutcome AppRegistryClient::ListAssociatedResources(const 
     return ListAssociatedResourcesOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  ss << "/resources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/resources");
   return ListAssociatedResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -572,9 +544,7 @@ void AppRegistryClient::ListAssociatedResourcesAsyncHelper(const ListAssociatedR
 ListAttributeGroupsOutcome AppRegistryClient::ListAttributeGroups(const ListAttributeGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/attribute-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/attribute-groups");
   return ListAttributeGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -604,10 +574,8 @@ ListTagsForResourceOutcome AppRegistryClient::ListTagsForResource(const ListTags
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -642,12 +610,9 @@ SyncResourceOutcome AppRegistryClient::SyncResource(const SyncResourceRequest& r
     return SyncResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sync/";
-  ss << ResourceTypeMapper::GetNameForResourceType(request.GetResourceType());
-  ss << "/";
-  ss << request.GetResource();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sync/");
+  uri.AddPathSegment(ResourceTypeMapper::GetNameForResourceType(request.GetResourceType()));
+  uri.AddPathSegment(request.GetResource());
   return SyncResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -677,10 +642,8 @@ TagResourceOutcome AppRegistryClient::TagResource(const TagResourceRequest& requ
     return TagResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -715,10 +678,8 @@ UntagResourceOutcome AppRegistryClient::UntagResource(const UntagResourceRequest
     return UntagResourceOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -748,10 +709,8 @@ UpdateApplicationOutcome AppRegistryClient::UpdateApplication(const UpdateApplic
     return UpdateApplicationOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Application]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
   return UpdateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -781,10 +740,8 @@ UpdateAttributeGroupOutcome AppRegistryClient::UpdateAttributeGroup(const Update
     return UpdateAttributeGroupOutcome(Aws::Client::AWSError<AppRegistryErrors>(AppRegistryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeGroup]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/attribute-groups/";
-  ss << request.GetAttributeGroup();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/attribute-groups/");
+  uri.AddPathSegment(request.GetAttributeGroup());
   return UpdateAttributeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

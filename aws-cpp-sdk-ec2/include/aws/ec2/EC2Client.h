@@ -38,8 +38,6 @@
 #include <aws/ec2/model/AttachVolumeResponse.h>
 #include <aws/ec2/model/AttachVpnGatewayResponse.h>
 #include <aws/ec2/model/AuthorizeClientVpnIngressResponse.h>
-#include <aws/ec2/model/AuthorizeSecurityGroupEgressResponse.h>
-#include <aws/ec2/model/AuthorizeSecurityGroupIngressResponse.h>
 #include <aws/ec2/model/BundleInstanceResponse.h>
 #include <aws/ec2/model/CancelBundleTaskResponse.h>
 #include <aws/ec2/model/CancelCapacityReservationResponse.h>
@@ -229,7 +227,6 @@
 #include <aws/ec2/model/DescribeScheduledInstanceAvailabilityResponse.h>
 #include <aws/ec2/model/DescribeScheduledInstancesResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupReferencesResponse.h>
-#include <aws/ec2/model/DescribeSecurityGroupRulesResponse.h>
 #include <aws/ec2/model/DescribeSecurityGroupsResponse.h>
 #include <aws/ec2/model/DescribeSnapshotAttributeResponse.h>
 #include <aws/ec2/model/DescribeSnapshotsResponse.h>
@@ -342,7 +339,6 @@
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
-#include <aws/ec2/model/ModifySecurityGroupRulesResponse.h>
 #include <aws/ec2/model/ModifySpotFleetRequestResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterNetworkServicesResponse.h>
 #include <aws/ec2/model/ModifyTrafficMirrorFilterRuleResponse.h>
@@ -698,7 +694,6 @@ namespace Model
         class DescribeScheduledInstanceAvailabilityRequest;
         class DescribeScheduledInstancesRequest;
         class DescribeSecurityGroupReferencesRequest;
-        class DescribeSecurityGroupRulesRequest;
         class DescribeSecurityGroupsRequest;
         class DescribeSnapshotAttributeRequest;
         class DescribeSnapshotsRequest;
@@ -824,7 +819,6 @@ namespace Model
         class ModifyManagedPrefixListRequest;
         class ModifyNetworkInterfaceAttributeRequest;
         class ModifyReservedInstancesRequest;
-        class ModifySecurityGroupRulesRequest;
         class ModifySnapshotAttributeRequest;
         class ModifySpotFleetRequestRequest;
         class ModifySubnetAttributeRequest;
@@ -933,8 +927,8 @@ namespace Model
         typedef Aws::Utils::Outcome<AttachVolumeResponse, EC2Error> AttachVolumeOutcome;
         typedef Aws::Utils::Outcome<AttachVpnGatewayResponse, EC2Error> AttachVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<AuthorizeClientVpnIngressResponse, EC2Error> AuthorizeClientVpnIngressOutcome;
-        typedef Aws::Utils::Outcome<AuthorizeSecurityGroupEgressResponse, EC2Error> AuthorizeSecurityGroupEgressOutcome;
-        typedef Aws::Utils::Outcome<AuthorizeSecurityGroupIngressResponse, EC2Error> AuthorizeSecurityGroupIngressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> AuthorizeSecurityGroupEgressOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> AuthorizeSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<BundleInstanceResponse, EC2Error> BundleInstanceOutcome;
         typedef Aws::Utils::Outcome<CancelBundleTaskResponse, EC2Error> CancelBundleTaskOutcome;
         typedef Aws::Utils::Outcome<CancelCapacityReservationResponse, EC2Error> CancelCapacityReservationOutcome;
@@ -1150,7 +1144,6 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeScheduledInstanceAvailabilityResponse, EC2Error> DescribeScheduledInstanceAvailabilityOutcome;
         typedef Aws::Utils::Outcome<DescribeScheduledInstancesResponse, EC2Error> DescribeScheduledInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeSecurityGroupReferencesResponse, EC2Error> DescribeSecurityGroupReferencesOutcome;
-        typedef Aws::Utils::Outcome<DescribeSecurityGroupRulesResponse, EC2Error> DescribeSecurityGroupRulesOutcome;
         typedef Aws::Utils::Outcome<DescribeSecurityGroupsResponse, EC2Error> DescribeSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotAttributeResponse, EC2Error> DescribeSnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeSnapshotsResponse, EC2Error> DescribeSnapshotsOutcome;
@@ -1276,7 +1269,6 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, EC2Error> ModifyManagedPrefixListOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyNetworkInterfaceAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyReservedInstancesResponse, EC2Error> ModifyReservedInstancesOutcome;
-        typedef Aws::Utils::Outcome<ModifySecurityGroupRulesResponse, EC2Error> ModifySecurityGroupRulesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifySnapshotAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifySpotFleetRequestResponse, EC2Error> ModifySpotFleetRequestOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifySubnetAttributeOutcome;
@@ -1602,7 +1594,6 @@ namespace Model
         typedef std::future<DescribeScheduledInstanceAvailabilityOutcome> DescribeScheduledInstanceAvailabilityOutcomeCallable;
         typedef std::future<DescribeScheduledInstancesOutcome> DescribeScheduledInstancesOutcomeCallable;
         typedef std::future<DescribeSecurityGroupReferencesOutcome> DescribeSecurityGroupReferencesOutcomeCallable;
-        typedef std::future<DescribeSecurityGroupRulesOutcome> DescribeSecurityGroupRulesOutcomeCallable;
         typedef std::future<DescribeSecurityGroupsOutcome> DescribeSecurityGroupsOutcomeCallable;
         typedef std::future<DescribeSnapshotAttributeOutcome> DescribeSnapshotAttributeOutcomeCallable;
         typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
@@ -1728,7 +1719,6 @@ namespace Model
         typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutcomeCallable;
         typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
         typedef std::future<ModifyReservedInstancesOutcome> ModifyReservedInstancesOutcomeCallable;
-        typedef std::future<ModifySecurityGroupRulesOutcome> ModifySecurityGroupRulesOutcomeCallable;
         typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
         typedef std::future<ModifySpotFleetRequestOutcome> ModifySpotFleetRequestOutcomeCallable;
         typedef std::future<ModifySubnetAttributeOutcome> ModifySubnetAttributeOutcomeCallable;
@@ -2057,7 +2047,6 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeScheduledInstanceAvailabilityRequest&, const Model::DescribeScheduledInstanceAvailabilityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledInstanceAvailabilityResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeScheduledInstancesRequest&, const Model::DescribeScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduledInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupReferencesRequest&, const Model::DescribeSecurityGroupReferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupReferencesResponseReceivedHandler;
-    typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupRulesRequest&, const Model::DescribeSecurityGroupRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupRulesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSecurityGroupsRequest&, const Model::DescribeSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSnapshotAttributeRequest&, const Model::DescribeSnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
@@ -2183,7 +2172,6 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyManagedPrefixListRequest&, const Model::ModifyManagedPrefixListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyManagedPrefixListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyReservedInstancesRequest&, const Model::ModifyReservedInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReservedInstancesResponseReceivedHandler;
-    typedef std::function<void(const EC2Client*, const Model::ModifySecurityGroupRulesRequest&, const Model::ModifySecurityGroupRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySecurityGroupRulesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifySnapshotAttributeRequest&, const Model::ModifySnapshotAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySnapshotAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifySpotFleetRequestRequest&, const Model::ModifySpotFleetRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySpotFleetRequestResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifySubnetAttributeRequest&, const Model::ModifySubnetAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySubnetAttributeResponseReceivedHandler;
@@ -3636,17 +3624,16 @@ namespace Model
         virtual void AuthorizeClientVpnIngressAsync(const Model::AuthorizeClientVpnIngressRequest& request, const AuthorizeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>[VPC only] Adds the specified outbound (egress) rules to a security group for
-         * use with a VPC.</p> <p>An outbound rule permits instances to send traffic to the
-         * specified IPv4 or IPv6 CIDR address ranges, or to the instances that are
-         * associated with the specified destination security groups.</p> <p>You specify a
-         * protocol for each rule (for example, TCP). For the TCP and UDP protocols, you
-         * must also specify the destination port or port range. For the ICMP protocol, you
-         * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes. </p> <p>You can optionally add a tag to the
-         * security group rule.</p> <p>Rule changes are propagated to affected instances as
-         * quickly as possible. However, a small delay might occur.</p> <p>For information
-         * about VPC security group quotas, see <a
+         * <p>[VPC only] Adds the specified egress rules to a security group for use with a
+         * VPC.</p> <p>An outbound rule permits instances to send traffic to the specified
+         * IPv4 or IPv6 CIDR address ranges, or to the instances associated with the
+         * specified destination security groups.</p> <p>You specify a protocol for each
+         * rule (for example, TCP). For the TCP and UDP protocols, you must also specify
+         * the destination port or port range. For the ICMP protocol, you must also specify
+         * the ICMP type and code. You can use -1 for the type or code to mean all types or
+         * all codes.</p> <p>Rule changes are propagated to affected instances as quickly
+         * as possible. However, a small delay might occur.</p> <p>For more information
+         * about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
@@ -3655,17 +3642,16 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupEgressOutcome AuthorizeSecurityGroupEgress(const Model::AuthorizeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>[VPC only] Adds the specified outbound (egress) rules to a security group for
-         * use with a VPC.</p> <p>An outbound rule permits instances to send traffic to the
-         * specified IPv4 or IPv6 CIDR address ranges, or to the instances that are
-         * associated with the specified destination security groups.</p> <p>You specify a
-         * protocol for each rule (for example, TCP). For the TCP and UDP protocols, you
-         * must also specify the destination port or port range. For the ICMP protocol, you
-         * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes. </p> <p>You can optionally add a tag to the
-         * security group rule.</p> <p>Rule changes are propagated to affected instances as
-         * quickly as possible. However, a small delay might occur.</p> <p>For information
-         * about VPC security group quotas, see <a
+         * <p>[VPC only] Adds the specified egress rules to a security group for use with a
+         * VPC.</p> <p>An outbound rule permits instances to send traffic to the specified
+         * IPv4 or IPv6 CIDR address ranges, or to the instances associated with the
+         * specified destination security groups.</p> <p>You specify a protocol for each
+         * rule (for example, TCP). For the TCP and UDP protocols, you must also specify
+         * the destination port or port range. For the ICMP protocol, you must also specify
+         * the ICMP type and code. You can use -1 for the type or code to mean all types or
+         * all codes.</p> <p>Rule changes are propagated to affected instances as quickly
+         * as possible. However, a small delay might occur.</p> <p>For more information
+         * about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
@@ -3676,17 +3662,16 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupEgressOutcomeCallable AuthorizeSecurityGroupEgressCallable(const Model::AuthorizeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>[VPC only] Adds the specified outbound (egress) rules to a security group for
-         * use with a VPC.</p> <p>An outbound rule permits instances to send traffic to the
-         * specified IPv4 or IPv6 CIDR address ranges, or to the instances that are
-         * associated with the specified destination security groups.</p> <p>You specify a
-         * protocol for each rule (for example, TCP). For the TCP and UDP protocols, you
-         * must also specify the destination port or port range. For the ICMP protocol, you
-         * must also specify the ICMP type and code. You can use -1 for the type or code to
-         * mean all types or all codes. </p> <p>You can optionally add a tag to the
-         * security group rule.</p> <p>Rule changes are propagated to affected instances as
-         * quickly as possible. However, a small delay might occur.</p> <p>For information
-         * about VPC security group quotas, see <a
+         * <p>[VPC only] Adds the specified egress rules to a security group for use with a
+         * VPC.</p> <p>An outbound rule permits instances to send traffic to the specified
+         * IPv4 or IPv6 CIDR address ranges, or to the instances associated with the
+         * specified destination security groups.</p> <p>You specify a protocol for each
+         * rule (for example, TCP). For the TCP and UDP protocols, you must also specify
+         * the destination port or port range. For the ICMP protocol, you must also specify
+         * the ICMP type and code. You can use -1 for the type or code to mean all types or
+         * all codes.</p> <p>Rule changes are propagated to affected instances as quickly
+         * as possible. However, a small delay might occur.</p> <p>For more information
+         * about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
@@ -3697,17 +3682,15 @@ namespace Model
         virtual void AuthorizeSecurityGroupEgressAsync(const Model::AuthorizeSecurityGroupEgressRequest& request, const AuthorizeSecurityGroupEgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds the specified inbound (ingress) rules to a security group.</p> <p>An
-         * inbound rule permits instances to receive traffic from the specified IPv4 or
-         * IPv6 CIDR address ranges, or from the instances that are associated with the
-         * specified destination security groups.</p> <p>You specify a protocol for each
-         * rule (for example, TCP). For TCP and UDP, you must also specify the destination
-         * port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type
-         * and code. You can use -1 to mean all types or all codes. </p> <p>[VPC Only] You
-         * can optionally add a tag to the security group rule.</p> <p>Rule changes are
-         * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p> <p>For information about VPC security
-         * group quotas, see <a
+         * <p>Adds the specified ingress rules to a security group.</p> <p>An inbound rule
+         * permits instances to receive traffic from the specified IPv4 or IPv6 CIDR
+         * address ranges, or from the instances associated with the specified destination
+         * security groups.</p> <p>You specify a protocol for each rule (for example, TCP).
+         * For TCP and UDP, you must also specify the destination port or port range. For
+         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
+         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
+         * within the security group as quickly as possible. However, a small delay might
+         * occur.</p> <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -3716,17 +3699,15 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupIngressOutcome AuthorizeSecurityGroupIngress(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Adds the specified inbound (ingress) rules to a security group.</p> <p>An
-         * inbound rule permits instances to receive traffic from the specified IPv4 or
-         * IPv6 CIDR address ranges, or from the instances that are associated with the
-         * specified destination security groups.</p> <p>You specify a protocol for each
-         * rule (for example, TCP). For TCP and UDP, you must also specify the destination
-         * port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type
-         * and code. You can use -1 to mean all types or all codes. </p> <p>[VPC Only] You
-         * can optionally add a tag to the security group rule.</p> <p>Rule changes are
-         * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p> <p>For information about VPC security
-         * group quotas, see <a
+         * <p>Adds the specified ingress rules to a security group.</p> <p>An inbound rule
+         * permits instances to receive traffic from the specified IPv4 or IPv6 CIDR
+         * address ranges, or from the instances associated with the specified destination
+         * security groups.</p> <p>You specify a protocol for each rule (for example, TCP).
+         * For TCP and UDP, you must also specify the destination port or port range. For
+         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
+         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
+         * within the security group as quickly as possible. However, a small delay might
+         * occur.</p> <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -3737,17 +3718,15 @@ namespace Model
         virtual Model::AuthorizeSecurityGroupIngressOutcomeCallable AuthorizeSecurityGroupIngressCallable(const Model::AuthorizeSecurityGroupIngressRequest& request) const;
 
         /**
-         * <p>Adds the specified inbound (ingress) rules to a security group.</p> <p>An
-         * inbound rule permits instances to receive traffic from the specified IPv4 or
-         * IPv6 CIDR address ranges, or from the instances that are associated with the
-         * specified destination security groups.</p> <p>You specify a protocol for each
-         * rule (for example, TCP). For TCP and UDP, you must also specify the destination
-         * port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type
-         * and code. You can use -1 to mean all types or all codes. </p> <p>[VPC Only] You
-         * can optionally add a tag to the security group rule.</p> <p>Rule changes are
-         * propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p> <p>For information about VPC security
-         * group quotas, see <a
+         * <p>Adds the specified ingress rules to a security group.</p> <p>An inbound rule
+         * permits instances to receive traffic from the specified IPv4 or IPv6 CIDR
+         * address ranges, or from the instances associated with the specified destination
+         * security groups.</p> <p>You specify a protocol for each rule (for example, TCP).
+         * For TCP and UDP, you must also specify the destination port or port range. For
+         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
+         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
+         * within the security group as quickly as possible. However, a small delay might
+         * occur.</p> <p>For more information about VPC security group limits, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
          * VPC Limits</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -12610,34 +12589,6 @@ namespace Model
         virtual void DescribeSecurityGroupReferencesAsync(const Model::DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your security group rules.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DescribeSecurityGroupRulesOutcome DescribeSecurityGroupRules(const Model::DescribeSecurityGroupRulesRequest& request) const;
-
-        /**
-         * <p>Describes one or more of your security group rules.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeSecurityGroupRulesOutcomeCallable DescribeSecurityGroupRulesCallable(const Model::DescribeSecurityGroupRulesRequest& request) const;
-
-        /**
-         * <p>Describes one or more of your security group rules.</p><p><h3>See Also:</h3> 
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupRules">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeSecurityGroupRulesAsync(const Model::DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Describes the specified security groups or all of your security groups.</p>
          * <p>A security group is for use with instances either in the EC2-Classic platform
          * or in a specific VPC. For more information, see <a
@@ -17779,31 +17730,6 @@ namespace Model
         virtual void ModifyReservedInstancesAsync(const Model::ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the rules of a security group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::ModifySecurityGroupRulesOutcome ModifySecurityGroupRules(const Model::ModifySecurityGroupRulesRequest& request) const;
-
-        /**
-         * <p>Modifies the rules of a security group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifySecurityGroupRulesOutcomeCallable ModifySecurityGroupRulesCallable(const Model::ModifySecurityGroupRulesRequest& request) const;
-
-        /**
-         * <p>Modifies the rules of a security group.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySecurityGroupRules">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifySecurityGroupRulesAsync(const Model::ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Adds or removes permission settings for the specified snapshot. You may add
          * or remove specified AWS account IDs from a snapshot's list of create volume
          * permissions, but you cannot do both in a single operation. If you need to both
@@ -20512,48 +20438,40 @@ namespace Model
         virtual void RevokeClientVpnIngressAsync(const Model::RevokeClientVpnIngressRequest& request, const RevokeClientVpnIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the specified egress (outbound) rules from a security group for
+         * <p>[VPC only] Removes the specified egress rules from a security group for
          * EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
-         * </p> <p>You can specify the rules that you want to remove by using one of the
-         * following methods:</p> <ul> <li> <p>The security group rule IDs.</p> </li> <li>
-         * <p>The security group rule properties. Each rule consists of the protocol, from
-         * port, to port, and the IPv4 or IPv6 CIDR range or referenced security group or
-         * prefix list id. For the TCP and UDP protocols, you must also specify the
-         * destination port or range of ports. For the ICMP protocol, you must also specify
-         * the ICMP type and code. If the security group rule has a description, you do not
-         * have to specify the description to revoke the rule. To remove a rule, the values
-         * that you specify (for example, ports) must match the existing rule's values
-         * exactly.</p>  <p>[Default VPC] If the values you specify do not match the
-         * existing rule's values, no error is returned, and the output describes the
-         * security group rules that were not revoked. </p> <p>AWS recommends that you use
-         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         *  </li> </ul> <p>Rule changes are propagated to instances within the
-         * security group as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * To remove a rule, the values that you specify (for example, ports) must match
+         * the existing rule's values exactly.</p>  <p>[Default VPC] If the values
+         * you specify do not match the existing rule's values, no error is returned, and
+         * the output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the IPv4
+         * or IPv6 CIDR range or source security group. For the TCP and UDP protocols, you
+         * must also specify the destination port or range of ports. For the ICMP protocol,
+         * you must also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
         virtual Model::RevokeSecurityGroupEgressOutcome RevokeSecurityGroupEgress(const Model::RevokeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>Removes the specified egress (outbound) rules from a security group for
+         * <p>[VPC only] Removes the specified egress rules from a security group for
          * EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
-         * </p> <p>You can specify the rules that you want to remove by using one of the
-         * following methods:</p> <ul> <li> <p>The security group rule IDs.</p> </li> <li>
-         * <p>The security group rule properties. Each rule consists of the protocol, from
-         * port, to port, and the IPv4 or IPv6 CIDR range or referenced security group or
-         * prefix list id. For the TCP and UDP protocols, you must also specify the
-         * destination port or range of ports. For the ICMP protocol, you must also specify
-         * the ICMP type and code. If the security group rule has a description, you do not
-         * have to specify the description to revoke the rule. To remove a rule, the values
-         * that you specify (for example, ports) must match the existing rule's values
-         * exactly.</p>  <p>[Default VPC] If the values you specify do not match the
-         * existing rule's values, no error is returned, and the output describes the
-         * security group rules that were not revoked. </p> <p>AWS recommends that you use
-         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         *  </li> </ul> <p>Rule changes are propagated to instances within the
-         * security group as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * To remove a rule, the values that you specify (for example, ports) must match
+         * the existing rule's values exactly.</p>  <p>[Default VPC] If the values
+         * you specify do not match the existing rule's values, no error is returned, and
+         * the output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the IPv4
+         * or IPv6 CIDR range or source security group. For the TCP and UDP protocols, you
+         * must also specify the destination port or range of ports. For the ICMP protocol,
+         * you must also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -20562,24 +20480,20 @@ namespace Model
         virtual Model::RevokeSecurityGroupEgressOutcomeCallable RevokeSecurityGroupEgressCallable(const Model::RevokeSecurityGroupEgressRequest& request) const;
 
         /**
-         * <p>Removes the specified egress (outbound) rules from a security group for
+         * <p>[VPC only] Removes the specified egress rules from a security group for
          * EC2-VPC. This action does not apply to security groups for use in EC2-Classic.
-         * </p> <p>You can specify the rules that you want to remove by using one of the
-         * following methods:</p> <ul> <li> <p>The security group rule IDs.</p> </li> <li>
-         * <p>The security group rule properties. Each rule consists of the protocol, from
-         * port, to port, and the IPv4 or IPv6 CIDR range or referenced security group or
-         * prefix list id. For the TCP and UDP protocols, you must also specify the
-         * destination port or range of ports. For the ICMP protocol, you must also specify
-         * the ICMP type and code. If the security group rule has a description, you do not
-         * have to specify the description to revoke the rule. To remove a rule, the values
-         * that you specify (for example, ports) must match the existing rule's values
-         * exactly.</p>  <p>[Default VPC] If the values you specify do not match the
-         * existing rule's values, no error is returned, and the output describes the
-         * security group rules that were not revoked. </p> <p>AWS recommends that you use
-         * <a>DescribeSecurityGroups</a> to verify that the rule has been removed.</p>
-         *  </li> </ul> <p>Rule changes are propagated to instances within the
-         * security group as quickly as possible. However, a small delay might
-         * occur.</p><p><h3>See Also:</h3>   <a
+         * To remove a rule, the values that you specify (for example, ports) must match
+         * the existing rule's values exactly.</p>  <p>[Default VPC] If the values
+         * you specify do not match the existing rule's values, no error is returned, and
+         * the output describes the security group rules that were not revoked. </p> <p>AWS
+         * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
+         * has been removed.</p>  <p>Each rule consists of the protocol and the IPv4
+         * or IPv6 CIDR range or source security group. For the TCP and UDP protocols, you
+         * must also specify the destination port or range of ports. For the ICMP protocol,
+         * you must also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupEgress">AWS
          * API Reference</a></p>
          *
@@ -20590,26 +20504,17 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p>  <p>[EC2-Classic, default VPC] If the values you
+         * values exactly.</p>  <p>[EC2-Classic , default VPC] If the values you
          * specify do not match the existing rule's values, no error is returned, and the
          * output describes the security group rules that were not revoked. </p> <p>AWS
          * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p>  <p>You can specify the rules that you want to
-         * remove by using one of the following methods:</p> <ul> <li> <p>[VPC only] The
-         * security group rule IDs.</p> </li> <li> <p>The security group rule properties.
-         * Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
-         * CIDR range or referenced security group or prefix list id. For the TCP and UDP
-         * protocols, you must also specify the destination port or range of ports. For the
-         * ICMP protocol, you must also specify the ICMP type and code. If the security
-         * group rule has a description, you do not have to specify the description to
-         * revoke the rule. To remove a rule, the values that you specify (for example,
-         * ports) must match the existing rule's values exactly.</p>  <p>[Default
-         * VPC] If the values you specify do not match the existing rule's values, no error
-         * is returned, and the output describes the security group rules that were not
-         * revoked. </p> <p>AWS recommends that you use <a>DescribeSecurityGroups</a> to
-         * verify that the rule has been removed.</p>  </li> </ul> <p>Rule changes
-         * are propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
+         * has been removed.</p>  <p>Each rule consists of the protocol and the CIDR
+         * range or source security group. For the TCP and UDP protocols, you must also
+         * specify the destination port or range of ports. For the ICMP protocol, you must
+         * also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -20618,26 +20523,17 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p>  <p>[EC2-Classic, default VPC] If the values you
+         * values exactly.</p>  <p>[EC2-Classic , default VPC] If the values you
          * specify do not match the existing rule's values, no error is returned, and the
          * output describes the security group rules that were not revoked. </p> <p>AWS
          * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p>  <p>You can specify the rules that you want to
-         * remove by using one of the following methods:</p> <ul> <li> <p>[VPC only] The
-         * security group rule IDs.</p> </li> <li> <p>The security group rule properties.
-         * Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
-         * CIDR range or referenced security group or prefix list id. For the TCP and UDP
-         * protocols, you must also specify the destination port or range of ports. For the
-         * ICMP protocol, you must also specify the ICMP type and code. If the security
-         * group rule has a description, you do not have to specify the description to
-         * revoke the rule. To remove a rule, the values that you specify (for example,
-         * ports) must match the existing rule's values exactly.</p>  <p>[Default
-         * VPC] If the values you specify do not match the existing rule's values, no error
-         * is returned, and the output describes the security group rules that were not
-         * revoked. </p> <p>AWS recommends that you use <a>DescribeSecurityGroups</a> to
-         * verify that the rule has been removed.</p>  </li> </ul> <p>Rule changes
-         * are propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
+         * has been removed.</p>  <p>Each rule consists of the protocol and the CIDR
+         * range or source security group. For the TCP and UDP protocols, you must also
+         * specify the destination port or range of ports. For the ICMP protocol, you must
+         * also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -20648,26 +20544,17 @@ namespace Model
         /**
          * <p>Removes the specified ingress rules from a security group. To remove a rule,
          * the values that you specify (for example, ports) must match the existing rule's
-         * values exactly.</p>  <p>[EC2-Classic, default VPC] If the values you
+         * values exactly.</p>  <p>[EC2-Classic , default VPC] If the values you
          * specify do not match the existing rule's values, no error is returned, and the
          * output describes the security group rules that were not revoked. </p> <p>AWS
          * recommends that you use <a>DescribeSecurityGroups</a> to verify that the rule
-         * has been removed.</p>  <p>You can specify the rules that you want to
-         * remove by using one of the following methods:</p> <ul> <li> <p>[VPC only] The
-         * security group rule IDs.</p> </li> <li> <p>The security group rule properties.
-         * Each rule consists of the protocol, from port, to port, and the IPv4 or IPv6
-         * CIDR range or referenced security group or prefix list id. For the TCP and UDP
-         * protocols, you must also specify the destination port or range of ports. For the
-         * ICMP protocol, you must also specify the ICMP type and code. If the security
-         * group rule has a description, you do not have to specify the description to
-         * revoke the rule. To remove a rule, the values that you specify (for example,
-         * ports) must match the existing rule's values exactly.</p>  <p>[Default
-         * VPC] If the values you specify do not match the existing rule's values, no error
-         * is returned, and the output describes the security group rules that were not
-         * revoked. </p> <p>AWS recommends that you use <a>DescribeSecurityGroups</a> to
-         * verify that the rule has been removed.</p>  </li> </ul> <p>Rule changes
-         * are propagated to instances within the security group as quickly as possible.
-         * However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
+         * has been removed.</p>  <p>Each rule consists of the protocol and the CIDR
+         * range or source security group. For the TCP and UDP protocols, you must also
+         * specify the destination port or range of ports. For the ICMP protocol, you must
+         * also specify the ICMP type and code. If the security group rule has a
+         * description, you do not have to specify the description to revoke the rule.</p>
+         * <p>Rule changes are propagated to instances within the security group as quickly
+         * as possible. However, a small delay might occur.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeSecurityGroupIngress">AWS
          * API Reference</a></p>
          *
@@ -21542,11 +21429,10 @@ namespace Model
         /**
          * <p>[VPC only] Updates the description of an egress (outbound) security group
          * rule. You can replace an existing description, or add a description to a rule
-         * that did not have one previously.</p> <p>You can specify the rule that you want
-         * to update by using one of the following methods:</p> <ul> <li> <p>The security
-         * group rule descriptions.</p> </li> <li> <p>The IP permissions structure.</p>
-         * </li> </ul> <p>You can remove a description for a security group rule by
-         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
          * API Reference</a></p>
          */
@@ -21555,11 +21441,10 @@ namespace Model
         /**
          * <p>[VPC only] Updates the description of an egress (outbound) security group
          * rule. You can replace an existing description, or add a description to a rule
-         * that did not have one previously.</p> <p>You can specify the rule that you want
-         * to update by using one of the following methods:</p> <ul> <li> <p>The security
-         * group rule descriptions.</p> </li> <li> <p>The IP permissions structure.</p>
-         * </li> </ul> <p>You can remove a description for a security group rule by
-         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
          * API Reference</a></p>
          *
@@ -21570,11 +21455,10 @@ namespace Model
         /**
          * <p>[VPC only] Updates the description of an egress (outbound) security group
          * rule. You can replace an existing description, or add a description to a rule
-         * that did not have one previously.</p> <p>You can specify the rule that you want
-         * to update by using one of the following methods:</p> <ul> <li> <p>The security
-         * group rule descriptions.</p> </li> <li> <p>The IP permissions structure.</p>
-         * </li> </ul> <p>You can remove a description for a security group rule by
-         * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
+         * that did not have one previously.</p> <p>You specify the description as part of
+         * the IP permissions structure. You can remove a description for a security group
+         * rule by omitting the description parameter in the request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress">AWS
          * API Reference</a></p>
          *
@@ -21585,10 +21469,8 @@ namespace Model
         /**
          * <p>Updates the description of an ingress (inbound) security group rule. You can
          * replace an existing description, or add a description to a rule that did not
-         * have one previously.</p> <p>You can specify the rule that you want to update by
-         * using one of the following methods:</p> <ul> <li> <p>[VPC only] The security
-         * group rule descriptions.</p> </li> <li> <p>The IP permissions structure.</p>
-         * </li> </ul> <p>You can remove a description for a security group rule by
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
          * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
          * API Reference</a></p>
@@ -21598,10 +21480,8 @@ namespace Model
         /**
          * <p>Updates the description of an ingress (inbound) security group rule. You can
          * replace an existing description, or add a description to a rule that did not
-         * have one previously.</p> <p>You can specify the rule that you want to update by
-         * using one of the following methods:</p> <ul> <li> <p>[VPC only] The security
-         * group rule descriptions.</p> </li> <li> <p>The IP permissions structure.</p>
-         * </li> </ul> <p>You can remove a description for a security group rule by
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
          * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
          * API Reference</a></p>
@@ -21613,10 +21493,8 @@ namespace Model
         /**
          * <p>Updates the description of an ingress (inbound) security group rule. You can
          * replace an existing description, or add a description to a rule that did not
-         * have one previously.</p> <p>You can specify the rule that you want to update by
-         * using one of the following methods:</p> <ul> <li> <p>[VPC only] The security
-         * group rule descriptions.</p> </li> <li> <p>The IP permissions structure.</p>
-         * </li> </ul> <p>You can remove a description for a security group rule by
+         * have one previously.</p> <p>You specify the description as part of the IP
+         * permissions structure. You can remove a description for a security group rule by
          * omitting the description parameter in the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsIngress">AWS
          * API Reference</a></p>
@@ -21911,7 +21789,6 @@ namespace Model
         void DescribeScheduledInstanceAvailabilityAsyncHelper(const Model::DescribeScheduledInstanceAvailabilityRequest& request, const DescribeScheduledInstanceAvailabilityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScheduledInstancesAsyncHelper(const Model::DescribeScheduledInstancesRequest& request, const DescribeScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSecurityGroupReferencesAsyncHelper(const Model::DescribeSecurityGroupReferencesRequest& request, const DescribeSecurityGroupReferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeSecurityGroupRulesAsyncHelper(const Model::DescribeSecurityGroupRulesRequest& request, const DescribeSecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSecurityGroupsAsyncHelper(const Model::DescribeSecurityGroupsRequest& request, const DescribeSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotAttributeAsyncHelper(const Model::DescribeSnapshotAttributeRequest& request, const DescribeSnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSnapshotsAsyncHelper(const Model::DescribeSnapshotsRequest& request, const DescribeSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -22037,7 +21914,6 @@ namespace Model
         void ModifyManagedPrefixListAsyncHelper(const Model::ModifyManagedPrefixListRequest& request, const ModifyManagedPrefixListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyNetworkInterfaceAttributeAsyncHelper(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyReservedInstancesAsyncHelper(const Model::ModifyReservedInstancesRequest& request, const ModifyReservedInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifySecurityGroupRulesAsyncHelper(const Model::ModifySecurityGroupRulesRequest& request, const ModifySecurityGroupRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySnapshotAttributeAsyncHelper(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySpotFleetRequestAsyncHelper(const Model::ModifySpotFleetRequestRequest& request, const ModifySpotFleetRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySubnetAttributeAsyncHelper(const Model::ModifySubnetAttributeRequest& request, const ModifySubnetAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

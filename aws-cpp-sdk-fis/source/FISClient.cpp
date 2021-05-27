@@ -111,9 +111,7 @@ void FISClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateExperimentTemplateOutcome FISClient::CreateExperimentTemplate(const CreateExperimentTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experimentTemplates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experimentTemplates");
   return CreateExperimentTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -143,10 +141,8 @@ DeleteExperimentTemplateOutcome FISClient::DeleteExperimentTemplate(const Delete
     return DeleteExperimentTemplateOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experimentTemplates/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experimentTemplates/");
+  uri.AddPathSegment(request.GetId());
   return DeleteExperimentTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -176,10 +172,8 @@ GetActionOutcome FISClient::GetAction(const GetActionRequest& request) const
     return GetActionOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/actions/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/actions/");
+  uri.AddPathSegment(request.GetId());
   return GetActionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -209,10 +203,8 @@ GetExperimentOutcome FISClient::GetExperiment(const GetExperimentRequest& reques
     return GetExperimentOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experiments/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experiments/");
+  uri.AddPathSegment(request.GetId());
   return GetExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -242,10 +234,8 @@ GetExperimentTemplateOutcome FISClient::GetExperimentTemplate(const GetExperimen
     return GetExperimentTemplateOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experimentTemplates/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experimentTemplates/");
+  uri.AddPathSegment(request.GetId());
   return GetExperimentTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -270,9 +260,7 @@ void FISClient::GetExperimentTemplateAsyncHelper(const GetExperimentTemplateRequ
 ListActionsOutcome FISClient::ListActions(const ListActionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/actions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/actions");
   return ListActionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -297,9 +285,7 @@ void FISClient::ListActionsAsyncHelper(const ListActionsRequest& request, const 
 ListExperimentTemplatesOutcome FISClient::ListExperimentTemplates(const ListExperimentTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experimentTemplates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experimentTemplates");
   return ListExperimentTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -324,9 +310,7 @@ void FISClient::ListExperimentTemplatesAsyncHelper(const ListExperimentTemplates
 ListExperimentsOutcome FISClient::ListExperiments(const ListExperimentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experiments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experiments");
   return ListExperimentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -356,10 +340,8 @@ ListTagsForResourceOutcome FISClient::ListTagsForResource(const ListTagsForResou
     return ListTagsForResourceOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -384,9 +366,7 @@ void FISClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
 StartExperimentOutcome FISClient::StartExperiment(const StartExperimentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experiments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experiments");
   return StartExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -416,10 +396,8 @@ StopExperimentOutcome FISClient::StopExperiment(const StopExperimentRequest& req
     return StopExperimentOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experiments/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experiments/");
+  uri.AddPathSegment(request.GetId());
   return StopExperimentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -449,10 +427,8 @@ TagResourceOutcome FISClient::TagResource(const TagResourceRequest& request) con
     return TagResourceOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -482,10 +458,8 @@ UntagResourceOutcome FISClient::UntagResource(const UntagResourceRequest& reques
     return UntagResourceOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -515,10 +489,8 @@ UpdateExperimentTemplateOutcome FISClient::UpdateExperimentTemplate(const Update
     return UpdateExperimentTemplateOutcome(Aws::Client::AWSError<FISErrors>(FISErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/experimentTemplates/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/experimentTemplates/");
+  uri.AddPathSegment(request.GetId());
   return UpdateExperimentTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

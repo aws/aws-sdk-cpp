@@ -130,9 +130,7 @@ void WorkLinkClient::OverrideEndpoint(const Aws::String& endpoint)
 AssociateDomainOutcome WorkLinkClient::AssociateDomain(const AssociateDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associateDomain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associateDomain");
   return AssociateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -157,9 +155,7 @@ void WorkLinkClient::AssociateDomainAsyncHelper(const AssociateDomainRequest& re
 AssociateWebsiteAuthorizationProviderOutcome WorkLinkClient::AssociateWebsiteAuthorizationProvider(const AssociateWebsiteAuthorizationProviderRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associateWebsiteAuthorizationProvider";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associateWebsiteAuthorizationProvider");
   return AssociateWebsiteAuthorizationProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -184,9 +180,7 @@ void WorkLinkClient::AssociateWebsiteAuthorizationProviderAsyncHelper(const Asso
 AssociateWebsiteCertificateAuthorityOutcome WorkLinkClient::AssociateWebsiteCertificateAuthority(const AssociateWebsiteCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/associateWebsiteCertificateAuthority";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/associateWebsiteCertificateAuthority");
   return AssociateWebsiteCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -211,9 +205,7 @@ void WorkLinkClient::AssociateWebsiteCertificateAuthorityAsyncHelper(const Assoc
 CreateFleetOutcome WorkLinkClient::CreateFleet(const CreateFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createFleet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createFleet");
   return CreateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -238,9 +230,7 @@ void WorkLinkClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, c
 DeleteFleetOutcome WorkLinkClient::DeleteFleet(const DeleteFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteFleet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteFleet");
   return DeleteFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -265,9 +255,7 @@ void WorkLinkClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, c
 DescribeAuditStreamConfigurationOutcome WorkLinkClient::DescribeAuditStreamConfiguration(const DescribeAuditStreamConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeAuditStreamConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeAuditStreamConfiguration");
   return DescribeAuditStreamConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -292,9 +280,7 @@ void WorkLinkClient::DescribeAuditStreamConfigurationAsyncHelper(const DescribeA
 DescribeCompanyNetworkConfigurationOutcome WorkLinkClient::DescribeCompanyNetworkConfiguration(const DescribeCompanyNetworkConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeCompanyNetworkConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeCompanyNetworkConfiguration");
   return DescribeCompanyNetworkConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -319,9 +305,7 @@ void WorkLinkClient::DescribeCompanyNetworkConfigurationAsyncHelper(const Descri
 DescribeDeviceOutcome WorkLinkClient::DescribeDevice(const DescribeDeviceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeDevice";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeDevice");
   return DescribeDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -346,9 +330,7 @@ void WorkLinkClient::DescribeDeviceAsyncHelper(const DescribeDeviceRequest& requ
 DescribeDevicePolicyConfigurationOutcome WorkLinkClient::DescribeDevicePolicyConfiguration(const DescribeDevicePolicyConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeDevicePolicyConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeDevicePolicyConfiguration");
   return DescribeDevicePolicyConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -373,9 +355,7 @@ void WorkLinkClient::DescribeDevicePolicyConfigurationAsyncHelper(const Describe
 DescribeDomainOutcome WorkLinkClient::DescribeDomain(const DescribeDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeDomain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeDomain");
   return DescribeDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -400,9 +380,7 @@ void WorkLinkClient::DescribeDomainAsyncHelper(const DescribeDomainRequest& requ
 DescribeFleetMetadataOutcome WorkLinkClient::DescribeFleetMetadata(const DescribeFleetMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeFleetMetadata";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeFleetMetadata");
   return DescribeFleetMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -427,9 +405,7 @@ void WorkLinkClient::DescribeFleetMetadataAsyncHelper(const DescribeFleetMetadat
 DescribeIdentityProviderConfigurationOutcome WorkLinkClient::DescribeIdentityProviderConfiguration(const DescribeIdentityProviderConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeIdentityProviderConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeIdentityProviderConfiguration");
   return DescribeIdentityProviderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,9 +430,7 @@ void WorkLinkClient::DescribeIdentityProviderConfigurationAsyncHelper(const Desc
 DescribeWebsiteCertificateAuthorityOutcome WorkLinkClient::DescribeWebsiteCertificateAuthority(const DescribeWebsiteCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeWebsiteCertificateAuthority";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeWebsiteCertificateAuthority");
   return DescribeWebsiteCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -481,9 +455,7 @@ void WorkLinkClient::DescribeWebsiteCertificateAuthorityAsyncHelper(const Descri
 DisassociateDomainOutcome WorkLinkClient::DisassociateDomain(const DisassociateDomainRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/disassociateDomain";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/disassociateDomain");
   return DisassociateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -508,9 +480,7 @@ void WorkLinkClient::DisassociateDomainAsyncHelper(const DisassociateDomainReque
 DisassociateWebsiteAuthorizationProviderOutcome WorkLinkClient::DisassociateWebsiteAuthorizationProvider(const DisassociateWebsiteAuthorizationProviderRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/disassociateWebsiteAuthorizationProvider";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/disassociateWebsiteAuthorizationProvider");
   return DisassociateWebsiteAuthorizationProviderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -535,9 +505,7 @@ void WorkLinkClient::DisassociateWebsiteAuthorizationProviderAsyncHelper(const D
 DisassociateWebsiteCertificateAuthorityOutcome WorkLinkClient::DisassociateWebsiteCertificateAuthority(const DisassociateWebsiteCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/disassociateWebsiteCertificateAuthority";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/disassociateWebsiteCertificateAuthority");
   return DisassociateWebsiteCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -562,9 +530,7 @@ void WorkLinkClient::DisassociateWebsiteCertificateAuthorityAsyncHelper(const Di
 ListDevicesOutcome WorkLinkClient::ListDevices(const ListDevicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listDevices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listDevices");
   return ListDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -589,9 +555,7 @@ void WorkLinkClient::ListDevicesAsyncHelper(const ListDevicesRequest& request, c
 ListDomainsOutcome WorkLinkClient::ListDomains(const ListDomainsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listDomains";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listDomains");
   return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -616,9 +580,7 @@ void WorkLinkClient::ListDomainsAsyncHelper(const ListDomainsRequest& request, c
 ListFleetsOutcome WorkLinkClient::ListFleets(const ListFleetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listFleets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listFleets");
   return ListFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -648,10 +610,8 @@ ListTagsForResourceOutcome WorkLinkClient::ListTagsForResource(const ListTagsFor
     return ListTagsForResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -676,9 +636,7 @@ void WorkLinkClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceReq
 ListWebsiteAuthorizationProvidersOutcome WorkLinkClient::ListWebsiteAuthorizationProviders(const ListWebsiteAuthorizationProvidersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listWebsiteAuthorizationProviders";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listWebsiteAuthorizationProviders");
   return ListWebsiteAuthorizationProvidersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -703,9 +661,7 @@ void WorkLinkClient::ListWebsiteAuthorizationProvidersAsyncHelper(const ListWebs
 ListWebsiteCertificateAuthoritiesOutcome WorkLinkClient::ListWebsiteCertificateAuthorities(const ListWebsiteCertificateAuthoritiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listWebsiteCertificateAuthorities";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listWebsiteCertificateAuthorities");
   return ListWebsiteCertificateAuthoritiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -730,9 +686,7 @@ void WorkLinkClient::ListWebsiteCertificateAuthoritiesAsyncHelper(const ListWebs
 RestoreDomainAccessOutcome WorkLinkClient::RestoreDomainAccess(const RestoreDomainAccessRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restoreDomainAccess";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/restoreDomainAccess");
   return RestoreDomainAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -757,9 +711,7 @@ void WorkLinkClient::RestoreDomainAccessAsyncHelper(const RestoreDomainAccessReq
 RevokeDomainAccessOutcome WorkLinkClient::RevokeDomainAccess(const RevokeDomainAccessRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/revokeDomainAccess";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/revokeDomainAccess");
   return RevokeDomainAccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -784,9 +736,7 @@ void WorkLinkClient::RevokeDomainAccessAsyncHelper(const RevokeDomainAccessReque
 SignOutUserOutcome WorkLinkClient::SignOutUser(const SignOutUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/signOutUser";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/signOutUser");
   return SignOutUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -816,10 +766,8 @@ TagResourceOutcome WorkLinkClient::TagResource(const TagResourceRequest& request
     return TagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -854,10 +802,8 @@ UntagResourceOutcome WorkLinkClient::UntagResource(const UntagResourceRequest& r
     return UntagResourceOutcome(Aws::Client::AWSError<WorkLinkErrors>(WorkLinkErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -882,9 +828,7 @@ void WorkLinkClient::UntagResourceAsyncHelper(const UntagResourceRequest& reques
 UpdateAuditStreamConfigurationOutcome WorkLinkClient::UpdateAuditStreamConfiguration(const UpdateAuditStreamConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateAuditStreamConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateAuditStreamConfiguration");
   return UpdateAuditStreamConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -909,9 +853,7 @@ void WorkLinkClient::UpdateAuditStreamConfigurationAsyncHelper(const UpdateAudit
 UpdateCompanyNetworkConfigurationOutcome WorkLinkClient::UpdateCompanyNetworkConfiguration(const UpdateCompanyNetworkConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateCompanyNetworkConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateCompanyNetworkConfiguration");
   return UpdateCompanyNetworkConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -936,9 +878,7 @@ void WorkLinkClient::UpdateCompanyNetworkConfigurationAsyncHelper(const UpdateCo
 UpdateDevicePolicyConfigurationOutcome WorkLinkClient::UpdateDevicePolicyConfiguration(const UpdateDevicePolicyConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateDevicePolicyConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateDevicePolicyConfiguration");
   return UpdateDevicePolicyConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -963,9 +903,7 @@ void WorkLinkClient::UpdateDevicePolicyConfigurationAsyncHelper(const UpdateDevi
 UpdateDomainMetadataOutcome WorkLinkClient::UpdateDomainMetadata(const UpdateDomainMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateDomainMetadata";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateDomainMetadata");
   return UpdateDomainMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -990,9 +928,7 @@ void WorkLinkClient::UpdateDomainMetadataAsyncHelper(const UpdateDomainMetadataR
 UpdateFleetMetadataOutcome WorkLinkClient::UpdateFleetMetadata(const UpdateFleetMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateFleetMetadata";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateFleetMetadata");
   return UpdateFleetMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1017,9 +953,7 @@ void WorkLinkClient::UpdateFleetMetadataAsyncHelper(const UpdateFleetMetadataReq
 UpdateIdentityProviderConfigurationOutcome WorkLinkClient::UpdateIdentityProviderConfiguration(const UpdateIdentityProviderConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateIdentityProviderConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateIdentityProviderConfiguration");
   return UpdateIdentityProviderConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

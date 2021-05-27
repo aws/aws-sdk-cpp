@@ -15,8 +15,7 @@ UpdateSecurityGroupRuleDescriptionsEgressRequest::UpdateSecurityGroupRuleDescrip
     m_dryRunHasBeenSet(false),
     m_groupIdHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false),
-    m_securityGroupRuleDescriptionsHasBeenSet(false)
+    m_ipPermissionsHasBeenSet(false)
 {
 }
 
@@ -46,16 +45,6 @@ Aws::String UpdateSecurityGroupRuleDescriptionsEgressRequest::SerializePayload()
     {
       item.OutputToStream(ss, "IpPermissions.", ipPermissionsCount, "");
       ipPermissionsCount++;
-    }
-  }
-
-  if(m_securityGroupRuleDescriptionsHasBeenSet)
-  {
-    unsigned securityGroupRuleDescriptionsCount = 1;
-    for(auto& item : m_securityGroupRuleDescriptions)
-    {
-      item.OutputToStream(ss, "SecurityGroupRuleDescription.", securityGroupRuleDescriptionsCount, "");
-      securityGroupRuleDescriptionsCount++;
     }
   }
 

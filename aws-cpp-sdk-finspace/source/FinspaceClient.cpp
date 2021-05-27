@@ -105,9 +105,7 @@ void FinspaceClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateEnvironmentOutcome FinspaceClient::CreateEnvironment(const CreateEnvironmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/environment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environment");
   return CreateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -137,10 +135,8 @@ DeleteEnvironmentOutcome FinspaceClient::DeleteEnvironment(const DeleteEnvironme
     return DeleteEnvironmentOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/environment/";
-  ss << request.GetEnvironmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentId());
   return DeleteEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -170,10 +166,8 @@ GetEnvironmentOutcome FinspaceClient::GetEnvironment(const GetEnvironmentRequest
     return GetEnvironmentOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/environment/";
-  ss << request.GetEnvironmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentId());
   return GetEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,9 +192,7 @@ void FinspaceClient::GetEnvironmentAsyncHelper(const GetEnvironmentRequest& requ
 ListEnvironmentsOutcome FinspaceClient::ListEnvironments(const ListEnvironmentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/environment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environment");
   return ListEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -230,10 +222,8 @@ ListTagsForResourceOutcome FinspaceClient::ListTagsForResource(const ListTagsFor
     return ListTagsForResourceOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,10 +253,8 @@ TagResourceOutcome FinspaceClient::TagResource(const TagResourceRequest& request
     return TagResourceOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -301,10 +289,8 @@ UntagResourceOutcome FinspaceClient::UntagResource(const UntagResourceRequest& r
     return UntagResourceOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,10 +320,8 @@ UpdateEnvironmentOutcome FinspaceClient::UpdateEnvironment(const UpdateEnvironme
     return UpdateEnvironmentOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/environment/";
-  ss << request.GetEnvironmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/environment/");
+  uri.AddPathSegment(request.GetEnvironmentId());
   return UpdateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

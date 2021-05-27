@@ -123,9 +123,7 @@ void IVSClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchGetChannelOutcome IVSClient::BatchGetChannel(const BatchGetChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/BatchGetChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/BatchGetChannel");
   return BatchGetChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -150,9 +148,7 @@ void IVSClient::BatchGetChannelAsyncHelper(const BatchGetChannelRequest& request
 BatchGetStreamKeyOutcome IVSClient::BatchGetStreamKey(const BatchGetStreamKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/BatchGetStreamKey";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/BatchGetStreamKey");
   return BatchGetStreamKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -177,9 +173,7 @@ void IVSClient::BatchGetStreamKeyAsyncHelper(const BatchGetStreamKeyRequest& req
 CreateChannelOutcome IVSClient::CreateChannel(const CreateChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateChannel");
   return CreateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -204,9 +198,7 @@ void IVSClient::CreateChannelAsyncHelper(const CreateChannelRequest& request, co
 CreateRecordingConfigurationOutcome IVSClient::CreateRecordingConfiguration(const CreateRecordingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateRecordingConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateRecordingConfiguration");
   return CreateRecordingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -231,9 +223,7 @@ void IVSClient::CreateRecordingConfigurationAsyncHelper(const CreateRecordingCon
 CreateStreamKeyOutcome IVSClient::CreateStreamKey(const CreateStreamKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateStreamKey";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateStreamKey");
   return CreateStreamKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -258,9 +248,7 @@ void IVSClient::CreateStreamKeyAsyncHelper(const CreateStreamKeyRequest& request
 DeleteChannelOutcome IVSClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteChannel");
   return DeleteChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -285,9 +273,7 @@ void IVSClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& request, co
 DeletePlaybackKeyPairOutcome IVSClient::DeletePlaybackKeyPair(const DeletePlaybackKeyPairRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeletePlaybackKeyPair";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeletePlaybackKeyPair");
   return DeletePlaybackKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -312,9 +298,7 @@ void IVSClient::DeletePlaybackKeyPairAsyncHelper(const DeletePlaybackKeyPairRequ
 DeleteRecordingConfigurationOutcome IVSClient::DeleteRecordingConfiguration(const DeleteRecordingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteRecordingConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteRecordingConfiguration");
   return DeleteRecordingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -339,9 +323,7 @@ void IVSClient::DeleteRecordingConfigurationAsyncHelper(const DeleteRecordingCon
 DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteStreamKey";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteStreamKey");
   return DeleteStreamKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -366,9 +348,7 @@ void IVSClient::DeleteStreamKeyAsyncHelper(const DeleteStreamKeyRequest& request
 GetChannelOutcome IVSClient::GetChannel(const GetChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetChannel");
   return GetChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -393,9 +373,7 @@ void IVSClient::GetChannelAsyncHelper(const GetChannelRequest& request, const Ge
 GetPlaybackKeyPairOutcome IVSClient::GetPlaybackKeyPair(const GetPlaybackKeyPairRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetPlaybackKeyPair";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetPlaybackKeyPair");
   return GetPlaybackKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -420,9 +398,7 @@ void IVSClient::GetPlaybackKeyPairAsyncHelper(const GetPlaybackKeyPairRequest& r
 GetRecordingConfigurationOutcome IVSClient::GetRecordingConfiguration(const GetRecordingConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetRecordingConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetRecordingConfiguration");
   return GetRecordingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -447,9 +423,7 @@ void IVSClient::GetRecordingConfigurationAsyncHelper(const GetRecordingConfigura
 GetStreamOutcome IVSClient::GetStream(const GetStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetStream");
   return GetStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -474,9 +448,7 @@ void IVSClient::GetStreamAsyncHelper(const GetStreamRequest& request, const GetS
 GetStreamKeyOutcome IVSClient::GetStreamKey(const GetStreamKeyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetStreamKey";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetStreamKey");
   return GetStreamKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -501,9 +473,7 @@ void IVSClient::GetStreamKeyAsyncHelper(const GetStreamKeyRequest& request, cons
 ImportPlaybackKeyPairOutcome IVSClient::ImportPlaybackKeyPair(const ImportPlaybackKeyPairRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ImportPlaybackKeyPair";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ImportPlaybackKeyPair");
   return ImportPlaybackKeyPairOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -528,9 +498,7 @@ void IVSClient::ImportPlaybackKeyPairAsyncHelper(const ImportPlaybackKeyPairRequ
 ListChannelsOutcome IVSClient::ListChannels(const ListChannelsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListChannels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListChannels");
   return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -555,9 +523,7 @@ void IVSClient::ListChannelsAsyncHelper(const ListChannelsRequest& request, cons
 ListPlaybackKeyPairsOutcome IVSClient::ListPlaybackKeyPairs(const ListPlaybackKeyPairsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListPlaybackKeyPairs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListPlaybackKeyPairs");
   return ListPlaybackKeyPairsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -582,9 +548,7 @@ void IVSClient::ListPlaybackKeyPairsAsyncHelper(const ListPlaybackKeyPairsReques
 ListRecordingConfigurationsOutcome IVSClient::ListRecordingConfigurations(const ListRecordingConfigurationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListRecordingConfigurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListRecordingConfigurations");
   return ListRecordingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -609,9 +573,7 @@ void IVSClient::ListRecordingConfigurationsAsyncHelper(const ListRecordingConfig
 ListStreamKeysOutcome IVSClient::ListStreamKeys(const ListStreamKeysRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListStreamKeys";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListStreamKeys");
   return ListStreamKeysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -636,9 +598,7 @@ void IVSClient::ListStreamKeysAsyncHelper(const ListStreamKeysRequest& request, 
 ListStreamsOutcome IVSClient::ListStreams(const ListStreamsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListStreams";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListStreams");
   return ListStreamsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -668,10 +628,8 @@ ListTagsForResourceOutcome IVSClient::ListTagsForResource(const ListTagsForResou
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IVSErrors>(IVSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -696,9 +654,7 @@ void IVSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
 PutMetadataOutcome IVSClient::PutMetadata(const PutMetadataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/PutMetadata";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/PutMetadata");
   return PutMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -723,9 +679,7 @@ void IVSClient::PutMetadataAsyncHelper(const PutMetadataRequest& request, const 
 StopStreamOutcome IVSClient::StopStream(const StopStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/StopStream";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/StopStream");
   return StopStreamOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -755,10 +709,8 @@ TagResourceOutcome IVSClient::TagResource(const TagResourceRequest& request) con
     return TagResourceOutcome(Aws::Client::AWSError<IVSErrors>(IVSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -793,10 +745,8 @@ UntagResourceOutcome IVSClient::UntagResource(const UntagResourceRequest& reques
     return UntagResourceOutcome(Aws::Client::AWSError<IVSErrors>(IVSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -821,9 +771,7 @@ void IVSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
 UpdateChannelOutcome IVSClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateChannel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateChannel");
   return UpdateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

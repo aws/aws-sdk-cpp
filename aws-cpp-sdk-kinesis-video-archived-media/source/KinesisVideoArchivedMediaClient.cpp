@@ -102,9 +102,7 @@ void KinesisVideoArchivedMediaClient::OverrideEndpoint(const Aws::String& endpoi
 GetClipOutcome KinesisVideoArchivedMediaClient::GetClip(const GetClipRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getClip";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getClip");
   return GetClipOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -129,9 +127,7 @@ void KinesisVideoArchivedMediaClient::GetClipAsyncHelper(const GetClipRequest& r
 GetDASHStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURL(const GetDASHStreamingSessionURLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getDASHStreamingSessionURL";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getDASHStreamingSessionURL");
   return GetDASHStreamingSessionURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -156,9 +152,7 @@ void KinesisVideoArchivedMediaClient::GetDASHStreamingSessionURLAsyncHelper(cons
 GetHLSStreamingSessionURLOutcome KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURL(const GetHLSStreamingSessionURLRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getHLSStreamingSessionURL";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getHLSStreamingSessionURL");
   return GetHLSStreamingSessionURLOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -183,9 +177,7 @@ void KinesisVideoArchivedMediaClient::GetHLSStreamingSessionURLAsyncHelper(const
 GetMediaForFragmentListOutcome KinesisVideoArchivedMediaClient::GetMediaForFragmentList(const GetMediaForFragmentListRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getMediaForFragmentList";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getMediaForFragmentList");
   return GetMediaForFragmentListOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -210,9 +202,7 @@ void KinesisVideoArchivedMediaClient::GetMediaForFragmentListAsyncHelper(const G
 ListFragmentsOutcome KinesisVideoArchivedMediaClient::ListFragments(const ListFragmentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listFragments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listFragments");
   return ListFragmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

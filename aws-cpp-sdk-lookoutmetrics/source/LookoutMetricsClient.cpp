@@ -122,9 +122,7 @@ void LookoutMetricsClient::OverrideEndpoint(const Aws::String& endpoint)
 ActivateAnomalyDetectorOutcome LookoutMetricsClient::ActivateAnomalyDetector(const ActivateAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ActivateAnomalyDetector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ActivateAnomalyDetector");
   return ActivateAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -149,9 +147,7 @@ void LookoutMetricsClient::ActivateAnomalyDetectorAsyncHelper(const ActivateAnom
 BackTestAnomalyDetectorOutcome LookoutMetricsClient::BackTestAnomalyDetector(const BackTestAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/BackTestAnomalyDetector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/BackTestAnomalyDetector");
   return BackTestAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -176,9 +172,7 @@ void LookoutMetricsClient::BackTestAnomalyDetectorAsyncHelper(const BackTestAnom
 CreateAlertOutcome LookoutMetricsClient::CreateAlert(const CreateAlertRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateAlert";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateAlert");
   return CreateAlertOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -203,9 +197,7 @@ void LookoutMetricsClient::CreateAlertAsyncHelper(const CreateAlertRequest& requ
 CreateAnomalyDetectorOutcome LookoutMetricsClient::CreateAnomalyDetector(const CreateAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateAnomalyDetector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateAnomalyDetector");
   return CreateAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -230,9 +222,7 @@ void LookoutMetricsClient::CreateAnomalyDetectorAsyncHelper(const CreateAnomalyD
 CreateMetricSetOutcome LookoutMetricsClient::CreateMetricSet(const CreateMetricSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CreateMetricSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CreateMetricSet");
   return CreateMetricSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -257,9 +247,7 @@ void LookoutMetricsClient::CreateMetricSetAsyncHelper(const CreateMetricSetReque
 DeleteAlertOutcome LookoutMetricsClient::DeleteAlert(const DeleteAlertRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteAlert";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteAlert");
   return DeleteAlertOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -284,9 +272,7 @@ void LookoutMetricsClient::DeleteAlertAsyncHelper(const DeleteAlertRequest& requ
 DeleteAnomalyDetectorOutcome LookoutMetricsClient::DeleteAnomalyDetector(const DeleteAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DeleteAnomalyDetector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DeleteAnomalyDetector");
   return DeleteAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -311,9 +297,7 @@ void LookoutMetricsClient::DeleteAnomalyDetectorAsyncHelper(const DeleteAnomalyD
 DescribeAlertOutcome LookoutMetricsClient::DescribeAlert(const DescribeAlertRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeAlert";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeAlert");
   return DescribeAlertOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -338,9 +322,7 @@ void LookoutMetricsClient::DescribeAlertAsyncHelper(const DescribeAlertRequest& 
 DescribeAnomalyDetectionExecutionsOutcome LookoutMetricsClient::DescribeAnomalyDetectionExecutions(const DescribeAnomalyDetectionExecutionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeAnomalyDetectionExecutions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeAnomalyDetectionExecutions");
   return DescribeAnomalyDetectionExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -365,9 +347,7 @@ void LookoutMetricsClient::DescribeAnomalyDetectionExecutionsAsyncHelper(const D
 DescribeAnomalyDetectorOutcome LookoutMetricsClient::DescribeAnomalyDetector(const DescribeAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeAnomalyDetector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeAnomalyDetector");
   return DescribeAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -392,9 +372,7 @@ void LookoutMetricsClient::DescribeAnomalyDetectorAsyncHelper(const DescribeAnom
 DescribeMetricSetOutcome LookoutMetricsClient::DescribeMetricSet(const DescribeMetricSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeMetricSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeMetricSet");
   return DescribeMetricSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -419,9 +397,7 @@ void LookoutMetricsClient::DescribeMetricSetAsyncHelper(const DescribeMetricSetR
 GetAnomalyGroupOutcome LookoutMetricsClient::GetAnomalyGroup(const GetAnomalyGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetAnomalyGroup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetAnomalyGroup");
   return GetAnomalyGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -446,9 +422,7 @@ void LookoutMetricsClient::GetAnomalyGroupAsyncHelper(const GetAnomalyGroupReque
 GetFeedbackOutcome LookoutMetricsClient::GetFeedback(const GetFeedbackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetFeedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetFeedback");
   return GetFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -473,9 +447,7 @@ void LookoutMetricsClient::GetFeedbackAsyncHelper(const GetFeedbackRequest& requ
 GetSampleDataOutcome LookoutMetricsClient::GetSampleData(const GetSampleDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/GetSampleData";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/GetSampleData");
   return GetSampleDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -500,9 +472,7 @@ void LookoutMetricsClient::GetSampleDataAsyncHelper(const GetSampleDataRequest& 
 ListAlertsOutcome LookoutMetricsClient::ListAlerts(const ListAlertsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListAlerts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListAlerts");
   return ListAlertsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -527,9 +497,7 @@ void LookoutMetricsClient::ListAlertsAsyncHelper(const ListAlertsRequest& reques
 ListAnomalyDetectorsOutcome LookoutMetricsClient::ListAnomalyDetectors(const ListAnomalyDetectorsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListAnomalyDetectors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListAnomalyDetectors");
   return ListAnomalyDetectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -554,9 +522,7 @@ void LookoutMetricsClient::ListAnomalyDetectorsAsyncHelper(const ListAnomalyDete
 ListAnomalyGroupSummariesOutcome LookoutMetricsClient::ListAnomalyGroupSummaries(const ListAnomalyGroupSummariesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListAnomalyGroupSummaries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListAnomalyGroupSummaries");
   return ListAnomalyGroupSummariesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -581,9 +547,7 @@ void LookoutMetricsClient::ListAnomalyGroupSummariesAsyncHelper(const ListAnomal
 ListAnomalyGroupTimeSeriesOutcome LookoutMetricsClient::ListAnomalyGroupTimeSeries(const ListAnomalyGroupTimeSeriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListAnomalyGroupTimeSeries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListAnomalyGroupTimeSeries");
   return ListAnomalyGroupTimeSeriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -608,9 +572,7 @@ void LookoutMetricsClient::ListAnomalyGroupTimeSeriesAsyncHelper(const ListAnoma
 ListMetricSetsOutcome LookoutMetricsClient::ListMetricSets(const ListMetricSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListMetricSets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListMetricSets");
   return ListMetricSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -640,10 +602,8 @@ ListTagsForResourceOutcome LookoutMetricsClient::ListTagsForResource(const ListT
     return ListTagsForResourceOutcome(Aws::Client::AWSError<LookoutMetricsErrors>(LookoutMetricsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -668,9 +628,7 @@ void LookoutMetricsClient::ListTagsForResourceAsyncHelper(const ListTagsForResou
 PutFeedbackOutcome LookoutMetricsClient::PutFeedback(const PutFeedbackRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/PutFeedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/PutFeedback");
   return PutFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -700,10 +658,8 @@ TagResourceOutcome LookoutMetricsClient::TagResource(const TagResourceRequest& r
     return TagResourceOutcome(Aws::Client::AWSError<LookoutMetricsErrors>(LookoutMetricsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -738,10 +694,8 @@ UntagResourceOutcome LookoutMetricsClient::UntagResource(const UntagResourceRequ
     return UntagResourceOutcome(Aws::Client::AWSError<LookoutMetricsErrors>(LookoutMetricsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -766,9 +720,7 @@ void LookoutMetricsClient::UntagResourceAsyncHelper(const UntagResourceRequest& 
 UpdateAnomalyDetectorOutcome LookoutMetricsClient::UpdateAnomalyDetector(const UpdateAnomalyDetectorRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateAnomalyDetector";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateAnomalyDetector");
   return UpdateAnomalyDetectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -793,9 +745,7 @@ void LookoutMetricsClient::UpdateAnomalyDetectorAsyncHelper(const UpdateAnomalyD
 UpdateMetricSetOutcome LookoutMetricsClient::UpdateMetricSet(const UpdateMetricSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/UpdateMetricSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/UpdateMetricSet");
   return UpdateMetricSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

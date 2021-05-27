@@ -137,11 +137,9 @@ AssociateCustomerGatewayOutcome NetworkManagerClient::AssociateCustomerGateway(c
     return AssociateCustomerGatewayOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/customer-gateway-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/customer-gateway-associations");
   return AssociateCustomerGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,11 +169,9 @@ AssociateLinkOutcome NetworkManagerClient::AssociateLink(const AssociateLinkRequ
     return AssociateLinkOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/link-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/link-associations");
   return AssociateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -205,11 +201,9 @@ AssociateTransitGatewayConnectPeerOutcome NetworkManagerClient::AssociateTransit
     return AssociateTransitGatewayConnectPeerOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/transit-gateway-connect-peer-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/transit-gateway-connect-peer-associations");
   return AssociateTransitGatewayConnectPeerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -239,11 +233,9 @@ CreateConnectionOutcome NetworkManagerClient::CreateConnection(const CreateConne
     return CreateConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/connections";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/connections");
   return CreateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -273,11 +265,9 @@ CreateDeviceOutcome NetworkManagerClient::CreateDevice(const CreateDeviceRequest
     return CreateDeviceOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/devices");
   return CreateDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -302,9 +292,7 @@ void NetworkManagerClient::CreateDeviceAsyncHelper(const CreateDeviceRequest& re
 CreateGlobalNetworkOutcome NetworkManagerClient::CreateGlobalNetwork(const CreateGlobalNetworkRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks");
   return CreateGlobalNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,11 +322,9 @@ CreateLinkOutcome NetworkManagerClient::CreateLink(const CreateLinkRequest& requ
     return CreateLinkOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/links";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/links");
   return CreateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -368,11 +354,9 @@ CreateSiteOutcome NetworkManagerClient::CreateSite(const CreateSiteRequest& requ
     return CreateSiteOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/sites";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/sites");
   return CreateSiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -407,12 +391,10 @@ DeleteConnectionOutcome NetworkManagerClient::DeleteConnection(const DeleteConne
     return DeleteConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/connections/";
-  ss << request.GetConnectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/connections/");
+  uri.AddPathSegment(request.GetConnectionId());
   return DeleteConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -447,12 +429,10 @@ DeleteDeviceOutcome NetworkManagerClient::DeleteDevice(const DeleteDeviceRequest
     return DeleteDeviceOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
   return DeleteDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -482,10 +462,8 @@ DeleteGlobalNetworkOutcome NetworkManagerClient::DeleteGlobalNetwork(const Delet
     return DeleteGlobalNetworkOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
   return DeleteGlobalNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -520,12 +498,10 @@ DeleteLinkOutcome NetworkManagerClient::DeleteLink(const DeleteLinkRequest& requ
     return DeleteLinkOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/links/";
-  ss << request.GetLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/links/");
+  uri.AddPathSegment(request.GetLinkId());
   return DeleteLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -560,12 +536,10 @@ DeleteSiteOutcome NetworkManagerClient::DeleteSite(const DeleteSiteRequest& requ
     return DeleteSiteOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SiteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/sites/";
-  ss << request.GetSiteId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/sites/");
+  uri.AddPathSegment(request.GetSiteId());
   return DeleteSiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -600,12 +574,10 @@ DeregisterTransitGatewayOutcome NetworkManagerClient::DeregisterTransitGateway(c
     return DeregisterTransitGatewayOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TransitGatewayArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/transit-gateway-registrations/";
-  ss << request.GetTransitGatewayArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/transit-gateway-registrations/");
+  uri.AddPathSegment(request.GetTransitGatewayArn());
   return DeregisterTransitGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -630,9 +602,7 @@ void NetworkManagerClient::DeregisterTransitGatewayAsyncHelper(const DeregisterT
 DescribeGlobalNetworksOutcome NetworkManagerClient::DescribeGlobalNetworks(const DescribeGlobalNetworksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks");
   return DescribeGlobalNetworksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -667,12 +637,10 @@ DisassociateCustomerGatewayOutcome NetworkManagerClient::DisassociateCustomerGat
     return DisassociateCustomerGatewayOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CustomerGatewayArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/customer-gateway-associations/";
-  ss << request.GetCustomerGatewayArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/customer-gateway-associations/");
+  uri.AddPathSegment(request.GetCustomerGatewayArn());
   return DisassociateCustomerGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -712,11 +680,9 @@ DisassociateLinkOutcome NetworkManagerClient::DisassociateLink(const Disassociat
     return DisassociateLinkOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/link-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/link-associations");
   return DisassociateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -751,12 +717,10 @@ DisassociateTransitGatewayConnectPeerOutcome NetworkManagerClient::DisassociateT
     return DisassociateTransitGatewayConnectPeerOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TransitGatewayConnectPeerArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/transit-gateway-connect-peer-associations/";
-  ss << request.GetTransitGatewayConnectPeerArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/transit-gateway-connect-peer-associations/");
+  uri.AddPathSegment(request.GetTransitGatewayConnectPeerArn());
   return DisassociateTransitGatewayConnectPeerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -786,11 +750,9 @@ GetConnectionsOutcome NetworkManagerClient::GetConnections(const GetConnectionsR
     return GetConnectionsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/connections";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/connections");
   return GetConnectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -820,11 +782,9 @@ GetCustomerGatewayAssociationsOutcome NetworkManagerClient::GetCustomerGatewayAs
     return GetCustomerGatewayAssociationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/customer-gateway-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/customer-gateway-associations");
   return GetCustomerGatewayAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -854,11 +814,9 @@ GetDevicesOutcome NetworkManagerClient::GetDevices(const GetDevicesRequest& requ
     return GetDevicesOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/devices");
   return GetDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -888,11 +846,9 @@ GetLinkAssociationsOutcome NetworkManagerClient::GetLinkAssociations(const GetLi
     return GetLinkAssociationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/link-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/link-associations");
   return GetLinkAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -922,11 +878,9 @@ GetLinksOutcome NetworkManagerClient::GetLinks(const GetLinksRequest& request) c
     return GetLinksOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/links";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/links");
   return GetLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -956,11 +910,9 @@ GetSitesOutcome NetworkManagerClient::GetSites(const GetSitesRequest& request) c
     return GetSitesOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/sites";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/sites");
   return GetSitesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -990,11 +942,9 @@ GetTransitGatewayConnectPeerAssociationsOutcome NetworkManagerClient::GetTransit
     return GetTransitGatewayConnectPeerAssociationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/transit-gateway-connect-peer-associations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/transit-gateway-connect-peer-associations");
   return GetTransitGatewayConnectPeerAssociationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1024,11 +974,9 @@ GetTransitGatewayRegistrationsOutcome NetworkManagerClient::GetTransitGatewayReg
     return GetTransitGatewayRegistrationsOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/transit-gateway-registrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/transit-gateway-registrations");
   return GetTransitGatewayRegistrationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1058,10 +1006,8 @@ ListTagsForResourceOutcome NetworkManagerClient::ListTagsForResource(const ListT
     return ListTagsForResourceOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1091,11 +1037,9 @@ RegisterTransitGatewayOutcome NetworkManagerClient::RegisterTransitGateway(const
     return RegisterTransitGatewayOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/transit-gateway-registrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/transit-gateway-registrations");
   return RegisterTransitGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1125,10 +1069,8 @@ TagResourceOutcome NetworkManagerClient::TagResource(const TagResourceRequest& r
     return TagResourceOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1163,10 +1105,8 @@ UntagResourceOutcome NetworkManagerClient::UntagResource(const UntagResourceRequ
     return UntagResourceOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1201,12 +1141,10 @@ UpdateConnectionOutcome NetworkManagerClient::UpdateConnection(const UpdateConne
     return UpdateConnectionOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/connections/";
-  ss << request.GetConnectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/connections/");
+  uri.AddPathSegment(request.GetConnectionId());
   return UpdateConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1241,12 +1179,10 @@ UpdateDeviceOutcome NetworkManagerClient::UpdateDevice(const UpdateDeviceRequest
     return UpdateDeviceOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/devices/";
-  ss << request.GetDeviceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/devices/");
+  uri.AddPathSegment(request.GetDeviceId());
   return UpdateDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1276,10 +1212,8 @@ UpdateGlobalNetworkOutcome NetworkManagerClient::UpdateGlobalNetwork(const Updat
     return UpdateGlobalNetworkOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GlobalNetworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
   return UpdateGlobalNetworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1314,12 +1248,10 @@ UpdateLinkOutcome NetworkManagerClient::UpdateLink(const UpdateLinkRequest& requ
     return UpdateLinkOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LinkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/links/";
-  ss << request.GetLinkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/links/");
+  uri.AddPathSegment(request.GetLinkId());
   return UpdateLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1354,12 +1286,10 @@ UpdateSiteOutcome NetworkManagerClient::UpdateSite(const UpdateSiteRequest& requ
     return UpdateSiteOutcome(Aws::Client::AWSError<NetworkManagerErrors>(NetworkManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SiteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-networks/";
-  ss << request.GetGlobalNetworkId();
-  ss << "/sites/";
-  ss << request.GetSiteId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-networks/");
+  uri.AddPathSegment(request.GetGlobalNetworkId());
+  uri.AddPathSegments("/sites/");
+  uri.AddPathSegment(request.GetSiteId());
   return UpdateSiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

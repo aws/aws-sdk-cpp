@@ -133,9 +133,7 @@ void TranscribeStreamingServiceClient::StartMedicalStreamTranscriptionAsync(Mode
     responseHandler(this, request, StartMedicalStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Type]", false)), handlerContext);
     return;
   }
-  Aws::StringStream ss;
-  ss << "/medical-stream-transcription";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/medical-stream-transcription");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
@@ -186,9 +184,7 @@ void TranscribeStreamingServiceClient::StartStreamTranscriptionAsync(Model::Star
     responseHandler(this, request, StartStreamTranscriptionOutcome(Aws::Client::AWSError<TranscribeStreamingServiceErrors>(TranscribeStreamingServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MediaEncoding]", false)), handlerContext);
     return;
   }
-  Aws::StringStream ss;
-  ss << "/stream-transcription";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/stream-transcription");
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );

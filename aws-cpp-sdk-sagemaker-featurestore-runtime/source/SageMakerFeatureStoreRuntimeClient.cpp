@@ -115,10 +115,8 @@ DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const Delet
     return DeleteRecordOutcome(Aws::Client::AWSError<SageMakerFeatureStoreRuntimeErrors>(SageMakerFeatureStoreRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventTime]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/FeatureGroup/";
-  ss << request.GetFeatureGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/FeatureGroup/");
+  uri.AddPathSegment(request.GetFeatureGroupName());
   return DeleteRecordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -153,10 +151,8 @@ GetRecordOutcome SageMakerFeatureStoreRuntimeClient::GetRecord(const GetRecordRe
     return GetRecordOutcome(Aws::Client::AWSError<SageMakerFeatureStoreRuntimeErrors>(SageMakerFeatureStoreRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecordIdentifierValueAsString]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/FeatureGroup/";
-  ss << request.GetFeatureGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/FeatureGroup/");
+  uri.AddPathSegment(request.GetFeatureGroupName());
   return GetRecordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -186,10 +182,8 @@ PutRecordOutcome SageMakerFeatureStoreRuntimeClient::PutRecord(const PutRecordRe
     return PutRecordOutcome(Aws::Client::AWSError<SageMakerFeatureStoreRuntimeErrors>(SageMakerFeatureStoreRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FeatureGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/FeatureGroup/";
-  ss << request.GetFeatureGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/FeatureGroup/");
+  uri.AddPathSegment(request.GetFeatureGroupName());
   return PutRecordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -145,9 +145,7 @@ void SecurityHubClient::OverrideEndpoint(const Aws::String& endpoint)
 AcceptAdministratorInvitationOutcome SecurityHubClient::AcceptAdministratorInvitation(const AcceptAdministratorInvitationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/administrator";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/administrator");
   return AcceptAdministratorInvitationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -172,9 +170,7 @@ void SecurityHubClient::AcceptAdministratorInvitationAsyncHelper(const AcceptAdm
 BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const BatchDisableStandardsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/standards/deregister";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/standards/deregister");
   return BatchDisableStandardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -199,9 +195,7 @@ void SecurityHubClient::BatchDisableStandardsAsyncHelper(const BatchDisableStand
 BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchEnableStandardsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/standards/register";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/standards/register");
   return BatchEnableStandardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -226,9 +220,7 @@ void SecurityHubClient::BatchEnableStandardsAsyncHelper(const BatchEnableStandar
 BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImportFindingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/findings/import";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/findings/import");
   return BatchImportFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -253,9 +245,7 @@ void SecurityHubClient::BatchImportFindingsAsyncHelper(const BatchImportFindings
 BatchUpdateFindingsOutcome SecurityHubClient::BatchUpdateFindings(const BatchUpdateFindingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/findings/batchupdate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/findings/batchupdate");
   return BatchUpdateFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -280,9 +270,7 @@ void SecurityHubClient::BatchUpdateFindingsAsyncHelper(const BatchUpdateFindings
 CreateActionTargetOutcome SecurityHubClient::CreateActionTarget(const CreateActionTargetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/actionTargets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/actionTargets");
   return CreateActionTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -307,9 +295,7 @@ void SecurityHubClient::CreateActionTargetAsyncHelper(const CreateActionTargetRe
 CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights");
   return CreateInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,9 +320,7 @@ void SecurityHubClient::CreateInsightAsyncHelper(const CreateInsightRequest& req
 CreateMembersOutcome SecurityHubClient::CreateMembers(const CreateMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/members";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/members");
   return CreateMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -361,9 +345,7 @@ void SecurityHubClient::CreateMembersAsyncHelper(const CreateMembersRequest& req
 DeclineInvitationsOutcome SecurityHubClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitations/decline";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitations/decline");
   return DeclineInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -393,10 +375,8 @@ DeleteActionTargetOutcome SecurityHubClient::DeleteActionTarget(const DeleteActi
     return DeleteActionTargetOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionTargetArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/actionTargets/";
-  ss << request.GetActionTargetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/actionTargets/");
+  uri.AddPathSegments(request.GetActionTargetArn());
   return DeleteActionTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -426,10 +406,8 @@ DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest
     return DeleteInsightOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InsightArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights/";
-  ss << request.GetInsightArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights/");
+  uri.AddPathSegments(request.GetInsightArn());
   return DeleteInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,9 +432,7 @@ void SecurityHubClient::DeleteInsightAsyncHelper(const DeleteInsightRequest& req
 DeleteInvitationsOutcome SecurityHubClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitations/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitations/delete");
   return DeleteInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -481,9 +457,7 @@ void SecurityHubClient::DeleteInvitationsAsyncHelper(const DeleteInvitationsRequ
 DeleteMembersOutcome SecurityHubClient::DeleteMembers(const DeleteMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/members/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/members/delete");
   return DeleteMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -508,9 +482,7 @@ void SecurityHubClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& req
 DescribeActionTargetsOutcome SecurityHubClient::DescribeActionTargets(const DescribeActionTargetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/actionTargets/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/actionTargets/get");
   return DescribeActionTargetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -535,9 +507,7 @@ void SecurityHubClient::DescribeActionTargetsAsyncHelper(const DescribeActionTar
 DescribeHubOutcome SecurityHubClient::DescribeHub(const DescribeHubRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts");
   return DescribeHubOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -562,9 +532,7 @@ void SecurityHubClient::DescribeHubAsyncHelper(const DescribeHubRequest& request
 DescribeOrganizationConfigurationOutcome SecurityHubClient::DescribeOrganizationConfiguration(const DescribeOrganizationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/organization/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/organization/configuration");
   return DescribeOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -589,9 +557,7 @@ void SecurityHubClient::DescribeOrganizationConfigurationAsyncHelper(const Descr
 DescribeProductsOutcome SecurityHubClient::DescribeProducts(const DescribeProductsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/products";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/products");
   return DescribeProductsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -616,9 +582,7 @@ void SecurityHubClient::DescribeProductsAsyncHelper(const DescribeProductsReques
 DescribeStandardsOutcome SecurityHubClient::DescribeStandards(const DescribeStandardsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/standards";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/standards");
   return DescribeStandardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -648,10 +612,8 @@ DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(co
     return DescribeStandardsControlsOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StandardsSubscriptionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/standards/controls/";
-  ss << request.GetStandardsSubscriptionArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/standards/controls/");
+  uri.AddPathSegments(request.GetStandardsSubscriptionArn());
   return DescribeStandardsControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -681,10 +643,8 @@ DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsF
     return DisableImportFindingsForProductOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProductSubscriptionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/productSubscriptions/";
-  ss << request.GetProductSubscriptionArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/productSubscriptions/");
+  uri.AddPathSegments(request.GetProductSubscriptionArn());
   return DisableImportFindingsForProductOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -709,9 +669,7 @@ void SecurityHubClient::DisableImportFindingsForProductAsyncHelper(const Disable
 DisableOrganizationAdminAccountOutcome SecurityHubClient::DisableOrganizationAdminAccount(const DisableOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/organization/admin/disable";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/organization/admin/disable");
   return DisableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -736,9 +694,7 @@ void SecurityHubClient::DisableOrganizationAdminAccountAsyncHelper(const Disable
 DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSecurityHubRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts");
   return DisableSecurityHubOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -763,9 +719,7 @@ void SecurityHubClient::DisableSecurityHubAsyncHelper(const DisableSecurityHubRe
 DisassociateFromAdministratorAccountOutcome SecurityHubClient::DisassociateFromAdministratorAccount(const DisassociateFromAdministratorAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/administrator/disassociate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/administrator/disassociate");
   return DisassociateFromAdministratorAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -790,9 +744,7 @@ void SecurityHubClient::DisassociateFromAdministratorAccountAsyncHelper(const Di
 DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const DisassociateMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/members/disassociate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/members/disassociate");
   return DisassociateMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -817,9 +769,7 @@ void SecurityHubClient::DisassociateMembersAsyncHelper(const DisassociateMembers
 EnableImportFindingsForProductOutcome SecurityHubClient::EnableImportFindingsForProduct(const EnableImportFindingsForProductRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/productSubscriptions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/productSubscriptions");
   return EnableImportFindingsForProductOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -844,9 +794,7 @@ void SecurityHubClient::EnableImportFindingsForProductAsyncHelper(const EnableIm
 EnableOrganizationAdminAccountOutcome SecurityHubClient::EnableOrganizationAdminAccount(const EnableOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/organization/admin/enable";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/organization/admin/enable");
   return EnableOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -871,9 +819,7 @@ void SecurityHubClient::EnableOrganizationAdminAccountAsyncHelper(const EnableOr
 EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecurityHubRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts");
   return EnableSecurityHubOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -898,9 +844,7 @@ void SecurityHubClient::EnableSecurityHubAsyncHelper(const EnableSecurityHubRequ
 GetAdministratorAccountOutcome SecurityHubClient::GetAdministratorAccount(const GetAdministratorAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/administrator";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/administrator");
   return GetAdministratorAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -925,9 +869,7 @@ void SecurityHubClient::GetAdministratorAccountAsyncHelper(const GetAdministrato
 GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabledStandardsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/standards/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/standards/get");
   return GetEnabledStandardsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -952,9 +894,7 @@ void SecurityHubClient::GetEnabledStandardsAsyncHelper(const GetEnabledStandards
 GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/findings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/findings");
   return GetFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -984,10 +924,8 @@ GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightRe
     return GetInsightResultsOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InsightArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights/results/";
-  ss << request.GetInsightArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights/results/");
+  uri.AddPathSegments(request.GetInsightArn());
   return GetInsightResultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1012,9 +950,7 @@ void SecurityHubClient::GetInsightResultsAsyncHelper(const GetInsightResultsRequ
 GetInsightsOutcome SecurityHubClient::GetInsights(const GetInsightsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights/get");
   return GetInsightsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1039,9 +975,7 @@ void SecurityHubClient::GetInsightsAsyncHelper(const GetInsightsRequest& request
 GetInvitationsCountOutcome SecurityHubClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitations/count";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitations/count");
   return GetInvitationsCountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1066,9 +1000,7 @@ void SecurityHubClient::GetInvitationsCountAsyncHelper(const GetInvitationsCount
 GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/members/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/members/get");
   return GetMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1093,9 +1025,7 @@ void SecurityHubClient::GetMembersAsyncHelper(const GetMembersRequest& request, 
 InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/members/invite";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/members/invite");
   return InviteMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1120,9 +1050,7 @@ void SecurityHubClient::InviteMembersAsyncHelper(const InviteMembersRequest& req
 ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImport(const ListEnabledProductsForImportRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/productSubscriptions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/productSubscriptions");
   return ListEnabledProductsForImportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1147,9 +1075,7 @@ void SecurityHubClient::ListEnabledProductsForImportAsyncHelper(const ListEnable
 ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/invitations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/invitations");
   return ListInvitationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1174,9 +1100,7 @@ void SecurityHubClient::ListInvitationsAsyncHelper(const ListInvitationsRequest&
 ListMembersOutcome SecurityHubClient::ListMembers(const ListMembersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/members";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/members");
   return ListMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1201,9 +1125,7 @@ void SecurityHubClient::ListMembersAsyncHelper(const ListMembersRequest& request
 ListOrganizationAdminAccountsOutcome SecurityHubClient::ListOrganizationAdminAccounts(const ListOrganizationAdminAccountsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/organization/admin";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/organization/admin");
   return ListOrganizationAdminAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1233,10 +1155,8 @@ ListTagsForResourceOutcome SecurityHubClient::ListTagsForResource(const ListTags
     return ListTagsForResourceOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1266,10 +1186,8 @@ TagResourceOutcome SecurityHubClient::TagResource(const TagResourceRequest& requ
     return TagResourceOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1304,10 +1222,8 @@ UntagResourceOutcome SecurityHubClient::UntagResource(const UntagResourceRequest
     return UntagResourceOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1337,10 +1253,8 @@ UpdateActionTargetOutcome SecurityHubClient::UpdateActionTarget(const UpdateActi
     return UpdateActionTargetOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ActionTargetArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/actionTargets/";
-  ss << request.GetActionTargetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/actionTargets/");
+  uri.AddPathSegments(request.GetActionTargetArn());
   return UpdateActionTargetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1365,9 +1279,7 @@ void SecurityHubClient::UpdateActionTargetAsyncHelper(const UpdateActionTargetRe
 UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/findings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/findings");
   return UpdateFindingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1397,10 +1309,8 @@ UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest
     return UpdateInsightOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InsightArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/insights/";
-  ss << request.GetInsightArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/insights/");
+  uri.AddPathSegments(request.GetInsightArn());
   return UpdateInsightOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1425,9 +1335,7 @@ void SecurityHubClient::UpdateInsightAsyncHelper(const UpdateInsightRequest& req
 UpdateOrganizationConfigurationOutcome SecurityHubClient::UpdateOrganizationConfiguration(const UpdateOrganizationConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/organization/configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/organization/configuration");
   return UpdateOrganizationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1452,9 +1360,7 @@ void SecurityHubClient::UpdateOrganizationConfigurationAsyncHelper(const UpdateO
 UpdateSecurityHubConfigurationOutcome SecurityHubClient::UpdateSecurityHubConfiguration(const UpdateSecurityHubConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts");
   return UpdateSecurityHubConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1484,10 +1390,8 @@ UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const Up
     return UpdateStandardsControlOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StandardsControlArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/standards/control/";
-  ss << request.GetStandardsControlArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/standards/control/");
+  uri.AddPathSegments(request.GetStandardsControlArn());
   return UpdateStandardsControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

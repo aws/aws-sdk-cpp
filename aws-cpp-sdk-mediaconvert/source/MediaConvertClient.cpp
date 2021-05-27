@@ -122,9 +122,7 @@ void MediaConvertClient::OverrideEndpoint(const Aws::String& endpoint)
 AssociateCertificateOutcome MediaConvertClient::AssociateCertificate(const AssociateCertificateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/certificates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/certificates");
   return AssociateCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -154,10 +152,8 @@ CancelJobOutcome MediaConvertClient::CancelJob(const CancelJobRequest& request) 
     return CancelJobOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobs/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobs/");
+  uri.AddPathSegment(request.GetId());
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -182,9 +178,7 @@ void MediaConvertClient::CancelJobAsyncHelper(const CancelJobRequest& request, c
 CreateJobOutcome MediaConvertClient::CreateJob(const CreateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobs");
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -209,9 +203,7 @@ void MediaConvertClient::CreateJobAsyncHelper(const CreateJobRequest& request, c
 CreateJobTemplateOutcome MediaConvertClient::CreateJobTemplate(const CreateJobTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobTemplates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobTemplates");
   return CreateJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -236,9 +228,7 @@ void MediaConvertClient::CreateJobTemplateAsyncHelper(const CreateJobTemplateReq
 CreatePresetOutcome MediaConvertClient::CreatePreset(const CreatePresetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/presets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/presets");
   return CreatePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,9 +253,7 @@ void MediaConvertClient::CreatePresetAsyncHelper(const CreatePresetRequest& requ
 CreateQueueOutcome MediaConvertClient::CreateQueue(const CreateQueueRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/queues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/queues");
   return CreateQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -295,10 +283,8 @@ DeleteJobTemplateOutcome MediaConvertClient::DeleteJobTemplate(const DeleteJobTe
     return DeleteJobTemplateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobTemplates/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobTemplates/");
+  uri.AddPathSegment(request.GetName());
   return DeleteJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -328,10 +314,8 @@ DeletePresetOutcome MediaConvertClient::DeletePreset(const DeletePresetRequest& 
     return DeletePresetOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/presets/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/presets/");
+  uri.AddPathSegment(request.GetName());
   return DeletePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -361,10 +345,8 @@ DeleteQueueOutcome MediaConvertClient::DeleteQueue(const DeleteQueueRequest& req
     return DeleteQueueOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/queues/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/queues/");
+  uri.AddPathSegment(request.GetName());
   return DeleteQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -389,9 +371,7 @@ void MediaConvertClient::DeleteQueueAsyncHelper(const DeleteQueueRequest& reques
 DescribeEndpointsOutcome MediaConvertClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/endpoints";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/endpoints");
   return DescribeEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -421,10 +401,8 @@ DisassociateCertificateOutcome MediaConvertClient::DisassociateCertificate(const
     return DisassociateCertificateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/certificates/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/certificates/");
+  uri.AddPathSegment(request.GetArn());
   return DisassociateCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,10 +432,8 @@ GetJobOutcome MediaConvertClient::GetJob(const GetJobRequest& request) const
     return GetJobOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobs/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobs/");
+  uri.AddPathSegment(request.GetId());
   return GetJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -487,10 +463,8 @@ GetJobTemplateOutcome MediaConvertClient::GetJobTemplate(const GetJobTemplateReq
     return GetJobTemplateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobTemplates/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobTemplates/");
+  uri.AddPathSegment(request.GetName());
   return GetJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -520,10 +494,8 @@ GetPresetOutcome MediaConvertClient::GetPreset(const GetPresetRequest& request) 
     return GetPresetOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/presets/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/presets/");
+  uri.AddPathSegment(request.GetName());
   return GetPresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -553,10 +525,8 @@ GetQueueOutcome MediaConvertClient::GetQueue(const GetQueueRequest& request) con
     return GetQueueOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/queues/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/queues/");
+  uri.AddPathSegment(request.GetName());
   return GetQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -581,9 +551,7 @@ void MediaConvertClient::GetQueueAsyncHelper(const GetQueueRequest& request, con
 ListJobTemplatesOutcome MediaConvertClient::ListJobTemplates(const ListJobTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobTemplates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobTemplates");
   return ListJobTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -608,9 +576,7 @@ void MediaConvertClient::ListJobTemplatesAsyncHelper(const ListJobTemplatesReque
 ListJobsOutcome MediaConvertClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobs");
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -635,9 +601,7 @@ void MediaConvertClient::ListJobsAsyncHelper(const ListJobsRequest& request, con
 ListPresetsOutcome MediaConvertClient::ListPresets(const ListPresetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/presets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/presets");
   return ListPresetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -662,9 +626,7 @@ void MediaConvertClient::ListPresetsAsyncHelper(const ListPresetsRequest& reques
 ListQueuesOutcome MediaConvertClient::ListQueues(const ListQueuesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/queues";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/queues");
   return ListQueuesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -694,10 +656,8 @@ ListTagsForResourceOutcome MediaConvertClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/tags/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/tags/");
+  uri.AddPathSegment(request.GetArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -722,9 +682,7 @@ void MediaConvertClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 TagResourceOutcome MediaConvertClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/tags");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -754,10 +712,8 @@ UntagResourceOutcome MediaConvertClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/tags/";
-  ss << request.GetArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/tags/");
+  uri.AddPathSegment(request.GetArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -787,10 +743,8 @@ UpdateJobTemplateOutcome MediaConvertClient::UpdateJobTemplate(const UpdateJobTe
     return UpdateJobTemplateOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/jobTemplates/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/jobTemplates/");
+  uri.AddPathSegment(request.GetName());
   return UpdateJobTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -820,10 +774,8 @@ UpdatePresetOutcome MediaConvertClient::UpdatePreset(const UpdatePresetRequest& 
     return UpdatePresetOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/presets/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/presets/");
+  uri.AddPathSegment(request.GetName());
   return UpdatePresetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -853,10 +805,8 @@ UpdateQueueOutcome MediaConvertClient::UpdateQueue(const UpdateQueueRequest& req
     return UpdateQueueOutcome(Aws::Client::AWSError<MediaConvertErrors>(MediaConvertErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2017-08-29/queues/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2017-08-29/queues/");
+  uri.AddPathSegment(request.GetName());
   return UpdateQueueOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

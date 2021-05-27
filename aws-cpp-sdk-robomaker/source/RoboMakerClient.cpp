@@ -154,9 +154,7 @@ void RoboMakerClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchDeleteWorldsOutcome RoboMakerClient::BatchDeleteWorlds(const BatchDeleteWorldsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/batchDeleteWorlds";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/batchDeleteWorlds");
   return BatchDeleteWorldsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -181,9 +179,7 @@ void RoboMakerClient::BatchDeleteWorldsAsyncHelper(const BatchDeleteWorldsReques
 BatchDescribeSimulationJobOutcome RoboMakerClient::BatchDescribeSimulationJob(const BatchDescribeSimulationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/batchDescribeSimulationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/batchDescribeSimulationJob");
   return BatchDescribeSimulationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -208,9 +204,7 @@ void RoboMakerClient::BatchDescribeSimulationJobAsyncHelper(const BatchDescribeS
 CancelDeploymentJobOutcome RoboMakerClient::CancelDeploymentJob(const CancelDeploymentJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/cancelDeploymentJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/cancelDeploymentJob");
   return CancelDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -235,9 +229,7 @@ void RoboMakerClient::CancelDeploymentJobAsyncHelper(const CancelDeploymentJobRe
 CancelSimulationJobOutcome RoboMakerClient::CancelSimulationJob(const CancelSimulationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/cancelSimulationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/cancelSimulationJob");
   return CancelSimulationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -262,9 +254,7 @@ void RoboMakerClient::CancelSimulationJobAsyncHelper(const CancelSimulationJobRe
 CancelSimulationJobBatchOutcome RoboMakerClient::CancelSimulationJobBatch(const CancelSimulationJobBatchRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/cancelSimulationJobBatch";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/cancelSimulationJobBatch");
   return CancelSimulationJobBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -289,9 +279,7 @@ void RoboMakerClient::CancelSimulationJobBatchAsyncHelper(const CancelSimulation
 CancelWorldExportJobOutcome RoboMakerClient::CancelWorldExportJob(const CancelWorldExportJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/cancelWorldExportJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/cancelWorldExportJob");
   return CancelWorldExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -316,9 +304,7 @@ void RoboMakerClient::CancelWorldExportJobAsyncHelper(const CancelWorldExportJob
 CancelWorldGenerationJobOutcome RoboMakerClient::CancelWorldGenerationJob(const CancelWorldGenerationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/cancelWorldGenerationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/cancelWorldGenerationJob");
   return CancelWorldGenerationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -343,9 +329,7 @@ void RoboMakerClient::CancelWorldGenerationJobAsyncHelper(const CancelWorldGener
 CreateDeploymentJobOutcome RoboMakerClient::CreateDeploymentJob(const CreateDeploymentJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createDeploymentJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createDeploymentJob");
   return CreateDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -370,9 +354,7 @@ void RoboMakerClient::CreateDeploymentJobAsyncHelper(const CreateDeploymentJobRe
 CreateFleetOutcome RoboMakerClient::CreateFleet(const CreateFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createFleet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createFleet");
   return CreateFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -397,9 +379,7 @@ void RoboMakerClient::CreateFleetAsyncHelper(const CreateFleetRequest& request, 
 CreateRobotOutcome RoboMakerClient::CreateRobot(const CreateRobotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createRobot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createRobot");
   return CreateRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -424,9 +404,7 @@ void RoboMakerClient::CreateRobotAsyncHelper(const CreateRobotRequest& request, 
 CreateRobotApplicationOutcome RoboMakerClient::CreateRobotApplication(const CreateRobotApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createRobotApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createRobotApplication");
   return CreateRobotApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -451,9 +429,7 @@ void RoboMakerClient::CreateRobotApplicationAsyncHelper(const CreateRobotApplica
 CreateRobotApplicationVersionOutcome RoboMakerClient::CreateRobotApplicationVersion(const CreateRobotApplicationVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createRobotApplicationVersion";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createRobotApplicationVersion");
   return CreateRobotApplicationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -478,9 +454,7 @@ void RoboMakerClient::CreateRobotApplicationVersionAsyncHelper(const CreateRobot
 CreateSimulationApplicationOutcome RoboMakerClient::CreateSimulationApplication(const CreateSimulationApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createSimulationApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createSimulationApplication");
   return CreateSimulationApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -505,9 +479,7 @@ void RoboMakerClient::CreateSimulationApplicationAsyncHelper(const CreateSimulat
 CreateSimulationApplicationVersionOutcome RoboMakerClient::CreateSimulationApplicationVersion(const CreateSimulationApplicationVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createSimulationApplicationVersion";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createSimulationApplicationVersion");
   return CreateSimulationApplicationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -532,9 +504,7 @@ void RoboMakerClient::CreateSimulationApplicationVersionAsyncHelper(const Create
 CreateSimulationJobOutcome RoboMakerClient::CreateSimulationJob(const CreateSimulationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createSimulationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createSimulationJob");
   return CreateSimulationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -559,9 +529,7 @@ void RoboMakerClient::CreateSimulationJobAsyncHelper(const CreateSimulationJobRe
 CreateWorldExportJobOutcome RoboMakerClient::CreateWorldExportJob(const CreateWorldExportJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createWorldExportJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createWorldExportJob");
   return CreateWorldExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -586,9 +554,7 @@ void RoboMakerClient::CreateWorldExportJobAsyncHelper(const CreateWorldExportJob
 CreateWorldGenerationJobOutcome RoboMakerClient::CreateWorldGenerationJob(const CreateWorldGenerationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createWorldGenerationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createWorldGenerationJob");
   return CreateWorldGenerationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -613,9 +579,7 @@ void RoboMakerClient::CreateWorldGenerationJobAsyncHelper(const CreateWorldGener
 CreateWorldTemplateOutcome RoboMakerClient::CreateWorldTemplate(const CreateWorldTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/createWorldTemplate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/createWorldTemplate");
   return CreateWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -640,9 +604,7 @@ void RoboMakerClient::CreateWorldTemplateAsyncHelper(const CreateWorldTemplateRe
 DeleteFleetOutcome RoboMakerClient::DeleteFleet(const DeleteFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteFleet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteFleet");
   return DeleteFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -667,9 +629,7 @@ void RoboMakerClient::DeleteFleetAsyncHelper(const DeleteFleetRequest& request, 
 DeleteRobotOutcome RoboMakerClient::DeleteRobot(const DeleteRobotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteRobot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteRobot");
   return DeleteRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -694,9 +654,7 @@ void RoboMakerClient::DeleteRobotAsyncHelper(const DeleteRobotRequest& request, 
 DeleteRobotApplicationOutcome RoboMakerClient::DeleteRobotApplication(const DeleteRobotApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteRobotApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteRobotApplication");
   return DeleteRobotApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -721,9 +679,7 @@ void RoboMakerClient::DeleteRobotApplicationAsyncHelper(const DeleteRobotApplica
 DeleteSimulationApplicationOutcome RoboMakerClient::DeleteSimulationApplication(const DeleteSimulationApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteSimulationApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteSimulationApplication");
   return DeleteSimulationApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -748,9 +704,7 @@ void RoboMakerClient::DeleteSimulationApplicationAsyncHelper(const DeleteSimulat
 DeleteWorldTemplateOutcome RoboMakerClient::DeleteWorldTemplate(const DeleteWorldTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deleteWorldTemplate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deleteWorldTemplate");
   return DeleteWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -775,9 +729,7 @@ void RoboMakerClient::DeleteWorldTemplateAsyncHelper(const DeleteWorldTemplateRe
 DeregisterRobotOutcome RoboMakerClient::DeregisterRobot(const DeregisterRobotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deregisterRobot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deregisterRobot");
   return DeregisterRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -802,9 +754,7 @@ void RoboMakerClient::DeregisterRobotAsyncHelper(const DeregisterRobotRequest& r
 DescribeDeploymentJobOutcome RoboMakerClient::DescribeDeploymentJob(const DescribeDeploymentJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeDeploymentJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeDeploymentJob");
   return DescribeDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -829,9 +779,7 @@ void RoboMakerClient::DescribeDeploymentJobAsyncHelper(const DescribeDeploymentJ
 DescribeFleetOutcome RoboMakerClient::DescribeFleet(const DescribeFleetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeFleet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeFleet");
   return DescribeFleetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -856,9 +804,7 @@ void RoboMakerClient::DescribeFleetAsyncHelper(const DescribeFleetRequest& reque
 DescribeRobotOutcome RoboMakerClient::DescribeRobot(const DescribeRobotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeRobot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeRobot");
   return DescribeRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -883,9 +829,7 @@ void RoboMakerClient::DescribeRobotAsyncHelper(const DescribeRobotRequest& reque
 DescribeRobotApplicationOutcome RoboMakerClient::DescribeRobotApplication(const DescribeRobotApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeRobotApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeRobotApplication");
   return DescribeRobotApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -910,9 +854,7 @@ void RoboMakerClient::DescribeRobotApplicationAsyncHelper(const DescribeRobotApp
 DescribeSimulationApplicationOutcome RoboMakerClient::DescribeSimulationApplication(const DescribeSimulationApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeSimulationApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeSimulationApplication");
   return DescribeSimulationApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -937,9 +879,7 @@ void RoboMakerClient::DescribeSimulationApplicationAsyncHelper(const DescribeSim
 DescribeSimulationJobOutcome RoboMakerClient::DescribeSimulationJob(const DescribeSimulationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeSimulationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeSimulationJob");
   return DescribeSimulationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -964,9 +904,7 @@ void RoboMakerClient::DescribeSimulationJobAsyncHelper(const DescribeSimulationJ
 DescribeSimulationJobBatchOutcome RoboMakerClient::DescribeSimulationJobBatch(const DescribeSimulationJobBatchRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeSimulationJobBatch";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeSimulationJobBatch");
   return DescribeSimulationJobBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -991,9 +929,7 @@ void RoboMakerClient::DescribeSimulationJobBatchAsyncHelper(const DescribeSimula
 DescribeWorldOutcome RoboMakerClient::DescribeWorld(const DescribeWorldRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeWorld";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeWorld");
   return DescribeWorldOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1018,9 +954,7 @@ void RoboMakerClient::DescribeWorldAsyncHelper(const DescribeWorldRequest& reque
 DescribeWorldExportJobOutcome RoboMakerClient::DescribeWorldExportJob(const DescribeWorldExportJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeWorldExportJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeWorldExportJob");
   return DescribeWorldExportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1045,9 +979,7 @@ void RoboMakerClient::DescribeWorldExportJobAsyncHelper(const DescribeWorldExpor
 DescribeWorldGenerationJobOutcome RoboMakerClient::DescribeWorldGenerationJob(const DescribeWorldGenerationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeWorldGenerationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeWorldGenerationJob");
   return DescribeWorldGenerationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1072,9 +1004,7 @@ void RoboMakerClient::DescribeWorldGenerationJobAsyncHelper(const DescribeWorldG
 DescribeWorldTemplateOutcome RoboMakerClient::DescribeWorldTemplate(const DescribeWorldTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/describeWorldTemplate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/describeWorldTemplate");
   return DescribeWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1099,9 +1029,7 @@ void RoboMakerClient::DescribeWorldTemplateAsyncHelper(const DescribeWorldTempla
 GetWorldTemplateBodyOutcome RoboMakerClient::GetWorldTemplateBody(const GetWorldTemplateBodyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/getWorldTemplateBody";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/getWorldTemplateBody");
   return GetWorldTemplateBodyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1126,9 +1054,7 @@ void RoboMakerClient::GetWorldTemplateBodyAsyncHelper(const GetWorldTemplateBody
 ListDeploymentJobsOutcome RoboMakerClient::ListDeploymentJobs(const ListDeploymentJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listDeploymentJobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listDeploymentJobs");
   return ListDeploymentJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1153,9 +1079,7 @@ void RoboMakerClient::ListDeploymentJobsAsyncHelper(const ListDeploymentJobsRequ
 ListFleetsOutcome RoboMakerClient::ListFleets(const ListFleetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listFleets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listFleets");
   return ListFleetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1180,9 +1104,7 @@ void RoboMakerClient::ListFleetsAsyncHelper(const ListFleetsRequest& request, co
 ListRobotApplicationsOutcome RoboMakerClient::ListRobotApplications(const ListRobotApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listRobotApplications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listRobotApplications");
   return ListRobotApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1207,9 +1129,7 @@ void RoboMakerClient::ListRobotApplicationsAsyncHelper(const ListRobotApplicatio
 ListRobotsOutcome RoboMakerClient::ListRobots(const ListRobotsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listRobots";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listRobots");
   return ListRobotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1234,9 +1154,7 @@ void RoboMakerClient::ListRobotsAsyncHelper(const ListRobotsRequest& request, co
 ListSimulationApplicationsOutcome RoboMakerClient::ListSimulationApplications(const ListSimulationApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listSimulationApplications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listSimulationApplications");
   return ListSimulationApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1261,9 +1179,7 @@ void RoboMakerClient::ListSimulationApplicationsAsyncHelper(const ListSimulation
 ListSimulationJobBatchesOutcome RoboMakerClient::ListSimulationJobBatches(const ListSimulationJobBatchesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listSimulationJobBatches";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listSimulationJobBatches");
   return ListSimulationJobBatchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1288,9 +1204,7 @@ void RoboMakerClient::ListSimulationJobBatchesAsyncHelper(const ListSimulationJo
 ListSimulationJobsOutcome RoboMakerClient::ListSimulationJobs(const ListSimulationJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listSimulationJobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listSimulationJobs");
   return ListSimulationJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1320,10 +1234,8 @@ ListTagsForResourceOutcome RoboMakerClient::ListTagsForResource(const ListTagsFo
     return ListTagsForResourceOutcome(Aws::Client::AWSError<RoboMakerErrors>(RoboMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1348,9 +1260,7 @@ void RoboMakerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRe
 ListWorldExportJobsOutcome RoboMakerClient::ListWorldExportJobs(const ListWorldExportJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listWorldExportJobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listWorldExportJobs");
   return ListWorldExportJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1375,9 +1285,7 @@ void RoboMakerClient::ListWorldExportJobsAsyncHelper(const ListWorldExportJobsRe
 ListWorldGenerationJobsOutcome RoboMakerClient::ListWorldGenerationJobs(const ListWorldGenerationJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listWorldGenerationJobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listWorldGenerationJobs");
   return ListWorldGenerationJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1402,9 +1310,7 @@ void RoboMakerClient::ListWorldGenerationJobsAsyncHelper(const ListWorldGenerati
 ListWorldTemplatesOutcome RoboMakerClient::ListWorldTemplates(const ListWorldTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listWorldTemplates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listWorldTemplates");
   return ListWorldTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1429,9 +1335,7 @@ void RoboMakerClient::ListWorldTemplatesAsyncHelper(const ListWorldTemplatesRequ
 ListWorldsOutcome RoboMakerClient::ListWorlds(const ListWorldsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/listWorlds";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/listWorlds");
   return ListWorldsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1456,9 +1360,7 @@ void RoboMakerClient::ListWorldsAsyncHelper(const ListWorldsRequest& request, co
 RegisterRobotOutcome RoboMakerClient::RegisterRobot(const RegisterRobotRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/registerRobot";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/registerRobot");
   return RegisterRobotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1483,9 +1385,7 @@ void RoboMakerClient::RegisterRobotAsyncHelper(const RegisterRobotRequest& reque
 RestartSimulationJobOutcome RoboMakerClient::RestartSimulationJob(const RestartSimulationJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restartSimulationJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/restartSimulationJob");
   return RestartSimulationJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1510,9 +1410,7 @@ void RoboMakerClient::RestartSimulationJobAsyncHelper(const RestartSimulationJob
 StartSimulationJobBatchOutcome RoboMakerClient::StartSimulationJobBatch(const StartSimulationJobBatchRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/startSimulationJobBatch";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/startSimulationJobBatch");
   return StartSimulationJobBatchOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1537,9 +1435,7 @@ void RoboMakerClient::StartSimulationJobBatchAsyncHelper(const StartSimulationJo
 SyncDeploymentJobOutcome RoboMakerClient::SyncDeploymentJob(const SyncDeploymentJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/syncDeploymentJob";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/syncDeploymentJob");
   return SyncDeploymentJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1569,10 +1465,8 @@ TagResourceOutcome RoboMakerClient::TagResource(const TagResourceRequest& reques
     return TagResourceOutcome(Aws::Client::AWSError<RoboMakerErrors>(RoboMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1607,10 +1501,8 @@ UntagResourceOutcome RoboMakerClient::UntagResource(const UntagResourceRequest& 
     return UntagResourceOutcome(Aws::Client::AWSError<RoboMakerErrors>(RoboMakerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1635,9 +1527,7 @@ void RoboMakerClient::UntagResourceAsyncHelper(const UntagResourceRequest& reque
 UpdateRobotApplicationOutcome RoboMakerClient::UpdateRobotApplication(const UpdateRobotApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateRobotApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateRobotApplication");
   return UpdateRobotApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1662,9 +1552,7 @@ void RoboMakerClient::UpdateRobotApplicationAsyncHelper(const UpdateRobotApplica
 UpdateSimulationApplicationOutcome RoboMakerClient::UpdateSimulationApplication(const UpdateSimulationApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateSimulationApplication";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateSimulationApplication");
   return UpdateSimulationApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1689,9 +1577,7 @@ void RoboMakerClient::UpdateSimulationApplicationAsyncHelper(const UpdateSimulat
 UpdateWorldTemplateOutcome RoboMakerClient::UpdateWorldTemplate(const UpdateWorldTemplateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/updateWorldTemplate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/updateWorldTemplate");
   return UpdateWorldTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

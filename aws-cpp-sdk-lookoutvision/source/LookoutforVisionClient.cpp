@@ -121,11 +121,9 @@ CreateDatasetOutcome LookoutforVisionClient::CreateDataset(const CreateDatasetRe
     return CreateDatasetOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/datasets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/datasets");
   return CreateDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -155,11 +153,9 @@ CreateModelOutcome LookoutforVisionClient::CreateModel(const CreateModelRequest&
     return CreateModelOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/models";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/models");
   return CreateModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -184,9 +180,7 @@ void LookoutforVisionClient::CreateModelAsyncHelper(const CreateModelRequest& re
 CreateProjectOutcome LookoutforVisionClient::CreateProject(const CreateProjectRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects");
   return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -221,12 +215,10 @@ DeleteDatasetOutcome LookoutforVisionClient::DeleteDataset(const DeleteDatasetRe
     return DeleteDatasetOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/datasets/";
-  ss << request.GetDatasetType();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetType());
   return DeleteDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -261,12 +253,10 @@ DeleteModelOutcome LookoutforVisionClient::DeleteModel(const DeleteModelRequest&
     return DeleteModelOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/models/";
-  ss << request.GetModelVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelVersion());
   return DeleteModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -296,10 +286,8 @@ DeleteProjectOutcome LookoutforVisionClient::DeleteProject(const DeleteProjectRe
     return DeleteProjectOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
   return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,12 +322,10 @@ DescribeDatasetOutcome LookoutforVisionClient::DescribeDataset(const DescribeDat
     return DescribeDatasetOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/datasets/";
-  ss << request.GetDatasetType();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetType());
   return DescribeDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -374,12 +360,10 @@ DescribeModelOutcome LookoutforVisionClient::DescribeModel(const DescribeModelRe
     return DescribeModelOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/models/";
-  ss << request.GetModelVersion();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelVersion());
   return DescribeModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -409,10 +393,8 @@ DescribeProjectOutcome LookoutforVisionClient::DescribeProject(const DescribePro
     return DescribeProjectOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
   return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -447,13 +429,11 @@ DetectAnomaliesOutcome LookoutforVisionClient::DetectAnomalies(const DetectAnoma
     return DetectAnomaliesOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/models/";
-  ss << request.GetModelVersion();
-  ss << "/detect";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelVersion());
+  uri.AddPathSegments("/detect");
   return DetectAnomaliesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -488,13 +468,11 @@ ListDatasetEntriesOutcome LookoutforVisionClient::ListDatasetEntries(const ListD
     return ListDatasetEntriesOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/datasets/";
-  ss << request.GetDatasetType();
-  ss << "/entries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetType());
+  uri.AddPathSegments("/entries");
   return ListDatasetEntriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -524,11 +502,9 @@ ListModelsOutcome LookoutforVisionClient::ListModels(const ListModelsRequest& re
     return ListModelsOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/models";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/models");
   return ListModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -553,9 +529,7 @@ void LookoutforVisionClient::ListModelsAsyncHelper(const ListModelsRequest& requ
 ListProjectsOutcome LookoutforVisionClient::ListProjects(const ListProjectsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects");
   return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -585,10 +559,8 @@ ListTagsForResourceOutcome LookoutforVisionClient::ListTagsForResource(const Lis
     return ListTagsForResourceOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -623,13 +595,11 @@ StartModelOutcome LookoutforVisionClient::StartModel(const StartModelRequest& re
     return StartModelOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/models/";
-  ss << request.GetModelVersion();
-  ss << "/start";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelVersion());
+  uri.AddPathSegments("/start");
   return StartModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -664,13 +634,11 @@ StopModelOutcome LookoutforVisionClient::StopModel(const StopModelRequest& reque
     return StopModelOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ModelVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/models/";
-  ss << request.GetModelVersion();
-  ss << "/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/models/");
+  uri.AddPathSegment(request.GetModelVersion());
+  uri.AddPathSegments("/stop");
   return StopModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -700,10 +668,8 @@ TagResourceOutcome LookoutforVisionClient::TagResource(const TagResourceRequest&
     return TagResourceOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -738,10 +704,8 @@ UntagResourceOutcome LookoutforVisionClient::UntagResource(const UntagResourceRe
     return UntagResourceOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -776,13 +740,11 @@ UpdateDatasetEntriesOutcome LookoutforVisionClient::UpdateDatasetEntries(const U
     return UpdateDatasetEntriesOutcome(Aws::Client::AWSError<LookoutforVisionErrors>(LookoutforVisionErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/2020-11-20/projects/";
-  ss << request.GetProjectName();
-  ss << "/datasets/";
-  ss << request.GetDatasetType();
-  ss << "/entries";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/2020-11-20/projects/");
+  uri.AddPathSegment(request.GetProjectName());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetType());
+  uri.AddPathSegments("/entries");
   return UpdateDatasetEntriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
