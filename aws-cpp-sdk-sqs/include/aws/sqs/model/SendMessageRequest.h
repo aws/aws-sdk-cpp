@@ -469,8 +469,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
@@ -514,8 +514,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
@@ -559,8 +559,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
@@ -604,8 +604,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
@@ -649,8 +649,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
@@ -694,8 +694,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
@@ -739,8 +739,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't
@@ -784,8 +784,8 @@ namespace Model
      * the same <code>MessageDeduplicationId</code> are accepted successfully but
      * aren't delivered during the 5-minute deduplication interval. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing">
-     * Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">
+     * Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.</p> <ul> <li> <p>Every message must have a unique
      * <code>MessageDeduplicationId</code>,</p> <ul> <li> <p>You may provide a
      * <code>MessageDeduplicationId</code> explicitly.</p> </li> <li> <p>If you aren't

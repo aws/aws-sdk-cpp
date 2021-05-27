@@ -37,8 +37,8 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing
      * your detector model. This process can take several minutes to complete.</p>
      * </li> <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your
-     * detector model .</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events
-     * couldn't analyze your detector model. Try again later.</p> </li> </ul>
+     * detector model.</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events couldn't
+     * analyze your detector model. Try again later.</p> </li> </ul>
      */
     inline const AnalysisStatus& GetStatus() const{ return m_status; }
 
@@ -47,8 +47,8 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing
      * your detector model. This process can take several minutes to complete.</p>
      * </li> <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your
-     * detector model .</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events
-     * couldn't analyze your detector model. Try again later.</p> </li> </ul>
+     * detector model.</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events couldn't
+     * analyze your detector model. Try again later.</p> </li> </ul>
      */
     inline void SetStatus(const AnalysisStatus& value) { m_status = value; }
 
@@ -57,8 +57,8 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing
      * your detector model. This process can take several minutes to complete.</p>
      * </li> <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your
-     * detector model .</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events
-     * couldn't analyze your detector model. Try again later.</p> </li> </ul>
+     * detector model.</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events couldn't
+     * analyze your detector model. Try again later.</p> </li> </ul>
      */
     inline void SetStatus(AnalysisStatus&& value) { m_status = std::move(value); }
 
@@ -67,8 +67,8 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing
      * your detector model. This process can take several minutes to complete.</p>
      * </li> <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your
-     * detector model .</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events
-     * couldn't analyze your detector model. Try again later.</p> </li> </ul>
+     * detector model.</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events couldn't
+     * analyze your detector model. Try again later.</p> </li> </ul>
      */
     inline DescribeDetectorModelAnalysisResult& WithStatus(const AnalysisStatus& value) { SetStatus(value); return *this;}
 
@@ -77,8 +77,8 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>RUNNING</code> - AWS IoT Events is analyzing
      * your detector model. This process can take several minutes to complete.</p>
      * </li> <li> <p> <code>COMPLETE</code> - AWS IoT Events finished analyzing your
-     * detector model .</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events
-     * couldn't analyze your detector model. Try again later.</p> </li> </ul>
+     * detector model.</p> </li> <li> <p> <code>FAILED</code> - AWS IoT Events couldn't
+     * analyze your detector model. Try again later.</p> </li> </ul>
      */
     inline DescribeDetectorModelAnalysisResult& WithStatus(AnalysisStatus&& value) { SetStatus(std::move(value)); return *this;}
 

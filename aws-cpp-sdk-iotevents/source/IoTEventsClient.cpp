@@ -20,23 +20,30 @@
 #include <aws/iotevents/IoTEventsClient.h>
 #include <aws/iotevents/IoTEventsEndpoint.h>
 #include <aws/iotevents/IoTEventsErrorMarshaller.h>
+#include <aws/iotevents/model/CreateAlarmModelRequest.h>
 #include <aws/iotevents/model/CreateDetectorModelRequest.h>
 #include <aws/iotevents/model/CreateInputRequest.h>
+#include <aws/iotevents/model/DeleteAlarmModelRequest.h>
 #include <aws/iotevents/model/DeleteDetectorModelRequest.h>
 #include <aws/iotevents/model/DeleteInputRequest.h>
+#include <aws/iotevents/model/DescribeAlarmModelRequest.h>
 #include <aws/iotevents/model/DescribeDetectorModelRequest.h>
 #include <aws/iotevents/model/DescribeDetectorModelAnalysisRequest.h>
 #include <aws/iotevents/model/DescribeInputRequest.h>
 #include <aws/iotevents/model/DescribeLoggingOptionsRequest.h>
 #include <aws/iotevents/model/GetDetectorModelAnalysisResultsRequest.h>
+#include <aws/iotevents/model/ListAlarmModelVersionsRequest.h>
+#include <aws/iotevents/model/ListAlarmModelsRequest.h>
 #include <aws/iotevents/model/ListDetectorModelVersionsRequest.h>
 #include <aws/iotevents/model/ListDetectorModelsRequest.h>
+#include <aws/iotevents/model/ListInputRoutingsRequest.h>
 #include <aws/iotevents/model/ListInputsRequest.h>
 #include <aws/iotevents/model/ListTagsForResourceRequest.h>
 #include <aws/iotevents/model/PutLoggingOptionsRequest.h>
 #include <aws/iotevents/model/StartDetectorModelAnalysisRequest.h>
 #include <aws/iotevents/model/TagResourceRequest.h>
 #include <aws/iotevents/model/UntagResourceRequest.h>
+#include <aws/iotevents/model/UpdateAlarmModelRequest.h>
 #include <aws/iotevents/model/UpdateDetectorModelRequest.h>
 #include <aws/iotevents/model/UpdateInputRequest.h>
 
@@ -113,6 +120,31 @@ void IoTEventsClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateAlarmModelOutcome IoTEventsClient::CreateAlarmModel(const CreateAlarmModelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/alarm-models");
+  return CreateAlarmModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateAlarmModelOutcomeCallable IoTEventsClient::CreateAlarmModelCallable(const CreateAlarmModelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAlarmModel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::CreateAlarmModelAsync(const CreateAlarmModelRequest& request, const CreateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAlarmModelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::CreateAlarmModelAsyncHelper(const CreateAlarmModelRequest& request, const CreateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAlarmModel(request), context);
+}
+
 CreateDetectorModelOutcome IoTEventsClient::CreateDetectorModel(const CreateDetectorModelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -161,6 +193,37 @@ void IoTEventsClient::CreateInputAsync(const CreateInputRequest& request, const 
 void IoTEventsClient::CreateInputAsyncHelper(const CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateInput(request), context);
+}
+
+DeleteAlarmModelOutcome IoTEventsClient::DeleteAlarmModel(const DeleteAlarmModelRequest& request) const
+{
+  if (!request.AlarmModelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAlarmModel", "Required field: AlarmModelName, is not set");
+    return DeleteAlarmModelOutcome(Aws::Client::AWSError<IoTEventsErrors>(IoTEventsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AlarmModelName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/alarm-models/");
+  uri.AddPathSegment(request.GetAlarmModelName());
+  return DeleteAlarmModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteAlarmModelOutcomeCallable IoTEventsClient::DeleteAlarmModelCallable(const DeleteAlarmModelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAlarmModel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::DeleteAlarmModelAsync(const DeleteAlarmModelRequest& request, const DeleteAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAlarmModelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::DeleteAlarmModelAsyncHelper(const DeleteAlarmModelRequest& request, const DeleteAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAlarmModel(request), context);
 }
 
 DeleteDetectorModelOutcome IoTEventsClient::DeleteDetectorModel(const DeleteDetectorModelRequest& request) const
@@ -223,6 +286,37 @@ void IoTEventsClient::DeleteInputAsync(const DeleteInputRequest& request, const 
 void IoTEventsClient::DeleteInputAsyncHelper(const DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteInput(request), context);
+}
+
+DescribeAlarmModelOutcome IoTEventsClient::DescribeAlarmModel(const DescribeAlarmModelRequest& request) const
+{
+  if (!request.AlarmModelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAlarmModel", "Required field: AlarmModelName, is not set");
+    return DescribeAlarmModelOutcome(Aws::Client::AWSError<IoTEventsErrors>(IoTEventsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AlarmModelName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/alarm-models/");
+  uri.AddPathSegment(request.GetAlarmModelName());
+  return DescribeAlarmModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeAlarmModelOutcomeCallable IoTEventsClient::DescribeAlarmModelCallable(const DescribeAlarmModelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAlarmModel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::DescribeAlarmModelAsync(const DescribeAlarmModelRequest& request, const DescribeAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAlarmModelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::DescribeAlarmModelAsyncHelper(const DescribeAlarmModelRequest& request, const DescribeAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAlarmModel(request), context);
 }
 
 DescribeDetectorModelOutcome IoTEventsClient::DescribeDetectorModel(const DescribeDetectorModelRequest& request) const
@@ -375,6 +469,63 @@ void IoTEventsClient::GetDetectorModelAnalysisResultsAsyncHelper(const GetDetect
   handler(this, request, GetDetectorModelAnalysisResults(request), context);
 }
 
+ListAlarmModelVersionsOutcome IoTEventsClient::ListAlarmModelVersions(const ListAlarmModelVersionsRequest& request) const
+{
+  if (!request.AlarmModelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAlarmModelVersions", "Required field: AlarmModelName, is not set");
+    return ListAlarmModelVersionsOutcome(Aws::Client::AWSError<IoTEventsErrors>(IoTEventsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AlarmModelName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/alarm-models/");
+  uri.AddPathSegment(request.GetAlarmModelName());
+  uri.AddPathSegments("/versions");
+  return ListAlarmModelVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAlarmModelVersionsOutcomeCallable IoTEventsClient::ListAlarmModelVersionsCallable(const ListAlarmModelVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAlarmModelVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlarmModelVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::ListAlarmModelVersionsAsync(const ListAlarmModelVersionsRequest& request, const ListAlarmModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAlarmModelVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::ListAlarmModelVersionsAsyncHelper(const ListAlarmModelVersionsRequest& request, const ListAlarmModelVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAlarmModelVersions(request), context);
+}
+
+ListAlarmModelsOutcome IoTEventsClient::ListAlarmModels(const ListAlarmModelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/alarm-models");
+  return ListAlarmModelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListAlarmModelsOutcomeCallable IoTEventsClient::ListAlarmModelsCallable(const ListAlarmModelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAlarmModelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAlarmModels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::ListAlarmModelsAsync(const ListAlarmModelsRequest& request, const ListAlarmModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAlarmModelsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::ListAlarmModelsAsyncHelper(const ListAlarmModelsRequest& request, const ListAlarmModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAlarmModels(request), context);
+}
+
 ListDetectorModelVersionsOutcome IoTEventsClient::ListDetectorModelVersions(const ListDetectorModelVersionsRequest& request) const
 {
   if (!request.DetectorModelNameHasBeenSet())
@@ -430,6 +581,31 @@ void IoTEventsClient::ListDetectorModelsAsync(const ListDetectorModelsRequest& r
 void IoTEventsClient::ListDetectorModelsAsyncHelper(const ListDetectorModelsRequest& request, const ListDetectorModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDetectorModels(request), context);
+}
+
+ListInputRoutingsOutcome IoTEventsClient::ListInputRoutings(const ListInputRoutingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/input-routings");
+  return ListInputRoutingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListInputRoutingsOutcomeCallable IoTEventsClient::ListInputRoutingsCallable(const ListInputRoutingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListInputRoutingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListInputRoutings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::ListInputRoutingsAsync(const ListInputRoutingsRequest& request, const ListInputRoutingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListInputRoutingsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::ListInputRoutingsAsyncHelper(const ListInputRoutingsRequest& request, const ListInputRoutingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListInputRoutings(request), context);
 }
 
 ListInputsOutcome IoTEventsClient::ListInputs(const ListInputsRequest& request) const
@@ -600,6 +776,37 @@ void IoTEventsClient::UntagResourceAsync(const UntagResourceRequest& request, co
 void IoTEventsClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+UpdateAlarmModelOutcome IoTEventsClient::UpdateAlarmModel(const UpdateAlarmModelRequest& request) const
+{
+  if (!request.AlarmModelNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAlarmModel", "Required field: AlarmModelName, is not set");
+    return UpdateAlarmModelOutcome(Aws::Client::AWSError<IoTEventsErrors>(IoTEventsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AlarmModelName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/alarm-models/");
+  uri.AddPathSegment(request.GetAlarmModelName());
+  return UpdateAlarmModelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateAlarmModelOutcomeCallable IoTEventsClient::UpdateAlarmModelCallable(const UpdateAlarmModelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateAlarmModelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateAlarmModel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTEventsClient::UpdateAlarmModelAsync(const UpdateAlarmModelRequest& request, const UpdateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateAlarmModelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTEventsClient::UpdateAlarmModelAsyncHelper(const UpdateAlarmModelRequest& request, const UpdateAlarmModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateAlarmModel(request), context);
 }
 
 UpdateDetectorModelOutcome IoTEventsClient::UpdateDetectorModel(const UpdateDetectorModelRequest& request) const

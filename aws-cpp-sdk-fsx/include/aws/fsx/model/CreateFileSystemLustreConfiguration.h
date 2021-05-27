@@ -9,6 +9,7 @@
 #include <aws/fsx/model/LustreDeploymentType.h>
 #include <aws/fsx/model/AutoImportPolicyType.h>
 #include <aws/fsx/model/DriveCacheType.h>
+#include <aws/fsx/model/DataCompressionType.h>
 #include <utility>
 
 namespace Aws
@@ -843,6 +844,79 @@ namespace Model
      */
     inline CreateFileSystemLustreConfiguration& WithDriveCacheType(DriveCacheType&& value) { SetDriveCacheType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets the data compression configuration for the file system.
+     * <code>DataCompressionType</code> can have the following values:</p> <ul> <li>
+     * <p> <code>NONE</code> - (Default) Data compression is turned off when the file
+     * system is created.</p> </li> <li> <p> <code>LZ4</code> - Data compression is
+     * turned on with the LZ4 algorithm.</p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
+     * data compression</a>.</p>
+     */
+    inline const DataCompressionType& GetDataCompressionType() const{ return m_dataCompressionType; }
+
+    /**
+     * <p>Sets the data compression configuration for the file system.
+     * <code>DataCompressionType</code> can have the following values:</p> <ul> <li>
+     * <p> <code>NONE</code> - (Default) Data compression is turned off when the file
+     * system is created.</p> </li> <li> <p> <code>LZ4</code> - Data compression is
+     * turned on with the LZ4 algorithm.</p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
+     * data compression</a>.</p>
+     */
+    inline bool DataCompressionTypeHasBeenSet() const { return m_dataCompressionTypeHasBeenSet; }
+
+    /**
+     * <p>Sets the data compression configuration for the file system.
+     * <code>DataCompressionType</code> can have the following values:</p> <ul> <li>
+     * <p> <code>NONE</code> - (Default) Data compression is turned off when the file
+     * system is created.</p> </li> <li> <p> <code>LZ4</code> - Data compression is
+     * turned on with the LZ4 algorithm.</p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
+     * data compression</a>.</p>
+     */
+    inline void SetDataCompressionType(const DataCompressionType& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = value; }
+
+    /**
+     * <p>Sets the data compression configuration for the file system.
+     * <code>DataCompressionType</code> can have the following values:</p> <ul> <li>
+     * <p> <code>NONE</code> - (Default) Data compression is turned off when the file
+     * system is created.</p> </li> <li> <p> <code>LZ4</code> - Data compression is
+     * turned on with the LZ4 algorithm.</p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
+     * data compression</a>.</p>
+     */
+    inline void SetDataCompressionType(DataCompressionType&& value) { m_dataCompressionTypeHasBeenSet = true; m_dataCompressionType = std::move(value); }
+
+    /**
+     * <p>Sets the data compression configuration for the file system.
+     * <code>DataCompressionType</code> can have the following values:</p> <ul> <li>
+     * <p> <code>NONE</code> - (Default) Data compression is turned off when the file
+     * system is created.</p> </li> <li> <p> <code>LZ4</code> - Data compression is
+     * turned on with the LZ4 algorithm.</p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
+     * data compression</a>.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithDataCompressionType(const DataCompressionType& value) { SetDataCompressionType(value); return *this;}
+
+    /**
+     * <p>Sets the data compression configuration for the file system.
+     * <code>DataCompressionType</code> can have the following values:</p> <ul> <li>
+     * <p> <code>NONE</code> - (Default) Data compression is turned off when the file
+     * system is created.</p> </li> <li> <p> <code>LZ4</code> - Data compression is
+     * turned on with the LZ4 algorithm.</p> </li> </ul> <p>For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre
+     * data compression</a>.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithDataCompressionType(DataCompressionType&& value) { SetDataCompressionType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -877,6 +951,9 @@ namespace Model
 
     DriveCacheType m_driveCacheType;
     bool m_driveCacheTypeHasBeenSet;
+
+    DataCompressionType m_dataCompressionType;
+    bool m_dataCompressionTypeHasBeenSet;
   };
 
 } // namespace Model

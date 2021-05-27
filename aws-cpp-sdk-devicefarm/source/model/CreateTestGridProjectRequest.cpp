@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 CreateTestGridProjectRequest::CreateTestGridProjectRequest() : 
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String CreateTestGridProjectRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
 
   }
 

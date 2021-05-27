@@ -32,7 +32,9 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration() :
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
     m_driveCacheType(DriveCacheType::NOT_SET),
-    m_driveCacheTypeHasBeenSet(false)
+    m_driveCacheTypeHasBeenSet(false),
+    m_dataCompressionType(DataCompressionType::NOT_SET),
+    m_dataCompressionTypeHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ LustreFileSystemConfiguration::LustreFileSystemConfiguration(JsonView jsonValue)
     m_copyTagsToBackups(false),
     m_copyTagsToBackupsHasBeenSet(false),
     m_driveCacheType(DriveCacheType::NOT_SET),
-    m_driveCacheTypeHasBeenSet(false)
+    m_driveCacheTypeHasBeenSet(false),
+    m_dataCompressionType(DataCompressionType::NOT_SET),
+    m_dataCompressionTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -120,6 +124,13 @@ LustreFileSystemConfiguration& LustreFileSystemConfiguration::operator =(JsonVie
     m_driveCacheTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataCompressionType"))
+  {
+    m_dataCompressionType = DataCompressionTypeMapper::GetDataCompressionTypeForName(jsonValue.GetString("DataCompressionType"));
+
+    m_dataCompressionTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +188,11 @@ JsonValue LustreFileSystemConfiguration::Jsonize() const
   if(m_driveCacheTypeHasBeenSet)
   {
    payload.WithString("DriveCacheType", DriveCacheTypeMapper::GetNameForDriveCacheType(m_driveCacheType));
+  }
+
+  if(m_dataCompressionTypeHasBeenSet)
+  {
+   payload.WithString("DataCompressionType", DataCompressionTypeMapper::GetNameForDataCompressionType(m_dataCompressionType));
   }
 
   return payload;

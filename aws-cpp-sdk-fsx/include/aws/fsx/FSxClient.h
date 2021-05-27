@@ -303,9 +303,9 @@ namespace Model
          * specify a Region, the backup copy is created in the same Region where the
          * request is sent from (in-Region copy).</p> <p>For more information on creating
          * backup copies, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
          * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
          * backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">AWS API
@@ -331,9 +331,9 @@ namespace Model
          * specify a Region, the backup copy is created in the same Region where the
          * request is sent from (in-Region copy).</p> <p>For more information on creating
          * backup copies, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
          * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
          * backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">AWS API
@@ -361,9 +361,9 @@ namespace Model
          * specify a Region, the backup copy is created in the same Region where the
          * request is sent from (in-Region copy).</p> <p>For more information on creating
          * backup copies, see <a
-         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/copy-backups.html">
+         * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups">
          * Copying backups</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
-         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/copy-backups.html">Copying
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying
          * backups</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup">AWS API
@@ -1298,9 +1298,9 @@ namespace Model
          * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
          * systems, you can update the following properties:</p> <ul> <li>
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
-         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>StorageCapacity</p>
-         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>DataCompressionType</p>
+         * </li> <li> <p>StorageCapacity</p> </li> <li> <p>WeeklyMaintenanceStartTime</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          */
@@ -1317,9 +1317,9 @@ namespace Model
          * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
          * systems, you can update the following properties:</p> <ul> <li>
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
-         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>StorageCapacity</p>
-         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>DataCompressionType</p>
+         * </li> <li> <p>StorageCapacity</p> </li> <li> <p>WeeklyMaintenanceStartTime</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *
@@ -1338,9 +1338,9 @@ namespace Model
          * <p>WeeklyMaintenanceStartTime</p> </li> </ul> <p>For Amazon FSx for Lustre file
          * systems, you can update the following properties:</p> <ul> <li>
          * <p>AutoImportPolicy</p> </li> <li> <p>AutomaticBackupRetentionDays</p> </li>
-         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>StorageCapacity</p>
-         * </li> <li> <p>WeeklyMaintenanceStartTime</p> </li> </ul><p><h3>See Also:</h3>  
-         * <a
+         * <li> <p>DailyAutomaticBackupStartTime</p> </li> <li> <p>DataCompressionType</p>
+         * </li> <li> <p>StorageCapacity</p> </li> <li> <p>WeeklyMaintenanceStartTime</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem">AWS
          * API Reference</a></p>
          *

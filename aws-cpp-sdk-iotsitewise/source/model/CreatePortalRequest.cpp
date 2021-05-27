@@ -22,7 +22,9 @@ CreatePortalRequest::CreatePortalRequest() :
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_portalAuthMode(AuthMode::NOT_SET),
-    m_portalAuthModeHasBeenSet(false)
+    m_portalAuthModeHasBeenSet(false),
+    m_notificationSenderEmailHasBeenSet(false),
+    m_alarmsHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,18 @@ Aws::String CreatePortalRequest::SerializePayload() const
   if(m_portalAuthModeHasBeenSet)
   {
    payload.WithString("portalAuthMode", AuthModeMapper::GetNameForAuthMode(m_portalAuthMode));
+  }
+
+  if(m_notificationSenderEmailHasBeenSet)
+  {
+   payload.WithString("notificationSenderEmail", m_notificationSenderEmail);
+
+  }
+
+  if(m_alarmsHasBeenSet)
+  {
+   payload.WithObject("alarms", m_alarms.Jsonize());
+
   }
 
   return payload.View().WriteReadable();
