@@ -65,7 +65,7 @@ public class HttpTest {
         vars = http.getRequestParameters();
         assertEquals(4, vars.size());
         assertEquals("var1", vars.get(0));
-        assertEquals("var2", vars.get(1));
+        assertEquals("var2+", vars.get(1));
         assertEquals("var-3", vars.get(2));
         assertEquals("var-4", vars.get(3));
 

@@ -298,11 +298,10 @@ AssociatePhoneNumberWithUserOutcome ChimeClient::AssociatePhoneNumberWithUser(co
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
   ss.str("?operation=associate-phone-number");
   uri.SetQueryString(ss.str());
   return AssociatePhoneNumberWithUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -335,9 +334,8 @@ AssociatePhoneNumbersWithVoiceConnectorOutcome ChimeClient::AssociatePhoneNumber
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
   ss.str("?operation=associate-phone-numbers");
   uri.SetQueryString(ss.str());
   return AssociatePhoneNumbersWithVoiceConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -370,9 +368,8 @@ AssociatePhoneNumbersWithVoiceConnectorGroupOutcome ChimeClient::AssociatePhoneN
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/voice-connector-groups/";
-  ss << request.GetVoiceConnectorGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connector-groups/");
+  uri.AddPathSegment(request.GetVoiceConnectorGroupId());
   ss.str("?operation=associate-phone-numbers");
   uri.SetQueryString(ss.str());
   return AssociatePhoneNumbersWithVoiceConnectorGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -405,9 +402,8 @@ AssociateSigninDelegateGroupsWithAccountOutcome ChimeClient::AssociateSigninDele
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
   ss.str("?operation=associate-signin-delegate-groups");
   uri.SetQueryString(ss.str());
   return AssociateSigninDelegateGroupsWithAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -440,10 +436,9 @@ BatchCreateAttendeeOutcome ChimeClient::BatchCreateAttendee(const BatchCreateAtt
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees");
   ss.str("?operation=batch-create");
   uri.SetQueryString(ss.str());
   return BatchCreateAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -526,12 +521,11 @@ BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const Ba
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  ss << "/memberships";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
+  uri.AddPathSegments("/memberships");
   ss.str("?operation=batch-create");
   uri.SetQueryString(ss.str());
   return BatchCreateRoomMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -559,8 +553,7 @@ BatchDeletePhoneNumberOutcome ChimeClient::BatchDeletePhoneNumber(const BatchDel
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/phone-numbers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers");
   ss.str("?operation=batch-delete");
   uri.SetQueryString(ss.str());
   return BatchDeletePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -593,10 +586,9 @@ BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequ
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users");
   ss.str("?operation=suspend");
   uri.SetQueryString(ss.str());
   return BatchSuspendUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -629,10 +621,9 @@ BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUs
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users");
   ss.str("?operation=unsuspend");
   uri.SetQueryString(ss.str());
   return BatchUnsuspendUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -660,8 +651,7 @@ BatchUpdatePhoneNumberOutcome ChimeClient::BatchUpdatePhoneNumber(const BatchUpd
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/phone-numbers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers");
   ss.str("?operation=batch-update");
   uri.SetQueryString(ss.str());
   return BatchUpdatePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -693,11 +683,9 @@ BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest
     return BatchUpdateUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users");
   return BatchUpdateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -722,9 +710,7 @@ void ChimeClient::BatchUpdateUserAsyncHelper(const BatchUpdateUserRequest& reque
 CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts");
   return CreateAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -758,9 +744,7 @@ CreateAppInstanceOutcome ChimeClient::CreateAppInstance(const CreateAppInstanceR
       return CreateAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances");
   return CreateAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -799,11 +783,9 @@ CreateAppInstanceAdminOutcome ChimeClient::CreateAppInstanceAdmin(const CreateAp
       return CreateAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/admins";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/admins");
   return CreateAppInstanceAdminOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -837,9 +819,7 @@ CreateAppInstanceUserOutcome ChimeClient::CreateAppInstanceUser(const CreateAppI
       return CreateAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instance-users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instance-users");
   return CreateAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -869,11 +849,9 @@ CreateAttendeeOutcome ChimeClient::CreateAttendee(const CreateAttendeeRequest& r
     return CreateAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees");
   return CreateAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -903,11 +881,9 @@ CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const
     return CreateBotOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots");
   return CreateBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -941,9 +917,7 @@ CreateChannelOutcome ChimeClient::CreateChannel(const CreateChannelRequest& requ
       return CreateChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   return CreateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -982,11 +956,9 @@ CreateChannelBanOutcome ChimeClient::CreateChannelBan(const CreateChannelBanRequ
       return CreateChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/bans";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/bans");
   return CreateChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1025,11 +997,9 @@ CreateChannelMembershipOutcome ChimeClient::CreateChannelMembership(const Create
       return CreateChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/memberships";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/memberships");
   return CreateChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1068,11 +1038,9 @@ CreateChannelModeratorOutcome ChimeClient::CreateChannelModerator(const CreateCh
       return CreateChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/moderators";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/moderators");
   return CreateChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1097,9 +1065,7 @@ void ChimeClient::CreateChannelModeratorAsyncHelper(const CreateChannelModerator
 CreateMeetingOutcome ChimeClient::CreateMeeting(const CreateMeetingRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings");
   return CreateMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1129,11 +1095,9 @@ CreateMeetingDialOutOutcome ChimeClient::CreateMeetingDialOut(const CreateMeetin
     return CreateMeetingDialOutOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/dial-outs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/dial-outs");
   return CreateMeetingDialOutOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1159,8 +1123,7 @@ CreateMeetingWithAttendeesOutcome ChimeClient::CreateMeetingWithAttendees(const 
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/meetings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings");
   ss.str("?operation=create-attendees");
   uri.SetQueryString(ss.str());
   return CreateMeetingWithAttendeesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1187,9 +1150,7 @@ void ChimeClient::CreateMeetingWithAttendeesAsyncHelper(const CreateMeetingWithA
 CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-number-orders";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-number-orders");
   return CreatePhoneNumberOrderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1219,11 +1180,9 @@ CreateProxySessionOutcome ChimeClient::CreateProxySession(const CreateProxySessi
     return CreateProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/proxy-sessions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/proxy-sessions");
   return CreateProxySessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1253,11 +1212,9 @@ CreateRoomOutcome ChimeClient::CreateRoom(const CreateRoomRequest& request) cons
     return CreateRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms");
   return CreateRoomOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1292,13 +1249,11 @@ CreateRoomMembershipOutcome ChimeClient::CreateRoomMembership(const CreateRoomMe
     return CreateRoomMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  ss << "/memberships";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
+  uri.AddPathSegments("/memberships");
   return CreateRoomMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1323,9 +1278,7 @@ void ChimeClient::CreateRoomMembershipAsyncHelper(const CreateRoomMembershipRequ
 CreateSipMediaApplicationOutcome ChimeClient::CreateSipMediaApplication(const CreateSipMediaApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications");
   return CreateSipMediaApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1355,11 +1308,9 @@ CreateSipMediaApplicationCallOutcome ChimeClient::CreateSipMediaApplicationCall(
     return CreateSipMediaApplicationCallOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications/";
-  ss << request.GetSipMediaApplicationId();
-  ss << "/calls";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications/");
+  uri.AddPathSegment(request.GetSipMediaApplicationId());
+  uri.AddPathSegments("/calls");
   return CreateSipMediaApplicationCallOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1384,9 +1335,7 @@ void ChimeClient::CreateSipMediaApplicationCallAsyncHelper(const CreateSipMediaA
 CreateSipRuleOutcome ChimeClient::CreateSipRule(const CreateSipRuleRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-rules";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-rules");
   return CreateSipRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1417,10 +1366,9 @@ CreateUserOutcome ChimeClient::CreateUser(const CreateUserRequest& request) cons
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users");
   ss.str("?operation=create");
   uri.SetQueryString(ss.str());
   return CreateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -1447,9 +1395,7 @@ void ChimeClient::CreateUserAsyncHelper(const CreateUserRequest& request, const 
 CreateVoiceConnectorOutcome ChimeClient::CreateVoiceConnector(const CreateVoiceConnectorRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors");
   return CreateVoiceConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1474,9 +1420,7 @@ void ChimeClient::CreateVoiceConnectorAsyncHelper(const CreateVoiceConnectorRequ
 CreateVoiceConnectorGroupOutcome ChimeClient::CreateVoiceConnectorGroup(const CreateVoiceConnectorGroupRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connector-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connector-groups");
   return CreateVoiceConnectorGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1506,10 +1450,8 @@ DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& requ
     return DeleteAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
   return DeleteAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1548,10 +1490,8 @@ DeleteAppInstanceOutcome ChimeClient::DeleteAppInstance(const DeleteAppInstanceR
       return DeleteAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
   return DeleteAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1595,12 +1535,10 @@ DeleteAppInstanceAdminOutcome ChimeClient::DeleteAppInstanceAdmin(const DeleteAp
       return DeleteAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/admins/";
-  ss << request.GetAppInstanceAdminArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/admins/");
+  uri.AddPathSegment(request.GetAppInstanceAdminArn());
   return DeleteAppInstanceAdminOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1630,11 +1568,9 @@ DeleteAppInstanceStreamingConfigurationsOutcome ChimeClient::DeleteAppInstanceSt
     return DeleteAppInstanceStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/streaming-configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/streaming-configurations");
   return DeleteAppInstanceStreamingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1673,10 +1609,8 @@ DeleteAppInstanceUserOutcome ChimeClient::DeleteAppInstanceUser(const DeleteAppI
       return DeleteAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instance-users/";
-  ss << request.GetAppInstanceUserArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
   return DeleteAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1711,12 +1645,10 @@ DeleteAttendeeOutcome ChimeClient::DeleteAttendee(const DeleteAttendeeRequest& r
     return DeleteAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees/";
-  ss << request.GetAttendeeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees/");
+  uri.AddPathSegment(request.GetAttendeeId());
   return DeleteAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1755,10 +1687,8 @@ DeleteChannelOutcome ChimeClient::DeleteChannel(const DeleteChannelRequest& requ
       return DeleteChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
   return DeleteChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1802,12 +1732,10 @@ DeleteChannelBanOutcome ChimeClient::DeleteChannelBan(const DeleteChannelBanRequ
       return DeleteChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/bans/";
-  ss << request.GetMemberArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/bans/");
+  uri.AddPathSegment(request.GetMemberArn());
   return DeleteChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1851,12 +1779,10 @@ DeleteChannelMembershipOutcome ChimeClient::DeleteChannelMembership(const Delete
       return DeleteChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/memberships/";
-  ss << request.GetMemberArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/memberships/");
+  uri.AddPathSegment(request.GetMemberArn());
   return DeleteChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1900,12 +1826,10 @@ DeleteChannelMessageOutcome ChimeClient::DeleteChannelMessage(const DeleteChanne
       return DeleteChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   return DeleteChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1949,12 +1873,10 @@ DeleteChannelModeratorOutcome ChimeClient::DeleteChannelModerator(const DeleteCh
       return DeleteChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/moderators/";
-  ss << request.GetChannelModeratorArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/moderators/");
+  uri.AddPathSegment(request.GetChannelModeratorArn());
   return DeleteChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1989,13 +1911,11 @@ DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const De
     return DeleteEventsConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/events-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/events-configuration");
   return DeleteEventsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2025,10 +1945,8 @@ DeleteMeetingOutcome ChimeClient::DeleteMeeting(const DeleteMeetingRequest& requ
     return DeleteMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
   return DeleteMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2058,10 +1976,8 @@ DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberR
     return DeletePhoneNumberOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-numbers/";
-  ss << request.GetPhoneNumberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
   return DeletePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2096,12 +2012,10 @@ DeleteProxySessionOutcome ChimeClient::DeleteProxySession(const DeleteProxySessi
     return DeleteProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/proxy-sessions/";
-  ss << request.GetProxySessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/proxy-sessions/");
+  uri.AddPathSegment(request.GetProxySessionId());
   return DeleteProxySessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2136,12 +2050,10 @@ DeleteRoomOutcome ChimeClient::DeleteRoom(const DeleteRoomRequest& request) cons
     return DeleteRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
   return DeleteRoomOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2181,14 +2093,12 @@ DeleteRoomMembershipOutcome ChimeClient::DeleteRoomMembership(const DeleteRoomMe
     return DeleteRoomMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  ss << "/memberships/";
-  ss << request.GetMemberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
+  uri.AddPathSegments("/memberships/");
+  uri.AddPathSegment(request.GetMemberId());
   return DeleteRoomMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2218,10 +2128,8 @@ DeleteSipMediaApplicationOutcome ChimeClient::DeleteSipMediaApplication(const De
     return DeleteSipMediaApplicationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications/";
-  ss << request.GetSipMediaApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications/");
+  uri.AddPathSegment(request.GetSipMediaApplicationId());
   return DeleteSipMediaApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2251,10 +2159,8 @@ DeleteSipRuleOutcome ChimeClient::DeleteSipRule(const DeleteSipRuleRequest& requ
     return DeleteSipRuleOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipRuleId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-rules/";
-  ss << request.GetSipRuleId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-rules/");
+  uri.AddPathSegment(request.GetSipRuleId());
   return DeleteSipRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2284,10 +2190,8 @@ DeleteVoiceConnectorOutcome ChimeClient::DeleteVoiceConnector(const DeleteVoiceC
     return DeleteVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
   return DeleteVoiceConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2317,11 +2221,9 @@ DeleteVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::DeleteVoic
     return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/emergency-calling-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/emergency-calling-configuration");
   return DeleteVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2351,10 +2253,8 @@ DeleteVoiceConnectorGroupOutcome ChimeClient::DeleteVoiceConnectorGroup(const De
     return DeleteVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connector-groups/";
-  ss << request.GetVoiceConnectorGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connector-groups/");
+  uri.AddPathSegment(request.GetVoiceConnectorGroupId());
   return DeleteVoiceConnectorGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2384,11 +2284,9 @@ DeleteVoiceConnectorOriginationOutcome ChimeClient::DeleteVoiceConnectorOriginat
     return DeleteVoiceConnectorOriginationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/origination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/origination");
   return DeleteVoiceConnectorOriginationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2418,11 +2316,9 @@ DeleteVoiceConnectorProxyOutcome ChimeClient::DeleteVoiceConnectorProxy(const De
     return DeleteVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/programmable-numbers/proxy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/programmable-numbers/proxy");
   return DeleteVoiceConnectorProxyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2452,11 +2348,9 @@ DeleteVoiceConnectorStreamingConfigurationOutcome ChimeClient::DeleteVoiceConnec
     return DeleteVoiceConnectorStreamingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/streaming-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/streaming-configuration");
   return DeleteVoiceConnectorStreamingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2486,11 +2380,9 @@ DeleteVoiceConnectorTerminationOutcome ChimeClient::DeleteVoiceConnectorTerminat
     return DeleteVoiceConnectorTerminationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/termination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/termination");
   return DeleteVoiceConnectorTerminationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2521,10 +2413,9 @@ DeleteVoiceConnectorTerminationCredentialsOutcome ChimeClient::DeleteVoiceConnec
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/termination/credentials";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/termination/credentials");
   ss.str("?operation=delete");
   uri.SetQueryString(ss.str());
   return DeleteVoiceConnectorTerminationCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -2565,10 +2456,8 @@ DescribeAppInstanceOutcome ChimeClient::DescribeAppInstance(const DescribeAppIns
       return DescribeAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
   return DescribeAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2612,12 +2501,10 @@ DescribeAppInstanceAdminOutcome ChimeClient::DescribeAppInstanceAdmin(const Desc
       return DescribeAppInstanceAdminOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/admins/";
-  ss << request.GetAppInstanceAdminArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/admins/");
+  uri.AddPathSegment(request.GetAppInstanceAdminArn());
   return DescribeAppInstanceAdminOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2656,10 +2543,8 @@ DescribeAppInstanceUserOutcome ChimeClient::DescribeAppInstanceUser(const Descri
       return DescribeAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instance-users/";
-  ss << request.GetAppInstanceUserArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
   return DescribeAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2698,10 +2583,8 @@ DescribeChannelOutcome ChimeClient::DescribeChannel(const DescribeChannelRequest
       return DescribeChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
   return DescribeChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2745,12 +2628,10 @@ DescribeChannelBanOutcome ChimeClient::DescribeChannelBan(const DescribeChannelB
       return DescribeChannelBanOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/bans/";
-  ss << request.GetMemberArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/bans/");
+  uri.AddPathSegment(request.GetMemberArn());
   return DescribeChannelBanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2794,12 +2675,10 @@ DescribeChannelMembershipOutcome ChimeClient::DescribeChannelMembership(const De
       return DescribeChannelMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/memberships/";
-  ss << request.GetMemberArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/memberships/");
+  uri.AddPathSegment(request.GetMemberArn());
   return DescribeChannelMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2844,9 +2723,8 @@ DescribeChannelMembershipForAppInstanceUserOutcome ChimeClient::DescribeChannelM
     }
   }
   Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
   ss.str("?scope=app-instance-user-membership");
   uri.SetQueryString(ss.str());
   return DescribeChannelMembershipForAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -2893,9 +2771,8 @@ DescribeChannelModeratedByAppInstanceUserOutcome ChimeClient::DescribeChannelMod
     }
   }
   Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
   ss.str("?scope=app-instance-user-moderated-channel");
   uri.SetQueryString(ss.str());
   return DescribeChannelModeratedByAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -2941,12 +2818,10 @@ DescribeChannelModeratorOutcome ChimeClient::DescribeChannelModerator(const Desc
       return DescribeChannelModeratorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/moderators/";
-  ss << request.GetChannelModeratorArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/moderators/");
+  uri.AddPathSegment(request.GetChannelModeratorArn());
   return DescribeChannelModeratorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2982,11 +2857,10 @@ DisassociatePhoneNumberFromUserOutcome ChimeClient::DisassociatePhoneNumberFromU
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
   ss.str("?operation=disassociate-phone-number");
   uri.SetQueryString(ss.str());
   return DisassociatePhoneNumberFromUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -3019,9 +2893,8 @@ DisassociatePhoneNumbersFromVoiceConnectorOutcome ChimeClient::DisassociatePhone
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
   ss.str("?operation=disassociate-phone-numbers");
   uri.SetQueryString(ss.str());
   return DisassociatePhoneNumbersFromVoiceConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -3054,9 +2927,8 @@ DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome ChimeClient::Disassociate
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/voice-connector-groups/";
-  ss << request.GetVoiceConnectorGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connector-groups/");
+  uri.AddPathSegment(request.GetVoiceConnectorGroupId());
   ss.str("?operation=disassociate-phone-numbers");
   uri.SetQueryString(ss.str());
   return DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -3089,9 +2961,8 @@ DisassociateSigninDelegateGroupsFromAccountOutcome ChimeClient::DisassociateSign
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
   ss.str("?operation=disassociate-signin-delegate-groups");
   uri.SetQueryString(ss.str());
   return DisassociateSigninDelegateGroupsFromAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -3123,10 +2994,8 @@ GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) cons
     return GetAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
   return GetAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3156,11 +3025,9 @@ GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettin
     return GetAccountSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/settings");
   return GetAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3199,11 +3066,9 @@ GetAppInstanceRetentionSettingsOutcome ChimeClient::GetAppInstanceRetentionSetti
       return GetAppInstanceRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/retention-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/retention-settings");
   return GetAppInstanceRetentionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3233,11 +3098,9 @@ GetAppInstanceStreamingConfigurationsOutcome ChimeClient::GetAppInstanceStreamin
     return GetAppInstanceStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/streaming-configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/streaming-configurations");
   return GetAppInstanceStreamingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3272,12 +3135,10 @@ GetAttendeeOutcome ChimeClient::GetAttendee(const GetAttendeeRequest& request) c
     return GetAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees/";
-  ss << request.GetAttendeeId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees/");
+  uri.AddPathSegment(request.GetAttendeeId());
   return GetAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3312,12 +3173,10 @@ GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const
     return GetBotOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots/";
-  ss << request.GetBotId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
   return GetBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3361,12 +3220,10 @@ GetChannelMessageOutcome ChimeClient::GetChannelMessage(const GetChannelMessageR
       return GetChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   return GetChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3401,13 +3258,11 @@ GetEventsConfigurationOutcome ChimeClient::GetEventsConfiguration(const GetEvent
     return GetEventsConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/events-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/events-configuration");
   return GetEventsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3462,10 +3317,8 @@ GetMeetingOutcome ChimeClient::GetMeeting(const GetMeetingRequest& request) cons
     return GetMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
   return GetMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3499,9 +3352,7 @@ GetMessagingSessionEndpointOutcome ChimeClient::GetMessagingSessionEndpoint(cons
       return GetMessagingSessionEndpointOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/endpoints/messaging-session";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/endpoints/messaging-session");
   return GetMessagingSessionEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3531,10 +3382,8 @@ GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& r
     return GetPhoneNumberOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-numbers/";
-  ss << request.GetPhoneNumberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
   return GetPhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3564,10 +3413,8 @@ GetPhoneNumberOrderOutcome ChimeClient::GetPhoneNumberOrder(const GetPhoneNumber
     return GetPhoneNumberOrderOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberOrderId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-number-orders/";
-  ss << request.GetPhoneNumberOrderId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-number-orders/");
+  uri.AddPathSegment(request.GetPhoneNumberOrderId());
   return GetPhoneNumberOrderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3627,12 +3474,10 @@ GetProxySessionOutcome ChimeClient::GetProxySession(const GetProxySessionRequest
     return GetProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/proxy-sessions/";
-  ss << request.GetProxySessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/proxy-sessions/");
+  uri.AddPathSegment(request.GetProxySessionId());
   return GetProxySessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3662,11 +3507,9 @@ GetRetentionSettingsOutcome ChimeClient::GetRetentionSettings(const GetRetention
     return GetRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/retention-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/retention-settings");
   return GetRetentionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3701,12 +3544,10 @@ GetRoomOutcome ChimeClient::GetRoom(const GetRoomRequest& request) const
     return GetRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
   return GetRoomOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3736,10 +3577,8 @@ GetSipMediaApplicationOutcome ChimeClient::GetSipMediaApplication(const GetSipMe
     return GetSipMediaApplicationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications/";
-  ss << request.GetSipMediaApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications/");
+  uri.AddPathSegment(request.GetSipMediaApplicationId());
   return GetSipMediaApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3769,11 +3608,9 @@ GetSipMediaApplicationLoggingConfigurationOutcome ChimeClient::GetSipMediaApplic
     return GetSipMediaApplicationLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications/";
-  ss << request.GetSipMediaApplicationId();
-  ss << "/logging-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications/");
+  uri.AddPathSegment(request.GetSipMediaApplicationId());
+  uri.AddPathSegments("/logging-configuration");
   return GetSipMediaApplicationLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3803,10 +3640,8 @@ GetSipRuleOutcome ChimeClient::GetSipRule(const GetSipRuleRequest& request) cons
     return GetSipRuleOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipRuleId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-rules/";
-  ss << request.GetSipRuleId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-rules/");
+  uri.AddPathSegment(request.GetSipRuleId());
   return GetSipRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3841,12 +3676,10 @@ GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const
     return GetUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
   return GetUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3881,13 +3714,11 @@ GetUserSettingsOutcome ChimeClient::GetUserSettings(const GetUserSettingsRequest
     return GetUserSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/settings");
   return GetUserSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3917,10 +3748,8 @@ GetVoiceConnectorOutcome ChimeClient::GetVoiceConnector(const GetVoiceConnectorR
     return GetVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
   return GetVoiceConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3950,11 +3779,9 @@ GetVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::GetVoiceConne
     return GetVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/emergency-calling-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/emergency-calling-configuration");
   return GetVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3984,10 +3811,8 @@ GetVoiceConnectorGroupOutcome ChimeClient::GetVoiceConnectorGroup(const GetVoice
     return GetVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connector-groups/";
-  ss << request.GetVoiceConnectorGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connector-groups/");
+  uri.AddPathSegment(request.GetVoiceConnectorGroupId());
   return GetVoiceConnectorGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4017,11 +3842,9 @@ GetVoiceConnectorLoggingConfigurationOutcome ChimeClient::GetVoiceConnectorLoggi
     return GetVoiceConnectorLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/logging-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/logging-configuration");
   return GetVoiceConnectorLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4051,11 +3874,9 @@ GetVoiceConnectorOriginationOutcome ChimeClient::GetVoiceConnectorOrigination(co
     return GetVoiceConnectorOriginationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/origination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/origination");
   return GetVoiceConnectorOriginationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4085,11 +3906,9 @@ GetVoiceConnectorProxyOutcome ChimeClient::GetVoiceConnectorProxy(const GetVoice
     return GetVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/programmable-numbers/proxy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/programmable-numbers/proxy");
   return GetVoiceConnectorProxyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4119,11 +3938,9 @@ GetVoiceConnectorStreamingConfigurationOutcome ChimeClient::GetVoiceConnectorStr
     return GetVoiceConnectorStreamingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/streaming-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/streaming-configuration");
   return GetVoiceConnectorStreamingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4153,11 +3970,9 @@ GetVoiceConnectorTerminationOutcome ChimeClient::GetVoiceConnectorTermination(co
     return GetVoiceConnectorTerminationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/termination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/termination");
   return GetVoiceConnectorTerminationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4187,11 +4002,9 @@ GetVoiceConnectorTerminationHealthOutcome ChimeClient::GetVoiceConnectorTerminat
     return GetVoiceConnectorTerminationHealthOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/termination/health";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/termination/health");
   return GetVoiceConnectorTerminationHealthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4222,10 +4035,9 @@ InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) c
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users");
   ss.str("?operation=add");
   uri.SetQueryString(ss.str());
   return InviteUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -4252,9 +4064,7 @@ void ChimeClient::InviteUsersAsyncHelper(const InviteUsersRequest& request, cons
 ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts");
   return ListAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4293,11 +4103,9 @@ ListAppInstanceAdminsOutcome ChimeClient::ListAppInstanceAdmins(const ListAppIns
       return ListAppInstanceAdminsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/admins";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/admins");
   return ListAppInstanceAdminsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4336,9 +4144,7 @@ ListAppInstanceUsersOutcome ChimeClient::ListAppInstanceUsers(const ListAppInsta
       return ListAppInstanceUsersOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instance-users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instance-users");
   return ListAppInstanceUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4372,9 +4178,7 @@ ListAppInstancesOutcome ChimeClient::ListAppInstances(const ListAppInstancesRequ
       return ListAppInstancesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances");
   return ListAppInstancesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4409,13 +4213,11 @@ ListAttendeeTagsOutcome ChimeClient::ListAttendeeTags(const ListAttendeeTagsRequ
     return ListAttendeeTagsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees/";
-  ss << request.GetAttendeeId();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees/");
+  uri.AddPathSegment(request.GetAttendeeId());
+  uri.AddPathSegments("/tags");
   return ListAttendeeTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4445,11 +4247,9 @@ ListAttendeesOutcome ChimeClient::ListAttendees(const ListAttendeesRequest& requ
     return ListAttendeesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees");
   return ListAttendeesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4479,11 +4279,9 @@ ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const
     return ListBotsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots");
   return ListBotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4522,11 +4320,9 @@ ListChannelBansOutcome ChimeClient::ListChannelBans(const ListChannelBansRequest
       return ListChannelBansOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/bans";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/bans");
   return ListChannelBansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4565,11 +4361,9 @@ ListChannelMembershipsOutcome ChimeClient::ListChannelMemberships(const ListChan
       return ListChannelMembershipsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/memberships";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/memberships");
   return ListChannelMembershipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4604,8 +4398,7 @@ ListChannelMembershipsForAppInstanceUserOutcome ChimeClient::ListChannelMembersh
     }
   }
   Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   ss.str("?scope=app-instance-user-memberships");
   uri.SetQueryString(ss.str());
   return ListChannelMembershipsForAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -4646,11 +4439,9 @@ ListChannelMessagesOutcome ChimeClient::ListChannelMessages(const ListChannelMes
       return ListChannelMessagesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/messages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/messages");
   return ListChannelMessagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4689,11 +4480,9 @@ ListChannelModeratorsOutcome ChimeClient::ListChannelModerators(const ListChanne
       return ListChannelModeratorsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/moderators";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/moderators");
   return ListChannelModeratorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4732,9 +4521,7 @@ ListChannelsOutcome ChimeClient::ListChannels(const ListChannelsRequest& request
       return ListChannelsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4769,8 +4556,7 @@ ListChannelsModeratedByAppInstanceUserOutcome ChimeClient::ListChannelsModerated
     }
   }
   Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   ss.str("?scope=app-instance-user-moderated-channels");
   uri.SetQueryString(ss.str());
   return ListChannelsModeratedByAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -4802,11 +4588,9 @@ ListMeetingTagsOutcome ChimeClient::ListMeetingTags(const ListMeetingTagsRequest
     return ListMeetingTagsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/tags");
   return ListMeetingTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4831,9 +4615,7 @@ void ChimeClient::ListMeetingTagsAsyncHelper(const ListMeetingTagsRequest& reque
 ListMeetingsOutcome ChimeClient::ListMeetings(const ListMeetingsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/meetings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings");
   return ListMeetingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4858,9 +4640,7 @@ void ChimeClient::ListMeetingsAsyncHelper(const ListMeetingsRequest& request, co
 ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneNumberOrdersRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-number-orders";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-number-orders");
   return ListPhoneNumberOrdersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4885,9 +4665,7 @@ void ChimeClient::ListPhoneNumberOrdersAsyncHelper(const ListPhoneNumberOrdersRe
 ListPhoneNumbersOutcome ChimeClient::ListPhoneNumbers(const ListPhoneNumbersRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-numbers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers");
   return ListPhoneNumbersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4917,11 +4695,9 @@ ListProxySessionsOutcome ChimeClient::ListProxySessions(const ListProxySessionsR
     return ListProxySessionsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/proxy-sessions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/proxy-sessions");
   return ListProxySessionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4956,13 +4732,11 @@ ListRoomMembershipsOutcome ChimeClient::ListRoomMemberships(const ListRoomMember
     return ListRoomMembershipsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  ss << "/memberships";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
+  uri.AddPathSegments("/memberships");
   return ListRoomMembershipsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -4992,11 +4766,9 @@ ListRoomsOutcome ChimeClient::ListRooms(const ListRoomsRequest& request) const
     return ListRoomsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms");
   return ListRoomsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5021,9 +4793,7 @@ void ChimeClient::ListRoomsAsyncHelper(const ListRoomsRequest& request, const Li
 ListSipMediaApplicationsOutcome ChimeClient::ListSipMediaApplications(const ListSipMediaApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications");
   return ListSipMediaApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5048,9 +4818,7 @@ void ChimeClient::ListSipMediaApplicationsAsyncHelper(const ListSipMediaApplicat
 ListSipRulesOutcome ChimeClient::ListSipRules(const ListSipRulesRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-rules";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-rules");
   return ListSipRulesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5112,9 +4880,7 @@ ListTagsForResourceOutcome ChimeClient::ListTagsForResource(const ListTagsForRes
     return ListTagsForResourceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceARN]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5144,11 +4910,9 @@ ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const
     return ListUsersOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users");
   return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5173,9 +4937,7 @@ void ChimeClient::ListUsersAsyncHelper(const ListUsersRequest& request, const Li
 ListVoiceConnectorGroupsOutcome ChimeClient::ListVoiceConnectorGroups(const ListVoiceConnectorGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connector-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connector-groups");
   return ListVoiceConnectorGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5205,11 +4967,9 @@ ListVoiceConnectorTerminationCredentialsOutcome ChimeClient::ListVoiceConnectorT
     return ListVoiceConnectorTerminationCredentialsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/termination/credentials";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/termination/credentials");
   return ListVoiceConnectorTerminationCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5234,9 +4994,7 @@ void ChimeClient::ListVoiceConnectorTerminationCredentialsAsyncHelper(const List
 ListVoiceConnectorsOutcome ChimeClient::ListVoiceConnectors(const ListVoiceConnectorsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors");
   return ListVoiceConnectorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5272,11 +5030,10 @@ LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) cons
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
   ss.str("?operation=logout");
   uri.SetQueryString(ss.str());
   return LogoutUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5317,11 +5074,9 @@ PutAppInstanceRetentionSettingsOutcome ChimeClient::PutAppInstanceRetentionSetti
       return PutAppInstanceRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/retention-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/retention-settings");
   return PutAppInstanceRetentionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5351,11 +5106,9 @@ PutAppInstanceStreamingConfigurationsOutcome ChimeClient::PutAppInstanceStreamin
     return PutAppInstanceStreamingConfigurationsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppInstanceArn]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  ss << "/streaming-configurations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
+  uri.AddPathSegments("/streaming-configurations");
   return PutAppInstanceStreamingConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5390,13 +5143,11 @@ PutEventsConfigurationOutcome ChimeClient::PutEventsConfiguration(const PutEvent
     return PutEventsConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots/";
-  ss << request.GetBotId();
-  ss << "/events-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
+  uri.AddPathSegments("/events-configuration");
   return PutEventsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5426,11 +5177,9 @@ PutRetentionSettingsOutcome ChimeClient::PutRetentionSettings(const PutRetention
     return PutRetentionSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/retention-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/retention-settings");
   return PutRetentionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5460,11 +5209,9 @@ PutSipMediaApplicationLoggingConfigurationOutcome ChimeClient::PutSipMediaApplic
     return PutSipMediaApplicationLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications/";
-  ss << request.GetSipMediaApplicationId();
-  ss << "/logging-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications/");
+  uri.AddPathSegment(request.GetSipMediaApplicationId());
+  uri.AddPathSegments("/logging-configuration");
   return PutSipMediaApplicationLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5494,11 +5241,9 @@ PutVoiceConnectorEmergencyCallingConfigurationOutcome ChimeClient::PutVoiceConne
     return PutVoiceConnectorEmergencyCallingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/emergency-calling-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/emergency-calling-configuration");
   return PutVoiceConnectorEmergencyCallingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5528,11 +5273,9 @@ PutVoiceConnectorLoggingConfigurationOutcome ChimeClient::PutVoiceConnectorLoggi
     return PutVoiceConnectorLoggingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/logging-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/logging-configuration");
   return PutVoiceConnectorLoggingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5562,11 +5305,9 @@ PutVoiceConnectorOriginationOutcome ChimeClient::PutVoiceConnectorOrigination(co
     return PutVoiceConnectorOriginationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/origination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/origination");
   return PutVoiceConnectorOriginationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5596,11 +5337,9 @@ PutVoiceConnectorProxyOutcome ChimeClient::PutVoiceConnectorProxy(const PutVoice
     return PutVoiceConnectorProxyOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/programmable-numbers/proxy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/programmable-numbers/proxy");
   return PutVoiceConnectorProxyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5630,11 +5369,9 @@ PutVoiceConnectorStreamingConfigurationOutcome ChimeClient::PutVoiceConnectorStr
     return PutVoiceConnectorStreamingConfigurationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/streaming-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/streaming-configuration");
   return PutVoiceConnectorStreamingConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5664,11 +5401,9 @@ PutVoiceConnectorTerminationOutcome ChimeClient::PutVoiceConnectorTermination(co
     return PutVoiceConnectorTerminationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/termination";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/termination");
   return PutVoiceConnectorTerminationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -5699,10 +5434,9 @@ PutVoiceConnectorTerminationCredentialsOutcome ChimeClient::PutVoiceConnectorTer
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/termination/credentials";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/termination/credentials");
   ss.str("?operation=put");
   uri.SetQueryString(ss.str());
   return PutVoiceConnectorTerminationCredentialsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5749,11 +5483,10 @@ RedactChannelMessageOutcome ChimeClient::RedactChannelMessage(const RedactChanne
     }
   }
   Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   ss.str("?operation=redact");
   uri.SetQueryString(ss.str());
   return RedactChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5796,13 +5529,12 @@ RedactConversationMessageOutcome ChimeClient::RedactConversationMessage(const Re
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/conversations/";
-  ss << request.GetConversationId();
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/conversations/");
+  uri.AddPathSegment(request.GetConversationId());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   ss.str("?operation=redact");
   uri.SetQueryString(ss.str());
   return RedactConversationMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5845,13 +5577,12 @@ RedactRoomMessageOutcome ChimeClient::RedactRoomMessage(const RedactRoomMessageR
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   ss.str("?operation=redact");
   uri.SetQueryString(ss.str());
   return RedactRoomMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5889,11 +5620,10 @@ RegenerateSecurityTokenOutcome ChimeClient::RegenerateSecurityToken(const Regene
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots/";
-  ss << request.GetBotId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
   ss.str("?operation=regenerate-security-token");
   uri.SetQueryString(ss.str());
   return RegenerateSecurityTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5931,11 +5661,10 @@ ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequ
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
   ss.str("?operation=reset-personal-pin");
   uri.SetQueryString(ss.str());
   return ResetPersonalPINOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5968,9 +5697,8 @@ RestorePhoneNumberOutcome ChimeClient::RestorePhoneNumber(const RestorePhoneNumb
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/phone-numbers/";
-  ss << request.GetPhoneNumberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
   ss.str("?operation=restore");
   uri.SetQueryString(ss.str());
   return RestorePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -5998,8 +5726,7 @@ SearchAvailablePhoneNumbersOutcome ChimeClient::SearchAvailablePhoneNumbers(cons
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/search");
   ss.str("?type=phone-numbers");
   uri.SetQueryString(ss.str());
   return SearchAvailablePhoneNumbersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
@@ -6040,11 +5767,9 @@ SendChannelMessageOutcome ChimeClient::SendChannelMessage(const SendChannelMessa
       return SendChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/messages";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/messages");
   return SendChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6080,12 +5805,11 @@ TagAttendeeOutcome ChimeClient::TagAttendee(const TagAttendeeRequest& request) c
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees/";
-  ss << request.GetAttendeeId();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees/");
+  uri.AddPathSegment(request.GetAttendeeId());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=add");
   uri.SetQueryString(ss.str());
   return TagAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -6118,10 +5842,9 @@ TagMeetingOutcome ChimeClient::TagMeeting(const TagMeetingRequest& request) cons
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=add");
   uri.SetQueryString(ss.str());
   return TagMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -6149,8 +5872,7 @@ TagResourceOutcome ChimeClient::TagResource(const TagResourceRequest& request) c
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=tag-resource");
   uri.SetQueryString(ss.str());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -6188,12 +5910,11 @@ UntagAttendeeOutcome ChimeClient::UntagAttendee(const UntagAttendeeRequest& requ
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/attendees/";
-  ss << request.GetAttendeeId();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/attendees/");
+  uri.AddPathSegment(request.GetAttendeeId());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=delete");
   uri.SetQueryString(ss.str());
   return UntagAttendeeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -6226,10 +5947,9 @@ UntagMeetingOutcome ChimeClient::UntagMeeting(const UntagMeetingRequest& request
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/meetings/";
-  ss << request.GetMeetingId();
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/meetings/");
+  uri.AddPathSegment(request.GetMeetingId());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=delete");
   uri.SetQueryString(ss.str());
   return UntagMeetingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -6257,8 +5977,7 @@ UntagResourceOutcome ChimeClient::UntagResource(const UntagResourceRequest& requ
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
   Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   ss.str("?operation=untag-resource");
   uri.SetQueryString(ss.str());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
@@ -6290,10 +6009,8 @@ UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& requ
     return UpdateAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
   return UpdateAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6323,11 +6040,9 @@ UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAcco
     return UpdateAccountSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/settings");
   return UpdateAccountSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6366,10 +6081,8 @@ UpdateAppInstanceOutcome ChimeClient::UpdateAppInstance(const UpdateAppInstanceR
       return UpdateAppInstanceOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instances/";
-  ss << request.GetAppInstanceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instances/");
+  uri.AddPathSegment(request.GetAppInstanceArn());
   return UpdateAppInstanceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6408,10 +6121,8 @@ UpdateAppInstanceUserOutcome ChimeClient::UpdateAppInstanceUser(const UpdateAppI
       return UpdateAppInstanceUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/app-instance-users/";
-  ss << request.GetAppInstanceUserArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/app-instance-users/");
+  uri.AddPathSegment(request.GetAppInstanceUserArn());
   return UpdateAppInstanceUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6446,12 +6157,10 @@ UpdateBotOutcome ChimeClient::UpdateBot(const UpdateBotRequest& request) const
     return UpdateBotOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/bots/";
-  ss << request.GetBotId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/bots/");
+  uri.AddPathSegment(request.GetBotId());
   return UpdateBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6490,10 +6199,8 @@ UpdateChannelOutcome ChimeClient::UpdateChannel(const UpdateChannelRequest& requ
       return UpdateChannelOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
   return UpdateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6537,12 +6244,10 @@ UpdateChannelMessageOutcome ChimeClient::UpdateChannelMessage(const UpdateChanne
       return UpdateChannelMessageOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/messages/";
-  ss << request.GetMessageId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/messages/");
+  uri.AddPathSegment(request.GetMessageId());
   return UpdateChannelMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6581,11 +6286,9 @@ UpdateChannelReadMarkerOutcome ChimeClient::UpdateChannelReadMarker(const Update
       return UpdateChannelReadMarkerOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
     }
   }
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelArn();
-  ss << "/readMarker";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelArn());
+  uri.AddPathSegments("/readMarker");
   return UpdateChannelReadMarkerOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6610,9 +6313,7 @@ void ChimeClient::UpdateChannelReadMarkerAsyncHelper(const UpdateChannelReadMark
 UpdateGlobalSettingsOutcome ChimeClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/settings");
   return UpdateGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6642,10 +6343,8 @@ UpdatePhoneNumberOutcome ChimeClient::UpdatePhoneNumber(const UpdatePhoneNumberR
     return UpdatePhoneNumberOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PhoneNumberId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/phone-numbers/";
-  ss << request.GetPhoneNumberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/phone-numbers/");
+  uri.AddPathSegment(request.GetPhoneNumberId());
   return UpdatePhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6670,9 +6369,7 @@ void ChimeClient::UpdatePhoneNumberAsyncHelper(const UpdatePhoneNumberRequest& r
 UpdatePhoneNumberSettingsOutcome ChimeClient::UpdatePhoneNumberSettings(const UpdatePhoneNumberSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/settings/phone-number";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/settings/phone-number");
   return UpdatePhoneNumberSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6707,12 +6404,10 @@ UpdateProxySessionOutcome ChimeClient::UpdateProxySession(const UpdateProxySessi
     return UpdateProxySessionOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProxySessionId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  ss << "/proxy-sessions/";
-  ss << request.GetProxySessionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
+  uri.AddPathSegments("/proxy-sessions/");
+  uri.AddPathSegment(request.GetProxySessionId());
   return UpdateProxySessionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6747,12 +6442,10 @@ UpdateRoomOutcome ChimeClient::UpdateRoom(const UpdateRoomRequest& request) cons
     return UpdateRoomOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoomId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
   return UpdateRoomOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6792,14 +6485,12 @@ UpdateRoomMembershipOutcome ChimeClient::UpdateRoomMembership(const UpdateRoomMe
     return UpdateRoomMembershipOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/rooms/";
-  ss << request.GetRoomId();
-  ss << "/memberships/";
-  ss << request.GetMemberId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/rooms/");
+  uri.AddPathSegment(request.GetRoomId());
+  uri.AddPathSegments("/memberships/");
+  uri.AddPathSegment(request.GetMemberId());
   return UpdateRoomMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6829,10 +6520,8 @@ UpdateSipMediaApplicationOutcome ChimeClient::UpdateSipMediaApplication(const Up
     return UpdateSipMediaApplicationOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-media-applications/";
-  ss << request.GetSipMediaApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-media-applications/");
+  uri.AddPathSegment(request.GetSipMediaApplicationId());
   return UpdateSipMediaApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6862,10 +6551,8 @@ UpdateSipRuleOutcome ChimeClient::UpdateSipRule(const UpdateSipRuleRequest& requ
     return UpdateSipRuleOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipRuleId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/sip-rules/";
-  ss << request.GetSipRuleId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sip-rules/");
+  uri.AddPathSegment(request.GetSipRuleId());
   return UpdateSipRuleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6900,12 +6587,10 @@ UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) cons
     return UpdateUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
   return UpdateUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6940,13 +6625,11 @@ UpdateUserSettingsOutcome ChimeClient::UpdateUserSettings(const UpdateUserSettin
     return UpdateUserSettingsOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/accounts/";
-  ss << request.GetAccountId();
-  ss << "/users/";
-  ss << request.GetUserId();
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAccountId());
+  uri.AddPathSegments("/users/");
+  uri.AddPathSegment(request.GetUserId());
+  uri.AddPathSegments("/settings");
   return UpdateUserSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -6976,10 +6659,8 @@ UpdateVoiceConnectorOutcome ChimeClient::UpdateVoiceConnector(const UpdateVoiceC
     return UpdateVoiceConnectorOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connectors/";
-  ss << request.GetVoiceConnectorId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connectors/");
+  uri.AddPathSegment(request.GetVoiceConnectorId());
   return UpdateVoiceConnectorOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -7009,10 +6690,8 @@ UpdateVoiceConnectorGroupOutcome ChimeClient::UpdateVoiceConnectorGroup(const Up
     return UpdateVoiceConnectorGroupOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VoiceConnectorGroupId]", false));
   }
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
-  Aws::StringStream ss;
-  ss << "/voice-connector-groups/";
-  ss << request.GetVoiceConnectorGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/voice-connector-groups/");
+  uri.AddPathSegment(request.GetVoiceConnectorGroupId());
   return UpdateVoiceConnectorGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

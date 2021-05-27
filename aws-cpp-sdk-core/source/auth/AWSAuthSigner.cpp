@@ -82,16 +82,14 @@ static Aws::String CanonicalizeRequestSigningString(HttpRequest& request, bool u
     if(urlEscapePath)
     {
         // RFC3986 is how we encode the URL before sending it on the wire.
-        auto rfc3986EncodedPath = URI::URLEncodePathRFC3986(uriCpy.GetPath());
-        uriCpy.SetPath(rfc3986EncodedPath);
+        uriCpy.SetPath(uriCpy.GetURLEncodedPathRFC3986());
         // However, SignatureV4 uses this URL encoding scheme
         signingStringStream << NEWLINE << uriCpy.GetURLEncodedPath() << NEWLINE;
     }
     else
     {
         // For the services that DO decode the URL first; we don't need to double encode it.
-        uriCpy.SetPath(uriCpy.GetURLEncodedPath());
-        signingStringStream << NEWLINE << uriCpy.GetPath() << NEWLINE;
+        signingStringStream << NEWLINE << uriCpy.GetURLEncodedPath() << NEWLINE;
     }
 
     if (request.GetQueryString().find('=') != std::string::npos)

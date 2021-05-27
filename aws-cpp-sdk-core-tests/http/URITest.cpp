@@ -46,9 +46,9 @@ TEST(URITest, TestSetPath)
     uri.SetPath(path);
     EXPECT_EQ(path, uri.GetPath());
 
-    path = "path/to/resource/";
+    path = "path/to/resource";
     uri.SetPath(path);
-    EXPECT_EQ("/path/to/resource/", uri.GetPath());
+    EXPECT_EQ("/path/to/resource", uri.GetPath());
 
     path = "//path/to//resource";
     uri.SetPath(path);
@@ -60,6 +60,52 @@ TEST(URITest, TestSetPath)
     EXPECT_EQ("/path/with%20space/to/resource", uri.GetURLEncodedPath());
     //make sure we return an UnEncoded path properly
     EXPECT_EQ(path, uri.GetPath());
+}
+
+TEST(URITest, TestAddPathSegments)
+{
+    URI uri;
+
+    uri.AddPathSegment("//");
+    EXPECT_STREQ("/", uri.GetPath().c_str());
+    EXPECT_STREQ("/", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegment("/path/");
+    EXPECT_STREQ("/path", uri.GetPath().c_str());
+    EXPECT_STREQ("/path", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegment("/path/");
+    uri.AddPathSegment("to");
+    uri.AddPathSegment("/some");
+    uri.AddPathSegment("resource/");
+    EXPECT_STREQ("/path/to/some/resource", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/to/some/resource", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegment("/int");
+    uri.AddPathSegment(10);
+    uri.AddPathSegment("float");
+    uri.AddPathSegment(12.34);
+    EXPECT_STREQ("/int/10/float/12.34", uri.GetPath().c_str());
+    EXPECT_STREQ("/int/10/float/12.34", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    // There is no way to tell the differences between slashes in path segment and slashed as delimiters before encoding.
+    uri.AddPathSegment("/path/segment/");
+    EXPECT_STREQ("/path/segment", uri.GetPath().c_str());
+    EXPECT_STREQ("/path%2Fsegment", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegments("//");
+    EXPECT_STREQ("/", uri.GetPath().c_str());
+    EXPECT_STREQ("/", uri.GetURLEncodedPath().c_str());
+
+    uri.SetPath("");
+    uri.AddPathSegments("//path/to//resource/");
+    EXPECT_STREQ("/path/to/resource", uri.GetPath().c_str());
+    EXPECT_STREQ("/path/to/resource", uri.GetURLEncodedPath().c_str());
 }
 
 TEST(URITest, TestAddQueryStringParameters)
@@ -173,8 +219,8 @@ TEST(URITest, TestParse)
     EXPECT_EQ(Scheme::HTTP, uriThatBrokeTheOtherDay.GetScheme());
     EXPECT_EQ("sqs.us-east-1.amazonaws.com", uriThatBrokeTheOtherDay.GetAuthority());
     EXPECT_EQ(80, uriThatBrokeTheOtherDay.GetPort());
-    EXPECT_EQ("/686094048/testQueueName/", uriThatBrokeTheOtherDay.GetPath());
-    EXPECT_EQ("http://sqs.us-east-1.amazonaws.com/686094048/testQueueName/", uriThatBrokeTheOtherDay.GetURIString());
+    EXPECT_EQ("/686094048/testQueueName", uriThatBrokeTheOtherDay.GetPath());
+    EXPECT_EQ("http://sqs.us-east-1.amazonaws.com/686094048/testQueueName", uriThatBrokeTheOtherDay.GetURIString());
 }
 
 TEST(URITest, TestParseWithColon)
@@ -232,7 +278,7 @@ TEST(URITest, TestGetURLEncodedPath)
 TEST(URITest, TestGetRFC3986URLEncodedPath)
 {
     URI uri = "https://test.com/path/1234/";
-    EXPECT_STREQ("/path/1234/", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
+    EXPECT_STREQ("/path/1234", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 
     uri = "https://test.com/path/$omething";
     EXPECT_STREQ("/path/$omething", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());

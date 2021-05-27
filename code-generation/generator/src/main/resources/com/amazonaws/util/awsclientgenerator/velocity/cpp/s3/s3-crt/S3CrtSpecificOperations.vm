@@ -215,7 +215,9 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 {
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#if($operation.http.requestUri.contains("?"))
   Aws::StringStream ss;
+#end
 #set($uriParts = $operation.http.requestUriParts)
 #set($uriVars = $operation.http.requestParameters)
 #set($partIndex = 1)
@@ -226,21 +228,31 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("${pathAndQuery.get(0)}");
 #end
   ss.str("${pathAndQuery.get(1)}");
-#else
-  ss << "$uriPartString";
+#elseif(!$uriPartString.equals("/"))
+  uri.AddPathSegments("$uriPartString");
 #end
 #foreach($var in $uriVars)
 #set($varIndex = $partIndex - 1)
+#set($uriVar = $uriVars.get($varIndex).replace('+', ''))
+#set($greedySyntax = $uriVars.get($varIndex).contains("+"))
 #if(!$skipFirst)
-#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVar))
 #if($partShapeMember.shape.enum)
-  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
+#set($parameter = "${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}())")
 #else
-  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
+#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}()")
+#end
+#if($queryStart)
+  ss << $parameter;
+#else
+#if($greedySyntax)
+  uri.AddPathSegments($parameter);
+#else
+  uri.AddPathSegment($parameter);
+#end
 #end
 #if($uriParts.size() > $partIndex)
 #set($uriPartString = "${uriParts.get($partIndex)}")
@@ -248,12 +260,11 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #set($queryStart = true)
 #set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
 #if(!$pathAndQuery.get(0).isEmpty())
-  ss << "${pathAndQuery.get(0)}";
+  uri.AddPathSegments("${pathAndQuery.get(0)}");
 #end
-  uri.SetPath(uri.GetPath() + ss.str());
   ss.str("${pathAndQuery.get(1)}");
-#else
-  ss << "$uriPartString";
+#elseif(!$uriPartString.equals("/"))
+  uri.AddPathSegments("$uriPartString");
 #end
 #end
 #end
@@ -261,9 +272,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 #set($skipFirst = false)
 #end
 #end
-#if(!$queryStart)
-  uri.SetPath(uri.GetPath() + ss.str());
-#else
+#if($queryStart)
   uri.SetQueryString(ss.str());
 #end
 #if($operation.result && $operation.result.shape.hasEventStreamMembers())

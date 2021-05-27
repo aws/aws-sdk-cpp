@@ -383,7 +383,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             serviceModel.getMetadata().setGlobalEndpoint("ce.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("chime")) {
-            serviceModel.getMetadata().setGlobalEndpoint("service.chime.aws.amazon.com");
+            serviceModel.getMetadata().setGlobalEndpoint("chime.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("iam")) {
             endpoints.put("cn-north-1", "iam.cn-north-1.amazonaws.com.cn");
