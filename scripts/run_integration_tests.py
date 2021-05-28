@@ -13,9 +13,11 @@ def ParseArguments():
 
     parser = argparse.ArgumentParser(description="AWSNativeSDK Run all Integration Tests")
     parser.add_argument("--testDir", action="store")
+    parser.add_argument("--retries", type=int, action="store")
 
     args = vars( parser.parse_args() )
     argMap[ "testDir" ] = args[ "testDir" ] or "./build"
+    argMap[ "retries" ] = args[ "retries" ] or 3
 
     return argMap
 
@@ -60,7 +62,14 @@ def Main():
         print("testExe = " + testExe)
         print("prefix = " + prefix)
         AddExecutableBit(testExe)
-        subprocess.check_call([testExe, prefix])
+        for attempt in range(arguments[ "retries" ]):
+            try:
+                subprocess.check_call([testExe, prefix])
+                return
+            except subprocess.CalledProcessError:
+                print("Integration test: {} failed. Attempt: {} in {}".format(testName, attempt + 1, arguments[ "retries" ]))
+        # Hit the max attempt.
+        raise Exception("All {} attempt(s) failed.".format(arguments[ "retries" ]))
 
 
 # Run from powershell; make sure msbuild is in PATH environment variable
