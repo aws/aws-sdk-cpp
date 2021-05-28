@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/DataSourceConfiguration.h>
 #include <aws/location/model/PricingPlan.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -36,35 +37,35 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the Place index resource was created in <a
+     * <p>The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The timestamp for when the Place index resource was created in <a
+     * <p>The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
 
     /**
-     * <p>The timestamp for when the Place index resource was created in <a
+     * <p>The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the Place index resource was created in <a
+     * <p>The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline DescribePlaceIndexResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the Place index resource was created in <a
+     * <p>The timestamp for when the place index resource was created in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
@@ -169,122 +170,136 @@ namespace Model
 
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline DescribePlaceIndexResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline DescribePlaceIndexResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline DescribePlaceIndexResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Place index resource. Used when you
-     * need to specify a resource across all AWS. </p>
+     * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
+     * a resource across all AWS. </p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetIndexArn() const{ return m_indexArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Place index resource. Used when you
-     * need to specify a resource across all AWS. </p>
+     * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
+     * a resource across all AWS. </p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
+     * </li> </ul>
      */
     inline void SetIndexArn(const Aws::String& value) { m_indexArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Place index resource. Used when you
-     * need to specify a resource across all AWS. </p>
+     * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
+     * a resource across all AWS. </p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
+     * </li> </ul>
      */
     inline void SetIndexArn(Aws::String&& value) { m_indexArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Place index resource. Used when you
-     * need to specify a resource across all AWS. </p>
+     * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
+     * a resource across all AWS. </p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
+     * </li> </ul>
      */
     inline void SetIndexArn(const char* value) { m_indexArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Place index resource. Used when you
-     * need to specify a resource across all AWS. </p>
+     * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
+     * a resource across all AWS. </p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
+     * </li> </ul>
      */
     inline DescribePlaceIndexResult& WithIndexArn(const Aws::String& value) { SetIndexArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Place index resource. Used when you
-     * need to specify a resource across all AWS. </p>
+     * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
+     * a resource across all AWS. </p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
+     * </li> </ul>
      */
     inline DescribePlaceIndexResult& WithIndexArn(Aws::String&& value) { SetIndexArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the Place index resource. Used when you
-     * need to specify a resource across all AWS. </p>
+     * <p>The Amazon Resource Name (ARN) for the place index resource. Used to specify
+     * a resource across all AWS. </p> <ul> <li> <p>Format example:
+     * <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code> </p>
+     * </li> </ul>
      */
     inline DescribePlaceIndexResult& WithIndexArn(const char* value) { SetIndexArn(value); return *this;}
 
 
     /**
-     * <p>The name of the Place index resource being described.</p>
+     * <p>The name of the place index resource being described.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
-     * <p>The name of the Place index resource being described.</p>
+     * <p>The name of the place index resource being described.</p>
      */
     inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
 
     /**
-     * <p>The name of the Place index resource being described.</p>
+     * <p>The name of the place index resource being described.</p>
      */
     inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
 
     /**
-     * <p>The name of the Place index resource being described.</p>
+     * <p>The name of the place index resource being described.</p>
      */
     inline void SetIndexName(const char* value) { m_indexName.assign(value); }
 
     /**
-     * <p>The name of the Place index resource being described.</p>
+     * <p>The name of the place index resource being described.</p>
      */
     inline DescribePlaceIndexResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
     /**
-     * <p>The name of the Place index resource being described.</p>
+     * <p>The name of the place index resource being described.</p>
      */
     inline DescribePlaceIndexResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Place index resource being described.</p>
+     * <p>The name of the place index resource being described.</p>
      */
     inline DescribePlaceIndexResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 
 
     /**
-     * <p>The pricing plan selected for the specified Place index resource.</p> <p>For
+     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -292,7 +307,7 @@ namespace Model
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * <p>The pricing plan selected for the specified Place index resource.</p> <p>For
+     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -300,7 +315,7 @@ namespace Model
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
 
     /**
-     * <p>The pricing plan selected for the specified Place index resource.</p> <p>For
+     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -308,7 +323,7 @@ namespace Model
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
 
     /**
-     * <p>The pricing plan selected for the specified Place index resource.</p> <p>For
+     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -316,7 +331,7 @@ namespace Model
     inline DescribePlaceIndexResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * <p>The pricing plan selected for the specified Place index resource.</p> <p>For
+     * <p>The pricing plan selected for the specified place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -325,35 +340,96 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the Place index resource was last updated in <a
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags associated with place index resource.</p>
+     */
+    inline DescribePlaceIndexResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
 
     /**
-     * <p>The timestamp for when the Place index resource was last updated in <a
+     * <p>The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
 
     /**
-     * <p>The timestamp for when the Place index resource was last updated in <a
+     * <p>The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the Place index resource was last updated in <a
+     * <p>The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline DescribePlaceIndexResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the Place index resource was last updated in <a
+     * <p>The timestamp for when the place index resource was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
@@ -374,6 +450,8 @@ namespace Model
     Aws::String m_indexName;
 
     PricingPlan m_pricingPlan;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Utils::DateTime m_updateTime;
   };

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Specifies a single point of interest, or Place as a result of a search query
-   * obtained from a dataset configured in the Place index Resource.</p><p><h3>See
+   * obtained from a dataset configured in the place index resource.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/SearchForPositionResult">AWS
    * API Reference</a></p>

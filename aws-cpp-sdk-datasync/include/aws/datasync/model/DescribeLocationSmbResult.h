@@ -77,37 +77,37 @@ namespace Model
 
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the source SBM location that was described.</p>
+     * <p>The URL of the source SMB location that was described.</p>
      */
     inline DescribeLocationSmbResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 

@@ -293,42 +293,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline SearchPlaceIndexForTextRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline SearchPlaceIndexForTextRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Place index resource you want to use for the search.</p>
+     * <p>The name of the place index resource you want to use for the search.</p>
      */
     inline SearchPlaceIndexForTextRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/DataSourceConfiguration.h>
 #include <aws/location/model/PricingPlan.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -38,8 +39,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -49,8 +56,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -60,8 +73,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -71,8 +90,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -82,8 +107,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -93,8 +124,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -104,8 +141,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -115,8 +158,14 @@ namespace Model
      * <p>Specifies the data provider of geospatial data.</p>  <p>This field is
      * case-sensitive. Enter the valid values as shown. For example, entering
      * <code>HERE</code> will return an error.</p>  <p>Valid values include:</p>
-     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p> </li>
-     * </ul> <p>For additional details on data providers, see the <a
+     * <ul> <li> <p> <code>Esri</code> </p> </li> <li> <p> <code>Here</code> </p>
+     *  <p>Place index resources using HERE as a data provider can't be used
+     * to <a
+     * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
+     * results for locations in Japan. For more information, see the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon
+     * Location Service.</p>  </li> </ul> <p>For additional details on data
+     * providers, see the <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers page</a>.</p>
      */
@@ -155,113 +204,113 @@ namespace Model
 
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline CreatePlaceIndexRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline CreatePlaceIndexRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The optional description for the Place index resource.</p>
+     * <p>The optional description for the place index resource.</p>
      */
     inline CreatePlaceIndexRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
     inline CreatePlaceIndexRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Place index resource. </p> <p>Requirements:</p> <ul> <li>
-     * <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods
-     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique Place index
+     * <p>The name of the place index resource. </p> <p>Requirements:</p> <ul> <li>
+     * <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+     * (.), and underscores (_).</p> </li> <li> <p>Must be a unique place index
      * resource name.</p> </li> <li> <p>No spaces allowed. For example,
      * <code>ExamplePlaceIndex</code>.</p> </li> </ul>
      */
@@ -269,7 +318,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies the pricing plan for your Place index resource.</p> <p>For
+     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -277,7 +326,7 @@ namespace Model
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * <p>Specifies the pricing plan for your Place index resource.</p> <p>For
+     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -285,7 +334,7 @@ namespace Model
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
 
     /**
-     * <p>Specifies the pricing plan for your Place index resource.</p> <p>For
+     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -293,7 +342,7 @@ namespace Model
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * <p>Specifies the pricing plan for your Place index resource.</p> <p>For
+     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -301,7 +350,7 @@ namespace Model
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * <p>Specifies the pricing plan for your Place index resource.</p> <p>For
+     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -309,12 +358,169 @@ namespace Model
     inline CreatePlaceIndexRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * <p>Specifies the pricing plan for your Place index resource.</p> <p>For
+     * <p>Specifies the pricing plan for your place index resource.</p> <p>For
      * additional details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
      */
     inline CreatePlaceIndexRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the place index resource. A tag is a key-value
+     * pair helps manage, identify, search, and filter your resources by labelling
+     * them.</p> <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul>
+     * <li> <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreatePlaceIndexRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -332,6 +538,9 @@ namespace Model
 
     PricingPlan m_pricingPlan;
     bool m_pricingPlanHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

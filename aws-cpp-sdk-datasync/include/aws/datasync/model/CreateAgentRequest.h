@@ -449,55 +449,64 @@ namespace Model
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupArns() const{ return m_securityGroupArns; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline bool SecurityGroupArnsHasBeenSet() const { return m_securityGroupArnsHasBeenSet; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline void SetSecurityGroupArns(const Aws::Vector<Aws::String>& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = value; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline void SetSecurityGroupArns(Aws::Vector<Aws::String>&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns = std::move(value); }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& WithSecurityGroupArns(const Aws::Vector<Aws::String>& value) { SetSecurityGroupArns(value); return *this;}
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& WithSecurityGroupArns(Aws::Vector<Aws::String>&& value) { SetSecurityGroupArns(std::move(value)); return *this;}
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(const Aws::String& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(Aws::String&& value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The ARNs of the security groups used to protect your data transfer task
-     * subnets. See <a>CreateAgentRequest$SubnetArns</a>.</p>
+     * subnets. See <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns">SecurityGroupArns</a>.</p>
      */
     inline CreateAgentRequest& AddSecurityGroupArns(const char* value) { m_securityGroupArnsHasBeenSet = true; m_securityGroupArns.push_back(value); return *this; }
 

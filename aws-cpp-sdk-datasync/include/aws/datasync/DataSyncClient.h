@@ -466,8 +466,9 @@ namespace Model
 
         /**
          * <p>Creates an endpoint for a self-managed object storage bucket. For more
-         * information about self-managed object storage locations, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * information about self-managed object storage locations, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS
          * API Reference</a></p>
          */
@@ -475,8 +476,9 @@ namespace Model
 
         /**
          * <p>Creates an endpoint for a self-managed object storage bucket. For more
-         * information about self-managed object storage locations, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * information about self-managed object storage locations, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS
          * API Reference</a></p>
          *
@@ -486,8 +488,9 @@ namespace Model
 
         /**
          * <p>Creates an endpoint for a self-managed object storage bucket. For more
-         * information about self-managed object storage locations, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * information about self-managed object storage locations, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage">AWS
          * API Reference</a></p>
          *
@@ -828,8 +831,9 @@ namespace Model
 
         /**
          * <p>Returns metadata about a self-managed object storage server location. For
-         * more information about self-managed object storage locations, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * more information about self-managed object storage locations, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">AWS
          * API Reference</a></p>
          */
@@ -837,8 +841,9 @@ namespace Model
 
         /**
          * <p>Returns metadata about a self-managed object storage server location. For
-         * more information about self-managed object storage locations, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * more information about self-managed object storage locations, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">AWS
          * API Reference</a></p>
          *
@@ -848,8 +853,9 @@ namespace Model
 
         /**
          * <p>Returns metadata about a self-managed object storage server location. For
-         * more information about self-managed object storage locations, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * more information about self-managed object storage locations, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage">AWS
          * API Reference</a></p>
          *
@@ -1247,8 +1253,9 @@ namespace Model
 
         /**
          * <p>Updates some of the parameters of a previously created location for Network
-         * File System (NFS) access. For information about creating an NFS location, see
-         * <a>create-nfs-location</a>.</p><p><h3>See Also:</h3>   <a
+         * File System (NFS) access. For information about creating an NFS location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
+         * a location for NFS</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
          * API Reference</a></p>
          */
@@ -1256,8 +1263,9 @@ namespace Model
 
         /**
          * <p>Updates some of the parameters of a previously created location for Network
-         * File System (NFS) access. For information about creating an NFS location, see
-         * <a>create-nfs-location</a>.</p><p><h3>See Also:</h3>   <a
+         * File System (NFS) access. For information about creating an NFS location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
+         * a location for NFS</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
          * API Reference</a></p>
          *
@@ -1267,8 +1275,9 @@ namespace Model
 
         /**
          * <p>Updates some of the parameters of a previously created location for Network
-         * File System (NFS) access. For information about creating an NFS location, see
-         * <a>create-nfs-location</a>.</p><p><h3>See Also:</h3>   <a
+         * File System (NFS) access. For information about creating an NFS location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html">Creating
+         * a location for NFS</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationNfs">AWS
          * API Reference</a></p>
          *
@@ -1279,8 +1288,9 @@ namespace Model
         /**
          * <p>Updates some of the parameters of a previously created location for
          * self-managed object storage server access. For information about creating a
-         * self-managed object storage location, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * self-managed object storage location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
          * API Reference</a></p>
          */
@@ -1289,8 +1299,9 @@ namespace Model
         /**
          * <p>Updates some of the parameters of a previously created location for
          * self-managed object storage server access. For information about creating a
-         * self-managed object storage location, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * self-managed object storage location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
          * API Reference</a></p>
          *
@@ -1301,8 +1312,9 @@ namespace Model
         /**
          * <p>Updates some of the parameters of a previously created location for
          * self-managed object storage server access. For information about creating a
-         * self-managed object storage location, see
-         * <a>create-object-location</a>.</p><p><h3>See Also:</h3>   <a
+         * self-managed object storage location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating
+         * a location for object storage</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationObjectStorage">AWS
          * API Reference</a></p>
          *
@@ -1313,7 +1325,9 @@ namespace Model
         /**
          * <p>Updates some of the parameters of a previously created location for Server
          * Message Block (SMB) file system access. For information about creating an SMB
-         * location, see <a>create-smb-location</a>.</p><p><h3>See Also:</h3>   <a
+         * location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
+         * a location for SMB</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -1322,7 +1336,9 @@ namespace Model
         /**
          * <p>Updates some of the parameters of a previously created location for Server
          * Message Block (SMB) file system access. For information about creating an SMB
-         * location, see <a>create-smb-location</a>.</p><p><h3>See Also:</h3>   <a
+         * location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
+         * a location for SMB</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
          * API Reference</a></p>
          *
@@ -1333,7 +1349,9 @@ namespace Model
         /**
          * <p>Updates some of the parameters of a previously created location for Server
          * Message Block (SMB) file system access. For information about creating an SMB
-         * location, see <a>create-smb-location</a>.</p><p><h3>See Also:</h3>   <a
+         * location, see <a
+         * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating
+         * a location for SMB</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationSmb">AWS
          * API Reference</a></p>
          *

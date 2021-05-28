@@ -44,7 +44,9 @@ Options::Options() :
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
     m_transferMode(TransferMode::NOT_SET),
-    m_transferModeHasBeenSet(false)
+    m_transferModeHasBeenSet(false),
+    m_securityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags::NOT_SET),
+    m_securityDescriptorCopyFlagsHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ Options::Options(JsonView jsonValue) :
     m_logLevel(LogLevel::NOT_SET),
     m_logLevelHasBeenSet(false),
     m_transferMode(TransferMode::NOT_SET),
-    m_transferModeHasBeenSet(false)
+    m_transferModeHasBeenSet(false),
+    m_securityDescriptorCopyFlags(SmbSecurityDescriptorCopyFlags::NOT_SET),
+    m_securityDescriptorCopyFlagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -172,6 +176,13 @@ Options& Options::operator =(JsonView jsonValue)
     m_transferModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecurityDescriptorCopyFlags"))
+  {
+    m_securityDescriptorCopyFlags = SmbSecurityDescriptorCopyFlagsMapper::GetSmbSecurityDescriptorCopyFlagsForName(jsonValue.GetString("SecurityDescriptorCopyFlags"));
+
+    m_securityDescriptorCopyFlagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +254,11 @@ JsonValue Options::Jsonize() const
   if(m_transferModeHasBeenSet)
   {
    payload.WithString("TransferMode", TransferModeMapper::GetNameForTransferMode(m_transferMode));
+  }
+
+  if(m_securityDescriptorCopyFlagsHasBeenSet)
+  {
+   payload.WithString("SecurityDescriptorCopyFlags", SmbSecurityDescriptorCopyFlagsMapper::GetNameForSmbSecurityDescriptorCopyFlags(m_securityDescriptorCopyFlags));
   }
 
   return payload;

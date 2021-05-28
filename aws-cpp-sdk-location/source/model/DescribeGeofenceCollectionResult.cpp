@@ -54,6 +54,12 @@ DescribeGeofenceCollectionResult& DescribeGeofenceCollectionResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
   if(jsonValue.ValueExists("PricingPlan"))
   {
     m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
@@ -64,6 +70,15 @@ DescribeGeofenceCollectionResult& DescribeGeofenceCollectionResult::operator =(c
   {
     m_pricingPlanDataSource = jsonValue.GetString("PricingPlanDataSource");
 
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
   }
 
   if(jsonValue.ValueExists("UpdateTime"))

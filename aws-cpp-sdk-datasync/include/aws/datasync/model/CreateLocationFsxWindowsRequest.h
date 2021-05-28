@@ -272,49 +272,65 @@ namespace Model
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
      * <p>The user who has the permissions to access files and folders in the FSx for
-     * Windows File Server file system.</p>
+     * Windows File Server file system.</p> <p>For information about choosing a user
+     * name that ensures sufficient permissions to files, folders, and metadata, see <a
+     * href="create-fsx-location.html#FSxWuser">user</a>.</p>
      */
     inline CreateLocationFsxWindowsRequest& WithUser(const char* value) { SetUser(value); return *this;}
 

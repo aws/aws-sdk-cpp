@@ -41,50 +41,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline const Aws::String& GetBucketAccessRoleArn() const{ return m_bucketAccessRoleArn; }
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline bool BucketAccessRoleArnHasBeenSet() const { return m_bucketAccessRoleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline void SetBucketAccessRoleArn(const Aws::String& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = value; }
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline void SetBucketAccessRoleArn(Aws::String&& value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline void SetBucketAccessRoleArn(const char* value) { m_bucketAccessRoleArnHasBeenSet = true; m_bucketAccessRoleArn.assign(value); }
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline S3Config& WithBucketAccessRoleArn(const Aws::String& value) { SetBucketAccessRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline S3Config& WithBucketAccessRoleArn(Aws::String&& value) { SetBucketAccessRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
-     * <a>CreateLocationS3</a> operation. </p>
+     * <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+     * operation. </p>
      */
     inline S3Config& WithBucketAccessRoleArn(const char* value) { SetBucketAccessRoleArn(value); return *this;}
 

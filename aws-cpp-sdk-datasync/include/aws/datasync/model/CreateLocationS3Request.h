@@ -154,7 +154,9 @@ namespace Model
      * defaults to AWS S3 Outposts.</p> <p>For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline const S3StorageClass& GetS3StorageClass() const{ return m_s3StorageClass; }
 
@@ -165,7 +167,9 @@ namespace Model
      * defaults to AWS S3 Outposts.</p> <p>For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline bool S3StorageClassHasBeenSet() const { return m_s3StorageClassHasBeenSet; }
 
@@ -176,7 +180,9 @@ namespace Model
      * defaults to AWS S3 Outposts.</p> <p>For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline void SetS3StorageClass(const S3StorageClass& value) { m_s3StorageClassHasBeenSet = true; m_s3StorageClass = value; }
 
@@ -187,7 +193,9 @@ namespace Model
      * defaults to AWS S3 Outposts.</p> <p>For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline void SetS3StorageClass(S3StorageClass&& value) { m_s3StorageClassHasBeenSet = true; m_s3StorageClass = std::move(value); }
 
@@ -198,7 +206,9 @@ namespace Model
      * defaults to AWS S3 Outposts.</p> <p>For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline CreateLocationS3Request& WithS3StorageClass(const S3StorageClass& value) { SetS3StorageClass(value); return *this;}
 
@@ -209,7 +219,9 @@ namespace Model
      * defaults to AWS S3 Outposts.</p> <p>For more information about S3 storage
      * classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
      * Storage Classes</a>. Some storage classes have behaviors that can affect your S3
-     * storage cost. For detailed information, see <a>using-storage-classes</a>.</p>
+     * storage cost. For detailed information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
+     * when working with S3 storage classes in DataSync</a>.</p>
      */
     inline CreateLocationS3Request& WithS3StorageClass(S3StorageClass&& value) { SetS3StorageClass(std::move(value)); return *this;}
 
@@ -236,72 +248,81 @@ namespace Model
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline CreateLocationS3Request& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline CreateLocationS3Request& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline CreateLocationS3Request& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline CreateLocationS3Request& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>If you are using DataSync on an AWS Outpost, specify the Amazon Resource
      * Names (ARNs) of the DataSync agents deployed on your Outpost. For more
-     * information about launching a DataSync agent on an AWS Outpost, see
-     * <a>outposts-agent</a>.</p>
+     * information about launching a DataSync agent on an AWS Outpost, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
+     * your DataSync agent on AWS Outposts</a>.</p>
      */
     inline CreateLocationS3Request& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
 

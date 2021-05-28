@@ -173,50 +173,42 @@ namespace Model
 
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline const Aws::String& GetPricingPlanDataSource() const{ return m_pricingPlanDataSource; }
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline bool PricingPlanDataSourceHasBeenSet() const { return m_pricingPlanDataSourceHasBeenSet; }
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline void SetPricingPlanDataSource(const Aws::String& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = value; }
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline void SetPricingPlanDataSource(Aws::String&& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = std::move(value); }
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline void SetPricingPlanDataSource(const char* value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource.assign(value); }
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline ListTrackersResponseEntry& WithPricingPlanDataSource(const Aws::String& value) { SetPricingPlanDataSource(value); return *this;}
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline ListTrackersResponseEntry& WithPricingPlanDataSource(Aws::String&& value) { SetPricingPlanDataSource(std::move(value)); return *this;}
 
     /**
-     * <p>The data source selected for the tracker resource and associated pricing
-     * plan.</p>
+     * <p>The specified data provider for the tracker resource.</p>
      */
     inline ListTrackersResponseEntry& WithPricingPlanDataSource(const char* value) { SetPricingPlanDataSource(value); return *this;}
 

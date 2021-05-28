@@ -229,7 +229,9 @@ namespace Model
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
      * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the operation. </p>
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline const Options& GetOptions() const{ return m_options; }
 
@@ -240,7 +242,9 @@ namespace Model
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
      * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the operation. </p>
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
@@ -251,7 +255,9 @@ namespace Model
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
      * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the operation. </p>
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -262,7 +268,9 @@ namespace Model
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
      * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the operation. </p>
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
@@ -273,7 +281,9 @@ namespace Model
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
      * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the operation. </p>
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline CreateTaskRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
 
@@ -284,7 +294,9 @@ namespace Model
      * group ID (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
      * specifying the <code>OverrideOptions</code> before starting the task execution.
-     * For more information, see the operation. </p>
+     * For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline CreateTaskRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
 
@@ -357,42 +369,54 @@ namespace Model
     /**
      * <p>Specifies a schedule used to periodically transfer files from a source to a
      * destination location. The schedule should be specified in UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
 
     /**
      * <p>Specifies a schedule used to periodically transfer files from a source to a
      * destination location. The schedule should be specified in UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * <p>Specifies a schedule used to periodically transfer files from a source to a
      * destination location. The schedule should be specified in UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline void SetSchedule(const TaskSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
      * <p>Specifies a schedule used to periodically transfer files from a source to a
      * destination location. The schedule should be specified in UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline void SetSchedule(TaskSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
     /**
      * <p>Specifies a schedule used to periodically transfer files from a source to a
      * destination location. The schedule should be specified in UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline CreateTaskRequest& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
 
     /**
      * <p>Specifies a schedule used to periodically transfer files from a source to a
      * destination location. The schedule should be specified in UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline CreateTaskRequest& WithSchedule(TaskSchedule&& value) { SetSchedule(std::move(value)); return *this;}
 
