@@ -1198,6 +1198,9 @@ namespace
         ASSERT_FALSE(S3CrtARN("arn:aws:s3:us-west-1:123456789120:accesspoint:endpoint").Validate("us-east-1").IsSuccess());
         // Cross region ARN using FIPS regions
         ASSERT_FALSE(S3CrtARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-east-1").IsSuccess());
+        // FIPS region in ARN
+        ASSERT_FALSE(S3CrtARN("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
+        ASSERT_FALSE(S3CrtARN("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
         // Empty region name
         ASSERT_FALSE(S3CrtARN("arn:aws:s3::123456789120:accesspoint:endpoint").Validate().IsSuccess());
 
@@ -1346,6 +1349,9 @@ namespace
         ASSERT_FALSE(S3CrtARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate("us-east-1").IsSuccess());
         // Cross region ARN when using FIPS regions
         ASSERT_FALSE(S3CrtARN("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        // FIPS region in ARN
+        ASSERT_FALSE(S3CrtARN("arn:aws-us-gov:s3-object-lambda:fips-us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        ASSERT_FALSE(S3CrtARN("arn:aws-us-gov:s3-object-lambda:fips-us-gov-east-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
         // Empty region name
         ASSERT_FALSE(S3CrtARN("arn:aws:s3-object-lambda::123456789012:accesspoint:mybanner").Validate().IsSuccess());
 

@@ -2006,6 +2006,12 @@ namespace
         config.region = "fips-us-gov-east-1";
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "", "", "", false);
 
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
+
         // Use ARN region
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
 
@@ -2051,6 +2057,12 @@ namespace
         // Cross FIPS region Access Point ARN is not allowed even though use ARN region. It's different from non FIPS regions.
         config.region = "fips-us-gov-east-1";
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1:123456789012:accesspoint:myendpoint", "", "", "", false);
+
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
 
         // US Gov regions with dual-stack
         config.region = "fips-us-gov-east-1";
@@ -2103,6 +2115,9 @@ namespace
         // FIPS regions are not supported.
         config.region = "fips-us-gov-east-1";
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:fips-us-gov-west-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-west-1-fips:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
 
         // Use ARN region
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
@@ -2126,6 +2141,9 @@ namespace
         // FIPS regions are not supported.
         config.region = "fips-us-gov-east-1";
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        config.region = Aws::Region::US_WEST_2;
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:fips-us-gov-west-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-outposts:us-gov-west-1-fips:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint", "", "", "", false);
 
         if (awsS3UseArnRegionBackup.empty())
         {
@@ -2192,6 +2210,12 @@ namespace
         config.region = "us-east-1-fips";
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
 
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
+
         // Use ARN region
         Aws::Environment::SetEnv("AWS_S3_USE_ARN_REGION", "true", 1);
 
@@ -2231,6 +2255,12 @@ namespace
         // Cross FIPS region Object Lambda Access Point ARN is not allowed even though use ARN region. It's different from non FIPS regions.
         config.region = "fips-us-gov-east-1";
         DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner", "", "", "", false);
+
+        // FIPS region in ARN
+        config.region = "fips-us-gov-west-1";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:fips-us-gov-west-1:123456789012:accesspoint/myendpoint", "", "", "", false);
+        config.region = "us-gov-west-1-fips";
+        DoTestGetObjectWithBucketARN(config, "arn:aws-us-gov:s3:us-gov-west-1-fips:123456789012:accesspoint/myendpoint", "", "", "", false);
 
         config.region = Aws::Region::US_WEST_2;
         DoTestWriteGetObjectResponse(config, "s3-object-lambda.us-west-2.amazonaws.com");
@@ -2299,6 +2329,9 @@ namespace
         ASSERT_FALSE(S3ARN("arn:aws:s3:us-west-1:123456789120:accesspoint:endpoint").Validate("us-east-1").IsSuccess());
         // Cross region ARN using FIPS regions
         ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-east-1").IsSuccess());
+        // FIPS region in ARN
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3:fips-us-gov-west-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
         // Empty region name
         ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint").Validate().IsSuccess());
 
@@ -2447,6 +2480,9 @@ namespace
         ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner").Validate("us-east-1").IsSuccess());
         // Cross region ARN when using FIPS regions
         ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        // FIPS region in ARN
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-object-lambda:fips-us-gov-east-1:123456789012:accesspoint:mybanner").Validate("fips-us-gov-east-1").IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws-us-gov:s3-object-lambda:fips-us-gov-east-1:123456789012:accesspoint:mybanner").Validate().IsSuccess());
         // Empty region name
         ASSERT_FALSE(S3ARN("arn:aws:s3-object-lambda::123456789012:accesspoint:mybanner").Validate().IsSuccess());
 
