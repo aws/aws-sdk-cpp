@@ -65,11 +65,14 @@ def Main():
         for attempt in range(arguments[ "retries" ]):
             try:
                 subprocess.check_call([testExe, prefix])
-                return
+                break
             except subprocess.CalledProcessError:
                 print("Integration test: {} failed. Attempt: {} in {}".format(testName, attempt + 1, arguments[ "retries" ]))
-        # Hit the max attempt.
-        raise Exception("All {} attempt(s) failed.".format(arguments[ "retries" ]))
+                # Hit the max attempt.
+                if attempt == arguments[ "retries" ] - 1:
+                    raise Exception("All {} attempt(s) failed.".format(arguments[ "retries" ]))
+                else:
+                    print("Retrying...")
 
 
 # Run from powershell; make sure msbuild is in PATH environment variable
