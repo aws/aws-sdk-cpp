@@ -44,6 +44,11 @@ namespace Aws
                  */
                 LogLevel GetLogLevel() const { return m_logLevel; }
                 /**
+                 * Set a new log level. This has the immediate effect of changing the log output to the new level.
+                 */
+                void SetLogLevel(LogLevel logLevel) { m_logLevel.store(logLevel); }
+
+                /**
                  * Handle the logging information from common runtime libraries.
                  * Redirect them to C++ SDK logging system by default.
                  */
