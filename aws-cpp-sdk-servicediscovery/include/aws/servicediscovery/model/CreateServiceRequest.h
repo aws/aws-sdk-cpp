@@ -51,7 +51,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -71,7 +71,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -91,7 +91,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -111,7 +111,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -131,7 +131,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -151,7 +151,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -171,7 +171,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -191,7 +191,7 @@ namespace Model
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
      *  <p>For services that are accessible by DNS queries, you can't create
      * multiple services with names that differ only by case (such as EXAMPLE and
      * example). Otherwise, these services have the same DNS name and can't be
@@ -262,64 +262,64 @@ namespace Model
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreateService</code> requests to be retried without the risk of running
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/timestamp.</p>
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -601,49 +601,43 @@ namespace Model
 
     /**
      * <p>If present, specifies that the service instances are only discoverable using
-     * the <code>DiscoverInstances</code> API operation. No DNS records will be
-     * registered for the service instances. The only valid value is
-     * <code>HTTP</code>.</p>
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
      */
     inline const ServiceTypeOption& GetType() const{ return m_type; }
 
     /**
      * <p>If present, specifies that the service instances are only discoverable using
-     * the <code>DiscoverInstances</code> API operation. No DNS records will be
-     * registered for the service instances. The only valid value is
-     * <code>HTTP</code>.</p>
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>If present, specifies that the service instances are only discoverable using
-     * the <code>DiscoverInstances</code> API operation. No DNS records will be
-     * registered for the service instances. The only valid value is
-     * <code>HTTP</code>.</p>
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
      */
     inline void SetType(const ServiceTypeOption& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>If present, specifies that the service instances are only discoverable using
-     * the <code>DiscoverInstances</code> API operation. No DNS records will be
-     * registered for the service instances. The only valid value is
-     * <code>HTTP</code>.</p>
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
      */
     inline void SetType(ServiceTypeOption&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>If present, specifies that the service instances are only discoverable using
-     * the <code>DiscoverInstances</code> API operation. No DNS records will be
-     * registered for the service instances. The only valid value is
-     * <code>HTTP</code>.</p>
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
      */
     inline CreateServiceRequest& WithType(const ServiceTypeOption& value) { SetType(value); return *this;}
 
     /**
      * <p>If present, specifies that the service instances are only discoverable using
-     * the <code>DiscoverInstances</code> API operation. No DNS records will be
-     * registered for the service instances. The only valid value is
-     * <code>HTTP</code>.</p>
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
      */
     inline CreateServiceRequest& WithType(ServiceTypeOption&& value) { SetType(std::move(value)); return *this;}
 

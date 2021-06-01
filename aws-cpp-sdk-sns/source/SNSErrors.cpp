@@ -6,19 +6,28 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/sns/SNSErrors.h>
+#include <aws/sns/model/VerificationException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::SNS;
+using namespace Aws::SNS::Model;
 
 namespace Aws
 {
 namespace SNS
 {
+template<> AWS_SNS_API VerificationException SNSError::GetModeledError()
+{
+  assert(this->GetErrorType() == SNSErrors::VERIFICATION);
+  return VerificationException(this->GetXmlPayload().GetRootElement());
+}
+
 namespace SNSErrorMapper
 {
 
 static const int CONCURRENT_ACCESS_HASH = HashingUtils::HashString("ConcurrentAccess");
+static const int VERIFICATION_HASH = HashingUtils::HashString("VerificationException");
 static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidState");
 static const int SUBSCRIPTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubscriptionLimitExceeded");
 static const int TOPIC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TopicLimitExceeded");
@@ -28,15 +37,17 @@ static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("Authorizat
 static const int PLATFORM_APPLICATION_DISABLED_HASH = HashingUtils::HashString("PlatformApplicationDisabled");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int ENDPOINT_DISABLED_HASH = HashingUtils::HashString("EndpointDisabled");
+static const int USER_ERROR_HASH = HashingUtils::HashString("UserError");
 static const int K_M_S_OPT_IN_REQUIRED_HASH = HashingUtils::HashString("KMSOptInRequired");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFound");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
-static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabled");
 static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFound");
+static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabled");
 static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDenied");
 static const int FILTER_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FilterPolicyLimitExceeded");
-static const int INVALID_SECURITY_HASH = HashingUtils::HashString("InvalidSecurity");
+static const int OPTED_OUT_HASH = HashingUtils::HashString("OptedOut");
 static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceeded");
+static const int INVALID_SECURITY_HASH = HashingUtils::HashString("InvalidSecurity");
 static const int STALE_TAG_HASH = HashingUtils::HashString("StaleTag");
 
 
@@ -47,6 +58,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONCURRENT_ACCESS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::CONCURRENT_ACCESS), false);
+  }
+  else if (hashCode == VERIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::VERIFICATION), false);
   }
   else if (hashCode == K_M_S_INVALID_STATE_HASH)
   {
@@ -84,6 +99,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::ENDPOINT_DISABLED), false);
   }
+  else if (hashCode == USER_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::USER_ERROR), false);
+  }
   else if (hashCode == K_M_S_OPT_IN_REQUIRED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_OPT_IN_REQUIRED), false);
@@ -96,13 +115,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_PARAMETER), false);
   }
-  else if (hashCode == K_M_S_DISABLED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_DISABLED), false);
-  }
   else if (hashCode == K_M_S_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_NOT_FOUND), false);
+  }
+  else if (hashCode == K_M_S_DISABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_DISABLED), false);
   }
   else if (hashCode == K_M_S_ACCESS_DENIED_HASH)
   {
@@ -112,13 +131,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::FILTER_POLICY_LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == INVALID_SECURITY_HASH)
+  else if (hashCode == OPTED_OUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_SECURITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::OPTED_OUT), false);
   }
   else if (hashCode == TAG_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TAG_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_SECURITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_SECURITY), false);
   }
   else if (hashCode == STALE_TAG_HASH)
   {

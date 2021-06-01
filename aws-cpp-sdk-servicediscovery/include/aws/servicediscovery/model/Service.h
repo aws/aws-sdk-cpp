@@ -258,33 +258,33 @@ namespace Model
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline Service& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -549,64 +549,64 @@ namespace Model
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline Service& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline Service& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
      * to be retried without the risk of running the operation twice.
-     * <code>CreatorRequestId</code> can be any unique string, for example, a
-     * date/timestamp.</p>
+     * <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).</p>
      */
     inline Service& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

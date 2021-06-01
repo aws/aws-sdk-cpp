@@ -94,56 +94,56 @@ namespace Model
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline HttpInstanceSummary& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline HttpInstanceSummary& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
 
     /**
      * <p> <code/> <code/> <code/> </p> <p>The <code>HttpName</code> name of the
-     * namespace, found in the <code>HttpProperties</code> member of the
+     * namespace. It's found in the <code>HttpProperties</code> member of the
      * <code>Properties</code> member of the namespace.</p>
      */
     inline HttpInstanceSummary& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that contains information that is specific to the namespace
+   * <p>A complex type that contains information that's specific to the namespace
    * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/NamespaceProperties">AWS
    * API Reference</a></p>

@@ -278,33 +278,33 @@ namespace Model
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of instances that are currently associated with the service.
-     * Instances that were previously associated with the service but that have been
-     * deleted are not included in the count. The count might not reflect pending
-     * registrations and deregistrations.</p>
+     * Instances that were previously associated with the service but that are deleted
+     * aren't included in the count. The count might not reflect pending registrations
+     * and deregistrations.</p>
      */
     inline ServiceSummary& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -393,13 +393,13 @@ namespace Model
      * <p>Information about an optional custom health check. A custom health check,
      * which requires that you use a third-party health checker to evaluate the health
      * of your resources, is useful in the following circumstances:</p> <ul> <li>
-     * <p>You can't use a health check that is defined by
-     * <code>HealthCheckConfig</code> because the resource isn't available over the
-     * internet. For example, you can use a custom health check when the instance is in
-     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
-     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
-     * checker regardless of where your resources are.</p> </li> </ul> 
-     * <p>If you specify a health check configuration, you can specify either
+     * <p>You can't use a health check that's defined by <code>HealthCheckConfig</code>
+     * because the resource isn't available over the internet. For example, you can use
+     * a custom health check when the instance is in an Amazon VPC. (To check the
+     * health of resources in a VPC, the health checker must also be in the VPC.)</p>
+     * </li> <li> <p>You want to use a third-party health checker regardless of where
+     * your resources are located.</p> </li> </ul>  <p>If you specify a
+     * health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p> 
      */
@@ -409,13 +409,13 @@ namespace Model
      * <p>Information about an optional custom health check. A custom health check,
      * which requires that you use a third-party health checker to evaluate the health
      * of your resources, is useful in the following circumstances:</p> <ul> <li>
-     * <p>You can't use a health check that is defined by
-     * <code>HealthCheckConfig</code> because the resource isn't available over the
-     * internet. For example, you can use a custom health check when the instance is in
-     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
-     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
-     * checker regardless of where your resources are.</p> </li> </ul> 
-     * <p>If you specify a health check configuration, you can specify either
+     * <p>You can't use a health check that's defined by <code>HealthCheckConfig</code>
+     * because the resource isn't available over the internet. For example, you can use
+     * a custom health check when the instance is in an Amazon VPC. (To check the
+     * health of resources in a VPC, the health checker must also be in the VPC.)</p>
+     * </li> <li> <p>You want to use a third-party health checker regardless of where
+     * your resources are located.</p> </li> </ul>  <p>If you specify a
+     * health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p> 
      */
@@ -425,13 +425,13 @@ namespace Model
      * <p>Information about an optional custom health check. A custom health check,
      * which requires that you use a third-party health checker to evaluate the health
      * of your resources, is useful in the following circumstances:</p> <ul> <li>
-     * <p>You can't use a health check that is defined by
-     * <code>HealthCheckConfig</code> because the resource isn't available over the
-     * internet. For example, you can use a custom health check when the instance is in
-     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
-     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
-     * checker regardless of where your resources are.</p> </li> </ul> 
-     * <p>If you specify a health check configuration, you can specify either
+     * <p>You can't use a health check that's defined by <code>HealthCheckConfig</code>
+     * because the resource isn't available over the internet. For example, you can use
+     * a custom health check when the instance is in an Amazon VPC. (To check the
+     * health of resources in a VPC, the health checker must also be in the VPC.)</p>
+     * </li> <li> <p>You want to use a third-party health checker regardless of where
+     * your resources are located.</p> </li> </ul>  <p>If you specify a
+     * health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p> 
      */
@@ -441,13 +441,13 @@ namespace Model
      * <p>Information about an optional custom health check. A custom health check,
      * which requires that you use a third-party health checker to evaluate the health
      * of your resources, is useful in the following circumstances:</p> <ul> <li>
-     * <p>You can't use a health check that is defined by
-     * <code>HealthCheckConfig</code> because the resource isn't available over the
-     * internet. For example, you can use a custom health check when the instance is in
-     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
-     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
-     * checker regardless of where your resources are.</p> </li> </ul> 
-     * <p>If you specify a health check configuration, you can specify either
+     * <p>You can't use a health check that's defined by <code>HealthCheckConfig</code>
+     * because the resource isn't available over the internet. For example, you can use
+     * a custom health check when the instance is in an Amazon VPC. (To check the
+     * health of resources in a VPC, the health checker must also be in the VPC.)</p>
+     * </li> <li> <p>You want to use a third-party health checker regardless of where
+     * your resources are located.</p> </li> </ul>  <p>If you specify a
+     * health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p> 
      */
@@ -457,13 +457,13 @@ namespace Model
      * <p>Information about an optional custom health check. A custom health check,
      * which requires that you use a third-party health checker to evaluate the health
      * of your resources, is useful in the following circumstances:</p> <ul> <li>
-     * <p>You can't use a health check that is defined by
-     * <code>HealthCheckConfig</code> because the resource isn't available over the
-     * internet. For example, you can use a custom health check when the instance is in
-     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
-     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
-     * checker regardless of where your resources are.</p> </li> </ul> 
-     * <p>If you specify a health check configuration, you can specify either
+     * <p>You can't use a health check that's defined by <code>HealthCheckConfig</code>
+     * because the resource isn't available over the internet. For example, you can use
+     * a custom health check when the instance is in an Amazon VPC. (To check the
+     * health of resources in a VPC, the health checker must also be in the VPC.)</p>
+     * </li> <li> <p>You want to use a third-party health checker regardless of where
+     * your resources are located.</p> </li> </ul>  <p>If you specify a
+     * health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p> 
      */
@@ -473,13 +473,13 @@ namespace Model
      * <p>Information about an optional custom health check. A custom health check,
      * which requires that you use a third-party health checker to evaluate the health
      * of your resources, is useful in the following circumstances:</p> <ul> <li>
-     * <p>You can't use a health check that is defined by
-     * <code>HealthCheckConfig</code> because the resource isn't available over the
-     * internet. For example, you can use a custom health check when the instance is in
-     * an Amazon VPC. (To check the health of resources in a VPC, the health checker
-     * must also be in the VPC.)</p> </li> <li> <p>You want to use a third-party health
-     * checker regardless of where your resources are.</p> </li> </ul> 
-     * <p>If you specify a health check configuration, you can specify either
+     * <p>You can't use a health check that's defined by <code>HealthCheckConfig</code>
+     * because the resource isn't available over the internet. For example, you can use
+     * a custom health check when the instance is in an Amazon VPC. (To check the
+     * health of resources in a VPC, the health checker must also be in the VPC.)</p>
+     * </li> <li> <p>You want to use a third-party health checker regardless of where
+     * your resources are located.</p> </li> </ul>  <p>If you specify a
+     * health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p> 
      */

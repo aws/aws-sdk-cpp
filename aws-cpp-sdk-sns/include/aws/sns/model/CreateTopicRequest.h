@@ -127,9 +127,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -139,17 +140,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -165,9 +166,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -177,17 +179,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -203,9 +205,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -215,17 +218,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -241,9 +244,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -253,17 +257,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -279,9 +283,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -291,17 +296,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -317,9 +322,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -329,17 +335,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -355,9 +361,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -367,17 +374,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -393,9 +400,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -405,17 +413,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -431,9 +439,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -443,17 +452,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -469,9 +478,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -481,17 +491,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -507,9 +517,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -519,17 +530,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -545,9 +556,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -557,17 +569,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -583,9 +595,10 @@ namespace Model
      * who can access your topic. By default, only the topic owner can publish or
      * subscribe to the topic.</p> </li> </ul> <p>The following attribute applies only
      * to <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
-     * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS-managed customer
-     * master key (CMK) for Amazon SNS or a custom CMK. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+     * encryption</a>:</p> <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an AWS
+     * managed customer master key (CMK) for Amazon SNS or a custom CMK. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
      * Terms</a>. For more examples, see <a
      * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a>
@@ -595,17 +608,17 @@ namespace Model
      * topics</a>:</p> <ul> <li> <p> <code>FifoTopic</code> – When this is set to
      * <code>true</code>, a FIFO topic is created.</p> </li> <li> <p>
      * <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
-     * FIFO topics. </p> <ul> <li> <p>By default,
-     * <code>ContentBasedDeduplication</code> is set to <code>false</code>. If you
-     * create a FIFO topic and this attribute is <code>false</code>, you must specify a
-     * value for the <code>MessageDeduplicationId</code> parameter for the <a
+     * FIFO topics.</p> <ul> <li> <p>By default, <code>ContentBasedDeduplication</code>
+     * is set to <code>false</code>. If you create a FIFO topic and this attribute is
+     * <code>false</code>, you must specify a value for the
+     * <code>MessageDeduplicationId</code> parameter for the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a>
      * action. </p> </li> <li> <p>When you set <code>ContentBasedDeduplication</code>
      * to <code>true</code>, Amazon SNS uses a SHA-256 hash to generate the
      * <code>MessageDeduplicationId</code> using the body of the message (but not the
      * attributes of the message).</p> <p>(Optional) To override the generated value,
-     * you can specify a value for the the <code>MessageDeduplicationId</code>
-     * parameter for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
+     * you can specify a value for the <code>MessageDeduplicationId</code> parameter
+     * for the <code>Publish</code> action.</p> </li> </ul> </li> </ul>
      */
     inline CreateTopicRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

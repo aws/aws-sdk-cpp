@@ -82,7 +82,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
@@ -90,7 +90,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
@@ -98,7 +98,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
@@ -106,7 +106,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
@@ -114,7 +114,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
@@ -122,7 +122,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
@@ -130,7 +130,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
@@ -138,7 +138,7 @@ namespace Model
      * <p>A unique string that identifies the request and that allows failed
      * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
      * running the operation twice. <code>CreatorRequestId</code> can be any unique
-     * string, for example, a date/timestamp.</p>
+     * string (for example, a date/timestamp).</p>
      */
     inline CreatePublicDnsNamespaceRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

@@ -35,7 +35,9 @@
 #include <aws/iotwireless/model/DisassociateWirelessGatewayFromThingResult.h>
 #include <aws/iotwireless/model/GetDestinationResult.h>
 #include <aws/iotwireless/model/GetDeviceProfileResult.h>
+#include <aws/iotwireless/model/GetLogLevelsByResourceTypesResult.h>
 #include <aws/iotwireless/model/GetPartnerAccountResult.h>
+#include <aws/iotwireless/model/GetResourceLogLevelResult.h>
 #include <aws/iotwireless/model/GetServiceEndpointResult.h>
 #include <aws/iotwireless/model/GetServiceProfileResult.h>
 #include <aws/iotwireless/model/GetWirelessDeviceResult.h>
@@ -54,11 +56,15 @@
 #include <aws/iotwireless/model/ListWirelessDevicesResult.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsResult.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysResult.h>
+#include <aws/iotwireless/model/PutResourceLogLevelResult.h>
+#include <aws/iotwireless/model/ResetAllResourceLogLevelsResult.h>
+#include <aws/iotwireless/model/ResetResourceLogLevelResult.h>
 #include <aws/iotwireless/model/SendDataToWirelessDeviceResult.h>
 #include <aws/iotwireless/model/TagResourceResult.h>
 #include <aws/iotwireless/model/TestWirelessDeviceResult.h>
 #include <aws/iotwireless/model/UntagResourceResult.h>
 #include <aws/iotwireless/model/UpdateDestinationResult.h>
+#include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesResult.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountResult.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceResult.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayResult.h>
@@ -125,7 +131,9 @@ namespace Model
         class DisassociateWirelessGatewayFromThingRequest;
         class GetDestinationRequest;
         class GetDeviceProfileRequest;
+        class GetLogLevelsByResourceTypesRequest;
         class GetPartnerAccountRequest;
+        class GetResourceLogLevelRequest;
         class GetServiceEndpointRequest;
         class GetServiceProfileRequest;
         class GetWirelessDeviceRequest;
@@ -144,11 +152,15 @@ namespace Model
         class ListWirelessDevicesRequest;
         class ListWirelessGatewayTaskDefinitionsRequest;
         class ListWirelessGatewaysRequest;
+        class PutResourceLogLevelRequest;
+        class ResetAllResourceLogLevelsRequest;
+        class ResetResourceLogLevelRequest;
         class SendDataToWirelessDeviceRequest;
         class TagResourceRequest;
         class TestWirelessDeviceRequest;
         class UntagResourceRequest;
         class UpdateDestinationRequest;
+        class UpdateLogLevelsByResourceTypesRequest;
         class UpdatePartnerAccountRequest;
         class UpdateWirelessDeviceRequest;
         class UpdateWirelessGatewayRequest;
@@ -177,7 +189,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateWirelessGatewayFromThingResult, IoTWirelessError> DisassociateWirelessGatewayFromThingOutcome;
         typedef Aws::Utils::Outcome<GetDestinationResult, IoTWirelessError> GetDestinationOutcome;
         typedef Aws::Utils::Outcome<GetDeviceProfileResult, IoTWirelessError> GetDeviceProfileOutcome;
+        typedef Aws::Utils::Outcome<GetLogLevelsByResourceTypesResult, IoTWirelessError> GetLogLevelsByResourceTypesOutcome;
         typedef Aws::Utils::Outcome<GetPartnerAccountResult, IoTWirelessError> GetPartnerAccountOutcome;
+        typedef Aws::Utils::Outcome<GetResourceLogLevelResult, IoTWirelessError> GetResourceLogLevelOutcome;
         typedef Aws::Utils::Outcome<GetServiceEndpointResult, IoTWirelessError> GetServiceEndpointOutcome;
         typedef Aws::Utils::Outcome<GetServiceProfileResult, IoTWirelessError> GetServiceProfileOutcome;
         typedef Aws::Utils::Outcome<GetWirelessDeviceResult, IoTWirelessError> GetWirelessDeviceOutcome;
@@ -196,11 +210,15 @@ namespace Model
         typedef Aws::Utils::Outcome<ListWirelessDevicesResult, IoTWirelessError> ListWirelessDevicesOutcome;
         typedef Aws::Utils::Outcome<ListWirelessGatewayTaskDefinitionsResult, IoTWirelessError> ListWirelessGatewayTaskDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListWirelessGatewaysResult, IoTWirelessError> ListWirelessGatewaysOutcome;
+        typedef Aws::Utils::Outcome<PutResourceLogLevelResult, IoTWirelessError> PutResourceLogLevelOutcome;
+        typedef Aws::Utils::Outcome<ResetAllResourceLogLevelsResult, IoTWirelessError> ResetAllResourceLogLevelsOutcome;
+        typedef Aws::Utils::Outcome<ResetResourceLogLevelResult, IoTWirelessError> ResetResourceLogLevelOutcome;
         typedef Aws::Utils::Outcome<SendDataToWirelessDeviceResult, IoTWirelessError> SendDataToWirelessDeviceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, IoTWirelessError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestWirelessDeviceResult, IoTWirelessError> TestWirelessDeviceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, IoTWirelessError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDestinationResult, IoTWirelessError> UpdateDestinationOutcome;
+        typedef Aws::Utils::Outcome<UpdateLogLevelsByResourceTypesResult, IoTWirelessError> UpdateLogLevelsByResourceTypesOutcome;
         typedef Aws::Utils::Outcome<UpdatePartnerAccountResult, IoTWirelessError> UpdatePartnerAccountOutcome;
         typedef Aws::Utils::Outcome<UpdateWirelessDeviceResult, IoTWirelessError> UpdateWirelessDeviceOutcome;
         typedef Aws::Utils::Outcome<UpdateWirelessGatewayResult, IoTWirelessError> UpdateWirelessGatewayOutcome;
@@ -229,7 +247,9 @@ namespace Model
         typedef std::future<DisassociateWirelessGatewayFromThingOutcome> DisassociateWirelessGatewayFromThingOutcomeCallable;
         typedef std::future<GetDestinationOutcome> GetDestinationOutcomeCallable;
         typedef std::future<GetDeviceProfileOutcome> GetDeviceProfileOutcomeCallable;
+        typedef std::future<GetLogLevelsByResourceTypesOutcome> GetLogLevelsByResourceTypesOutcomeCallable;
         typedef std::future<GetPartnerAccountOutcome> GetPartnerAccountOutcomeCallable;
+        typedef std::future<GetResourceLogLevelOutcome> GetResourceLogLevelOutcomeCallable;
         typedef std::future<GetServiceEndpointOutcome> GetServiceEndpointOutcomeCallable;
         typedef std::future<GetServiceProfileOutcome> GetServiceProfileOutcomeCallable;
         typedef std::future<GetWirelessDeviceOutcome> GetWirelessDeviceOutcomeCallable;
@@ -248,11 +268,15 @@ namespace Model
         typedef std::future<ListWirelessDevicesOutcome> ListWirelessDevicesOutcomeCallable;
         typedef std::future<ListWirelessGatewayTaskDefinitionsOutcome> ListWirelessGatewayTaskDefinitionsOutcomeCallable;
         typedef std::future<ListWirelessGatewaysOutcome> ListWirelessGatewaysOutcomeCallable;
+        typedef std::future<PutResourceLogLevelOutcome> PutResourceLogLevelOutcomeCallable;
+        typedef std::future<ResetAllResourceLogLevelsOutcome> ResetAllResourceLogLevelsOutcomeCallable;
+        typedef std::future<ResetResourceLogLevelOutcome> ResetResourceLogLevelOutcomeCallable;
         typedef std::future<SendDataToWirelessDeviceOutcome> SendDataToWirelessDeviceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestWirelessDeviceOutcome> TestWirelessDeviceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDestinationOutcome> UpdateDestinationOutcomeCallable;
+        typedef std::future<UpdateLogLevelsByResourceTypesOutcome> UpdateLogLevelsByResourceTypesOutcomeCallable;
         typedef std::future<UpdatePartnerAccountOutcome> UpdatePartnerAccountOutcomeCallable;
         typedef std::future<UpdateWirelessDeviceOutcome> UpdateWirelessDeviceOutcomeCallable;
         typedef std::future<UpdateWirelessGatewayOutcome> UpdateWirelessGatewayOutcomeCallable;
@@ -284,7 +308,9 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::DisassociateWirelessGatewayFromThingRequest&, const Model::DisassociateWirelessGatewayFromThingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateWirelessGatewayFromThingResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetDestinationRequest&, const Model::GetDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDestinationResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetDeviceProfileRequest&, const Model::GetDeviceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeviceProfileResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::GetLogLevelsByResourceTypesRequest&, const Model::GetLogLevelsByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogLevelsByResourceTypesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetPartnerAccountRequest&, const Model::GetPartnerAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPartnerAccountResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::GetResourceLogLevelRequest&, const Model::GetResourceLogLevelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceLogLevelResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetServiceEndpointRequest&, const Model::GetServiceEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceEndpointResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetServiceProfileRequest&, const Model::GetServiceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceProfileResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::GetWirelessDeviceRequest&, const Model::GetWirelessDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWirelessDeviceResponseReceivedHandler;
@@ -303,11 +329,15 @@ namespace Model
     typedef std::function<void(const IoTWirelessClient*, const Model::ListWirelessDevicesRequest&, const Model::ListWirelessDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWirelessDevicesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListWirelessGatewayTaskDefinitionsRequest&, const Model::ListWirelessGatewayTaskDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWirelessGatewayTaskDefinitionsResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::ListWirelessGatewaysRequest&, const Model::ListWirelessGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWirelessGatewaysResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::PutResourceLogLevelRequest&, const Model::PutResourceLogLevelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceLogLevelResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::ResetAllResourceLogLevelsRequest&, const Model::ResetAllResourceLogLevelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAllResourceLogLevelsResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::ResetResourceLogLevelRequest&, const Model::ResetResourceLogLevelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetResourceLogLevelResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::SendDataToWirelessDeviceRequest&, const Model::SendDataToWirelessDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDataToWirelessDeviceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::TestWirelessDeviceRequest&, const Model::TestWirelessDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestWirelessDeviceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateDestinationRequest&, const Model::UpdateDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDestinationResponseReceivedHandler;
+    typedef std::function<void(const IoTWirelessClient*, const Model::UpdateLogLevelsByResourceTypesRequest&, const Model::UpdateLogLevelsByResourceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLogLevelsByResourceTypesResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdatePartnerAccountRequest&, const Model::UpdatePartnerAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePartnerAccountResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateWirelessDeviceRequest&, const Model::UpdateWirelessDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWirelessDeviceResponseReceivedHandler;
     typedef std::function<void(const IoTWirelessClient*, const Model::UpdateWirelessGatewayRequest&, const Model::UpdateWirelessGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWirelessGatewayResponseReceivedHandler;
@@ -976,6 +1006,37 @@ namespace Model
         virtual void GetDeviceProfileAsync(const Model::GetDeviceProfileRequest& request, const GetDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns current default log-levels, or log levels by resource types, could be
+         * for wireless device log options or wireless gateway log options.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLogLevelsByResourceTypesOutcome GetLogLevelsByResourceTypes(const Model::GetLogLevelsByResourceTypesRequest& request) const;
+
+        /**
+         * <p>Returns current default log-levels, or log levels by resource types, could be
+         * for wireless device log options or wireless gateway log options.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLogLevelsByResourceTypesOutcomeCallable GetLogLevelsByResourceTypesCallable(const Model::GetLogLevelsByResourceTypesRequest& request) const;
+
+        /**
+         * <p>Returns current default log-levels, or log levels by resource types, could be
+         * for wireless device log options or wireless gateway log options.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetLogLevelsByResourceTypes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLogLevelsByResourceTypesAsync(const Model::GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a partner account. If <code>PartnerAccountId</code>
          * and <code>PartnerType</code> are <code>null</code>, returns all partner
          * accounts.</p><p><h3>See Also:</h3>   <a
@@ -1005,6 +1066,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPartnerAccountAsync(const Model::GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Fetches the log-level override if any for a given resource-ID and
+         * resource-type, coulde be a wireless device or a wireless gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourceLogLevelOutcome GetResourceLogLevel(const Model::GetResourceLogLevelRequest& request) const;
+
+        /**
+         * <p>Fetches the log-level override if any for a given resource-ID and
+         * resource-type, coulde be a wireless device or a wireless gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourceLogLevelOutcomeCallable GetResourceLogLevelCallable(const Model::GetResourceLogLevelRequest& request) const;
+
+        /**
+         * <p>Fetches the log-level override if any for a given resource-ID and
+         * resource-type, coulde be a wireless device or a wireless gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourceLogLevel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourceLogLevelAsync(const Model::GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets the account-specific endpoint for Configuration and Update Server (CUPS)
@@ -1502,6 +1594,93 @@ namespace Model
         virtual void ListWirelessGatewaysAsync(const Model::ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Sets the log-level override for a resource-ID and resource-type, could be a
+         * wireless gateway or a wireless device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourceLogLevelOutcome PutResourceLogLevel(const Model::PutResourceLogLevelRequest& request) const;
+
+        /**
+         * <p>Sets the log-level override for a resource-ID and resource-type, could be a
+         * wireless gateway or a wireless device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourceLogLevelOutcomeCallable PutResourceLogLevelCallable(const Model::PutResourceLogLevelRequest& request) const;
+
+        /**
+         * <p>Sets the log-level override for a resource-ID and resource-type, could be a
+         * wireless gateway or a wireless device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutResourceLogLevel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourceLogLevelAsync(const Model::PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove log-level overrides if any for all resources (both wireless devices
+         * and wireless gateways).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetAllResourceLogLevelsOutcome ResetAllResourceLogLevels(const Model::ResetAllResourceLogLevelsRequest& request) const;
+
+        /**
+         * <p>Remove log-level overrides if any for all resources (both wireless devices
+         * and wireless gateways).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetAllResourceLogLevelsOutcomeCallable ResetAllResourceLogLevelsCallable(const Model::ResetAllResourceLogLevelsRequest& request) const;
+
+        /**
+         * <p>Remove log-level overrides if any for all resources (both wireless devices
+         * and wireless gateways).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetAllResourceLogLevels">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetAllResourceLogLevelsAsync(const Model::ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove log-level override if any for a specific resource-ID and
+         * resource-type, could be a wireless device or a wireless gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetResourceLogLevelOutcome ResetResourceLogLevel(const Model::ResetResourceLogLevelRequest& request) const;
+
+        /**
+         * <p>Remove log-level override if any for a specific resource-ID and
+         * resource-type, could be a wireless device or a wireless gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetResourceLogLevelOutcomeCallable ResetResourceLogLevelCallable(const Model::ResetResourceLogLevelRequest& request) const;
+
+        /**
+         * <p>Remove log-level override if any for a specific resource-ID and
+         * resource-type, could be a wireless device or a wireless gateway.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ResetResourceLogLevel">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetResourceLogLevelAsync(const Model::ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sends a decrypted application data frame to a device.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/SendDataToWirelessDevice">AWS
@@ -1633,6 +1812,37 @@ namespace Model
         virtual void UpdateDestinationAsync(const Model::UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Set default log level, or log levels by resource types, could be for wireless
+         * device log options or wireless gateways log options. This is to control the log
+         * messages that will be displayed in CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLogLevelsByResourceTypesOutcome UpdateLogLevelsByResourceTypes(const Model::UpdateLogLevelsByResourceTypesRequest& request) const;
+
+        /**
+         * <p>Set default log level, or log levels by resource types, could be for wireless
+         * device log options or wireless gateways log options. This is to control the log
+         * messages that will be displayed in CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLogLevelsByResourceTypesOutcomeCallable UpdateLogLevelsByResourceTypesCallable(const Model::UpdateLogLevelsByResourceTypesRequest& request) const;
+
+        /**
+         * <p>Set default log level, or log levels by resource types, could be for wireless
+         * device log options or wireless gateways log options. This is to control the log
+         * messages that will be displayed in CloudWatch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateLogLevelsByResourceTypes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLogLevelsByResourceTypesAsync(const Model::UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates properties of a partner account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePartnerAccount">AWS
          * API Reference</a></p>
@@ -1735,7 +1945,9 @@ namespace Model
         void DisassociateWirelessGatewayFromThingAsyncHelper(const Model::DisassociateWirelessGatewayFromThingRequest& request, const DisassociateWirelessGatewayFromThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDestinationAsyncHelper(const Model::GetDestinationRequest& request, const GetDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeviceProfileAsyncHelper(const Model::GetDeviceProfileRequest& request, const GetDeviceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLogLevelsByResourceTypesAsyncHelper(const Model::GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPartnerAccountAsyncHelper(const Model::GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResourceLogLevelAsyncHelper(const Model::GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServiceEndpointAsyncHelper(const Model::GetServiceEndpointRequest& request, const GetServiceEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServiceProfileAsyncHelper(const Model::GetServiceProfileRequest& request, const GetServiceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWirelessDeviceAsyncHelper(const Model::GetWirelessDeviceRequest& request, const GetWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1754,11 +1966,15 @@ namespace Model
         void ListWirelessDevicesAsyncHelper(const Model::ListWirelessDevicesRequest& request, const ListWirelessDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWirelessGatewayTaskDefinitionsAsyncHelper(const Model::ListWirelessGatewayTaskDefinitionsRequest& request, const ListWirelessGatewayTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWirelessGatewaysAsyncHelper(const Model::ListWirelessGatewaysRequest& request, const ListWirelessGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutResourceLogLevelAsyncHelper(const Model::PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetAllResourceLogLevelsAsyncHelper(const Model::ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetResourceLogLevelAsyncHelper(const Model::ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendDataToWirelessDeviceAsyncHelper(const Model::SendDataToWirelessDeviceRequest& request, const SendDataToWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestWirelessDeviceAsyncHelper(const Model::TestWirelessDeviceRequest& request, const TestWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDestinationAsyncHelper(const Model::UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLogLevelsByResourceTypesAsyncHelper(const Model::UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePartnerAccountAsyncHelper(const Model::UpdatePartnerAccountRequest& request, const UpdatePartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWirelessDeviceAsyncHelper(const Model::UpdateWirelessDeviceRequest& request, const UpdateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWirelessGatewayAsyncHelper(const Model::UpdateWirelessGatewayRequest& request, const UpdateWirelessGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

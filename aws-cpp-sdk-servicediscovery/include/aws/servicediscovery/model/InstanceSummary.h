@@ -82,11 +82,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -98,13 +98,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -114,11 +114,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -130,13 +130,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -146,11 +146,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -162,13 +162,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -178,11 +178,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -194,13 +194,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -210,11 +210,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -226,13 +226,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -242,11 +242,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -258,13 +258,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -274,11 +274,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -290,13 +290,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -306,11 +306,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -322,13 +322,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -338,11 +338,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -354,13 +354,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -370,11 +370,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -386,13 +386,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -402,11 +402,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -418,13 +418,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -434,11 +434,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -450,13 +450,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends
@@ -466,11 +466,11 @@ namespace Model
 
     /**
      * <p>A string map that contains the following information:</p> <ul> <li> <p>The
-     * attributes that are associate with the instance. </p> </li> <li> <p>For each
+     * attributes that are associated with the instance. </p> </li> <li> <p>For each
      * attribute, the applicable value.</p> </li> </ul> <p>Supported attribute keys
      * include the following:</p> <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> <p>For an alias
      * record that routes traffic to an Elastic Load Balancing load balancer, the DNS
-     * name that is associated with the load balancer. </p> </dd>
+     * name that's associated with the load balancer. </p> </dd>
      * <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> <p>The Amazon EC2
      * instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
      * attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute
@@ -482,13 +482,13 @@ namespace Model
      * specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is
      * <code>HEALTHY</code>.</p> </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> <p>For a
      * <code>CNAME</code> record, the domain name that Route 53 returns in response to
-     * DNS queries, for example, <code>example.com</code>.</p> </dd>
+     * DNS queries (for example, <code>example.com</code>).</p> </dd>
      * <dt>AWS_INSTANCE_IPV4</dt> <dd> <p>For an <code>A</code> record, the IPv4
-     * address that Route 53 returns in response to DNS queries, for example,
-     * <code>192.0.2.44</code>.</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
+     * address that Route 53 returns in response to DNS queries (for example,
+     * <code>192.0.2.44</code>).</p> </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> <p>For an
      * <code>AAAA</code> record, the IPv6 address that Route 53 returns in response to
-     * DNS queries, for example,
-     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.</p> </dd>
+     * DNS queries (for example,
+     * <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).</p> </dd>
      * <dt>AWS_INSTANCE_PORT</dt> <dd> <p>For an <code>SRV</code> record, the value
      * that Route 53 returns for the port. In addition, if the service includes
      * <code>HealthCheckConfig</code>, the port on the endpoint that Route 53 sends

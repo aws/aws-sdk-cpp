@@ -25,18 +25,23 @@
 #include <aws/sns/model/ConfirmSubscriptionRequest.h>
 #include <aws/sns/model/CreatePlatformApplicationRequest.h>
 #include <aws/sns/model/CreatePlatformEndpointRequest.h>
+#include <aws/sns/model/CreateSMSSandboxPhoneNumberRequest.h>
 #include <aws/sns/model/CreateTopicRequest.h>
 #include <aws/sns/model/DeleteEndpointRequest.h>
 #include <aws/sns/model/DeletePlatformApplicationRequest.h>
+#include <aws/sns/model/DeleteSMSSandboxPhoneNumberRequest.h>
 #include <aws/sns/model/DeleteTopicRequest.h>
 #include <aws/sns/model/GetEndpointAttributesRequest.h>
 #include <aws/sns/model/GetPlatformApplicationAttributesRequest.h>
 #include <aws/sns/model/GetSMSAttributesRequest.h>
+#include <aws/sns/model/GetSMSSandboxAccountStatusRequest.h>
 #include <aws/sns/model/GetSubscriptionAttributesRequest.h>
 #include <aws/sns/model/GetTopicAttributesRequest.h>
 #include <aws/sns/model/ListEndpointsByPlatformApplicationRequest.h>
+#include <aws/sns/model/ListOriginationNumbersRequest.h>
 #include <aws/sns/model/ListPhoneNumbersOptedOutRequest.h>
 #include <aws/sns/model/ListPlatformApplicationsRequest.h>
+#include <aws/sns/model/ListSMSSandboxPhoneNumbersRequest.h>
 #include <aws/sns/model/ListSubscriptionsRequest.h>
 #include <aws/sns/model/ListSubscriptionsByTopicRequest.h>
 #include <aws/sns/model/ListTagsForResourceRequest.h>
@@ -53,6 +58,7 @@
 #include <aws/sns/model/TagResourceRequest.h>
 #include <aws/sns/model/UnsubscribeRequest.h>
 #include <aws/sns/model/UntagResourceRequest.h>
+#include <aws/sns/model/VerifySMSSandboxPhoneNumberRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -258,6 +264,30 @@ void SNSClient::CreatePlatformEndpointAsyncHelper(const CreatePlatformEndpointRe
   handler(this, request, CreatePlatformEndpoint(request), context);
 }
 
+CreateSMSSandboxPhoneNumberOutcome SNSClient::CreateSMSSandboxPhoneNumber(const CreateSMSSandboxPhoneNumberRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateSMSSandboxPhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateSMSSandboxPhoneNumberOutcomeCallable SNSClient::CreateSMSSandboxPhoneNumberCallable(const CreateSMSSandboxPhoneNumberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSMSSandboxPhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSMSSandboxPhoneNumber(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::CreateSMSSandboxPhoneNumberAsync(const CreateSMSSandboxPhoneNumberRequest& request, const CreateSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSMSSandboxPhoneNumberAsyncHelper( request, handler, context ); } );
+}
+
+void SNSClient::CreateSMSSandboxPhoneNumberAsyncHelper(const CreateSMSSandboxPhoneNumberRequest& request, const CreateSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSMSSandboxPhoneNumber(request), context);
+}
+
 CreateTopicOutcome SNSClient::CreateTopic(const CreateTopicRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -328,6 +358,30 @@ void SNSClient::DeletePlatformApplicationAsync(const DeletePlatformApplicationRe
 void SNSClient::DeletePlatformApplicationAsyncHelper(const DeletePlatformApplicationRequest& request, const DeletePlatformApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePlatformApplication(request), context);
+}
+
+DeleteSMSSandboxPhoneNumberOutcome SNSClient::DeleteSMSSandboxPhoneNumber(const DeleteSMSSandboxPhoneNumberRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteSMSSandboxPhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteSMSSandboxPhoneNumberOutcomeCallable SNSClient::DeleteSMSSandboxPhoneNumberCallable(const DeleteSMSSandboxPhoneNumberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSMSSandboxPhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSMSSandboxPhoneNumber(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::DeleteSMSSandboxPhoneNumberAsync(const DeleteSMSSandboxPhoneNumberRequest& request, const DeleteSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSMSSandboxPhoneNumberAsyncHelper( request, handler, context ); } );
+}
+
+void SNSClient::DeleteSMSSandboxPhoneNumberAsyncHelper(const DeleteSMSSandboxPhoneNumberRequest& request, const DeleteSMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSMSSandboxPhoneNumber(request), context);
 }
 
 DeleteTopicOutcome SNSClient::DeleteTopic(const DeleteTopicRequest& request) const
@@ -426,6 +480,30 @@ void SNSClient::GetSMSAttributesAsyncHelper(const GetSMSAttributesRequest& reque
   handler(this, request, GetSMSAttributes(request), context);
 }
 
+GetSMSSandboxAccountStatusOutcome SNSClient::GetSMSSandboxAccountStatus(const GetSMSSandboxAccountStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetSMSSandboxAccountStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+GetSMSSandboxAccountStatusOutcomeCallable SNSClient::GetSMSSandboxAccountStatusCallable(const GetSMSSandboxAccountStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSMSSandboxAccountStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSMSSandboxAccountStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::GetSMSSandboxAccountStatusAsync(const GetSMSSandboxAccountStatusRequest& request, const GetSMSSandboxAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSMSSandboxAccountStatusAsyncHelper( request, handler, context ); } );
+}
+
+void SNSClient::GetSMSSandboxAccountStatusAsyncHelper(const GetSMSSandboxAccountStatusRequest& request, const GetSMSSandboxAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSMSSandboxAccountStatus(request), context);
+}
+
 GetSubscriptionAttributesOutcome SNSClient::GetSubscriptionAttributes(const GetSubscriptionAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -498,6 +576,30 @@ void SNSClient::ListEndpointsByPlatformApplicationAsyncHelper(const ListEndpoint
   handler(this, request, ListEndpointsByPlatformApplication(request), context);
 }
 
+ListOriginationNumbersOutcome SNSClient::ListOriginationNumbers(const ListOriginationNumbersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListOriginationNumbersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ListOriginationNumbersOutcomeCallable SNSClient::ListOriginationNumbersCallable(const ListOriginationNumbersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOriginationNumbersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOriginationNumbers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::ListOriginationNumbersAsync(const ListOriginationNumbersRequest& request, const ListOriginationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOriginationNumbersAsyncHelper( request, handler, context ); } );
+}
+
+void SNSClient::ListOriginationNumbersAsyncHelper(const ListOriginationNumbersRequest& request, const ListOriginationNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOriginationNumbers(request), context);
+}
+
 ListPhoneNumbersOptedOutOutcome SNSClient::ListPhoneNumbersOptedOut(const ListPhoneNumbersOptedOutRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -544,6 +646,30 @@ void SNSClient::ListPlatformApplicationsAsync(const ListPlatformApplicationsRequ
 void SNSClient::ListPlatformApplicationsAsyncHelper(const ListPlatformApplicationsRequest& request, const ListPlatformApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPlatformApplications(request), context);
+}
+
+ListSMSSandboxPhoneNumbersOutcome SNSClient::ListSMSSandboxPhoneNumbers(const ListSMSSandboxPhoneNumbersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListSMSSandboxPhoneNumbersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ListSMSSandboxPhoneNumbersOutcomeCallable SNSClient::ListSMSSandboxPhoneNumbersCallable(const ListSMSSandboxPhoneNumbersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSMSSandboxPhoneNumbersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSMSSandboxPhoneNumbers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::ListSMSSandboxPhoneNumbersAsync(const ListSMSSandboxPhoneNumbersRequest& request, const ListSMSSandboxPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSMSSandboxPhoneNumbersAsyncHelper( request, handler, context ); } );
+}
+
+void SNSClient::ListSMSSandboxPhoneNumbersAsyncHelper(const ListSMSSandboxPhoneNumbersRequest& request, const ListSMSSandboxPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSMSSandboxPhoneNumbers(request), context);
 }
 
 ListSubscriptionsOutcome SNSClient::ListSubscriptions(const ListSubscriptionsRequest& request) const
@@ -928,5 +1054,29 @@ void SNSClient::UntagResourceAsync(const UntagResourceRequest& request, const Un
 void SNSClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UntagResource(request), context);
+}
+
+VerifySMSSandboxPhoneNumberOutcome SNSClient::VerifySMSSandboxPhoneNumber(const VerifySMSSandboxPhoneNumberRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return VerifySMSSandboxPhoneNumberOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+VerifySMSSandboxPhoneNumberOutcomeCallable SNSClient::VerifySMSSandboxPhoneNumberCallable(const VerifySMSSandboxPhoneNumberRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< VerifySMSSandboxPhoneNumberOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->VerifySMSSandboxPhoneNumber(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SNSClient::VerifySMSSandboxPhoneNumberAsync(const VerifySMSSandboxPhoneNumberRequest& request, const VerifySMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->VerifySMSSandboxPhoneNumberAsyncHelper( request, handler, context ); } );
+}
+
+void SNSClient::VerifySMSSandboxPhoneNumberAsyncHelper(const VerifySMSSandboxPhoneNumberRequest& request, const VerifySMSSandboxPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, VerifySMSSandboxPhoneNumber(request), context);
 }
 

@@ -44,7 +44,9 @@
 #include <aws/iotwireless/model/DisassociateWirelessGatewayFromThingRequest.h>
 #include <aws/iotwireless/model/GetDestinationRequest.h>
 #include <aws/iotwireless/model/GetDeviceProfileRequest.h>
+#include <aws/iotwireless/model/GetLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/GetPartnerAccountRequest.h>
+#include <aws/iotwireless/model/GetResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/GetServiceEndpointRequest.h>
 #include <aws/iotwireless/model/GetServiceProfileRequest.h>
 #include <aws/iotwireless/model/GetWirelessDeviceRequest.h>
@@ -63,11 +65,15 @@
 #include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
+#include <aws/iotwireless/model/PutResourceLogLevelRequest.h>
+#include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
+#include <aws/iotwireless/model/ResetResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/SendDataToWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/TagResourceRequest.h>
 #include <aws/iotwireless/model/TestWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UntagResourceRequest.h>
 #include <aws/iotwireless/model/UpdateDestinationRequest.h>
+#include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayRequest.h>
@@ -860,6 +866,31 @@ void IoTWirelessClient::GetDeviceProfileAsyncHelper(const GetDeviceProfileReques
   handler(this, request, GetDeviceProfile(request), context);
 }
 
+GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceTypes(const GetLogLevelsByResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels");
+  return GetLogLevelsByResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLogLevelsByResourceTypesOutcomeCallable IoTWirelessClient::GetLogLevelsByResourceTypesCallable(const GetLogLevelsByResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLogLevelsByResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLogLevelsByResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetLogLevelsByResourceTypesAsync(const GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLogLevelsByResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetLogLevelsByResourceTypesAsyncHelper(const GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLogLevelsByResourceTypes(request), context);
+}
+
 GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAccountRequest& request) const
 {
   if (!request.PartnerAccountIdHasBeenSet())
@@ -894,6 +925,42 @@ void IoTWirelessClient::GetPartnerAccountAsync(const GetPartnerAccountRequest& r
 void IoTWirelessClient::GetPartnerAccountAsyncHelper(const GetPartnerAccountRequest& request, const GetPartnerAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPartnerAccount(request), context);
+}
+
+GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResourceLogLevelRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceLogLevel", "Required field: ResourceIdentifier, is not set");
+    return GetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceLogLevel", "Required field: ResourceType, is not set");
+    return GetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return GetResourceLogLevelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourceLogLevelOutcomeCallable IoTWirelessClient::GetResourceLogLevelCallable(const GetResourceLogLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceLogLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceLogLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetResourceLogLevelAsync(const GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourceLogLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetResourceLogLevelAsyncHelper(const GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourceLogLevel(request), context);
 }
 
 GetServiceEndpointOutcome IoTWirelessClient::GetServiceEndpoint(const GetServiceEndpointRequest& request) const
@@ -1420,6 +1487,103 @@ void IoTWirelessClient::ListWirelessGatewaysAsyncHelper(const ListWirelessGatewa
   handler(this, request, ListWirelessGateways(request), context);
 }
 
+PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResourceLogLevelRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutResourceLogLevel", "Required field: ResourceIdentifier, is not set");
+    return PutResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutResourceLogLevel", "Required field: ResourceType, is not set");
+    return PutResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return PutResourceLogLevelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutResourceLogLevelOutcomeCallable IoTWirelessClient::PutResourceLogLevelCallable(const PutResourceLogLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourceLogLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourceLogLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::PutResourceLogLevelAsync(const PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutResourceLogLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::PutResourceLogLevelAsyncHelper(const PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutResourceLogLevel(request), context);
+}
+
+ResetAllResourceLogLevelsOutcome IoTWirelessClient::ResetAllResourceLogLevels(const ResetAllResourceLogLevelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels");
+  return ResetAllResourceLogLevelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResetAllResourceLogLevelsOutcomeCallable IoTWirelessClient::ResetAllResourceLogLevelsCallable(const ResetAllResourceLogLevelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetAllResourceLogLevelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetAllResourceLogLevels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ResetAllResourceLogLevelsAsync(const ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetAllResourceLogLevelsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ResetAllResourceLogLevelsAsyncHelper(const ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetAllResourceLogLevels(request), context);
+}
+
+ResetResourceLogLevelOutcome IoTWirelessClient::ResetResourceLogLevel(const ResetResourceLogLevelRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetResourceLogLevel", "Required field: ResourceIdentifier, is not set");
+    return ResetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetResourceLogLevel", "Required field: ResourceType, is not set");
+    return ResetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return ResetResourceLogLevelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResetResourceLogLevelOutcomeCallable IoTWirelessClient::ResetResourceLogLevelCallable(const ResetResourceLogLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetResourceLogLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetResourceLogLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ResetResourceLogLevelAsync(const ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetResourceLogLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ResetResourceLogLevelAsyncHelper(const ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetResourceLogLevel(request), context);
+}
+
 SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(const SendDataToWirelessDeviceRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -1578,6 +1742,31 @@ void IoTWirelessClient::UpdateDestinationAsync(const UpdateDestinationRequest& r
 void IoTWirelessClient::UpdateDestinationAsyncHelper(const UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDestination(request), context);
+}
+
+UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResourceTypes(const UpdateLogLevelsByResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels");
+  return UpdateLogLevelsByResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLogLevelsByResourceTypesOutcomeCallable IoTWirelessClient::UpdateLogLevelsByResourceTypesCallable(const UpdateLogLevelsByResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLogLevelsByResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLogLevelsByResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsync(const UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLogLevelsByResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsyncHelper(const UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLogLevelsByResourceTypes(request), context);
 }
 
 UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const UpdatePartnerAccountRequest& request) const

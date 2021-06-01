@@ -25,7 +25,9 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_interfaceType(NetworkInterfaceCreationType::NOT_SET),
     m_interfaceTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false)
+    m_tagSpecificationsHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -107,6 +109,11 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
       item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
       tagSpecificationsCount++;
     }
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+    ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";
