@@ -45,10 +45,18 @@ namespace Aws
                 (void)logger;
             }
 
+            static int s_aws_logger_redirect_set_log_level(struct aws_logger *logger, enum aws_log_level log_level)
+            {
+                DefaultCRTLogSystem* crtLogSystem = reinterpret_cast<DefaultCRTLogSystem*>(logger->p_impl);
+                crtLogSystem->SetLogLevel(static_cast<LogLevel>(log_level));
+                return AWS_OP_SUCCESS;
+            }
+
             static struct aws_logger_vtable s_aws_logger_redirect_vtable = {
                 s_aws_logger_redirect_log, // .log
                 s_aws_logger_redirect_get_log_level, // .get_log_level
-                s_aws_logger_redirect_clean_up // .clean_up
+                s_aws_logger_redirect_clean_up, // .clean_up
+                s_aws_logger_redirect_set_log_level // set_log_level
             };
 
             DefaultCRTLogSystem::DefaultCRTLogSystem(LogLevel logLevel) :

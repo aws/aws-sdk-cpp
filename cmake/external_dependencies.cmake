@@ -36,21 +36,28 @@ elseif(ENABLE_OPENSSL_ENCRYPTION)
 
     if(PLATFORM_ANDROID AND ANDROID_BUILD_OPENSSL)
         set(BUILD_OPENSSL 1)
+        set(USE_OPENSSL ON)
         message(STATUS "  Building Openssl as part of AWS SDK")
     else()
-        include(FindOpenSSL)
-        if(NOT OPENSSL_FOUND)
-            message(FATAL_ERROR "Could not find openssl")
+        if(USE_OPENSSL OR NOT BUILD_DEPS)
+            include(FindOpenSSL)
+            if(NOT OPENSSL_FOUND)
+                message(FATAL_ERROR "Could not find openssl")
+            else()
+                message(STATUS "  Openssl include directory: ${OPENSSL_INCLUDE_DIR}")
+                message(STATUS "  Openssl library: ${OPENSSL_LIBRARIES}")
+                # LibCrypto_INCLUDE_DIR, LibCrypto_STATIC_LIBRARY and LibCrypto_SHARED_LIBRARY
+                # are defined here for s2n and aws-c-cal to use the same libcrypto and libssl used by C++ SDK.
+                # They could either be static or dynamic, depends on which are found by include(FindOpenSSL),
+                # no matter if C++ SDK itself is built statically or dynamically.
+                set(LibCrypto_INCLUDE_DIR "${OPENSSL_INCLUDE_DIR}" CACHE INTERNAL "The OpenSSL include directory")
+                set(LibCrypto_STATIC_LIBRARY "${OPENSSL_CRYPTO_LIBRARY}" CACHE INTERNAL "The OpenSSL crypto static library")
+                set(LibCrypto_SHARED_LIBRARY "${OPENSSL_CRYPTO_LIBRARY}" CACHE INTERNAL "The OpenSSL crypto shared library")
+            endif()
         else()
-            message(STATUS "  Openssl include directory: ${OPENSSL_INCLUDE_DIR}")
-            message(STATUS "  Openssl library: ${OPENSSL_LIBRARIES}")
-            # LibCrypto_INCLUDE_DIR, LibCrypto_STATIC_LIBRARY and LibCrypto_SHARED_LIBRARY
-            # are defined here for s2n and aws-c-cal to use the same libcrypto and libssl used by C++ SDK.
-            # They could either be static or dynamic, depends on which are found by include(FindOpenSSL),
-            # no matter if C++ SDK itself is built statically or dynamically.
-            set(LibCrypto_INCLUDE_DIR "${OPENSSL_INCLUDE_DIR}" CACHE INTERNAL "The OpenSSL include directory")
-            set(LibCrypto_STATIC_LIBRARY "${OPENSSL_CRYPTO_LIBRARY}" CACHE INTERNAL "The OpenSSL crypto static library")
-            set(LibCrypto_SHARED_LIBRARY "${OPENSSL_CRYPTO_LIBRARY}" CACHE INTERNAL "The OpenSSL crypto shared library")
+            set(CRYPTO_IN_SOURCE_BUILD ON)
+            set(OPENSSL_LIBRARIES crypto ssl)
+            message(STATUS "  Using libcrypto and libssl from AWS-LC.")
         endif()
         List(APPEND EXTERNAL_DEPS_INCLUDE_DIRS ${OPENSSL_INCLUDE_DIR})
     endif()
