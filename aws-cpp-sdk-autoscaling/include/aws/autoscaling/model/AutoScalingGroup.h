@@ -492,64 +492,64 @@ namespace Model
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
      * <p>The service to use for the health checks. The valid values are
      * <code>EC2</code> and <code>ELB</code>. If you configure an Auto Scaling group to
-     * use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.</p>
+     * use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.</p>
      */
     inline AutoScalingGroup& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
@@ -986,49 +986,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline const Aws::String& GetServiceLinkedRoleARN() const{ return m_serviceLinkedRoleARN; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline bool ServiceLinkedRoleARNHasBeenSet() const { return m_serviceLinkedRoleARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline void SetServiceLinkedRoleARN(const Aws::String& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline void SetServiceLinkedRoleARN(Aws::String&& value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline void SetServiceLinkedRoleARN(const char* value) { m_serviceLinkedRoleARNHasBeenSet = true; m_serviceLinkedRoleARN.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline AutoScalingGroup& WithServiceLinkedRoleARN(const Aws::String& value) { SetServiceLinkedRoleARN(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline AutoScalingGroup& WithServiceLinkedRoleARN(Aws::String&& value) { SetServiceLinkedRoleARN(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
-     * Scaling group uses to call other AWS services on your behalf.</p>
+     * Scaling group uses to call other Amazon Web Services on your behalf.</p>
      */
     inline AutoScalingGroup& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
 

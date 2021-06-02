@@ -128,42 +128,58 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(const Aws::String& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = value; }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(Aws::String&& value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId = std::move(value); }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline void SetEc2InstanceId(const char* value) { m_ec2InstanceIdHasBeenSet = true; m_ec2InstanceId.assign(value); }
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const Aws::String& value) { SetEc2InstanceId(value); return *this;}
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(Aws::String&& value) { SetEc2InstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance ID of the container instance.</p>
+     * <p>The ID of the container instance. For Amazon EC2 instances, this value is the
+     * Amazon EC2 instance ID. For external instances, this value is the AWS Systems
+     * Manager managed instance ID.</p>
      */
     inline ContainerInstance& WithEc2InstanceId(const char* value) { SetEc2InstanceId(value); return *this;}
 

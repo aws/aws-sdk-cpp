@@ -270,7 +270,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>
@@ -282,7 +282,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>
@@ -294,7 +294,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>
@@ -306,7 +306,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>
@@ -318,7 +318,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>
@@ -330,7 +330,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>
@@ -342,7 +342,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>
@@ -354,7 +354,7 @@ namespace Model
      * (AAAA), canonical name (CNAME), mail exchanger (MX), name server (NS), start of
      * authority (SOA), service locator (SRV), or text (TXT).</p> <p>The following
      * domain entry types can be used:</p> <ul> <li> <p> <code>A</code> </p> </li> <li>
-     * <p> <code>AAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
+     * <p> <code>AAAA</code> </p> </li> <li> <p> <code>CNAME</code> </p> </li> <li> <p>
      * <code>MX</code> </p> </li> <li> <p> <code>NS</code> </p> </li> <li> <p>
      * <code>SOA</code> </p> </li> <li> <p> <code>SRV</code> </p> </li> <li> <p>
      * <code>TXT</code> </p> </li> </ul>

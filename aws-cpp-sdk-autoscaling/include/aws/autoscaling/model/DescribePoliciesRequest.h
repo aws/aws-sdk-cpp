@@ -81,72 +81,72 @@ namespace Model
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
      * are described. If a group name is provided, the results are limited to that
-     * group. This list is limited to 50 items. If you specify an unknown policy name,
-     * it is ignored with no error.</p>
+     * group. If you specify an unknown policy name, it is ignored with no error.</p>
+     * <p>Array Members: Maximum number of 50 items.</p>
      */
     inline DescribePoliciesRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
 

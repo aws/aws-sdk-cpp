@@ -1272,18 +1272,16 @@ namespace Model
         virtual void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes Amazon Elastic Container Service container instances. Returns
-         * metadata about registered and remaining resources on each container instance
-         * requested.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more container instances. Returns metadata about each
+         * container instance requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeContainerInstancesOutcome DescribeContainerInstances(const Model::DescribeContainerInstancesRequest& request) const;
 
         /**
-         * <p>Describes Amazon Elastic Container Service container instances. Returns
-         * metadata about registered and remaining resources on each container instance
-         * requested.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more container instances. Returns metadata about each
+         * container instance requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
          *
@@ -1292,9 +1290,8 @@ namespace Model
         virtual Model::DescribeContainerInstancesOutcomeCallable DescribeContainerInstancesCallable(const Model::DescribeContainerInstancesRequest& request) const;
 
         /**
-         * <p>Describes Amazon Elastic Container Service container instances. Returns
-         * metadata about registered and remaining resources on each container instance
-         * requested.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more container instances. Returns metadata about each
+         * container instance requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
          *

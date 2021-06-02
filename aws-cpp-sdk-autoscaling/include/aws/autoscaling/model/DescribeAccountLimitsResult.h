@@ -33,71 +33,71 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of groups allowed for your AWS account. The default is 200
-     * groups per AWS Region.</p>
+     * <p>The maximum number of groups allowed for your account. The default is 200
+     * groups per Region.</p>
      */
     inline int GetMaxNumberOfAutoScalingGroups() const{ return m_maxNumberOfAutoScalingGroups; }
 
     /**
-     * <p>The maximum number of groups allowed for your AWS account. The default is 200
-     * groups per AWS Region.</p>
+     * <p>The maximum number of groups allowed for your account. The default is 200
+     * groups per Region.</p>
      */
     inline void SetMaxNumberOfAutoScalingGroups(int value) { m_maxNumberOfAutoScalingGroups = value; }
 
     /**
-     * <p>The maximum number of groups allowed for your AWS account. The default is 200
-     * groups per AWS Region.</p>
+     * <p>The maximum number of groups allowed for your account. The default is 200
+     * groups per Region.</p>
      */
     inline DescribeAccountLimitsResult& WithMaxNumberOfAutoScalingGroups(int value) { SetMaxNumberOfAutoScalingGroups(value); return *this;}
 
 
     /**
-     * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default is 200 launch configurations per AWS Region.</p>
+     * <p>The maximum number of launch configurations allowed for your account. The
+     * default is 200 launch configurations per Region.</p>
      */
     inline int GetMaxNumberOfLaunchConfigurations() const{ return m_maxNumberOfLaunchConfigurations; }
 
     /**
-     * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default is 200 launch configurations per AWS Region.</p>
+     * <p>The maximum number of launch configurations allowed for your account. The
+     * default is 200 launch configurations per Region.</p>
      */
     inline void SetMaxNumberOfLaunchConfigurations(int value) { m_maxNumberOfLaunchConfigurations = value; }
 
     /**
-     * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default is 200 launch configurations per AWS Region.</p>
+     * <p>The maximum number of launch configurations allowed for your account. The
+     * default is 200 launch configurations per Region.</p>
      */
     inline DescribeAccountLimitsResult& WithMaxNumberOfLaunchConfigurations(int value) { SetMaxNumberOfLaunchConfigurations(value); return *this;}
 
 
     /**
-     * <p>The current number of groups for your AWS account.</p>
+     * <p>The current number of groups for your account.</p>
      */
     inline int GetNumberOfAutoScalingGroups() const{ return m_numberOfAutoScalingGroups; }
 
     /**
-     * <p>The current number of groups for your AWS account.</p>
+     * <p>The current number of groups for your account.</p>
      */
     inline void SetNumberOfAutoScalingGroups(int value) { m_numberOfAutoScalingGroups = value; }
 
     /**
-     * <p>The current number of groups for your AWS account.</p>
+     * <p>The current number of groups for your account.</p>
      */
     inline DescribeAccountLimitsResult& WithNumberOfAutoScalingGroups(int value) { SetNumberOfAutoScalingGroups(value); return *this;}
 
 
     /**
-     * <p>The current number of launch configurations for your AWS account.</p>
+     * <p>The current number of launch configurations for your account.</p>
      */
     inline int GetNumberOfLaunchConfigurations() const{ return m_numberOfLaunchConfigurations; }
 
     /**
-     * <p>The current number of launch configurations for your AWS account.</p>
+     * <p>The current number of launch configurations for your account.</p>
      */
     inline void SetNumberOfLaunchConfigurations(int value) { m_numberOfLaunchConfigurations = value; }
 
     /**
-     * <p>The current number of launch configurations for your AWS account.</p>
+     * <p>The current number of launch configurations for your account.</p>
      */
     inline DescribeAccountLimitsResult& WithNumberOfLaunchConfigurations(int value) { SetNumberOfLaunchConfigurations(value); return *this;}
 

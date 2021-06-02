@@ -1132,6 +1132,47 @@ namespace Model
 
 
     /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
+
+    /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
+
+    /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
+
+    /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
+
+    /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
+
+    /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The cluster identifier of the new global cluster.</p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -1229,6 +1270,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Aws::String m_globalClusterIdentifier;
+    bool m_globalClusterIdentifierHasBeenSet;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet;

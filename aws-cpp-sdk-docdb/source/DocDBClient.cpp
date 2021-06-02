@@ -31,12 +31,14 @@
 #include <aws/docdb/model/CreateDBInstanceRequest.h>
 #include <aws/docdb/model/CreateDBSubnetGroupRequest.h>
 #include <aws/docdb/model/CreateEventSubscriptionRequest.h>
+#include <aws/docdb/model/CreateGlobalClusterRequest.h>
 #include <aws/docdb/model/DeleteDBClusterRequest.h>
 #include <aws/docdb/model/DeleteDBClusterParameterGroupRequest.h>
 #include <aws/docdb/model/DeleteDBClusterSnapshotRequest.h>
 #include <aws/docdb/model/DeleteDBInstanceRequest.h>
 #include <aws/docdb/model/DeleteDBSubnetGroupRequest.h>
 #include <aws/docdb/model/DeleteEventSubscriptionRequest.h>
+#include <aws/docdb/model/DeleteGlobalClusterRequest.h>
 #include <aws/docdb/model/DescribeCertificatesRequest.h>
 #include <aws/docdb/model/DescribeDBClusterParameterGroupsRequest.h>
 #include <aws/docdb/model/DescribeDBClusterParametersRequest.h>
@@ -50,6 +52,7 @@
 #include <aws/docdb/model/DescribeEventCategoriesRequest.h>
 #include <aws/docdb/model/DescribeEventSubscriptionsRequest.h>
 #include <aws/docdb/model/DescribeEventsRequest.h>
+#include <aws/docdb/model/DescribeGlobalClustersRequest.h>
 #include <aws/docdb/model/DescribeOrderableDBInstanceOptionsRequest.h>
 #include <aws/docdb/model/DescribePendingMaintenanceActionsRequest.h>
 #include <aws/docdb/model/FailoverDBClusterRequest.h>
@@ -60,7 +63,9 @@
 #include <aws/docdb/model/ModifyDBInstanceRequest.h>
 #include <aws/docdb/model/ModifyDBSubnetGroupRequest.h>
 #include <aws/docdb/model/ModifyEventSubscriptionRequest.h>
+#include <aws/docdb/model/ModifyGlobalClusterRequest.h>
 #include <aws/docdb/model/RebootDBInstanceRequest.h>
+#include <aws/docdb/model/RemoveFromGlobalClusterRequest.h>
 #include <aws/docdb/model/RemoveSourceIdentifierFromSubscriptionRequest.h>
 #include <aws/docdb/model/RemoveTagsFromResourceRequest.h>
 #include <aws/docdb/model/ResetDBClusterParameterGroupRequest.h>
@@ -430,6 +435,30 @@ void DocDBClient::CreateEventSubscriptionAsyncHelper(const CreateEventSubscripti
   handler(this, request, CreateEventSubscription(request), context);
 }
 
+CreateGlobalClusterOutcome DocDBClient::CreateGlobalCluster(const CreateGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+CreateGlobalClusterOutcomeCallable DocDBClient::CreateGlobalClusterCallable(const CreateGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::CreateGlobalClusterAsync(const CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::CreateGlobalClusterAsyncHelper(const CreateGlobalClusterRequest& request, const CreateGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateGlobalCluster(request), context);
+}
+
 DeleteDBClusterOutcome DocDBClient::DeleteDBCluster(const DeleteDBClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -572,6 +601,30 @@ void DocDBClient::DeleteEventSubscriptionAsync(const DeleteEventSubscriptionRequ
 void DocDBClient::DeleteEventSubscriptionAsyncHelper(const DeleteEventSubscriptionRequest& request, const DeleteEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventSubscription(request), context);
+}
+
+DeleteGlobalClusterOutcome DocDBClient::DeleteGlobalCluster(const DeleteGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeleteGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeleteGlobalClusterOutcomeCallable DocDBClient::DeleteGlobalClusterCallable(const DeleteGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::DeleteGlobalClusterAsync(const DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::DeleteGlobalClusterAsyncHelper(const DeleteGlobalClusterRequest& request, const DeleteGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteGlobalCluster(request), context);
 }
 
 DescribeCertificatesOutcome DocDBClient::DescribeCertificates(const DescribeCertificatesRequest& request) const
@@ -886,6 +939,30 @@ void DocDBClient::DescribeEventsAsyncHelper(const DescribeEventsRequest& request
   handler(this, request, DescribeEvents(request), context);
 }
 
+DescribeGlobalClustersOutcome DocDBClient::DescribeGlobalClusters(const DescribeGlobalClustersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribeGlobalClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribeGlobalClustersOutcomeCallable DocDBClient::DescribeGlobalClustersCallable(const DescribeGlobalClustersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeGlobalClustersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeGlobalClusters(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::DescribeGlobalClustersAsync(const DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeGlobalClustersAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::DescribeGlobalClustersAsyncHelper(const DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeGlobalClusters(request), context);
+}
+
 DescribeOrderableDBInstanceOptionsOutcome DocDBClient::DescribeOrderableDBInstanceOptions(const DescribeOrderableDBInstanceOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1126,6 +1203,30 @@ void DocDBClient::ModifyEventSubscriptionAsyncHelper(const ModifyEventSubscripti
   handler(this, request, ModifyEventSubscription(request), context);
 }
 
+ModifyGlobalClusterOutcome DocDBClient::ModifyGlobalCluster(const ModifyGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ModifyGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ModifyGlobalClusterOutcomeCallable DocDBClient::ModifyGlobalClusterCallable(const ModifyGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::ModifyGlobalClusterAsync(const ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::ModifyGlobalClusterAsyncHelper(const ModifyGlobalClusterRequest& request, const ModifyGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyGlobalCluster(request), context);
+}
+
 RebootDBInstanceOutcome DocDBClient::RebootDBInstance(const RebootDBInstanceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1148,6 +1249,30 @@ void DocDBClient::RebootDBInstanceAsync(const RebootDBInstanceRequest& request, 
 void DocDBClient::RebootDBInstanceAsyncHelper(const RebootDBInstanceRequest& request, const RebootDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RebootDBInstance(request), context);
+}
+
+RemoveFromGlobalClusterOutcome DocDBClient::RemoveFromGlobalCluster(const RemoveFromGlobalClusterRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RemoveFromGlobalClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RemoveFromGlobalClusterOutcomeCallable DocDBClient::RemoveFromGlobalClusterCallable(const RemoveFromGlobalClusterRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveFromGlobalClusterOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveFromGlobalCluster(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void DocDBClient::RemoveFromGlobalClusterAsync(const RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveFromGlobalClusterAsyncHelper( request, handler, context ); } );
+}
+
+void DocDBClient::RemoveFromGlobalClusterAsyncHelper(const RemoveFromGlobalClusterRequest& request, const RemoveFromGlobalClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveFromGlobalCluster(request), context);
 }
 
 RemoveSourceIdentifierFromSubscriptionOutcome DocDBClient::RemoveSourceIdentifierFromSubscription(const RemoveSourceIdentifierFromSubscriptionRequest& request) const
