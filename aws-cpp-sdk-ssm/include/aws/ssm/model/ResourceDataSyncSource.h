@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline ResourceDataSyncSource& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline ResourceDataSyncSource& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of data source for the resource data sync. <code>SourceType</code>
      * is either <code>AwsOrganizations</code> (if an organization is present in AWS
-     * Organizations) or <code>singleAccountMultiRegions</code>.</p>
+     * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
     inline ResourceDataSyncSource& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

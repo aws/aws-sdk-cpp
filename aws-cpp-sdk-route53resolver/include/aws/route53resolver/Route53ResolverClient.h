@@ -360,15 +360,15 @@ namespace Model
   /**
    * <p>When you create a VPC using Amazon VPC, you automatically get DNS resolution
    * within the VPC from Route 53 Resolver. By default, Resolver answers DNS queries
-   * for VPC domain names such as domain names for EC2 instances or ELB load
-   * balancers. Resolver performs recursive lookups against public name servers for
-   * all other domain names.</p> <p>You can also configure DNS resolution between
-   * your VPC and your network over a Direct Connect or VPN connection:</p> <p>
-   * <b>Forward DNS queries from resolvers on your network to Route 53 Resolver</b>
-   * </p> <p>DNS resolvers on your network can forward DNS queries to Resolver in a
-   * specified VPC. This allows your DNS resolvers to easily resolve domain names for
-   * AWS resources such as EC2 instances or records in a Route 53 private hosted
-   * zone. For more information, see <a
+   * for VPC domain names such as domain names for EC2 instances or Elastic Load
+   * Balancing load balancers. Resolver performs recursive lookups against public
+   * name servers for all other domain names.</p> <p>You can also configure DNS
+   * resolution between your VPC and your network over a Direct Connect or VPN
+   * connection:</p> <p> <b>Forward DNS queries from resolvers on your network to
+   * Route 53 Resolver</b> </p> <p>DNS resolvers on your network can forward DNS
+   * queries to Resolver in a specified VPC. This allows your DNS resolvers to easily
+   * resolve domain names for AWS resources such as EC2 instances or records in a
+   * Route 53 private hosted zone. For more information, see <a
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How
    * DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver</a> in
    * the <i>Amazon Route 53 Developer Guide</i>.</p> <p> <b>Conditionally forward
@@ -384,7 +384,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network">How
    * Route 53 Resolver Forwards DNS Queries from Your VPCs to Your Network</a> in the
    * <i>Amazon Route 53 Developer Guide</i>.</p> <p>Like Amazon VPC, Resolver is
-   * regional. In each region where you have VPCs, you can choose whether to forward
+   * Regional. In each Region where you have VPCs, you can choose whether to forward
    * queries from your VPCs to your network (outbound queries), from your network to
    * your VPCs (inbound queries), or both.</p>
    */
@@ -1087,10 +1087,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
-         * a query logging configuration with other accounts, VPCs can be disassociated
-         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
-         * you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
+         * to share a query logging configuration with other accounts, VPCs can be
+         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
+         * accounts that you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1101,10 +1101,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
-         * a query logging configuration with other accounts, VPCs can be disassociated
-         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
-         * you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
+         * to share a query logging configuration with other accounts, VPCs can be
+         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
+         * accounts that you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1117,10 +1117,10 @@ namespace Model
         /**
          * <p>Disassociates a VPC from a query logging configuration.</p>  <p>Before
          * you can delete a query logging configuration, you must first disassociate all
-         * VPCs from the configuration. If you used Resource Access Manager (RAM) to share
-         * a query logging configuration with other accounts, VPCs can be disassociated
-         * from the configuration in the following ways:</p> <ul> <li> <p>The accounts that
-         * you shared the configuration with can disassociate VPCs from the
+         * VPCs from the configuration. If you used AWS Resource Access Manager (AWS RAM)
+         * to share a query logging configuration with other accounts, VPCs can be
+         * disassociated from the configuration in the following ways:</p> <ul> <li> <p>The
+         * accounts that you shared the configuration with can disassociate VPCs from the
          * configuration.</p> </li> <li> <p>You can stop sharing the configuration.</p>
          * </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig">AWS
@@ -1166,7 +1166,8 @@ namespace Model
 
         /**
          * <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall
-         * for a single Amazon virtual private cloud (VPC). </p><p><h3>See Also:</h3>   <a
+         * for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig">AWS
          * API Reference</a></p>
          */
@@ -1174,7 +1175,8 @@ namespace Model
 
         /**
          * <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall
-         * for a single Amazon virtual private cloud (VPC). </p><p><h3>See Also:</h3>   <a
+         * for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig">AWS
          * API Reference</a></p>
          *
@@ -1184,7 +1186,8 @@ namespace Model
 
         /**
          * <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall
-         * for a single Amazon virtual private cloud (VPC). </p><p><h3>See Also:</h3>   <a
+         * for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig">AWS
          * API Reference</a></p>
          *
@@ -1279,7 +1282,7 @@ namespace Model
         /**
          * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
          * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
+         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          */
@@ -1288,7 +1291,7 @@ namespace Model
         /**
          * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
          * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
+         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -1299,7 +1302,7 @@ namespace Model
         /**
          * <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing
          * the specified rule group. You can use the policy to share the rule group using
-         * AWS Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
+         * AWS Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -2050,7 +2053,7 @@ namespace Model
         /**
          * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
          * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
+         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          */
@@ -2059,7 +2062,7 @@ namespace Model
         /**
          * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
          * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
+         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -2070,7 +2073,7 @@ namespace Model
         /**
          * <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing
          * the rule group. You can use the policy to share the rule group using AWS
-         * Resource Access Manager (RAM). </p><p><h3>See Also:</h3>   <a
+         * Resource Access Manager (AWS RAM). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutFirewallRuleGroupPolicy">AWS
          * API Reference</a></p>
          *
@@ -2198,7 +2201,8 @@ namespace Model
 
         /**
          * <p>Updates the configuration of the firewall behavior provided by DNS Firewall
-         * for a single Amazon virtual private cloud (VPC). </p><p><h3>See Also:</h3>   <a
+         * for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig">AWS
          * API Reference</a></p>
          */
@@ -2206,7 +2210,8 @@ namespace Model
 
         /**
          * <p>Updates the configuration of the firewall behavior provided by DNS Firewall
-         * for a single Amazon virtual private cloud (VPC). </p><p><h3>See Also:</h3>   <a
+         * for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig">AWS
          * API Reference</a></p>
          *
@@ -2216,7 +2221,8 @@ namespace Model
 
         /**
          * <p>Updates the configuration of the firewall behavior provided by DNS Firewall
-         * for a single Amazon virtual private cloud (VPC). </p><p><h3>See Also:</h3>   <a
+         * for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateFirewallConfig">AWS
          * API Reference</a></p>
          *

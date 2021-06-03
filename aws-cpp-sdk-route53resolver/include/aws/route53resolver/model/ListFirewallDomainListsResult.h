@@ -86,49 +86,49 @@ namespace Model
 
     /**
      * <p>A list of the domain lists that you have defined. </p> <p>This might be a
-     * parital list of the domain lists that you've defined. For information, see
+     * partial list of the domain lists that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline const Aws::Vector<FirewallDomainListMetadata>& GetFirewallDomainLists() const{ return m_firewallDomainLists; }
 
     /**
      * <p>A list of the domain lists that you have defined. </p> <p>This might be a
-     * parital list of the domain lists that you've defined. For information, see
+     * partial list of the domain lists that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline void SetFirewallDomainLists(const Aws::Vector<FirewallDomainListMetadata>& value) { m_firewallDomainLists = value; }
 
     /**
      * <p>A list of the domain lists that you have defined. </p> <p>This might be a
-     * parital list of the domain lists that you've defined. For information, see
+     * partial list of the domain lists that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline void SetFirewallDomainLists(Aws::Vector<FirewallDomainListMetadata>&& value) { m_firewallDomainLists = std::move(value); }
 
     /**
      * <p>A list of the domain lists that you have defined. </p> <p>This might be a
-     * parital list of the domain lists that you've defined. For information, see
+     * partial list of the domain lists that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainListsResult& WithFirewallDomainLists(const Aws::Vector<FirewallDomainListMetadata>& value) { SetFirewallDomainLists(value); return *this;}
 
     /**
      * <p>A list of the domain lists that you have defined. </p> <p>This might be a
-     * parital list of the domain lists that you've defined. For information, see
+     * partial list of the domain lists that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainListsResult& WithFirewallDomainLists(Aws::Vector<FirewallDomainListMetadata>&& value) { SetFirewallDomainLists(std::move(value)); return *this;}
 
     /**
      * <p>A list of the domain lists that you have defined. </p> <p>This might be a
-     * parital list of the domain lists that you've defined. For information, see
+     * partial list of the domain lists that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainListsResult& AddFirewallDomainLists(const FirewallDomainListMetadata& value) { m_firewallDomainLists.push_back(value); return *this; }
 
     /**
      * <p>A list of the domain lists that you have defined. </p> <p>This might be a
-     * parital list of the domain lists that you've defined. For information, see
+     * partial list of the domain lists that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainListsResult& AddFirewallDomainLists(FirewallDomainListMetadata&& value) { m_firewallDomainLists.push_back(std::move(value)); return *this; }

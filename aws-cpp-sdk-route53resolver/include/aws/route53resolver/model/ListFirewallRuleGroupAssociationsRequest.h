@@ -144,28 +144,32 @@ namespace Model
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that are associated with a single VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that are associated with a single VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that are associated with a single VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that are associated with a single VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p>
      */
     inline ListFirewallRuleGroupAssociationsRequest& WithPriority(int value) { SetPriority(value); return *this;}
 

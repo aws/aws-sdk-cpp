@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>High level information about a list of firewall domains for use in a
+   * <p>High-level information about a list of firewall domains for use in a
    * <a>FirewallRule</a>. This is returned by <a>GetFirewallDomainList</a>.</p> <p>To
    * retrieve the domains that are defined for this domain list, call
    * <a>ListFirewallDomains</a>.</p><p><h3>See Also:</h3>   <a
@@ -316,57 +316,57 @@ namespace Model
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline FirewallDomainList& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline FirewallDomainList& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline FirewallDomainList& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline CreateResolverQueryLogConfigRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline CreateResolverQueryLogConfigRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name that you want to give the query logging configuration</p>
+     * <p>The name that you want to give the query logging configuration.</p>
      */
     inline CreateResolverQueryLogConfigRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -201,7 +201,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -209,7 +209,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -217,7 +217,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -225,7 +225,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -233,7 +233,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -241,7 +241,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -249,7 +249,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -257,7 +257,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows failed requests
-     * to be retried without the risk of executing the operation twice.
+     * to be retried without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */

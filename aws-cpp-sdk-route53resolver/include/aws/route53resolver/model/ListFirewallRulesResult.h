@@ -85,49 +85,49 @@ namespace Model
 
 
     /**
-     * <p>A list of the rules that you have defined. </p> <p>This might be a parital
+     * <p>A list of the rules that you have defined. </p> <p>This might be a partial
      * list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline const Aws::Vector<FirewallRule>& GetFirewallRules() const{ return m_firewallRules; }
 
     /**
-     * <p>A list of the rules that you have defined. </p> <p>This might be a parital
+     * <p>A list of the rules that you have defined. </p> <p>This might be a partial
      * list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline void SetFirewallRules(const Aws::Vector<FirewallRule>& value) { m_firewallRules = value; }
 
     /**
-     * <p>A list of the rules that you have defined. </p> <p>This might be a parital
+     * <p>A list of the rules that you have defined. </p> <p>This might be a partial
      * list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline void SetFirewallRules(Aws::Vector<FirewallRule>&& value) { m_firewallRules = std::move(value); }
 
     /**
-     * <p>A list of the rules that you have defined. </p> <p>This might be a parital
+     * <p>A list of the rules that you have defined. </p> <p>This might be a partial
      * list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline ListFirewallRulesResult& WithFirewallRules(const Aws::Vector<FirewallRule>& value) { SetFirewallRules(value); return *this;}
 
     /**
-     * <p>A list of the rules that you have defined. </p> <p>This might be a parital
+     * <p>A list of the rules that you have defined. </p> <p>This might be a partial
      * list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline ListFirewallRulesResult& WithFirewallRules(Aws::Vector<FirewallRule>&& value) { SetFirewallRules(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the rules that you have defined. </p> <p>This might be a parital
+     * <p>A list of the rules that you have defined. </p> <p>This might be a partial
      * list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */
     inline ListFirewallRulesResult& AddFirewallRules(const FirewallRule& value) { m_firewallRules.push_back(value); return *this; }
 
     /**
-     * <p>A list of the rules that you have defined. </p> <p>This might be a parital
+     * <p>A list of the rules that you have defined. </p> <p>This might be a partial
      * list of the firewall rules that you've defined. For information, see
      * <code>MaxResults</code>. </p>
      */

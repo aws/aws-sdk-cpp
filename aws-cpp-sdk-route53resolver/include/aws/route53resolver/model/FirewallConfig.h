@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-   * Amazon virtual private cloud (VPC). </p><p><h3>See Also:</h3>   <a
+   * VPC from Amazon Virtual Private Cloud (Amazon VPC). </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallConfig">AWS
    * API Reference</a></p>
    */
@@ -40,42 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline FirewallConfig& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline FirewallConfig& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The Id of the firewall configuration.</p>
+     * <p>The ID of the firewall configuration.</p>
      */
     inline FirewallConfig& WithId(const char* value) { SetId(value); return *this;}
 

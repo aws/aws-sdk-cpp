@@ -42,7 +42,9 @@ S3CopyObjectOperation::S3CopyObjectOperation() :
     m_objectLockLegalHoldStatusHasBeenSet(false),
     m_objectLockMode(S3ObjectLockMode::NOT_SET),
     m_objectLockModeHasBeenSet(false),
-    m_objectLockRetainUntilDateHasBeenSet(false)
+    m_objectLockRetainUntilDateHasBeenSet(false),
+    m_bucketKeyEnabled(false),
+    m_bucketKeyEnabledHasBeenSet(false)
 {
 }
 
@@ -68,7 +70,9 @@ S3CopyObjectOperation::S3CopyObjectOperation(const XmlNode& xmlNode) :
     m_objectLockLegalHoldStatusHasBeenSet(false),
     m_objectLockMode(S3ObjectLockMode::NOT_SET),
     m_objectLockModeHasBeenSet(false),
-    m_objectLockRetainUntilDateHasBeenSet(false)
+    m_objectLockRetainUntilDateHasBeenSet(false),
+    m_bucketKeyEnabled(false),
+    m_bucketKeyEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -187,6 +191,12 @@ S3CopyObjectOperation& S3CopyObjectOperation::operator =(const XmlNode& xmlNode)
       m_objectLockRetainUntilDate = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectLockRetainUntilDateNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
       m_objectLockRetainUntilDateHasBeenSet = true;
     }
+    XmlNode bucketKeyEnabledNode = resultNode.FirstChild("BucketKeyEnabled");
+    if(!bucketKeyEnabledNode.IsNull())
+    {
+      m_bucketKeyEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bucketKeyEnabledNode.GetText()).c_str()).c_str());
+      m_bucketKeyEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -299,6 +309,14 @@ void S3CopyObjectOperation::AddToNode(XmlNode& parentNode) const
   {
    XmlNode objectLockRetainUntilDateNode = parentNode.CreateChildElement("ObjectLockRetainUntilDate");
    objectLockRetainUntilDateNode.SetText(m_objectLockRetainUntilDate.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_bucketKeyEnabledHasBeenSet)
+  {
+   XmlNode bucketKeyEnabledNode = parentNode.CreateChildElement("BucketKeyEnabled");
+   ss << std::boolalpha << m_bucketKeyEnabled;
+   bucketKeyEnabledNode.SetText(ss.str());
+   ss.str("");
   }
 
 }

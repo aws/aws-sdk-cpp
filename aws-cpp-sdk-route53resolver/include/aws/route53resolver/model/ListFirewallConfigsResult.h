@@ -86,43 +86,43 @@ namespace Model
 
     /**
      * <p>The configurations for the firewall behavior provided by DNS Firewall for
-     * Amazon virtual private clouds (VPC). </p>
+     * VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
      */
     inline const Aws::Vector<FirewallConfig>& GetFirewallConfigs() const{ return m_firewallConfigs; }
 
     /**
      * <p>The configurations for the firewall behavior provided by DNS Firewall for
-     * Amazon virtual private clouds (VPC). </p>
+     * VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
      */
     inline void SetFirewallConfigs(const Aws::Vector<FirewallConfig>& value) { m_firewallConfigs = value; }
 
     /**
      * <p>The configurations for the firewall behavior provided by DNS Firewall for
-     * Amazon virtual private clouds (VPC). </p>
+     * VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
      */
     inline void SetFirewallConfigs(Aws::Vector<FirewallConfig>&& value) { m_firewallConfigs = std::move(value); }
 
     /**
      * <p>The configurations for the firewall behavior provided by DNS Firewall for
-     * Amazon virtual private clouds (VPC). </p>
+     * VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
      */
     inline ListFirewallConfigsResult& WithFirewallConfigs(const Aws::Vector<FirewallConfig>& value) { SetFirewallConfigs(value); return *this;}
 
     /**
      * <p>The configurations for the firewall behavior provided by DNS Firewall for
-     * Amazon virtual private clouds (VPC). </p>
+     * VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
      */
     inline ListFirewallConfigsResult& WithFirewallConfigs(Aws::Vector<FirewallConfig>&& value) { SetFirewallConfigs(std::move(value)); return *this;}
 
     /**
      * <p>The configurations for the firewall behavior provided by DNS Firewall for
-     * Amazon virtual private clouds (VPC). </p>
+     * VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
      */
     inline ListFirewallConfigsResult& AddFirewallConfigs(const FirewallConfig& value) { m_firewallConfigs.push_back(value); return *this; }
 
     /**
      * <p>The configurations for the firewall behavior provided by DNS Firewall for
-     * Amazon virtual private clouds (VPC). </p>
+     * VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
      */
     inline ListFirewallConfigsResult& AddFirewallConfigs(FirewallConfig&& value) { m_firewallConfigs.push_back(std::move(value)); return *this; }
 

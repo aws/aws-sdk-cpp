@@ -568,7 +568,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -580,7 +580,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -592,7 +592,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -604,7 +604,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -616,7 +616,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -628,7 +628,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -640,7 +640,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -652,7 +652,7 @@ namespace Model
      * value: /AWS::EC2::Instance. If you specify a value of '/' the document can run
      * on all types of resources. If you don't specify a value, the document can't run
      * on any resources. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */

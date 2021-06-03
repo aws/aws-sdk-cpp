@@ -98,56 +98,56 @@ namespace Model
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline ResolverRule& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline ResolverRule& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that you specified when you created the Resolver rule.
      * <code>CreatorRequestId</code> identifies the request and allows failed requests
-     * to be retried without the risk of executing the operation twice. </p>
+     * to be retried without the risk of running the operation twice. </p>
      */
     inline ResolverRule& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -620,44 +620,44 @@ namespace Model
 
 
     /**
-     * <p>Whether the rules is shared and, if so, whether the current account is
-     * sharing the rule with another account, or another account is sharing the rule
-     * with the current account.</p>
+     * <p>Whether the rule is shared and, if so, whether the current account is sharing
+     * the rule with another account, or another account is sharing the rule with the
+     * current account.</p>
      */
     inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
 
     /**
-     * <p>Whether the rules is shared and, if so, whether the current account is
-     * sharing the rule with another account, or another account is sharing the rule
-     * with the current account.</p>
+     * <p>Whether the rule is shared and, if so, whether the current account is sharing
+     * the rule with another account, or another account is sharing the rule with the
+     * current account.</p>
      */
     inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
 
     /**
-     * <p>Whether the rules is shared and, if so, whether the current account is
-     * sharing the rule with another account, or another account is sharing the rule
-     * with the current account.</p>
+     * <p>Whether the rule is shared and, if so, whether the current account is sharing
+     * the rule with another account, or another account is sharing the rule with the
+     * current account.</p>
      */
     inline void SetShareStatus(const ShareStatus& value) { m_shareStatusHasBeenSet = true; m_shareStatus = value; }
 
     /**
-     * <p>Whether the rules is shared and, if so, whether the current account is
-     * sharing the rule with another account, or another account is sharing the rule
-     * with the current account.</p>
+     * <p>Whether the rule is shared and, if so, whether the current account is sharing
+     * the rule with another account, or another account is sharing the rule with the
+     * current account.</p>
      */
     inline void SetShareStatus(ShareStatus&& value) { m_shareStatusHasBeenSet = true; m_shareStatus = std::move(value); }
 
     /**
-     * <p>Whether the rules is shared and, if so, whether the current account is
-     * sharing the rule with another account, or another account is sharing the rule
-     * with the current account.</p>
+     * <p>Whether the rule is shared and, if so, whether the current account is sharing
+     * the rule with another account, or another account is sharing the rule with the
+     * current account.</p>
      */
     inline ResolverRule& WithShareStatus(const ShareStatus& value) { SetShareStatus(value); return *this;}
 
     /**
-     * <p>Whether the rules is shared and, if so, whether the current account is
-     * sharing the rule with another account, or another account is sharing the rule
-     * with the current account.</p>
+     * <p>Whether the rule is shared and, if so, whether the current account is sharing
+     * the rule with another account, or another account is sharing the rule with the
+     * current account.</p>
      */
     inline ResolverRule& WithShareStatus(ShareStatus&& value) { SetShareStatus(std::move(value)); return *this;}
 

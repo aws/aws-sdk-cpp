@@ -19,6 +19,7 @@ using namespace Aws;
 DescribePredictorResult::DescribePredictorResult() : 
     m_forecastHorizon(0),
     m_performAutoML(false),
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
     m_performHPO(false),
     m_estimatedTimeRemainingInMinutes(0)
 {
@@ -27,6 +28,7 @@ DescribePredictorResult::DescribePredictorResult() :
 DescribePredictorResult::DescribePredictorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_forecastHorizon(0),
     m_performAutoML(false),
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
     m_performHPO(false),
     m_estimatedTimeRemainingInMinutes(0)
 {
@@ -72,6 +74,12 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("PerformAutoML"))
   {
     m_performAutoML = jsonValue.GetBool("PerformAutoML");
+
+  }
+
+  if(jsonValue.ValueExists("AutoMLOverrideStrategy"))
+  {
+    m_autoMLOverrideStrategy = AutoMLOverrideStrategyMapper::GetAutoMLOverrideStrategyForName(jsonValue.GetString("AutoMLOverrideStrategy"));
 
   }
 

@@ -85,56 +85,56 @@ namespace Model
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domains = value; }
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domains = std::move(value); }
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainsResult& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainsResult& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainsResult& AddDomains(const Aws::String& value) { m_domains.push_back(value); return *this; }
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainsResult& AddDomains(Aws::String&& value) { m_domains.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of the domains in the firewall domain list. </p> <p>This might be a
-     * parital list of the domains that you've defined in the domain list. For
+     * partial list of the domains that you've defined in the domain list. For
      * information, see <code>MaxResults</code>. </p>
      */
     inline ListFirewallDomainsResult& AddDomains(const char* value) { m_domains.push_back(value); return *this; }

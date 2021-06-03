@@ -461,7 +461,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -470,7 +470,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -479,7 +479,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -488,7 +488,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -497,7 +497,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -506,7 +506,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -515,7 +515,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -524,7 +524,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */

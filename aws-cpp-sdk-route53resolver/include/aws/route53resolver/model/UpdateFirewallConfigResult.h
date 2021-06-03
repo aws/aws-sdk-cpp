@@ -34,31 +34,31 @@ namespace Model
 
     /**
      * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * Amazon virtual private cloud (VPC). </p>
+     * VPC. </p>
      */
     inline const FirewallConfig& GetFirewallConfig() const{ return m_firewallConfig; }
 
     /**
      * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * Amazon virtual private cloud (VPC). </p>
+     * VPC. </p>
      */
     inline void SetFirewallConfig(const FirewallConfig& value) { m_firewallConfig = value; }
 
     /**
      * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * Amazon virtual private cloud (VPC). </p>
+     * VPC. </p>
      */
     inline void SetFirewallConfig(FirewallConfig&& value) { m_firewallConfig = std::move(value); }
 
     /**
      * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * Amazon virtual private cloud (VPC). </p>
+     * VPC. </p>
      */
     inline UpdateFirewallConfigResult& WithFirewallConfig(const FirewallConfig& value) { SetFirewallConfig(value); return *this;}
 
     /**
      * <p>Configuration of the firewall behavior provided by DNS Firewall for a single
-     * Amazon virtual private cloud (VPC). </p>
+     * VPC. </p>
      */
     inline UpdateFirewallConfigResult& WithFirewallConfig(FirewallConfig&& value) { SetFirewallConfig(std::move(value)); return *this;}
 

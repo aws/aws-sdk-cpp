@@ -129,65 +129,65 @@ namespace Model
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline const Aws::String& GetDomainFileUrl() const{ return m_domainFileUrl; }
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline bool DomainFileUrlHasBeenSet() const { return m_domainFileUrlHasBeenSet; }
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline void SetDomainFileUrl(const Aws::String& value) { m_domainFileUrlHasBeenSet = true; m_domainFileUrl = value; }
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline void SetDomainFileUrl(Aws::String&& value) { m_domainFileUrlHasBeenSet = true; m_domainFileUrl = std::move(value); }
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline void SetDomainFileUrl(const char* value) { m_domainFileUrlHasBeenSet = true; m_domainFileUrl.assign(value); }
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline ImportFirewallDomainsRequest& WithDomainFileUrl(const Aws::String& value) { SetDomainFileUrl(value); return *this;}
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline ImportFirewallDomainsRequest& WithDomainFileUrl(Aws::String&& value) { SetDomainFileUrl(std::move(value)); return *this;}
 
     /**
      * <p>The fully qualified URL or URI of the file stored in Amazon Simple Storage
-     * Service (S3) that contains the list of domains to import.</p> <p>The file must
-     * be in an S3 bucket that's in the same Region as your DNS Firewall. The file must
-     * be a text file and must contain a single domain per line.</p>
+     * Service (Amazon S3) that contains the list of domains to import.</p> <p>The file
+     * must be in an S3 bucket that's in the same Region as your DNS Firewall. The file
+     * must be a text file and must contain a single domain per line.</p>
      */
     inline ImportFirewallDomainsRequest& WithDomainFileUrl(const char* value) { SetDomainFileUrl(value); return *this;}
 

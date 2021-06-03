@@ -26,7 +26,8 @@ namespace Model
     ObjectLockRetainUntilDate,
     ObjectLockMode,
     ObjectLockLegalHoldStatus,
-    IntelligentTieringAccessTier
+    IntelligentTieringAccessTier,
+    BucketKeyStatus
   };
 
 namespace InventoryOptionalFieldMapper

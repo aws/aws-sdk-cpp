@@ -40,7 +40,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -56,7 +56,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -80,7 +80,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -88,7 +88,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -96,7 +96,7 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and that allows you to retry
-     * failed requests without the risk of executing the operation twice.
+     * failed requests without the risk of running the operation twice.
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
@@ -238,7 +238,7 @@ namespace Model
      * <p>The action that DNS Firewall should take on a DNS query when it matches one
      * of the domains in the rule's domain list:</p> <ul> <li> <p> <code>ALLOW</code> -
      * Permit the request to go through.</p> </li> <li> <p> <code>ALERT</code> - Permit
-     * the request and send metrics and log to Cloud Watch.</p> </li> <li> <p>
+     * the request and send metrics and logs to Cloud Watch.</p> </li> <li> <p>
      * <code>BLOCK</code> - Disallow the request. This option requires additional
      * details in the rule's <code>BlockResponse</code>. </p> </li> </ul>
      */
@@ -248,7 +248,7 @@ namespace Model
      * <p>The action that DNS Firewall should take on a DNS query when it matches one
      * of the domains in the rule's domain list:</p> <ul> <li> <p> <code>ALLOW</code> -
      * Permit the request to go through.</p> </li> <li> <p> <code>ALERT</code> - Permit
-     * the request and send metrics and log to Cloud Watch.</p> </li> <li> <p>
+     * the request and send metrics and logs to Cloud Watch.</p> </li> <li> <p>
      * <code>BLOCK</code> - Disallow the request. This option requires additional
      * details in the rule's <code>BlockResponse</code>. </p> </li> </ul>
      */
@@ -258,7 +258,7 @@ namespace Model
      * <p>The action that DNS Firewall should take on a DNS query when it matches one
      * of the domains in the rule's domain list:</p> <ul> <li> <p> <code>ALLOW</code> -
      * Permit the request to go through.</p> </li> <li> <p> <code>ALERT</code> - Permit
-     * the request and send metrics and log to Cloud Watch.</p> </li> <li> <p>
+     * the request and send metrics and logs to Cloud Watch.</p> </li> <li> <p>
      * <code>BLOCK</code> - Disallow the request. This option requires additional
      * details in the rule's <code>BlockResponse</code>. </p> </li> </ul>
      */
@@ -268,7 +268,7 @@ namespace Model
      * <p>The action that DNS Firewall should take on a DNS query when it matches one
      * of the domains in the rule's domain list:</p> <ul> <li> <p> <code>ALLOW</code> -
      * Permit the request to go through.</p> </li> <li> <p> <code>ALERT</code> - Permit
-     * the request and send metrics and log to Cloud Watch.</p> </li> <li> <p>
+     * the request and send metrics and logs to Cloud Watch.</p> </li> <li> <p>
      * <code>BLOCK</code> - Disallow the request. This option requires additional
      * details in the rule's <code>BlockResponse</code>. </p> </li> </ul>
      */
@@ -278,7 +278,7 @@ namespace Model
      * <p>The action that DNS Firewall should take on a DNS query when it matches one
      * of the domains in the rule's domain list:</p> <ul> <li> <p> <code>ALLOW</code> -
      * Permit the request to go through.</p> </li> <li> <p> <code>ALERT</code> - Permit
-     * the request and send metrics and log to Cloud Watch.</p> </li> <li> <p>
+     * the request and send metrics and logs to Cloud Watch.</p> </li> <li> <p>
      * <code>BLOCK</code> - Disallow the request. This option requires additional
      * details in the rule's <code>BlockResponse</code>. </p> </li> </ul>
      */
@@ -288,7 +288,7 @@ namespace Model
      * <p>The action that DNS Firewall should take on a DNS query when it matches one
      * of the domains in the rule's domain list:</p> <ul> <li> <p> <code>ALLOW</code> -
      * Permit the request to go through.</p> </li> <li> <p> <code>ALERT</code> - Permit
-     * the request and send metrics and log to Cloud Watch.</p> </li> <li> <p>
+     * the request and send metrics and logs to Cloud Watch.</p> </li> <li> <p>
      * <code>BLOCK</code> - Disallow the request. This option requires additional
      * details in the rule's <code>BlockResponse</code>. </p> </li> </ul>
      */
@@ -297,7 +297,7 @@ namespace Model
 
     /**
      * <p>The way that you want DNS Firewall to block the request, used with the rule
-     * aciton setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
+     * action setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
      * Respond indicating that the query was successful, but no response is available
      * for it.</p> </li> <li> <p> <code>NXDOMAIN</code> - Respond indicating that the
      * domain name that's in the query doesn't exist.</p> </li> <li> <p>
@@ -310,7 +310,7 @@ namespace Model
 
     /**
      * <p>The way that you want DNS Firewall to block the request, used with the rule
-     * aciton setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
+     * action setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
      * Respond indicating that the query was successful, but no response is available
      * for it.</p> </li> <li> <p> <code>NXDOMAIN</code> - Respond indicating that the
      * domain name that's in the query doesn't exist.</p> </li> <li> <p>
@@ -323,7 +323,7 @@ namespace Model
 
     /**
      * <p>The way that you want DNS Firewall to block the request, used with the rule
-     * aciton setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
+     * action setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
      * Respond indicating that the query was successful, but no response is available
      * for it.</p> </li> <li> <p> <code>NXDOMAIN</code> - Respond indicating that the
      * domain name that's in the query doesn't exist.</p> </li> <li> <p>
@@ -336,7 +336,7 @@ namespace Model
 
     /**
      * <p>The way that you want DNS Firewall to block the request, used with the rule
-     * aciton setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
+     * action setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
      * Respond indicating that the query was successful, but no response is available
      * for it.</p> </li> <li> <p> <code>NXDOMAIN</code> - Respond indicating that the
      * domain name that's in the query doesn't exist.</p> </li> <li> <p>
@@ -349,7 +349,7 @@ namespace Model
 
     /**
      * <p>The way that you want DNS Firewall to block the request, used with the rule
-     * aciton setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
+     * action setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
      * Respond indicating that the query was successful, but no response is available
      * for it.</p> </li> <li> <p> <code>NXDOMAIN</code> - Respond indicating that the
      * domain name that's in the query doesn't exist.</p> </li> <li> <p>
@@ -362,7 +362,7 @@ namespace Model
 
     /**
      * <p>The way that you want DNS Firewall to block the request, used with the rule
-     * aciton setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
+     * action setting <code>BLOCK</code>. </p> <ul> <li> <p> <code>NODATA</code> -
      * Respond indicating that the query was successful, but no response is available
      * for it.</p> </li> <li> <p> <code>NXDOMAIN</code> - Respond indicating that the
      * domain name that's in the query doesn't exist.</p> </li> <li> <p>

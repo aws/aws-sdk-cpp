@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>An association between a firewall rul group and a VPC, which enables DNS
+   * <p>An association between a firewall rule group and a VPC, which enables DNS
    * filtering for the VPC. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/FirewallRuleGroupAssociation">AWS
    * API Reference</a></p>
@@ -448,57 +448,57 @@ namespace Model
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline FirewallRuleGroupAssociation& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline FirewallRuleGroupAssociation& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string defined by you to identify the request. This allows you to
-     * retry failed requests without the risk of executing the operation twice. This
-     * can be any unique string, for example, a timestamp. </p>
+     * retry failed requests without the risk of running the operation twice. This can
+     * be any unique string, for example, a timestamp. </p>
      */
     inline FirewallRuleGroupAssociation& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

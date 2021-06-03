@@ -7,6 +7,7 @@
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/forecast/model/AutoMLOverrideStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/forecast/model/EvaluationParameters.h>
 #include <aws/forecast/model/HyperParameterTuningJobConfig.h>
@@ -231,6 +232,47 @@ namespace Model
      * <p>Whether the predictor is set to perform AutoML.</p>
      */
     inline DescribePredictorResult& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
+
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategy = value; }
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategy = std::move(value); }
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline DescribePredictorResult& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline DescribePredictorResult& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -872,6 +914,8 @@ namespace Model
     Aws::Vector<Aws::String> m_forecastTypes;
 
     bool m_performAutoML;
+
+    AutoMLOverrideStrategy m_autoMLOverrideStrategy;
 
     bool m_performHPO;
 

@@ -1253,7 +1253,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1268,7 +1268,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1283,7 +1283,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1298,7 +1298,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1313,7 +1313,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1328,7 +1328,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1343,7 +1343,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1358,7 +1358,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */

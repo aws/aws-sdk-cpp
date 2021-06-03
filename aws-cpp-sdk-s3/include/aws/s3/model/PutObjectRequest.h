@@ -1686,32 +1686,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date and time when you want this object's Object Lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire. Must be
+     * formatted as a timestamp parameter.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 

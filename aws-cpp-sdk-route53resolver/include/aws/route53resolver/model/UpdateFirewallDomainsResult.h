@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+     * <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+     * <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+     * <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+     * <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+     * <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
      */
     inline UpdateFirewallDomainsResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+     * <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
      */
     inline UpdateFirewallDomainsResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The Id of the firewall domain list that DNS Firewall just updated.</p>
+     * <p>The ID of the firewall domain list that DNS Firewall just updated.</p>
      */
     inline UpdateFirewallDomainsResult& WithId(const char* value) { SetId(value); return *this;}
 

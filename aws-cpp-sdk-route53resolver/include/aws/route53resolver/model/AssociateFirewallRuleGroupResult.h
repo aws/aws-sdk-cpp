@@ -33,31 +33,31 @@ namespace Model
 
 
     /**
-     * <p>The association that you just created. The association has an Id that you can
+     * <p>The association that you just created. The association has an ID that you can
      * use to identify it in other requests, like update and delete.</p>
      */
     inline const FirewallRuleGroupAssociation& GetFirewallRuleGroupAssociation() const{ return m_firewallRuleGroupAssociation; }
 
     /**
-     * <p>The association that you just created. The association has an Id that you can
+     * <p>The association that you just created. The association has an ID that you can
      * use to identify it in other requests, like update and delete.</p>
      */
     inline void SetFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { m_firewallRuleGroupAssociation = value; }
 
     /**
-     * <p>The association that you just created. The association has an Id that you can
+     * <p>The association that you just created. The association has an ID that you can
      * use to identify it in other requests, like update and delete.</p>
      */
     inline void SetFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { m_firewallRuleGroupAssociation = std::move(value); }
 
     /**
-     * <p>The association that you just created. The association has an Id that you can
+     * <p>The association that you just created. The association has an ID that you can
      * use to identify it in other requests, like update and delete.</p>
      */
     inline AssociateFirewallRuleGroupResult& WithFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { SetFirewallRuleGroupAssociation(value); return *this;}
 
     /**
-     * <p>The association that you just created. The association has an Id that you can
+     * <p>The association that you just created. The association has an ID that you can
      * use to identify it in other requests, like update and delete.</p>
      */
     inline AssociateFirewallRuleGroupResult& WithFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { SetFirewallRuleGroupAssociation(std::move(value)); return *this;}

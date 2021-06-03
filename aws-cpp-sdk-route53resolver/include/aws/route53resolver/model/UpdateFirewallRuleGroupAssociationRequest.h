@@ -79,44 +79,48 @@ namespace Model
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that you associate with the specified VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
-     * <p>You must specify a unique priority for each rule group that you associate
-     * with a single VPC. To make it easier to insert rule groups later, leave space
-     * between the numbers, for example, use 100, 200, and so on. You can change the
-     * priority setting for a rule group association after you create it.</p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p> <p>You must specify a unique priority for each rule group that you
+     * associate with a single VPC. To make it easier to insert rule groups later,
+     * leave space between the numbers, for example, use 100, 200, and so on. You can
+     * change the priority setting for a rule group association after you create
+     * it.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that you associate with the specified VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
-     * <p>You must specify a unique priority for each rule group that you associate
-     * with a single VPC. To make it easier to insert rule groups later, leave space
-     * between the numbers, for example, use 100, 200, and so on. You can change the
-     * priority setting for a rule group association after you create it.</p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p> <p>You must specify a unique priority for each rule group that you
+     * associate with a single VPC. To make it easier to insert rule groups later,
+     * leave space between the numbers, for example, use 100, 200, and so on. You can
+     * change the priority setting for a rule group association after you create
+     * it.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that you associate with the specified VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
-     * <p>You must specify a unique priority for each rule group that you associate
-     * with a single VPC. To make it easier to insert rule groups later, leave space
-     * between the numbers, for example, use 100, 200, and so on. You can change the
-     * priority setting for a rule group association after you create it.</p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p> <p>You must specify a unique priority for each rule group that you
+     * associate with a single VPC. To make it easier to insert rule groups later,
+     * leave space between the numbers, for example, use 100, 200, and so on. You can
+     * change the priority setting for a rule group association after you create
+     * it.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
      * <p>The setting that determines the processing order of the rule group among the
      * rule groups that you associate with the specified VPC. DNS Firewall filters VPC
-     * traffic starting from rule group with the lowest numeric priority setting. </p>
-     * <p>You must specify a unique priority for each rule group that you associate
-     * with a single VPC. To make it easier to insert rule groups later, leave space
-     * between the numbers, for example, use 100, 200, and so on. You can change the
-     * priority setting for a rule group association after you create it.</p>
+     * traffic starting from the rule group with the lowest numeric priority setting.
+     * </p> <p>You must specify a unique priority for each rule group that you
+     * associate with a single VPC. To make it easier to insert rule groups later,
+     * leave space between the numbers, for example, use 100, 200, and so on. You can
+     * change the priority setting for a rule group association after you create
+     * it.</p>
      */
     inline UpdateFirewallRuleGroupAssociationRequest& WithPriority(int value) { SetPriority(value); return *this;}
 
