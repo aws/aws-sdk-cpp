@@ -539,10 +539,13 @@ AWS_SUPPRESS_DEPRECATION(
                                                                  nullptr, m_key.GetUnderlyingData(), m_key.GetLength(),
                                                                  nullptr, 0, 0, kCCModeOptionCTR_BE, &m_encryptorHandle);
 #ifdef MAC_13_AVAILABLE
-                status |= CCCryptorGCMSetIV(m_encryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
-#else
-                status |= CCCryptorGCMAddIV(m_encryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
+                if (__builtin_available(macos 10.13, ios 11.0, *)) {
+                  status |= CCCryptorGCMSetIV(m_encryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
+                } else
 #endif
+                {
+                  status |= CCCryptorGCMAddIV(m_encryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
+                }
                 if (m_aad.GetLength() > 0)
                 {
                     status |= CCCryptorGCMAddAAD(m_encryptorHandle, m_aad.GetUnderlyingData(), m_aad.GetLength());
@@ -552,9 +555,13 @@ AWS_SUPPRESS_DEPRECATION(
                                                  nullptr, m_key.GetUnderlyingData(), m_key.GetLength(),
                                                  nullptr, 0, 0, kCCModeOptionCTR_BE, &m_decryptorHandle);
 #ifdef MAC_13_AVAILABLE
-                status |= CCCryptorGCMSetIV(m_decryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
+                if (__builtin_available(macos 10.13, ios 11.0, *)) {
+                  status |= CCCryptorGCMSetIV(m_decryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
+                } else
 #else
-                status |= CCCryptorGCMAddIV(m_decryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
+                {
+                  status |= CCCryptorGCMAddIV(m_decryptorHandle, m_initializationVector.GetUnderlyingData(), m_initializationVector.GetLength());
+                }
 #endif
                 if (m_aad.GetLength() > 0)
                 {
@@ -576,14 +583,18 @@ AWS_SUPPRESS_DEPRECATION(
                     return CryptoBuffer();
                 }
 
-                CCStatus status;
+                CCStatus status = kCCUnimplemented;
                 m_tag = CryptoBuffer(TagLengthBytes);
                 size_t tagLength = TagLengthBytes;
 
 #ifdef MAC_13_AVAILABLE
-                status = CCCryptorGCMFinalize(m_encryptorHandle, m_tag.GetUnderlyingData(), tagLength);
+                if (__builtin_available(macos 10.13, ios 11.0, *)) {
+                  status = CCCryptorGCMFinalize(m_encryptorHandle, m_tag.GetUnderlyingData(), tagLength);
+                } else
 #else
-                status = CCCryptorGCMFinal(m_encryptorHandle, m_tag.GetUnderlyingData(), &tagLength);
+                {
+                  status = CCCryptorGCMFinal(m_encryptorHandle, m_tag.GetUnderlyingData(), &tagLength);
+                }
 #endif
                 if (status != kCCSuccess)
                 {
@@ -602,16 +613,20 @@ AWS_SUPPRESS_DEPRECATION(
                     return CryptoBuffer();
                 }
 
-                CCStatus status;
+                CCStatus status = kCCUnimplemented;
                 size_t tagLength = TagLengthBytes;
 
                 /* Note that CCCryptorGCMFinal is deprecated in Mac 10.13. It also doesn't compare the tag with expected tag
                  * https://opensource.apple.com/source/CommonCrypto/CommonCrypto-60118.1.1/include/CommonCryptorSPI.h.auto.html
                  */
 #ifdef MAC_13_AVAILABLE
-                status = CCCryptorGCMFinalize(m_decryptorHandle, m_tag.GetUnderlyingData(), tagLength);
+                if (__builtin_available(macos 10.13, ios 11.0, *)) {
+                  status = CCCryptorGCMFinalize(m_decryptorHandle, m_tag.GetUnderlyingData(), tagLength);
+                } else
 #else
-                status = CCCryptorGCMFinal(m_decryptorHandle, m_tag.GetUnderlyingData(), &tagLength);
+                {
+                  status = CCCryptorGCMFinal(m_decryptorHandle, m_tag.GetUnderlyingData(), &tagLength);
+                }
 #endif
                 if (status != kCCSuccess)
                 {
