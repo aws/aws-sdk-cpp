@@ -97,7 +97,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
@@ -107,7 +107,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
@@ -127,7 +127,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
@@ -137,7 +137,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
@@ -157,7 +157,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the
@@ -167,7 +167,7 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for a symmetric customer master key (CMK) in
-     * AWS Key Management Service (AWS KMS). Amazon QLDB does not support asymmetric
+     * AWS Key Management Service (AWS KMS). Amazon S3 does not support asymmetric
      * CMKs.</p> <p>You must provide a <code>KmsKeyArn</code> if you specify
      * <code>SSE_KMS</code> as the <code>ObjectEncryptionType</code>.</p> <p>
      * <code>KmsKeyArn</code> is not required if you specify <code>SSE_S3</code> as the

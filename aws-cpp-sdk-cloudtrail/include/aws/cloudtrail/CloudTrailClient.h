@@ -334,8 +334,8 @@ namespace Model
          * write-only events, or all events. This applies to both management events and
          * data events.</p> </li> <li> <p>If your event selector includes management
          * events.</p> </li> <li> <p>If your event selector includes data events, the
-         * Amazon S3 objects or AWS Lambda functions that you are logging for data
-         * events.</p> </li> </ul> <p>For more information, see <a
+         * resources on which you are logging data events.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
          * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -351,8 +351,8 @@ namespace Model
          * write-only events, or all events. This applies to both management events and
          * data events.</p> </li> <li> <p>If your event selector includes management
          * events.</p> </li> <li> <p>If your event selector includes data events, the
-         * Amazon S3 objects or AWS Lambda functions that you are logging for data
-         * events.</p> </li> </ul> <p>For more information, see <a
+         * resources on which you are logging data events.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
          * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -370,8 +370,8 @@ namespace Model
          * write-only events, or all events. This applies to both management events and
          * data events.</p> </li> <li> <p>If your event selector includes management
          * events.</p> </li> <li> <p>If your event selector includes data events, the
-         * Amazon S3 objects or AWS Lambda functions that you are logging for data
-         * events.</p> </li> </ul> <p>For more information, see <a
+         * resources on which you are logging data events.</p> </li> </ul> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html">Logging
          * Data and Management Events for Trails </a> in the <i>AWS CloudTrail User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

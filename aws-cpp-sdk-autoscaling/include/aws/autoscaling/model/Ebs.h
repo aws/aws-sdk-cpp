@@ -427,26 +427,22 @@ namespace Model
 
 
     /**
-     * <p>The throughput to provision for a <code>gp3</code> volume.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
      */
     inline int GetThroughput() const{ return m_throughput; }
 
     /**
-     * <p>The throughput to provision for a <code>gp3</code> volume.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
      */
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
 
     /**
-     * <p>The throughput to provision for a <code>gp3</code> volume.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
      */
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
 
     /**
-     * <p>The throughput to provision for a <code>gp3</code> volume.</p> <p>Valid
-     * Range: Minimum value of 125. Maximum value of 1000.</p>
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
      */
     inline Ebs& WithThroughput(int value) { SetThroughput(value); return *this;}
 

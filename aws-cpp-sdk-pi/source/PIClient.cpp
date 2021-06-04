@@ -21,6 +21,7 @@
 #include <aws/pi/PIEndpoint.h>
 #include <aws/pi/PIErrorMarshaller.h>
 #include <aws/pi/model/DescribeDimensionKeysRequest.h>
+#include <aws/pi/model/GetDimensionKeyDetailsRequest.h>
 #include <aws/pi/model/GetResourceMetricsRequest.h>
 
 using namespace Aws;
@@ -118,6 +119,30 @@ void PIClient::DescribeDimensionKeysAsync(const DescribeDimensionKeysRequest& re
 void PIClient::DescribeDimensionKeysAsyncHelper(const DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeDimensionKeys(request), context);
+}
+
+GetDimensionKeyDetailsOutcome PIClient::GetDimensionKeyDetails(const GetDimensionKeyDetailsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return GetDimensionKeyDetailsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetDimensionKeyDetailsOutcomeCallable PIClient::GetDimensionKeyDetailsCallable(const GetDimensionKeyDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDimensionKeyDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDimensionKeyDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PIClient::GetDimensionKeyDetailsAsync(const GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDimensionKeyDetailsAsyncHelper( request, handler, context ); } );
+}
+
+void PIClient::GetDimensionKeyDetailsAsyncHelper(const GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDimensionKeyDetails(request), context);
 }
 
 GetResourceMetricsOutcome PIClient::GetResourceMetrics(const GetResourceMetricsRequest& request) const
