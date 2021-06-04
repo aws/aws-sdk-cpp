@@ -142,7 +142,7 @@ static const char* ALLOCATION_TAG = "S3CrtClient";
 
 S3CrtClient::S3CrtClient(const S3Crt::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
@@ -152,7 +152,7 @@ S3CrtClient::S3CrtClient(const S3Crt::ClientConfiguration& clientConfiguration, 
 
 S3CrtClient::S3CrtClient(const AWSCredentials& credentials, const S3Crt::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
@@ -163,7 +163,7 @@ S3CrtClient::S3CrtClient(const AWSCredentials& credentials, const S3Crt::ClientC
 S3CrtClient::S3CrtClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
   const S3Crt::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
-    Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
+    Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region), signPayloads, false),
     Aws::MakeShared<S3CrtErrorMarshaller>(ALLOCATION_TAG)),
     m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
@@ -613,7 +613,7 @@ AbortMultipartUploadOutcome S3CrtClient::AbortMultipartUpload(const AbortMultipa
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return AbortMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return AbortMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 AbortMultipartUploadOutcomeCallable S3CrtClient::AbortMultipartUploadCallable(const AbortMultipartUploadRequest& request) const
@@ -658,7 +658,7 @@ CompleteMultipartUploadOutcome S3CrtClient::CompleteMultipartUpload(const Comple
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return CompleteMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return CompleteMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 CompleteMultipartUploadOutcomeCallable S3CrtClient::CompleteMultipartUploadCallable(const CompleteMultipartUploadRequest& request) const
@@ -703,7 +703,7 @@ CopyObjectOutcome S3CrtClient::CopyObject(const CopyObjectRequest& request) cons
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return CopyObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return CopyObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 CopyObjectOutcomeCallable S3CrtClient::CopyObjectCallable(const CopyObjectRequest& request) const
@@ -738,7 +738,7 @@ CreateBucketOutcome S3CrtClient::CreateBucket(const CreateBucketRequest& request
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegment(request.GetBucket());
-  return CreateBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return CreateBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 CreateBucketOutcomeCallable S3CrtClient::CreateBucketCallable(const CreateBucketRequest& request) const
@@ -781,7 +781,7 @@ CreateMultipartUploadOutcome S3CrtClient::CreateMultipartUpload(const CreateMult
   uri.AddPathSegments(request.GetKey());
   ss.str("?uploads");
   uri.SetQueryString(ss.str());
-  return CreateMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return CreateMultipartUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 CreateMultipartUploadOutcomeCallable S3CrtClient::CreateMultipartUploadCallable(const CreateMultipartUploadRequest& request) const
@@ -815,7 +815,7 @@ DeleteBucketOutcome S3CrtClient::DeleteBucket(const DeleteBucketRequest& request
     return DeleteBucketOutcome(computeEndpointOutcome.GetError());
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
-  return DeleteBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketOutcomeCallable S3CrtClient::DeleteBucketCallable(const DeleteBucketRequest& request) const
@@ -857,7 +857,7 @@ DeleteBucketAnalyticsConfigurationOutcome S3CrtClient::DeleteBucketAnalyticsConf
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  return DeleteBucketAnalyticsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketAnalyticsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketAnalyticsConfigurationOutcomeCallable S3CrtClient::DeleteBucketAnalyticsConfigurationCallable(const DeleteBucketAnalyticsConfigurationRequest& request) const
@@ -894,7 +894,7 @@ DeleteBucketCorsOutcome S3CrtClient::DeleteBucketCors(const DeleteBucketCorsRequ
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  return DeleteBucketCorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketCorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketCorsOutcomeCallable S3CrtClient::DeleteBucketCorsCallable(const DeleteBucketCorsRequest& request) const
@@ -931,7 +931,7 @@ DeleteBucketEncryptionOutcome S3CrtClient::DeleteBucketEncryption(const DeleteBu
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  return DeleteBucketEncryptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketEncryptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketEncryptionOutcomeCallable S3CrtClient::DeleteBucketEncryptionCallable(const DeleteBucketEncryptionRequest& request) const
@@ -973,7 +973,7 @@ DeleteBucketIntelligentTieringConfigurationOutcome S3CrtClient::DeleteBucketInte
   Aws::StringStream ss;
   ss.str("?intelligent-tiering");
   uri.SetQueryString(ss.str());
-  return DeleteBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketIntelligentTieringConfigurationOutcomeCallable S3CrtClient::DeleteBucketIntelligentTieringConfigurationCallable(const DeleteBucketIntelligentTieringConfigurationRequest& request) const
@@ -1015,7 +1015,7 @@ DeleteBucketInventoryConfigurationOutcome S3CrtClient::DeleteBucketInventoryConf
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  return DeleteBucketInventoryConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketInventoryConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketInventoryConfigurationOutcomeCallable S3CrtClient::DeleteBucketInventoryConfigurationCallable(const DeleteBucketInventoryConfigurationRequest& request) const
@@ -1052,7 +1052,7 @@ DeleteBucketLifecycleOutcome S3CrtClient::DeleteBucketLifecycle(const DeleteBuck
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  return DeleteBucketLifecycleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketLifecycleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketLifecycleOutcomeCallable S3CrtClient::DeleteBucketLifecycleCallable(const DeleteBucketLifecycleRequest& request) const
@@ -1094,7 +1094,7 @@ DeleteBucketMetricsConfigurationOutcome S3CrtClient::DeleteBucketMetricsConfigur
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  return DeleteBucketMetricsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketMetricsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketMetricsConfigurationOutcomeCallable S3CrtClient::DeleteBucketMetricsConfigurationCallable(const DeleteBucketMetricsConfigurationRequest& request) const
@@ -1131,7 +1131,7 @@ DeleteBucketOwnershipControlsOutcome S3CrtClient::DeleteBucketOwnershipControls(
   Aws::StringStream ss;
   ss.str("?ownershipControls");
   uri.SetQueryString(ss.str());
-  return DeleteBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketOwnershipControlsOutcomeCallable S3CrtClient::DeleteBucketOwnershipControlsCallable(const DeleteBucketOwnershipControlsRequest& request) const
@@ -1168,7 +1168,7 @@ DeleteBucketPolicyOutcome S3CrtClient::DeleteBucketPolicy(const DeleteBucketPoli
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  return DeleteBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketPolicyOutcomeCallable S3CrtClient::DeleteBucketPolicyCallable(const DeleteBucketPolicyRequest& request) const
@@ -1205,7 +1205,7 @@ DeleteBucketReplicationOutcome S3CrtClient::DeleteBucketReplication(const Delete
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  return DeleteBucketReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketReplicationOutcomeCallable S3CrtClient::DeleteBucketReplicationCallable(const DeleteBucketReplicationRequest& request) const
@@ -1242,7 +1242,7 @@ DeleteBucketTaggingOutcome S3CrtClient::DeleteBucketTagging(const DeleteBucketTa
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  return DeleteBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketTaggingOutcomeCallable S3CrtClient::DeleteBucketTaggingCallable(const DeleteBucketTaggingRequest& request) const
@@ -1279,7 +1279,7 @@ DeleteBucketWebsiteOutcome S3CrtClient::DeleteBucketWebsite(const DeleteBucketWe
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  return DeleteBucketWebsiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteBucketWebsiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteBucketWebsiteOutcomeCallable S3CrtClient::DeleteBucketWebsiteCallable(const DeleteBucketWebsiteRequest& request) const
@@ -1319,7 +1319,7 @@ DeleteObjectOutcome S3CrtClient::DeleteObject(const DeleteObjectRequest& request
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return DeleteObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteObjectOutcomeCallable S3CrtClient::DeleteObjectCallable(const DeleteObjectRequest& request) const
@@ -1362,7 +1362,7 @@ DeleteObjectTaggingOutcome S3CrtClient::DeleteObjectTagging(const DeleteObjectTa
   uri.AddPathSegments(request.GetKey());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  return DeleteObjectTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteObjectTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteObjectTaggingOutcomeCallable S3CrtClient::DeleteObjectTaggingCallable(const DeleteObjectTaggingRequest& request) const
@@ -1399,7 +1399,7 @@ DeleteObjectsOutcome S3CrtClient::DeleteObjects(const DeleteObjectsRequest& requ
   Aws::StringStream ss;
   ss.str("?delete");
   uri.SetQueryString(ss.str());
-  return DeleteObjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeleteObjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeleteObjectsOutcomeCallable S3CrtClient::DeleteObjectsCallable(const DeleteObjectsRequest& request) const
@@ -1436,7 +1436,7 @@ DeletePublicAccessBlockOutcome S3CrtClient::DeletePublicAccessBlock(const Delete
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  return DeletePublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return DeletePublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 DeletePublicAccessBlockOutcomeCallable S3CrtClient::DeletePublicAccessBlockCallable(const DeletePublicAccessBlockRequest& request) const
@@ -1473,7 +1473,7 @@ GetBucketAccelerateConfigurationOutcome S3CrtClient::GetBucketAccelerateConfigur
   Aws::StringStream ss;
   ss.str("?accelerate");
   uri.SetQueryString(ss.str());
-  return GetBucketAccelerateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketAccelerateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketAccelerateConfigurationOutcomeCallable S3CrtClient::GetBucketAccelerateConfigurationCallable(const GetBucketAccelerateConfigurationRequest& request) const
@@ -1510,7 +1510,7 @@ GetBucketAclOutcome S3CrtClient::GetBucketAcl(const GetBucketAclRequest& request
   Aws::StringStream ss;
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  return GetBucketAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketAclOutcomeCallable S3CrtClient::GetBucketAclCallable(const GetBucketAclRequest& request) const
@@ -1552,7 +1552,7 @@ GetBucketAnalyticsConfigurationOutcome S3CrtClient::GetBucketAnalyticsConfigurat
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  return GetBucketAnalyticsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketAnalyticsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketAnalyticsConfigurationOutcomeCallable S3CrtClient::GetBucketAnalyticsConfigurationCallable(const GetBucketAnalyticsConfigurationRequest& request) const
@@ -1589,7 +1589,7 @@ GetBucketCorsOutcome S3CrtClient::GetBucketCors(const GetBucketCorsRequest& requ
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  return GetBucketCorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketCorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketCorsOutcomeCallable S3CrtClient::GetBucketCorsCallable(const GetBucketCorsRequest& request) const
@@ -1626,7 +1626,7 @@ GetBucketEncryptionOutcome S3CrtClient::GetBucketEncryption(const GetBucketEncry
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  return GetBucketEncryptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketEncryptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketEncryptionOutcomeCallable S3CrtClient::GetBucketEncryptionCallable(const GetBucketEncryptionRequest& request) const
@@ -1668,7 +1668,7 @@ GetBucketIntelligentTieringConfigurationOutcome S3CrtClient::GetBucketIntelligen
   Aws::StringStream ss;
   ss.str("?intelligent-tiering");
   uri.SetQueryString(ss.str());
-  return GetBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketIntelligentTieringConfigurationOutcomeCallable S3CrtClient::GetBucketIntelligentTieringConfigurationCallable(const GetBucketIntelligentTieringConfigurationRequest& request) const
@@ -1710,7 +1710,7 @@ GetBucketInventoryConfigurationOutcome S3CrtClient::GetBucketInventoryConfigurat
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  return GetBucketInventoryConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketInventoryConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketInventoryConfigurationOutcomeCallable S3CrtClient::GetBucketInventoryConfigurationCallable(const GetBucketInventoryConfigurationRequest& request) const
@@ -1747,7 +1747,7 @@ GetBucketLifecycleConfigurationOutcome S3CrtClient::GetBucketLifecycleConfigurat
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  return GetBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketLifecycleConfigurationOutcomeCallable S3CrtClient::GetBucketLifecycleConfigurationCallable(const GetBucketLifecycleConfigurationRequest& request) const
@@ -1784,7 +1784,7 @@ GetBucketLocationOutcome S3CrtClient::GetBucketLocation(const GetBucketLocationR
   Aws::StringStream ss;
   ss.str("?location");
   uri.SetQueryString(ss.str());
-  return GetBucketLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketLocationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketLocationOutcomeCallable S3CrtClient::GetBucketLocationCallable(const GetBucketLocationRequest& request) const
@@ -1821,7 +1821,7 @@ GetBucketLoggingOutcome S3CrtClient::GetBucketLogging(const GetBucketLoggingRequ
   Aws::StringStream ss;
   ss.str("?logging");
   uri.SetQueryString(ss.str());
-  return GetBucketLoggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketLoggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketLoggingOutcomeCallable S3CrtClient::GetBucketLoggingCallable(const GetBucketLoggingRequest& request) const
@@ -1863,7 +1863,7 @@ GetBucketMetricsConfigurationOutcome S3CrtClient::GetBucketMetricsConfiguration(
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  return GetBucketMetricsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketMetricsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketMetricsConfigurationOutcomeCallable S3CrtClient::GetBucketMetricsConfigurationCallable(const GetBucketMetricsConfigurationRequest& request) const
@@ -1900,7 +1900,7 @@ GetBucketNotificationConfigurationOutcome S3CrtClient::GetBucketNotificationConf
   Aws::StringStream ss;
   ss.str("?notification");
   uri.SetQueryString(ss.str());
-  return GetBucketNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketNotificationConfigurationOutcomeCallable S3CrtClient::GetBucketNotificationConfigurationCallable(const GetBucketNotificationConfigurationRequest& request) const
@@ -1937,7 +1937,7 @@ GetBucketOwnershipControlsOutcome S3CrtClient::GetBucketOwnershipControls(const 
   Aws::StringStream ss;
   ss.str("?ownershipControls");
   uri.SetQueryString(ss.str());
-  return GetBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketOwnershipControlsOutcomeCallable S3CrtClient::GetBucketOwnershipControlsCallable(const GetBucketOwnershipControlsRequest& request) const
@@ -1974,7 +1974,7 @@ GetBucketPolicyOutcome S3CrtClient::GetBucketPolicy(const GetBucketPolicyRequest
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  return GetBucketPolicyOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketPolicyOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketPolicyOutcomeCallable S3CrtClient::GetBucketPolicyCallable(const GetBucketPolicyRequest& request) const
@@ -2011,7 +2011,7 @@ GetBucketPolicyStatusOutcome S3CrtClient::GetBucketPolicyStatus(const GetBucketP
   Aws::StringStream ss;
   ss.str("?policyStatus");
   uri.SetQueryString(ss.str());
-  return GetBucketPolicyStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketPolicyStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketPolicyStatusOutcomeCallable S3CrtClient::GetBucketPolicyStatusCallable(const GetBucketPolicyStatusRequest& request) const
@@ -2048,7 +2048,7 @@ GetBucketReplicationOutcome S3CrtClient::GetBucketReplication(const GetBucketRep
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  return GetBucketReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketReplicationOutcomeCallable S3CrtClient::GetBucketReplicationCallable(const GetBucketReplicationRequest& request) const
@@ -2085,7 +2085,7 @@ GetBucketRequestPaymentOutcome S3CrtClient::GetBucketRequestPayment(const GetBuc
   Aws::StringStream ss;
   ss.str("?requestPayment");
   uri.SetQueryString(ss.str());
-  return GetBucketRequestPaymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketRequestPaymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketRequestPaymentOutcomeCallable S3CrtClient::GetBucketRequestPaymentCallable(const GetBucketRequestPaymentRequest& request) const
@@ -2122,7 +2122,7 @@ GetBucketTaggingOutcome S3CrtClient::GetBucketTagging(const GetBucketTaggingRequ
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  return GetBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketTaggingOutcomeCallable S3CrtClient::GetBucketTaggingCallable(const GetBucketTaggingRequest& request) const
@@ -2159,7 +2159,7 @@ GetBucketVersioningOutcome S3CrtClient::GetBucketVersioning(const GetBucketVersi
   Aws::StringStream ss;
   ss.str("?versioning");
   uri.SetQueryString(ss.str());
-  return GetBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketVersioningOutcomeCallable S3CrtClient::GetBucketVersioningCallable(const GetBucketVersioningRequest& request) const
@@ -2196,7 +2196,7 @@ GetBucketWebsiteOutcome S3CrtClient::GetBucketWebsite(const GetBucketWebsiteRequ
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  return GetBucketWebsiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetBucketWebsiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetBucketWebsiteOutcomeCallable S3CrtClient::GetBucketWebsiteCallable(const GetBucketWebsiteRequest& request) const
@@ -2239,7 +2239,7 @@ GetObjectAclOutcome S3CrtClient::GetObjectAcl(const GetObjectAclRequest& request
   uri.AddPathSegments(request.GetKey());
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  return GetObjectAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetObjectAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetObjectAclOutcomeCallable S3CrtClient::GetObjectAclCallable(const GetObjectAclRequest& request) const
@@ -2282,7 +2282,7 @@ GetObjectLegalHoldOutcome S3CrtClient::GetObjectLegalHold(const GetObjectLegalHo
   uri.AddPathSegments(request.GetKey());
   ss.str("?legal-hold");
   uri.SetQueryString(ss.str());
-  return GetObjectLegalHoldOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetObjectLegalHoldOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetObjectLegalHoldOutcomeCallable S3CrtClient::GetObjectLegalHoldCallable(const GetObjectLegalHoldRequest& request) const
@@ -2319,7 +2319,7 @@ GetObjectLockConfigurationOutcome S3CrtClient::GetObjectLockConfiguration(const 
   Aws::StringStream ss;
   ss.str("?object-lock");
   uri.SetQueryString(ss.str());
-  return GetObjectLockConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetObjectLockConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetObjectLockConfigurationOutcomeCallable S3CrtClient::GetObjectLockConfigurationCallable(const GetObjectLockConfigurationRequest& request) const
@@ -2362,7 +2362,7 @@ GetObjectRetentionOutcome S3CrtClient::GetObjectRetention(const GetObjectRetenti
   uri.AddPathSegments(request.GetKey());
   ss.str("?retention");
   uri.SetQueryString(ss.str());
-  return GetObjectRetentionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetObjectRetentionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetObjectRetentionOutcomeCallable S3CrtClient::GetObjectRetentionCallable(const GetObjectRetentionRequest& request) const
@@ -2405,7 +2405,7 @@ GetObjectTaggingOutcome S3CrtClient::GetObjectTagging(const GetObjectTaggingRequ
   uri.AddPathSegments(request.GetKey());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  return GetObjectTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetObjectTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetObjectTaggingOutcomeCallable S3CrtClient::GetObjectTaggingCallable(const GetObjectTaggingRequest& request) const
@@ -2448,7 +2448,7 @@ GetObjectTorrentOutcome S3CrtClient::GetObjectTorrent(const GetObjectTorrentRequ
   uri.AddPathSegments(request.GetKey());
   ss.str("?torrent");
   uri.SetQueryString(ss.str());
-  return GetObjectTorrentOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetObjectTorrentOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetObjectTorrentOutcomeCallable S3CrtClient::GetObjectTorrentCallable(const GetObjectTorrentRequest& request) const
@@ -2485,7 +2485,7 @@ GetPublicAccessBlockOutcome S3CrtClient::GetPublicAccessBlock(const GetPublicAcc
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  return GetPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return GetPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 GetPublicAccessBlockOutcomeCallable S3CrtClient::GetPublicAccessBlockCallable(const GetPublicAccessBlockRequest& request) const
@@ -2519,7 +2519,7 @@ HeadBucketOutcome S3CrtClient::HeadBucket(const HeadBucketRequest& request) cons
     return HeadBucketOutcome(computeEndpointOutcome.GetError());
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
-  return HeadBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return HeadBucketOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 HeadBucketOutcomeCallable S3CrtClient::HeadBucketCallable(const HeadBucketRequest& request) const
@@ -2559,7 +2559,7 @@ HeadObjectOutcome S3CrtClient::HeadObject(const HeadObjectRequest& request) cons
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return HeadObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return HeadObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 HeadObjectOutcomeCallable S3CrtClient::HeadObjectCallable(const HeadObjectRequest& request) const
@@ -2596,7 +2596,7 @@ ListBucketAnalyticsConfigurationsOutcome S3CrtClient::ListBucketAnalyticsConfigu
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  return ListBucketAnalyticsConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListBucketAnalyticsConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListBucketAnalyticsConfigurationsOutcomeCallable S3CrtClient::ListBucketAnalyticsConfigurationsCallable(const ListBucketAnalyticsConfigurationsRequest& request) const
@@ -2633,7 +2633,7 @@ ListBucketIntelligentTieringConfigurationsOutcome S3CrtClient::ListBucketIntelli
   Aws::StringStream ss;
   ss.str("?intelligent-tiering");
   uri.SetQueryString(ss.str());
-  return ListBucketIntelligentTieringConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListBucketIntelligentTieringConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListBucketIntelligentTieringConfigurationsOutcomeCallable S3CrtClient::ListBucketIntelligentTieringConfigurationsCallable(const ListBucketIntelligentTieringConfigurationsRequest& request) const
@@ -2670,7 +2670,7 @@ ListBucketInventoryConfigurationsOutcome S3CrtClient::ListBucketInventoryConfigu
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  return ListBucketInventoryConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListBucketInventoryConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListBucketInventoryConfigurationsOutcomeCallable S3CrtClient::ListBucketInventoryConfigurationsCallable(const ListBucketInventoryConfigurationsRequest& request) const
@@ -2707,7 +2707,7 @@ ListBucketMetricsConfigurationsOutcome S3CrtClient::ListBucketMetricsConfigurati
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  return ListBucketMetricsConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListBucketMetricsConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListBucketMetricsConfigurationsOutcomeCallable S3CrtClient::ListBucketMetricsConfigurationsCallable(const ListBucketMetricsConfigurationsRequest& request) const
@@ -2774,7 +2774,7 @@ ListMultipartUploadsOutcome S3CrtClient::ListMultipartUploads(const ListMultipar
   Aws::StringStream ss;
   ss.str("?uploads");
   uri.SetQueryString(ss.str());
-  return ListMultipartUploadsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListMultipartUploadsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListMultipartUploadsOutcomeCallable S3CrtClient::ListMultipartUploadsCallable(const ListMultipartUploadsRequest& request) const
@@ -2811,7 +2811,7 @@ ListObjectVersionsOutcome S3CrtClient::ListObjectVersions(const ListObjectVersio
   Aws::StringStream ss;
   ss.str("?versions");
   uri.SetQueryString(ss.str());
-  return ListObjectVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListObjectVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListObjectVersionsOutcomeCallable S3CrtClient::ListObjectVersionsCallable(const ListObjectVersionsRequest& request) const
@@ -2845,7 +2845,7 @@ ListObjectsOutcome S3CrtClient::ListObjects(const ListObjectsRequest& request) c
     return ListObjectsOutcome(computeEndpointOutcome.GetError());
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
-  return ListObjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListObjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListObjectsOutcomeCallable S3CrtClient::ListObjectsCallable(const ListObjectsRequest& request) const
@@ -2882,7 +2882,7 @@ ListObjectsV2Outcome S3CrtClient::ListObjectsV2(const ListObjectsV2Request& requ
   Aws::StringStream ss;
   ss.str("?list-type=2");
   uri.SetQueryString(ss.str());
-  return ListObjectsV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListObjectsV2Outcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListObjectsV2OutcomeCallable S3CrtClient::ListObjectsV2Callable(const ListObjectsV2Request& request) const
@@ -2927,7 +2927,7 @@ ListPartsOutcome S3CrtClient::ListParts(const ListPartsRequest& request) const
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return ListPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return ListPartsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 ListPartsOutcomeCallable S3CrtClient::ListPartsCallable(const ListPartsRequest& request) const
@@ -2964,7 +2964,7 @@ PutBucketAccelerateConfigurationOutcome S3CrtClient::PutBucketAccelerateConfigur
   Aws::StringStream ss;
   ss.str("?accelerate");
   uri.SetQueryString(ss.str());
-  return PutBucketAccelerateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketAccelerateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketAccelerateConfigurationOutcomeCallable S3CrtClient::PutBucketAccelerateConfigurationCallable(const PutBucketAccelerateConfigurationRequest& request) const
@@ -3001,7 +3001,7 @@ PutBucketAclOutcome S3CrtClient::PutBucketAcl(const PutBucketAclRequest& request
   Aws::StringStream ss;
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  return PutBucketAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketAclOutcomeCallable S3CrtClient::PutBucketAclCallable(const PutBucketAclRequest& request) const
@@ -3043,7 +3043,7 @@ PutBucketAnalyticsConfigurationOutcome S3CrtClient::PutBucketAnalyticsConfigurat
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  return PutBucketAnalyticsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketAnalyticsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketAnalyticsConfigurationOutcomeCallable S3CrtClient::PutBucketAnalyticsConfigurationCallable(const PutBucketAnalyticsConfigurationRequest& request) const
@@ -3080,7 +3080,7 @@ PutBucketCorsOutcome S3CrtClient::PutBucketCors(const PutBucketCorsRequest& requ
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  return PutBucketCorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketCorsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketCorsOutcomeCallable S3CrtClient::PutBucketCorsCallable(const PutBucketCorsRequest& request) const
@@ -3117,7 +3117,7 @@ PutBucketEncryptionOutcome S3CrtClient::PutBucketEncryption(const PutBucketEncry
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  return PutBucketEncryptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketEncryptionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketEncryptionOutcomeCallable S3CrtClient::PutBucketEncryptionCallable(const PutBucketEncryptionRequest& request) const
@@ -3159,7 +3159,7 @@ PutBucketIntelligentTieringConfigurationOutcome S3CrtClient::PutBucketIntelligen
   Aws::StringStream ss;
   ss.str("?intelligent-tiering");
   uri.SetQueryString(ss.str());
-  return PutBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketIntelligentTieringConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketIntelligentTieringConfigurationOutcomeCallable S3CrtClient::PutBucketIntelligentTieringConfigurationCallable(const PutBucketIntelligentTieringConfigurationRequest& request) const
@@ -3201,7 +3201,7 @@ PutBucketInventoryConfigurationOutcome S3CrtClient::PutBucketInventoryConfigurat
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  return PutBucketInventoryConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketInventoryConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketInventoryConfigurationOutcomeCallable S3CrtClient::PutBucketInventoryConfigurationCallable(const PutBucketInventoryConfigurationRequest& request) const
@@ -3238,7 +3238,7 @@ PutBucketLifecycleConfigurationOutcome S3CrtClient::PutBucketLifecycleConfigurat
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  return PutBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketLifecycleConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketLifecycleConfigurationOutcomeCallable S3CrtClient::PutBucketLifecycleConfigurationCallable(const PutBucketLifecycleConfigurationRequest& request) const
@@ -3275,7 +3275,7 @@ PutBucketLoggingOutcome S3CrtClient::PutBucketLogging(const PutBucketLoggingRequ
   Aws::StringStream ss;
   ss.str("?logging");
   uri.SetQueryString(ss.str());
-  return PutBucketLoggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketLoggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketLoggingOutcomeCallable S3CrtClient::PutBucketLoggingCallable(const PutBucketLoggingRequest& request) const
@@ -3317,7 +3317,7 @@ PutBucketMetricsConfigurationOutcome S3CrtClient::PutBucketMetricsConfiguration(
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  return PutBucketMetricsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketMetricsConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketMetricsConfigurationOutcomeCallable S3CrtClient::PutBucketMetricsConfigurationCallable(const PutBucketMetricsConfigurationRequest& request) const
@@ -3354,7 +3354,7 @@ PutBucketNotificationConfigurationOutcome S3CrtClient::PutBucketNotificationConf
   Aws::StringStream ss;
   ss.str("?notification");
   uri.SetQueryString(ss.str());
-  return PutBucketNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketNotificationConfigurationOutcomeCallable S3CrtClient::PutBucketNotificationConfigurationCallable(const PutBucketNotificationConfigurationRequest& request) const
@@ -3391,7 +3391,7 @@ PutBucketOwnershipControlsOutcome S3CrtClient::PutBucketOwnershipControls(const 
   Aws::StringStream ss;
   ss.str("?ownershipControls");
   uri.SetQueryString(ss.str());
-  return PutBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketOwnershipControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketOwnershipControlsOutcomeCallable S3CrtClient::PutBucketOwnershipControlsCallable(const PutBucketOwnershipControlsRequest& request) const
@@ -3428,7 +3428,7 @@ PutBucketPolicyOutcome S3CrtClient::PutBucketPolicy(const PutBucketPolicyRequest
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  return PutBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketPolicyOutcomeCallable S3CrtClient::PutBucketPolicyCallable(const PutBucketPolicyRequest& request) const
@@ -3465,7 +3465,7 @@ PutBucketReplicationOutcome S3CrtClient::PutBucketReplication(const PutBucketRep
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  return PutBucketReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketReplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketReplicationOutcomeCallable S3CrtClient::PutBucketReplicationCallable(const PutBucketReplicationRequest& request) const
@@ -3502,7 +3502,7 @@ PutBucketRequestPaymentOutcome S3CrtClient::PutBucketRequestPayment(const PutBuc
   Aws::StringStream ss;
   ss.str("?requestPayment");
   uri.SetQueryString(ss.str());
-  return PutBucketRequestPaymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketRequestPaymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketRequestPaymentOutcomeCallable S3CrtClient::PutBucketRequestPaymentCallable(const PutBucketRequestPaymentRequest& request) const
@@ -3539,7 +3539,7 @@ PutBucketTaggingOutcome S3CrtClient::PutBucketTagging(const PutBucketTaggingRequ
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  return PutBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketTaggingOutcomeCallable S3CrtClient::PutBucketTaggingCallable(const PutBucketTaggingRequest& request) const
@@ -3576,7 +3576,7 @@ PutBucketVersioningOutcome S3CrtClient::PutBucketVersioning(const PutBucketVersi
   Aws::StringStream ss;
   ss.str("?versioning");
   uri.SetQueryString(ss.str());
-  return PutBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketVersioningOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketVersioningOutcomeCallable S3CrtClient::PutBucketVersioningCallable(const PutBucketVersioningRequest& request) const
@@ -3613,7 +3613,7 @@ PutBucketWebsiteOutcome S3CrtClient::PutBucketWebsite(const PutBucketWebsiteRequ
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  return PutBucketWebsiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutBucketWebsiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutBucketWebsiteOutcomeCallable S3CrtClient::PutBucketWebsiteCallable(const PutBucketWebsiteRequest& request) const
@@ -3656,7 +3656,7 @@ PutObjectAclOutcome S3CrtClient::PutObjectAcl(const PutObjectAclRequest& request
   uri.AddPathSegments(request.GetKey());
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  return PutObjectAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutObjectAclOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutObjectAclOutcomeCallable S3CrtClient::PutObjectAclCallable(const PutObjectAclRequest& request) const
@@ -3699,7 +3699,7 @@ PutObjectLegalHoldOutcome S3CrtClient::PutObjectLegalHold(const PutObjectLegalHo
   uri.AddPathSegments(request.GetKey());
   ss.str("?legal-hold");
   uri.SetQueryString(ss.str());
-  return PutObjectLegalHoldOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutObjectLegalHoldOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutObjectLegalHoldOutcomeCallable S3CrtClient::PutObjectLegalHoldCallable(const PutObjectLegalHoldRequest& request) const
@@ -3736,7 +3736,7 @@ PutObjectLockConfigurationOutcome S3CrtClient::PutObjectLockConfiguration(const 
   Aws::StringStream ss;
   ss.str("?object-lock");
   uri.SetQueryString(ss.str());
-  return PutObjectLockConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutObjectLockConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutObjectLockConfigurationOutcomeCallable S3CrtClient::PutObjectLockConfigurationCallable(const PutObjectLockConfigurationRequest& request) const
@@ -3779,7 +3779,7 @@ PutObjectRetentionOutcome S3CrtClient::PutObjectRetention(const PutObjectRetenti
   uri.AddPathSegments(request.GetKey());
   ss.str("?retention");
   uri.SetQueryString(ss.str());
-  return PutObjectRetentionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutObjectRetentionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutObjectRetentionOutcomeCallable S3CrtClient::PutObjectRetentionCallable(const PutObjectRetentionRequest& request) const
@@ -3822,7 +3822,7 @@ PutObjectTaggingOutcome S3CrtClient::PutObjectTagging(const PutObjectTaggingRequ
   uri.AddPathSegments(request.GetKey());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  return PutObjectTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutObjectTaggingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutObjectTaggingOutcomeCallable S3CrtClient::PutObjectTaggingCallable(const PutObjectTaggingRequest& request) const
@@ -3859,7 +3859,7 @@ PutPublicAccessBlockOutcome S3CrtClient::PutPublicAccessBlock(const PutPublicAcc
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  return PutPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return PutPublicAccessBlockOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 PutPublicAccessBlockOutcomeCallable S3CrtClient::PutPublicAccessBlockCallable(const PutPublicAccessBlockRequest& request) const
@@ -3902,7 +3902,7 @@ RestoreObjectOutcome S3CrtClient::RestoreObject(const RestoreObjectRequest& requ
   uri.AddPathSegments(request.GetKey());
   ss.str("?restore");
   uri.SetQueryString(ss.str());
-  return RestoreObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return RestoreObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 RestoreObjectOutcomeCallable S3CrtClient::RestoreObjectCallable(const RestoreObjectRequest& request) const
@@ -3948,7 +3948,7 @@ SelectObjectContentOutcome S3CrtClient::SelectObjectContent(SelectObjectContentR
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  return SelectObjectContentOutcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return SelectObjectContentOutcome(MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_POST, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 SelectObjectContentOutcomeCallable S3CrtClient::SelectObjectContentCallable(SelectObjectContentRequest& request) const
@@ -3998,7 +3998,7 @@ UploadPartOutcome S3CrtClient::UploadPart(const UploadPartRequest& request) cons
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return UploadPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return UploadPartOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 UploadPartOutcomeCallable S3CrtClient::UploadPartCallable(const UploadPartRequest& request) const
@@ -4053,7 +4053,7 @@ UploadPartCopyOutcome S3CrtClient::UploadPartCopy(const UploadPartCopyRequest& r
   }
   Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
   uri.AddPathSegments(request.GetKey());
-  return UploadPartCopyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return UploadPartCopyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 UploadPartCopyOutcomeCallable S3CrtClient::UploadPartCopyCallable(const UploadPartCopyRequest& request) const
@@ -4107,7 +4107,7 @@ WriteGetObjectResponseOutcome S3CrtClient::WriteGetObjectResponse(const WriteGet
     }
   }
   uri.AddPathSegments("/WriteGetObjectResponse");
-  return WriteGetObjectResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
+  return WriteGetObjectResponseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/, computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/, computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/));
 }
 
 WriteGetObjectResponseOutcomeCallable S3CrtClient::WriteGetObjectResponseCallable(const WriteGetObjectResponseRequest& request) const
@@ -4133,6 +4133,8 @@ static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGI
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
 static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
 static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
+static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_ENV_VAR[] = "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS";
+static const char S3_DISABLE_MULTIREGION_ACCESS_POINTS_CONFIG_VAR[] = "s3_disable_multiregion_access_points";
 
 void S3CrtClient::LoadS3CrtSpecificConfig(const Aws::String& profile)
 {
@@ -4173,6 +4175,25 @@ void S3CrtClient::LoadS3CrtSpecificConfig(const Aws::String& profile)
     }
     m_useArnRegion = false;
   }
+
+  Aws::String s3DisableMultiRegionAccessPoints = Aws::Environment::GetEnv(S3_DISABLE_MULTIREGION_ACCESS_POINTS_ENV_VAR);
+  if (s3DisableMultiRegionAccessPoints.empty())
+  {
+    s3DisableMultiRegionAccessPoints = Aws::Config::GetCachedConfigValue(profile, S3_DISABLE_MULTIREGION_ACCESS_POINTS_CONFIG_VAR);
+  }
+  if (s3DisableMultiRegionAccessPoints == "true")
+  {
+    m_disableMultiRegionAccessPoints = true;
+  }
+  else
+  {
+    if (!s3DisableMultiRegionAccessPoints.empty() && s3DisableMultiRegionAccessPoints != "false")
+    {
+      AWS_LOGSTREAM_WARN("S3CrtClient", "AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS in environment variables or s3_disable_multiregion_access_points"
+                                    << "in config file should either be true of false if specified, otherwise turn off this flag by default.");
+    }
+    m_disableMultiRegionAccessPoints = false;
+  }
 }
 
 #include<aws/core/utils/HashingUtils.h>
@@ -4184,10 +4205,10 @@ Aws::String S3CrtClient::GeneratePresignedUrl(const Aws::String& bucket, const A
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), expirationInSeconds);
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), expirationInSeconds);
 }
 
 Aws::String S3CrtClient::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
@@ -4198,10 +4219,10 @@ Aws::String S3CrtClient::GeneratePresignedUrl(const Aws::String& bucket, const A
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 Aws::String S3CrtClient::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
@@ -4212,12 +4233,12 @@ Aws::String S3CrtClient::GeneratePresignedUrlWithSSES3(const Aws::String& bucket
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
 }
 
 Aws::String S3CrtClient::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
@@ -4228,11 +4249,11 @@ Aws::String S3CrtClient::GeneratePresignedUrlWithSSES3(const Aws::String& bucket
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 Aws::String S3CrtClient::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
@@ -4243,13 +4264,13 @@ Aws::String S3CrtClient::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucke
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::aws_kms));
     headers.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
 }
 
 Aws::String S3CrtClient::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
@@ -4260,12 +4281,12 @@ Aws::String S3CrtClient::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucke
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::aws_kms));
     customizedHeaders.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 Aws::String S3CrtClient::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
@@ -4276,16 +4297,16 @@ Aws::String S3CrtClient::GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::AES256));
     headers.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     headers.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), headers, expirationInSeconds);
 }
 
 Aws::String S3CrtClient::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
@@ -4296,15 +4317,15 @@ Aws::String S3CrtClient::GeneratePresignedUrlWithSSEC(const Aws::String& bucket,
         AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
         return {};
     }
-    Aws::StringStream ss;
-    ss << computeEndpointOutcome.GetResult().endpoint << "/" << key;
-    URI uri(ss.str());
+    URI uri(computeEndpointOutcome.GetResult().endpoint);
+    uri.SetPath(uri.GetPath() + "/" + key);
     customizedHeaders.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3Crt::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3Crt::Model::ServerSideEncryption::AES256));
     customizedHeaders.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     customizedHeaders.emplace(Aws::S3Crt::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(), computeEndpointOutcome.GetResult().signerServiceName.c_str(), customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().signerRegion.c_str(),
+        computeEndpointOutcome.GetResult().signerServiceName.c_str(), computeEndpointOutcome.GetResult().signerName.c_str(), customizedHeaders, expirationInSeconds);
 }
 
 ComputeEndpointOutcome S3CrtClient::ComputeEndpointString(const Aws::String& bucketOrArn) const
@@ -4336,6 +4357,7 @@ ComputeEndpointOutcome S3CrtClient::ComputeEndpointString(const Aws::String& buc
             return ComputeEndpointOutcome(s3ArnOutcome.GetError());
         }
         signerRegion = m_useArnRegion ? arn.GetRegion() : signerRegion;
+        // S3 Object Lambda Access Point ARN
         if (arn.GetService() == ARNService::S3_OBJECT_LAMBDA)
         {
             if (m_useDualStack)
@@ -4346,11 +4368,34 @@ ComputeEndpointOutcome S3CrtClient::ComputeEndpointString(const Aws::String& buc
             ss << S3CrtEndpoint::ForObjectLambdaAccessPointArn(arn, useClientRegion ? m_region : "", m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, ARNService::S3_OBJECT_LAMBDA));
         }
+        // S3 Multi Region Access Point ARN
+        else if (arn.GetResourceType() == ARNResourceType::ACCESSPOINT && arn.GetRegion().empty())
+        {
+            if (m_disableMultiRegionAccessPoints)
+            {
+                return ComputeEndpointOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION",
+                    "Multi Region Access Point ARN is disabled explicitly. Unset AWS_S3_DISABLE_MULTIREGION_ACCESS_POINTS in environment variables and s3_disable_multiregion_access_points in config file, or set them to false.", false));
+            }
+            if (m_useDualStack)
+            {
+                return ComputeEndpointOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION",
+                    "S3 Multi Region Access Point ARNs do not support dualstack right now.", false));
+            }
+            if (m_useCustomEndpoint)
+            {
+                return ComputeEndpointOutcome(Aws::Client::AWSError<S3CrtErrors>(S3CrtErrors::VALIDATION, "VALIDATION",
+                    "S3 Multi Region Access Point ARNs do not support custom endpoint override right now.", false));
+            }
+            ss << S3CrtEndpoint::ForMultiRegionAccessPointArn(arn, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), "*", SERVICE_NAME, Aws::Auth::ASYMMETRIC_SIGV4_SIGNER));
+        }
+        // Regular S3 Access Point ARN
         else if (arn.GetResourceType() == ARNResourceType::ACCESSPOINT)
         {
             ss << S3CrtEndpoint::ForAccessPointArn(arn, useClientRegion ? m_region : "", m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
             return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, SERVICE_NAME));
         }
+        // S3 Outposts Access Point ARN
         else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
         {
             if (m_useDualStack)
@@ -4359,7 +4404,7 @@ ComputeEndpointOutcome S3CrtClient::ComputeEndpointString(const Aws::String& buc
                     "Outposts Access Points do not support dualstack right now.", false));
             }
             ss << S3CrtEndpoint::ForOutpostsArn(arn, useClientRegion ? m_region : "", m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
-            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, "s3-outposts"));
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, ARNService::S3_OUTPOSTS));
         }
     }
 

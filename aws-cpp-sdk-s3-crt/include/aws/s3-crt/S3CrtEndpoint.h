@@ -34,6 +34,12 @@ namespace S3CrtEndpoint
   AWS_S3CRT_API Aws::String ForAccessPointArn(const S3CrtARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false, const Aws::String& endpointOverride = "");
 
   /**
+   * Compute endpoint based on Multi Region Access Point ARN.
+   * @param arn The S3 Multi Region Access Point ARN
+   */
+  AWS_S3CRT_API Aws::String ForMultiRegionAccessPointArn(const S3CrtARN& arn, bool useDualStack = false, const Aws::String& endpointOverride = "");
+
+  /**
    * Compute endpoint based on Outposts ARN.
    * @param arn The S3 Outposts ARN
    * @param regionNameOverride Override region name in ARN if it's not empty

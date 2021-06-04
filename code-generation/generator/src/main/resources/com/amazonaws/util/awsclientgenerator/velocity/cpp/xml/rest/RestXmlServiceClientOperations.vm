@@ -1,7 +1,11 @@
 #foreach($operation in $serviceModel.operations)
 #if(!$operation.s3CrtSpecific)
 #if($arnEndpointSupported)
+#if($multiRegionAccessPointSupported)
+#set($signerName = ", computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/")
+#else
 #set($signerName = ", Aws::Auth::SIGV4_SIGNER")
+#end
 #set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
 #set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
 #else

@@ -21,7 +21,10 @@
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
+#include <aws/s3/model/PutObjectRequest.h>
+#include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
+#include <aws/s3/model/DeleteObjectRequest.h>
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3control/model/CreateBucketRequest.h>
@@ -31,6 +34,9 @@
 #include <aws/s3control/model/GetAccessPointRequest.h>
 #include <aws/s3control/model/ListAccessPointsRequest.h>
 #include <aws/s3control/model/DeleteAccessPointRequest.h>
+#include <aws/s3control/model/CreateMultiRegionAccessPointRequest.h>
+#include <aws/s3control/model/DeleteMultiRegionAccessPointRequest.h>
+#include <aws/s3control/model/GetMultiRegionAccessPointRequest.h>
 #include <aws/access-management/AccessManagementClient.h>
 #include <aws/iam/IAMClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
@@ -45,7 +51,9 @@ namespace
 {
     static const char ALLOCATION_TAG[] = "S3ControlTest";
     static const char BASE_BUCKET_NAME[] = "accesspointbucket";
+    static const char BASE_MRAP_BUCKET_NAME[] = "mrapbucket";
     static const char BASE_ACCESS_POINT[] = "accesspoint";
+    static const char BASE_MRAP[] = "mrap";
     static const char BASE_OUTPOST_ID[] = "op-0123456789abcdef0";
     static const char PRESIGNED_URLS_BUCKET_NAME[] = "presignedaccesspointbucket";
     static const char PRESIGNED_URLS_ACCESS_POINT[] = "presignedaccesspoint";
@@ -194,6 +202,98 @@ namespace
             }
         }
 
+        void PrepareMRAPTest(const Aws::String& bucketName, const Aws::Vector<Aws::String>& multiRegions, Aws::String& accessPointName)
+        {
+            using namespace S3::Model::BucketLocationConstraintMapper;
+
+            Aws::Vector<Aws::S3Control::Model::Region> bucketsInMultiRegions;
+            for (const Aws::String& region : multiRegions)
+            {
+                Aws::String regionalBucketName = bucketName + "-" + region;
+
+                Aws::Client::ClientConfiguration config;
+                config.region = region;
+                Aws::S3::S3Client s3Client(config);
+
+                S3::Model::CreateBucketRequest createBucketRequest;
+                S3::Model::CreateBucketConfiguration bucketConfiguration;
+                bucketConfiguration.SetLocationConstraint(GetBucketLocationConstraintForName(region));
+                createBucketRequest.SetBucket(regionalBucketName);
+                createBucketRequest.SetCreateBucketConfiguration(bucketConfiguration);
+                auto createBucketOutcome = s3Client.CreateBucket(createBucketRequest);
+                ASSERT_TRUE(createBucketOutcome.IsSuccess());
+                ASSERT_TRUE(WaitForBucketToPropagate(regionalBucketName, s3Client));
+
+                S3Control::Model::Region regionalBucket;
+                regionalBucket.SetBucket(regionalBucketName);
+                bucketsInMultiRegions.push_back(regionalBucket);
+            }
+
+            CreateMultiRegionAccessPointRequest createMRAPRequest;
+            CreateMultiRegionAccessPointInput createMRAPInput;
+            createMRAPInput.SetName(accessPointName);
+            createMRAPInput.SetRegions(bucketsInMultiRegions);
+            createMRAPRequest.SetAccountId(m_accountId);
+            createMRAPRequest.SetDetails(createMRAPInput);
+
+            auto createMRAPOutcome = m_client.CreateMultiRegionAccessPoint(createMRAPRequest);
+            ASSERT_TRUE(createMRAPOutcome.IsSuccess());
+
+
+            unsigned timeoutCount = 0;
+            while (timeoutCount++ < TIMEOUT_MAX * 2)
+            {
+                GetMultiRegionAccessPointRequest getMRAPRequest;
+                getMRAPRequest.SetAccountId(m_accountId);
+                getMRAPRequest.SetName(accessPointName);
+                auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
+                if (getMRAPOutcome.IsSuccess() && getMRAPOutcome.GetResult().GetAccessPoint().GetStatus() == MultiRegionAccessPointStatus::READY)
+                {
+                    return;
+                }
+                std::this_thread::sleep_for(std::chrono::seconds(10));
+            }
+        }
+
+        void CleanUpMRAPTest(const Aws::String& bucketName, const Aws::Vector<Aws::String>& multiRegions, const Aws::String& accessPointName)
+        {
+            AWS_UNREFERENCED_PARAM(accessPointName);
+            DeleteMultiRegionAccessPointRequest deleteMRAPRequest;
+            DeleteMultiRegionAccessPointInput deleteMRAPInput;
+            deleteMRAPInput.SetName(accessPointName);
+            deleteMRAPRequest.SetDetails(deleteMRAPInput);
+            deleteMRAPRequest.SetAccountId(m_accountId);
+            auto deleteMRAPOutcome = m_client.DeleteMultiRegionAccessPoint(deleteMRAPRequest);
+            ASSERT_TRUE(deleteMRAPOutcome.IsSuccess());
+
+            unsigned timeoutCount = 0;
+            while (timeoutCount++ < TIMEOUT_MAX * 2)
+            {
+                GetMultiRegionAccessPointRequest getMRAPRequest;
+                getMRAPRequest.SetAccountId(m_accountId);
+                getMRAPRequest.SetName(accessPointName);
+                auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
+                if (!getMRAPOutcome.IsSuccess())
+                {
+                    break;
+                }
+                std::this_thread::sleep_for(std::chrono::seconds(10));
+            }
+
+            for (const Aws::String& region : multiRegions)
+            {
+                Aws::Client::ClientConfiguration config;
+                config.region = region;
+                Aws::S3::S3Client s3Client(config);
+
+                Aws::String regionalBucket = bucketName + "-" + region;
+                S3::Model::DeleteBucketRequest deleteBucketRequest;
+                deleteBucketRequest.SetBucket(regionalBucket);
+                auto deleteBucketOutcome = s3Client.DeleteBucket(deleteBucketRequest);
+                ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
+            }
+        }
+
         void DoPresignedUrlTest(const Aws::String& accessPointArn, std::shared_ptr<HttpRequest>& putRequest)
         {
             std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>("BucketAndObjectOperationTest");
@@ -281,14 +381,6 @@ namespace
         // Invalid resource type
         ss.str("");
         ss << "arn:aws:s3:" << Aws::Region::US_WEST_2 << ":" << m_accountId << ":bucket_name:" << accessPointName;
-        headBucketRequest.SetBucket(ss.str());
-        headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
-        ASSERT_FALSE(headBucketOutcome.IsSuccess());
-        ASSERT_EQ(S3::S3Errors::VALIDATION, headBucketOutcome.GetError().GetErrorType());
-
-        // Empty region
-        ss.str("");
-        ss << "arn:aws:s3:" << "" << ":" << m_accountId << ":accesspoint:" << accessPointName;
         headBucketRequest.SetBucket(ss.str());
         headBucketOutcome = m_s3Client.HeadBucket(headBucketRequest);
         ASSERT_FALSE(headBucketOutcome.IsSuccess());
@@ -574,6 +666,69 @@ namespace
 
         CleanUpAccessPointTest(bucketName, accessPoint);
     }
+
+    TEST_F(S3ControlTest, TestMultiRegionAccessPoint)
+    {
+        Aws::String bucketName = BuildResourceName(BASE_MRAP_BUCKET_NAME);
+        Aws::String accessPointName = BuildResourceName(BASE_MRAP);
+
+        Aws::Vector<Aws::String> multiRegions;
+        multiRegions.push_back(Aws::Region::US_EAST_2);
+        multiRegions.push_back(Aws::Region::US_WEST_2);
+        PrepareMRAPTest(bucketName, multiRegions, accessPointName);
+
+        GetMultiRegionAccessPointRequest getMRAPRequest;
+        getMRAPRequest.SetAccountId(m_accountId);
+        getMRAPRequest.SetName(accessPointName);
+        auto getMRAPOutcome = m_client.GetMultiRegionAccessPoint(getMRAPRequest);
+        ASSERT_TRUE(getMRAPOutcome.IsSuccess());
+        Aws::Vector<S3Control::Model::RegionReport> returnedRegions = getMRAPOutcome.GetResult().GetAccessPoint().GetRegions();
+        ASSERT_EQ(2u, returnedRegions.size());
+
+        Aws::Client::ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
+        Aws::S3::S3Client s3Client(config);
+
+        Aws::Vector<Aws::String> objectKeys;
+        objectKeys.push_back(TEST_OBJECT_KEY);
+        objectKeys.push_back(Aws::String(TEST_OBJECT_KEY) + "With!and?\\+/plus:In=Key&Name");
+        for (const auto& objectKey : objectKeys)
+        {
+            S3::Model::PutObjectRequest putObjectRequest;
+            Aws::StringStream arn;
+            arn << "arn:aws:s3::" << m_accountId << ":accesspoint:" << getMRAPOutcome.GetResult().GetAccessPoint().GetAlias();
+            putObjectRequest.SetBucket(arn.str());
+            putObjectRequest.SetKey(objectKey);
+            std::shared_ptr<Aws::IOStream> objectStream = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG);
+            *objectStream << "Test Multi Region Access Point";
+            putObjectRequest.SetBody(objectStream);
+            auto putObjectOutcome = s3Client.PutObject(putObjectRequest);
+            ASSERT_TRUE(putObjectOutcome.IsSuccess());
+
+            S3::Model::HeadObjectRequest headObjectRequest;
+            headObjectRequest.SetBucket(arn.str());
+            headObjectRequest.SetKey(objectKey);
+            auto headObjectOutcome = s3Client.HeadObject(headObjectRequest);
+            ASSERT_TRUE(headObjectOutcome.IsSuccess());
+
+            S3::Model::GetObjectRequest getObjectRequest;
+            getObjectRequest.SetBucket(arn.str());
+            getObjectRequest.SetKey(objectKey);
+            auto getObjectOutcome = s3Client.GetObject(getObjectRequest);
+            ASSERT_TRUE(getObjectOutcome.IsSuccess());
+            Aws::StringStream ss;
+            ss << getObjectOutcome.GetResult().GetBody().rdbuf();
+            ASSERT_STREQ("Test Multi Region Access Point", ss.str().c_str());
+            S3::Model::DeleteObjectRequest deleteObjectRequest;
+            deleteObjectRequest.SetBucket(arn.str());
+            deleteObjectRequest.SetKey(objectKey);
+            auto deleteObjectOutcome = s3Client.DeleteObject(deleteObjectRequest);
+            ASSERT_TRUE(deleteObjectOutcome.IsSuccess());
+        }
+
+        CleanUpMRAPTest(bucketName, multiRegions, accessPointName);
+    }
+
     TEST_F(S3ControlTest, TestCustomEndpointOverride)
     {
         // Outpost Access Point ARN without dualstack

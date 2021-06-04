@@ -51,7 +51,7 @@
 #end
 #end
 
-#if($hasEventStreamInputOperation)
+#if($hasEventStreamInputOperation || $multiRegionAccessPointSupported)
 ${className}::${className}(const ${clientConfigurationNamespace}::ClientConfiguration& clientConfiguration${signPayloads}${virtualAddressing}${USEast1RegionalEndpointArgString}) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),

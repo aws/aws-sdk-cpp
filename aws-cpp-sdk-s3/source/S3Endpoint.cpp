@@ -54,6 +54,21 @@ namespace S3Endpoint
     return ss.str();
   }
 
+  Aws::String ForMultiRegionAccessPointArn(const S3ARN& arn, bool useDualStack, const Aws::String& endpointOverride)
+  {
+    AWS_UNREFERENCED_PARAM(useDualStack);
+    AWS_UNREFERENCED_PARAM(endpointOverride);
+    assert(!useDualStack);
+    assert(endpointOverride.empty());
+    Aws::StringStream ss;
+    ss << arn.GetResourceId() << ".accesspoint.s3-global.amazonaws.com";
+    if (arn.GetPartition() == "aws-cn")
+    {
+      ss << ".cn";
+    }
+    return ss.str();
+  }
+
   Aws::String ForOutpostsArn(const S3ARN& arn, const Aws::String& regionNameOverride, bool useDualStack, const Aws::String& endpointOverride)
   {
     AWS_UNREFERENCED_PARAM(useDualStack);

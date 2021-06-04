@@ -86,7 +86,20 @@ public:
         Aws::Vector<Aws::String> authComponents = Aws::Utils::StringUtils::Split(request->GetAwsAuthorization(), '/');
         if (authComponents.size() > 3)
         {
-            TestingMonitoringMetrics::s_lastSigningServiceName = authComponents[3].c_str();
+            if (authComponents[0].find("AWS4-HMAC-SHA256") == 0)
+            {
+                // For SigV4
+                TestingMonitoringMetrics::s_lastSigningServiceName = authComponents[3].c_str();
+            }
+            else if (authComponents[0].find("AWS4-ECDSA-P256-SHA256") == 0)
+            {
+                // For SigV4A
+                TestingMonitoringMetrics::s_lastSigningServiceName = authComponents[2].c_str();
+            }
+            else
+            {
+                TestingMonitoringMetrics::s_lastSigningServiceName = "";
+            }
         }
         else
         {

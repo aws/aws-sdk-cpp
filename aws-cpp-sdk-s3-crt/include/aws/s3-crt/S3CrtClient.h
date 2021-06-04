@@ -499,12 +499,13 @@ namespace Aws
     // Get endpoint, signer region and signer service name after computing the endpoint.
     struct ComputeEndpointResult
     {
-      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}) :
-        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName) {}
+      ComputeEndpointResult(const Aws::String& endpointName = {}, const Aws::String& region = {}, const Aws::String& serviceName = {}, const Aws::String signer = Aws::Auth::SIGV4_SIGNER) :
+        endpoint(endpointName), signerRegion(region), signerServiceName(serviceName), signerName(signer) {}
 
       Aws::String endpoint;
       Aws::String signerRegion;
       Aws::String signerServiceName;
+      Aws::String signerName;
     };
     typedef Aws::Utils::Outcome<ComputeEndpointResult, Aws::Client::AWSError<S3CrtErrors>> ComputeEndpointOutcome;
 
@@ -11232,6 +11233,7 @@ namespace Aws
         bool m_useVirtualAddressing;
         bool m_useDualStack;
         bool m_useArnRegion;
+        bool m_disableMultiRegionAccessPoints;
         bool m_useCustomEndpoint;
         Aws::S3Crt::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption;
     };
