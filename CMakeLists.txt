@@ -48,7 +48,7 @@ option(FORCE_CURL "Forces usage of the Curl client rather than the default OS-sp
 option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for gcc or clang" OFF)
 option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
 option(BUILD_DEPS "Build third-party dependencies" ON)
-option(USE_OPENSSL "Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto" OFF)
+option(USE_OPENSSL "Set this if you want to use your system's OpenSSL 1.0.2/1.1.1 compatible libcrypto" ON)
 option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" ON)
 option(ENABLE_HTTP_CLIENT_TESTING "If enabled, corresponding http client test suites will be built and run" OFF)
 option(CUSTOM_MEMORY_MANAGEMENT "If set to ON, generates the sdk project files with custom memory management enabled, otherwise disables it" OFF)
@@ -82,6 +82,10 @@ if(NOT WIN32)
   set(BoldMagenta "${Esc}[1;35m")
   set(BoldCyan    "${Esc}[1;36m")
   set(BoldWhite   "${Esc}[1;37m")
+endif()
+
+if(NOT USE_OPENSSL)
+    message(WARNING "Turning off USE_OPENSSL will install AWS-LC as replacement of OpenSSL in the system default directory. This is an experimental feature. Do not use if you have an OpenSSL installation in your system already.")
 endif()
 
 # backwards compatibility with old command line params
