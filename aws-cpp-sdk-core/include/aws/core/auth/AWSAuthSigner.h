@@ -15,6 +15,7 @@
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
+#include <aws/crt/auth/Sigv4Signing.h>
 
 #include <memory>
 #include <atomic>
@@ -40,7 +41,15 @@ namespace Aws
     {
         class AWSCredentials;
         class AWSCredentialsProvider;
+
+        enum class AWSSigningAlgorithm
+        {
+            SIGV4 = static_cast<int>(Aws::Crt::Auth::SigningAlgorithm::SigV4),
+            ASYMMETRIC_SIGV4 = static_cast<int>(Aws::Crt::Auth::SigningAlgorithm::SigV4A),
+        };
+
         AWS_CORE_API extern const char SIGV4_SIGNER[];
+        AWS_CORE_API extern const char ASYMMETRIC_SIGV4_SIGNER[];
         AWS_CORE_API extern const char EVENTSTREAM_SIGV4_SIGNER[];
         AWS_CORE_API extern const char SIGNATURE[];
         AWS_CORE_API extern const char NULL_SIGNER[];
@@ -197,7 +206,7 @@ namespace Aws
              */
             AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
                             const char* serviceName, const Aws::String& region, PayloadSigningPolicy signingPolicy = PayloadSigningPolicy::RequestDependent,
-                            bool urlEscapePath = true);
+                            bool urlEscapePath = true, Aws::Auth::AWSSigningAlgorithm signingAlgorithm = Aws::Auth::AWSSigningAlgorithm::SIGV4);
 
             virtual ~AWSAuthV4Signer();
 
@@ -205,7 +214,17 @@ namespace Aws
              * AWSAuthV4signer's implementation of virtual function from base class
              * Return Auth Signer's name, here the value is specified in Aws::Auth::DEFAULT_AUTHV4_SIGNER.
              */
-            const char* GetName() const override { return Aws::Auth::SIGV4_SIGNER; }
+            const char* GetName() const override
+            {
+                if (m_signingAlgorithm == Aws::Auth::AWSSigningAlgorithm::ASYMMETRIC_SIGV4)
+                {
+                    return Aws::Auth::ASYMMETRIC_SIGV4_SIGNER;
+                }
+                else
+                {
+                    return Aws::Auth::SIGV4_SIGNER;
+                }
+            }
 
             /**
              * Signs the request itself based on info in the request and uri.
@@ -295,8 +314,10 @@ namespace Aws
             Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey, const Aws::String& simpleDate) const;
             Aws::Utils::ByteBuffer ComputeHash(const Aws::String& secretKey,
                     const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const;
+            bool SignRequestWithSigV4a(Aws::Http::HttpRequest& request, const char* region, const char* serviceName,
+                    bool signBody, long long expirationTimeInSeconds, Aws::Crt::Auth::SignatureType signatureType) const;
 
-
+            Aws::Auth::AWSSigningAlgorithm m_signingAlgorithm;
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             const Aws::String m_serviceName;
             const Aws::String m_region;

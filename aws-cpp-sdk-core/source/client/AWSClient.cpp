@@ -794,6 +794,34 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
     return {};
 }
 
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, long long expirationInSeconds) const
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    auto signer = GetSignerByName(signerName);
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
+Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, const char* signerName, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+{
+    std::shared_ptr<HttpRequest> request = CreateHttpRequest(uri, method, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+    for (const auto& it: customizedHeaders)
+    {
+        request->SetHeaderValue(it.first.c_str(), it.second);
+    }
+    auto signer = GetSignerByName(signerName);
+    if (signer->PresignRequest(*request, region, serviceName, expirationInSeconds))
+    {
+        return request->GetURIString();
+    }
+
+    return {};
+}
+
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
     const Aws::Http::QueryStringParameterCollection& extraParams, long long expirationInSeconds) const
 {

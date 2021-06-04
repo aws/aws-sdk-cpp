@@ -1268,6 +1268,12 @@ double DateTime::SecondsWithMSPrecision() const
     return timestamp.count();
 }
 
+int64_t DateTime::Seconds() const
+{
+    auto timestamp = std::chrono::duration_cast<std::chrono::seconds>(m_time.time_since_epoch());
+    return timestamp.count();
+}
+
 int64_t DateTime::Millis() const
 {
     auto timestamp = std::chrono::duration_cast<std::chrono::milliseconds>(m_time.time_since_epoch());

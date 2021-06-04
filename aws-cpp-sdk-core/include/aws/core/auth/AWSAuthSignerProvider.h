@@ -9,6 +9,7 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/auth/AWSAuthSigner.h>
 #include <memory>
 
 
@@ -42,7 +43,9 @@ namespace Aws
              * @param region The AWS region in which the requests will be made.
              */
             DefaultAuthSignerProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-                    const Aws::String& serviceName, const Aws::String& region);
+                const Aws::String& serviceName, const Aws::String& region,
+                Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signingPolicy = Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+                bool urlEscapePath = true);
             explicit DefaultAuthSignerProvider(const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer);
             void AddSigner(std::shared_ptr<Aws::Client::AWSAuthSigner>& signer) override;
             std::shared_ptr<Aws::Client::AWSAuthSigner> GetSigner(const Aws::String& signerName) const override;

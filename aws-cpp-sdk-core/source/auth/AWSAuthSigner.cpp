@@ -9,6 +9,7 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpResponse.h>
+#include <aws/core/http/URI.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
@@ -20,6 +21,9 @@
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/event/EventMessage.h>
 #include <aws/core/utils/event/EventHeader.h>
+
+#include <aws/crt/auth/Credentials.h>
+#include <aws/crt/http/HttpRequestResponse.h>
 
 #include <cstdio>
 #include <iomanip>
@@ -54,6 +58,7 @@ static const char* SIMPLE_DATE_FORMAT_STR = "%Y%m%d";
 static const char* EMPTY_STRING_SHA256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
 
 static const char v4LogTag[] = "AWSAuthV4Signer";
+static const char v4AsymmetricLogTag[] = "AWSAuthSymmetricV4Signer";
 static const char v4StreamingLogTag[] = "AWSAuthEventStreamV4Signer";
 
 namespace Aws
@@ -62,6 +67,7 @@ namespace Aws
     {
         const char SIGNATURE[] = "Signature";
         const char SIGV4_SIGNER[] = "SignatureV4";
+        const char ASYMMETRIC_SIGV4_SIGNER[] = "AsymmetricSignatureV4";
         const char EVENTSTREAM_SIGV4_SIGNER[] = "EventStreamSignatureV4";
         const char EVENTSTREAM_SIGNATURE_HEADER[] = ":chunk-signature";
         const char EVENTSTREAM_DATE_HEADER[] = ":date";
@@ -124,7 +130,7 @@ static Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollecti
         {
             for(size_t i = 1; i < headerMultiLine.size(); ++i)
             {
-                headerValue += ",";
+                headerValue += " ";
                 headerValue += StringUtils::Trim(headerMultiLine[i].c_str());
             }
         }
@@ -142,9 +148,10 @@ static Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollecti
     return canonicalHeaders;
 }
 
-AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider,
-    const char* serviceName, const Aws::String& region, PayloadSigningPolicy signingPolicy, bool urlEscapePath) :
+AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvider>& credentialsProvider, const char* serviceName,
+    const Aws::String& region, PayloadSigningPolicy signingPolicy, bool urlEscapePath, AWSSigningAlgorithm signingAlgorithm) :
     m_includeSha256HashHeader(true),
+    m_signingAlgorithm(signingAlgorithm),
     m_credentialsProvider(credentialsProvider),
     m_serviceName(serviceName),
     m_region(region),
@@ -163,6 +170,111 @@ AWSAuthV4Signer::~AWSAuthV4Signer()
     // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file
 }
 
+bool AWSAuthV4Signer::SignRequestWithSigV4a(Aws::Http::HttpRequest& request, const char* region, const char* serviceName,
+    bool signBody, long long expirationTimeInSeconds, Aws::Crt::Auth::SignatureType signatureType) const
+{
+    AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
+    auto crtCredentials = Aws::MakeShared<Aws::Crt::Auth::Credentials>(v4AsymmetricLogTag,
+        Aws::Crt::ByteCursorFromCString(credentials.GetAWSAccessKeyId().c_str()),
+        Aws::Crt::ByteCursorFromCString(credentials.GetAWSSecretKey().c_str()),
+        Aws::Crt::ByteCursorFromCString(credentials.GetSessionToken().c_str()),
+        credentials.GetExpiration().Seconds());
+
+    Aws::Crt::Auth::AwsSigningConfig awsSigningConfig;
+    awsSigningConfig.SetSigningAlgorithm(static_cast<Aws::Crt::Auth::SigningAlgorithm>(AWSSigningAlgorithm::ASYMMETRIC_SIGV4));
+    awsSigningConfig.SetSignatureType(signatureType);
+    awsSigningConfig.SetRegion(region);
+    awsSigningConfig.SetService(serviceName);
+    awsSigningConfig.SetSigningTimepoint(GetSigningTimestamp().UnderlyingTimestamp());
+    awsSigningConfig.SetUseDoubleUriEncode(m_urlEscapePath);
+    awsSigningConfig.SetShouldNormalizeUriPath(true);
+    awsSigningConfig.SetOmitSessionToken(false);
+    awsSigningConfig.SetShouldSignHeaderUserData(reinterpret_cast<void*>(const_cast<Aws::Set<Aws::String>*>(&m_unsignedHeaders)));
+    awsSigningConfig.SetShouldSignHeaderCallback([](const Aws::Crt::ByteCursor *name, void *user_data) {
+        Aws::Set<Aws::String>* unsignedHeaders = static_cast<Aws::Set<Aws::String>*>(user_data);
+        Aws::String headerKey(reinterpret_cast<const char*>(name->ptr), name->len);
+        return unsignedHeaders->find(Aws::Utils::StringUtils::ToLower(headerKey.c_str())) == unsignedHeaders->cend();
+    });
+    if (signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders)
+    {
+        Aws::String payloadHash(UNSIGNED_PAYLOAD);
+        if(signBody || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
+        {
+            if (!request.GetContentBody())
+            {
+                AWS_LOGSTREAM_DEBUG(v4AsymmetricLogTag, "Using cached empty string sha256 " << EMPTY_STRING_SHA256 << " because payload is empty.");
+                payloadHash = EMPTY_STRING_SHA256;
+            }
+            else
+            {
+                // The hash will be calculated from the payload during siging.
+                payloadHash = {};
+            }
+        }
+        else
+        {
+            AWS_LOGSTREAM_DEBUG(v4AsymmetricLogTag, "Note: Http payloads are not being signed. signPayloads=" << signBody
+                    << " http scheme=" << Http::SchemeMapper::ToString(request.GetUri().GetScheme()));
+        }
+        awsSigningConfig.SetSignedBodyValue(payloadHash.c_str());
+        awsSigningConfig.SetSignedBodyHeader(m_includeSha256HashHeader ? Aws::Crt::Auth::SignedBodyHeaderType::XAmzContentSha256 : Aws::Crt::Auth::SignedBodyHeaderType::None);
+    }
+    else if (signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams)
+    {
+        if (ServiceRequireUnsignedPayload(serviceName))
+        {
+            awsSigningConfig.SetSignedBodyValue(UNSIGNED_PAYLOAD);
+        }
+        else
+        {
+            awsSigningConfig.SetSignedBodyValue(EMPTY_STRING_SHA256);
+        }
+    }
+    else
+    {
+        AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "The signature type should be either \"HttpRequestViaHeaders\" or \"HttpRequestViaQueryParams\"");
+        return false;
+    }
+    awsSigningConfig.SetExpirationInSeconds(static_cast<uint64_t>(expirationTimeInSeconds));
+    awsSigningConfig.SetCredentials(crtCredentials);
+
+    std::shared_ptr<Aws::Crt::Http::HttpRequest> crtHttpRequest = request.ToCrtHttpRequest();
+
+    auto sigv4HttpRequestSigner = Aws::MakeShared<Aws::Crt::Auth::Sigv4HttpRequestSigner>(v4AsymmetricLogTag);
+    bool success = true;
+    sigv4HttpRequestSigner->SignRequest(crtHttpRequest, awsSigningConfig,
+        [&request, &success, signatureType](const std::shared_ptr<Aws::Crt::Http::HttpRequest>& signedCrtHttpRequest, int errorCode) {
+            success = (errorCode == AWS_ERROR_SUCCESS);
+            if (success)
+            {
+                if (signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders)
+                {
+                    for (size_t i = 0; i < signedCrtHttpRequest->GetHeaderCount(); i++)
+                    {
+                        Aws::Crt::Optional<Aws::Crt::Http::HttpHeader> httpHeader = signedCrtHttpRequest->GetHeader(i);
+                        request.SetHeaderValue(Aws::String(reinterpret_cast<const char*>(httpHeader->name.ptr), httpHeader->name.len),
+                            Aws::String(reinterpret_cast<const char*>(httpHeader->value.ptr), httpHeader->value.len));
+                    }
+                }
+                else if (signatureType == Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams)
+                {
+                    Aws::Http::URI newPath(reinterpret_cast<const char*>(signedCrtHttpRequest->GetPath()->ptr));
+                    request.GetUri().SetQueryString(newPath.GetQueryString());
+                }
+                else
+                {
+                    AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "No action to take when signature type is neither \"HttpRequestViaHeaders\" nor \"HttpRequestViaQueryParams\"");
+                    success = false;
+                }
+            }
+            else
+            {
+                AWS_LOGSTREAM_ERROR(v4AsymmetricLogTag, "Encountered internal error during signing process with AWS signature version 4 (Asymmetric):" << aws_error_str(errorCode));
+            }
+        }
+    );
+    return success;
+}
 
 bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
 {
@@ -171,6 +283,8 @@ bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
 
 bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, bool signBody) const
 {
+    Aws::String signingRegion = region ? region : m_region;
+    Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
     //don't sign anonymous requests
@@ -179,10 +293,8 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
         return true;
     }
 
-    if (!credentials.GetSessionToken().empty())
-    {
-        request.SetAwsSessionToken(credentials.GetSessionToken());
-    }
+    request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
+    request.SetSigningRegion(signingRegion);
 
     Aws::String payloadHash(UNSIGNED_PAYLOAD);
     switch(m_payloadSigningPolicy)
@@ -197,6 +309,18 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
             // respect the request setting
         default:
             break;
+    }
+
+    if (m_signingAlgorithm == AWSSigningAlgorithm::ASYMMETRIC_SIGV4)
+    {
+        // Replace m_serviceName with signingServiceName after rebasing on S3 outposts.
+        return SignRequestWithSigV4a(request, signingRegion.c_str(), m_serviceName.c_str(), signBody,
+            0 /* expirationTimeInSeconds doesn't matter for HttpRequestViaHeaders */, Aws::Crt::Auth::SignatureType::HttpRequestViaHeaders);
+    }
+
+    if (!credentials.GetSessionToken().empty())
+    {
+        request.SetAwsSessionToken(credentials.GetSessionToken());
     }
 
     if(signBody || request.GetUri().GetScheme() != Http::Scheme::HTTPS)
@@ -273,8 +397,6 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     Aws::String canonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
 
-    Aws::String signingRegion = region ? region : m_region;
-    Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
     Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, canonicalRequestHash, signingRegion, signingServiceName);
     auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, signingServiceName);
 
@@ -286,8 +408,6 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* r
     auto awsAuthString = ss.str();
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signing request with: " << awsAuthString);
     request.SetAwsAuthorization(awsAuthString);
-    request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
-    request.SetSigningRegion(signingRegion);
     return true;
 }
 
@@ -303,12 +423,20 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
 
 bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char* region, const char* serviceName, long long expirationTimeInSeconds) const
 {
+    Aws::String signingRegion = region ? region : m_region;
+    Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
     //don't sign anonymous requests
     if (credentials.GetAWSAccessKeyId().empty() || credentials.GetAWSSecretKey().empty())
     {
         return true;
+    }
+
+    if (m_signingAlgorithm == AWSSigningAlgorithm::ASYMMETRIC_SIGV4)
+    {
+        return SignRequestWithSigV4a(request, signingRegion.c_str(), signingServiceName.c_str(), false /* signBody doesn't matter for HttpRequestViaHeaders */,
+            expirationTimeInSeconds, Aws::Crt::Auth::SignatureType::HttpRequestViaQueryParams);
     }
 
     Aws::StringStream intConversionStream;
@@ -351,8 +479,6 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signed Headers value: " << signedHeadersValue);
 
     Aws::StringStream ss;
-    Aws::String signingRegion = region ? region : m_region;
-    Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
     ss << credentials.GetAWSAccessKeyId() << "/" << simpleDate
         << "/" << signingRegion << "/" << signingServiceName << "/" << AWS4_REQUEST;
