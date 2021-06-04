@@ -25,7 +25,7 @@
         // MSVC
         "msvc", "MSFT", "LPDWORD", "DATAW", "mkgmtime", "vscprintf", "wtoi", "msxml", "runtimeobject", "winhttp", "Wininet",
         // Crypto
-        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT", "libcrypto", "AWSLC",
+        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT",
         // EC2
         "IMDS",
         // Cognito
@@ -33,7 +33,7 @@
         // License and Notice
         "SPDX", "grinninglizard", "Thomason", "Lepilleur", "Sidebotham", "Rublee", "Andrey", "Kamaev",
         // Dependencies
-        "openssl", "libcurl",
+        "openssl",
         // Aws common runtime libraries
         "mqtt"
     ],

@@ -33,6 +33,7 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
   auto& bodyStream = userData->response->GetResponseBody();
 
+  bodyStream.seekp(range_start);
   bodyStream.write(reinterpret_cast<char*>(body->ptr), static_cast<std::streamsize>(body->len));
   if (userData->request->IsEventStreamRequest())
   {

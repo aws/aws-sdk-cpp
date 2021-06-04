@@ -56,11 +56,8 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
         set_property(TARGET ssl PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libssl.a)
         add_library(crypto UNKNOWN IMPORTED)
         set_property(TARGET crypto PROPERTY IMPORTED_LOCATION ${OPENSSL_LIBRARY_DIR}/libcrypto.a)
-        set_target_properties(crypto PROPERTIES
-            INTERFACE_INCLUDE_DIRECTORIES "${OPENSSL_INCLUDE_DIR}"
-            IMPORTED_LINK_INTERFACE_LANGUAGES "C")
+
         set(OPENSSL_LIBRARIES "${OPENSSL_LIBRARY_DIR}/libssl.a;${OPENSSL_LIBRARY_DIR}/libcrypto.a")
-        set(OPENSSL_CRYPTO_LIBRARY "${OPENSSL_LIBRARY_DIR}/libcrypto.a")
         set(CURL_OPENSSL_DEPENDENCY "OPENSSL")
 
         set(LibCrypto_INCLUDE_DIR "${OPENSSL_INCLUDE_DIR}" CACHE INTERNAL "crypto include dir")

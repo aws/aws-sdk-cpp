@@ -8,7 +8,6 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #include <aws/core/utils/Outcome.h>
-#include <openssl/crypto.h>
 #include <openssl/md5.h>
 
 #ifdef OPENSSL_IS_BORINGSSL
@@ -66,7 +65,7 @@ namespace Aws
 #else
                     OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CRYPTO_STRINGS /*options*/ ,NULL /* OpenSSL init settings*/ );
 #endif
-#if !(defined(OPENSSL_IS_BORINGSSL) || defined(OPENSSL_IS_AWSLC))
+#if !defined(OPENSSL_IS_BORINGSSL)
                     OPENSSL_add_all_algorithms_noconf();
 #endif
 #if OPENSSL_VERSION_LESS_1_1
@@ -548,7 +547,7 @@ namespace Aws
                 CryptoBuffer finalBlock(GetBlockSizeBytes());
                 int writtenSize = static_cast<int>(finalBlock.GetLength());
                 int ret = EVP_DecryptFinal_ex(m_decryptor_ctx, finalBlock.GetUnderlyingData(), &writtenSize);
-#if !defined(OPENSSL_IS_AWSLC) && OPENSSL_VERSION_NUMBER > 0x1010104fL //1.1.1d
+#if OPENSSL_VERSION_NUMBER > 0x1010104fL //1.1.1d
                 if (ret <= 0)
 #else
                 if (ret <= 0 && !m_emptyPlaintext) // see details why making exception for empty string at: https://github.com/aws/aws-sdk-cpp/issues/1413

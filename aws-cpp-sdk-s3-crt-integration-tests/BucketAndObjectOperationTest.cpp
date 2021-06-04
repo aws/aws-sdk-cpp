@@ -543,12 +543,6 @@ namespace
         ASSERT_TRUE(getObjectOutcome.IsSuccess());
         ASSERT_EQ(contentLength, getObjectOutcome.GetResult().GetContentLength());
 
-        // GET with range
-        getObjectRequest.SetRange("bytes=128-1024");
-        getObjectOutcome = Client->GetObject(getObjectRequest);
-        ASSERT_TRUE(getObjectOutcome.IsSuccess());
-        ASSERT_EQ(1024-128+1, getObjectOutcome.GetResult().GetContentLength());
-
         HeadObjectRequest headObjectRequest;
         headObjectRequest.SetBucket(fullBucketName);
         headObjectRequest.SetKey(TEST_OBJ_KEY);
