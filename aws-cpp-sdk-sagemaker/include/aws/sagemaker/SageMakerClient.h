@@ -180,6 +180,8 @@
 #include <aws/sagemaker/model/PutModelPackageGroupPolicyResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
+#include <aws/sagemaker/model/SendPipelineExecutionStepFailureResult.h>
+#include <aws/sagemaker/model/SendPipelineExecutionStepSuccessResult.h>
 #include <aws/sagemaker/model/StartPipelineExecutionResult.h>
 #include <aws/sagemaker/model/StopPipelineExecutionResult.h>
 #include <aws/sagemaker/model/UpdateActionResult.h>
@@ -439,6 +441,8 @@ namespace Model
         class RegisterDevicesRequest;
         class RenderUiTemplateRequest;
         class SearchRequest;
+        class SendPipelineExecutionStepFailureRequest;
+        class SendPipelineExecutionStepSuccessRequest;
         class StartMonitoringScheduleRequest;
         class StartNotebookInstanceRequest;
         class StartPipelineExecutionRequest;
@@ -673,6 +677,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> RegisterDevicesOutcome;
         typedef Aws::Utils::Outcome<RenderUiTemplateResult, SageMakerError> RenderUiTemplateOutcome;
         typedef Aws::Utils::Outcome<SearchResult, SageMakerError> SearchOutcome;
+        typedef Aws::Utils::Outcome<SendPipelineExecutionStepFailureResult, SageMakerError> SendPipelineExecutionStepFailureOutcome;
+        typedef Aws::Utils::Outcome<SendPipelineExecutionStepSuccessResult, SageMakerError> SendPipelineExecutionStepSuccessOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerError> StartNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<StartPipelineExecutionResult, SageMakerError> StartPipelineExecutionOutcome;
@@ -907,6 +913,8 @@ namespace Model
         typedef std::future<RegisterDevicesOutcome> RegisterDevicesOutcomeCallable;
         typedef std::future<RenderUiTemplateOutcome> RenderUiTemplateOutcomeCallable;
         typedef std::future<SearchOutcome> SearchOutcomeCallable;
+        typedef std::future<SendPipelineExecutionStepFailureOutcome> SendPipelineExecutionStepFailureOutcomeCallable;
+        typedef std::future<SendPipelineExecutionStepSuccessOutcome> SendPipelineExecutionStepSuccessOutcomeCallable;
         typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutcomeCallable;
         typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
         typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
@@ -1144,6 +1152,8 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::RegisterDevicesRequest&, const Model::RegisterDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDevicesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RenderUiTemplateRequest&, const Model::RenderUiTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenderUiTemplateResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepFailureRequest&, const Model::SendPipelineExecutionStepFailureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepFailureResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::SendPipelineExecutionStepSuccessRequest&, const Model::SendPipelineExecutionStepSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendPipelineExecutionStepSuccessResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartMonitoringScheduleRequest&, const Model::StartMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartNotebookInstanceRequest&, const Model::StartNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
@@ -8257,6 +8267,74 @@ namespace Model
         virtual void SearchAsync(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Notifies the pipeline that the execution of a callback step failed, along
+         * with a message describing why. When a callback step is run, the pipeline
+         * generates a callback token and includes the token in a message sent to Amazon
+         * Simple Queue Service (Amazon SQS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendPipelineExecutionStepFailureOutcome SendPipelineExecutionStepFailure(const Model::SendPipelineExecutionStepFailureRequest& request) const;
+
+        /**
+         * <p>Notifies the pipeline that the execution of a callback step failed, along
+         * with a message describing why. When a callback step is run, the pipeline
+         * generates a callback token and includes the token in a message sent to Amazon
+         * Simple Queue Service (Amazon SQS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendPipelineExecutionStepFailureOutcomeCallable SendPipelineExecutionStepFailureCallable(const Model::SendPipelineExecutionStepFailureRequest& request) const;
+
+        /**
+         * <p>Notifies the pipeline that the execution of a callback step failed, along
+         * with a message describing why. When a callback step is run, the pipeline
+         * generates a callback token and includes the token in a message sent to Amazon
+         * Simple Queue Service (Amazon SQS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepFailure">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendPipelineExecutionStepFailureAsync(const Model::SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Notifies the pipeline that the execution of a callback step succeeded and
+         * provides a list of the step's output parameters. When a callback step is run,
+         * the pipeline generates a callback token and includes the token in a message sent
+         * to Amazon Simple Queue Service (Amazon SQS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendPipelineExecutionStepSuccessOutcome SendPipelineExecutionStepSuccess(const Model::SendPipelineExecutionStepSuccessRequest& request) const;
+
+        /**
+         * <p>Notifies the pipeline that the execution of a callback step succeeded and
+         * provides a list of the step's output parameters. When a callback step is run,
+         * the pipeline generates a callback token and includes the token in a message sent
+         * to Amazon Simple Queue Service (Amazon SQS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SendPipelineExecutionStepSuccessOutcomeCallable SendPipelineExecutionStepSuccessCallable(const Model::SendPipelineExecutionStepSuccessRequest& request) const;
+
+        /**
+         * <p>Notifies the pipeline that the execution of a callback step succeeded and
+         * provides a list of the step's output parameters. When a callback step is run,
+         * the pipeline generates a callback token and includes the token in a message sent
+         * to Amazon Simple Queue Service (Amazon SQS).</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SendPipelineExecutionStepSuccess">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SendPipelineExecutionStepSuccessAsync(const Model::SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts a previously stopped monitoring schedule.</p>  <p>By default,
          * when you successfully create a new schedule, the status of a monitoring schedule
          * is <code>scheduled</code>.</p> <p><h3>See Also:</h3>   <a
@@ -9663,6 +9741,8 @@ namespace Model
         void RegisterDevicesAsyncHelper(const Model::RegisterDevicesRequest& request, const RegisterDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenderUiTemplateAsyncHelper(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAsyncHelper(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendPipelineExecutionStepFailureAsyncHelper(const Model::SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SendPipelineExecutionStepSuccessAsyncHelper(const Model::SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMonitoringScheduleAsyncHelper(const Model::StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartNotebookInstanceAsyncHelper(const Model::StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartPipelineExecutionAsyncHelper(const Model::StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

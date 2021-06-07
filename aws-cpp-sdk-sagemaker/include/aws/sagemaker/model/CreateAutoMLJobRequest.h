@@ -151,54 +151,36 @@ namespace Model
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline const AutoMLOutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline void SetOutputDataConfig(const AutoMLOutputDataConfig& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = value; }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline void SetOutputDataConfig(AutoMLOutputDataConfig&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::move(value); }
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithOutputDataConfig(const AutoMLOutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
 
     /**
      * <p>Provides information about encryption and the Amazon S3 output path needed to
      * store artifacts from an AutoML job. Format(s) supported: CSV.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithOutputDataConfig(AutoMLOutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
 
@@ -346,65 +328,41 @@ namespace Model
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the role that is used to access the data.</p>
-     * <p>&lt;para&gt;Specifies whether to automatically deploy the best &amp;ATP;
-     * model to an endpoint and the name of that endpoint if deployed
-     * automatically.&lt;/para&gt;</p>
      */
     inline CreateAutoMLJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

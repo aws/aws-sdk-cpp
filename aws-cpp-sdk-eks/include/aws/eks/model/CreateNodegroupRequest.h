@@ -13,6 +13,7 @@
 #include <aws/eks/model/RemoteAccessConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
+#include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <aws/eks/model/CapacityTypes.h>
 #include <aws/eks/model/Taint.h>
 #include <utility>
@@ -1110,6 +1111,25 @@ namespace Model
     inline CreateNodegroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
 
 
+    
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+
+    
+    inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
+
+    
+    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
+
+    
+    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
+
+    
+    inline CreateNodegroupRequest& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
+
+    
+    inline CreateNodegroupRequest& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The capacity type for your node group.</p>
      */
@@ -1401,6 +1421,9 @@ namespace Model
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;
+
+    NodegroupUpdateConfig m_updateConfig;
+    bool m_updateConfigHasBeenSet;
 
     CapacityTypes m_capacityType;
     bool m_capacityTypeHasBeenSet;

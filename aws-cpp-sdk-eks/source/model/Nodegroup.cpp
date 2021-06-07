@@ -43,6 +43,7 @@ Nodegroup::Nodegroup() :
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_updateConfigHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -73,6 +74,7 @@ Nodegroup::Nodegroup(JsonView jsonValue) :
     m_diskSize(0),
     m_diskSizeHasBeenSet(false),
     m_healthHasBeenSet(false),
+    m_updateConfigHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -233,6 +235,13 @@ Nodegroup& Nodegroup::operator =(JsonView jsonValue)
     m_healthHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("updateConfig"))
+  {
+    m_updateConfig = jsonValue.GetObject("updateConfig");
+
+    m_updateConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("launchTemplate"))
   {
     m_launchTemplate = jsonValue.GetObject("launchTemplate");
@@ -389,6 +398,12 @@ JsonValue Nodegroup::Jsonize() const
   if(m_healthHasBeenSet)
   {
    payload.WithObject("health", m_health.Jsonize());
+
+  }
+
+  if(m_updateConfigHasBeenSet)
+  {
+   payload.WithObject("updateConfig", m_updateConfig.Jsonize());
 
   }
 

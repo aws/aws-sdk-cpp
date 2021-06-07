@@ -41,6 +41,8 @@ namespace Aws
         static const int AddonVersion_HASH = HashingUtils::HashString("AddonVersion");
         static const int ServiceAccountRoleArn_HASH = HashingUtils::HashString("ServiceAccountRoleArn");
         static const int ResolveConflicts_HASH = HashingUtils::HashString("ResolveConflicts");
+        static const int MaxUnavailable_HASH = HashingUtils::HashString("MaxUnavailable");
+        static const int MaxUnavailablePercentage_HASH = HashingUtils::HashString("MaxUnavailablePercentage");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -130,6 +132,14 @@ namespace Aws
           {
             return UpdateParamType::ResolveConflicts;
           }
+          else if (hashCode == MaxUnavailable_HASH)
+          {
+            return UpdateParamType::MaxUnavailable;
+          }
+          else if (hashCode == MaxUnavailablePercentage_HASH)
+          {
+            return UpdateParamType::MaxUnavailablePercentage;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -186,6 +196,10 @@ namespace Aws
             return "ServiceAccountRoleArn";
           case UpdateParamType::ResolveConflicts:
             return "ResolveConflicts";
+          case UpdateParamType::MaxUnavailable:
+            return "MaxUnavailable";
+          case UpdateParamType::MaxUnavailablePercentage:
+            return "MaxUnavailablePercentage";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

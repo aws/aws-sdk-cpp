@@ -24,7 +24,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_transformJobHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_registerModelHasBeenSet(false),
-    m_conditionHasBeenSet(false)
+    m_conditionHasBeenSet(false),
+    m_callbackHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
     m_transformJobHasBeenSet(false),
     m_modelHasBeenSet(false),
     m_registerModelHasBeenSet(false),
-    m_conditionHasBeenSet(false)
+    m_conditionHasBeenSet(false),
+    m_callbackHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_conditionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Callback"))
+  {
+    m_callback = jsonValue.GetObject("Callback");
+
+    m_callbackHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +132,12 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_conditionHasBeenSet)
   {
    payload.WithObject("Condition", m_condition.Jsonize());
+
+  }
+
+  if(m_callbackHasBeenSet)
+  {
+   payload.WithObject("Callback", m_callback.Jsonize());
 
   }
 

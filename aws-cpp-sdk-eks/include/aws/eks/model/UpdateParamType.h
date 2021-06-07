@@ -36,7 +36,9 @@ namespace Model
     EncryptionConfig,
     AddonVersion,
     ServiceAccountRoleArn,
-    ResolveConflicts
+    ResolveConflicts,
+    MaxUnavailable,
+    MaxUnavailablePercentage
   };
 
 namespace UpdateParamTypeMapper

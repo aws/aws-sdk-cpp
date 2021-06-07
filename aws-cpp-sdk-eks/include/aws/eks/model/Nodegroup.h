@@ -16,6 +16,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/NodegroupResources.h>
 #include <aws/eks/model/NodegroupHealth.h>
+#include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
 #include <aws/eks/model/Taint.h>
 #include <utility>
@@ -996,6 +997,25 @@ namespace Model
     inline Nodegroup& WithHealth(NodegroupHealth&& value) { SetHealth(std::move(value)); return *this;}
 
 
+    
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+
+    
+    inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
+
+    
+    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
+
+    
+    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
+
+    
+    inline Nodegroup& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
+
+    
+    inline Nodegroup& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>If a launch template was used to create the node group, then this is the
      * launch template that was used.</p>
@@ -1198,6 +1218,9 @@ namespace Model
 
     NodegroupHealth m_health;
     bool m_healthHasBeenSet;
+
+    NodegroupUpdateConfig m_updateConfig;
+    bool m_updateConfigHasBeenSet;
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;

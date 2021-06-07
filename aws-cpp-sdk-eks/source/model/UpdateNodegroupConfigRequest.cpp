@@ -18,6 +18,7 @@ UpdateNodegroupConfigRequest::UpdateNodegroupConfigRequest() :
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
     m_scalingConfigHasBeenSet(false),
+    m_updateConfigHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
@@ -42,6 +43,12 @@ Aws::String UpdateNodegroupConfigRequest::SerializePayload() const
   if(m_scalingConfigHasBeenSet)
   {
    payload.WithObject("scalingConfig", m_scalingConfig.Jsonize());
+
+  }
+
+  if(m_updateConfigHasBeenSet)
+  {
+   payload.WithObject("updateConfig", m_updateConfig.Jsonize());
 
   }
 

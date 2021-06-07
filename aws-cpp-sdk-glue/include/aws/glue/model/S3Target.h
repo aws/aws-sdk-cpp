@@ -201,6 +201,35 @@ namespace Model
      */
     inline S3Target& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
 
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline int GetSampleSize() const{ return m_sampleSize; }
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline bool SampleSizeHasBeenSet() const { return m_sampleSizeHasBeenSet; }
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline void SetSampleSize(int value) { m_sampleSizeHasBeenSet = true; m_sampleSize = value; }
+
+    /**
+     * <p>Sets the number of files in each leaf folder to be crawled when crawling
+     * sample files in a dataset. If not set, all the files are crawled. A valid value
+     * is an integer between 1 and 249.</p>
+     */
+    inline S3Target& WithSampleSize(int value) { SetSampleSize(value); return *this;}
+
   private:
 
     Aws::String m_path;
@@ -211,6 +240,9 @@ namespace Model
 
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet;
+
+    int m_sampleSize;
+    bool m_sampleSizeHasBeenSet;
   };
 
 } // namespace Model

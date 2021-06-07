@@ -10,6 +10,7 @@
 #include <aws/eks/model/UpdateLabelsPayload.h>
 #include <aws/eks/model/UpdateTaintsPayload.h>
 #include <aws/eks/model/NodegroupScalingConfig.h>
+#include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -237,6 +238,25 @@ namespace Model
     inline UpdateNodegroupConfigRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
 
 
+    
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+
+    
+    inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
+
+    
+    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
+
+    
+    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
+
+    
+    inline UpdateNodegroupConfigRequest& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
+
+    
+    inline UpdateNodegroupConfigRequest& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
      * of the request.</p>
@@ -301,6 +321,9 @@ namespace Model
 
     NodegroupScalingConfig m_scalingConfig;
     bool m_scalingConfigHasBeenSet;
+
+    NodegroupUpdateConfig m_updateConfig;
+    bool m_updateConfigHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

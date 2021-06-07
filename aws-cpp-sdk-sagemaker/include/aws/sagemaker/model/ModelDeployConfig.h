@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Set to <code>True</code> to automatically generate an endpoint name for a
      * one-click Autopilot model deployment; set to <code>False</code> otherwise. The
-     * default value is <code>True</code>.</p>  <p>If you set
+     * default value is <code>False</code>.</p>  <p>If you set
      * <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      * <code>EndpointName</code>; otherwise a 400 error is thrown.</p> 
      */
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>Set to <code>True</code> to automatically generate an endpoint name for a
      * one-click Autopilot model deployment; set to <code>False</code> otherwise. The
-     * default value is <code>True</code>.</p>  <p>If you set
+     * default value is <code>False</code>.</p>  <p>If you set
      * <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      * <code>EndpointName</code>; otherwise a 400 error is thrown.</p> 
      */
@@ -59,7 +59,7 @@ namespace Model
     /**
      * <p>Set to <code>True</code> to automatically generate an endpoint name for a
      * one-click Autopilot model deployment; set to <code>False</code> otherwise. The
-     * default value is <code>True</code>.</p>  <p>If you set
+     * default value is <code>False</code>.</p>  <p>If you set
      * <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      * <code>EndpointName</code>; otherwise a 400 error is thrown.</p> 
      */
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>Set to <code>True</code> to automatically generate an endpoint name for a
      * one-click Autopilot model deployment; set to <code>False</code> otherwise. The
-     * default value is <code>True</code>.</p>  <p>If you set
+     * default value is <code>False</code>.</p>  <p>If you set
      * <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify the
      * <code>EndpointName</code>; otherwise a 400 error is thrown.</p> 
      */

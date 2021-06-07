@@ -30,6 +30,7 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_launchTemplateHasBeenSet(false),
+    m_updateConfigHasBeenSet(false),
     m_capacityType(CapacityTypes::NOT_SET),
     m_capacityTypeHasBeenSet(false),
     m_versionHasBeenSet(false),
@@ -140,6 +141,12 @@ Aws::String CreateNodegroupRequest::SerializePayload() const
   if(m_launchTemplateHasBeenSet)
   {
    payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
+
+  }
+
+  if(m_updateConfigHasBeenSet)
+  {
+   payload.WithObject("updateConfig", m_updateConfig.Jsonize());
 
   }
 

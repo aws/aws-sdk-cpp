@@ -215,6 +215,8 @@
 #include <aws/sagemaker/model/RegisterDevicesRequest.h>
 #include <aws/sagemaker/model/RenderUiTemplateRequest.h>
 #include <aws/sagemaker/model/SearchRequest.h>
+#include <aws/sagemaker/model/SendPipelineExecutionStepFailureRequest.h>
+#include <aws/sagemaker/model/SendPipelineExecutionStepSuccessRequest.h>
 #include <aws/sagemaker/model/StartMonitoringScheduleRequest.h>
 #include <aws/sagemaker/model/StartNotebookInstanceRequest.h>
 #include <aws/sagemaker/model/StartPipelineExecutionRequest.h>
@@ -5005,6 +5007,54 @@ void SageMakerClient::SearchAsync(const SearchRequest& request, const SearchResp
 void SageMakerClient::SearchAsyncHelper(const SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, Search(request), context);
+}
+
+SendPipelineExecutionStepFailureOutcome SageMakerClient::SendPipelineExecutionStepFailure(const SendPipelineExecutionStepFailureRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SendPipelineExecutionStepFailureOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendPipelineExecutionStepFailureOutcomeCallable SageMakerClient::SendPipelineExecutionStepFailureCallable(const SendPipelineExecutionStepFailureRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendPipelineExecutionStepFailureOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendPipelineExecutionStepFailure(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::SendPipelineExecutionStepFailureAsync(const SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendPipelineExecutionStepFailureAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::SendPipelineExecutionStepFailureAsyncHelper(const SendPipelineExecutionStepFailureRequest& request, const SendPipelineExecutionStepFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendPipelineExecutionStepFailure(request), context);
+}
+
+SendPipelineExecutionStepSuccessOutcome SageMakerClient::SendPipelineExecutionStepSuccess(const SendPipelineExecutionStepSuccessRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SendPipelineExecutionStepSuccessOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SendPipelineExecutionStepSuccessOutcomeCallable SageMakerClient::SendPipelineExecutionStepSuccessCallable(const SendPipelineExecutionStepSuccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SendPipelineExecutionStepSuccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SendPipelineExecutionStepSuccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::SendPipelineExecutionStepSuccessAsync(const SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SendPipelineExecutionStepSuccessAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::SendPipelineExecutionStepSuccessAsyncHelper(const SendPipelineExecutionStepSuccessRequest& request, const SendPipelineExecutionStepSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SendPipelineExecutionStepSuccess(request), context);
 }
 
 StartMonitoringScheduleOutcome SageMakerClient::StartMonitoringSchedule(const StartMonitoringScheduleRequest& request) const

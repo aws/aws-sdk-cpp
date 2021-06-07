@@ -27,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Identifies a model that you want to host and the resources to deploy for
-   * hosting it. If you are deploying multiple models, tell Amazon SageMaker how to
-   * distribute traffic among the models by specifying variant weights.
+   * <p>Identifies a model that you want to host and the resources chosen to deploy
+   * for hosting it. If you are deploying multiple models, tell Amazon SageMaker how
+   * to distribute traffic among the models by specifying variant weights.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariant">AWS
    * API Reference</a></p>

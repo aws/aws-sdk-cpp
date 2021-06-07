@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/ModelStepMetadata.h>
 #include <aws/sagemaker/model/RegisterModelStepMetadata.h>
 #include <aws/sagemaker/model/ConditionStepMetadata.h>
+#include <aws/sagemaker/model/CallbackStepMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -245,6 +246,25 @@ namespace Model
      */
     inline PipelineExecutionStepMetadata& WithCondition(ConditionStepMetadata&& value) { SetCondition(std::move(value)); return *this;}
 
+
+    
+    inline const CallbackStepMetadata& GetCallback() const{ return m_callback; }
+
+    
+    inline bool CallbackHasBeenSet() const { return m_callbackHasBeenSet; }
+
+    
+    inline void SetCallback(const CallbackStepMetadata& value) { m_callbackHasBeenSet = true; m_callback = value; }
+
+    
+    inline void SetCallback(CallbackStepMetadata&& value) { m_callbackHasBeenSet = true; m_callback = std::move(value); }
+
+    
+    inline PipelineExecutionStepMetadata& WithCallback(const CallbackStepMetadata& value) { SetCallback(value); return *this;}
+
+    
+    inline PipelineExecutionStepMetadata& WithCallback(CallbackStepMetadata&& value) { SetCallback(std::move(value)); return *this;}
+
   private:
 
     TrainingJobStepMetadata m_trainingJob;
@@ -264,6 +284,9 @@ namespace Model
 
     ConditionStepMetadata m_condition;
     bool m_conditionHasBeenSet;
+
+    CallbackStepMetadata m_callback;
+    bool m_callbackHasBeenSet;
   };
 
 } // namespace Model
