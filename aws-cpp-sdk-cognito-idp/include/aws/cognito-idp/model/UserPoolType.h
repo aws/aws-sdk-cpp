@@ -930,49 +930,129 @@ namespace Model
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSmsConfigurationFailure() const{ return m_smsConfigurationFailure; }
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline bool SmsConfigurationFailureHasBeenSet() const { return m_smsConfigurationFailureHasBeenSet; }
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline void SetSmsConfigurationFailure(const Aws::String& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = value; }
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline void SetSmsConfigurationFailure(Aws::String&& value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure = std::move(value); }
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline void SetSmsConfigurationFailure(const char* value) { m_smsConfigurationFailureHasBeenSet = true; m_smsConfigurationFailure.assign(value); }
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline UserPoolType& WithSmsConfigurationFailure(const Aws::String& value) { SetSmsConfigurationFailure(value); return *this;}
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline UserPoolType& WithSmsConfigurationFailure(Aws::String&& value) { SetSmsConfigurationFailure(std::move(value)); return *this;}
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
-     * users.</p>
+     * users.</p> <p>This message might include comma-separated values to describe why
+     * your SMS configuration can't send messages to user pool end users.</p> <ul> <li>
+     * <p>InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send
+     * SMS messages is not properly configured. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html">SmsConfigurationType</a>.</p>
+     * </li> <li> <p>SNSSandbox - The AWS account is in SNS Sandbox and messages won’t
+     * reach unverified end users. This parameter won’t get populated with SNSSandbox
+     * if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving
+     * out of the SMS sandbox</a>.</p> </li> </ul>
      */
     inline UserPoolType& WithSmsConfigurationFailure(const char* value) { SetSmsConfigurationFailure(value); return *this;}
 

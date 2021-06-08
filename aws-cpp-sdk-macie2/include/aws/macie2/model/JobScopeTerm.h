@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>Specifies a property- or tag-based condition that defines criteria for
-   * including or excluding S3 objects from a classification job.</p><p><h3>See
-   * Also:</h3>   <a
+   * including or excluding S3 objects from a classification job. A JobScopeTerm
+   * object can contain only one simpleScopeTerm object or one tagScopeTerm
+   * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/JobScopeTerm">AWS
    * API Reference</a></p>
    */

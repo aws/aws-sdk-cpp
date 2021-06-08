@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/macie2/model/FindingCriteria.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -331,6 +332,55 @@ namespace Model
      */
     inline UpdateFindingsFilterRequest& WithPosition(int value) { SetPosition(value); return *this;}
 
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline UpdateFindingsFilterRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline UpdateFindingsFilterRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique, case-sensitive token that you provide to ensure the idempotency of
+     * the request.</p>
+     */
+    inline UpdateFindingsFilterRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
 
     FindingsFilterAction m_action;
@@ -350,6 +400,9 @@ namespace Model
 
     int m_position;
     bool m_positionHasBeenSet;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet;
   };
 
 } // namespace Model

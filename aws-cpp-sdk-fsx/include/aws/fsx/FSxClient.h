@@ -1291,7 +1291,8 @@ namespace Model
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
          * system. You can update multiple properties in a single request.</p> <p>For
          * Amazon FSx for Windows File Server file systems, you can update the following
-         * properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * properties:</p> <ul> <li> <p>AuditLogConfiguration</p> </li> <li>
+         * <p>AutomaticBackupRetentionDays</p> </li> <li>
          * <p>DailyAutomaticBackupStartTime</p> </li> <li>
          * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
          * </li> <li> <p>ThroughputCapacity</p> </li> <li>
@@ -1310,7 +1311,8 @@ namespace Model
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
          * system. You can update multiple properties in a single request.</p> <p>For
          * Amazon FSx for Windows File Server file systems, you can update the following
-         * properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * properties:</p> <ul> <li> <p>AuditLogConfiguration</p> </li> <li>
+         * <p>AutomaticBackupRetentionDays</p> </li> <li>
          * <p>DailyAutomaticBackupStartTime</p> </li> <li>
          * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
          * </li> <li> <p>ThroughputCapacity</p> </li> <li>
@@ -1331,7 +1333,8 @@ namespace Model
          * <p>Use this operation to update the configuration of an existing Amazon FSx file
          * system. You can update multiple properties in a single request.</p> <p>For
          * Amazon FSx for Windows File Server file systems, you can update the following
-         * properties:</p> <ul> <li> <p>AutomaticBackupRetentionDays</p> </li> <li>
+         * properties:</p> <ul> <li> <p>AuditLogConfiguration</p> </li> <li>
+         * <p>AutomaticBackupRetentionDays</p> </li> <li>
          * <p>DailyAutomaticBackupStartTime</p> </li> <li>
          * <p>SelfManagedActiveDirectoryConfiguration</p> </li> <li> <p>StorageCapacity</p>
          * </li> <li> <p>ThroughputCapacity</p> </li> <li>

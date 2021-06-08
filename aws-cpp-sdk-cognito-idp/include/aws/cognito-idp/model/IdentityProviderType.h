@@ -172,10 +172,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProviderDetails() const{ return m_providerDetails; }
 
@@ -196,10 +195,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline bool ProviderDetailsHasBeenSet() const { return m_providerDetailsHasBeenSet; }
 
@@ -220,10 +218,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = value; }
 
@@ -244,10 +241,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline void SetProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = std::move(value); }
 
@@ -268,10 +264,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& WithProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetProviderDetails(value); return *this;}
 
@@ -292,10 +287,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& WithProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetProviderDetails(std::move(value)); return *this;}
 
@@ -316,10 +310,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const Aws::String& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
@@ -340,10 +333,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
 
@@ -364,10 +356,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const Aws::String& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
 
@@ -388,10 +379,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -412,10 +402,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const char* key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
 
@@ -436,10 +425,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(Aws::String&& key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
 
@@ -460,10 +448,9 @@ namespace Model
      * <i>if not available from discovery URL specified by oidc_issuer key</i> </p>
      * </li> <li> <p>attributes_url <i>if not available from discovery URL specified by
      * oidc_issuer key</i> </p> </li> <li> <p>jwks_uri <i>if not available from
-     * discovery URL specified by oidc_issuer key</i> </p> </li> <li>
-     * <p>authorize_scopes</p> </li> </ul> </li> <li> <p>For SAML providers:</p> <ul>
-     * <li> <p>MetadataFile OR MetadataURL</p> </li> <li> <p>IDPSignOut <i>optional</i>
-     * </p> </li> </ul> </li> </ul>
+     * discovery URL specified by oidc_issuer key</i> </p> </li> </ul> </li> <li>
+     * <p>For SAML providers:</p> <ul> <li> <p>MetadataFile OR MetadataURL</p> </li>
+     * <li> <p>IDPSignOut <i>optional</i> </p> </li> </ul> </li> </ul>
      */
     inline IdentityProviderType& AddProviderDetails(const char* key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
 
