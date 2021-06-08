@@ -31,13 +31,13 @@ file(WRITE
     "set(AWSSDK_INSTALL_INCLUDEDIR ${INCLUDE_DIRECTORY})\n"
     "set(AWSSDK_INSTALL_ARCHIVEDIR ${ARCHIVE_DIRECTORY})\n"
     "if (NOT LibCrypto_INCLUDE_DIR)\n"
-    "    set(LibCrypto_INCLUDE_DIR ${OPENSSL_INCLUDE_DIR})\n"
+    "    set(LibCrypto_INCLUDE_DIR ${OPENSSL_INCLUDE_DIR} CACHE INTERNAL \"The OpenSSL include directory\")\n"
     "endif()\n"
     "if (NOT LibCrypto_STATIC_LIBRARY)\n"
-    "    set(LibCrypto_STATIC_LIBRARY ${OPENSSL_CRYPTO_LIBRARY})\n"
+    "    set(LibCrypto_STATIC_LIBRARY ${OPENSSL_CRYPTO_LIBRARY} CACHE INTERNAL \"The OpenSSL crypto static library\")\n"
     "endif()\n"
     "if (NOT LibCrypto_SHARED_LIBRARY)\n"
-    "    set(LibCrypto_SHARED_LIBRARY ${OPENSSL_CRYPTO_LIBRARY})\n"
+    "    set(LibCrypto_SHARED_LIBRARY ${OPENSSL_CRYPTO_LIBRARY} CACHE INTERNAL \"The OpenSSL crypto shared library\")\n"
     "endif()\n"
     )
 
