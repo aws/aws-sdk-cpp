@@ -196,7 +196,12 @@ public class CppViewHelper {
             protocolAndVersion += metadata.getJsonVersion();
         }
 
-        return CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.get(protocolAndVersion);
+        // Customization for request content-type
+        if (metadata.getServiceId().equals("WellArchitected")) {
+            return "Aws::JSON_CONTENT_TYPE";
+        } else {
+            return CORAL_PROTOCOL_TO_CONTENT_TYPE_MAPPING.get(protocolAndVersion);
+        }
     }
 
     public static String computeServicePayloadType(String protocol) {
