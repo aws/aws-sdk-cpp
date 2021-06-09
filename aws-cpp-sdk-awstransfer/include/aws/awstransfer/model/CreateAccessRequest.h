@@ -41,117 +41,117 @@ namespace Model
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline CreateAccessRequest& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline CreateAccessRequest& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
      * <p>The landing directory (folder) for a user when they log in to the server
      * using the client.</p> <p>A <code>HomeDirectory</code> example is
-     * <code>/directory_name/home/mydirectory</code>.</p>
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline CreateAccessRequest& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you
-     * must provide mappings in the <code>HomeDirectoryMappings</code> for how you want
-     * to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you
-     * must provide mappings in the <code>HomeDirectoryMappings</code> for how you want
-     * to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you
-     * must provide mappings in the <code>HomeDirectoryMappings</code> for how you want
-     * to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you
-     * must provide mappings in the <code>HomeDirectoryMappings</code> for how you want
-     * to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you
-     * must provide mappings in the <code>HomeDirectoryMappings</code> for how you want
-     * to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline CreateAccessRequest& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it <code>LOGICAL</code>, you
-     * must provide mappings in the <code>HomeDirectoryMappings</code> for how you want
-     * to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline CreateAccessRequest& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
@@ -184,7 +184,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
 
@@ -216,7 +216,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
 
@@ -248,7 +248,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
 
@@ -280,7 +280,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
 
@@ -312,7 +312,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline CreateAccessRequest& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
 
@@ -344,7 +344,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline CreateAccessRequest& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
 
@@ -376,7 +376,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline CreateAccessRequest& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
 
@@ -408,7 +408,7 @@ namespace Model
      * operation. For example, you can use the following.</p> <p> <code>aws s3api
      * put-object --bucket bucketname --key path/to/folder/</code> </p> <p>The end of
      * the key name must end in a <code>/</code> for it to be considered a folder.</p>
-     *  <p>Required: No</p>
+     * 
      */
     inline CreateAccessRequest& AddHomeDirectoryMappings(HomeDirectoryMapEntry&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(std::move(value)); return *this; }
 
@@ -419,7 +419,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -437,7 +437,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -455,7 +455,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -473,7 +473,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -491,7 +491,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -509,7 +509,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -527,7 +527,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -545,7 +545,7 @@ namespace Model
      * Amazon S3 bucket. Variables that you can use inside this policy include
      * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
-     * of <code>ServerId</code> is S3. Amazon EFS does not use scope down policy.</p>
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
      * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
      * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
      * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
@@ -578,82 +578,90 @@ namespace Model
 
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline CreateAccessRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline CreateAccessRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the IAM role that controls your users' access to your Amazon S3
-     * bucket or EFS file system. The policies attached to this role determine the
-     * level of access that you want to provide your users when transferring files into
-     * and out of your Amazon S3 bucket or EFS file system. The IAM role should also
-     * contain a trust relationship that allows the server to access your resources
-     * when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline CreateAccessRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -714,7 +722,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -729,7 +737,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -744,7 +752,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -759,7 +767,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -774,7 +782,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -789,7 +797,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -804,7 +812,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -819,7 +827,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also

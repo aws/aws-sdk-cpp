@@ -94,66 +94,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described user. An
-     * example is <i> <code>your-Amazon-S3-bucket-name&gt;/home/username</code>
-     * </i>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline DescribedUser& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 
@@ -280,109 +272,135 @@ namespace Model
 
 
     /**
-     * <p>Specifies the type of landing directory (folder) you mapped for your users to
-     * see when they log into the file transfer protocol-enabled server. If you set it
-     * to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     * paths as is in their file transfer protocol clients. If you set it
-     * <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
 
     /**
-     * <p>Specifies the type of landing directory (folder) you mapped for your users to
-     * see when they log into the file transfer protocol-enabled server. If you set it
-     * to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     * paths as is in their file transfer protocol clients. If you set it
-     * <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the type of landing directory (folder) you mapped for your users to
-     * see when they log into the file transfer protocol-enabled server. If you set it
-     * to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     * paths as is in their file transfer protocol clients. If you set it
-     * <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
 
     /**
-     * <p>Specifies the type of landing directory (folder) you mapped for your users to
-     * see when they log into the file transfer protocol-enabled server. If you set it
-     * to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     * paths as is in their file transfer protocol clients. If you set it
-     * <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
 
     /**
-     * <p>Specifies the type of landing directory (folder) you mapped for your users to
-     * see when they log into the file transfer protocol-enabled server. If you set it
-     * to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     * paths as is in their file transfer protocol clients. If you set it
-     * <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline DescribedUser& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
 
     /**
-     * <p>Specifies the type of landing directory (folder) you mapped for your users to
-     * see when they log into the file transfer protocol-enabled server. If you set it
-     * to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS
-     * paths as is in their file transfer protocol clients. If you set it
-     * <code>LOGICAL</code>, you will need to provide mappings in the
-     * <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or EFS
-     * paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline DescribedUser& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedUser& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedUser& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the name of the policy in use for the described user.</p>
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedUser& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -455,80 +473,88 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */
     inline DescribedUser& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */
     inline DescribedUser& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role will determine the level of access you want to
-     * provide your users when transferring files into and out of your Amazon S3 bucket
-     * or buckets. The IAM role should also contain a trust relationship that allows a
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
      * server to access your resources when servicing your users' transfer
      * requests.</p>
      */

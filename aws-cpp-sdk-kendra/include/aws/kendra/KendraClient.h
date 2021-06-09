@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/kendra/model/BatchDeleteDocumentResult.h>
+#include <aws/kendra/model/BatchGetDocumentStatusResult.h>
 #include <aws/kendra/model/BatchPutDocumentResult.h>
 #include <aws/kendra/model/CreateDataSourceResult.h>
 #include <aws/kendra/model/CreateFaqResult.h>
@@ -77,6 +78,7 @@ namespace kendra
 namespace Model
 {
         class BatchDeleteDocumentRequest;
+        class BatchGetDocumentStatusRequest;
         class BatchPutDocumentRequest;
         class ClearQuerySuggestionsRequest;
         class CreateDataSourceRequest;
@@ -116,6 +118,7 @@ namespace Model
         class UpdateThesaurusRequest;
 
         typedef Aws::Utils::Outcome<BatchDeleteDocumentResult, KendraError> BatchDeleteDocumentOutcome;
+        typedef Aws::Utils::Outcome<BatchGetDocumentStatusResult, KendraError> BatchGetDocumentStatusOutcome;
         typedef Aws::Utils::Outcome<BatchPutDocumentResult, KendraError> BatchPutDocumentOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> ClearQuerySuggestionsOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceResult, KendraError> CreateDataSourceOutcome;
@@ -155,6 +158,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateThesaurusOutcome;
 
         typedef std::future<BatchDeleteDocumentOutcome> BatchDeleteDocumentOutcomeCallable;
+        typedef std::future<BatchGetDocumentStatusOutcome> BatchGetDocumentStatusOutcomeCallable;
         typedef std::future<BatchPutDocumentOutcome> BatchPutDocumentOutcomeCallable;
         typedef std::future<ClearQuerySuggestionsOutcome> ClearQuerySuggestionsOutcomeCallable;
         typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
@@ -197,6 +201,7 @@ namespace Model
   class KendraClient;
 
     typedef std::function<void(const KendraClient*, const Model::BatchDeleteDocumentRequest&, const Model::BatchDeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteDocumentResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::BatchGetDocumentStatusRequest&, const Model::BatchGetDocumentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDocumentStatusResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchPutDocumentRequest&, const Model::BatchPutDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutDocumentResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ClearQuerySuggestionsRequest&, const Model::ClearQuerySuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClearQuerySuggestionsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
@@ -301,6 +306,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void BatchDeleteDocumentAsync(const Model::BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the indexing status for one or more documents submitted with the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
+         * BatchPutDocument</a> operation.</p> <p>When you use the
+         * <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
+         * You can use the <code>BatchGetDocumentStatus</code> operation to get the current
+         * status of a list of documents so that you can determine if they have been
+         * successfully indexed.</p> <p>You can also use the
+         * <code>BatchGetDocumentStatus</code> operation to check the status of the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+         * BatchDeleteDocument</a> operation. When a document is deleted from the index,
+         * Amazon Kendra returns <code>NOT_FOUND</code> as the status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetDocumentStatusOutcome BatchGetDocumentStatus(const Model::BatchGetDocumentStatusRequest& request) const;
+
+        /**
+         * <p>Returns the indexing status for one or more documents submitted with the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
+         * BatchPutDocument</a> operation.</p> <p>When you use the
+         * <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
+         * You can use the <code>BatchGetDocumentStatus</code> operation to get the current
+         * status of a list of documents so that you can determine if they have been
+         * successfully indexed.</p> <p>You can also use the
+         * <code>BatchGetDocumentStatus</code> operation to check the status of the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+         * BatchDeleteDocument</a> operation. When a document is deleted from the index,
+         * Amazon Kendra returns <code>NOT_FOUND</code> as the status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetDocumentStatusOutcomeCallable BatchGetDocumentStatusCallable(const Model::BatchGetDocumentStatusRequest& request) const;
+
+        /**
+         * <p>Returns the indexing status for one or more documents submitted with the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
+         * BatchPutDocument</a> operation.</p> <p>When you use the
+         * <code>BatchPutDocument</code> operation, documents are indexed asynchronously.
+         * You can use the <code>BatchGetDocumentStatus</code> operation to get the current
+         * status of a list of documents so that you can determine if they have been
+         * successfully indexed.</p> <p>You can also use the
+         * <code>BatchGetDocumentStatus</code> operation to check the status of the <a
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchDeleteDocument.html">
+         * BatchDeleteDocument</a> operation. When a document is deleted from the index,
+         * Amazon Kendra returns <code>NOT_FOUND</code> as the status.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetDocumentStatusAsync(const Model::BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds one or more documents to an index.</p> <p>The
@@ -1505,6 +1568,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void BatchDeleteDocumentAsyncHelper(const Model::BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetDocumentStatusAsyncHelper(const Model::BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchPutDocumentAsyncHelper(const Model::BatchPutDocumentRequest& request, const BatchPutDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ClearQuerySuggestionsAsyncHelper(const Model::ClearQuerySuggestionsRequest& request, const ClearQuerySuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceAsyncHelper(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

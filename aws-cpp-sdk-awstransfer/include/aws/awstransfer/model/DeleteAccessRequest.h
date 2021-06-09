@@ -90,7 +90,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -105,7 +105,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -120,7 +120,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -135,7 +135,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -150,7 +150,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -165,7 +165,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -180,7 +180,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also
@@ -195,7 +195,7 @@ namespace Model
      * If you know the group name, you can view the SID values by running the following
      * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
      * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamaccountName,ObjectSid</code> </p> <p>In that command, replace
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
      * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
      * regex used to validate this parameter is a string of characters consisting of
      * uppercase and lowercase alphanumeric characters with no spaces. You can also

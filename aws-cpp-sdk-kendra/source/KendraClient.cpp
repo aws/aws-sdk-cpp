@@ -21,6 +21,7 @@
 #include <aws/kendra/KendraEndpoint.h>
 #include <aws/kendra/KendraErrorMarshaller.h>
 #include <aws/kendra/model/BatchDeleteDocumentRequest.h>
+#include <aws/kendra/model/BatchGetDocumentStatusRequest.h>
 #include <aws/kendra/model/BatchPutDocumentRequest.h>
 #include <aws/kendra/model/ClearQuerySuggestionsRequest.h>
 #include <aws/kendra/model/CreateDataSourceRequest.h>
@@ -154,6 +155,30 @@ void KendraClient::BatchDeleteDocumentAsync(const BatchDeleteDocumentRequest& re
 void KendraClient::BatchDeleteDocumentAsyncHelper(const BatchDeleteDocumentRequest& request, const BatchDeleteDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDeleteDocument(request), context);
+}
+
+BatchGetDocumentStatusOutcome KendraClient::BatchGetDocumentStatus(const BatchGetDocumentStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchGetDocumentStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetDocumentStatusOutcomeCallable KendraClient::BatchGetDocumentStatusCallable(const BatchGetDocumentStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetDocumentStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetDocumentStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KendraClient::BatchGetDocumentStatusAsync(const BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDocumentStatusAsyncHelper( request, handler, context ); } );
+}
+
+void KendraClient::BatchGetDocumentStatusAsyncHelper(const BatchGetDocumentStatusRequest& request, const BatchGetDocumentStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetDocumentStatus(request), context);
 }
 
 BatchPutDocumentOutcome KendraClient::BatchPutDocument(const BatchPutDocumentRequest& request) const

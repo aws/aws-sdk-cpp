@@ -43,58 +43,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline DescribedAccess& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline DescribedAccess& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the landing directory (or folder), which is the location that files
-     * are written to or read from in an Amazon S3 bucket, for the described
-     * access.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline DescribedAccess& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 
@@ -229,142 +229,134 @@ namespace Model
 
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it to <code>LOGICAL</code>,
-     * you must provide mappings in the <code>HomeDirectoryMappings</code> for how you
-     * want to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it to <code>LOGICAL</code>,
-     * you must provide mappings in the <code>HomeDirectoryMappings</code> for how you
-     * want to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it to <code>LOGICAL</code>,
-     * you must provide mappings in the <code>HomeDirectoryMappings</code> for how you
-     * want to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it to <code>LOGICAL</code>,
-     * you must provide mappings in the <code>HomeDirectoryMappings</code> for how you
-     * want to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it to <code>LOGICAL</code>,
-     * you must provide mappings in the <code>HomeDirectoryMappings</code> for how you
-     * want to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline DescribedAccess& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
 
     /**
-     * <p>The type of landing directory (folder) that you want your users' home
-     * directory to be when they log in to the server. If you set it to
-     * <code>PATH</code>, the user will see the absolute Amazon S3 bucket paths as is
-     * in their file transfer protocol clients. If you set it to <code>LOGICAL</code>,
-     * you must provide mappings in the <code>HomeDirectoryMappings</code> for how you
-     * want to make Amazon S3 paths visible to your users.</p>
+     * <p>The type of landing directory (folder) you want your users' home directory to
+     * be when they log into the server. If you set it to <code>PATH</code>, the user
+     * will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer
+     * protocol clients. If you set it <code>LOGICAL</code>, you will need to provide
+     * mappings in the <code>HomeDirectoryMappings</code> for how you want to make
+     * Amazon S3 or EFS paths visible to your users.</p>
      */
     inline DescribedAccess& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
 
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedAccess& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedAccess& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>A scope-down policy for your user so that you can use the same AWS Identity
-     * and Access Management (IAM) role across multiple users. This policy scopes down
-     * user access to portions of their Amazon S3 bucket. Variables that you can use
-     * inside this policy include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
      * <code>${Transfer:HomeBucket}</code>.</p>
      */
     inline DescribedAccess& WithPolicy(const char* value) { SetPolicy(value); return *this;}
@@ -390,219 +382,211 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline DescribedAccess& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline DescribedAccess& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that controls access to your Amazon S3 bucket from the specified
-     * associated access. The policies attached to this role will determine the level
-     * of access that you want to provide the associated access when transferring files
-     * into and out of your Amazon S3 bucket or buckets. The IAM role should also
-     * contain a trust relationship that allows a server to access your resources when
-     * servicing transfer requests for the associated access.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline DescribedAccess& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline DescribedAccess& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline DescribedAccess& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier that might be required when you assume a role in another
-     * account. Think of the <code>ExternalID</code> as a group membership mechanism
-     * that uses a unique identifier (often a SID, but could be a group name or
-     * something else) as a basis. If the administrator of the account to which the
-     * role belongs provided you with an external ID, then provide that value in the
-     * <code>ExternalId</code> parameter. A cross-account role is usually set up to
-     * trust everyone in an account. Therefore, the administrator of the trusting
-     * account might send an external ID to the administrator of the trusted account.
-     * That way, only someone with the ID can assume the role, rather than everyone in
-     * the account.</p> <p>The regex used to validate this parameter is a string of
-     * characters consisting of uppercase and lowercase alphanumeric characters with no
-     * spaces. You can also include underscores or any of the following characters:
-     * =,.@:/-</p>
+     * <p>A unique identifier that is required to identify specific groups within your
+     * directory. The users of the group that you associate have access to your Amazon
+     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
+     * If you know the group name, you can view the SID values by running the following
+     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
+     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
+     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
+     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
+     * regex used to validate this parameter is a string of characters consisting of
+     * uppercase and lowercase alphanumeric characters with no spaces. You can also
+     * include underscores or any of the following characters: =,.@:/-</p>
      */
     inline DescribedAccess& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

@@ -39,58 +39,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline UpdateUserRequest& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline UpdateUserRequest& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the landing directory (folder) for a user when they log in to the
-     * server using their file transfer protocol client.</p> <p>An example is
-     * <code>your-Amazon-S3-bucket-name&gt;/home/username</code>.</p>
+     * <p>The landing directory (folder) for a user when they log in to the server
+     * using the client.</p> <p>A <code>HomeDirectory</code> example is
+     * <code>/bucket_name/home/mydirectory</code>.</p>
      */
     inline UpdateUserRequest& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
 
@@ -366,16 +366,16 @@ namespace Model
 
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -384,16 +384,16 @@ namespace Model
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -402,16 +402,16 @@ namespace Model
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -420,16 +420,16 @@ namespace Model
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -438,16 +438,16 @@ namespace Model
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -456,16 +456,16 @@ namespace Model
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -474,16 +474,16 @@ namespace Model
     inline UpdateUserRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -492,16 +492,16 @@ namespace Model
     inline UpdateUserRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>Allows you to supply a scope-down policy for your user so you can use the
-     * same IAM role across multiple users. The policy scopes down user access to
-     * portions of your Amazon S3 bucket. Variables you can use inside this policy
-     * include <code>${Transfer:UserName}</code>,
-     * <code>${Transfer:HomeDirectory}</code>, and
-     * <code>${Transfer:HomeBucket}</code>.</p>  <p>For scope-down policies, AWS
-     * Transfer Family stores the policy as a JSON blob, instead of the Amazon Resource
-     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
-     * <code>Policy</code> argument.</p> <p>For an example of a scope-down policy, see
-     * <a
+     * <p>A scope-down policy for your user so that you can use the same IAM role
+     * across multiple users. This policy scopes down user access to portions of their
+     * Amazon S3 bucket. Variables that you can use inside this policy include
+     * <code>${Transfer:UserName}</code>, <code>${Transfer:HomeDirectory}</code>, and
+     * <code>${Transfer:HomeBucket}</code>.</p>  <p>This only applies when domain
+     * of <code>ServerId</code> is S3. Amazon EFS does not use scope-down policies.</p>
+     * <p>For scope-down policies, AWS Transfer Family stores the policy as a JSON
+     * blob, instead of the Amazon Resource Name (ARN) of the policy. You save the
+     * policy as a JSON blob and pass it in the <code>Policy</code> argument.</p>
+     * <p>For an example of a scope-down policy, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down">Creating
      * a scope-down policy</a>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a>
@@ -572,74 +572,90 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline UpdateUserRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline UpdateUserRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that controls your users' access to your Amazon S3 bucket. The
-     * policies attached to this role determine the level of access you want to provide
-     * your users when transferring files into and out of your S3 bucket or buckets.
-     * The IAM role should also contain a trust relationship that allows the server to
-     * access your resources when servicing your users' transfer requests.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your
+     * users' access to your Amazon S3 bucket or EFS file system. The policies attached
+     * to this role determine the level of access that you want to provide your users
+     * when transferring files into and out of your Amazon S3 bucket or EFS file
+     * system. The IAM role should also contain a trust relationship that allows the
+     * server to access your resources when servicing your users' transfer
+     * requests.</p>
      */
     inline UpdateUserRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
