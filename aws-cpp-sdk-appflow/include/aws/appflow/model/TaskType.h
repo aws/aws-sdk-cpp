@@ -19,6 +19,7 @@ namespace Model
     Arithmetic,
     Filter,
     Map,
+    Map_all,
     Mask,
     Merge,
     Truncate,

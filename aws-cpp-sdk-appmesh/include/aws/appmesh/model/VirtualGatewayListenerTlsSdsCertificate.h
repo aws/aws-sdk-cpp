@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>An object that represents the virtual gateway's listener's Secret Discovery
    * Service certificate.The proxy must be configured with a local SDS provider via a
-   * Unix Domain Socket. See App Mesh <a
+   * Unix Domain Socket. See App Mesh<a
    * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html">TLS
    * documentation</a> for more info. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayListenerTlsSdsCertificate">AWS

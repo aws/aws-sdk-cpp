@@ -1363,10 +1363,10 @@ namespace Model
          * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
          * example, you can update the product type or the calling name.</p> <p>For
          * toll-free numbers, you cannot use the Amazon Chime Business Calling product
-         * type. For numbers outside the US, you must use the Amazon Chime SIP Media
+         * type. For numbers outside the U.S., you must use the Amazon Chime SIP Media
          * Application Dial-In product type.</p> <p>Updates to outbound calling names can
-         * take 72 hours to complete. Pending updates to outbound calling names must be
-         * complete before you can request another update.</p><p><h3>See Also:</h3>   <a
+         * take up to 72 hours to complete. Pending updates to outbound calling names must
+         * be complete before you can request another update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          */
@@ -1377,10 +1377,10 @@ namespace Model
          * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
          * example, you can update the product type or the calling name.</p> <p>For
          * toll-free numbers, you cannot use the Amazon Chime Business Calling product
-         * type. For numbers outside the US, you must use the Amazon Chime SIP Media
+         * type. For numbers outside the U.S., you must use the Amazon Chime SIP Media
          * Application Dial-In product type.</p> <p>Updates to outbound calling names can
-         * take 72 hours to complete. Pending updates to outbound calling names must be
-         * complete before you can request another update.</p><p><h3>See Also:</h3>   <a
+         * take up to 72 hours to complete. Pending updates to outbound calling names must
+         * be complete before you can request another update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -1393,10 +1393,10 @@ namespace Model
          * attribute at a time for each <code>UpdatePhoneNumberRequestItem</code>. For
          * example, you can update the product type or the calling name.</p> <p>For
          * toll-free numbers, you cannot use the Amazon Chime Business Calling product
-         * type. For numbers outside the US, you must use the Amazon Chime SIP Media
+         * type. For numbers outside the U.S., you must use the Amazon Chime SIP Media
          * Application Dial-In product type.</p> <p>Updates to outbound calling names can
-         * take 72 hours to complete. Pending updates to outbound calling names must be
-         * complete before you can request another update.</p><p><h3>See Also:</h3>   <a
+         * take up to 72 hours to complete. Pending updates to outbound calling names must
+         * be complete before you can request another update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdatePhoneNumber">AWS
          * API Reference</a></p>
          *
@@ -1405,9 +1405,9 @@ namespace Model
         virtual void BatchUpdatePhoneNumberAsync(const Model::BatchUpdatePhoneNumberRequest& request, const BatchUpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates user details within the <a>UpdateUserRequestItem</a> object for up
-         * to 20 users for the specified Amazon Chime account. Currently, only
-         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
+         * <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to
+         * 20 users for the specified Amazon Chime account. Currently, only
+         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">AWS
          * API Reference</a></p>
@@ -1415,9 +1415,9 @@ namespace Model
         virtual Model::BatchUpdateUserOutcome BatchUpdateUser(const Model::BatchUpdateUserRequest& request) const;
 
         /**
-         * <p> Updates user details within the <a>UpdateUserRequestItem</a> object for up
-         * to 20 users for the specified Amazon Chime account. Currently, only
-         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
+         * <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to
+         * 20 users for the specified Amazon Chime account. Currently, only
+         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">AWS
          * API Reference</a></p>
@@ -1427,9 +1427,9 @@ namespace Model
         virtual Model::BatchUpdateUserOutcomeCallable BatchUpdateUserCallable(const Model::BatchUpdateUserRequest& request) const;
 
         /**
-         * <p> Updates user details within the <a>UpdateUserRequestItem</a> object for up
-         * to 20 users for the specified Amazon Chime account. Currently, only
-         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
+         * <p>Updates user details within the <a>UpdateUserRequestItem</a> object for up to
+         * 20 users for the specified Amazon Chime account. Currently, only
+         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUpdateUser">AWS
          * API Reference</a></p>
@@ -1970,7 +1970,7 @@ namespace Model
         /**
          * <p>Creates an order for phone numbers to be provisioned. For toll-free numbers,
          * you cannot use the Amazon Chime Business Calling product type. For numbers
-         * outside the US, you must use the Amazon Chime SIP Media Application Dial-In
+         * outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In
          * product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
@@ -1980,7 +1980,7 @@ namespace Model
         /**
          * <p>Creates an order for phone numbers to be provisioned. For toll-free numbers,
          * you cannot use the Amazon Chime Business Calling product type. For numbers
-         * outside the US, you must use the Amazon Chime SIP Media Application Dial-In
+         * outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In
          * product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
@@ -1992,7 +1992,7 @@ namespace Model
         /**
          * <p>Creates an order for phone numbers to be provisioned. For toll-free numbers,
          * you cannot use the Amazon Chime Business Calling product type. For numbers
-         * outside the US, you must use the Amazon Chime SIP Media Application Dial-In
+         * outside the U.S., you must use the Amazon Chime SIP Media Application Dial-In
          * product type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreatePhoneNumberOrder">AWS
          * API Reference</a></p>
@@ -6308,8 +6308,8 @@ namespace Model
 
         /**
          * <p>Updates account details for the specified Amazon Chime account. Currently,
-         * only account name updates are supported for this action.</p><p><h3>See
-         * Also:</h3>   <a
+         * only account name and default license updates are supported for this
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccount">AWS
          * API Reference</a></p>
          */
@@ -6317,8 +6317,8 @@ namespace Model
 
         /**
          * <p>Updates account details for the specified Amazon Chime account. Currently,
-         * only account name updates are supported for this action.</p><p><h3>See
-         * Also:</h3>   <a
+         * only account name and default license updates are supported for this
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccount">AWS
          * API Reference</a></p>
          *
@@ -6328,8 +6328,8 @@ namespace Model
 
         /**
          * <p>Updates account details for the specified Amazon Chime account. Currently,
-         * only account name updates are supported for this action.</p><p><h3>See
-         * Also:</h3>   <a
+         * only account name and default license updates are supported for this
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccount">AWS
          * API Reference</a></p>
          *

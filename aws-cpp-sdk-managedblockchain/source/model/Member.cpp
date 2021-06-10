@@ -29,7 +29,8 @@ Member::Member() :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Member::Member(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,13 @@ Member& Member::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +200,12 @@ JsonValue Member::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
 
   }
 

@@ -326,22 +326,34 @@ namespace Model
     inline DestinationConnectorProperties& WithCustomerProfiles(CustomerProfilesDestinationProperties&& value) { SetCustomerProfiles(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
     inline const ZendeskDestinationProperties& GetZendesk() const{ return m_zendesk; }
 
-    
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
     inline bool ZendeskHasBeenSet() const { return m_zendeskHasBeenSet; }
 
-    
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
     inline void SetZendesk(const ZendeskDestinationProperties& value) { m_zendeskHasBeenSet = true; m_zendesk = value; }
 
-    
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
     inline void SetZendesk(ZendeskDestinationProperties&& value) { m_zendeskHasBeenSet = true; m_zendesk = std::move(value); }
 
-    
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
     inline DestinationConnectorProperties& WithZendesk(const ZendeskDestinationProperties& value) { SetZendesk(value); return *this;}
 
-    
+    /**
+     * <p>The properties required to query Zendesk.</p>
+     */
     inline DestinationConnectorProperties& WithZendesk(ZendeskDestinationProperties&& value) { SetZendesk(std::move(value)); return *this;}
 
   private:

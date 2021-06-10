@@ -39,22 +39,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline const TlsValidationContextFileTrust& GetFile() const{ return m_file; }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline void SetFile(const TlsValidationContextFileTrust& value) { m_fileHasBeenSet = true; m_file = value; }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline void SetFile(TlsValidationContextFileTrust&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline ListenerTlsValidationContextTrust& WithFile(const TlsValidationContextFileTrust& value) { SetFile(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline ListenerTlsValidationContextTrust& WithFile(TlsValidationContextFileTrust&& value) { SetFile(std::move(value)); return *this;}
 
 

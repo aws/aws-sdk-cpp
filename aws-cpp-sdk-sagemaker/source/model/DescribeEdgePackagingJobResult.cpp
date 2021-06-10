@@ -114,6 +114,12 @@ DescribeEdgePackagingJobResult& DescribeEdgePackagingJobResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("PresetDeploymentOutput"))
+  {
+    m_presetDeploymentOutput = jsonValue.GetObject("PresetDeploymentOutput");
+
+  }
+
 
 
   return *this;

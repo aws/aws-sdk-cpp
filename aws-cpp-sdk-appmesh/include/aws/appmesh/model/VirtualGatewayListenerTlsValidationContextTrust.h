@@ -39,22 +39,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline const VirtualGatewayTlsValidationContextFileTrust& GetFile() const{ return m_file; }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline void SetFile(const VirtualGatewayTlsValidationContextFileTrust& value) { m_fileHasBeenSet = true; m_file = value; }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline void SetFile(VirtualGatewayTlsValidationContextFileTrust&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline VirtualGatewayListenerTlsValidationContextTrust& WithFile(const VirtualGatewayTlsValidationContextFileTrust& value) { SetFile(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents a Transport Layer Security (TLS) validation context
+     * trust for a local file.</p>
+     */
     inline VirtualGatewayListenerTlsValidationContextTrust& WithFile(VirtualGatewayTlsValidationContextFileTrust&& value) { SetFile(std::move(value)); return *this;}
 
 

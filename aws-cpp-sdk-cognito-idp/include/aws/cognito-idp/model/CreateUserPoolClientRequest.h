@@ -1307,6 +1307,43 @@ namespace Model
      */
     inline CreateUserPoolClientRequest& WithPreventUserExistenceErrors(PreventUserExistenceErrorTypes&& value) { SetPreventUserExistenceErrors(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enables or disables token revocation. For more information about revoking
+     * tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+     * <p>If you don't include this parameter, token revocation is automatically
+     * enabled for the new user pool client.</p>
+     */
+    inline bool GetEnableTokenRevocation() const{ return m_enableTokenRevocation; }
+
+    /**
+     * <p>Enables or disables token revocation. For more information about revoking
+     * tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+     * <p>If you don't include this parameter, token revocation is automatically
+     * enabled for the new user pool client.</p>
+     */
+    inline bool EnableTokenRevocationHasBeenSet() const { return m_enableTokenRevocationHasBeenSet; }
+
+    /**
+     * <p>Enables or disables token revocation. For more information about revoking
+     * tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+     * <p>If you don't include this parameter, token revocation is automatically
+     * enabled for the new user pool client.</p>
+     */
+    inline void SetEnableTokenRevocation(bool value) { m_enableTokenRevocationHasBeenSet = true; m_enableTokenRevocation = value; }
+
+    /**
+     * <p>Enables or disables token revocation. For more information about revoking
+     * tokens, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p>
+     * <p>If you don't include this parameter, token revocation is automatically
+     * enabled for the new user pool client.</p>
+     */
+    inline CreateUserPoolClientRequest& WithEnableTokenRevocation(bool value) { SetEnableTokenRevocation(value); return *this;}
+
   private:
 
     Aws::String m_userPoolId;
@@ -1365,6 +1402,9 @@ namespace Model
 
     PreventUserExistenceErrorTypes m_preventUserExistenceErrors;
     bool m_preventUserExistenceErrorsHasBeenSet;
+
+    bool m_enableTokenRevocation;
+    bool m_enableTokenRevocationHasBeenSet;
   };
 
 } // namespace Model

@@ -26,8 +26,7 @@ namespace Model
 
   /**
    * <p>An object that represents a Transport Layer Security (TLS) validation context
-   * trust for an AWS Certicate Manager (ACM) certificate.</p><p><h3>See Also:</h3>  
-   * <a
+   * trust for an Certificate Manager certificate.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualGatewayTlsValidationContextAcmTrust">AWS
    * API Reference</a></p>
    */

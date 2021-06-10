@@ -32,7 +32,8 @@ Node::Node() :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Node::Node(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -144,6 +146,13 @@ Node& Node::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -222,6 +231,12 @@ JsonValue Node::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
 
   }
 

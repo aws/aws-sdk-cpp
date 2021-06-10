@@ -99,6 +99,7 @@
 #include <aws/cognito-idp/model/ListUsersInGroupRequest.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeRequest.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeRequest.h>
+#include <aws/cognito-idp/model/RevokeTokenRequest.h>
 #include <aws/cognito-idp/model/SetRiskConfigurationRequest.h>
 #include <aws/cognito-idp/model/SetUICustomizationRequest.h>
 #include <aws/cognito-idp/model/SetUserMFAPreferenceRequest.h>
@@ -2088,6 +2089,30 @@ void CognitoIdentityProviderClient::RespondToAuthChallengeAsync(const RespondToA
 void CognitoIdentityProviderClient::RespondToAuthChallengeAsyncHelper(const RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RespondToAuthChallenge(request), context);
+}
+
+RevokeTokenOutcome CognitoIdentityProviderClient::RevokeToken(const RevokeTokenRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RevokeTokenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+RevokeTokenOutcomeCallable CognitoIdentityProviderClient::RevokeTokenCallable(const RevokeTokenRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RevokeTokenOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RevokeToken(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CognitoIdentityProviderClient::RevokeTokenAsync(const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RevokeTokenAsyncHelper( request, handler, context ); } );
+}
+
+void CognitoIdentityProviderClient::RevokeTokenAsyncHelper(const RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RevokeToken(request), context);
 }
 
 SetRiskConfigurationOutcome CognitoIdentityProviderClient::SetRiskConfiguration(const SetRiskConfigurationRequest& request) const

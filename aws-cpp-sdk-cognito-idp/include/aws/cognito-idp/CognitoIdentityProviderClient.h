@@ -79,6 +79,7 @@
 #include <aws/cognito-idp/model/ListUsersInGroupResult.h>
 #include <aws/cognito-idp/model/ResendConfirmationCodeResult.h>
 #include <aws/cognito-idp/model/RespondToAuthChallengeResult.h>
+#include <aws/cognito-idp/model/RevokeTokenResult.h>
 #include <aws/cognito-idp/model/SetRiskConfigurationResult.h>
 #include <aws/cognito-idp/model/SetUICustomizationResult.h>
 #include <aws/cognito-idp/model/SetUserMFAPreferenceResult.h>
@@ -219,6 +220,7 @@ namespace Model
         class ListUsersInGroupRequest;
         class ResendConfirmationCodeRequest;
         class RespondToAuthChallengeRequest;
+        class RevokeTokenRequest;
         class SetRiskConfigurationRequest;
         class SetUICustomizationRequest;
         class SetUserMFAPreferenceRequest;
@@ -320,6 +322,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListUsersInGroupResult, CognitoIdentityProviderError> ListUsersInGroupOutcome;
         typedef Aws::Utils::Outcome<ResendConfirmationCodeResult, CognitoIdentityProviderError> ResendConfirmationCodeOutcome;
         typedef Aws::Utils::Outcome<RespondToAuthChallengeResult, CognitoIdentityProviderError> RespondToAuthChallengeOutcome;
+        typedef Aws::Utils::Outcome<RevokeTokenResult, CognitoIdentityProviderError> RevokeTokenOutcome;
         typedef Aws::Utils::Outcome<SetRiskConfigurationResult, CognitoIdentityProviderError> SetRiskConfigurationOutcome;
         typedef Aws::Utils::Outcome<SetUICustomizationResult, CognitoIdentityProviderError> SetUICustomizationOutcome;
         typedef Aws::Utils::Outcome<SetUserMFAPreferenceResult, CognitoIdentityProviderError> SetUserMFAPreferenceOutcome;
@@ -421,6 +424,7 @@ namespace Model
         typedef std::future<ListUsersInGroupOutcome> ListUsersInGroupOutcomeCallable;
         typedef std::future<ResendConfirmationCodeOutcome> ResendConfirmationCodeOutcomeCallable;
         typedef std::future<RespondToAuthChallengeOutcome> RespondToAuthChallengeOutcomeCallable;
+        typedef std::future<RevokeTokenOutcome> RevokeTokenOutcomeCallable;
         typedef std::future<SetRiskConfigurationOutcome> SetRiskConfigurationOutcomeCallable;
         typedef std::future<SetUICustomizationOutcome> SetUICustomizationOutcomeCallable;
         typedef std::future<SetUserMFAPreferenceOutcome> SetUserMFAPreferenceOutcomeCallable;
@@ -525,6 +529,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ListUsersInGroupRequest&, const Model::ListUsersInGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersInGroupResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::ResendConfirmationCodeRequest&, const Model::ResendConfirmationCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResendConfirmationCodeResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::RespondToAuthChallengeRequest&, const Model::RespondToAuthChallengeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RespondToAuthChallengeResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::RevokeTokenRequest&, const Model::RevokeTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeTokenResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetRiskConfigurationRequest&, const Model::SetRiskConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRiskConfigurationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUICustomizationRequest&, const Model::SetUICustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUICustomizationResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::SetUserMFAPreferenceRequest&, const Model::SetUserMFAPreferenceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUserMFAPreferenceResponseReceivedHandler;
@@ -2187,14 +2192,22 @@ namespace Model
         virtual void CreateUserPoolAsync(const Model::CreateUserPoolRequest& request, const CreateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the user pool client.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the user pool client.</p> <p>When you create a new user pool client,
+         * token revocation is automatically enabled. For more information about revoking
+         * tokens, see <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateUserPoolClientOutcome CreateUserPoolClient(const Model::CreateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Creates the user pool client.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the user pool client.</p> <p>When you create a new user pool client,
+         * token revocation is automatically enabled. For more information about revoking
+         * tokens, see <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -2203,7 +2216,11 @@ namespace Model
         virtual Model::CreateUserPoolClientOutcomeCallable CreateUserPoolClientCallable(const Model::CreateUserPoolClientRequest& request) const;
 
         /**
-         * <p>Creates the user pool client.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates the user pool client.</p> <p>When you create a new user pool client,
+         * token revocation is automatically enabled. For more information about revoking
+         * tokens, see <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/CreateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -3603,6 +3620,37 @@ namespace Model
         virtual void RespondToAuthChallengeAsync(const Model::RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Revokes all of the access tokens generated by the specified refresh token.
+         * After the token is revoked, you can not use the revoked token to access Cognito
+         * authenticated APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeToken">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RevokeTokenOutcome RevokeToken(const Model::RevokeTokenRequest& request) const;
+
+        /**
+         * <p>Revokes all of the access tokens generated by the specified refresh token.
+         * After the token is revoked, you can not use the revoked token to access Cognito
+         * authenticated APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeToken">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RevokeTokenOutcomeCallable RevokeTokenCallable(const Model::RevokeTokenRequest& request) const;
+
+        /**
+         * <p>Revokes all of the access tokens generated by the specified refresh token.
+         * After the token is revoked, you can not use the revoked token to access Cognito
+         * authenticated APIs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeToken">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RevokeTokenAsync(const Model::RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Configures actions on detected risks. To delete the risk configuration for
          * <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four
          * configuration types.</p> <p>To enable Amazon Cognito advanced security features,
@@ -4395,7 +4443,11 @@ namespace Model
          * can get a list of the current user pool app client settings using <a
          * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p>
          *  <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> <p><h3>See Also:</h3>   <a
+         * the default value.</p>  <p>You can also use this operation to enable
+         * token revocation for user pool clients. For more information about revoking
+         * tokens, see <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          */
@@ -4406,7 +4458,11 @@ namespace Model
          * can get a list of the current user pool app client settings using <a
          * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p>
          *  <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> <p><h3>See Also:</h3>   <a
+         * the default value.</p>  <p>You can also use this operation to enable
+         * token revocation for user pool clients. For more information about revoking
+         * tokens, see <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -4419,7 +4475,11 @@ namespace Model
          * can get a list of the current user pool app client settings using <a
          * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p>
          *  <p>If you don't provide a value for an attribute, it will be set to
-         * the default value.</p> <p><h3>See Also:</h3>   <a
+         * the default value.</p>  <p>You can also use this operation to enable
+         * token revocation for user pool clients. For more information about revoking
+         * tokens, see <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RevokeToken.html">RevokeToken</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolClient">AWS
          * API Reference</a></p>
          *
@@ -4651,6 +4711,7 @@ namespace Model
         void ListUsersInGroupAsyncHelper(const Model::ListUsersInGroupRequest& request, const ListUsersInGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResendConfirmationCodeAsyncHelper(const Model::ResendConfirmationCodeRequest& request, const ResendConfirmationCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RespondToAuthChallengeAsyncHelper(const Model::RespondToAuthChallengeRequest& request, const RespondToAuthChallengeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RevokeTokenAsyncHelper(const Model::RevokeTokenRequest& request, const RevokeTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRiskConfigurationAsyncHelper(const Model::SetRiskConfigurationRequest& request, const SetRiskConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetUICustomizationAsyncHelper(const Model::SetUICustomizationRequest& request, const SetUICustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetUserMFAPreferenceAsyncHelper(const Model::SetUserMFAPreferenceRequest& request, const SetUserMFAPreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

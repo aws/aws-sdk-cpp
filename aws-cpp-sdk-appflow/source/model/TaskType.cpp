@@ -23,6 +23,7 @@ namespace Aws
         static const int Arithmetic_HASH = HashingUtils::HashString("Arithmetic");
         static const int Filter_HASH = HashingUtils::HashString("Filter");
         static const int Map_HASH = HashingUtils::HashString("Map");
+        static const int Map_all_HASH = HashingUtils::HashString("Map_all");
         static const int Mask_HASH = HashingUtils::HashString("Mask");
         static const int Merge_HASH = HashingUtils::HashString("Merge");
         static const int Truncate_HASH = HashingUtils::HashString("Truncate");
@@ -43,6 +44,10 @@ namespace Aws
           else if (hashCode == Map_HASH)
           {
             return TaskType::Map;
+          }
+          else if (hashCode == Map_all_HASH)
+          {
+            return TaskType::Map_all;
           }
           else if (hashCode == Mask_HASH)
           {
@@ -80,6 +85,8 @@ namespace Aws
             return "Filter";
           case TaskType::Map:
             return "Map";
+          case TaskType::Map_all:
+            return "Map_all";
           case TaskType::Mask:
             return "Mask";
           case TaskType::Merge:

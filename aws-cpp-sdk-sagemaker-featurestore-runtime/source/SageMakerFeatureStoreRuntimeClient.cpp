@@ -20,6 +20,7 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeClient.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeEndpoint.h>
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeErrorMarshaller.h>
+#include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordRequest.h>
 #include <aws/sagemaker-featurestore-runtime/model/DeleteRecordRequest.h>
 #include <aws/sagemaker-featurestore-runtime/model/GetRecordRequest.h>
 #include <aws/sagemaker-featurestore-runtime/model/PutRecordRequest.h>
@@ -95,6 +96,31 @@ void SageMakerFeatureStoreRuntimeClient::OverrideEndpoint(const Aws::String& end
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+BatchGetRecordOutcome SageMakerFeatureStoreRuntimeClient::BatchGetRecord(const BatchGetRecordRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/BatchGetRecord");
+  return BatchGetRecordOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchGetRecordOutcomeCallable SageMakerFeatureStoreRuntimeClient::BatchGetRecordCallable(const BatchGetRecordRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetRecord(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerFeatureStoreRuntimeClient::BatchGetRecordAsync(const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetRecordAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerFeatureStoreRuntimeClient::BatchGetRecordAsyncHelper(const BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchGetRecord(request), context);
 }
 
 DeleteRecordOutcome SageMakerFeatureStoreRuntimeClient::DeleteRecord(const DeleteRecordRequest& request) const

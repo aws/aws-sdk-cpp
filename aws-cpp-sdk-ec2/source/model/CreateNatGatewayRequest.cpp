@@ -11,13 +11,15 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 CreateNatGatewayRequest::CreateNatGatewayRequest() : 
+    m_allocationIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
-    m_allocationIdHasBeenSet(false)
+    m_connectivityType(ConnectivityType::NOT_SET),
+    m_connectivityTypeHasBeenSet(false)
 {
 }
 
@@ -25,6 +27,11 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
 {
   Aws::StringStream ss;
   ss << "Action=CreateNatGateway&";
+  if(m_allocationIdHasBeenSet)
+  {
+    ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
+  }
+
   if(m_clientTokenHasBeenSet)
   {
     ss << "ClientToken=" << StringUtils::URLEncode(m_clientToken.c_str()) << "&";
@@ -50,9 +57,9 @@ Aws::String CreateNatGatewayRequest::SerializePayload() const
     }
   }
 
-  if(m_allocationIdHasBeenSet)
+  if(m_connectivityTypeHasBeenSet)
   {
-    ss << "AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
+    ss << "ConnectivityType=" << ConnectivityTypeMapper::GetNameForConnectivityType(m_connectivityType) << "&";
   }
 
   ss << "Version=2016-11-15";

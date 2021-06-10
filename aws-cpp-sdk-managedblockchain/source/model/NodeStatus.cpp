@@ -28,6 +28,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int INACCESSIBLE_ENCRYPTION_KEY_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_KEY");
 
 
         NodeStatus GetNodeStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return NodeStatus::FAILED;
           }
+          else if (hashCode == INACCESSIBLE_ENCRYPTION_KEY_HASH)
+          {
+            return NodeStatus::INACCESSIBLE_ENCRYPTION_KEY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "DELETED";
           case NodeStatus::FAILED:
             return "FAILED";
+          case NodeStatus::INACCESSIBLE_ENCRYPTION_KEY:
+            return "INACCESSIBLE_ENCRYPTION_KEY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

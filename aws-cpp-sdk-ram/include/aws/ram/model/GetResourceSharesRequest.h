@@ -37,47 +37,47 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceShareArns() const{ return m_resourceShareArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline bool ResourceShareArnsHasBeenSet() const { return m_resourceShareArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline void SetResourceShareArns(const Aws::Vector<Aws::String>& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline void SetResourceShareArns(Aws::Vector<Aws::String>&& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline GetResourceSharesRequest& WithResourceShareArns(const Aws::Vector<Aws::String>& value) { SetResourceShareArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline GetResourceSharesRequest& WithResourceShareArns(Aws::Vector<Aws::String>&& value) { SetResourceShareArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline GetResourceSharesRequest& AddResourceShareArns(const Aws::String& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline GetResourceSharesRequest& AddResourceShareArns(Aws::String&& value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resource shares.</p>
+     * <p>The ARNs of the resource shares.</p>
      */
     inline GetResourceSharesRequest& AddResourceShareArns(const char* value) { m_resourceShareArnsHasBeenSet = true; m_resourceShareArns.push_back(value); return *this; }
 
@@ -295,6 +295,55 @@ namespace Model
      */
     inline GetResourceSharesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline GetResourceSharesRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline GetResourceSharesRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permission that is associated
+     * with the resource share.</p>
+     */
+    inline GetResourceSharesRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_resourceShareArns;
@@ -317,6 +366,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_permissionArn;
+    bool m_permissionArnHasBeenSet;
   };
 
 } // namespace Model

@@ -23,7 +23,8 @@ MemberConfiguration::MemberConfiguration() :
     m_descriptionHasBeenSet(false),
     m_frameworkConfigurationHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ MemberConfiguration::MemberConfiguration(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_frameworkConfigurationHasBeenSet(false),
     m_logPublishingConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ MemberConfiguration& MemberConfiguration::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+    m_kmsKeyArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +125,12 @@ JsonValue MemberConfiguration::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("KmsKeyArn", m_kmsKeyArn);
 
   }
 

@@ -514,16 +514,16 @@ namespace Model
         virtual void GetResourceShareAssociationsAsync(const Model::GetResourceShareAssociationsRequest& request, const GetResourceShareAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the invitations for resource sharing that you've received.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the invitations that you have received for resource
+         * shares.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourceShareInvitationsOutcome GetResourceShareInvitations(const Model::GetResourceShareInvitationsRequest& request) const;
 
         /**
-         * <p>Gets the invitations for resource sharing that you've received.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the invitations that you have received for resource
+         * shares.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
          *
@@ -532,8 +532,8 @@ namespace Model
         virtual Model::GetResourceShareInvitationsOutcomeCallable GetResourceShareInvitationsCallable(const Model::GetResourceShareInvitationsRequest& request) const;
 
         /**
-         * <p>Gets the invitations for resource sharing that you've received.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets the invitations that you have received for resource
+         * shares.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">AWS
          * API Reference</a></p>
          *

@@ -22,7 +22,8 @@ GetResourceSharesRequest::GetResourceSharesRequest() :
     m_tagFiltersHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_permissionArnHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,12 @@ Aws::String GetResourceSharesRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_permissionArnHasBeenSet)
+  {
+   payload.WithString("permissionArn", m_permissionArn);
 
   }
 

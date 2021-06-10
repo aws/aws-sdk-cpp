@@ -168,8 +168,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
@@ -190,8 +189,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
@@ -212,8 +210,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
@@ -234,8 +231,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
@@ -256,8 +252,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
@@ -278,8 +273,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline ListPrincipalsRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
@@ -300,8 +294,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline ListPrincipalsRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
@@ -322,8 +315,7 @@ namespace Model
      * <code>network-firewall:StatefulRuleGroup</code> |
      * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code>
      * | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
-     * <code>route53resolver:FirewallRuleGroup</code>
-     * |<code>route53resolver:ResolverQueryLogConfig</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> |
      * <code>route53resolver:ResolverRule</code> </p>
      */
     inline ListPrincipalsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
