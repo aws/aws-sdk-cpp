@@ -57,7 +57,8 @@ Image::Image() :
     m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
     m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
+    m_bootModeHasBeenSet(false),
+    m_deprecationTimeHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ Image::Image(const XmlNode& xmlNode) :
     m_virtualizationType(VirtualizationType::NOT_SET),
     m_virtualizationTypeHasBeenSet(false),
     m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
+    m_bootModeHasBeenSet(false),
+    m_deprecationTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -289,6 +291,12 @@ Image& Image::operator =(const XmlNode& xmlNode)
       m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
       m_bootModeHasBeenSet = true;
     }
+    XmlNode deprecationTimeNode = resultNode.FirstChild("deprecationTime");
+    if(!deprecationTimeNode.IsNull())
+    {
+      m_deprecationTime = Aws::Utils::Xml::DecodeEscapedXmlText(deprecationTimeNode.GetText());
+      m_deprecationTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -451,6 +459,11 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
   }
 
+  if(m_deprecationTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
+  }
+
 }
 
 void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -582,6 +595,10 @@ void Image::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_bootModeHasBeenSet)
   {
       oStream << location << ".BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
+  }
+  if(m_deprecationTimeHasBeenSet)
+  {
+      oStream << location << ".DeprecationTime=" << StringUtils::URLEncode(m_deprecationTime.c_str()) << "&";
   }
 }
 

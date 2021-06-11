@@ -727,6 +727,47 @@ namespace Model
 
 
     /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
+
+    /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
+
+    /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline DescribeImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -771,6 +812,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_owners;
     bool m_ownersHasBeenSet;
+
+    bool m_includeDeprecated;
+    bool m_includeDeprecatedHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

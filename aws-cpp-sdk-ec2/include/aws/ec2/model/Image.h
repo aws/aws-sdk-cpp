@@ -1202,6 +1202,63 @@ namespace Model
      */
     inline Image& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline const Aws::String& GetDeprecationTime() const{ return m_deprecationTime; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline bool DeprecationTimeHasBeenSet() const { return m_deprecationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(const Aws::String& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = value; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(Aws::String&& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = std::move(value); }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(const char* value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime.assign(value); }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(const Aws::String& value) { SetDeprecationTime(value); return *this;}
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(Aws::String&& value) { SetDeprecationTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(const char* value) { SetDeprecationTime(value); return *this;}
+
   private:
 
     ArchitectureValues m_architecture;
@@ -1284,6 +1341,9 @@ namespace Model
 
     BootModeValues m_bootMode;
     bool m_bootModeHasBeenSet;
+
+    Aws::String m_deprecationTime;
+    bool m_deprecationTimeHasBeenSet;
   };
 
 } // namespace Model
