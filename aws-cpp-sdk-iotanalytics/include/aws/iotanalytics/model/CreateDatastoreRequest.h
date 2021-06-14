@@ -11,6 +11,7 @@
 #include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotanalytics/model/FileFormatConfiguration.h>
+#include <aws/iotanalytics/model/DatastorePartitions.h>
 #include <aws/iotanalytics/model/Tag.h>
 #include <utility>
 
@@ -265,6 +266,37 @@ namespace Model
      */
     inline CreateDatastoreRequest& WithFileFormatConfiguration(FileFormatConfiguration&& value) { SetFileFormatConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Contains information about the partitions in a data store. </p>
+     */
+    inline const DatastorePartitions& GetDatastorePartitions() const{ return m_datastorePartitions; }
+
+    /**
+     * <p> Contains information about the partitions in a data store. </p>
+     */
+    inline bool DatastorePartitionsHasBeenSet() const { return m_datastorePartitionsHasBeenSet; }
+
+    /**
+     * <p> Contains information about the partitions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(const DatastorePartitions& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = value; }
+
+    /**
+     * <p> Contains information about the partitions in a data store. </p>
+     */
+    inline void SetDatastorePartitions(DatastorePartitions&& value) { m_datastorePartitionsHasBeenSet = true; m_datastorePartitions = std::move(value); }
+
+    /**
+     * <p> Contains information about the partitions in a data store. </p>
+     */
+    inline CreateDatastoreRequest& WithDatastorePartitions(const DatastorePartitions& value) { SetDatastorePartitions(value); return *this;}
+
+    /**
+     * <p> Contains information about the partitions in a data store. </p>
+     */
+    inline CreateDatastoreRequest& WithDatastorePartitions(DatastorePartitions&& value) { SetDatastorePartitions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreName;
@@ -281,6 +313,9 @@ namespace Model
 
     FileFormatConfiguration m_fileFormatConfiguration;
     bool m_fileFormatConfigurationHasBeenSet;
+
+    DatastorePartitions m_datastorePartitions;
+    bool m_datastorePartitionsHasBeenSet;
   };
 
 } // namespace Model

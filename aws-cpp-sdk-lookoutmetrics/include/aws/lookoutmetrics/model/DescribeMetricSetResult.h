@@ -235,17 +235,17 @@ namespace Model
 
 
     /**
-     * <p>The offset for the dataset.</p>
+     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
      */
     inline int GetOffset() const{ return m_offset; }
 
     /**
-     * <p>The offset for the dataset.</p>
+     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
      */
     inline void SetOffset(int value) { m_offset = value; }
 
     /**
-     * <p>The offset for the dataset.</p>
+     * <p>The offset in seconds. Only supported for S3 and Redshift datasources.</p>
      */
     inline DescribeMetricSetResult& WithOffset(int value) { SetOffset(value); return *this;}
 

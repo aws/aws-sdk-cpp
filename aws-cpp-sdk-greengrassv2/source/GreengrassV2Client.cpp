@@ -20,6 +20,8 @@
 #include <aws/greengrassv2/GreengrassV2Client.h>
 #include <aws/greengrassv2/GreengrassV2Endpoint.h>
 #include <aws/greengrassv2/GreengrassV2ErrorMarshaller.h>
+#include <aws/greengrassv2/model/BatchAssociateClientDeviceWithCoreDeviceRequest.h>
+#include <aws/greengrassv2/model/BatchDisassociateClientDeviceFromCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/CancelDeploymentRequest.h>
 #include <aws/greengrassv2/model/CreateComponentVersionRequest.h>
 #include <aws/greengrassv2/model/CreateDeploymentRequest.h>
@@ -30,6 +32,7 @@
 #include <aws/greengrassv2/model/GetComponentVersionArtifactRequest.h>
 #include <aws/greengrassv2/model/GetCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/GetDeploymentRequest.h>
+#include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceRequest.h>
 #include <aws/greengrassv2/model/ListComponentVersionsRequest.h>
 #include <aws/greengrassv2/model/ListComponentsRequest.h>
 #include <aws/greengrassv2/model/ListCoreDevicesRequest.h>
@@ -112,6 +115,70 @@ void GreengrassV2Client::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+BatchAssociateClientDeviceWithCoreDeviceOutcome GreengrassV2Client::BatchAssociateClientDeviceWithCoreDevice(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
+{
+  if (!request.CoreDeviceThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchAssociateClientDeviceWithCoreDevice", "Required field: CoreDeviceThingName, is not set");
+    return BatchAssociateClientDeviceWithCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/associateClientDevices");
+  return BatchAssociateClientDeviceWithCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceCallable(const BatchAssociateClientDeviceWithCoreDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateClientDeviceWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchAssociateClientDeviceWithCoreDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceAsync(const BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateClientDeviceWithCoreDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::BatchAssociateClientDeviceWithCoreDeviceAsyncHelper(const BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchAssociateClientDeviceWithCoreDevice(request), context);
+}
+
+BatchDisassociateClientDeviceFromCoreDeviceOutcome GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDevice(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const
+{
+  if (!request.CoreDeviceThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchDisassociateClientDeviceFromCoreDevice", "Required field: CoreDeviceThingName, is not set");
+    return BatchDisassociateClientDeviceFromCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/disassociateClientDevices");
+  return BatchDisassociateClientDeviceFromCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceCallable(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateClientDeviceFromCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisassociateClientDeviceFromCoreDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceAsync(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper(const BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDisassociateClientDeviceFromCoreDevice(request), context);
 }
 
 CancelDeploymentOutcome GreengrassV2Client::CancelDeployment(const CancelDeploymentRequest& request) const
@@ -419,6 +486,38 @@ void GreengrassV2Client::GetDeploymentAsync(const GetDeploymentRequest& request,
 void GreengrassV2Client::GetDeploymentAsyncHelper(const GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDeployment(request), context);
+}
+
+ListClientDevicesAssociatedWithCoreDeviceOutcome GreengrassV2Client::ListClientDevicesAssociatedWithCoreDevice(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
+{
+  if (!request.CoreDeviceThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListClientDevicesAssociatedWithCoreDevice", "Required field: CoreDeviceThingName, is not set");
+    return ListClientDevicesAssociatedWithCoreDeviceOutcome(Aws::Client::AWSError<GreengrassV2Errors>(GreengrassV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDeviceThingName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/greengrass/v2/coreDevices/");
+  uri.AddPathSegment(request.GetCoreDeviceThingName());
+  uri.AddPathSegments("/associatedClientDevices");
+  return ListClientDevicesAssociatedWithCoreDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceCallable(const ListClientDevicesAssociatedWithCoreDeviceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListClientDevicesAssociatedWithCoreDeviceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListClientDevicesAssociatedWithCoreDevice(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceAsync(const ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListClientDevicesAssociatedWithCoreDeviceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassV2Client::ListClientDevicesAssociatedWithCoreDeviceAsyncHelper(const ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListClientDevicesAssociatedWithCoreDevice(request), context);
 }
 
 ListComponentVersionsOutcome GreengrassV2Client::ListComponentVersions(const ListComponentVersionsRequest& request) const

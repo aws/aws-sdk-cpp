@@ -25,6 +25,7 @@ namespace Aws
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int INACTIVE_HASH = HashingUtils::HashString("INACTIVE");
+        static const int LEARNING_HASH = HashingUtils::HashString("LEARNING");
         static const int BACK_TEST_ACTIVATING_HASH = HashingUtils::HashString("BACK_TEST_ACTIVATING");
         static const int BACK_TEST_ACTIVE_HASH = HashingUtils::HashString("BACK_TEST_ACTIVE");
         static const int BACK_TEST_COMPLETE_HASH = HashingUtils::HashString("BACK_TEST_COMPLETE");
@@ -52,6 +53,10 @@ namespace Aws
           else if (hashCode == INACTIVE_HASH)
           {
             return AnomalyDetectorStatus::INACTIVE;
+          }
+          else if (hashCode == LEARNING_HASH)
+          {
+            return AnomalyDetectorStatus::LEARNING;
           }
           else if (hashCode == BACK_TEST_ACTIVATING_HASH)
           {
@@ -89,6 +94,8 @@ namespace Aws
             return "FAILED";
           case AnomalyDetectorStatus::INACTIVE:
             return "INACTIVE";
+          case AnomalyDetectorStatus::LEARNING:
+            return "LEARNING";
           case AnomalyDetectorStatus::BACK_TEST_ACTIVATING:
             return "BACK_TEST_ACTIVATING";
           case AnomalyDetectorStatus::BACK_TEST_ACTIVE:
