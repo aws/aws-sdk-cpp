@@ -112,32 +112,68 @@ namespace Model
 
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline const UserSettings& GetDefaultUserSettings() const{ return m_defaultUserSettings; }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline bool DefaultUserSettingsHasBeenSet() const { return m_defaultUserSettingsHasBeenSet; }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline void SetDefaultUserSettings(const UserSettings& value) { m_defaultUserSettingsHasBeenSet = true; m_defaultUserSettings = value; }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline void SetDefaultUserSettings(UserSettings&& value) { m_defaultUserSettingsHasBeenSet = true; m_defaultUserSettings = std::move(value); }
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline CreateDomainRequest& WithDefaultUserSettings(const UserSettings& value) { SetDefaultUserSettings(value); return *this;}
 
     /**
-     * <p>The default user settings.</p>
+     * <p>The default settings to use to create a user profile when
+     * <code>UserSettings</code> isn't specified in the call to the
+     * <code>CreateUserProfile</code> API.</p> <p> <code>SecurityGroups</code> is
+     * aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in
+     * <code>CreateUserProfile</code> take precedence over those specified in
+     * <code>CreateDomain</code>.</p>
      */
     inline CreateDomainRequest& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
 
@@ -240,56 +276,64 @@ namespace Model
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>Tags to associated with the Domain. Each tag consists of a key and an
      * optional value. Tag keys must be unique per resource. Tags are searchable using
-     * the <a>Search</a> API.</p>
+     * the <code>Search</code> API.</p> <p>Tags that you specify for the Domain are
+     * also added to all Apps that the Domain launches.</p>
      */
     inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

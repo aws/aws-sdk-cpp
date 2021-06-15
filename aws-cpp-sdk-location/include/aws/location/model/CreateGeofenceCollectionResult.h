@@ -35,43 +35,64 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetCollectionArn() const{ return m_collectionArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline void SetCollectionArn(const Aws::String& value) { m_collectionArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline void SetCollectionArn(Aws::String&& value) { m_collectionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline void SetCollectionArn(const char* value) { m_collectionArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline CreateGeofenceCollectionResult& WithCollectionArn(const Aws::String& value) { SetCollectionArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline CreateGeofenceCollectionResult& WithCollectionArn(Aws::String&& value) { SetCollectionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline CreateGeofenceCollectionResult& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
 

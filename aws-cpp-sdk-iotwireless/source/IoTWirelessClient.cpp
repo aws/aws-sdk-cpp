@@ -44,7 +44,9 @@
 #include <aws/iotwireless/model/DisassociateWirelessGatewayFromThingRequest.h>
 #include <aws/iotwireless/model/GetDestinationRequest.h>
 #include <aws/iotwireless/model/GetDeviceProfileRequest.h>
+#include <aws/iotwireless/model/GetLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/GetPartnerAccountRequest.h>
+#include <aws/iotwireless/model/GetResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/GetServiceEndpointRequest.h>
 #include <aws/iotwireless/model/GetServiceProfileRequest.h>
 #include <aws/iotwireless/model/GetWirelessDeviceRequest.h>
@@ -63,11 +65,15 @@
 #include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
+#include <aws/iotwireless/model/PutResourceLogLevelRequest.h>
+#include <aws/iotwireless/model/ResetAllResourceLogLevelsRequest.h>
+#include <aws/iotwireless/model/ResetResourceLogLevelRequest.h>
 #include <aws/iotwireless/model/SendDataToWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/TagResourceRequest.h>
 #include <aws/iotwireless/model/TestWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UntagResourceRequest.h>
 #include <aws/iotwireless/model/UpdateDestinationRequest.h>
+#include <aws/iotwireless/model/UpdateLogLevelsByResourceTypesRequest.h>
 #include <aws/iotwireless/model/UpdatePartnerAccountRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayRequest.h>
@@ -119,7 +125,7 @@ IoTWirelessClient::~IoTWirelessClient()
 {
 }
 
-void IoTWirelessClient::init(const ClientConfiguration& config)
+void IoTWirelessClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT Wireless");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -148,9 +154,7 @@ void IoTWirelessClient::OverrideEndpoint(const Aws::String& endpoint)
 AssociateAwsAccountWithPartnerAccountOutcome IoTWirelessClient::AssociateAwsAccountWithPartnerAccount(const AssociateAwsAccountWithPartnerAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/partner-accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/partner-accounts");
   return AssociateAwsAccountWithPartnerAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -180,11 +184,9 @@ AssociateWirelessDeviceWithThingOutcome IoTWirelessClient::AssociateWirelessDevi
     return AssociateWirelessDeviceWithThingOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetId();
-  ss << "/thing";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/thing");
   return AssociateWirelessDeviceWithThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -214,11 +216,9 @@ AssociateWirelessGatewayWithCertificateOutcome IoTWirelessClient::AssociateWirel
     return AssociateWirelessGatewayWithCertificateOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/certificate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/certificate");
   return AssociateWirelessGatewayWithCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -248,11 +248,9 @@ AssociateWirelessGatewayWithThingOutcome IoTWirelessClient::AssociateWirelessGat
     return AssociateWirelessGatewayWithThingOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/thing";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/thing");
   return AssociateWirelessGatewayWithThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -277,9 +275,7 @@ void IoTWirelessClient::AssociateWirelessGatewayWithThingAsyncHelper(const Assoc
 CreateDestinationOutcome IoTWirelessClient::CreateDestination(const CreateDestinationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/destinations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/destinations");
   return CreateDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -304,9 +300,7 @@ void IoTWirelessClient::CreateDestinationAsyncHelper(const CreateDestinationRequ
 CreateDeviceProfileOutcome IoTWirelessClient::CreateDeviceProfile(const CreateDeviceProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/device-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/device-profiles");
   return CreateDeviceProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -331,9 +325,7 @@ void IoTWirelessClient::CreateDeviceProfileAsyncHelper(const CreateDeviceProfile
 CreateServiceProfileOutcome IoTWirelessClient::CreateServiceProfile(const CreateServiceProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/service-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/service-profiles");
   return CreateServiceProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -358,9 +350,7 @@ void IoTWirelessClient::CreateServiceProfileAsyncHelper(const CreateServiceProfi
 CreateWirelessDeviceOutcome IoTWirelessClient::CreateWirelessDevice(const CreateWirelessDeviceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices");
   return CreateWirelessDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -385,9 +375,7 @@ void IoTWirelessClient::CreateWirelessDeviceAsyncHelper(const CreateWirelessDevi
 CreateWirelessGatewayOutcome IoTWirelessClient::CreateWirelessGateway(const CreateWirelessGatewayRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways");
   return CreateWirelessGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -417,11 +405,9 @@ CreateWirelessGatewayTaskOutcome IoTWirelessClient::CreateWirelessGatewayTask(co
     return CreateWirelessGatewayTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/tasks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/tasks");
   return CreateWirelessGatewayTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -446,9 +432,7 @@ void IoTWirelessClient::CreateWirelessGatewayTaskAsyncHelper(const CreateWireles
 CreateWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::CreateWirelessGatewayTaskDefinition(const CreateWirelessGatewayTaskDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateway-task-definitions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateway-task-definitions");
   return CreateWirelessGatewayTaskDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -478,10 +462,8 @@ DeleteDestinationOutcome IoTWirelessClient::DeleteDestination(const DeleteDestin
     return DeleteDestinationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/destinations/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/destinations/");
+  uri.AddPathSegment(request.GetName());
   return DeleteDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -511,10 +493,8 @@ DeleteDeviceProfileOutcome IoTWirelessClient::DeleteDeviceProfile(const DeleteDe
     return DeleteDeviceProfileOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/device-profiles/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/device-profiles/");
+  uri.AddPathSegment(request.GetId());
   return DeleteDeviceProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -544,10 +524,8 @@ DeleteServiceProfileOutcome IoTWirelessClient::DeleteServiceProfile(const Delete
     return DeleteServiceProfileOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/service-profiles/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/service-profiles/");
+  uri.AddPathSegment(request.GetId());
   return DeleteServiceProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -577,10 +555,8 @@ DeleteWirelessDeviceOutcome IoTWirelessClient::DeleteWirelessDevice(const Delete
     return DeleteWirelessDeviceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
   return DeleteWirelessDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -610,10 +586,8 @@ DeleteWirelessGatewayOutcome IoTWirelessClient::DeleteWirelessGateway(const Dele
     return DeleteWirelessGatewayOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
   return DeleteWirelessGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -643,11 +617,9 @@ DeleteWirelessGatewayTaskOutcome IoTWirelessClient::DeleteWirelessGatewayTask(co
     return DeleteWirelessGatewayTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/tasks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/tasks");
   return DeleteWirelessGatewayTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -677,10 +649,8 @@ DeleteWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::DeleteWirelessGate
     return DeleteWirelessGatewayTaskDefinitionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateway-task-definitions/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateway-task-definitions/");
+  uri.AddPathSegment(request.GetId());
   return DeleteWirelessGatewayTaskDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -715,10 +685,8 @@ DisassociateAwsAccountFromPartnerAccountOutcome IoTWirelessClient::DisassociateA
     return DisassociateAwsAccountFromPartnerAccountOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PartnerType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/partner-accounts/";
-  ss << request.GetPartnerAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/partner-accounts/");
+  uri.AddPathSegment(request.GetPartnerAccountId());
   return DisassociateAwsAccountFromPartnerAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -748,11 +716,9 @@ DisassociateWirelessDeviceFromThingOutcome IoTWirelessClient::DisassociateWirele
     return DisassociateWirelessDeviceFromThingOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetId();
-  ss << "/thing";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/thing");
   return DisassociateWirelessDeviceFromThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -782,11 +748,9 @@ DisassociateWirelessGatewayFromCertificateOutcome IoTWirelessClient::Disassociat
     return DisassociateWirelessGatewayFromCertificateOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/certificate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/certificate");
   return DisassociateWirelessGatewayFromCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -816,11 +780,9 @@ DisassociateWirelessGatewayFromThingOutcome IoTWirelessClient::DisassociateWirel
     return DisassociateWirelessGatewayFromThingOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/thing";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/thing");
   return DisassociateWirelessGatewayFromThingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -850,10 +812,8 @@ GetDestinationOutcome IoTWirelessClient::GetDestination(const GetDestinationRequ
     return GetDestinationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/destinations/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/destinations/");
+  uri.AddPathSegment(request.GetName());
   return GetDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -883,10 +843,8 @@ GetDeviceProfileOutcome IoTWirelessClient::GetDeviceProfile(const GetDeviceProfi
     return GetDeviceProfileOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/device-profiles/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/device-profiles/");
+  uri.AddPathSegment(request.GetId());
   return GetDeviceProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -908,6 +866,31 @@ void IoTWirelessClient::GetDeviceProfileAsyncHelper(const GetDeviceProfileReques
   handler(this, request, GetDeviceProfile(request), context);
 }
 
+GetLogLevelsByResourceTypesOutcome IoTWirelessClient::GetLogLevelsByResourceTypes(const GetLogLevelsByResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels");
+  return GetLogLevelsByResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetLogLevelsByResourceTypesOutcomeCallable IoTWirelessClient::GetLogLevelsByResourceTypesCallable(const GetLogLevelsByResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLogLevelsByResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLogLevelsByResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetLogLevelsByResourceTypesAsync(const GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLogLevelsByResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetLogLevelsByResourceTypesAsyncHelper(const GetLogLevelsByResourceTypesRequest& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLogLevelsByResourceTypes(request), context);
+}
+
 GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAccountRequest& request) const
 {
   if (!request.PartnerAccountIdHasBeenSet())
@@ -921,10 +904,8 @@ GetPartnerAccountOutcome IoTWirelessClient::GetPartnerAccount(const GetPartnerAc
     return GetPartnerAccountOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PartnerType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/partner-accounts/";
-  ss << request.GetPartnerAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/partner-accounts/");
+  uri.AddPathSegment(request.GetPartnerAccountId());
   return GetPartnerAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -946,12 +927,46 @@ void IoTWirelessClient::GetPartnerAccountAsyncHelper(const GetPartnerAccountRequ
   handler(this, request, GetPartnerAccount(request), context);
 }
 
+GetResourceLogLevelOutcome IoTWirelessClient::GetResourceLogLevel(const GetResourceLogLevelRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceLogLevel", "Required field: ResourceIdentifier, is not set");
+    return GetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceLogLevel", "Required field: ResourceType, is not set");
+    return GetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return GetResourceLogLevelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetResourceLogLevelOutcomeCallable IoTWirelessClient::GetResourceLogLevelCallable(const GetResourceLogLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourceLogLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourceLogLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::GetResourceLogLevelAsync(const GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourceLogLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::GetResourceLogLevelAsyncHelper(const GetResourceLogLevelRequest& request, const GetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourceLogLevel(request), context);
+}
+
 GetServiceEndpointOutcome IoTWirelessClient::GetServiceEndpoint(const GetServiceEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/service-endpoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/service-endpoint");
   return GetServiceEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -981,10 +996,8 @@ GetServiceProfileOutcome IoTWirelessClient::GetServiceProfile(const GetServicePr
     return GetServiceProfileOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/service-profiles/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/service-profiles/");
+  uri.AddPathSegment(request.GetId());
   return GetServiceProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1019,10 +1032,8 @@ GetWirelessDeviceOutcome IoTWirelessClient::GetWirelessDevice(const GetWirelessD
     return GetWirelessDeviceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentifierType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetIdentifier();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetIdentifier());
   return GetWirelessDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1052,11 +1063,9 @@ GetWirelessDeviceStatisticsOutcome IoTWirelessClient::GetWirelessDeviceStatistic
     return GetWirelessDeviceStatisticsOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WirelessDeviceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetWirelessDeviceId();
-  ss << "/statistics";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetWirelessDeviceId());
+  uri.AddPathSegments("/statistics");
   return GetWirelessDeviceStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1091,10 +1100,8 @@ GetWirelessGatewayOutcome IoTWirelessClient::GetWirelessGateway(const GetWireles
     return GetWirelessGatewayOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IdentifierType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetIdentifier();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetIdentifier());
   return GetWirelessGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1124,11 +1131,9 @@ GetWirelessGatewayCertificateOutcome IoTWirelessClient::GetWirelessGatewayCertif
     return GetWirelessGatewayCertificateOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/certificate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/certificate");
   return GetWirelessGatewayCertificateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1158,11 +1163,9 @@ GetWirelessGatewayFirmwareInformationOutcome IoTWirelessClient::GetWirelessGatew
     return GetWirelessGatewayFirmwareInformationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/firmware-information";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/firmware-information");
   return GetWirelessGatewayFirmwareInformationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1192,11 +1195,9 @@ GetWirelessGatewayStatisticsOutcome IoTWirelessClient::GetWirelessGatewayStatist
     return GetWirelessGatewayStatisticsOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WirelessGatewayId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetWirelessGatewayId();
-  ss << "/statistics";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetWirelessGatewayId());
+  uri.AddPathSegments("/statistics");
   return GetWirelessGatewayStatisticsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1226,11 +1227,9 @@ GetWirelessGatewayTaskOutcome IoTWirelessClient::GetWirelessGatewayTask(const Ge
     return GetWirelessGatewayTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  ss << "/tasks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/tasks");
   return GetWirelessGatewayTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1260,10 +1259,8 @@ GetWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::GetWirelessGatewayTas
     return GetWirelessGatewayTaskDefinitionOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateway-task-definitions/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateway-task-definitions/");
+  uri.AddPathSegment(request.GetId());
   return GetWirelessGatewayTaskDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1288,9 +1285,7 @@ void IoTWirelessClient::GetWirelessGatewayTaskDefinitionAsyncHelper(const GetWir
 ListDestinationsOutcome IoTWirelessClient::ListDestinations(const ListDestinationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/destinations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/destinations");
   return ListDestinationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1315,9 +1310,7 @@ void IoTWirelessClient::ListDestinationsAsyncHelper(const ListDestinationsReques
 ListDeviceProfilesOutcome IoTWirelessClient::ListDeviceProfiles(const ListDeviceProfilesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/device-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/device-profiles");
   return ListDeviceProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1342,9 +1335,7 @@ void IoTWirelessClient::ListDeviceProfilesAsyncHelper(const ListDeviceProfilesRe
 ListPartnerAccountsOutcome IoTWirelessClient::ListPartnerAccounts(const ListPartnerAccountsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/partner-accounts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/partner-accounts");
   return ListPartnerAccountsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1369,9 +1360,7 @@ void IoTWirelessClient::ListPartnerAccountsAsyncHelper(const ListPartnerAccounts
 ListServiceProfilesOutcome IoTWirelessClient::ListServiceProfiles(const ListServiceProfilesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/service-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/service-profiles");
   return ListServiceProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1401,9 +1390,7 @@ ListTagsForResourceOutcome IoTWirelessClient::ListTagsForResource(const ListTags
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1428,9 +1415,7 @@ void IoTWirelessClient::ListTagsForResourceAsyncHelper(const ListTagsForResource
 ListWirelessDevicesOutcome IoTWirelessClient::ListWirelessDevices(const ListWirelessDevicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices");
   return ListWirelessDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1455,9 +1440,7 @@ void IoTWirelessClient::ListWirelessDevicesAsyncHelper(const ListWirelessDevices
 ListWirelessGatewayTaskDefinitionsOutcome IoTWirelessClient::ListWirelessGatewayTaskDefinitions(const ListWirelessGatewayTaskDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateway-task-definitions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateway-task-definitions");
   return ListWirelessGatewayTaskDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1482,9 +1465,7 @@ void IoTWirelessClient::ListWirelessGatewayTaskDefinitionsAsyncHelper(const List
 ListWirelessGatewaysOutcome IoTWirelessClient::ListWirelessGateways(const ListWirelessGatewaysRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways");
   return ListWirelessGatewaysOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1506,6 +1487,103 @@ void IoTWirelessClient::ListWirelessGatewaysAsyncHelper(const ListWirelessGatewa
   handler(this, request, ListWirelessGateways(request), context);
 }
 
+PutResourceLogLevelOutcome IoTWirelessClient::PutResourceLogLevel(const PutResourceLogLevelRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutResourceLogLevel", "Required field: ResourceIdentifier, is not set");
+    return PutResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutResourceLogLevel", "Required field: ResourceType, is not set");
+    return PutResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return PutResourceLogLevelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutResourceLogLevelOutcomeCallable IoTWirelessClient::PutResourceLogLevelCallable(const PutResourceLogLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourceLogLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourceLogLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::PutResourceLogLevelAsync(const PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutResourceLogLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::PutResourceLogLevelAsyncHelper(const PutResourceLogLevelRequest& request, const PutResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutResourceLogLevel(request), context);
+}
+
+ResetAllResourceLogLevelsOutcome IoTWirelessClient::ResetAllResourceLogLevels(const ResetAllResourceLogLevelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels");
+  return ResetAllResourceLogLevelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResetAllResourceLogLevelsOutcomeCallable IoTWirelessClient::ResetAllResourceLogLevelsCallable(const ResetAllResourceLogLevelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetAllResourceLogLevelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetAllResourceLogLevels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ResetAllResourceLogLevelsAsync(const ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetAllResourceLogLevelsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ResetAllResourceLogLevelsAsyncHelper(const ResetAllResourceLogLevelsRequest& request, const ResetAllResourceLogLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetAllResourceLogLevels(request), context);
+}
+
+ResetResourceLogLevelOutcome IoTWirelessClient::ResetResourceLogLevel(const ResetResourceLogLevelRequest& request) const
+{
+  if (!request.ResourceIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetResourceLogLevel", "Required field: ResourceIdentifier, is not set");
+    return ResetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceIdentifier]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetResourceLogLevel", "Required field: ResourceType, is not set");
+    return ResetResourceLogLevelOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels/");
+  uri.AddPathSegment(request.GetResourceIdentifier());
+  return ResetResourceLogLevelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+ResetResourceLogLevelOutcomeCallable IoTWirelessClient::ResetResourceLogLevelCallable(const ResetResourceLogLevelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetResourceLogLevelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetResourceLogLevel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::ResetResourceLogLevelAsync(const ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetResourceLogLevelAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::ResetResourceLogLevelAsyncHelper(const ResetResourceLogLevelRequest& request, const ResetResourceLogLevelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetResourceLogLevel(request), context);
+}
+
 SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(const SendDataToWirelessDeviceRequest& request) const
 {
   if (!request.IdHasBeenSet())
@@ -1514,11 +1592,9 @@ SendDataToWirelessDeviceOutcome IoTWirelessClient::SendDataToWirelessDevice(cons
     return SendDataToWirelessDeviceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetId();
-  ss << "/data";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/data");
   return SendDataToWirelessDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1548,9 +1624,7 @@ TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& requ
     return TagResourceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1580,11 +1654,9 @@ TestWirelessDeviceOutcome IoTWirelessClient::TestWirelessDevice(const TestWirele
     return TestWirelessDeviceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetId();
-  ss << "/test";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
+  uri.AddPathSegments("/test");
   return TestWirelessDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1619,9 +1691,7 @@ UntagResourceOutcome IoTWirelessClient::UntagResource(const UntagResourceRequest
     return UntagResourceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1651,10 +1721,8 @@ UpdateDestinationOutcome IoTWirelessClient::UpdateDestination(const UpdateDestin
     return UpdateDestinationOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/destinations/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/destinations/");
+  uri.AddPathSegment(request.GetName());
   return UpdateDestinationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1676,6 +1744,31 @@ void IoTWirelessClient::UpdateDestinationAsyncHelper(const UpdateDestinationRequ
   handler(this, request, UpdateDestination(request), context);
 }
 
+UpdateLogLevelsByResourceTypesOutcome IoTWirelessClient::UpdateLogLevelsByResourceTypes(const UpdateLogLevelsByResourceTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/log-levels");
+  return UpdateLogLevelsByResourceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLogLevelsByResourceTypesOutcomeCallable IoTWirelessClient::UpdateLogLevelsByResourceTypesCallable(const UpdateLogLevelsByResourceTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLogLevelsByResourceTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLogLevelsByResourceTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsync(const UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLogLevelsByResourceTypesAsyncHelper( request, handler, context ); } );
+}
+
+void IoTWirelessClient::UpdateLogLevelsByResourceTypesAsyncHelper(const UpdateLogLevelsByResourceTypesRequest& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLogLevelsByResourceTypes(request), context);
+}
+
 UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const UpdatePartnerAccountRequest& request) const
 {
   if (!request.PartnerAccountIdHasBeenSet())
@@ -1689,10 +1782,8 @@ UpdatePartnerAccountOutcome IoTWirelessClient::UpdatePartnerAccount(const Update
     return UpdatePartnerAccountOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PartnerType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/partner-accounts/";
-  ss << request.GetPartnerAccountId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/partner-accounts/");
+  uri.AddPathSegment(request.GetPartnerAccountId());
   return UpdatePartnerAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1722,10 +1813,8 @@ UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const Update
     return UpdateWirelessDeviceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-devices/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-devices/");
+  uri.AddPathSegment(request.GetId());
   return UpdateWirelessDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1755,10 +1844,8 @@ UpdateWirelessGatewayOutcome IoTWirelessClient::UpdateWirelessGateway(const Upda
     return UpdateWirelessGatewayOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/wireless-gateways/";
-  ss << request.GetId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/wireless-gateways/");
+  uri.AddPathSegment(request.GetId());
   return UpdateWirelessGatewayOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -69,6 +69,20 @@
       "documentation":"<p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p> <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>",
       "idempotent":true
     },
+    "CreatePreparedStatement":{
+      "name":"CreatePreparedStatement",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreatePreparedStatementInput"},
+      "output":{"shape":"CreatePreparedStatementOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Creates a prepared statement for use with SQL queries in Athena.</p>"
+    },
     "CreateWorkGroup":{
       "name":"CreateWorkGroup",
       "http":{
@@ -112,6 +126,21 @@
       "documentation":"<p>Deletes the named query if you have access to the workgroup in which the query was saved.</p> <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>",
       "idempotent":true
     },
+    "DeletePreparedStatement":{
+      "name":"DeletePreparedStatement",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeletePreparedStatementInput"},
+      "output":{"shape":"DeletePreparedStatementOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Deletes the prepared statement with the specified name from the specified workgroup.</p>"
+    },
     "DeleteWorkGroup":{
       "name":"DeleteWorkGroup",
       "http":{
@@ -154,7 +183,7 @@
         {"shape":"InvalidRequestException"},
         {"shape":"MetadataException"}
       ],
-      "documentation":"<p>Returns a database object for the specfied database and data catalog.</p>"
+      "documentation":"<p>Returns a database object for the specified database and data catalog.</p>"
     },
     "GetNamedQuery":{
       "name":"GetNamedQuery",
@@ -169,6 +198,21 @@
         {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Returns information about a single query. Requires that you have access to the workgroup in which the query was saved.</p>"
+    },
+    "GetPreparedStatement":{
+      "name":"GetPreparedStatement",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetPreparedStatementInput"},
+      "output":{"shape":"GetPreparedStatementOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Retrieves the prepared statement with the specified name from the specified workgroup.</p>"
     },
     "GetQueryExecution":{
       "name":"GetQueryExecution",
@@ -256,6 +300,20 @@
       ],
       "documentation":"<p>Lists the databases in the specified data catalog.</p>"
     },
+    "ListEngineVersions":{
+      "name":"ListEngineVersions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListEngineVersionsInput"},
+      "output":{"shape":"ListEngineVersionsOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Returns a list of engine versions that are available to choose from, including the Auto option.</p>"
+    },
     "ListNamedQueries":{
       "name":"ListNamedQueries",
       "http":{
@@ -269,6 +327,20 @@
         {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p> <p>For code samples using the AWS SDK for Java, see <a href=\"http://docs.aws.amazon.com/athena/latest/ug/code-samples.html\">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>"
+    },
+    "ListPreparedStatements":{
+      "name":"ListPreparedStatements",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListPreparedStatementsInput"},
+      "output":{"shape":"ListPreparedStatementsOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"}
+      ],
+      "documentation":"<p>Lists the prepared statements in the specfied workgroup.</p>"
     },
     "ListQueryExecutions":{
       "name":"ListQueryExecutions",
@@ -402,6 +474,21 @@
         {"shape":"InvalidRequestException"}
       ],
       "documentation":"<p>Updates the data catalog that has the specified name.</p>"
+    },
+    "UpdatePreparedStatement":{
+      "name":"UpdatePreparedStatement",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdatePreparedStatementInput"},
+      "output":{"shape":"UpdatePreparedStatementOutput"},
+      "errors":[
+        {"shape":"InternalServerException"},
+        {"shape":"InvalidRequestException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>Updates a prepared statement.</p>"
     },
     "UpdateWorkGroup":{
       "name":"UpdateWorkGroup",
@@ -586,7 +673,7 @@
         },
         "Type":{
           "shape":"DataCatalogType",
-          "documentation":"<p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.</p>"
+          "documentation":"<p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive metastore.</p> <note> <p>Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an <code>INVALID_INPUT</code> error.</p> </note>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -594,7 +681,7 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li> </ul>"
+          "documentation":"<p>Specifies the Lambda function or functions to use for creating the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> </ul>"
         },
         "Tags":{
           "shape":"TagList",
@@ -651,6 +738,37 @@
         }
       }
     },
+    "CreatePreparedStatementInput":{
+      "type":"structure",
+      "required":[
+        "StatementName",
+        "WorkGroup",
+        "QueryStatement"
+      ],
+      "members":{
+        "StatementName":{
+          "shape":"StatementName",
+          "documentation":"<p>The name of the prepared statement.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup to which the prepared statement belongs.</p>"
+        },
+        "QueryStatement":{
+          "shape":"QueryString",
+          "documentation":"<p>The query string for the prepared statement.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>The description of the prepared statement.</p>"
+        }
+      }
+    },
+    "CreatePreparedStatementOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "CreateWorkGroupInput":{
       "type":"structure",
       "required":["Name"],
@@ -695,11 +813,11 @@
         },
         "Type":{
           "shape":"DataCatalogType",
-          "documentation":"<p>The type of data catalog: <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.</p>"
+          "documentation":"<p>The type of data catalog: <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive metastore. <code>GLUE</code> refers to the <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one.</p>"
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li> </ul>"
+          "documentation":"<p>Specifies the Lambda function or functions to use for the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> </ul>"
         }
       },
       "documentation":"<p>Contains information about a data catalog in an AWS account.</p>"
@@ -800,6 +918,28 @@
       "members":{
       }
     },
+    "DeletePreparedStatementInput":{
+      "type":"structure",
+      "required":[
+        "StatementName",
+        "WorkGroup"
+      ],
+      "members":{
+        "StatementName":{
+          "shape":"StatementName",
+          "documentation":"<p>The name of the prepared statement to delete.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The workgroup to which the statement to be deleted belongs.</p>"
+        }
+      }
+    },
+    "DeletePreparedStatementOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteWorkGroupInput":{
       "type":"structure",
       "required":["WorkGroup"],
@@ -810,7 +950,7 @@
         },
         "RecursiveDeleteOption":{
           "shape":"BoxedBoolean",
-          "documentation":"<p>The option to delete the workgroup and its contents even if the workgroup contains any named queries.</p>"
+          "documentation":"<p>The option to delete the workgroup and its contents even if the workgroup contains any named queries or query executions.</p>"
         }
       }
     },
@@ -846,6 +986,26 @@
         "SSE_KMS",
         "CSE_KMS"
       ]
+    },
+    "EngineVersion":{
+      "type":"structure",
+      "members":{
+        "SelectedEngineVersion":{
+          "shape":"NameString",
+          "documentation":"<p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>"
+        },
+        "EffectiveEngineVersion":{
+          "shape":"NameString",
+          "documentation":"<p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>"
+        }
+      },
+      "documentation":"<p>The Athena engine version for running queries.</p>"
+    },
+    "EngineVersionsList":{
+      "type":"list",
+      "member":{"shape":"EngineVersion"},
+      "max":10,
+      "min":0
     },
     "ErrorCode":{
       "type":"string",
@@ -920,6 +1080,32 @@
         "NamedQuery":{
           "shape":"NamedQuery",
           "documentation":"<p>Information about the query.</p>"
+        }
+      }
+    },
+    "GetPreparedStatementInput":{
+      "type":"structure",
+      "required":[
+        "StatementName",
+        "WorkGroup"
+      ],
+      "members":{
+        "StatementName":{
+          "shape":"StatementName",
+          "documentation":"<p>The name of the prepared statement to retrieve.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The workgroup to which the statement to be retrieved belongs.</p>"
+        }
+      }
+    },
+    "GetPreparedStatementOutput":{
+      "type":"structure",
+      "members":{
+        "PreparedStatement":{
+          "shape":"PreparedStatement",
+          "documentation":"<p>The name of the prepared statement that was retrieved.</p>"
         }
       }
     },
@@ -1114,6 +1300,32 @@
         }
       }
     },
+    "ListEngineVersionsInput":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxEngineVersionsCount",
+          "documentation":"<p>The maximum number of engine versions to return in this request.</p>"
+        }
+      }
+    },
+    "ListEngineVersionsOutput":{
+      "type":"structure",
+      "members":{
+        "EngineVersions":{
+          "shape":"EngineVersionsList",
+          "documentation":"<p>A list of engine versions that are available to choose from.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>"
+        }
+      }
+    },
     "ListNamedQueriesInput":{
       "type":"structure",
       "members":{
@@ -1137,6 +1349,37 @@
         "NamedQueryIds":{
           "shape":"NamedQueryIdList",
           "documentation":"<p>The list of unique query IDs.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>"
+        }
+      }
+    },
+    "ListPreparedStatementsInput":{
+      "type":"structure",
+      "required":["WorkGroup"],
+      "members":{
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The workgroup to list the prepared statements for.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A token generated by the Athena service that specifies where to continue pagination if a previous request was truncated. To obtain the next set of pages, pass in the <code>NextToken</code> from the response object of the previous page call.</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxPreparedStatementsCount",
+          "documentation":"<p>The maximum number of results to return in this request.</p>"
+        }
+      }
+    },
+    "ListPreparedStatementsOutput":{
+      "type":"structure",
+      "members":{
+        "PreparedStatements":{
+          "shape":"PreparedStatementsList",
+          "documentation":"<p>The list of prepared statements for the workgroup.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -1265,7 +1508,7 @@
       "members":{
         "WorkGroups":{
           "shape":"WorkGroupsList",
-          "documentation":"<p>The list of workgroups, including their names, descriptions, creation times, and states.</p>"
+          "documentation":"<p>A list of <a>WorkGroupSummary</a> objects that include the names, descriptions, creation times, and states for each workgroup.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -1286,11 +1529,23 @@
       "max":50,
       "min":1
     },
+    "MaxEngineVersionsCount":{
+      "type":"integer",
+      "box":true,
+      "max":10,
+      "min":1
+    },
     "MaxNamedQueriesCount":{
       "type":"integer",
       "box":true,
       "max":50,
       "min":0
+    },
+    "MaxPreparedStatementsCount":{
+      "type":"integer",
+      "box":true,
+      "max":50,
+      "min":1
     },
     "MaxQueryExecutionsCount":{
       "type":"integer",
@@ -1389,6 +1644,52 @@
       "type":"string",
       "max":51200
     },
+    "PreparedStatement":{
+      "type":"structure",
+      "members":{
+        "StatementName":{
+          "shape":"StatementName",
+          "documentation":"<p>The name of the prepared statement.</p>"
+        },
+        "QueryStatement":{
+          "shape":"QueryString",
+          "documentation":"<p>The query string for the prepared statement.</p>"
+        },
+        "WorkGroupName":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The name of the workgroup to which the prepared statement belongs.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>The description of the prepared statement.</p>"
+        },
+        "LastModifiedTime":{
+          "shape":"Date",
+          "documentation":"<p>The last modified time of the prepared statement.</p>"
+        }
+      },
+      "documentation":"<p>A prepared SQL statement for use with Athena.</p>"
+    },
+    "PreparedStatementSummary":{
+      "type":"structure",
+      "members":{
+        "StatementName":{
+          "shape":"StatementName",
+          "documentation":"<p>The name of the prepared statement.</p>"
+        },
+        "LastModifiedTime":{
+          "shape":"Date",
+          "documentation":"<p>The last modified time of the prepared statement.</p>"
+        }
+      },
+      "documentation":"<p>The name and last modified time of the prepared statement.</p>"
+    },
+    "PreparedStatementsList":{
+      "type":"list",
+      "member":{"shape":"PreparedStatementSummary"},
+      "max":50,
+      "min":0
+    },
     "QueryExecution":{
       "type":"structure",
       "members":{
@@ -1423,6 +1724,10 @@
         "WorkGroup":{
           "shape":"WorkGroupName",
           "documentation":"<p>The name of the workgroup in which the query ran.</p>"
+        },
+        "EngineVersion":{
+          "shape":"EngineVersion",
+          "documentation":"<p>The engine version that executed the query.</p>"
         }
       },
       "documentation":"<p>Information about a single instance of a query execution.</p>"
@@ -1641,6 +1946,12 @@
           "documentation":"<p>The unique ID of the query that ran as a result of this request.</p>"
         }
       }
+    },
+    "StatementName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[a-zA-Z_][a-zA-Z0-9_@:]{1,256}"
     },
     "StatementType":{
       "type":"string",
@@ -1869,7 +2180,7 @@
         },
         "Type":{
           "shape":"DataCatalogType",
-          "documentation":"<p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog, <code>GLUE</code> for AWS Glue Catalog, or <code>HIVE</code> for an external hive metastore.</p>"
+          "documentation":"<p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a federated catalog or <code>HIVE</code> for an external hive metastore.</p> <note> <p>Do not use the <code>GLUE</code> type. This refers to the <code>AwsDataCatalog</code> that already exists in your account, of which you can have only one. Specifying the <code>GLUE</code> type will result in an <code>INVALID_INPUT</code> error.</p> </note>"
         },
         "Description":{
           "shape":"DescriptionString",
@@ -1877,11 +2188,42 @@
         },
         "Parameters":{
           "shape":"ParametersMap",
-          "documentation":"<p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> <li> <p>The <code>GLUE</code> type has no parameters.</p> </li> </ul>"
+          "documentation":"<p>Specifies the Lambda function or functions to use for updating the data catalog. This is a mapping whose values depend on the catalog type. </p> <ul> <li> <p>For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code> parameter is required. <code>The sdk-version</code> parameter is optional and defaults to the currently supported version.</p> <p> <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code> </p> </li> <li> <p>For the <code>LAMBDA</code> data catalog type, use one of the following sets of required parameters, but not both.</p> <ul> <li> <p>If you have one Lambda function that processes metadata and another for reading the actual data, use the following syntax. Both parameters are required.</p> <p> <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code> </p> </li> <li> <p> If you have a composite Lambda function that processes both metadata and data, use the following syntax to specify your Lambda function.</p> <p> <code>function=<i>lambda_arn</i> </code> </p> </li> </ul> </li> </ul>"
         }
       }
     },
     "UpdateDataCatalogOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "UpdatePreparedStatementInput":{
+      "type":"structure",
+      "required":[
+        "StatementName",
+        "WorkGroup",
+        "QueryStatement"
+      ],
+      "members":{
+        "StatementName":{
+          "shape":"StatementName",
+          "documentation":"<p>The name of the prepared statement.</p>"
+        },
+        "WorkGroup":{
+          "shape":"WorkGroupName",
+          "documentation":"<p>The workgroup for the prepared statement.</p>"
+        },
+        "QueryStatement":{
+          "shape":"QueryString",
+          "documentation":"<p>The query string for the prepared statement.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>The description of the prepared statement.</p>"
+        }
+      }
+    },
+    "UpdatePreparedStatementOutput":{
       "type":"structure",
       "members":{
       }
@@ -1962,6 +2304,10 @@
         "RequesterPaysEnabled":{
           "shape":"BoxedBoolean",
           "documentation":"<p>If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html\">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>"
+        },
+        "EngineVersion":{
+          "shape":"EngineVersion",
+          "documentation":"<p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>"
         }
       },
       "documentation":"<p>The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. </p>"
@@ -1992,6 +2338,10 @@
         "RequesterPaysEnabled":{
           "shape":"BoxedBoolean",
           "documentation":"<p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html\">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>"
+        },
+        "EngineVersion":{
+          "shape":"EngineVersion",
+          "documentation":"<p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>"
         }
       },
       "documentation":"<p>The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.</p>"
@@ -2030,6 +2380,10 @@
         "CreationTime":{
           "shape":"Date",
           "documentation":"<p>The workgroup creation date and time.</p>"
+        },
+        "EngineVersion":{
+          "shape":"EngineVersion",
+          "documentation":"<p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>"
         }
       },
       "documentation":"<p>The summary information for the workgroup, which includes its name, state, description, and the date and time it was created.</p>"

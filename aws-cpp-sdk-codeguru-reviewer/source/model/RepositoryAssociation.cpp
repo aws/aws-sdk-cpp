@@ -30,7 +30,8 @@ RepositoryAssociation::RepositoryAssociation() :
     m_stateHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false)
+    m_createdTimeStampHasBeenSet(false),
+    m_kMSKeyDetailsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ RepositoryAssociation::RepositoryAssociation(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_stateReasonHasBeenSet(false),
     m_lastUpdatedTimeStampHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false)
+    m_createdTimeStampHasBeenSet(false),
+    m_kMSKeyDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +125,13 @@ RepositoryAssociation& RepositoryAssociation::operator =(JsonView jsonValue)
     m_createdTimeStampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KMSKeyDetails"))
+  {
+    m_kMSKeyDetails = jsonValue.GetObject("KMSKeyDetails");
+
+    m_kMSKeyDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +193,12 @@ JsonValue RepositoryAssociation::Jsonize() const
   if(m_createdTimeStampHasBeenSet)
   {
    payload.WithDouble("CreatedTimeStamp", m_createdTimeStamp.SecondsWithMSPrecision());
+  }
+
+  if(m_kMSKeyDetailsHasBeenSet)
+  {
+   payload.WithObject("KMSKeyDetails", m_kMSKeyDetails.Jsonize());
+
   }
 
   return payload;

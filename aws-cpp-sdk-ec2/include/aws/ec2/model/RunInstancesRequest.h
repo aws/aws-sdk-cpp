@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -159,7 +159,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -183,7 +183,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>The instance type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Default:
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * <code>m1.small</code> </p>
      */
     inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
@@ -323,8 +323,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
 
@@ -332,8 +331,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
 
@@ -341,8 +339,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
 
@@ -350,8 +347,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
 
@@ -359,8 +355,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
 
@@ -368,8 +363,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
 
@@ -377,8 +371,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
 
@@ -386,8 +379,7 @@ namespace Model
      * <p>The ID of the kernel.</p>  <p>We recommend that you use PV-GRUB
      * instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
 
@@ -644,8 +636,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
 
@@ -656,8 +647,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
@@ -668,8 +658,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
@@ -680,8 +669,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
@@ -692,8 +680,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
 
@@ -704,8 +691,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
 
@@ -716,8 +702,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
@@ -728,8 +713,7 @@ namespace Model
      * and search for the kernel ID.</p>  <p>We recommend that you use
      * PV-GRUB instead of kernels and RAM disks. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
-     * PV-GRUB</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * 
+     * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
     inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 
@@ -1260,32 +1244,32 @@ namespace Model
 
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline RunInstancesRequest& WithIamInstanceProfile(const IamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
@@ -1483,9 +1467,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const{ return m_elasticGpuSpecification; }
 
@@ -1493,9 +1476,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool ElasticGpuSpecificationHasBeenSet() const { return m_elasticGpuSpecificationHasBeenSet; }
 
@@ -1503,9 +1485,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = value; }
 
@@ -1513,9 +1494,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::move(value); }
 
@@ -1523,9 +1503,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecification(value); return *this;}
 
@@ -1533,9 +1512,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecification(std::move(value)); return *this;}
 
@@ -1543,9 +1521,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(value); return *this; }
 
@@ -1553,9 +1530,8 @@ namespace Model
      * <p>An elastic GPU to associate with the instance. An Elastic GPU is a GPU
      * resource that you can attach to your Windows instance to accelerate the graphics
      * performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">
-     * Amazon EC2 Elastic GPUs</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+     * EC2 Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(std::move(value)); return *this; }
 
@@ -1803,9 +1779,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3/T3a instances)</p>
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * instances)</p>
      */
     inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
 
@@ -1816,9 +1792,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3/T3a instances)</p>
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * instances)</p>
      */
     inline bool CreditSpecificationHasBeenSet() const { return m_creditSpecificationHasBeenSet; }
 
@@ -1829,9 +1805,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3/T3a instances)</p>
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * instances)</p>
      */
     inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
 
@@ -1842,9 +1818,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3/T3a instances)</p>
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * instances)</p>
      */
     inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
 
@@ -1855,9 +1831,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3/T3a instances)</p>
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * instances)</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
 
@@ -1868,9 +1844,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
-     * performance instances</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3/T3a instances)</p>
+     * performance instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
+     * <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a
+     * instances)</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
 
@@ -1878,42 +1854,42 @@ namespace Model
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const CpuOptionsRequest& GetCpuOptions() const{ return m_cpuOptions; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetCpuOptions(const CpuOptionsRequest& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetCpuOptions(CpuOptionsRequest&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithCpuOptions(const CpuOptionsRequest& value) { SetCpuOptions(value); return *this;}
 
     /**
      * <p>The CPU options for the instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing
-     * CPU options</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline RunInstancesRequest& WithCpuOptions(CpuOptionsRequest&& value) { SetCpuOptions(std::move(value)); return *this;}
 
@@ -1971,8 +1947,8 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
+     * hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
 
@@ -1980,8 +1956,8 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
+     * hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
@@ -1989,8 +1965,8 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
+     * hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
@@ -1998,8 +1974,8 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
+     * hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline void SetHibernationOptions(HibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
@@ -2007,8 +1983,8 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
+     * hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(const HibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
 
@@ -2016,8 +1992,8 @@ namespace Model
      * <p>Indicates whether an instance is enabled for hibernation. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-     * your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>You can't enable hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
+     * hibernation and AWS Nitro Enclaves on the same instance.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(HibernationOptionsRequest&& value) { SetHibernationOptions(std::move(value)); return *this;}
 

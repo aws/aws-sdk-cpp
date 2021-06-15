@@ -917,7 +917,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
-     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,
@@ -927,7 +927,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
-     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,
@@ -937,7 +937,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
-     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,
@@ -947,7 +947,7 @@ namespace Model
 
     /**
      * <p>Specifies whether to propagate the tags from the job or job definition to the
-     * corresponding Amazon ECS task. If no value is specified, the tags are not
+     * corresponding Amazon ECS task. If no value is specified, the tags aren't
      * propagated. Tags can only be propagated to the tasks during task creation. For
      * tags with the same name, job tags are given priority over job definitions tags.
      * If the total number of combined tags from the job and job definition is over 50,

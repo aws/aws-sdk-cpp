@@ -29,6 +29,8 @@ DBProxyTarget::DBProxyTarget() :
     m_portHasBeenSet(false),
     m_type(TargetType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_role(TargetRole::NOT_SET),
+    m_roleHasBeenSet(false),
     m_targetHealthHasBeenSet(false)
 {
 }
@@ -42,6 +44,8 @@ DBProxyTarget::DBProxyTarget(const XmlNode& xmlNode) :
     m_portHasBeenSet(false),
     m_type(TargetType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_role(TargetRole::NOT_SET),
+    m_roleHasBeenSet(false),
     m_targetHealthHasBeenSet(false)
 {
   *this = xmlNode;
@@ -89,6 +93,12 @@ DBProxyTarget& DBProxyTarget::operator =(const XmlNode& xmlNode)
       m_type = TargetTypeMapper::GetTargetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
       m_typeHasBeenSet = true;
     }
+    XmlNode roleNode = resultNode.FirstChild("Role");
+    if(!roleNode.IsNull())
+    {
+      m_role = TargetRoleMapper::GetTargetRoleForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(roleNode.GetText()).c_str()).c_str());
+      m_roleHasBeenSet = true;
+    }
     XmlNode targetHealthNode = resultNode.FirstChild("TargetHealth");
     if(!targetHealthNode.IsNull())
     {
@@ -132,6 +142,11 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
   }
 
+  if(m_roleHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Role=" << TargetRoleMapper::GetNameForTargetRole(m_role) << "&";
+  }
+
   if(m_targetHealthHasBeenSet)
   {
       Aws::StringStream targetHealthLocationAndMemberSs;
@@ -166,6 +181,10 @@ void DBProxyTarget::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << TargetTypeMapper::GetNameForTargetType(m_type) << "&";
+  }
+  if(m_roleHasBeenSet)
+  {
+      oStream << location << ".Role=" << TargetRoleMapper::GetNameForTargetRole(m_role) << "&";
   }
   if(m_targetHealthHasBeenSet)
   {

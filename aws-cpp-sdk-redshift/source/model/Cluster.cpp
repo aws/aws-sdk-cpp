@@ -76,7 +76,10 @@ Cluster::Cluster() :
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
     m_resizeInfoHasBeenSet(false),
     m_availabilityZoneRelocationStatusHasBeenSet(false),
-    m_clusterNamespaceArnHasBeenSet(false)
+    m_clusterNamespaceArnHasBeenSet(false),
+    m_totalStorageCapacityInMegaBytes(0),
+    m_totalStorageCapacityInMegaBytesHasBeenSet(false),
+    m_aquaConfigurationHasBeenSet(false)
 {
 }
 
@@ -136,7 +139,10 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_nextMaintenanceWindowStartTimeHasBeenSet(false),
     m_resizeInfoHasBeenSet(false),
     m_availabilityZoneRelocationStatusHasBeenSet(false),
-    m_clusterNamespaceArnHasBeenSet(false)
+    m_clusterNamespaceArnHasBeenSet(false),
+    m_totalStorageCapacityInMegaBytes(0),
+    m_totalStorageCapacityInMegaBytesHasBeenSet(false),
+    m_aquaConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -483,6 +489,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_clusterNamespaceArn = Aws::Utils::Xml::DecodeEscapedXmlText(clusterNamespaceArnNode.GetText());
       m_clusterNamespaceArnHasBeenSet = true;
     }
+    XmlNode totalStorageCapacityInMegaBytesNode = resultNode.FirstChild("TotalStorageCapacityInMegaBytes");
+    if(!totalStorageCapacityInMegaBytesNode.IsNull())
+    {
+      m_totalStorageCapacityInMegaBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(totalStorageCapacityInMegaBytesNode.GetText()).c_str()).c_str());
+      m_totalStorageCapacityInMegaBytesHasBeenSet = true;
+    }
+    XmlNode aquaConfigurationNode = resultNode.FirstChild("AquaConfiguration");
+    if(!aquaConfigurationNode.IsNull())
+    {
+      m_aquaConfiguration = aquaConfigurationNode;
+      m_aquaConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -792,6 +810,18 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".ClusterNamespaceArn=" << StringUtils::URLEncode(m_clusterNamespaceArn.c_str()) << "&";
   }
 
+  if(m_totalStorageCapacityInMegaBytesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TotalStorageCapacityInMegaBytes=" << m_totalStorageCapacityInMegaBytes << "&";
+  }
+
+  if(m_aquaConfigurationHasBeenSet)
+  {
+      Aws::StringStream aquaConfigurationLocationAndMemberSs;
+      aquaConfigurationLocationAndMemberSs << location << index << locationValue << ".AquaConfiguration";
+      m_aquaConfiguration.OutputToStream(oStream, aquaConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1049,6 +1079,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_clusterNamespaceArnHasBeenSet)
   {
       oStream << location << ".ClusterNamespaceArn=" << StringUtils::URLEncode(m_clusterNamespaceArn.c_str()) << "&";
+  }
+  if(m_totalStorageCapacityInMegaBytesHasBeenSet)
+  {
+      oStream << location << ".TotalStorageCapacityInMegaBytes=" << m_totalStorageCapacityInMegaBytes << "&";
+  }
+  if(m_aquaConfigurationHasBeenSet)
+  {
+      Aws::String aquaConfigurationLocationAndMember(location);
+      aquaConfigurationLocationAndMember += ".AquaConfiguration";
+      m_aquaConfiguration.OutputToStream(oStream, aquaConfigurationLocationAndMember.c_str());
   }
 }
 

@@ -26,7 +26,8 @@ CostCategory::CostCategory() :
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_processingStatusHasBeenSet(false)
+    m_processingStatusHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ CostCategory::CostCategory(JsonView jsonValue) :
     m_ruleVersion(CostCategoryRuleVersion::NOT_SET),
     m_ruleVersionHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_processingStatusHasBeenSet(false)
+    m_processingStatusHasBeenSet(false),
+    m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +102,13 @@ CostCategory& CostCategory::operator =(JsonView jsonValue)
     m_processingStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultValue"))
+  {
+    m_defaultValue = jsonValue.GetString("DefaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -155,6 +164,12 @@ JsonValue CostCategory::Jsonize() const
      processingStatusJsonList[processingStatusIndex].AsObject(m_processingStatus[processingStatusIndex].Jsonize());
    }
    payload.WithArray("ProcessingStatus", std::move(processingStatusJsonList));
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("DefaultValue", m_defaultValue);
 
   }
 

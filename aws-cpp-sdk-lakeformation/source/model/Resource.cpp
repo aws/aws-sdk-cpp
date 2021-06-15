@@ -23,7 +23,9 @@ Resource::Resource() :
     m_databaseHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_tableWithColumnsHasBeenSet(false),
-    m_dataLocationHasBeenSet(false)
+    m_dataLocationHasBeenSet(false),
+    m_lFTagHasBeenSet(false),
+    m_lFTagPolicyHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ Resource::Resource(JsonView jsonValue) :
     m_databaseHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_tableWithColumnsHasBeenSet(false),
-    m_dataLocationHasBeenSet(false)
+    m_dataLocationHasBeenSet(false),
+    m_lFTagHasBeenSet(false),
+    m_lFTagPolicyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,20 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_dataLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LFTag"))
+  {
+    m_lFTag = jsonValue.GetObject("LFTag");
+
+    m_lFTagHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LFTagPolicy"))
+  {
+    m_lFTagPolicy = jsonValue.GetObject("LFTagPolicy");
+
+    m_lFTagPolicyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +126,18 @@ JsonValue Resource::Jsonize() const
   if(m_dataLocationHasBeenSet)
   {
    payload.WithObject("DataLocation", m_dataLocation.Jsonize());
+
+  }
+
+  if(m_lFTagHasBeenSet)
+  {
+   payload.WithObject("LFTag", m_lFTag.Jsonize());
+
+  }
+
+  if(m_lFTagPolicyHasBeenSet)
+  {
+   payload.WithObject("LFTagPolicy", m_lFTagPolicy.Jsonize());
 
   }
 

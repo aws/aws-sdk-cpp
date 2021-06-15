@@ -26,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Similar to Channel. A channel is a named input source that training
-   * algorithms can consume. Refer to Channel for detailed
-   * descriptions.</p><p><h3>See Also:</h3>   <a
+   * <p>A channel is a named input source that training algorithms can consume. For
+   * more information, see .</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLChannel">AWS
    * API Reference</a></p>
    */
@@ -42,104 +41,118 @@ namespace Model
 
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline const AutoMLDataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline void SetDataSource(const AutoMLDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline void SetDataSource(AutoMLDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline AutoMLChannel& WithDataSource(const AutoMLDataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The data source.</p>
+     * <p>The data source for an AutoML channel.</p>
      */
     inline AutoMLChannel& WithDataSource(AutoMLDataSource&& value) { SetDataSource(std::move(value)); return *this;}
 
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline AutoMLChannel& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
 
     /**
-     * <p>You can use Gzip or None. The default value is None.</p>
+     * <p>You can use <code>Gzip</code> or <code>None</code>. The default value is
+     * <code>None</code>.</p>
      */
     inline AutoMLChannel& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline const Aws::String& GetTargetAttributeName() const{ return m_targetAttributeName; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline bool TargetAttributeNameHasBeenSet() const { return m_targetAttributeNameHasBeenSet; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline void SetTargetAttributeName(const Aws::String& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = value; }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::move(value); }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline void SetTargetAttributeName(const char* value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName.assign(value); }
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(const Aws::String& value) { SetTargetAttributeName(value); return *this;}
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the target variable in supervised learning, a.k.a. 'y'.</p>
+     * <p>The name of the target variable in supervised learning, usually represented
+     * by 'y'.</p>
      */
     inline AutoMLChannel& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
 

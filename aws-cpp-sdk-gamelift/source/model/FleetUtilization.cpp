@@ -20,6 +20,7 @@ namespace Model
 
 FleetUtilization::FleetUtilization() : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_activeServerProcessCount(0),
     m_activeServerProcessCountHasBeenSet(false),
     m_activeGameSessionCount(0),
@@ -27,12 +28,14 @@ FleetUtilization::FleetUtilization() :
     m_currentPlayerSessionCount(0),
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false)
+    m_maximumPlayerSessionCountHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
 FleetUtilization::FleetUtilization(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_activeServerProcessCount(0),
     m_activeServerProcessCountHasBeenSet(false),
     m_activeGameSessionCount(0),
@@ -40,7 +43,8 @@ FleetUtilization::FleetUtilization(JsonView jsonValue) :
     m_currentPlayerSessionCount(0),
     m_currentPlayerSessionCountHasBeenSet(false),
     m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false)
+    m_maximumPlayerSessionCountHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +56,13 @@ FleetUtilization& FleetUtilization::operator =(JsonView jsonValue)
     m_fleetId = jsonValue.GetString("FleetId");
 
     m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+    m_fleetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ActiveServerProcessCount"))
@@ -82,6 +93,13 @@ FleetUtilization& FleetUtilization::operator =(JsonView jsonValue)
     m_maximumPlayerSessionCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+    m_locationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +110,12 @@ JsonValue FleetUtilization::Jsonize() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_fleetArnHasBeenSet)
+  {
+   payload.WithString("FleetArn", m_fleetArn);
 
   }
 
@@ -116,6 +140,12 @@ JsonValue FleetUtilization::Jsonize() const
   if(m_maximumPlayerSessionCountHasBeenSet)
   {
    payload.WithInteger("MaximumPlayerSessionCount", m_maximumPlayerSessionCount);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

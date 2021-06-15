@@ -96,6 +96,11 @@ DescribeImageAttributeResponse& DescribeImageAttributeResponse::operator =(const
     {
       m_sriovNetSupport = sriovNetSupportNode;
     }
+    XmlNode bootModeNode = resultNode.FirstChild("bootMode");
+    if(!bootModeNode.IsNull())
+    {
+      m_bootMode = bootModeNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

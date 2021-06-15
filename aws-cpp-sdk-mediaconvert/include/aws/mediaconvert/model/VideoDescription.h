@@ -33,7 +33,10 @@ namespace Model
 {
 
   /**
-   * Settings for video outputs<p><h3>See Also:</h3>   <a
+   * Settings related to video encoding of your output. The specific video settings
+   * depend on the video codec that you choose. When you work directly in your JSON
+   * job specification, include one instance of Video description (VideoDescription)
+   * per output.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoDescription">AWS
    * API Reference</a></p>
    */

@@ -72,7 +72,7 @@ IoTJobsDataPlaneClient::~IoTJobsDataPlaneClient()
 {
 }
 
-void IoTJobsDataPlaneClient::init(const ClientConfiguration& config)
+void IoTJobsDataPlaneClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoT Jobs Data Plane");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -111,12 +111,10 @@ DescribeJobExecutionOutcome IoTJobsDataPlaneClient::DescribeJobExecution(const D
     return DescribeJobExecutionOutcome(Aws::Client::AWSError<IoTJobsDataPlaneErrors>(IoTJobsDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return DescribeJobExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -146,11 +144,9 @@ GetPendingJobExecutionsOutcome IoTJobsDataPlaneClient::GetPendingJobExecutions(c
     return GetPendingJobExecutionsOutcome(Aws::Client::AWSError<IoTJobsDataPlaneErrors>(IoTJobsDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/jobs");
   return GetPendingJobExecutionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -180,11 +176,9 @@ StartNextPendingJobExecutionOutcome IoTJobsDataPlaneClient::StartNextPendingJobE
     return StartNextPendingJobExecutionOutcome(Aws::Client::AWSError<IoTJobsDataPlaneErrors>(IoTJobsDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/jobs/$next";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/jobs/$next");
   return StartNextPendingJobExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -219,12 +213,10 @@ UpdateJobExecutionOutcome IoTJobsDataPlaneClient::UpdateJobExecution(const Updat
     return UpdateJobExecutionOutcome(Aws::Client::AWSError<IoTJobsDataPlaneErrors>(IoTJobsDataPlaneErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/things/";
-  ss << request.GetThingName();
-  ss << "/jobs/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/jobs/");
+  uri.AddPathSegment(request.GetJobId());
   return UpdateJobExecutionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

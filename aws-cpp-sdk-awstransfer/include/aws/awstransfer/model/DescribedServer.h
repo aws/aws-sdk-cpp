@@ -137,22 +137,40 @@ namespace Model
     inline DescribedServer& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline const Domain& GetDomain() const{ return m_domain; }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline DescribedServer& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline DescribedServer& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
 
@@ -296,48 +314,51 @@ namespace Model
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline const IdentityProviderDetails& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetIdentityProviderDetails(IdentityProviderDetails&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline DescribedServer& WithIdentityProviderDetails(const IdentityProviderDetails& value) { SetIdentityProviderDetails(value); return *this;}
 
     /**
      * <p>Specifies information to call a customer-supplied authentication API. This
      * field is not populated when the <code>IdentityProviderType</code> of a server is
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code>.</p>
      */
     inline DescribedServer& WithIdentityProviderDetails(IdentityProviderDetails&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the mode of authentication method enabled for this service. A value
+     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
+     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in AWS using AD Connectors. A value
      * of <code>SERVICE_MANAGED</code> means that you are using this server to store
      * and access user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
@@ -347,6 +368,9 @@ namespace Model
 
     /**
      * <p>Specifies the mode of authentication method enabled for this service. A value
+     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
+     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in AWS using AD Connectors. A value
      * of <code>SERVICE_MANAGED</code> means that you are using this server to store
      * and access user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
@@ -356,6 +380,9 @@ namespace Model
 
     /**
      * <p>Specifies the mode of authentication method enabled for this service. A value
+     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
+     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in AWS using AD Connectors. A value
      * of <code>SERVICE_MANAGED</code> means that you are using this server to store
      * and access user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
@@ -365,6 +392,9 @@ namespace Model
 
     /**
      * <p>Specifies the mode of authentication method enabled for this service. A value
+     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
+     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in AWS using AD Connectors. A value
      * of <code>SERVICE_MANAGED</code> means that you are using this server to store
      * and access user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
@@ -374,6 +404,9 @@ namespace Model
 
     /**
      * <p>Specifies the mode of authentication method enabled for this service. A value
+     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
+     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in AWS using AD Connectors. A value
      * of <code>SERVICE_MANAGED</code> means that you are using this server to store
      * and access user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
@@ -383,6 +416,9 @@ namespace Model
 
     /**
      * <p>Specifies the mode of authentication method enabled for this service. A value
+     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
+     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
+     * Directory in your on-premises environment or in AWS using AD Connectors. A value
      * of <code>SERVICE_MANAGED</code> means that you are using this server to store
      * and access user credentials within the service. A value of
      * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
@@ -393,57 +429,57 @@ namespace Model
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 events. When set, user
-     * activity can be viewed in your CloudWatch logs.</p>
+     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
+     * When set, user activity can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 

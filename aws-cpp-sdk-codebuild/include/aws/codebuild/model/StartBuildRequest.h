@@ -201,11 +201,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -224,11 +224,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -247,11 +247,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -270,11 +270,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -293,11 +293,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -316,11 +316,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -339,11 +339,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -362,11 +362,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -852,36 +852,60 @@ namespace Model
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline bool GetReportBuildStatusOverride() const{ return m_reportBuildStatusOverride; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline bool ReportBuildStatusOverrideHasBeenSet() const { return m_reportBuildStatusOverrideHasBeenSet; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline void SetReportBuildStatusOverride(bool value) { m_reportBuildStatusOverrideHasBeenSet = true; m_reportBuildStatusOverride = value; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p> 
-     * <p> The status of a build triggered by a webhook is always reported to your
-     * source provider. </p> 
+     * GitHub Enterprise, or Bitbucket, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>  <p> The
+     * status of a build triggered by a webhook is always reported to your source
+     * provider. </p> 
      */
     inline StartBuildRequest& WithReportBuildStatusOverride(bool value) { SetReportBuildStatusOverride(value); return *this;}
 

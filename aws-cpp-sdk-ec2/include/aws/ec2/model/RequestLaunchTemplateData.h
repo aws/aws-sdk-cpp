@@ -170,32 +170,32 @@ namespace Model
 
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline const LaunchTemplateIamInstanceProfileSpecificationRequest& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline void SetIamInstanceProfile(const LaunchTemplateIamInstanceProfileSpecificationRequest& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline void SetIamInstanceProfile(LaunchTemplateIamInstanceProfileSpecificationRequest&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline RequestLaunchTemplateData& WithIamInstanceProfile(const LaunchTemplateIamInstanceProfileSpecificationRequest& value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The IAM instance profile.</p>
+     * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
     inline RequestLaunchTemplateData& WithIamInstanceProfile(LaunchTemplateIamInstanceProfileSpecificationRequest&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 

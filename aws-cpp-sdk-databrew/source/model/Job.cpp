@@ -44,7 +44,8 @@ Job::Job() :
     m_roleArnHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_jobSampleHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ Job::Job(JsonView jsonValue) :
     m_roleArnHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_jobSampleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -227,6 +229,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JobSample"))
+  {
+    m_jobSample = jsonValue.GetObject("JobSample");
+
+    m_jobSampleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -356,6 +365,12 @@ JsonValue Job::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_jobSampleHasBeenSet)
+  {
+   payload.WithObject("JobSample", m_jobSample.Jsonize());
 
   }
 

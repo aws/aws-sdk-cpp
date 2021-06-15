@@ -47,6 +47,8 @@ def ParseArguments():
 
 serviceNameRemaps = {
     "runtime.lex" : "lex",
+    "runtime.lex.v2" : "lexv2-runtime",
+    "models.lex.v2" : "lexv2-models",
     "entitlement.marketplace" : "marketplace-entitlement",
     "runtime.sagemaker" : "sagemaker-runtime",
     "transfer" : "awstransfer",
@@ -71,6 +73,13 @@ def DiscoverAllAvailableSDKs(discoveryPath):
             sdk['apiVersion'] = match.group(2)
             sdk['filePath'] = join(discoveryPath, file)
             sdks['{}-{}'.format(sdk['serviceName'], sdk['apiVersion'])] = sdk
+
+            if serviceName == "s3":
+                s3crt = {}
+                s3crt['serviceName'] = "s3-crt"
+                s3crt['apiVersion'] = sdk['apiVersion']
+                s3crt['filePath'] = sdk['filePath']
+                sdks['s3-crt-{}'.format(s3crt['apiVersion'])] = s3crt
 
     return sdks
 

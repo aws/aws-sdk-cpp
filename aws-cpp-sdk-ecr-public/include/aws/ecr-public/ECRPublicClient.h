@@ -26,10 +26,13 @@
 #include <aws/ecr-public/model/GetRepositoryCatalogDataResult.h>
 #include <aws/ecr-public/model/GetRepositoryPolicyResult.h>
 #include <aws/ecr-public/model/InitiateLayerUploadResult.h>
+#include <aws/ecr-public/model/ListTagsForResourceResult.h>
 #include <aws/ecr-public/model/PutImageResult.h>
 #include <aws/ecr-public/model/PutRegistryCatalogDataResult.h>
 #include <aws/ecr-public/model/PutRepositoryCatalogDataResult.h>
 #include <aws/ecr-public/model/SetRepositoryPolicyResult.h>
+#include <aws/ecr-public/model/TagResourceResult.h>
+#include <aws/ecr-public/model/UntagResourceResult.h>
 #include <aws/ecr-public/model/UploadLayerPartResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -85,10 +88,13 @@ namespace Model
         class GetRepositoryCatalogDataRequest;
         class GetRepositoryPolicyRequest;
         class InitiateLayerUploadRequest;
+        class ListTagsForResourceRequest;
         class PutImageRequest;
         class PutRegistryCatalogDataRequest;
         class PutRepositoryCatalogDataRequest;
         class SetRepositoryPolicyRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UploadLayerPartRequest;
 
         typedef Aws::Utils::Outcome<BatchCheckLayerAvailabilityResult, ECRPublicError> BatchCheckLayerAvailabilityOutcome;
@@ -106,10 +112,13 @@ namespace Model
         typedef Aws::Utils::Outcome<GetRepositoryCatalogDataResult, ECRPublicError> GetRepositoryCatalogDataOutcome;
         typedef Aws::Utils::Outcome<GetRepositoryPolicyResult, ECRPublicError> GetRepositoryPolicyOutcome;
         typedef Aws::Utils::Outcome<InitiateLayerUploadResult, ECRPublicError> InitiateLayerUploadOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ECRPublicError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutImageResult, ECRPublicError> PutImageOutcome;
         typedef Aws::Utils::Outcome<PutRegistryCatalogDataResult, ECRPublicError> PutRegistryCatalogDataOutcome;
         typedef Aws::Utils::Outcome<PutRepositoryCatalogDataResult, ECRPublicError> PutRepositoryCatalogDataOutcome;
         typedef Aws::Utils::Outcome<SetRepositoryPolicyResult, ECRPublicError> SetRepositoryPolicyOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ECRPublicError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ECRPublicError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UploadLayerPartResult, ECRPublicError> UploadLayerPartOutcome;
 
         typedef std::future<BatchCheckLayerAvailabilityOutcome> BatchCheckLayerAvailabilityOutcomeCallable;
@@ -127,10 +136,13 @@ namespace Model
         typedef std::future<GetRepositoryCatalogDataOutcome> GetRepositoryCatalogDataOutcomeCallable;
         typedef std::future<GetRepositoryPolicyOutcome> GetRepositoryPolicyOutcomeCallable;
         typedef std::future<InitiateLayerUploadOutcome> InitiateLayerUploadOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutImageOutcome> PutImageOutcomeCallable;
         typedef std::future<PutRegistryCatalogDataOutcome> PutRegistryCatalogDataOutcomeCallable;
         typedef std::future<PutRepositoryCatalogDataOutcome> PutRepositoryCatalogDataOutcomeCallable;
         typedef std::future<SetRepositoryPolicyOutcome> SetRepositoryPolicyOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UploadLayerPartOutcome> UploadLayerPartOutcomeCallable;
 } // namespace Model
 
@@ -151,10 +163,13 @@ namespace Model
     typedef std::function<void(const ECRPublicClient*, const Model::GetRepositoryCatalogDataRequest&, const Model::GetRepositoryCatalogDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryCatalogDataResponseReceivedHandler;
     typedef std::function<void(const ECRPublicClient*, const Model::GetRepositoryPolicyRequest&, const Model::GetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRepositoryPolicyResponseReceivedHandler;
     typedef std::function<void(const ECRPublicClient*, const Model::InitiateLayerUploadRequest&, const Model::InitiateLayerUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateLayerUploadResponseReceivedHandler;
+    typedef std::function<void(const ECRPublicClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ECRPublicClient*, const Model::PutImageRequest&, const Model::PutImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutImageResponseReceivedHandler;
     typedef std::function<void(const ECRPublicClient*, const Model::PutRegistryCatalogDataRequest&, const Model::PutRegistryCatalogDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRegistryCatalogDataResponseReceivedHandler;
     typedef std::function<void(const ECRPublicClient*, const Model::PutRepositoryCatalogDataRequest&, const Model::PutRepositoryCatalogDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRepositoryCatalogDataResponseReceivedHandler;
     typedef std::function<void(const ECRPublicClient*, const Model::SetRepositoryPolicyRequest&, const Model::SetRepositoryPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetRepositoryPolicyResponseReceivedHandler;
+    typedef std::function<void(const ECRPublicClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ECRPublicClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ECRPublicClient*, const Model::UploadLayerPartRequest&, const Model::UploadLayerPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadLayerPartResponseReceivedHandler;
 
   /**
@@ -719,6 +734,34 @@ namespace Model
         virtual void InitiateLayerUploadAsync(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List the tags for an Amazon ECR Public resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an Amazon ECR Public resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List the tags for an Amazon ECR Public resource.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates or updates the image manifest and tags associated with an image.</p>
          * <p>When an image is pushed and all new image layers have been uploaded, the
          * PutImage API is called once to create or update the image manifest and the tags
@@ -855,6 +898,68 @@ namespace Model
         virtual void SetRepositoryPolicyAsync(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Associates the specified tags to a resource with the specified
+         * <code>resourceArn</code>. If existing tags on a resource are not specified in
+         * the request parameters, they are not changed. When a resource is deleted, the
+         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes specified tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-public-2020-10-30/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed,
          * each new image layer is uploaded in parts. The maximum size of each image layer
          * part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called
@@ -916,10 +1021,13 @@ namespace Model
         void GetRepositoryCatalogDataAsyncHelper(const Model::GetRepositoryCatalogDataRequest& request, const GetRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRepositoryPolicyAsyncHelper(const Model::GetRepositoryPolicyRequest& request, const GetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitiateLayerUploadAsyncHelper(const Model::InitiateLayerUploadRequest& request, const InitiateLayerUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutImageAsyncHelper(const Model::PutImageRequest& request, const PutImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRegistryCatalogDataAsyncHelper(const Model::PutRegistryCatalogDataRequest& request, const PutRegistryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRepositoryCatalogDataAsyncHelper(const Model::PutRepositoryCatalogDataRequest& request, const PutRepositoryCatalogDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetRepositoryPolicyAsyncHelper(const Model::SetRepositoryPolicyRequest& request, const SetRepositoryPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadLayerPartAsyncHelper(const Model::UploadLayerPartRequest& request, const UploadLayerPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

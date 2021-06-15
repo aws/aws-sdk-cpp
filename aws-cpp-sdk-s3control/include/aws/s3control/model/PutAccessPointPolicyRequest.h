@@ -207,72 +207,72 @@ namespace Model
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
      * <p>The policy that you want to apply to the specified access point. For more
      * information about access point policies, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
-     * data access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
-     * Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing
+     * data access with Amazon S3 access points</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline PutAccessPointPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

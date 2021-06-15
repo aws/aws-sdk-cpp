@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Creates a channel member.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of a channel member.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelMembership">AWS
    * API Reference</a></p>
    */
@@ -41,38 +41,32 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the member who invited another member. Taken from the
-     * message header.</p>
+     * <p>The identifier of the member who invited another member.</p>
      */
     inline const Identity& GetInvitedBy() const{ return m_invitedBy; }
 
     /**
-     * <p>The identifier of the member who invited another member. Taken from the
-     * message header.</p>
+     * <p>The identifier of the member who invited another member.</p>
      */
     inline bool InvitedByHasBeenSet() const { return m_invitedByHasBeenSet; }
 
     /**
-     * <p>The identifier of the member who invited another member. Taken from the
-     * message header.</p>
+     * <p>The identifier of the member who invited another member.</p>
      */
     inline void SetInvitedBy(const Identity& value) { m_invitedByHasBeenSet = true; m_invitedBy = value; }
 
     /**
-     * <p>The identifier of the member who invited another member. Taken from the
-     * message header.</p>
+     * <p>The identifier of the member who invited another member.</p>
      */
     inline void SetInvitedBy(Identity&& value) { m_invitedByHasBeenSet = true; m_invitedBy = std::move(value); }
 
     /**
-     * <p>The identifier of the member who invited another member. Taken from the
-     * message header.</p>
+     * <p>The identifier of the member who invited another member.</p>
      */
     inline ChannelMembership& WithInvitedBy(const Identity& value) { SetInvitedBy(value); return *this;}
 
     /**
-     * <p>The identifier of the member who invited another member. Taken from the
-     * message header.</p>
+     * <p>The identifier of the member who invited another member.</p>
      */
     inline ChannelMembership& WithInvitedBy(Identity&& value) { SetInvitedBy(std::move(value)); return *this;}
 
@@ -181,32 +175,32 @@ namespace Model
 
 
     /**
-     * <p>The time at which the channel membership was created. </p>
+     * <p>The time at which the channel membership was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
 
     /**
-     * <p>The time at which the channel membership was created. </p>
+     * <p>The time at which the channel membership was created.</p>
      */
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
-     * <p>The time at which the channel membership was created. </p>
+     * <p>The time at which the channel membership was created.</p>
      */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
-     * <p>The time at which the channel membership was created. </p>
+     * <p>The time at which the channel membership was created.</p>
      */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
 
     /**
-     * <p>The time at which the channel membership was created. </p>
+     * <p>The time at which the channel membership was created.</p>
      */
     inline ChannelMembership& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
 
     /**
-     * <p>The time at which the channel membership was created. </p>
+     * <p>The time at which the channel membership was created.</p>
      */
     inline ChannelMembership& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 

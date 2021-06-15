@@ -121,47 +121,65 @@ namespace Model
 
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline AssociateResourceShareRequest& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline AssociateResourceShareRequest& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline AssociateResourceShareRequest& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline AssociateResourceShareRequest& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The principals.</p>
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, and the ARNs of organizational units (OU) or organizations
+     * from AWS Organizations.</p>
      */
     inline AssociateResourceShareRequest& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 

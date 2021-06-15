@@ -161,43 +161,43 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
-     * master account will provide member accounts with access to this share.</p>
+     * management account provides member accounts with access to this share.</p>
      */
     inline const Aws::String& GetLicenseManagerResourceShareArn() const{ return m_licenseManagerResourceShareArn; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
-     * master account will provide member accounts with access to this share.</p>
+     * management account provides member accounts with access to this share.</p>
      */
     inline void SetLicenseManagerResourceShareArn(const Aws::String& value) { m_licenseManagerResourceShareArn = value; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
-     * master account will provide member accounts with access to this share.</p>
+     * management account provides member accounts with access to this share.</p>
      */
     inline void SetLicenseManagerResourceShareArn(Aws::String&& value) { m_licenseManagerResourceShareArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
-     * master account will provide member accounts with access to this share.</p>
+     * management account provides member accounts with access to this share.</p>
      */
     inline void SetLicenseManagerResourceShareArn(const char* value) { m_licenseManagerResourceShareArn.assign(value); }
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
-     * master account will provide member accounts with access to this share.</p>
+     * management account provides member accounts with access to this share.</p>
      */
     inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(const Aws::String& value) { SetLicenseManagerResourceShareArn(value); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
-     * master account will provide member accounts with access to this share.</p>
+     * management account provides member accounts with access to this share.</p>
      */
     inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(Aws::String&& value) { SetLicenseManagerResourceShareArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
-     * master account will provide member accounts with access to this share.</p>
+     * management account provides member accounts with access to this share.</p>
      */
     inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(const char* value) { SetLicenseManagerResourceShareArn(value); return *this;}
 

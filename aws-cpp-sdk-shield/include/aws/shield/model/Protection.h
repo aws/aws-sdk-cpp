@@ -224,6 +224,47 @@ namespace Model
      */
     inline Protection& AddHealthCheckIds(const char* value) { m_healthCheckIdsHasBeenSet = true; m_healthCheckIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline const Aws::String& GetProtectionArn() const{ return m_protectionArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline bool ProtectionArnHasBeenSet() const { return m_protectionArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline void SetProtectionArn(const Aws::String& value) { m_protectionArnHasBeenSet = true; m_protectionArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline void SetProtectionArn(Aws::String&& value) { m_protectionArnHasBeenSet = true; m_protectionArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline void SetProtectionArn(const char* value) { m_protectionArnHasBeenSet = true; m_protectionArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline Protection& WithProtectionArn(const Aws::String& value) { SetProtectionArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline Protection& WithProtectionArn(Aws::String&& value) { SetProtectionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection.</p>
+     */
+    inline Protection& WithProtectionArn(const char* value) { SetProtectionArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -237,6 +278,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_healthCheckIds;
     bool m_healthCheckIdsHasBeenSet;
+
+    Aws::String m_protectionArn;
+    bool m_protectionArnHasBeenSet;
   };
 
 } // namespace Model

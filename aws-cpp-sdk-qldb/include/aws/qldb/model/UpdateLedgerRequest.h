@@ -77,10 +77,8 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -88,10 +86,8 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -99,10 +95,8 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -110,10 +104,8 @@ namespace Model
      * <p>The flag that prevents a ledger from being deleted by any user. If not
      * provided on ledger creation, this feature is enabled (<code>true</code>) by
      * default.</p> <p>If deletion protection is enabled, you must first disable it
-     * before you can delete the ledger using the QLDB API or the AWS Command Line
-     * Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code>
-     * operation to set the flag to <code>false</code>. The QLDB console disables
-     * deletion protection for you when you use it to delete a ledger.</p>
+     * before you can delete the ledger. You can disable it by calling the
+     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
      */
     inline UpdateLedgerRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

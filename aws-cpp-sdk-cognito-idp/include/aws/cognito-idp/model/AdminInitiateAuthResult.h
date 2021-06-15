@@ -65,9 +65,19 @@ namespace Model
      * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate
      * with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client
      * must be enabled to use this flow.</p> </li> <li> <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> </ul>
+     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
+     * they can sign-in. The MFA types enabled for the user pool will be listed in the
+     * challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup
+     * software token MFA, use the session returned here from <code>InitiateAuth</code>
+     * as an input to <code>AssociateSoftwareToken</code>, and use the session returned
+     * by <code>VerifySoftwareToken</code> as an input to
+     * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
+     * to complete sign-in. To setup SMS MFA, users will need help from an
+     * administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.</p> </li> </ul>
      */
     inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
 
@@ -95,9 +105,19 @@ namespace Model
      * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate
      * with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client
      * must be enabled to use this flow.</p> </li> <li> <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> </ul>
+     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
+     * they can sign-in. The MFA types enabled for the user pool will be listed in the
+     * challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup
+     * software token MFA, use the session returned here from <code>InitiateAuth</code>
+     * as an input to <code>AssociateSoftwareToken</code>, and use the session returned
+     * by <code>VerifySoftwareToken</code> as an input to
+     * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
+     * to complete sign-in. To setup SMS MFA, users will need help from an
+     * administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.</p> </li> </ul>
      */
     inline void SetChallengeName(const ChallengeNameType& value) { m_challengeName = value; }
 
@@ -125,9 +145,19 @@ namespace Model
      * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate
      * with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client
      * must be enabled to use this flow.</p> </li> <li> <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> </ul>
+     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
+     * they can sign-in. The MFA types enabled for the user pool will be listed in the
+     * challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup
+     * software token MFA, use the session returned here from <code>InitiateAuth</code>
+     * as an input to <code>AssociateSoftwareToken</code>, and use the session returned
+     * by <code>VerifySoftwareToken</code> as an input to
+     * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
+     * to complete sign-in. To setup SMS MFA, users will need help from an
+     * administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.</p> </li> </ul>
      */
     inline void SetChallengeName(ChallengeNameType&& value) { m_challengeName = std::move(value); }
 
@@ -155,9 +185,19 @@ namespace Model
      * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate
      * with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client
      * must be enabled to use this flow.</p> </li> <li> <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> </ul>
+     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
+     * they can sign-in. The MFA types enabled for the user pool will be listed in the
+     * challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup
+     * software token MFA, use the session returned here from <code>InitiateAuth</code>
+     * as an input to <code>AssociateSoftwareToken</code>, and use the session returned
+     * by <code>VerifySoftwareToken</code> as an input to
+     * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
+     * to complete sign-in. To setup SMS MFA, users will need help from an
+     * administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.</p> </li> </ul>
      */
     inline AdminInitiateAuthResult& WithChallengeName(const ChallengeNameType& value) { SetChallengeName(value); return *this;}
 
@@ -185,9 +225,19 @@ namespace Model
      * <code>ADMIN_NO_SRP_AUTH</code>: This is returned if you need to authenticate
      * with <code>USERNAME</code> and <code>PASSWORD</code> directly. An app client
      * must be enabled to use this flow.</p> </li> <li> <p>
-     * <code>NEW_PASSWORD_REQUIRED</code>: For users which are required to change their
+     * <code>NEW_PASSWORD_REQUIRED</code>: For users who are required to change their
      * passwords after successful first login. This challenge should be passed with
-     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> </ul>
+     * <code>NEW_PASSWORD</code> and any other required attributes.</p> </li> <li> <p>
+     * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before
+     * they can sign-in. The MFA types enabled for the user pool will be listed in the
+     * challenge parameters <code>MFA_CAN_SETUP</code> value. </p> <p> To setup
+     * software token MFA, use the session returned here from <code>InitiateAuth</code>
+     * as an input to <code>AssociateSoftwareToken</code>, and use the session returned
+     * by <code>VerifySoftwareToken</code> as an input to
+     * <code>RespondToAuthChallenge</code> with challenge name <code>MFA_SETUP</code>
+     * to complete sign-in. To setup SMS MFA, users will need help from an
+     * administrator to add a phone number to their account and then call
+     * <code>InitiateAuth</code> again to restart sign-in.</p> </li> </ul>
      */
     inline AdminInitiateAuthResult& WithChallengeName(ChallengeNameType&& value) { SetChallengeName(std::move(value)); return *this;}
 

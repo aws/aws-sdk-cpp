@@ -87,185 +87,169 @@ namespace Model
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>The name of the bucket to which to initiate the upload</p> <p>When using this
-     * API with an access point, you must direct requests to the access point hostname.
-     * The access point hostname takes the form
+     * action with an access point, you must direct requests to the access point
+     * hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this operation with an access point through the AWS SDKs, you provide
+     * When using this action with an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about
      * access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
-     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p> <p>When using this API with Amazon S3 on Outposts, you must
-     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
-     * takes the form
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
+     * Outposts hostname. The S3 on Outposts hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-     * When using this operation using S3 on Outposts through the AWS SDKs, you provide
+     * When using this action using S3 on Outposts through the AWS SDKs, you provide
      * the Outposts bucket ARN in place of the bucket name. For more information about
      * S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
-     * S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
+     * S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -869,7 +853,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
@@ -880,7 +864,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
@@ -891,7 +875,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
@@ -902,7 +886,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
@@ -913,7 +897,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
@@ -924,7 +908,7 @@ namespace Model
      * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-     * Classes</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
+     * Classes</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -1170,9 +1154,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
@@ -1181,9 +1165,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
@@ -1192,9 +1176,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
@@ -1203,9 +1187,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
@@ -1214,9 +1198,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
@@ -1225,9 +1209,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1236,9 +1220,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
@@ -1247,9 +1231,9 @@ namespace Model
      * object encryption. All GET and PUT requests for an object protected by AWS KMS
      * will fail if not made via SSL or using SigV4. For information about configuring
      * using any of the officially supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
-     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
-     * Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3 User
+     * Guide</i>.</p>
      */
     inline CreateMultipartUploadRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1315,8 +1299,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an object operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS.</p> <p>Specifying this header with an object action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline bool GetBucketKeyEnabled() const{ return m_bucketKeyEnabled; }
 
@@ -1324,8 +1308,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an object operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS.</p> <p>Specifying this header with an object action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline bool BucketKeyEnabledHasBeenSet() const { return m_bucketKeyEnabledHasBeenSet; }
 
@@ -1333,8 +1317,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an object operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS.</p> <p>Specifying this header with an object action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline void SetBucketKeyEnabled(bool value) { m_bucketKeyEnabledHasBeenSet = true; m_bucketKeyEnabled = value; }
 
@@ -1342,8 +1326,8 @@ namespace Model
      * <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption
      * with server-side encryption using AWS KMS (SSE-KMS). Setting this header to
      * <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-     * with SSE-KMS.</p> <p>Specifying this header with an object operation doesn’t
-     * affect bucket-level settings for S3 Bucket Key.</p>
+     * with SSE-KMS.</p> <p>Specifying this header with an object action doesn’t affect
+     * bucket-level settings for S3 Bucket Key.</p>
      */
     inline CreateMultipartUploadRequest& WithBucketKeyEnabled(bool value) { SetBucketKeyEnabled(value); return *this;}
 
@@ -1516,56 +1500,56 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline CreateMultipartUploadRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline CreateMultipartUploadRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */

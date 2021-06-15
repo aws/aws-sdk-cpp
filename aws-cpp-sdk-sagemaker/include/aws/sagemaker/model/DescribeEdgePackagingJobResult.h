@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/EdgeOutputConfig.h>
 #include <aws/sagemaker/model/EdgePackagingJobStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/EdgePresetDeploymentOutput.h>
 #include <utility>
 
 namespace Aws
@@ -512,6 +513,32 @@ namespace Model
      */
     inline DescribeEdgePackagingJobResult& WithModelSignature(const char* value) { SetModelSignature(value); return *this;}
 
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline const EdgePresetDeploymentOutput& GetPresetDeploymentOutput() const{ return m_presetDeploymentOutput; }
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline void SetPresetDeploymentOutput(const EdgePresetDeploymentOutput& value) { m_presetDeploymentOutput = value; }
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline void SetPresetDeploymentOutput(EdgePresetDeploymentOutput&& value) { m_presetDeploymentOutput = std::move(value); }
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline DescribeEdgePackagingJobResult& WithPresetDeploymentOutput(const EdgePresetDeploymentOutput& value) { SetPresetDeploymentOutput(value); return *this;}
+
+    /**
+     * <p>The output of a SageMaker Edge Manager deployable resource.</p>
+     */
+    inline DescribeEdgePackagingJobResult& WithPresetDeploymentOutput(EdgePresetDeploymentOutput&& value) { SetPresetDeploymentOutput(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_edgePackagingJobArn;
@@ -541,6 +568,8 @@ namespace Model
     Aws::String m_modelArtifact;
 
     Aws::String m_modelSignature;
+
+    EdgePresetDeploymentOutput m_presetDeploymentOutput;
   };
 
 } // namespace Model

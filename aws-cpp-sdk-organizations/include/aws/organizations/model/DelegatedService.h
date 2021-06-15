@@ -40,56 +40,56 @@ namespace Model
 
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline DelegatedService& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */
     inline DelegatedService& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a service that can request an operation for the specified
+     * <p>The name of an AWS service that can request an operation for the specified
      * service. This is typically in the form of a URL, such as: <code>
      * <i>servicename</i>.amazonaws.com</code>.</p>
      */

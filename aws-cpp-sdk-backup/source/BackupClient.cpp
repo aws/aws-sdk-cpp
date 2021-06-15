@@ -37,6 +37,7 @@
 #include <aws/backup/model/DescribeRecoveryPointRequest.h>
 #include <aws/backup/model/DescribeRegionSettingsRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
+#include <aws/backup/model/DisassociateRecoveryPointRequest.h>
 #include <aws/backup/model/ExportBackupPlanTemplateRequest.h>
 #include <aws/backup/model/GetBackupPlanRequest.h>
 #include <aws/backup/model/GetBackupPlanFromJSONRequest.h>
@@ -117,7 +118,7 @@ BackupClient::~BackupClient()
 {
 }
 
-void BackupClient::init(const ClientConfiguration& config)
+void BackupClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Backup");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -146,9 +147,7 @@ void BackupClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateBackupPlanOutcome BackupClient::CreateBackupPlan(const CreateBackupPlanRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
   return CreateBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -178,11 +177,9 @@ CreateBackupSelectionOutcome BackupClient::CreateBackupSelection(const CreateBac
     return CreateBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  ss << "/selections/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
+  uri.AddPathSegments("/selections/");
   return CreateBackupSelectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -212,10 +209,8 @@ CreateBackupVaultOutcome BackupClient::CreateBackupVault(const CreateBackupVault
     return CreateBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
   return CreateBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -245,10 +240,8 @@ DeleteBackupPlanOutcome BackupClient::DeleteBackupPlan(const DeleteBackupPlanReq
     return DeleteBackupPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
   return DeleteBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -283,12 +276,10 @@ DeleteBackupSelectionOutcome BackupClient::DeleteBackupSelection(const DeleteBac
     return DeleteBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SelectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  ss << "/selections/";
-  ss << request.GetSelectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
+  uri.AddPathSegments("/selections/");
+  uri.AddPathSegment(request.GetSelectionId());
   return DeleteBackupSelectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -318,10 +309,8 @@ DeleteBackupVaultOutcome BackupClient::DeleteBackupVault(const DeleteBackupVault
     return DeleteBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
   return DeleteBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -351,11 +340,9 @@ DeleteBackupVaultAccessPolicyOutcome BackupClient::DeleteBackupVaultAccessPolicy
     return DeleteBackupVaultAccessPolicyOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/access-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/access-policy");
   return DeleteBackupVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -385,11 +372,9 @@ DeleteBackupVaultNotificationsOutcome BackupClient::DeleteBackupVaultNotificatio
     return DeleteBackupVaultNotificationsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/notification-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/notification-configuration");
   return DeleteBackupVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -424,12 +409,10 @@ DeleteRecoveryPointOutcome BackupClient::DeleteRecoveryPoint(const DeleteRecover
     return DeleteRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/recovery-points/";
-  ss << request.GetRecoveryPointArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/recovery-points/");
+  uri.AddPathSegment(request.GetRecoveryPointArn());
   return DeleteRecoveryPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -459,10 +442,8 @@ DescribeBackupJobOutcome BackupClient::DescribeBackupJob(const DescribeBackupJob
     return DescribeBackupJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupJobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-jobs/";
-  ss << request.GetBackupJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-jobs/");
+  uri.AddPathSegment(request.GetBackupJobId());
   return DescribeBackupJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -492,10 +473,8 @@ DescribeBackupVaultOutcome BackupClient::DescribeBackupVault(const DescribeBacku
     return DescribeBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
   return DescribeBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -525,10 +504,8 @@ DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobReques
     return DescribeCopyJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CopyJobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/copy-jobs/";
-  ss << request.GetCopyJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/copy-jobs/");
+  uri.AddPathSegment(request.GetCopyJobId());
   return DescribeCopyJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -553,9 +530,7 @@ void BackupClient::DescribeCopyJobAsyncHelper(const DescribeCopyJobRequest& requ
 DescribeGlobalSettingsOutcome BackupClient::DescribeGlobalSettings(const DescribeGlobalSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-settings");
   return DescribeGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -585,10 +560,8 @@ DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const D
     return DescribeProtectedResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceArn());
   return DescribeProtectedResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -623,12 +596,10 @@ DescribeRecoveryPointOutcome BackupClient::DescribeRecoveryPoint(const DescribeR
     return DescribeRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/recovery-points/";
-  ss << request.GetRecoveryPointArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/recovery-points/");
+  uri.AddPathSegment(request.GetRecoveryPointArn());
   return DescribeRecoveryPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -653,9 +624,7 @@ void BackupClient::DescribeRecoveryPointAsyncHelper(const DescribeRecoveryPointR
 DescribeRegionSettingsOutcome BackupClient::DescribeRegionSettings(const DescribeRegionSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account-settings");
   return DescribeRegionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -685,10 +654,8 @@ DescribeRestoreJobOutcome BackupClient::DescribeRestoreJob(const DescribeRestore
     return DescribeRestoreJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RestoreJobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restore-jobs/";
-  ss << request.GetRestoreJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/restore-jobs/");
+  uri.AddPathSegment(request.GetRestoreJobId());
   return DescribeRestoreJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -710,6 +677,45 @@ void BackupClient::DescribeRestoreJobAsyncHelper(const DescribeRestoreJobRequest
   handler(this, request, DescribeRestoreJob(request), context);
 }
 
+DisassociateRecoveryPointOutcome BackupClient::DisassociateRecoveryPoint(const DisassociateRecoveryPointRequest& request) const
+{
+  if (!request.BackupVaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateRecoveryPoint", "Required field: BackupVaultName, is not set");
+    return DisassociateRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
+  }
+  if (!request.RecoveryPointArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateRecoveryPoint", "Required field: RecoveryPointArn, is not set");
+    return DisassociateRecoveryPointOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/recovery-points/");
+  uri.AddPathSegment(request.GetRecoveryPointArn());
+  uri.AddPathSegments("/disassociate");
+  return DisassociateRecoveryPointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateRecoveryPointOutcomeCallable BackupClient::DisassociateRecoveryPointCallable(const DisassociateRecoveryPointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateRecoveryPointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateRecoveryPoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DisassociateRecoveryPointAsync(const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateRecoveryPointAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DisassociateRecoveryPointAsyncHelper(const DisassociateRecoveryPointRequest& request, const DisassociateRecoveryPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateRecoveryPoint(request), context);
+}
+
 ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const ExportBackupPlanTemplateRequest& request) const
 {
   if (!request.BackupPlanIdHasBeenSet())
@@ -718,11 +724,9 @@ ExportBackupPlanTemplateOutcome BackupClient::ExportBackupPlanTemplate(const Exp
     return ExportBackupPlanTemplateOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  ss << "/toTemplate/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
+  uri.AddPathSegments("/toTemplate/");
   return ExportBackupPlanTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -752,11 +756,8 @@ GetBackupPlanOutcome BackupClient::GetBackupPlan(const GetBackupPlanRequest& req
     return GetBackupPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
   return GetBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -781,9 +782,7 @@ void BackupClient::GetBackupPlanAsyncHelper(const GetBackupPlanRequest& request,
 GetBackupPlanFromJSONOutcome BackupClient::GetBackupPlanFromJSON(const GetBackupPlanFromJSONRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/template/json/toPlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/template/json/toPlan");
   return GetBackupPlanFromJSONOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -813,11 +812,9 @@ GetBackupPlanFromTemplateOutcome BackupClient::GetBackupPlanFromTemplate(const G
     return GetBackupPlanFromTemplateOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanTemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/template/plans/";
-  ss << request.GetBackupPlanTemplateId();
-  ss << "/toPlan";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/template/plans/");
+  uri.AddPathSegment(request.GetBackupPlanTemplateId());
+  uri.AddPathSegments("/toPlan");
   return GetBackupPlanFromTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -852,12 +849,10 @@ GetBackupSelectionOutcome BackupClient::GetBackupSelection(const GetBackupSelect
     return GetBackupSelectionOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SelectionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  ss << "/selections/";
-  ss << request.GetSelectionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
+  uri.AddPathSegments("/selections/");
+  uri.AddPathSegment(request.GetSelectionId());
   return GetBackupSelectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -887,11 +882,9 @@ GetBackupVaultAccessPolicyOutcome BackupClient::GetBackupVaultAccessPolicy(const
     return GetBackupVaultAccessPolicyOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/access-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/access-policy");
   return GetBackupVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -921,11 +914,9 @@ GetBackupVaultNotificationsOutcome BackupClient::GetBackupVaultNotifications(con
     return GetBackupVaultNotificationsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/notification-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/notification-configuration");
   return GetBackupVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -960,13 +951,11 @@ GetRecoveryPointRestoreMetadataOutcome BackupClient::GetRecoveryPointRestoreMeta
     return GetRecoveryPointRestoreMetadataOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/recovery-points/";
-  ss << request.GetRecoveryPointArn();
-  ss << "/restore-metadata";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/recovery-points/");
+  uri.AddPathSegment(request.GetRecoveryPointArn());
+  uri.AddPathSegments("/restore-metadata");
   return GetRecoveryPointRestoreMetadataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1016,9 +1005,7 @@ void BackupClient::GetSupportedResourceTypesAsyncHelper(const GetSupportedResour
 ListBackupJobsOutcome BackupClient::ListBackupJobs(const ListBackupJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-jobs/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-jobs/");
   return ListBackupJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1043,9 +1030,7 @@ void BackupClient::ListBackupJobsAsyncHelper(const ListBackupJobsRequest& reques
 ListBackupPlanTemplatesOutcome BackupClient::ListBackupPlanTemplates(const ListBackupPlanTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/template/plans";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/template/plans");
   return ListBackupPlanTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1075,11 +1060,9 @@ ListBackupPlanVersionsOutcome BackupClient::ListBackupPlanVersions(const ListBac
     return ListBackupPlanVersionsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  ss << "/versions/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
+  uri.AddPathSegments("/versions/");
   return ListBackupPlanVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1104,9 +1087,7 @@ void BackupClient::ListBackupPlanVersionsAsyncHelper(const ListBackupPlanVersion
 ListBackupPlansOutcome BackupClient::ListBackupPlans(const ListBackupPlansRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
   return ListBackupPlansOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1136,11 +1117,9 @@ ListBackupSelectionsOutcome BackupClient::ListBackupSelections(const ListBackupS
     return ListBackupSelectionsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  ss << "/selections/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
+  uri.AddPathSegments("/selections/");
   return ListBackupSelectionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1165,9 +1144,7 @@ void BackupClient::ListBackupSelectionsAsyncHelper(const ListBackupSelectionsReq
 ListBackupVaultsOutcome BackupClient::ListBackupVaults(const ListBackupVaultsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
   return ListBackupVaultsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1192,9 +1169,7 @@ void BackupClient::ListBackupVaultsAsyncHelper(const ListBackupVaultsRequest& re
 ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/copy-jobs/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/copy-jobs/");
   return ListCopyJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1219,9 +1194,7 @@ void BackupClient::ListCopyJobsAsyncHelper(const ListCopyJobsRequest& request, c
 ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListProtectedResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
   return ListProtectedResourcesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1251,11 +1224,9 @@ ListRecoveryPointsByBackupVaultOutcome BackupClient::ListRecoveryPointsByBackupV
     return ListRecoveryPointsByBackupVaultOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/recovery-points/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/recovery-points/");
   return ListRecoveryPointsByBackupVaultOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1285,11 +1256,9 @@ ListRecoveryPointsByResourceOutcome BackupClient::ListRecoveryPointsByResource(c
     return ListRecoveryPointsByResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/resources/";
-  ss << request.GetResourceArn();
-  ss << "/recovery-points/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/resources/");
+  uri.AddPathSegment(request.GetResourceArn());
+  uri.AddPathSegments("/recovery-points/");
   return ListRecoveryPointsByResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1314,9 +1283,7 @@ void BackupClient::ListRecoveryPointsByResourceAsyncHelper(const ListRecoveryPoi
 ListRestoreJobsOutcome BackupClient::ListRestoreJobs(const ListRestoreJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restore-jobs/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/restore-jobs/");
   return ListRestoreJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1346,11 +1313,8 @@ ListTagsOutcome BackupClient::ListTags(const ListTagsRequest& request) const
     return ListTagsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1380,11 +1344,9 @@ PutBackupVaultAccessPolicyOutcome BackupClient::PutBackupVaultAccessPolicy(const
     return PutBackupVaultAccessPolicyOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/access-policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/access-policy");
   return PutBackupVaultAccessPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1414,11 +1376,9 @@ PutBackupVaultNotificationsOutcome BackupClient::PutBackupVaultNotifications(con
     return PutBackupVaultNotificationsOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupVaultName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/notification-configuration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/notification-configuration");
   return PutBackupVaultNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1443,9 +1403,7 @@ void BackupClient::PutBackupVaultNotificationsAsyncHelper(const PutBackupVaultNo
 StartBackupJobOutcome BackupClient::StartBackupJob(const StartBackupJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-jobs");
   return StartBackupJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1470,9 +1428,7 @@ void BackupClient::StartBackupJobAsyncHelper(const StartBackupJobRequest& reques
 StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/copy-jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/copy-jobs");
   return StartCopyJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1497,9 +1453,7 @@ void BackupClient::StartCopyJobAsyncHelper(const StartCopyJobRequest& request, c
 StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/restore-jobs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/restore-jobs");
   return StartRestoreJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1529,10 +1483,8 @@ StopBackupJobOutcome BackupClient::StopBackupJob(const StopBackupJobRequest& req
     return StopBackupJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupJobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-jobs/";
-  ss << request.GetBackupJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-jobs/");
+  uri.AddPathSegment(request.GetBackupJobId());
   return StopBackupJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1562,10 +1514,8 @@ TagResourceOutcome BackupClient::TagResource(const TagResourceRequest& request) 
     return TagResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1595,10 +1545,8 @@ UntagResourceOutcome BackupClient::UntagResource(const UntagResourceRequest& req
     return UntagResourceOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/untag/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/untag/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1628,10 +1576,8 @@ UpdateBackupPlanOutcome BackupClient::UpdateBackupPlan(const UpdateBackupPlanReq
     return UpdateBackupPlanOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackupPlanId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup/plans/";
-  ss << request.GetBackupPlanId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup/plans/");
+  uri.AddPathSegment(request.GetBackupPlanId());
   return UpdateBackupPlanOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1656,9 +1602,7 @@ void BackupClient::UpdateBackupPlanAsyncHelper(const UpdateBackupPlanRequest& re
 UpdateGlobalSettingsOutcome BackupClient::UpdateGlobalSettings(const UpdateGlobalSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/global-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/global-settings");
   return UpdateGlobalSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1693,12 +1637,10 @@ UpdateRecoveryPointLifecycleOutcome BackupClient::UpdateRecoveryPointLifecycle(c
     return UpdateRecoveryPointLifecycleOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecoveryPointArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/backup-vaults/";
-  ss << request.GetBackupVaultName();
-  ss << "/recovery-points/";
-  ss << request.GetRecoveryPointArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/backup-vaults/");
+  uri.AddPathSegment(request.GetBackupVaultName());
+  uri.AddPathSegments("/recovery-points/");
+  uri.AddPathSegment(request.GetRecoveryPointArn());
   return UpdateRecoveryPointLifecycleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1723,9 +1665,7 @@ void BackupClient::UpdateRecoveryPointLifecycleAsyncHelper(const UpdateRecoveryP
 UpdateRegionSettingsOutcome BackupClient::UpdateRegionSettings(const UpdateRegionSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account-settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account-settings");
   return UpdateRegionSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

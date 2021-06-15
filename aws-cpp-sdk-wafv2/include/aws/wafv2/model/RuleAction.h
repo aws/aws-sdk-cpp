@@ -26,13 +26,9 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>The action that AWS WAF should take on
-   * a web request when it matches a rule's statement. Settings at the web ACL level
-   * can override the rule action setting. </p><p><h3>See Also:</h3>   <a
+   * <p>The action that AWS WAF should take on a web request when it matches a rule's
+   * statement. Settings at the web ACL level can override the rule action setting.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleAction">AWS
    * API Reference</a></p>
    */

@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/PipelineExecutionStatus.h>
+#include <aws/sagemaker/model/PipelineExperimentConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
 #include <utility>
@@ -205,6 +206,58 @@ namespace Model
     inline DescribePipelineExecutionResult& WithPipelineExecutionDescription(const char* value) { SetPipelineExecutionDescription(value); return *this;}
 
 
+    
+    inline const PipelineExperimentConfig& GetPipelineExperimentConfig() const{ return m_pipelineExperimentConfig; }
+
+    
+    inline void SetPipelineExperimentConfig(const PipelineExperimentConfig& value) { m_pipelineExperimentConfig = value; }
+
+    
+    inline void SetPipelineExperimentConfig(PipelineExperimentConfig&& value) { m_pipelineExperimentConfig = std::move(value); }
+
+    
+    inline DescribePipelineExecutionResult& WithPipelineExperimentConfig(const PipelineExperimentConfig& value) { SetPipelineExperimentConfig(value); return *this;}
+
+    
+    inline DescribePipelineExecutionResult& WithPipelineExperimentConfig(PipelineExperimentConfig&& value) { SetPipelineExperimentConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline DescribePipelineExecutionResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline DescribePipelineExecutionResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline DescribePipelineExecutionResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
+
     /**
      * <p>The time when the pipeline execution was created.</p>
      */
@@ -299,6 +352,10 @@ namespace Model
     PipelineExecutionStatus m_pipelineExecutionStatus;
 
     Aws::String m_pipelineExecutionDescription;
+
+    PipelineExperimentConfig m_pipelineExperimentConfig;
+
+    Aws::String m_failureReason;
 
     Aws::Utils::DateTime m_creationTime;
 

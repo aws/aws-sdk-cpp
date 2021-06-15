@@ -78,7 +78,7 @@ OutpostsClient::~OutpostsClient()
 {
 }
 
-void OutpostsClient::init(const ClientConfiguration& config)
+void OutpostsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Outposts");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -107,9 +107,7 @@ void OutpostsClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateOutpostOutcome OutpostsClient::CreateOutpost(const CreateOutpostRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/outposts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/outposts");
   return CreateOutpostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -139,10 +137,8 @@ DeleteOutpostOutcome OutpostsClient::DeleteOutpost(const DeleteOutpostRequest& r
     return DeleteOutpostOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/outposts/";
-  ss << request.GetOutpostId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/outposts/");
+  uri.AddPathSegment(request.GetOutpostId());
   return DeleteOutpostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -172,10 +168,8 @@ DeleteSiteOutcome OutpostsClient::DeleteSite(const DeleteSiteRequest& request) c
     return DeleteSiteOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SiteId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sites/";
-  ss << request.GetSiteId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sites/");
+  uri.AddPathSegment(request.GetSiteId());
   return DeleteSiteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -205,10 +199,8 @@ GetOutpostOutcome OutpostsClient::GetOutpost(const GetOutpostRequest& request) c
     return GetOutpostOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/outposts/";
-  ss << request.GetOutpostId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/outposts/");
+  uri.AddPathSegment(request.GetOutpostId());
   return GetOutpostOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -238,11 +230,9 @@ GetOutpostInstanceTypesOutcome OutpostsClient::GetOutpostInstanceTypes(const Get
     return GetOutpostInstanceTypesOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/outposts/";
-  ss << request.GetOutpostId();
-  ss << "/instanceTypes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/outposts/");
+  uri.AddPathSegment(request.GetOutpostId());
+  uri.AddPathSegments("/instanceTypes");
   return GetOutpostInstanceTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -267,9 +257,7 @@ void OutpostsClient::GetOutpostInstanceTypesAsyncHelper(const GetOutpostInstance
 ListOutpostsOutcome OutpostsClient::ListOutposts(const ListOutpostsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/outposts";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/outposts");
   return ListOutpostsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -294,9 +282,7 @@ void OutpostsClient::ListOutpostsAsyncHelper(const ListOutpostsRequest& request,
 ListSitesOutcome OutpostsClient::ListSites(const ListSitesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/sites";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/sites");
   return ListSitesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -326,10 +312,8 @@ ListTagsForResourceOutcome OutpostsClient::ListTagsForResource(const ListTagsFor
     return ListTagsForResourceOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -359,10 +343,8 @@ TagResourceOutcome OutpostsClient::TagResource(const TagResourceRequest& request
     return TagResourceOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -397,10 +379,8 @@ UntagResourceOutcome OutpostsClient::UntagResource(const UntagResourceRequest& r
     return UntagResourceOutcome(Aws::Client::AWSError<OutpostsErrors>(OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 

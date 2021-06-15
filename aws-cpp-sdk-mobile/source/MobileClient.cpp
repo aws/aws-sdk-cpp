@@ -77,7 +77,7 @@ MobileClient::~MobileClient()
 {
 }
 
-void MobileClient::init(const ClientConfiguration& config)
+void MobileClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("mobile");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -106,9 +106,7 @@ void MobileClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects");
   return CreateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -138,10 +136,8 @@ DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& req
     return DeleteProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects/";
-  ss << request.GetProjectId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects/");
+  uri.AddPathSegment(request.GetProjectId());
   return DeleteProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,10 +167,8 @@ DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& 
     return DescribeBundleOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bundles/";
-  ss << request.GetBundleId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bundles/");
+  uri.AddPathSegment(request.GetBundleId());
   return DescribeBundleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -204,9 +198,7 @@ DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectReques
     return DescribeProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/project";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/project");
   return DescribeProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -236,10 +228,8 @@ ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& reques
     return ExportBundleOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bundles/";
-  ss << request.GetBundleId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bundles/");
+  uri.AddPathSegment(request.GetBundleId());
   return ExportBundleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -269,10 +259,8 @@ ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& req
     return ExportProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/exports/";
-  ss << request.GetProjectId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/exports/");
+  uri.AddPathSegment(request.GetProjectId());
   return ExportProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -297,9 +285,7 @@ void MobileClient::ExportProjectAsyncHelper(const ExportProjectRequest& request,
 ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/bundles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/bundles");
   return ListBundlesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -324,9 +310,7 @@ void MobileClient::ListBundlesAsyncHelper(const ListBundlesRequest& request, con
 ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/projects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/projects");
   return ListProjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -356,9 +340,7 @@ UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& req
     return UpdateProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/update");
   return UpdateProjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     AmazonEC2,
     AmazonECS,
-    AWSLambda
+    AmazonEKS,
+    AWSLambda,
+    AmazonSageMaker
   };
 
 namespace SavingsPlanRateServiceCodeMapper

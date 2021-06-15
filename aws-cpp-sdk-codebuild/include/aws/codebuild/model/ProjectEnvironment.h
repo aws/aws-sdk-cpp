@@ -538,72 +538,64 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */
     inline ProjectEnvironment& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Amazon Simple Storage Service (Amazon S3) bucket, path prefix,
-     * and object key that contains the PEM-encoded certificate for the build project.
-     * For more information, see <a
+     * <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains
+     * the PEM-encoded certificate for the build project. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>AWS CodeBuild User Guide</i>.</p>
      */

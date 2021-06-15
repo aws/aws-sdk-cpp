@@ -40,8 +40,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
@@ -49,8 +48,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
@@ -58,8 +56,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
@@ -67,8 +64,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
@@ -76,8 +72,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
@@ -85,8 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
@@ -94,8 +88,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
@@ -103,8 +96,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy to which you want to add a
      * new version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
@@ -253,7 +245,7 @@ namespace Model
      * users, groups, and roles that the policy is attached to.</p> <p>For more
      * information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool GetSetAsDefault() const{ return m_setAsDefault; }
 
@@ -264,7 +256,7 @@ namespace Model
      * users, groups, and roles that the policy is attached to.</p> <p>For more
      * information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool SetAsDefaultHasBeenSet() const { return m_setAsDefaultHasBeenSet; }
 
@@ -275,7 +267,7 @@ namespace Model
      * users, groups, and roles that the policy is attached to.</p> <p>For more
      * information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetSetAsDefault(bool value) { m_setAsDefaultHasBeenSet = true; m_setAsDefault = value; }
 
@@ -286,7 +278,7 @@ namespace Model
      * users, groups, and roles that the policy is attached to.</p> <p>For more
      * information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreatePolicyVersionRequest& WithSetAsDefault(bool value) { SetSetAsDefault(value); return *this;}
 

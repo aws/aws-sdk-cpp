@@ -16,6 +16,7 @@ CreateClusterRequest::CreateClusterRequest() :
     m_clusterNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_configurationHasBeenSet(false),
     m_capacityProvidersHasBeenSet(false),
     m_defaultCapacityProviderStrategyHasBeenSet(false)
 {
@@ -50,6 +51,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
      settingsJsonList[settingsIndex].AsObject(m_settings[settingsIndex].Jsonize());
    }
    payload.WithArray("settings", std::move(settingsJsonList));
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

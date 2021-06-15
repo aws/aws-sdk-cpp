@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <assert.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/URI.h>
@@ -44,7 +45,11 @@ public:
         return Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(MockHttpAllocationTag, request);
     }
 
-    const Aws::Http::Standard::StandardHttpRequest& GetMostRecentHttpRequest() const { return m_requestsMade.back(); }
+    const Aws::Http::Standard::StandardHttpRequest& GetMostRecentHttpRequest() const
+    {
+        assert(!m_requestsMade.empty());
+        return m_requestsMade.back();
+    }
     const Aws::Vector<Aws::Http::Standard::StandardHttpRequest>& GetAllRequestsMade() const { return m_requestsMade; }
 
     //these will be cleaned up by the aws client, so if you are testing an aws client, don't worry about freeing the memory

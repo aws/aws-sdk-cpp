@@ -46,6 +46,12 @@ CreatePackagingGroupResult& CreatePackagingGroupResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("egressAccessLogs"))
+  {
+    m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
+
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");

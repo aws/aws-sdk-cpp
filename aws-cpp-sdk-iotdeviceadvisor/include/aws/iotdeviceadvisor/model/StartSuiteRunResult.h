@@ -34,99 +34,99 @@ namespace Model
 
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run Id of the started suite run.</p>
      */
     inline const Aws::String& GetSuiteRunId() const{ return m_suiteRunId; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run Id of the started suite run.</p>
      */
     inline void SetSuiteRunId(const Aws::String& value) { m_suiteRunId = value; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run Id of the started suite run.</p>
      */
     inline void SetSuiteRunId(Aws::String&& value) { m_suiteRunId = std::move(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run Id of the started suite run.</p>
      */
     inline void SetSuiteRunId(const char* value) { m_suiteRunId.assign(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run Id of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunId(const Aws::String& value) { SetSuiteRunId(value); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run Id of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunId(Aws::String&& value) { SetSuiteRunId(std::move(value)); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite Run Id.</p>
+     * <p>Suite Run Id of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunId(const char* value) { SetSuiteRunId(value); return *this;}
 
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon resource name of the started suite run.</p>
      */
     inline const Aws::String& GetSuiteRunArn() const{ return m_suiteRunArn; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon resource name of the started suite run.</p>
      */
     inline void SetSuiteRunArn(const Aws::String& value) { m_suiteRunArn = value; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon resource name of the started suite run.</p>
      */
     inline void SetSuiteRunArn(Aws::String&& value) { m_suiteRunArn = std::move(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon resource name of the started suite run.</p>
      */
     inline void SetSuiteRunArn(const char* value) { m_suiteRunArn.assign(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon resource name of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunArn(const Aws::String& value) { SetSuiteRunArn(value); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon resource name of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunArn(Aws::String&& value) { SetSuiteRunArn(std::move(value)); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite run arn.</p>
+     * <p>Amazon resource name of the started suite run.</p>
      */
     inline StartSuiteRunResult& WithSuiteRunArn(const char* value) { SetSuiteRunArn(value); return *this;}
 
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite create time.</p>
+     * <p>Date (in Unix epoch time) when the suite run was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite create time.</p>
+     * <p>Date (in Unix epoch time) when the suite run was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite create time.</p>
+     * <p>Date (in Unix epoch time) when the suite run was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite create time.</p>
+     * <p>Date (in Unix epoch time) when the suite run was created.</p>
      */
     inline StartSuiteRunResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Starts a Device Advisor test suite run based on suite create time.</p>
+     * <p>Date (in Unix epoch time) when the suite run was created.</p>
      */
     inline StartSuiteRunResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

@@ -30,7 +30,8 @@ AutoMLCandidate::AutoMLCandidate() :
     m_creationTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_candidatePropertiesHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ AutoMLCandidate::AutoMLCandidate(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_candidatePropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +131,13 @@ AutoMLCandidate& AutoMLCandidate::operator =(JsonView jsonValue)
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CandidateProperties"))
+  {
+    m_candidateProperties = jsonValue.GetObject("CandidateProperties");
+
+    m_candidatePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +207,12 @@ JsonValue AutoMLCandidate::Jsonize() const
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("FailureReason", m_failureReason);
+
+  }
+
+  if(m_candidatePropertiesHasBeenSet)
+  {
+   payload.WithObject("CandidateProperties", m_candidateProperties.Jsonize());
 
   }
 

@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+   * <p>Deletes a virtual node input.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNodeInput">AWS
    * API Reference</a></p>
    */

@@ -46,56 +46,56 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) used by the service access IAM role. It is a
-     * required parameter that enables DMS to write and read objects from an 3S
+     * required parameter that enables DMS to write and read objects from an S3
      * bucket.</p>
      */
     inline S3Settings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}

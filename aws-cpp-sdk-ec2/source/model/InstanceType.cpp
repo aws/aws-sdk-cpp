@@ -343,6 +343,10 @@ namespace Aws
         static const int z1d_6xlarge_HASH = HashingUtils::HashString("z1d.6xlarge");
         static const int z1d_12xlarge_HASH = HashingUtils::HashString("z1d.12xlarge");
         static const int z1d_metal_HASH = HashingUtils::HashString("z1d.metal");
+        static const int u_6tb1_56xlarge_HASH = HashingUtils::HashString("u-6tb1.56xlarge");
+        static const int u_6tb1_112xlarge_HASH = HashingUtils::HashString("u-6tb1.112xlarge");
+        static const int u_9tb1_112xlarge_HASH = HashingUtils::HashString("u-9tb1.112xlarge");
+        static const int u_12tb1_112xlarge_HASH = HashingUtils::HashString("u-12tb1.112xlarge");
         static const int u_6tb1_metal_HASH = HashingUtils::HashString("u-6tb1.metal");
         static const int u_9tb1_metal_HASH = HashingUtils::HashString("u-9tb1.metal");
         static const int u_12tb1_metal_HASH = HashingUtils::HashString("u-12tb1.metal");
@@ -409,6 +413,15 @@ namespace Aws
         static const int m6gd_12xlarge_HASH = HashingUtils::HashString("m6gd.12xlarge");
         static const int m6gd_16xlarge_HASH = HashingUtils::HashString("m6gd.16xlarge");
         static const int mac1_metal_HASH = HashingUtils::HashString("mac1.metal");
+        static const int x2gd_medium_HASH = HashingUtils::HashString("x2gd.medium");
+        static const int x2gd_large_HASH = HashingUtils::HashString("x2gd.large");
+        static const int x2gd_xlarge_HASH = HashingUtils::HashString("x2gd.xlarge");
+        static const int x2gd_2xlarge_HASH = HashingUtils::HashString("x2gd.2xlarge");
+        static const int x2gd_4xlarge_HASH = HashingUtils::HashString("x2gd.4xlarge");
+        static const int x2gd_8xlarge_HASH = HashingUtils::HashString("x2gd.8xlarge");
+        static const int x2gd_12xlarge_HASH = HashingUtils::HashString("x2gd.12xlarge");
+        static const int x2gd_16xlarge_HASH = HashingUtils::HashString("x2gd.16xlarge");
+        static const int x2gd_metal_HASH = HashingUtils::HashString("x2gd.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2040,6 +2053,26 @@ namespace Aws
             enumValue = InstanceType::z1d_metal;
             return true;
           }
+          else if (hashCode == u_6tb1_56xlarge_HASH)
+          {
+            enumValue = InstanceType::u_6tb1_56xlarge;
+            return true;
+          }
+          else if (hashCode == u_6tb1_112xlarge_HASH)
+          {
+            enumValue = InstanceType::u_6tb1_112xlarge;
+            return true;
+          }
+          else if (hashCode == u_9tb1_112xlarge_HASH)
+          {
+            enumValue = InstanceType::u_9tb1_112xlarge;
+            return true;
+          }
+          else if (hashCode == u_12tb1_112xlarge_HASH)
+          {
+            enumValue = InstanceType::u_12tb1_112xlarge;
+            return true;
+          }
           else if (hashCode == u_6tb1_metal_HASH)
           {
             enumValue = InstanceType::u_6tb1_metal;
@@ -2235,7 +2268,11 @@ namespace Aws
             enumValue = InstanceType::r5n_4xlarge;
             return true;
           }
-          else if (hashCode == r5n_8xlarge_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper3(int hashCode, InstanceType& enumValue)
+        {
+          if (hashCode == r5n_8xlarge_HASH)
           {
             enumValue = InstanceType::r5n_8xlarge;
             return true;
@@ -2255,11 +2292,7 @@ namespace Aws
             enumValue = InstanceType::r5n_24xlarge;
             return true;
           }
-          return false;
-        }
-        static bool GetEnumForNameHelper3(int hashCode, InstanceType& enumValue)
-        {
-          if (hashCode == inf1_xlarge_HASH)
+          else if (hashCode == inf1_xlarge_HASH)
           {
             enumValue = InstanceType::inf1_xlarge;
             return true;
@@ -2372,6 +2405,51 @@ namespace Aws
           else if (hashCode == mac1_metal_HASH)
           {
             enumValue = InstanceType::mac1_metal;
+            return true;
+          }
+          else if (hashCode == x2gd_medium_HASH)
+          {
+            enumValue = InstanceType::x2gd_medium;
+            return true;
+          }
+          else if (hashCode == x2gd_large_HASH)
+          {
+            enumValue = InstanceType::x2gd_large;
+            return true;
+          }
+          else if (hashCode == x2gd_xlarge_HASH)
+          {
+            enumValue = InstanceType::x2gd_xlarge;
+            return true;
+          }
+          else if (hashCode == x2gd_2xlarge_HASH)
+          {
+            enumValue = InstanceType::x2gd_2xlarge;
+            return true;
+          }
+          else if (hashCode == x2gd_4xlarge_HASH)
+          {
+            enumValue = InstanceType::x2gd_4xlarge;
+            return true;
+          }
+          else if (hashCode == x2gd_8xlarge_HASH)
+          {
+            enumValue = InstanceType::x2gd_8xlarge;
+            return true;
+          }
+          else if (hashCode == x2gd_12xlarge_HASH)
+          {
+            enumValue = InstanceType::x2gd_12xlarge;
+            return true;
+          }
+          else if (hashCode == x2gd_16xlarge_HASH)
+          {
+            enumValue = InstanceType::x2gd_16xlarge;
+            return true;
+          }
+          else if (hashCode == x2gd_metal_HASH)
+          {
+            enumValue = InstanceType::x2gd_metal;
             return true;
           }
           return false;
@@ -3366,6 +3444,18 @@ namespace Aws
           case InstanceType::z1d_metal:
             value = "z1d.metal";
             return true;
+          case InstanceType::u_6tb1_56xlarge:
+            value = "u-6tb1.56xlarge";
+            return true;
+          case InstanceType::u_6tb1_112xlarge:
+            value = "u-6tb1.112xlarge";
+            return true;
+          case InstanceType::u_9tb1_112xlarge:
+            value = "u-9tb1.112xlarge";
+            return true;
+          case InstanceType::u_12tb1_112xlarge:
+            value = "u-12tb1.112xlarge";
+            return true;
           case InstanceType::u_6tb1_metal:
             value = "u-6tb1.metal";
             return true;
@@ -3483,6 +3573,14 @@ namespace Aws
           case InstanceType::r5n_4xlarge:
             value = "r5n.4xlarge";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper3(InstanceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case InstanceType::r5n_8xlarge:
             value = "r5n.8xlarge";
             return true;
@@ -3495,14 +3593,6 @@ namespace Aws
           case InstanceType::r5n_24xlarge:
             value = "r5n.24xlarge";
             return true;
-          default:
-            return false;
-          }
-        }
-        static bool GetNameForEnumHelper3(InstanceType enumValue, Aws::String& value)
-        {
-          switch(enumValue)
-          {
           case InstanceType::inf1_xlarge:
             value = "inf1.xlarge";
             return true;
@@ -3571,6 +3661,33 @@ namespace Aws
             return true;
           case InstanceType::mac1_metal:
             value = "mac1.metal";
+            return true;
+          case InstanceType::x2gd_medium:
+            value = "x2gd.medium";
+            return true;
+          case InstanceType::x2gd_large:
+            value = "x2gd.large";
+            return true;
+          case InstanceType::x2gd_xlarge:
+            value = "x2gd.xlarge";
+            return true;
+          case InstanceType::x2gd_2xlarge:
+            value = "x2gd.2xlarge";
+            return true;
+          case InstanceType::x2gd_4xlarge:
+            value = "x2gd.4xlarge";
+            return true;
+          case InstanceType::x2gd_8xlarge:
+            value = "x2gd.8xlarge";
+            return true;
+          case InstanceType::x2gd_12xlarge:
+            value = "x2gd.12xlarge";
+            return true;
+          case InstanceType::x2gd_16xlarge:
+            value = "x2gd.16xlarge";
+            return true;
+          case InstanceType::x2gd_metal:
+            value = "x2gd.metal";
             return true;
           default:
             return false;

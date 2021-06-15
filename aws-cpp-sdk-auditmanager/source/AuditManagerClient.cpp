@@ -119,7 +119,7 @@ AuditManagerClient::~AuditManagerClient()
 {
 }
 
-void AuditManagerClient::init(const ClientConfiguration& config)
+void AuditManagerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AuditManager");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -153,11 +153,9 @@ AssociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::AssociateAsse
     return AssociateAssessmentReportEvidenceFolderOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/associateToAssessmentReport";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/associateToAssessmentReport");
   return AssociateAssessmentReportEvidenceFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -187,11 +185,9 @@ BatchAssociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchAssociate
     return BatchAssociateAssessmentReportEvidenceOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/batchAssociateToAssessmentReport";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/batchAssociateToAssessmentReport");
   return BatchAssociateAssessmentReportEvidenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -221,11 +217,9 @@ BatchCreateDelegationByAssessmentOutcome AuditManagerClient::BatchCreateDelegati
     return BatchCreateDelegationByAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/delegations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/delegations");
   return BatchCreateDelegationByAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -255,11 +249,9 @@ BatchDeleteDelegationByAssessmentOutcome AuditManagerClient::BatchDeleteDelegati
     return BatchDeleteDelegationByAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/delegations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/delegations");
   return BatchDeleteDelegationByAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -289,11 +281,9 @@ BatchDisassociateAssessmentReportEvidenceOutcome AuditManagerClient::BatchDisass
     return BatchDisassociateAssessmentReportEvidenceOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/batchDisassociateFromAssessmentReport";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/batchDisassociateFromAssessmentReport");
   return BatchDisassociateAssessmentReportEvidenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -333,15 +323,13 @@ BatchImportEvidenceToAssessmentControlOutcome AuditManagerClient::BatchImportEvi
     return BatchImportEvidenceToAssessmentControlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/controlSets/";
-  ss << request.GetControlSetId();
-  ss << "/controls/";
-  ss << request.GetControlId();
-  ss << "/evidence";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/controlSets/");
+  uri.AddPathSegment(request.GetControlSetId());
+  uri.AddPathSegments("/controls/");
+  uri.AddPathSegment(request.GetControlId());
+  uri.AddPathSegments("/evidence");
   return BatchImportEvidenceToAssessmentControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -366,9 +354,7 @@ void AuditManagerClient::BatchImportEvidenceToAssessmentControlAsyncHelper(const
 CreateAssessmentOutcome AuditManagerClient::CreateAssessment(const CreateAssessmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments");
   return CreateAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -393,9 +379,7 @@ void AuditManagerClient::CreateAssessmentAsyncHelper(const CreateAssessmentReque
 CreateAssessmentFrameworkOutcome AuditManagerClient::CreateAssessmentFramework(const CreateAssessmentFrameworkRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessmentFrameworks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessmentFrameworks");
   return CreateAssessmentFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -425,11 +409,9 @@ CreateAssessmentReportOutcome AuditManagerClient::CreateAssessmentReport(const C
     return CreateAssessmentReportOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/reports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/reports");
   return CreateAssessmentReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,9 +436,7 @@ void AuditManagerClient::CreateAssessmentReportAsyncHelper(const CreateAssessmen
 CreateControlOutcome AuditManagerClient::CreateControl(const CreateControlRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/controls";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/controls");
   return CreateControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -486,10 +466,8 @@ DeleteAssessmentOutcome AuditManagerClient::DeleteAssessment(const DeleteAssessm
     return DeleteAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
   return DeleteAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -519,10 +497,8 @@ DeleteAssessmentFrameworkOutcome AuditManagerClient::DeleteAssessmentFramework(c
     return DeleteAssessmentFrameworkOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessmentFrameworks/";
-  ss << request.GetFrameworkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessmentFrameworks/");
+  uri.AddPathSegment(request.GetFrameworkId());
   return DeleteAssessmentFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -557,12 +533,10 @@ DeleteAssessmentReportOutcome AuditManagerClient::DeleteAssessmentReport(const D
     return DeleteAssessmentReportOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentReportId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/reports/";
-  ss << request.GetAssessmentReportId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/reports/");
+  uri.AddPathSegment(request.GetAssessmentReportId());
   return DeleteAssessmentReportOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -592,10 +566,8 @@ DeleteControlOutcome AuditManagerClient::DeleteControl(const DeleteControlReques
     return DeleteControlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/controls/";
-  ss << request.GetControlId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/controls/");
+  uri.AddPathSegment(request.GetControlId());
   return DeleteControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -620,9 +592,7 @@ void AuditManagerClient::DeleteControlAsyncHelper(const DeleteControlRequest& re
 DeregisterAccountOutcome AuditManagerClient::DeregisterAccount(const DeregisterAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account/deregisterAccount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account/deregisterAccount");
   return DeregisterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -647,9 +617,7 @@ void AuditManagerClient::DeregisterAccountAsyncHelper(const DeregisterAccountReq
 DeregisterOrganizationAdminAccountOutcome AuditManagerClient::DeregisterOrganizationAdminAccount(const DeregisterOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account/deregisterOrganizationAdminAccount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account/deregisterOrganizationAdminAccount");
   return DeregisterOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -679,11 +647,9 @@ DisassociateAssessmentReportEvidenceFolderOutcome AuditManagerClient::Disassocia
     return DisassociateAssessmentReportEvidenceFolderOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/disassociateFromAssessmentReport";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/disassociateFromAssessmentReport");
   return DisassociateAssessmentReportEvidenceFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -708,9 +674,7 @@ void AuditManagerClient::DisassociateAssessmentReportEvidenceFolderAsyncHelper(c
 GetAccountStatusOutcome AuditManagerClient::GetAccountStatus(const GetAccountStatusRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account/status");
   return GetAccountStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -740,10 +704,8 @@ GetAssessmentOutcome AuditManagerClient::GetAssessment(const GetAssessmentReques
     return GetAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
   return GetAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -773,10 +735,8 @@ GetAssessmentFrameworkOutcome AuditManagerClient::GetAssessmentFramework(const G
     return GetAssessmentFrameworkOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessmentFrameworks/";
-  ss << request.GetFrameworkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessmentFrameworks/");
+  uri.AddPathSegment(request.GetFrameworkId());
   return GetAssessmentFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -811,13 +771,11 @@ GetAssessmentReportUrlOutcome AuditManagerClient::GetAssessmentReportUrl(const G
     return GetAssessmentReportUrlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/reports/";
-  ss << request.GetAssessmentReportId();
-  ss << "/url";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/reports/");
+  uri.AddPathSegment(request.GetAssessmentReportId());
+  uri.AddPathSegments("/url");
   return GetAssessmentReportUrlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -847,11 +805,9 @@ GetChangeLogsOutcome AuditManagerClient::GetChangeLogs(const GetChangeLogsReques
     return GetChangeLogsOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/changelogs";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/changelogs");
   return GetChangeLogsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -881,10 +837,8 @@ GetControlOutcome AuditManagerClient::GetControl(const GetControlRequest& reques
     return GetControlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/controls/";
-  ss << request.GetControlId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/controls/");
+  uri.AddPathSegment(request.GetControlId());
   return GetControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -909,9 +863,7 @@ void AuditManagerClient::GetControlAsyncHelper(const GetControlRequest& request,
 GetDelegationsOutcome AuditManagerClient::GetDelegations(const GetDelegationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/delegations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/delegations");
   return GetDelegationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -956,16 +908,14 @@ GetEvidenceOutcome AuditManagerClient::GetEvidence(const GetEvidenceRequest& req
     return GetEvidenceOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EvidenceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/controlSets/";
-  ss << request.GetControlSetId();
-  ss << "/evidenceFolders/";
-  ss << request.GetEvidenceFolderId();
-  ss << "/evidence/";
-  ss << request.GetEvidenceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/controlSets/");
+  uri.AddPathSegment(request.GetControlSetId());
+  uri.AddPathSegments("/evidenceFolders/");
+  uri.AddPathSegment(request.GetEvidenceFolderId());
+  uri.AddPathSegments("/evidence/");
+  uri.AddPathSegment(request.GetEvidenceId());
   return GetEvidenceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1005,15 +955,13 @@ GetEvidenceByEvidenceFolderOutcome AuditManagerClient::GetEvidenceByEvidenceFold
     return GetEvidenceByEvidenceFolderOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EvidenceFolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/controlSets/";
-  ss << request.GetControlSetId();
-  ss << "/evidenceFolders/";
-  ss << request.GetEvidenceFolderId();
-  ss << "/evidence";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/controlSets/");
+  uri.AddPathSegment(request.GetControlSetId());
+  uri.AddPathSegments("/evidenceFolders/");
+  uri.AddPathSegment(request.GetEvidenceFolderId());
+  uri.AddPathSegments("/evidence");
   return GetEvidenceByEvidenceFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1053,14 +1001,12 @@ GetEvidenceFolderOutcome AuditManagerClient::GetEvidenceFolder(const GetEvidence
     return GetEvidenceFolderOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EvidenceFolderId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/controlSets/";
-  ss << request.GetControlSetId();
-  ss << "/evidenceFolders/";
-  ss << request.GetEvidenceFolderId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/controlSets/");
+  uri.AddPathSegment(request.GetControlSetId());
+  uri.AddPathSegments("/evidenceFolders/");
+  uri.AddPathSegment(request.GetEvidenceFolderId());
   return GetEvidenceFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1090,11 +1036,9 @@ GetEvidenceFoldersByAssessmentOutcome AuditManagerClient::GetEvidenceFoldersByAs
     return GetEvidenceFoldersByAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/evidenceFolders";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/evidenceFolders");
   return GetEvidenceFoldersByAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1134,14 +1078,11 @@ GetEvidenceFoldersByAssessmentControlOutcome AuditManagerClient::GetEvidenceFold
     return GetEvidenceFoldersByAssessmentControlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/evidenceFolders-by-assessment-control/";
-  ss << request.GetControlSetId();
-  ss << "/";
-  ss << request.GetControlId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/evidenceFolders-by-assessment-control/");
+  uri.AddPathSegment(request.GetControlSetId());
+  uri.AddPathSegment(request.GetControlId());
   return GetEvidenceFoldersByAssessmentControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1166,9 +1107,7 @@ void AuditManagerClient::GetEvidenceFoldersByAssessmentControlAsyncHelper(const 
 GetOrganizationAdminAccountOutcome AuditManagerClient::GetOrganizationAdminAccount(const GetOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account/organizationAdminAccount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account/organizationAdminAccount");
   return GetOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1193,9 +1132,7 @@ void AuditManagerClient::GetOrganizationAdminAccountAsyncHelper(const GetOrganiz
 GetServicesInScopeOutcome AuditManagerClient::GetServicesInScope(const GetServicesInScopeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/services";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/services");
   return GetServicesInScopeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1225,10 +1162,8 @@ GetSettingsOutcome AuditManagerClient::GetSettings(const GetSettingsRequest& req
     return GetSettingsOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Attribute]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/settings/";
-  ss << SettingAttributeMapper::GetNameForSettingAttribute(request.GetAttribute());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/settings/");
+  uri.AddPathSegment(SettingAttributeMapper::GetNameForSettingAttribute(request.GetAttribute()));
   return GetSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1258,9 +1193,7 @@ ListAssessmentFrameworksOutcome AuditManagerClient::ListAssessmentFrameworks(con
     return ListAssessmentFrameworksOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessmentFrameworks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessmentFrameworks");
   return ListAssessmentFrameworksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1285,9 +1218,7 @@ void AuditManagerClient::ListAssessmentFrameworksAsyncHelper(const ListAssessmen
 ListAssessmentReportsOutcome AuditManagerClient::ListAssessmentReports(const ListAssessmentReportsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessmentReports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessmentReports");
   return ListAssessmentReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1312,9 +1243,7 @@ void AuditManagerClient::ListAssessmentReportsAsyncHelper(const ListAssessmentRe
 ListAssessmentsOutcome AuditManagerClient::ListAssessments(const ListAssessmentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments");
   return ListAssessmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1344,9 +1273,7 @@ ListControlsOutcome AuditManagerClient::ListControls(const ListControlsRequest& 
     return ListControlsOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlType]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/controls";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/controls");
   return ListControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1376,9 +1303,7 @@ ListKeywordsForDataSourceOutcome AuditManagerClient::ListKeywordsForDataSource(c
     return ListKeywordsForDataSourceOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Source]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/dataSourceKeywords";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/dataSourceKeywords");
   return ListKeywordsForDataSourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1403,9 +1328,7 @@ void AuditManagerClient::ListKeywordsForDataSourceAsyncHelper(const ListKeywords
 ListNotificationsOutcome AuditManagerClient::ListNotifications(const ListNotificationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/notifications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/notifications");
   return ListNotificationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1435,10 +1358,8 @@ ListTagsForResourceOutcome AuditManagerClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1463,9 +1384,7 @@ void AuditManagerClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 RegisterAccountOutcome AuditManagerClient::RegisterAccount(const RegisterAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account/registerAccount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account/registerAccount");
   return RegisterAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1490,9 +1409,7 @@ void AuditManagerClient::RegisterAccountAsyncHelper(const RegisterAccountRequest
 RegisterOrganizationAdminAccountOutcome AuditManagerClient::RegisterOrganizationAdminAccount(const RegisterOrganizationAdminAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/account/registerOrganizationAdminAccount";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/account/registerOrganizationAdminAccount");
   return RegisterOrganizationAdminAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1522,10 +1439,8 @@ TagResourceOutcome AuditManagerClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1560,10 +1475,8 @@ UntagResourceOutcome AuditManagerClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1593,10 +1506,8 @@ UpdateAssessmentOutcome AuditManagerClient::UpdateAssessment(const UpdateAssessm
     return UpdateAssessmentOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
   return UpdateAssessmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1636,14 +1547,12 @@ UpdateAssessmentControlOutcome AuditManagerClient::UpdateAssessmentControl(const
     return UpdateAssessmentControlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/controlSets/";
-  ss << request.GetControlSetId();
-  ss << "/controls/";
-  ss << request.GetControlId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/controlSets/");
+  uri.AddPathSegment(request.GetControlSetId());
+  uri.AddPathSegments("/controls/");
+  uri.AddPathSegment(request.GetControlId());
   return UpdateAssessmentControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1678,13 +1587,11 @@ UpdateAssessmentControlSetStatusOutcome AuditManagerClient::UpdateAssessmentCont
     return UpdateAssessmentControlSetStatusOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/controlSets/";
-  ss << request.GetControlSetId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/controlSets/");
+  uri.AddPathSegment(request.GetControlSetId());
+  uri.AddPathSegments("/status");
   return UpdateAssessmentControlSetStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1714,10 +1621,8 @@ UpdateAssessmentFrameworkOutcome AuditManagerClient::UpdateAssessmentFramework(c
     return UpdateAssessmentFrameworkOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FrameworkId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessmentFrameworks/";
-  ss << request.GetFrameworkId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessmentFrameworks/");
+  uri.AddPathSegment(request.GetFrameworkId());
   return UpdateAssessmentFrameworkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1747,11 +1652,9 @@ UpdateAssessmentStatusOutcome AuditManagerClient::UpdateAssessmentStatus(const U
     return UpdateAssessmentStatusOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssessmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessments/";
-  ss << request.GetAssessmentId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessments/");
+  uri.AddPathSegment(request.GetAssessmentId());
+  uri.AddPathSegments("/status");
   return UpdateAssessmentStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1781,10 +1684,8 @@ UpdateControlOutcome AuditManagerClient::UpdateControl(const UpdateControlReques
     return UpdateControlOutcome(Aws::Client::AWSError<AuditManagerErrors>(AuditManagerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ControlId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/controls/";
-  ss << request.GetControlId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/controls/");
+  uri.AddPathSegment(request.GetControlId());
   return UpdateControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1809,9 +1710,7 @@ void AuditManagerClient::UpdateControlAsyncHelper(const UpdateControlRequest& re
 UpdateSettingsOutcome AuditManagerClient::UpdateSettings(const UpdateSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/settings";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/settings");
   return UpdateSettingsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1836,9 +1735,7 @@ void AuditManagerClient::UpdateSettingsAsyncHelper(const UpdateSettingsRequest& 
 ValidateAssessmentReportIntegrityOutcome AuditManagerClient::ValidateAssessmentReportIntegrity(const ValidateAssessmentReportIntegrityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/assessmentReports/integrity";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/assessmentReports/integrity");
   return ValidateAssessmentReportIntegrityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

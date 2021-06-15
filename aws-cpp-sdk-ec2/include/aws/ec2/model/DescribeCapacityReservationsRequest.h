@@ -177,25 +177,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a
@@ -228,25 +231,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a
@@ -279,25 +285,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a
@@ -330,25 +339,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a
@@ -381,25 +393,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a
@@ -432,25 +447,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a
@@ -483,25 +501,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a
@@ -534,25 +555,28 @@ namespace Model
      * Reservation is created on hardware that is shared with other AWS accounts.</p>
      * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
      * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>state</code> - The current state of the Capacity
-     * Reservation. A Capacity Reservation can be in one of the following states:</p>
-     * <ul> <li> <p> <code>active</code>- The Capacity Reservation is active and the
-     * capacity is available for your use.</p> </li> <li> <p> <code>expired</code> -
-     * The Capacity Reservation expired automatically at the date and time specified in
-     * your request. The reserved capacity is no longer available for your use.</p>
-     * </li> <li> <p> <code>cancelled</code> - The Capacity Reservation was manually
-     * cancelled. The reserved capacity is no longer available for your use.</p> </li>
-     * <li> <p> <code>pending</code> - The Capacity Reservation request was successful
-     * but the capacity provisioning is still pending.</p> </li> <li> <p>
-     * <code>failed</code> - The Capacity Reservation request has failed. A request
-     * might fail due to invalid request parameters, capacity constraints, or instance
-     * limit constraints. Failed requests are retained for 60 minutes.</p> </li> </ul>
-     * </li> <li> <p> <code>end-date</code> - The date and time at which the Capacity
-     * Reservation expires. When a Capacity Reservation expires, the reserved capacity
-     * is released and you can no longer launch instances into it. The Capacity
-     * Reservation's state changes to expired when it reaches its end date and
-     * time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in which
-     * the Capacity Reservation ends. A Capacity Reservation can have one of the
+     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
+     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * <code>state</code> - The current state of the Capacity Reservation. A Capacity
+     * Reservation can be in one of the following states:</p> <ul> <li> <p>
+     * <code>active</code>- The Capacity Reservation is active and the capacity is
+     * available for your use.</p> </li> <li> <p> <code>expired</code> - The Capacity
+     * Reservation expired automatically at the date and time specified in your
+     * request. The reserved capacity is no longer available for your use.</p> </li>
+     * <li> <p> <code>cancelled</code> - The Capacity Reservation was cancelled. The
+     * reserved capacity is no longer available for your use.</p> </li> <li> <p>
+     * <code>pending</code> - The Capacity Reservation request was successful but the
+     * capacity provisioning is still pending.</p> </li> <li> <p> <code>failed</code> -
+     * The Capacity Reservation request has failed. A request might fail due to invalid
+     * request parameters, capacity constraints, or instance limit constraints. Failed
+     * requests are retained for 60 minutes.</p> </li> </ul> </li> <li> <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation
+     * was started.</p> </li> <li> <p> <code>end-date</code> - The date and time at
+     * which the Capacity Reservation expires. When a Capacity Reservation expires, the
+     * reserved capacity is released and you can no longer launch instances into it.
+     * The Capacity Reservation's state changes to expired when it reaches its end date
+     * and time.</p> </li> <li> <p> <code>end-date-type</code> - Indicates the way in
+     * which the Capacity Reservation ends. A Capacity Reservation can have one of the
      * following end types:</p> <ul> <li> <p> <code>unlimited</code> - The Capacity
      * Reservation remains active until you explicitly cancel it.</p> </li> <li> <p>
      * <code>limited</code> - The Capacity Reservation expires automatically at a

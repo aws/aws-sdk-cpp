@@ -39,7 +39,7 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -48,7 +48,7 @@ namespace Model
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -57,7 +57,7 @@ namespace Model
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -66,7 +66,7 @@ namespace Model
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -75,7 +75,7 @@ namespace Model
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -84,7 +84,7 @@ namespace Model
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -93,7 +93,7 @@ namespace Model
     inline TagUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -102,7 +102,7 @@ namespace Model
     inline TagUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the user that you want to add tags to.</p> <p>This parameter
+     * <p>The name of the IAM user to which you want to add tags.</p> <p>This parameter
      * accepts (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that consist of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
@@ -112,50 +112,50 @@ namespace Model
 
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline TagUserRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline TagUserRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline TagUserRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags that you want to attach to the user. Each tag consists of a
-     * key name and an associated value.</p>
+     * <p>The list of tags that you want to attach to the IAM user. Each tag consists
+     * of a key name and an associated value.</p>
      */
     inline TagUserRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

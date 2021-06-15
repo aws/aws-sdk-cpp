@@ -20,31 +20,31 @@ namespace Aws
       namespace MetadataFieldMapper
       {
 
+        static const int ComputePlatform_HASH = HashingUtils::HashString("ComputePlatform");
         static const int AgentId_HASH = HashingUtils::HashString("AgentId");
         static const int AwsRequestId_HASH = HashingUtils::HashString("AwsRequestId");
-        static const int ComputePlatform_HASH = HashingUtils::HashString("ComputePlatform");
         static const int ExecutionEnvironment_HASH = HashingUtils::HashString("ExecutionEnvironment");
         static const int LambdaFunctionArn_HASH = HashingUtils::HashString("LambdaFunctionArn");
         static const int LambdaMemoryLimitInMB_HASH = HashingUtils::HashString("LambdaMemoryLimitInMB");
-        static const int LambdaPreviousExecutionTimeInMilliseconds_HASH = HashingUtils::HashString("LambdaPreviousExecutionTimeInMilliseconds");
         static const int LambdaRemainingTimeInMilliseconds_HASH = HashingUtils::HashString("LambdaRemainingTimeInMilliseconds");
         static const int LambdaTimeGapBetweenInvokesInMilliseconds_HASH = HashingUtils::HashString("LambdaTimeGapBetweenInvokesInMilliseconds");
+        static const int LambdaPreviousExecutionTimeInMilliseconds_HASH = HashingUtils::HashString("LambdaPreviousExecutionTimeInMilliseconds");
 
 
         MetadataField GetMetadataFieldForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == AgentId_HASH)
+          if (hashCode == ComputePlatform_HASH)
+          {
+            return MetadataField::ComputePlatform;
+          }
+          else if (hashCode == AgentId_HASH)
           {
             return MetadataField::AgentId;
           }
           else if (hashCode == AwsRequestId_HASH)
           {
             return MetadataField::AwsRequestId;
-          }
-          else if (hashCode == ComputePlatform_HASH)
-          {
-            return MetadataField::ComputePlatform;
           }
           else if (hashCode == ExecutionEnvironment_HASH)
           {
@@ -58,10 +58,6 @@ namespace Aws
           {
             return MetadataField::LambdaMemoryLimitInMB;
           }
-          else if (hashCode == LambdaPreviousExecutionTimeInMilliseconds_HASH)
-          {
-            return MetadataField::LambdaPreviousExecutionTimeInMilliseconds;
-          }
           else if (hashCode == LambdaRemainingTimeInMilliseconds_HASH)
           {
             return MetadataField::LambdaRemainingTimeInMilliseconds;
@@ -69,6 +65,10 @@ namespace Aws
           else if (hashCode == LambdaTimeGapBetweenInvokesInMilliseconds_HASH)
           {
             return MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds;
+          }
+          else if (hashCode == LambdaPreviousExecutionTimeInMilliseconds_HASH)
+          {
+            return MetadataField::LambdaPreviousExecutionTimeInMilliseconds;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -84,24 +84,24 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetadataField::ComputePlatform:
+            return "ComputePlatform";
           case MetadataField::AgentId:
             return "AgentId";
           case MetadataField::AwsRequestId:
             return "AwsRequestId";
-          case MetadataField::ComputePlatform:
-            return "ComputePlatform";
           case MetadataField::ExecutionEnvironment:
             return "ExecutionEnvironment";
           case MetadataField::LambdaFunctionArn:
             return "LambdaFunctionArn";
           case MetadataField::LambdaMemoryLimitInMB:
             return "LambdaMemoryLimitInMB";
-          case MetadataField::LambdaPreviousExecutionTimeInMilliseconds:
-            return "LambdaPreviousExecutionTimeInMilliseconds";
           case MetadataField::LambdaRemainingTimeInMilliseconds:
             return "LambdaRemainingTimeInMilliseconds";
           case MetadataField::LambdaTimeGapBetweenInvokesInMilliseconds:
             return "LambdaTimeGapBetweenInvokesInMilliseconds";
+          case MetadataField::LambdaPreviousExecutionTimeInMilliseconds:
+            return "LambdaPreviousExecutionTimeInMilliseconds";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

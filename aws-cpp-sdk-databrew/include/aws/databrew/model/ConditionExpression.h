@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Represents an individual condition that evaluates to true or false.</p>
-   * <p>Conditions are used with recipe actions: The action is only performed for
+   * <p>Conditions are used with recipe actions. The action is only performed for
    * column values where the condition evaluates to true.</p> <p>If a recipe requires
    * more than one condition, then the recipe must specify multiple
    * <code>ConditionExpression</code> elements. Each condition is applied to the rows
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline ConditionExpression& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline ConditionExpression& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>A specific condition to apply to a recipe action. For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html">Recipe
+     * href="https://docs.aws.amazon.com/databrew/latest/dg/recipes.html#recipes.structure">Recipe
      * structure</a> in the <i>AWS Glue DataBrew Developer Guide</i>.</p>
      */
     inline ConditionExpression& WithCondition(const char* value) { SetCondition(value); return *this;}
@@ -150,42 +150,42 @@ namespace Model
 
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline const Aws::String& GetTargetColumn() const{ return m_targetColumn; }
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline bool TargetColumnHasBeenSet() const { return m_targetColumnHasBeenSet; }
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline void SetTargetColumn(const Aws::String& value) { m_targetColumnHasBeenSet = true; m_targetColumn = value; }
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline void SetTargetColumn(Aws::String&& value) { m_targetColumnHasBeenSet = true; m_targetColumn = std::move(value); }
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline void SetTargetColumn(const char* value) { m_targetColumnHasBeenSet = true; m_targetColumn.assign(value); }
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline ConditionExpression& WithTargetColumn(const Aws::String& value) { SetTargetColumn(value); return *this;}
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline ConditionExpression& WithTargetColumn(Aws::String&& value) { SetTargetColumn(std::move(value)); return *this;}
 
     /**
-     * <p>A column to apply this condition to, within an AWS Glue DataBrew dataset.</p>
+     * <p>A column to apply this condition to.</p>
      */
     inline ConditionExpression& WithTargetColumn(const char* value) { SetTargetColumn(value); return *this;}
 

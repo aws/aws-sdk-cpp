@@ -167,25 +167,25 @@ namespace Model
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline int GetWeight() const{ return m_weight; }
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
      * <p>The weight associated with the host. If hosts are equal in priority, calls
-     * are distributed among them based on their relative weight.</p>
+     * are redistributed among them based on their relative weight.</p>
      */
     inline OriginationRoute& WithWeight(int value) { SetWeight(value); return *this;}
 

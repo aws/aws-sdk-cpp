@@ -19,13 +19,29 @@ ListChannelsModeratedByAppInstanceUserRequest::ListChannelsModeratedByAppInstanc
     m_appInstanceUserArnHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
 Aws::String ListChannelsModeratedByAppInstanceUserRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection ListChannelsModeratedByAppInstanceUserRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 void ListChannelsModeratedByAppInstanceUserRequest::AddQueryStringParameters(URI& uri) const

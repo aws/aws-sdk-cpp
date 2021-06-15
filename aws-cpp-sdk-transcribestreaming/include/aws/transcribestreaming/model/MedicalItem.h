@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A word or punctuation that is transcribed from the input audio.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A word, phrase, or punctuation mark that is transcribed from the input
+   * audio.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-streaming-2017-10-26/MedicalItem">AWS
    * API Reference</a></p>
    */

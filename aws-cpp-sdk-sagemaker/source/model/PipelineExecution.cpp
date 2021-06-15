@@ -25,6 +25,8 @@ PipelineExecution::PipelineExecution() :
     m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
     m_pipelineExecutionStatusHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
+    m_pipelineExperimentConfigHasBeenSet(false),
+    m_failureReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_createdByHasBeenSet(false),
@@ -40,6 +42,8 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
     m_pipelineExecutionStatusHasBeenSet(false),
     m_pipelineExecutionDescriptionHasBeenSet(false),
+    m_pipelineExperimentConfigHasBeenSet(false),
+    m_failureReasonHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
     m_createdByHasBeenSet(false),
@@ -84,6 +88,20 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_pipelineExecutionDescription = jsonValue.GetString("PipelineExecutionDescription");
 
     m_pipelineExecutionDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PipelineExperimentConfig"))
+  {
+    m_pipelineExperimentConfig = jsonValue.GetObject("PipelineExperimentConfig");
+
+    m_pipelineExperimentConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FailureReason"))
+  {
+    m_failureReason = jsonValue.GetString("FailureReason");
+
+    m_failureReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationTime"))
@@ -157,6 +175,18 @@ JsonValue PipelineExecution::Jsonize() const
   if(m_pipelineExecutionDescriptionHasBeenSet)
   {
    payload.WithString("PipelineExecutionDescription", m_pipelineExecutionDescription);
+
+  }
+
+  if(m_pipelineExperimentConfigHasBeenSet)
+  {
+   payload.WithObject("PipelineExperimentConfig", m_pipelineExperimentConfig.Jsonize());
+
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("FailureReason", m_failureReason);
 
   }
 

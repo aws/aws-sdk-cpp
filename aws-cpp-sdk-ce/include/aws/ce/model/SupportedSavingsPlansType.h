@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     COMPUTE_SP,
-    EC2_INSTANCE_SP
+    EC2_INSTANCE_SP,
+    SAGEMAKER_SP
   };
 
 namespace SupportedSavingsPlansTypeMapper

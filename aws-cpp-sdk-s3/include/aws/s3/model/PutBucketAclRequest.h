@@ -367,42 +367,58 @@ namespace Model
 
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline const Aws::String& GetGrantWrite() const{ return m_grantWrite; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline bool GrantWriteHasBeenSet() const { return m_grantWriteHasBeenSet; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(Aws::String&& value) { m_grantWriteHasBeenSet = true; m_grantWrite = std::move(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline void SetGrantWrite(const char* value) { m_grantWriteHasBeenSet = true; m_grantWrite.assign(value); }
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline PutBucketAclRequest& WithGrantWrite(const Aws::String& value) { SetGrantWrite(value); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline PutBucketAclRequest& WithGrantWrite(Aws::String&& value) { SetGrantWrite(std::move(value)); return *this;}
 
     /**
-     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     * <p>Allows grantee to create new objects in the bucket.</p> <p>For the bucket and
+     * object owners of existing objects, also allows deletions and overwrites of those
+     * objects.</p>
      */
     inline PutBucketAclRequest& WithGrantWrite(const char* value) { SetGrantWrite(value); return *this;}
 
@@ -449,56 +465,56 @@ namespace Model
 
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline PutBucketAclRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */
     inline PutBucketAclRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account id of the expected bucket owner. If the bucket is owned by a
+     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
      * different account, the request will fail with an HTTP <code>403 (Access
      * Denied)</code> error.</p>
      */

@@ -122,7 +122,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
@@ -134,7 +138,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
@@ -146,7 +154,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
@@ -158,7 +170,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
@@ -170,7 +186,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
@@ -182,7 +202,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline SmsConfigurationType& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
@@ -194,7 +218,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline SmsConfigurationType& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
@@ -206,7 +234,11 @@ namespace Model
      * roles trust policy to require the <code>ExternalID</code>. If you use the
      * Cognito Management Console to create a role for SMS MFA, Cognito will create a
      * role with the required permissions and a trust policy that demonstrates use of
-     * the <code>ExternalId</code>.</p>
+     * the <code>ExternalId</code>.</p> <p>For more information about the
+     * <code>ExternalId</code> of a role, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How
+     * to use an external ID when granting access to your AWS resources to a third
+     * party</a> </p>
      */
     inline SmsConfigurationType& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

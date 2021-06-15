@@ -246,22 +246,34 @@ namespace Model
     inline CreateTaskSetRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline CreateTaskSetRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>An object representing the network configuration for a task set.</p>
+     */
     inline CreateTaskSetRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
@@ -698,22 +710,40 @@ namespace Model
     inline CreateTaskSetRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline const Scale& GetScale() const{ return m_scale; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline void SetScale(const Scale& value) { m_scaleHasBeenSet = true; m_scale = value; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline void SetScale(Scale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline CreateTaskSetRequest& WithScale(const Scale& value) { SetScale(value); return *this;}
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline CreateTaskSetRequest& WithScale(Scale&& value) { SetScale(std::move(value)); return *this;}
 
 

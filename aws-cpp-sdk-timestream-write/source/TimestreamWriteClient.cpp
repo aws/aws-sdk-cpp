@@ -16,6 +16,7 @@
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/platform/Environment.h>
 
 #include <aws/timestream-write/TimestreamWriteClient.h>
 #include <aws/timestream-write/TimestreamWriteEndpoint.h>
@@ -83,9 +84,10 @@ TimestreamWriteClient::~TimestreamWriteClient()
 {
 }
 
-void TimestreamWriteClient::init(const ClientConfiguration& config)
+void TimestreamWriteClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Timestream Write");
+  LoadTimestreamWriteSpecificConfig(config);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   if (config.endpointOverride.empty())
   {
@@ -95,13 +97,42 @@ void TimestreamWriteClient::init(const ClientConfiguration& config)
   {
       OverrideEndpoint(config.endpointOverride);
   }
-  if (!config.endpointOverride.empty())
+}
+
+void TimestreamWriteClient::LoadTimestreamWriteSpecificConfig(const Aws::Client::ClientConfiguration& clientConfiguration)
+{
+  if (!clientConfiguration.endpointOverride.empty())
   {
     m_enableEndpointDiscovery = false;
   }
+  else if (clientConfiguration.enableEndpointDiscovery)
+  {
+    m_enableEndpointDiscovery = clientConfiguration.enableEndpointDiscovery.value();
+  }
   else
   {
-    m_enableEndpointDiscovery = config.enableEndpointDiscovery;
+    m_enableEndpointDiscovery = true;
+
+    Aws::String enableEndpointDiscovery = Aws::Environment::GetEnv("AWS_ENABLE_ENDPOINT_DISCOVERY");
+    if (enableEndpointDiscovery.empty())
+    {
+      enableEndpointDiscovery = Aws::Config::GetCachedConfigValue(clientConfiguration.profileName, "endpoint_discovery_enabled");
+    }
+
+    if (enableEndpointDiscovery == "true")
+    {
+      m_enableEndpointDiscovery = true;
+    }
+    else if (enableEndpointDiscovery == "false")
+    {
+      m_enableEndpointDiscovery = false;
+    }
+    else if (!enableEndpointDiscovery.empty())
+    {
+      AWS_LOGSTREAM_WARN("TimestreamWriteClient", R"(Using the SDK default configuration for Endpoint Discovery. )"
+        R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY" or )"
+        R"(your config file's variable "endpoint_discovery_enabled" are explicitly set to "true" or "false" (case-sensitive) or not set at all.)");
+    }
   }
 }
 
@@ -149,9 +180,14 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "CreateDatabase" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return CreateDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return CreateDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -204,9 +240,14 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "CreateTable" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return CreateTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return CreateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -259,9 +300,14 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "DeleteDatabase" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return DeleteDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return DeleteDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -314,9 +360,14 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "DeleteTable" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return DeleteTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return DeleteTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -369,9 +420,14 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "DescribeDatabase" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return DescribeDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return DescribeDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -396,9 +452,6 @@ void TimestreamWriteClient::DescribeDatabaseAsyncHelper(const DescribeDatabaseRe
 DescribeEndpointsOutcome TimestreamWriteClient::DescribeEndpoints(const DescribeEndpointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -451,9 +504,14 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "DescribeTable" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return DescribeTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return DescribeTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -506,9 +564,14 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "ListDatabases" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return ListDatabasesOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return ListDatabasesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -561,9 +624,14 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "ListTables" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return ListTablesOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return ListTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -616,9 +684,14 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "ListTagsForResource" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -671,9 +744,14 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "TagResource" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return TagResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -726,9 +804,14 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "UntagResource" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return UntagResourceOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -781,9 +864,14 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "UpdateDatabase" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return UpdateDatabaseOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return UpdateDatabaseOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -836,9 +924,14 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "UpdateTable" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return UpdateTableOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return UpdateTableOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -891,9 +984,14 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
       }
     }
   }
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  else
+  {
+    Aws::String errorMessage = R"(Unable to perform "WriteRecords" without endpoint discovery. )"
+      R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+      R"(your config file's variable "endpoint_discovery_enabled" and )"
+      R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+    return WriteRecordsOutcome(Aws::Client::AWSError<TimestreamWriteErrors>(TimestreamWriteErrors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+  }
   return WriteRecordsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -22,6 +22,7 @@ PolicyDetails::PolicyDetails() :
     m_policyType(PolicyTypeValues::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
+    m_resourceLocationsHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
     m_schedulesHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -34,6 +35,7 @@ PolicyDetails::PolicyDetails(JsonView jsonValue) :
     m_policyType(PolicyTypeValues::NOT_SET),
     m_policyTypeHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
+    m_resourceLocationsHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
     m_schedulesHasBeenSet(false),
     m_parametersHasBeenSet(false),
@@ -60,6 +62,16 @@ PolicyDetails& PolicyDetails::operator =(JsonView jsonValue)
       m_resourceTypes.push_back(ResourceTypeValuesMapper::GetResourceTypeValuesForName(resourceTypesJsonList[resourceTypesIndex].AsString()));
     }
     m_resourceTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResourceLocations"))
+  {
+    Array<JsonView> resourceLocationsJsonList = jsonValue.GetArray("ResourceLocations");
+    for(unsigned resourceLocationsIndex = 0; resourceLocationsIndex < resourceLocationsJsonList.GetLength(); ++resourceLocationsIndex)
+    {
+      m_resourceLocations.push_back(ResourceLocationValuesMapper::GetResourceLocationValuesForName(resourceLocationsJsonList[resourceLocationsIndex].AsString()));
+    }
+    m_resourceLocationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TargetTags"))
@@ -126,6 +138,17 @@ JsonValue PolicyDetails::Jsonize() const
      resourceTypesJsonList[resourceTypesIndex].AsString(ResourceTypeValuesMapper::GetNameForResourceTypeValues(m_resourceTypes[resourceTypesIndex]));
    }
    payload.WithArray("ResourceTypes", std::move(resourceTypesJsonList));
+
+  }
+
+  if(m_resourceLocationsHasBeenSet)
+  {
+   Array<JsonValue> resourceLocationsJsonList(m_resourceLocations.size());
+   for(unsigned resourceLocationsIndex = 0; resourceLocationsIndex < resourceLocationsJsonList.GetLength(); ++resourceLocationsIndex)
+   {
+     resourceLocationsJsonList[resourceLocationsIndex].AsString(ResourceLocationValuesMapper::GetNameForResourceLocationValues(m_resourceLocations[resourceLocationsIndex]));
+   }
+   payload.WithArray("ResourceLocations", std::move(resourceLocationsJsonList));
 
   }
 

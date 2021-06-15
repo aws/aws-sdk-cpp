@@ -72,42 +72,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline LaunchPermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline LaunchPermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID.</p>
+     * <p>The AWS account ID.</p> <p>Constraints: Up to 10 000 account IDs can be
+     * specified in a single request.</p>
      */
     inline LaunchPermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 

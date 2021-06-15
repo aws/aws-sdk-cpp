@@ -51,6 +51,12 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("InferenceExecutionConfig"))
+  {
+    m_inferenceExecutionConfig = jsonValue.GetObject("InferenceExecutionConfig");
+
+  }
+
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");

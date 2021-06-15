@@ -235,81 +235,81 @@ namespace Model
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
 
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
 
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
 
     /**
      * <p> Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
-     * enhance the overall experience of using EC2 Image Builder. Enabled by default.
-     * </p>
+     * enhance the overall experience of using EC2 Image Builder. Enabled by
+     * default.</p>
      */
     inline Image& WithEnhancedImageMetadataEnabled(bool value) { SetEnhancedImageMetadataEnabled(value); return *this;}
 
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline bool OsVersionHasBeenSet() const { return m_osVersionHasBeenSet; }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(const Aws::String& value) { m_osVersionHasBeenSet = true; m_osVersion = value; }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(Aws::String&& value) { m_osVersionHasBeenSet = true; m_osVersion = std::move(value); }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline void SetOsVersion(const char* value) { m_osVersionHasBeenSet = true; m_osVersion.assign(value); }
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline Image& WithOsVersion(const Aws::String& value) { SetOsVersion(value); return *this;}
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline Image& WithOsVersion(Aws::String&& value) { SetOsVersion(std::move(value)); return *this;}
 
     /**
      * <p>The operating system version of the instance. For example, Amazon Linux 2,
-     * Ubuntu 18, or Microsoft Windows Server 2019. </p>
+     * Ubuntu 18, or Microsoft Windows Server 2019.</p>
      */
     inline Image& WithOsVersion(const char* value) { SetOsVersion(value); return *this;}
 

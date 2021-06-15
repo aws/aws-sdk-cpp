@@ -75,7 +75,7 @@ ImportExportClient::~ImportExportClient()
 {
 }
 
-void ImportExportClient::init(const ClientConfiguration& config)
+void ImportExportClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("importexport");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -115,8 +115,7 @@ CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) 
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/");
   ss.str("?Operation=CancelJob");
   uri.SetQueryString(ss.str());
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -144,8 +143,7 @@ CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) 
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/");
   ss.str("?Operation=CreateJob");
   uri.SetQueryString(ss.str());
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -173,8 +171,7 @@ GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLa
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/");
   ss.str("?Operation=GetShippingLabel");
   uri.SetQueryString(ss.str());
   return GetShippingLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -202,8 +199,7 @@ GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) 
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/");
   ss.str("?Operation=GetStatus");
   uri.SetQueryString(ss.str());
   return GetStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -231,8 +227,7 @@ ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) con
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/");
   ss.str("?Operation=ListJobs");
   uri.SetQueryString(ss.str());
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -260,8 +255,7 @@ UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) 
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/");
   ss.str("?Operation=UpdateJob");
   uri.SetQueryString(ss.str());
   return UpdateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
@@ -284,6 +278,4 @@ void ImportExportClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, c
 {
   handler(this, request, UpdateJob(request), context);
 }
-
-
 

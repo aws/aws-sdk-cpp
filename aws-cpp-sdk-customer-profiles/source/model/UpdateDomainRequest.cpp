@@ -18,6 +18,7 @@ UpdateDomainRequest::UpdateDomainRequest() :
     m_defaultExpirationDaysHasBeenSet(false),
     m_defaultEncryptionKeyHasBeenSet(false),
     m_deadLetterQueueUrlHasBeenSet(false),
+    m_matchingHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -41,6 +42,12 @@ Aws::String UpdateDomainRequest::SerializePayload() const
   if(m_deadLetterQueueUrlHasBeenSet)
   {
    payload.WithString("DeadLetterQueueUrl", m_deadLetterQueueUrl);
+
+  }
+
+  if(m_matchingHasBeenSet)
+  {
+   payload.WithObject("Matching", m_matching.Jsonize());
 
   }
 

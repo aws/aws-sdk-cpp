@@ -17,6 +17,7 @@
 #include <aws/codepipeline/model/CreatePipelineResult.h>
 #include <aws/codepipeline/model/DeleteWebhookResult.h>
 #include <aws/codepipeline/model/DeregisterWebhookWithThirdPartyResult.h>
+#include <aws/codepipeline/model/GetActionTypeResult.h>
 #include <aws/codepipeline/model/GetJobDetailsResult.h>
 #include <aws/codepipeline/model/GetPipelineResult.h>
 #include <aws/codepipeline/model/GetPipelineExecutionResult.h>
@@ -90,6 +91,7 @@ namespace Model
         class DeregisterWebhookWithThirdPartyRequest;
         class DisableStageTransitionRequest;
         class EnableStageTransitionRequest;
+        class GetActionTypeRequest;
         class GetJobDetailsRequest;
         class GetPipelineRequest;
         class GetPipelineExecutionRequest;
@@ -116,6 +118,7 @@ namespace Model
         class StopPipelineExecutionRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateActionTypeRequest;
         class UpdatePipelineRequest;
 
         typedef Aws::Utils::Outcome<AcknowledgeJobResult, CodePipelineError> AcknowledgeJobOutcome;
@@ -128,6 +131,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeregisterWebhookWithThirdPartyResult, CodePipelineError> DeregisterWebhookWithThirdPartyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> DisableStageTransitionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> EnableStageTransitionOutcome;
+        typedef Aws::Utils::Outcome<GetActionTypeResult, CodePipelineError> GetActionTypeOutcome;
         typedef Aws::Utils::Outcome<GetJobDetailsResult, CodePipelineError> GetJobDetailsOutcome;
         typedef Aws::Utils::Outcome<GetPipelineResult, CodePipelineError> GetPipelineOutcome;
         typedef Aws::Utils::Outcome<GetPipelineExecutionResult, CodePipelineError> GetPipelineExecutionOutcome;
@@ -154,6 +158,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StopPipelineExecutionResult, CodePipelineError> StopPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, CodePipelineError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, CodePipelineError> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, CodePipelineError> UpdateActionTypeOutcome;
         typedef Aws::Utils::Outcome<UpdatePipelineResult, CodePipelineError> UpdatePipelineOutcome;
 
         typedef std::future<AcknowledgeJobOutcome> AcknowledgeJobOutcomeCallable;
@@ -166,6 +171,7 @@ namespace Model
         typedef std::future<DeregisterWebhookWithThirdPartyOutcome> DeregisterWebhookWithThirdPartyOutcomeCallable;
         typedef std::future<DisableStageTransitionOutcome> DisableStageTransitionOutcomeCallable;
         typedef std::future<EnableStageTransitionOutcome> EnableStageTransitionOutcomeCallable;
+        typedef std::future<GetActionTypeOutcome> GetActionTypeOutcomeCallable;
         typedef std::future<GetJobDetailsOutcome> GetJobDetailsOutcomeCallable;
         typedef std::future<GetPipelineOutcome> GetPipelineOutcomeCallable;
         typedef std::future<GetPipelineExecutionOutcome> GetPipelineExecutionOutcomeCallable;
@@ -192,6 +198,7 @@ namespace Model
         typedef std::future<StopPipelineExecutionOutcome> StopPipelineExecutionOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateActionTypeOutcome> UpdateActionTypeOutcomeCallable;
         typedef std::future<UpdatePipelineOutcome> UpdatePipelineOutcomeCallable;
 } // namespace Model
 
@@ -207,6 +214,7 @@ namespace Model
     typedef std::function<void(const CodePipelineClient*, const Model::DeregisterWebhookWithThirdPartyRequest&, const Model::DeregisterWebhookWithThirdPartyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterWebhookWithThirdPartyResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::DisableStageTransitionRequest&, const Model::DisableStageTransitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableStageTransitionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::EnableStageTransitionRequest&, const Model::EnableStageTransitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableStageTransitionResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::GetActionTypeRequest&, const Model::GetActionTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActionTypeResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetJobDetailsRequest&, const Model::GetJobDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobDetailsResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineRequest&, const Model::GetPipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::GetPipelineExecutionRequest&, const Model::GetPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPipelineExecutionResponseReceivedHandler;
@@ -233,6 +241,7 @@ namespace Model
     typedef std::function<void(const CodePipelineClient*, const Model::StopPipelineExecutionRequest&, const Model::StopPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::UpdateActionTypeRequest&, const Model::UpdateActionTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateActionTypeResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
 
   /**
@@ -662,6 +671,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableStageTransitionAsync(const Model::EnableStageTransitionRequest& request, const EnableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about an action type created for an external provider,
+         * where the action is to be used by customers of the external provider. The action
+         * can be created with any supported integration model.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetActionTypeOutcome GetActionType(const Model::GetActionTypeRequest& request) const;
+
+        /**
+         * <p>Returns information about an action type created for an external provider,
+         * where the action is to be used by customers of the external provider. The action
+         * can be created with any supported integration model.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetActionTypeOutcomeCallable GetActionTypeCallable(const Model::GetActionTypeRequest& request) const;
+
+        /**
+         * <p>Returns information about an action type created for an external provider,
+         * where the action is to be used by customers of the external provider. The action
+         * can be created with any supported integration model.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetActionTypeAsync(const Model::GetActionTypeRequest& request, const GetActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
@@ -1500,6 +1543,40 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates an action type that was created with any supported integration model,
+         * where the action type is to be used by customers of the action type provider.
+         * Use a JSON file with the action definition and <code>UpdateActionType</code> to
+         * provide the full structure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateActionTypeOutcome UpdateActionType(const Model::UpdateActionTypeRequest& request) const;
+
+        /**
+         * <p>Updates an action type that was created with any supported integration model,
+         * where the action type is to be used by customers of the action type provider.
+         * Use a JSON file with the action definition and <code>UpdateActionType</code> to
+         * provide the full structure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateActionTypeOutcomeCallable UpdateActionTypeCallable(const Model::UpdateActionTypeRequest& request) const;
+
+        /**
+         * <p>Updates an action type that was created with any supported integration model,
+         * where the action type is to be used by customers of the action type provider.
+         * Use a JSON file with the action definition and <code>UpdateActionType</code> to
+         * provide the full structure.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateActionTypeAsync(const Model::UpdateActionTypeRequest& request, const UpdateActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a specified pipeline with edits or changes to its structure. Use a
          * JSON file with the pipeline structure and <code>UpdatePipeline</code> to provide
          * the full structure of the pipeline. Updating the pipeline increases the version
@@ -1547,6 +1624,7 @@ namespace Model
         void DeregisterWebhookWithThirdPartyAsyncHelper(const Model::DeregisterWebhookWithThirdPartyRequest& request, const DeregisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableStageTransitionAsyncHelper(const Model::DisableStageTransitionRequest& request, const DisableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableStageTransitionAsyncHelper(const Model::EnableStageTransitionRequest& request, const EnableStageTransitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetActionTypeAsyncHelper(const Model::GetActionTypeRequest& request, const GetActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobDetailsAsyncHelper(const Model::GetJobDetailsRequest& request, const GetJobDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPipelineAsyncHelper(const Model::GetPipelineRequest& request, const GetPipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPipelineExecutionAsyncHelper(const Model::GetPipelineExecutionRequest& request, const GetPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1573,6 +1651,7 @@ namespace Model
         void StopPipelineExecutionAsyncHelper(const Model::StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateActionTypeAsyncHelper(const Model::UpdateActionTypeRequest& request, const UpdateActionTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePipelineAsyncHelper(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

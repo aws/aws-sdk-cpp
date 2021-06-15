@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreatePackagingGroupRequest::CreatePackagingGroupRequest() : 
     m_authorizationHasBeenSet(false),
+    m_egressAccessLogsHasBeenSet(false),
     m_idHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -26,6 +27,12 @@ Aws::String CreatePackagingGroupRequest::SerializePayload() const
   if(m_authorizationHasBeenSet)
   {
    payload.WithObject("authorization", m_authorization.Jsonize());
+
+  }
+
+  if(m_egressAccessLogsHasBeenSet)
+  {
+   payload.WithObject("egressAccessLogs", m_egressAccessLogs.Jsonize());
 
   }
 

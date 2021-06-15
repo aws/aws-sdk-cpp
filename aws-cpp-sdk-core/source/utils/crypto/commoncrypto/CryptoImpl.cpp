@@ -120,6 +120,43 @@ AWS_SUPPRESS_DEPRECATION(
                 return HashResult(std::move(hash));
             }
 
+            HashResult Sha1CommonCryptoImpl::Calculate(const Aws::String& str)
+            {
+                ByteBuffer hash(CC_SHA1_DIGEST_LENGTH);
+                CC_SHA1(str.c_str(), static_cast<CC_LONG>(str.length()), hash.GetUnderlyingData());
+
+                return HashResult(std::move(hash));
+            }
+
+            HashResult Sha1CommonCryptoImpl::Calculate(Aws::IStream& stream)
+            {
+                CC_SHA1_CTX sha1;
+                CC_SHA1_Init(&sha1);
+
+                auto currentPos = stream.tellg();
+                stream.seekg(0, stream.beg);
+
+                char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
+                while(stream.good())
+                {
+                    stream.read(streamBuffer, Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE);
+                    auto bytesRead = stream.gcount();
+
+                    if(bytesRead > 0)
+                    {
+                        CC_SHA1_Update(&sha1, streamBuffer, static_cast<CC_LONG>(bytesRead));
+                    }
+                }
+
+                stream.clear();
+                stream.seekg(currentPos, stream.beg);
+
+                ByteBuffer hash(CC_SHA1_DIGEST_LENGTH);
+                CC_SHA1_Final(hash.GetUnderlyingData(), &sha1);
+
+                return HashResult(std::move(hash));
+            }
+
             HashResult Sha256CommonCryptoImpl::Calculate(const Aws::String& str)
             {
                 ByteBuffer hash(CC_SHA256_DIGEST_LENGTH);

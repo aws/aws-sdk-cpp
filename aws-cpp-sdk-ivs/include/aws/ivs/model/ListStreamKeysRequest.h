@@ -123,22 +123,22 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of streamKeys to return.</p>
+     * <p>Maximum number of streamKeys to return. Default: 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of streamKeys to return.</p>
+     * <p>Maximum number of streamKeys to return. Default: 50.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of streamKeys to return.</p>
+     * <p>Maximum number of streamKeys to return. Default: 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of streamKeys to return.</p>
+     * <p>Maximum number of streamKeys to return. Default: 50.</p>
      */
     inline ListStreamKeysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

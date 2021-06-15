@@ -26,18 +26,14 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>Attackers sometimes insert malicious
-   * SQL code into web requests in an effort to extract data from your database. To
-   * allow or block web requests that appear to contain malicious SQL code, create
-   * one or more SQL injection match conditions. An SQL injection match condition
-   * identifies the part of web requests, such as the URI or the query string, that
-   * you want AWS WAF to inspect. Later in the process, when you create a web ACL,
-   * you specify whether to allow or block requests that appear to contain malicious
-   * SQL code.</p><p><h3>See Also:</h3>   <a
+   * <p>Attackers sometimes insert malicious SQL code into web requests in an effort
+   * to extract data from your database. To allow or block web requests that appear
+   * to contain malicious SQL code, create one or more SQL injection match
+   * conditions. An SQL injection match condition identifies the part of web
+   * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+   * Later in the process, when you create a web ACL, you specify whether to allow or
+   * block requests that appear to contain malicious SQL code.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SqliMatchStatement">AWS
    * API Reference</a></p>
    */

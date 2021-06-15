@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/InstanceRefreshStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/autoscaling/model/InstanceRefreshProgressDetails.h>
 #include <utility>
 
 namespace Aws
@@ -322,8 +323,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline int GetPercentageComplete() const{ return m_percentageComplete; }
 
@@ -331,8 +332,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline bool PercentageCompleteHasBeenSet() const { return m_percentageCompleteHasBeenSet; }
 
@@ -340,8 +341,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline void SetPercentageComplete(int value) { m_percentageCompleteHasBeenSet = true; m_percentageComplete = value; }
 
@@ -349,8 +350,8 @@ namespace Model
      * <p>The percentage of the instance refresh that is complete. For each instance
      * replacement, Amazon EC2 Auto Scaling tracks the instance's health status and
      * warm-up time. When the instance's health status changes to healthy and the
-     * specified warm-up time passes, the instance is considered updated and added to
-     * the percentage complete.</p>
+     * specified warm-up time passes, the instance is considered updated and is added
+     * to the percentage complete.</p>
      */
     inline InstanceRefresh& WithPercentageComplete(int value) { SetPercentageComplete(value); return *this;}
 
@@ -379,6 +380,43 @@ namespace Model
      */
     inline InstanceRefresh& WithInstancesToUpdate(int value) { SetInstancesToUpdate(value); return *this;}
 
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline const InstanceRefreshProgressDetails& GetProgressDetails() const{ return m_progressDetails; }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline bool ProgressDetailsHasBeenSet() const { return m_progressDetailsHasBeenSet; }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline void SetProgressDetails(const InstanceRefreshProgressDetails& value) { m_progressDetailsHasBeenSet = true; m_progressDetails = value; }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline void SetProgressDetails(InstanceRefreshProgressDetails&& value) { m_progressDetailsHasBeenSet = true; m_progressDetails = std::move(value); }
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline InstanceRefresh& WithProgressDetails(const InstanceRefreshProgressDetails& value) { SetProgressDetails(value); return *this;}
+
+    /**
+     * <p>Additional progress details for an Auto Scaling group that has a warm
+     * pool.</p>
+     */
+    inline InstanceRefresh& WithProgressDetails(InstanceRefreshProgressDetails&& value) { SetProgressDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceRefreshId;
@@ -404,6 +442,9 @@ namespace Model
 
     int m_instancesToUpdate;
     bool m_instancesToUpdateHasBeenSet;
+
+    InstanceRefreshProgressDetails m_progressDetails;
+    bool m_progressDetailsHasBeenSet;
   };
 
 } // namespace Model

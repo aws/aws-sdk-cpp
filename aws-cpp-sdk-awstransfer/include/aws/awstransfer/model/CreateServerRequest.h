@@ -235,85 +235,124 @@ namespace Model
     inline CreateServerRequest& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
 
-    
+    /**
+     * <p>The domain of the storage system that is used for file transfers. There are
+     * two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon
+     * Elastic File System (Amazon EFS). The default value is S3.</p>  <p>After
+     * the server is created, the domain cannot be changed.</p> 
+     */
     inline const Domain& GetDomain() const{ return m_domain; }
 
-    
+    /**
+     * <p>The domain of the storage system that is used for file transfers. There are
+     * two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon
+     * Elastic File System (Amazon EFS). The default value is S3.</p>  <p>After
+     * the server is created, the domain cannot be changed.</p> 
+     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
-    
+    /**
+     * <p>The domain of the storage system that is used for file transfers. There are
+     * two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon
+     * Elastic File System (Amazon EFS). The default value is S3.</p>  <p>After
+     * the server is created, the domain cannot be changed.</p> 
+     */
     inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    
+    /**
+     * <p>The domain of the storage system that is used for file transfers. There are
+     * two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon
+     * Elastic File System (Amazon EFS). The default value is S3.</p>  <p>After
+     * the server is created, the domain cannot be changed.</p> 
+     */
     inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
-    
+    /**
+     * <p>The domain of the storage system that is used for file transfers. There are
+     * two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon
+     * Elastic File System (Amazon EFS). The default value is S3.</p>  <p>After
+     * the server is created, the domain cannot be changed.</p> 
+     */
     inline CreateServerRequest& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
-    
+    /**
+     * <p>The domain of the storage system that is used for file transfers. There are
+     * two domains available: Amazon Simple Storage Service (Amazon S3) and Amazon
+     * Elastic File System (Amazon EFS). The default value is S3.</p>  <p>After
+     * the server is created, the domain cannot be changed.</p> 
+     */
     inline CreateServerRequest& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
      * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IPs and
-     * make it accessible to clients over the internet. Your VPC's default security
-     * groups are automatically assigned to your endpoint.</p>
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
      * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IPs and
-     * make it accessible to clients over the internet. Your VPC's default security
-     * groups are automatically assigned to your endpoint.</p>
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
      * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IPs and
-     * make it accessible to clients over the internet. Your VPC's default security
-     * groups are automatically assigned to your endpoint.</p>
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
      * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IPs and
-     * make it accessible to clients over the internet. Your VPC's default security
-     * groups are automatically assigned to your endpoint.</p>
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
      * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IPs and
-     * make it accessible to clients over the internet. Your VPC's default security
-     * groups are automatically assigned to your endpoint.</p>
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline CreateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
      * your server. When you host your endpoint within your VPC, you can make it
-     * accessible only to resources within your VPC, or you can attach Elastic IPs and
-     * make it accessible to clients over the internet. Your VPC's default security
-     * groups are automatically assigned to your endpoint.</p>
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline CreateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of VPC endpoint that you want your server to connect to. You can
-     * choose to connect to the public internet or a VPC endpoint. With a VPC endpoint,
-     * you can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before May 19, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
+     * 19, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -323,10 +362,19 @@ namespace Model
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of VPC endpoint that you want your server to connect to. You can
-     * choose to connect to the public internet or a VPC endpoint. With a VPC endpoint,
-     * you can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before May 19, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
+     * 19, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -336,10 +384,19 @@ namespace Model
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of VPC endpoint that you want your server to connect to. You can
-     * choose to connect to the public internet or a VPC endpoint. With a VPC endpoint,
-     * you can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before May 19, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
+     * 19, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -349,10 +406,19 @@ namespace Model
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of VPC endpoint that you want your server to connect to. You can
-     * choose to connect to the public internet or a VPC endpoint. With a VPC endpoint,
-     * you can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before May 19, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
+     * 19, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -362,10 +428,19 @@ namespace Model
     inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of VPC endpoint that you want your server to connect to. You can
-     * choose to connect to the public internet or a VPC endpoint. With a VPC endpoint,
-     * you can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before May 19, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
+     * 19, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -375,10 +450,19 @@ namespace Model
     inline CreateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of VPC endpoint that you want your server to connect to. You can
-     * choose to connect to the public internet or a VPC endpoint. With a VPC endpoint,
-     * you can restrict access to your server and resources only within your VPC.</p>
-     *  <p>It is recommended that you use <code>VPC</code> as the
+     * <p>The type of endpoint that you want your server to use. You can choose to make
+     * your server's endpoint publicly accessible (PUBLIC) or host it inside your VPC.
+     * With an endpoint that is hosted in a VPC, you can restrict access to your server
+     * and resources only within your VPC or choose to make it internet facing by
+     * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
+     * 2021, you won't be able to create a server using
+     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
+     * hasn't already done so before May 19, 2021. If you have already created servers
+     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
+     * 19, 2021, you will not be affected. After this date, use
+     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+     * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
      * directly associate up to three Elastic IPv4 addresses (BYO IP included) with
      * your server's endpoint and use VPC security groups to restrict traffic by the
@@ -487,55 +571,61 @@ namespace Model
 
     /**
      * <p>Required when <code>IdentityProviderType</code> is set to
-     * <code>API_GATEWAY</code>. Accepts an array containing all of the information
-     * required to call a customer-supplied authentication API, including the API
-     * Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array
+     * containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication
+     * API, including the API Gateway URL. Not required when
+     * <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
      */
     inline const IdentityProviderDetails& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
 
     /**
      * <p>Required when <code>IdentityProviderType</code> is set to
-     * <code>API_GATEWAY</code>. Accepts an array containing all of the information
-     * required to call a customer-supplied authentication API, including the API
-     * Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array
+     * containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication
+     * API, including the API Gateway URL. Not required when
+     * <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
      */
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
 
     /**
      * <p>Required when <code>IdentityProviderType</code> is set to
-     * <code>API_GATEWAY</code>. Accepts an array containing all of the information
-     * required to call a customer-supplied authentication API, including the API
-     * Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array
+     * containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication
+     * API, including the API Gateway URL. Not required when
+     * <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
     /**
      * <p>Required when <code>IdentityProviderType</code> is set to
-     * <code>API_GATEWAY</code>. Accepts an array containing all of the information
-     * required to call a customer-supplied authentication API, including the API
-     * Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array
+     * containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication
+     * API, including the API Gateway URL. Not required when
+     * <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
      */
     inline void SetIdentityProviderDetails(IdentityProviderDetails&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
 
     /**
      * <p>Required when <code>IdentityProviderType</code> is set to
-     * <code>API_GATEWAY</code>. Accepts an array containing all of the information
-     * required to call a customer-supplied authentication API, including the API
-     * Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array
+     * containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication
+     * API, including the API Gateway URL. Not required when
+     * <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
      */
     inline CreateServerRequest& WithIdentityProviderDetails(const IdentityProviderDetails& value) { SetIdentityProviderDetails(value); return *this;}
 
     /**
      * <p>Required when <code>IdentityProviderType</code> is set to
-     * <code>API_GATEWAY</code>. Accepts an array containing all of the information
-     * required to call a customer-supplied authentication API, including the API
-     * Gateway URL. Not required when <code>IdentityProviderType</code> is set to
-     * <code>SERVICE_MANAGED</code>.</p>
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array
+     * containing all of the information required to use a directory in
+     * <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied authentication
+     * API, including the API Gateway URL. Not required when
+     * <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
      */
     inline CreateServerRequest& WithIdentityProviderDetails(IdentityProviderDetails&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
 
@@ -543,10 +633,14 @@ namespace Model
     /**
      * <p>Specifies the mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the AWS Transfer Family service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in AWS Managed Active Directory or Microsoft Active Directory in your
+     * on-premises environment or in AWS using AD Connectors. This option also requires
+     * you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     * parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity
+     * provider of your choosing. The <code>API_GATEWAY</code> setting requires you to
+     * provide an API Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
@@ -554,10 +648,14 @@ namespace Model
     /**
      * <p>Specifies the mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the AWS Transfer Family service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in AWS Managed Active Directory or Microsoft Active Directory in your
+     * on-premises environment or in AWS using AD Connectors. This option also requires
+     * you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     * parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity
+     * provider of your choosing. The <code>API_GATEWAY</code> setting requires you to
+     * provide an API Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
@@ -565,10 +663,14 @@ namespace Model
     /**
      * <p>Specifies the mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the AWS Transfer Family service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in AWS Managed Active Directory or Microsoft Active Directory in your
+     * on-premises environment or in AWS using AD Connectors. This option also requires
+     * you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     * parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity
+     * provider of your choosing. The <code>API_GATEWAY</code> setting requires you to
+     * provide an API Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
@@ -576,10 +678,14 @@ namespace Model
     /**
      * <p>Specifies the mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the AWS Transfer Family service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in AWS Managed Active Directory or Microsoft Active Directory in your
+     * on-premises environment or in AWS using AD Connectors. This option also requires
+     * you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     * parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity
+     * provider of your choosing. The <code>API_GATEWAY</code> setting requires you to
+     * provide an API Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
@@ -587,10 +693,14 @@ namespace Model
     /**
      * <p>Specifies the mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the AWS Transfer Family service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in AWS Managed Active Directory or Microsoft Active Directory in your
+     * on-premises environment or in AWS using AD Connectors. This option also requires
+     * you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     * parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity
+     * provider of your choosing. The <code>API_GATEWAY</code> setting requires you to
+     * provide an API Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline CreateServerRequest& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
@@ -598,10 +708,14 @@ namespace Model
     /**
      * <p>Specifies the mode of authentication for a server. The default value is
      * <code>SERVICE_MANAGED</code>, which allows you to store and access user
-     * credentials within the AWS Transfer Family service. Use the
-     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
-     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
-     * Gateway endpoint URL to call for authentication using the
+     * credentials within the AWS Transfer Family service. Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in AWS Managed Active Directory or Microsoft Active Directory in your
+     * on-premises environment or in AWS using AD Connectors. This option also requires
+     * you to provide a Directory ID using the <code>IdentityProviderDetails</code>
+     * parameter. Use the <code>API_GATEWAY</code> value to integrate with an identity
+     * provider of your choosing. The <code>API_GATEWAY</code> setting requires you to
+     * provide an API Gateway endpoint URL to call for authentication using the
      * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline CreateServerRequest& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
@@ -668,11 +782,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -690,11 +804,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -712,11 +826,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -734,11 +848,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -756,11 +870,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -778,11 +892,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -800,11 +914,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */
@@ -822,11 +936,11 @@ namespace Model
      * to identify your server when clients connect to it over FTPS.</p> <p>If
      * <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>,
      * then the <code>EndpointType</code> must be <code>VPC</code> and the
-     * <code>IdentityProviderType</code> must be <code>API_GATEWAY</code>.</p> <p>If
-     * <code>Protocol</code> includes <code>FTP</code>, then
-     * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
-     * <code>Protocol</code> is set only to <code>SFTP</code>, the
-     * <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
+     * <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>API_GATEWAY</code>.</p> <p>If <code>Protocol</code> includes
+     * <code>FTP</code>, then <code>AddressAllocationIds</code> cannot be
+     * associated.</p> <p>If <code>Protocol</code> is set only to <code>SFTP</code>,
+     * the <code>EndpointType</code> can be set to <code>PUBLIC</code> and the
      * <code>IdentityProviderType</code> can be set to
      * <code>SERVICE_MANAGED</code>.</p> 
      */

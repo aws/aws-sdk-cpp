@@ -17,6 +17,7 @@
 #include <aws/storagegateway/model/AddUploadBufferResult.h>
 #include <aws/storagegateway/model/AddWorkingStorageResult.h>
 #include <aws/storagegateway/model/AssignTapePoolResult.h>
+#include <aws/storagegateway/model/AssociateFileSystemResult.h>
 #include <aws/storagegateway/model/AttachVolumeResult.h>
 #include <aws/storagegateway/model/CancelArchivalResult.h>
 #include <aws/storagegateway/model/CancelRetrievalResult.h>
@@ -45,6 +46,7 @@
 #include <aws/storagegateway/model/DescribeCacheResult.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesResult.h>
 #include <aws/storagegateway/model/DescribeChapCredentialsResult.h>
+#include <aws/storagegateway/model/DescribeFileSystemAssociationsResult.h>
 #include <aws/storagegateway/model/DescribeGatewayInformationResult.h>
 #include <aws/storagegateway/model/DescribeMaintenanceStartTimeResult.h>
 #include <aws/storagegateway/model/DescribeNFSFileSharesResult.h>
@@ -60,9 +62,11 @@
 #include <aws/storagegateway/model/DescribeWorkingStorageResult.h>
 #include <aws/storagegateway/model/DetachVolumeResult.h>
 #include <aws/storagegateway/model/DisableGatewayResult.h>
+#include <aws/storagegateway/model/DisassociateFileSystemResult.h>
 #include <aws/storagegateway/model/JoinDomainResult.h>
 #include <aws/storagegateway/model/ListAutomaticTapeCreationPoliciesResult.h>
 #include <aws/storagegateway/model/ListFileSharesResult.h>
+#include <aws/storagegateway/model/ListFileSystemAssociationsResult.h>
 #include <aws/storagegateway/model/ListGatewaysResult.h>
 #include <aws/storagegateway/model/ListLocalDisksResult.h>
 #include <aws/storagegateway/model/ListTagsForResourceResult.h>
@@ -86,6 +90,7 @@
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitResult.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitScheduleResult.h>
 #include <aws/storagegateway/model/UpdateChapCredentialsResult.h>
+#include <aws/storagegateway/model/UpdateFileSystemAssociationResult.h>
 #include <aws/storagegateway/model/UpdateGatewayInformationResult.h>
 #include <aws/storagegateway/model/UpdateGatewaySoftwareNowResult.h>
 #include <aws/storagegateway/model/UpdateMaintenanceStartTimeResult.h>
@@ -140,6 +145,7 @@ namespace Model
         class AddUploadBufferRequest;
         class AddWorkingStorageRequest;
         class AssignTapePoolRequest;
+        class AssociateFileSystemRequest;
         class AttachVolumeRequest;
         class CancelArchivalRequest;
         class CancelRetrievalRequest;
@@ -168,6 +174,7 @@ namespace Model
         class DescribeCacheRequest;
         class DescribeCachediSCSIVolumesRequest;
         class DescribeChapCredentialsRequest;
+        class DescribeFileSystemAssociationsRequest;
         class DescribeGatewayInformationRequest;
         class DescribeMaintenanceStartTimeRequest;
         class DescribeNFSFileSharesRequest;
@@ -183,9 +190,11 @@ namespace Model
         class DescribeWorkingStorageRequest;
         class DetachVolumeRequest;
         class DisableGatewayRequest;
+        class DisassociateFileSystemRequest;
         class JoinDomainRequest;
         class ListAutomaticTapeCreationPoliciesRequest;
         class ListFileSharesRequest;
+        class ListFileSystemAssociationsRequest;
         class ListGatewaysRequest;
         class ListLocalDisksRequest;
         class ListTagsForResourceRequest;
@@ -209,6 +218,7 @@ namespace Model
         class UpdateBandwidthRateLimitRequest;
         class UpdateBandwidthRateLimitScheduleRequest;
         class UpdateChapCredentialsRequest;
+        class UpdateFileSystemAssociationRequest;
         class UpdateGatewayInformationRequest;
         class UpdateGatewaySoftwareNowRequest;
         class UpdateMaintenanceStartTimeRequest;
@@ -225,6 +235,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddUploadBufferResult, StorageGatewayError> AddUploadBufferOutcome;
         typedef Aws::Utils::Outcome<AddWorkingStorageResult, StorageGatewayError> AddWorkingStorageOutcome;
         typedef Aws::Utils::Outcome<AssignTapePoolResult, StorageGatewayError> AssignTapePoolOutcome;
+        typedef Aws::Utils::Outcome<AssociateFileSystemResult, StorageGatewayError> AssociateFileSystemOutcome;
         typedef Aws::Utils::Outcome<AttachVolumeResult, StorageGatewayError> AttachVolumeOutcome;
         typedef Aws::Utils::Outcome<CancelArchivalResult, StorageGatewayError> CancelArchivalOutcome;
         typedef Aws::Utils::Outcome<CancelRetrievalResult, StorageGatewayError> CancelRetrievalOutcome;
@@ -253,6 +264,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeCacheResult, StorageGatewayError> DescribeCacheOutcome;
         typedef Aws::Utils::Outcome<DescribeCachediSCSIVolumesResult, StorageGatewayError> DescribeCachediSCSIVolumesOutcome;
         typedef Aws::Utils::Outcome<DescribeChapCredentialsResult, StorageGatewayError> DescribeChapCredentialsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFileSystemAssociationsResult, StorageGatewayError> DescribeFileSystemAssociationsOutcome;
         typedef Aws::Utils::Outcome<DescribeGatewayInformationResult, StorageGatewayError> DescribeGatewayInformationOutcome;
         typedef Aws::Utils::Outcome<DescribeMaintenanceStartTimeResult, StorageGatewayError> DescribeMaintenanceStartTimeOutcome;
         typedef Aws::Utils::Outcome<DescribeNFSFileSharesResult, StorageGatewayError> DescribeNFSFileSharesOutcome;
@@ -268,9 +280,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeWorkingStorageResult, StorageGatewayError> DescribeWorkingStorageOutcome;
         typedef Aws::Utils::Outcome<DetachVolumeResult, StorageGatewayError> DetachVolumeOutcome;
         typedef Aws::Utils::Outcome<DisableGatewayResult, StorageGatewayError> DisableGatewayOutcome;
+        typedef Aws::Utils::Outcome<DisassociateFileSystemResult, StorageGatewayError> DisassociateFileSystemOutcome;
         typedef Aws::Utils::Outcome<JoinDomainResult, StorageGatewayError> JoinDomainOutcome;
         typedef Aws::Utils::Outcome<ListAutomaticTapeCreationPoliciesResult, StorageGatewayError> ListAutomaticTapeCreationPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListFileSharesResult, StorageGatewayError> ListFileSharesOutcome;
+        typedef Aws::Utils::Outcome<ListFileSystemAssociationsResult, StorageGatewayError> ListFileSystemAssociationsOutcome;
         typedef Aws::Utils::Outcome<ListGatewaysResult, StorageGatewayError> ListGatewaysOutcome;
         typedef Aws::Utils::Outcome<ListLocalDisksResult, StorageGatewayError> ListLocalDisksOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, StorageGatewayError> ListTagsForResourceOutcome;
@@ -294,6 +308,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateBandwidthRateLimitResult, StorageGatewayError> UpdateBandwidthRateLimitOutcome;
         typedef Aws::Utils::Outcome<UpdateBandwidthRateLimitScheduleResult, StorageGatewayError> UpdateBandwidthRateLimitScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateChapCredentialsResult, StorageGatewayError> UpdateChapCredentialsOutcome;
+        typedef Aws::Utils::Outcome<UpdateFileSystemAssociationResult, StorageGatewayError> UpdateFileSystemAssociationOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewayInformationResult, StorageGatewayError> UpdateGatewayInformationOutcome;
         typedef Aws::Utils::Outcome<UpdateGatewaySoftwareNowResult, StorageGatewayError> UpdateGatewaySoftwareNowOutcome;
         typedef Aws::Utils::Outcome<UpdateMaintenanceStartTimeResult, StorageGatewayError> UpdateMaintenanceStartTimeOutcome;
@@ -310,6 +325,7 @@ namespace Model
         typedef std::future<AddUploadBufferOutcome> AddUploadBufferOutcomeCallable;
         typedef std::future<AddWorkingStorageOutcome> AddWorkingStorageOutcomeCallable;
         typedef std::future<AssignTapePoolOutcome> AssignTapePoolOutcomeCallable;
+        typedef std::future<AssociateFileSystemOutcome> AssociateFileSystemOutcomeCallable;
         typedef std::future<AttachVolumeOutcome> AttachVolumeOutcomeCallable;
         typedef std::future<CancelArchivalOutcome> CancelArchivalOutcomeCallable;
         typedef std::future<CancelRetrievalOutcome> CancelRetrievalOutcomeCallable;
@@ -338,6 +354,7 @@ namespace Model
         typedef std::future<DescribeCacheOutcome> DescribeCacheOutcomeCallable;
         typedef std::future<DescribeCachediSCSIVolumesOutcome> DescribeCachediSCSIVolumesOutcomeCallable;
         typedef std::future<DescribeChapCredentialsOutcome> DescribeChapCredentialsOutcomeCallable;
+        typedef std::future<DescribeFileSystemAssociationsOutcome> DescribeFileSystemAssociationsOutcomeCallable;
         typedef std::future<DescribeGatewayInformationOutcome> DescribeGatewayInformationOutcomeCallable;
         typedef std::future<DescribeMaintenanceStartTimeOutcome> DescribeMaintenanceStartTimeOutcomeCallable;
         typedef std::future<DescribeNFSFileSharesOutcome> DescribeNFSFileSharesOutcomeCallable;
@@ -353,9 +370,11 @@ namespace Model
         typedef std::future<DescribeWorkingStorageOutcome> DescribeWorkingStorageOutcomeCallable;
         typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
         typedef std::future<DisableGatewayOutcome> DisableGatewayOutcomeCallable;
+        typedef std::future<DisassociateFileSystemOutcome> DisassociateFileSystemOutcomeCallable;
         typedef std::future<JoinDomainOutcome> JoinDomainOutcomeCallable;
         typedef std::future<ListAutomaticTapeCreationPoliciesOutcome> ListAutomaticTapeCreationPoliciesOutcomeCallable;
         typedef std::future<ListFileSharesOutcome> ListFileSharesOutcomeCallable;
+        typedef std::future<ListFileSystemAssociationsOutcome> ListFileSystemAssociationsOutcomeCallable;
         typedef std::future<ListGatewaysOutcome> ListGatewaysOutcomeCallable;
         typedef std::future<ListLocalDisksOutcome> ListLocalDisksOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
@@ -379,6 +398,7 @@ namespace Model
         typedef std::future<UpdateBandwidthRateLimitOutcome> UpdateBandwidthRateLimitOutcomeCallable;
         typedef std::future<UpdateBandwidthRateLimitScheduleOutcome> UpdateBandwidthRateLimitScheduleOutcomeCallable;
         typedef std::future<UpdateChapCredentialsOutcome> UpdateChapCredentialsOutcomeCallable;
+        typedef std::future<UpdateFileSystemAssociationOutcome> UpdateFileSystemAssociationOutcomeCallable;
         typedef std::future<UpdateGatewayInformationOutcome> UpdateGatewayInformationOutcomeCallable;
         typedef std::future<UpdateGatewaySoftwareNowOutcome> UpdateGatewaySoftwareNowOutcomeCallable;
         typedef std::future<UpdateMaintenanceStartTimeOutcome> UpdateMaintenanceStartTimeOutcomeCallable;
@@ -398,6 +418,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::AddUploadBufferRequest&, const Model::AddUploadBufferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddUploadBufferResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AddWorkingStorageRequest&, const Model::AddWorkingStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddWorkingStorageResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AssignTapePoolRequest&, const Model::AssignTapePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssignTapePoolResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::AssociateFileSystemRequest&, const Model::AssociateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateFileSystemResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AttachVolumeRequest&, const Model::AttachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelArchivalRequest&, const Model::CancelArchivalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelArchivalResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelRetrievalRequest&, const Model::CancelRetrievalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRetrievalResponseReceivedHandler;
@@ -426,6 +447,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCacheRequest&, const Model::DescribeCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCachediSCSIVolumesRequest&, const Model::DescribeCachediSCSIVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCachediSCSIVolumesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeChapCredentialsRequest&, const Model::DescribeChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChapCredentialsResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DescribeFileSystemAssociationsRequest&, const Model::DescribeFileSystemAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemAssociationsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeGatewayInformationRequest&, const Model::DescribeGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGatewayInformationResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeMaintenanceStartTimeRequest&, const Model::DescribeMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMaintenanceStartTimeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeNFSFileSharesRequest&, const Model::DescribeNFSFileSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNFSFileSharesResponseReceivedHandler;
@@ -441,9 +463,11 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeWorkingStorageRequest&, const Model::DescribeWorkingStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkingStorageResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DetachVolumeRequest&, const Model::DetachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DisableGatewayRequest&, const Model::DisableGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableGatewayResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DisassociateFileSystemRequest&, const Model::DisassociateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFileSystemResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::JoinDomainRequest&, const Model::JoinDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > JoinDomainResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListAutomaticTapeCreationPoliciesRequest&, const Model::ListAutomaticTapeCreationPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutomaticTapeCreationPoliciesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListFileSharesRequest&, const Model::ListFileSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileSharesResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::ListFileSystemAssociationsRequest&, const Model::ListFileSystemAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileSystemAssociationsResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListGatewaysRequest&, const Model::ListGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGatewaysResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListLocalDisksRequest&, const Model::ListLocalDisksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLocalDisksResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
@@ -467,6 +491,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateBandwidthRateLimitRequest&, const Model::UpdateBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBandwidthRateLimitResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateBandwidthRateLimitScheduleRequest&, const Model::UpdateBandwidthRateLimitScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBandwidthRateLimitScheduleResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateChapCredentialsRequest&, const Model::UpdateChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChapCredentialsResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::UpdateFileSystemAssociationRequest&, const Model::UpdateFileSystemAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileSystemAssociationResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateGatewayInformationRequest&, const Model::UpdateGatewayInformationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewayInformationResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateGatewaySoftwareNowRequest&, const Model::UpdateGatewaySoftwareNowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGatewaySoftwareNowResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateMaintenanceStartTimeRequest&, const Model::UpdateMaintenanceStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceStartTimeResponseReceivedHandler;
@@ -693,7 +718,7 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as upload buffer for a specified
-         * gateway. This operation is supported for the stored volume, cached volume and
+         * gateway. This operation is supported for the stored volume, cached volume, and
          * tape gateway types.</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add upload buffer, and one or more disk
          * IDs that you want to configure as upload buffer.</p><p><h3>See Also:</h3>   <a
@@ -704,7 +729,7 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as upload buffer for a specified
-         * gateway. This operation is supported for the stored volume, cached volume and
+         * gateway. This operation is supported for the stored volume, cached volume, and
          * tape gateway types.</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add upload buffer, and one or more disk
          * IDs that you want to configure as upload buffer.</p><p><h3>See Also:</h3>   <a
@@ -717,7 +742,7 @@ namespace Model
 
         /**
          * <p>Configures one or more gateway local disks as upload buffer for a specified
-         * gateway. This operation is supported for the stored volume, cached volume and
+         * gateway. This operation is supported for the stored volume, cached volume, and
          * tape gateway types.</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add upload buffer, and one or more disk
          * IDs that you want to configure as upload buffer.</p><p><h3>See Also:</h3>   <a
@@ -816,6 +841,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssignTapePoolAsync(const Model::AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associate an Amazon FSx file system with the Amazon FSx file gateway. After
+         * the association process is complete, the file shares on the Amazon FSx file
+         * system are available for access through the gateway. This operation only
+         * supports the Amazon FSx file gateway type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateFileSystemOutcome AssociateFileSystem(const Model::AssociateFileSystemRequest& request) const;
+
+        /**
+         * <p>Associate an Amazon FSx file system with the Amazon FSx file gateway. After
+         * the association process is complete, the file shares on the Amazon FSx file
+         * system are available for access through the gateway. This operation only
+         * supports the Amazon FSx file gateway type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateFileSystemOutcomeCallable AssociateFileSystemCallable(const Model::AssociateFileSystemRequest& request) const;
+
+        /**
+         * <p>Associate an Amazon FSx file system with the Amazon FSx file gateway. After
+         * the association process is complete, the file shares on the Amazon FSx file
+         * system are available for access through the gateway. This operation only
+         * supports the Amazon FSx file gateway type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateFileSystemAsync(const Model::AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Connects a volume to an iSCSI connection and then attaches the volume to the
@@ -1105,10 +1164,10 @@ namespace Model
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the
          * ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-         * (Amazon S3) for durable off-site recovery, as well as import the data to an
-         * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
-         * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-         * This API enables you to take an ad hoc snapshot. For more information, see <a
+         * (Amazon S3) for durable off-site recovery, and also import the data to an Amazon
+         * Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can
+         * take snapshots of your gateway volume on a scheduled or ad hoc basis. This API
+         * enables you to take an ad hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
          * a snapshot schedule</a>.</p> <p>In the <code>CreateSnapshot</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). You must also
@@ -1135,10 +1194,10 @@ namespace Model
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the
          * ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-         * (Amazon S3) for durable off-site recovery, as well as import the data to an
-         * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
-         * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-         * This API enables you to take an ad hoc snapshot. For more information, see <a
+         * (Amazon S3) for durable off-site recovery, and also import the data to an Amazon
+         * Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can
+         * take snapshots of your gateway volume on a scheduled or ad hoc basis. This API
+         * enables you to take an ad hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
          * a snapshot schedule</a>.</p> <p>In the <code>CreateSnapshot</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). You must also
@@ -1167,10 +1226,10 @@ namespace Model
         /**
          * <p>Initiates a snapshot of a volume.</p> <p>AWS Storage Gateway provides the
          * ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-         * (Amazon S3) for durable off-site recovery, as well as import the data to an
-         * Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2).
-         * You can take snapshots of your gateway volume on a scheduled or ad hoc basis.
-         * This API enables you to take an ad hoc snapshot. For more information, see <a
+         * (Amazon S3) for durable off-site recovery, and also import the data to an Amazon
+         * Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can
+         * take snapshots of your gateway volume on a scheduled or ad hoc basis. This API
+         * enables you to take an ad hoc snapshot. For more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
          * a snapshot schedule</a>.</p> <p>In the <code>CreateSnapshot</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). You must also
@@ -1848,7 +1907,7 @@ namespace Model
         virtual void DeleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the most recent High Availability monitoring test
+         * <p>Returns information about the most recent high availability monitoring test
          * that was performed on the host in a cluster. If a test isn't performed, the
          * status and start time in the response would be null.</p><p><h3>See Also:</h3>  
          * <a
@@ -1858,7 +1917,7 @@ namespace Model
         virtual Model::DescribeAvailabilityMonitorTestOutcome DescribeAvailabilityMonitorTest(const Model::DescribeAvailabilityMonitorTestRequest& request) const;
 
         /**
-         * <p>Returns information about the most recent High Availability monitoring test
+         * <p>Returns information about the most recent high availability monitoring test
          * that was performed on the host in a cluster. If a test isn't performed, the
          * status and start time in the response would be null.</p><p><h3>See Also:</h3>  
          * <a
@@ -1870,7 +1929,7 @@ namespace Model
         virtual Model::DescribeAvailabilityMonitorTestOutcomeCallable DescribeAvailabilityMonitorTestCallable(const Model::DescribeAvailabilityMonitorTestRequest& request) const;
 
         /**
-         * <p>Returns information about the most recent High Availability monitoring test
+         * <p>Returns information about the most recent high availability monitoring test
          * that was performed on the host in a cluster. If a test isn't performed, the
          * status and start time in the response would be null.</p><p><h3>See Also:</h3>  
          * <a
@@ -2095,6 +2154,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeChapCredentialsAsync(const Model::DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the file system association information. This operation is only
+         * supported for Amazon FSx file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFileSystemAssociationsOutcome DescribeFileSystemAssociations(const Model::DescribeFileSystemAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets the file system association information. This operation is only
+         * supported for Amazon FSx file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFileSystemAssociationsOutcomeCallable DescribeFileSystemAssociationsCallable(const Model::DescribeFileSystemAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets the file system association information. This operation is only
+         * supported for Amazon FSx file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFileSystemAssociationsAsync(const Model::DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns metadata about a gateway such as its name, network interfaces,
@@ -2634,6 +2721,40 @@ namespace Model
         virtual void DisableGatewayAsync(const Model::DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates an Amazon FSx file system from the specified gateway. After the
+         * disassociation process finishes, the gateway can no longer access the Amazon FSx
+         * file system. This operation is only supported in the Amazon FSx file gateway
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFileSystemOutcome DisassociateFileSystem(const Model::DisassociateFileSystemRequest& request) const;
+
+        /**
+         * <p>Disassociates an Amazon FSx file system from the specified gateway. After the
+         * disassociation process finishes, the gateway can no longer access the Amazon FSx
+         * file system. This operation is only supported in the Amazon FSx file gateway
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateFileSystemOutcomeCallable DisassociateFileSystemCallable(const Model::DisassociateFileSystemRequest& request) const;
+
+        /**
+         * <p>Disassociates an Amazon FSx file system from the specified gateway. After the
+         * disassociation process finishes, the gateway can no longer access the Amazon FSx
+         * file system. This operation is only supported in the Amazon FSx file gateway
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateFileSystemAsync(const Model::DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds a file gateway to an Active Directory domain. This operation is only
          * supported for file gateways that support the SMB file protocol.</p><p><h3>See
          * Also:</h3>   <a
@@ -2728,6 +2849,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListFileSharesAsync(const Model::ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object
+         * contains a summary of a file system association. This operation is only
+         * supported for Amazon FSx file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFileSystemAssociationsOutcome ListFileSystemAssociations(const Model::ListFileSystemAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object
+         * contains a summary of a file system association. This operation is only
+         * supported for Amazon FSx file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFileSystemAssociationsOutcomeCallable ListFileSystemAssociationsCallable(const Model::ListFileSystemAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object
+         * contains a summary of a file system association. This operation is only
+         * supported for Amazon FSx file gateways.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFileSystemAssociationsAsync(const Model::ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists gateways owned by an AWS account in an AWS Region specified in the
@@ -3144,12 +3296,15 @@ namespace Model
         virtual void NotifyWhenUploadedAsync(const Model::NotifyWhenUploadedRequest& request, const NotifyWhenUploadedResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added, removed, or replaced since the
-         * gateway last listed the bucket's contents and cached the results. This operation
-         * is only supported in the file gateway type. You can subscribe to be notified
-         * through an Amazon CloudWatch event when your RefreshCache operation completes.
-         * For more information, see <a
+         * <p>Refreshes the cached inventory of objects for the specified file share. This
+         * operation finds objects in the Amazon S3 bucket that were added, removed, or
+         * replaced since the gateway last listed the bucket's contents and cached the
+         * results. This operation does not import files into the file gateway cache
+         * storage. It only updates the cached inventory to reflect changes in the
+         * inventory of the objects in the S3 bucket. This operation is only supported in
+         * the file gateway type. You can subscribe to be notified through an Amazon
+         * CloudWatch event when your <code>RefreshCache</code> operation completes. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
          * notified about file operations</a> in the <i>AWS Storage Gateway User
          * Guide</i>.</p> <p>When this API is called, it only initiates the refresh
@@ -3157,8 +3312,8 @@ namespace Model
          * necessarily mean that the file refresh has completed. You should use the
          * refresh-complete notification to determine that the operation has completed
          * before you check for new files on the gateway file share. You can subscribe to
-         * be notified through an CloudWatch event when your <code>RefreshCache</code>
-         * operation completes.</p> <p>Throttle limit: This API is asynchronous so the
+         * be notified through a CloudWatch event when your <code>RefreshCache</code>
+         * operation completes.</p> <p>Throttle limit: This API is asynchronous, so the
          * gateway will accept no more than two refreshes at any time. We recommend using
          * the refresh-complete CloudWatch event notification before issuing additional
          * requests. For more information, see <a
@@ -3177,12 +3332,15 @@ namespace Model
         virtual Model::RefreshCacheOutcome RefreshCache(const Model::RefreshCacheRequest& request) const;
 
         /**
-         * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added, removed, or replaced since the
-         * gateway last listed the bucket's contents and cached the results. This operation
-         * is only supported in the file gateway type. You can subscribe to be notified
-         * through an Amazon CloudWatch event when your RefreshCache operation completes.
-         * For more information, see <a
+         * <p>Refreshes the cached inventory of objects for the specified file share. This
+         * operation finds objects in the Amazon S3 bucket that were added, removed, or
+         * replaced since the gateway last listed the bucket's contents and cached the
+         * results. This operation does not import files into the file gateway cache
+         * storage. It only updates the cached inventory to reflect changes in the
+         * inventory of the objects in the S3 bucket. This operation is only supported in
+         * the file gateway type. You can subscribe to be notified through an Amazon
+         * CloudWatch event when your <code>RefreshCache</code> operation completes. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
          * notified about file operations</a> in the <i>AWS Storage Gateway User
          * Guide</i>.</p> <p>When this API is called, it only initiates the refresh
@@ -3190,8 +3348,8 @@ namespace Model
          * necessarily mean that the file refresh has completed. You should use the
          * refresh-complete notification to determine that the operation has completed
          * before you check for new files on the gateway file share. You can subscribe to
-         * be notified through an CloudWatch event when your <code>RefreshCache</code>
-         * operation completes.</p> <p>Throttle limit: This API is asynchronous so the
+         * be notified through a CloudWatch event when your <code>RefreshCache</code>
+         * operation completes.</p> <p>Throttle limit: This API is asynchronous, so the
          * gateway will accept no more than two refreshes at any time. We recommend using
          * the refresh-complete CloudWatch event notification before issuing additional
          * requests. For more information, see <a
@@ -3212,12 +3370,15 @@ namespace Model
         virtual Model::RefreshCacheOutcomeCallable RefreshCacheCallable(const Model::RefreshCacheRequest& request) const;
 
         /**
-         * <p>Refreshes the cache for the specified file share. This operation finds
-         * objects in the Amazon S3 bucket that were added, removed, or replaced since the
-         * gateway last listed the bucket's contents and cached the results. This operation
-         * is only supported in the file gateway type. You can subscribe to be notified
-         * through an Amazon CloudWatch event when your RefreshCache operation completes.
-         * For more information, see <a
+         * <p>Refreshes the cached inventory of objects for the specified file share. This
+         * operation finds objects in the Amazon S3 bucket that were added, removed, or
+         * replaced since the gateway last listed the bucket's contents and cached the
+         * results. This operation does not import files into the file gateway cache
+         * storage. It only updates the cached inventory to reflect changes in the
+         * inventory of the objects in the S3 bucket. This operation is only supported in
+         * the file gateway type. You can subscribe to be notified through an Amazon
+         * CloudWatch event when your <code>RefreshCache</code> operation completes. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
          * notified about file operations</a> in the <i>AWS Storage Gateway User
          * Guide</i>.</p> <p>When this API is called, it only initiates the refresh
@@ -3225,8 +3386,8 @@ namespace Model
          * necessarily mean that the file refresh has completed. You should use the
          * refresh-complete notification to determine that the operation has completed
          * before you check for new files on the gateway file share. You can subscribe to
-         * be notified through an CloudWatch event when your <code>RefreshCache</code>
-         * operation completes.</p> <p>Throttle limit: This API is asynchronous so the
+         * be notified through a CloudWatch event when your <code>RefreshCache</code>
+         * operation completes.</p> <p>Throttle limit: This API is asynchronous, so the
          * gateway will accept no more than two refreshes at any time. We recommend using
          * the refresh-complete CloudWatch event notification before issuing additional
          * requests. For more information, see <a
@@ -3827,6 +3988,34 @@ namespace Model
         virtual void UpdateChapCredentialsAsync(const Model::UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a file system association. This operation is only supported in the
+         * Amazon FSx file gateway type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFileSystemAssociationOutcome UpdateFileSystemAssociation(const Model::UpdateFileSystemAssociationRequest& request) const;
+
+        /**
+         * <p>Updates a file system association. This operation is only supported in the
+         * Amazon FSx file gateway type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFileSystemAssociationOutcomeCallable UpdateFileSystemAssociationCallable(const Model::UpdateFileSystemAssociationRequest& request) const;
+
+        /**
+         * <p>Updates a file system association. This operation is only supported in the
+         * Amazon FSx file gateway type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFileSystemAssociationAsync(const Model::UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a gateway's metadata, which includes the gateway's name and time
          * zone. To specify which gateway to update, use the Amazon Resource Name (ARN) of
          * the gateway in your request.</p>  <p>For gateways activated after
@@ -4220,6 +4409,7 @@ namespace Model
         void AddUploadBufferAsyncHelper(const Model::AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddWorkingStorageAsyncHelper(const Model::AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssignTapePoolAsyncHelper(const Model::AssignTapePoolRequest& request, const AssignTapePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateFileSystemAsyncHelper(const Model::AssociateFileSystemRequest& request, const AssociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachVolumeAsyncHelper(const Model::AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelArchivalAsyncHelper(const Model::CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelRetrievalAsyncHelper(const Model::CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4248,6 +4438,7 @@ namespace Model
         void DescribeCacheAsyncHelper(const Model::DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCachediSCSIVolumesAsyncHelper(const Model::DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChapCredentialsAsyncHelper(const Model::DescribeChapCredentialsRequest& request, const DescribeChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFileSystemAssociationsAsyncHelper(const Model::DescribeFileSystemAssociationsRequest& request, const DescribeFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGatewayInformationAsyncHelper(const Model::DescribeGatewayInformationRequest& request, const DescribeGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMaintenanceStartTimeAsyncHelper(const Model::DescribeMaintenanceStartTimeRequest& request, const DescribeMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNFSFileSharesAsyncHelper(const Model::DescribeNFSFileSharesRequest& request, const DescribeNFSFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4263,9 +4454,11 @@ namespace Model
         void DescribeWorkingStorageAsyncHelper(const Model::DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachVolumeAsyncHelper(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableGatewayAsyncHelper(const Model::DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateFileSystemAsyncHelper(const Model::DisassociateFileSystemRequest& request, const DisassociateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void JoinDomainAsyncHelper(const Model::JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAutomaticTapeCreationPoliciesAsyncHelper(const Model::ListAutomaticTapeCreationPoliciesRequest& request, const ListAutomaticTapeCreationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFileSharesAsyncHelper(const Model::ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFileSystemAssociationsAsyncHelper(const Model::ListFileSystemAssociationsRequest& request, const ListFileSystemAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGatewaysAsyncHelper(const Model::ListGatewaysRequest& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLocalDisksAsyncHelper(const Model::ListLocalDisksRequest& request, const ListLocalDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4289,6 +4482,7 @@ namespace Model
         void UpdateBandwidthRateLimitAsyncHelper(const Model::UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBandwidthRateLimitScheduleAsyncHelper(const Model::UpdateBandwidthRateLimitScheduleRequest& request, const UpdateBandwidthRateLimitScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChapCredentialsAsyncHelper(const Model::UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFileSystemAssociationAsyncHelper(const Model::UpdateFileSystemAssociationRequest& request, const UpdateFileSystemAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewayInformationAsyncHelper(const Model::UpdateGatewayInformationRequest& request, const UpdateGatewayInformationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGatewaySoftwareNowAsyncHelper(const Model::UpdateGatewaySoftwareNowRequest& request, const UpdateGatewaySoftwareNowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMaintenanceStartTimeAsyncHelper(const Model::UpdateMaintenanceStartTimeRequest& request, const UpdateMaintenanceStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

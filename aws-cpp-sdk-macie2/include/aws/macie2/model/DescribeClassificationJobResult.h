@@ -536,31 +536,31 @@ namespace Model
 
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline const S3JobDefinition& GetS3JobDefinition() const{ return m_s3JobDefinition; }
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline void SetS3JobDefinition(const S3JobDefinition& value) { m_s3JobDefinition = value; }
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline void SetS3JobDefinition(S3JobDefinition&& value) { m_s3JobDefinition = std::move(value); }
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline DescribeClassificationJobResult& WithS3JobDefinition(const S3JobDefinition& value) { SetS3JobDefinition(value); return *this;}
 
     /**
-     * <p>The S3 buckets that the job is configured to analyze, and the scope of that
+     * <p>The S3 buckets that contain the objects to analyze, and the scope of that
      * analysis.</p>
      */
     inline DescribeClassificationJobResult& WithS3JobDefinition(S3JobDefinition&& value) { SetS3JobDefinition(std::move(value)); return *this;}

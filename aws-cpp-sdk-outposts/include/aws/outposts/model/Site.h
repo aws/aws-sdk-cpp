@@ -203,6 +203,31 @@ namespace Model
      */
     inline Site& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    
+    inline const Aws::String& GetSiteArn() const{ return m_siteArn; }
+
+    
+    inline bool SiteArnHasBeenSet() const { return m_siteArnHasBeenSet; }
+
+    
+    inline void SetSiteArn(const Aws::String& value) { m_siteArnHasBeenSet = true; m_siteArn = value; }
+
+    
+    inline void SetSiteArn(Aws::String&& value) { m_siteArnHasBeenSet = true; m_siteArn = std::move(value); }
+
+    
+    inline void SetSiteArn(const char* value) { m_siteArnHasBeenSet = true; m_siteArn.assign(value); }
+
+    
+    inline Site& WithSiteArn(const Aws::String& value) { SetSiteArn(value); return *this;}
+
+    
+    inline Site& WithSiteArn(Aws::String&& value) { SetSiteArn(std::move(value)); return *this;}
+
+    
+    inline Site& WithSiteArn(const char* value) { SetSiteArn(value); return *this;}
+
   private:
 
     Aws::String m_siteId;
@@ -219,6 +244,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_siteArn;
+    bool m_siteArnHasBeenSet;
   };
 
 } // namespace Model

@@ -128,14 +128,14 @@ namespace Model
     typedef std::function<void(const SupportClient*, const Model::ResolveCaseRequest&, const Model::ResolveCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResolveCaseResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Support</fullname> <p>The AWS Support API reference is intended
-   * for programmers who need detailed information about the AWS Support operations
-   * and data types. This service enables you to manage your AWS Support cases
-   * programmatically. It uses HTTP methods that return results in JSON format.</p>
-   *  <ul> <li> <p>You must have a Business or Enterprise support plan to use
-   * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
-   * account that does not have a Business or Enterprise support plan, the
-   * <code>SubscriptionRequiredException</code> error message appears. For
+   * <fullname>AWS Support</fullname> <p>The <i>AWS Support API Reference</i> is
+   * intended for programmers who need detailed information about the AWS Support
+   * operations and data types. You can use the API to manage your support cases
+   * programmatically. The AWS Support API uses HTTP methods that return results in
+   * JSON format.</p>  <ul> <li> <p>You must have a Business or Enterprise
+   * Support plan to use the AWS Support API. </p> </li> <li> <p>If you call the AWS
+   * Support API from an account that does not have a Business or Enterprise Support
+   * plan, the <code>SubscriptionRequiredException</code> error message appears. For
    * information about changing your support plan, see <a
    * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
    *  <p>The AWS Support service also exposes a set of <a
@@ -143,23 +143,22 @@ namespace Model
    * Advisor</a> features. You can retrieve a list of checks and their descriptions,
    * get check results, specify checks to refresh, and get the refresh status of
    * checks.</p> <p>The following list describes the AWS Support case management
-   * operations:</p> <ul> <li> <p> <b>Service names, issue categories, and available
-   * severity levels. </b>The <a>DescribeServices</a> and
-   * <a>DescribeSeverityLevels</a> operations return AWS service names, service
-   * codes, service categories, and problem severity levels. You use these values
-   * when you call the <a>CreateCase</a> operation.</p> </li> <li> <p> <b>Case
-   * creation, case details, and case resolution.</b> The <a>CreateCase</a>,
-   * <a>DescribeCases</a>, <a>DescribeAttachment</a>, and <a>ResolveCase</a>
-   * operations create AWS Support cases, retrieve information about cases, and
-   * resolve cases.</p> </li> <li> <p> <b>Case communication.</b> The
-   * <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and
-   * <a>AddAttachmentsToSet</a> operations retrieve and add communications and
-   * attachments to AWS Support cases.</p> </li> </ul> <p>The following list
-   * describes the operations available from the AWS Support service for Trusted
-   * Advisor:</p> <ul> <li> <p> <a>DescribeTrustedAdvisorChecks</a> returns the list
-   * of checks that run against your AWS resources.</p> </li> <li> <p>Using the
-   * <code>checkId</code> for a specific check returned by
-   * <a>DescribeTrustedAdvisorChecks</a>, you can call
+   * operations:</p> <ul> <li> <p> Service names, issue categories, and available
+   * severity levels - The <a>DescribeServices</a> and <a>DescribeSeverityLevels</a>
+   * operations return AWS service names, service codes, service categories, and
+   * problem severity levels. You use these values when you call the
+   * <a>CreateCase</a> operation.</p> </li> <li> <p> Case creation, case details, and
+   * case resolution - The <a>CreateCase</a>, <a>DescribeCases</a>,
+   * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support
+   * cases, retrieve information about cases, and resolve cases.</p> </li> <li> <p>
+   * Case communication - The <a>DescribeCommunications</a>,
+   * <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a> operations
+   * retrieve and add communications and attachments to AWS Support cases.</p> </li>
+   * </ul> <p>The following list describes the operations available from the AWS
+   * Support service for Trusted Advisor:</p> <ul> <li> <p>
+   * <a>DescribeTrustedAdvisorChecks</a> returns the list of checks that run against
+   * your AWS resources.</p> </li> <li> <p>Using the <code>checkId</code> for a
+   * specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call
    * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check
    * that you specified.</p> </li> <li> <p>
    * <a>DescribeTrustedAdvisorCheckSummaries</a> returns summarized results for one
@@ -208,9 +207,9 @@ namespace Model
          * is a temporary container for attachments that you add to a case or case
          * communication. The set is available for 1 hour after it's created. The
          * <code>expiryTime</code> returned in the response is when the set expires. </p>
-         *  <ul> <li> <p>You must have a Business or Enterprise support plan to use
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
          * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
-         * account that does not have a Business or Enterprise support plan, the
+         * account that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -225,9 +224,9 @@ namespace Model
          * is a temporary container for attachments that you add to a case or case
          * communication. The set is available for 1 hour after it's created. The
          * <code>expiryTime</code> returned in the response is when the set expires. </p>
-         *  <ul> <li> <p>You must have a Business or Enterprise support plan to use
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
          * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
-         * account that does not have a Business or Enterprise support plan, the
+         * account that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -244,9 +243,9 @@ namespace Model
          * is a temporary container for attachments that you add to a case or case
          * communication. The set is available for 1 hour after it's created. The
          * <code>expiryTime</code> returned in the response is when the set expires. </p>
-         *  <ul> <li> <p>You must have a Business or Enterprise support plan to use
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
          * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
-         * account that does not have a Business or Enterprise support plan, the
+         * account that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -264,9 +263,9 @@ namespace Model
          * communication. You can list a set of email addresses to copy on the
          * communication by using the <code>ccEmailAddresses</code> parameter. The
          * <code>communicationBody</code> value contains the text of the communication.</p>
-         *  <ul> <li> <p>You must have a Business or Enterprise support plan to use
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
          * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
-         * account that does not have a Business or Enterprise support plan, the
+         * account that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -282,9 +281,9 @@ namespace Model
          * communication. You can list a set of email addresses to copy on the
          * communication by using the <code>ccEmailAddresses</code> parameter. The
          * <code>communicationBody</code> value contains the text of the communication.</p>
-         *  <ul> <li> <p>You must have a Business or Enterprise support plan to use
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
          * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
-         * account that does not have a Business or Enterprise support plan, the
+         * account that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -302,9 +301,9 @@ namespace Model
          * communication. You can list a set of email addresses to copy on the
          * communication by using the <code>ccEmailAddresses</code> parameter. The
          * <code>communicationBody</code> value contains the text of the communication.</p>
-         *  <ul> <li> <p>You must have a Business or Enterprise support plan to use
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
          * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
-         * account that does not have a Business or Enterprise support plan, the
+         * account that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -334,9 +333,9 @@ namespace Model
          * <code>caseId</code> is separate from the <code>displayId</code> that appears in
          * the <a href="https://console.aws.amazon.com/support">AWS Support Center</a>. Use
          * the <a>DescribeCases</a> operation to get the <code>displayId</code>.</p> 
-         * <ul> <li> <p>You must have a Business or Enterprise support plan to use the AWS
+         * <ul> <li> <p>You must have a Business or Enterprise Support plan to use the AWS
          * Support API. </p> </li> <li> <p>If you call the AWS Support API from an account
-         * that does not have a Business or Enterprise support plan, the
+         * that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -364,9 +363,9 @@ namespace Model
          * <code>caseId</code> is separate from the <code>displayId</code> that appears in
          * the <a href="https://console.aws.amazon.com/support">AWS Support Center</a>. Use
          * the <a>DescribeCases</a> operation to get the <code>displayId</code>.</p> 
-         * <ul> <li> <p>You must have a Business or Enterprise support plan to use the AWS
+         * <ul> <li> <p>You must have a Business or Enterprise Support plan to use the AWS
          * Support API. </p> </li> <li> <p>If you call the AWS Support API from an account
-         * that does not have a Business or Enterprise support plan, the
+         * that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -396,9 +395,9 @@ namespace Model
          * <code>caseId</code> is separate from the <code>displayId</code> that appears in
          * the <a href="https://console.aws.amazon.com/support">AWS Support Center</a>. Use
          * the <a>DescribeCases</a> operation to get the <code>displayId</code>.</p> 
-         * <ul> <li> <p>You must have a Business or Enterprise support plan to use the AWS
+         * <ul> <li> <p>You must have a Business or Enterprise Support plan to use the AWS
          * Support API. </p> </li> <li> <p>If you call the AWS Support API from an account
-         * that does not have a Business or Enterprise support plan, the
+         * that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -417,9 +416,9 @@ namespace Model
          * or case communication. Attachment IDs are returned in the
          * <a>AttachmentDetails</a> objects that are returned by the
          * <a>DescribeCommunications</a> operation.</p>  <ul> <li> <p>You must have a
-         * Business or Enterprise support plan to use the AWS Support API. </p> </li> <li>
+         * Business or Enterprise Support plan to use the AWS Support API. </p> </li> <li>
          * <p>If you call the AWS Support API from an account that does not have a Business
-         * or Enterprise support plan, the <code>SubscriptionRequiredException</code> error
+         * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -435,9 +434,9 @@ namespace Model
          * or case communication. Attachment IDs are returned in the
          * <a>AttachmentDetails</a> objects that are returned by the
          * <a>DescribeCommunications</a> operation.</p>  <ul> <li> <p>You must have a
-         * Business or Enterprise support plan to use the AWS Support API. </p> </li> <li>
+         * Business or Enterprise Support plan to use the AWS Support API. </p> </li> <li>
          * <p>If you call the AWS Support API from an account that does not have a Business
-         * or Enterprise support plan, the <code>SubscriptionRequiredException</code> error
+         * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -455,9 +454,9 @@ namespace Model
          * or case communication. Attachment IDs are returned in the
          * <a>AttachmentDetails</a> objects that are returned by the
          * <a>DescribeCommunications</a> operation.</p>  <ul> <li> <p>You must have a
-         * Business or Enterprise support plan to use the AWS Support API. </p> </li> <li>
+         * Business or Enterprise Support plan to use the AWS Support API. </p> </li> <li>
          * <p>If you call the AWS Support API from an account that does not have a Business
-         * or Enterprise support plan, the <code>SubscriptionRequiredException</code> error
+         * or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -481,9 +480,9 @@ namespace Model
          * <code>CaseDetails</code> objects.</p> </li> </ul> <p>Case data is available for
          * 12 months after creation. If a case was created more than 12 months ago, a
          * request might return an error.</p>  <ul> <li> <p>You must have a Business
-         * or Enterprise support plan to use the AWS Support API. </p> </li> <li> <p>If you
+         * or Enterprise Support plan to use the AWS Support API. </p> </li> <li> <p>If you
          * call the AWS Support API from an account that does not have a Business or
-         * Enterprise support plan, the <code>SubscriptionRequiredException</code> error
+         * Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -505,9 +504,9 @@ namespace Model
          * <code>CaseDetails</code> objects.</p> </li> </ul> <p>Case data is available for
          * 12 months after creation. If a case was created more than 12 months ago, a
          * request might return an error.</p>  <ul> <li> <p>You must have a Business
-         * or Enterprise support plan to use the AWS Support API. </p> </li> <li> <p>If you
+         * or Enterprise Support plan to use the AWS Support API. </p> </li> <li> <p>If you
          * call the AWS Support API from an account that does not have a Business or
-         * Enterprise support plan, the <code>SubscriptionRequiredException</code> error
+         * Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -531,9 +530,9 @@ namespace Model
          * <code>CaseDetails</code> objects.</p> </li> </ul> <p>Case data is available for
          * 12 months after creation. If a case was created more than 12 months ago, a
          * request might return an error.</p>  <ul> <li> <p>You must have a Business
-         * or Enterprise support plan to use the AWS Support API. </p> </li> <li> <p>If you
+         * or Enterprise Support plan to use the AWS Support API. </p> </li> <li> <p>If you
          * call the AWS Support API from an account that does not have a Business or
-         * Enterprise support plan, the <code>SubscriptionRequiredException</code> error
+         * Enterprise Support plan, the <code>SubscriptionRequiredException</code> error
          * message appears. For information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
@@ -554,9 +553,9 @@ namespace Model
          * parameters to control the pagination of the results. Set <code>maxResults</code>
          * to the number of cases that you want to display on each page, and use
          * <code>nextToken</code> to specify the resumption of pagination.</p>  <ul>
-         * <li> <p>You must have a Business or Enterprise support plan to use the AWS
+         * <li> <p>You must have a Business or Enterprise Support plan to use the AWS
          * Support API. </p> </li> <li> <p>If you call the AWS Support API from an account
-         * that does not have a Business or Enterprise support plan, the
+         * that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -576,9 +575,9 @@ namespace Model
          * parameters to control the pagination of the results. Set <code>maxResults</code>
          * to the number of cases that you want to display on each page, and use
          * <code>nextToken</code> to specify the resumption of pagination.</p>  <ul>
-         * <li> <p>You must have a Business or Enterprise support plan to use the AWS
+         * <li> <p>You must have a Business or Enterprise Support plan to use the AWS
          * Support API. </p> </li> <li> <p>If you call the AWS Support API from an account
-         * that does not have a Business or Enterprise support plan, the
+         * that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -600,9 +599,9 @@ namespace Model
          * parameters to control the pagination of the results. Set <code>maxResults</code>
          * to the number of cases that you want to display on each page, and use
          * <code>nextToken</code> to specify the resumption of pagination.</p>  <ul>
-         * <li> <p>You must have a Business or Enterprise support plan to use the AWS
+         * <li> <p>You must have a Business or Enterprise Support plan to use the AWS
          * Support API. </p> </li> <li> <p>If you call the AWS Support API from an account
-         * that does not have a Business or Enterprise support plan, the
+         * that does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -625,9 +624,9 @@ namespace Model
          * categories returned by the <code>DescribeServices</code> operation. Always use
          * the service codes and categories that the <code>DescribeServices</code>
          * operation returns, so that you have the most recent set of service and category
-         * codes.</p>  <ul> <li> <p>You must have a Business or Enterprise support
+         * codes.</p>  <ul> <li> <p>You must have a Business or Enterprise Support
          * plan to use the AWS Support API. </p> </li> <li> <p>If you call the AWS Support
-         * API from an account that does not have a Business or Enterprise support plan,
+         * API from an account that does not have a Business or Enterprise Support plan,
          * the <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -648,9 +647,9 @@ namespace Model
          * categories returned by the <code>DescribeServices</code> operation. Always use
          * the service codes and categories that the <code>DescribeServices</code>
          * operation returns, so that you have the most recent set of service and category
-         * codes.</p>  <ul> <li> <p>You must have a Business or Enterprise support
+         * codes.</p>  <ul> <li> <p>You must have a Business or Enterprise Support
          * plan to use the AWS Support API. </p> </li> <li> <p>If you call the AWS Support
-         * API from an account that does not have a Business or Enterprise support plan,
+         * API from an account that does not have a Business or Enterprise Support plan,
          * the <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -673,9 +672,9 @@ namespace Model
          * categories returned by the <code>DescribeServices</code> operation. Always use
          * the service codes and categories that the <code>DescribeServices</code>
          * operation returns, so that you have the most recent set of service and category
-         * codes.</p>  <ul> <li> <p>You must have a Business or Enterprise support
+         * codes.</p>  <ul> <li> <p>You must have a Business or Enterprise Support
          * plan to use the AWS Support API. </p> </li> <li> <p>If you call the AWS Support
-         * API from an account that does not have a Business or Enterprise support plan,
+         * API from an account that does not have a Business or Enterprise Support plan,
          * the <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -688,12 +687,12 @@ namespace Model
         virtual void DescribeServicesAsync(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the list of severity levels that you can assign to an AWS Support
-         * case. The severity level for a case is also a field in the <a>CaseDetails</a>
-         * data type that you include for a <a>CreateCase</a> request.</p>  <ul> <li>
-         * <p>You must have a Business or Enterprise support plan to use the AWS Support
+         * <p>Returns the list of severity levels that you can assign to a support case.
+         * The severity level for a case is also a field in the <a>CaseDetails</a> data
+         * type that you include for a <a>CreateCase</a> request.</p>  <ul> <li>
+         * <p>You must have a Business or Enterprise Support plan to use the AWS Support
          * API. </p> </li> <li> <p>If you call the AWS Support API from an account that
-         * does not have a Business or Enterprise support plan, the
+         * does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -704,12 +703,12 @@ namespace Model
         virtual Model::DescribeSeverityLevelsOutcome DescribeSeverityLevels(const Model::DescribeSeverityLevelsRequest& request) const;
 
         /**
-         * <p>Returns the list of severity levels that you can assign to an AWS Support
-         * case. The severity level for a case is also a field in the <a>CaseDetails</a>
-         * data type that you include for a <a>CreateCase</a> request.</p>  <ul> <li>
-         * <p>You must have a Business or Enterprise support plan to use the AWS Support
+         * <p>Returns the list of severity levels that you can assign to a support case.
+         * The severity level for a case is also a field in the <a>CaseDetails</a> data
+         * type that you include for a <a>CreateCase</a> request.</p>  <ul> <li>
+         * <p>You must have a Business or Enterprise Support plan to use the AWS Support
          * API. </p> </li> <li> <p>If you call the AWS Support API from an account that
-         * does not have a Business or Enterprise support plan, the
+         * does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -722,12 +721,12 @@ namespace Model
         virtual Model::DescribeSeverityLevelsOutcomeCallable DescribeSeverityLevelsCallable(const Model::DescribeSeverityLevelsRequest& request) const;
 
         /**
-         * <p>Returns the list of severity levels that you can assign to an AWS Support
-         * case. The severity level for a case is also a field in the <a>CaseDetails</a>
-         * data type that you include for a <a>CreateCase</a> request.</p>  <ul> <li>
-         * <p>You must have a Business or Enterprise support plan to use the AWS Support
+         * <p>Returns the list of severity levels that you can assign to a support case.
+         * The severity level for a case is also a field in the <a>CaseDetails</a> data
+         * type that you include for a <a>CreateCase</a> request.</p>  <ul> <li>
+         * <p>You must have a Business or Enterprise Support plan to use the AWS Support
          * API. </p> </li> <li> <p>If you call the AWS Support API from an account that
-         * does not have a Business or Enterprise support plan, the
+         * does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -747,9 +746,9 @@ namespace Model
          * <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If you call
          * this operation for these checks, you might see an
          * <code>InvalidParameterValue</code> error.</p>  <ul> <li> <p>You must have
-         * a Business or Enterprise support plan to use the AWS Support API. </p> </li>
+         * a Business or Enterprise Support plan to use the AWS Support API. </p> </li>
          * <li> <p>If you call the AWS Support API from an account that does not have a
-         * Business or Enterprise support plan, the
+         * Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -767,9 +766,9 @@ namespace Model
          * <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If you call
          * this operation for these checks, you might see an
          * <code>InvalidParameterValue</code> error.</p>  <ul> <li> <p>You must have
-         * a Business or Enterprise support plan to use the AWS Support API. </p> </li>
+         * a Business or Enterprise Support plan to use the AWS Support API. </p> </li>
          * <li> <p>If you call the AWS Support API from an account that does not have a
-         * Business or Enterprise support plan, the
+         * Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -789,9 +788,9 @@ namespace Model
          * <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If you call
          * this operation for these checks, you might see an
          * <code>InvalidParameterValue</code> error.</p>  <ul> <li> <p>You must have
-         * a Business or Enterprise support plan to use the AWS Support API. </p> </li>
+         * a Business or Enterprise Support plan to use the AWS Support API. </p> </li>
          * <li> <p>If you call the AWS Support API from an account that does not have a
-         * Business or Enterprise support plan, the
+         * Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -812,14 +811,15 @@ namespace Model
          * <a>TrustedAdvisorResourceDetail</a> </p> </li> <li> <p>
          * <a>TrustedAdvisorResourcesSummary</a> </p> </li> </ul> <p>In addition, the
          * response contains these fields:</p> <ul> <li> <p> <b>status</b> - The alert
-         * status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-         * "not_available".</p> </li> <li> <p> <b>timestamp</b> - The time of the last
-         * refresh of the check.</p> </li> <li> <p> <b>checkId</b> - The unique identifier
-         * for the check.</p> </li> </ul>  <ul> <li> <p>You must have a Business or
-         * Enterprise support plan to use the AWS Support API. </p> </li> <li> <p>If you
-         * call the AWS Support API from an account that does not have a Business or
-         * Enterprise support plan, the <code>SubscriptionRequiredException</code> error
-         * message appears. For information about changing your support plan, see <a
+         * status of the check can be <code>ok</code> (green), <code>warning</code>
+         * (yellow), <code>error</code> (red), or <code>not_available</code>.</p> </li>
+         * <li> <p> <b>timestamp</b> - The time of the last refresh of the check.</p> </li>
+         * <li> <p> <b>checkId</b> - The unique identifier for the check.</p> </li> </ul>
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
+         * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
+         * account that does not have a Business or Enterprise Support plan, the
+         * <code>SubscriptionRequiredException</code> error message appears. For
+         * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">AWS
@@ -836,14 +836,15 @@ namespace Model
          * <a>TrustedAdvisorResourceDetail</a> </p> </li> <li> <p>
          * <a>TrustedAdvisorResourcesSummary</a> </p> </li> </ul> <p>In addition, the
          * response contains these fields:</p> <ul> <li> <p> <b>status</b> - The alert
-         * status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-         * "not_available".</p> </li> <li> <p> <b>timestamp</b> - The time of the last
-         * refresh of the check.</p> </li> <li> <p> <b>checkId</b> - The unique identifier
-         * for the check.</p> </li> </ul>  <ul> <li> <p>You must have a Business or
-         * Enterprise support plan to use the AWS Support API. </p> </li> <li> <p>If you
-         * call the AWS Support API from an account that does not have a Business or
-         * Enterprise support plan, the <code>SubscriptionRequiredException</code> error
-         * message appears. For information about changing your support plan, see <a
+         * status of the check can be <code>ok</code> (green), <code>warning</code>
+         * (yellow), <code>error</code> (red), or <code>not_available</code>.</p> </li>
+         * <li> <p> <b>timestamp</b> - The time of the last refresh of the check.</p> </li>
+         * <li> <p> <b>checkId</b> - The unique identifier for the check.</p> </li> </ul>
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
+         * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
+         * account that does not have a Business or Enterprise Support plan, the
+         * <code>SubscriptionRequiredException</code> error message appears. For
+         * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">AWS
@@ -862,14 +863,15 @@ namespace Model
          * <a>TrustedAdvisorResourceDetail</a> </p> </li> <li> <p>
          * <a>TrustedAdvisorResourcesSummary</a> </p> </li> </ul> <p>In addition, the
          * response contains these fields:</p> <ul> <li> <p> <b>status</b> - The alert
-         * status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-         * "not_available".</p> </li> <li> <p> <b>timestamp</b> - The time of the last
-         * refresh of the check.</p> </li> <li> <p> <b>checkId</b> - The unique identifier
-         * for the check.</p> </li> </ul>  <ul> <li> <p>You must have a Business or
-         * Enterprise support plan to use the AWS Support API. </p> </li> <li> <p>If you
-         * call the AWS Support API from an account that does not have a Business or
-         * Enterprise support plan, the <code>SubscriptionRequiredException</code> error
-         * message appears. For information about changing your support plan, see <a
+         * status of the check can be <code>ok</code> (green), <code>warning</code>
+         * (yellow), <code>error</code> (red), or <code>not_available</code>.</p> </li>
+         * <li> <p> <b>timestamp</b> - The time of the last refresh of the check.</p> </li>
+         * <li> <p> <b>checkId</b> - The unique identifier for the check.</p> </li> </ul>
+         *  <ul> <li> <p>You must have a Business or Enterprise Support plan to use
+         * the AWS Support API. </p> </li> <li> <p>If you call the AWS Support API from an
+         * account that does not have a Business or Enterprise Support plan, the
+         * <code>SubscriptionRequiredException</code> error message appears. For
+         * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">AWS
@@ -884,9 +886,9 @@ namespace Model
          * IDs that you specified. You can get the check IDs by calling the
          * <a>DescribeTrustedAdvisorChecks</a> operation.</p> <p>The response contains an
          * array of <a>TrustedAdvisorCheckSummary</a> objects.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -901,9 +903,9 @@ namespace Model
          * IDs that you specified. You can get the check IDs by calling the
          * <a>DescribeTrustedAdvisorChecks</a> operation.</p> <p>The response contains an
          * array of <a>TrustedAdvisorCheckSummary</a> objects.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -920,9 +922,9 @@ namespace Model
          * IDs that you specified. You can get the check IDs by calling the
          * <a>DescribeTrustedAdvisorChecks</a> operation.</p> <p>The response contains an
          * array of <a>TrustedAdvisorCheckSummary</a> objects.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -940,13 +942,15 @@ namespace Model
          * code. The AWS Support API currently supports English ("en") and Japanese ("ja").
          * The response contains a <a>TrustedAdvisorCheckDescription</a> object for each
          * check. You must set the AWS Region to us-east-1.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
-         * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> <li>
+         * <p>The names and descriptions for Trusted Advisor checks are subject to change.
+         * We recommend that you specify the check ID in your code to uniquely identify a
+         * check.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS
          * API Reference</a></p>
          */
@@ -958,13 +962,15 @@ namespace Model
          * code. The AWS Support API currently supports English ("en") and Japanese ("ja").
          * The response contains a <a>TrustedAdvisorCheckDescription</a> object for each
          * check. You must set the AWS Region to us-east-1.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
-         * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> <li>
+         * <p>The names and descriptions for Trusted Advisor checks are subject to change.
+         * We recommend that you specify the check ID in your code to uniquely identify a
+         * check.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS
          * API Reference</a></p>
          *
@@ -978,13 +984,15 @@ namespace Model
          * code. The AWS Support API currently supports English ("en") and Japanese ("ja").
          * The response contains a <a>TrustedAdvisorCheckDescription</a> object for each
          * check. You must set the AWS Region to us-east-1.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
-         * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> <li>
+         * <p>The names and descriptions for Trusted Advisor checks are subject to change.
+         * We recommend that you specify the check ID in your code to uniquely identify a
+         * check.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">AWS
          * API Reference</a></p>
          *
@@ -999,9 +1007,9 @@ namespace Model
          * the <code>RefreshTrustedAdvisorCheck</code> operation to refresh them, you might
          * see the <code>InvalidParameterValue</code> error.</p>  <p>The response
          * contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.</p>  <ul> <li>
-         * <p>You must have a Business or Enterprise support plan to use the AWS Support
+         * <p>You must have a Business or Enterprise Support plan to use the AWS Support
          * API. </p> </li> <li> <p>If you call the AWS Support API from an account that
-         * does not have a Business or Enterprise support plan, the
+         * does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -1018,9 +1026,9 @@ namespace Model
          * the <code>RefreshTrustedAdvisorCheck</code> operation to refresh them, you might
          * see the <code>InvalidParameterValue</code> error.</p>  <p>The response
          * contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.</p>  <ul> <li>
-         * <p>You must have a Business or Enterprise support plan to use the AWS Support
+         * <p>You must have a Business or Enterprise Support plan to use the AWS Support
          * API. </p> </li> <li> <p>If you call the AWS Support API from an account that
-         * does not have a Business or Enterprise support plan, the
+         * does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -1039,9 +1047,9 @@ namespace Model
          * the <code>RefreshTrustedAdvisorCheck</code> operation to refresh them, you might
          * see the <code>InvalidParameterValue</code> error.</p>  <p>The response
          * contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.</p>  <ul> <li>
-         * <p>You must have a Business or Enterprise support plan to use the AWS Support
+         * <p>You must have a Business or Enterprise Support plan to use the AWS Support
          * API. </p> </li> <li> <p>If you call the AWS Support API from an account that
-         * does not have a Business or Enterprise support plan, the
+         * does not have a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -1056,9 +1064,9 @@ namespace Model
         /**
          * <p>Resolves a support case. This operation takes a <code>caseId</code> and
          * returns the initial and final state of the case.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -1071,9 +1079,9 @@ namespace Model
         /**
          * <p>Resolves a support case. This operation takes a <code>caseId</code> and
          * returns the initial and final state of the case.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>
@@ -1088,9 +1096,9 @@ namespace Model
         /**
          * <p>Resolves a support case. This operation takes a <code>caseId</code> and
          * returns the initial and final state of the case.</p>  <ul> <li> <p>You
-         * must have a Business or Enterprise support plan to use the AWS Support API. </p>
+         * must have a Business or Enterprise Support plan to use the AWS Support API. </p>
          * </li> <li> <p>If you call the AWS Support API from an account that does not have
-         * a Business or Enterprise support plan, the
+         * a Business or Enterprise Support plan, the
          * <code>SubscriptionRequiredException</code> error message appears. For
          * information about changing your support plan, see <a
          * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p> </li> </ul>

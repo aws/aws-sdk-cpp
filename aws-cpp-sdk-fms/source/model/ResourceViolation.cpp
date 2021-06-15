@@ -25,7 +25,10 @@ ResourceViolation::ResourceViolation() :
     m_networkFirewallMissingFirewallViolationHasBeenSet(false),
     m_networkFirewallMissingSubnetViolationHasBeenSet(false),
     m_networkFirewallMissingExpectedRTViolationHasBeenSet(false),
-    m_networkFirewallPolicyModifiedViolationHasBeenSet(false)
+    m_networkFirewallPolicyModifiedViolationHasBeenSet(false),
+    m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
+    m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
+    m_dnsRuleGroupLimitExceededViolationHasBeenSet(false)
 {
 }
 
@@ -36,7 +39,10 @@ ResourceViolation::ResourceViolation(JsonView jsonValue) :
     m_networkFirewallMissingFirewallViolationHasBeenSet(false),
     m_networkFirewallMissingSubnetViolationHasBeenSet(false),
     m_networkFirewallMissingExpectedRTViolationHasBeenSet(false),
-    m_networkFirewallPolicyModifiedViolationHasBeenSet(false)
+    m_networkFirewallPolicyModifiedViolationHasBeenSet(false),
+    m_dnsRuleGroupPriorityConflictViolationHasBeenSet(false),
+    m_dnsDuplicateRuleGroupViolationHasBeenSet(false),
+    m_dnsRuleGroupLimitExceededViolationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +98,27 @@ ResourceViolation& ResourceViolation::operator =(JsonView jsonValue)
     m_networkFirewallPolicyModifiedViolationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DnsRuleGroupPriorityConflictViolation"))
+  {
+    m_dnsRuleGroupPriorityConflictViolation = jsonValue.GetObject("DnsRuleGroupPriorityConflictViolation");
+
+    m_dnsRuleGroupPriorityConflictViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DnsDuplicateRuleGroupViolation"))
+  {
+    m_dnsDuplicateRuleGroupViolation = jsonValue.GetObject("DnsDuplicateRuleGroupViolation");
+
+    m_dnsDuplicateRuleGroupViolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DnsRuleGroupLimitExceededViolation"))
+  {
+    m_dnsRuleGroupLimitExceededViolation = jsonValue.GetObject("DnsRuleGroupLimitExceededViolation");
+
+    m_dnsRuleGroupLimitExceededViolationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +165,24 @@ JsonValue ResourceViolation::Jsonize() const
   if(m_networkFirewallPolicyModifiedViolationHasBeenSet)
   {
    payload.WithObject("NetworkFirewallPolicyModifiedViolation", m_networkFirewallPolicyModifiedViolation.Jsonize());
+
+  }
+
+  if(m_dnsRuleGroupPriorityConflictViolationHasBeenSet)
+  {
+   payload.WithObject("DnsRuleGroupPriorityConflictViolation", m_dnsRuleGroupPriorityConflictViolation.Jsonize());
+
+  }
+
+  if(m_dnsDuplicateRuleGroupViolationHasBeenSet)
+  {
+   payload.WithObject("DnsDuplicateRuleGroupViolation", m_dnsDuplicateRuleGroupViolation.Jsonize());
+
+  }
+
+  if(m_dnsRuleGroupLimitExceededViolationHasBeenSet)
+  {
+   payload.WithObject("DnsRuleGroupLimitExceededViolation", m_dnsRuleGroupLimitExceededViolation.Jsonize());
 
   }
 

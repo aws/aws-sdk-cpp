@@ -466,7 +466,7 @@ namespace Model
 
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
      * the index. A 0 for the query capacity or the storage capacity indicates that the
      * index is using the default capacity for the index.</p>
@@ -474,7 +474,7 @@ namespace Model
     inline const CapacityUnitsConfiguration& GetCapacityUnits() const{ return m_capacityUnits; }
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
      * the index. A 0 for the query capacity or the storage capacity indicates that the
      * index is using the default capacity for the index.</p>
@@ -482,7 +482,7 @@ namespace Model
     inline void SetCapacityUnits(const CapacityUnitsConfiguration& value) { m_capacityUnits = value; }
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
      * the index. A 0 for the query capacity or the storage capacity indicates that the
      * index is using the default capacity for the index.</p>
@@ -490,7 +490,7 @@ namespace Model
     inline void SetCapacityUnits(CapacityUnitsConfiguration&& value) { m_capacityUnits = std::move(value); }
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
      * the index. A 0 for the query capacity or the storage capacity indicates that the
      * index is using the default capacity for the index.</p>
@@ -498,7 +498,7 @@ namespace Model
     inline DescribeIndexResult& WithCapacityUnits(const CapacityUnitsConfiguration& value) { SetCapacityUnits(value); return *this;}
 
     /**
-     * <p>For enterprise edtion indexes, you can choose to use additional capacity to
+     * <p>For Enterprise edition indexes, you can choose to use additional capacity to
      * meet the needs of your application. This contains the capacity units used for
      * the index. A 0 for the query capacity or the storage capacity indicates that the
      * index is using the default capacity for the index.</p>

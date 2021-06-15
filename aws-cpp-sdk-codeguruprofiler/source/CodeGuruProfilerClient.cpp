@@ -91,7 +91,7 @@ CodeGuruProfilerClient::~CodeGuruProfilerClient()
 {
 }
 
-void CodeGuruProfilerClient::init(const ClientConfiguration& config)
+void CodeGuruProfilerClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CodeGuruProfiler");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -125,11 +125,9 @@ AddNotificationChannelsOutcome CodeGuruProfilerClient::AddNotificationChannels(c
     return AddNotificationChannelsOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/notificationConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/notificationConfiguration");
   return AddNotificationChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -159,11 +157,9 @@ BatchGetFrameMetricDataOutcome CodeGuruProfilerClient::BatchGetFrameMetricData(c
     return BatchGetFrameMetricDataOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/frames/-/metrics";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/frames/-/metrics");
   return BatchGetFrameMetricDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -193,11 +189,9 @@ ConfigureAgentOutcome CodeGuruProfilerClient::ConfigureAgent(const ConfigureAgen
     return ConfigureAgentOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/configureAgent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/configureAgent");
   return ConfigureAgentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -227,9 +221,7 @@ CreateProfilingGroupOutcome CodeGuruProfilerClient::CreateProfilingGroup(const C
     return CreateProfilingGroupOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups");
   return CreateProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -259,10 +251,8 @@ DeleteProfilingGroupOutcome CodeGuruProfilerClient::DeleteProfilingGroup(const D
     return DeleteProfilingGroupOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
   return DeleteProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -292,10 +282,8 @@ DescribeProfilingGroupOutcome CodeGuruProfilerClient::DescribeProfilingGroup(con
     return DescribeProfilingGroupOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
   return DescribeProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -320,9 +308,7 @@ void CodeGuruProfilerClient::DescribeProfilingGroupAsyncHelper(const DescribePro
 GetFindingsReportAccountSummaryOutcome CodeGuruProfilerClient::GetFindingsReportAccountSummary(const GetFindingsReportAccountSummaryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/internal/findingsReports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/internal/findingsReports");
   return GetFindingsReportAccountSummaryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -352,11 +338,9 @@ GetNotificationConfigurationOutcome CodeGuruProfilerClient::GetNotificationConfi
     return GetNotificationConfigurationOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/notificationConfiguration";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/notificationConfiguration");
   return GetNotificationConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -386,11 +370,9 @@ GetPolicyOutcome CodeGuruProfilerClient::GetPolicy(const GetPolicyRequest& reque
     return GetPolicyOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/policy");
   return GetPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -420,11 +402,9 @@ GetProfileOutcome CodeGuruProfilerClient::GetProfile(const GetProfileRequest& re
     return GetProfileOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/profile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/profile");
   return GetProfileOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -464,11 +444,9 @@ GetRecommendationsOutcome CodeGuruProfilerClient::GetRecommendations(const GetRe
     return GetRecommendationsOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/internal/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/recommendations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/internal/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/recommendations");
   return GetRecommendationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -508,11 +486,9 @@ ListFindingsReportsOutcome CodeGuruProfilerClient::ListFindingsReports(const Lis
     return ListFindingsReportsOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/internal/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/findingsReports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/internal/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/findingsReports");
   return ListFindingsReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -557,11 +533,9 @@ ListProfileTimesOutcome CodeGuruProfilerClient::ListProfileTimes(const ListProfi
     return ListProfileTimesOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/profileTimes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/profileTimes");
   return ListProfileTimesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -586,9 +560,7 @@ void CodeGuruProfilerClient::ListProfileTimesAsyncHelper(const ListProfileTimesR
 ListProfilingGroupsOutcome CodeGuruProfilerClient::ListProfilingGroups(const ListProfilingGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups");
   return ListProfilingGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -618,10 +590,8 @@ ListTagsForResourceOutcome CodeGuruProfilerClient::ListTagsForResource(const Lis
     return ListTagsForResourceOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -651,11 +621,9 @@ PostAgentProfileOutcome CodeGuruProfilerClient::PostAgentProfile(const PostAgent
     return PostAgentProfileOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/agentProfile";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/agentProfile");
   return PostAgentProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -690,12 +658,10 @@ PutPermissionOutcome CodeGuruProfilerClient::PutPermission(const PutPermissionRe
     return PutPermissionOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/policy/";
-  ss << ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/policy/");
+  uri.AddPathSegment(ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup()));
   return PutPermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -730,12 +696,10 @@ RemoveNotificationChannelOutcome CodeGuruProfilerClient::RemoveNotificationChann
     return RemoveNotificationChannelOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/notificationConfiguration/";
-  ss << request.GetChannelId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/notificationConfiguration/");
+  uri.AddPathSegment(request.GetChannelId());
   return RemoveNotificationChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -775,12 +739,10 @@ RemovePermissionOutcome CodeGuruProfilerClient::RemovePermission(const RemovePer
     return RemovePermissionOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RevisionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/policy/";
-  ss << ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup());
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/policy/");
+  uri.AddPathSegment(ActionGroupMapper::GetNameForActionGroup(request.GetActionGroup()));
   return RemovePermissionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -815,13 +777,11 @@ SubmitFeedbackOutcome CodeGuruProfilerClient::SubmitFeedback(const SubmitFeedbac
     return SubmitFeedbackOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/internal/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  ss << "/anomalies/";
-  ss << request.GetAnomalyInstanceId();
-  ss << "/feedback";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/internal/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
+  uri.AddPathSegments("/anomalies/");
+  uri.AddPathSegment(request.GetAnomalyInstanceId());
+  uri.AddPathSegments("/feedback");
   return SubmitFeedbackOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -851,10 +811,8 @@ TagResourceOutcome CodeGuruProfilerClient::TagResource(const TagResourceRequest&
     return TagResourceOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -889,10 +847,8 @@ UntagResourceOutcome CodeGuruProfilerClient::UntagResource(const UntagResourceRe
     return UntagResourceOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -922,10 +878,8 @@ UpdateProfilingGroupOutcome CodeGuruProfilerClient::UpdateProfilingGroup(const U
     return UpdateProfilingGroupOutcome(Aws::Client::AWSError<CodeGuruProfilerErrors>(CodeGuruProfilerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfilingGroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/profilingGroups/";
-  ss << request.GetProfilingGroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/profilingGroups/");
+  uri.AddPathSegment(request.GetProfilingGroupName());
   return UpdateProfilingGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/InferenceExecutionConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -161,6 +162,43 @@ namespace Model
      * <p>Specifies the containers in the inference pipeline.</p>
      */
     inline CreateModelRequest& AddContainers(ContainerDefinition&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline const InferenceExecutionConfig& GetInferenceExecutionConfig() const{ return m_inferenceExecutionConfig; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline bool InferenceExecutionConfigHasBeenSet() const { return m_inferenceExecutionConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline void SetInferenceExecutionConfig(const InferenceExecutionConfig& value) { m_inferenceExecutionConfigHasBeenSet = true; m_inferenceExecutionConfig = value; }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline void SetInferenceExecutionConfig(InferenceExecutionConfig&& value) { m_inferenceExecutionConfigHasBeenSet = true; m_inferenceExecutionConfig = std::move(value); }
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline CreateModelRequest& WithInferenceExecutionConfig(const InferenceExecutionConfig& value) { SetInferenceExecutionConfig(value); return *this;}
+
+    /**
+     * <p>Specifies details of how containers in a multi-container endpoint are
+     * called.</p>
+     */
+    inline CreateModelRequest& WithInferenceExecutionConfig(InferenceExecutionConfig&& value) { SetInferenceExecutionConfig(std::move(value)); return *this;}
 
 
     /**
@@ -440,6 +478,9 @@ namespace Model
 
     Aws::Vector<ContainerDefinition> m_containers;
     bool m_containersHasBeenSet;
+
+    InferenceExecutionConfig m_inferenceExecutionConfig;
+    bool m_inferenceExecutionConfigHasBeenSet;
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet;

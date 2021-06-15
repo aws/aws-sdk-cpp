@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     speke,
-    static_key
+    static_key,
+    srt_password
   };
 
 namespace KeyTypeMapper

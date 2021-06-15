@@ -19,36 +19,36 @@ namespace Model
 {
 
 MinimumHealthyHosts::MinimumHealthyHosts() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
     m_type(MinimumHealthyHostsType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_value(0),
+    m_valueHasBeenSet(false)
 {
 }
 
 MinimumHealthyHosts::MinimumHealthyHosts(JsonView jsonValue) : 
-    m_value(0),
-    m_valueHasBeenSet(false),
     m_type(MinimumHealthyHostsType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_value(0),
+    m_valueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 MinimumHealthyHosts& MinimumHealthyHosts::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("value"))
-  {
-    m_value = jsonValue.GetInteger("value");
-
-    m_valueHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MinimumHealthyHostsTypeMapper::GetMinimumHealthyHostsTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("value"))
+  {
+    m_value = jsonValue.GetInteger("value");
+
+    m_valueHasBeenSet = true;
   }
 
   return *this;
@@ -58,15 +58,15 @@ JsonValue MinimumHealthyHosts::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", MinimumHealthyHostsTypeMapper::GetNameForMinimumHealthyHostsType(m_type));
+  }
+
   if(m_valueHasBeenSet)
   {
    payload.WithInteger("value", m_value);
 
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", MinimumHealthyHostsTypeMapper::GetNameForMinimumHealthyHostsType(m_type));
   }
 
   return payload;

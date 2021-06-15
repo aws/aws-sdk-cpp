@@ -92,7 +92,9 @@ namespace Model
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>
+     * after the file system has been created.</p>  <p>The <code>maxIO</code>
+     * mode is not supported on file systems using One Zone storage classes.</p>
+     * 
      */
     inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
 
@@ -102,7 +104,9 @@ namespace Model
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>
+     * after the file system has been created.</p>  <p>The <code>maxIO</code>
+     * mode is not supported on file systems using One Zone storage classes.</p>
+     * 
      */
     inline bool PerformanceModeHasBeenSet() const { return m_performanceModeHasBeenSet; }
 
@@ -112,7 +116,9 @@ namespace Model
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>
+     * after the file system has been created.</p>  <p>The <code>maxIO</code>
+     * mode is not supported on file systems using One Zone storage classes.</p>
+     * 
      */
     inline void SetPerformanceMode(const PerformanceMode& value) { m_performanceModeHasBeenSet = true; m_performanceMode = value; }
 
@@ -122,7 +128,9 @@ namespace Model
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>
+     * after the file system has been created.</p>  <p>The <code>maxIO</code>
+     * mode is not supported on file systems using One Zone storage classes.</p>
+     * 
      */
     inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceModeHasBeenSet = true; m_performanceMode = std::move(value); }
 
@@ -132,7 +140,9 @@ namespace Model
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>
+     * after the file system has been created.</p>  <p>The <code>maxIO</code>
+     * mode is not supported on file systems using One Zone storage classes.</p>
+     * 
      */
     inline CreateFileSystemRequest& WithPerformanceMode(const PerformanceMode& value) { SetPerformanceMode(value); return *this;}
 
@@ -142,7 +152,9 @@ namespace Model
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>
+     * after the file system has been created.</p>  <p>The <code>maxIO</code>
+     * mode is not supported on file systems using One Zone storage classes.</p>
+     * 
      */
     inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
@@ -189,11 +201,11 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -203,17 +215,17 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -223,17 +235,17 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -243,17 +255,17 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -263,17 +275,17 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -283,17 +295,17 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -303,17 +315,17 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -323,17 +335,17 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS CMK to be used to protect the encrypted file system.
-     * This parameter is only required if you want to use a nondefault CMK. If this
-     * parameter is not specified, the default CMK for Amazon EFS is used. This ID can
-     * be in one of the following formats:</p> <ul> <li> <p>Key ID - A unique
-     * identifier of the key, for example
+     * <p>The ID of the AWS KMS CMK that you want to use to protect the encrypted file
+     * system. This parameter is only required if you want to use a non-default KMS
+     * key. If this parameter is not specified, the default CMK for Amazon EFS is used.
+     * This ID can be in one of the following formats:</p> <ul> <li> <p>Key ID - A
+     * unique identifier of the key, for example
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p> </li> <li> <p>ARN - An
      * Amazon Resource Name (ARN) for the key, for example
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
@@ -343,93 +355,99 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:444455556666:alias/projectKey1</code>.</p> </li>
      * </ul> <p>If <code>KmsKeyId</code> is specified, the
      * <a>CreateFileSystemRequest$Encrypted</a> parameter must be set to true.</p>
-     *  <p>EFS accepts only symmetric CMKs. You cannot use asymmetric CMKs
-     * with EFS file systems.</p> 
+     *  <p>EFS accepts only symmetric KMS keys. You cannot use asymmetric
+     * KMS keys with EFS file systems.</p> 
      */
     inline CreateFileSystemRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The throughput mode for the file system to be created. There are two
-     * throughput modes to choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. For more, see <a
+     * <p>Specifies the throughput mode for the file system, either
+     * <code>bursting</code> or <code>provisioned</code>. If you set
+     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
+     * system, you can decrease your file system's throughput in Provisioned Throughput
+     * mode or change between the throughput modes, as long as it’s been more than 24
+     * hours since the last decrease or throughput mode change. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
-     * Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+     * <p>Default is <code>bursting</code>.</p>
      */
     inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
 
     /**
-     * <p>The throughput mode for the file system to be created. There are two
-     * throughput modes to choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. For more, see <a
+     * <p>Specifies the throughput mode for the file system, either
+     * <code>bursting</code> or <code>provisioned</code>. If you set
+     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
+     * system, you can decrease your file system's throughput in Provisioned Throughput
+     * mode or change between the throughput modes, as long as it’s been more than 24
+     * hours since the last decrease or throughput mode change. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
-     * Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+     * <p>Default is <code>bursting</code>.</p>
      */
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
 
     /**
-     * <p>The throughput mode for the file system to be created. There are two
-     * throughput modes to choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. For more, see <a
+     * <p>Specifies the throughput mode for the file system, either
+     * <code>bursting</code> or <code>provisioned</code>. If you set
+     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
+     * system, you can decrease your file system's throughput in Provisioned Throughput
+     * mode or change between the throughput modes, as long as it’s been more than 24
+     * hours since the last decrease or throughput mode change. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
-     * Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+     * <p>Default is <code>bursting</code>.</p>
      */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
 
     /**
-     * <p>The throughput mode for the file system to be created. There are two
-     * throughput modes to choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. For more, see <a
+     * <p>Specifies the throughput mode for the file system, either
+     * <code>bursting</code> or <code>provisioned</code>. If you set
+     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
+     * system, you can decrease your file system's throughput in Provisioned Throughput
+     * mode or change between the throughput modes, as long as it’s been more than 24
+     * hours since the last decrease or throughput mode change. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
-     * Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+     * <p>Default is <code>bursting</code>.</p>
      */
     inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
 
     /**
-     * <p>The throughput mode for the file system to be created. There are two
-     * throughput modes to choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. For more, see <a
+     * <p>Specifies the throughput mode for the file system, either
+     * <code>bursting</code> or <code>provisioned</code>. If you set
+     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
+     * system, you can decrease your file system's throughput in Provisioned Throughput
+     * mode or change between the throughput modes, as long as it’s been more than 24
+     * hours since the last decrease or throughput mode change. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
-     * Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+     * <p>Default is <code>bursting</code>.</p>
      */
     inline CreateFileSystemRequest& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
 
     /**
-     * <p>The throughput mode for the file system to be created. There are two
-     * throughput modes to choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. For more, see <a
+     * <p>Specifies the throughput mode for the file system, either
+     * <code>bursting</code> or <code>provisioned</code>. If you set
+     * <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
+     * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
+     * system, you can decrease your file system's throughput in Provisioned Throughput
+     * mode or change between the throughput modes, as long as it’s been more than 24
+     * hours since the last decrease or throughput mode change. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
-     * Throughput with Provisioned Mode</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
+     * <p>Default is <code>bursting</code>.</p>
      */
     inline CreateFileSystemRequest& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
 
@@ -438,10 +456,10 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. You can get this limit increased by contacting AWS
-     * Support. For more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
 
@@ -449,10 +467,10 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. You can get this limit increased by contacting AWS
-     * Support. For more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
 
@@ -460,10 +478,10 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. You can get this limit increased by contacting AWS
-     * Support. For more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
 
@@ -471,12 +489,166 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system that you're creating. Valid values are 1-1024. Required if
      * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. You can get this limit increased by contacting AWS
-     * Support. For more information, see <a
+     * for throughput is 1024 MiB/s. To increase this limit, contact AWS Support. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline CreateFileSystemRequest& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
+
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline CreateFileSystemRequest& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline CreateFileSystemRequest& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
+
+    /**
+     * <p>Used to create a file system that uses One Zone storage classes. It specifies
+     * the AWS Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone storage classes, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
+     * storage classes are not available in all Availability Zones in AWS Regions where
+     * Amazon EFS is available.</p> 
+     */
+    inline CreateFileSystemRequest& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether automatic backups are enabled on the file system that you
+     * are creating. Set the value to <code>true</code> to enable automatic backups. If
+     * you are creating a file system that uses One Zone storage classes, automatic
+     * backups are enabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
+     * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
+     * <code>false</code>. However, if you specify an
+     * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
+     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * available.</p> 
+     */
+    inline bool GetBackup() const{ return m_backup; }
+
+    /**
+     * <p>Specifies whether automatic backups are enabled on the file system that you
+     * are creating. Set the value to <code>true</code> to enable automatic backups. If
+     * you are creating a file system that uses One Zone storage classes, automatic
+     * backups are enabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
+     * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
+     * <code>false</code>. However, if you specify an
+     * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
+     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * available.</p> 
+     */
+    inline bool BackupHasBeenSet() const { return m_backupHasBeenSet; }
+
+    /**
+     * <p>Specifies whether automatic backups are enabled on the file system that you
+     * are creating. Set the value to <code>true</code> to enable automatic backups. If
+     * you are creating a file system that uses One Zone storage classes, automatic
+     * backups are enabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
+     * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
+     * <code>false</code>. However, if you specify an
+     * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
+     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * available.</p> 
+     */
+    inline void SetBackup(bool value) { m_backupHasBeenSet = true; m_backup = value; }
+
+    /**
+     * <p>Specifies whether automatic backups are enabled on the file system that you
+     * are creating. Set the value to <code>true</code> to enable automatic backups. If
+     * you are creating a file system that uses One Zone storage classes, automatic
+     * backups are enabled by default. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
+     * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
+     * <code>false</code>. However, if you specify an
+     * <code>AvailabilityZoneName</code>, the default is <code>true</code>.</p> 
+     * <p>AWS Backup is not available in all AWS Regions where Amazon EFS is
+     * available.</p> 
+     */
+    inline CreateFileSystemRequest& WithBackup(bool value) { SetBackup(value); return *this;}
 
 
     /**
@@ -562,6 +734,12 @@ namespace Model
 
     double m_provisionedThroughputInMibps;
     bool m_provisionedThroughputInMibpsHasBeenSet;
+
+    Aws::String m_availabilityZoneName;
+    bool m_availabilityZoneNameHasBeenSet;
+
+    bool m_backup;
+    bool m_backupHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

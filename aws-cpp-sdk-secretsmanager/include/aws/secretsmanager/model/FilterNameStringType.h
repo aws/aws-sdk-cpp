@@ -20,6 +20,7 @@ namespace Model
     name,
     tag_key,
     tag_value,
+    primary_region,
     all
   };
 

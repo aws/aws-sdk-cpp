@@ -36,7 +36,8 @@ JobRun::JobRun() :
     m_outputsHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
-    m_startedOnHasBeenSet(false)
+    m_startedOnHasBeenSet(false),
+    m_jobSampleHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ JobRun::JobRun(JsonView jsonValue) :
     m_outputsHasBeenSet(false),
     m_recipeReferenceHasBeenSet(false),
     m_startedByHasBeenSet(false),
-    m_startedOnHasBeenSet(false)
+    m_startedOnHasBeenSet(false),
+    m_jobSampleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +168,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_startedOnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JobSample"))
+  {
+    m_jobSample = jsonValue.GetObject("JobSample");
+
+    m_jobSampleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -256,6 +265,12 @@ JsonValue JobRun::Jsonize() const
   if(m_startedOnHasBeenSet)
   {
    payload.WithDouble("StartedOn", m_startedOn.SecondsWithMSPrecision());
+  }
+
+  if(m_jobSampleHasBeenSet)
+  {
+   payload.WithObject("JobSample", m_jobSample.Jsonize());
+
   }
 
   return payload;

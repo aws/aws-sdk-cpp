@@ -20,6 +20,7 @@ namespace Model
 
 S3ReportExportConfig::S3ReportExportConfig() : 
     m_bucketHasBeenSet(false),
+    m_bucketOwnerHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_packaging(ReportPackagingType::NOT_SET),
     m_packagingHasBeenSet(false),
@@ -31,6 +32,7 @@ S3ReportExportConfig::S3ReportExportConfig() :
 
 S3ReportExportConfig::S3ReportExportConfig(JsonView jsonValue) : 
     m_bucketHasBeenSet(false),
+    m_bucketOwnerHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_packaging(ReportPackagingType::NOT_SET),
     m_packagingHasBeenSet(false),
@@ -48,6 +50,13 @@ S3ReportExportConfig& S3ReportExportConfig::operator =(JsonView jsonValue)
     m_bucket = jsonValue.GetString("bucket");
 
     m_bucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bucketOwner"))
+  {
+    m_bucketOwner = jsonValue.GetString("bucketOwner");
+
+    m_bucketOwnerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("path"))
@@ -88,6 +97,12 @@ JsonValue S3ReportExportConfig::Jsonize() const
   if(m_bucketHasBeenSet)
   {
    payload.WithString("bucket", m_bucket);
+
+  }
+
+  if(m_bucketOwnerHasBeenSet)
+  {
+   payload.WithString("bucketOwner", m_bucketOwner);
 
   }
 

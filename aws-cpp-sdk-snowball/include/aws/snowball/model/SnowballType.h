@@ -21,7 +21,8 @@ namespace Model
     EDGE_C,
     EDGE_CG,
     EDGE_S,
-    SNC1_HDD
+    SNC1_HDD,
+    SNC1_SSD
   };
 
 namespace SnowballTypeMapper

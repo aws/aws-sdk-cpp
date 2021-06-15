@@ -49,11 +49,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -62,11 +62,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -75,11 +75,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -88,11 +88,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -101,11 +101,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -114,11 +114,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline Alias& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -127,11 +127,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline Alias& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -140,11 +140,11 @@ namespace Model
      * requirements:</p> <ul> <li> <p>Formatted as a fully-qualified domain name
      * (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline Alias& WithName(const char* value) { SetName(value); return *this;}
 

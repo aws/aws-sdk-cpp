@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>Defines the mapping between a field in the Confluence data source to a Amazon
    * Kendra index field.</p> <p>You must first create the index field using the
-   * operation. </p><p><h3>See Also:</h3>   <a
+   * <code>UpdateIndex</code> operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ConfluencePageToIndexFieldMapping">AWS
    * API Reference</a></p>
    */

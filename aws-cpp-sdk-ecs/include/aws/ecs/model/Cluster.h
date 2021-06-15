@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/ClusterConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/KeyValuePair.h>
 #include <aws/ecs/model/Tag.h>
@@ -158,6 +159,37 @@ namespace Model
      * <p>A user-generated string that you use to identify your cluster.</p>
      */
     inline Cluster& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+
+
+    /**
+     * <p>The execute command configuration for the cluster.</p>
+     */
+    inline const ClusterConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>The execute command configuration for the cluster.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>The execute command configuration for the cluster.</p>
+     */
+    inline void SetConfiguration(const ClusterConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>The execute command configuration for the cluster.</p>
+     */
+    inline void SetConfiguration(ClusterConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>The execute command configuration for the cluster.</p>
+     */
+    inline Cluster& WithConfiguration(const ClusterConfiguration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>The execute command configuration for the cluster.</p>
+     */
+    inline Cluster& WithConfiguration(ClusterConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -967,6 +999,9 @@ namespace Model
 
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet;
+
+    ClusterConfiguration m_configuration;
+    bool m_configurationHasBeenSet;
 
     Aws::String m_status;
     bool m_statusHasBeenSet;

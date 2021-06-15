@@ -15,6 +15,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_backupRetentionPeriod(0),
     m_backupRetentionPeriodHasBeenSet(false),
     m_characterSetNameHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_dBClusterIdentifierHasBeenSet(false),
     m_dBClusterParameterGroupNameHasBeenSet(false),
@@ -39,7 +41,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableIAMDatabaseAuthenticationHasBeenSet(false),
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_sourceRegionHasBeenSet(false)
 {
 }
 
@@ -66,6 +69,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_characterSetNameHasBeenSet)
   {
     ss << "CharacterSetName=" << StringUtils::URLEncode(m_characterSetName.c_str()) << "&";
+  }
+
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+    ss << "CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 
   if(m_databaseNameHasBeenSet)

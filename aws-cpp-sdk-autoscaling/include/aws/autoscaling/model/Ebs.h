@@ -90,151 +90,123 @@ namespace Model
 
 
     /**
-     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
-     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
-     * you specify a snapshot, the volume size must be equal to or larger than the
-     * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
-     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
-     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
-     * size must be equal or greater than the size of the snapshot.</p>
+     * <p>The volume size, in GiBs. The following are the supported volumes sizes for
+     * each volume type: </p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>:
+     * 1-16,384</p> </li> <li> <p> <code>io1</code>: 4-16,384</p> </li> <li> <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul> <p>You must specify either a
+     * <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
-     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
-     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
-     * you specify a snapshot, the volume size must be equal to or larger than the
-     * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
-     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
-     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
-     * size must be equal or greater than the size of the snapshot.</p>
+     * <p>The volume size, in GiBs. The following are the supported volumes sizes for
+     * each volume type: </p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>:
+     * 1-16,384</p> </li> <li> <p> <code>io1</code>: 4-16,384</p> </li> <li> <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul> <p>You must specify either a
+     * <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
-     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
-     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
-     * you specify a snapshot, the volume size must be equal to or larger than the
-     * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
-     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
-     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
-     * size must be equal or greater than the size of the snapshot.</p>
+     * <p>The volume size, in GiBs. The following are the supported volumes sizes for
+     * each volume type: </p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>:
+     * 1-16,384</p> </li> <li> <p> <code>io1</code>: 4-16,384</p> </li> <li> <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul> <p>You must specify either a
+     * <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
-     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
-     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
-     * you specify a snapshot, the volume size must be equal to or larger than the
-     * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
-     * don't specify a volume size, the default is the snapshot size.</p> <p>You must
-     * specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>. If you
-     * specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume
-     * size must be equal or greater than the size of the snapshot.</p>
+     * <p>The volume size, in GiBs. The following are the supported volumes sizes for
+     * each volume type: </p> <ul> <li> <p> <code>gp2</code> and <code>gp3</code>:
+     * 1-16,384</p> </li> <li> <p> <code>io1</code>: 4-16,384</p> </li> <li> <p>
+     * <code>st1</code> and <code>sc1</code>: 125-16,384</p> </li> <li> <p>
+     * <code>standard</code>: 1-1,024</p> </li> </ul> <p>You must specify either a
+     * <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be
+     * equal or greater than the size of the snapshot.</p>
      */
     inline Ebs& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
 
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline Ebs& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline Ebs& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
-     * <p>The volume type, which can be <code>standard</code> for Magnetic,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>gp2</code> for General Purpose
-     * SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for Cold
-     * HDD. For more information, see <a
+     * <p>The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
-     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
+     * <code>gp2</code> | <code>st1</code> | <code>sc1</code> | <code>gp3</code> </p>
      */
     inline Ebs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
@@ -265,50 +237,78 @@ namespace Model
 
 
     /**
-     * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
-     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
-     * <code>sc1</code> volumes.) </p>
+     * <p>The number of input/output (I/O) operations per second (IOPS) to provision
+     * for the volume. For <code>gp3</code> and <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume
+     * and the rate at which the volume accumulates I/O credits for bursting. </p>
+     * <p>The following are the supported values for each volume type: </p> <ul> <li>
+     * <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> </ul> <p>For <code>io1</code> volumes, we guarantee
+     * 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up
+     * to 32,000 IOPS. </p> <p> <code>Iops</code> is supported when the volume type is
+     * <code>gp3</code> or <code>io1</code> and required only when the volume type is
+     * <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.) </p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
-     * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
-     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
-     * <code>sc1</code> volumes.) </p>
+     * <p>The number of input/output (I/O) operations per second (IOPS) to provision
+     * for the volume. For <code>gp3</code> and <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume
+     * and the rate at which the volume accumulates I/O credits for bursting. </p>
+     * <p>The following are the supported values for each volume type: </p> <ul> <li>
+     * <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> </ul> <p>For <code>io1</code> volumes, we guarantee
+     * 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up
+     * to 32,000 IOPS. </p> <p> <code>Iops</code> is supported when the volume type is
+     * <code>gp3</code> or <code>io1</code> and required only when the volume type is
+     * <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.) </p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
     /**
-     * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
-     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
-     * <code>sc1</code> volumes.) </p>
+     * <p>The number of input/output (I/O) operations per second (IOPS) to provision
+     * for the volume. For <code>gp3</code> and <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume
+     * and the rate at which the volume accumulates I/O credits for bursting. </p>
+     * <p>The following are the supported values for each volume type: </p> <ul> <li>
+     * <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> </ul> <p>For <code>io1</code> volumes, we guarantee
+     * 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up
+     * to 32,000 IOPS. </p> <p> <code>Iops</code> is supported when the volume type is
+     * <code>gp3</code> or <code>io1</code> and required only when the volume type is
+     * <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.) </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
-     * <p>The number of I/O operations per second (IOPS) to provision for the volume.
-     * The maximum ratio of IOPS to volume size (in GiB) is 50:1. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Required when the volume type is <code>io1</code>. (Not
-     * used with <code>standard</code>, <code>gp2</code>, <code>st1</code>, or
-     * <code>sc1</code> volumes.) </p>
+     * <p>The number of input/output (I/O) operations per second (IOPS) to provision
+     * for the volume. For <code>gp3</code> and <code>io1</code> volumes, this
+     * represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume
+     * and the rate at which the volume accumulates I/O credits for bursting. </p>
+     * <p>The following are the supported values for each volume type: </p> <ul> <li>
+     * <p> <code>gp3</code>: 3,000-16,000 IOPS</p> </li> <li> <p> <code>io1</code>:
+     * 100-64,000 IOPS</p> </li> </ul> <p>For <code>io1</code> volumes, we guarantee
+     * 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up
+     * to 32,000 IOPS. </p> <p> <code>Iops</code> is supported when the volume type is
+     * <code>gp3</code> or <code>io1</code> and required only when the volume type is
+     * <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.) </p>
      */
     inline Ebs& WithIops(int value) { SetIops(value); return *this;}
 
@@ -425,6 +425,27 @@ namespace Model
      */
     inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
+
+    /**
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
+     */
+    inline int GetThroughput() const{ return m_throughput; }
+
+    /**
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
+     */
+    inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
+
+    /**
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
+     */
+    inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
+
+    /**
+     * <p>The throughput (MiBps) to provision for a <code>gp3</code> volume.</p>
+     */
+    inline Ebs& WithThroughput(int value) { SetThroughput(value); return *this;}
+
   private:
 
     Aws::String m_snapshotId;
@@ -444,6 +465,9 @@ namespace Model
 
     bool m_encrypted;
     bool m_encryptedHasBeenSet;
+
+    int m_throughput;
+    bool m_throughputHasBeenSet;
   };
 
 } // namespace Model

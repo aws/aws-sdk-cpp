@@ -214,7 +214,7 @@ namespace Model
          * of the CRL), the Amazon S3 bucket that will contain the CRL, and a CNAME alias
          * for the S3 bucket that is included in certificates issued by the CA. If
          * successful, this action returns the Amazon Resource Name (ARN) of the CA.</p>
-         * <p>ACM Private CAA assets that are stored in Amazon S3 can be protected with
+         * <p>ACM Private CA assets that are stored in Amazon S3 can be protected with
          * encryption. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
          * Your CRLs</a>.</p>  <p>Both PCA and the IAM principal must have permission
@@ -239,7 +239,7 @@ namespace Model
          * of the CRL), the Amazon S3 bucket that will contain the CRL, and a CNAME alias
          * for the S3 bucket that is included in certificates issued by the CA. If
          * successful, this action returns the Amazon Resource Name (ARN) of the CA.</p>
-         * <p>ACM Private CAA assets that are stored in Amazon S3 can be protected with
+         * <p>ACM Private CA assets that are stored in Amazon S3 can be protected with
          * encryption. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
          * Your CRLs</a>.</p>  <p>Both PCA and the IAM principal must have permission
@@ -266,7 +266,7 @@ namespace Model
          * of the CRL), the Amazon S3 bucket that will contain the CRL, and a CNAME alias
          * for the S3 bucket that is included in certificates issued by the CA. If
          * successful, this action returns the Amazon Resource Name (ARN) of the CA.</p>
-         * <p>ACM Private CAA assets that are stored in Amazon S3 can be protected with
+         * <p>ACM Private CA assets that are stored in Amazon S3 can be protected with
          * encryption. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption">Encrypting
          * Your CRLs</a>.</p>  <p>Both PCA and the IAM principal must have permission
@@ -294,7 +294,7 @@ namespace Model
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure
-         * Access to ACM Private CA</a>.</p>  <p>ACM Private CAA assets that are
+         * Access to ACM Private CA</a>.</p>  <p>ACM Private CA assets that are
          * stored in Amazon S3 can be protected with encryption. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
@@ -316,7 +316,7 @@ namespace Model
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure
-         * Access to ACM Private CA</a>.</p>  <p>ACM Private CAA assets that are
+         * Access to ACM Private CA</a>.</p>  <p>ACM Private CA assets that are
          * stored in Amazon S3 can be protected with encryption. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
@@ -340,7 +340,7 @@ namespace Model
          * making the call does not have permission to write to the bucket, then an
          * exception is thrown. For more information, see <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuthAccess.html">Configure
-         * Access to ACM Private CA</a>.</p>  <p>ACM Private CAA assets that are
+         * Access to ACM Private CA</a>.</p>  <p>ACM Private CA assets that are
          * stored in Amazon S3 can be protected with encryption. For more information, see
          * <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaAuditReport.html#audit-report-encryption">Encrypting
@@ -735,7 +735,7 @@ namespace Model
          * private CA has been disabled.</p> </li> <li> <p> <code>EXPIRED</code> - Your
          * private CA certificate has expired.</p> </li> <li> <p> <code>FAILED</code> -
          * Your private CA has failed. Your CA can fail because of problems such a network
-         * outage or backend AWS failure or other errors. A failed CA can never return to
+         * outage or back-end AWS failure or other errors. A failed CA can never return to
          * the pending state. You must create a new CA. </p> </li> <li> <p>
          * <code>DELETED</code> - Your private CA is within the restoration period, after
          * which it is permanently deleted. The length of time remaining in the CA's
@@ -759,7 +759,7 @@ namespace Model
          * private CA has been disabled.</p> </li> <li> <p> <code>EXPIRED</code> - Your
          * private CA certificate has expired.</p> </li> <li> <p> <code>FAILED</code> -
          * Your private CA has failed. Your CA can fail because of problems such a network
-         * outage or backend AWS failure or other errors. A failed CA can never return to
+         * outage or back-end AWS failure or other errors. A failed CA can never return to
          * the pending state. You must create a new CA. </p> </li> <li> <p>
          * <code>DELETED</code> - Your private CA is within the restoration period, after
          * which it is permanently deleted. The length of time remaining in the CA's
@@ -785,7 +785,7 @@ namespace Model
          * private CA has been disabled.</p> </li> <li> <p> <code>EXPIRED</code> - Your
          * private CA certificate has expired.</p> </li> <li> <p> <code>FAILED</code> -
          * Your private CA has failed. Your CA can fail because of problems such a network
-         * outage or backend AWS failure or other errors. A failed CA can never return to
+         * outage or back-end AWS failure or other errors. A failed CA can never return to
          * the pending state. You must create a new CA. </p> </li> <li> <p>
          * <code>DELETED</code> - Your private CA is within the restoration period, after
          * which it is permanently deleted. The length of time remaining in the CA's
@@ -1085,7 +1085,7 @@ namespace Model
          * Private CA. Before you can call this action, the following preparations must in
          * place:</p> <ol> <li> <p>In ACM Private CA, call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-         * action to create the private CA that that you plan to back with the imported
+         * action to create the private CA that you plan to back with the imported
          * certificate.</p> </li> <li> <p>Call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html">GetCertificateAuthorityCsr</a>
          * action to generate a certificate signing request (CSR).</p> </li> <li> <p>Sign
@@ -1097,7 +1097,7 @@ namespace Model
          * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
          * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
          * <p>Installing a subordinate CA certificate whose parent authority is externally
-         * hosted.</p> </li> </ul> <p>The following addtitional requirements apply when you
+         * hosted.</p> </li> </ul> <p>The following additional requirements apply when you
          * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
          * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
          * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
@@ -1133,7 +1133,7 @@ namespace Model
          * Private CA. Before you can call this action, the following preparations must in
          * place:</p> <ol> <li> <p>In ACM Private CA, call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-         * action to create the private CA that that you plan to back with the imported
+         * action to create the private CA that you plan to back with the imported
          * certificate.</p> </li> <li> <p>Call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html">GetCertificateAuthorityCsr</a>
          * action to generate a certificate signing request (CSR).</p> </li> <li> <p>Sign
@@ -1145,7 +1145,7 @@ namespace Model
          * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
          * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
          * <p>Installing a subordinate CA certificate whose parent authority is externally
-         * hosted.</p> </li> </ul> <p>The following addtitional requirements apply when you
+         * hosted.</p> </li> </ul> <p>The following additional requirements apply when you
          * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
          * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
          * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not
@@ -1183,7 +1183,7 @@ namespace Model
          * Private CA. Before you can call this action, the following preparations must in
          * place:</p> <ol> <li> <p>In ACM Private CA, call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a>
-         * action to create the private CA that that you plan to back with the imported
+         * action to create the private CA that you plan to back with the imported
          * certificate.</p> </li> <li> <p>Call the <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html">GetCertificateAuthorityCsr</a>
          * action to generate a certificate signing request (CSR).</p> </li> <li> <p>Sign
@@ -1195,7 +1195,7 @@ namespace Model
          * root CA hosted by ACM Private CA.</p> </li> <li> <p>Installing a subordinate CA
          * certificate whose parent authority is hosted by ACM Private CA.</p> </li> <li>
          * <p>Installing a subordinate CA certificate whose parent authority is externally
-         * hosted.</p> </li> </ul> <p>The following addtitional requirements apply when you
+         * hosted.</p> </li> </ul> <p>The following additional requirements apply when you
          * import a CA certificate.</p> <ul> <li> <p>Only a self-signed certificate can be
          * imported as a root CA.</p> </li> <li> <p>A self-signed certificate cannot be
          * imported as a subordinate CA.</p> </li> <li> <p>Your certificate chain must not

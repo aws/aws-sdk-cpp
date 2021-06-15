@@ -27,21 +27,17 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>A rule statement that compares a number
-   * of bytes against the size of a request component, using a comparison operator,
-   * such as greater than (&gt;) or less than (&lt;). For example, you can use a size
-   * constraint statement to look for query strings that are longer than 100 bytes.
-   * </p> <p>If you configure AWS WAF to inspect the request body, AWS WAF inspects
-   * only the first 8192 bytes (8 KB). If the request body for your web requests
-   * never exceeds 8192 bytes, you can create a size constraint condition and block
-   * requests that have a request body greater than 8192 bytes.</p> <p>If you choose
-   * URI for the value of Part of the request to filter on, the slash (/) in the URI
-   * counts as one character. For example, the URI <code>/logo.jpg</code> is nine
-   * characters long.</p><p><h3>See Also:</h3>   <a
+   * <p>A rule statement that compares a number of bytes against the size of a
+   * request component, using a comparison operator, such as greater than (&gt;) or
+   * less than (&lt;). For example, you can use a size constraint statement to look
+   * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
+   * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
+   * KB). If the request body for your web requests never exceeds 8192 bytes, you can
+   * create a size constraint condition and block requests that have a request body
+   * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
+   * request to filter on, the slash (/) in the URI counts as one character. For
+   * example, the URI <code>/logo.jpg</code> is nine characters long.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SizeConstraintStatement">AWS
    * API Reference</a></p>
    */

@@ -42,37 +42,61 @@ namespace Model
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
-     * clusters is <code>LOCAL_USE</code>.</p>
+     * clusters is <code>LOCAL_USE</code>.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
-     * clusters is <code>LOCAL_USE</code>.</p>
+     * clusters is <code>LOCAL_USE</code>.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
-     * clusters is <code>LOCAL_USE</code>.</p>
+     * clusters is <code>LOCAL_USE</code>.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
-     * clusters is <code>LOCAL_USE</code>.</p>
+     * clusters is <code>LOCAL_USE</code>.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
-     * clusters is <code>LOCAL_USE</code>.</p>
+     * clusters is <code>LOCAL_USE</code>.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateClusterRequest& WithJobType(const JobType& value) { SetJobType(value); return *this;}
 
     /**
      * <p>The type of job for this cluster. Currently, the only job type supported for
-     * clusters is <code>LOCAL_USE</code>.</p>
+     * clusters is <code>LOCAL_USE</code>.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateClusterRequest& WithJobType(JobType&& value) { SetJobType(std::move(value)); return *this;}
 
@@ -343,42 +367,66 @@ namespace Model
     /**
      * <p>The type of AWS Snow Family device to use for this cluster. </p> 
      * <p>For cluster jobs, AWS Snow Family currently supports only the
-     * <code>EDGE</code> device type.</p> 
+     * <code>EDGE</code> device type.</p>  <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
      * <p>The type of AWS Snow Family device to use for this cluster. </p> 
      * <p>For cluster jobs, AWS Snow Family currently supports only the
-     * <code>EDGE</code> device type.</p> 
+     * <code>EDGE</code> device type.</p>  <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
 
     /**
      * <p>The type of AWS Snow Family device to use for this cluster. </p> 
      * <p>For cluster jobs, AWS Snow Family currently supports only the
-     * <code>EDGE</code> device type.</p> 
+     * <code>EDGE</code> device type.</p>  <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
      * <p>The type of AWS Snow Family device to use for this cluster. </p> 
      * <p>For cluster jobs, AWS Snow Family currently supports only the
-     * <code>EDGE</code> device type.</p> 
+     * <code>EDGE</code> device type.</p>  <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
      * <p>The type of AWS Snow Family device to use for this cluster. </p> 
      * <p>For cluster jobs, AWS Snow Family currently supports only the
-     * <code>EDGE</code> device type.</p> 
+     * <code>EDGE</code> device type.</p>  <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateClusterRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
      * <p>The type of AWS Snow Family device to use for this cluster. </p> 
      * <p>For cluster jobs, AWS Snow Family currently supports only the
-     * <code>EDGE</code> device type.</p> 
+     * <code>EDGE</code> device type.</p>  <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline CreateClusterRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 

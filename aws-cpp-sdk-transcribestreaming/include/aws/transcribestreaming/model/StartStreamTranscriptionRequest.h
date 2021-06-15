@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/transcribestreaming/model/AudioStream.h>
 #include <aws/transcribestreaming/model/VocabularyFilterMethod.h>
+#include <aws/transcribestreaming/model/PartialResultsStability.h>
 #include <utility>
 
 namespace Aws
@@ -468,6 +469,92 @@ namespace Model
      */
     inline StartStreamTranscriptionRequest& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
 
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to present transcription
+     * results that have the partial results stabilized. Normally, any word or phrase
+     * from one partial result can change in a subsequent partial result. With partial
+     * results stabilization enabled, only the last few words of one partial result can
+     * change in another partial result.</p>
+     */
+    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to present transcription
+     * results that have the partial results stabilized. Normally, any word or phrase
+     * from one partial result can change in a subsequent partial result. With partial
+     * results stabilization enabled, only the last few words of one partial result can
+     * change in another partial result.</p>
+     */
+    inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to present transcription
+     * results that have the partial results stabilized. Normally, any word or phrase
+     * from one partial result can change in a subsequent partial result. With partial
+     * results stabilization enabled, only the last few words of one partial result can
+     * change in another partial result.</p>
+     */
+    inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
+
+    /**
+     * <p>When <code>true</code>, instructs Amazon Transcribe to present transcription
+     * results that have the partial results stabilized. Normally, any word or phrase
+     * from one partial result can change in a subsequent partial result. With partial
+     * results stabilization enabled, only the last few words of one partial result can
+     * change in another partial result.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
+
+
+    /**
+     * <p>You can use this field to set the stability level of the transcription
+     * results. A higher stability level means that the transcription results are less
+     * likely to change. Higher stability levels can come with lower overall
+     * transcription accuracy.</p>
+     */
+    inline const PartialResultsStability& GetPartialResultsStability() const{ return m_partialResultsStability; }
+
+    /**
+     * <p>You can use this field to set the stability level of the transcription
+     * results. A higher stability level means that the transcription results are less
+     * likely to change. Higher stability levels can come with lower overall
+     * transcription accuracy.</p>
+     */
+    inline bool PartialResultsStabilityHasBeenSet() const { return m_partialResultsStabilityHasBeenSet; }
+
+    /**
+     * <p>You can use this field to set the stability level of the transcription
+     * results. A higher stability level means that the transcription results are less
+     * likely to change. Higher stability levels can come with lower overall
+     * transcription accuracy.</p>
+     */
+    inline void SetPartialResultsStability(const PartialResultsStability& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = value; }
+
+    /**
+     * <p>You can use this field to set the stability level of the transcription
+     * results. A higher stability level means that the transcription results are less
+     * likely to change. Higher stability levels can come with lower overall
+     * transcription accuracy.</p>
+     */
+    inline void SetPartialResultsStability(PartialResultsStability&& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = std::move(value); }
+
+    /**
+     * <p>You can use this field to set the stability level of the transcription
+     * results. A higher stability level means that the transcription results are less
+     * likely to change. Higher stability levels can come with lower overall
+     * transcription accuracy.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithPartialResultsStability(const PartialResultsStability& value) { SetPartialResultsStability(value); return *this;}
+
+    /**
+     * <p>You can use this field to set the stability level of the transcription
+     * results. A higher stability level means that the transcription results are less
+     * likely to change. Higher stability levels can come with lower overall
+     * transcription accuracy.</p>
+     */
+    inline StartStreamTranscriptionRequest& WithPartialResultsStability(PartialResultsStability&& value) { SetPartialResultsStability(std::move(value)); return *this;}
+
   private:
 
     LanguageCode m_languageCode;
@@ -501,6 +588,12 @@ namespace Model
 
     int m_numberOfChannels;
     bool m_numberOfChannelsHasBeenSet;
+
+    bool m_enablePartialResultsStabilization;
+    bool m_enablePartialResultsStabilizationHasBeenSet;
+
+    PartialResultsStability m_partialResultsStability;
+    bool m_partialResultsStabilityHasBeenSet;
     Aws::Utils::Event::EventStreamDecoder m_decoder;
     StartStreamTranscriptionHandler m_handler;
 

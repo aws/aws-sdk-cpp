@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/model/MatchingResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -35,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainName = value; }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainName = std::move(value); }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline void SetDomainName(const char* value) { m_domainName.assign(value); }
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique name for the domain.</p>
+     * <p>The unique name of the domain.</p>
      */
     inline UpdateDomainResult& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 
@@ -177,6 +178,37 @@ namespace Model
      * associated with ingesting data from third party applications.</p>
      */
     inline UpdateDomainResult& WithDeadLetterQueueUrl(const char* value) { SetDeadLetterQueueUrl(value); return *this;}
+
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline const MatchingResponse& GetMatching() const{ return m_matching; }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline void SetMatching(const MatchingResponse& value) { m_matching = value; }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline void SetMatching(MatchingResponse&& value) { m_matching = std::move(value); }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline UpdateDomainResult& WithMatching(const MatchingResponse& value) { SetMatching(value); return *this;}
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline UpdateDomainResult& WithMatching(MatchingResponse&& value) { SetMatching(std::move(value)); return *this;}
 
 
     /**
@@ -300,6 +332,8 @@ namespace Model
     Aws::String m_defaultEncryptionKey;
 
     Aws::String m_deadLetterQueueUrl;
+
+    MatchingResponse m_matching;
 
     Aws::Utils::DateTime m_createdAt;
 

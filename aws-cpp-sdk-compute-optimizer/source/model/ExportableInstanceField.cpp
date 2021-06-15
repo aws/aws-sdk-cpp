@@ -24,6 +24,7 @@ namespace Aws
         static const int InstanceArn_HASH = HashingUtils::HashString("InstanceArn");
         static const int InstanceName_HASH = HashingUtils::HashString("InstanceName");
         static const int Finding_HASH = HashingUtils::HashString("Finding");
+        static const int FindingReasonCodes_HASH = HashingUtils::HashString("FindingReasonCodes");
         static const int LookbackPeriodInDays_HASH = HashingUtils::HashString("LookbackPeriodInDays");
         static const int CurrentInstanceType_HASH = HashingUtils::HashString("CurrentInstanceType");
         static const int UtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("UtilizationMetricsCpuMaximum");
@@ -32,6 +33,14 @@ namespace Aws
         static const int UtilizationMetricsEbsWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteOpsPerSecondMaximum");
         static const int UtilizationMetricsEbsReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsReadBytesPerSecondMaximum");
         static const int UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsEbsWriteBytesPerSecondMaximum");
+        static const int UtilizationMetricsDiskReadOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskReadOpsPerSecondMaximum");
+        static const int UtilizationMetricsDiskWriteOpsPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskWriteOpsPerSecondMaximum");
+        static const int UtilizationMetricsDiskReadBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskReadBytesPerSecondMaximum");
+        static const int UtilizationMetricsDiskWriteBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsDiskWriteBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkInBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkInBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkOutBytesPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkOutBytesPerSecondMaximum");
+        static const int UtilizationMetricsNetworkPacketsInPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkPacketsInPerSecondMaximum");
+        static const int UtilizationMetricsNetworkPacketsOutPerSecondMaximum_HASH = HashingUtils::HashString("UtilizationMetricsNetworkPacketsOutPerSecondMaximum");
         static const int CurrentOnDemandPrice_HASH = HashingUtils::HashString("CurrentOnDemandPrice");
         static const int CurrentStandardOneYearNoUpfrontReservedPrice_HASH = HashingUtils::HashString("CurrentStandardOneYearNoUpfrontReservedPrice");
         static const int CurrentStandardThreeYearNoUpfrontReservedPrice_HASH = HashingUtils::HashString("CurrentStandardThreeYearNoUpfrontReservedPrice");
@@ -42,6 +51,7 @@ namespace Aws
         static const int RecommendationOptionsInstanceType_HASH = HashingUtils::HashString("RecommendationOptionsInstanceType");
         static const int RecommendationOptionsProjectedUtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
         static const int RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
+        static const int RecommendationOptionsPlatformDifferences_HASH = HashingUtils::HashString("RecommendationOptionsPlatformDifferences");
         static const int RecommendationOptionsPerformanceRisk_HASH = HashingUtils::HashString("RecommendationOptionsPerformanceRisk");
         static const int RecommendationOptionsVcpus_HASH = HashingUtils::HashString("RecommendationOptionsVcpus");
         static const int RecommendationOptionsMemory_HASH = HashingUtils::HashString("RecommendationOptionsMemory");
@@ -74,6 +84,10 @@ namespace Aws
           {
             return ExportableInstanceField::Finding;
           }
+          else if (hashCode == FindingReasonCodes_HASH)
+          {
+            return ExportableInstanceField::FindingReasonCodes;
+          }
           else if (hashCode == LookbackPeriodInDays_HASH)
           {
             return ExportableInstanceField::LookbackPeriodInDays;
@@ -105,6 +119,38 @@ namespace Aws
           else if (hashCode == UtilizationMetricsEbsWriteBytesPerSecondMaximum_HASH)
           {
             return ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskReadOpsPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskWriteOpsPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskReadBytesPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsDiskWriteBytesPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkInBytesPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkOutBytesPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkPacketsInPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum;
+          }
+          else if (hashCode == UtilizationMetricsNetworkPacketsOutPerSecondMaximum_HASH)
+          {
+            return ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum;
           }
           else if (hashCode == CurrentOnDemandPrice_HASH)
           {
@@ -145,6 +191,10 @@ namespace Aws
           else if (hashCode == RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum_HASH)
           {
             return ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum;
+          }
+          else if (hashCode == RecommendationOptionsPlatformDifferences_HASH)
+          {
+            return ExportableInstanceField::RecommendationOptionsPlatformDifferences;
           }
           else if (hashCode == RecommendationOptionsPerformanceRisk_HASH)
           {
@@ -212,6 +262,8 @@ namespace Aws
             return "InstanceName";
           case ExportableInstanceField::Finding:
             return "Finding";
+          case ExportableInstanceField::FindingReasonCodes:
+            return "FindingReasonCodes";
           case ExportableInstanceField::LookbackPeriodInDays:
             return "LookbackPeriodInDays";
           case ExportableInstanceField::CurrentInstanceType:
@@ -228,6 +280,22 @@ namespace Aws
             return "UtilizationMetricsEbsReadBytesPerSecondMaximum";
           case ExportableInstanceField::UtilizationMetricsEbsWriteBytesPerSecondMaximum:
             return "UtilizationMetricsEbsWriteBytesPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsDiskReadOpsPerSecondMaximum:
+            return "UtilizationMetricsDiskReadOpsPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsDiskWriteOpsPerSecondMaximum:
+            return "UtilizationMetricsDiskWriteOpsPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsDiskReadBytesPerSecondMaximum:
+            return "UtilizationMetricsDiskReadBytesPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsDiskWriteBytesPerSecondMaximum:
+            return "UtilizationMetricsDiskWriteBytesPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsNetworkInBytesPerSecondMaximum:
+            return "UtilizationMetricsNetworkInBytesPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsNetworkOutBytesPerSecondMaximum:
+            return "UtilizationMetricsNetworkOutBytesPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsNetworkPacketsInPerSecondMaximum:
+            return "UtilizationMetricsNetworkPacketsInPerSecondMaximum";
+          case ExportableInstanceField::UtilizationMetricsNetworkPacketsOutPerSecondMaximum:
+            return "UtilizationMetricsNetworkPacketsOutPerSecondMaximum";
           case ExportableInstanceField::CurrentOnDemandPrice:
             return "CurrentOnDemandPrice";
           case ExportableInstanceField::CurrentStandardOneYearNoUpfrontReservedPrice:
@@ -248,6 +316,8 @@ namespace Aws
             return "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum";
           case ExportableInstanceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum:
             return "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum";
+          case ExportableInstanceField::RecommendationOptionsPlatformDifferences:
+            return "RecommendationOptionsPlatformDifferences";
           case ExportableInstanceField::RecommendationOptionsPerformanceRisk:
             return "RecommendationOptionsPerformanceRisk";
           case ExportableInstanceField::RecommendationOptionsVcpus:

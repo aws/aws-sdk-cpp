@@ -39,22 +39,22 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of records to return. </p>
+     * <p>Maximum number of records to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of records to return. </p>
+     * <p>Maximum number of records to return.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of records to return. </p>
+     * <p>Maximum number of records to return.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of records to return. </p>
+     * <p>Maximum number of records to return.</p>
      */
     inline ListPlaybackConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

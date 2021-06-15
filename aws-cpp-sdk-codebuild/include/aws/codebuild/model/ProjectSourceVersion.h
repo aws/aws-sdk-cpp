@@ -39,42 +39,58 @@ namespace Model
 
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline const Aws::String& GetSourceIdentifier() const{ return m_sourceIdentifier; }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline void SetSourceIdentifier(Aws::String&& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = std::move(value); }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline void SetSourceIdentifier(const char* value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier.assign(value); }
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline ProjectSourceVersion& WithSourceIdentifier(const Aws::String& value) { SetSourceIdentifier(value); return *this;}
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline ProjectSourceVersion& WithSourceIdentifier(Aws::String&& value) { SetSourceIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier for a source in the build project.</p>
+     * <p>An identifier for a source in the build project. The identifier can only
+     * contain alphanumeric characters and underscores, and must be less than 128
+     * characters in length. </p>
      */
     inline ProjectSourceVersion& WithSourceIdentifier(const char* value) { SetSourceIdentifier(value); return *this;}
 
@@ -91,9 +107,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -111,9 +127,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -131,9 +147,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -151,9 +167,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -171,9 +187,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -191,9 +207,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -211,9 +227,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -231,9 +247,9 @@ namespace Model
      * commit ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a branch name is specified, the branch's HEAD
      * commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon S3): the
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </li> </ul> <p> For more information, see <a
+     * used.</p> </li> <li> <p>For Amazon S3: the version ID of the object that
+     * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */

@@ -83,15 +83,13 @@ namespace Model
     typedef std::function<void(const AugmentedAIRuntimeClient*, const Model::StopHumanLoopRequest&, const Model::StopHumanLoopOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHumanLoopResponseReceivedHandler;
 
   /**
-   *  <p>Amazon Augmented AI is in preview release and is subject to
-   * change. We do not recommend using this product in production environments.</p>
-   *  <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human
-   * judgment to any machine learning application. When an AI application can't
-   * evaluate data with a high degree of confidence, human reviewers can take over.
-   * This human review is called a human review workflow. To create and start a human
-   * review workflow, you need three resources: a <i>worker task template</i>, a
-   * <i>flow definition</i>, and a <i>human loop</i>.</p> <p>For information about
-   * these resources and prerequisites for using Amazon A2I, see <a
+   * <p>Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any
+   * machine learning application. When an AI application can't evaluate data with a
+   * high degree of confidence, human reviewers can take over. This human review is
+   * called a human review workflow. To create and start a human review workflow, you
+   * need three resources: a <i>worker task template</i>, a <i>flow definition</i>,
+   * and a <i>human loop</i>.</p> <p>For information about these resources and
+   * prerequisites for using Amazon A2I, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html">Get
    * Started with Amazon Augmented AI</a> in the Amazon SageMaker Developer
    * Guide.</p> <p>This API reference includes information about API actions and data
@@ -143,16 +141,18 @@ namespace Model
 
 
         /**
-         * <p>Deletes the specified human loop for a flow definition.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified human loop for a flow definition.</p> <p>If the human
+         * loop was deleted, this operation will return a
+         * <code>ResourceNotFoundException</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteHumanLoopOutcome DeleteHumanLoop(const Model::DeleteHumanLoopRequest& request) const;
 
         /**
-         * <p>Deletes the specified human loop for a flow definition.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified human loop for a flow definition.</p> <p>If the human
+         * loop was deleted, this operation will return a
+         * <code>ResourceNotFoundException</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">AWS
          * API Reference</a></p>
          *
@@ -161,8 +161,9 @@ namespace Model
         virtual Model::DeleteHumanLoopOutcomeCallable DeleteHumanLoopCallable(const Model::DeleteHumanLoopRequest& request) const;
 
         /**
-         * <p>Deletes the specified human loop for a flow definition.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the specified human loop for a flow definition.</p> <p>If the human
+         * loop was deleted, this operation will return a
+         * <code>ResourceNotFoundException</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DeleteHumanLoop">AWS
          * API Reference</a></p>
          *
@@ -171,16 +172,18 @@ namespace Model
         virtual void DeleteHumanLoopAsync(const Model::DeleteHumanLoopRequest& request, const DeleteHumanLoopResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified human loop.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns information about the specified human loop. If the human loop was
+         * deleted, this operation will return a <code>ResourceNotFoundException</code>
+         * error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeHumanLoopOutcome DescribeHumanLoop(const Model::DescribeHumanLoopRequest& request) const;
 
         /**
-         * <p>Returns information about the specified human loop.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns information about the specified human loop. If the human loop was
+         * deleted, this operation will return a <code>ResourceNotFoundException</code>
+         * error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">AWS
          * API Reference</a></p>
          *
@@ -189,8 +192,9 @@ namespace Model
         virtual Model::DescribeHumanLoopOutcomeCallable DescribeHumanLoopCallable(const Model::DescribeHumanLoopRequest& request) const;
 
         /**
-         * <p>Returns information about the specified human loop.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Returns information about the specified human loop. If the human loop was
+         * deleted, this operation will return a <code>ResourceNotFoundException</code>
+         * error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-a2i-runtime-2019-11-07/DescribeHumanLoop">AWS
          * API Reference</a></p>
          *

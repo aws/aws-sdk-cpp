@@ -30,7 +30,8 @@ CreateJobRequest::CreateJobRequest() :
     m_snowballTypeHasBeenSet(false),
     m_forwardingAddressIdHasBeenSet(false),
     m_taxDocumentsHasBeenSet(false),
-    m_deviceConfigurationHasBeenSet(false)
+    m_deviceConfigurationHasBeenSet(false),
+    m_longTermPricingIdHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_deviceConfigurationHasBeenSet)
   {
    payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
+
+  }
+
+  if(m_longTermPricingIdHasBeenSet)
+  {
+   payload.WithString("LongTermPricingId", m_longTermPricingId);
 
   }
 

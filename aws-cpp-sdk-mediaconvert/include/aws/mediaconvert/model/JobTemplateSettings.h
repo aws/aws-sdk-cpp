@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/AvailBlanking.h>
 #include <aws/mediaconvert/model/EsamSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/KantarWatermarkSettings.h>
 #include <aws/mediaconvert/model/MotionImageInserter.h>
 #include <aws/mediaconvert/model/NielsenConfiguration.h>
 #include <aws/mediaconvert/model/NielsenNonLinearWatermarkSettings.h>
@@ -110,32 +111,38 @@ namespace Model
 
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline const EsamSettings& GetEsam() const{ return m_esam; }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline bool EsamHasBeenSet() const { return m_esamHasBeenSet; }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline void SetEsam(const EsamSettings& value) { m_esamHasBeenSet = true; m_esam = value; }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline void SetEsam(EsamSettings&& value) { m_esamHasBeenSet = true; m_esam = std::move(value); }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline JobTemplateSettings& WithEsam(const EsamSettings& value) { SetEsam(value); return *this;}
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
+     * you can ignore these settings.
      */
     inline JobTemplateSettings& WithEsam(EsamSettings&& value) { SetEsam(std::move(value)); return *this;}
 
@@ -198,38 +205,111 @@ namespace Model
 
 
     /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline const KantarWatermarkSettings& GetKantarWatermark() const{ return m_kantarWatermark; }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline bool KantarWatermarkHasBeenSet() const { return m_kantarWatermarkHasBeenSet; }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline void SetKantarWatermark(const KantarWatermarkSettings& value) { m_kantarWatermarkHasBeenSet = true; m_kantarWatermark = value; }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline void SetKantarWatermark(KantarWatermarkSettings&& value) { m_kantarWatermarkHasBeenSet = true; m_kantarWatermark = std::move(value); }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline JobTemplateSettings& WithKantarWatermark(const KantarWatermarkSettings& value) { SetKantarWatermark(value); return *this;}
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values
+     * that MediaConvert uses to generate and place Kantar watermarks in your output
+     * audio. These settings apply to every output in your job. In addition to
+     * specifying these values, you also need to store your Kantar credentials in AWS
+     * Secrets Manager. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    inline JobTemplateSettings& WithKantarWatermark(KantarWatermarkSettings&& value) { SetKantarWatermark(std::move(value)); return *this;}
+
+
+    /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline const MotionImageInserter& GetMotionImageInserter() const{ return m_motionImageInserter; }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline bool MotionImageInserterHasBeenSet() const { return m_motionImageInserterHasBeenSet; }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline void SetMotionImageInserter(const MotionImageInserter& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = value; }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline void SetMotionImageInserter(MotionImageInserter&& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = std::move(value); }
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline JobTemplateSettings& WithMotionImageInserter(const MotionImageInserter& value) { SetMotionImageInserter(value); return *this;}
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you
-     * specify here appear on all outputs in all output groups.
+     * specify here appear on all outputs in all output groups. For more information,
+     * see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     inline JobTemplateSettings& WithMotionImageInserter(MotionImageInserter&& value) { SetMotionImageInserter(std::move(value)); return *this;}
 
@@ -482,32 +562,38 @@ namespace Model
 
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline const TimecodeConfig& GetTimecodeConfig() const{ return m_timecodeConfig; }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline bool TimecodeConfigHasBeenSet() const { return m_timecodeConfigHasBeenSet; }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline void SetTimecodeConfig(const TimecodeConfig& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = value; }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline void SetTimecodeConfig(TimecodeConfig&& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = std::move(value); }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline JobTemplateSettings& WithTimecodeConfig(const TimecodeConfig& value) { SetTimecodeConfig(value); return *this;}
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job.
+     * These settings don't affect input clipping.
      */
     inline JobTemplateSettings& WithTimecodeConfig(TimecodeConfig&& value) { SetTimecodeConfig(std::move(value)); return *this;}
 
@@ -573,6 +659,9 @@ namespace Model
 
     Aws::Vector<InputTemplate> m_inputs;
     bool m_inputsHasBeenSet;
+
+    KantarWatermarkSettings m_kantarWatermark;
+    bool m_kantarWatermarkHasBeenSet;
 
     MotionImageInserter m_motionImageInserter;
     bool m_motionImageInserterHasBeenSet;

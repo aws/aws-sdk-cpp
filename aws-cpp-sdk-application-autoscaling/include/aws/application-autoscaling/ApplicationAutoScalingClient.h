@@ -118,7 +118,7 @@ namespace Model
    * <li> <p>Amazon Comprehend document classification and entity recognizer
    * endpoints</p> </li> <li> <p>AWS Lambda function provisioned concurrency</p>
    * </li> <li> <p>Amazon Keyspaces (for Apache Cassandra) tables</p> </li> <li>
-   * <p>Amazon Managed Streaming for Apache Kafka cluster storage</p> </li> </ul> <p>
+   * <p>Amazon Managed Streaming for Apache Kafka broker storage</p> </li> </ul> <p>
    * <b>API Summary</b> </p> <p>The Application Auto Scaling service API includes
    * three key sets of actions: </p> <ul> <li> <p>Register and manage scalable
    * targets - Register AWS or custom resources as scalable targets (a resource that
@@ -173,9 +173,9 @@ namespace Model
          * policy, even if it no longer has an associated action.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-         * a Step Scaling Policy</a> and <a
+         * a step scaling policy</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
-         * a Target Tracking Scaling Policy</a> in the <i>Application Auto Scaling User
+         * a target tracking scaling policy</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">AWS
          * API Reference</a></p>
@@ -189,9 +189,9 @@ namespace Model
          * policy, even if it no longer has an associated action.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-         * a Step Scaling Policy</a> and <a
+         * a step scaling policy</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
-         * a Target Tracking Scaling Policy</a> in the <i>Application Auto Scaling User
+         * a target tracking scaling policy</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">AWS
          * API Reference</a></p>
@@ -207,9 +207,9 @@ namespace Model
          * policy, even if it no longer has an associated action.</p> <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#delete-step-scaling-policy">Delete
-         * a Step Scaling Policy</a> and <a
+         * a step scaling policy</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#delete-target-tracking-policy">Delete
-         * a Target Tracking Scaling Policy</a> in the <i>Application Auto Scaling User
+         * a target tracking scaling policy</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScalingPolicy">AWS
          * API Reference</a></p>
@@ -221,8 +221,8 @@ namespace Model
         /**
          * <p>Deletes the specified scheduled action for an Application Auto Scaling
          * scalable target.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html#delete-scheduled-action">Delete
-         * a Scheduled Action</a> in the <i>Application Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html#delete-scheduled-action">Delete
+         * a scheduled action</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">AWS
          * API Reference</a></p>
@@ -232,8 +232,8 @@ namespace Model
         /**
          * <p>Deletes the specified scheduled action for an Application Auto Scaling
          * scalable target.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html#delete-scheduled-action">Delete
-         * a Scheduled Action</a> in the <i>Application Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html#delete-scheduled-action">Delete
+         * a scheduled action</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">AWS
          * API Reference</a></p>
@@ -245,8 +245,8 @@ namespace Model
         /**
          * <p>Deletes the specified scheduled action for an Application Auto Scaling
          * scalable target.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html#delete-scheduled-action">Delete
-         * a Scheduled Action</a> in the <i>Application Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html#delete-scheduled-action">Delete
+         * a scheduled action</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DeleteScheduledAction">AWS
          * API Reference</a></p>
@@ -366,9 +366,9 @@ namespace Model
          * <code>ResourceId</code>, <code>ScalableDimension</code>, and
          * <code>PolicyNames</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-         * Tracking Scaling Policies</a> and <a
+         * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-         * Scaling Policies</a> in the <i>Application Auto Scaling User
+         * scaling policies</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">AWS
          * API Reference</a></p>
@@ -381,9 +381,9 @@ namespace Model
          * <code>ResourceId</code>, <code>ScalableDimension</code>, and
          * <code>PolicyNames</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-         * Tracking Scaling Policies</a> and <a
+         * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-         * Scaling Policies</a> in the <i>Application Auto Scaling User
+         * scaling policies</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">AWS
          * API Reference</a></p>
@@ -398,9 +398,9 @@ namespace Model
          * <code>ResourceId</code>, <code>ScalableDimension</code>, and
          * <code>PolicyNames</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-         * Tracking Scaling Policies</a> and <a
+         * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-         * Scaling Policies</a> in the <i>Application Auto Scaling User
+         * scaling policies</a> in the <i>Application Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScalingPolicies">AWS
          * API Reference</a></p>
@@ -416,8 +416,10 @@ namespace Model
          * <code>ScheduledActionNames</code> parameters.</p> <p>For more information, see
          * <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-         * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * scaling</a> and <a
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
+         * scheduled scaling</a> in the <i>Application Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">AWS
          * API Reference</a></p>
          */
@@ -430,8 +432,10 @@ namespace Model
          * <code>ScheduledActionNames</code> parameters.</p> <p>For more information, see
          * <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-         * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * scaling</a> and <a
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
+         * scheduled scaling</a> in the <i>Application Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">AWS
          * API Reference</a></p>
          *
@@ -446,8 +450,10 @@ namespace Model
          * <code>ScheduledActionNames</code> parameters.</p> <p>For more information, see
          * <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-         * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * scaling</a> and <a
+         * href="https://docs.aws.amazon.com/autoscaling/application/userguide/scheduled-scaling-additional-cli-commands.html">Managing
+         * scheduled scaling</a> in the <i>Application Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/DescribeScheduledActions">AWS
          * API Reference</a></p>
          *
@@ -478,9 +484,9 @@ namespace Model
          * the target tracking policy could instruct the scalable target to scale out
          * again. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-         * Tracking Scaling Policies</a> and <a
+         * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-         * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+         * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
          *  <p>If a scalable target is deregistered, the scalable target is no longer
          * available to execute scaling policies. Any scaling policies that were specified
          * for the scalable target are deleted.</p> <p><h3>See Also:</h3>   <a
@@ -512,9 +518,9 @@ namespace Model
          * the target tracking policy could instruct the scalable target to scale out
          * again. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-         * Tracking Scaling Policies</a> and <a
+         * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-         * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+         * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
          *  <p>If a scalable target is deregistered, the scalable target is no longer
          * available to execute scaling policies. Any scaling policies that were specified
          * for the scalable target are deleted.</p> <p><h3>See Also:</h3>   <a
@@ -548,9 +554,9 @@ namespace Model
          * the target tracking policy could instruct the scalable target to scale out
          * again. </p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-         * Tracking Scaling Policies</a> and <a
+         * tracking scaling policies</a> and <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-         * Scaling Policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+         * scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.</p>
          *  <p>If a scalable target is deregistered, the scalable target is no longer
          * available to execute scaling policies. Any scaling policies that were specified
          * for the scalable target are deleted.</p> <p><h3>See Also:</h3>   <a
@@ -563,17 +569,17 @@ namespace Model
 
         /**
          * <p>Creates or updates a scheduled action for an Application Auto Scaling
-         * scalable target.</p> <p>Each scalable target is identified by a service
+         * scalable target. </p> <p>Each scalable target is identified by a service
          * namespace, resource ID, and scalable dimension. A scheduled action applies to
          * the scalable target identified by those three attributes. You cannot create a
          * scheduled action until you have registered the resource as a scalable
          * target.</p> <p>When start and end times are specified with a recurring schedule
-         * using a cron expression or rates, they form the boundaries of when the recurring
-         * action starts and stops.</p> <p>To update a scheduled action, specify the
-         * parameters that you want to change. If you don't specify start and end times,
-         * the old values are deleted.</p> <p>For more information, see <a
+         * using a cron expression or rates, they form the boundaries for when the
+         * recurring action starts and stops.</p> <p>To update a scheduled action, specify
+         * the parameters that you want to change. If you don't specify start and end
+         * times, the old values are deleted.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-         * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>  <p>If
+         * scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>  <p>If
          * a scalable target is deregistered, the scalable target is no longer available to
          * run scheduled actions. Any scheduled actions that were specified for the
          * scalable target are deleted.</p> <p><h3>See Also:</h3>   <a
@@ -584,17 +590,17 @@ namespace Model
 
         /**
          * <p>Creates or updates a scheduled action for an Application Auto Scaling
-         * scalable target.</p> <p>Each scalable target is identified by a service
+         * scalable target. </p> <p>Each scalable target is identified by a service
          * namespace, resource ID, and scalable dimension. A scheduled action applies to
          * the scalable target identified by those three attributes. You cannot create a
          * scheduled action until you have registered the resource as a scalable
          * target.</p> <p>When start and end times are specified with a recurring schedule
-         * using a cron expression or rates, they form the boundaries of when the recurring
-         * action starts and stops.</p> <p>To update a scheduled action, specify the
-         * parameters that you want to change. If you don't specify start and end times,
-         * the old values are deleted.</p> <p>For more information, see <a
+         * using a cron expression or rates, they form the boundaries for when the
+         * recurring action starts and stops.</p> <p>To update a scheduled action, specify
+         * the parameters that you want to change. If you don't specify start and end
+         * times, the old values are deleted.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-         * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>  <p>If
+         * scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>  <p>If
          * a scalable target is deregistered, the scalable target is no longer available to
          * run scheduled actions. Any scheduled actions that were specified for the
          * scalable target are deleted.</p> <p><h3>See Also:</h3>   <a
@@ -607,17 +613,17 @@ namespace Model
 
         /**
          * <p>Creates or updates a scheduled action for an Application Auto Scaling
-         * scalable target.</p> <p>Each scalable target is identified by a service
+         * scalable target. </p> <p>Each scalable target is identified by a service
          * namespace, resource ID, and scalable dimension. A scheduled action applies to
          * the scalable target identified by those three attributes. You cannot create a
          * scheduled action until you have registered the resource as a scalable
          * target.</p> <p>When start and end times are specified with a recurring schedule
-         * using a cron expression or rates, they form the boundaries of when the recurring
-         * action starts and stops.</p> <p>To update a scheduled action, specify the
-         * parameters that you want to change. If you don't specify start and end times,
-         * the old values are deleted.</p> <p>For more information, see <a
+         * using a cron expression or rates, they form the boundaries for when the
+         * recurring action starts and stops.</p> <p>To update a scheduled action, specify
+         * the parameters that you want to change. If you don't specify start and end
+         * times, the old values are deleted.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-         * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>  <p>If
+         * scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>  <p>If
          * a scalable target is deregistered, the scalable target is no longer available to
          * run scheduled actions. Any scheduled actions that were specified for the
          * scalable target are deleted.</p> <p><h3>See Also:</h3>   <a

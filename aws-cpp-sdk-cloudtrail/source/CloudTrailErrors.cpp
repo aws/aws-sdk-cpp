@@ -18,6 +18,7 @@ namespace CloudTrail
 namespace CloudTrailErrorMapper
 {
 
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int TRAIL_ALREADY_EXISTS_HASH = HashingUtils::HashString("TrailAlreadyExistsException");
 static const int KMS_KEY_NOT_FOUND_HASH = HashingUtils::HashString("KmsKeyNotFoundException");
 static const int INVALID_MAX_RESULTS_HASH = HashingUtils::HashString("InvalidMaxResultsException");
@@ -65,7 +66,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == TRAIL_ALREADY_EXISTS_HASH)
+  if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CONFLICT), false);
+  }
+  else if (hashCode == TRAIL_ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_ALREADY_EXISTS), false);
   }

@@ -22,6 +22,7 @@ namespace Model
     nodejs8_10,
     nodejs10_x,
     nodejs12_x,
+    nodejs14_x,
     java8,
     java8_al2,
     java11,

@@ -80,7 +80,7 @@ HoneycodeClient::~HoneycodeClient()
 {
 }
 
-void HoneycodeClient::init(const ClientConfiguration& config)
+void HoneycodeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Honeycode");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -119,13 +119,11 @@ BatchCreateTableRowsOutcome HoneycodeClient::BatchCreateTableRows(const BatchCre
     return BatchCreateTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/rows/batchcreate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/rows/batchcreate");
   return BatchCreateTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -160,13 +158,11 @@ BatchDeleteTableRowsOutcome HoneycodeClient::BatchDeleteTableRows(const BatchDel
     return BatchDeleteTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/rows/batchdelete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/rows/batchdelete");
   return BatchDeleteTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -201,13 +197,11 @@ BatchUpdateTableRowsOutcome HoneycodeClient::BatchUpdateTableRows(const BatchUpd
     return BatchUpdateTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/rows/batchupdate";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/rows/batchupdate");
   return BatchUpdateTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -242,13 +236,11 @@ BatchUpsertTableRowsOutcome HoneycodeClient::BatchUpsertTableRows(const BatchUps
     return BatchUpsertTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/rows/batchupsert";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/rows/batchupsert");
   return BatchUpsertTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -288,14 +280,12 @@ DescribeTableDataImportJobOutcome HoneycodeClient::DescribeTableDataImportJob(co
     return DescribeTableDataImportJobOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/import/";
-  ss << request.GetJobId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/import/");
+  uri.AddPathSegment(request.GetJobId());
   return DescribeTableDataImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -320,9 +310,7 @@ void HoneycodeClient::DescribeTableDataImportJobAsyncHelper(const DescribeTableD
 GetScreenDataOutcome HoneycodeClient::GetScreenData(const GetScreenDataRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/screendata";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/screendata");
   return GetScreenDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -367,16 +355,14 @@ InvokeScreenAutomationOutcome HoneycodeClient::InvokeScreenAutomation(const Invo
     return InvokeScreenAutomationOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScreenAutomationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/apps/";
-  ss << request.GetAppId();
-  ss << "/screens/";
-  ss << request.GetScreenId();
-  ss << "/automations/";
-  ss << request.GetScreenAutomationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/apps/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/screens/");
+  uri.AddPathSegment(request.GetScreenId());
+  uri.AddPathSegments("/automations/");
+  uri.AddPathSegment(request.GetScreenAutomationId());
   return InvokeScreenAutomationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -411,13 +397,11 @@ ListTableColumnsOutcome HoneycodeClient::ListTableColumns(const ListTableColumns
     return ListTableColumnsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/columns";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/columns");
   return ListTableColumnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -452,13 +436,11 @@ ListTableRowsOutcome HoneycodeClient::ListTableRows(const ListTableRowsRequest& 
     return ListTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/rows/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/rows/list");
   return ListTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -488,11 +470,9 @@ ListTablesOutcome HoneycodeClient::ListTables(const ListTablesRequest& request) 
     return ListTablesOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkbookId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables");
   return ListTablesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -527,13 +507,11 @@ QueryTableRowsOutcome HoneycodeClient::QueryTableRows(const QueryTableRowsReques
     return QueryTableRowsOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetTableId();
-  ss << "/rows/query";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetTableId());
+  uri.AddPathSegments("/rows/query");
   return QueryTableRowsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -568,13 +546,11 @@ StartTableDataImportJobOutcome HoneycodeClient::StartTableDataImportJob(const St
     return StartTableDataImportJobOutcome(Aws::Client::AWSError<HoneycodeErrors>(HoneycodeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DestinationTableId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workbooks/";
-  ss << request.GetWorkbookId();
-  ss << "/tables/";
-  ss << request.GetDestinationTableId();
-  ss << "/import";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workbooks/");
+  uri.AddPathSegment(request.GetWorkbookId());
+  uri.AddPathSegments("/tables/");
+  uri.AddPathSegment(request.GetDestinationTableId());
+  uri.AddPathSegments("/import");
   return StartTableDataImportJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -199,22 +199,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of functions to return.</p>
+     * <p>The maximum number of functions to return in the response. Note that
+     * <code>ListFunctions</code> returns a maximum of 50 items in each response, even
+     * if you set the number higher.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>The maximum number of functions to return.</p>
+     * <p>The maximum number of functions to return in the response. Note that
+     * <code>ListFunctions</code> returns a maximum of 50 items in each response, even
+     * if you set the number higher.</p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
-     * <p>The maximum number of functions to return.</p>
+     * <p>The maximum number of functions to return in the response. Note that
+     * <code>ListFunctions</code> returns a maximum of 50 items in each response, even
+     * if you set the number higher.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>The maximum number of functions to return.</p>
+     * <p>The maximum number of functions to return in the response. Note that
+     * <code>ListFunctions</code> returns a maximum of 50 items in each response, even
+     * if you set the number higher.</p>
      */
     inline ListFunctionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

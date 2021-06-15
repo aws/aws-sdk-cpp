@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -284,34 +285,26 @@ namespace Model
 
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline bool GetMultiAZEnabled() const{ return m_multiAZEnabled; }
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline bool MultiAZEnabledHasBeenSet() const { return m_multiAZEnabledHasBeenSet; }
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline void SetMultiAZEnabled(bool value) { m_multiAZEnabledHasBeenSet = true; m_multiAZEnabled = value; }
 
     /**
-     * <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing
-     * Downtime: Multi-AZ</a>.</p>
+     * <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag
+     * key must be accompanied by a tag value, although null is accepted.</p>
      */
     inline ModifyReplicationGroupRequest& WithMultiAZEnabled(bool value) { SetMultiAZEnabled(value); return *this;}
 
@@ -1220,102 +1213,102 @@ namespace Model
 
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroupIdsToAdd() const{ return m_userGroupIdsToAdd; }
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline bool UserGroupIdsToAddHasBeenSet() const { return m_userGroupIdsToAddHasBeenSet; }
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline void SetUserGroupIdsToAdd(const Aws::Vector<Aws::String>& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd = value; }
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline void SetUserGroupIdsToAdd(Aws::Vector<Aws::String>&& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd = std::move(value); }
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& WithUserGroupIdsToAdd(const Aws::Vector<Aws::String>& value) { SetUserGroupIdsToAdd(value); return *this;}
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& WithUserGroupIdsToAdd(Aws::Vector<Aws::String>&& value) { SetUserGroupIdsToAdd(std::move(value)); return *this;}
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(const Aws::String& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(value); return *this; }
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(Aws::String&& value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of user group IDs.</p>
+     * <p>The user group you are associating with the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& AddUserGroupIdsToAdd(const char* value) { m_userGroupIdsToAddHasBeenSet = true; m_userGroupIdsToAdd.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroupIdsToRemove() const{ return m_userGroupIdsToRemove; }
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline bool UserGroupIdsToRemoveHasBeenSet() const { return m_userGroupIdsToRemoveHasBeenSet; }
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline void SetUserGroupIdsToRemove(const Aws::Vector<Aws::String>& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove = value; }
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline void SetUserGroupIdsToRemove(Aws::Vector<Aws::String>&& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove = std::move(value); }
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& WithUserGroupIdsToRemove(const Aws::Vector<Aws::String>& value) { SetUserGroupIdsToRemove(value); return *this;}
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& WithUserGroupIdsToRemove(Aws::Vector<Aws::String>&& value) { SetUserGroupIdsToRemove(std::move(value)); return *this;}
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(const Aws::String& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(value); return *this; }
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(Aws::String&& value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of users groups to remove, meaning the users in the group no longer
-     * can access thereplication group.</p>
+     * <p>The user group to remove, meaning the users in the group no longer can access
+     * the replication group.</p>
      */
     inline ModifyReplicationGroupRequest& AddUserGroupIdsToRemove(const char* value) { m_userGroupIdsToRemoveHasBeenSet = true; m_userGroupIdsToRemove.push_back(value); return *this; }
 
@@ -1339,6 +1332,47 @@ namespace Model
      * <p>Removes the user groups that can access this replication group.</p>
      */
     inline ModifyReplicationGroupRequest& WithRemoveUserGroups(bool value) { SetRemoveUserGroups(value); return *this;}
+
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline ModifyReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -1410,6 +1444,9 @@ namespace Model
 
     bool m_removeUserGroups;
     bool m_removeUserGroupsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

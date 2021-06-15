@@ -30,8 +30,8 @@ namespace Model
    * of the existing metrics configuration. If you don't include the elements you
    * want to keep, they are erased. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html">
-   * PUT Bucket metrics</a> in the <i>Amazon Simple Storage Service API
-   * Reference</i>.</p><p><h3>See Also:</h3>   <a
+   * PUT Bucket metrics</a> in the <i>Amazon S3 API Reference</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsConfiguration">AWS
    * API Reference</a></p>
    */

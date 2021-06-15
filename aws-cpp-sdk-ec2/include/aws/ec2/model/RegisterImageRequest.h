@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ArchitectureValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <utility>
 
@@ -159,42 +160,106 @@ namespace Model
 
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline RegisterImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline RegisterImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mapping entries.</p>
+     * <p>The block device mapping entries.</p> <p>If you specify an EBS volume using
+     * the ID of an EBS snapshot, you can't specify the encryption state of the
+     * volume.</p> <p>If you create an AMI on an Outpost, then all backing snapshots
+     * must be on the same Outpost or in the Region of that Outpost. AMIs on an Outpost
+     * that include local snapshots can be used to launch instances on the same Outpost
+     * only. For more information, <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
+     * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
+     * Cloud User Guide</i>.</p>
      */
     inline RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -679,6 +744,49 @@ namespace Model
      */
     inline RegisterImageRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
 
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode of the AMI. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline RegisterImageRequest& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_imageLocation;
@@ -719,6 +827,9 @@ namespace Model
 
     Aws::String m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
+
+    BootModeValues m_bootMode;
+    bool m_bootModeHasBeenSet;
   };
 
 } // namespace Model

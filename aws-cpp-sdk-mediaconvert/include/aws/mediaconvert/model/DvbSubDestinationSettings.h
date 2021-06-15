@@ -7,6 +7,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/DvbSubtitleAlignment.h>
 #include <aws/mediaconvert/model/DvbSubtitleBackgroundColor.h>
+#include <aws/mediaconvert/model/DvbddsHandling.h>
 #include <aws/mediaconvert/model/DvbSubtitleFontColor.h>
 #include <aws/mediaconvert/model/FontScript.h>
 #include <aws/mediaconvert/model/DvbSubtitleOutlineColor.h>
@@ -31,7 +32,12 @@ namespace Model
 {
 
   /**
-   * DVB-Sub Destination Settings<p><h3>See Also:</h3>   <a
+   * Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output
+   * as your video. For more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html.
+   * When you work directly in your JSON job specification, include this object and
+   * any required children when you set destinationType to DVB_SUB.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DvbSubDestinationSettings">AWS
    * API Reference</a></p>
    */
@@ -187,6 +193,215 @@ All burn-in and
      * (transparent). All burn-in and DVB-Sub font settings must match.
      */
     inline DvbSubDestinationSettings& WithBackgroundOpacity(int value) { SetBackgroundOpacity(value); return *this;}
+
+
+    /**
+     * Specify how MediaConvert handles the display definition segment (DDS). Keep the
+     * default, None (NONE), to exclude the DDS from this set of captions. Choose No
+     * display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not
+     * include display window data. In this case, MediaConvert writes that information
+     * to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to
+     * have MediaConvert set up the display window based on the values that you specify
+     * in related job settings. For video resolutions that are 576 pixels or smaller in
+     * height, MediaConvert doesn't include the DDS, regardless of the value you choose
+     * for DDS handling (ddsHandling). In this case, it doesn't write the display
+     * window data to the PCS either. Related settings: Use the settings DDS
+     * x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify
+     * the offset between the top left corner of the display window and the top left
+     * corner of the video frame. All burn-in and DVB-Sub font settings must match.
+     */
+    inline const DvbddsHandling& GetDdsHandling() const{ return m_ddsHandling; }
+
+    /**
+     * Specify how MediaConvert handles the display definition segment (DDS). Keep the
+     * default, None (NONE), to exclude the DDS from this set of captions. Choose No
+     * display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not
+     * include display window data. In this case, MediaConvert writes that information
+     * to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to
+     * have MediaConvert set up the display window based on the values that you specify
+     * in related job settings. For video resolutions that are 576 pixels or smaller in
+     * height, MediaConvert doesn't include the DDS, regardless of the value you choose
+     * for DDS handling (ddsHandling). In this case, it doesn't write the display
+     * window data to the PCS either. Related settings: Use the settings DDS
+     * x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify
+     * the offset between the top left corner of the display window and the top left
+     * corner of the video frame. All burn-in and DVB-Sub font settings must match.
+     */
+    inline bool DdsHandlingHasBeenSet() const { return m_ddsHandlingHasBeenSet; }
+
+    /**
+     * Specify how MediaConvert handles the display definition segment (DDS). Keep the
+     * default, None (NONE), to exclude the DDS from this set of captions. Choose No
+     * display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not
+     * include display window data. In this case, MediaConvert writes that information
+     * to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to
+     * have MediaConvert set up the display window based on the values that you specify
+     * in related job settings. For video resolutions that are 576 pixels or smaller in
+     * height, MediaConvert doesn't include the DDS, regardless of the value you choose
+     * for DDS handling (ddsHandling). In this case, it doesn't write the display
+     * window data to the PCS either. Related settings: Use the settings DDS
+     * x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify
+     * the offset between the top left corner of the display window and the top left
+     * corner of the video frame. All burn-in and DVB-Sub font settings must match.
+     */
+    inline void SetDdsHandling(const DvbddsHandling& value) { m_ddsHandlingHasBeenSet = true; m_ddsHandling = value; }
+
+    /**
+     * Specify how MediaConvert handles the display definition segment (DDS). Keep the
+     * default, None (NONE), to exclude the DDS from this set of captions. Choose No
+     * display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not
+     * include display window data. In this case, MediaConvert writes that information
+     * to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to
+     * have MediaConvert set up the display window based on the values that you specify
+     * in related job settings. For video resolutions that are 576 pixels or smaller in
+     * height, MediaConvert doesn't include the DDS, regardless of the value you choose
+     * for DDS handling (ddsHandling). In this case, it doesn't write the display
+     * window data to the PCS either. Related settings: Use the settings DDS
+     * x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify
+     * the offset between the top left corner of the display window and the top left
+     * corner of the video frame. All burn-in and DVB-Sub font settings must match.
+     */
+    inline void SetDdsHandling(DvbddsHandling&& value) { m_ddsHandlingHasBeenSet = true; m_ddsHandling = std::move(value); }
+
+    /**
+     * Specify how MediaConvert handles the display definition segment (DDS). Keep the
+     * default, None (NONE), to exclude the DDS from this set of captions. Choose No
+     * display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not
+     * include display window data. In this case, MediaConvert writes that information
+     * to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to
+     * have MediaConvert set up the display window based on the values that you specify
+     * in related job settings. For video resolutions that are 576 pixels or smaller in
+     * height, MediaConvert doesn't include the DDS, regardless of the value you choose
+     * for DDS handling (ddsHandling). In this case, it doesn't write the display
+     * window data to the PCS either. Related settings: Use the settings DDS
+     * x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify
+     * the offset between the top left corner of the display window and the top left
+     * corner of the video frame. All burn-in and DVB-Sub font settings must match.
+     */
+    inline DvbSubDestinationSettings& WithDdsHandling(const DvbddsHandling& value) { SetDdsHandling(value); return *this;}
+
+    /**
+     * Specify how MediaConvert handles the display definition segment (DDS). Keep the
+     * default, None (NONE), to exclude the DDS from this set of captions. Choose No
+     * display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not
+     * include display window data. In this case, MediaConvert writes that information
+     * to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to
+     * have MediaConvert set up the display window based on the values that you specify
+     * in related job settings. For video resolutions that are 576 pixels or smaller in
+     * height, MediaConvert doesn't include the DDS, regardless of the value you choose
+     * for DDS handling (ddsHandling). In this case, it doesn't write the display
+     * window data to the PCS either. Related settings: Use the settings DDS
+     * x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify
+     * the offset between the top left corner of the display window and the top left
+     * corner of the video frame. All burn-in and DVB-Sub font settings must match.
+     */
+    inline DvbSubDestinationSettings& WithDdsHandling(DvbddsHandling&& value) { SetDdsHandling(std::move(value)); return *this;}
+
+
+    /**
+     * Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the left side of the
+     * frame and the left side of the DDS display window. Keep the default value, 0, to
+     * have MediaConvert automatically choose this offset. Related setting: When you
+     * use this setting, you must set DDS handling (ddsHandling) to a value other than
+     * None (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline int GetDdsXCoordinate() const{ return m_ddsXCoordinate; }
+
+    /**
+     * Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the left side of the
+     * frame and the left side of the DDS display window. Keep the default value, 0, to
+     * have MediaConvert automatically choose this offset. Related setting: When you
+     * use this setting, you must set DDS handling (ddsHandling) to a value other than
+     * None (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline bool DdsXCoordinateHasBeenSet() const { return m_ddsXCoordinateHasBeenSet; }
+
+    /**
+     * Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the left side of the
+     * frame and the left side of the DDS display window. Keep the default value, 0, to
+     * have MediaConvert automatically choose this offset. Related setting: When you
+     * use this setting, you must set DDS handling (ddsHandling) to a value other than
+     * None (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline void SetDdsXCoordinate(int value) { m_ddsXCoordinateHasBeenSet = true; m_ddsXCoordinate = value; }
+
+    /**
+     * Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the left side of the
+     * frame and the left side of the DDS display window. Keep the default value, 0, to
+     * have MediaConvert automatically choose this offset. Related setting: When you
+     * use this setting, you must set DDS handling (ddsHandling) to a value other than
+     * None (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline DvbSubDestinationSettings& WithDdsXCoordinate(int value) { SetDdsXCoordinate(value); return *this;}
+
+
+    /**
+     * Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the top of the frame and
+     * the top of the DDS display window. Keep the default value, 0, to have
+     * MediaConvert automatically choose this offset. Related setting: When you use
+     * this setting, you must set DDS handling (ddsHandling) to a value other than None
+     * (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline int GetDdsYCoordinate() const{ return m_ddsYCoordinate; }
+
+    /**
+     * Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the top of the frame and
+     * the top of the DDS display window. Keep the default value, 0, to have
+     * MediaConvert automatically choose this offset. Related setting: When you use
+     * this setting, you must set DDS handling (ddsHandling) to a value other than None
+     * (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline bool DdsYCoordinateHasBeenSet() const { return m_ddsYCoordinateHasBeenSet; }
+
+    /**
+     * Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the top of the frame and
+     * the top of the DDS display window. Keep the default value, 0, to have
+     * MediaConvert automatically choose this offset. Related setting: When you use
+     * this setting, you must set DDS handling (ddsHandling) to a value other than None
+     * (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline void SetDdsYCoordinate(int value) { m_ddsYCoordinateHasBeenSet = true; m_ddsYCoordinate = value; }
+
+    /**
+     * Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the
+     * upper left corner of the display definition segment (DDS) display window. With
+     * this setting, specify the distance, in pixels, between the top of the frame and
+     * the top of the DDS display window. Keep the default value, 0, to have
+     * MediaConvert automatically choose this offset. Related setting: When you use
+     * this setting, you must set DDS handling (ddsHandling) to a value other than None
+     * (NONE). MediaConvert uses these values to determine whether to write page
+     * position data to the DDS or to the page composition segment (PCS). All burn-in
+     * and DVB-Sub font settings must match.
+     */
+    inline DvbSubDestinationSettings& WithDdsYCoordinate(int value) { SetDdsYCoordinate(value); return *this;}
 
 
     /**
@@ -368,6 +583,39 @@ All burn-in and
      * automatic font size selection. All burn-in and DVB-Sub font settings must match.
      */
     inline DvbSubDestinationSettings& WithFontSize(int value) { SetFontSize(value); return *this;}
+
+
+    /**
+     * Specify the height, in pixels, of this set of DVB-Sub captions. The default
+     * value is 576 pixels. Related setting: When you use this setting, you must set
+     * DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline int GetHeight() const{ return m_height; }
+
+    /**
+     * Specify the height, in pixels, of this set of DVB-Sub captions. The default
+     * value is 576 pixels. Related setting: When you use this setting, you must set
+     * DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
+
+    /**
+     * Specify the height, in pixels, of this set of DVB-Sub captions. The default
+     * value is 576 pixels. Related setting: When you use this setting, you must set
+     * DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
+
+    /**
+     * Specify the height, in pixels, of this set of DVB-Sub captions. The default
+     * value is 576 pixels. Related setting: When you use this setting, you must set
+     * DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline DvbSubDestinationSettings& WithHeight(int value) { SetHeight(value); return *this;}
 
 
     /**
@@ -681,6 +929,39 @@ All burn-in and DVB-Sub
 
 
     /**
+     * Specify the width, in pixels, of this set of DVB-Sub captions. The default value
+     * is 720 pixels. Related setting: When you use this setting, you must set DDS
+     * handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline int GetWidth() const{ return m_width; }
+
+    /**
+     * Specify the width, in pixels, of this set of DVB-Sub captions. The default value
+     * is 720 pixels. Related setting: When you use this setting, you must set DDS
+     * handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
+
+    /**
+     * Specify the width, in pixels, of this set of DVB-Sub captions. The default value
+     * is 720 pixels. Related setting: When you use this setting, you must set DDS
+     * handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
+
+    /**
+     * Specify the width, in pixels, of this set of DVB-Sub captions. The default value
+     * is 720 pixels. Related setting: When you use this setting, you must set DDS
+     * handling (ddsHandling) to a value other than None (NONE). All burn-in and
+     * DVB-Sub font settings must match.
+     */
+    inline DvbSubDestinationSettings& WithWidth(int value) { SetWidth(value); return *this;}
+
+
+    /**
      * Specifies the horizontal position of the caption relative to the left side of
      * the output in pixels. A value of 10 would result in the captions starting 10
      * pixels from the left of the output. If no explicit x_position is provided, the
@@ -780,6 +1061,15 @@ All burn-in and DVB-Sub
     int m_backgroundOpacity;
     bool m_backgroundOpacityHasBeenSet;
 
+    DvbddsHandling m_ddsHandling;
+    bool m_ddsHandlingHasBeenSet;
+
+    int m_ddsXCoordinate;
+    bool m_ddsXCoordinateHasBeenSet;
+
+    int m_ddsYCoordinate;
+    bool m_ddsYCoordinateHasBeenSet;
+
     DvbSubtitleFontColor m_fontColor;
     bool m_fontColorHasBeenSet;
 
@@ -794,6 +1084,9 @@ All burn-in and DVB-Sub
 
     int m_fontSize;
     bool m_fontSizeHasBeenSet;
+
+    int m_height;
+    bool m_heightHasBeenSet;
 
     DvbSubtitleOutlineColor m_outlineColor;
     bool m_outlineColorHasBeenSet;
@@ -818,6 +1111,9 @@ All burn-in and DVB-Sub
 
     DvbSubtitleTeletextSpacing m_teletextSpacing;
     bool m_teletextSpacingHasBeenSet;
+
+    int m_width;
+    bool m_widthHasBeenSet;
 
     int m_xPosition;
     bool m_xPositionHasBeenSet;

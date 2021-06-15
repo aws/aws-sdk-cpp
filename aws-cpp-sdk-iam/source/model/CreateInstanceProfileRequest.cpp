@@ -12,7 +12,8 @@ using namespace Aws::Utils;
 
 CreateInstanceProfileRequest::CreateInstanceProfileRequest() : 
     m_instanceProfileNameHasBeenSet(false),
-    m_pathHasBeenSet(false)
+    m_pathHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -28,6 +29,16 @@ Aws::String CreateInstanceProfileRequest::SerializePayload() const
   if(m_pathHasBeenSet)
   {
     ss << "Path=" << StringUtils::URLEncode(m_path.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2010-05-08";

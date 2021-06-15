@@ -36,6 +36,7 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() :
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
     m_applyOnlyAtCronIntervalHasBeenSet(false),
+    m_calendarNamesHasBeenSet(false),
     m_targetLocationsHasBeenSet(false)
 {
 }
@@ -58,6 +59,7 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(JsonView 
     m_syncComplianceHasBeenSet(false),
     m_applyOnlyAtCronInterval(false),
     m_applyOnlyAtCronIntervalHasBeenSet(false),
+    m_calendarNamesHasBeenSet(false),
     m_targetLocationsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -176,6 +178,16 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
     m_applyOnlyAtCronIntervalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CalendarNames"))
+  {
+    Array<JsonView> calendarNamesJsonList = jsonValue.GetArray("CalendarNames");
+    for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
+    {
+      m_calendarNames.push_back(calendarNamesJsonList[calendarNamesIndex].AsString());
+    }
+    m_calendarNamesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TargetLocations"))
   {
     Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
@@ -287,6 +299,17 @@ JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
   if(m_applyOnlyAtCronIntervalHasBeenSet)
   {
    payload.WithBool("ApplyOnlyAtCronInterval", m_applyOnlyAtCronInterval);
+
+  }
+
+  if(m_calendarNamesHasBeenSet)
+  {
+   Array<JsonValue> calendarNamesJsonList(m_calendarNames.size());
+   for(unsigned calendarNamesIndex = 0; calendarNamesIndex < calendarNamesJsonList.GetLength(); ++calendarNamesIndex)
+   {
+     calendarNamesJsonList[calendarNamesIndex].AsString(m_calendarNames[calendarNamesIndex]);
+   }
+   payload.WithArray("CalendarNames", std::move(calendarNamesJsonList));
 
   }
 

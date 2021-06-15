@@ -7,6 +7,8 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/location/model/PricingPlan.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -35,43 +37,64 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetCollectionArn() const{ return m_collectionArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline void SetCollectionArn(const Aws::String& value) { m_collectionArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline void SetCollectionArn(Aws::String&& value) { m_collectionArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline void SetCollectionArn(const char* value) { m_collectionArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline DescribeGeofenceCollectionResult& WithCollectionArn(const Aws::String& value) { SetCollectionArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline DescribeGeofenceCollectionResult& WithCollectionArn(Aws::String&& value) { SetCollectionArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used
-     * when you need to specify a resource across all AWS. </p>
+     * when you need to specify a resource across all AWS. </p> <ul> <li> <p>Format
+     * example:
+     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code>
+     * </p> </li> </ul>
      */
     inline DescribeGeofenceCollectionResult& WithCollectionArn(const char* value) { SetCollectionArn(value); return *this;}
 
@@ -185,6 +208,194 @@ namespace Model
 
 
     /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>A key identifier for an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
+     * KMS customer managed key</a> assigned to the Amazon Location resource</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
+
+    /**
+     * <p>The pricing plan selected for the specified geofence collection.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
+
+    /**
+     * <p>The pricing plan selected for the specified geofence collection.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlan = value; }
+
+    /**
+     * <p>The pricing plan selected for the specified geofence collection.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlan = std::move(value); }
+
+    /**
+     * <p>The pricing plan selected for the specified geofence collection.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
+
+    /**
+     * <p>The pricing plan selected for the specified geofence collection.</p> <p>For
+     * additional details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The specified data provider for the geofence collection.</p>
+     */
+    inline const Aws::String& GetPricingPlanDataSource() const{ return m_pricingPlanDataSource; }
+
+    /**
+     * <p>The specified data provider for the geofence collection.</p>
+     */
+    inline void SetPricingPlanDataSource(const Aws::String& value) { m_pricingPlanDataSource = value; }
+
+    /**
+     * <p>The specified data provider for the geofence collection.</p>
+     */
+    inline void SetPricingPlanDataSource(Aws::String&& value) { m_pricingPlanDataSource = std::move(value); }
+
+    /**
+     * <p>The specified data provider for the geofence collection.</p>
+     */
+    inline void SetPricingPlanDataSource(const char* value) { m_pricingPlanDataSource.assign(value); }
+
+    /**
+     * <p>The specified data provider for the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithPricingPlanDataSource(const Aws::String& value) { SetPricingPlanDataSource(value); return *this;}
+
+    /**
+     * <p>The specified data provider for the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithPricingPlanDataSource(Aws::String&& value) { SetPricingPlanDataSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The specified data provider for the geofence collection.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithPricingPlanDataSource(const char* value) { SetPricingPlanDataSource(value); return *this;}
+
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Displays the key, value pairs of tags associated with this resource.</p>
+     */
+    inline DescribeGeofenceCollectionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The timestamp for when the geofence collection was last updated in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
@@ -228,6 +439,14 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::String m_description;
+
+    Aws::String m_kmsKeyId;
+
+    PricingPlan m_pricingPlan;
+
+    Aws::String m_pricingPlanDataSource;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Utils::DateTime m_updateTime;
   };

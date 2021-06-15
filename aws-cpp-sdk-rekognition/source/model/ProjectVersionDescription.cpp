@@ -33,7 +33,8 @@ ProjectVersionDescription::ProjectVersionDescription() :
     m_trainingDataResultHasBeenSet(false),
     m_testingDataResultHasBeenSet(false),
     m_evaluationResultHasBeenSet(false),
-    m_manifestSummaryHasBeenSet(false)
+    m_manifestSummaryHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ ProjectVersionDescription::ProjectVersionDescription(JsonView jsonValue) :
     m_trainingDataResultHasBeenSet(false),
     m_testingDataResultHasBeenSet(false),
     m_evaluationResultHasBeenSet(false),
-    m_manifestSummaryHasBeenSet(false)
+    m_manifestSummaryHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -143,6 +145,13 @@ ProjectVersionDescription& ProjectVersionDescription::operator =(JsonView jsonVa
     m_manifestSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -216,6 +225,12 @@ JsonValue ProjectVersionDescription::Jsonize() const
   if(m_manifestSummaryHasBeenSet)
   {
    payload.WithObject("ManifestSummary", m_manifestSummary.Jsonize());
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("KmsKeyId", m_kmsKeyId);
 
   }
 

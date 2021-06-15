@@ -84,50 +84,107 @@ namespace Model
 
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline const Aws::String& GetConnectedDatabase() const{ return m_connectedDatabase; }
+
+    /**
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline bool ConnectedDatabaseHasBeenSet() const { return m_connectedDatabaseHasBeenSet; }
+
+    /**
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline void SetConnectedDatabase(const Aws::String& value) { m_connectedDatabaseHasBeenSet = true; m_connectedDatabase = value; }
+
+    /**
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline void SetConnectedDatabase(Aws::String&& value) { m_connectedDatabaseHasBeenSet = true; m_connectedDatabase = std::move(value); }
+
+    /**
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline void SetConnectedDatabase(const char* value) { m_connectedDatabaseHasBeenSet = true; m_connectedDatabase.assign(value); }
+
+    /**
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline DescribeTableRequest& WithConnectedDatabase(const Aws::String& value) { SetConnectedDatabase(value); return *this;}
+
+    /**
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline DescribeTableRequest& WithConnectedDatabase(Aws::String&& value) { SetConnectedDatabase(std::move(value)); return *this;}
+
+    /**
+     * <p>A database name. The connected database is specified when you connect with
+     * your authentication credentials. </p>
+     */
+    inline DescribeTableRequest& WithConnectedDatabase(const char* value) { SetConnectedDatabase(value); return *this;}
+
+
+    /**
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline const Aws::String& GetDatabase() const{ return m_database; }
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline DescribeTableRequest& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline DescribeTableRequest& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the database. This parameter is required when authenticating
-     * using temporary credentials.</p>
+     * <p>The name of the database that contains the tables to be described. If
+     * <code>ConnectedDatabase</code> is not specified, this is also the database to
+     * connect to with your authentication credentials.</p>
      */
     inline DescribeTableRequest& WithDatabase(const char* value) { SetDatabase(value); return *this;}
 
@@ -441,6 +498,9 @@ namespace Model
 
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
+    Aws::String m_connectedDatabase;
+    bool m_connectedDatabaseHasBeenSet;
 
     Aws::String m_database;
     bool m_databaseHasBeenSet;

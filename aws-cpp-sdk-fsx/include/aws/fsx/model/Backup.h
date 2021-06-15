@@ -32,13 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>A backup of an Amazon FSx file system. For more information see:</p> <ul>
-   * <li> <p> <a
-   * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working
-   * with backups for Windows file systems</a> </p> </li> <li> <p> <a
-   * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working
-   * with backups for Lustre file systems</a> </p> </li> </ul><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
+   * <p>A backup of an Amazon FSx file system.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Backup">AWS API
    * Reference</a></p>
    */
   class AWS_FSX_API Backup
@@ -98,7 +93,8 @@ namespace Model
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
      * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
      * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
@@ -111,7 +107,8 @@ namespace Model
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
      * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
      * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
@@ -124,7 +121,8 @@ namespace Model
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
      * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
      * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
@@ -137,7 +135,8 @@ namespace Model
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
      * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
      * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
@@ -150,7 +149,8 @@ namespace Model
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
      * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
      * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
@@ -163,7 +163,8 @@ namespace Model
      * creating the backup.</p> </li> <li> <p> <code>CREATING</code> - Amazon FSx is
      * creating the backup.</p> </li> <li> <p> <code>TRANSFERRING</code> - For
      * user-initiated backups on Lustre file systems only; Amazon FSx is transferring
-     * the backup to S3.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
+     * the backup to S3.</p> </li> <li> <p> <code>COPYING</code> - Amazon FSx is
+     * copying the backup.</p> </li> <li> <p> <code>DELETED</code> - Amazon FSx deleted
      * the backup and it is no longer available.</p> </li> <li> <p> <code>FAILED</code>
      * - Amazon FSx could not complete the backup.</p> </li> </ul>
      */
@@ -480,6 +481,105 @@ namespace Model
      */
     inline Backup& WithDirectoryInformation(ActiveDirectoryBackupAttributes&& value) { SetDirectoryInformation(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    
+    inline Backup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    
+    inline Backup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    
+    inline Backup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+
+    
+    inline const Aws::String& GetSourceBackupId() const{ return m_sourceBackupId; }
+
+    
+    inline bool SourceBackupIdHasBeenSet() const { return m_sourceBackupIdHasBeenSet; }
+
+    
+    inline void SetSourceBackupId(const Aws::String& value) { m_sourceBackupIdHasBeenSet = true; m_sourceBackupId = value; }
+
+    
+    inline void SetSourceBackupId(Aws::String&& value) { m_sourceBackupIdHasBeenSet = true; m_sourceBackupId = std::move(value); }
+
+    
+    inline void SetSourceBackupId(const char* value) { m_sourceBackupIdHasBeenSet = true; m_sourceBackupId.assign(value); }
+
+    
+    inline Backup& WithSourceBackupId(const Aws::String& value) { SetSourceBackupId(value); return *this;}
+
+    
+    inline Backup& WithSourceBackupId(Aws::String&& value) { SetSourceBackupId(std::move(value)); return *this;}
+
+    
+    inline Backup& WithSourceBackupId(const char* value) { SetSourceBackupId(value); return *this;}
+
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline const Aws::String& GetSourceBackupRegion() const{ return m_sourceBackupRegion; }
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline bool SourceBackupRegionHasBeenSet() const { return m_sourceBackupRegionHasBeenSet; }
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline void SetSourceBackupRegion(const Aws::String& value) { m_sourceBackupRegionHasBeenSet = true; m_sourceBackupRegion = value; }
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline void SetSourceBackupRegion(Aws::String&& value) { m_sourceBackupRegionHasBeenSet = true; m_sourceBackupRegion = std::move(value); }
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline void SetSourceBackupRegion(const char* value) { m_sourceBackupRegionHasBeenSet = true; m_sourceBackupRegion.assign(value); }
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline Backup& WithSourceBackupRegion(const Aws::String& value) { SetSourceBackupRegion(value); return *this;}
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline Backup& WithSourceBackupRegion(Aws::String&& value) { SetSourceBackupRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The source Region of the backup. Specifies the Region from where this backup
+     * is copied.</p>
+     */
+    inline Backup& WithSourceBackupRegion(const char* value) { SetSourceBackupRegion(value); return *this;}
+
   private:
 
     Aws::String m_backupId;
@@ -514,6 +614,15 @@ namespace Model
 
     ActiveDirectoryBackupAttributes m_directoryInformation;
     bool m_directoryInformationHasBeenSet;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
+
+    Aws::String m_sourceBackupId;
+    bool m_sourceBackupIdHasBeenSet;
+
+    Aws::String m_sourceBackupRegion;
+    bool m_sourceBackupRegionHasBeenSet;
   };
 
 } // namespace Model

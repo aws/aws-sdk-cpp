@@ -102,7 +102,7 @@ IoTAnalyticsClient::~IoTAnalyticsClient()
 {
 }
 
-void IoTAnalyticsClient::init(const ClientConfiguration& config)
+void IoTAnalyticsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("IoTAnalytics");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -131,9 +131,7 @@ void IoTAnalyticsClient::OverrideEndpoint(const Aws::String& endpoint)
 BatchPutMessageOutcome IoTAnalyticsClient::BatchPutMessage(const BatchPutMessageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/messages/batch";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/messages/batch");
   return BatchPutMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -168,12 +166,10 @@ CancelPipelineReprocessingOutcome IoTAnalyticsClient::CancelPipelineReprocessing
     return CancelPipelineReprocessingOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReprocessingId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelines/";
-  ss << request.GetPipelineName();
-  ss << "/reprocessing/";
-  ss << request.GetReprocessingId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelines/");
+  uri.AddPathSegment(request.GetPipelineName());
+  uri.AddPathSegments("/reprocessing/");
+  uri.AddPathSegment(request.GetReprocessingId());
   return CancelPipelineReprocessingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -198,9 +194,7 @@ void IoTAnalyticsClient::CancelPipelineReprocessingAsyncHelper(const CancelPipel
 CreateChannelOutcome IoTAnalyticsClient::CreateChannel(const CreateChannelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   return CreateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -225,9 +219,7 @@ void IoTAnalyticsClient::CreateChannelAsyncHelper(const CreateChannelRequest& re
 CreateDatasetOutcome IoTAnalyticsClient::CreateDataset(const CreateDatasetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets");
   return CreateDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -257,11 +249,9 @@ CreateDatasetContentOutcome IoTAnalyticsClient::CreateDatasetContent(const Creat
     return CreateDatasetContentOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  ss << "/content";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
+  uri.AddPathSegments("/content");
   return CreateDatasetContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -286,9 +276,7 @@ void IoTAnalyticsClient::CreateDatasetContentAsyncHelper(const CreateDatasetCont
 CreateDatastoreOutcome IoTAnalyticsClient::CreateDatastore(const CreateDatastoreRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datastores";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datastores");
   return CreateDatastoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -313,9 +301,7 @@ void IoTAnalyticsClient::CreateDatastoreAsyncHelper(const CreateDatastoreRequest
 CreatePipelineOutcome IoTAnalyticsClient::CreatePipeline(const CreatePipelineRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelines";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelines");
   return CreatePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -345,10 +331,8 @@ DeleteChannelOutcome IoTAnalyticsClient::DeleteChannel(const DeleteChannelReques
     return DeleteChannelOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelName());
   return DeleteChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -378,10 +362,8 @@ DeleteDatasetOutcome IoTAnalyticsClient::DeleteDataset(const DeleteDatasetReques
     return DeleteDatasetOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
   return DeleteDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -411,11 +393,9 @@ DeleteDatasetContentOutcome IoTAnalyticsClient::DeleteDatasetContent(const Delet
     return DeleteDatasetContentOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  ss << "/content";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
+  uri.AddPathSegments("/content");
   return DeleteDatasetContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -445,10 +425,8 @@ DeleteDatastoreOutcome IoTAnalyticsClient::DeleteDatastore(const DeleteDatastore
     return DeleteDatastoreOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatastoreName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datastores/";
-  ss << request.GetDatastoreName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datastores/");
+  uri.AddPathSegment(request.GetDatastoreName());
   return DeleteDatastoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -478,10 +456,8 @@ DeletePipelineOutcome IoTAnalyticsClient::DeletePipeline(const DeletePipelineReq
     return DeletePipelineOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelines/";
-  ss << request.GetPipelineName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelines/");
+  uri.AddPathSegment(request.GetPipelineName());
   return DeletePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -511,10 +487,8 @@ DescribeChannelOutcome IoTAnalyticsClient::DescribeChannel(const DescribeChannel
     return DescribeChannelOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelName());
   return DescribeChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -544,10 +518,8 @@ DescribeDatasetOutcome IoTAnalyticsClient::DescribeDataset(const DescribeDataset
     return DescribeDatasetOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
   return DescribeDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -577,10 +549,8 @@ DescribeDatastoreOutcome IoTAnalyticsClient::DescribeDatastore(const DescribeDat
     return DescribeDatastoreOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatastoreName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datastores/";
-  ss << request.GetDatastoreName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datastores/");
+  uri.AddPathSegment(request.GetDatastoreName());
   return DescribeDatastoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -605,9 +575,7 @@ void IoTAnalyticsClient::DescribeDatastoreAsyncHelper(const DescribeDatastoreReq
 DescribeLoggingOptionsOutcome IoTAnalyticsClient::DescribeLoggingOptions(const DescribeLoggingOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/logging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/logging");
   return DescribeLoggingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -637,10 +605,8 @@ DescribePipelineOutcome IoTAnalyticsClient::DescribePipeline(const DescribePipel
     return DescribePipelineOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelines/";
-  ss << request.GetPipelineName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelines/");
+  uri.AddPathSegment(request.GetPipelineName());
   return DescribePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -670,11 +636,9 @@ GetDatasetContentOutcome IoTAnalyticsClient::GetDatasetContent(const GetDatasetC
     return GetDatasetContentOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  ss << "/content";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
+  uri.AddPathSegments("/content");
   return GetDatasetContentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -699,9 +663,7 @@ void IoTAnalyticsClient::GetDatasetContentAsyncHelper(const GetDatasetContentReq
 ListChannelsOutcome IoTAnalyticsClient::ListChannels(const ListChannelsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels");
   return ListChannelsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -731,11 +693,9 @@ ListDatasetContentsOutcome IoTAnalyticsClient::ListDatasetContents(const ListDat
     return ListDatasetContentsOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  ss << "/contents";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
+  uri.AddPathSegments("/contents");
   return ListDatasetContentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -760,9 +720,7 @@ void IoTAnalyticsClient::ListDatasetContentsAsyncHelper(const ListDatasetContent
 ListDatasetsOutcome IoTAnalyticsClient::ListDatasets(const ListDatasetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets");
   return ListDatasetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -787,9 +745,7 @@ void IoTAnalyticsClient::ListDatasetsAsyncHelper(const ListDatasetsRequest& requ
 ListDatastoresOutcome IoTAnalyticsClient::ListDatastores(const ListDatastoresRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datastores";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datastores");
   return ListDatastoresOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -814,9 +770,7 @@ void IoTAnalyticsClient::ListDatastoresAsyncHelper(const ListDatastoresRequest& 
 ListPipelinesOutcome IoTAnalyticsClient::ListPipelines(const ListPipelinesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelines";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelines");
   return ListPipelinesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -846,9 +800,7 @@ ListTagsForResourceOutcome IoTAnalyticsClient::ListTagsForResource(const ListTag
     return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -873,9 +825,7 @@ void IoTAnalyticsClient::ListTagsForResourceAsyncHelper(const ListTagsForResourc
 PutLoggingOptionsOutcome IoTAnalyticsClient::PutLoggingOptions(const PutLoggingOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/logging";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/logging");
   return PutLoggingOptionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -900,9 +850,7 @@ void IoTAnalyticsClient::PutLoggingOptionsAsyncHelper(const PutLoggingOptionsReq
 RunPipelineActivityOutcome IoTAnalyticsClient::RunPipelineActivity(const RunPipelineActivityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelineactivities/run";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelineactivities/run");
   return RunPipelineActivityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -932,11 +880,9 @@ SampleChannelDataOutcome IoTAnalyticsClient::SampleChannelData(const SampleChann
     return SampleChannelDataOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelName();
-  ss << "/sample";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelName());
+  uri.AddPathSegments("/sample");
   return SampleChannelDataOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -966,11 +912,9 @@ StartPipelineReprocessingOutcome IoTAnalyticsClient::StartPipelineReprocessing(c
     return StartPipelineReprocessingOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelines/";
-  ss << request.GetPipelineName();
-  ss << "/reprocessing";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelines/");
+  uri.AddPathSegment(request.GetPipelineName());
+  uri.AddPathSegments("/reprocessing");
   return StartPipelineReprocessingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1000,9 +944,7 @@ TagResourceOutcome IoTAnalyticsClient::TagResource(const TagResourceRequest& req
     return TagResourceOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1037,9 +979,7 @@ UntagResourceOutcome IoTAnalyticsClient::UntagResource(const UntagResourceReques
     return UntagResourceOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1069,10 +1009,8 @@ UpdateChannelOutcome IoTAnalyticsClient::UpdateChannel(const UpdateChannelReques
     return UpdateChannelOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChannelName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/channels/";
-  ss << request.GetChannelName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/channels/");
+  uri.AddPathSegment(request.GetChannelName());
   return UpdateChannelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1102,10 +1040,8 @@ UpdateDatasetOutcome IoTAnalyticsClient::UpdateDataset(const UpdateDatasetReques
     return UpdateDatasetOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatasetName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datasets/";
-  ss << request.GetDatasetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datasets/");
+  uri.AddPathSegment(request.GetDatasetName());
   return UpdateDatasetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1135,10 +1071,8 @@ UpdateDatastoreOutcome IoTAnalyticsClient::UpdateDatastore(const UpdateDatastore
     return UpdateDatastoreOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DatastoreName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/datastores/";
-  ss << request.GetDatastoreName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/datastores/");
+  uri.AddPathSegment(request.GetDatastoreName());
   return UpdateDatastoreOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1168,10 +1102,8 @@ UpdatePipelineOutcome IoTAnalyticsClient::UpdatePipeline(const UpdatePipelineReq
     return UpdatePipelineOutcome(Aws::Client::AWSError<IoTAnalyticsErrors>(IoTAnalyticsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PipelineName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/pipelines/";
-  ss << request.GetPipelineName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/pipelines/");
+  uri.AddPathSegment(request.GetPipelineName());
   return UpdatePipelineOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -27,20 +27,16 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>A rule statement used to search web
-   * request components for matches with regular expressions. To use this, create a
-   * <a>RegexPatternSet</a> that specifies the expressions that you want to detect,
-   * then use the ARN of that set in this statement. A web request matches the
-   * pattern set rule statement if the request component matches any of the patterns
-   * in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
-   * <p>Each regex pattern set rule statement references a regex pattern set. You
-   * create and maintain the set independent of your rules. This allows you to use
-   * the single set in multiple rules. When you update the referenced set, AWS WAF
-   * automatically updates all rules that reference it.</p><p><h3>See Also:</h3>   <a
+   * <p>A rule statement used to search web request components for matches with
+   * regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies
+   * the expressions that you want to detect, then use the ARN of that set in this
+   * statement. A web request matches the pattern set rule statement if the request
+   * component matches any of the patterns in the set. To create a regex pattern set,
+   * see <a>CreateRegexPatternSet</a>.</p> <p>Each regex pattern set rule statement
+   * references a regex pattern set. You create and maintain the set independent of
+   * your rules. This allows you to use the single set in multiple rules. When you
+   * update the referenced set, AWS WAF automatically updates all rules that
+   * reference it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexPatternSetReferenceStatement">AWS
    * API Reference</a></p>
    */

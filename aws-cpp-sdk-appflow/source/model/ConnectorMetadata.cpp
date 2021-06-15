@@ -36,7 +36,9 @@ ConnectorMetadata::ConnectorMetadata() :
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
     m_eventBridgeHasBeenSet(false),
-    m_upsolverHasBeenSet(false)
+    m_upsolverHasBeenSet(false),
+    m_customerProfilesHasBeenSet(false),
+    m_honeycodeHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ ConnectorMetadata::ConnectorMetadata(JsonView jsonValue) :
     m_veevaHasBeenSet(false),
     m_zendeskHasBeenSet(false),
     m_eventBridgeHasBeenSet(false),
-    m_upsolverHasBeenSet(false)
+    m_upsolverHasBeenSet(false),
+    m_customerProfilesHasBeenSet(false),
+    m_honeycodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,6 +195,20 @@ ConnectorMetadata& ConnectorMetadata::operator =(JsonView jsonValue)
     m_upsolverHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomerProfiles"))
+  {
+    m_customerProfiles = jsonValue.GetObject("CustomerProfiles");
+
+    m_customerProfilesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Honeycode"))
+  {
+    m_honeycode = jsonValue.GetObject("Honeycode");
+
+    m_honeycodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -303,6 +321,18 @@ JsonValue ConnectorMetadata::Jsonize() const
   if(m_upsolverHasBeenSet)
   {
    payload.WithObject("Upsolver", m_upsolver.Jsonize());
+
+  }
+
+  if(m_customerProfilesHasBeenSet)
+  {
+   payload.WithObject("CustomerProfiles", m_customerProfiles.Jsonize());
+
+  }
+
+  if(m_honeycodeHasBeenSet)
+  {
+   payload.WithObject("Honeycode", m_honeycode.Jsonize());
 
   }
 

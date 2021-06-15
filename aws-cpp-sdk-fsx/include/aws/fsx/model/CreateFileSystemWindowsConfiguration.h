@@ -9,6 +9,7 @@
 #include <aws/fsx/model/SelfManagedActiveDirectoryConfiguration.h>
 #include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fsx/model/WindowsAuditLogCreateConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -508,11 +509,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAliases() const{ return m_aliases; }
 
@@ -533,11 +534,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
 
@@ -558,11 +559,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetAliases(const Aws::Vector<Aws::String>& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
 
@@ -583,11 +584,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline void SetAliases(Aws::Vector<Aws::String>&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
 
@@ -608,11 +609,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithAliases(const Aws::Vector<Aws::String>& value) { SetAliases(value); return *this;}
 
@@ -633,11 +634,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& WithAliases(Aws::Vector<Aws::String>&& value) { SetAliases(std::move(value)); return *this;}
 
@@ -658,11 +659,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& AddAliases(const Aws::String& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
 
@@ -683,11 +684,11 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& AddAliases(Aws::String&& value) { m_aliasesHasBeenSet = true; m_aliases.push_back(std::move(value)); return *this; }
 
@@ -708,13 +709,56 @@ namespace Model
      * alias name has to meet the following requirements:</p> <ul> <li> <p>Formatted as
      * a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
      * <code>accounting.example.com</code>.</p> </li> <li> <p>Can contain alphanumeric
-     * characters and the hyphen (-).</p> </li> <li> <p>Cannot start or end with a
-     * hyphen.</p> </li> <li> <p>Can start with a numeric.</p> </li> </ul> <p>For DNS
-     * alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z),
-     * regardless of how you specify them: as uppercase letters, lowercase letters, or
-     * the corresponding letters in escape codes.</p>
+     * characters, the underscore (_), and the hyphen (-).</p> </li> <li> <p>Cannot
+     * start or end with a hyphen.</p> </li> <li> <p>Can start with a numeric.</p>
+     * </li> </ul> <p>For DNS alias names, Amazon FSx stores alphabetic characters as
+     * lowercase letters (a-z), regardless of how you specify them: as uppercase
+     * letters, lowercase letters, or the corresponding letters in escape codes.</p>
      */
     inline CreateFileSystemWindowsConfiguration& AddAliases(const char* value) { m_aliasesHasBeenSet = true; m_aliases.push_back(value); return *this; }
+
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline const WindowsAuditLogCreateConfiguration& GetAuditLogConfiguration() const{ return m_auditLogConfiguration; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline bool AuditLogConfigurationHasBeenSet() const { return m_auditLogConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline void SetAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = value; }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline void SetAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { m_auditLogConfigurationHasBeenSet = true; m_auditLogConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithAuditLogConfiguration(const WindowsAuditLogCreateConfiguration& value) { SetAuditLogConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration that Amazon FSx for Windows File Server uses to audit and
+     * log user accesses of files, folders, and file shares on the Amazon FSx for
+     * Windows File Server file system.</p>
+     */
+    inline CreateFileSystemWindowsConfiguration& WithAuditLogConfiguration(WindowsAuditLogCreateConfiguration&& value) { SetAuditLogConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -747,6 +791,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_aliases;
     bool m_aliasesHasBeenSet;
+
+    WindowsAuditLogCreateConfiguration m_auditLogConfiguration;
+    bool m_auditLogConfigurationHasBeenSet;
   };
 
 } // namespace Model

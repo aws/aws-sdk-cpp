@@ -74,42 +74,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS RAM permission to associate with the resource share.</p>
+     * <p>The Amazon Resource Name (ARN) of the AWS RAM permissions to associate with
+     * the resource share.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
 
@@ -195,6 +203,31 @@ namespace Model
      */
     inline AssociateResourceSharePermissionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The version of the AWS RAM permissions to associate with the resource
+     * share.</p>
+     */
+    inline int GetPermissionVersion() const{ return m_permissionVersion; }
+
+    /**
+     * <p>The version of the AWS RAM permissions to associate with the resource
+     * share.</p>
+     */
+    inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the AWS RAM permissions to associate with the resource
+     * share.</p>
+     */
+    inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
+
+    /**
+     * <p>The version of the AWS RAM permissions to associate with the resource
+     * share.</p>
+     */
+    inline AssociateResourceSharePermissionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
+
   private:
 
     Aws::String m_resourceShareArn;
@@ -208,6 +241,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    int m_permissionVersion;
+    bool m_permissionVersionHasBeenSet;
   };
 
 } // namespace Model

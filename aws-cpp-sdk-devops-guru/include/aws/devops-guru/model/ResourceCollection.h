@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p> A collection of AWS resources supported by DevOps Guru. The one type of AWS
    * resource collection supported is AWS CloudFormation stacks. DevOps Guru can be
-   * configured to analyze only the AWS resources that are defined in the stacks.
-   * </p><p><h3>See Also:</h3>   <a
+   * configured to analyze only the AWS resources that are defined in the stacks. You
+   * can specify up to 500 AWS CloudFormation stacks. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/ResourceCollection">AWS
    * API Reference</a></p>
    */
@@ -42,37 +42,43 @@ namespace Model
 
     /**
      * <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS
-     * resources that DevOps Guru analyzes. </p>
+     * resources that DevOps Guru analyzes. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline const CloudFormationCollection& GetCloudFormation() const{ return m_cloudFormation; }
 
     /**
      * <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS
-     * resources that DevOps Guru analyzes. </p>
+     * resources that DevOps Guru analyzes. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
 
     /**
      * <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS
-     * resources that DevOps Guru analyzes. </p>
+     * resources that DevOps Guru analyzes. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline void SetCloudFormation(const CloudFormationCollection& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
 
     /**
      * <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS
-     * resources that DevOps Guru analyzes. </p>
+     * resources that DevOps Guru analyzes. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline void SetCloudFormation(CloudFormationCollection&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
 
     /**
      * <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS
-     * resources that DevOps Guru analyzes. </p>
+     * resources that DevOps Guru analyzes. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline ResourceCollection& WithCloudFormation(const CloudFormationCollection& value) { SetCloudFormation(value); return *this;}
 
     /**
      * <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS
-     * resources that DevOps Guru analyzes. </p>
+     * resources that DevOps Guru analyzes. You can specify up to 500 AWS
+     * CloudFormation stacks. </p>
      */
     inline ResourceCollection& WithCloudFormation(CloudFormationCollection&& value) { SetCloudFormation(std::move(value)); return *this;}
 

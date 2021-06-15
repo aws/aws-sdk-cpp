@@ -20,13 +20,15 @@ namespace Model
 
 ConfigDetails::ConfigDetails() : 
     m_antennaDemodDecodeDetailsHasBeenSet(false),
-    m_endpointDetailsHasBeenSet(false)
+    m_endpointDetailsHasBeenSet(false),
+    m_s3RecordingDetailsHasBeenSet(false)
 {
 }
 
 ConfigDetails::ConfigDetails(JsonView jsonValue) : 
     m_antennaDemodDecodeDetailsHasBeenSet(false),
-    m_endpointDetailsHasBeenSet(false)
+    m_endpointDetailsHasBeenSet(false),
+    m_s3RecordingDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ConfigDetails& ConfigDetails::operator =(JsonView jsonValue)
     m_endpointDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("s3RecordingDetails"))
+  {
+    m_s3RecordingDetails = jsonValue.GetObject("s3RecordingDetails");
+
+    m_s3RecordingDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ConfigDetails::Jsonize() const
   if(m_endpointDetailsHasBeenSet)
   {
    payload.WithObject("endpointDetails", m_endpointDetails.Jsonize());
+
+  }
+
+  if(m_s3RecordingDetailsHasBeenSet)
+  {
+   payload.WithObject("s3RecordingDetails", m_s3RecordingDetails.Jsonize());
 
   }
 

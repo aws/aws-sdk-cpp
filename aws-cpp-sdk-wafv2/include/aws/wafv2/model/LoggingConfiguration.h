@@ -7,6 +7,7 @@
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wafv2/model/LoggingFilter.h>
 #include <aws/wafv2/model/FieldToMatch.h>
 #include <utility>
 
@@ -26,14 +27,11 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>Defines an association between Amazon
-   * Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS
-   * WAF. As part of the association, you can specify parts of the standard logging
-   * fields to keep out of the logs. </p><p><h3>See Also:</h3>   <a
+   * <p>Defines an association between Amazon Kinesis Data Firehose destinations and
+   * a web ACL resource, for logging from AWS WAF. As part of the association, you
+   * can specify parts of the standard logging fields to keep out of the logs and you
+   * can specify filters so that you log only a subset of the logging records.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -251,6 +249,49 @@ namespace Model
      */
     inline LoggingConfiguration& WithManagedByFirewallManager(bool value) { SetManagedByFirewallManager(value); return *this;}
 
+
+    /**
+     * <p>Filtering that specifies which web requests are kept in the logs and which
+     * are dropped. You can filter on the rule action and on the web request labels
+     * that were applied by matching rules during web ACL evaluation. </p>
+     */
+    inline const LoggingFilter& GetLoggingFilter() const{ return m_loggingFilter; }
+
+    /**
+     * <p>Filtering that specifies which web requests are kept in the logs and which
+     * are dropped. You can filter on the rule action and on the web request labels
+     * that were applied by matching rules during web ACL evaluation. </p>
+     */
+    inline bool LoggingFilterHasBeenSet() const { return m_loggingFilterHasBeenSet; }
+
+    /**
+     * <p>Filtering that specifies which web requests are kept in the logs and which
+     * are dropped. You can filter on the rule action and on the web request labels
+     * that were applied by matching rules during web ACL evaluation. </p>
+     */
+    inline void SetLoggingFilter(const LoggingFilter& value) { m_loggingFilterHasBeenSet = true; m_loggingFilter = value; }
+
+    /**
+     * <p>Filtering that specifies which web requests are kept in the logs and which
+     * are dropped. You can filter on the rule action and on the web request labels
+     * that were applied by matching rules during web ACL evaluation. </p>
+     */
+    inline void SetLoggingFilter(LoggingFilter&& value) { m_loggingFilterHasBeenSet = true; m_loggingFilter = std::move(value); }
+
+    /**
+     * <p>Filtering that specifies which web requests are kept in the logs and which
+     * are dropped. You can filter on the rule action and on the web request labels
+     * that were applied by matching rules during web ACL evaluation. </p>
+     */
+    inline LoggingConfiguration& WithLoggingFilter(const LoggingFilter& value) { SetLoggingFilter(value); return *this;}
+
+    /**
+     * <p>Filtering that specifies which web requests are kept in the logs and which
+     * are dropped. You can filter on the rule action and on the web request labels
+     * that were applied by matching rules during web ACL evaluation. </p>
+     */
+    inline LoggingConfiguration& WithLoggingFilter(LoggingFilter&& value) { SetLoggingFilter(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -264,6 +305,9 @@ namespace Model
 
     bool m_managedByFirewallManager;
     bool m_managedByFirewallManagerHasBeenSet;
+
+    LoggingFilter m_loggingFilter;
+    bool m_loggingFilterHasBeenSet;
   };
 
 } // namespace Model

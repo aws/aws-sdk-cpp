@@ -10,6 +10,7 @@
 #include <aws/iotsitewise/model/ImageFile.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iotsitewise/model/AuthMode.h>
+#include <aws/iotsitewise/model/Alarms.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -556,6 +557,128 @@ namespace Model
      */
     inline CreatePortalRequest& WithPortalAuthMode(AuthMode&& value) { SetPortalAuthMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline const Aws::String& GetNotificationSenderEmail() const{ return m_notificationSenderEmail; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline bool NotificationSenderEmailHasBeenSet() const { return m_notificationSenderEmailHasBeenSet; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline void SetNotificationSenderEmail(const Aws::String& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = value; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline void SetNotificationSenderEmail(Aws::String&& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = std::move(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline void SetNotificationSenderEmail(const char* value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail.assign(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline CreatePortalRequest& WithNotificationSenderEmail(const Aws::String& value) { SetNotificationSenderEmail(value); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline CreatePortalRequest& WithNotificationSenderEmail(Aws::String&& value) { SetNotificationSenderEmail(std::move(value)); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>  <p>If you
+     * use the AWS IoT Events managed AWS Lambda function to manage your emails, you
+     * must <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+     * the sender email address in Amazon SES</a>.</p> 
+     */
+    inline CreatePortalRequest& WithNotificationSenderEmail(const char* value) { SetNotificationSenderEmail(value); return *this;}
+
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline const Alarms& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline void SetAlarms(const Alarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline void SetAlarms(Alarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline CreatePortalRequest& WithAlarms(const Alarms& value) { SetAlarms(value); return *this;}
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline CreatePortalRequest& WithAlarms(Alarms&& value) { SetAlarms(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_portalName;
@@ -581,6 +704,12 @@ namespace Model
 
     AuthMode m_portalAuthMode;
     bool m_portalAuthModeHasBeenSet;
+
+    Aws::String m_notificationSenderEmail;
+    bool m_notificationSenderEmailHasBeenSet;
+
+    Alarms m_alarms;
+    bool m_alarmsHasBeenSet;
   };
 
 } // namespace Model

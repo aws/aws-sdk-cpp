@@ -6,6 +6,7 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm/SSMErrors.h>
+#include <aws/ssm/model/OpsItemRelatedItemAlreadyExistsException.h>
 #include <aws/ssm/model/ResourceDataSyncNotFoundException.h>
 #include <aws/ssm/model/OpsItemAlreadyExistsException.h>
 #include <aws/ssm/model/ItemSizeLimitExceededException.h>
@@ -25,6 +26,12 @@ namespace Aws
 {
 namespace SSM
 {
+template<> AWS_SSM_API OpsItemRelatedItemAlreadyExistsException SSMError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMErrors::OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS);
+  return OpsItemRelatedItemAlreadyExistsException(this->GetJsonPayload().View());
+}
+
 template<> AWS_SSM_API ResourceDataSyncNotFoundException SSMError::GetModeledError()
 {
   assert(this->GetErrorType() == SSMErrors::RESOURCE_DATA_SYNC_NOT_FOUND);
@@ -101,6 +108,7 @@ static const int ASSOCIATION_VERSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashStr
 static const int INVALID_PERMISSION_TYPE_HASH = HashingUtils::HashString("InvalidPermissionType");
 static const int INCOMPATIBLE_POLICY_HASH = HashingUtils::HashString("IncompatiblePolicyException");
 static const int INVALID_ASSOCIATION_VERSION_HASH = HashingUtils::HashString("InvalidAssociationVersion");
+static const int OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH = HashingUtils::HashString("OpsItemRelatedItemAlreadyExistsException");
 static const int PARAMETER_NOT_FOUND_HASH = HashingUtils::HashString("ParameterNotFound");
 static const int INVALID_DOCUMENT_TYPE_HASH = HashingUtils::HashString("InvalidDocumentType");
 static const int PARAMETER_ALREADY_EXISTS_HASH = HashingUtils::HashString("ParameterAlreadyExists");
@@ -131,6 +139,7 @@ static const int ITEM_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ItemS
 static const int OPS_METADATA_TOO_MANY_UPDATES_HASH = HashingUtils::HashString("OpsMetadataTooManyUpdatesException");
 static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ParameterVersionLabelLimitExceeded");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
+static const int OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND_HASH = HashingUtils::HashString("OpsItemRelatedItemAssociationNotFoundException");
 static const int DOCUMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DocumentLimitExceeded");
 static const int ASSOCIATION_ALREADY_EXISTS_HASH = HashingUtils::HashString("AssociationAlreadyExists");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextToken");
@@ -283,6 +292,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_ASSOCIATION_VERSION), false);
   }
+  else if (hashCode == OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ALREADY_EXISTS), false);
+  }
   else if (hashCode == PARAMETER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::PARAMETER_NOT_FOUND), false);
@@ -402,6 +415,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), false);
+  }
+  else if (hashCode == OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::OPS_ITEM_RELATED_ITEM_ASSOCIATION_NOT_FOUND), false);
   }
   else if (hashCode == DOCUMENT_LIMIT_EXCEEDED_HASH)
   {

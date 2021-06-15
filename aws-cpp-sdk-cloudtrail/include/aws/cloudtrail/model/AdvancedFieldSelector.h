@@ -57,8 +57,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -66,14 +68,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetField() const{ return m_field; }
 
@@ -95,8 +118,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -104,14 +129,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
 
@@ -133,8 +179,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -142,14 +190,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
 
@@ -171,8 +240,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -180,14 +251,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
 
@@ -209,8 +301,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -218,14 +312,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
 
@@ -247,8 +362,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -256,14 +373,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const Aws::String& value) { SetField(value); return *this;}
 
@@ -285,8 +423,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -294,14 +434,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
 
@@ -323,8 +484,10 @@ namespace Model
      * <code>Management</code> or <code>Data</code>.</p> </li> <li> <p> <b>
      * <code>resources.type</code> </b> - This ﬁeld is required.
      * <code>resources.type</code> can only use the <code>Equals</code> operator, and
-     * the value can be one of the following: <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code>. You can have only one
+     * the value can be one of the following: <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+     * <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+     * or <code>AWS::S3ObjectLambda::AccessPoint</code>. You can have only one
      * <code>resources.type</code> ﬁeld per selector. To log data events on more than
      * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with resources.ARN,
@@ -332,14 +495,35 @@ namespace Model
      * exactly match the ARN of a valid resource of the type you've speciﬁed in the
      * template as the value of resources.type. For example, if resources.type equals
      * <code>AWS::S3::Object</code>, the ARN must be in one of the following formats.
-     * The trailing slash is intentional; do not exclude it.</p> <ul> <li> <p>
-     * <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
+     * To log all data events for all objects in a specific S3 bucket, use the
+     * <code>StartsWith</code> operator, and include only the bucket ARN as the
+     * matching value.</p> <p>The trailing slash is intentional; do not exclude it.</p>
+     * <ul> <li> <p> <code>arn:partition:s3:::bucket_name/</code> </p> </li> <li> <p>
      * <code>arn:partition:s3:::bucket_name/object_or_file_name/</code> </p> </li>
      * </ul> <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the
      * operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
      * be in the following format:</p> <ul> <li> <p>
      * <code>arn:partition:lambda:region:account_ID:function:function_name</code> </p>
-     * </li> </ul> </li> </ul>
+     * </li> </ul> <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and
+     * the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+     * must be in the following format:</p> <ul> <li> <p>
+     * <code>arn:partition:dynamodb:region:account_ID:table:table_name</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-outposts:region:&gt;account_ID:object_path</code> </p>
+     * </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:managedblockchain:region:account_ID:nodes/node_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:partition:s3-object-lambda:region:account_ID:accesspoint/access_point_name</code>
+     * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const char* value) { SetField(value); return *this;}
 

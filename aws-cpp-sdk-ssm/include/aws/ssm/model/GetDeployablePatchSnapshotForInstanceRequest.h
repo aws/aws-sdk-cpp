@@ -7,6 +7,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/BaselineOverride.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,37 @@ namespace Model
      */
     inline GetDeployablePatchSnapshotForInstanceRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
+
+    /**
+     * <p>Defines the basic information about a patch baseline override.</p>
+     */
+    inline const BaselineOverride& GetBaselineOverride() const{ return m_baselineOverride; }
+
+    /**
+     * <p>Defines the basic information about a patch baseline override.</p>
+     */
+    inline bool BaselineOverrideHasBeenSet() const { return m_baselineOverrideHasBeenSet; }
+
+    /**
+     * <p>Defines the basic information about a patch baseline override.</p>
+     */
+    inline void SetBaselineOverride(const BaselineOverride& value) { m_baselineOverrideHasBeenSet = true; m_baselineOverride = value; }
+
+    /**
+     * <p>Defines the basic information about a patch baseline override.</p>
+     */
+    inline void SetBaselineOverride(BaselineOverride&& value) { m_baselineOverrideHasBeenSet = true; m_baselineOverride = std::move(value); }
+
+    /**
+     * <p>Defines the basic information about a patch baseline override.</p>
+     */
+    inline GetDeployablePatchSnapshotForInstanceRequest& WithBaselineOverride(const BaselineOverride& value) { SetBaselineOverride(value); return *this;}
+
+    /**
+     * <p>Defines the basic information about a patch baseline override.</p>
+     */
+    inline GetDeployablePatchSnapshotForInstanceRequest& WithBaselineOverride(BaselineOverride&& value) { SetBaselineOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -130,6 +162,9 @@ namespace Model
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet;
+
+    BaselineOverride m_baselineOverride;
+    bool m_baselineOverrideHasBeenSet;
   };
 
 } // namespace Model

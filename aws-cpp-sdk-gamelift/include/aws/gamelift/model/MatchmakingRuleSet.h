@@ -32,7 +32,7 @@ namespace Model
    * following elements for a match. For detailed information and examples showing
    * how to construct a rule set, see <a
    * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-rulesets.html">Build
-   * a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
+   * a FlexMatch rule set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
    * define one or multiple teams for the match and set minimum and maximum team
    * sizes. For example, a rule set might describe a 4x4 match that requires all
    * eight slots to be filled. </p> </li> <li> <p>Player attributes -- Optional.
@@ -66,115 +66,131 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline MatchmakingRuleSet& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline MatchmakingRuleSet& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for the matchmaking rule set</p>
      */
     inline MatchmakingRuleSet& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline const Aws::String& GetRuleSetArn() const{ return m_ruleSetArn; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline bool RuleSetArnHasBeenSet() const { return m_ruleSetArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline void SetRuleSetArn(const Aws::String& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = value; }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline void SetRuleSetArn(Aws::String&& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline void SetRuleSetArn(const char* value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline MatchmakingRuleSet& WithRuleSetArn(const Aws::String& value) { SetRuleSetArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline MatchmakingRuleSet& WithRuleSetArn(Aws::String&& value) { SetRuleSetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a GameLift matchmaking rule set resource and uniquely
-     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
-     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     * identifies it. ARNs are unique across all Regions. Format is
+     * <code>arn:aws:gamelift:&lt;region&gt;::matchmakingruleset/&lt;ruleset
+     * name&gt;</code>. In a GameLift rule set ARN, the resource ID matches the
+     * <i>RuleSetName</i> value.</p>
      */
     inline MatchmakingRuleSet& WithRuleSetArn(const char* value) { SetRuleSetArn(value); return *this;}
 
@@ -229,44 +245,44 @@ namespace Model
 
 
     /**
-     * <p>The time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingRuleSet& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time stamp indicating when this data object was created. The format is a
-     * number expressed in Unix time as milliseconds (for example
-     * "1469498468.057").</p>
+     * <p>A time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example
+     * <code>"1469498468.057"</code>).</p>
      */
     inline MatchmakingRuleSet& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 

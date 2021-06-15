@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ProductionVariantInstanceType.h>
 #include <aws/sagemaker/model/ProductionVariantAcceleratorType.h>
+#include <aws/sagemaker/model/ProductionVariantCoreDumpConfig.h>
 #include <utility>
 
 namespace Aws
@@ -26,9 +27,9 @@ namespace Model
 {
 
   /**
-   * <p>Identifies a model that you want to host and the resources to deploy for
-   * hosting it. If you are deploying multiple models, tell Amazon SageMaker how to
-   * distribute traffic among the models by specifying variant weights.
+   * <p>Identifies a model that you want to host and the resources chosen to deploy
+   * for hosting it. If you are deploying multiple models, tell Amazon SageMaker how
+   * to distribute traffic among the models by specifying variant weights.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariant">AWS
    * API Reference</a></p>
@@ -275,6 +276,43 @@ namespace Model
      */
     inline ProductionVariant& WithAcceleratorType(ProductionVariantAcceleratorType&& value) { SetAcceleratorType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies configuration for a core dump from the model container when the
+     * process crashes.</p>
+     */
+    inline const ProductionVariantCoreDumpConfig& GetCoreDumpConfig() const{ return m_coreDumpConfig; }
+
+    /**
+     * <p>Specifies configuration for a core dump from the model container when the
+     * process crashes.</p>
+     */
+    inline bool CoreDumpConfigHasBeenSet() const { return m_coreDumpConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies configuration for a core dump from the model container when the
+     * process crashes.</p>
+     */
+    inline void SetCoreDumpConfig(const ProductionVariantCoreDumpConfig& value) { m_coreDumpConfigHasBeenSet = true; m_coreDumpConfig = value; }
+
+    /**
+     * <p>Specifies configuration for a core dump from the model container when the
+     * process crashes.</p>
+     */
+    inline void SetCoreDumpConfig(ProductionVariantCoreDumpConfig&& value) { m_coreDumpConfigHasBeenSet = true; m_coreDumpConfig = std::move(value); }
+
+    /**
+     * <p>Specifies configuration for a core dump from the model container when the
+     * process crashes.</p>
+     */
+    inline ProductionVariant& WithCoreDumpConfig(const ProductionVariantCoreDumpConfig& value) { SetCoreDumpConfig(value); return *this;}
+
+    /**
+     * <p>Specifies configuration for a core dump from the model container when the
+     * process crashes.</p>
+     */
+    inline ProductionVariant& WithCoreDumpConfig(ProductionVariantCoreDumpConfig&& value) { SetCoreDumpConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -294,6 +332,9 @@ namespace Model
 
     ProductionVariantAcceleratorType m_acceleratorType;
     bool m_acceleratorTypeHasBeenSet;
+
+    ProductionVariantCoreDumpConfig m_coreDumpConfig;
+    bool m_coreDumpConfigHasBeenSet;
   };
 
 } // namespace Model

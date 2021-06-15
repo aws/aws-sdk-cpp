@@ -26,7 +26,9 @@ RegisterImageRequest::RegisterImageRequest() :
     m_ramdiskIdHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_sriovNetSupportHasBeenSet(false),
-    m_virtualizationTypeHasBeenSet(false)
+    m_virtualizationTypeHasBeenSet(false),
+    m_bootMode(BootModeValues::NOT_SET),
+    m_bootModeHasBeenSet(false)
 {
 }
 
@@ -108,6 +110,11 @@ Aws::String RegisterImageRequest::SerializePayload() const
   if(m_virtualizationTypeHasBeenSet)
   {
     ss << "VirtualizationType=" << StringUtils::URLEncode(m_virtualizationType.c_str()) << "&";
+  }
+
+  if(m_bootModeHasBeenSet)
+  {
+    ss << "BootMode=" << BootModeValuesMapper::GetNameForBootModeValues(m_bootMode) << "&";
   }
 
   ss << "Version=2016-11-15";

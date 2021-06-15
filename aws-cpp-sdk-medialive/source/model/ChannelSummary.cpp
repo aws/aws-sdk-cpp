@@ -36,7 +36,8 @@ ChannelSummary::ChannelSummary() :
     m_roleArnHasBeenSet(false),
     m_state(ChannelState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ ChannelSummary::ChannelSummary(JsonView jsonValue) :
     m_roleArnHasBeenSet(false),
     m_state(ChannelState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -175,6 +177,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
+    m_vpcHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -280,6 +289,12 @@ JsonValue ChannelSummary::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_vpcHasBeenSet)
+  {
+   payload.WithObject("vpc", m_vpc.Jsonize());
 
   }
 

@@ -101,6 +101,7 @@ namespace Aws
         static const int AWS_SSM_PatchCompliance_HASH = HashingUtils::HashString("AWS::SSM::PatchCompliance");
         static const int AWS_Shield_Protection_HASH = HashingUtils::HashString("AWS::Shield::Protection");
         static const int AWS_ShieldRegional_Protection_HASH = HashingUtils::HashString("AWS::ShieldRegional::Protection");
+        static const int AWS_Config_ConformancePackCompliance_HASH = HashingUtils::HashString("AWS::Config::ConformancePackCompliance");
         static const int AWS_Config_ResourceCompliance_HASH = HashingUtils::HashString("AWS::Config::ResourceCompliance");
         static const int AWS_ApiGateway_Stage_HASH = HashingUtils::HashString("AWS::ApiGateway::Stage");
         static const int AWS_ApiGateway_RestApi_HASH = HashingUtils::HashString("AWS::ApiGateway::RestApi");
@@ -445,6 +446,10 @@ namespace Aws
           {
             return ResourceType::AWS_ShieldRegional_Protection;
           }
+          else if (hashCode == AWS_Config_ConformancePackCompliance_HASH)
+          {
+            return ResourceType::AWS_Config_ConformancePackCompliance;
+          }
           else if (hashCode == AWS_Config_ResourceCompliance_HASH)
           {
             return ResourceType::AWS_Config_ResourceCompliance;
@@ -681,6 +686,8 @@ namespace Aws
             return "AWS::Shield::Protection";
           case ResourceType::AWS_ShieldRegional_Protection:
             return "AWS::ShieldRegional::Protection";
+          case ResourceType::AWS_Config_ConformancePackCompliance:
+            return "AWS::Config::ConformancePackCompliance";
           case ResourceType::AWS_Config_ResourceCompliance:
             return "AWS::Config::ResourceCompliance";
           case ResourceType::AWS_ApiGateway_Stage:

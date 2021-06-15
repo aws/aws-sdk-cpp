@@ -248,15 +248,16 @@ namespace Model
     typedef std::function<void(const AppMeshClient*, const Model::UpdateVirtualServiceRequest&, const Model::UpdateVirtualServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVirtualServiceResponseReceivedHandler;
 
   /**
-   * <p>AWS App Mesh is a service mesh based on the Envoy proxy that makes it easy to
+   * <p>App Mesh is a service mesh based on the Envoy proxy that makes it easy to
    * monitor and control microservices. App Mesh standardizes how your microservices
    * communicate, giving you end-to-end visibility and helping to ensure high
    * availability for your applications.</p> <p>App Mesh gives you consistent
    * visibility and network traffic controls for every microservice in an
-   * application. You can use App Mesh with AWS Fargate, Amazon ECS, Amazon EKS,
-   * Kubernetes on AWS, and Amazon EC2.</p>  <p>App Mesh supports microservice
-   * applications that use service discovery naming for their components. For more
-   * information about service discovery on Amazon ECS, see <a
+   * application. You can use App Mesh with Amazon Web Services Fargate, Amazon ECS,
+   * Amazon EKS, Kubernetes on Amazon Web Services, and Amazon EC2.</p>  <p>App
+   * Mesh supports microservice applications that use service discovery naming for
+   * their components. For more information about service discovery on Amazon ECS,
+   * see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
    * Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
    * Kubernetes <code>kube-dns</code> and <code>coredns</code> are supported. For
@@ -483,11 +484,10 @@ namespace Model
          * specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself
          * in metrics and traces. You can override this behavior by setting the
          * <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own
-         * name.</p> <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
-         *  <p>For more information about virtual nodes, see <a
+         * name.</p>  <p>For more information about virtual nodes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
          * nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image
-         * when setting these variables. For more information about App Mesh Envoy
+         * when setting these variables. For more information aboutApp Mesh Envoy
          * variables, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
          * image</a> in the AWS App Mesh User Guide.</p><p><h3>See Also:</h3>   <a
@@ -516,11 +516,10 @@ namespace Model
          * specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself
          * in metrics and traces. You can override this behavior by setting the
          * <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own
-         * name.</p> <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
-         *  <p>For more information about virtual nodes, see <a
+         * name.</p>  <p>For more information about virtual nodes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
          * nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image
-         * when setting these variables. For more information about App Mesh Envoy
+         * when setting these variables. For more information aboutApp Mesh Envoy
          * variables, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
          * image</a> in the AWS App Mesh User Guide.</p><p><h3>See Also:</h3>   <a
@@ -551,11 +550,10 @@ namespace Model
          * specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy is referring to itself
          * in metrics and traces. You can override this behavior by setting the
          * <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own
-         * name.</p> <p>AWS Cloud Map is not available in the eu-south-1 Region.</p>
-         *  <p>For more information about virtual nodes, see <a
+         * name.</p>  <p>For more information about virtual nodes, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
          * nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image
-         * when setting these variables. For more information about App Mesh Envoy
+         * when setting these variables. For more information aboutApp Mesh Envoy
          * variables, see <a
          * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
          * image</a> in the AWS App Mesh User Guide.</p><p><h3>See Also:</h3>   <a

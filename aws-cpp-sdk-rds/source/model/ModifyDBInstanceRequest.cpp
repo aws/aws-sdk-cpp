@@ -75,7 +75,8 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_replicaMode(ReplicaMode::NOT_SET),
     m_replicaModeHasBeenSet(false),
     m_enableCustomerOwnedIp(false),
-    m_enableCustomerOwnedIpHasBeenSet(false)
+    m_enableCustomerOwnedIpHasBeenSet(false),
+    m_awsBackupRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -318,6 +319,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_enableCustomerOwnedIpHasBeenSet)
   {
     ss << "EnableCustomerOwnedIp=" << std::boolalpha << m_enableCustomerOwnedIp << "&";
+  }
+
+  if(m_awsBackupRecoveryPointArnHasBeenSet)
+  {
+    ss << "AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -12,7 +12,8 @@ using namespace Aws::Utils;
 
 CreateSAMLProviderRequest::CreateSAMLProviderRequest() : 
     m_sAMLMetadataDocumentHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -28,6 +29,16 @@ Aws::String CreateSAMLProviderRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
     ss << "Name=" << StringUtils::URLEncode(m_name.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2010-05-08";

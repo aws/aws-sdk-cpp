@@ -150,7 +150,7 @@ namespace Model
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
      *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
-     * vaue of 60000, even if this value is set to another value using this API or in
+     * value of 60000, even if this value is set to another value using this API or in
      * application code.</p> 
      */
     inline long long GetCheckpointInterval() const{ return m_checkpointInterval; }
@@ -159,7 +159,7 @@ namespace Model
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
      *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
-     * vaue of 60000, even if this value is set to another value using this API or in
+     * value of 60000, even if this value is set to another value using this API or in
      * application code.</p> 
      */
     inline bool CheckpointIntervalHasBeenSet() const { return m_checkpointIntervalHasBeenSet; }
@@ -168,7 +168,7 @@ namespace Model
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
      *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
-     * vaue of 60000, even if this value is set to another value using this API or in
+     * value of 60000, even if this value is set to another value using this API or in
      * application code.</p> 
      */
     inline void SetCheckpointInterval(long long value) { m_checkpointIntervalHasBeenSet = true; m_checkpointInterval = value; }
@@ -177,7 +177,7 @@ namespace Model
      * <p>Describes the interval in milliseconds between checkpoint operations. </p>
      *  <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
      * <code>DEFAULT</code>, the application will use a <code>CheckpointInterval</code>
-     * vaue of 60000, even if this value is set to another value using this API or in
+     * value of 60000, even if this value is set to another value using this API or in
      * application code.</p> 
      */
     inline CheckpointConfigurationDescription& WithCheckpointInterval(long long value) { SetCheckpointInterval(value); return *this;}

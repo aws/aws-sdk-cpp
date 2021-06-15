@@ -1365,6 +1365,79 @@ namespace Model
 
 
     /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline const Aws::String& GetSpatialDataOptionToGeoJsonFunctionName() const{ return m_spatialDataOptionToGeoJsonFunctionName; }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline bool SpatialDataOptionToGeoJsonFunctionNameHasBeenSet() const { return m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet; }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline void SetSpatialDataOptionToGeoJsonFunctionName(const Aws::String& value) { m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true; m_spatialDataOptionToGeoJsonFunctionName = value; }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline void SetSpatialDataOptionToGeoJsonFunctionName(Aws::String&& value) { m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true; m_spatialDataOptionToGeoJsonFunctionName = std::move(value); }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline void SetSpatialDataOptionToGeoJsonFunctionName(const char* value) { m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true; m_spatialDataOptionToGeoJsonFunctionName.assign(value); }
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline OracleSettings& WithSpatialDataOptionToGeoJsonFunctionName(const Aws::String& value) { SetSpatialDataOptionToGeoJsonFunctionName(value); return *this;}
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline OracleSettings& WithSpatialDataOptionToGeoJsonFunctionName(Aws::String&& value) { SetSpatialDataOptionToGeoJsonFunctionName(std::move(value)); return *this;}
+
+    /**
+     * <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+     * <code>GEOJSON</code> format. By default, DMS calls the <code>SDO2GEOJSON</code>
+     * custom function if present and accessible. Or you can create your own custom
+     * function that mimics the operation of <code>SDOGEOJSON</code> and set
+     * <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
+     */
+    inline OracleSettings& WithSpatialDataOptionToGeoJsonFunctionName(const char* value) { SetSpatialDataOptionToGeoJsonFunctionName(value); return *this;}
+
+
+    /**
      * <p>Endpoint connection user name.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
@@ -1928,6 +2001,9 @@ namespace Model
 
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet;
+
+    Aws::String m_spatialDataOptionToGeoJsonFunctionName;
+    bool m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet;
 
     Aws::String m_username;
     bool m_usernameHasBeenSet;

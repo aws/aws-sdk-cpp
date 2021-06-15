@@ -14,7 +14,8 @@ CopySnapshotRequest::CopySnapshotRequest() :
     m_sourceSnapshotNameHasBeenSet(false),
     m_targetSnapshotNameHasBeenSet(false),
     m_targetBucketHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

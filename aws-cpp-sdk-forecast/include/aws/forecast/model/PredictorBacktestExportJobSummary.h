@@ -146,80 +146,80 @@ namespace Model
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline PredictorBacktestExportJobSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline PredictorBacktestExportJobSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The status of the predictor backtest export job. States include: </p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>
-     * </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> </p> </li> <li> <p>
-     * <code>CREATE_FAILED</code> </p> </li> <li> <p> <code>DELETE_PENDING</code> </p>
-     * </li> <li> <p> <code>DELETE_IN_PROGRESS</code> </p> </li> <li> <p>
+     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> <li> <p>
+     * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
     inline PredictorBacktestExportJobSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
@@ -306,32 +306,68 @@ namespace Model
 
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline PredictorBacktestExportJobSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>When the last successful export job finished.</p>
+     * <p>The last time the resource was modified. The timestamp depends on the status
+     * of the job:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The
+     * <code>CreationTime</code>.</p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> -
+     * The current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPING</code> - The
+     * current timestamp.</p> </li> <li> <p> <code>CREATE_STOPPED</code> - When the job
+     * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
+     * When the job finished or failed.</p> </li> </ul>
      */
     inline PredictorBacktestExportJobSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

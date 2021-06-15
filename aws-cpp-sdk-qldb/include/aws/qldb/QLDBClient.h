@@ -29,6 +29,7 @@
 #include <aws/qldb/model/TagResourceResult.h>
 #include <aws/qldb/model/UntagResourceResult.h>
 #include <aws/qldb/model/UpdateLedgerResult.h>
+#include <aws/qldb/model/UpdateLedgerPermissionsModeResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -88,6 +89,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateLedgerRequest;
+        class UpdateLedgerPermissionsModeRequest;
 
         typedef Aws::Utils::Outcome<CancelJournalKinesisStreamResult, QLDBError> CancelJournalKinesisStreamOutcome;
         typedef Aws::Utils::Outcome<CreateLedgerResult, QLDBError> CreateLedgerOutcome;
@@ -108,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, QLDBError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, QLDBError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateLedgerResult, QLDBError> UpdateLedgerOutcome;
+        typedef Aws::Utils::Outcome<UpdateLedgerPermissionsModeResult, QLDBError> UpdateLedgerPermissionsModeOutcome;
 
         typedef std::future<CancelJournalKinesisStreamOutcome> CancelJournalKinesisStreamOutcomeCallable;
         typedef std::future<CreateLedgerOutcome> CreateLedgerOutcomeCallable;
@@ -128,6 +131,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateLedgerOutcome> UpdateLedgerOutcomeCallable;
+        typedef std::future<UpdateLedgerPermissionsModeOutcome> UpdateLedgerPermissionsModeOutcomeCallable;
 } // namespace Model
 
   class QLDBClient;
@@ -151,6 +155,7 @@ namespace Model
     typedef std::function<void(const QLDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QLDBClient*, const Model::UpdateLedgerRequest&, const Model::UpdateLedgerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLedgerResponseReceivedHandler;
+    typedef std::function<void(const QLDBClient*, const Model::UpdateLedgerPermissionsModeRequest&, const Model::UpdateLedgerPermissionsModeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLedgerPermissionsModeResponseReceivedHandler;
 
   /**
    * <p>The control plane for Amazon QLDB</p>
@@ -220,14 +225,16 @@ namespace Model
         virtual void CancelJournalKinesisStreamAsync(const Model::CancelJournalKinesisStreamRequest& request, const CancelJournalKinesisStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new ledger in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new ledger in your AWS account in the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLedgerOutcome CreateLedger(const Model::CreateLedgerRequest& request) const;
 
         /**
-         * <p>Creates a new ledger in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new ledger in your AWS account in the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
          *
@@ -236,7 +243,8 @@ namespace Model
         virtual Model::CreateLedgerOutcomeCallable CreateLedgerCallable(const Model::CreateLedgerRequest& request) const;
 
         /**
-         * <p>Creates a new ledger in your AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new ledger in your AWS account in the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/CreateLedger">AWS
          * API Reference</a></p>
          *
@@ -247,11 +255,8 @@ namespace Model
         /**
          * <p>Deletes a ledger and all of its contents. This action is irreversible.</p>
          * <p>If deletion protection is enabled, you must first disable it before you can
-         * delete the ledger using the QLDB API or the AWS Command Line Interface (AWS
-         * CLI). You can disable it by calling the <code>UpdateLedger</code> operation to
-         * set the flag to <code>false</code>. The QLDB console disables deletion
-         * protection for you when you use it to delete a ledger.</p><p><h3>See Also:</h3> 
-         * <a
+         * delete the ledger. You can disable it by calling the <code>UpdateLedger</code>
+         * operation to set the flag to <code>false</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger">AWS
          * API Reference</a></p>
          */
@@ -260,11 +265,8 @@ namespace Model
         /**
          * <p>Deletes a ledger and all of its contents. This action is irreversible.</p>
          * <p>If deletion protection is enabled, you must first disable it before you can
-         * delete the ledger using the QLDB API or the AWS Command Line Interface (AWS
-         * CLI). You can disable it by calling the <code>UpdateLedger</code> operation to
-         * set the flag to <code>false</code>. The QLDB console disables deletion
-         * protection for you when you use it to delete a ledger.</p><p><h3>See Also:</h3> 
-         * <a
+         * delete the ledger. You can disable it by calling the <code>UpdateLedger</code>
+         * operation to set the flag to <code>false</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger">AWS
          * API Reference</a></p>
          *
@@ -275,11 +277,8 @@ namespace Model
         /**
          * <p>Deletes a ledger and all of its contents. This action is irreversible.</p>
          * <p>If deletion protection is enabled, you must first disable it before you can
-         * delete the ledger using the QLDB API or the AWS Command Line Interface (AWS
-         * CLI). You can disable it by calling the <code>UpdateLedger</code> operation to
-         * set the flag to <code>false</code>. The QLDB console disables deletion
-         * protection for you when you use it to delete a ledger.</p><p><h3>See Also:</h3> 
-         * <a
+         * delete the ledger. You can disable it by calling the <code>UpdateLedger</code>
+         * operation to set the flag to <code>false</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DeleteLedger">AWS
          * API Reference</a></p>
          *
@@ -290,8 +289,12 @@ namespace Model
         /**
          * <p>Returns detailed information about a given Amazon QLDB journal stream. The
          * output includes the Amazon Resource Name (ARN), stream name, current status,
-         * creation time, and the parameters of your original stream creation
-         * request.</p><p><h3>See Also:</h3>   <a
+         * creation time, and the parameters of the original stream creation request.</p>
+         * <p>This action does not return any expired journal streams. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration
+         * for terminal streams</a> in the <i>Amazon QLDB Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">AWS
          * API Reference</a></p>
          */
@@ -300,8 +303,12 @@ namespace Model
         /**
          * <p>Returns detailed information about a given Amazon QLDB journal stream. The
          * output includes the Amazon Resource Name (ARN), stream name, current status,
-         * creation time, and the parameters of your original stream creation
-         * request.</p><p><h3>See Also:</h3>   <a
+         * creation time, and the parameters of the original stream creation request.</p>
+         * <p>This action does not return any expired journal streams. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration
+         * for terminal streams</a> in the <i>Amazon QLDB Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">AWS
          * API Reference</a></p>
          *
@@ -312,8 +319,12 @@ namespace Model
         /**
          * <p>Returns detailed information about a given Amazon QLDB journal stream. The
          * output includes the Amazon Resource Name (ARN), stream name, current status,
-         * creation time, and the parameters of your original stream creation
-         * request.</p><p><h3>See Also:</h3>   <a
+         * creation time, and the parameters of the original stream creation request.</p>
+         * <p>This action does not return any expired journal streams. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration
+         * for terminal streams</a> in the <i>Amazon QLDB Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/DescribeJournalKinesisStream">AWS
          * API Reference</a></p>
          *
@@ -323,11 +334,11 @@ namespace Model
 
         /**
          * <p>Returns information about a journal export job, including the ledger name,
-         * export ID, when it was created, current status, and its start and end time
-         * export parameters.</p> <p>This action does not return any expired export jobs.
-         * For more information, see <a
+         * export ID, creation time, current status, and the parameters of the original
+         * export creation request.</p> <p>This action does not return any expired export
+         * jobs. For more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
          * export job with the given <code>ExportId</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
          * <code>Name</code> doesn't exist, then throws
@@ -339,11 +350,11 @@ namespace Model
 
         /**
          * <p>Returns information about a journal export job, including the ledger name,
-         * export ID, when it was created, current status, and its start and end time
-         * export parameters.</p> <p>This action does not return any expired export jobs.
-         * For more information, see <a
+         * export ID, creation time, current status, and the parameters of the original
+         * export creation request.</p> <p>This action does not return any expired export
+         * jobs. For more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
          * export job with the given <code>ExportId</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
          * <code>Name</code> doesn't exist, then throws
@@ -357,11 +368,11 @@ namespace Model
 
         /**
          * <p>Returns information about a journal export job, including the ledger name,
-         * export ID, when it was created, current status, and its start and end time
-         * export parameters.</p> <p>This action does not return any expired export jobs.
-         * For more information, see <a
+         * export ID, creation time, current status, and the parameters of the original
+         * export creation request.</p> <p>This action does not return any expired export
+         * jobs. For more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the
          * export job with the given <code>ExportId</code> doesn't exist, then throws
          * <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given
          * <code>Name</code> doesn't exist, then throws
@@ -573,9 +584,12 @@ namespace Model
         /**
          * <p>Returns an array of all Amazon QLDB journal stream descriptors for a given
          * ledger. The output of each stream descriptor includes the same details that are
-         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action
-         * returns a maximum of <code>MaxResults</code> items. It is paginated so that you
-         * can retrieve all the items by calling
+         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action does
+         * not return any expired journal streams. For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration
+         * for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>This
+         * action returns a maximum of <code>MaxResults</code> items. It is paginated so
+         * that you can retrieve all the items by calling
          * <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">AWS
@@ -586,9 +600,12 @@ namespace Model
         /**
          * <p>Returns an array of all Amazon QLDB journal stream descriptors for a given
          * ledger. The output of each stream descriptor includes the same details that are
-         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action
-         * returns a maximum of <code>MaxResults</code> items. It is paginated so that you
-         * can retrieve all the items by calling
+         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action does
+         * not return any expired journal streams. For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration
+         * for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>This
+         * action returns a maximum of <code>MaxResults</code> items. It is paginated so
+         * that you can retrieve all the items by calling
          * <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">AWS
@@ -601,9 +618,12 @@ namespace Model
         /**
          * <p>Returns an array of all Amazon QLDB journal stream descriptors for a given
          * ledger. The output of each stream descriptor includes the same details that are
-         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action
-         * returns a maximum of <code>MaxResults</code> items. It is paginated so that you
-         * can retrieve all the items by calling
+         * returned by <code>DescribeJournalKinesisStream</code>.</p> <p>This action does
+         * not return any expired journal streams. For more information, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration
+         * for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>This
+         * action returns a maximum of <code>MaxResults</code> items. It is paginated so
+         * that you can retrieve all the items by calling
          * <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalKinesisStreamsForLedger">AWS
@@ -621,7 +641,7 @@ namespace Model
          * times.</p> <p>This action does not return any expired export jobs. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">AWS
          * API Reference</a></p>
@@ -636,7 +656,7 @@ namespace Model
          * times.</p> <p>This action does not return any expired export jobs. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">AWS
          * API Reference</a></p>
@@ -653,7 +673,7 @@ namespace Model
          * times.</p> <p>This action does not return any expired export jobs. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3Exports">AWS
          * API Reference</a></p>
@@ -669,7 +689,7 @@ namespace Model
          * <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action
          * does not return any expired export jobs. For more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">AWS
          * API Reference</a></p>
@@ -683,7 +703,7 @@ namespace Model
          * <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action
          * does not return any expired export jobs. For more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">AWS
          * API Reference</a></p>
@@ -699,7 +719,7 @@ namespace Model
          * <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action
          * does not return any expired export jobs. For more information, see <a
          * href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export
-         * Job Expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
+         * job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/ListJournalS3ExportsForLedger">AWS
          * API Reference</a></p>
@@ -888,6 +908,49 @@ namespace Model
          */
         virtual void UpdateLedgerAsync(const Model::UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the permissions mode of a ledger.</p>  <p>Before you
+         * switch to the <code>STANDARD</code> permissions mode, you must first create all
+         * required IAM policies and table tags to avoid disruption to your users. To learn
+         * more, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
+         * to the standard permissions mode</a> in the <i>Amazon QLDB Developer
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLedgerPermissionsModeOutcome UpdateLedgerPermissionsMode(const Model::UpdateLedgerPermissionsModeRequest& request) const;
+
+        /**
+         * <p>Updates the permissions mode of a ledger.</p>  <p>Before you
+         * switch to the <code>STANDARD</code> permissions mode, you must first create all
+         * required IAM policies and table tags to avoid disruption to your users. To learn
+         * more, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
+         * to the standard permissions mode</a> in the <i>Amazon QLDB Developer
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLedgerPermissionsModeOutcomeCallable UpdateLedgerPermissionsModeCallable(const Model::UpdateLedgerPermissionsModeRequest& request) const;
+
+        /**
+         * <p>Updates the permissions mode of a ledger.</p>  <p>Before you
+         * switch to the <code>STANDARD</code> permissions mode, you must first create all
+         * required IAM policies and table tags to avoid disruption to your users. To learn
+         * more, see <a
+         * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
+         * to the standard permissions mode</a> in the <i>Amazon QLDB Developer
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/qldb-2019-01-02/UpdateLedgerPermissionsMode">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLedgerPermissionsModeAsync(const Model::UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -911,6 +974,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLedgerAsyncHelper(const Model::UpdateLedgerRequest& request, const UpdateLedgerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLedgerPermissionsModeAsyncHelper(const Model::UpdateLedgerPermissionsModeRequest& request, const UpdateLedgerPermissionsModeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

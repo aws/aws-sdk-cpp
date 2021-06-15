@@ -163,9 +163,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use
@@ -343,9 +344,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use
@@ -523,9 +525,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use
@@ -703,9 +706,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use
@@ -883,9 +887,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use
@@ -1063,9 +1068,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use
@@ -1243,9 +1249,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use
@@ -1423,9 +1430,10 @@ namespace Model
      * address translation (NAT) in your VPC.</p> </li> <li> <p>
      * <code>network-interface.subnet-id</code> - The ID of the subnet for the network
      * interface.</p> </li> <li> <p> <code>network-interface.vpc-id</code> - The ID of
-     * the VPC for the network interface.</p> </li> <li> <p> <code>owner-id</code> -
-     * The AWS account ID of the instance owner.</p> </li> <li> <p>
-     * <code>placement-group-name</code> - The name of the placement group for the
+     * the VPC for the network interface.</p> </li> <li> <p> <code>outpost-arn</code> -
+     * The Amazon Resource Name (ARN) of the Outpost.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the instance owner.</p> </li> <li>
+     * <p> <code>placement-group-name</code> - The name of the placement group for the
      * instance.</p> </li> <li> <p> <code>placement-partition-number</code> - The
      * partition in which the instance is located.</p> </li> <li> <p>
      * <code>platform</code> - The platform. To list only Windows instances, use

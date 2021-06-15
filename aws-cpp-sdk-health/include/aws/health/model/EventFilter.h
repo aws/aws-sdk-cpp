@@ -239,93 +239,93 @@ namespace Model
 
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline EventFilter& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline EventFilter& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline EventFilter& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline EventFilter& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS regions.</p>
+     * <p>A list of AWS Regions.</p>
      */
     inline EventFilter& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline EventFilter& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline EventFilter& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline EventFilter& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline EventFilter& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of AWS availability zones.</p>
+     * <p>A list of AWS Availability Zones.</p>
      */
     inline EventFilter& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 

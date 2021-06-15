@@ -28,7 +28,8 @@ Outpost::Outpost() :
     m_lifeCycleStatusHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Outpost::Outpost(JsonView jsonValue) :
     m_lifeCycleStatusHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_siteArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,13 @@ Outpost& Outpost::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SiteArn"))
+  {
+    m_siteArn = jsonValue.GetString("SiteArn");
+
+    m_siteArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -191,6 +200,12 @@ JsonValue Outpost::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_siteArnHasBeenSet)
+  {
+   payload.WithString("SiteArn", m_siteArn);
 
   }
 

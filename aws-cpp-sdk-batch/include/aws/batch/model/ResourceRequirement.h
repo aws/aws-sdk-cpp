@@ -47,10 +47,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -115,10 +116,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -183,10 +185,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -251,10 +254,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -319,10 +323,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -387,10 +392,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -455,10 +461,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -523,10 +530,11 @@ namespace Model
      * container. The number of GPUs reserved for all containers in a job shouldn't
      * exceed the number of available GPUs on the compute resource that the job is
      * launched on.</p>  <p>GPUs are not available for jobs running on Fargate
-     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>For jobs running on
-     * EC2 resources, the hard limit (in MiB) of memory to present to the container. If
-     * your container attempts to exceed the memory specified here, the container is
-     * killed. This parameter maps to <code>Memory</code> in the <a
+     * resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd> <p>The memory hard
+     * limit (in MiB) present to the container. This parameter is supported for jobs
+     * running on EC2 resources. If your container attempts to exceed the memory
+     * specified, the container is terminated. This parameter maps to
+     * <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the

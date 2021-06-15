@@ -12,6 +12,9 @@
 #include <aws/fms/model/NetworkFirewallMissingSubnetViolation.h>
 #include <aws/fms/model/NetworkFirewallMissingExpectedRTViolation.h>
 #include <aws/fms/model/NetworkFirewallPolicyModifiedViolation.h>
+#include <aws/fms/model/DnsRuleGroupPriorityConflictViolation.h>
+#include <aws/fms/model/DnsDuplicateRuleGroupViolation.h>
+#include <aws/fms/model/DnsRuleGroupLimitExceededViolation.h>
 #include <utility>
 
 namespace Aws
@@ -301,6 +304,135 @@ namespace Model
      */
     inline ResourceViolation& WithNetworkFirewallPolicyModifiedViolation(NetworkFirewallPolicyModifiedViolation&& value) { SetNetworkFirewallPolicyModifiedViolation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC has the same priority as a
+     * rule group that's already associated. </p>
+     */
+    inline const DnsRuleGroupPriorityConflictViolation& GetDnsRuleGroupPriorityConflictViolation() const{ return m_dnsRuleGroupPriorityConflictViolation; }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC has the same priority as a
+     * rule group that's already associated. </p>
+     */
+    inline bool DnsRuleGroupPriorityConflictViolationHasBeenSet() const { return m_dnsRuleGroupPriorityConflictViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC has the same priority as a
+     * rule group that's already associated. </p>
+     */
+    inline void SetDnsRuleGroupPriorityConflictViolation(const DnsRuleGroupPriorityConflictViolation& value) { m_dnsRuleGroupPriorityConflictViolationHasBeenSet = true; m_dnsRuleGroupPriorityConflictViolation = value; }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC has the same priority as a
+     * rule group that's already associated. </p>
+     */
+    inline void SetDnsRuleGroupPriorityConflictViolation(DnsRuleGroupPriorityConflictViolation&& value) { m_dnsRuleGroupPriorityConflictViolationHasBeenSet = true; m_dnsRuleGroupPriorityConflictViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC has the same priority as a
+     * rule group that's already associated. </p>
+     */
+    inline ResourceViolation& WithDnsRuleGroupPriorityConflictViolation(const DnsRuleGroupPriorityConflictViolation& value) { SetDnsRuleGroupPriorityConflictViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC has the same priority as a
+     * rule group that's already associated. </p>
+     */
+    inline ResourceViolation& WithDnsRuleGroupPriorityConflictViolation(DnsRuleGroupPriorityConflictViolation&& value) { SetDnsRuleGroupPriorityConflictViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC is already associated with
+     * the VPC and can't be associated again. </p>
+     */
+    inline const DnsDuplicateRuleGroupViolation& GetDnsDuplicateRuleGroupViolation() const{ return m_dnsDuplicateRuleGroupViolation; }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC is already associated with
+     * the VPC and can't be associated again. </p>
+     */
+    inline bool DnsDuplicateRuleGroupViolationHasBeenSet() const { return m_dnsDuplicateRuleGroupViolationHasBeenSet; }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC is already associated with
+     * the VPC and can't be associated again. </p>
+     */
+    inline void SetDnsDuplicateRuleGroupViolation(const DnsDuplicateRuleGroupViolation& value) { m_dnsDuplicateRuleGroupViolationHasBeenSet = true; m_dnsDuplicateRuleGroupViolation = value; }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC is already associated with
+     * the VPC and can't be associated again. </p>
+     */
+    inline void SetDnsDuplicateRuleGroupViolation(DnsDuplicateRuleGroupViolation&& value) { m_dnsDuplicateRuleGroupViolationHasBeenSet = true; m_dnsDuplicateRuleGroupViolation = std::move(value); }
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC is already associated with
+     * the VPC and can't be associated again. </p>
+     */
+    inline ResourceViolation& WithDnsDuplicateRuleGroupViolation(const DnsDuplicateRuleGroupViolation& value) { SetDnsDuplicateRuleGroupViolation(value); return *this;}
+
+    /**
+     * <p>Violation detail for a DNS Firewall policy that indicates that a rule group
+     * that Firewall Manager tried to associate with a VPC is already associated with
+     * the VPC and can't be associated again. </p>
+     */
+    inline ResourceViolation& WithDnsDuplicateRuleGroupViolation(DnsDuplicateRuleGroupViolation&& value) { SetDnsDuplicateRuleGroupViolation(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * reached the limit for associated DNS Firewall rule groups. Firewall Manager
+     * tried to associate another rule group with the VPC and failed. </p>
+     */
+    inline const DnsRuleGroupLimitExceededViolation& GetDnsRuleGroupLimitExceededViolation() const{ return m_dnsRuleGroupLimitExceededViolation; }
+
+    /**
+     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * reached the limit for associated DNS Firewall rule groups. Firewall Manager
+     * tried to associate another rule group with the VPC and failed. </p>
+     */
+    inline bool DnsRuleGroupLimitExceededViolationHasBeenSet() const { return m_dnsRuleGroupLimitExceededViolationHasBeenSet; }
+
+    /**
+     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * reached the limit for associated DNS Firewall rule groups. Firewall Manager
+     * tried to associate another rule group with the VPC and failed. </p>
+     */
+    inline void SetDnsRuleGroupLimitExceededViolation(const DnsRuleGroupLimitExceededViolation& value) { m_dnsRuleGroupLimitExceededViolationHasBeenSet = true; m_dnsRuleGroupLimitExceededViolation = value; }
+
+    /**
+     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * reached the limit for associated DNS Firewall rule groups. Firewall Manager
+     * tried to associate another rule group with the VPC and failed. </p>
+     */
+    inline void SetDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolation&& value) { m_dnsRuleGroupLimitExceededViolationHasBeenSet = true; m_dnsRuleGroupLimitExceededViolation = std::move(value); }
+
+    /**
+     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * reached the limit for associated DNS Firewall rule groups. Firewall Manager
+     * tried to associate another rule group with the VPC and failed. </p>
+     */
+    inline ResourceViolation& WithDnsRuleGroupLimitExceededViolation(const DnsRuleGroupLimitExceededViolation& value) { SetDnsRuleGroupLimitExceededViolation(value); return *this;}
+
+    /**
+     * <p>Violation details for a DNS Firewall policy that indicates that the VPC
+     * reached the limit for associated DNS Firewall rule groups. Firewall Manager
+     * tried to associate another rule group with the VPC and failed. </p>
+     */
+    inline ResourceViolation& WithDnsRuleGroupLimitExceededViolation(DnsRuleGroupLimitExceededViolation&& value) { SetDnsRuleGroupLimitExceededViolation(std::move(value)); return *this;}
+
   private:
 
     AwsVPCSecurityGroupViolation m_awsVPCSecurityGroupViolation;
@@ -323,6 +455,15 @@ namespace Model
 
     NetworkFirewallPolicyModifiedViolation m_networkFirewallPolicyModifiedViolation;
     bool m_networkFirewallPolicyModifiedViolationHasBeenSet;
+
+    DnsRuleGroupPriorityConflictViolation m_dnsRuleGroupPriorityConflictViolation;
+    bool m_dnsRuleGroupPriorityConflictViolationHasBeenSet;
+
+    DnsDuplicateRuleGroupViolation m_dnsDuplicateRuleGroupViolation;
+    bool m_dnsDuplicateRuleGroupViolationHasBeenSet;
+
+    DnsRuleGroupLimitExceededViolation m_dnsRuleGroupLimitExceededViolation;
+    bool m_dnsRuleGroupLimitExceededViolationHasBeenSet;
   };
 
 } // namespace Model

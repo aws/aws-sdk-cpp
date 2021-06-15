@@ -20,6 +20,7 @@ QueryRequest::QueryRequest() :
     m_requestedDocumentAttributesHasBeenSet(false),
     m_queryResultTypeFilter(QueryResultType::NOT_SET),
     m_queryResultTypeFilterHasBeenSet(false),
+    m_documentRelevanceOverrideConfigurationsHasBeenSet(false),
     m_pageNumber(0),
     m_pageNumberHasBeenSet(false),
     m_pageSize(0),
@@ -77,6 +78,17 @@ Aws::String QueryRequest::SerializePayload() const
   if(m_queryResultTypeFilterHasBeenSet)
   {
    payload.WithString("QueryResultTypeFilter", QueryResultTypeMapper::GetNameForQueryResultType(m_queryResultTypeFilter));
+  }
+
+  if(m_documentRelevanceOverrideConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> documentRelevanceOverrideConfigurationsJsonList(m_documentRelevanceOverrideConfigurations.size());
+   for(unsigned documentRelevanceOverrideConfigurationsIndex = 0; documentRelevanceOverrideConfigurationsIndex < documentRelevanceOverrideConfigurationsJsonList.GetLength(); ++documentRelevanceOverrideConfigurationsIndex)
+   {
+     documentRelevanceOverrideConfigurationsJsonList[documentRelevanceOverrideConfigurationsIndex].AsObject(m_documentRelevanceOverrideConfigurations[documentRelevanceOverrideConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("DocumentRelevanceOverrideConfigurations", std::move(documentRelevanceOverrideConfigurationsJsonList));
+
   }
 
   if(m_pageNumberHasBeenSet)

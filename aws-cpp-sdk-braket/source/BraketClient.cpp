@@ -77,7 +77,7 @@ BraketClient::~BraketClient()
 {
 }
 
-void BraketClient::init(const ClientConfiguration& config)
+void BraketClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Braket");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -111,11 +111,9 @@ CancelQuantumTaskOutcome BraketClient::CancelQuantumTask(const CancelQuantumTask
     return CancelQuantumTaskOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuantumTaskArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quantum-task/";
-  ss << request.GetQuantumTaskArn();
-  ss << "/cancel";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quantum-task/");
+  uri.AddPathSegment(request.GetQuantumTaskArn());
+  uri.AddPathSegments("/cancel");
   return CancelQuantumTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -140,9 +138,7 @@ void BraketClient::CancelQuantumTaskAsyncHelper(const CancelQuantumTaskRequest& 
 CreateQuantumTaskOutcome BraketClient::CreateQuantumTask(const CreateQuantumTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quantum-task";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quantum-task");
   return CreateQuantumTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -172,10 +168,8 @@ GetDeviceOutcome BraketClient::GetDevice(const GetDeviceRequest& request) const
     return GetDeviceOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/device/";
-  ss << request.GetDeviceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/device/");
+  uri.AddPathSegment(request.GetDeviceArn());
   return GetDeviceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -205,10 +199,8 @@ GetQuantumTaskOutcome BraketClient::GetQuantumTask(const GetQuantumTaskRequest& 
     return GetQuantumTaskOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [QuantumTaskArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quantum-task/";
-  ss << request.GetQuantumTaskArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quantum-task/");
+  uri.AddPathSegment(request.GetQuantumTaskArn());
   return GetQuantumTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -238,10 +230,8 @@ ListTagsForResourceOutcome BraketClient::ListTagsForResource(const ListTagsForRe
     return ListTagsForResourceOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -266,9 +256,7 @@ void BraketClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceReque
 SearchDevicesOutcome BraketClient::SearchDevices(const SearchDevicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/devices");
   return SearchDevicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -293,9 +281,7 @@ void BraketClient::SearchDevicesAsyncHelper(const SearchDevicesRequest& request,
 SearchQuantumTasksOutcome BraketClient::SearchQuantumTasks(const SearchQuantumTasksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/quantum-tasks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/quantum-tasks");
   return SearchQuantumTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -325,10 +311,8 @@ TagResourceOutcome BraketClient::TagResource(const TagResourceRequest& request) 
     return TagResourceOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -363,10 +347,8 @@ UntagResourceOutcome BraketClient::UntagResource(const UntagResourceRequest& req
     return UntagResourceOutcome(Aws::Client::AWSError<BraketErrors>(BraketErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 

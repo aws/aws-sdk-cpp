@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -78,7 +78,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>The IDs of the AWS accounts for which to export instance recommendations.</p>
      * <p>If your account is the management account of an organization, use this
-     * parameter to specify the member accounts for which you want to export
+     * parameter to specify the member account for which you want to export
      * recommendations.</p> <p>This parameter cannot be specified together with the
      * include member accounts parameter. The parameters are mutually exclusive.</p>
      * <p>Recommendations for member accounts are not included in the export if this
@@ -394,10 +394,14 @@ namespace Model
      * <p>Indicates whether to include recommendations for resources in all member
      * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
-     * Optimizer.</p> <p>Recommendations for member accounts of the organization are
-     * not included in the export file if this parameter is omitted.</p>
-     * <p>Recommendations for member accounts are not included in the export if this
-     * parameter, or the account IDs parameter, is omitted.</p>
+     * Optimizer, and trusted access for Compute Optimizer must be enabled in the
+     * organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
+     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
+     * organization are not included in the export file if this parameter is
+     * omitted.</p> <p>Recommendations for member accounts are not included in the
+     * export if this parameter, or the account IDs parameter, is omitted.</p>
      */
     inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
 
@@ -405,10 +409,14 @@ namespace Model
      * <p>Indicates whether to include recommendations for resources in all member
      * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
-     * Optimizer.</p> <p>Recommendations for member accounts of the organization are
-     * not included in the export file if this parameter is omitted.</p>
-     * <p>Recommendations for member accounts are not included in the export if this
-     * parameter, or the account IDs parameter, is omitted.</p>
+     * Optimizer, and trusted access for Compute Optimizer must be enabled in the
+     * organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
+     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
+     * organization are not included in the export file if this parameter is
+     * omitted.</p> <p>Recommendations for member accounts are not included in the
+     * export if this parameter, or the account IDs parameter, is omitted.</p>
      */
     inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }
 
@@ -416,10 +424,14 @@ namespace Model
      * <p>Indicates whether to include recommendations for resources in all member
      * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
-     * Optimizer.</p> <p>Recommendations for member accounts of the organization are
-     * not included in the export file if this parameter is omitted.</p>
-     * <p>Recommendations for member accounts are not included in the export if this
-     * parameter, or the account IDs parameter, is omitted.</p>
+     * Optimizer, and trusted access for Compute Optimizer must be enabled in the
+     * organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
+     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
+     * organization are not included in the export file if this parameter is
+     * omitted.</p> <p>Recommendations for member accounts are not included in the
+     * export if this parameter, or the account IDs parameter, is omitted.</p>
      */
     inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccountsHasBeenSet = true; m_includeMemberAccounts = value; }
 
@@ -427,10 +439,14 @@ namespace Model
      * <p>Indicates whether to include recommendations for resources in all member
      * accounts of the organization if your account is the management account of an
      * organization.</p> <p>The member accounts must also be opted in to Compute
-     * Optimizer.</p> <p>Recommendations for member accounts of the organization are
-     * not included in the export file if this parameter is omitted.</p>
-     * <p>Recommendations for member accounts are not included in the export if this
-     * parameter, or the account IDs parameter, is omitted.</p>
+     * Optimizer, and trusted access for Compute Optimizer must be enabled in the
+     * organization account. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/security-iam.html#trusted-service-access">Compute
+     * Optimizer and AWS Organizations trusted access</a> in the <i>AWS Compute
+     * Optimizer User Guide</i>.</p> <p>Recommendations for member accounts of the
+     * organization are not included in the export file if this parameter is
+     * omitted.</p> <p>Recommendations for member accounts are not included in the
+     * export if this parameter, or the account IDs parameter, is omitted.</p>
      */
     inline ExportEC2InstanceRecommendationsRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
 

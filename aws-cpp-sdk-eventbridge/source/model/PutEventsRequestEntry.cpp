@@ -24,7 +24,8 @@ PutEventsRequestEntry::PutEventsRequestEntry() :
     m_resourcesHasBeenSet(false),
     m_detailTypeHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
+    m_eventBusNameHasBeenSet(false),
+    m_traceHeaderHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ PutEventsRequestEntry::PutEventsRequestEntry(JsonView jsonValue) :
     m_resourcesHasBeenSet(false),
     m_detailTypeHasBeenSet(false),
     m_detailHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
+    m_eventBusNameHasBeenSet(false),
+    m_traceHeaderHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ PutEventsRequestEntry& PutEventsRequestEntry::operator =(JsonView jsonValue)
     m_eventBusNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TraceHeader"))
+  {
+    m_traceHeader = jsonValue.GetString("TraceHeader");
+
+    m_traceHeaderHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue PutEventsRequestEntry::Jsonize() const
   if(m_eventBusNameHasBeenSet)
   {
    payload.WithString("EventBusName", m_eventBusName);
+
+  }
+
+  if(m_traceHeaderHasBeenSet)
+  {
+   payload.WithString("TraceHeader", m_traceHeader);
 
   }
 

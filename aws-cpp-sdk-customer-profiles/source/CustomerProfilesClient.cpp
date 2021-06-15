@@ -31,6 +31,7 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetDomainRequest.h>
 #include <aws/customer-profiles/model/GetIntegrationRequest.h>
+#include <aws/customer-profiles/model/GetMatchesRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeRequest.h>
 #include <aws/customer-profiles/model/GetProfileObjectTypeTemplateRequest.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/customer-profiles/model/ListProfileObjectTypesRequest.h>
 #include <aws/customer-profiles/model/ListProfileObjectsRequest.h>
 #include <aws/customer-profiles/model/ListTagsForResourceRequest.h>
+#include <aws/customer-profiles/model/MergeProfilesRequest.h>
 #include <aws/customer-profiles/model/PutIntegrationRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectRequest.h>
 #include <aws/customer-profiles/model/PutProfileObjectTypeRequest.h>
@@ -96,7 +98,7 @@ CustomerProfilesClient::~CustomerProfilesClient()
 {
 }
 
-void CustomerProfilesClient::init(const ClientConfiguration& config)
+void CustomerProfilesClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Customer Profiles");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -130,11 +132,9 @@ AddProfileKeyOutcome CustomerProfilesClient::AddProfileKey(const AddProfileKeyRe
     return AddProfileKeyOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles/keys";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/keys");
   return AddProfileKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -164,10 +164,8 @@ CreateDomainOutcome CustomerProfilesClient::CreateDomain(const CreateDomainReque
     return CreateDomainOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
   return CreateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -197,11 +195,9 @@ CreateProfileOutcome CustomerProfilesClient::CreateProfile(const CreateProfileRe
     return CreateProfileOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles");
   return CreateProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -231,10 +227,8 @@ DeleteDomainOutcome CustomerProfilesClient::DeleteDomain(const DeleteDomainReque
     return DeleteDomainOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
   return DeleteDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -264,11 +258,9 @@ DeleteIntegrationOutcome CustomerProfilesClient::DeleteIntegration(const DeleteI
     return DeleteIntegrationOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/integrations/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/integrations/delete");
   return DeleteIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -298,11 +290,9 @@ DeleteProfileOutcome CustomerProfilesClient::DeleteProfile(const DeleteProfileRe
     return DeleteProfileOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/delete");
   return DeleteProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -332,11 +322,9 @@ DeleteProfileKeyOutcome CustomerProfilesClient::DeleteProfileKey(const DeletePro
     return DeleteProfileKeyOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles/keys/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/keys/delete");
   return DeleteProfileKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -366,11 +354,9 @@ DeleteProfileObjectOutcome CustomerProfilesClient::DeleteProfileObject(const Del
     return DeleteProfileObjectOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles/objects/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/objects/delete");
   return DeleteProfileObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -405,12 +391,10 @@ DeleteProfileObjectTypeOutcome CustomerProfilesClient::DeleteProfileObjectType(c
     return DeleteProfileObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/object-types/";
-  ss << request.GetObjectTypeName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/object-types/");
+  uri.AddPathSegment(request.GetObjectTypeName());
   return DeleteProfileObjectTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -440,10 +424,8 @@ GetDomainOutcome CustomerProfilesClient::GetDomain(const GetDomainRequest& reque
     return GetDomainOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
   return GetDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -473,11 +455,9 @@ GetIntegrationOutcome CustomerProfilesClient::GetIntegration(const GetIntegratio
     return GetIntegrationOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/integrations");
   return GetIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -499,6 +479,38 @@ void CustomerProfilesClient::GetIntegrationAsyncHelper(const GetIntegrationReque
   handler(this, request, GetIntegration(request), context);
 }
 
+GetMatchesOutcome CustomerProfilesClient::GetMatches(const GetMatchesRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMatches", "Required field: DomainName, is not set");
+    return GetMatchesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/matches");
+  return GetMatchesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetMatchesOutcomeCallable CustomerProfilesClient::GetMatchesCallable(const GetMatchesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMatchesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMatches(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CustomerProfilesClient::GetMatchesAsync(const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMatchesAsyncHelper( request, handler, context ); } );
+}
+
+void CustomerProfilesClient::GetMatchesAsyncHelper(const GetMatchesRequest& request, const GetMatchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMatches(request), context);
+}
+
 GetProfileObjectTypeOutcome CustomerProfilesClient::GetProfileObjectType(const GetProfileObjectTypeRequest& request) const
 {
   if (!request.DomainNameHasBeenSet())
@@ -512,12 +524,10 @@ GetProfileObjectTypeOutcome CustomerProfilesClient::GetProfileObjectType(const G
     return GetProfileObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/object-types/";
-  ss << request.GetObjectTypeName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/object-types/");
+  uri.AddPathSegment(request.GetObjectTypeName());
   return GetProfileObjectTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -547,10 +557,8 @@ GetProfileObjectTypeTemplateOutcome CustomerProfilesClient::GetProfileObjectType
     return GetProfileObjectTypeTemplateOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/templates/";
-  ss << request.GetTemplateId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/templates/");
+  uri.AddPathSegment(request.GetTemplateId());
   return GetProfileObjectTypeTemplateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -575,9 +583,7 @@ void CustomerProfilesClient::GetProfileObjectTypeTemplateAsyncHelper(const GetPr
 ListAccountIntegrationsOutcome CustomerProfilesClient::ListAccountIntegrations(const ListAccountIntegrationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/integrations");
   return ListAccountIntegrationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -602,9 +608,7 @@ void CustomerProfilesClient::ListAccountIntegrationsAsyncHelper(const ListAccoun
 ListDomainsOutcome CustomerProfilesClient::ListDomains(const ListDomainsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains");
   return ListDomainsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -634,11 +638,9 @@ ListIntegrationsOutcome CustomerProfilesClient::ListIntegrations(const ListInteg
     return ListIntegrationsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/integrations");
   return ListIntegrationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -663,9 +665,7 @@ void CustomerProfilesClient::ListIntegrationsAsyncHelper(const ListIntegrationsR
 ListProfileObjectTypeTemplatesOutcome CustomerProfilesClient::ListProfileObjectTypeTemplates(const ListProfileObjectTypeTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/templates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/templates");
   return ListProfileObjectTypeTemplatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -695,11 +695,9 @@ ListProfileObjectTypesOutcome CustomerProfilesClient::ListProfileObjectTypes(con
     return ListProfileObjectTypesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/object-types";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/object-types");
   return ListProfileObjectTypesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -729,11 +727,9 @@ ListProfileObjectsOutcome CustomerProfilesClient::ListProfileObjects(const ListP
     return ListProfileObjectsOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles/objects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/objects");
   return ListProfileObjectsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -763,10 +759,8 @@ ListTagsForResourceOutcome CustomerProfilesClient::ListTagsForResource(const Lis
     return ListTagsForResourceOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -788,6 +782,38 @@ void CustomerProfilesClient::ListTagsForResourceAsyncHelper(const ListTagsForRes
   handler(this, request, ListTagsForResource(request), context);
 }
 
+MergeProfilesOutcome CustomerProfilesClient::MergeProfiles(const MergeProfilesRequest& request) const
+{
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("MergeProfiles", "Required field: DomainName, is not set");
+    return MergeProfilesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/objects/merge");
+  return MergeProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+MergeProfilesOutcomeCallable CustomerProfilesClient::MergeProfilesCallable(const MergeProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MergeProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MergeProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CustomerProfilesClient::MergeProfilesAsync(const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MergeProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void CustomerProfilesClient::MergeProfilesAsyncHelper(const MergeProfilesRequest& request, const MergeProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MergeProfiles(request), context);
+}
+
 PutIntegrationOutcome CustomerProfilesClient::PutIntegration(const PutIntegrationRequest& request) const
 {
   if (!request.DomainNameHasBeenSet())
@@ -796,11 +822,9 @@ PutIntegrationOutcome CustomerProfilesClient::PutIntegration(const PutIntegratio
     return PutIntegrationOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/integrations";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/integrations");
   return PutIntegrationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -830,11 +854,9 @@ PutProfileObjectOutcome CustomerProfilesClient::PutProfileObject(const PutProfil
     return PutProfileObjectOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles/objects";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/objects");
   return PutProfileObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -869,12 +891,10 @@ PutProfileObjectTypeOutcome CustomerProfilesClient::PutProfileObjectType(const P
     return PutProfileObjectTypeOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ObjectTypeName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/object-types/";
-  ss << request.GetObjectTypeName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/object-types/");
+  uri.AddPathSegment(request.GetObjectTypeName());
   return PutProfileObjectTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -904,11 +924,9 @@ SearchProfilesOutcome CustomerProfilesClient::SearchProfiles(const SearchProfile
     return SearchProfilesOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles/search";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles/search");
   return SearchProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -938,10 +956,8 @@ TagResourceOutcome CustomerProfilesClient::TagResource(const TagResourceRequest&
     return TagResourceOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -976,10 +992,8 @@ UntagResourceOutcome CustomerProfilesClient::UntagResource(const UntagResourceRe
     return UntagResourceOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1009,10 +1023,8 @@ UpdateDomainOutcome CustomerProfilesClient::UpdateDomain(const UpdateDomainReque
     return UpdateDomainOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
   return UpdateDomainOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1042,11 +1054,9 @@ UpdateProfileOutcome CustomerProfilesClient::UpdateProfile(const UpdateProfileRe
     return UpdateProfileOutcome(Aws::Client::AWSError<CustomerProfilesErrors>(CustomerProfilesErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/domains/";
-  ss << request.GetDomainName();
-  ss << "/profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/domains/");
+  uri.AddPathSegment(request.GetDomainName());
+  uri.AddPathSegments("/profiles");
   return UpdateProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

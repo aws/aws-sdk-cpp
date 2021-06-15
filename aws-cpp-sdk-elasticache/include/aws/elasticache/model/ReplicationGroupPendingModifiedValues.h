@@ -11,6 +11,8 @@
 #include <aws/elasticache/model/ReshardingStatus.h>
 #include <aws/elasticache/model/AuthTokenUpdateStatus.h>
 #include <aws/elasticache/model/UserGroupsUpdateStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticache/model/PendingLogDeliveryConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -230,6 +232,47 @@ namespace Model
      */
     inline ReplicationGroupPendingModifiedValues& WithUserGroups(UserGroupsUpdateStatus&& value) { SetUserGroups(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline const Aws::Vector<PendingLogDeliveryConfiguration>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<PendingLogDeliveryConfiguration>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<PendingLogDeliveryConfiguration>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithLogDeliveryConfigurations(const Aws::Vector<PendingLogDeliveryConfiguration>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& WithLogDeliveryConfigurations(Aws::Vector<PendingLogDeliveryConfiguration>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& AddLogDeliveryConfigurations(const PendingLogDeliveryConfiguration& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The log delivery configurations being modified </p>
+     */
+    inline ReplicationGroupPendingModifiedValues& AddLogDeliveryConfigurations(PendingLogDeliveryConfiguration&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_primaryClusterId;
@@ -246,6 +289,9 @@ namespace Model
 
     UserGroupsUpdateStatus m_userGroups;
     bool m_userGroupsHasBeenSet;
+
+    Aws::Vector<PendingLogDeliveryConfiguration> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

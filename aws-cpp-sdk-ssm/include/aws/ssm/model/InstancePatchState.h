@@ -825,6 +825,105 @@ namespace Model
      */
     inline InstancePatchState& WithRebootOption(RebootOption&& value) { SetRebootOption(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of instances where patches that are specified as "Critical" for
+     * compliance reporting in the patch baseline are not installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
+     */
+    inline int GetCriticalNonCompliantCount() const{ return m_criticalNonCompliantCount; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Critical" for
+     * compliance reporting in the patch baseline are not installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
+     */
+    inline bool CriticalNonCompliantCountHasBeenSet() const { return m_criticalNonCompliantCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Critical" for
+     * compliance reporting in the patch baseline are not installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
+     */
+    inline void SetCriticalNonCompliantCount(int value) { m_criticalNonCompliantCountHasBeenSet = true; m_criticalNonCompliantCount = value; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Critical" for
+     * compliance reporting in the patch baseline are not installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
+     */
+    inline InstancePatchState& WithCriticalNonCompliantCount(int value) { SetCriticalNonCompliantCount(value); return *this;}
+
+
+    /**
+     * <p>The number of instances where patches that are specified as "Security" in a
+     * patch advisory are not installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required instance
+     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     */
+    inline int GetSecurityNonCompliantCount() const{ return m_securityNonCompliantCount; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Security" in a
+     * patch advisory are not installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required instance
+     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     */
+    inline bool SecurityNonCompliantCountHasBeenSet() const { return m_securityNonCompliantCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Security" in a
+     * patch advisory are not installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required instance
+     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     */
+    inline void SetSecurityNonCompliantCount(int value) { m_securityNonCompliantCountHasBeenSet = true; m_securityNonCompliantCount = value; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Security" in a
+     * patch advisory are not installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required instance
+     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     */
+    inline InstancePatchState& WithSecurityNonCompliantCount(int value) { SetSecurityNonCompliantCount(value); return *this;}
+
+
+    /**
+     * <p>The number of instances with patches installed that are specified as other
+     * than "Critical" or "Security" but are not compliant with the patch baseline. The
+     * status of these instances is NON_COMPLIANT.</p>
+     */
+    inline int GetOtherNonCompliantCount() const{ return m_otherNonCompliantCount; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified as other
+     * than "Critical" or "Security" but are not compliant with the patch baseline. The
+     * status of these instances is NON_COMPLIANT.</p>
+     */
+    inline bool OtherNonCompliantCountHasBeenSet() const { return m_otherNonCompliantCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified as other
+     * than "Critical" or "Security" but are not compliant with the patch baseline. The
+     * status of these instances is NON_COMPLIANT.</p>
+     */
+    inline void SetOtherNonCompliantCount(int value) { m_otherNonCompliantCountHasBeenSet = true; m_otherNonCompliantCount = value; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified as other
+     * than "Critical" or "Security" but are not compliant with the patch baseline. The
+     * status of these instances is NON_COMPLIANT.</p>
+     */
+    inline InstancePatchState& WithOtherNonCompliantCount(int value) { SetOtherNonCompliantCount(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -883,6 +982,15 @@ namespace Model
 
     RebootOption m_rebootOption;
     bool m_rebootOptionHasBeenSet;
+
+    int m_criticalNonCompliantCount;
+    bool m_criticalNonCompliantCountHasBeenSet;
+
+    int m_securityNonCompliantCount;
+    bool m_securityNonCompliantCountHasBeenSet;
+
+    int m_otherNonCompliantCount;
+    bool m_otherNonCompliantCountHasBeenSet;
   };
 
 } // namespace Model

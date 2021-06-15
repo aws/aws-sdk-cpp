@@ -16,6 +16,7 @@
 #include <aws/snowball/model/CreateAddressResult.h>
 #include <aws/snowball/model/CreateClusterResult.h>
 #include <aws/snowball/model/CreateJobResult.h>
+#include <aws/snowball/model/CreateLongTermPricingResult.h>
 #include <aws/snowball/model/CreateReturnShippingLabelResult.h>
 #include <aws/snowball/model/DescribeAddressResult.h>
 #include <aws/snowball/model/DescribeAddressesResult.h>
@@ -30,9 +31,11 @@
 #include <aws/snowball/model/ListClustersResult.h>
 #include <aws/snowball/model/ListCompatibleImagesResult.h>
 #include <aws/snowball/model/ListJobsResult.h>
+#include <aws/snowball/model/ListLongTermPricingResult.h>
 #include <aws/snowball/model/UpdateClusterResult.h>
 #include <aws/snowball/model/UpdateJobResult.h>
 #include <aws/snowball/model/UpdateJobShipmentStateResult.h>
+#include <aws/snowball/model/UpdateLongTermPricingResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -77,6 +80,7 @@ namespace Model
         class CreateAddressRequest;
         class CreateClusterRequest;
         class CreateJobRequest;
+        class CreateLongTermPricingRequest;
         class CreateReturnShippingLabelRequest;
         class DescribeAddressRequest;
         class DescribeAddressesRequest;
@@ -91,15 +95,18 @@ namespace Model
         class ListClustersRequest;
         class ListCompatibleImagesRequest;
         class ListJobsRequest;
+        class ListLongTermPricingRequest;
         class UpdateClusterRequest;
         class UpdateJobRequest;
         class UpdateJobShipmentStateRequest;
+        class UpdateLongTermPricingRequest;
 
         typedef Aws::Utils::Outcome<CancelClusterResult, SnowballError> CancelClusterOutcome;
         typedef Aws::Utils::Outcome<CancelJobResult, SnowballError> CancelJobOutcome;
         typedef Aws::Utils::Outcome<CreateAddressResult, SnowballError> CreateAddressOutcome;
         typedef Aws::Utils::Outcome<CreateClusterResult, SnowballError> CreateClusterOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, SnowballError> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<CreateLongTermPricingResult, SnowballError> CreateLongTermPricingOutcome;
         typedef Aws::Utils::Outcome<CreateReturnShippingLabelResult, SnowballError> CreateReturnShippingLabelOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressResult, SnowballError> DescribeAddressOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressesResult, SnowballError> DescribeAddressesOutcome;
@@ -114,15 +121,18 @@ namespace Model
         typedef Aws::Utils::Outcome<ListClustersResult, SnowballError> ListClustersOutcome;
         typedef Aws::Utils::Outcome<ListCompatibleImagesResult, SnowballError> ListCompatibleImagesOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, SnowballError> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<ListLongTermPricingResult, SnowballError> ListLongTermPricingOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterResult, SnowballError> UpdateClusterOutcome;
         typedef Aws::Utils::Outcome<UpdateJobResult, SnowballError> UpdateJobOutcome;
         typedef Aws::Utils::Outcome<UpdateJobShipmentStateResult, SnowballError> UpdateJobShipmentStateOutcome;
+        typedef Aws::Utils::Outcome<UpdateLongTermPricingResult, SnowballError> UpdateLongTermPricingOutcome;
 
         typedef std::future<CancelClusterOutcome> CancelClusterOutcomeCallable;
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateAddressOutcome> CreateAddressOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
+        typedef std::future<CreateLongTermPricingOutcome> CreateLongTermPricingOutcomeCallable;
         typedef std::future<CreateReturnShippingLabelOutcome> CreateReturnShippingLabelOutcomeCallable;
         typedef std::future<DescribeAddressOutcome> DescribeAddressOutcomeCallable;
         typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
@@ -137,9 +147,11 @@ namespace Model
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
         typedef std::future<ListCompatibleImagesOutcome> ListCompatibleImagesOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<ListLongTermPricingOutcome> ListLongTermPricingOutcomeCallable;
         typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
         typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
         typedef std::future<UpdateJobShipmentStateOutcome> UpdateJobShipmentStateOutcomeCallable;
+        typedef std::future<UpdateLongTermPricingOutcome> UpdateLongTermPricingOutcomeCallable;
 } // namespace Model
 
   class SnowballClient;
@@ -149,6 +161,7 @@ namespace Model
     typedef std::function<void(const SnowballClient*, const Model::CreateAddressRequest&, const Model::CreateAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAddressResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
+    typedef std::function<void(const SnowballClient*, const Model::CreateLongTermPricingRequest&, const Model::CreateLongTermPricingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLongTermPricingResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::CreateReturnShippingLabelRequest&, const Model::CreateReturnShippingLabelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReturnShippingLabelResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::DescribeAddressRequest&, const Model::DescribeAddressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::DescribeAddressesRequest&, const Model::DescribeAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesResponseReceivedHandler;
@@ -163,9 +176,11 @@ namespace Model
     typedef std::function<void(const SnowballClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListCompatibleImagesRequest&, const Model::ListCompatibleImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCompatibleImagesResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const SnowballClient*, const Model::ListLongTermPricingRequest&, const Model::ListLongTermPricingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLongTermPricingResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::UpdateJobRequest&, const Model::UpdateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobResponseReceivedHandler;
     typedef std::function<void(const SnowballClient*, const Model::UpdateJobShipmentStateRequest&, const Model::UpdateJobShipmentStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobShipmentStateResponseReceivedHandler;
+    typedef std::function<void(const SnowballClient*, const Model::UpdateLongTermPricingRequest&, const Model::UpdateLongTermPricingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLongTermPricingResponseReceivedHandler;
 
   /**
    * <p>AWS Snow Family is a petabyte-scale data transport solution that uses secure
@@ -347,8 +362,33 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for a Snow device. If you're creating a job for a node
          * in a cluster, you only need to provide the <code>clusterId</code> value; the
-         * other job attributes are inherited from the cluster. </p><p><h3>See Also:</h3>  
-         * <a
+         * other job attributes are inherited from the cluster. </p>  <p>Only the
+         * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
+         * device capacity is optional.</p> <p>Availability of device types differ by AWS
+         * Region. For more information about region availability, see <a
+         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+         * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
+         * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
+         * type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li>
+         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Snow Family device
+         * type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li>
+         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>EDGE_S</b> </p> <ul> <li> <p>Capacity: T98</p> </li> <li> <p>Description:
+         * Snowball Edge Storage Optimized for data transfer only </p> </li> </ul> <p/>
+         * </li> <li> <p>Device type: <b>EDGE_CG</b> </p> <ul> <li> <p>Capacity: T42</p>
+         * </li> <li> <p>Description: Snowball Edge Compute Optimized with GPU</p> </li>
+         * </ul> <p/> </li> <li> <p>Device type: <b>EDGE_C</b> </p> <ul> <li> <p>Capacity:
+         * T42</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without
+         * GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE</b> </p> <ul> <li>
+         * <p>Capacity: T100</p> </li> <li> <p>Description: Snowball Edge Storage Optimized
+         * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
+         * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
+         * device</p>  <p>This device is only available in the Ningxia, Beijing, and
+         * Singapore AWS Regions. </p>  </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
+         * Original Snowball device</p>  <p>This device is only available in the
+         * Ningxia, Beijing, and Singapore AWS Regions. </p>  </li> </ul> <p/> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          */
@@ -359,8 +399,33 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for a Snow device. If you're creating a job for a node
          * in a cluster, you only need to provide the <code>clusterId</code> value; the
-         * other job attributes are inherited from the cluster. </p><p><h3>See Also:</h3>  
-         * <a
+         * other job attributes are inherited from the cluster. </p>  <p>Only the
+         * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
+         * device capacity is optional.</p> <p>Availability of device types differ by AWS
+         * Region. For more information about region availability, see <a
+         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+         * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
+         * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
+         * type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li>
+         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Snow Family device
+         * type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li>
+         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>EDGE_S</b> </p> <ul> <li> <p>Capacity: T98</p> </li> <li> <p>Description:
+         * Snowball Edge Storage Optimized for data transfer only </p> </li> </ul> <p/>
+         * </li> <li> <p>Device type: <b>EDGE_CG</b> </p> <ul> <li> <p>Capacity: T42</p>
+         * </li> <li> <p>Description: Snowball Edge Compute Optimized with GPU</p> </li>
+         * </ul> <p/> </li> <li> <p>Device type: <b>EDGE_C</b> </p> <ul> <li> <p>Capacity:
+         * T42</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without
+         * GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE</b> </p> <ul> <li>
+         * <p>Capacity: T100</p> </li> <li> <p>Description: Snowball Edge Storage Optimized
+         * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
+         * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
+         * device</p>  <p>This device is only available in the Ningxia, Beijing, and
+         * Singapore AWS Regions. </p>  </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
+         * Original Snowball device</p>  <p>This device is only available in the
+         * Ningxia, Beijing, and Singapore AWS Regions. </p>  </li> </ul> <p/> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          *
@@ -373,14 +438,73 @@ namespace Model
          * data center. Your AWS account must have the right trust policies and permissions
          * in place to create a job for a Snow device. If you're creating a job for a node
          * in a cluster, you only need to provide the <code>clusterId</code> value; the
-         * other job attributes are inherited from the cluster. </p><p><h3>See Also:</h3>  
-         * <a
+         * other job attributes are inherited from the cluster. </p>  <p>Only the
+         * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
+         * device capacity is optional.</p> <p>Availability of device types differ by AWS
+         * Region. For more information about region availability, see <a
+         * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
+         * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
+         * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
+         * type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li>
+         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Snow Family device
+         * type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li>
+         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>EDGE_S</b> </p> <ul> <li> <p>Capacity: T98</p> </li> <li> <p>Description:
+         * Snowball Edge Storage Optimized for data transfer only </p> </li> </ul> <p/>
+         * </li> <li> <p>Device type: <b>EDGE_CG</b> </p> <ul> <li> <p>Capacity: T42</p>
+         * </li> <li> <p>Description: Snowball Edge Compute Optimized with GPU</p> </li>
+         * </ul> <p/> </li> <li> <p>Device type: <b>EDGE_C</b> </p> <ul> <li> <p>Capacity:
+         * T42</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without
+         * GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE</b> </p> <ul> <li>
+         * <p>Capacity: T100</p> </li> <li> <p>Description: Snowball Edge Storage Optimized
+         * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
+         * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
+         * device</p>  <p>This device is only available in the Ningxia, Beijing, and
+         * Singapore AWS Regions. </p>  </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
+         * Original Snowball device</p>  <p>This device is only available in the
+         * Ningxia, Beijing, and Singapore AWS Regions. </p>  </li> </ul> <p/> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a job with long term usage option for a device. The long term usage
+         * is a one year or three year long term pricing type for the device. You are
+         * billed upfront and AWS give discounts for long term pricing. For detailed
+         * information see XXXXXXXX</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLongTermPricingOutcome CreateLongTermPricing(const Model::CreateLongTermPricingRequest& request) const;
+
+        /**
+         * <p>Creates a job with long term usage option for a device. The long term usage
+         * is a one year or three year long term pricing type for the device. You are
+         * billed upfront and AWS give discounts for long term pricing. For detailed
+         * information see XXXXXXXX</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLongTermPricingOutcomeCallable CreateLongTermPricingCallable(const Model::CreateLongTermPricingRequest& request) const;
+
+        /**
+         * <p>Creates a job with long term usage option for a device. The long term usage
+         * is a one year or three year long term pricing type for the device. You are
+         * billed upfront and AWS give discounts for long term pricing. For detailed
+         * information see XXXXXXXX</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLongTermPricingAsync(const Model::CreateLongTermPricingRequest& request, const CreateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a shipping label that will be used to return the Snow device to
@@ -570,7 +694,7 @@ namespace Model
          * same location as the manifest file for that job. Saving these separately helps
          * prevent unauthorized parties from gaining access to the Snow device associated
          * with that job.</p> <p>The credentials of a given job, including its manifest
-         * file and unlock code, expire 90 days after the job is created.</p><p><h3>See
+         * file and unlock code, expire 360 days after the job is created.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">AWS
          * API Reference</a></p>
@@ -591,7 +715,7 @@ namespace Model
          * same location as the manifest file for that job. Saving these separately helps
          * prevent unauthorized parties from gaining access to the Snow device associated
          * with that job.</p> <p>The credentials of a given job, including its manifest
-         * file and unlock code, expire 90 days after the job is created.</p><p><h3>See
+         * file and unlock code, expire 360 days after the job is created.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">AWS
          * API Reference</a></p>
@@ -614,7 +738,7 @@ namespace Model
          * same location as the manifest file for that job. Saving these separately helps
          * prevent unauthorized parties from gaining access to the Snow device associated
          * with that job.</p> <p>The credentials of a given job, including its manifest
-         * file and unlock code, expire 90 days after the job is created.</p><p><h3>See
+         * file and unlock code, expire 360 days after the job is created.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobManifest">AWS
          * API Reference</a></p>
@@ -625,16 +749,16 @@ namespace Model
 
         /**
          * <p>Returns the <code>UnlockCode</code> code value for the specified job. A
-         * particular <code>UnlockCode</code> value can be accessed for up to 90 days after
-         * the associated job has been created.</p> <p>The <code>UnlockCode</code> value is
-         * a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is
-         * used to decrypt the manifest file when it is passed along with the manifest to
-         * the Snow device through the Snowball client when the client is started for the
-         * first time.</p> <p>As a best practice, we recommend that you don't save a copy
-         * of the <code>UnlockCode</code> in the same location as the manifest file for
-         * that job. Saving these separately helps prevent unauthorized parties from
-         * gaining access to the Snow device associated with that job.</p><p><h3>See
-         * Also:</h3>   <a
+         * particular <code>UnlockCode</code> value can be accessed for up to 360 days
+         * after the associated job has been created.</p> <p>The <code>UnlockCode</code>
+         * value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This
+         * code is used to decrypt the manifest file when it is passed along with the
+         * manifest to the Snow device through the Snowball client when the client is
+         * started for the first time.</p> <p>As a best practice, we recommend that you
+         * don't save a copy of the <code>UnlockCode</code> in the same location as the
+         * manifest file for that job. Saving these separately helps prevent unauthorized
+         * parties from gaining access to the Snow device associated with that
+         * job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">AWS
          * API Reference</a></p>
          */
@@ -642,16 +766,16 @@ namespace Model
 
         /**
          * <p>Returns the <code>UnlockCode</code> code value for the specified job. A
-         * particular <code>UnlockCode</code> value can be accessed for up to 90 days after
-         * the associated job has been created.</p> <p>The <code>UnlockCode</code> value is
-         * a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is
-         * used to decrypt the manifest file when it is passed along with the manifest to
-         * the Snow device through the Snowball client when the client is started for the
-         * first time.</p> <p>As a best practice, we recommend that you don't save a copy
-         * of the <code>UnlockCode</code> in the same location as the manifest file for
-         * that job. Saving these separately helps prevent unauthorized parties from
-         * gaining access to the Snow device associated with that job.</p><p><h3>See
-         * Also:</h3>   <a
+         * particular <code>UnlockCode</code> value can be accessed for up to 360 days
+         * after the associated job has been created.</p> <p>The <code>UnlockCode</code>
+         * value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This
+         * code is used to decrypt the manifest file when it is passed along with the
+         * manifest to the Snow device through the Snowball client when the client is
+         * started for the first time.</p> <p>As a best practice, we recommend that you
+         * don't save a copy of the <code>UnlockCode</code> in the same location as the
+         * manifest file for that job. Saving these separately helps prevent unauthorized
+         * parties from gaining access to the Snow device associated with that
+         * job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">AWS
          * API Reference</a></p>
          *
@@ -661,16 +785,16 @@ namespace Model
 
         /**
          * <p>Returns the <code>UnlockCode</code> code value for the specified job. A
-         * particular <code>UnlockCode</code> value can be accessed for up to 90 days after
-         * the associated job has been created.</p> <p>The <code>UnlockCode</code> value is
-         * a 29-character code with 25 alphanumeric characters and 4 hyphens. This code is
-         * used to decrypt the manifest file when it is passed along with the manifest to
-         * the Snow device through the Snowball client when the client is started for the
-         * first time.</p> <p>As a best practice, we recommend that you don't save a copy
-         * of the <code>UnlockCode</code> in the same location as the manifest file for
-         * that job. Saving these separately helps prevent unauthorized parties from
-         * gaining access to the Snow device associated with that job.</p><p><h3>See
-         * Also:</h3>   <a
+         * particular <code>UnlockCode</code> value can be accessed for up to 360 days
+         * after the associated job has been created.</p> <p>The <code>UnlockCode</code>
+         * value is a 29-character code with 25 alphanumeric characters and 4 hyphens. This
+         * code is used to decrypt the manifest file when it is passed along with the
+         * manifest to the Snow device through the Snowball client when the client is
+         * started for the first time.</p> <p>As a best practice, we recommend that you
+         * don't save a copy of the <code>UnlockCode</code> in the same location as the
+         * manifest file for that job. Saving these separately helps prevent unauthorized
+         * parties from gaining access to the Snow device associated with that
+         * job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/GetJobUnlockCode">AWS
          * API Reference</a></p>
          *
@@ -889,6 +1013,31 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all long term pricing types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLongTermPricingOutcome ListLongTermPricing(const Model::ListLongTermPricingRequest& request) const;
+
+        /**
+         * <p>Lists all long term pricing types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLongTermPricingOutcomeCallable ListLongTermPricingCallable(const Model::ListLongTermPricingRequest& request) const;
+
+        /**
+         * <p>Lists all long term pricing types.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLongTermPricingAsync(const Model::ListLongTermPricingRequest& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>While a cluster's <code>ClusterState</code> value is in the
          * <code>AwaitingQuorum</code> state, you can update some of the information
          * associated with a cluster. Once the cluster changes to a different job state,
@@ -987,6 +1136,31 @@ namespace Model
          */
         virtual void UpdateJobShipmentStateAsync(const Model::UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates the long term pricing type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLongTermPricingOutcome UpdateLongTermPricing(const Model::UpdateLongTermPricingRequest& request) const;
+
+        /**
+         * <p>Updates the long term pricing type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateLongTermPricingOutcomeCallable UpdateLongTermPricingCallable(const Model::UpdateLongTermPricingRequest& request) const;
+
+        /**
+         * <p>Updates the long term pricing type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateLongTermPricingAsync(const Model::UpdateLongTermPricingRequest& request, const UpdateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -996,6 +1170,7 @@ namespace Model
         void CreateAddressAsyncHelper(const Model::CreateAddressRequest& request, const CreateAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLongTermPricingAsyncHelper(const Model::CreateLongTermPricingRequest& request, const CreateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateReturnShippingLabelAsyncHelper(const Model::CreateReturnShippingLabelRequest& request, const CreateReturnShippingLabelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddressAsyncHelper(const Model::DescribeAddressRequest& request, const DescribeAddressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddressesAsyncHelper(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1010,9 +1185,11 @@ namespace Model
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCompatibleImagesAsyncHelper(const Model::ListCompatibleImagesRequest& request, const ListCompatibleImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLongTermPricingAsyncHelper(const Model::ListLongTermPricingRequest& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterAsyncHelper(const Model::UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobAsyncHelper(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobShipmentStateAsyncHelper(const Model::UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateLongTermPricingAsyncHelper(const Model::UpdateLongTermPricingRequest& request, const UpdateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

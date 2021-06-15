@@ -84,90 +84,90 @@ namespace Model
     /**
      * <p>The latest device position defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[Xlongitude, Ylatitude]</code>.</p>
+     * <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
 
     /**
      * <p>The latest device position defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[Xlongitude, Ylatitude]</code>.</p>
+     * <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
      * <p>The latest device position defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[Xlongitude, Ylatitude]</code>.</p>
+     * <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
      * <p>The latest device position defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[Xlongitude, Ylatitude]</code>.</p>
+     * <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
 
     /**
      * <p>The latest device position defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[Xlongitude, Ylatitude]</code>.</p>
+     * <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline DevicePositionUpdate& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
 
     /**
      * <p>The latest device position defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[Xlongitude, Ylatitude]</code>.</p>
+     * <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline DevicePositionUpdate& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
 
     /**
      * <p>The latest device position defined in <a
      * href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
-     * <code>[Xlongitude, Ylatitude]</code>.</p>
+     * <code>[X or longitude, Y or latitude]</code>.</p>
      */
     inline DevicePositionUpdate& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
 
 
     /**
-     * <p>The timestamp for when the position update was received in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
 
     /**
-     * <p>The timestamp for when the position update was received in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline bool SampleTimeHasBeenSet() const { return m_sampleTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp for when the position update was received in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = value; }
 
     /**
-     * <p>The timestamp for when the position update was received in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the position update was received in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */
     inline DevicePositionUpdate& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the position update was received in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
      */

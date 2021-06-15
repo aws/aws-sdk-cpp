@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * Settings for TS segments in HLS<p><h3>See Also:</h3>   <a
+   * These settings relate to the MPEG-2 transport stream (MPEG2-TS) container for
+   * the MPEG2-TS segments in your HLS outputs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M3u8Settings">AWS
    * API Reference</a></p>
    */
@@ -214,6 +215,31 @@ namespace Model
      * comma separation.
      */
     inline M3u8Settings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
+
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline int GetMaxPcrInterval() const{ return m_maxPcrInterval; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline bool MaxPcrIntervalHasBeenSet() const { return m_maxPcrIntervalHasBeenSet; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline void SetMaxPcrInterval(int value) { m_maxPcrIntervalHasBeenSet = true; m_maxPcrInterval = value; }
+
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
+     */
+    inline M3u8Settings& WithMaxPcrInterval(int value) { SetMaxPcrInterval(value); return *this;}
 
 
     /**
@@ -641,6 +667,9 @@ namespace Model
 
     Aws::Vector<int> m_audioPids;
     bool m_audioPidsHasBeenSet;
+
+    int m_maxPcrInterval;
+    bool m_maxPcrIntervalHasBeenSet;
 
     M3u8NielsenId3 m_nielsenId3;
     bool m_nielsenId3HasBeenSet;

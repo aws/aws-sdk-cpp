@@ -424,16 +424,18 @@ namespace Model
         virtual void CreateDatasetContentAsync(const Model::CreateDatasetContentRequest& request, const CreateDatasetContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a data store, which is a repository for messages.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a data store, which is a repository for messages. Only data stores
+         * that are used to save pipeline data can be configured with
+         * <code>ParquetConfiguration</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDatastoreOutcome CreateDatastore(const Model::CreateDatastoreRequest& request) const;
 
         /**
-         * <p>Creates a data store, which is a repository for messages.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a data store, which is a repository for messages. Only data stores
+         * that are used to save pipeline data can be configured with
+         * <code>ParquetConfiguration</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">AWS
          * API Reference</a></p>
          *
@@ -442,8 +444,9 @@ namespace Model
         virtual Model::CreateDatastoreOutcomeCallable CreateDatastoreCallable(const Model::CreateDatastoreRequest& request) const;
 
         /**
-         * <p>Creates a data store, which is a repository for messages.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a data store, which is a repository for messages. Only data stores
+         * that are used to save pipeline data can be configured with
+         * <code>ParquetConfiguration</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatastore">AWS
          * API Reference</a></p>
          *

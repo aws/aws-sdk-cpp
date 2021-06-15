@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Last update information for the environment.</p><p><h3>See Also:</h3>   <a
+   * <p>The status of the last update on the environment, and any errors that were
+   * encountered.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/LastUpdate">AWS API
    * Reference</a></p>
    */
@@ -40,94 +41,100 @@ namespace Model
 
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline LastUpdate& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Time that last update occurred.</p>
+     * <p>The day and time of the last update on the environment.</p>
      */
     inline LastUpdate& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline const UpdateError& GetError() const{ return m_error; }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline void SetError(const UpdateError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline void SetError(UpdateError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline LastUpdate& WithError(const UpdateError& value) { SetError(value); return *this;}
 
     /**
-     * <p>Error string of last update, if applicable.</p>
+     * <p>The error that was encountered during the last update of the environment.</p>
      */
     inline LastUpdate& WithError(UpdateError&& value) { SetError(std::move(value)); return *this;}
 
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment. Valid values:
+     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
      */
     inline const UpdateStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment. Valid values:
+     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment. Valid values:
+     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
      */
     inline void SetStatus(const UpdateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment. Valid values:
+     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
      */
     inline void SetStatus(UpdateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment. Valid values:
+     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
      */
     inline LastUpdate& WithStatus(const UpdateStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Status of last update of SUCCESS, FAILED, CREATING, DELETING.</p>
+     * <p>The status of the last update on the environment. Valid values:
+     * <code>SUCCESS</code>, <code>PENDING</code>, <code>FAILED</code>.</p>
      */
     inline LastUpdate& WithStatus(UpdateStatus&& value) { SetStatus(std::move(value)); return *this;}
 

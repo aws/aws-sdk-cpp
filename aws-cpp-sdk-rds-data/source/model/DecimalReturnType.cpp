@@ -20,20 +20,20 @@ namespace Aws
       namespace DecimalReturnTypeMapper
       {
 
-        static const int DOUBLE_OR_LONG_HASH = HashingUtils::HashString("DOUBLE_OR_LONG");
         static const int STRING_HASH = HashingUtils::HashString("STRING");
+        static const int DOUBLE_OR_LONG_HASH = HashingUtils::HashString("DOUBLE_OR_LONG");
 
 
         DecimalReturnType GetDecimalReturnTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == DOUBLE_OR_LONG_HASH)
-          {
-            return DecimalReturnType::DOUBLE_OR_LONG;
-          }
-          else if (hashCode == STRING_HASH)
+          if (hashCode == STRING_HASH)
           {
             return DecimalReturnType::STRING;
+          }
+          else if (hashCode == DOUBLE_OR_LONG_HASH)
+          {
+            return DecimalReturnType::DOUBLE_OR_LONG;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,10 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case DecimalReturnType::DOUBLE_OR_LONG:
-            return "DOUBLE_OR_LONG";
           case DecimalReturnType::STRING:
             return "STRING";
+          case DecimalReturnType::DOUBLE_OR_LONG:
+            return "DOUBLE_OR_LONG";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

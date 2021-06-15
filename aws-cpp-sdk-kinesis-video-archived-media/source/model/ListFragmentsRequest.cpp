@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 ListFragmentsRequest::ListFragmentsRequest() : 
     m_streamNameHasBeenSet(false),
+    m_streamARNHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -28,6 +29,12 @@ Aws::String ListFragmentsRequest::SerializePayload() const
   if(m_streamNameHasBeenSet)
   {
    payload.WithString("StreamName", m_streamName);
+
+  }
+
+  if(m_streamARNHasBeenSet)
+  {
+   payload.WithString("StreamARN", m_streamARN);
 
   }
 

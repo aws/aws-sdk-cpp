@@ -25,6 +25,7 @@ namespace Aws
         static const int ClusterUnreachable_HASH = HashingUtils::HashString("ClusterUnreachable");
         static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
         static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
+        static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
 
 
         AddonIssueCode GetAddonIssueCodeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return AddonIssueCode::ConfigurationConflict;
           }
+          else if (hashCode == AdmissionRequestDenied_HASH)
+          {
+            return AddonIssueCode::AdmissionRequestDenied;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "InsufficientNumberOfReplicas";
           case AddonIssueCode::ConfigurationConflict:
             return "ConfigurationConflict";
+          case AddonIssueCode::AdmissionRequestDenied:
+            return "AdmissionRequestDenied";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

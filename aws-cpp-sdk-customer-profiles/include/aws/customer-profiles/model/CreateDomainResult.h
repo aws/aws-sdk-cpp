@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/customer-profiles/CustomerProfiles_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/customer-profiles/model/MatchingResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -180,6 +181,37 @@ namespace Model
 
 
     /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline const MatchingResponse& GetMatching() const{ return m_matching; }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline void SetMatching(const MatchingResponse& value) { m_matching = value; }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline void SetMatching(MatchingResponse&& value) { m_matching = std::move(value); }
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline CreateDomainResult& WithMatching(const MatchingResponse& value) { SetMatching(value); return *this;}
+
+    /**
+     * <p>The process of matching duplicate profiles. This process runs every Saturday
+     * at 12AM.</p>
+     */
+    inline CreateDomainResult& WithMatching(MatchingResponse&& value) { SetMatching(std::move(value)); return *this;}
+
+
+    /**
      * <p>The timestamp of when the domain was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
@@ -300,6 +332,8 @@ namespace Model
     Aws::String m_defaultEncryptionKey;
 
     Aws::String m_deadLetterQueueUrl;
+
+    MatchingResponse m_matching;
 
     Aws::Utils::DateTime m_createdAt;
 

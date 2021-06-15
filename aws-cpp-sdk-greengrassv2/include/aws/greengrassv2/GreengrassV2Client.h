@@ -11,6 +11,8 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrassv2/model/BatchAssociateClientDeviceWithCoreDeviceResult.h>
+#include <aws/greengrassv2/model/BatchDisassociateClientDeviceFromCoreDeviceResult.h>
 #include <aws/greengrassv2/model/CancelDeploymentResult.h>
 #include <aws/greengrassv2/model/CreateComponentVersionResult.h>
 #include <aws/greengrassv2/model/CreateDeploymentResult.h>
@@ -19,6 +21,7 @@
 #include <aws/greengrassv2/model/GetComponentVersionArtifactResult.h>
 #include <aws/greengrassv2/model/GetCoreDeviceResult.h>
 #include <aws/greengrassv2/model/GetDeploymentResult.h>
+#include <aws/greengrassv2/model/ListClientDevicesAssociatedWithCoreDeviceResult.h>
 #include <aws/greengrassv2/model/ListComponentVersionsResult.h>
 #include <aws/greengrassv2/model/ListComponentsResult.h>
 #include <aws/greengrassv2/model/ListCoreDevicesResult.h>
@@ -69,6 +72,8 @@ namespace GreengrassV2
 
 namespace Model
 {
+        class BatchAssociateClientDeviceWithCoreDeviceRequest;
+        class BatchDisassociateClientDeviceFromCoreDeviceRequest;
         class CancelDeploymentRequest;
         class CreateComponentVersionRequest;
         class CreateDeploymentRequest;
@@ -79,6 +84,7 @@ namespace Model
         class GetComponentVersionArtifactRequest;
         class GetCoreDeviceRequest;
         class GetDeploymentRequest;
+        class ListClientDevicesAssociatedWithCoreDeviceRequest;
         class ListComponentVersionsRequest;
         class ListComponentsRequest;
         class ListCoreDevicesRequest;
@@ -90,6 +96,8 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
 
+        typedef Aws::Utils::Outcome<BatchAssociateClientDeviceWithCoreDeviceResult, GreengrassV2Error> BatchAssociateClientDeviceWithCoreDeviceOutcome;
+        typedef Aws::Utils::Outcome<BatchDisassociateClientDeviceFromCoreDeviceResult, GreengrassV2Error> BatchDisassociateClientDeviceFromCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<CancelDeploymentResult, GreengrassV2Error> CancelDeploymentOutcome;
         typedef Aws::Utils::Outcome<CreateComponentVersionResult, GreengrassV2Error> CreateComponentVersionOutcome;
         typedef Aws::Utils::Outcome<CreateDeploymentResult, GreengrassV2Error> CreateDeploymentOutcome;
@@ -100,6 +108,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetComponentVersionArtifactResult, GreengrassV2Error> GetComponentVersionArtifactOutcome;
         typedef Aws::Utils::Outcome<GetCoreDeviceResult, GreengrassV2Error> GetCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<GetDeploymentResult, GreengrassV2Error> GetDeploymentOutcome;
+        typedef Aws::Utils::Outcome<ListClientDevicesAssociatedWithCoreDeviceResult, GreengrassV2Error> ListClientDevicesAssociatedWithCoreDeviceOutcome;
         typedef Aws::Utils::Outcome<ListComponentVersionsResult, GreengrassV2Error> ListComponentVersionsOutcome;
         typedef Aws::Utils::Outcome<ListComponentsResult, GreengrassV2Error> ListComponentsOutcome;
         typedef Aws::Utils::Outcome<ListCoreDevicesResult, GreengrassV2Error> ListCoreDevicesOutcome;
@@ -111,6 +120,8 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, GreengrassV2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, GreengrassV2Error> UntagResourceOutcome;
 
+        typedef std::future<BatchAssociateClientDeviceWithCoreDeviceOutcome> BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable;
+        typedef std::future<BatchDisassociateClientDeviceFromCoreDeviceOutcome> BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable;
         typedef std::future<CancelDeploymentOutcome> CancelDeploymentOutcomeCallable;
         typedef std::future<CreateComponentVersionOutcome> CreateComponentVersionOutcomeCallable;
         typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
@@ -121,6 +132,7 @@ namespace Model
         typedef std::future<GetComponentVersionArtifactOutcome> GetComponentVersionArtifactOutcomeCallable;
         typedef std::future<GetCoreDeviceOutcome> GetCoreDeviceOutcomeCallable;
         typedef std::future<GetDeploymentOutcome> GetDeploymentOutcomeCallable;
+        typedef std::future<ListClientDevicesAssociatedWithCoreDeviceOutcome> ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable;
         typedef std::future<ListComponentVersionsOutcome> ListComponentVersionsOutcomeCallable;
         typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
         typedef std::future<ListCoreDevicesOutcome> ListCoreDevicesOutcomeCallable;
@@ -135,6 +147,8 @@ namespace Model
 
   class GreengrassV2Client;
 
+    typedef std::function<void(const GreengrassV2Client*, const Model::BatchAssociateClientDeviceWithCoreDeviceRequest&, const Model::BatchAssociateClientDeviceWithCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler;
+    typedef std::function<void(const GreengrassV2Client*, const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest&, const Model::BatchDisassociateClientDeviceFromCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::CancelDeploymentRequest&, const Model::CancelDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDeploymentResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::CreateComponentVersionRequest&, const Model::CreateComponentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateComponentVersionResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentResponseReceivedHandler;
@@ -145,6 +159,7 @@ namespace Model
     typedef std::function<void(const GreengrassV2Client*, const Model::GetComponentVersionArtifactRequest&, const Model::GetComponentVersionArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComponentVersionArtifactResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::GetCoreDeviceRequest&, const Model::GetCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::GetDeploymentRequest&, const Model::GetDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeploymentResponseReceivedHandler;
+    typedef std::function<void(const GreengrassV2Client*, const Model::ListClientDevicesAssociatedWithCoreDeviceRequest&, const Model::ListClientDevicesAssociatedWithCoreDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::ListComponentVersionsRequest&, const Model::ListComponentVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentVersionsResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
     typedef std::function<void(const GreengrassV2Client*, const Model::ListCoreDevicesRequest&, const Model::ListCoreDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoreDevicesResponseReceivedHandler;
@@ -199,6 +214,107 @@ namespace Model
 
         virtual ~GreengrassV2Client();
 
+
+        /**
+         * <p>Associate a list of client devices with a core device. Use this API operation
+         * to specify which client devices can discover a core device through cloud
+         * discovery. With cloud discovery, client devices connect to AWS IoT Greengrass to
+         * retrieve associated core devices' connectivity information and certificates. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+         * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+         *  <p>Client devices are local IoT devices that connect to and communicate
+         * with an AWS IoT Greengrass core device over MQTT. You can connect client devices
+         * to a core device to sync MQTT messages and data to AWS IoT Core and interact
+         * with client devices in AWS IoT Greengrass components. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+         * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchAssociateClientDeviceWithCoreDeviceOutcome BatchAssociateClientDeviceWithCoreDevice(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request) const;
+
+        /**
+         * <p>Associate a list of client devices with a core device. Use this API operation
+         * to specify which client devices can discover a core device through cloud
+         * discovery. With cloud discovery, client devices connect to AWS IoT Greengrass to
+         * retrieve associated core devices' connectivity information and certificates. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+         * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+         *  <p>Client devices are local IoT devices that connect to and communicate
+         * with an AWS IoT Greengrass core device over MQTT. You can connect client devices
+         * to a core device to sync MQTT messages and data to AWS IoT Core and interact
+         * with client devices in AWS IoT Greengrass components. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+         * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchAssociateClientDeviceWithCoreDeviceOutcomeCallable BatchAssociateClientDeviceWithCoreDeviceCallable(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request) const;
+
+        /**
+         * <p>Associate a list of client devices with a core device. Use this API operation
+         * to specify which client devices can discover a core device through cloud
+         * discovery. With cloud discovery, client devices connect to AWS IoT Greengrass to
+         * retrieve associated core devices' connectivity information and certificates. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure
+         * cloud discovery</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+         *  <p>Client devices are local IoT devices that connect to and communicate
+         * with an AWS IoT Greengrass core device over MQTT. You can connect client devices
+         * to a core device to sync MQTT messages and data to AWS IoT Core and interact
+         * with client devices in AWS IoT Greengrass components. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interact-with-local-iot-devices.html">Interact
+         * with local IoT devices</a> in the <i>AWS IoT Greengrass V2 Developer
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchAssociateClientDeviceWithCoreDevice">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchAssociateClientDeviceWithCoreDeviceAsync(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociate a list of client devices from a core device. After you
+         * disassociate a client device from a core device, the client device won't be able
+         * to use cloud discovery to retrieve the core device's connectivity information
+         * and certificates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDisassociateClientDeviceFromCoreDeviceOutcome BatchDisassociateClientDeviceFromCoreDevice(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const;
+
+        /**
+         * <p>Disassociate a list of client devices from a core device. After you
+         * disassociate a client device from a core device, the client device won't be able
+         * to use cloud discovery to retrieve the core device's connectivity information
+         * and certificates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDisassociateClientDeviceFromCoreDeviceOutcomeCallable BatchDisassociateClientDeviceFromCoreDeviceCallable(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request) const;
+
+        /**
+         * <p>Disassociate a list of client devices from a core device. After you
+         * disassociate a client device from a core device, the client device won't be able
+         * to use cloud discovery to retrieve the core device's connectivity information
+         * and certificates.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/BatchDisassociateClientDeviceFromCoreDevice">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDisassociateClientDeviceFromCoreDeviceAsync(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels a deployment. This operation cancels the deployment for devices that
@@ -337,7 +453,7 @@ namespace Model
          * this operation to create a new revision of an existing deployment. This
          * operation returns the revision number of the new deployment when you create
          * it.</p> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
          * deployments</a> in the <i>AWS IoT Greengrass V2 Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateDeployment">AWS
@@ -357,7 +473,7 @@ namespace Model
          * this operation to create a new revision of an existing deployment. This
          * operation returns the revision number of the new deployment when you create
          * it.</p> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
          * deployments</a> in the <i>AWS IoT Greengrass V2 Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateDeployment">AWS
@@ -379,7 +495,7 @@ namespace Model
          * this operation to create a new revision of an existing deployment. This
          * operation returns the revision number of the new deployment when you create
          * it.</p> <p>For more information, see the <a
-         * href="https://docs.aws.amazon.com/greengrass/v2/latest/developerguide/create-deployments.html">Create
+         * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create
          * deployments</a> in the <i>AWS IoT Greengrass V2 Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/CreateDeployment">AWS
@@ -529,8 +645,8 @@ namespace Model
         virtual void GetComponentAsync(const Model::GetComponentRequest& request, const GetComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the pre-signed URL to a component artifact in an S3 bucket. Core devices
-         * can call this operation to identify the URL that they can use to download an
+         * <p>Gets the pre-signed URL to download a public component artifact. Core devices
+         * call this operation to identify the URL that they can use to download an
          * artifact to install.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetComponentVersionArtifact">AWS
          * API Reference</a></p>
@@ -538,8 +654,8 @@ namespace Model
         virtual Model::GetComponentVersionArtifactOutcome GetComponentVersionArtifact(const Model::GetComponentVersionArtifactRequest& request) const;
 
         /**
-         * <p>Gets the pre-signed URL to a component artifact in an S3 bucket. Core devices
-         * can call this operation to identify the URL that they can use to download an
+         * <p>Gets the pre-signed URL to download a public component artifact. Core devices
+         * call this operation to identify the URL that they can use to download an
          * artifact to install.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetComponentVersionArtifact">AWS
          * API Reference</a></p>
@@ -549,8 +665,8 @@ namespace Model
         virtual Model::GetComponentVersionArtifactOutcomeCallable GetComponentVersionArtifactCallable(const Model::GetComponentVersionArtifactRequest& request) const;
 
         /**
-         * <p>Gets the pre-signed URL to a component artifact in an S3 bucket. Core devices
-         * can call this operation to identify the URL that they can use to download an
+         * <p>Gets the pre-signed URL to download a public component artifact. Core devices
+         * call this operation to identify the URL that they can use to download an
          * artifact to install.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/GetComponentVersionArtifact">AWS
          * API Reference</a></p>
@@ -616,16 +732,44 @@ namespace Model
         virtual void GetDeploymentAsync(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a paginated list of all versions for a component.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a paginated list of client devices that are associated with a core
+         * device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListClientDevicesAssociatedWithCoreDeviceOutcome ListClientDevicesAssociatedWithCoreDevice(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request) const;
+
+        /**
+         * <p>Retrieves a paginated list of client devices that are associated with a core
+         * device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListClientDevicesAssociatedWithCoreDeviceOutcomeCallable ListClientDevicesAssociatedWithCoreDeviceCallable(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request) const;
+
+        /**
+         * <p>Retrieves a paginated list of client devices that are associated with a core
+         * device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListClientDevicesAssociatedWithCoreDevice">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListClientDevicesAssociatedWithCoreDeviceAsync(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a paginated list of all versions for a component. Greater versions
+         * are listed first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListComponentVersions">AWS
          * API Reference</a></p>
          */
         virtual Model::ListComponentVersionsOutcome ListComponentVersions(const Model::ListComponentVersionsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of all versions for a component.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a paginated list of all versions for a component. Greater versions
+         * are listed first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListComponentVersions">AWS
          * API Reference</a></p>
          *
@@ -634,8 +778,8 @@ namespace Model
         virtual Model::ListComponentVersionsOutcomeCallable ListComponentVersionsCallable(const Model::ListComponentVersionsRequest& request) const;
 
         /**
-         * <p>Retrieves a paginated list of all versions for a component.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a paginated list of all versions for a component. Greater versions
+         * are listed first.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ListComponentVersions">AWS
          * API Reference</a></p>
          *
@@ -823,9 +967,8 @@ namespace Model
          * Greengrass specifies to use the version from the AWS Cloud.</p> 
          * <p>To use this operation, you must use the data plane API endpoint and
          * authenticate with an AWS IoT device certificate. For more information, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
-         * IoT Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
+         * Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ResolveComponentCandidates">AWS
          * API Reference</a></p>
          */
@@ -846,9 +989,8 @@ namespace Model
          * Greengrass specifies to use the version from the AWS Cloud.</p> 
          * <p>To use this operation, you must use the data plane API endpoint and
          * authenticate with an AWS IoT device certificate. For more information, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
-         * IoT Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
+         * Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ResolveComponentCandidates">AWS
          * API Reference</a></p>
          *
@@ -871,9 +1013,8 @@ namespace Model
          * Greengrass specifies to use the version from the AWS Cloud.</p> 
          * <p>To use this operation, you must use the data plane API endpoint and
          * authenticate with an AWS IoT device certificate. For more information, see <a
-         * href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS
-         * IoT Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>  
-         * <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/greengrass.html">AWS IoT
+         * Greengrass endpoints and quotas</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/greengrassv2-2020-11-30/ResolveComponentCandidates">AWS
          * API Reference</a></p>
          *
@@ -941,6 +1082,8 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void BatchAssociateClientDeviceWithCoreDeviceAsyncHelper(const Model::BatchAssociateClientDeviceWithCoreDeviceRequest& request, const BatchAssociateClientDeviceWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchDisassociateClientDeviceFromCoreDeviceAsyncHelper(const Model::BatchDisassociateClientDeviceFromCoreDeviceRequest& request, const BatchDisassociateClientDeviceFromCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelDeploymentAsyncHelper(const Model::CancelDeploymentRequest& request, const CancelDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateComponentVersionAsyncHelper(const Model::CreateComponentVersionRequest& request, const CreateComponentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -951,6 +1094,7 @@ namespace Model
         void GetComponentVersionArtifactAsyncHelper(const Model::GetComponentVersionArtifactRequest& request, const GetComponentVersionArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCoreDeviceAsyncHelper(const Model::GetCoreDeviceRequest& request, const GetCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDeploymentAsyncHelper(const Model::GetDeploymentRequest& request, const GetDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListClientDevicesAssociatedWithCoreDeviceAsyncHelper(const Model::ListClientDevicesAssociatedWithCoreDeviceRequest& request, const ListClientDevicesAssociatedWithCoreDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentVersionsAsyncHelper(const Model::ListComponentVersionsRequest& request, const ListComponentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCoreDevicesAsyncHelper(const Model::ListCoreDevicesRequest& request, const ListCoreDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

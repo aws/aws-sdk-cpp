@@ -39,22 +39,40 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
+     */
     inline const ManagedScaling& GetManagedScaling() const{ return m_managedScaling; }
 
-    
+    /**
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
+     */
     inline bool ManagedScalingHasBeenSet() const { return m_managedScalingHasBeenSet; }
 
-    
+    /**
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
+     */
     inline void SetManagedScaling(const ManagedScaling& value) { m_managedScalingHasBeenSet = true; m_managedScaling = value; }
 
-    
+    /**
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
+     */
     inline void SetManagedScaling(ManagedScaling&& value) { m_managedScalingHasBeenSet = true; m_managedScaling = std::move(value); }
 
-    
+    /**
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
+     */
     inline AutoScalingGroupProviderUpdate& WithManagedScaling(const ManagedScaling& value) { SetManagedScaling(value); return *this;}
 
-    
+    /**
+     * <p>The managed scaling settings for the Auto Scaling group capacity
+     * provider.</p>
+     */
     inline AutoScalingGroupProviderUpdate& WithManagedScaling(ManagedScaling&& value) { SetManagedScaling(std::move(value)); return *this;}
 
 

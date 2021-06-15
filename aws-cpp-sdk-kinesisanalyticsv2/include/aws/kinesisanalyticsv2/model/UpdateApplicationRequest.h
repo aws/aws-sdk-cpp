@@ -80,26 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The current application version ID. You can retrieve the application version
-     * ID using <a>DescribeApplication</a>.</p>
+     * <p>The current application version ID. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
-     * <p>The current application version ID. You can retrieve the application version
-     * ID using <a>DescribeApplication</a>.</p>
+     * <p>The current application version ID. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
-     * <p>The current application version ID. You can retrieve the application version
-     * ID using <a>DescribeApplication</a>.</p>
+     * <p>The current application version ID. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
-     * <p>The current application version ID. You can retrieve the application version
-     * ID using <a>DescribeApplication</a>.</p>
+     * <p>The current application version ID. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using
+     * <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
      */
     inline UpdateApplicationRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
 
@@ -263,6 +279,87 @@ namespace Model
      */
     inline UpdateApplicationRequest& AddCloudWatchLoggingOptionUpdates(CloudWatchLoggingOptionUpdate&& value) { m_cloudWatchLoggingOptionUpdatesHasBeenSet = true; m_cloudWatchLoggingOptionUpdates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline const Aws::String& GetConditionalToken() const{ return m_conditionalToken; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline bool ConditionalTokenHasBeenSet() const { return m_conditionalTokenHasBeenSet; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline void SetConditionalToken(const Aws::String& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = value; }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline void SetConditionalToken(Aws::String&& value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken = std::move(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline void SetConditionalToken(const char* value) { m_conditionalTokenHasBeenSet = true; m_conditionalToken.assign(value); }
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline UpdateApplicationRequest& WithConditionalToken(const Aws::String& value) { SetConditionalToken(value); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline UpdateApplicationRequest& WithConditionalToken(Aws::String&& value) { SetConditionalToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A value you use to implement strong concurrency for application updates. You
+     * must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better
+     * concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.</p>
+     */
+    inline UpdateApplicationRequest& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -282,6 +379,9 @@ namespace Model
 
     Aws::Vector<CloudWatchLoggingOptionUpdate> m_cloudWatchLoggingOptionUpdates;
     bool m_cloudWatchLoggingOptionUpdatesHasBeenSet;
+
+    Aws::String m_conditionalToken;
+    bool m_conditionalTokenHasBeenSet;
   };
 
 } // namespace Model

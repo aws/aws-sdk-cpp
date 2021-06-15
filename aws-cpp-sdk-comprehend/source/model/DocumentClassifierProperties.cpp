@@ -36,7 +36,8 @@ DocumentClassifierProperties::DocumentClassifierProperties() :
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_mode(DocumentClassifierMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ DocumentClassifierProperties::DocumentClassifierProperties(JsonView jsonValue) :
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_mode(DocumentClassifierMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,13 @@ DocumentClassifierProperties& DocumentClassifierProperties::operator =(JsonView 
     m_modeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelKmsKeyId"))
+  {
+    m_modelKmsKeyId = jsonValue.GetString("ModelKmsKeyId");
+
+    m_modelKmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -258,6 +267,12 @@ JsonValue DocumentClassifierProperties::Jsonize() const
   if(m_modeHasBeenSet)
   {
    payload.WithString("Mode", DocumentClassifierModeMapper::GetNameForDocumentClassifierMode(m_mode));
+  }
+
+  if(m_modelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
   }
 
   return payload;

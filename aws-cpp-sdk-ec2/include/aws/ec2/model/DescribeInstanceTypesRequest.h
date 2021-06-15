@@ -75,56 +75,56 @@ namespace Model
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<InstanceType>& GetInstanceTypes() const{ return m_instanceTypes; }
 
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceTypes(const Aws::Vector<InstanceType>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
 
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetInstanceTypes(Aws::Vector<InstanceType>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
 
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeInstanceTypesRequest& WithInstanceTypes(const Aws::Vector<InstanceType>& value) { SetInstanceTypes(value); return *this;}
 
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeInstanceTypesRequest& WithInstanceTypes(Aws::Vector<InstanceType>&& value) { SetInstanceTypes(std::move(value)); return *this;}
 
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeInstanceTypesRequest& AddInstanceTypes(const InstanceType& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
 
     /**
      * <p>The instance types. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline DescribeInstanceTypesRequest& AddInstanceTypes(InstanceType&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
 
@@ -185,6 +185,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -203,10 +205,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -278,6 +282,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -296,10 +302,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -371,6 +379,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -389,10 +399,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -464,6 +476,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -482,10 +496,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -557,6 +573,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -575,10 +593,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -650,6 +670,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -668,10 +690,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -743,6 +767,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -761,10 +787,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the
@@ -836,6 +864,8 @@ namespace Model
      * <li> <p> <code>instance-type</code> - The instance type (for example
      * <code>c5.2xlarge</code> or c5*).</p> </li> <li> <p>
      * <code>memory-info.size-in-mib</code> - The memory size.</p> </li> <li> <p>
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number
+     * of Elastic Fabric Adapters (EFAs) per instance.</p> </li> <li> <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type
      * supports Elastic Fabric Adapter (EFA) (<code>true</code> |
      * <code>false</code>).</p> </li> <li> <p> <code>network-info.ena-support</code> -
@@ -854,10 +884,12 @@ namespace Model
      * <code>processor-info.supported-architecture</code> - The CPU architecture
      * (<code>arm64</code> | <code>i386</code> | <code>x86_64</code>).</p> </li> <li>
      * <p> <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock
-     * speed, in GHz.</p> </li> <li> <p> <code>supported-root-device-type</code> - The
-     * root device type (<code>ebs</code> | <code>instance-store</code>).</p> </li>
-     * <li> <p> <code>supported-usage-class</code> - The usage class
-     * (<code>on-demand</code> | <code>spot</code>).</p> </li> <li> <p>
+     * speed, in GHz.</p> </li> <li> <p> <code>supported-boot-mode</code> - The boot
+     * mode (<code>legacy-bios</code> | <code>uefi</code>).</p> </li> <li> <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code>
+     * | <code>instance-store</code>).</p> </li> <li> <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> |
+     * <code>spot</code>).</p> </li> <li> <p>
      * <code>supported-virtualization-type</code> - The virtualization type
      * (<code>hvm</code> | <code>paravirtual</code>).</p> </li> <li> <p>
      * <code>vcpu-info.default-cores</code> - The default number of cores for the

@@ -255,7 +255,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies configuration information for the knowlege article types that
+     * <p>Specifies configuration information for the knowledge article types that
      * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
      * standard fields of knowledge articles, or the custom fields of custom knowledge
      * articles, but not both.</p>
@@ -263,7 +263,7 @@ namespace Model
     inline const SalesforceKnowledgeArticleConfiguration& GetKnowledgeArticleConfiguration() const{ return m_knowledgeArticleConfiguration; }
 
     /**
-     * <p>Specifies configuration information for the knowlege article types that
+     * <p>Specifies configuration information for the knowledge article types that
      * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
      * standard fields of knowledge articles, or the custom fields of custom knowledge
      * articles, but not both.</p>
@@ -271,7 +271,7 @@ namespace Model
     inline bool KnowledgeArticleConfigurationHasBeenSet() const { return m_knowledgeArticleConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies configuration information for the knowlege article types that
+     * <p>Specifies configuration information for the knowledge article types that
      * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
      * standard fields of knowledge articles, or the custom fields of custom knowledge
      * articles, but not both.</p>
@@ -279,7 +279,7 @@ namespace Model
     inline void SetKnowledgeArticleConfiguration(const SalesforceKnowledgeArticleConfiguration& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = value; }
 
     /**
-     * <p>Specifies configuration information for the knowlege article types that
+     * <p>Specifies configuration information for the knowledge article types that
      * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
      * standard fields of knowledge articles, or the custom fields of custom knowledge
      * articles, but not both.</p>
@@ -287,7 +287,7 @@ namespace Model
     inline void SetKnowledgeArticleConfiguration(SalesforceKnowledgeArticleConfiguration&& value) { m_knowledgeArticleConfigurationHasBeenSet = true; m_knowledgeArticleConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies configuration information for the knowlege article types that
+     * <p>Specifies configuration information for the knowledge article types that
      * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
      * standard fields of knowledge articles, or the custom fields of custom knowledge
      * articles, but not both.</p>
@@ -295,7 +295,7 @@ namespace Model
     inline SalesforceConfiguration& WithKnowledgeArticleConfiguration(const SalesforceKnowledgeArticleConfiguration& value) { SetKnowledgeArticleConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies configuration information for the knowlege article types that
+     * <p>Specifies configuration information for the knowledge article types that
      * Amazon Kendra indexes. Amazon Kendra indexes standard knowledge articles and the
      * standard fields of knowledge articles, or the custom fields of custom knowledge
      * articles, but not both.</p>

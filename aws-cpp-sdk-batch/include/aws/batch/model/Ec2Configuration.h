@@ -25,10 +25,14 @@ namespace Model
 
   /**
    * <p>Provides information used to select Amazon Machine Images (AMIs) for
-   * instances in the compute environment. If the <code>Ec2Configuration</code> isn't
-   * specified, the default is <code>ECS_AL1</code>.</p>  <p>This object isn't
-   * applicable to jobs running on Fargate resources.</p> <p><h3>See
-   * Also:</h3>   <a
+   * instances in the compute environment. If <code>Ec2Configuration</code> isn't
+   * specified, the default is currently <code>ECS_AL1</code> (<a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami">Amazon
+   * Linux</a>) for non-GPU, non-Graviton instances. Starting on March 31, 2021, this
+   * default will be changing to <code>ECS_AL2</code> (<a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+   * Linux 2</a>).</p>  <p>This object isn't applicable to jobs running on
+   * Fargate resources.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Ec2Configuration">AWS
    * API Reference</a></p>
    */
@@ -45,7 +49,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -67,7 +74,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -89,7 +99,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -111,7 +124,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -133,7 +149,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -155,7 +174,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -177,7 +199,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and
@@ -199,7 +224,10 @@ namespace Model
      * <p>The image type to match with the instance type to select an AMI. If the
      * <code>imageIdOverride</code> parameter isn't specified, then a recent <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
-     * ECS-optimized AMI</a> is used.</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
+     * ECS-optimized AMI</a> (<code>ECS_AL1</code>) is used. Starting on March 31,
+     * 2021, this default will be changing to <code>ECS_AL2</code> (<a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+     * Linux 2</a>).</p> <dl> <dt>ECS_AL2</dt> <dd> <p> <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
      * Linux 2</a>− Default for all AWS Graviton-based instance families (for example,
      * <code>C6g</code>, <code>M6g</code>, <code>R6g</code>, and <code>T4g</code>) and

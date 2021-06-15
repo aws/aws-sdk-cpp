@@ -21,6 +21,7 @@
 #include <aws/ec2/model/DescribeVpcsRequest.h>
 #include <aws/ec2/model/DescribeVpcsResponse.h>
 #include <aws/testing/TestingEnvironment.h>
+#include <aws/core/utils/UUID.h>
 
 #include <chrono>
 #include <thread>
@@ -35,11 +36,6 @@ namespace
 static const char* ALLOCATION_TAG = "EC2Tests";
 static const char* BASE_SECURITY_GROUP_NAME = "CppSDKIntegrationTestSecurityGroup";
 
-Aws::String BuildResourceName(const char* baseName)
-{
-    return Aws::Testing::GetAwsResourcePrefix() + baseName;
-}
-
 class EC2OperationTest : public ::testing::Test
 {
 
@@ -51,6 +47,17 @@ protected:
     };
 
     static std::shared_ptr<Aws::EC2::EC2Client> m_EC2Client;
+
+    static Aws::String GetRandomUUID()
+    {
+        static const Aws::Utils::UUID resourceUUID = Aws::Utils::UUID::RandomUUID();
+        return resourceUUID;
+    }
+
+    static Aws::String BuildResourceName(const char* baseName)
+    {
+        return Aws::Testing::GetAwsResourcePrefix() + baseName + GetRandomUUID();
+    }
 
     static void SetUpTestCase()
     {
@@ -96,7 +103,7 @@ protected:
                 const Aws::Vector< Aws::EC2::Model::SecurityGroup >& groups = describeOutcome.GetResult().GetSecurityGroups();
                 bool exists = std::find_if(groups.cbegin(), groups.cend(), [](const Aws::EC2::Model::SecurityGroup& group){ return group.GetGroupName() == BuildResourceName(BASE_SECURITY_GROUP_NAME); }) != groups.cend();
                 finished = (objectState == ObjectState::Nonexistent && !exists) || (objectState == ObjectState::Ready && exists);
-            } 
+            }
             else if (describeOutcome.GetError().GetErrorType() == Aws::EC2::EC2Errors::INVALID_GROUP__NOT_FOUND)
             {
                 finished = objectState == ObjectState::Nonexistent;

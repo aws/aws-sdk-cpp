@@ -28,9 +28,13 @@ ResourceDetails::ResourceDetails() :
     m_awsEc2VolumeHasBeenSet(false),
     m_awsEc2VpcHasBeenSet(false),
     m_awsEc2EipHasBeenSet(false),
+    m_awsEc2SubnetHasBeenSet(false),
+    m_awsEc2NetworkAclHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
+    m_awsElasticBeanstalkEnvironmentHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3AccountPublicAccessBlockHasBeenSet(false),
     m_awsS3ObjectHasBeenSet(false),
     m_awsSecretsManagerSecretHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
@@ -42,6 +46,7 @@ ResourceDetails::ResourceDetails() :
     m_awsApiGatewayStageHasBeenSet(false),
     m_awsApiGatewayRestApiHasBeenSet(false),
     m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsSsmPatchComplianceHasBeenSet(false),
     m_awsCertificateManagerCertificateHasBeenSet(false),
     m_awsRedshiftClusterHasBeenSet(false),
     m_awsElbLoadBalancerHasBeenSet(false),
@@ -72,9 +77,13 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEc2VolumeHasBeenSet(false),
     m_awsEc2VpcHasBeenSet(false),
     m_awsEc2EipHasBeenSet(false),
+    m_awsEc2SubnetHasBeenSet(false),
+    m_awsEc2NetworkAclHasBeenSet(false),
     m_awsElbv2LoadBalancerHasBeenSet(false),
+    m_awsElasticBeanstalkEnvironmentHasBeenSet(false),
     m_awsElasticsearchDomainHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
+    m_awsS3AccountPublicAccessBlockHasBeenSet(false),
     m_awsS3ObjectHasBeenSet(false),
     m_awsSecretsManagerSecretHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
@@ -86,6 +95,7 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsApiGatewayStageHasBeenSet(false),
     m_awsApiGatewayRestApiHasBeenSet(false),
     m_awsCloudTrailTrailHasBeenSet(false),
+    m_awsSsmPatchComplianceHasBeenSet(false),
     m_awsCertificateManagerCertificateHasBeenSet(false),
     m_awsRedshiftClusterHasBeenSet(false),
     m_awsElbLoadBalancerHasBeenSet(false),
@@ -172,11 +182,32 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEc2EipHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEc2Subnet"))
+  {
+    m_awsEc2Subnet = jsonValue.GetObject("AwsEc2Subnet");
+
+    m_awsEc2SubnetHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEc2NetworkAcl"))
+  {
+    m_awsEc2NetworkAcl = jsonValue.GetObject("AwsEc2NetworkAcl");
+
+    m_awsEc2NetworkAclHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AwsElbv2LoadBalancer"))
   {
     m_awsElbv2LoadBalancer = jsonValue.GetObject("AwsElbv2LoadBalancer");
 
     m_awsElbv2LoadBalancerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsElasticBeanstalkEnvironment"))
+  {
+    m_awsElasticBeanstalkEnvironment = jsonValue.GetObject("AwsElasticBeanstalkEnvironment");
+
+    m_awsElasticBeanstalkEnvironmentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsElasticsearchDomain"))
@@ -191,6 +222,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsS3Bucket = jsonValue.GetObject("AwsS3Bucket");
 
     m_awsS3BucketHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsS3AccountPublicAccessBlock"))
+  {
+    m_awsS3AccountPublicAccessBlock = jsonValue.GetObject("AwsS3AccountPublicAccessBlock");
+
+    m_awsS3AccountPublicAccessBlockHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsS3Object"))
@@ -268,6 +306,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsCloudTrailTrail = jsonValue.GetObject("AwsCloudTrailTrail");
 
     m_awsCloudTrailTrailHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsSsmPatchCompliance"))
+  {
+    m_awsSsmPatchCompliance = jsonValue.GetObject("AwsSsmPatchCompliance");
+
+    m_awsSsmPatchComplianceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsCertificateManagerCertificate"))
@@ -453,9 +498,27 @@ JsonValue ResourceDetails::Jsonize() const
 
   }
 
+  if(m_awsEc2SubnetHasBeenSet)
+  {
+   payload.WithObject("AwsEc2Subnet", m_awsEc2Subnet.Jsonize());
+
+  }
+
+  if(m_awsEc2NetworkAclHasBeenSet)
+  {
+   payload.WithObject("AwsEc2NetworkAcl", m_awsEc2NetworkAcl.Jsonize());
+
+  }
+
   if(m_awsElbv2LoadBalancerHasBeenSet)
   {
    payload.WithObject("AwsElbv2LoadBalancer", m_awsElbv2LoadBalancer.Jsonize());
+
+  }
+
+  if(m_awsElasticBeanstalkEnvironmentHasBeenSet)
+  {
+   payload.WithObject("AwsElasticBeanstalkEnvironment", m_awsElasticBeanstalkEnvironment.Jsonize());
 
   }
 
@@ -468,6 +531,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsS3BucketHasBeenSet)
   {
    payload.WithObject("AwsS3Bucket", m_awsS3Bucket.Jsonize());
+
+  }
+
+  if(m_awsS3AccountPublicAccessBlockHasBeenSet)
+  {
+   payload.WithObject("AwsS3AccountPublicAccessBlock", m_awsS3AccountPublicAccessBlock.Jsonize());
 
   }
 
@@ -534,6 +603,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsCloudTrailTrailHasBeenSet)
   {
    payload.WithObject("AwsCloudTrailTrail", m_awsCloudTrailTrail.Jsonize());
+
+  }
+
+  if(m_awsSsmPatchComplianceHasBeenSet)
+  {
+   payload.WithObject("AwsSsmPatchCompliance", m_awsSsmPatchCompliance.Jsonize());
 
   }
 

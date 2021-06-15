@@ -29,7 +29,8 @@ namespace Model
     TRUNCATE_LENGTH,
     MATH_OPERATION_FIELDS_ORDER,
     CONCAT_FORMAT,
-    SUBFIELD_CATEGORY_MAP
+    SUBFIELD_CATEGORY_MAP,
+    EXCLUDE_SOURCE_FIELDS_LIST
   };
 
 namespace OperatorPropertiesKeysMapper

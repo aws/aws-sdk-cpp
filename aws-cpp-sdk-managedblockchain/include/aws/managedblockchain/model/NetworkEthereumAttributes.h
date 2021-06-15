@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Attributes of Ethereum for a network.</p><p><h3>See Also:</h3>   <a
+   * <p>Attributes of Ethereum for a network. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NetworkEthereumAttributes">AWS
    * API Reference</a></p>
    */

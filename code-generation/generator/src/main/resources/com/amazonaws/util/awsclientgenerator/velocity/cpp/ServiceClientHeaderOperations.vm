@@ -32,12 +32,14 @@
          */
         $virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request) const;
 
+#if(!$operation.s3CrtSpecific)
         /**
          * ${operation.documentation}
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}Model::${operation.request.shape.name}& request) const;
+#end
 
         /**
          * ${operation.documentation}
@@ -53,12 +55,14 @@
          */
         $virtual Model::${operation.name}Outcome ${operation.name}() const;
 
+#if(!$operation.s3CrtSpecific)
         /**
          * ${operation.documentation}
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable() const;
+#end
 
         /**
          * ${operation.documentation}

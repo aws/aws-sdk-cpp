@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int AWS_CLOUD_FORMATION_HASH = HashingUtils::HashString("AWS_CLOUD_FORMATION");
+        static const int AWS_SERVICE_HASH = HashingUtils::HashString("AWS_SERVICE");
 
 
         ResourceCollectionType GetResourceCollectionTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == AWS_CLOUD_FORMATION_HASH)
           {
             return ResourceCollectionType::AWS_CLOUD_FORMATION;
+          }
+          else if (hashCode == AWS_SERVICE_HASH)
+          {
+            return ResourceCollectionType::AWS_SERVICE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case ResourceCollectionType::AWS_CLOUD_FORMATION:
             return "AWS_CLOUD_FORMATION";
+          case ResourceCollectionType::AWS_SERVICE:
+            return "AWS_SERVICE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

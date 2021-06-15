@@ -128,44 +128,109 @@ namespace Model
 
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline UpdateDocumentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline UpdateDocumentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the document that you want to update.</p>
+     * <p>The name of the Systems Manager document that you want to update.</p>
      */
     inline UpdateDocumentRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline UpdateDocumentRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline UpdateDocumentRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document that you want to update.
+     * This value can differ for each version of the document. If you do not specify a
+     * value for this parameter in your request, the existing value is applied to the
+     * new document version.</p>
+     */
+    inline UpdateDocumentRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
@@ -226,58 +291,66 @@ namespace Model
 
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>(Required) The latest version of the document that you want to update. The
-     * latest document version can be specified using the $LATEST variable or by the
-     * version number. Updating a previous version of a document is not supported.</p>
+     * <p>The version of the document that you want to update. Currently, Systems
+     * Manager supports updating only the latest version of the document. You can
+     * specify the version number of the latest version or use the <code>$LATEST</code>
+     * variable.</p>
      */
     inline UpdateDocumentRequest& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
@@ -369,6 +442,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_versionName;
     bool m_versionNameHasBeenSet;

@@ -10,6 +10,8 @@
 #include <aws/core/Region.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/Array.h>
+#include <aws/crt/Optional.h>
 #include <memory>
 
 namespace Aws
@@ -165,6 +167,10 @@ namespace Aws
             */
             Aws::String proxySSLKeyPassword;
             /**
+            * Calls to hosts in this vector will not use proxy configuration
+            */
+            Aws::Utils::Array<Aws::String> nonProxyHosts;
+            /**
             * Threading Executor implementation. Default uses std::thread::detach()
             */
             std::shared_ptr<Aws::Utils::Threading::Executor> executor;
@@ -228,11 +234,13 @@ namespace Aws
             /**
              * Enable endpoint discovery
              * For some services to dynamically set up their endpoints for different requests.
-             * Defaults to false, it's an opt-in feature.
+             * By default, service clients will decide if endpoint discovery is enabled or not.
              * If disabled, regional or overriden endpoint will be used instead.
              * If a request requires endpoint discovery but you disabled it. The request will never succeed.
+             * A boolean value is either true of false, use Optional here to have an instance does not contain a value,
+             * such that SDK will decide the default behavior as stated before, if no value specified.
              */
-            bool enableEndpointDiscovery;
+            Aws::Crt::Optional<bool> enableEndpointDiscovery;
 
             /**
              * profileName in config file that will be used by this object to reslove more configurations.

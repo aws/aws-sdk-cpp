@@ -281,9 +281,12 @@ namespace Model
          * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
          * ChangeSet described in the <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
-         * below because it contains two changes to execute the same change type
-         * (<code>AddRevisions</code>) against the same entity
-         * (<code>entity-id@1)</code>.</p><p><h3>See Also:</h3>   <a
+         * later in this topic, because it contains two changes to execute the same change
+         * type (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1)</code>.</p> <p>For more information about working with
+         * change sets, see <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
+         * Working with change sets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          */
@@ -299,9 +302,12 @@ namespace Model
          * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
          * ChangeSet described in the <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
-         * below because it contains two changes to execute the same change type
-         * (<code>AddRevisions</code>) against the same entity
-         * (<code>entity-id@1)</code>.</p><p><h3>See Also:</h3>   <a
+         * later in this topic, because it contains two changes to execute the same change
+         * type (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1)</code>.</p> <p>For more information about working with
+         * change sets, see <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
+         * Working with change sets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          *
@@ -319,9 +325,12 @@ namespace Model
          * <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the
          * ChangeSet described in the <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
-         * below because it contains two changes to execute the same change type
-         * (<code>AddRevisions</code>) against the same entity
-         * (<code>entity-id@1)</code>.</p><p><h3>See Also:</h3>   <a
+         * later in this topic, because it contains two changes to execute the same change
+         * type (<code>AddRevisions</code>) against the same entity
+         * (<code>entity-id@1)</code>.</p> <p>For more information about working with
+         * change sets, see <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
+         * Working with change sets</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          *

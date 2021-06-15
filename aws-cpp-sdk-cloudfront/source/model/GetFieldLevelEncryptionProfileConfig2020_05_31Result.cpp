@@ -20,12 +20,12 @@ GetFieldLevelEncryptionProfileConfig2020_05_31Result::GetFieldLevelEncryptionPro
 {
 }
 
-GetFieldLevelEncryptionProfileConfig2020_05_31Result::GetFieldLevelEncryptionProfileConfig2020_05_31Result(const AmazonWebServiceResult<XmlDocument>& result)
+GetFieldLevelEncryptionProfileConfig2020_05_31Result::GetFieldLevelEncryptionProfileConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetFieldLevelEncryptionProfileConfig2020_05_31Result& GetFieldLevelEncryptionProfileConfig2020_05_31Result::operator =(const AmazonWebServiceResult<XmlDocument>& result)
+GetFieldLevelEncryptionProfileConfig2020_05_31Result& GetFieldLevelEncryptionProfileConfig2020_05_31Result::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode resultNode = xmlDocument.GetRootElement();

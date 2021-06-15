@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>An AWS account that is the master of or a member of a behavior
+   * <p>An AWS account that is the administrator account of or a member of a behavior
    * graph.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/Account">AWS
    * API Reference</a></p>

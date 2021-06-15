@@ -19,7 +19,8 @@ CreateModelRequest::CreateModelRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_outputConfigHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -29,7 +30,7 @@ Aws::String CreateModelRequest::SerializePayload() const
 
   if(m_descriptionHasBeenSet)
   {
-   payload.WithObject("Description", m_description.Jsonize());
+   payload.WithString("Description", m_description);
 
   }
 
@@ -42,6 +43,17 @@ Aws::String CreateModelRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

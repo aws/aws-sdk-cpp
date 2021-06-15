@@ -477,8 +477,10 @@ namespace Model
          * <p>Returns a list of ARNs of the resources that are members of a specified
          * resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command,
          * you must have the following permissions:</p> <ul> <li> <p>
-         * <code>resource-groups:ListGroupResources</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <code>resource-groups:ListGroupResources</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
+         * <code>cloudformation:ListStackResources</code> </p> </li> <li> <p>
+         * <code>tag:GetResources</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">AWS
          * API Reference</a></p>
          */
@@ -488,8 +490,10 @@ namespace Model
          * <p>Returns a list of ARNs of the resources that are members of a specified
          * resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command,
          * you must have the following permissions:</p> <ul> <li> <p>
-         * <code>resource-groups:ListGroupResources</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <code>resource-groups:ListGroupResources</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
+         * <code>cloudformation:ListStackResources</code> </p> </li> <li> <p>
+         * <code>tag:GetResources</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">AWS
          * API Reference</a></p>
          *
@@ -501,8 +505,10 @@ namespace Model
          * <p>Returns a list of ARNs of the resources that are members of a specified
          * resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command,
          * you must have the following permissions:</p> <ul> <li> <p>
-         * <code>resource-groups:ListGroupResources</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <code>resource-groups:ListGroupResources</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
+         * <code>cloudformation:ListStackResources</code> </p> </li> <li> <p>
+         * <code>tag:GetResources</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources">AWS
          * API Reference</a></p>
          *
@@ -592,8 +598,10 @@ namespace Model
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p> <p> <b>Minimum permissions</b> </p> <p>To run
          * this command, you must have the following permissions:</p> <ul> <li> <p>
-         * <code>resource-groups:SearchResources</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <code>resource-groups:SearchResources</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
+         * <code>cloudformation:ListStackResources</code> </p> </li> <li> <p>
+         * <code>tag:GetResources</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
          * API Reference</a></p>
          */
@@ -604,8 +612,10 @@ namespace Model
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p> <p> <b>Minimum permissions</b> </p> <p>To run
          * this command, you must have the following permissions:</p> <ul> <li> <p>
-         * <code>resource-groups:SearchResources</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <code>resource-groups:SearchResources</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
+         * <code>cloudformation:ListStackResources</code> </p> </li> <li> <p>
+         * <code>tag:GetResources</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
          * API Reference</a></p>
          *
@@ -618,8 +628,10 @@ namespace Model
          * The query uses the same format as a resource query in a CreateGroup or
          * UpdateGroupQuery operation.</p> <p> <b>Minimum permissions</b> </p> <p>To run
          * this command, you must have the following permissions:</p> <ul> <li> <p>
-         * <code>resource-groups:SearchResources</code> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * <code>resource-groups:SearchResources</code> </p> </li> <li> <p>
+         * <code>cloudformation:DescribeStacks</code> </p> </li> <li> <p>
+         * <code>cloudformation:ListStackResources</code> </p> </li> <li> <p>
+         * <code>tag:GetResources</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources">AWS
          * API Reference</a></p>
          *

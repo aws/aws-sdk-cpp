@@ -48,17 +48,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -74,17 +76,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -100,17 +104,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -126,17 +132,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -152,17 +160,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -178,17 +188,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -204,17 +216,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -230,17 +244,19 @@ namespace Model
      * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
      * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
      * <p>Parameter names can include only the following symbols and letters:
-     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
-     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
-     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
-     * values for parameter names, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">About
-     * requirements and constraints for parameter names</a> in the <i>AWS Systems
-     * Manager User Guide</i>.</p>  <p>The maximum length constraint listed below
-     * includes capacity for additional system attributes that are not part of the
-     * name. The maximum length for a parameter name, including the full length of the
-     * parameter ARN, is 1011 characters. For example, the length of the following
-     * parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used
+     * to delineate hierarchies in parameter names. For example:
+     * <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A
+     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
+     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
+     * information about valid values for parameter names, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating
+     * Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     *  <p>The maximum length constraint listed below includes capacity for
+     * additional system attributes that are not part of the name. The maximum length
+     * for a parameter name, including the full length of the parameter ARN, is 1011
+     * characters. For example, the length of the following parameter name is 65
+     * characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> 
      */
@@ -572,26 +588,22 @@ namespace Model
 
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline bool GetOverwrite() const{ return m_overwrite; }
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline bool OverwriteHasBeenSet() const { return m_overwriteHasBeenSet; }
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline void SetOverwrite(bool value) { m_overwriteHasBeenSet = true; m_overwrite = value; }
 
     /**
-     * <p>Overwrite an existing parameter. If not specified, will default to
-     * "false".</p>
+     * <p>Overwrite an existing parameter. The default value is 'false'.</p>
      */
     inline PutParameterRequest& WithOverwrite(bool value) { SetOverwrite(value); return *this;}
 
@@ -1241,7 +1253,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1256,7 +1268,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1271,7 +1283,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1286,7 +1298,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1301,7 +1313,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1316,7 +1328,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1331,7 +1343,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */
@@ -1346,7 +1358,7 @@ namespace Model
      * Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in
      * your AWS account. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a> in the <i>AWS Systems Manager
      * User Guide</i>.</p>
      */

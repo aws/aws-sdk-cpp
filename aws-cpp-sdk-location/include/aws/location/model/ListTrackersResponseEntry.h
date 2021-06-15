@@ -7,6 +7,7 @@
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/location/model/PricingPlan.h>
 #include <utility>
 
 namespace Aws
@@ -123,6 +124,96 @@ namespace Model
 
 
     /**
+     * <p>The pricing plan for the specified tracker resource.</p> <p>For additional
+     * details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
+
+    /**
+     * <p>The pricing plan for the specified tracker resource.</p> <p>For additional
+     * details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
+
+    /**
+     * <p>The pricing plan for the specified tracker resource.</p> <p>For additional
+     * details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
+
+    /**
+     * <p>The pricing plan for the specified tracker resource.</p> <p>For additional
+     * details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
+
+    /**
+     * <p>The pricing plan for the specified tracker resource.</p> <p>For additional
+     * details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline ListTrackersResponseEntry& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
+
+    /**
+     * <p>The pricing plan for the specified tracker resource.</p> <p>For additional
+     * details and restrictions on each pricing plan option, see the <a
+     * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+     * page</a>.</p>
+     */
+    inline ListTrackersResponseEntry& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline const Aws::String& GetPricingPlanDataSource() const{ return m_pricingPlanDataSource; }
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline bool PricingPlanDataSourceHasBeenSet() const { return m_pricingPlanDataSourceHasBeenSet; }
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline void SetPricingPlanDataSource(const Aws::String& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = value; }
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline void SetPricingPlanDataSource(Aws::String&& value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource = std::move(value); }
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline void SetPricingPlanDataSource(const char* value) { m_pricingPlanDataSourceHasBeenSet = true; m_pricingPlanDataSource.assign(value); }
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline ListTrackersResponseEntry& WithPricingPlanDataSource(const Aws::String& value) { SetPricingPlanDataSource(value); return *this;}
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline ListTrackersResponseEntry& WithPricingPlanDataSource(Aws::String&& value) { SetPricingPlanDataSource(std::move(value)); return *this;}
+
+    /**
+     * <p>The specified data provider for the tracker resource.</p>
+     */
+    inline ListTrackersResponseEntry& WithPricingPlanDataSource(const char* value) { SetPricingPlanDataSource(value); return *this;}
+
+
+    /**
      * <p>The name of the tracker resource.</p>
      */
     inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
@@ -164,42 +255,42 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline ListTrackersResponseEntry& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the position was detected and sampled in <a
+     * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
@@ -212,6 +303,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    PricingPlan m_pricingPlan;
+    bool m_pricingPlanHasBeenSet;
+
+    Aws::String m_pricingPlanDataSource;
+    bool m_pricingPlanDataSourceHasBeenSet;
 
     Aws::String m_trackerName;
     bool m_trackerNameHasBeenSet;

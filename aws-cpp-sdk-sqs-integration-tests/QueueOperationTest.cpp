@@ -78,8 +78,8 @@ protected:
     // the entire reason for this function is workaround the memory-allocator being initialized after static variables.
     static Aws::String GetRandomUUID()
     {
-        static const Aws::Utils::UUID m_resourceUUID = Aws::Utils::UUID::RandomUUID();
-        return m_resourceUUID;
+        static const Aws::Utils::UUID resourceUUID = Aws::Utils::UUID::RandomUUID();
+        return resourceUUID;
     }
 
     static ClientConfiguration GetConfig()
@@ -133,6 +133,7 @@ protected:
     {
         ListQueuesRequest listQueueRequest;
         listQueueRequest.WithQueueNamePrefix(BuildResourcePrefix());
+        listQueueRequest.WithMaxResults(10);
 
         ListQueuesOutcome listQueuesOutcome = sqsClient->ListQueues(listQueueRequest);
         ListQueuesResult listQueuesResult = listQueuesOutcome.GetResult();

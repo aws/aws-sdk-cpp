@@ -339,6 +339,10 @@ namespace Model
     z1d_6xlarge,
     z1d_12xlarge,
     z1d_metal,
+    u_6tb1_56xlarge,
+    u_6tb1_112xlarge,
+    u_9tb1_112xlarge,
+    u_12tb1_112xlarge,
     u_6tb1_metal,
     u_9tb1_metal,
     u_12tb1_metal,
@@ -404,7 +408,16 @@ namespace Model
     m6gd_8xlarge,
     m6gd_12xlarge,
     m6gd_16xlarge,
-    mac1_metal
+    mac1_metal,
+    x2gd_medium,
+    x2gd_large,
+    x2gd_xlarge,
+    x2gd_2xlarge,
+    x2gd_4xlarge,
+    x2gd_8xlarge,
+    x2gd_12xlarge,
+    x2gd_16xlarge,
+    x2gd_metal
   };
 
 namespace InstanceTypeMapper

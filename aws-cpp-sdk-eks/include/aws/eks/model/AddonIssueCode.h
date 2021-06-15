@@ -20,7 +20,8 @@ namespace Model
     InternalFailure,
     ClusterUnreachable,
     InsufficientNumberOfReplicas,
-    ConfigurationConflict
+    ConfigurationConflict,
+    AdmissionRequestDenied
   };
 
 namespace AddonIssueCodeMapper

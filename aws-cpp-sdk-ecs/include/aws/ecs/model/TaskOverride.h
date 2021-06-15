@@ -7,6 +7,7 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/model/EphemeralStorage.h>
 #include <aws/ecs/model/ContainerOverride.h>
 #include <aws/ecs/model/InferenceAcceleratorOverride.h>
 #include <utility>
@@ -309,6 +310,49 @@ namespace Model
      */
     inline TaskOverride& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The ephemeral storage setting override for the task.</p>  <p>This
+     * parameter is only supported for tasks hosted on AWS Fargate using platform
+     * version <code>1.4.0</code> or later.</p> 
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The ephemeral storage setting override for the task.</p>  <p>This
+     * parameter is only supported for tasks hosted on AWS Fargate using platform
+     * version <code>1.4.0</code> or later.</p> 
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The ephemeral storage setting override for the task.</p>  <p>This
+     * parameter is only supported for tasks hosted on AWS Fargate using platform
+     * version <code>1.4.0</code> or later.</p> 
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The ephemeral storage setting override for the task.</p>  <p>This
+     * parameter is only supported for tasks hosted on AWS Fargate using platform
+     * version <code>1.4.0</code> or later.</p> 
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The ephemeral storage setting override for the task.</p>  <p>This
+     * parameter is only supported for tasks hosted on AWS Fargate using platform
+     * version <code>1.4.0</code> or later.</p> 
+     */
+    inline TaskOverride& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The ephemeral storage setting override for the task.</p>  <p>This
+     * parameter is only supported for tasks hosted on AWS Fargate using platform
+     * version <code>1.4.0</code> or later.</p> 
+     */
+    inline TaskOverride& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<ContainerOverride> m_containerOverrides;
@@ -328,6 +372,9 @@ namespace Model
 
     Aws::String m_taskRoleArn;
     bool m_taskRoleArnHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model

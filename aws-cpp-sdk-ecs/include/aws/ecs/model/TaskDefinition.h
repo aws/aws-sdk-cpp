@@ -12,6 +12,8 @@
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/ProxyConfiguration.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/ecs/model/EphemeralStorage.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/Attribute.h>
@@ -267,7 +269,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
@@ -283,7 +285,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
@@ -299,7 +301,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
@@ -315,7 +317,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
@@ -331,7 +333,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
@@ -347,7 +349,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinition& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
@@ -363,7 +365,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinition& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
@@ -379,7 +381,7 @@ namespace Model
      * ECS-optimized Windows AMI. Your containers must also run some configuration code
      * in order to take advantage of the feature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
-     * IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * IAM roles for tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinition& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
@@ -757,90 +759,82 @@ namespace Model
 
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
 
     /**
-     * <p>The list of volume definitions for the task.</p> <p>If your tasks are using
-     * the Fargate launch type, the <code>host</code> and <code>sourcePath</code>
-     * parameters are not supported.</p> <p>For more information about volume
-     * definition parameters and defaults, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon
-     * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * <p>The list of data volume definitions for the task. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>  <p>The <code>host</code> and <code>sourcePath</code>
+     * parameters are not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
@@ -877,221 +871,285 @@ namespace Model
 
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline const Aws::Vector<Attribute>& GetRequiresAttributes() const{ return m_requiresAttributes; }
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline bool RequiresAttributesHasBeenSet() const { return m_requiresAttributesHasBeenSet; }
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline void SetRequiresAttributes(const Aws::Vector<Attribute>& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes = value; }
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline void SetRequiresAttributes(Aws::Vector<Attribute>&& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes = std::move(value); }
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithRequiresAttributes(const Aws::Vector<Attribute>& value) { SetRequiresAttributes(value); return *this;}
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithRequiresAttributes(Aws::Vector<Attribute>&& value) { SetRequiresAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& AddRequiresAttributes(const Attribute& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes.push_back(value); return *this; }
 
     /**
-     * <p>The container instance attributes required by your task. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>The container instance attributes required by your task. When an Amazon EC2
+     * instance is registered to your cluster, the Amazon ECS container agent assigns
+     * some standard attributes to the instance. You can apply custom attributes,
+     * specified as key-value pairs using the Amazon ECS console or the
+     * <a>PutAttributes</a> API. These attributes are used when considering task
+     * placement for tasks hosted on Amazon EC2 instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> 
+     * <p>This parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& AddRequiresAttributes(Attribute&& value) { m_requiresAttributesHasBeenSet = true; m_requiresAttributes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline void SetPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline void SetPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& AddPlacementConstraints(const TaskDefinitionPlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
 
     /**
-     * <p>An array of placement constraint objects to use for tasks. This field is not
-     * valid if you are using the Fargate launch type for your task.</p>
+     * <p>An array of placement constraint objects to use for tasks.</p>  <p>This
+     * parameter is not supported for tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Compatibility>& GetCompatibilities() const{ return m_compatibilities; }
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool CompatibilitiesHasBeenSet() const { return m_compatibilitiesHasBeenSet; }
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetCompatibilities(const Aws::Vector<Compatibility>& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities = value; }
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetCompatibilities(Aws::Vector<Compatibility>&& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities = std::move(value); }
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinition& WithCompatibilities(const Aws::Vector<Compatibility>& value) { SetCompatibilities(value); return *this;}
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinition& WithCompatibilities(Aws::Vector<Compatibility>&& value) { SetCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinition& AddCompatibilities(const Compatibility& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The launch type to use with your task. For more information, see <a
+     * <p>The task launch types the task definition validated against during task
+     * definition registration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline TaskDefinition& AddCompatibilities(Compatibility&& value) { m_compatibilitiesHasBeenSet = true; m_compatibilities.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline TaskDefinition& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline TaskDefinition& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline TaskDefinition& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The launch type the task requires. If no value is specified, it will default
-     * to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>.</p>
+     * <p>The task launch types the task definition was validated against. To determine
+     * which task launch types the task definition is validated for, see the
+     * <a>TaskDefinition$compatibilities</a> parameter.</p>
      */
     inline TaskDefinition& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 
@@ -1242,178 +1300,186 @@ namespace Model
 
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetMemory() const{ return m_memory; }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline TaskDefinition& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline TaskDefinition& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
 
     /**
-     * <p>The amount (in MiB) of memory used by the task.</p> <p>If using the EC2
-     * launch type, you must specify either a task-level memory value or a
-     * container-level memory value. This field is optional and any value can be used.
-     * If a task-level memory value is specified then the container-level memory value
-     * is optional. For more information regarding container-level memory and memory
-     * reservation, see <a
+     * <p>The amount (in MiB) of memory used by the task.</p> <p>If your tasks will be
+     * run on Amazon EC2 instances, you must specify either a task-level memory value
+     * or a container-level memory value. This field is optional and any value can be
+     * used. If a task-level memory value is specified then the container-level memory
+     * value is optional. For more information regarding container-level memory and
+     * memory reservation, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ContainerDefinition.html">ContainerDefinition</a>.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of valid values for the
-     * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
-     * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
-     * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
-     * values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available <code>cpu</code>
-     * values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and 16384 (16 GB) in
-     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 2048 (2 vCPU)</p>
-     * </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
-     * - Available <code>cpu</code> values: 4096 (4 vCPU)</p> </li> </ul>
+     * <p>If your tasks will be run on AWS Fargate, this field is required and you must
+     * use one of the following values, which determines your range of valid values for
+     * the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048
+     * (2 GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li>
+     * <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available
+     * <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB), 3072 (3
+     * GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) - Available
+     * <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096 (4 GB) and
+     * 16384 (16 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
+     * 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and 30720 (30 GB) in
+     * increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4 vCPU)</p>
+     * </li> </ul>
      */
     inline TaskDefinition& WithMemory(const char* value) { SetMemory(value); return *this;}
 
@@ -1473,7 +1539,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline const PidMode& GetPidMode() const{ return m_pidMode; }
 
@@ -1491,7 +1557,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
@@ -1509,7 +1575,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
@@ -1527,7 +1593,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
@@ -1545,7 +1611,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
 
@@ -1563,7 +1629,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
 
@@ -1595,7 +1661,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline const IpcMode& GetIpcMode() const{ return m_ipcMode; }
 
@@ -1626,7 +1692,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
 
@@ -1657,7 +1723,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetIpcMode(const IpcMode& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
 
@@ -1688,7 +1754,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetIpcMode(IpcMode&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
 
@@ -1719,7 +1785,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithIpcMode(const IpcMode& value) { SetIpcMode(value); return *this;}
 
@@ -1750,7 +1816,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline TaskDefinition& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 
@@ -1839,6 +1905,146 @@ namespace Model
      */
     inline TaskDefinition& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline bool RegisteredAtHasBeenSet() const { return m_registeredAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline TaskDefinition& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp for when the task definition was registered.</p>
+     */
+    inline TaskDefinition& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline const Aws::Utils::DateTime& GetDeregisteredAt() const{ return m_deregisteredAt; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline bool DeregisteredAtHasBeenSet() const { return m_deregisteredAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline void SetDeregisteredAt(const Aws::Utils::DateTime& value) { m_deregisteredAtHasBeenSet = true; m_deregisteredAt = value; }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline void SetDeregisteredAt(Aws::Utils::DateTime&& value) { m_deregisteredAtHasBeenSet = true; m_deregisteredAt = std::move(value); }
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline TaskDefinition& WithDeregisteredAt(const Aws::Utils::DateTime& value) { SetDeregisteredAt(value); return *this;}
+
+    /**
+     * <p>The Unix timestamp for when the task definition was deregistered.</p>
+     */
+    inline TaskDefinition& WithDeregisteredAt(Aws::Utils::DateTime&& value) { SetDeregisteredAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline const Aws::String& GetRegisteredBy() const{ return m_registeredBy; }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline bool RegisteredByHasBeenSet() const { return m_registeredByHasBeenSet; }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline void SetRegisteredBy(const Aws::String& value) { m_registeredByHasBeenSet = true; m_registeredBy = value; }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline void SetRegisteredBy(Aws::String&& value) { m_registeredByHasBeenSet = true; m_registeredBy = std::move(value); }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline void SetRegisteredBy(const char* value) { m_registeredByHasBeenSet = true; m_registeredBy.assign(value); }
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline TaskDefinition& WithRegisteredBy(const Aws::String& value) { SetRegisteredBy(value); return *this;}
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline TaskDefinition& WithRegisteredBy(Aws::String&& value) { SetRegisteredBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The principal that registered the task definition.</p>
+     */
+    inline TaskDefinition& WithRegisteredBy(const char* value) { SetRegisteredBy(value); return *this;}
+
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline TaskDefinition& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The ephemeral storage settings to use for tasks run with the task
+     * definition.</p>
+     */
+    inline TaskDefinition& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_taskDefinitionArn;
@@ -1897,6 +2103,18 @@ namespace Model
 
     ProxyConfiguration m_proxyConfiguration;
     bool m_proxyConfigurationHasBeenSet;
+
+    Aws::Utils::DateTime m_registeredAt;
+    bool m_registeredAtHasBeenSet;
+
+    Aws::Utils::DateTime m_deregisteredAt;
+    bool m_deregisteredAtHasBeenSet;
+
+    Aws::String m_registeredBy;
+    bool m_registeredByHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model

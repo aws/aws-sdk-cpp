@@ -25,7 +25,8 @@ CreateJobRequest::CreateJobRequest() :
     m_abortConfigHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_jobTemplateArnHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_namespaceIdHasBeenSet)
   {
    payload.WithString("namespaceId", m_namespaceId);
+
+  }
+
+  if(m_jobTemplateArnHasBeenSet)
+  {
+   payload.WithString("jobTemplateArn", m_jobTemplateArn);
 
   }
 

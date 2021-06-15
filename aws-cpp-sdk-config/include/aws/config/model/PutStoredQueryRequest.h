@@ -38,37 +38,55 @@ namespace Model
 
     /**
      * <p>A list of <code>StoredQuery</code> objects. The mandatory fields are
-     * <code>QueryName</code> and <code>Expression</code>.</p>
+     * <code>QueryName</code> and <code>Expression</code>.</p>  <p>When you are
+     * creating a query, you must provide a query name and an expression. When you are
+     * updating a query, you must provide a query name but updating the description is
+     * optional.</p> 
      */
     inline const StoredQuery& GetStoredQuery() const{ return m_storedQuery; }
 
     /**
      * <p>A list of <code>StoredQuery</code> objects. The mandatory fields are
-     * <code>QueryName</code> and <code>Expression</code>.</p>
+     * <code>QueryName</code> and <code>Expression</code>.</p>  <p>When you are
+     * creating a query, you must provide a query name and an expression. When you are
+     * updating a query, you must provide a query name but updating the description is
+     * optional.</p> 
      */
     inline bool StoredQueryHasBeenSet() const { return m_storedQueryHasBeenSet; }
 
     /**
      * <p>A list of <code>StoredQuery</code> objects. The mandatory fields are
-     * <code>QueryName</code> and <code>Expression</code>.</p>
+     * <code>QueryName</code> and <code>Expression</code>.</p>  <p>When you are
+     * creating a query, you must provide a query name and an expression. When you are
+     * updating a query, you must provide a query name but updating the description is
+     * optional.</p> 
      */
     inline void SetStoredQuery(const StoredQuery& value) { m_storedQueryHasBeenSet = true; m_storedQuery = value; }
 
     /**
      * <p>A list of <code>StoredQuery</code> objects. The mandatory fields are
-     * <code>QueryName</code> and <code>Expression</code>.</p>
+     * <code>QueryName</code> and <code>Expression</code>.</p>  <p>When you are
+     * creating a query, you must provide a query name and an expression. When you are
+     * updating a query, you must provide a query name but updating the description is
+     * optional.</p> 
      */
     inline void SetStoredQuery(StoredQuery&& value) { m_storedQueryHasBeenSet = true; m_storedQuery = std::move(value); }
 
     /**
      * <p>A list of <code>StoredQuery</code> objects. The mandatory fields are
-     * <code>QueryName</code> and <code>Expression</code>.</p>
+     * <code>QueryName</code> and <code>Expression</code>.</p>  <p>When you are
+     * creating a query, you must provide a query name and an expression. When you are
+     * updating a query, you must provide a query name but updating the description is
+     * optional.</p> 
      */
     inline PutStoredQueryRequest& WithStoredQuery(const StoredQuery& value) { SetStoredQuery(value); return *this;}
 
     /**
      * <p>A list of <code>StoredQuery</code> objects. The mandatory fields are
-     * <code>QueryName</code> and <code>Expression</code>.</p>
+     * <code>QueryName</code> and <code>Expression</code>.</p>  <p>When you are
+     * creating a query, you must provide a query name and an expression. When you are
+     * updating a query, you must provide a query name but updating the description is
+     * optional.</p> 
      */
     inline PutStoredQueryRequest& WithStoredQuery(StoredQuery&& value) { SetStoredQuery(std::move(value)); return *this;}
 

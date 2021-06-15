@@ -22,7 +22,9 @@ EC2ResourceUtilization::EC2ResourceUtilization() :
     m_maxCpuUtilizationPercentageHasBeenSet(false),
     m_maxMemoryUtilizationPercentageHasBeenSet(false),
     m_maxStorageUtilizationPercentageHasBeenSet(false),
-    m_eBSResourceUtilizationHasBeenSet(false)
+    m_eBSResourceUtilizationHasBeenSet(false),
+    m_diskResourceUtilizationHasBeenSet(false),
+    m_networkResourceUtilizationHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ EC2ResourceUtilization::EC2ResourceUtilization(JsonView jsonValue) :
     m_maxCpuUtilizationPercentageHasBeenSet(false),
     m_maxMemoryUtilizationPercentageHasBeenSet(false),
     m_maxStorageUtilizationPercentageHasBeenSet(false),
-    m_eBSResourceUtilizationHasBeenSet(false)
+    m_eBSResourceUtilizationHasBeenSet(false),
+    m_diskResourceUtilizationHasBeenSet(false),
+    m_networkResourceUtilizationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,20 @@ EC2ResourceUtilization& EC2ResourceUtilization::operator =(JsonView jsonValue)
     m_eBSResourceUtilizationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DiskResourceUtilization"))
+  {
+    m_diskResourceUtilization = jsonValue.GetObject("DiskResourceUtilization");
+
+    m_diskResourceUtilizationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkResourceUtilization"))
+  {
+    m_networkResourceUtilization = jsonValue.GetObject("NetworkResourceUtilization");
+
+    m_networkResourceUtilizationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +111,18 @@ JsonValue EC2ResourceUtilization::Jsonize() const
   if(m_eBSResourceUtilizationHasBeenSet)
   {
    payload.WithObject("EBSResourceUtilization", m_eBSResourceUtilization.Jsonize());
+
+  }
+
+  if(m_diskResourceUtilizationHasBeenSet)
+  {
+   payload.WithObject("DiskResourceUtilization", m_diskResourceUtilization.Jsonize());
+
+  }
+
+  if(m_networkResourceUtilizationHasBeenSet)
+  {
+   payload.WithObject("NetworkResourceUtilization", m_networkResourceUtilization.Jsonize());
 
   }
 

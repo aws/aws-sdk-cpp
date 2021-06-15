@@ -216,7 +216,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
 
@@ -237,7 +239,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
 
@@ -258,7 +262,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline void SetChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = value; }
 
@@ -279,7 +285,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline void SetChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::move(value); }
 
@@ -300,7 +308,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& WithChallengeResponses(const Aws::Map<Aws::String, Aws::String>& value) { SetChallengeResponses(value); return *this;}
 
@@ -321,7 +331,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& WithChallengeResponses(Aws::Map<Aws::String, Aws::String>&& value) { SetChallengeResponses(std::move(value)); return *this;}
 
@@ -342,7 +354,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 
@@ -363,7 +377,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const Aws::String& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -384,7 +400,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const Aws::String& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -405,7 +423,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -426,7 +446,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const char* key, Aws::String&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, std::move(value)); return *this; }
 
@@ -447,7 +469,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(Aws::String&& key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(std::move(key), value); return *this; }
 
@@ -468,7 +492,9 @@ namespace Model
      * <code>DEVICE_KEY</code>, <code>SRP_A</code> (and <code>SECRET_HASH</code>).</p>
      * </li> <li> <p> <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that
      * <code>PASSWORD_VERIFIER</code> requires plus <code>DEVICE_KEY</code>.</p> </li>
-     * </ul>
+     * <li> <p> <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to
+     * use the session value returned by <code>VerifySoftwareToken</code> in the
+     * <code>Session</code> parameter.</p> </li> </ul>
      */
     inline RespondToAuthChallengeRequest& AddChallengeResponses(const char* key, const char* value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace(key, value); return *this; }
 

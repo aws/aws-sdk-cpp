@@ -300,7 +300,8 @@ namespace Model
      * request.</p> <p>The maximum number of objects that to be returned for this
      * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
      * the request will return 1000 results as the default value for this
-     * parameter.</p>
+     * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -309,7 +310,8 @@ namespace Model
      * request.</p> <p>The maximum number of objects that to be returned for this
      * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
      * the request will return 1000 results as the default value for this
-     * parameter.</p>
+     * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -318,7 +320,8 @@ namespace Model
      * request.</p> <p>The maximum number of objects that to be returned for this
      * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
      * the request will return 1000 results as the default value for this
-     * parameter.</p>
+     * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -327,7 +330,8 @@ namespace Model
      * request.</p> <p>The maximum number of objects that to be returned for this
      * request. If <code>MaxResults</code> is not specified with <code>SortBy</code>,
      * the request will return 1000 results as the default value for this
-     * parameter.</p>
+     * parameter.</p> <p>For <code>GetCostCategories</code>, MaxResults has an upper
+     * limit of 1000.</p>
      */
     inline GetCostCategoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

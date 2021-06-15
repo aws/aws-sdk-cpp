@@ -101,7 +101,7 @@ AppConfigClient::~AppConfigClient()
 {
 }
 
-void AppConfigClient::init(const ClientConfiguration& config)
+void AppConfigClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("AppConfig");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -130,9 +130,7 @@ void AppConfigClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateApplicationOutcome AppConfigClient::CreateApplication(const CreateApplicationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return CreateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -162,11 +160,9 @@ CreateConfigurationProfileOutcome AppConfigClient::CreateConfigurationProfile(co
     return CreateConfigurationProfileOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles");
   return CreateConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -191,9 +187,7 @@ void AppConfigClient::CreateConfigurationProfileAsyncHelper(const CreateConfigur
 CreateDeploymentStrategyOutcome AppConfigClient::CreateDeploymentStrategy(const CreateDeploymentStrategyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deploymentstrategies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deploymentstrategies");
   return CreateDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -223,11 +217,9 @@ CreateEnvironmentOutcome AppConfigClient::CreateEnvironment(const CreateEnvironm
     return CreateEnvironmentOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments");
   return CreateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -262,13 +254,11 @@ CreateHostedConfigurationVersionOutcome AppConfigClient::CreateHostedConfigurati
     return CreateHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  ss << "/hostedconfigurationversions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
+  uri.AddPathSegments("/hostedconfigurationversions");
   return CreateHostedConfigurationVersionOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 
@@ -298,10 +288,8 @@ DeleteApplicationOutcome AppConfigClient::DeleteApplication(const DeleteApplicat
     return DeleteApplicationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return DeleteApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -336,12 +324,10 @@ DeleteConfigurationProfileOutcome AppConfigClient::DeleteConfigurationProfile(co
     return DeleteConfigurationProfileOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
   return DeleteConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -371,10 +357,8 @@ DeleteDeploymentStrategyOutcome AppConfigClient::DeleteDeploymentStrategy(const 
     return DeleteDeploymentStrategyOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentStrategyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deployementstrategies/";
-  ss << request.GetDeploymentStrategyId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deployementstrategies/");
+  uri.AddPathSegment(request.GetDeploymentStrategyId());
   return DeleteDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -409,12 +393,10 @@ DeleteEnvironmentOutcome AppConfigClient::DeleteEnvironment(const DeleteEnvironm
     return DeleteEnvironmentOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments/";
-  ss << request.GetEnvironmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentId());
   return DeleteEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -454,14 +436,12 @@ DeleteHostedConfigurationVersionOutcome AppConfigClient::DeleteHostedConfigurati
     return DeleteHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  ss << "/hostedconfigurationversions/";
-  ss << request.GetVersionNumber();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
+  uri.AddPathSegments("/hostedconfigurationversions/");
+  uri.AddPathSegment(request.GetVersionNumber());
   return DeleteHostedConfigurationVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -491,10 +471,8 @@ GetApplicationOutcome AppConfigClient::GetApplication(const GetApplicationReques
     return GetApplicationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return GetApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -539,14 +517,12 @@ GetConfigurationOutcome AppConfigClient::GetConfiguration(const GetConfiguration
     return GetConfigurationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClientId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplication();
-  ss << "/environments/";
-  ss << request.GetEnvironment();
-  ss << "/configurations/";
-  ss << request.GetConfiguration();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplication());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironment());
+  uri.AddPathSegments("/configurations/");
+  uri.AddPathSegment(request.GetConfiguration());
   return GetConfigurationOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -581,12 +557,10 @@ GetConfigurationProfileOutcome AppConfigClient::GetConfigurationProfile(const Ge
     return GetConfigurationProfileOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
   return GetConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -626,14 +600,12 @@ GetDeploymentOutcome AppConfigClient::GetDeployment(const GetDeploymentRequest& 
     return GetDeploymentOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments/";
-  ss << request.GetEnvironmentId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentNumber();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentNumber());
   return GetDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -663,10 +635,8 @@ GetDeploymentStrategyOutcome AppConfigClient::GetDeploymentStrategy(const GetDep
     return GetDeploymentStrategyOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentStrategyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deploymentstrategies/";
-  ss << request.GetDeploymentStrategyId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deploymentstrategies/");
+  uri.AddPathSegment(request.GetDeploymentStrategyId());
   return GetDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -701,12 +671,10 @@ GetEnvironmentOutcome AppConfigClient::GetEnvironment(const GetEnvironmentReques
     return GetEnvironmentOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments/";
-  ss << request.GetEnvironmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentId());
   return GetEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -746,14 +714,12 @@ GetHostedConfigurationVersionOutcome AppConfigClient::GetHostedConfigurationVers
     return GetHostedConfigurationVersionOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  ss << "/hostedconfigurationversions/";
-  ss << request.GetVersionNumber();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
+  uri.AddPathSegments("/hostedconfigurationversions/");
+  uri.AddPathSegment(request.GetVersionNumber());
   return GetHostedConfigurationVersionOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET));
 }
 
@@ -778,9 +744,7 @@ void AppConfigClient::GetHostedConfigurationVersionAsyncHelper(const GetHostedCo
 ListApplicationsOutcome AppConfigClient::ListApplications(const ListApplicationsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications");
   return ListApplicationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -810,11 +774,9 @@ ListConfigurationProfilesOutcome AppConfigClient::ListConfigurationProfiles(cons
     return ListConfigurationProfilesOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles");
   return ListConfigurationProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -839,9 +801,7 @@ void AppConfigClient::ListConfigurationProfilesAsyncHelper(const ListConfigurati
 ListDeploymentStrategiesOutcome AppConfigClient::ListDeploymentStrategies(const ListDeploymentStrategiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deploymentstrategies";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deploymentstrategies");
   return ListDeploymentStrategiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -876,13 +836,11 @@ ListDeploymentsOutcome AppConfigClient::ListDeployments(const ListDeploymentsReq
     return ListDeploymentsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments/";
-  ss << request.GetEnvironmentId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentId());
+  uri.AddPathSegments("/deployments");
   return ListDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -912,11 +870,9 @@ ListEnvironmentsOutcome AppConfigClient::ListEnvironments(const ListEnvironments
     return ListEnvironmentsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments");
   return ListEnvironmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -951,13 +907,11 @@ ListHostedConfigurationVersionsOutcome AppConfigClient::ListHostedConfigurationV
     return ListHostedConfigurationVersionsOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  ss << "/hostedconfigurationversions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
+  uri.AddPathSegments("/hostedconfigurationversions");
   return ListHostedConfigurationVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -987,10 +941,8 @@ ListTagsForResourceOutcome AppConfigClient::ListTagsForResource(const ListTagsFo
     return ListTagsForResourceOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1025,13 +977,11 @@ StartDeploymentOutcome AppConfigClient::StartDeployment(const StartDeploymentReq
     return StartDeploymentOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments/";
-  ss << request.GetEnvironmentId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentId());
+  uri.AddPathSegments("/deployments");
   return StartDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1071,14 +1021,12 @@ StopDeploymentOutcome AppConfigClient::StopDeployment(const StopDeploymentReques
     return StopDeploymentOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentNumber]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments/";
-  ss << request.GetEnvironmentId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentNumber();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentNumber());
   return StopDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1108,10 +1056,8 @@ TagResourceOutcome AppConfigClient::TagResource(const TagResourceRequest& reques
     return TagResourceOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1146,10 +1092,8 @@ UntagResourceOutcome AppConfigClient::UntagResource(const UntagResourceRequest& 
     return UntagResourceOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1179,10 +1123,8 @@ UpdateApplicationOutcome AppConfigClient::UpdateApplication(const UpdateApplicat
     return UpdateApplicationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
   return UpdateApplicationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1217,12 +1159,10 @@ UpdateConfigurationProfileOutcome AppConfigClient::UpdateConfigurationProfile(co
     return UpdateConfigurationProfileOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationProfileId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
   return UpdateConfigurationProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1252,10 +1192,8 @@ UpdateDeploymentStrategyOutcome AppConfigClient::UpdateDeploymentStrategy(const 
     return UpdateDeploymentStrategyOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentStrategyId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/deploymentstrategies/";
-  ss << request.GetDeploymentStrategyId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/deploymentstrategies/");
+  uri.AddPathSegment(request.GetDeploymentStrategyId());
   return UpdateDeploymentStrategyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1290,12 +1228,10 @@ UpdateEnvironmentOutcome AppConfigClient::UpdateEnvironment(const UpdateEnvironm
     return UpdateEnvironmentOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/environments/";
-  ss << request.GetEnvironmentId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/environments/");
+  uri.AddPathSegment(request.GetEnvironmentId());
   return UpdateEnvironmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1335,13 +1271,11 @@ ValidateConfigurationOutcome AppConfigClient::ValidateConfiguration(const Valida
     return ValidateConfigurationOutcome(Aws::Client::AWSError<AppConfigErrors>(AppConfigErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationVersion]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/applications/";
-  ss << request.GetApplicationId();
-  ss << "/configurationprofiles/";
-  ss << request.GetConfigurationProfileId();
-  ss << "/validators";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/applications/");
+  uri.AddPathSegment(request.GetApplicationId());
+  uri.AddPathSegments("/configurationprofiles/");
+  uri.AddPathSegment(request.GetConfigurationProfileId());
+  uri.AddPathSegments("/validators");
   return ValidateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

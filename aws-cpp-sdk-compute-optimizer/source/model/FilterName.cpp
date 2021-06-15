@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int Finding_HASH = HashingUtils::HashString("Finding");
+        static const int FindingReasonCodes_HASH = HashingUtils::HashString("FindingReasonCodes");
         static const int RecommendationSourceType_HASH = HashingUtils::HashString("RecommendationSourceType");
 
 
@@ -30,6 +31,10 @@ namespace Aws
           if (hashCode == Finding_HASH)
           {
             return FilterName::Finding;
+          }
+          else if (hashCode == FindingReasonCodes_HASH)
+          {
+            return FilterName::FindingReasonCodes;
           }
           else if (hashCode == RecommendationSourceType_HASH)
           {
@@ -51,6 +56,8 @@ namespace Aws
           {
           case FilterName::Finding:
             return "Finding";
+          case FilterName::FindingReasonCodes:
+            return "FindingReasonCodes";
           case FilterName::RecommendationSourceType:
             return "RecommendationSourceType";
           default:

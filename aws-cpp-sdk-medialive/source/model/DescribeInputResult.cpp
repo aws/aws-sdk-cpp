@@ -81,6 +81,15 @@ DescribeInputResult& DescribeInputResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("inputPartnerIds"))
+  {
+    Array<JsonView> inputPartnerIdsJsonList = jsonValue.GetArray("inputPartnerIds");
+    for(unsigned inputPartnerIdsIndex = 0; inputPartnerIdsIndex < inputPartnerIdsJsonList.GetLength(); ++inputPartnerIdsIndex)
+    {
+      m_inputPartnerIds.push_back(inputPartnerIdsJsonList[inputPartnerIdsIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("inputSourceType"))
   {
     m_inputSourceType = InputSourceTypeMapper::GetInputSourceTypeForName(jsonValue.GetString("inputSourceType"));

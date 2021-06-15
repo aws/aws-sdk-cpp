@@ -27,7 +27,8 @@ MutableClusterInfo::MutableClusterInfo() :
     m_enhancedMonitoringHasBeenSet(false),
     m_openMonitoringHasBeenSet(false),
     m_kafkaVersionHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false)
+    m_loggingInfoHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_enhancedMonitoringHasBeenSet(false),
     m_openMonitoringHasBeenSet(false),
     m_kafkaVersionHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false)
+    m_loggingInfoHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +101,13 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_loggingInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +158,12 @@ JsonValue MutableClusterInfo::Jsonize() const
   if(m_loggingInfoHasBeenSet)
   {
    payload.WithObject("loggingInfo", m_loggingInfo.Jsonize());
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
 
   }
 

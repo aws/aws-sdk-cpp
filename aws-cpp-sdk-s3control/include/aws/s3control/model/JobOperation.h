@@ -9,6 +9,7 @@
 #include <aws/s3control/model/S3CopyObjectOperation.h>
 #include <aws/s3control/model/S3SetObjectAclOperation.h>
 #include <aws/s3control/model/S3SetObjectTaggingOperation.h>
+#include <aws/s3control/model/S3DeleteObjectTaggingOperation.h>
 #include <aws/s3control/model/S3InitiateRestoreObjectOperation.h>
 #include <aws/s3control/model/S3SetObjectLegalHoldOperation.h>
 #include <aws/s3control/model/S3SetObjectRetentionOperation.h>
@@ -32,8 +33,7 @@ namespace Model
    * <p>The operation that you want this job to perform on every object listed in the
    * manifest. For more information about the available operations, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a>
-   * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * in the <i>Amazon S3 User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobOperation">AWS
    * API Reference</a></p>
    */
@@ -196,6 +196,43 @@ namespace Model
 
 
     /**
+     * <p>Directs the specified job to execute a DELETE Object tagging call on every
+     * object in the manifest.</p>
+     */
+    inline const S3DeleteObjectTaggingOperation& GetS3DeleteObjectTagging() const{ return m_s3DeleteObjectTagging; }
+
+    /**
+     * <p>Directs the specified job to execute a DELETE Object tagging call on every
+     * object in the manifest.</p>
+     */
+    inline bool S3DeleteObjectTaggingHasBeenSet() const { return m_s3DeleteObjectTaggingHasBeenSet; }
+
+    /**
+     * <p>Directs the specified job to execute a DELETE Object tagging call on every
+     * object in the manifest.</p>
+     */
+    inline void SetS3DeleteObjectTagging(const S3DeleteObjectTaggingOperation& value) { m_s3DeleteObjectTaggingHasBeenSet = true; m_s3DeleteObjectTagging = value; }
+
+    /**
+     * <p>Directs the specified job to execute a DELETE Object tagging call on every
+     * object in the manifest.</p>
+     */
+    inline void SetS3DeleteObjectTagging(S3DeleteObjectTaggingOperation&& value) { m_s3DeleteObjectTaggingHasBeenSet = true; m_s3DeleteObjectTagging = std::move(value); }
+
+    /**
+     * <p>Directs the specified job to execute a DELETE Object tagging call on every
+     * object in the manifest.</p>
+     */
+    inline JobOperation& WithS3DeleteObjectTagging(const S3DeleteObjectTaggingOperation& value) { SetS3DeleteObjectTagging(value); return *this;}
+
+    /**
+     * <p>Directs the specified job to execute a DELETE Object tagging call on every
+     * object in the manifest.</p>
+     */
+    inline JobOperation& WithS3DeleteObjectTagging(S3DeleteObjectTaggingOperation&& value) { SetS3DeleteObjectTagging(std::move(value)); return *this;}
+
+
+    /**
      * <p>Directs the specified job to initiate restore requests for every archived
      * object in the manifest.</p>
      */
@@ -282,6 +319,9 @@ namespace Model
 
     S3SetObjectTaggingOperation m_s3PutObjectTagging;
     bool m_s3PutObjectTaggingHasBeenSet;
+
+    S3DeleteObjectTaggingOperation m_s3DeleteObjectTagging;
+    bool m_s3DeleteObjectTaggingHasBeenSet;
 
     S3InitiateRestoreObjectOperation m_s3InitiateRestoreObject;
     bool m_s3InitiateRestoreObjectHasBeenSet;

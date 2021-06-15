@@ -11,6 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker-featurestore-runtime/model/BatchGetRecordResult.h>
 #include <aws/sagemaker-featurestore-runtime/model/GetRecordResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -52,14 +53,17 @@ namespace SageMakerFeatureStoreRuntime
 
 namespace Model
 {
+        class BatchGetRecordRequest;
         class DeleteRecordRequest;
         class GetRecordRequest;
         class PutRecordRequest;
 
+        typedef Aws::Utils::Outcome<BatchGetRecordResult, SageMakerFeatureStoreRuntimeError> BatchGetRecordOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> DeleteRecordOutcome;
         typedef Aws::Utils::Outcome<GetRecordResult, SageMakerFeatureStoreRuntimeError> GetRecordOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, SageMakerFeatureStoreRuntimeError> PutRecordOutcome;
 
+        typedef std::future<BatchGetRecordOutcome> BatchGetRecordOutcomeCallable;
         typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
         typedef std::future<GetRecordOutcome> GetRecordOutcomeCallable;
         typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
@@ -67,6 +71,7 @@ namespace Model
 
   class SageMakerFeatureStoreRuntimeClient;
 
+    typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::BatchGetRecordRequest&, const Model::BatchGetRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRecordResponseReceivedHandler;
     typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::DeleteRecordRequest&, const Model::DeleteRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecordResponseReceivedHandler;
     typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::GetRecordRequest&, const Model::GetRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecordResponseReceivedHandler;
     typedef std::function<void(const SageMakerFeatureStoreRuntimeClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
@@ -112,6 +117,34 @@ namespace Model
 
         virtual ~SageMakerFeatureStoreRuntimeClient();
 
+
+        /**
+         * <p>Retrieves a batch of <code>Records</code> from a
+         * <code>FeatureGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetRecordOutcome BatchGetRecord(const Model::BatchGetRecordRequest& request) const;
+
+        /**
+         * <p>Retrieves a batch of <code>Records</code> from a
+         * <code>FeatureGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetRecordOutcomeCallable BatchGetRecordCallable(const Model::BatchGetRecordRequest& request) const;
+
+        /**
+         * <p>Retrieves a batch of <code>Records</code> from a
+         * <code>FeatureGroup</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchGetRecord">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetRecordAsync(const Model::BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record
@@ -228,6 +261,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void BatchGetRecordAsyncHelper(const Model::BatchGetRecordRequest& request, const BatchGetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRecordAsyncHelper(const Model::DeleteRecordRequest& request, const DeleteRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRecordAsyncHelper(const Model::GetRecordRequest& request, const GetRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRecordAsyncHelper(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

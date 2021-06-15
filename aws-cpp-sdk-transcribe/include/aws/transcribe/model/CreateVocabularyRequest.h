@@ -102,32 +102,38 @@ namespace Model
 
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code of the vocabulary entries. For a list of languages and
+     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code of the vocabulary entries. For a list of languages and
+     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code of the vocabulary entries. For a list of languages and
+     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code of the vocabulary entries. For a list of languages and
+     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code of the vocabulary entries. For a list of languages and
+     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
      */
     inline CreateVocabularyRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the vocabulary entries.</p>
+     * <p>The language code of the vocabulary entries. For a list of languages and
+     * their corresponding language codes, see <a>what-is-transcribe</a>.</p>
      */
     inline CreateVocabularyRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -186,7 +192,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline const Aws::String& GetVocabularyFileUri() const{ return m_vocabularyFileUri; }
@@ -199,7 +205,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline bool VocabularyFileUriHasBeenSet() const { return m_vocabularyFileUriHasBeenSet; }
@@ -212,7 +218,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const Aws::String& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = value; }
@@ -225,7 +231,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(Aws::String&& value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri = std::move(value); }
@@ -238,7 +244,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline void SetVocabularyFileUri(const char* value) { m_vocabularyFileUriHasBeenSet = true; m_vocabularyFileUri.assign(value); }
@@ -251,7 +257,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const Aws::String& value) { SetVocabularyFileUri(value); return *this;}
@@ -264,7 +270,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(Aws::String&& value) { SetVocabularyFileUri(std::move(value)); return *this;}
@@ -277,7 +283,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object
      * Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p> <p>For more information
      * about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
      * Vocabularies</a>.</p>
      */
     inline CreateVocabularyRequest& WithVocabularyFileUri(const char* value) { SetVocabularyFileUri(value); return *this;}

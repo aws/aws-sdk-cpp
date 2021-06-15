@@ -21,6 +21,7 @@ CreateDataSetRequest::CreateDataSetRequest() :
     m_importMode(DataSetImportMode::NOT_SET),
     m_importModeHasBeenSet(false),
     m_columnGroupsHasBeenSet(false),
+    m_fieldFoldersHasBeenSet(false),
     m_permissionsHasBeenSet(false),
     m_rowLevelPermissionDataSetHasBeenSet(false),
     m_columnLevelPermissionRulesHasBeenSet(false),
@@ -79,6 +80,17 @@ Aws::String CreateDataSetRequest::SerializePayload() const
      columnGroupsJsonList[columnGroupsIndex].AsObject(m_columnGroups[columnGroupsIndex].Jsonize());
    }
    payload.WithArray("ColumnGroups", std::move(columnGroupsJsonList));
+
+  }
+
+  if(m_fieldFoldersHasBeenSet)
+  {
+   JsonValue fieldFoldersJsonMap;
+   for(auto& fieldFoldersItem : m_fieldFolders)
+   {
+     fieldFoldersJsonMap.WithObject(fieldFoldersItem.first, fieldFoldersItem.second.Jsonize());
+   }
+   payload.WithObject("FieldFolders", std::move(fieldFoldersJsonMap));
 
   }
 

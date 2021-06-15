@@ -74,7 +74,7 @@ MarketplaceCatalogClient::~MarketplaceCatalogClient()
 {
 }
 
-void MarketplaceCatalogClient::init(const ClientConfiguration& config)
+void MarketplaceCatalogClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Marketplace Catalog");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -113,9 +113,7 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
     return CancelChangeSetOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChangeSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/CancelChangeSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/CancelChangeSet");
   return CancelChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -150,9 +148,7 @@ DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const Descr
     return DescribeChangeSetOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ChangeSetId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeChangeSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeChangeSet");
   return DescribeChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -187,9 +183,7 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
     return DescribeEntityOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EntityId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/DescribeEntity";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/DescribeEntity");
   return DescribeEntityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -214,9 +208,7 @@ void MarketplaceCatalogClient::DescribeEntityAsyncHelper(const DescribeEntityReq
 ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListChangeSets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListChangeSets");
   return ListChangeSetsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -241,9 +233,7 @@ void MarketplaceCatalogClient::ListChangeSetsAsyncHelper(const ListChangeSetsReq
 ListEntitiesOutcome MarketplaceCatalogClient::ListEntities(const ListEntitiesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/ListEntities";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/ListEntities");
   return ListEntitiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -268,9 +258,7 @@ void MarketplaceCatalogClient::ListEntitiesAsyncHelper(const ListEntitiesRequest
 StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChangeSetRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/StartChangeSet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/StartChangeSet");
   return StartChangeSetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -137,7 +137,7 @@ void AWSClient::SetServiceClientName(const Aws::String& name)
     if (!m_customizedUserAgent)
     {
         Aws::StringStream ss;
-        ss << "aws-sdk-cpp/" << Version::GetVersionString() << "/" << m_serviceName << "/" <<  Aws::OSVersionInfo::ComputeOSVersionString()
+        ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString()
             << " " << Version::GetCompilerVersionString();
         m_userAgent = ss.str();
     }
@@ -232,7 +232,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
-    Aws::String invocationId = UUID::RandomUUID();
+    Aws::String invocationId = Aws::Utils::UUID::RandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
     requestInfo.maxAttempts = 0;
@@ -358,7 +358,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
-    Aws::String invocationId = UUID::RandomUUID();
+    Aws::String invocationId = Aws::Utils::UUID::RandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
     requestInfo.maxAttempts = 0;
@@ -626,7 +626,7 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
     }
 
     //Add transfer-encoding:chunked to header
-    if (body && isChunked)
+    if (body && isChunked && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
     {
         httpRequest->SetTransferEncoding(CHUNKED_VALUE);
     }

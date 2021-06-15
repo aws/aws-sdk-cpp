@@ -45,12 +45,14 @@ namespace Model
      * <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your
      * broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets
      * associated with your VPC. Lambda connects to these subnets to fetch data from
-     * your Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC
-     * security group used to manage access to your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-256 authentication of your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-512 authentication of your Kafka brokers.</p> </li> </ul>
+     * your Self-Managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access
+     * to your Self-Managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
+     * used for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
+     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
+     * Self-Managed Apache Kafka brokers.</p> </li> </ul>
      */
     inline const SourceAccessType& GetType() const{ return m_type; }
 
@@ -60,12 +62,14 @@ namespace Model
      * <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your
      * broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets
      * associated with your VPC. Lambda connects to these subnets to fetch data from
-     * your Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC
-     * security group used to manage access to your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-256 authentication of your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-512 authentication of your Kafka brokers.</p> </li> </ul>
+     * your Self-Managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access
+     * to your Self-Managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
+     * used for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
+     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
+     * Self-Managed Apache Kafka brokers.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -75,12 +79,14 @@ namespace Model
      * <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your
      * broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets
      * associated with your VPC. Lambda connects to these subnets to fetch data from
-     * your Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC
-     * security group used to manage access to your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-256 authentication of your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-512 authentication of your Kafka brokers.</p> </li> </ul>
+     * your Self-Managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access
+     * to your Self-Managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
+     * used for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
+     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
+     * Self-Managed Apache Kafka brokers.</p> </li> </ul>
      */
     inline void SetType(const SourceAccessType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -90,12 +96,14 @@ namespace Model
      * <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your
      * broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets
      * associated with your VPC. Lambda connects to these subnets to fetch data from
-     * your Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC
-     * security group used to manage access to your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-256 authentication of your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-512 authentication of your Kafka brokers.</p> </li> </ul>
+     * your Self-Managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access
+     * to your Self-Managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
+     * used for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
+     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
+     * Self-Managed Apache Kafka brokers.</p> </li> </ul>
      */
     inline void SetType(SourceAccessType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -105,12 +113,14 @@ namespace Model
      * <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your
      * broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets
      * associated with your VPC. Lambda connects to these subnets to fetch data from
-     * your Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC
-     * security group used to manage access to your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-256 authentication of your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-512 authentication of your Kafka brokers.</p> </li> </ul>
+     * your Self-Managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access
+     * to your Self-Managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
+     * used for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
+     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
+     * Self-Managed Apache Kafka brokers.</p> </li> </ul>
      */
     inline SourceAccessConfiguration& WithType(const SourceAccessType& value) { SetType(value); return *this;}
 
@@ -120,12 +130,14 @@ namespace Model
      * <p> <code>BASIC_AUTH</code> - (MQ) The Secrets Manager secret that stores your
      * broker credentials.</p> </li> <li> <p> <code>VPC_SUBNET</code> - The subnets
      * associated with your VPC. Lambda connects to these subnets to fetch data from
-     * your Kafka cluster.</p> </li> <li> <p> <code>VPC_SECURITY_GROUP</code> - The VPC
-     * security group used to manage access to your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_256_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-256 authentication of your Kafka brokers.</p> </li> <li> <p>
-     * <code>SASL_SCRAM_512_AUTH</code> - The ARN of your secret key used for SASL
-     * SCRAM-512 authentication of your Kafka brokers.</p> </li> </ul>
+     * your Self-Managed Apache Kafka cluster.</p> </li> <li> <p>
+     * <code>VPC_SECURITY_GROUP</code> - The VPC security group used to manage access
+     * to your Self-Managed Apache Kafka brokers.</p> </li> <li> <p>
+     * <code>SASL_SCRAM_256_AUTH</code> - The Secrets Manager ARN of your secret key
+     * used for SASL SCRAM-256 authentication of your Self-Managed Apache Kafka
+     * brokers.</p> </li> <li> <p> <code>SASL_SCRAM_512_AUTH</code> - The Secrets
+     * Manager ARN of your secret key used for SASL SCRAM-512 authentication of your
+     * Self-Managed Apache Kafka brokers.</p> </li> </ul>
      */
     inline SourceAccessConfiguration& WithType(SourceAccessType&& value) { SetType(std::move(value)); return *this;}
 

@@ -82,8 +82,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -133,8 +132,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -184,8 +182,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -235,8 +232,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -286,8 +282,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -337,8 +332,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -388,8 +382,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -439,8 +432,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
@@ -490,8 +482,7 @@ namespace Model
 
     /**
      * <p>The identifier of the resource associated with the scalable target. This
-     * string consists of the resource type and unique identifier. If you specify a
-     * scalable dimension, you must also specify a resource ID.</p> <ul> <li> <p>ECS
+     * string consists of the resource type and unique identifier.</p> <ul> <li> <p>ECS
      * service - The resource type is <code>service</code> and the unique identifier is
      * the cluster name and service name. Example:
      * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request

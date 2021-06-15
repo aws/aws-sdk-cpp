@@ -407,9 +407,12 @@ namespace Model
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
      * tokens are not required and cannot be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * registrations. You can only specify ON when you are initially creating a user
+     * pool. You can use the <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline const UserPoolMfaType& GetMfaConfiguration() const{ return m_mfaConfiguration; }
 
@@ -417,9 +420,12 @@ namespace Model
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
      * tokens are not required and cannot be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * registrations. You can only specify ON when you are initially creating a user
+     * pool. You can use the <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
 
@@ -427,9 +433,12 @@ namespace Model
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
      * tokens are not required and cannot be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * registrations. You can only specify ON when you are initially creating a user
+     * pool. You can use the <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
 
@@ -437,9 +446,12 @@ namespace Model
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
      * tokens are not required and cannot be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * registrations. You can only specify ON when you are initially creating a user
+     * pool. You can use the <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline void SetMfaConfiguration(UserPoolMfaType&& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = std::move(value); }
 
@@ -447,9 +459,12 @@ namespace Model
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
      * tokens are not required and cannot be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * registrations. You can only specify ON when you are initially creating a user
+     * pool. You can use the <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline UpdateUserPoolRequest& WithMfaConfiguration(const UserPoolMfaType& value) { SetMfaConfiguration(value); return *this;}
 
@@ -457,9 +472,12 @@ namespace Model
      * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
      * tokens are not required and cannot be specified during user registration.</p>
      * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
-     * registrations. You can only specify required when you are initially creating a
-     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
-     * registering to create an MFA token.</p> </li> </ul>
+     * registrations. You can only specify ON when you are initially creating a user
+     * pool. You can use the <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+     * API operation to turn MFA "ON" for existing user pools. </p> </li> <li> <p>
+     * <code>OPTIONAL</code> - Users have the option when registering to create an MFA
+     * token.</p> </li> </ul>
      */
     inline UpdateUserPoolRequest& WithMfaConfiguration(UserPoolMfaType&& value) { SetMfaConfiguration(std::move(value)); return *this;}
 

@@ -32,6 +32,8 @@ Task::Task() :
     m_cpuHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
@@ -56,7 +58,8 @@ Task::Task() :
     m_taskArnHasBeenSet(false),
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
 }
 
@@ -74,6 +77,8 @@ Task::Task(JsonView jsonValue) :
     m_cpuHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_desiredStatusHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_executionStoppedAtHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
@@ -98,7 +103,8 @@ Task::Task(JsonView jsonValue) :
     m_taskArnHasBeenSet(false),
     m_taskDefinitionArnHasBeenSet(false),
     m_version(0),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_ephemeralStorageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -196,6 +202,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_desiredStatus = jsonValue.GetString("desiredStatus");
 
     m_desiredStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enableExecuteCommand"))
+  {
+    m_enableExecuteCommand = jsonValue.GetBool("enableExecuteCommand");
+
+    m_enableExecuteCommandHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("executionStoppedAt"))
@@ -351,6 +364,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ephemeralStorage"))
+  {
+    m_ephemeralStorage = jsonValue.GetObject("ephemeralStorage");
+
+    m_ephemeralStorageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -439,6 +459,12 @@ JsonValue Task::Jsonize() const
   if(m_desiredStatusHasBeenSet)
   {
    payload.WithString("desiredStatus", m_desiredStatus);
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 
@@ -566,6 +592,12 @@ JsonValue Task::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithInt64("version", m_version);
+
+  }
+
+  if(m_ephemeralStorageHasBeenSet)
+  {
+   payload.WithObject("ephemeralStorage", m_ephemeralStorage.Jsonize());
 
   }
 

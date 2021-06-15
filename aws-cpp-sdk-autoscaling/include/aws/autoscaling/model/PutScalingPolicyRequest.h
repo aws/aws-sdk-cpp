@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling/model/TargetTrackingConfiguration.h>
+#include <aws/autoscaling/model/PredictiveScalingConfiguration.h>
 #include <aws/autoscaling/model/StepAdjustment.h>
 #include <utility>
 
@@ -124,56 +125,64 @@ namespace Model
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
      * <p>One of the following policy types: </p> <ul> <li> <p>
      * <code>TargetTrackingScaling</code> </p> </li> <li> <p> <code>StepScaling</code>
-     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> </ul>
+     * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
+     * <code>PredictiveScaling</code> </p> </li> </ul>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
 
@@ -607,7 +616,7 @@ namespace Model
 
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
+     * <p>A target tracking scaling policy. Provides support for predefined or
      * customized metrics.</p> <p>The following predefined metrics are available:</p>
      * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
@@ -623,7 +632,7 @@ namespace Model
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
+     * <p>A target tracking scaling policy. Provides support for predefined or
      * customized metrics.</p> <p>The following predefined metrics are available:</p>
      * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
@@ -639,7 +648,7 @@ namespace Model
     inline bool TargetTrackingConfigurationHasBeenSet() const { return m_targetTrackingConfigurationHasBeenSet; }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
+     * <p>A target tracking scaling policy. Provides support for predefined or
      * customized metrics.</p> <p>The following predefined metrics are available:</p>
      * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
@@ -655,7 +664,7 @@ namespace Model
     inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
+     * <p>A target tracking scaling policy. Provides support for predefined or
      * customized metrics.</p> <p>The following predefined metrics are available:</p>
      * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
@@ -671,7 +680,7 @@ namespace Model
     inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
+     * <p>A target tracking scaling policy. Provides support for predefined or
      * customized metrics.</p> <p>The following predefined metrics are available:</p>
      * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
@@ -687,7 +696,7 @@ namespace Model
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
 
     /**
-     * <p>A target tracking scaling policy. Includes support for predefined or
+     * <p>A target tracking scaling policy. Provides support for predefined or
      * customized metrics.</p> <p>The following predefined metrics are available:</p>
      * <ul> <li> <p> <code>ASGAverageCPUUtilization</code> </p> </li> <li> <p>
      * <code>ASGAverageNetworkIn</code> </p> </li> <li> <p>
@@ -739,6 +748,73 @@ namespace Model
      */
     inline PutScalingPolicyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
+
+    /**
+     * <p>A predictive scaling policy. Provides support for only predefined
+     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
+     * and the Application Load Balancer request count.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline const PredictiveScalingConfiguration& GetPredictiveScalingConfiguration() const{ return m_predictiveScalingConfiguration; }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for only predefined
+     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
+     * and the Application Load Balancer request count.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline bool PredictiveScalingConfigurationHasBeenSet() const { return m_predictiveScalingConfigurationHasBeenSet; }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for only predefined
+     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
+     * and the Application Load Balancer request count.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = value; }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for only predefined
+     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
+     * and the Application Load Balancer request count.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline void SetPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = std::move(value); }
+
+    /**
+     * <p>A predictive scaling policy. Provides support for only predefined
+     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
+     * and the Application Load Balancer request count.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline PutScalingPolicyRequest& WithPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { SetPredictiveScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>A predictive scaling policy. Provides support for only predefined
+     * metrics.</p> <p>Predictive scaling works with CPU utilization, network in/out,
+     * and the Application Load Balancer request count.</p> <p>For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a>
+     * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
+     * policy type is <code>PredictiveScaling</code>.</p>
+     */
+    inline PutScalingPolicyRequest& WithPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { SetPredictiveScalingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -779,6 +855,9 @@ namespace Model
 
     bool m_enabled;
     bool m_enabledHasBeenSet;
+
+    PredictiveScalingConfiguration m_predictiveScalingConfiguration;
+    bool m_predictiveScalingConfigurationHasBeenSet;
   };
 
 } // namespace Model

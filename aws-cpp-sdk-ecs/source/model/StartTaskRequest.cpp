@@ -17,6 +17,8 @@ StartTaskRequest::StartTaskRequest() :
     m_containerInstancesHasBeenSet(false),
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false),
     m_groupHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_overridesHasBeenSet(false),
@@ -53,6 +55,12 @@ Aws::String StartTaskRequest::SerializePayload() const
   if(m_enableECSManagedTagsHasBeenSet)
   {
    payload.WithBool("enableECSManagedTags", m_enableECSManagedTags);
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 

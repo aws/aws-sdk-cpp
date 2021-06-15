@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies which files, folders and objects to include or exclude when
+   * <p>Specifies which files, folders, and objects to include or exclude when
    * transferring files from source to destination.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/FilterRule">AWS
    * API Reference</a></p>

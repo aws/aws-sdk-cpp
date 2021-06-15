@@ -27,7 +27,9 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_forceNewDeployment(false),
     m_forceNewDeploymentHasBeenSet(false),
     m_healthCheckGracePeriodSeconds(0),
-    m_healthCheckGracePeriodSecondsHasBeenSet(false)
+    m_healthCheckGracePeriodSecondsHasBeenSet(false),
+    m_enableExecuteCommand(false),
+    m_enableExecuteCommandHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,12 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_healthCheckGracePeriodSecondsHasBeenSet)
   {
    payload.WithInteger("healthCheckGracePeriodSeconds", m_healthCheckGracePeriodSeconds);
+
+  }
+
+  if(m_enableExecuteCommandHasBeenSet)
+  {
+   payload.WithBool("enableExecuteCommand", m_enableExecuteCommand);
 
   }
 

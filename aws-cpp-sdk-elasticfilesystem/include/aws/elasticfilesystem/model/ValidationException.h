@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Returned if the AWS Backup service is not available in the region that the
-   * request was made.</p><p><h3>See Also:</h3>   <a
+   * <p>Returned if the AWS Backup service is not available in the Region in which
+   * the request was made.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ValidationException">AWS
    * API Reference</a></p>
    */

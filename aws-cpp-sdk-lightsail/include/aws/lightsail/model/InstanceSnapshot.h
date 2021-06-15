@@ -387,42 +387,50 @@ namespace Model
 
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline const Aws::String& GetProgress() const{ return m_progress; }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline void SetProgress(Aws::String&& value) { m_progressHasBeenSet = true; m_progress = std::move(value); }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline void SetProgress(const char* value) { m_progressHasBeenSet = true; m_progress.assign(value); }
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline InstanceSnapshot& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline InstanceSnapshot& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
 
     /**
-     * <p>The progress of the snapshot.</p>
+     * <p>The progress of the snapshot.</p>  <p>This is populated only for disk
+     * snapshots, and is <code>null</code> for instance snapshots.</p> 
      */
     inline InstanceSnapshot& WithProgress(const char* value) { SetProgress(value); return *this;}
 

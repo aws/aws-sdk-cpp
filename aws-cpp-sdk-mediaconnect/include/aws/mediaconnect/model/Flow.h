@@ -11,6 +11,7 @@
 #include <aws/mediaconnect/model/FailoverConfig.h>
 #include <aws/mediaconnect/model/Status.h>
 #include <aws/mediaconnect/model/Entitlement.h>
+#include <aws/mediaconnect/model/MediaStream.h>
 #include <aws/mediaconnect/model/Output.h>
 #include <aws/mediaconnect/model/VpcInterface.h>
 #include <utility>
@@ -275,6 +276,55 @@ namespace Model
 
 
     /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline const Aws::Vector<MediaStream>& GetMediaStreams() const{ return m_mediaStreams; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline bool MediaStreamsHasBeenSet() const { return m_mediaStreamsHasBeenSet; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline void SetMediaStreams(const Aws::Vector<MediaStream>& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = value; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline void SetMediaStreams(Aws::Vector<MediaStream>&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = std::move(value); }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& WithMediaStreams(const Aws::Vector<MediaStream>& value) { SetMediaStreams(value); return *this;}
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& WithMediaStreams(Aws::Vector<MediaStream>&& value) { SetMediaStreams(std::move(value)); return *this;}
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& AddMediaStreams(const MediaStream& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(value); return *this; }
+
+    /**
+     * The media streams that are associated with the flow. After you associate a media
+     * stream with a source, you can also associate it with outputs on the flow.
+     */
+    inline Flow& AddMediaStreams(MediaStream&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The name of the flow.
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -506,6 +556,9 @@ namespace Model
 
     Aws::String m_flowArn;
     bool m_flowArnHasBeenSet;
+
+    Aws::Vector<MediaStream> m_mediaStreams;
+    bool m_mediaStreamsHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

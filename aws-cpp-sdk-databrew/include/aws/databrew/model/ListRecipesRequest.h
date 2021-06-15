@@ -60,91 +60,123 @@ namespace Model
 
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListRecipesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListRecipesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
      */
     inline ListRecipesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline const Aws::String& GetRecipeVersion() const{ return m_recipeVersion; }
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline bool RecipeVersionHasBeenSet() const { return m_recipeVersionHasBeenSet; }
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline void SetRecipeVersion(const Aws::String& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = value; }
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline void SetRecipeVersion(Aws::String&& value) { m_recipeVersionHasBeenSet = true; m_recipeVersion = std::move(value); }
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline void SetRecipeVersion(const char* value) { m_recipeVersionHasBeenSet = true; m_recipeVersion.assign(value); }
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline ListRecipesRequest& WithRecipeVersion(const Aws::String& value) { SetRecipeVersion(value); return *this;}
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline ListRecipesRequest& WithRecipeVersion(Aws::String&& value) { SetRecipeVersion(std::move(value)); return *this;}
 
     /**
-     * <p>A version identifier. Using this parameter indicates to return only those
-     * recipes that have this version identifier.</p>
+     * <p>Return only those recipes with a version identifier of
+     * <code>LATEST_WORKING</code> or <code>LATEST_PUBLISHED</code>. If
+     * <code>RecipeVersion</code> is omitted, <code>ListRecipes</code> returns all of
+     * the <code>LATEST_PUBLISHED</code> recipe versions.</p> <p>Valid values:
+     * <code>LATEST_WORKING</code> | <code>LATEST_PUBLISHED</code> </p>
      */
     inline ListRecipesRequest& WithRecipeVersion(const char* value) { SetRecipeVersion(value); return *this;}
 

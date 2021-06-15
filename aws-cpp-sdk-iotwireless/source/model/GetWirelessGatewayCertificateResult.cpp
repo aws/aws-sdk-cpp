@@ -34,6 +34,12 @@ GetWirelessGatewayCertificateResult& GetWirelessGatewayCertificateResult::operat
 
   }
 
+  if(jsonValue.ValueExists("LoRaWANNetworkServerCertificateId"))
+  {
+    m_loRaWANNetworkServerCertificateId = jsonValue.GetString("LoRaWANNetworkServerCertificateId");
+
+  }
+
 
 
   return *this;

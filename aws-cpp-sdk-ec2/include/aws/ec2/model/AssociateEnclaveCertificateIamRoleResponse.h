@@ -72,49 +72,49 @@ namespace Model
     /**
      * <p>The Amazon S3 object key where the certificate, certificate chain, and
      * encrypted private key bundle are stored. The object key is formatted as follows:
-     * <code>certificate_arn</code>/<code>role_arn</code>.</p>
+     * <code>role_arn</code>/<code>certificate_arn</code>.</p>
      */
     inline const Aws::String& GetCertificateS3ObjectKey() const{ return m_certificateS3ObjectKey; }
 
     /**
      * <p>The Amazon S3 object key where the certificate, certificate chain, and
      * encrypted private key bundle are stored. The object key is formatted as follows:
-     * <code>certificate_arn</code>/<code>role_arn</code>.</p>
+     * <code>role_arn</code>/<code>certificate_arn</code>.</p>
      */
     inline void SetCertificateS3ObjectKey(const Aws::String& value) { m_certificateS3ObjectKey = value; }
 
     /**
      * <p>The Amazon S3 object key where the certificate, certificate chain, and
      * encrypted private key bundle are stored. The object key is formatted as follows:
-     * <code>certificate_arn</code>/<code>role_arn</code>.</p>
+     * <code>role_arn</code>/<code>certificate_arn</code>.</p>
      */
     inline void SetCertificateS3ObjectKey(Aws::String&& value) { m_certificateS3ObjectKey = std::move(value); }
 
     /**
      * <p>The Amazon S3 object key where the certificate, certificate chain, and
      * encrypted private key bundle are stored. The object key is formatted as follows:
-     * <code>certificate_arn</code>/<code>role_arn</code>.</p>
+     * <code>role_arn</code>/<code>certificate_arn</code>.</p>
      */
     inline void SetCertificateS3ObjectKey(const char* value) { m_certificateS3ObjectKey.assign(value); }
 
     /**
      * <p>The Amazon S3 object key where the certificate, certificate chain, and
      * encrypted private key bundle are stored. The object key is formatted as follows:
-     * <code>certificate_arn</code>/<code>role_arn</code>.</p>
+     * <code>role_arn</code>/<code>certificate_arn</code>.</p>
      */
     inline AssociateEnclaveCertificateIamRoleResponse& WithCertificateS3ObjectKey(const Aws::String& value) { SetCertificateS3ObjectKey(value); return *this;}
 
     /**
      * <p>The Amazon S3 object key where the certificate, certificate chain, and
      * encrypted private key bundle are stored. The object key is formatted as follows:
-     * <code>certificate_arn</code>/<code>role_arn</code>.</p>
+     * <code>role_arn</code>/<code>certificate_arn</code>.</p>
      */
     inline AssociateEnclaveCertificateIamRoleResponse& WithCertificateS3ObjectKey(Aws::String&& value) { SetCertificateS3ObjectKey(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon S3 object key where the certificate, certificate chain, and
      * encrypted private key bundle are stored. The object key is formatted as follows:
-     * <code>certificate_arn</code>/<code>role_arn</code>.</p>
+     * <code>role_arn</code>/<code>certificate_arn</code>.</p>
      */
     inline AssociateEnclaveCertificateIamRoleResponse& WithCertificateS3ObjectKey(const char* value) { SetCertificateS3ObjectKey(value); return *this;}
 

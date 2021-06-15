@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePlaceIndexResult::DescribePlaceIndexResult()
+DescribePlaceIndexResult::DescribePlaceIndexResult() : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
 }
 
-DescribePlaceIndexResult::DescribePlaceIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribePlaceIndexResult::DescribePlaceIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
   *this = result;
 }
@@ -62,6 +64,21 @@ DescribePlaceIndexResult& DescribePlaceIndexResult::operator =(const Aws::Amazon
   {
     m_indexName = jsonValue.GetString("IndexName");
 
+  }
+
+  if(jsonValue.ValueExists("PricingPlan"))
+  {
+    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
+
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
   }
 
   if(jsonValue.ValueExists("UpdateTime"))

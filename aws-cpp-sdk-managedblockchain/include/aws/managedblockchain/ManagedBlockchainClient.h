@@ -27,7 +27,10 @@
 #include <aws/managedblockchain/model/ListNodesResult.h>
 #include <aws/managedblockchain/model/ListProposalVotesResult.h>
 #include <aws/managedblockchain/model/ListProposalsResult.h>
+#include <aws/managedblockchain/model/ListTagsForResourceResult.h>
 #include <aws/managedblockchain/model/RejectInvitationResult.h>
+#include <aws/managedblockchain/model/TagResourceResult.h>
+#include <aws/managedblockchain/model/UntagResourceResult.h>
 #include <aws/managedblockchain/model/UpdateMemberResult.h>
 #include <aws/managedblockchain/model/UpdateNodeResult.h>
 #include <aws/managedblockchain/model/VoteOnProposalResult.h>
@@ -86,7 +89,10 @@ namespace Model
         class ListNodesRequest;
         class ListProposalVotesRequest;
         class ListProposalsRequest;
+        class ListTagsForResourceRequest;
         class RejectInvitationRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateMemberRequest;
         class UpdateNodeRequest;
         class VoteOnProposalRequest;
@@ -107,7 +113,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListNodesResult, ManagedBlockchainError> ListNodesOutcome;
         typedef Aws::Utils::Outcome<ListProposalVotesResult, ManagedBlockchainError> ListProposalVotesOutcome;
         typedef Aws::Utils::Outcome<ListProposalsResult, ManagedBlockchainError> ListProposalsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, ManagedBlockchainError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RejectInvitationResult, ManagedBlockchainError> RejectInvitationOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, ManagedBlockchainError> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, ManagedBlockchainError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateMemberResult, ManagedBlockchainError> UpdateMemberOutcome;
         typedef Aws::Utils::Outcome<UpdateNodeResult, ManagedBlockchainError> UpdateNodeOutcome;
         typedef Aws::Utils::Outcome<VoteOnProposalResult, ManagedBlockchainError> VoteOnProposalOutcome;
@@ -128,7 +137,10 @@ namespace Model
         typedef std::future<ListNodesOutcome> ListNodesOutcomeCallable;
         typedef std::future<ListProposalVotesOutcome> ListProposalVotesOutcomeCallable;
         typedef std::future<ListProposalsOutcome> ListProposalsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RejectInvitationOutcome> RejectInvitationOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateMemberOutcome> UpdateMemberOutcomeCallable;
         typedef std::future<UpdateNodeOutcome> UpdateNodeOutcomeCallable;
         typedef std::future<VoteOnProposalOutcome> VoteOnProposalOutcomeCallable;
@@ -152,7 +164,10 @@ namespace Model
     typedef std::function<void(const ManagedBlockchainClient*, const Model::ListNodesRequest&, const Model::ListNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodesResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::ListProposalVotesRequest&, const Model::ListProposalVotesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProposalVotesResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::ListProposalsRequest&, const Model::ListProposalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProposalsResponseReceivedHandler;
+    typedef std::function<void(const ManagedBlockchainClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::RejectInvitationRequest&, const Model::RejectInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInvitationResponseReceivedHandler;
+    typedef std::function<void(const ManagedBlockchainClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const ManagedBlockchainClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::UpdateMemberRequest&, const Model::UpdateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMemberResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::UpdateNodeRequest&, const Model::UpdateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodeResponseReceivedHandler;
     typedef std::function<void(const ManagedBlockchainClient*, const Model::VoteOnProposalRequest&, const Model::VoteOnProposalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VoteOnProposalResponseReceivedHandler;
@@ -683,6 +698,52 @@ namespace Model
         virtual void ListProposalsAsync(const Model::ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of tags for the specified resource. Each tag consists of a key
+         * and optional value.</p> <p>For more information about tags, see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags for the specified resource. Each tag consists of a key
+         * and optional value.</p> <p>For more information about tags, see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags for the specified resource. Each tag consists of a key
+         * and optional value.</p> <p>For more information about tags, see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Rejects an invitation to join a network. This action can be called by a
          * principal in an AWS account that has received an invitation to create a member
          * and join a network.</p> <p>Applies only to Hyperledger Fabric.</p><p><h3>See
@@ -715,6 +776,113 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RejectInvitationAsync(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds or overwrites the specified tags for the specified Amazon Managed
+         * Blockchain resource. Each tag consists of a key and optional value.</p> <p>When
+         * you specify a tag key that already exists, the tag value is overwritten with the
+         * new value. Use <code>UntagResource</code> to remove tag keys.</p> <p>A resource
+         * can have up to 50 tags. If you try to create more than 50 tags for a resource,
+         * your request fails and returns an error.</p> <p>For more information about tags,
+         * see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites the specified tags for the specified Amazon Managed
+         * Blockchain resource. Each tag consists of a key and optional value.</p> <p>When
+         * you specify a tag key that already exists, the tag value is overwritten with the
+         * new value. Use <code>UntagResource</code> to remove tag keys.</p> <p>A resource
+         * can have up to 50 tags. If you try to create more than 50 tags for a resource,
+         * your request fails and returns an error.</p> <p>For more information about tags,
+         * see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or overwrites the specified tags for the specified Amazon Managed
+         * Blockchain resource. Each tag consists of a key and optional value.</p> <p>When
+         * you specify a tag key that already exists, the tag value is overwritten with the
+         * new value. Use <code>UntagResource</code> to remove tag keys.</p> <p>A resource
+         * can have up to 50 tags. If you try to create more than 50 tags for a resource,
+         * your request fails and returns an error.</p> <p>For more information about tags,
+         * see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tags from the Amazon Managed Blockchain resource.</p>
+         * <p>For more information about tags, see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the Amazon Managed Blockchain resource.</p>
+         * <p>For more information about tags, see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the Amazon Managed Blockchain resource.</p>
+         * <p>For more information about tags, see <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>,
+         * or <a
+         * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging
+         * Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a member configuration with new parameters.</p> <p>Applies only to
@@ -826,7 +994,10 @@ namespace Model
         void ListNodesAsyncHelper(const Model::ListNodesRequest& request, const ListNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProposalVotesAsyncHelper(const Model::ListProposalVotesRequest& request, const ListProposalVotesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProposalsAsyncHelper(const Model::ListProposalsRequest& request, const ListProposalsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectInvitationAsyncHelper(const Model::RejectInvitationRequest& request, const RejectInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateMemberAsyncHelper(const Model::UpdateMemberRequest& request, const UpdateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNodeAsyncHelper(const Model::UpdateNodeRequest& request, const UpdateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VoteOnProposalAsyncHelper(const Model::VoteOnProposalRequest& request, const VoteOnProposalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

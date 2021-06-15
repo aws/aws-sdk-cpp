@@ -16,6 +16,7 @@ ModifyGlobalReplicationGroupRequest::ModifyGlobalReplicationGroupRequest() :
     m_applyImmediatelyHasBeenSet(false),
     m_cacheNodeTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
+    m_cacheParameterGroupNameHasBeenSet(false),
     m_globalReplicationGroupDescriptionHasBeenSet(false),
     m_automaticFailoverEnabled(false),
     m_automaticFailoverEnabledHasBeenSet(false)
@@ -44,6 +45,11 @@ Aws::String ModifyGlobalReplicationGroupRequest::SerializePayload() const
   if(m_engineVersionHasBeenSet)
   {
     ss << "EngineVersion=" << StringUtils::URLEncode(m_engineVersion.c_str()) << "&";
+  }
+
+  if(m_cacheParameterGroupNameHasBeenSet)
+  {
+    ss << "CacheParameterGroupName=" << StringUtils::URLEncode(m_cacheParameterGroupName.c_str()) << "&";
   }
 
   if(m_globalReplicationGroupDescriptionHasBeenSet)

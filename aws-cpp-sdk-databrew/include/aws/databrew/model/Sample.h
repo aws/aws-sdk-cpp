@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the sample size and sampling type for AWS Glue DataBrew to use for
+   * <p>Represents the sample size and sampling type for DataBrew to use for
    * interactive data analysis.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Sample">AWS API
    * Reference</a></p>

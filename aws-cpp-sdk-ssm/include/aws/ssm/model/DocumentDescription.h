@@ -219,6 +219,63 @@ namespace Model
 
 
     /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentDescription& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentDescription& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentDescription& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
      * <p>The version of the artifact associated with the document.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
@@ -779,7 +836,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -788,7 +845,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -797,7 +854,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -806,7 +863,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -815,7 +872,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -824,7 +881,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -833,7 +890,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -842,7 +899,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -1211,6 +1268,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_versionName;
     bool m_versionNameHasBeenSet;

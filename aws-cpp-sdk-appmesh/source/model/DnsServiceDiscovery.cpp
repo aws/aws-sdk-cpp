@@ -19,12 +19,16 @@ namespace Model
 {
 
 DnsServiceDiscovery::DnsServiceDiscovery() : 
-    m_hostnameHasBeenSet(false)
+    m_hostnameHasBeenSet(false),
+    m_responseType(DnsResponseType::NOT_SET),
+    m_responseTypeHasBeenSet(false)
 {
 }
 
 DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue) : 
-    m_hostnameHasBeenSet(false)
+    m_hostnameHasBeenSet(false),
+    m_responseType(DnsResponseType::NOT_SET),
+    m_responseTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +42,13 @@ DnsServiceDiscovery& DnsServiceDiscovery::operator =(JsonView jsonValue)
     m_hostnameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("responseType"))
+  {
+    m_responseType = DnsResponseTypeMapper::GetDnsResponseTypeForName(jsonValue.GetString("responseType"));
+
+    m_responseTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -49,6 +60,11 @@ JsonValue DnsServiceDiscovery::Jsonize() const
   {
    payload.WithString("hostname", m_hostname);
 
+  }
+
+  if(m_responseTypeHasBeenSet)
+  {
+   payload.WithString("responseType", DnsResponseTypeMapper::GetNameForDnsResponseType(m_responseType));
   }
 
   return payload;

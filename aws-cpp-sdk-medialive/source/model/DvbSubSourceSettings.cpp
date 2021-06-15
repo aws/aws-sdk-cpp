@@ -19,12 +19,16 @@ namespace Model
 {
 
 DvbSubSourceSettings::DvbSubSourceSettings() : 
+    m_ocrLanguage(DvbSubOcrLanguage::NOT_SET),
+    m_ocrLanguageHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false)
 {
 }
 
 DvbSubSourceSettings::DvbSubSourceSettings(JsonView jsonValue) : 
+    m_ocrLanguage(DvbSubOcrLanguage::NOT_SET),
+    m_ocrLanguageHasBeenSet(false),
     m_pid(0),
     m_pidHasBeenSet(false)
 {
@@ -33,6 +37,13 @@ DvbSubSourceSettings::DvbSubSourceSettings(JsonView jsonValue) :
 
 DvbSubSourceSettings& DvbSubSourceSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ocrLanguage"))
+  {
+    m_ocrLanguage = DvbSubOcrLanguageMapper::GetDvbSubOcrLanguageForName(jsonValue.GetString("ocrLanguage"));
+
+    m_ocrLanguageHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("pid"))
   {
     m_pid = jsonValue.GetInteger("pid");
@@ -46,6 +57,11 @@ DvbSubSourceSettings& DvbSubSourceSettings::operator =(JsonView jsonValue)
 JsonValue DvbSubSourceSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_ocrLanguageHasBeenSet)
+  {
+   payload.WithString("ocrLanguage", DvbSubOcrLanguageMapper::GetNameForDvbSubOcrLanguage(m_ocrLanguage));
+  }
 
   if(m_pidHasBeenSet)
   {

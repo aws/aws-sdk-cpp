@@ -8,6 +8,9 @@
 #include <aws/wafv2/model/HTTPRequest.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wafv2/model/HTTPHeader.h>
+#include <aws/wafv2/model/Label.h>
 #include <utility>
 
 namespace Aws
@@ -26,14 +29,9 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>Represents a single sampled web
-   * request. The response from <a>GetSampledRequests</a> includes a
-   * <code>SampledHTTPRequests</code> complex type that appears as
-   * <code>SampledRequests</code> in the response syntax.
+   * <p>Represents a single sampled web request. The response from
+   * <a>GetSampledRequests</a> includes a <code>SampledHTTPRequests</code> complex
+   * type that appears as <code>SampledRequests</code> in the response syntax.
    * <code>SampledHTTPRequests</code> contains an array of
    * <code>SampledHTTPRequest</code> objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SampledHTTPRequest">AWS
@@ -270,6 +268,157 @@ namespace Model
      */
     inline SampledHTTPRequest& WithRuleNameWithinRuleGroup(const char* value) { SetRuleNameWithinRuleGroup(value); return *this;}
 
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline const Aws::Vector<HTTPHeader>& GetRequestHeadersInserted() const{ return m_requestHeadersInserted; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline bool RequestHeadersInsertedHasBeenSet() const { return m_requestHeadersInsertedHasBeenSet; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline void SetRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = value; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline void SetRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = std::move(value); }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& WithRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { SetRequestHeadersInserted(value); return *this;}
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& WithRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { SetRequestHeadersInserted(std::move(value)); return *this;}
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& AddRequestHeadersInserted(const HTTPHeader& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(value); return *this; }
+
+    /**
+     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * custom request configuration for the matching rule action.</p>
+     */
+    inline SampledHTTPRequest& AddRequestHeadersInserted(HTTPHeader&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline int GetResponseCodeSent() const{ return m_responseCodeSent; }
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline bool ResponseCodeSentHasBeenSet() const { return m_responseCodeSentHasBeenSet; }
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline void SetResponseCodeSent(int value) { m_responseCodeSentHasBeenSet = true; m_responseCodeSent = value; }
+
+    /**
+     * <p>The response code that was sent for the request.</p>
+     */
+    inline SampledHTTPRequest& WithResponseCodeSent(int value) { SetResponseCodeSent(value); return *this;}
+
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline const Aws::Vector<Label>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline void SetLabels(const Aws::Vector<Label>& value) { m_labelsHasBeenSet = true; m_labels = value; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline void SetLabels(Aws::Vector<Label>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& WithLabels(const Aws::Vector<Label>& value) { SetLabels(value); return *this;}
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& WithLabels(Aws::Vector<Label>&& value) { SetLabels(std::move(value)); return *this;}
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& AddLabels(const Label& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+
+    /**
+     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * qualified labels to matching web requests. A fully qualified label is the
+     * concatenation of a label namespace and a rule label. The rule's rule group or
+     * web ACL defines the label namespace. </p> <p>For example,
+     * <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
+     * or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. </p>
+     */
+    inline SampledHTTPRequest& AddLabels(Label&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
+
   private:
 
     HTTPRequest m_request;
@@ -286,6 +435,15 @@ namespace Model
 
     Aws::String m_ruleNameWithinRuleGroup;
     bool m_ruleNameWithinRuleGroupHasBeenSet;
+
+    Aws::Vector<HTTPHeader> m_requestHeadersInserted;
+    bool m_requestHeadersInsertedHasBeenSet;
+
+    int m_responseCodeSent;
+    bool m_responseCodeSentHasBeenSet;
+
+    Aws::Vector<Label> m_labels;
+    bool m_labelsHasBeenSet;
   };
 
 } // namespace Model

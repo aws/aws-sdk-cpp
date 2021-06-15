@@ -611,9 +611,9 @@ namespace Model
      * journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the
      * journey. Depending on the journey's schedule, the journey starts running
      * immediately or at the scheduled start time. If a journey's status is ACTIVE, you
-     * can't add, change, or remove activities from it.</p></li></ul> <p>The CANCELLED,
-     * COMPLETED, and CLOSED values are not supported in requests to create or update a
-     * journey. To cancel a journey, use the <link 
+     * can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED,
+     * CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create
+     * or update a journey. To cancel, pause, or resume a journey, use the <link 
      * linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
      * resource.</p>
      */
@@ -624,9 +624,9 @@ namespace Model
      * journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the
      * journey. Depending on the journey's schedule, the journey starts running
      * immediately or at the scheduled start time. If a journey's status is ACTIVE, you
-     * can't add, change, or remove activities from it.</p></li></ul> <p>The CANCELLED,
-     * COMPLETED, and CLOSED values are not supported in requests to create or update a
-     * journey. To cancel a journey, use the <link 
+     * can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED,
+     * CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create
+     * or update a journey. To cancel, pause, or resume a journey, use the <link 
      * linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
      * resource.</p>
      */
@@ -637,9 +637,9 @@ namespace Model
      * journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the
      * journey. Depending on the journey's schedule, the journey starts running
      * immediately or at the scheduled start time. If a journey's status is ACTIVE, you
-     * can't add, change, or remove activities from it.</p></li></ul> <p>The CANCELLED,
-     * COMPLETED, and CLOSED values are not supported in requests to create or update a
-     * journey. To cancel a journey, use the <link 
+     * can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED,
+     * CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create
+     * or update a journey. To cancel, pause, or resume a journey, use the <link 
      * linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
      * resource.</p>
      */
@@ -650,9 +650,9 @@ namespace Model
      * journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the
      * journey. Depending on the journey's schedule, the journey starts running
      * immediately or at the scheduled start time. If a journey's status is ACTIVE, you
-     * can't add, change, or remove activities from it.</p></li></ul> <p>The CANCELLED,
-     * COMPLETED, and CLOSED values are not supported in requests to create or update a
-     * journey. To cancel a journey, use the <link 
+     * can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED,
+     * CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create
+     * or update a journey. To cancel, pause, or resume a journey, use the <link 
      * linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
      * resource.</p>
      */
@@ -663,9 +663,9 @@ namespace Model
      * journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the
      * journey. Depending on the journey's schedule, the journey starts running
      * immediately or at the scheduled start time. If a journey's status is ACTIVE, you
-     * can't add, change, or remove activities from it.</p></li></ul> <p>The CANCELLED,
-     * COMPLETED, and CLOSED values are not supported in requests to create or update a
-     * journey. To cancel a journey, use the <link 
+     * can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED,
+     * CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create
+     * or update a journey. To cancel, pause, or resume a journey, use the <link 
      * linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
      * resource.</p>
      */
@@ -676,13 +676,59 @@ namespace Model
      * journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the
      * journey. Depending on the journey's schedule, the journey starts running
      * immediately or at the scheduled start time. If a journey's status is ACTIVE, you
-     * can't add, change, or remove activities from it.</p></li></ul> <p>The CANCELLED,
-     * COMPLETED, and CLOSED values are not supported in requests to create or update a
-     * journey. To cancel a journey, use the <link 
+     * can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED,
+     * CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create
+     * or update a journey. To cancel, pause, or resume a journey, use the <link 
      * linkend="apps-application-id-journeys-journey-id-state">Journey State</link>
      * resource.</p>
      */
     inline WriteJourneyRequest& WithState(State&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline bool GetWaitForQuietTime() const{ return m_waitForQuietTime; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline bool WaitForQuietTimeHasBeenSet() const { return m_waitForQuietTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline void SetWaitForQuietTime(bool value) { m_waitForQuietTimeHasBeenSet = true; m_waitForQuietTime = value; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline WriteJourneyRequest& WithWaitForQuietTime(bool value) { SetWaitForQuietTime(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline bool GetRefreshOnSegmentUpdate() const{ return m_refreshOnSegmentUpdate; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline bool RefreshOnSegmentUpdateHasBeenSet() const { return m_refreshOnSegmentUpdateHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline void SetRefreshOnSegmentUpdate(bool value) { m_refreshOnSegmentUpdateHasBeenSet = true; m_refreshOnSegmentUpdate = value; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline WriteJourneyRequest& WithRefreshOnSegmentUpdate(bool value) { SetRefreshOnSegmentUpdate(value); return *this;}
 
   private:
 
@@ -721,6 +767,12 @@ namespace Model
 
     State m_state;
     bool m_stateHasBeenSet;
+
+    bool m_waitForQuietTime;
+    bool m_waitForQuietTimeHasBeenSet;
+
+    bool m_refreshOnSegmentUpdate;
+    bool m_refreshOnSegmentUpdateHasBeenSet;
   };
 
 } // namespace Model

@@ -28,9 +28,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides the location of 1-15 occurrences of sensitive data that was detected
-   * by managed data identifiers or a custom data identifier and produced a sensitive
-   * data finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the location of 1-15 occurrences of sensitive data that was
+   * detected by managed data identifiers or a custom data identifier and produced a
+   * sensitive data finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Occurrences">AWS
    * API Reference</a></p>
    */
@@ -105,10 +105,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline const Aws::Vector<Range>& GetLineRanges() const{ return m_lineRanges; }
 
@@ -117,10 +117,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline bool LineRangesHasBeenSet() const { return m_lineRangesHasBeenSet; }
 
@@ -129,10 +129,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline void SetLineRanges(const Aws::Vector<Range>& value) { m_lineRangesHasBeenSet = true; m_lineRanges = value; }
 
@@ -141,10 +141,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline void SetLineRanges(Aws::Vector<Range>&& value) { m_lineRangesHasBeenSet = true; m_lineRanges = std::move(value); }
 
@@ -153,10 +153,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& WithLineRanges(const Aws::Vector<Range>& value) { SetLineRanges(value); return *this;}
 
@@ -165,10 +165,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& WithLineRanges(Aws::Vector<Range>&& value) { SetLineRanges(std::move(value)); return *this;}
 
@@ -177,10 +177,10 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& AddLineRanges(const Range& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(value); return *this; }
 
@@ -189,83 +189,51 @@ namespace Model
      * Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file.
      * Each object specifies the line that contains the data, and the position of the
      * data on that line.</p> <p>This value is often null for file types that are
-     * supported by Cell, Page, or Record objects. Exceptions are the locations of:
-     * data in unstructured sections of an otherwise structured file, such as a comment
-     * in a file; and, data in a malformed file that Amazon Macie analyzes as plain
-     * text.</p>
+     * supported by Cell, Page, or Record objects. Exceptions are the locations of data
+     * in: unstructured sections of an otherwise structured file, such as a comment in
+     * a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or
+     * TSV file that has any column names that contain sensitive data.</p>
      */
     inline Occurrences& AddLineRanges(Range&& value) { m_lineRangesHasBeenSet = true; m_lineRanges.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline const Aws::Vector<Range>& GetOffsetRanges() const{ return m_offsetRanges; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline bool OffsetRangesHasBeenSet() const { return m_offsetRangesHasBeenSet; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline void SetOffsetRanges(const Aws::Vector<Range>& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = value; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline void SetOffsetRanges(Aws::Vector<Range>&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline Occurrences& WithOffsetRanges(const Aws::Vector<Range>& value) { SetOffsetRanges(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline Occurrences& WithOffsetRanges(Aws::Vector<Range>&& value) { SetOffsetRanges(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline Occurrences& AddOffsetRanges(const Range& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each occurrence of sensitive data in a binary
-     * text file. Each object specifies the position of the data relative to the
-     * beginning of the file.</p> <p>This value is typically null. For binary text
-     * files, Amazon Macie adds location data to a lineRanges.Range or Page object,
-     * depending on the file type.</p>
+     *  <p>Reserved for future use.</p>
      */
     inline Occurrences& AddOffsetRanges(Range&& value) { m_offsetRangesHasBeenSet = true; m_offsetRanges.push_back(std::move(value)); return *this; }
 
@@ -273,64 +241,56 @@ namespace Model
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline const Aws::Vector<Page>& GetPages() const{ return m_pages; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline void SetPages(const Aws::Vector<Page>& value) { m_pagesHasBeenSet = true; m_pages = value; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline void SetPages(Aws::Vector<Page>&& value) { m_pagesHasBeenSet = true; m_pages = std::move(value); }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline Occurrences& WithPages(const Aws::Vector<Page>& value) { SetPages(value); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline Occurrences& WithPages(Aws::Vector<Page>&& value) { SetPages(std::move(value)); return *this;}
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline Occurrences& AddPages(const Page& value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
 
     /**
      * <p>An array of objects, one for each occurrence of sensitive data in an Adobe
      * Portable Document Format file. Each object specifies the page that contains the
-     * data, and the position of the data on that page. This value is null for all
-     * other types of files.</p>
+     * data. This value is null for all other types of files.</p>
      */
     inline Occurrences& AddPages(Page&& value) { m_pagesHasBeenSet = true; m_pages.push_back(std::move(value)); return *this; }
 

@@ -19,8 +19,8 @@
 #include <aws/iotdeviceadvisor/model/ListSuiteDefinitionsResult.h>
 #include <aws/iotdeviceadvisor/model/ListSuiteRunsResult.h>
 #include <aws/iotdeviceadvisor/model/ListTagsForResourceResult.h>
-#include <aws/iotdeviceadvisor/model/ListTestCasesResult.h>
 #include <aws/iotdeviceadvisor/model/StartSuiteRunResult.h>
+#include <aws/iotdeviceadvisor/model/StopSuiteRunResult.h>
 #include <aws/iotdeviceadvisor/model/TagResourceResult.h>
 #include <aws/iotdeviceadvisor/model/UntagResourceResult.h>
 #include <aws/iotdeviceadvisor/model/UpdateSuiteDefinitionResult.h>
@@ -71,8 +71,8 @@ namespace Model
         class ListSuiteDefinitionsRequest;
         class ListSuiteRunsRequest;
         class ListTagsForResourceRequest;
-        class ListTestCasesRequest;
         class StartSuiteRunRequest;
+        class StopSuiteRunRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateSuiteDefinitionRequest;
@@ -85,8 +85,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSuiteDefinitionsResult, IoTDeviceAdvisorError> ListSuiteDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListSuiteRunsResult, IoTDeviceAdvisorError> ListSuiteRunsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, IoTDeviceAdvisorError> ListTagsForResourceOutcome;
-        typedef Aws::Utils::Outcome<ListTestCasesResult, IoTDeviceAdvisorError> ListTestCasesOutcome;
         typedef Aws::Utils::Outcome<StartSuiteRunResult, IoTDeviceAdvisorError> StartSuiteRunOutcome;
+        typedef Aws::Utils::Outcome<StopSuiteRunResult, IoTDeviceAdvisorError> StopSuiteRunOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, IoTDeviceAdvisorError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, IoTDeviceAdvisorError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateSuiteDefinitionResult, IoTDeviceAdvisorError> UpdateSuiteDefinitionOutcome;
@@ -99,8 +99,8 @@ namespace Model
         typedef std::future<ListSuiteDefinitionsOutcome> ListSuiteDefinitionsOutcomeCallable;
         typedef std::future<ListSuiteRunsOutcome> ListSuiteRunsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-        typedef std::future<ListTestCasesOutcome> ListTestCasesOutcomeCallable;
         typedef std::future<StartSuiteRunOutcome> StartSuiteRunOutcomeCallable;
+        typedef std::future<StopSuiteRunOutcome> StopSuiteRunOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateSuiteDefinitionOutcome> UpdateSuiteDefinitionOutcomeCallable;
@@ -116,8 +116,8 @@ namespace Model
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::ListSuiteDefinitionsRequest&, const Model::ListSuiteDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuiteDefinitionsResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::ListSuiteRunsRequest&, const Model::ListSuiteRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuiteRunsResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::ListTestCasesRequest&, const Model::ListTestCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestCasesResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::StartSuiteRunRequest&, const Model::StartSuiteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSuiteRunResponseReceivedHandler;
+    typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::StopSuiteRunRequest&, const Model::StopSuiteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSuiteRunResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const IoTDeviceAdvisorClient*, const Model::UpdateSuiteDefinitionRequest&, const Model::UpdateSuiteDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSuiteDefinitionResponseReceivedHandler;
@@ -383,31 +383,6 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the test cases in the test suite.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::ListTestCasesOutcome ListTestCases(const Model::ListTestCasesRequest& request) const;
-
-        /**
-         * <p>Lists all the test cases in the test suite.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ListTestCasesOutcomeCallable ListTestCasesCallable(const Model::ListTestCasesRequest& request) const;
-
-        /**
-         * <p>Lists all the test cases in the test suite.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/ListTestCases">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ListTestCasesAsync(const Model::ListTestCasesRequest& request, const ListTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Starts a Device Advisor test suite run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StartSuiteRun">AWS
          * API Reference</a></p>
@@ -431,6 +406,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartSuiteRunAsync(const Model::StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a Device Advisor test suite run that is currently
+         * running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopSuiteRunOutcome StopSuiteRun(const Model::StopSuiteRunRequest& request) const;
+
+        /**
+         * <p>Stops a Device Advisor test suite run that is currently
+         * running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopSuiteRunOutcomeCallable StopSuiteRunCallable(const Model::StopSuiteRunRequest& request) const;
+
+        /**
+         * <p>Stops a Device Advisor test suite run that is currently
+         * running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/StopSuiteRun">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopSuiteRunAsync(const Model::StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds to and modifies existing tags of an IoT Device Advisor
@@ -525,8 +528,8 @@ namespace Model
         void ListSuiteDefinitionsAsyncHelper(const Model::ListSuiteDefinitionsRequest& request, const ListSuiteDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSuiteRunsAsyncHelper(const Model::ListSuiteRunsRequest& request, const ListSuiteRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ListTestCasesAsyncHelper(const Model::ListTestCasesRequest& request, const ListTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSuiteRunAsyncHelper(const Model::StartSuiteRunRequest& request, const StartSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopSuiteRunAsyncHelper(const Model::StopSuiteRunRequest& request, const StopSuiteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSuiteDefinitionAsyncHelper(const Model::UpdateSuiteDefinitionRequest& request, const UpdateSuiteDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

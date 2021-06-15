@@ -832,28 +832,44 @@ namespace Model
     inline CommandInvocation& WithStandardErrorUrl(const char* value) { SetStandardErrorUrl(value); return *this;}
 
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline const Aws::Vector<CommandPlugin>& GetCommandPlugins() const{ return m_commandPlugins; }
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline bool CommandPluginsHasBeenSet() const { return m_commandPluginsHasBeenSet; }
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline void SetCommandPlugins(const Aws::Vector<CommandPlugin>& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins = value; }
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline void SetCommandPlugins(Aws::Vector<CommandPlugin>&& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins = std::move(value); }
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline CommandInvocation& WithCommandPlugins(const Aws::Vector<CommandPlugin>& value) { SetCommandPlugins(value); return *this;}
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline CommandInvocation& WithCommandPlugins(Aws::Vector<CommandPlugin>&& value) { SetCommandPlugins(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline CommandInvocation& AddCommandPlugins(const CommandPlugin& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Plugins processed by the command.</p>
+     */
     inline CommandInvocation& AddCommandPlugins(CommandPlugin&& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins.push_back(std::move(value)); return *this; }
 
 

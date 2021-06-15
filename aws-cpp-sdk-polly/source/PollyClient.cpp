@@ -77,7 +77,7 @@ PollyClient::~PollyClient()
 {
 }
 
-void PollyClient::init(const ClientConfiguration& config)
+void PollyClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Polly");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -111,10 +111,8 @@ DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& requ
     return DeleteLexiconOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/lexicons/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/lexicons/");
+  uri.AddPathSegment(request.GetName());
   return DeleteLexiconOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -139,9 +137,7 @@ void PollyClient::DeleteLexiconAsyncHelper(const DeleteLexiconRequest& request, 
 DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/voices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/voices");
   return DescribeVoicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -171,10 +167,8 @@ GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) cons
     return GetLexiconOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/lexicons/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/lexicons/");
+  uri.AddPathSegment(request.GetName());
   return GetLexiconOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -204,10 +198,8 @@ GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeec
     return GetSpeechSynthesisTaskOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/synthesisTasks/";
-  ss << request.GetTaskId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/synthesisTasks/");
+  uri.AddPathSegment(request.GetTaskId());
   return GetSpeechSynthesisTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -232,9 +224,7 @@ void PollyClient::GetSpeechSynthesisTaskAsyncHelper(const GetSpeechSynthesisTask
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/lexicons";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/lexicons");
   return ListLexiconsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -259,9 +249,7 @@ void PollyClient::ListLexiconsAsyncHelper(const ListLexiconsRequest& request, co
 ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const ListSpeechSynthesisTasksRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/synthesisTasks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/synthesisTasks");
   return ListSpeechSynthesisTasksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -291,10 +279,8 @@ PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) cons
     return PutLexiconOutcome(Aws::Client::AWSError<PollyErrors>(PollyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/lexicons/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/lexicons/");
+  uri.AddPathSegment(request.GetName());
   return PutLexiconOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -319,9 +305,7 @@ void PollyClient::PutLexiconAsyncHelper(const PutLexiconRequest& request, const 
 StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/synthesisTasks";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/synthesisTasks");
   return StartSpeechSynthesisTaskOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -346,9 +330,7 @@ void PollyClient::StartSpeechSynthesisTaskAsyncHelper(const StartSpeechSynthesis
 SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/v1/speech";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/v1/speech");
   return SynthesizeSpeechOutcome(MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_POST));
 }
 

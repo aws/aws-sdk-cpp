@@ -131,17 +131,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -194,17 +194,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -257,17 +257,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -320,17 +320,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -383,17 +383,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -446,17 +446,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -509,17 +509,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -572,17 +572,17 @@ namespace Model
      * <li> <p> <code>manifest-location</code> - The location of the image
      * manifest.</p> </li> <li> <p> <code>name</code> - The name of the AMI (provided
      * during image creation).</p> </li> <li> <p> <code>owner-alias</code> - The owner
-     * alias, from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code>). This is not the user-configured AWS account alias
-     * set using the IAM console. We recommend that you use the related parameter
-     * instead of this filter.</p> </li> <li> <p> <code>owner-id</code> - The AWS
-     * account ID of the owner. We recommend that you use the related parameter instead
-     * of this filter.</p> </li> <li> <p> <code>platform</code> - The platform. To only
-     * list Windows-based AMIs, use <code>windows</code>.</p> </li> <li> <p>
-     * <code>product-code</code> - The product code.</p> </li> <li> <p>
-     * <code>product-code.type</code> - The type of the product code
-     * (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li> <p>
-     * <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
+     * alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid aliases
+     * are defined in an Amazon-maintained list. This is not the AWS account alias that
+     * can be set using the IAM console. We recommend that you use the <b>Owner</b>
+     * request parameter instead of this filter.</p> </li> <li> <p>
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you
+     * use the <b>Owner</b> request parameter instead of this filter.</p> </li> <li>
+     * <p> <code>platform</code> - The platform. To only list Windows-based AMIs, use
+     * <code>windows</code>.</p> </li> <li> <p> <code>product-code</code> - The product
+     * code.</p> </li> <li> <p> <code>product-code.type</code> - The type of the
+     * product code (<code>devpay</code> | <code>marketplace</code>).</p> </li> <li>
+     * <p> <code>ramdisk-id</code> - The RAM disk ID.</p> </li> <li> <p>
      * <code>root-device-name</code> - The device name of the root device volume (for
      * example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
@@ -727,6 +727,47 @@ namespace Model
 
 
     /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
+
+    /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
+
+    /**
+     * <p>If <code>true</code>, all deprecated AMIs are included in the response. If
+     * <code>false</code>, no deprecated AMIs are included in the response. If no value
+     * is specified, the default value is <code>false</code>.</p>  <p>If you are
+     * the AMI owner, all deprecated AMIs appear in the response regardless of the
+     * value (<code>true</code> or <code>false</code>) that you set for this
+     * parameter.</p> 
+     */
+    inline DescribeImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -771,6 +812,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_owners;
     bool m_ownersHasBeenSet;
+
+    bool m_includeDeprecated;
+    bool m_includeDeprecatedHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

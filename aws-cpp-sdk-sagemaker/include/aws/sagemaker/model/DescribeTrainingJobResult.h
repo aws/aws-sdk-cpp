@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/ProfilerConfig.h>
 #include <aws/sagemaker/model/ProfilingStatus.h>
+#include <aws/sagemaker/model/RetryStrategy.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
@@ -379,7 +380,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline const SecondaryStatus& GetSecondaryStatus() const{ return m_secondaryStatus; }
@@ -411,7 +412,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(const SecondaryStatus& value) { m_secondaryStatus = value; }
@@ -443,7 +444,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline void SetSecondaryStatus(SecondaryStatus&& value) { m_secondaryStatus = std::move(value); }
@@ -475,7 +476,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(const SecondaryStatus& value) { SetSecondaryStatus(value); return *this;}
@@ -507,7 +508,7 @@ namespace Model
      * </dl>  <p>Valid values for <code>SecondaryStatus</code> are subject
      * to change. </p>  <p>We no longer support the following secondary
      * statuses:</p> <ul> <li> <p> <code>LaunchingMLInstances</code> </p> </li> <li>
-     * <p> <code>PreparingTrainingStack</code> </p> </li> <li> <p>
+     * <p> <code>PreparingTraining</code> </p> </li> <li> <p>
      * <code>DownloadingTrainingImage</code> </p> </li> </ul>
      */
     inline DescribeTrainingJobResult& WithSecondaryStatus(SecondaryStatus&& value) { SetSecondaryStatus(std::move(value)); return *this;}
@@ -832,8 +833,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -843,8 +844,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -854,8 +855,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -865,8 +866,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -876,8 +877,8 @@ namespace Model
 
     /**
      * <p>Specifies a limit to how long a model training job can run. It also specifies
-     * the maximum time to wait for a spot instance. When the job reaches the time
-     * limit, Amazon SageMaker ends the training job. Use this API to cap model
+     * how long a managed Spot training job has to complete. When the job reaches the
+     * time limit, Amazon SageMaker ends the training job. Use this API to cap model
      * training costs.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
      * <code>SIGTERM</code> signal, which delays job termination for 120 seconds.
      * Algorithms can use this 120-second window to save the model artifacts, so the
@@ -1239,29 +1240,41 @@ namespace Model
 
 
     /**
-     * <p>The billable time in seconds.</p> <p>You can calculate the savings from using
-     * managed spot training using the formula <code>(1 - BillableTimeInSeconds /
-     * TrainingTimeInSeconds) * 100</code>. For example, if
-     * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code>
-     * is 500, the savings is 80%.</p>
+     * <p>The billable time in seconds. Billable time refers to the absolute wall-clock
+     * time.</p> <p>Multiply <code>BillableTimeInSeconds</code> by the number of
+     * instances (<code>InstanceCount</code>) in your training cluster to get the total
+     * compute time Amazon SageMaker will bill you if you run distributed training. The
+     * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+     * <p>You can calculate the savings from using managed spot training using the
+     * formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>.
+     * For example, if <code>BillableTimeInSeconds</code> is 100 and
+     * <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
      */
     inline int GetBillableTimeInSeconds() const{ return m_billableTimeInSeconds; }
 
     /**
-     * <p>The billable time in seconds.</p> <p>You can calculate the savings from using
-     * managed spot training using the formula <code>(1 - BillableTimeInSeconds /
-     * TrainingTimeInSeconds) * 100</code>. For example, if
-     * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code>
-     * is 500, the savings is 80%.</p>
+     * <p>The billable time in seconds. Billable time refers to the absolute wall-clock
+     * time.</p> <p>Multiply <code>BillableTimeInSeconds</code> by the number of
+     * instances (<code>InstanceCount</code>) in your training cluster to get the total
+     * compute time Amazon SageMaker will bill you if you run distributed training. The
+     * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+     * <p>You can calculate the savings from using managed spot training using the
+     * formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>.
+     * For example, if <code>BillableTimeInSeconds</code> is 100 and
+     * <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
      */
     inline void SetBillableTimeInSeconds(int value) { m_billableTimeInSeconds = value; }
 
     /**
-     * <p>The billable time in seconds.</p> <p>You can calculate the savings from using
-     * managed spot training using the formula <code>(1 - BillableTimeInSeconds /
-     * TrainingTimeInSeconds) * 100</code>. For example, if
-     * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code>
-     * is 500, the savings is 80%.</p>
+     * <p>The billable time in seconds. Billable time refers to the absolute wall-clock
+     * time.</p> <p>Multiply <code>BillableTimeInSeconds</code> by the number of
+     * instances (<code>InstanceCount</code>) in your training cluster to get the total
+     * compute time Amazon SageMaker will bill you if you run distributed training. The
+     * formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .</p>
+     * <p>You can calculate the savings from using managed spot training using the
+     * formula <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>.
+     * For example, if <code>BillableTimeInSeconds</code> is 100 and
+     * <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.</p>
      */
     inline DescribeTrainingJobResult& WithBillableTimeInSeconds(int value) { SetBillableTimeInSeconds(value); return *this;}
 
@@ -1513,6 +1526,98 @@ namespace Model
      */
     inline DescribeTrainingJobResult& WithProfilingStatus(ProfilingStatus&& value) { SetProfilingStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline const RetryStrategy& GetRetryStrategy() const{ return m_retryStrategy; }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline void SetRetryStrategy(const RetryStrategy& value) { m_retryStrategy = value; }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline void SetRetryStrategy(RetryStrategy&& value) { m_retryStrategy = std::move(value); }
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRetryStrategy(const RetryStrategy& value) { SetRetryStrategy(value); return *this;}
+
+    /**
+     * <p>The number of times to retry the job when the job fails due to an
+     * <code>InternalServerError</code>.</p>
+     */
+    inline DescribeTrainingJobResult& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environment = value; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environment = std::move(value); }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environment.emplace(key, value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environment.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const char* key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(Aws::String&& key, const char* value) { m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container.</p>
+     */
+    inline DescribeTrainingJobResult& AddEnvironment(const char* key, const char* value) { m_environment.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1590,6 +1695,10 @@ namespace Model
     Aws::Vector<ProfilerRuleEvaluationStatus> m_profilerRuleEvaluationStatuses;
 
     ProfilingStatus m_profilingStatus;
+
+    RetryStrategy m_retryStrategy;
+
+    Aws::Map<Aws::String, Aws::String> m_environment;
   };
 
 } // namespace Model

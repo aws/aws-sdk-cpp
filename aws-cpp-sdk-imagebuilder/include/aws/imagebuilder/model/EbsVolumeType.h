@@ -20,6 +20,7 @@ namespace Model
     io1,
     io2,
     gp2,
+    gp3,
     sc1,
     st1
   };

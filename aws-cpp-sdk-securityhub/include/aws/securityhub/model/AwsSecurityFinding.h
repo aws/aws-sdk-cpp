@@ -19,6 +19,8 @@
 #include <aws/securityhub/model/RecordState.h>
 #include <aws/securityhub/model/Note.h>
 #include <aws/securityhub/model/PatchSummary.h>
+#include <aws/securityhub/model/Action.h>
+#include <aws/securityhub/model/FindingProviderFields.h>
 #include <aws/securityhub/model/Malware.h>
 #include <aws/securityhub/model/NetworkPathComponent.h>
 #include <aws/securityhub/model/ThreatIntelIndicator.h>
@@ -1686,6 +1688,86 @@ namespace Model
      */
     inline AwsSecurityFinding& WithPatchSummary(PatchSummary&& value) { SetPatchSummary(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline const Action& GetAction() const{ return m_action; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline AwsSecurityFinding& WithAction(const Action& value) { SetAction(value); return *this;}
+
+    /**
+     * <p>Provides details about an action that affects or that was taken on a
+     * resource.</p>
+     */
+    inline AwsSecurityFinding& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline const FindingProviderFields& GetFindingProviderFields() const{ return m_findingProviderFields; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline bool FindingProviderFieldsHasBeenSet() const { return m_findingProviderFieldsHasBeenSet; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline void SetFindingProviderFields(const FindingProviderFields& value) { m_findingProviderFieldsHasBeenSet = true; m_findingProviderFields = value; }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline void SetFindingProviderFields(FindingProviderFields&& value) { m_findingProviderFieldsHasBeenSet = true; m_findingProviderFields = std::move(value); }
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline AwsSecurityFinding& WithFindingProviderFields(const FindingProviderFields& value) { SetFindingProviderFields(value); return *this;}
+
+    /**
+     * <p>In a <code>BatchImportFindings</code> request, finding providers use
+     * <code>FindingProviderFields</code> to provide and update their own values for
+     * confidence, criticality, related findings, severity, and types.</p>
+     */
+    inline AwsSecurityFinding& WithFindingProviderFields(FindingProviderFields&& value) { SetFindingProviderFields(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -1789,6 +1871,12 @@ namespace Model
 
     PatchSummary m_patchSummary;
     bool m_patchSummaryHasBeenSet;
+
+    Action m_action;
+    bool m_actionHasBeenSet;
+
+    FindingProviderFields m_findingProviderFields;
+    bool m_findingProviderFieldsHasBeenSet;
   };
 
 } // namespace Model

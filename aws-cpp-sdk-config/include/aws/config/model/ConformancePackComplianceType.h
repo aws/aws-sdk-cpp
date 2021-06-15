@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     COMPLIANT,
-    NON_COMPLIANT
+    NON_COMPLIANT,
+    INSUFFICIENT_DATA
   };
 
 namespace ConformancePackComplianceTypeMapper

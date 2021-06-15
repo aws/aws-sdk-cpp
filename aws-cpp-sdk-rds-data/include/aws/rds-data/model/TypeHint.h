@@ -16,10 +16,12 @@ namespace Model
   enum class TypeHint
   {
     NOT_SET,
+    JSON,
+    UUID,
+    TIMESTAMP,
     DATE,
-    DECIMAL,
     TIME,
-    TIMESTAMP
+    DECIMAL
   };
 
 namespace TypeHintMapper

@@ -28,7 +28,8 @@ namespace Model
    * This value might be returned when you try to create a file system in provisioned
    * throughput mode, when you attempt to increase the provisioned throughput of an
    * existing file system, or when you attempt to change an existing file system from
-   * bursting to provisioned throughput mode.</p><p><h3>See Also:</h3>   <a
+   * bursting to provisioned throughput mode. Try again later.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/InsufficientThroughputCapacity">AWS
    * API Reference</a></p>
    */

@@ -22,7 +22,8 @@ ChangeSummary::ChangeSummary() :
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_errorDetailListHasBeenSet(false)
+    m_errorDetailListHasBeenSet(false),
+    m_changeNameHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ChangeSummary::ChangeSummary(JsonView jsonValue) :
     m_changeTypeHasBeenSet(false),
     m_entityHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_errorDetailListHasBeenSet(false)
+    m_errorDetailListHasBeenSet(false),
+    m_changeNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +70,13 @@ ChangeSummary& ChangeSummary::operator =(JsonView jsonValue)
     m_errorDetailListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ChangeName"))
+  {
+    m_changeName = jsonValue.GetString("ChangeName");
+
+    m_changeNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -101,6 +110,12 @@ JsonValue ChangeSummary::Jsonize() const
      errorDetailListJsonList[errorDetailListIndex].AsObject(m_errorDetailList[errorDetailListIndex].Jsonize());
    }
    payload.WithArray("ErrorDetailList", std::move(errorDetailListJsonList));
+
+  }
+
+  if(m_changeNameHasBeenSet)
+  {
+   payload.WithString("ChangeName", m_changeName);
 
   }
 

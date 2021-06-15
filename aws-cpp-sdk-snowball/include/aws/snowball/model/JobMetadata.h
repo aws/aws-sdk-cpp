@@ -512,42 +512,66 @@ namespace Model
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline JobMetadata& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
 
     /**
      * <p>The Snow device capacity preference for this job, specified at job creation.
      * In US regions, you can choose between 50 TB and 80 TB Snowballs. All other
-     * regions use 80 TB capacity Snowballs.</p>
+     * regions use 80 TB capacity Snowballs.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
      */
     inline JobMetadata& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
 
@@ -852,6 +876,47 @@ namespace Model
     
     inline JobMetadata& WithDeviceConfiguration(DeviceConfiguration&& value) { SetDeviceConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline const Aws::String& GetLongTermPricingId() const{ return m_longTermPricingId; }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline bool LongTermPricingIdHasBeenSet() const { return m_longTermPricingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const Aws::String& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = value; }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(Aws::String&& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = std::move(value); }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline void SetLongTermPricingId(const char* value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId.assign(value); }
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline JobMetadata& WithLongTermPricingId(const Aws::String& value) { SetLongTermPricingId(value); return *this;}
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline JobMetadata& WithLongTermPricingId(Aws::String&& value) { SetLongTermPricingId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the long term pricing type for the device.</p>
+     */
+    inline JobMetadata& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -910,6 +975,9 @@ namespace Model
 
     DeviceConfiguration m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
+
+    Aws::String m_longTermPricingId;
+    bool m_longTermPricingIdHasBeenSet;
   };
 
 } // namespace Model

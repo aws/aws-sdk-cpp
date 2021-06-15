@@ -36,35 +36,40 @@ namespace Model
     /**
      * <p> The requested list of AWS resource collections. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * to analyze only the AWS resources that are defined in the stacks. You can
+     * specify up to 500 AWS CloudFormation stacks. </p>
      */
     inline const ResourceCollectionFilter& GetResourceCollection() const{ return m_resourceCollection; }
 
     /**
      * <p> The requested list of AWS resource collections. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * to analyze only the AWS resources that are defined in the stacks. You can
+     * specify up to 500 AWS CloudFormation stacks. </p>
      */
     inline void SetResourceCollection(const ResourceCollectionFilter& value) { m_resourceCollection = value; }
 
     /**
      * <p> The requested list of AWS resource collections. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * to analyze only the AWS resources that are defined in the stacks. You can
+     * specify up to 500 AWS CloudFormation stacks. </p>
      */
     inline void SetResourceCollection(ResourceCollectionFilter&& value) { m_resourceCollection = std::move(value); }
 
     /**
      * <p> The requested list of AWS resource collections. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * to analyze only the AWS resources that are defined in the stacks. You can
+     * specify up to 500 AWS CloudFormation stacks. </p>
      */
     inline GetResourceCollectionResult& WithResourceCollection(const ResourceCollectionFilter& value) { SetResourceCollection(value); return *this;}
 
     /**
      * <p> The requested list of AWS resource collections. The one type of AWS resource
      * collection supported is AWS CloudFormation stacks. DevOps Guru can be configured
-     * to analyze only the AWS resources that are defined in the stacks. </p>
+     * to analyze only the AWS resources that are defined in the stacks. You can
+     * specify up to 500 AWS CloudFormation stacks. </p>
      */
     inline GetResourceCollectionResult& WithResourceCollection(ResourceCollectionFilter&& value) { SetResourceCollection(std::move(value)); return *this;}
 

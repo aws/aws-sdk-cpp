@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies confguration information for indexing a single standard
+   * <p>Specifies configuration information for indexing a single standard
    * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SalesforceStandardObjectConfiguration">AWS
    * API Reference</a></p>
@@ -123,49 +123,49 @@ namespace Model
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline const Aws::String& GetDocumentTitleFieldName() const{ return m_documentTitleFieldName; }
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline bool DocumentTitleFieldNameHasBeenSet() const { return m_documentTitleFieldNameHasBeenSet; }
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline void SetDocumentTitleFieldName(const Aws::String& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = value; }
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline void SetDocumentTitleFieldName(Aws::String&& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = std::move(value); }
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline void SetDocumentTitleFieldName(const char* value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName.assign(value); }
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline SalesforceStandardObjectConfiguration& WithDocumentTitleFieldName(const Aws::String& value) { SetDocumentTitleFieldName(value); return *this;}
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline SalesforceStandardObjectConfiguration& WithDocumentTitleFieldName(Aws::String&& value) { SetDocumentTitleFieldName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the field in the standard object table that contains the document
-     * titleB.</p>
+     * title.</p>
      */
     inline SalesforceStandardObjectConfiguration& WithDocumentTitleFieldName(const char* value) { SetDocumentTitleFieldName(value); return *this;}
 

@@ -287,6 +287,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline const Lifecycle& GetLifecycle() const{ return m_lifecycle; }
 
@@ -298,6 +299,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
@@ -309,6 +311,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline void SetLifecycle(const Lifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
@@ -320,6 +323,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline void SetLifecycle(Lifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
@@ -331,6 +335,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline BackupRule& WithLifecycle(const Lifecycle& value) { SetLifecycle(value); return *this;}
 
@@ -342,6 +347,7 @@ namespace Model
      * days. Therefore, the “expire after days” setting must be 90 days greater than
      * the “transition to cold after days” setting. The “transition to cold after days”
      * setting cannot be changed after a backup has been transitioned to cold. </p>
+     * <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
      */
     inline BackupRule& WithLifecycle(Lifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
 
@@ -522,6 +528,35 @@ namespace Model
      */
     inline BackupRule& AddCopyActions(CopyAction&& value) { m_copyActionsHasBeenSet = true; m_copyActions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline bool GetEnableContinuousBackup() const{ return m_enableContinuousBackup; }
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline bool EnableContinuousBackupHasBeenSet() const { return m_enableContinuousBackupHasBeenSet; }
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline void SetEnableContinuousBackup(bool value) { m_enableContinuousBackupHasBeenSet = true; m_enableContinuousBackup = value; }
+
+    /**
+     * <p>Specifies whether AWS Backup creates continuous backups. True causes AWS
+     * Backup to create continuous backups capable of point-in-time restore (PITR).
+     * False (or not specified) causes AWS Backup to create snapshot backups.</p>
+     */
+    inline BackupRule& WithEnableContinuousBackup(bool value) { SetEnableContinuousBackup(value); return *this;}
+
   private:
 
     Aws::String m_ruleName;
@@ -550,6 +585,9 @@ namespace Model
 
     Aws::Vector<CopyAction> m_copyActions;
     bool m_copyActionsHasBeenSet;
+
+    bool m_enableContinuousBackup;
+    bool m_enableContinuousBackupHasBeenSet;
   };
 
 } // namespace Model

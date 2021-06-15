@@ -83,6 +83,63 @@ namespace Model
 
 
     /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentVersionInfo& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentVersionInfo& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>The friendly name of the Systems Manager document. This value can differ for
+     * each version of the document. If you want to update this value, see
+     * <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentVersionInfo& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+
+
+    /**
      * <p>The document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
@@ -405,6 +462,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;

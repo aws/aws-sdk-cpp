@@ -84,9 +84,9 @@ namespace Model
      * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
      * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
      * your Amazon EKS cluster. Common causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
-     * </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
+     * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
+     * </li> </ul>
      */
     inline const NodegroupIssueCode& GetCode() const{ return m_code; }
 
@@ -134,9 +134,9 @@ namespace Model
      * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
      * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
      * your Amazon EKS cluster. Common causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
-     * </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
+     * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
+     * </li> </ul>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
@@ -184,9 +184,9 @@ namespace Model
      * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
      * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
      * your Amazon EKS cluster. Common causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
-     * </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
+     * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
+     * </li> </ul>
      */
     inline void SetCode(const NodegroupIssueCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
@@ -234,9 +234,9 @@ namespace Model
      * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
      * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
      * your Amazon EKS cluster. Common causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
-     * </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
+     * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
+     * </li> </ul>
      */
     inline void SetCode(NodegroupIssueCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
@@ -284,9 +284,9 @@ namespace Model
      * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
      * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
      * your Amazon EKS cluster. Common causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
-     * </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
+     * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
+     * </li> </ul>
      */
     inline Issue& WithCode(const NodegroupIssueCode& value) { SetCode(value); return *this;}
 
@@ -334,9 +334,9 @@ namespace Model
      * caused by an Amazon EKS server-side issue.</p> </li> <li> <p>
      * <b>NodeCreationFailure</b>: Your launched instances are unable to register with
      * your Amazon EKS cluster. Common causes of this failure are insufficient <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
-     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
-     * </p> </li> </ul>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node
+     * IAM role</a> permissions or lack of outbound internet access for the nodes. </p>
+     * </li> </ul>
      */
     inline Issue& WithCode(NodegroupIssueCode&& value) { SetCode(std::move(value)); return *this;}
 

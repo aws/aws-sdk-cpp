@@ -182,22 +182,40 @@ namespace Model
     inline UpdateTaskSetRequest& WithTaskSet(const char* value) { SetTaskSet(value); return *this;}
 
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline const Scale& GetScale() const{ return m_scale; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline bool ScaleHasBeenSet() const { return m_scaleHasBeenSet; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline void SetScale(const Scale& value) { m_scaleHasBeenSet = true; m_scale = value; }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline void SetScale(Scale&& value) { m_scaleHasBeenSet = true; m_scale = std::move(value); }
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline UpdateTaskSetRequest& WithScale(const Scale& value) { SetScale(value); return *this;}
 
-    
+    /**
+     * <p>A floating-point percentage of the desired number of tasks to place and keep
+     * running in the task set.</p>
+     */
     inline UpdateTaskSetRequest& WithScale(Scale&& value) { SetScale(std::move(value)); return *this;}
 
   private:

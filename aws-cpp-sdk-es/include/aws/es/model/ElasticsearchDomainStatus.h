@@ -17,6 +17,7 @@
 #include <aws/es/model/ServiceSoftwareOptions.h>
 #include <aws/es/model/DomainEndpointOptions.h>
 #include <aws/es/model/AdvancedSecurityOptions.h>
+#include <aws/es/model/AutoTuneOptionsOutput.h>
 #include <aws/es/model/LogType.h>
 #include <aws/es/model/LogPublishingOption.h>
 #include <utility>
@@ -1028,6 +1029,37 @@ namespace Model
      */
     inline ElasticsearchDomainStatus& WithAdvancedSecurityOptions(AdvancedSecurityOptions&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current status of the Elasticsearch domain's Auto-Tune options.</p>
+     */
+    inline const AutoTuneOptionsOutput& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's Auto-Tune options.</p>
+     */
+    inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(const AutoTuneOptionsOutput& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's Auto-Tune options.</p>
+     */
+    inline void SetAutoTuneOptions(AutoTuneOptionsOutput&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
+
+    /**
+     * <p>The current status of the Elasticsearch domain's Auto-Tune options.</p>
+     */
+    inline ElasticsearchDomainStatus& WithAutoTuneOptions(const AutoTuneOptionsOutput& value) { SetAutoTuneOptions(value); return *this;}
+
+    /**
+     * <p>The current status of the Elasticsearch domain's Auto-Tune options.</p>
+     */
+    inline ElasticsearchDomainStatus& WithAutoTuneOptions(AutoTuneOptionsOutput&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainId;
@@ -1098,6 +1130,9 @@ namespace Model
 
     AdvancedSecurityOptions m_advancedSecurityOptions;
     bool m_advancedSecurityOptionsHasBeenSet;
+
+    AutoTuneOptionsOutput m_autoTuneOptions;
+    bool m_autoTuneOptionsHasBeenSet;
   };
 
 } // namespace Model

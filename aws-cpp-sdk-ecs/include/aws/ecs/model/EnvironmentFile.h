@@ -39,9 +39,9 @@ namespace Model
    * processed from the top down. It is recommended to use unique variable names. For
    * more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
-   * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-   * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-   * Fargate launch type.</p><p><h3>See Also:</h3>   <a
+   * environment variables</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p> <p>This field is only valid for containers in Fargate tasks that
+   * use platform version <code>1.4.0</code> or later.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/EnvironmentFile">AWS
    * API Reference</a></p>
    */

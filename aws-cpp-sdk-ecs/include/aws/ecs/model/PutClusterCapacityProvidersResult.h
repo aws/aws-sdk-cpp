@@ -32,19 +32,29 @@ namespace Model
     PutClusterCapacityProvidersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Details about the cluster.</p>
+     */
     inline const Cluster& GetCluster() const{ return m_cluster; }
 
-    
+    /**
+     * <p>Details about the cluster.</p>
+     */
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
 
-    
+    /**
+     * <p>Details about the cluster.</p>
+     */
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
 
-    
+    /**
+     * <p>Details about the cluster.</p>
+     */
     inline PutClusterCapacityProvidersResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
 
-    
+    /**
+     * <p>Details about the cluster.</p>
+     */
     inline PutClusterCapacityProvidersResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 
   private:

@@ -20,7 +20,8 @@ namespace Model
     ACTIVE,
     COMPLETED,
     CANCELLED,
-    CLOSED
+    CLOSED,
+    PAUSED
   };
 
 namespace StateMapper

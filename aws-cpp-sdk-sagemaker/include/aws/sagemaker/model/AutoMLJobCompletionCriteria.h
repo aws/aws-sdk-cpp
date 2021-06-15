@@ -58,51 +58,47 @@ namespace Model
 
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, a training job is allowed to run as part of an
+     * AutoML job.</p>
      */
     inline int GetMaxRuntimePerTrainingJobInSeconds() const{ return m_maxRuntimePerTrainingJobInSeconds; }
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, a training job is allowed to run as part of an
+     * AutoML job.</p>
      */
     inline bool MaxRuntimePerTrainingJobInSecondsHasBeenSet() const { return m_maxRuntimePerTrainingJobInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, a training job is allowed to run as part of an
+     * AutoML job.</p>
      */
     inline void SetMaxRuntimePerTrainingJobInSeconds(int value) { m_maxRuntimePerTrainingJobInSecondsHasBeenSet = true; m_maxRuntimePerTrainingJobInSeconds = value; }
 
     /**
-     * <p>The maximum time, in seconds, a job is allowed to run.</p>
+     * <p>The maximum time, in seconds, a training job is allowed to run as part of an
+     * AutoML job.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxRuntimePerTrainingJobInSeconds(int value) { SetMaxRuntimePerTrainingJobInSeconds(value); return *this;}
 
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
      */
     inline int GetMaxAutoMLJobRuntimeInSeconds() const{ return m_maxAutoMLJobRuntimeInSeconds; }
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
      */
     inline bool MaxAutoMLJobRuntimeInSecondsHasBeenSet() const { return m_maxAutoMLJobRuntimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
      */
     inline void SetMaxAutoMLJobRuntimeInSeconds(int value) { m_maxAutoMLJobRuntimeInSecondsHasBeenSet = true; m_maxAutoMLJobRuntimeInSeconds = value; }
 
     /**
-     * <p>The maximum time, in seconds, an AutoML job is allowed to wait for a trial to
-     * complete. It must be equal to or greater than
-     * MaxRuntimePerTrainingJobInSeconds.</p>
+     * <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
      */
     inline AutoMLJobCompletionCriteria& WithMaxAutoMLJobRuntimeInSeconds(int value) { SetMaxAutoMLJobRuntimeInSeconds(value); return *this;}
 

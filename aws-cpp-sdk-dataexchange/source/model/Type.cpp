@@ -24,6 +24,7 @@ namespace Aws
         static const int IMPORT_ASSET_FROM_SIGNED_URL_HASH = HashingUtils::HashString("IMPORT_ASSET_FROM_SIGNED_URL");
         static const int EXPORT_ASSETS_TO_S3_HASH = HashingUtils::HashString("EXPORT_ASSETS_TO_S3");
         static const int EXPORT_ASSET_TO_SIGNED_URL_HASH = HashingUtils::HashString("EXPORT_ASSET_TO_SIGNED_URL");
+        static const int EXPORT_REVISIONS_TO_S3_HASH = HashingUtils::HashString("EXPORT_REVISIONS_TO_S3");
 
 
         Type GetTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == EXPORT_ASSET_TO_SIGNED_URL_HASH)
           {
             return Type::EXPORT_ASSET_TO_SIGNED_URL;
+          }
+          else if (hashCode == EXPORT_REVISIONS_TO_S3_HASH)
+          {
+            return Type::EXPORT_REVISIONS_TO_S3;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "EXPORT_ASSETS_TO_S3";
           case Type::EXPORT_ASSET_TO_SIGNED_URL:
             return "EXPORT_ASSET_TO_SIGNED_URL";
+          case Type::EXPORT_REVISIONS_TO_S3:
+            return "EXPORT_REVISIONS_TO_S3";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

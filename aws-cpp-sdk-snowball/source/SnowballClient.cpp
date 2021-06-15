@@ -25,6 +25,7 @@
 #include <aws/snowball/model/CreateAddressRequest.h>
 #include <aws/snowball/model/CreateClusterRequest.h>
 #include <aws/snowball/model/CreateJobRequest.h>
+#include <aws/snowball/model/CreateLongTermPricingRequest.h>
 #include <aws/snowball/model/CreateReturnShippingLabelRequest.h>
 #include <aws/snowball/model/DescribeAddressRequest.h>
 #include <aws/snowball/model/DescribeAddressesRequest.h>
@@ -39,9 +40,11 @@
 #include <aws/snowball/model/ListClustersRequest.h>
 #include <aws/snowball/model/ListCompatibleImagesRequest.h>
 #include <aws/snowball/model/ListJobsRequest.h>
+#include <aws/snowball/model/ListLongTermPricingRequest.h>
 #include <aws/snowball/model/UpdateClusterRequest.h>
 #include <aws/snowball/model/UpdateJobRequest.h>
 #include <aws/snowball/model/UpdateJobShipmentStateRequest.h>
+#include <aws/snowball/model/UpdateLongTermPricingRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -90,7 +93,7 @@ SnowballClient::~SnowballClient()
 {
 }
 
-void SnowballClient::init(const ClientConfiguration& config)
+void SnowballClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Snowball");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -119,9 +122,6 @@ void SnowballClient::OverrideEndpoint(const Aws::String& endpoint)
 CancelClusterOutcome SnowballClient::CancelCluster(const CancelClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CancelClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -146,9 +146,6 @@ void SnowballClient::CancelClusterAsyncHelper(const CancelClusterRequest& reques
 CancelJobOutcome SnowballClient::CancelJob(const CancelJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CancelJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -173,9 +170,6 @@ void SnowballClient::CancelJobAsyncHelper(const CancelJobRequest& request, const
 CreateAddressOutcome SnowballClient::CreateAddress(const CreateAddressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateAddressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,9 +194,6 @@ void SnowballClient::CreateAddressAsyncHelper(const CreateAddressRequest& reques
 CreateClusterOutcome SnowballClient::CreateCluster(const CreateClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -227,9 +218,6 @@ void SnowballClient::CreateClusterAsyncHelper(const CreateClusterRequest& reques
 CreateJobOutcome SnowballClient::CreateJob(const CreateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -251,12 +239,33 @@ void SnowballClient::CreateJobAsyncHelper(const CreateJobRequest& request, const
   handler(this, request, CreateJob(request), context);
 }
 
+CreateLongTermPricingOutcome SnowballClient::CreateLongTermPricing(const CreateLongTermPricingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return CreateLongTermPricingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateLongTermPricingOutcomeCallable SnowballClient::CreateLongTermPricingCallable(const CreateLongTermPricingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLongTermPricingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLongTermPricing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SnowballClient::CreateLongTermPricingAsync(const CreateLongTermPricingRequest& request, const CreateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLongTermPricingAsyncHelper( request, handler, context ); } );
+}
+
+void SnowballClient::CreateLongTermPricingAsyncHelper(const CreateLongTermPricingRequest& request, const CreateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLongTermPricing(request), context);
+}
+
 CreateReturnShippingLabelOutcome SnowballClient::CreateReturnShippingLabel(const CreateReturnShippingLabelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateReturnShippingLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -281,9 +290,6 @@ void SnowballClient::CreateReturnShippingLabelAsyncHelper(const CreateReturnShip
 DescribeAddressOutcome SnowballClient::DescribeAddress(const DescribeAddressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAddressOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -308,9 +314,6 @@ void SnowballClient::DescribeAddressAsyncHelper(const DescribeAddressRequest& re
 DescribeAddressesOutcome SnowballClient::DescribeAddresses(const DescribeAddressesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeAddressesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -335,9 +338,6 @@ void SnowballClient::DescribeAddressesAsyncHelper(const DescribeAddressesRequest
 DescribeClusterOutcome SnowballClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -362,9 +362,6 @@ void SnowballClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& re
 DescribeJobOutcome SnowballClient::DescribeJob(const DescribeJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -389,9 +386,6 @@ void SnowballClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, c
 DescribeReturnShippingLabelOutcome SnowballClient::DescribeReturnShippingLabel(const DescribeReturnShippingLabelRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeReturnShippingLabelOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -416,9 +410,6 @@ void SnowballClient::DescribeReturnShippingLabelAsyncHelper(const DescribeReturn
 GetJobManifestOutcome SnowballClient::GetJobManifest(const GetJobManifestRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetJobManifestOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -443,9 +434,6 @@ void SnowballClient::GetJobManifestAsyncHelper(const GetJobManifestRequest& requ
 GetJobUnlockCodeOutcome SnowballClient::GetJobUnlockCode(const GetJobUnlockCodeRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetJobUnlockCodeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -470,9 +458,6 @@ void SnowballClient::GetJobUnlockCodeAsyncHelper(const GetJobUnlockCodeRequest& 
 GetSnowballUsageOutcome SnowballClient::GetSnowballUsage(const GetSnowballUsageRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSnowballUsageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -497,9 +482,6 @@ void SnowballClient::GetSnowballUsageAsyncHelper(const GetSnowballUsageRequest& 
 GetSoftwareUpdatesOutcome SnowballClient::GetSoftwareUpdates(const GetSoftwareUpdatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetSoftwareUpdatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -524,9 +506,6 @@ void SnowballClient::GetSoftwareUpdatesAsyncHelper(const GetSoftwareUpdatesReque
 ListClusterJobsOutcome SnowballClient::ListClusterJobs(const ListClusterJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListClusterJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -551,9 +530,6 @@ void SnowballClient::ListClusterJobsAsyncHelper(const ListClusterJobsRequest& re
 ListClustersOutcome SnowballClient::ListClusters(const ListClustersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -578,9 +554,6 @@ void SnowballClient::ListClustersAsyncHelper(const ListClustersRequest& request,
 ListCompatibleImagesOutcome SnowballClient::ListCompatibleImages(const ListCompatibleImagesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListCompatibleImagesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -605,9 +578,6 @@ void SnowballClient::ListCompatibleImagesAsyncHelper(const ListCompatibleImagesR
 ListJobsOutcome SnowballClient::ListJobs(const ListJobsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListJobsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -629,12 +599,33 @@ void SnowballClient::ListJobsAsyncHelper(const ListJobsRequest& request, const L
   handler(this, request, ListJobs(request), context);
 }
 
+ListLongTermPricingOutcome SnowballClient::ListLongTermPricing(const ListLongTermPricingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ListLongTermPricingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListLongTermPricingOutcomeCallable SnowballClient::ListLongTermPricingCallable(const ListLongTermPricingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLongTermPricingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLongTermPricing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SnowballClient::ListLongTermPricingAsync(const ListLongTermPricingRequest& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLongTermPricingAsyncHelper( request, handler, context ); } );
+}
+
+void SnowballClient::ListLongTermPricingAsyncHelper(const ListLongTermPricingRequest& request, const ListLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLongTermPricing(request), context);
+}
+
 UpdateClusterOutcome SnowballClient::UpdateCluster(const UpdateClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -659,9 +650,6 @@ void SnowballClient::UpdateClusterAsyncHelper(const UpdateClusterRequest& reques
 UpdateJobOutcome SnowballClient::UpdateJob(const UpdateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -686,9 +674,6 @@ void SnowballClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const
 UpdateJobShipmentStateOutcome SnowballClient::UpdateJobShipmentState(const UpdateJobShipmentStateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return UpdateJobShipmentStateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -708,5 +693,29 @@ void SnowballClient::UpdateJobShipmentStateAsync(const UpdateJobShipmentStateReq
 void SnowballClient::UpdateJobShipmentStateAsyncHelper(const UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateJobShipmentState(request), context);
+}
+
+UpdateLongTermPricingOutcome SnowballClient::UpdateLongTermPricing(const UpdateLongTermPricingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdateLongTermPricingOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateLongTermPricingOutcomeCallable SnowballClient::UpdateLongTermPricingCallable(const UpdateLongTermPricingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateLongTermPricingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateLongTermPricing(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SnowballClient::UpdateLongTermPricingAsync(const UpdateLongTermPricingRequest& request, const UpdateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateLongTermPricingAsyncHelper( request, handler, context ); } );
+}
+
+void SnowballClient::UpdateLongTermPricingAsyncHelper(const UpdateLongTermPricingRequest& request, const UpdateLongTermPricingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateLongTermPricing(request), context);
 }
 

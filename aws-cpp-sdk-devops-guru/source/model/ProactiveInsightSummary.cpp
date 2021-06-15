@@ -27,7 +27,8 @@ ProactiveInsightSummary::ProactiveInsightSummary() :
     m_statusHasBeenSet(false),
     m_insightTimeRangeHasBeenSet(false),
     m_predictionTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_serviceCollectionHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ ProactiveInsightSummary::ProactiveInsightSummary(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_insightTimeRangeHasBeenSet(false),
     m_predictionTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
+    m_resourceCollectionHasBeenSet(false),
+    m_serviceCollectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +98,13 @@ ProactiveInsightSummary& ProactiveInsightSummary::operator =(JsonView jsonValue)
     m_resourceCollectionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceCollection"))
+  {
+    m_serviceCollection = jsonValue.GetObject("ServiceCollection");
+
+    m_serviceCollectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +149,12 @@ JsonValue ProactiveInsightSummary::Jsonize() const
   if(m_resourceCollectionHasBeenSet)
   {
    payload.WithObject("ResourceCollection", m_resourceCollection.Jsonize());
+
+  }
+
+  if(m_serviceCollectionHasBeenSet)
+  {
+   payload.WithObject("ServiceCollection", m_serviceCollection.Jsonize());
 
   }
 

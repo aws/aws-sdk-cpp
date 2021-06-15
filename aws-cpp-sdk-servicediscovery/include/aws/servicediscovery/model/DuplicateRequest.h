@@ -63,42 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline const Aws::String& GetDuplicateOperationId() const{ return m_duplicateOperationId; }
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline bool DuplicateOperationIdHasBeenSet() const { return m_duplicateOperationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline void SetDuplicateOperationId(const Aws::String& value) { m_duplicateOperationIdHasBeenSet = true; m_duplicateOperationId = value; }
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline void SetDuplicateOperationId(Aws::String&& value) { m_duplicateOperationIdHasBeenSet = true; m_duplicateOperationId = std::move(value); }
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline void SetDuplicateOperationId(const char* value) { m_duplicateOperationIdHasBeenSet = true; m_duplicateOperationId.assign(value); }
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline DuplicateRequest& WithDuplicateOperationId(const Aws::String& value) { SetDuplicateOperationId(value); return *this;}
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline DuplicateRequest& WithDuplicateOperationId(Aws::String&& value) { SetDuplicateOperationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the operation that is already in progress.</p>
+     * <p>The ID of the operation that's already in progress.</p>
      */
     inline DuplicateRequest& WithDuplicateOperationId(const char* value) { SetDuplicateOperationId(value); return *this;}
 

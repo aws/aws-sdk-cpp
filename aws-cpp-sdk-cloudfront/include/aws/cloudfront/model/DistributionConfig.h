@@ -555,74 +555,50 @@ namespace Model
 
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline DistributionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline DistributionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
 
     /**
-     * <p>Any comments you want to include about the distribution.</p> <p>If you don't
-     * want to specify a comment, include an empty <code>Comment</code> element.</p>
-     * <p>To delete an existing comment, update the distribution configuration and
-     * include an empty <code>Comment</code> element.</p> <p>To add or change a
-     * comment, update the distribution configuration and specify the new comment.</p>
+     * <p>An optional comment to describe the distribution. The comment cannot be
+     * longer than 128 characters.</p>
      */
     inline DistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
 

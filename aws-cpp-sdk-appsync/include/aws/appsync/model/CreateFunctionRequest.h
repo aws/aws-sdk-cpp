@@ -7,6 +7,7 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/AppSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/SyncConfig.h>
 #include <utility>
 
 namespace Aws
@@ -342,6 +343,25 @@ namespace Model
      */
     inline CreateFunctionRequest& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
 
+
+    
+    inline const SyncConfig& GetSyncConfig() const{ return m_syncConfig; }
+
+    
+    inline bool SyncConfigHasBeenSet() const { return m_syncConfigHasBeenSet; }
+
+    
+    inline void SetSyncConfig(const SyncConfig& value) { m_syncConfigHasBeenSet = true; m_syncConfig = value; }
+
+    
+    inline void SetSyncConfig(SyncConfig&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::move(value); }
+
+    
+    inline CreateFunctionRequest& WithSyncConfig(const SyncConfig& value) { SetSyncConfig(value); return *this;}
+
+    
+    inline CreateFunctionRequest& WithSyncConfig(SyncConfig&& value) { SetSyncConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -364,6 +384,9 @@ namespace Model
 
     Aws::String m_functionVersion;
     bool m_functionVersionHasBeenSet;
+
+    SyncConfig m_syncConfig;
+    bool m_syncConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -40,37 +40,43 @@ namespace Model
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline const S3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline void SetS3BucketDestination(const S3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline void SetS3BucketDestination(S3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline StorageLensDataExport& WithS3BucketDestination(const S3BucketDestination& value) { SetS3BucketDestination(value); return *this;}
 
     /**
      * <p>A container for the bucket where the S3 Storage Lens metrics export will be
-     * located.</p>
+     * located.</p>  <p>This bucket must be located in the same Region as the
+     * storage lens configuration. </p> 
      */
     inline StorageLensDataExport& WithS3BucketDestination(S3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
 

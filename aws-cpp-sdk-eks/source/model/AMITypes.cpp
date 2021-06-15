@@ -23,6 +23,7 @@ namespace Aws
         static const int AL2_x86_64_HASH = HashingUtils::HashString("AL2_x86_64");
         static const int AL2_x86_64_GPU_HASH = HashingUtils::HashString("AL2_x86_64_GPU");
         static const int AL2_ARM_64_HASH = HashingUtils::HashString("AL2_ARM_64");
+        static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
 
 
         AMITypes GetAMITypesForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == AL2_ARM_64_HASH)
           {
             return AMITypes::AL2_ARM_64;
+          }
+          else if (hashCode == CUSTOM_HASH)
+          {
+            return AMITypes::CUSTOM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "AL2_x86_64_GPU";
           case AMITypes::AL2_ARM_64:
             return "AL2_ARM_64";
+          case AMITypes::CUSTOM:
+            return "CUSTOM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -10,6 +10,7 @@
 #include <aws/ecs/model/HealthStatus.h>
 #include <aws/ecs/model/NetworkBinding.h>
 #include <aws/ecs/model/NetworkInterface.h>
+#include <aws/ecs/model/ManagedAgent.h>
 #include <utility>
 
 namespace Aws
@@ -540,6 +541,55 @@ namespace Model
 
 
     /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline const Aws::Vector<ManagedAgent>& GetManagedAgents() const{ return m_managedAgents; }
+
+    /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline bool ManagedAgentsHasBeenSet() const { return m_managedAgentsHasBeenSet; }
+
+    /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline void SetManagedAgents(const Aws::Vector<ManagedAgent>& value) { m_managedAgentsHasBeenSet = true; m_managedAgents = value; }
+
+    /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline void SetManagedAgents(Aws::Vector<ManagedAgent>&& value) { m_managedAgentsHasBeenSet = true; m_managedAgents = std::move(value); }
+
+    /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline Container& WithManagedAgents(const Aws::Vector<ManagedAgent>& value) { SetManagedAgents(value); return *this;}
+
+    /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline Container& WithManagedAgents(Aws::Vector<ManagedAgent>&& value) { SetManagedAgents(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline Container& AddManagedAgents(const ManagedAgent& value) { m_managedAgentsHasBeenSet = true; m_managedAgents.push_back(value); return *this; }
+
+    /**
+     * <p>The details of any Amazon ECS managed agents associated with the
+     * container.</p>
+     */
+    inline Container& AddManagedAgents(ManagedAgent&& value) { m_managedAgentsHasBeenSet = true; m_managedAgents.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The number of CPU units set for the container. The value will be
      * <code>0</code> if no value was specified in the container definition when the
      * task definition was registered.</p>
@@ -760,6 +810,9 @@ namespace Model
 
     HealthStatus m_healthStatus;
     bool m_healthStatusHasBeenSet;
+
+    Aws::Vector<ManagedAgent> m_managedAgents;
+    bool m_managedAgentsHasBeenSet;
 
     Aws::String m_cpu;
     bool m_cpuHasBeenSet;

@@ -71,7 +71,7 @@ S3OutpostsClient::~S3OutpostsClient()
 {
 }
 
-void S3OutpostsClient::init(const ClientConfiguration& config)
+void S3OutpostsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("S3Outposts");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -100,9 +100,7 @@ void S3OutpostsClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateEndpointOutcome S3OutpostsClient::CreateEndpoint(const CreateEndpointRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/S3Outposts/CreateEndpoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/S3Outposts/CreateEndpoint");
   return CreateEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -137,9 +135,7 @@ DeleteEndpointOutcome S3OutpostsClient::DeleteEndpoint(const DeleteEndpointReque
     return DeleteEndpointOutcome(Aws::Client::AWSError<S3OutpostsErrors>(S3OutpostsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OutpostId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/S3Outposts/DeleteEndpoint";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/S3Outposts/DeleteEndpoint");
   return DeleteEndpointOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -164,9 +160,7 @@ void S3OutpostsClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& re
 ListEndpointsOutcome S3OutpostsClient::ListEndpoints(const ListEndpointsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/S3Outposts/ListEndpoints";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/S3Outposts/ListEndpoints");
   return ListEndpointsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 

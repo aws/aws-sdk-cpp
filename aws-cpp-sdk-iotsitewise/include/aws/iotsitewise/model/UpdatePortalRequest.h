@@ -8,6 +8,7 @@
 #include <aws/iotsitewise/IoTSiteWiseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotsitewise/model/Image.h>
+#include <aws/iotsitewise/model/Alarms.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -362,6 +363,96 @@ namespace Model
      */
     inline UpdatePortalRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline const Aws::String& GetNotificationSenderEmail() const{ return m_notificationSenderEmail; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline bool NotificationSenderEmailHasBeenSet() const { return m_notificationSenderEmailHasBeenSet; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(const Aws::String& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = value; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(Aws::String&& value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail = std::move(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(const char* value) { m_notificationSenderEmailHasBeenSet = true; m_notificationSenderEmail.assign(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline UpdatePortalRequest& WithNotificationSenderEmail(const Aws::String& value) { SetNotificationSenderEmail(value); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline UpdatePortalRequest& WithNotificationSenderEmail(Aws::String&& value) { SetNotificationSenderEmail(std::move(value)); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline UpdatePortalRequest& WithNotificationSenderEmail(const char* value) { SetNotificationSenderEmail(value); return *this;}
+
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline const Alarms& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline void SetAlarms(const Alarms& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline void SetAlarms(Alarms&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline UpdatePortalRequest& WithAlarms(const Alarms& value) { SetAlarms(value); return *this;}
+
+    /**
+     * <p>Contains the configuration information of an alarm created in an AWS IoT
+     * SiteWise Monitor portal. You can use the alarm to monitor an asset property and
+     * get notified when the asset property value is outside a specified range. For
+     * more information, see .</p>
+     */
+    inline UpdatePortalRequest& WithAlarms(Alarms&& value) { SetAlarms(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_portalId;
@@ -384,6 +475,12 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::String m_notificationSenderEmail;
+    bool m_notificationSenderEmailHasBeenSet;
+
+    Alarms m_alarms;
+    bool m_alarmsHasBeenSet;
   };
 
 } // namespace Model

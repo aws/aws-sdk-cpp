@@ -25,6 +25,7 @@ Rule::Rule() :
     m_statementHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_overrideActionHasBeenSet(false),
+    m_ruleLabelsHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false)
 {
 }
@@ -36,6 +37,7 @@ Rule::Rule(JsonView jsonValue) :
     m_statementHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_overrideActionHasBeenSet(false),
+    m_ruleLabelsHasBeenSet(false),
     m_visibilityConfigHasBeenSet(false)
 {
   *this = jsonValue;
@@ -76,6 +78,16 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_overrideAction = jsonValue.GetObject("OverrideAction");
 
     m_overrideActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RuleLabels"))
+  {
+    Array<JsonView> ruleLabelsJsonList = jsonValue.GetArray("RuleLabels");
+    for(unsigned ruleLabelsIndex = 0; ruleLabelsIndex < ruleLabelsJsonList.GetLength(); ++ruleLabelsIndex)
+    {
+      m_ruleLabels.push_back(ruleLabelsJsonList[ruleLabelsIndex].AsObject());
+    }
+    m_ruleLabelsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VisibilityConfig"))
@@ -119,6 +131,17 @@ JsonValue Rule::Jsonize() const
   if(m_overrideActionHasBeenSet)
   {
    payload.WithObject("OverrideAction", m_overrideAction.Jsonize());
+
+  }
+
+  if(m_ruleLabelsHasBeenSet)
+  {
+   Array<JsonValue> ruleLabelsJsonList(m_ruleLabels.size());
+   for(unsigned ruleLabelsIndex = 0; ruleLabelsIndex < ruleLabelsJsonList.GetLength(); ++ruleLabelsIndex)
+   {
+     ruleLabelsJsonList[ruleLabelsIndex].AsObject(m_ruleLabels[ruleLabelsIndex].Jsonize());
+   }
+   payload.WithArray("RuleLabels", std::move(ruleLabelsJsonList));
 
   }
 

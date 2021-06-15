@@ -31,7 +31,9 @@ WebACL::WebACL() :
     m_preProcessFirewallManagerRuleGroupsHasBeenSet(false),
     m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
     m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false)
+    m_managedByFirewallManagerHasBeenSet(false),
+    m_labelNamespaceHasBeenSet(false),
+    m_customResponseBodiesHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ WebACL::WebACL(JsonView jsonValue) :
     m_preProcessFirewallManagerRuleGroupsHasBeenSet(false),
     m_postProcessFirewallManagerRuleGroupsHasBeenSet(false),
     m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false)
+    m_managedByFirewallManagerHasBeenSet(false),
+    m_labelNamespaceHasBeenSet(false),
+    m_customResponseBodiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -141,6 +145,23 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_managedByFirewallManagerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LabelNamespace"))
+  {
+    m_labelNamespace = jsonValue.GetString("LabelNamespace");
+
+    m_labelNamespaceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomResponseBodies"))
+  {
+    Aws::Map<Aws::String, JsonView> customResponseBodiesJsonMap = jsonValue.GetObject("CustomResponseBodies").GetAllObjects();
+    for(auto& customResponseBodiesItem : customResponseBodiesJsonMap)
+    {
+      m_customResponseBodies[customResponseBodiesItem.first] = customResponseBodiesItem.second.AsObject();
+    }
+    m_customResponseBodiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +247,23 @@ JsonValue WebACL::Jsonize() const
   if(m_managedByFirewallManagerHasBeenSet)
   {
    payload.WithBool("ManagedByFirewallManager", m_managedByFirewallManager);
+
+  }
+
+  if(m_labelNamespaceHasBeenSet)
+  {
+   payload.WithString("LabelNamespace", m_labelNamespace);
+
+  }
+
+  if(m_customResponseBodiesHasBeenSet)
+  {
+   JsonValue customResponseBodiesJsonMap;
+   for(auto& customResponseBodiesItem : m_customResponseBodies)
+   {
+     customResponseBodiesJsonMap.WithObject(customResponseBodiesItem.first, customResponseBodiesItem.second.Jsonize());
+   }
+   payload.WithObject("CustomResponseBodies", std::move(customResponseBodiesJsonMap));
 
   }
 

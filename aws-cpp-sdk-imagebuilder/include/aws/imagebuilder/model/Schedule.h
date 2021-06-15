@@ -26,7 +26,7 @@ namespace Model
 
   /**
    * <p>A schedule configures how often and when a pipeline will automatically create
-   * a new image. </p><p><h3>See Also:</h3>   <a
+   * a new image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Schedule">AWS
    * API Reference</a></p>
    */
@@ -110,6 +110,71 @@ namespace Model
      * cron expressions in EC2 Image Builder</a>.</p>
      */
     inline Schedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline Schedule& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline Schedule& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>The timezone that applies to the scheduling expression. For example,
+     * "Etc/UTC", "America/Los_Angeles" in the <a
+     * href="https://www.joda.org/joda-time/timezones.html">IANA timezone format</a>.
+     * If not specified this defaults to UTC.</p>
+     */
+    inline Schedule& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
 
     /**
@@ -206,6 +271,9 @@ namespace Model
 
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet;
+
+    Aws::String m_timezone;
+    bool m_timezoneHasBeenSet;
 
     PipelineExecutionStartCondition m_pipelineExecutionStartCondition;
     bool m_pipelineExecutionStartConditionHasBeenSet;

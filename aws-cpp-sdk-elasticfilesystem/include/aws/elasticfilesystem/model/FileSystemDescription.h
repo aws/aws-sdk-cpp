@@ -589,117 +589,213 @@ namespace Model
 
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline FileSystemDescription& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
 
     /**
-     * <p>The throughput mode for a file system. There are two throughput modes to
-     * choose from for your file system: <code>bursting</code> and
-     * <code>provisioned</code>. If you set <code>ThroughputMode</code> to
-     * <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughPutInMibps</code>. You can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes
-     * as long as it’s been more than 24 hours since the last decrease or throughput
-     * mode change. </p>
+     * <p>Displays the file system's throughput mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput
+     * modes</a> in the <i>Amazon EFS User Guide</i>. </p>
      */
     inline FileSystemDescription& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-     * to <code>provisioned</code>. The limit on throughput is 1024 MiB/s. You can get
-     * these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * Valid for file systems using <code>ThroughputMode</code> set to
+     * <code>provisioned</code>.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-     * to <code>provisioned</code>. The limit on throughput is 1024 MiB/s. You can get
-     * these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * Valid for file systems using <code>ThroughputMode</code> set to
+     * <code>provisioned</code>.</p>
      */
     inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-     * to <code>provisioned</code>. The limit on throughput is 1024 MiB/s. You can get
-     * these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * Valid for file systems using <code>ThroughputMode</code> set to
+     * <code>provisioned</code>.</p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system. Valid values are 1-1024. Required if <code>ThroughputMode</code> is set
-     * to <code>provisioned</code>. The limit on throughput is 1024 MiB/s. You can get
-     * these limits increased by contacting AWS Support. For more information, see <a
-     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
-     * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
+     * <p>The amount of provisioned throughput, measured in MiB/s, for the file system.
+     * Valid for file systems using <code>ThroughputMode</code> set to
+     * <code>provisioned</code>.</p>
      */
     inline FileSystemDescription& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
+
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline FileSystemDescription& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline FileSystemDescription& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the AWS Availability Zone in which the file system is located, and
+     * is valid only for file systems using One Zone storage classes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
+     * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>
+     */
+    inline FileSystemDescription& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
+
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline FileSystemDescription& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline FileSystemDescription& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique and consistent identifier of the Availability Zone in which the
+     * file system's One Zone storage classes exist. For example, <code>use1-az1</code>
+     * is an Availability Zone ID for the us-east-1 AWS Region, and it has the same
+     * location in every AWS account.</p>
+     */
+    inline FileSystemDescription& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
 
     /**
@@ -793,6 +889,12 @@ namespace Model
 
     double m_provisionedThroughputInMibps;
     bool m_provisionedThroughputInMibpsHasBeenSet;
+
+    Aws::String m_availabilityZoneName;
+    bool m_availabilityZoneNameHasBeenSet;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

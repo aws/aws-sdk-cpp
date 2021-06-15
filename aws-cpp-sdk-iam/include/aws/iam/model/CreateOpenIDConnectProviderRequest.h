@@ -8,6 +8,7 @@
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -276,7 +277,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThumbprintList() const{ return m_thumbprintList; }
@@ -297,7 +298,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline bool ThumbprintListHasBeenSet() const { return m_thumbprintListHasBeenSet; }
@@ -318,7 +319,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline void SetThumbprintList(const Aws::Vector<Aws::String>& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = value; }
@@ -339,7 +340,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline void SetThumbprintList(Aws::Vector<Aws::String>&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList = std::move(value); }
@@ -360,7 +361,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithThumbprintList(const Aws::Vector<Aws::String>& value) { SetThumbprintList(value); return *this;}
@@ -381,7 +382,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& WithThumbprintList(Aws::Vector<Aws::String>&& value) { SetThumbprintList(std::move(value)); return *this;}
@@ -402,7 +403,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const Aws::String& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
@@ -423,7 +424,7 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(Aws::String&& value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(std::move(value)); return *this; }
@@ -444,10 +445,99 @@ namespace Model
      * https://keys.server.example.com.</p> <p>For more information about obtaining the
      * OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User
      * Guide</i>.</p>
      */
     inline CreateOpenIDConnectProviderRequest& AddThumbprintList(const char* value) { m_thumbprintListHasBeenSet = true; m_thumbprintList.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the new IAM OpenID Connect (OIDC)
+     * provider. Each tag consists of a key name and an associated value. For more
+     * information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * resources</a> in the <i>IAM User Guide</i>.</p>  <p>If any one of the tags
+     * is invalid or if you exceed the allowed maximum number of tags, then the entire
+     * request fails and the resource is not created.</p> 
+     */
+    inline CreateOpenIDConnectProviderRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -459,6 +549,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_thumbprintList;
     bool m_thumbprintListHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

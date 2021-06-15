@@ -83,8 +83,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */
@@ -92,8 +93,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */
@@ -101,8 +103,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */
@@ -110,8 +113,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */
@@ -119,8 +123,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */
@@ -128,8 +133,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */
@@ -137,8 +143,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */
@@ -146,8 +153,9 @@ namespace Model
 
     /**
      * <p>The <code>FileSystemPolicy</code> that you're creating. Accepts a JSON
-     * formatted policy definition. To find out more about the elements that make up a
-     * file system policy, see <a
+     * formatted policy definition. EFS file system policies have a 20,000 character
+     * limit. To find out more about the elements that make up a file system policy,
+     * see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-manage-access-intro-resource-policies">EFS
      * Resource-based Policies</a>. </p>
      */

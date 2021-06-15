@@ -205,14 +205,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -231,14 +231,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -257,14 +257,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -283,14 +283,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -309,14 +309,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -335,14 +335,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -361,14 +361,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -387,14 +387,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the IAM managed policies that you want to
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
-     * policy ARNs. However, the plain text that you use for both inline and managed
+     * policy ARNs. However, the plaintext that you use for both inline and managed
      * session policies can't exceed 2,048 characters. For more information about ARNs,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
      * Reference.</p>  <p>An AWS conversion compresses the passed session
      * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
+     * Your request can fail for this limit even if your plaintext meets the other
      * requirements. The <code>PackedPolicySize</code> response element indicates by
      * percentage how close the policies and tags for your request are to the upper
      * size limit. </p>  <p>Passing policies to this operation returns new
@@ -420,17 +420,16 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -444,17 +443,16 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -468,17 +466,16 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -492,17 +489,16 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -516,17 +512,16 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -540,17 +535,16 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -564,17 +558,16 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -588,29 +581,29 @@ namespace Model
      * grant more permissions than those allowed by the identity-based policy of the
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. The
-     * JSON policy characters can be any ASCII character from the space character to
-     * the end of the valid character list (\u0020 through \u00FF). It can also include
-     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p>  <p>An AWS conversion compresses the passed session
-     * policies and session tags into a packed binary format that has a separate limit.
-     * Your request can fail for this limit even if your plain text meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by
-     * percentage how close the policies and tags for your request are to the upper
-     * size limit. </p> 
+     * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * policy characters can be any ASCII character from the space character to the end
+     * of the valid character list (\u0020 through \u00FF). It can also include the tab
+     * (\u0009), linefeed (\u000A), and carriage return (\u000D) characters.</p> 
+     * <p>An AWS conversion compresses the passed session policies and session tags
+     * into a packed binary format that has a separate limit. Your request can fail for
+     * this limit even if your plaintext meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> 
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
 
     /**
-     * <p>The duration, in seconds, of the role session. The value can range from 900
-     * seconds (15 minutes) up to the maximum session duration setting for the role.
-     * This setting can have a value from 1 hour to 12 hours. If you specify a value
-     * higher than this setting, the operation fails. For example, if you specify a
-     * session duration of 12 hours, but your administrator set the maximum session
-     * duration to 6 hours, your operation fails. To learn how to view the maximum
-     * value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can can
+     * range from 900 seconds (15 minutes) up to the maximum session duration that is
+     * set for the role. The maximum session duration setting can have a value from 1
+     * hour to 12 hours. If you specify a value higher than this setting or the
+     * administrator setting (whichever is lower), the operation fails. For example, if
+     * you specify a session duration of 12 hours, but your administrator set the
+     * maximum session duration to 6 hours, your operation fails. To learn how to view
+     * the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -626,13 +619,14 @@ namespace Model
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
-     * <p>The duration, in seconds, of the role session. The value can range from 900
-     * seconds (15 minutes) up to the maximum session duration setting for the role.
-     * This setting can have a value from 1 hour to 12 hours. If you specify a value
-     * higher than this setting, the operation fails. For example, if you specify a
-     * session duration of 12 hours, but your administrator set the maximum session
-     * duration to 6 hours, your operation fails. To learn how to view the maximum
-     * value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can can
+     * range from 900 seconds (15 minutes) up to the maximum session duration that is
+     * set for the role. The maximum session duration setting can have a value from 1
+     * hour to 12 hours. If you specify a value higher than this setting or the
+     * administrator setting (whichever is lower), the operation fails. For example, if
+     * you specify a session duration of 12 hours, but your administrator set the
+     * maximum session duration to 6 hours, your operation fails. To learn how to view
+     * the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -648,13 +642,14 @@ namespace Model
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
     /**
-     * <p>The duration, in seconds, of the role session. The value can range from 900
-     * seconds (15 minutes) up to the maximum session duration setting for the role.
-     * This setting can have a value from 1 hour to 12 hours. If you specify a value
-     * higher than this setting, the operation fails. For example, if you specify a
-     * session duration of 12 hours, but your administrator set the maximum session
-     * duration to 6 hours, your operation fails. To learn how to view the maximum
-     * value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can can
+     * range from 900 seconds (15 minutes) up to the maximum session duration that is
+     * set for the role. The maximum session duration setting can have a value from 1
+     * hour to 12 hours. If you specify a value higher than this setting or the
+     * administrator setting (whichever is lower), the operation fails. For example, if
+     * you specify a session duration of 12 hours, but your administrator set the
+     * maximum session duration to 6 hours, your operation fails. To learn how to view
+     * the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -670,13 +665,14 @@ namespace Model
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
-     * <p>The duration, in seconds, of the role session. The value can range from 900
-     * seconds (15 minutes) up to the maximum session duration setting for the role.
-     * This setting can have a value from 1 hour to 12 hours. If you specify a value
-     * higher than this setting, the operation fails. For example, if you specify a
-     * session duration of 12 hours, but your administrator set the maximum session
-     * duration to 6 hours, your operation fails. To learn how to view the maximum
-     * value for your role, see <a
+     * <p>The duration, in seconds, of the role session. The value specified can can
+     * range from 900 seconds (15 minutes) up to the maximum session duration that is
+     * set for the role. The maximum session duration setting can have a value from 1
+     * hour to 12 hours. If you specify a value higher than this setting or the
+     * administrator setting (whichever is lower), the operation fails. For example, if
+     * you specify a session duration of 12 hours, but your administrator set the
+     * maximum session duration to 6 hours, your operation fails. To learn how to view
+     * the maximum value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User
      * Guide</i>.</p> <p>By default, the value is set to <code>3600</code> seconds.
@@ -698,14 +694,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -733,14 +729,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -768,14 +764,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -803,14 +799,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -838,14 +834,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -873,14 +869,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -908,14 +904,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -943,14 +939,14 @@ namespace Model
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
      * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
-     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * optional. You can pass up to 50 session tags. The plaintext session tag keys
      * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
      * these and additional limits, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
      * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>  <p>An AWS
      * conversion compresses the passed session policies and session tags into a packed
      * binary format that has a separate limit. Your request can fail for this limit
-     * even if your plain text meets the other requirements. The
+     * even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close
      * the policies and tags for your request are to the upper size limit. </p> 
      * <p>You can pass a session tag with the same key as a tag that is already
@@ -1351,83 +1347,236 @@ namespace Model
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline const Aws::String& GetTokenCode() const{ return m_tokenCode; }
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline bool TokenCodeHasBeenSet() const { return m_tokenCodeHasBeenSet; }
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const Aws::String& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = value; }
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(Aws::String&& value) { m_tokenCodeHasBeenSet = true; m_tokenCode = std::move(value); }
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline void SetTokenCode(const char* value) { m_tokenCodeHasBeenSet = true; m_tokenCode.assign(value); }
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline AssumeRoleRequest& WithTokenCode(const Aws::String& value) { SetTokenCode(value); return *this;}
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline AssumeRoleRequest& WithTokenCode(Aws::String&& value) { SetTokenCode(std::move(value)); return *this;}
 
     /**
      * <p>The value provided by the MFA device, if the trust policy of the role being
-     * assumed requires MFA (that is, if the policy includes a condition that tests for
-     * MFA). If the role being assumed requires MFA and if the <code>TokenCode</code>
-     * value is missing or expired, the <code>AssumeRole</code> call returns an "access
-     * denied" error.</p> <p>The format for this parameter, as described by its regex
-     * pattern, is a sequence of six numeric digits.</p>
+     * assumed requires MFA. (In other words, if the policy includes a condition that
+     * tests for MFA). If the role being assumed requires MFA and if the
+     * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code>
+     * call returns an "access denied" error.</p> <p>The format for this parameter, as
+     * described by its regex pattern, is a sequence of six numeric digits.</p>
      */
     inline AssumeRoleRequest& WithTokenCode(const char* value) { SetTokenCode(value); return *this;}
+
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline const Aws::String& GetSourceIdentity() const{ return m_sourceIdentity; }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline bool SourceIdentityHasBeenSet() const { return m_sourceIdentityHasBeenSet; }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline void SetSourceIdentity(const Aws::String& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = value; }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline void SetSourceIdentity(Aws::String&& value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity = std::move(value); }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline void SetSourceIdentity(const char* value) { m_sourceIdentityHasBeenSet = true; m_sourceIdentity.assign(value); }
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline AssumeRoleRequest& WithSourceIdentity(const Aws::String& value) { SetSourceIdentity(value); return *this;}
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline AssumeRoleRequest& WithSourceIdentity(Aws::String&& value) { SetSourceIdentity(std::move(value)); return *this;}
+
+    /**
+     * <p>The source identity specified by the principal that is calling the
+     * <code>AssumeRole</code> operation.</p> <p>You can require users to specify a
+     * source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
+     * use source identity information in AWS CloudTrail logs to determine who took
+     * actions with a role. You can use the <code>aws:SourceIdentity</code> condition
+     * key to further control access to AWS resources based on the value of source
+     * identity. For more information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User
+     * Guide</i>.</p> <p>The regex used to validate this parameter is a string of
+     * characters consisting of upper- and lower-case alphanumeric characters with no
+     * spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This
+     * prefix is reserved for AWS internal use.</p>
+     */
+    inline AssumeRoleRequest& WithSourceIdentity(const char* value) { SetSourceIdentity(value); return *this;}
 
   private:
 
@@ -1460,6 +1609,9 @@ namespace Model
 
     Aws::String m_tokenCode;
     bool m_tokenCodeHasBeenSet;
+
+    Aws::String m_sourceIdentity;
+    bool m_sourceIdentityHasBeenSet;
   };
 
 } // namespace Model

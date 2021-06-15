@@ -35,51 +35,51 @@ namespace Model
 
 
     /**
-     * <p> The returned list of <code> <a
+     * <p> The returned list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-     * </code> objects. </p>
+     * objects. </p>
      */
     inline const Aws::Vector<DomainSummary>& GetDomains() const{ return m_domains; }
 
     /**
-     * <p> The returned list of <code> <a
+     * <p> The returned list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-     * </code> objects. </p>
+     * objects. </p>
      */
     inline void SetDomains(const Aws::Vector<DomainSummary>& value) { m_domains = value; }
 
     /**
-     * <p> The returned list of <code> <a
+     * <p> The returned list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-     * </code> objects. </p>
+     * objects. </p>
      */
     inline void SetDomains(Aws::Vector<DomainSummary>&& value) { m_domains = std::move(value); }
 
     /**
-     * <p> The returned list of <code> <a
+     * <p> The returned list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-     * </code> objects. </p>
+     * objects. </p>
      */
     inline ListDomainsResult& WithDomains(const Aws::Vector<DomainSummary>& value) { SetDomains(value); return *this;}
 
     /**
-     * <p> The returned list of <code> <a
+     * <p> The returned list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-     * </code> objects. </p>
+     * objects. </p>
      */
     inline ListDomainsResult& WithDomains(Aws::Vector<DomainSummary>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
-     * <p> The returned list of <code> <a
+     * <p> The returned list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-     * </code> objects. </p>
+     * objects. </p>
      */
     inline ListDomainsResult& AddDomains(const DomainSummary& value) { m_domains.push_back(value); return *this; }
 
     /**
-     * <p> The returned list of <code> <a
+     * <p> The returned list of <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainSummary.html">DomainSummary</a>
-     * </code> objects. </p>
+     * objects. </p>
      */
     inline ListDomainsResult& AddDomains(DomainSummary&& value) { m_domains.push_back(std::move(value)); return *this; }
 

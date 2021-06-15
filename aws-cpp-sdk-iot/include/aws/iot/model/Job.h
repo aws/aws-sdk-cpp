@@ -795,6 +795,47 @@ namespace Model
      */
     inline Job& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline const Aws::String& GetJobTemplateArn() const{ return m_jobTemplateArn; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline bool JobTemplateArnHasBeenSet() const { return m_jobTemplateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(const Aws::String& value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn = value; }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(Aws::String&& value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline void SetJobTemplateArn(const char* value) { m_jobTemplateArnHasBeenSet = true; m_jobTemplateArn.assign(value); }
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline Job& WithJobTemplateArn(const Aws::String& value) { SetJobTemplateArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline Job& WithJobTemplateArn(Aws::String&& value) { SetJobTemplateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the job template used to create the job.</p>
+     */
+    inline Job& WithJobTemplateArn(const char* value) { SetJobTemplateArn(value); return *this;}
+
   private:
 
     Aws::String m_jobArn;
@@ -850,6 +891,9 @@ namespace Model
 
     Aws::String m_namespaceId;
     bool m_namespaceIdHasBeenSet;
+
+    Aws::String m_jobTemplateArn;
+    bool m_jobTemplateArnHasBeenSet;
   };
 
 } // namespace Model

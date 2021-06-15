@@ -361,6 +361,47 @@ namespace Model
      */
     inline ProtectionGroup& AddMembers(const char* value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
 
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline const Aws::String& GetProtectionGroupArn() const{ return m_protectionGroupArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline bool ProtectionGroupArnHasBeenSet() const { return m_protectionGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline void SetProtectionGroupArn(const Aws::String& value) { m_protectionGroupArnHasBeenSet = true; m_protectionGroupArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline void SetProtectionGroupArn(Aws::String&& value) { m_protectionGroupArnHasBeenSet = true; m_protectionGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline void SetProtectionGroupArn(const char* value) { m_protectionGroupArnHasBeenSet = true; m_protectionGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline ProtectionGroup& WithProtectionGroupArn(const Aws::String& value) { SetProtectionGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline ProtectionGroup& WithProtectionGroupArn(Aws::String&& value) { SetProtectionGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the protection group.</p>
+     */
+    inline ProtectionGroup& WithProtectionGroupArn(const char* value) { SetProtectionGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_protectionGroupId;
@@ -377,6 +418,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_members;
     bool m_membersHasBeenSet;
+
+    Aws::String m_protectionGroupArn;
+    bool m_protectionGroupArnHasBeenSet;
   };
 
 } // namespace Model

@@ -9,8 +9,10 @@
 #include <aws/wafv2/model/DefaultAction.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/VisibilityConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/FirewallManagerRuleGroup.h>
+#include <aws/wafv2/model/CustomResponseBody.h>
 #include <utility>
 
 namespace Aws
@@ -29,20 +31,15 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p> A Web ACL defines a collection of
-   * rules to use to inspect and control web requests. Each rule has an action
-   * defined (allow, block, or count) for requests that match the statement of the
-   * rule. In the Web ACL, you assign a default action to take (allow, block) for any
-   * request that does not match any of the rules. The rules in a Web ACL can be a
-   * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group.
-   * You can associate a Web ACL with one or more AWS resources to protect. The
-   * resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
-   * Application Load Balancer, or an AWS AppSync GraphQL API. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> A Web ACL defines a collection of rules to use to inspect and control web
+   * requests. Each rule has an action defined (allow, block, or count) for requests
+   * that match the statement of the rule. In the Web ACL, you assign a default
+   * action to take (allow, block) for any request that does not match any of the
+   * rules. The rules in a Web ACL can be a combination of the types <a>Rule</a>,
+   * <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one
+   * or more AWS resources to protect. The resources can be Amazon CloudFront, an
+   * Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync
+   * GraphQL API. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL">AWS API
    * Reference</a></p>
    */
@@ -248,50 +245,42 @@ namespace Model
 
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline WebACL& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline WebACL& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the Web ACL that helps with identification. You cannot
-     * change the description of a Web ACL after you create it.</p>
+     * <p>A description of the Web ACL that helps with identification. </p>
      */
     inline WebACL& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -669,6 +658,328 @@ namespace Model
      */
     inline WebACL& WithManagedByFirewallManager(bool value) { SetManagedByFirewallManager(value); return *this;}
 
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline const Aws::String& GetLabelNamespace() const{ return m_labelNamespace; }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline bool LabelNamespaceHasBeenSet() const { return m_labelNamespaceHasBeenSet; }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline void SetLabelNamespace(const Aws::String& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = value; }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline void SetLabelNamespace(Aws::String&& value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace = std::move(value); }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline void SetLabelNamespace(const char* value) { m_labelNamespaceHasBeenSet = true; m_labelNamespace.assign(value); }
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline WebACL& WithLabelNamespace(const Aws::String& value) { SetLabelNamespace(value); return *this;}
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline WebACL& WithLabelNamespace(Aws::String&& value) { SetLabelNamespace(std::move(value)); return *this;}
+
+    /**
+     * <p>The label namespace prefix for this web ACL. All labels added by rules in
+     * this web ACL have this prefix. </p> <ul> <li> <p>The syntax for the label
+     * namespace prefix for a web ACL is the following: </p> <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> </p> </li>
+     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * qualified label to the request. A fully qualified label is made up of the label
+     * namespace from the rule group or web ACL where the rule is defined and the label
+     * from the rule, separated by a colon: </p> <p> <code>&lt;label
+     * namespace&gt;:&lt;label from rule&gt;</code> </p> </li> </ul>
+     */
+    inline WebACL& WithLabelNamespace(const char* value) { SetLabelNamespace(value); return *this;}
+
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline const Aws::Map<Aws::String, CustomResponseBody>& GetCustomResponseBodies() const{ return m_customResponseBodies; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline bool CustomResponseBodiesHasBeenSet() const { return m_customResponseBodiesHasBeenSet; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline void SetCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = value; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline void SetCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = std::move(value); }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& WithCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { SetCustomResponseBodies(value); return *this;}
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& WithCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { SetCustomResponseBodies(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& AddCustomResponseBodies(const Aws::String& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& AddCustomResponseBodies(Aws::String&& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& AddCustomResponseBodies(const Aws::String& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& AddCustomResponseBodies(Aws::String&& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& AddCustomResponseBodies(const char* key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of custom response keys and content bodies. When you create a rule with
+     * a block action, you can send a custom response to the web request. You define
+     * these for the web ACL, and then use them in the rules and default actions that
+     * you define in the web ACL. </p> <p>For information about customizing web
+     * requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     * web requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
+     * size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+     * WAF Developer Guide</a>. </p>
+     */
+    inline WebACL& AddCustomResponseBodies(const char* key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -703,6 +1014,12 @@ namespace Model
 
     bool m_managedByFirewallManager;
     bool m_managedByFirewallManagerHasBeenSet;
+
+    Aws::String m_labelNamespace;
+    bool m_labelNamespaceHasBeenSet;
+
+    Aws::Map<Aws::String, CustomResponseBody> m_customResponseBodies;
+    bool m_customResponseBodiesHasBeenSet;
   };
 
 } // namespace Model

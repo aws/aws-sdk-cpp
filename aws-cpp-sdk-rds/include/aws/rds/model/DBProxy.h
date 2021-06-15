@@ -228,6 +228,47 @@ namespace Model
 
 
     /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
+
+    /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
+
+    /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
+
+    /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline DBProxy& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
+
+    /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline DBProxy& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides the VPC ID of the DB proxy.</p>
+     */
+    inline DBProxy& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+
+
+    /**
      * <p>Provides a list of VPC security groups that the proxy belongs to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
@@ -418,49 +459,49 @@ namespace Model
 
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline DBProxy& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline DBProxy& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint that you can use to connect to the proxy. You include the
+     * <p>The endpoint that you can use to connect to the DB proxy. You include the
      * endpoint value in the connection string for a database client application.</p>
      */
     inline DBProxy& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
@@ -647,6 +688,9 @@ namespace Model
 
     Aws::String m_engineFamily;
     bool m_engineFamilyHasBeenSet;
+
+    Aws::String m_vpcId;
+    bool m_vpcIdHasBeenSet;
 
     Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
     bool m_vpcSecurityGroupIdsHasBeenSet;

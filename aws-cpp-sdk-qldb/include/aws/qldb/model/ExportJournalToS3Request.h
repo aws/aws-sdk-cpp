@@ -76,10 +76,10 @@ namespace Model
 
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
+     * <p>The inclusive start date and time for the range of journal contents to
+     * export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>InclusiveStartTime</code> must be before
      * <code>ExclusiveEndTime</code>.</p> <p>If you provide an
      * <code>InclusiveStartTime</code> that is before the ledger's
@@ -89,10 +89,10 @@ namespace Model
     inline const Aws::Utils::DateTime& GetInclusiveStartTime() const{ return m_inclusiveStartTime; }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
+     * <p>The inclusive start date and time for the range of journal contents to
+     * export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>InclusiveStartTime</code> must be before
      * <code>ExclusiveEndTime</code>.</p> <p>If you provide an
      * <code>InclusiveStartTime</code> that is before the ledger's
@@ -102,10 +102,10 @@ namespace Model
     inline bool InclusiveStartTimeHasBeenSet() const { return m_inclusiveStartTimeHasBeenSet; }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
+     * <p>The inclusive start date and time for the range of journal contents to
+     * export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>InclusiveStartTime</code> must be before
      * <code>ExclusiveEndTime</code>.</p> <p>If you provide an
      * <code>InclusiveStartTime</code> that is before the ledger's
@@ -115,10 +115,10 @@ namespace Model
     inline void SetInclusiveStartTime(const Aws::Utils::DateTime& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = value; }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
+     * <p>The inclusive start date and time for the range of journal contents to
+     * export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>InclusiveStartTime</code> must be before
      * <code>ExclusiveEndTime</code>.</p> <p>If you provide an
      * <code>InclusiveStartTime</code> that is before the ledger's
@@ -128,10 +128,10 @@ namespace Model
     inline void SetInclusiveStartTime(Aws::Utils::DateTime&& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = std::move(value); }
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
+     * <p>The inclusive start date and time for the range of journal contents to
+     * export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>InclusiveStartTime</code> must be before
      * <code>ExclusiveEndTime</code>.</p> <p>If you provide an
      * <code>InclusiveStartTime</code> that is before the ledger's
@@ -141,10 +141,10 @@ namespace Model
     inline ExportJournalToS3Request& WithInclusiveStartTime(const Aws::Utils::DateTime& value) { SetInclusiveStartTime(value); return *this;}
 
     /**
-     * <p>The inclusive start date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
+     * <p>The inclusive start date and time for the range of journal contents to
+     * export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>InclusiveStartTime</code> must be before
      * <code>ExclusiveEndTime</code>.</p> <p>If you provide an
      * <code>InclusiveStartTime</code> that is before the ledger's
@@ -155,60 +155,60 @@ namespace Model
 
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
+     * <p>The exclusive end date and time for the range of journal contents to
+     * export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
      * and time.</p>
      */
     inline const Aws::Utils::DateTime& GetExclusiveEndTime() const{ return m_exclusiveEndTime; }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
+     * <p>The exclusive end date and time for the range of journal contents to
+     * export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
      * and time.</p>
      */
     inline bool ExclusiveEndTimeHasBeenSet() const { return m_exclusiveEndTimeHasBeenSet; }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
+     * <p>The exclusive end date and time for the range of journal contents to
+     * export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
      * and time.</p>
      */
     inline void SetExclusiveEndTime(const Aws::Utils::DateTime& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = value; }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
+     * <p>The exclusive end date and time for the range of journal contents to
+     * export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
      * and time.</p>
      */
     inline void SetExclusiveEndTime(Aws::Utils::DateTime&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::move(value); }
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
+     * <p>The exclusive end date and time for the range of journal contents to
+     * export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
      * and time.</p>
      */
     inline ExportJournalToS3Request& WithExclusiveEndTime(const Aws::Utils::DateTime& value) { SetExclusiveEndTime(value); return *this;}
 
     /**
-     * <p>The exclusive end date and time for the range of journal contents that you
-     * want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
+     * <p>The exclusive end date and time for the range of journal contents to
+     * export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO
      * 8601</code> date and time format and in Universal Coordinated Time (UTC). For
-     * example: <code>2019-06-13T21:36:34Z</code> </p> <p>The
+     * example: <code>2019-06-13T21:36:34Z</code>.</p> <p>The
      * <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
      * and time.</p>
      */

@@ -38,49 +38,49 @@ namespace Model
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the index to add the documents to. You need to create the
-     * index first using the <a>CreateIndex</a> operation.</p>
+     * index first using the <code>CreateIndex</code> operation.</p>
      */
     inline BatchPutDocumentRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
 
@@ -151,81 +151,121 @@ namespace Model
 
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline const Aws::Vector<Document>& GetDocuments() const{ return m_documents; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetDocuments(const Aws::Vector<Document>& value) { m_documentsHasBeenSet = true; m_documents = value; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetDocuments(Aws::Vector<Document>&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& WithDocuments(const Aws::Vector<Document>& value) { SetDocuments(value); return *this;}
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& WithDocuments(Aws::Vector<Document>&& value) { SetDocuments(std::move(value)); return *this;}
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& AddDocuments(const Document& value) { m_documentsHasBeenSet = true; m_documents.push_back(value); return *this; }
 
     /**
-     * <p>One or more documents to add to the index. </p> <p>Documents have the
-     * following file size limits.</p> <ul> <li> <p>5 MB total size for inline
-     * documents</p> </li> <li> <p>50 MB total size for files from an S3 bucket</p>
-     * </li> <li> <p>5 MB extracted text for any file</p> </li> </ul> <p>For more
-     * information about file size and transaction per second quotas, see <a
+     * <p>One or more documents to add to the index.</p> <p>Documents can include
+     * custom attributes. For example, 'DataSourceId' and 'DataSourceSyncJobId' are
+     * custom attributes that provide information on the synchronization of documents
+     * running on a data source. Note, 'DataSourceSyncJobId' could be an optional
+     * custom attribute as Amazon Kendra will use the ID of a running sync job.</p>
+     * <p>Documents have the following file size limits.</p> <ul> <li> <p>5 MB total
+     * size for inline documents</p> </li> <li> <p>50 MB total size for files from an
+     * S3 bucket</p> </li> <li> <p>5 MB extracted text for any file</p> </li> </ul>
+     * <p>For more information about file size and transaction per second quotas, see
+     * <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline BatchPutDocumentRequest& AddDocuments(Document&& value) { m_documentsHasBeenSet = true; m_documents.push_back(std::move(value)); return *this; }

@@ -52,7 +52,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
 
@@ -69,7 +76,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
@@ -86,7 +100,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
 
@@ -103,7 +124,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
 
@@ -120,7 +148,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
 
@@ -137,7 +172,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline MetricCollectionType& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
 
@@ -154,7 +196,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline MetricCollectionType& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
 
@@ -171,7 +220,14 @@ namespace Model
      * <code>GroupPendingCapacity</code> </p> </li> <li> <p>
      * <code>GroupStandbyCapacity</code> </p> </li> <li> <p>
      * <code>GroupTerminatingCapacity</code> </p> </li> <li> <p>
-     * <code>GroupTotalCapacity</code> </p> </li> </ul>
+     * <code>GroupTotalCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolWarmedCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolPendingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTerminatingCapacity</code> </p> </li> <li> <p>
+     * <code>WarmPoolTotalCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
+     * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
     inline MetricCollectionType& WithMetric(const char* value) { SetMetric(value); return *this;}
 

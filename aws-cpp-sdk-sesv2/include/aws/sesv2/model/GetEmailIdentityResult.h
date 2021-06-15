@@ -299,6 +299,42 @@ namespace Model
      */
     inline GetEmailIdentityResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The configuration set used by default when sending from this identity.</p>
+     */
+    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * <p>The configuration set used by default when sending from this identity.</p>
+     */
+    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetName = value; }
+
+    /**
+     * <p>The configuration set used by default when sending from this identity.</p>
+     */
+    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetName = std::move(value); }
+
+    /**
+     * <p>The configuration set used by default when sending from this identity.</p>
+     */
+    inline void SetConfigurationSetName(const char* value) { m_configurationSetName.assign(value); }
+
+    /**
+     * <p>The configuration set used by default when sending from this identity.</p>
+     */
+    inline GetEmailIdentityResult& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
+
+    /**
+     * <p>The configuration set used by default when sending from this identity.</p>
+     */
+    inline GetEmailIdentityResult& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The configuration set used by default when sending from this identity.</p>
+     */
+    inline GetEmailIdentityResult& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+
   private:
 
     IdentityType m_identityType;
@@ -314,6 +350,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_policies;
 
     Aws::Vector<Tag> m_tags;
+
+    Aws::String m_configurationSetName;
   };
 
 } // namespace Model

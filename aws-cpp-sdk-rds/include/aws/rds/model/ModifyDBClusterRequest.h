@@ -560,14 +560,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
@@ -575,14 +574,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
@@ -590,14 +588,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
@@ -605,14 +602,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
@@ -620,14 +616,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
@@ -635,14 +630,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -650,14 +644,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
@@ -665,14 +658,13 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p>The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora">
-     * Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon
-     * Aurora User Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
-     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
-     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
-     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
-     * </ul>
+     * block of time for each AWS Region. To view the time blocks available, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow">
+     * Backup window</a> in the <i>Amazon Aurora User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
+     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
+     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -1451,38 +1443,58 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline bool GetEnableGlobalWriteForwarding() const{ return m_enableGlobalWriteForwarding; }
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline bool EnableGlobalWriteForwardingHasBeenSet() const { return m_enableGlobalWriteForwardingHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline void SetEnableGlobalWriteForwarding(bool value) { m_enableGlobalWriteForwardingHasBeenSet = true; m_enableGlobalWriteForwarding = value; }
 
     /**
-     * <p>A value that indicates whether to enable write operations to be forwarded
-     * from this cluster to the primary cluster in an Aurora global database. The
-     * resulting changes are replicated back to this cluster. This parameter only
-     * applies to DB clusters that are secondary clusters in an Aurora global database.
-     * By default, Aurora disallows write operations for secondary clusters.</p>
+     * <p>A value that indicates whether to enable this DB cluster to forward write
+     * operations to the primary cluster of an Aurora global database
+     * (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora
+     * DB clusters that are secondary clusters in an Aurora global database.</p> <p>You
+     * can set this value only on Aurora DB clusters that are members of an Aurora
+     * global database. With this parameter enabled, a secondary cluster can forward
+     * writes to the current primary cluster and the resulting changes are replicated
+     * back to this cluster. For the primary DB cluster of an Aurora global database,
+     * this value is used immediately if the primary is demoted by the
+     * <a>FailoverGlobalCluster</a> API operation, but it does nothing until then. </p>
      */
     inline ModifyDBClusterRequest& WithEnableGlobalWriteForwarding(bool value) { SetEnableGlobalWriteForwarding(value); return *this;}
 

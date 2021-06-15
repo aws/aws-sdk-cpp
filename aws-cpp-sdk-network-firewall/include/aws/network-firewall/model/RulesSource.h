@@ -50,11 +50,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline const Aws::String& GetRulesString() const{ return m_rulesString; }
 
@@ -64,11 +60,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline bool RulesStringHasBeenSet() const { return m_rulesStringHasBeenSet; }
 
@@ -78,11 +70,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline void SetRulesString(const Aws::String& value) { m_rulesStringHasBeenSet = true; m_rulesString = value; }
 
@@ -92,11 +80,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline void SetRulesString(Aws::String&& value) { m_rulesStringHasBeenSet = true; m_rulesString = std::move(value); }
 
@@ -106,11 +90,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline void SetRulesString(const char* value) { m_rulesStringHasBeenSet = true; m_rulesString.assign(value); }
 
@@ -120,11 +100,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline RulesSource& WithRulesString(const Aws::String& value) { SetRulesString(value); return *this;}
 
@@ -134,11 +110,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline RulesSource& WithRulesString(Aws::String&& value) { SetRulesString(std::move(value)); return *this;}
 
@@ -148,11 +120,7 @@ namespace Model
      * includes a standard rule-based language for network traffic inspection.</p>
      * <p>These rules contain the inspection criteria and the action to take for
      * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p> <p>You can provide the rules from a file that
-     * you've stored in an Amazon S3 bucket, or by providing the rules in a Suricata
-     * rules string. To import from Amazon S3, provide the fully qualified name of the
-     * file that contains the rules definitions. To provide a Suricata rule string,
-     * provide the complete, Suricata compatible rule.</p>
+     * separate action setting.</p>
      */
     inline RulesSource& WithRulesString(const char* value) { SetRulesString(value); return *this;}
 

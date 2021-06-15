@@ -8,6 +8,7 @@
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/forecast/model/AutoMLOverrideStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/forecast/model/EvaluationParameters.h>
 #include <aws/forecast/model/HyperParameterTuningJobConfig.h>
@@ -358,6 +359,55 @@ namespace Model
      * your training data. In this case, <code>PerformHPO</code> must be false.</p>
      */
     inline CreatePredictorRequest& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
+
+
+    /**
+     * <p>Used to overide the default AutoML strategy, which is to optimize predictor
+     * accuracy. To apply an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
+     */
+    inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
+
+    /**
+     * <p>Used to overide the default AutoML strategy, which is to optimize predictor
+     * accuracy. To apply an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
+     */
+    inline bool AutoMLOverrideStrategyHasBeenSet() const { return m_autoMLOverrideStrategyHasBeenSet; }
+
+    /**
+     * <p>Used to overide the default AutoML strategy, which is to optimize predictor
+     * accuracy. To apply an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = value; }
+
+    /**
+     * <p>Used to overide the default AutoML strategy, which is to optimize predictor
+     * accuracy. To apply an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = std::move(value); }
+
+    /**
+     * <p>Used to overide the default AutoML strategy, which is to optimize predictor
+     * accuracy. To apply an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
+     */
+    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
+
+    /**
+     * <p>Used to overide the default AutoML strategy, which is to optimize predictor
+     * accuracy. To apply an AutoML strategy that minimizes training time, use
+     * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
+     * predictors trained using AutoML.</p>
+     */
+    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
 
 
     /**
@@ -932,6 +982,9 @@ namespace Model
 
     bool m_performAutoML;
     bool m_performAutoMLHasBeenSet;
+
+    AutoMLOverrideStrategy m_autoMLOverrideStrategy;
+    bool m_autoMLOverrideStrategyHasBeenSet;
 
     bool m_performHPO;
     bool m_performHPOHasBeenSet;

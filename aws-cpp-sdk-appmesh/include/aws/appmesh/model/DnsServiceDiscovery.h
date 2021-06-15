@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appmesh/model/DnsResponseType.h>
 #include <utility>
 
 namespace Aws
@@ -78,10 +79,44 @@ namespace Model
      */
     inline DnsServiceDiscovery& WithHostname(const char* value) { SetHostname(value); return *this;}
 
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline const DnsResponseType& GetResponseType() const{ return m_responseType; }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline bool ResponseTypeHasBeenSet() const { return m_responseTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline void SetResponseType(const DnsResponseType& value) { m_responseTypeHasBeenSet = true; m_responseType = value; }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline void SetResponseType(DnsResponseType&& value) { m_responseTypeHasBeenSet = true; m_responseType = std::move(value); }
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline DnsServiceDiscovery& WithResponseType(const DnsResponseType& value) { SetResponseType(value); return *this;}
+
+    /**
+     * <p>Specifies the DNS response type for the virtual node.</p>
+     */
+    inline DnsServiceDiscovery& WithResponseType(DnsResponseType&& value) { SetResponseType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;
+
+    DnsResponseType m_responseType;
+    bool m_responseTypeHasBeenSet;
   };
 
 } // namespace Model

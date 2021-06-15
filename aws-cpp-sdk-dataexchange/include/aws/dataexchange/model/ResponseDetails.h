@@ -7,6 +7,7 @@
 #include <aws/dataexchange/DataExchange_EXPORTS.h>
 #include <aws/dataexchange/model/ExportAssetToSignedUrlResponseDetails.h>
 #include <aws/dataexchange/model/ExportAssetsToS3ResponseDetails.h>
+#include <aws/dataexchange/model/ExportRevisionsToS3ResponseDetails.h>
 #include <aws/dataexchange/model/ImportAssetFromSignedUrlResponseDetails.h>
 #include <aws/dataexchange/model/ImportAssetsFromS3ResponseDetails.h>
 #include <utility>
@@ -103,6 +104,37 @@ namespace Model
 
 
     /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline const ExportRevisionsToS3ResponseDetails& GetExportRevisionsToS3() const{ return m_exportRevisionsToS3; }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline bool ExportRevisionsToS3HasBeenSet() const { return m_exportRevisionsToS3HasBeenSet; }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline void SetExportRevisionsToS3(const ExportRevisionsToS3ResponseDetails& value) { m_exportRevisionsToS3HasBeenSet = true; m_exportRevisionsToS3 = value; }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline void SetExportRevisionsToS3(ExportRevisionsToS3ResponseDetails&& value) { m_exportRevisionsToS3HasBeenSet = true; m_exportRevisionsToS3 = std::move(value); }
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline ResponseDetails& WithExportRevisionsToS3(const ExportRevisionsToS3ResponseDetails& value) { SetExportRevisionsToS3(value); return *this;}
+
+    /**
+     * <p>Details for the export revisions to Amazon S3 response.</p>
+     */
+    inline ResponseDetails& WithExportRevisionsToS3(ExportRevisionsToS3ResponseDetails&& value) { SetExportRevisionsToS3(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details for the import from signed URL response.</p>
      */
     inline const ImportAssetFromSignedUrlResponseDetails& GetImportAssetFromSignedUrl() const{ return m_importAssetFromSignedUrl; }
@@ -170,6 +202,9 @@ namespace Model
 
     ExportAssetsToS3ResponseDetails m_exportAssetsToS3;
     bool m_exportAssetsToS3HasBeenSet;
+
+    ExportRevisionsToS3ResponseDetails m_exportRevisionsToS3;
+    bool m_exportRevisionsToS3HasBeenSet;
 
     ImportAssetFromSignedUrlResponseDetails m_importAssetFromSignedUrl;
     bool m_importAssetFromSignedUrlHasBeenSet;

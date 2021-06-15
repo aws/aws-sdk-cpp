@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies a current quota for an account.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies a current quota for an Amazon Macie account.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ServiceLimit">AWS
    * API Reference</a></p>
    */

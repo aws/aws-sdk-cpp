@@ -14,6 +14,7 @@
 #include <aws/eventbridge/model/SqsParameters.h>
 #include <aws/eventbridge/model/HttpParameters.h>
 #include <aws/eventbridge/model/RedshiftDataParameters.h>
+#include <aws/eventbridge/model/SageMakerPipelineParameters.h>
 #include <aws/eventbridge/model/DeadLetterConfig.h>
 #include <aws/eventbridge/model/RetryPolicy.h>
 #include <utility>
@@ -597,49 +598,67 @@ namespace Model
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline const HttpParameters& GetHttpParameters() const{ return m_httpParameters; }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline bool HttpParametersHasBeenSet() const { return m_httpParametersHasBeenSet; }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline void SetHttpParameters(const HttpParameters& value) { m_httpParametersHasBeenSet = true; m_httpParameters = value; }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline void SetHttpParameters(HttpParameters&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::move(value); }
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline Target& WithHttpParameters(const HttpParameters& value) { SetHttpParameters(value); return *this;}
 
     /**
      * <p>Contains the HTTP parameters to use when the target is a API Gateway REST
-     * endpoint.</p> <p>If you specify an API Gateway REST API as a target, you can use
-     * this parameter to specify headers, path parameter, query string keys/values as
-     * part of your target invoking request.</p>
+     * endpoint or EventBridge ApiDestination.</p> <p>If you specify an API Gateway
+     * REST API or EventBridge ApiDestination as a target, you can use this parameter
+     * to specify headers, path parameters, and query string keys/values as part of
+     * your target invoking request. If you're using ApiDestinations, the corresponding
+     * Connection can also have these values configured. In case of any conflicting
+     * keys, values from the Connection take precedence.</p>
      */
     inline Target& WithHttpParameters(HttpParameters&& value) { SetHttpParameters(std::move(value)); return *this;}
 
@@ -691,6 +710,55 @@ namespace Model
      * based on EventBridge events.</p>
      */
     inline Target& WithRedshiftDataParameters(RedshiftDataParameters&& value) { SetRedshiftDataParameters(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline const SageMakerPipelineParameters& GetSageMakerPipelineParameters() const{ return m_sageMakerPipelineParameters; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline bool SageMakerPipelineParametersHasBeenSet() const { return m_sageMakerPipelineParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline void SetSageMakerPipelineParameters(const SageMakerPipelineParameters& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = value; }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline void SetSageMakerPipelineParameters(SageMakerPipelineParameters&& value) { m_sageMakerPipelineParametersHasBeenSet = true; m_sageMakerPipelineParameters = std::move(value); }
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline Target& WithSageMakerPipelineParameters(const SageMakerPipelineParameters& value) { SetSageMakerPipelineParameters(value); return *this;}
+
+    /**
+     * <p>Contains the SageMaker Model Building Pipeline parameters to start execution
+     * of a SageMaker Model Building Pipeline.</p> <p>If you specify a SageMaker Model
+     * Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.</p>
+     */
+    inline Target& WithSageMakerPipelineParameters(SageMakerPipelineParameters&& value) { SetSageMakerPipelineParameters(std::move(value)); return *this;}
 
 
     /**
@@ -806,6 +874,9 @@ namespace Model
 
     RedshiftDataParameters m_redshiftDataParameters;
     bool m_redshiftDataParametersHasBeenSet;
+
+    SageMakerPipelineParameters m_sageMakerPipelineParameters;
+    bool m_sageMakerPipelineParametersHasBeenSet;
 
     DeadLetterConfig m_deadLetterConfig;
     bool m_deadLetterConfigHasBeenSet;

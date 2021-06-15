@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A collection of settings used for a job.</p><p><h3>See Also:</h3>   <a
+   * <p>A collection of settings used for an AutoML job.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobConfig">AWS
    * API Reference</a></p>
    */
@@ -39,69 +40,69 @@ namespace Model
 
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline AutoMLJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
 
     /**
-     * <p>How long a job is allowed to run, or how many candidates a job is allowed to
-     * generate.</p>
+     * <p>How long an AutoML job is allowed to run, or how many candidates a job is
+     * allowed to generate.</p>
      */
     inline AutoMLJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
 
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline const AutoMLSecurityConfig& GetSecurityConfig() const{ return m_securityConfig; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline bool SecurityConfigHasBeenSet() const { return m_securityConfigHasBeenSet; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline void SetSecurityConfig(const AutoMLSecurityConfig& value) { m_securityConfigHasBeenSet = true; m_securityConfig = value; }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline void SetSecurityConfig(AutoMLSecurityConfig&& value) { m_securityConfigHasBeenSet = true; m_securityConfig = std::move(value); }
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline AutoMLJobConfig& WithSecurityConfig(const AutoMLSecurityConfig& value) { SetSecurityConfig(value); return *this;}
 
     /**
-     * <p>Security configuration for traffic encryption or Amazon VPC settings.</p>
+     * <p>The security configuration for traffic encryption or Amazon VPC settings.</p>
      */
     inline AutoMLJobConfig& WithSecurityConfig(AutoMLSecurityConfig&& value) { SetSecurityConfig(std::move(value)); return *this;}
 

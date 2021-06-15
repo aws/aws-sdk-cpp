@@ -21,13 +21,29 @@ ListChannelMembershipsRequest::ListChannelMembershipsRequest() :
     m_typeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
 Aws::String ListChannelMembershipsRequest::SerializePayload() const
 {
   return {};
+}
+
+Aws::Http::HeaderValueCollection ListChannelMembershipsRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_chimeBearerHasBeenSet)
+  {
+    ss << m_chimeBearer;
+    headers.emplace("x-amz-chime-bearer",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 void ListChannelMembershipsRequest::AddQueryStringParameters(URI& uri) const

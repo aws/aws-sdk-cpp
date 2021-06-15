@@ -24,6 +24,7 @@ namespace Aws
         static const int HANDSHAKE_RATE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("HANDSHAKE_RATE_LIMIT_EXCEEDED");
         static const int ALREADY_IN_AN_ORGANIZATION_HASH = HashingUtils::HashString("ALREADY_IN_AN_ORGANIZATION");
         static const int ORGANIZATION_ALREADY_HAS_ALL_FEATURES_HASH = HashingUtils::HashString("ORGANIZATION_ALREADY_HAS_ALL_FEATURES");
+        static const int ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION_HASH = HashingUtils::HashString("ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION");
         static const int INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES_HASH = HashingUtils::HashString("INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES");
         static const int PAYMENT_INSTRUMENT_REQUIRED_HASH = HashingUtils::HashString("PAYMENT_INSTRUMENT_REQUIRED");
         static const int ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD_HASH = HashingUtils::HashString("ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD");
@@ -48,6 +49,10 @@ namespace Aws
           else if (hashCode == ORGANIZATION_ALREADY_HAS_ALL_FEATURES_HASH)
           {
             return HandshakeConstraintViolationExceptionReason::ORGANIZATION_ALREADY_HAS_ALL_FEATURES;
+          }
+          else if (hashCode == ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION_HASH)
+          {
+            return HandshakeConstraintViolationExceptionReason::ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION;
           }
           else if (hashCode == INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES_HASH)
           {
@@ -87,6 +92,8 @@ namespace Aws
             return "ALREADY_IN_AN_ORGANIZATION";
           case HandshakeConstraintViolationExceptionReason::ORGANIZATION_ALREADY_HAS_ALL_FEATURES:
             return "ORGANIZATION_ALREADY_HAS_ALL_FEATURES";
+          case HandshakeConstraintViolationExceptionReason::ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION:
+            return "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION";
           case HandshakeConstraintViolationExceptionReason::INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES:
             return "INVITE_DISABLED_DURING_ENABLE_ALL_FEATURES";
           case HandshakeConstraintViolationExceptionReason::PAYMENT_INSTRUMENT_REQUIRED:

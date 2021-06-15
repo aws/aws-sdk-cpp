@@ -60,8 +60,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -75,8 +75,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -90,8 +90,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -105,8 +105,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -120,8 +120,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -135,8 +135,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -150,8 +150,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -165,8 +165,8 @@ namespace Model
      * <p>The name of a container. If you are linking multiple containers together in a
      * task definition, the <code>name</code> of one container can be entered in the
      * <code>links</code> of another container to connect the containers. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed. This
-     * parameter maps to <code>name</code> in the <a
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. This parameter maps to <code>name</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -873,21 +873,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetLinks() const{ return m_links; }
 
@@ -896,21 +896,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline bool LinksHasBeenSet() const { return m_linksHasBeenSet; }
 
@@ -919,21 +919,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline void SetLinks(const Aws::Vector<Aws::String>& value) { m_linksHasBeenSet = true; m_links = value; }
 
@@ -942,21 +942,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline void SetLinks(Aws::Vector<Aws::String>&& value) { m_linksHasBeenSet = true; m_links = std::move(value); }
 
@@ -965,21 +965,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline ContainerDefinition& WithLinks(const Aws::Vector<Aws::String>& value) { SetLinks(value); return *this;}
 
@@ -988,21 +988,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline ContainerDefinition& WithLinks(Aws::Vector<Aws::String>&& value) { SetLinks(std::move(value)); return *this;}
 
@@ -1011,21 +1011,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline ContainerDefinition& AddLinks(const Aws::String& value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
@@ -1034,21 +1034,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline ContainerDefinition& AddLinks(Aws::String&& value) { m_linksHasBeenSet = true; m_links.push_back(std::move(value)); return *this; }
 
@@ -1057,21 +1057,21 @@ namespace Model
      * other without the need for port mappings. This parameter is only supported if
      * the network mode of a task definition is <code>bridge</code>. The
      * <code>name:internalName</code> construct is analogous to <code>name:alias</code>
-     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers, and
-     * hyphens are allowed. For more information about linking Docker containers, go to
-     * <a href="https://docs.docker.com/network/links/">Legacy container links</a> in
-     * the Docker documentation. This parameter maps to <code>Links</code> in the <a
+     * in Docker links. Up to 255 letters (uppercase and lowercase), numbers,
+     * underscores, and hyphens are allowed. For more information about linking Docker
+     * containers, go to <a href="https://docs.docker.com/network/links/">Legacy
+     * container links</a> in the Docker documentation. This parameter maps to
+     * <code>Links</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--link</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p>   <p>Containers
-     * that are collocated on a single container instance may be able to communicate
-     * with each other without requiring links or host port mappings. Network isolation
-     * is achieved on the container instance using security groups and VPC
-     * settings.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p>   <p>Containers that are collocated on a
+     * single container instance may be able to communicate with each other without
+     * requiring links or host port mappings. Network isolation is achieved on the
+     * container instance using security groups and VPC settings.</p> 
      */
     inline ContainerDefinition& AddLinks(const char* value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
 
@@ -1783,8 +1783,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<EnvironmentFile>& GetEnvironmentFiles() const{ return m_environmentFiles; }
 
@@ -1806,8 +1805,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline bool EnvironmentFilesHasBeenSet() const { return m_environmentFilesHasBeenSet; }
 
@@ -1829,8 +1827,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline void SetEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = value; }
 
@@ -1852,8 +1849,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline void SetEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::move(value); }
 
@@ -1875,8 +1871,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { SetEnvironmentFiles(value); return *this;}
 
@@ -1898,8 +1893,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { SetEnvironmentFiles(std::move(value)); return *this;}
 
@@ -1921,8 +1915,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddEnvironmentFiles(const EnvironmentFile& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(value); return *this; }
 
@@ -1944,8 +1937,7 @@ namespace Model
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html">Specifying
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>This field is not valid for containers in tasks using the
-     * Fargate launch type.</p>
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddEnvironmentFiles(EnvironmentFile&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(std::move(value)); return *this; }
 
@@ -2804,8 +2796,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
@@ -2825,8 +2817,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
@@ -2846,8 +2838,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
@@ -2867,8 +2859,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
@@ -2888,8 +2880,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
@@ -2909,8 +2901,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline ContainerDefinition& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
@@ -2930,8 +2922,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
@@ -2951,8 +2943,8 @@ namespace Model
      * <code>user</code> </p> </li> <li> <p> <code>user:group</code> </p> </li> <li>
      * <p> <code>uid</code> </p> </li> <li> <p> <code>uid:gid</code> </p> </li> <li>
      * <p> <code>user:gid</code> </p> </li> <li> <p> <code>uid:group</code> </p> </li>
-     * </ul>  <p>This parameter is not supported for Windows containers or tasks
-     * that use the awsvpc network mode.</p> 
+     * </ul>  <p>This parameter is not supported for Windows containers.</p>
+     * 
      */
     inline ContainerDefinition& WithUser(const char* value) { SetUser(value); return *this;}
 
@@ -3060,8 +3052,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-     *  <p>This parameter is not supported for Windows containers or tasks that
-     * use the awsvpc network mode.</p> 
+     *  <p>This parameter is not supported for Windows containers.</p> 
      */
     inline bool GetDisableNetworking() const{ return m_disableNetworking; }
 
@@ -3071,8 +3062,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-     *  <p>This parameter is not supported for Windows containers or tasks that
-     * use the awsvpc network mode.</p> 
+     *  <p>This parameter is not supported for Windows containers.</p> 
      */
     inline bool DisableNetworkingHasBeenSet() const { return m_disableNetworkingHasBeenSet; }
 
@@ -3082,8 +3072,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-     *  <p>This parameter is not supported for Windows containers or tasks that
-     * use the awsvpc network mode.</p> 
+     *  <p>This parameter is not supported for Windows containers.</p> 
      */
     inline void SetDisableNetworking(bool value) { m_disableNetworkingHasBeenSet = true; m_disableNetworking = value; }
 
@@ -3093,8 +3082,7 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p>
-     *  <p>This parameter is not supported for Windows containers or tasks that
-     * use the awsvpc network mode.</p> 
+     *  <p>This parameter is not supported for Windows containers.</p> 
      */
     inline ContainerDefinition& WithDisableNetworking(bool value) { SetDisableNetworking(value); return *this;}
 
@@ -3109,7 +3097,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline bool GetPrivileged() const{ return m_privileged; }
 
@@ -3123,7 +3111,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
 
@@ -3137,7 +3125,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
 
@@ -3151,7 +3139,7 @@ namespace Model
      * <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
      * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline ContainerDefinition& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
 
@@ -3164,8 +3152,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--read-only</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline bool GetReadonlyRootFilesystem() const{ return m_readonlyRootFilesystem; }
 
@@ -3177,8 +3165,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--read-only</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline bool ReadonlyRootFilesystemHasBeenSet() const { return m_readonlyRootFilesystemHasBeenSet; }
 
@@ -3190,8 +3178,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--read-only</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline void SetReadonlyRootFilesystem(bool value) { m_readonlyRootFilesystemHasBeenSet = true; m_readonlyRootFilesystem = value; }
 
@@ -3203,8 +3191,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--read-only</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
 
@@ -3217,8 +3205,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetDnsServers() const{ return m_dnsServers; }
 
@@ -3230,8 +3218,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline bool DnsServersHasBeenSet() const { return m_dnsServersHasBeenSet; }
 
@@ -3243,8 +3231,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline void SetDnsServers(const Aws::Vector<Aws::String>& value) { m_dnsServersHasBeenSet = true; m_dnsServers = value; }
 
@@ -3256,8 +3244,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline void SetDnsServers(Aws::Vector<Aws::String>&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = std::move(value); }
 
@@ -3269,8 +3257,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& WithDnsServers(const Aws::Vector<Aws::String>& value) { SetDnsServers(value); return *this;}
 
@@ -3282,8 +3270,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& WithDnsServers(Aws::Vector<Aws::String>&& value) { SetDnsServers(std::move(value)); return *this;}
 
@@ -3295,8 +3283,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& AddDnsServers(const Aws::String& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
 
@@ -3308,8 +3296,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& AddDnsServers(Aws::String&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(std::move(value)); return *this; }
 
@@ -3321,8 +3309,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& AddDnsServers(const char* value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
 
@@ -3335,8 +3323,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetDnsSearchDomains() const{ return m_dnsSearchDomains; }
 
@@ -3348,8 +3336,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline bool DnsSearchDomainsHasBeenSet() const { return m_dnsSearchDomainsHasBeenSet; }
 
@@ -3361,8 +3349,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline void SetDnsSearchDomains(const Aws::Vector<Aws::String>& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = value; }
 
@@ -3374,8 +3362,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline void SetDnsSearchDomains(Aws::Vector<Aws::String>&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = std::move(value); }
 
@@ -3387,8 +3375,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& WithDnsSearchDomains(const Aws::Vector<Aws::String>& value) { SetDnsSearchDomains(value); return *this;}
 
@@ -3400,8 +3388,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& WithDnsSearchDomains(Aws::Vector<Aws::String>&& value) { SetDnsSearchDomains(std::move(value)); return *this;}
 
@@ -3413,8 +3401,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& AddDnsSearchDomains(const Aws::String& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
 
@@ -3426,8 +3414,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& AddDnsSearchDomains(Aws::String&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(std::move(value)); return *this; }
 
@@ -3439,8 +3427,8 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--dns-search</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>.</p>  <p>This parameter is not supported for Windows containers or
-     * tasks that use the awsvpc network mode.</p> 
+     * run</a>.</p>  <p>This parameter is not supported for Windows
+     * containers.</p> 
      */
     inline ContainerDefinition& AddDnsSearchDomains(const char* value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
 
@@ -4136,13 +4124,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
 
@@ -4155,13 +4148,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
 
@@ -4174,13 +4172,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
 
@@ -4193,13 +4196,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
 
@@ -4212,13 +4220,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline ContainerDefinition& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
 
@@ -4231,13 +4244,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline ContainerDefinition& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
 
@@ -4250,13 +4268,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline ContainerDefinition& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
 
@@ -4269,13 +4292,18 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--ulimit</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type. This
-     * parameter requires version 1.18 of the Docker Remote API or greater on your
-     * container instance. To check the Docker Remote API version on your container
-     * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p> 
-     * <p>This parameter is not supported for Windows containers or tasks that use the
-     * awsvpc network mode.</p> 
+     * run</a>. Valid naming values are displayed in the <a>Ulimit</a> data type.</p>
+     * <p>Amazon ECS tasks hosted on Fargate use the default resource limit values set
+     * by the operating system with the exception of the <code>nofile</code> resource
+     * limit parameter which Fargate overrides. The <code>nofile</code> resource limit
+     * sets a restriction on the number of open files that a container can use. The
+     * default <code>nofile</code> soft limit is <code>1024</code> and hard limit is
+     * <code>4096</code>.</p> <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version --format
+     * '{{.Server.APIVersion}}'</code> </p>  <p>This parameter is not supported
+     * for Windows containers.</p> 
      */
     inline ContainerDefinition& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
 

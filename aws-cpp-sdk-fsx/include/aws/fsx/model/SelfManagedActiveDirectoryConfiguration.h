@@ -27,7 +27,10 @@ namespace Model
   /**
    * <p>The configuration that Amazon FSx uses to join the Windows File Server
    * instance to your self-managed (including on-premises) Microsoft Active Directory
-   * (AD) directory.</p><p><h3>See Also:</h3>   <a
+   * (AD) directory. For more information, see <a
+   * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/self-managed-AD.html">
+   * Using Amazon FSx with your self-managed Microsoft Active
+   * Directory</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SelfManagedActiveDirectoryConfiguration">AWS
    * API Reference</a></p>
    */
@@ -391,109 +394,55 @@ namespace Model
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIps() const{ return m_dnsIps; }
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline bool DnsIpsHasBeenSet() const { return m_dnsIpsHasBeenSet; }
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline void SetDnsIps(const Aws::Vector<Aws::String>& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = value; }
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline void SetDnsIps(Aws::Vector<Aws::String>&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps = std::move(value); }
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& WithDnsIps(const Aws::Vector<Aws::String>& value) { SetDnsIps(value); return *this;}
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& WithDnsIps(Aws::Vector<Aws::String>&& value) { SetDnsIps(std::move(value)); return *this;}
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& AddDnsIps(const Aws::String& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& AddDnsIps(Aws::String&& value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
-     * self-managed AD directory. The IP addresses need to be either in the same VPC
-     * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (IPv4) address ranges, as specified in <a
-     * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
-     * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
-     * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
-     * 192.168.255.255 (192.168/16 prefix)</p> </li> </ul>
+     * self-managed AD directory. </p>
      */
     inline SelfManagedActiveDirectoryConfiguration& AddDnsIps(const char* value) { m_dnsIpsHasBeenSet = true; m_dnsIps.push_back(value); return *this; }
 

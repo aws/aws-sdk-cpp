@@ -13,6 +13,7 @@
 #include <aws/transcribe/model/MedicalTranscript.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/MedicalTranscriptionSetting.h>
+#include <aws/transcribe/model/MedicalContentIdentificationType.h>
 #include <aws/transcribe/model/Specialty.h>
 #include <aws/transcribe/model/Type.h>
 #include <utility>
@@ -678,6 +679,55 @@ namespace Model
 
 
     /**
+     * <p>Shows the type of content that you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the job to identify personal health information (PHI) in the
+     * transcription output.</p>
+     */
+    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+
+    /**
+     * <p>Shows the type of content that you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the job to identify personal health information (PHI) in the
+     * transcription output.</p>
+     */
+    inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
+
+    /**
+     * <p>Shows the type of content that you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the job to identify personal health information (PHI) in the
+     * transcription output.</p>
+     */
+    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+
+    /**
+     * <p>Shows the type of content that you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the job to identify personal health information (PHI) in the
+     * transcription output.</p>
+     */
+    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
+
+    /**
+     * <p>Shows the type of content that you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the job to identify personal health information (PHI) in the
+     * transcription output.</p>
+     */
+    inline MedicalTranscriptionJob& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
+
+    /**
+     * <p>Shows the type of content that you've configured Amazon Transcribe Medical to
+     * identify in a transcription job. If the value is <code>PHI</code>, you've
+     * configured the job to identify personal health information (PHI) in the
+     * transcription output.</p>
+     */
+    inline MedicalTranscriptionJob& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The medical specialty of any clinicians providing a dictation or having a
      * conversation. <code>PRIMARYCARE</code> is the only available setting for this
      * object. This specialty enables you to generate transcriptions for the following
@@ -811,6 +861,9 @@ namespace Model
 
     MedicalTranscriptionSetting m_settings;
     bool m_settingsHasBeenSet;
+
+    MedicalContentIdentificationType m_contentIdentificationType;
+    bool m_contentIdentificationTypeHasBeenSet;
 
     Specialty m_specialty;
     bool m_specialtyHasBeenSet;

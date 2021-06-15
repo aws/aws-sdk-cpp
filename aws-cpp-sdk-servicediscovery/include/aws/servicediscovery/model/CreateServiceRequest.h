@@ -11,6 +11,7 @@
 #include <aws/servicediscovery/model/HealthCheckConfig.h>
 #include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicediscovery/model/ServiceTypeOption.h>
 #include <aws/servicediscovery/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -42,219 +43,283 @@ namespace Model
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline CreateServiceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline CreateServiceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance, and if
+     * Map to create an <code>SRV</code> record when you register an instance and
      * you're using a system that requires a specific <code>SRV</code> format, such as
      * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
-     * as <code>_exampleservice</code> </p> </li> <li> <p>End the name with
-     * <i>._protocol</i>, such as <code>._tcp</code> </p> </li> </ul> <p>When you
+     * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
+     * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
      * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
      * assigns a name to the record by concatenating the service name and the namespace
-     * name, for example:</p> <p> <code>_exampleservice._tcp.example.com</code> </p>
+     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
+     *  <p>For services that are accessible by DNS queries, you can't create
+     * multiple services with names that differ only by case (such as EXAMPLE and
+     * example). Otherwise, these services have the same DNS name and can't be
+     * distinguished. However, if you use a namespace that's only accessible by API
+     * calls, then you can create services that with names that differ only by
+     * case.</p> 
      */
     inline CreateServiceRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline CreateServiceRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline CreateServiceRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the namespace that you want to use to create the service.</p>
+     * <p>The ID of the namespace that you want to use to create the service. The
+     * namespace ID must be specified, but it can be specified either here or in the
+     * <code>DnsConfig</code> object.</p>
      */
     inline CreateServiceRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
 
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and that allows failed
-     * <code>CreateService</code> requests to be retried without the risk of executing
-     * the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     * example, a date/time stamp.</p>
+     * <code>CreateService</code> requests to be retried without the risk of running
+     * the operation twice. <code>CreatorRequestId</code> can be any unique string (for
+     * example, a date/timestamp).</p>
      */
     inline CreateServiceRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 
@@ -479,59 +544,102 @@ namespace Model
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreateServiceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreateServiceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreateServiceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tags to add to the service. Each tag consists of a key and an optional
-     * value, both of which you define. Tag keys can have a maximum character length of
-     * 128 characters, and tag values can have a maximum length of 256 characters.</p>
+     * value that you define. Tags keys can be up to 128 characters in length, and tag
+     * values can be up to 256 characters in length.</p>
      */
     inline CreateServiceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
+     */
+    inline const ServiceTypeOption& GetType() const{ return m_type; }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
+     */
+    inline void SetType(const ServiceTypeOption& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
+     */
+    inline void SetType(ServiceTypeOption&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
+     */
+    inline CreateServiceRequest& WithType(const ServiceTypeOption& value) { SetType(value); return *this;}
+
+    /**
+     * <p>If present, specifies that the service instances are only discoverable using
+     * the <code>DiscoverInstances</code> API operation. No DNS records is registered
+     * for the service instances. The only valid value is <code>HTTP</code>.</p>
+     */
+    inline CreateServiceRequest& WithType(ServiceTypeOption&& value) { SetType(std::move(value)); return *this;}
 
   private:
 
@@ -558,6 +666,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ServiceTypeOption m_type;
+    bool m_typeHasBeenSet;
   };
 
 } // namespace Model

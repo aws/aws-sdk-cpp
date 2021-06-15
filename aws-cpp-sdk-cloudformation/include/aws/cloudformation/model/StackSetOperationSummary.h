@@ -147,10 +147,9 @@ namespace Model
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
      * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -170,10 +169,9 @@ namespace Model
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
      * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -193,10 +191,9 @@ namespace Model
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
      * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -216,10 +213,9 @@ namespace Model
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
      * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -239,10 +235,9 @@ namespace Model
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
      * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -262,10 +257,9 @@ namespace Model
      * exceeds the failure tolerance, the status of the operation in the Region is set
      * to <code>FAILED</code>. This in turn sets the status of the operation as a whole
      * to <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>

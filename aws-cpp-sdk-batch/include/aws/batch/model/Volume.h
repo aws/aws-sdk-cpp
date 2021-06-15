@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/Host.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/batch/model/EFSVolumeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -163,6 +164,49 @@ namespace Model
      */
     inline Volume& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * file system for job storage. Jobs running on Fargate resources must specify a
+     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     */
+    inline const EFSVolumeConfiguration& GetEfsVolumeConfiguration() const{ return m_efsVolumeConfiguration; }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * file system for job storage. Jobs running on Fargate resources must specify a
+     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     */
+    inline bool EfsVolumeConfigurationHasBeenSet() const { return m_efsVolumeConfigurationHasBeenSet; }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * file system for job storage. Jobs running on Fargate resources must specify a
+     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     */
+    inline void SetEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = value; }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * file system for job storage. Jobs running on Fargate resources must specify a
+     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     */
+    inline void SetEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::move(value); }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * file system for job storage. Jobs running on Fargate resources must specify a
+     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     */
+    inline Volume& WithEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { SetEfsVolumeConfiguration(value); return *this;}
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * file system for job storage. Jobs running on Fargate resources must specify a
+     * <code>platformVersion</code> of at least <code>1.4.0</code>.</p>
+     */
+    inline Volume& WithEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
+
   private:
 
     Host m_host;
@@ -170,6 +214,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    EFSVolumeConfiguration m_efsVolumeConfiguration;
+    bool m_efsVolumeConfigurationHasBeenSet;
   };
 
 } // namespace Model

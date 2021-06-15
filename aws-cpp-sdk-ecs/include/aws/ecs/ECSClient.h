@@ -31,6 +31,7 @@
 #include <aws/ecs/model/DescribeTaskSetsResult.h>
 #include <aws/ecs/model/DescribeTasksResult.h>
 #include <aws/ecs/model/DiscoverPollEndpointResult.h>
+#include <aws/ecs/model/ExecuteCommandResult.h>
 #include <aws/ecs/model/ListAccountSettingsResult.h>
 #include <aws/ecs/model/ListAttributesResult.h>
 #include <aws/ecs/model/ListClustersResult.h>
@@ -55,6 +56,7 @@
 #include <aws/ecs/model/TagResourceResult.h>
 #include <aws/ecs/model/UntagResourceResult.h>
 #include <aws/ecs/model/UpdateCapacityProviderResult.h>
+#include <aws/ecs/model/UpdateClusterResult.h>
 #include <aws/ecs/model/UpdateClusterSettingsResult.h>
 #include <aws/ecs/model/UpdateContainerAgentResult.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateResult.h>
@@ -120,6 +122,7 @@ namespace Model
         class DescribeTaskSetsRequest;
         class DescribeTasksRequest;
         class DiscoverPollEndpointRequest;
+        class ExecuteCommandRequest;
         class ListAccountSettingsRequest;
         class ListAttributesRequest;
         class ListClustersRequest;
@@ -144,6 +147,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateCapacityProviderRequest;
+        class UpdateClusterRequest;
         class UpdateClusterSettingsRequest;
         class UpdateContainerAgentRequest;
         class UpdateContainerInstancesStateRequest;
@@ -171,6 +175,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTaskSetsResult, ECSError> DescribeTaskSetsOutcome;
         typedef Aws::Utils::Outcome<DescribeTasksResult, ECSError> DescribeTasksOutcome;
         typedef Aws::Utils::Outcome<DiscoverPollEndpointResult, ECSError> DiscoverPollEndpointOutcome;
+        typedef Aws::Utils::Outcome<ExecuteCommandResult, ECSError> ExecuteCommandOutcome;
         typedef Aws::Utils::Outcome<ListAccountSettingsResult, ECSError> ListAccountSettingsOutcome;
         typedef Aws::Utils::Outcome<ListAttributesResult, ECSError> ListAttributesOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, ECSError> ListClustersOutcome;
@@ -195,6 +200,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, ECSError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, ECSError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateCapacityProviderResult, ECSError> UpdateCapacityProviderOutcome;
+        typedef Aws::Utils::Outcome<UpdateClusterResult, ECSError> UpdateClusterOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterSettingsResult, ECSError> UpdateClusterSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateContainerAgentResult, ECSError> UpdateContainerAgentOutcome;
         typedef Aws::Utils::Outcome<UpdateContainerInstancesStateResult, ECSError> UpdateContainerInstancesStateOutcome;
@@ -222,6 +228,7 @@ namespace Model
         typedef std::future<DescribeTaskSetsOutcome> DescribeTaskSetsOutcomeCallable;
         typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
         typedef std::future<DiscoverPollEndpointOutcome> DiscoverPollEndpointOutcomeCallable;
+        typedef std::future<ExecuteCommandOutcome> ExecuteCommandOutcomeCallable;
         typedef std::future<ListAccountSettingsOutcome> ListAccountSettingsOutcomeCallable;
         typedef std::future<ListAttributesOutcome> ListAttributesOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
@@ -246,6 +253,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateCapacityProviderOutcome> UpdateCapacityProviderOutcomeCallable;
+        typedef std::future<UpdateClusterOutcome> UpdateClusterOutcomeCallable;
         typedef std::future<UpdateClusterSettingsOutcome> UpdateClusterSettingsOutcomeCallable;
         typedef std::future<UpdateContainerAgentOutcome> UpdateContainerAgentOutcomeCallable;
         typedef std::future<UpdateContainerInstancesStateOutcome> UpdateContainerInstancesStateOutcomeCallable;
@@ -276,6 +284,7 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::DescribeTaskSetsRequest&, const Model::DescribeTaskSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskSetsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeTasksRequest&, const Model::DescribeTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTasksResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DiscoverPollEndpointRequest&, const Model::DiscoverPollEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverPollEndpointResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::ExecuteCommandRequest&, const Model::ExecuteCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteCommandResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListAccountSettingsRequest&, const Model::ListAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListAttributesRequest&, const Model::ListAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttributesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
@@ -300,6 +309,7 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateCapacityProviderRequest&, const Model::UpdateCapacityProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCapacityProviderResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::UpdateClusterRequest&, const Model::UpdateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateClusterSettingsRequest&, const Model::UpdateClusterSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterSettingsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateContainerAgentRequest&, const Model::UpdateContainerAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerAgentResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateContainerInstancesStateRequest&, const Model::UpdateContainerInstancesStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerInstancesStateResponseReceivedHandler;
@@ -312,19 +322,16 @@ namespace Model
    * Container Service (Amazon ECS) is a highly scalable, fast, container management
    * service that makes it easy to run, stop, and manage Docker containers on a
    * cluster. You can host your cluster on a serverless infrastructure that is
-   * managed by Amazon ECS by launching your services or tasks using the Fargate
-   * launch type. For more control, you can host your tasks on a cluster of Amazon
-   * Elastic Compute Cloud (Amazon EC2) instances that you manage by using the EC2
-   * launch type. For more information about launch types, see <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-   * ECS Launch Types</a>.</p> <p>Amazon ECS lets you launch and stop container-based
-   * applications with simple API calls, allows you to get the state of your cluster
-   * from a centralized service, and gives you access to many familiar Amazon EC2
-   * features.</p> <p>You can use Amazon ECS to schedule the placement of containers
-   * across your cluster based on your resource needs, isolation policies, and
-   * availability requirements. Amazon ECS eliminates the need for you to operate
-   * your own cluster management and configuration management systems or worry about
-   * scaling your management infrastructure.</p>
+   * managed by Amazon ECS by launching your services or tasks on AWS Fargate. For
+   * more control, you can host your tasks on a cluster of Amazon Elastic Compute
+   * Cloud (Amazon EC2) instances that you manage.</p> <p>Amazon ECS makes it easy to
+   * launch and stop container-based applications with simple API calls, allows you
+   * to get the state of your cluster from a centralized service, and gives you
+   * access to many familiar Amazon EC2 features.</p> <p>You can use Amazon ECS to
+   * schedule the placement of containers across your cluster based on your resource
+   * needs, isolation policies, and availability requirements. Amazon ECS eliminates
+   * the need for you to operate your own cluster management and configuration
+   * management systems or worry about scaling your management infrastructure.</p>
    */
   class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient
   {
@@ -1265,18 +1272,16 @@ namespace Model
         virtual void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes Amazon Elastic Container Service container instances. Returns
-         * metadata about registered and remaining resources on each container instance
-         * requested.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more container instances. Returns metadata about each
+         * container instance requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeContainerInstancesOutcome DescribeContainerInstances(const Model::DescribeContainerInstancesRequest& request) const;
 
         /**
-         * <p>Describes Amazon Elastic Container Service container instances. Returns
-         * metadata about registered and remaining resources on each container instance
-         * requested.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more container instances. Returns metadata about each
+         * container instance requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
          *
@@ -1285,9 +1290,8 @@ namespace Model
         virtual Model::DescribeContainerInstancesOutcomeCallable DescribeContainerInstancesCallable(const Model::DescribeContainerInstancesRequest& request) const;
 
         /**
-         * <p>Describes Amazon Elastic Container Service container instances. Returns
-         * metadata about registered and remaining resources on each container instance
-         * requested.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more container instances. Returns metadata about each
+         * container instance requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances">AWS
          * API Reference</a></p>
          *
@@ -1460,6 +1464,34 @@ namespace Model
         virtual void DiscoverPollEndpointAsync(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Runs a command remotely on a container within a task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExecuteCommandOutcome ExecuteCommand(const Model::ExecuteCommandRequest& request) const;
+
+        /**
+         * <p>Runs a command remotely on a container within a task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExecuteCommandOutcomeCallable ExecuteCommandCallable(const Model::ExecuteCommandRequest& request) const;
+
+        /**
+         * <p>Runs a command remotely on a container within a task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExecuteCommandAsync(const Model::ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the account settings for a specified principal.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings">AWS
@@ -1602,16 +1634,16 @@ namespace Model
         virtual void ListContainerInstancesAsync(const Model::ListContainerInstancesRequest& request, const ListContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of services. You can filter the results by cluster, launch
+         * type, and scheduling strategy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
          * API Reference</a></p>
          */
         virtual Model::ListServicesOutcome ListServices(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of services. You can filter the results by cluster, launch
+         * type, and scheduling strategy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
          * API Reference</a></p>
          *
@@ -1620,8 +1652,8 @@ namespace Model
         virtual Model::ListServicesOutcomeCallable ListServicesCallable(const Model::ListServicesRequest& request) const;
 
         /**
-         * <p>Lists the services that are running in a specified cluster.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of services. You can filter the results by cluster, launch
+         * type, and scheduling strategy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices">AWS
          * API Reference</a></p>
          *
@@ -1732,24 +1764,22 @@ namespace Model
         virtual void ListTaskDefinitionsAsync(const Model::ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of tasks for a specified cluster. You can filter the results
-         * by family name, by a particular container instance, or by the desired status of
-         * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
-         * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tasks. You can filter the results by cluster, task
+         * definition family, container instance, launch type, what IAM principal started
+         * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
+         * might appear in the returned results. Currently, stopped tasks appear in the
+         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          */
         virtual Model::ListTasksOutcome ListTasks(const Model::ListTasksRequest& request) const;
 
         /**
-         * <p>Returns a list of tasks for a specified cluster. You can filter the results
-         * by family name, by a particular container instance, or by the desired status of
-         * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
-         * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tasks. You can filter the results by cluster, task
+         * definition family, container instance, launch type, what IAM principal started
+         * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
+         * might appear in the returned results. Currently, stopped tasks appear in the
+         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          *
@@ -1758,12 +1788,11 @@ namespace Model
         virtual Model::ListTasksOutcomeCallable ListTasksCallable(const Model::ListTasksRequest& request) const;
 
         /**
-         * <p>Returns a list of tasks for a specified cluster. You can filter the results
-         * by family name, by a particular container instance, or by the desired status of
-         * the task with the <code>family</code>, <code>containerInstance</code>, and
-         * <code>desiredStatus</code> parameters.</p> <p>Recently stopped tasks might
-         * appear in the returned results. Currently, stopped tasks appear in the returned
-         * results for at least one hour. </p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of tasks. You can filter the results by cluster, task
+         * definition family, container instance, launch type, what IAM principal started
+         * the task, or by the desired status of the task.</p> <p>Recently stopped tasks
+         * might appear in the returned results. Currently, stopped tasks appear in the
+         * returned results for at least one hour.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks">AWS API
          * Reference</a></p>
          *
@@ -2519,6 +2548,31 @@ namespace Model
         virtual void UpdateCapacityProviderAsync(const Model::UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateClusterOutcome UpdateCluster(const Model::UpdateClusterRequest& request) const;
+
+        /**
+         * <p>Updates the cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateClusterOutcomeCallable UpdateClusterCallable(const Model::UpdateClusterRequest& request) const;
+
+        /**
+         * <p>Updates the cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateClusterAsync(const Model::UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the settings to use for a cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings">AWS
          * API Reference</a></p>
@@ -2548,12 +2602,19 @@ namespace Model
          * Updating the Amazon ECS container agent does not interrupt running tasks or
          * services on the container instance. The process for updating the agent differs
          * depending on whether your container instance was launched with the Amazon
-         * ECS-optimized AMI or another operating system.</p> <p>
-         * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
-         * Amazon Linux with the <code>ecs-init</code> service installed and running. For
-         * help updating the Amazon ECS container agent on other operating systems, see <a
+         * ECS-optimized AMI or another operating system.</p>  <p>The
+         * <code>UpdateContainerAgent</code> API isn't supported for container instances
+         * using the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the
+         * container agent, you can update the <code>ecs-init</code> package which will
+         * update the agent. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating
+         * the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p>  <p>The <code>UpdateContainerAgent</code> API
+         * requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
+         * <code>ecs-init</code> service installed and running. For help updating the
+         * Amazon ECS container agent on other operating systems, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
-         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
+         * updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
          * API Reference</a></p>
@@ -2565,12 +2626,19 @@ namespace Model
          * Updating the Amazon ECS container agent does not interrupt running tasks or
          * services on the container instance. The process for updating the agent differs
          * depending on whether your container instance was launched with the Amazon
-         * ECS-optimized AMI or another operating system.</p> <p>
-         * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
-         * Amazon Linux with the <code>ecs-init</code> service installed and running. For
-         * help updating the Amazon ECS container agent on other operating systems, see <a
+         * ECS-optimized AMI or another operating system.</p>  <p>The
+         * <code>UpdateContainerAgent</code> API isn't supported for container instances
+         * using the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the
+         * container agent, you can update the <code>ecs-init</code> package which will
+         * update the agent. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating
+         * the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p>  <p>The <code>UpdateContainerAgent</code> API
+         * requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
+         * <code>ecs-init</code> service installed and running. For help updating the
+         * Amazon ECS container agent on other operating systems, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
-         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
+         * updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
          * API Reference</a></p>
@@ -2584,12 +2652,19 @@ namespace Model
          * Updating the Amazon ECS container agent does not interrupt running tasks or
          * services on the container instance. The process for updating the agent differs
          * depending on whether your container instance was launched with the Amazon
-         * ECS-optimized AMI or another operating system.</p> <p>
-         * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
-         * Amazon Linux with the <code>ecs-init</code> service installed and running. For
-         * help updating the Amazon ECS container agent on other operating systems, see <a
+         * ECS-optimized AMI or another operating system.</p>  <p>The
+         * <code>UpdateContainerAgent</code> API isn't supported for container instances
+         * using the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the
+         * container agent, you can update the <code>ecs-init</code> package which will
+         * update the agent. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating
+         * the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p>  <p>The <code>UpdateContainerAgent</code> API
+         * requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
+         * <code>ecs-init</code> service installed and running. For help updating the
+         * Amazon ECS container agent on other operating systems, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
-         * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
+         * updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
          * API Reference</a></p>
@@ -3115,6 +3190,7 @@ namespace Model
         void DescribeTaskSetsAsyncHelper(const Model::DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTasksAsyncHelper(const Model::DescribeTasksRequest& request, const DescribeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DiscoverPollEndpointAsyncHelper(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExecuteCommandAsyncHelper(const Model::ExecuteCommandRequest& request, const ExecuteCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountSettingsAsyncHelper(const Model::ListAccountSettingsRequest& request, const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAttributesAsyncHelper(const Model::ListAttributesRequest& request, const ListAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3139,6 +3215,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCapacityProviderAsyncHelper(const Model::UpdateCapacityProviderRequest& request, const UpdateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateClusterAsyncHelper(const Model::UpdateClusterRequest& request, const UpdateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterSettingsAsyncHelper(const Model::UpdateClusterSettingsRequest& request, const UpdateClusterSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContainerAgentAsyncHelper(const Model::UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContainerInstancesStateAsyncHelper(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

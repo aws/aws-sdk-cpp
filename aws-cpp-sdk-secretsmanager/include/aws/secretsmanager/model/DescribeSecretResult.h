@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/secretsmanager/model/Tag.h>
+#include <aws/secretsmanager/model/ReplicationStatusType.h>
 #include <utility>
 
 namespace Aws
@@ -285,58 +286,68 @@ namespace Model
 
 
     /**
-     * <p>A structure that contains the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret.</p>
      */
     inline const RotationRulesType& GetRotationRules() const{ return m_rotationRules; }
 
     /**
-     * <p>A structure that contains the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret.</p>
      */
     inline void SetRotationRules(const RotationRulesType& value) { m_rotationRules = value; }
 
     /**
-     * <p>A structure that contains the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret.</p>
      */
     inline void SetRotationRules(RotationRulesType&& value) { m_rotationRules = std::move(value); }
 
     /**
-     * <p>A structure that contains the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret.</p>
      */
     inline DescribeSecretResult& WithRotationRules(const RotationRulesType& value) { SetRotationRules(value); return *this;}
 
     /**
-     * <p>A structure that contains the rotation configuration for this secret.</p>
+     * <p>A structure with the rotation configuration for this secret.</p>
      */
     inline DescribeSecretResult& WithRotationRules(RotationRulesType&& value) { SetRotationRules(std::move(value)); return *this;}
 
 
     /**
-     * <p>The most recent date and time that the Secrets Manager rotation process was
-     * successfully completed. This value is null if the secret has never rotated.</p>
+     * <p>The last date and time that the rotation process for this secret was
+     * invoked.</p> <p>The most recent date and time that the Secrets Manager rotation
+     * process successfully completed. If the secret doesn't rotate, Secrets Manager
+     * returns a null value.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRotatedDate() const{ return m_lastRotatedDate; }
 
     /**
-     * <p>The most recent date and time that the Secrets Manager rotation process was
-     * successfully completed. This value is null if the secret has never rotated.</p>
+     * <p>The last date and time that the rotation process for this secret was
+     * invoked.</p> <p>The most recent date and time that the Secrets Manager rotation
+     * process successfully completed. If the secret doesn't rotate, Secrets Manager
+     * returns a null value.</p>
      */
     inline void SetLastRotatedDate(const Aws::Utils::DateTime& value) { m_lastRotatedDate = value; }
 
     /**
-     * <p>The most recent date and time that the Secrets Manager rotation process was
-     * successfully completed. This value is null if the secret has never rotated.</p>
+     * <p>The last date and time that the rotation process for this secret was
+     * invoked.</p> <p>The most recent date and time that the Secrets Manager rotation
+     * process successfully completed. If the secret doesn't rotate, Secrets Manager
+     * returns a null value.</p>
      */
     inline void SetLastRotatedDate(Aws::Utils::DateTime&& value) { m_lastRotatedDate = std::move(value); }
 
     /**
-     * <p>The most recent date and time that the Secrets Manager rotation process was
-     * successfully completed. This value is null if the secret has never rotated.</p>
+     * <p>The last date and time that the rotation process for this secret was
+     * invoked.</p> <p>The most recent date and time that the Secrets Manager rotation
+     * process successfully completed. If the secret doesn't rotate, Secrets Manager
+     * returns a null value.</p>
      */
     inline DescribeSecretResult& WithLastRotatedDate(const Aws::Utils::DateTime& value) { SetLastRotatedDate(value); return *this;}
 
     /**
-     * <p>The most recent date and time that the Secrets Manager rotation process was
-     * successfully completed. This value is null if the secret has never rotated.</p>
+     * <p>The last date and time that the rotation process for this secret was
+     * invoked.</p> <p>The most recent date and time that the Secrets Manager rotation
+     * process successfully completed. If the secret doesn't rotate, Secrets Manager
+     * returns a null value.</p>
      */
     inline DescribeSecretResult& WithLastRotatedDate(Aws::Utils::DateTime&& value) { SetLastRotatedDate(std::move(value)); return *this;}
 
@@ -642,29 +653,108 @@ namespace Model
 
 
     /**
-     * <p>The date that the secret was created.</p>
+     * <p>The date you created the secret.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
 
     /**
-     * <p>The date that the secret was created.</p>
+     * <p>The date you created the secret.</p>
      */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
 
     /**
-     * <p>The date that the secret was created.</p>
+     * <p>The date you created the secret.</p>
      */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
 
     /**
-     * <p>The date that the secret was created.</p>
+     * <p>The date you created the secret.</p>
      */
     inline DescribeSecretResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
 
     /**
-     * <p>The date that the secret was created.</p>
+     * <p>The date you created the secret.</p>
      */
     inline DescribeSecretResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the primary region for secret replication. </p>
+     */
+    inline const Aws::String& GetPrimaryRegion() const{ return m_primaryRegion; }
+
+    /**
+     * <p>Specifies the primary region for secret replication. </p>
+     */
+    inline void SetPrimaryRegion(const Aws::String& value) { m_primaryRegion = value; }
+
+    /**
+     * <p>Specifies the primary region for secret replication. </p>
+     */
+    inline void SetPrimaryRegion(Aws::String&& value) { m_primaryRegion = std::move(value); }
+
+    /**
+     * <p>Specifies the primary region for secret replication. </p>
+     */
+    inline void SetPrimaryRegion(const char* value) { m_primaryRegion.assign(value); }
+
+    /**
+     * <p>Specifies the primary region for secret replication. </p>
+     */
+    inline DescribeSecretResult& WithPrimaryRegion(const Aws::String& value) { SetPrimaryRegion(value); return *this;}
+
+    /**
+     * <p>Specifies the primary region for secret replication. </p>
+     */
+    inline DescribeSecretResult& WithPrimaryRegion(Aws::String&& value) { SetPrimaryRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the primary region for secret replication. </p>
+     */
+    inline DescribeSecretResult& WithPrimaryRegion(const char* value) { SetPrimaryRegion(value); return *this;}
+
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
+     */
+    inline const Aws::Vector<ReplicationStatusType>& GetReplicationStatus() const{ return m_replicationStatus; }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
+     */
+    inline void SetReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { m_replicationStatus = value; }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
+     */
+    inline void SetReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { m_replicationStatus = std::move(value); }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
+     */
+    inline DescribeSecretResult& WithReplicationStatus(const Aws::Vector<ReplicationStatusType>& value) { SetReplicationStatus(value); return *this;}
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
+     */
+    inline DescribeSecretResult& WithReplicationStatus(Aws::Vector<ReplicationStatusType>&& value) { SetReplicationStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
+     */
+    inline DescribeSecretResult& AddReplicationStatus(const ReplicationStatusType& value) { m_replicationStatus.push_back(value); return *this; }
+
+    /**
+     * <p>Describes a list of replication status objects as <code>InProgress</code>,
+     * <code>Failed</code> or <code>InSync</code>.<code>P</code> </p>
+     */
+    inline DescribeSecretResult& AddReplicationStatus(ReplicationStatusType&& value) { m_replicationStatus.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -697,6 +787,10 @@ namespace Model
     Aws::String m_owningService;
 
     Aws::Utils::DateTime m_createdDate;
+
+    Aws::String m_primaryRegion;
+
+    Aws::Vector<ReplicationStatusType> m_replicationStatus;
   };
 
 } // namespace Model

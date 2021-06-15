@@ -24,6 +24,7 @@ JobTemplateSettings::JobTemplateSettings() :
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_nielsenNonLinearWatermarkHasBeenSet(false),
@@ -39,6 +40,7 @@ JobTemplateSettings::JobTemplateSettings(JsonView jsonValue) :
     m_availBlankingHasBeenSet(false),
     m_esamHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_kantarWatermarkHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_nielsenNonLinearWatermarkHasBeenSet(false),
@@ -80,6 +82,13 @@ JobTemplateSettings& JobTemplateSettings::operator =(JsonView jsonValue)
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
     }
     m_inputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kantarWatermark"))
+  {
+    m_kantarWatermark = jsonValue.GetObject("kantarWatermark");
+
+    m_kantarWatermarkHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("motionImageInserter"))
@@ -160,6 +169,12 @@ JsonValue JobTemplateSettings::Jsonize() const
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
    }
    payload.WithArray("inputs", std::move(inputsJsonList));
+
+  }
+
+  if(m_kantarWatermarkHasBeenSet)
+  {
+   payload.WithObject("kantarWatermark", m_kantarWatermark.Jsonize());
 
   }
 

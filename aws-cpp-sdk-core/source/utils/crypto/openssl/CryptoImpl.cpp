@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
 #include <aws/core/utils/Outcome.h>
+#include <openssl/crypto.h>
 #include <openssl/md5.h>
 
 #ifdef OPENSSL_IS_BORINGSSL
@@ -65,7 +66,7 @@ namespace Aws
 #else
                     OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CRYPTO_STRINGS /*options*/ ,NULL /* OpenSSL init settings*/ );
 #endif
-#if !defined(OPENSSL_IS_BORINGSSL)
+#if !(defined(OPENSSL_IS_BORINGSSL) || defined(OPENSSL_IS_AWSLC))
                     OPENSSL_add_all_algorithms_noconf();
 #endif
 #if OPENSSL_VERSION_LESS_1_1
@@ -217,6 +218,56 @@ namespace Aws
                 stream.seekg(currentPos, stream.beg);
 
                 ByteBuffer hash(EVP_MD_size(EVP_md5()));
+                EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
+
+                return HashResult(std::move(hash));
+            }
+
+            HashResult Sha1OpenSSLImpl::Calculate(const Aws::String& str)
+            {
+                OpensslCtxRAIIGuard guard;
+                auto ctx = guard.getResource();
+                EVP_DigestInit_ex(ctx, EVP_sha1(), nullptr);
+                EVP_DigestUpdate(ctx, str.c_str(), str.size());
+
+                ByteBuffer hash(EVP_MD_size(EVP_sha1()));
+                EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
+
+                return HashResult(std::move(hash));
+            }
+
+            HashResult Sha1OpenSSLImpl::Calculate(Aws::IStream& stream)
+            {
+                OpensslCtxRAIIGuard guard;
+                auto ctx = guard.getResource();
+
+                EVP_DigestInit_ex(ctx, EVP_sha1(), nullptr);
+
+                auto currentPos = stream.tellg();
+                if (currentPos == -1)
+                {
+                    currentPos = 0;
+                    stream.clear();
+                }
+
+                stream.seekg(0, stream.beg);
+
+                char streamBuffer[Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE];
+                while (stream.good())
+                {
+                    stream.read(streamBuffer, Aws::Utils::Crypto::Hash::INTERNAL_HASH_STREAM_BUFFER_SIZE);
+                    auto bytesRead = stream.gcount();
+
+                    if (bytesRead > 0)
+                    {
+                        EVP_DigestUpdate(ctx, streamBuffer, static_cast<size_t>(bytesRead));
+                    }
+                }
+
+                stream.clear();
+                stream.seekg(currentPos, stream.beg);
+
+                ByteBuffer hash(EVP_MD_size(EVP_sha1()));
                 EVP_DigestFinal(ctx, hash.GetUnderlyingData(), nullptr);
 
                 return HashResult(std::move(hash));
@@ -497,7 +548,7 @@ namespace Aws
                 CryptoBuffer finalBlock(GetBlockSizeBytes());
                 int writtenSize = static_cast<int>(finalBlock.GetLength());
                 int ret = EVP_DecryptFinal_ex(m_decryptor_ctx, finalBlock.GetUnderlyingData(), &writtenSize);
-#if OPENSSL_VERSION_NUMBER > 0x1010104fL //1.1.1d
+#if !defined(OPENSSL_IS_AWSLC) && OPENSSL_VERSION_NUMBER > 0x1010104fL //1.1.1d
                 if (ret <= 0)
 #else
                 if (ret <= 0 && !m_emptyPlaintext) // see details why making exception for empty string at: https://github.com/aws/aws-sdk-cpp/issues/1413

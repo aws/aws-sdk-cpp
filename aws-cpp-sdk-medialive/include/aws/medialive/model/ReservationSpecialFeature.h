@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     ADVANCED_AUDIO,
-    AUDIO_NORMALIZATION
+    AUDIO_NORMALIZATION,
+    MGHD,
+    MGUHD
   };
 
 namespace ReservationSpecialFeatureMapper

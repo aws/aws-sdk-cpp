@@ -23,7 +23,8 @@ Location::Location() :
     m_locationNameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_availablePortSpeedsHasBeenSet(false),
-    m_availableProvidersHasBeenSet(false)
+    m_availableProvidersHasBeenSet(false),
+    m_availableMacSecPortSpeedsHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ Location::Location(JsonView jsonValue) :
     m_locationNameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_availablePortSpeedsHasBeenSet(false),
-    m_availableProvidersHasBeenSet(false)
+    m_availableProvidersHasBeenSet(false),
+    m_availableMacSecPortSpeedsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,16 @@ Location& Location::operator =(JsonView jsonValue)
     m_availableProvidersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("availableMacSecPortSpeeds"))
+  {
+    Array<JsonView> availableMacSecPortSpeedsJsonList = jsonValue.GetArray("availableMacSecPortSpeeds");
+    for(unsigned availableMacSecPortSpeedsIndex = 0; availableMacSecPortSpeedsIndex < availableMacSecPortSpeedsJsonList.GetLength(); ++availableMacSecPortSpeedsIndex)
+    {
+      m_availableMacSecPortSpeeds.push_back(availableMacSecPortSpeedsJsonList[availableMacSecPortSpeedsIndex].AsString());
+    }
+    m_availableMacSecPortSpeedsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +136,17 @@ JsonValue Location::Jsonize() const
      availableProvidersJsonList[availableProvidersIndex].AsString(m_availableProviders[availableProvidersIndex]);
    }
    payload.WithArray("availableProviders", std::move(availableProvidersJsonList));
+
+  }
+
+  if(m_availableMacSecPortSpeedsHasBeenSet)
+  {
+   Array<JsonValue> availableMacSecPortSpeedsJsonList(m_availableMacSecPortSpeeds.size());
+   for(unsigned availableMacSecPortSpeedsIndex = 0; availableMacSecPortSpeedsIndex < availableMacSecPortSpeedsJsonList.GetLength(); ++availableMacSecPortSpeedsIndex)
+   {
+     availableMacSecPortSpeedsJsonList[availableMacSecPortSpeedsIndex].AsString(m_availableMacSecPortSpeeds[availableMacSecPortSpeedsIndex]);
+   }
+   payload.WithArray("availableMacSecPortSpeeds", std::move(availableMacSecPortSpeedsJsonList));
 
   }
 

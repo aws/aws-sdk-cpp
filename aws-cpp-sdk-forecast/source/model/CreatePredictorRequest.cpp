@@ -20,6 +20,8 @@ CreatePredictorRequest::CreatePredictorRequest() :
     m_forecastTypesHasBeenSet(false),
     m_performAutoML(false),
     m_performAutoMLHasBeenSet(false),
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
+    m_autoMLOverrideStrategyHasBeenSet(false),
     m_performHPO(false),
     m_performHPOHasBeenSet(false),
     m_trainingParametersHasBeenSet(false),
@@ -69,6 +71,11 @@ Aws::String CreatePredictorRequest::SerializePayload() const
   {
    payload.WithBool("PerformAutoML", m_performAutoML);
 
+  }
+
+  if(m_autoMLOverrideStrategyHasBeenSet)
+  {
+   payload.WithString("AutoMLOverrideStrategy", AutoMLOverrideStrategyMapper::GetNameForAutoMLOverrideStrategy(m_autoMLOverrideStrategy));
   }
 
   if(m_performHPOHasBeenSet)

@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult()
+DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult() : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
 }
 
-DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeGeofenceCollectionResult::DescribeGeofenceCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_pricingPlan(PricingPlan::NOT_SET)
 {
   *this = result;
 }
@@ -50,6 +52,33 @@ DescribeGeofenceCollectionResult& DescribeGeofenceCollectionResult::operator =(c
   {
     m_description = jsonValue.GetString("Description");
 
+  }
+
+  if(jsonValue.ValueExists("KmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("PricingPlan"))
+  {
+    m_pricingPlan = PricingPlanMapper::GetPricingPlanForName(jsonValue.GetString("PricingPlan"));
+
+  }
+
+  if(jsonValue.ValueExists("PricingPlanDataSource"))
+  {
+    m_pricingPlanDataSource = jsonValue.GetString("PricingPlanDataSource");
+
+  }
+
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
   }
 
   if(jsonValue.ValueExists("UpdateTime"))

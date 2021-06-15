@@ -403,38 +403,44 @@ namespace Model
 
 
     /**
-     * <p>The last date and time that the rotation process for this secret was
-     * invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret hasn't ever
+     * rotated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastRotatedDate() const{ return m_lastRotatedDate; }
 
     /**
-     * <p>The last date and time that the rotation process for this secret was
-     * invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret hasn't ever
+     * rotated.</p>
      */
     inline bool LastRotatedDateHasBeenSet() const { return m_lastRotatedDateHasBeenSet; }
 
     /**
-     * <p>The last date and time that the rotation process for this secret was
-     * invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret hasn't ever
+     * rotated.</p>
      */
     inline void SetLastRotatedDate(const Aws::Utils::DateTime& value) { m_lastRotatedDateHasBeenSet = true; m_lastRotatedDate = value; }
 
     /**
-     * <p>The last date and time that the rotation process for this secret was
-     * invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret hasn't ever
+     * rotated.</p>
      */
     inline void SetLastRotatedDate(Aws::Utils::DateTime&& value) { m_lastRotatedDateHasBeenSet = true; m_lastRotatedDate = std::move(value); }
 
     /**
-     * <p>The last date and time that the rotation process for this secret was
-     * invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret hasn't ever
+     * rotated.</p>
      */
     inline SecretListEntry& WithLastRotatedDate(const Aws::Utils::DateTime& value) { SetLastRotatedDate(value); return *this;}
 
     /**
-     * <p>The last date and time that the rotation process for this secret was
-     * invoked.</p>
+     * <p>The most recent date and time that the Secrets Manager rotation process was
+     * successfully completed. This value is null if the secret hasn't ever
+     * rotated.</p>
      */
     inline SecretListEntry& WithLastRotatedDate(Aws::Utils::DateTime&& value) { SetLastRotatedDate(std::move(value)); return *this;}
 
@@ -797,6 +803,47 @@ namespace Model
      */
     inline SecretListEntry& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline const Aws::String& GetPrimaryRegion() const{ return m_primaryRegion; }
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline bool PrimaryRegionHasBeenSet() const { return m_primaryRegionHasBeenSet; }
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline void SetPrimaryRegion(const Aws::String& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = value; }
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline void SetPrimaryRegion(Aws::String&& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = std::move(value); }
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline void SetPrimaryRegion(const char* value) { m_primaryRegionHasBeenSet = true; m_primaryRegion.assign(value); }
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline SecretListEntry& WithPrimaryRegion(const Aws::String& value) { SetPrimaryRegion(value); return *this;}
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline SecretListEntry& WithPrimaryRegion(Aws::String&& value) { SetPrimaryRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region where Secrets Manager originated the secret.</p>
+     */
+    inline SecretListEntry& WithPrimaryRegion(const char* value) { SetPrimaryRegion(value); return *this;}
+
   private:
 
     Aws::String m_aRN;
@@ -843,6 +890,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
+    Aws::String m_primaryRegion;
+    bool m_primaryRegionHasBeenSet;
   };
 
 } // namespace Model

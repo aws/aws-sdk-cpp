@@ -50,7 +50,8 @@ ReplicationGroup::ReplicationGroup() :
     m_memberClustersOutpostArnsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false)
+    m_userGroupIdsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_memberClustersOutpostArnsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_aRNHasBeenSet(false),
-    m_userGroupIdsHasBeenSet(false)
+    m_userGroupIdsHasBeenSet(false),
+    m_logDeliveryConfigurationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -257,6 +259,18 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
 
       m_userGroupIdsHasBeenSet = true;
     }
+    XmlNode logDeliveryConfigurationsNode = resultNode.FirstChild("LogDeliveryConfigurations");
+    if(!logDeliveryConfigurationsNode.IsNull())
+    {
+      XmlNode logDeliveryConfigurationsMember = logDeliveryConfigurationsNode.FirstChild("LogDeliveryConfiguration");
+      while(!logDeliveryConfigurationsMember.IsNull())
+      {
+        m_logDeliveryConfigurations.push_back(logDeliveryConfigurationsMember);
+        logDeliveryConfigurationsMember = logDeliveryConfigurationsMember.NextNode("LogDeliveryConfiguration");
+      }
+
+      m_logDeliveryConfigurationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -403,6 +417,17 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location << index << locationValue << ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
+      }
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -521,6 +546,16 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_userGroupIds)
       {
         oStream << location << ".UserGroupIds.member." << userGroupIdsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_logDeliveryConfigurationsHasBeenSet)
+  {
+      unsigned logDeliveryConfigurationsIdx = 1;
+      for(auto& item : m_logDeliveryConfigurations)
+      {
+        Aws::StringStream logDeliveryConfigurationsSs;
+        logDeliveryConfigurationsSs << location <<  ".LogDeliveryConfiguration." << logDeliveryConfigurationsIdx++;
+        item.OutputToStream(oStream, logDeliveryConfigurationsSs.str().c_str());
       }
   }
 }

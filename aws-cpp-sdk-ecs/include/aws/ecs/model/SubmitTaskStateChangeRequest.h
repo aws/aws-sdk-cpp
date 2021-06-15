@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/ContainerStateChange.h>
 #include <aws/ecs/model/AttachmentStateChange.h>
+#include <aws/ecs/model/ManagedAgentStateChange.h>
 #include <utility>
 
 namespace Aws
@@ -293,6 +294,47 @@ namespace Model
 
 
     /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline const Aws::Vector<ManagedAgentStateChange>& GetManagedAgents() const{ return m_managedAgents; }
+
+    /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline bool ManagedAgentsHasBeenSet() const { return m_managedAgentsHasBeenSet; }
+
+    /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline void SetManagedAgents(const Aws::Vector<ManagedAgentStateChange>& value) { m_managedAgentsHasBeenSet = true; m_managedAgents = value; }
+
+    /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline void SetManagedAgents(Aws::Vector<ManagedAgentStateChange>&& value) { m_managedAgentsHasBeenSet = true; m_managedAgents = std::move(value); }
+
+    /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithManagedAgents(const Aws::Vector<ManagedAgentStateChange>& value) { SetManagedAgents(value); return *this;}
+
+    /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& WithManagedAgents(Aws::Vector<ManagedAgentStateChange>&& value) { SetManagedAgents(std::move(value)); return *this;}
+
+    /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddManagedAgents(const ManagedAgentStateChange& value) { m_managedAgentsHasBeenSet = true; m_managedAgents.push_back(value); return *this; }
+
+    /**
+     * <p>The details for the managed agent associated with the task.</p>
+     */
+    inline SubmitTaskStateChangeRequest& AddManagedAgents(ManagedAgentStateChange&& value) { m_managedAgentsHasBeenSet = true; m_managedAgents.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStartedAt() const{ return m_pullStartedAt; }
@@ -403,6 +445,9 @@ namespace Model
 
     Aws::Vector<AttachmentStateChange> m_attachments;
     bool m_attachmentsHasBeenSet;
+
+    Aws::Vector<ManagedAgentStateChange> m_managedAgents;
+    bool m_managedAgentsHasBeenSet;
 
     Aws::Utils::DateTime m_pullStartedAt;
     bool m_pullStartedAtHasBeenSet;

@@ -188,43 +188,43 @@ namespace Model
 
 
     /**
-     * <p>Whether your contact center handles incoming contacts.</p>
+     * <p>Your contact center handles incoming contacts.</p>
      */
     inline bool GetInboundCallsEnabled() const{ return m_inboundCallsEnabled; }
 
     /**
-     * <p>Whether your contact center handles incoming contacts.</p>
+     * <p>Your contact center handles incoming contacts.</p>
      */
     inline bool InboundCallsEnabledHasBeenSet() const { return m_inboundCallsEnabledHasBeenSet; }
 
     /**
-     * <p>Whether your contact center handles incoming contacts.</p>
+     * <p>Your contact center handles incoming contacts.</p>
      */
     inline void SetInboundCallsEnabled(bool value) { m_inboundCallsEnabledHasBeenSet = true; m_inboundCallsEnabled = value; }
 
     /**
-     * <p>Whether your contact center handles incoming contacts.</p>
+     * <p>Your contact center handles incoming contacts.</p>
      */
     inline CreateInstanceRequest& WithInboundCallsEnabled(bool value) { SetInboundCallsEnabled(value); return *this;}
 
 
     /**
-     * <p>Whether your contact center allows outbound calls.</p>
+     * <p>Your contact center allows outbound calls.</p>
      */
     inline bool GetOutboundCallsEnabled() const{ return m_outboundCallsEnabled; }
 
     /**
-     * <p>Whether your contact center allows outbound calls.</p>
+     * <p>Your contact center allows outbound calls.</p>
      */
     inline bool OutboundCallsEnabledHasBeenSet() const { return m_outboundCallsEnabledHasBeenSet; }
 
     /**
-     * <p>Whether your contact center allows outbound calls.</p>
+     * <p>Your contact center allows outbound calls.</p>
      */
     inline void SetOutboundCallsEnabled(bool value) { m_outboundCallsEnabledHasBeenSet = true; m_outboundCallsEnabled = value; }
 
     /**
-     * <p>Whether your contact center allows outbound calls.</p>
+     * <p>Your contact center allows outbound calls.</p>
      */
     inline CreateInstanceRequest& WithOutboundCallsEnabled(bool value) { SetOutboundCallsEnabled(value); return *this;}
 

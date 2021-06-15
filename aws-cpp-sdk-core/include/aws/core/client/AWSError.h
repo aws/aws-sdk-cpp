@@ -12,6 +12,13 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/StringUtils.h>
 
+// TODO: temporary fix for naming conflicts on Windows.
+#ifdef _WIN32
+#ifdef GetMessage
+#undef GetMessage
+#endif
+#endif
+
 namespace Aws
 {
     namespace Client
@@ -56,8 +63,8 @@ namespace Aws
                 m_errorType(errorType), m_responseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE),
                 m_isRetryable(isRetryable), m_errorPayloadType(ErrorPayloadType::NOT_SET) {}
 
-            AWSError(AWSError&& rhs) = default;
-            AWSError(const AWSError& rhs) = default;
+            AWSError(AWSError&&) = default;
+            AWSError(const AWSError&) = default;
 
             template<typename OTHER_ERROR_TYPE>
             AWSError(AWSError<OTHER_ERROR_TYPE>&& rhs) :

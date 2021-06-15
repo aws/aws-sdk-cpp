@@ -82,122 +82,130 @@ namespace Model
 
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <p>The protocol that you want to use. Supported protocols include:</p> <ul> <li>
+     * <p> <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
      * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
      * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
      * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
      * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
-     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
-     * function.</p> </li> </ul>
+     * message to an EndpointArn for a mobile app and device</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function</p> </li> <li> <p> <code>firehose</code> – delivery of JSON-encoded
+     * message to an Amazon Kinesis Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
@@ -205,136 +213,152 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the (public)
-     * endpoint is a URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * endpoint is a URL beginning with <code>http://</code>.</p> </li> <li> <p>For the
      * <code>https</code> protocol, the (public) endpoint is a URL beginning with
-     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
-     * the endpoint is an email address</p> </li> <li> <p>For the
-     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <code>https://</code>.</p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address.</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address.</p> </li>
      * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
-     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
-     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * SMS-enabled device.</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue.</p> </li> <li> <p>For the
      * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
      * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
-     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
+     * endpoint is the ARN of an AWS Lambda function.</p> </li> <li> <p>For the
+     * <code>firehose</code> protocol, the endpoint is the ARN of an Amazon Kinesis
+     * Data Firehose delivery stream.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
@@ -345,7 +369,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -356,7 +380,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -366,7 +399,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -377,7 +410,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -387,7 +429,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -398,7 +440,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -408,7 +459,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -419,7 +470,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -429,7 +489,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -440,7 +500,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -450,7 +519,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -461,7 +530,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -471,7 +549,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -482,7 +560,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -492,7 +579,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -503,7 +590,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -513,7 +609,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -524,7 +620,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -534,7 +639,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -545,7 +650,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -555,7 +669,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -566,7 +680,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -576,7 +699,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -587,7 +710,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -597,7 +729,7 @@ namespace Model
      * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
      * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
      * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
-     * <code>FilterPolicy</code> ��� The simple JSON object that lets your subscriber
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
      * receive only a subset of messages, rather than receiving every message published
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
@@ -608,7 +740,16 @@ namespace Model
      * to client errors (for example, when the subscribed endpoint is unreachable) or
      * server errors (for example, when the service that powers the subscribed endpoint
      * becomes unavailable) are held in the dead-letter queue for further analysis or
-     * reprocessing.</p> </li> </ul>
+     * reprocessing.</p> </li> </ul> <p>The following attribute applies only to Amazon
+     * Kinesis Data Firehose delivery stream subscriptions:</p> <ul> <li> <p>
+     * <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the
+     * following:</p> <ul> <li> <p>Permission to write to the Kinesis Data Firehose
+     * delivery stream</p> </li> <li> <p>Amazon SNS listed as a trusted entity</p>
+     * </li> </ul> <p>Specifying a valid ARN for this attribute is required for Kinesis
+     * Data Firehose delivery stream subscriptions. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+     * to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer
+     * Guide</i>.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

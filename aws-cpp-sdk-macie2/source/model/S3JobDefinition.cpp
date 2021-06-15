@@ -20,13 +20,15 @@ namespace Model
 
 S3JobDefinition::S3JobDefinition() : 
     m_bucketDefinitionsHasBeenSet(false),
-    m_scopingHasBeenSet(false)
+    m_scopingHasBeenSet(false),
+    m_bucketCriteriaHasBeenSet(false)
 {
 }
 
 S3JobDefinition::S3JobDefinition(JsonView jsonValue) : 
     m_bucketDefinitionsHasBeenSet(false),
-    m_scopingHasBeenSet(false)
+    m_scopingHasBeenSet(false),
+    m_bucketCriteriaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ S3JobDefinition& S3JobDefinition::operator =(JsonView jsonValue)
     m_scopingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("bucketCriteria"))
+  {
+    m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
+
+    m_bucketCriteriaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue S3JobDefinition::Jsonize() const
   if(m_scopingHasBeenSet)
   {
    payload.WithObject("scoping", m_scoping.Jsonize());
+
+  }
+
+  if(m_bucketCriteriaHasBeenSet)
+  {
+   payload.WithObject("bucketCriteria", m_bucketCriteria.Jsonize());
 
   }
 

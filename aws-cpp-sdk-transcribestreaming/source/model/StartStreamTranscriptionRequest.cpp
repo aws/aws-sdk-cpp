@@ -32,6 +32,10 @@ StartStreamTranscriptionRequest::StartStreamTranscriptionRequest() :
     m_enableChannelIdentificationHasBeenSet(false),
     m_numberOfChannels(0),
     m_numberOfChannelsHasBeenSet(false),
+    m_enablePartialResultsStabilization(false),
+    m_enablePartialResultsStabilizationHasBeenSet(false),
+    m_partialResultsStability(PartialResultsStability::NOT_SET),
+    m_partialResultsStabilityHasBeenSet(false),
     m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -109,6 +113,18 @@ Aws::Http::HeaderValueCollection StartStreamTranscriptionRequest::GetRequestSpec
     ss << m_numberOfChannels;
     headers.emplace("x-amzn-transcribe-number-of-channels",  ss.str());
     ss.str("");
+  }
+
+  if(m_enablePartialResultsStabilizationHasBeenSet)
+  {
+    ss << std::boolalpha << m_enablePartialResultsStabilization;
+    headers.emplace("x-amzn-transcribe-enable-partial-results-stabilization", ss.str());
+    ss.str("");
+  }
+
+  if(m_partialResultsStabilityHasBeenSet)
+  {
+    headers.emplace("x-amzn-transcribe-partial-results-stability", PartialResultsStabilityMapper::GetNameForPartialResultsStability(m_partialResultsStability));
   }
 
   return headers;

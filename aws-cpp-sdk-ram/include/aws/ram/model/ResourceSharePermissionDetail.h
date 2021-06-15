@@ -121,26 +121,26 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the version of the permission that is set as the default
-     * version.</p>
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this permission.</p>
      */
     inline bool GetDefaultVersion() const{ return m_defaultVersion; }
 
     /**
-     * <p>The identifier for the version of the permission that is set as the default
-     * version.</p>
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this permission.</p>
      */
     inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
 
     /**
-     * <p>The identifier for the version of the permission that is set as the default
-     * version.</p>
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this permission.</p>
      */
     inline void SetDefaultVersion(bool value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
 
     /**
-     * <p>The identifier for the version of the permission that is set as the default
-     * version.</p>
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this permission.</p>
      */
     inline ResourceSharePermissionDetail& WithDefaultVersion(bool value) { SetDefaultVersion(value); return *this;}
 
@@ -345,6 +345,31 @@ namespace Model
      */
     inline ResourceSharePermissionDetail& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this resource type.</p>
+     */
+    inline bool GetIsResourceTypeDefault() const{ return m_isResourceTypeDefault; }
+
+    /**
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this resource type.</p>
+     */
+    inline bool IsResourceTypeDefaultHasBeenSet() const { return m_isResourceTypeDefaultHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this resource type.</p>
+     */
+    inline void SetIsResourceTypeDefault(bool value) { m_isResourceTypeDefaultHasBeenSet = true; m_isResourceTypeDefault = value; }
+
+    /**
+     * <p>Specifies whether the version of the permission is set to the default version
+     * for this resource type.</p>
+     */
+    inline ResourceSharePermissionDetail& WithIsResourceTypeDefault(bool value) { SetIsResourceTypeDefault(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -370,6 +395,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
+    bool m_isResourceTypeDefault;
+    bool m_isResourceTypeDefaultHasBeenSet;
   };
 
 } // namespace Model

@@ -20,13 +20,15 @@ namespace Model
 
 FormatOptions::FormatOptions() : 
     m_jsonHasBeenSet(false),
-    m_excelHasBeenSet(false)
+    m_excelHasBeenSet(false),
+    m_csvHasBeenSet(false)
 {
 }
 
 FormatOptions::FormatOptions(JsonView jsonValue) : 
     m_jsonHasBeenSet(false),
-    m_excelHasBeenSet(false)
+    m_excelHasBeenSet(false),
+    m_csvHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ FormatOptions& FormatOptions::operator =(JsonView jsonValue)
     m_excelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Csv"))
+  {
+    m_csv = jsonValue.GetObject("Csv");
+
+    m_csvHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue FormatOptions::Jsonize() const
   if(m_excelHasBeenSet)
   {
    payload.WithObject("Excel", m_excel.Jsonize());
+
+  }
+
+  if(m_csvHasBeenSet)
+  {
+   payload.WithObject("Csv", m_csv.Jsonize());
 
   }
 

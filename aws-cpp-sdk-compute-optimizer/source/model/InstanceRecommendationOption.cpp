@@ -21,6 +21,7 @@ namespace Model
 InstanceRecommendationOption::InstanceRecommendationOption() : 
     m_instanceTypeHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false),
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
@@ -31,6 +32,7 @@ InstanceRecommendationOption::InstanceRecommendationOption() :
 InstanceRecommendationOption::InstanceRecommendationOption(JsonView jsonValue) : 
     m_instanceTypeHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
+    m_platformDifferencesHasBeenSet(false),
     m_performanceRisk(0.0),
     m_performanceRiskHasBeenSet(false),
     m_rank(0),
@@ -56,6 +58,16 @@ InstanceRecommendationOption& InstanceRecommendationOption::operator =(JsonView 
       m_projectedUtilizationMetrics.push_back(projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject());
     }
     m_projectedUtilizationMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("platformDifferences"))
+  {
+    Array<JsonView> platformDifferencesJsonList = jsonValue.GetArray("platformDifferences");
+    for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+    {
+      m_platformDifferences.push_back(PlatformDifferenceMapper::GetPlatformDifferenceForName(platformDifferencesJsonList[platformDifferencesIndex].AsString()));
+    }
+    m_platformDifferencesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("performanceRisk"))
@@ -93,6 +105,17 @@ JsonValue InstanceRecommendationOption::Jsonize() const
      projectedUtilizationMetricsJsonList[projectedUtilizationMetricsIndex].AsObject(m_projectedUtilizationMetrics[projectedUtilizationMetricsIndex].Jsonize());
    }
    payload.WithArray("projectedUtilizationMetrics", std::move(projectedUtilizationMetricsJsonList));
+
+  }
+
+  if(m_platformDifferencesHasBeenSet)
+  {
+   Array<JsonValue> platformDifferencesJsonList(m_platformDifferences.size());
+   for(unsigned platformDifferencesIndex = 0; platformDifferencesIndex < platformDifferencesJsonList.GetLength(); ++platformDifferencesIndex)
+   {
+     platformDifferencesJsonList[platformDifferencesIndex].AsString(PlatformDifferenceMapper::GetNameForPlatformDifference(m_platformDifferences[platformDifferencesIndex]));
+   }
+   payload.WithArray("platformDifferences", std::move(platformDifferencesJsonList));
 
   }
 

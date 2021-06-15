@@ -24,7 +24,8 @@ Invitation::Invitation() :
     m_expirationDateHasBeenSet(false),
     m_status(InvitationStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_networkSummaryHasBeenSet(false)
+    m_networkSummaryHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ Invitation::Invitation(JsonView jsonValue) :
     m_expirationDateHasBeenSet(false),
     m_status(InvitationStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_networkSummaryHasBeenSet(false)
+    m_networkSummaryHasBeenSet(false),
+    m_arnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ Invitation& Invitation::operator =(JsonView jsonValue)
     m_networkSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +116,12 @@ JsonValue Invitation::Jsonize() const
   if(m_networkSummaryHasBeenSet)
   {
    payload.WithObject("NetworkSummary", m_networkSummary.Jsonize());
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 

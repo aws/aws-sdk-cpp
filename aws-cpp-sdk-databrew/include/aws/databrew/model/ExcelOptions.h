@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Options that define how DataBrew will interpret a Microsoft Excel file, when
-   * creating a dataset from that file.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a set of options that define how DataBrew will interpret a
+   * Microsoft Excel file when creating a dataset from that file.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/ExcelOptions">AWS
    * API Reference</a></p>
    */
@@ -40,101 +41,126 @@ namespace Model
 
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSheetNames() const{ return m_sheetNames; }
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline bool SheetNamesHasBeenSet() const { return m_sheetNamesHasBeenSet; }
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline void SetSheetNames(const Aws::Vector<Aws::String>& value) { m_sheetNamesHasBeenSet = true; m_sheetNames = value; }
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline void SetSheetNames(Aws::Vector<Aws::String>&& value) { m_sheetNamesHasBeenSet = true; m_sheetNames = std::move(value); }
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& WithSheetNames(const Aws::Vector<Aws::String>& value) { SetSheetNames(value); return *this;}
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& WithSheetNames(Aws::Vector<Aws::String>&& value) { SetSheetNames(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& AddSheetNames(const Aws::String& value) { m_sheetNamesHasBeenSet = true; m_sheetNames.push_back(value); return *this; }
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& AddSheetNames(Aws::String&& value) { m_sheetNamesHasBeenSet = true; m_sheetNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Specifies one or more named sheets in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more named sheets in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& AddSheetNames(const char* value) { m_sheetNamesHasBeenSet = true; m_sheetNames.push_back(value); return *this; }
 
 
     /**
-     * <p>Specifies one or more sheet numbers in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more sheet numbers in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline const Aws::Vector<int>& GetSheetIndexes() const{ return m_sheetIndexes; }
 
     /**
-     * <p>Specifies one or more sheet numbers in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more sheet numbers in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline bool SheetIndexesHasBeenSet() const { return m_sheetIndexesHasBeenSet; }
 
     /**
-     * <p>Specifies one or more sheet numbers in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more sheet numbers in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline void SetSheetIndexes(const Aws::Vector<int>& value) { m_sheetIndexesHasBeenSet = true; m_sheetIndexes = value; }
 
     /**
-     * <p>Specifies one or more sheet numbers in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more sheet numbers in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline void SetSheetIndexes(Aws::Vector<int>&& value) { m_sheetIndexesHasBeenSet = true; m_sheetIndexes = std::move(value); }
 
     /**
-     * <p>Specifies one or more sheet numbers in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more sheet numbers in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& WithSheetIndexes(const Aws::Vector<int>& value) { SetSheetIndexes(value); return *this;}
 
     /**
-     * <p>Specifies one or more sheet numbers in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more sheet numbers in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& WithSheetIndexes(Aws::Vector<int>&& value) { SetSheetIndexes(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies one or more sheet numbers in the Excel file, which will be included
-     * in the dataset.</p>
+     * <p>One or more sheet numbers in the Excel file that will be included in the
+     * dataset.</p>
      */
     inline ExcelOptions& AddSheetIndexes(int value) { m_sheetIndexesHasBeenSet = true; m_sheetIndexes.push_back(value); return *this; }
+
+
+    /**
+     * <p>A variable that specifies whether the first row in the file is parsed as the
+     * header. If this value is false, column names are auto-generated.</p>
+     */
+    inline bool GetHeaderRow() const{ return m_headerRow; }
+
+    /**
+     * <p>A variable that specifies whether the first row in the file is parsed as the
+     * header. If this value is false, column names are auto-generated.</p>
+     */
+    inline bool HeaderRowHasBeenSet() const { return m_headerRowHasBeenSet; }
+
+    /**
+     * <p>A variable that specifies whether the first row in the file is parsed as the
+     * header. If this value is false, column names are auto-generated.</p>
+     */
+    inline void SetHeaderRow(bool value) { m_headerRowHasBeenSet = true; m_headerRow = value; }
+
+    /**
+     * <p>A variable that specifies whether the first row in the file is parsed as the
+     * header. If this value is false, column names are auto-generated.</p>
+     */
+    inline ExcelOptions& WithHeaderRow(bool value) { SetHeaderRow(value); return *this;}
 
   private:
 
@@ -143,6 +169,9 @@ namespace Model
 
     Aws::Vector<int> m_sheetIndexes;
     bool m_sheetIndexesHasBeenSet;
+
+    bool m_headerRow;
+    bool m_headerRowHasBeenSet;
   };
 
 } // namespace Model

@@ -312,8 +312,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetResolvedSourceVersion() const{ return m_resolvedSourceVersion; }
 
@@ -321,8 +321,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline bool ResolvedSourceVersionHasBeenSet() const { return m_resolvedSourceVersionHasBeenSet; }
 
@@ -330,8 +330,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline void SetResolvedSourceVersion(const Aws::String& value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion = value; }
 
@@ -339,8 +339,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline void SetResolvedSourceVersion(Aws::String&& value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion = std::move(value); }
 
@@ -348,8 +348,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline void SetResolvedSourceVersion(const char* value) { m_resolvedSourceVersionHasBeenSet = true; m_resolvedSourceVersion.assign(value); }
 
@@ -357,8 +357,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline BuildBatch& WithResolvedSourceVersion(const Aws::String& value) { SetResolvedSourceVersion(value); return *this;}
 
@@ -366,8 +366,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline BuildBatch& WithResolvedSourceVersion(Aws::String&& value) { SetResolvedSourceVersion(std::move(value)); return *this;}
 
@@ -375,8 +375,8 @@ namespace Model
      * <p>The identifier of the resolved version of this batch build's source code.</p>
      * <ul> <li> <p>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the
      * commit ID.</p> </li> <li> <p>For AWS CodePipeline, the source revision provided
-     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
-     * S3), this does not apply.</p> </li> </ul>
+     * by AWS CodePipeline.</p> </li> <li> <p>For Amazon S3, this does not apply.</p>
+     * </li> </ul>
      */
     inline BuildBatch& WithResolvedSourceVersion(const char* value) { SetResolvedSourceVersion(value); return *this;}
 
@@ -551,9 +551,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourceVersions() const{ return m_secondarySourceVersions; }
 
@@ -569,9 +569,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline bool SecondarySourceVersionsHasBeenSet() const { return m_secondarySourceVersionsHasBeenSet; }
 
@@ -587,9 +587,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline void SetSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = value; }
 
@@ -605,9 +605,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline void SetSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = std::move(value); }
 
@@ -623,9 +623,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline BuildBatch& WithSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { SetSecondarySourceVersions(value); return *this;}
 
@@ -641,9 +641,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline BuildBatch& WithSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { SetSecondarySourceVersions(std::move(value)); return *this;}
 
@@ -659,9 +659,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline BuildBatch& AddSecondarySourceVersions(const ProjectSourceVersion& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(value); return *this; }
 
@@ -677,9 +677,9 @@ namespace Model
      * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
      * that corresponds to the version of the source code you want to build. If a
      * branch name is specified, the branch's HEAD commit ID is used. If not specified,
-     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
-     * Storage Service (Amazon S3): the version ID of the object that represents the
-     * build input ZIP file to use.</p> </li> </ul>
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon S3:
+     * the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline BuildBatch& AddSecondarySourceVersions(ProjectSourceVersion&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(std::move(value)); return *this; }
 
@@ -1297,6 +1297,43 @@ namespace Model
      */
     inline BuildBatch& AddBuildGroups(BuildGroup&& value) { m_buildGroupsHasBeenSet = true; m_buildGroups.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool GetDebugSessionEnabled() const{ return m_debugSessionEnabled; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool DebugSessionEnabledHasBeenSet() const { return m_debugSessionEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline void SetDebugSessionEnabled(bool value) { m_debugSessionEnabledHasBeenSet = true; m_debugSessionEnabled = value; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline BuildBatch& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1385,6 +1422,9 @@ namespace Model
 
     Aws::Vector<BuildGroup> m_buildGroups;
     bool m_buildGroupsHasBeenSet;
+
+    bool m_debugSessionEnabled;
+    bool m_debugSessionEnabledHasBeenSet;
   };
 
 } // namespace Model

@@ -13,6 +13,7 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/acm/model/DescribeCertificateResult.h>
 #include <aws/acm/model/ExportCertificateResult.h>
+#include <aws/acm/model/GetAccountConfigurationResult.h>
 #include <aws/acm/model/GetCertificateResult.h>
 #include <aws/acm/model/ImportCertificateResult.h>
 #include <aws/acm/model/ListCertificatesResult.h>
@@ -66,6 +67,7 @@ namespace Model
         class ImportCertificateRequest;
         class ListCertificatesRequest;
         class ListTagsForCertificateRequest;
+        class PutAccountConfigurationRequest;
         class RemoveTagsFromCertificateRequest;
         class RenewCertificateRequest;
         class RequestCertificateRequest;
@@ -76,10 +78,12 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> DeleteCertificateOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificateResult, ACMError> DescribeCertificateOutcome;
         typedef Aws::Utils::Outcome<ExportCertificateResult, ACMError> ExportCertificateOutcome;
+        typedef Aws::Utils::Outcome<GetAccountConfigurationResult, ACMError> GetAccountConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetCertificateResult, ACMError> GetCertificateOutcome;
         typedef Aws::Utils::Outcome<ImportCertificateResult, ACMError> ImportCertificateOutcome;
         typedef Aws::Utils::Outcome<ListCertificatesResult, ACMError> ListCertificatesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForCertificateResult, ACMError> ListTagsForCertificateOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> PutAccountConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RemoveTagsFromCertificateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ACMError> RenewCertificateOutcome;
         typedef Aws::Utils::Outcome<RequestCertificateResult, ACMError> RequestCertificateOutcome;
@@ -90,10 +94,12 @@ namespace Model
         typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
         typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
         typedef std::future<ExportCertificateOutcome> ExportCertificateOutcomeCallable;
+        typedef std::future<GetAccountConfigurationOutcome> GetAccountConfigurationOutcomeCallable;
         typedef std::future<GetCertificateOutcome> GetCertificateOutcomeCallable;
         typedef std::future<ImportCertificateOutcome> ImportCertificateOutcomeCallable;
         typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
         typedef std::future<ListTagsForCertificateOutcome> ListTagsForCertificateOutcomeCallable;
+        typedef std::future<PutAccountConfigurationOutcome> PutAccountConfigurationOutcomeCallable;
         typedef std::future<RemoveTagsFromCertificateOutcome> RemoveTagsFromCertificateOutcomeCallable;
         typedef std::future<RenewCertificateOutcome> RenewCertificateOutcomeCallable;
         typedef std::future<RequestCertificateOutcome> RequestCertificateOutcomeCallable;
@@ -107,10 +113,12 @@ namespace Model
     typedef std::function<void(const ACMClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ExportCertificateRequest&, const Model::ExportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::GetAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountConfigurationResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::GetCertificateRequest&, const Model::GetCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ImportCertificateRequest&, const Model::ImportCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::ListTagsForCertificateRequest&, const Model::ListTagsForCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForCertificateResponseReceivedHandler;
+    typedef std::function<void(const ACMClient*, const Model::PutAccountConfigurationRequest&, const Model::PutAccountConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountConfigurationResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::RemoveTagsFromCertificateRequest&, const Model::RemoveTagsFromCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::RenewCertificateRequest&, const Model::RenewCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenewCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMClient*, const Model::RequestCertificateRequest&, const Model::RequestCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestCertificateResponseReceivedHandler;
@@ -118,12 +126,11 @@ namespace Model
     typedef std::function<void(const ACMClient*, const Model::UpdateCertificateOptionsRequest&, const Model::UpdateCertificateOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateOptionsResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Certificate Manager</fullname> <p>Welcome to the AWS Certificate
-   * Manager (ACM) API documentation.</p> <p>You can use ACM to manage SSL/TLS
-   * certificates for your AWS-based websites and applications. For general
-   * information about using ACM, see the <a
-   * href="https://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate
-   * Manager User Guide</i> </a>.</p>
+   * <fullname>AWS Certificate Manager</fullname> <p>You can use AWS Certificate
+   * Manager (ACM) to manage SSL/TLS certificates for your AWS-based websites and
+   * applications. For more information about using ACM, see the <a
+   * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+   * User Guide</a>.</p>
    */
   class AWS_ACM_API ACMClient : public Aws::Client::AWSJsonClient
   {
@@ -346,6 +353,33 @@ namespace Model
         virtual void ExportCertificateAsync(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the account configuration options associated with an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccountConfigurationOutcome GetAccountConfiguration() const;
+
+        /**
+         * <p>Returns the account configuration options associated with an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccountConfigurationOutcomeCallable GetAccountConfigurationCallable() const;
+
+        /**
+         * <p>Returns the account configuration options associated with an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/GetAccountConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccountConfigurationAsync(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
          * <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain
          * consists of the certificate of the issuing CA and the intermediate certificates
          * of any other subordinate CAs. All of the certificates are base64 encoded. You
@@ -405,7 +439,8 @@ namespace Model
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
-         * that is protected by a password or a passphrase.</p> </li> <li> <p>If the
+         * that is protected by a password or a passphrase.</p> </li> <li> <p>The private
+         * key must be no larger than 5 KB (5,120 bytes).</p> </li> <li> <p>If the
          * certificate you are importing is not self-signed, you must enter its certificate
          * chain.</p> </li> <li> <p>If a certificate chain is included, the issuer must be
          * the subject of one of the certificates in the chain.</p> </li> <li> <p>The
@@ -415,13 +450,13 @@ namespace Model
          * <code>Issuer</code> field must not be empty.</p> </li> <li> <p>The OCSP
          * authority URL, if present, must not exceed 1000 characters.</p> </li> <li> <p>To
          * import a new certificate, omit the <code>CertificateArn</code> argument. Include
-         * this argument only when you want to replace a previously imported certifica</p>
-         * </li> <li> <p>When you import a certificate by using the CLI, you must specify
-         * the certificate, the certificate chain, and the private key by their file names
-         * preceded by <code>file://</code>. For example, you can specify a certificate
-         * saved in the <code>C:\temp</code> folder as
-         * <code>file://C:\temp\certificate_to_import.pem</code>. If you are making an HTTP
-         * or HTTPS Query request, include these arguments as BLOBs. </p> </li> <li>
+         * this argument only when you want to replace a previously imported
+         * certificate.</p> </li> <li> <p>When you import a certificate by using the CLI,
+         * you must specify the certificate, the certificate chain, and the private key by
+         * their file names preceded by <code>fileb://</code>. For example, you can specify
+         * a certificate saved in the <code>C:\temp</code> folder as
+         * <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are making an
+         * HTTP or HTTPS Query request, include these arguments as BLOBs. </p> </li> <li>
          * <p>When you import a certificate by using an SDK, you must specify the
          * certificate, the certificate chain, and the private key files in the manner
          * required by the programming language you're using. </p> </li> <li> <p>The
@@ -454,7 +489,8 @@ namespace Model
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
-         * that is protected by a password or a passphrase.</p> </li> <li> <p>If the
+         * that is protected by a password or a passphrase.</p> </li> <li> <p>The private
+         * key must be no larger than 5 KB (5,120 bytes).</p> </li> <li> <p>If the
          * certificate you are importing is not self-signed, you must enter its certificate
          * chain.</p> </li> <li> <p>If a certificate chain is included, the issuer must be
          * the subject of one of the certificates in the chain.</p> </li> <li> <p>The
@@ -464,13 +500,13 @@ namespace Model
          * <code>Issuer</code> field must not be empty.</p> </li> <li> <p>The OCSP
          * authority URL, if present, must not exceed 1000 characters.</p> </li> <li> <p>To
          * import a new certificate, omit the <code>CertificateArn</code> argument. Include
-         * this argument only when you want to replace a previously imported certifica</p>
-         * </li> <li> <p>When you import a certificate by using the CLI, you must specify
-         * the certificate, the certificate chain, and the private key by their file names
-         * preceded by <code>file://</code>. For example, you can specify a certificate
-         * saved in the <code>C:\temp</code> folder as
-         * <code>file://C:\temp\certificate_to_import.pem</code>. If you are making an HTTP
-         * or HTTPS Query request, include these arguments as BLOBs. </p> </li> <li>
+         * this argument only when you want to replace a previously imported
+         * certificate.</p> </li> <li> <p>When you import a certificate by using the CLI,
+         * you must specify the certificate, the certificate chain, and the private key by
+         * their file names preceded by <code>fileb://</code>. For example, you can specify
+         * a certificate saved in the <code>C:\temp</code> folder as
+         * <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are making an
+         * HTTP or HTTPS Query request, include these arguments as BLOBs. </p> </li> <li>
          * <p>When you import a certificate by using an SDK, you must specify the
          * certificate, the certificate chain, and the private key files in the manner
          * required by the programming language you're using. </p> </li> <li> <p>The
@@ -505,7 +541,8 @@ namespace Model
          * guidelines when importing third party certificates:</p> <ul> <li> <p>You must
          * enter the private key that matches the certificate you are importing.</p> </li>
          * <li> <p>The private key must be unencrypted. You cannot import a private key
-         * that is protected by a password or a passphrase.</p> </li> <li> <p>If the
+         * that is protected by a password or a passphrase.</p> </li> <li> <p>The private
+         * key must be no larger than 5 KB (5,120 bytes).</p> </li> <li> <p>If the
          * certificate you are importing is not self-signed, you must enter its certificate
          * chain.</p> </li> <li> <p>If a certificate chain is included, the issuer must be
          * the subject of one of the certificates in the chain.</p> </li> <li> <p>The
@@ -515,13 +552,13 @@ namespace Model
          * <code>Issuer</code> field must not be empty.</p> </li> <li> <p>The OCSP
          * authority URL, if present, must not exceed 1000 characters.</p> </li> <li> <p>To
          * import a new certificate, omit the <code>CertificateArn</code> argument. Include
-         * this argument only when you want to replace a previously imported certifica</p>
-         * </li> <li> <p>When you import a certificate by using the CLI, you must specify
-         * the certificate, the certificate chain, and the private key by their file names
-         * preceded by <code>file://</code>. For example, you can specify a certificate
-         * saved in the <code>C:\temp</code> folder as
-         * <code>file://C:\temp\certificate_to_import.pem</code>. If you are making an HTTP
-         * or HTTPS Query request, include these arguments as BLOBs. </p> </li> <li>
+         * this argument only when you want to replace a previously imported
+         * certificate.</p> </li> <li> <p>When you import a certificate by using the CLI,
+         * you must specify the certificate, the certificate chain, and the private key by
+         * their file names preceded by <code>fileb://</code>. For example, you can specify
+         * a certificate saved in the <code>C:\temp</code> folder as
+         * <code>fileb://C:\temp\certificate_to_import.pem</code>. If you are making an
+         * HTTP or HTTPS Query request, include these arguments as BLOBs. </p> </li> <li>
          * <p>When you import a certificate by using an SDK, you must specify the
          * certificate, the certificate chain, and the private key files in the manner
          * required by the programming language you're using. </p> </li> <li> <p>The
@@ -614,6 +651,46 @@ namespace Model
         virtual void ListTagsForCertificateAsync(const Model::ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds or modifies account-level configurations in ACM. </p> <p>The supported
+         * configuration option is <code>DaysBeforeExpiry</code>. This option specifies the
+         * number of days prior to certificate expiration when ACM starts generating
+         * <code>EventBridge</code> events. ACM sends one event per day per certificate
+         * until the certificate expires. By default, accounts receive events starting 45
+         * days before certificate expiration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountConfigurationOutcome PutAccountConfiguration(const Model::PutAccountConfigurationRequest& request) const;
+
+        /**
+         * <p>Adds or modifies account-level configurations in ACM. </p> <p>The supported
+         * configuration option is <code>DaysBeforeExpiry</code>. This option specifies the
+         * number of days prior to certificate expiration when ACM starts generating
+         * <code>EventBridge</code> events. ACM sends one event per day per certificate
+         * until the certificate expires. By default, accounts receive events starting 45
+         * days before certificate expiration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccountConfigurationOutcomeCallable PutAccountConfigurationCallable(const Model::PutAccountConfigurationRequest& request) const;
+
+        /**
+         * <p>Adds or modifies account-level configurations in ACM. </p> <p>The supported
+         * configuration option is <code>DaysBeforeExpiry</code>. This option specifies the
+         * number of days prior to certificate expiration when ACM starts generating
+         * <code>EventBridge</code> events. ACM sends one event per day per certificate
+         * until the certificate expires. By default, accounts receive events starting 45
+         * days before certificate expiration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/PutAccountConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccountConfigurationAsync(const Model::PutAccountConfigurationRequest& request, const PutAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Remove one or more tags from an ACM certificate. A tag consists of a
          * key-value pair. If you do not specify the value portion of the tag when calling
          * this function, the tag will be removed regardless of value. If you specify a
@@ -660,7 +737,7 @@ namespace Model
         virtual void RemoveTagsFromCertificateAsync(const Model::RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Renews an eligable ACM certificate. At this time, only exported private
+         * <p>Renews an eligible ACM certificate. At this time, only exported private
          * certificates can be renewed with this operation. In order to renew your ACM PCA
          * certificates with ACM, you must first <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
@@ -673,7 +750,7 @@ namespace Model
         virtual Model::RenewCertificateOutcome RenewCertificate(const Model::RenewCertificateRequest& request) const;
 
         /**
-         * <p>Renews an eligable ACM certificate. At this time, only exported private
+         * <p>Renews an eligible ACM certificate. At this time, only exported private
          * certificates can be renewed with this operation. In order to renew your ACM PCA
          * certificates with ACM, you must first <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
@@ -688,7 +765,7 @@ namespace Model
         virtual Model::RenewCertificateOutcomeCallable RenewCertificateCallable(const Model::RenewCertificateRequest& request) const;
 
         /**
-         * <p>Renews an eligable ACM certificate. At this time, only exported private
+         * <p>Renews an eligible ACM certificate. At this time, only exported private
          * certificates can be renewed with this operation. In order to renew your ACM PCA
          * certificates with ACM, you must first <a
          * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant
@@ -869,10 +946,12 @@ namespace Model
         void DeleteCertificateAsyncHelper(const Model::DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificateAsyncHelper(const Model::DescribeCertificateRequest& request, const DescribeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportCertificateAsyncHelper(const Model::ExportCertificateRequest& request, const ExportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccountConfigurationAsyncHelper(const GetAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCertificateAsyncHelper(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportCertificateAsyncHelper(const Model::ImportCertificateRequest& request, const ImportCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCertificatesAsyncHelper(const Model::ListCertificatesRequest& request, const ListCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForCertificateAsyncHelper(const Model::ListTagsForCertificateRequest& request, const ListTagsForCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccountConfigurationAsyncHelper(const Model::PutAccountConfigurationRequest& request, const PutAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromCertificateAsyncHelper(const Model::RemoveTagsFromCertificateRequest& request, const RemoveTagsFromCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenewCertificateAsyncHelper(const Model::RenewCertificateRequest& request, const RenewCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RequestCertificateAsyncHelper(const Model::RequestCertificateRequest& request, const RequestCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

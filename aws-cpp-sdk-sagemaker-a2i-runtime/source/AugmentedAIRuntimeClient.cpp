@@ -73,7 +73,7 @@ AugmentedAIRuntimeClient::~AugmentedAIRuntimeClient()
 {
 }
 
-void AugmentedAIRuntimeClient::init(const ClientConfiguration& config)
+void AugmentedAIRuntimeClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("SageMaker A2I Runtime");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -107,10 +107,8 @@ DeleteHumanLoopOutcome AugmentedAIRuntimeClient::DeleteHumanLoop(const DeleteHum
     return DeleteHumanLoopOutcome(Aws::Client::AWSError<AugmentedAIRuntimeErrors>(AugmentedAIRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HumanLoopName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/human-loops/";
-  ss << request.GetHumanLoopName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/human-loops/");
+  uri.AddPathSegment(request.GetHumanLoopName());
   return DeleteHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -140,10 +138,8 @@ DescribeHumanLoopOutcome AugmentedAIRuntimeClient::DescribeHumanLoop(const Descr
     return DescribeHumanLoopOutcome(Aws::Client::AWSError<AugmentedAIRuntimeErrors>(AugmentedAIRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HumanLoopName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/human-loops/";
-  ss << request.GetHumanLoopName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/human-loops/");
+  uri.AddPathSegment(request.GetHumanLoopName());
   return DescribeHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -173,9 +169,7 @@ ListHumanLoopsOutcome AugmentedAIRuntimeClient::ListHumanLoops(const ListHumanLo
     return ListHumanLoopsOutcome(Aws::Client::AWSError<AugmentedAIRuntimeErrors>(AugmentedAIRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FlowDefinitionArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/human-loops";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/human-loops");
   return ListHumanLoopsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,9 +194,7 @@ void AugmentedAIRuntimeClient::ListHumanLoopsAsyncHelper(const ListHumanLoopsReq
 StartHumanLoopOutcome AugmentedAIRuntimeClient::StartHumanLoop(const StartHumanLoopRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/human-loops";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/human-loops");
   return StartHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -227,9 +219,7 @@ void AugmentedAIRuntimeClient::StartHumanLoopAsyncHelper(const StartHumanLoopReq
 StopHumanLoopOutcome AugmentedAIRuntimeClient::StopHumanLoop(const StopHumanLoopRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/human-loops/stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/human-loops/stop");
   return StopHumanLoopOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

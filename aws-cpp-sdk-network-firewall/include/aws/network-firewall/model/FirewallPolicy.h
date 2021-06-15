@@ -223,128 +223,137 @@ namespace Model
 
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStatelessFragmentDefaultActions() const{ return m_statelessFragmentDefaultActions; }
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline bool StatelessFragmentDefaultActionsHasBeenSet() const { return m_statelessFragmentDefaultActionsHasBeenSet; }
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline void SetStatelessFragmentDefaultActions(const Aws::Vector<Aws::String>& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions = value; }
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline void SetStatelessFragmentDefaultActions(Aws::Vector<Aws::String>&& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions = std::move(value); }
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline FirewallPolicy& WithStatelessFragmentDefaultActions(const Aws::Vector<Aws::String>& value) { SetStatelessFragmentDefaultActions(value); return *this;}
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline FirewallPolicy& WithStatelessFragmentDefaultActions(Aws::Vector<Aws::String>&& value) { SetStatelessFragmentDefaultActions(std::move(value)); return *this;}
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline FirewallPolicy& AddStatelessFragmentDefaultActions(const Aws::String& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions.push_back(value); return *this; }
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline FirewallPolicy& AddStatelessFragmentDefaultActions(Aws::String&& value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The actions to take on a fragmented packet if it doesn't match any of the
-     * stateless rules in the policy. If you want non-matching fragmented packets to be
-     * forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
-     * <p>You must specify one of the standard actions: <code>aws:pass</code>,
-     * <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can
-     * specify custom actions that are compatible with your standard section
-     * choice.</p> <p>For example, you could specify <code>["aws:pass"]</code> or you
-     * could specify <code>["aws:pass", “customActionName”]</code>. For information
-     * about compatibility, see the custom action descriptions under
-     * <a>CustomAction</a>.</p>
+     * <p>The actions to take on a fragmented UDP packet if it doesn't match any of the
+     * stateless rules in the policy. Network Firewall only manages UDP packet
+     * fragments and silently drops packet fragments for other protocols. If you want
+     * non-matching fragmented UDP packets to be forwarded for stateful inspection,
+     * specify <code>aws:forward_to_sfe</code>. </p> <p>You must specify one of the
+     * standard actions: <code>aws:pass</code>, <code>aws:drop</code>, or
+     * <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions
+     * that are compatible with your standard section choice.</p> <p>For example, you
+     * could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
+     * “customActionName”]</code>. For information about compatibility, see the custom
+     * action descriptions under <a>CustomAction</a>.</p>
      */
     inline FirewallPolicy& AddStatelessFragmentDefaultActions(const char* value) { m_statelessFragmentDefaultActionsHasBeenSet = true; m_statelessFragmentDefaultActions.push_back(value); return *this; }
 

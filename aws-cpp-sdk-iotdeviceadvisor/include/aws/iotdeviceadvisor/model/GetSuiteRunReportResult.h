@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>Gets the download URL of the qualification report.</p>
+     * <p>Download URL of the qualification report.</p>
      */
     inline const Aws::String& GetQualificationReportDownloadUrl() const{ return m_qualificationReportDownloadUrl; }
 
     /**
-     * <p>Gets the download URL of the qualification report.</p>
+     * <p>Download URL of the qualification report.</p>
      */
     inline void SetQualificationReportDownloadUrl(const Aws::String& value) { m_qualificationReportDownloadUrl = value; }
 
     /**
-     * <p>Gets the download URL of the qualification report.</p>
+     * <p>Download URL of the qualification report.</p>
      */
     inline void SetQualificationReportDownloadUrl(Aws::String&& value) { m_qualificationReportDownloadUrl = std::move(value); }
 
     /**
-     * <p>Gets the download URL of the qualification report.</p>
+     * <p>Download URL of the qualification report.</p>
      */
     inline void SetQualificationReportDownloadUrl(const char* value) { m_qualificationReportDownloadUrl.assign(value); }
 
     /**
-     * <p>Gets the download URL of the qualification report.</p>
+     * <p>Download URL of the qualification report.</p>
      */
     inline GetSuiteRunReportResult& WithQualificationReportDownloadUrl(const Aws::String& value) { SetQualificationReportDownloadUrl(value); return *this;}
 
     /**
-     * <p>Gets the download URL of the qualification report.</p>
+     * <p>Download URL of the qualification report.</p>
      */
     inline GetSuiteRunReportResult& WithQualificationReportDownloadUrl(Aws::String&& value) { SetQualificationReportDownloadUrl(std::move(value)); return *this;}
 
     /**
-     * <p>Gets the download URL of the qualification report.</p>
+     * <p>Download URL of the qualification report.</p>
      */
     inline GetSuiteRunReportResult& WithQualificationReportDownloadUrl(const char* value) { SetQualificationReportDownloadUrl(value); return *this;}
 

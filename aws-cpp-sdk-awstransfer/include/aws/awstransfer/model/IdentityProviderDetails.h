@@ -128,6 +128,55 @@ namespace Model
      */
     inline IdentityProviderDetails& WithInvocationRole(const char* value) { SetInvocationRole(value); return *this;}
 
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline IdentityProviderDetails& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline IdentityProviderDetails& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the AWS Directory Service directory that you want to stop
+     * sharing.</p>
+     */
+    inline IdentityProviderDetails& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+
   private:
 
     Aws::String m_url;
@@ -135,6 +184,9 @@ namespace Model
 
     Aws::String m_invocationRole;
     bool m_invocationRoleHasBeenSet;
+
+    Aws::String m_directoryId;
+    bool m_directoryIdHasBeenSet;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/forecast/model/AutoMLOverrideStrategy.h>
 #include <aws/forecast/model/EvaluationResult.h>
 #include <utility>
 
@@ -68,9 +69,52 @@ namespace Model
      */
     inline GetAccuracyMetricsResult& AddPredictorEvaluationResults(EvaluationResult&& value) { m_predictorEvaluationResults.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategy = value; }
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategy = std::move(value); }
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline GetAccuracyMetricsResult& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
+
+    /**
+     * <p>The AutoML strategy used to train the predictor. Unless
+     * <code>LatencyOptimized</code> is specified, the AutoML strategy optimizes
+     * predictor accuracy.</p> <p>This parameter is only valid for predictors trained
+     * using AutoML.</p>
+     */
+    inline GetAccuracyMetricsResult& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<EvaluationResult> m_predictorEvaluationResults;
+
+    AutoMLOverrideStrategy m_autoMLOverrideStrategy;
   };
 
 } // namespace Model

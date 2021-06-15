@@ -75,25 +75,25 @@ namespace Model
 
     /**
      * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
+     * <code>nextToken</code> response field. Default: 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
+     * <code>nextToken</code> response field. Default: 50.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
+     * <code>nextToken</code> response field. Default: 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The first key pair to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
+     * <code>nextToken</code> response field. Default: 50.</p>
      */
     inline ListPlaybackKeyPairsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

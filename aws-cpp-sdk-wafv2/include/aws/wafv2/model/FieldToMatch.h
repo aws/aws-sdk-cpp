@@ -12,6 +12,7 @@
 #include <aws/wafv2/model/QueryString.h>
 #include <aws/wafv2/model/Body.h>
 #include <aws/wafv2/model/Method.h>
+#include <aws/wafv2/model/JsonBody.h>
 #include <utility>
 
 namespace Aws
@@ -30,17 +31,12 @@ namespace Model
 {
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>The part of a web request that you want
-   * AWS WAF to inspect. Include the single <code>FieldToMatch</code> type that you
-   * want to inspect, with additional specifications as needed, according to the
-   * type. You specify a single request component in <code>FieldToMatch</code> for
-   * each rule statement that requires it. To inspect more than one component of a
-   * web request, create a separate rule statement for each component.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The part of a web request that you want AWS WAF to inspect. Include the
+   * single <code>FieldToMatch</code> type that you want to inspect, with additional
+   * specifications as needed, according to the type. You specify a single request
+   * component in <code>FieldToMatch</code> for each rule statement that requires it.
+   * To inspect more than one component of a web request, create a separate rule
+   * statement for each component.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */
@@ -56,42 +52,48 @@ namespace Model
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline const SingleHeader& GetSingleHeader() const{ return m_singleHeader; }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline bool SingleHeaderHasBeenSet() const { return m_singleHeaderHasBeenSet; }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline void SetSingleHeader(const SingleHeader& value) { m_singleHeaderHasBeenSet = true; m_singleHeader = value; }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline void SetSingleHeader(SingleHeader&& value) { m_singleHeaderHasBeenSet = true; m_singleHeader = std::move(value); }
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline FieldToMatch& WithSingleHeader(const SingleHeader& value) { SetSingleHeader(value); return *this;}
 
     /**
      * <p>Inspect a single header. Provide the name of the header to inspect, for
      * example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't
-     * case sensitive.</p>
+     * case sensitive.</p> <p>Example JSON: <code>"SingleHeader": { "Name": "haystack"
+     * }</code> </p>
      */
     inline FieldToMatch& WithSingleHeader(SingleHeader&& value) { SetSingleHeader(std::move(value)); return *this;}
 
@@ -101,7 +103,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline const SingleQueryArgument& GetSingleQueryArgument() const{ return m_singleQueryArgument; }
 
@@ -110,7 +113,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline bool SingleQueryArgumentHasBeenSet() const { return m_singleQueryArgumentHasBeenSet; }
 
@@ -119,7 +123,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline void SetSingleQueryArgument(const SingleQueryArgument& value) { m_singleQueryArgumentHasBeenSet = true; m_singleQueryArgument = value; }
 
@@ -128,7 +133,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline void SetSingleQueryArgument(SingleQueryArgument&& value) { m_singleQueryArgumentHasBeenSet = true; m_singleQueryArgument = std::move(value); }
 
@@ -137,7 +143,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline FieldToMatch& WithSingleQueryArgument(const SingleQueryArgument& value) { SetSingleQueryArgument(value); return *this;}
 
@@ -146,7 +153,8 @@ namespace Model
      * inspect, such as <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30
      * characters long and isn't case sensitive. </p> <p>This is used only to indicate
      * the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a>
-     * specification. </p>
+     * specification. </p> <p>Example JSON: <code>"SingleQueryArgument": { "Name":
+     * "myArgument" }</code> </p>
      */
     inline FieldToMatch& WithSingleQueryArgument(SingleQueryArgument&& value) { SetSingleQueryArgument(std::move(value)); return *this;}
 
@@ -257,92 +265,98 @@ namespace Model
 
 
     /**
-     * <p>Inspect the request body, which immediately follows the request headers. This
-     * is the part of a request that contains any additional data that you want to send
-     * to your web server as the HTTP request body, such as data from a form. </p>
-     * <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded
-     * to AWS WAF for inspection by the underlying host service. If you don't need to
-     * inspect more than 8 KB, you can guarantee that you don't allow additional bytes
-     * in by combining a statement that inspects the body of the web request, such as
-     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
-     * <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of
-     * the request. AWS WAF doesn't support inspecting the entire contents of web
-     * requests whose bodies exceed the 8 KB limit.</p>
+     * <p>Inspect the request body as plain text. The request body immediately follows
+     * the request headers. This is the part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body, such as
+     * data from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the
+     * request body are forwarded to AWS WAF for inspection by the underlying host
+     * service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     * don't allow additional bytes in by combining a statement that inspects the body
+     * of the web request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
      */
     inline const Body& GetBody() const{ return m_body; }
 
     /**
-     * <p>Inspect the request body, which immediately follows the request headers. This
-     * is the part of a request that contains any additional data that you want to send
-     * to your web server as the HTTP request body, such as data from a form. </p>
-     * <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded
-     * to AWS WAF for inspection by the underlying host service. If you don't need to
-     * inspect more than 8 KB, you can guarantee that you don't allow additional bytes
-     * in by combining a statement that inspects the body of the web request, such as
-     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
-     * <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of
-     * the request. AWS WAF doesn't support inspecting the entire contents of web
-     * requests whose bodies exceed the 8 KB limit.</p>
+     * <p>Inspect the request body as plain text. The request body immediately follows
+     * the request headers. This is the part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body, such as
+     * data from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the
+     * request body are forwarded to AWS WAF for inspection by the underlying host
+     * service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     * don't allow additional bytes in by combining a statement that inspects the body
+     * of the web request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
-     * <p>Inspect the request body, which immediately follows the request headers. This
-     * is the part of a request that contains any additional data that you want to send
-     * to your web server as the HTTP request body, such as data from a form. </p>
-     * <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded
-     * to AWS WAF for inspection by the underlying host service. If you don't need to
-     * inspect more than 8 KB, you can guarantee that you don't allow additional bytes
-     * in by combining a statement that inspects the body of the web request, such as
-     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
-     * <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of
-     * the request. AWS WAF doesn't support inspecting the entire contents of web
-     * requests whose bodies exceed the 8 KB limit.</p>
+     * <p>Inspect the request body as plain text. The request body immediately follows
+     * the request headers. This is the part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body, such as
+     * data from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the
+     * request body are forwarded to AWS WAF for inspection by the underlying host
+     * service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     * don't allow additional bytes in by combining a statement that inspects the body
+     * of the web request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
      */
     inline void SetBody(const Body& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
-     * <p>Inspect the request body, which immediately follows the request headers. This
-     * is the part of a request that contains any additional data that you want to send
-     * to your web server as the HTTP request body, such as data from a form. </p>
-     * <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded
-     * to AWS WAF for inspection by the underlying host service. If you don't need to
-     * inspect more than 8 KB, you can guarantee that you don't allow additional bytes
-     * in by combining a statement that inspects the body of the web request, such as
-     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
-     * <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of
-     * the request. AWS WAF doesn't support inspecting the entire contents of web
-     * requests whose bodies exceed the 8 KB limit.</p>
+     * <p>Inspect the request body as plain text. The request body immediately follows
+     * the request headers. This is the part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body, such as
+     * data from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the
+     * request body are forwarded to AWS WAF for inspection by the underlying host
+     * service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     * don't allow additional bytes in by combining a statement that inspects the body
+     * of the web request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
      */
     inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
     /**
-     * <p>Inspect the request body, which immediately follows the request headers. This
-     * is the part of a request that contains any additional data that you want to send
-     * to your web server as the HTTP request body, such as data from a form. </p>
-     * <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded
-     * to AWS WAF for inspection by the underlying host service. If you don't need to
-     * inspect more than 8 KB, you can guarantee that you don't allow additional bytes
-     * in by combining a statement that inspects the body of the web request, such as
-     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
-     * <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of
-     * the request. AWS WAF doesn't support inspecting the entire contents of web
-     * requests whose bodies exceed the 8 KB limit.</p>
+     * <p>Inspect the request body as plain text. The request body immediately follows
+     * the request headers. This is the part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body, such as
+     * data from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the
+     * request body are forwarded to AWS WAF for inspection by the underlying host
+     * service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     * don't allow additional bytes in by combining a statement that inspects the body
+     * of the web request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
      */
     inline FieldToMatch& WithBody(const Body& value) { SetBody(value); return *this;}
 
     /**
-     * <p>Inspect the request body, which immediately follows the request headers. This
-     * is the part of a request that contains any additional data that you want to send
-     * to your web server as the HTTP request body, such as data from a form. </p>
-     * <p>Note that only the first 8 KB (8192 bytes) of the request body are forwarded
-     * to AWS WAF for inspection by the underlying host service. If you don't need to
-     * inspect more than 8 KB, you can guarantee that you don't allow additional bytes
-     * in by combining a statement that inspects the body of the web request, such as
-     * <a>ByteMatchStatement</a> or <a>RegexPatternSetReferenceStatement</a>, with a
-     * <a>SizeConstraintStatement</a> that enforces an 8 KB size limit on the body of
-     * the request. AWS WAF doesn't support inspecting the entire contents of web
-     * requests whose bodies exceed the 8 KB limit.</p>
+     * <p>Inspect the request body as plain text. The request body immediately follows
+     * the request headers. This is the part of a request that contains any additional
+     * data that you want to send to your web server as the HTTP request body, such as
+     * data from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the
+     * request body are forwarded to AWS WAF for inspection by the underlying host
+     * service. If you don't need to inspect more than 8 KB, you can guarantee that you
+     * don't allow additional bytes in by combining a statement that inspects the body
+     * of the web request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
      */
     inline FieldToMatch& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
 
@@ -383,6 +397,103 @@ namespace Model
      */
     inline FieldToMatch& WithMethod(Method&& value) { SetMethod(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Inspect the request body as JSON. The request body immediately follows the
+     * request headers. This is the part of a request that contains any additional data
+     * that you want to send to your web server as the HTTP request body, such as data
+     * from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the request
+     * body are forwarded to AWS WAF for inspection by the underlying host service. If
+     * you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web
+     * request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
+     */
+    inline const JsonBody& GetJsonBody() const{ return m_jsonBody; }
+
+    /**
+     * <p>Inspect the request body as JSON. The request body immediately follows the
+     * request headers. This is the part of a request that contains any additional data
+     * that you want to send to your web server as the HTTP request body, such as data
+     * from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the request
+     * body are forwarded to AWS WAF for inspection by the underlying host service. If
+     * you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web
+     * request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
+     */
+    inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }
+
+    /**
+     * <p>Inspect the request body as JSON. The request body immediately follows the
+     * request headers. This is the part of a request that contains any additional data
+     * that you want to send to your web server as the HTTP request body, such as data
+     * from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the request
+     * body are forwarded to AWS WAF for inspection by the underlying host service. If
+     * you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web
+     * request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
+     */
+    inline void SetJsonBody(const JsonBody& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = value; }
+
+    /**
+     * <p>Inspect the request body as JSON. The request body immediately follows the
+     * request headers. This is the part of a request that contains any additional data
+     * that you want to send to your web server as the HTTP request body, such as data
+     * from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the request
+     * body are forwarded to AWS WAF for inspection by the underlying host service. If
+     * you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web
+     * request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
+     */
+    inline void SetJsonBody(JsonBody&& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = std::move(value); }
+
+    /**
+     * <p>Inspect the request body as JSON. The request body immediately follows the
+     * request headers. This is the part of a request that contains any additional data
+     * that you want to send to your web server as the HTTP request body, such as data
+     * from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the request
+     * body are forwarded to AWS WAF for inspection by the underlying host service. If
+     * you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web
+     * request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
+     */
+    inline FieldToMatch& WithJsonBody(const JsonBody& value) { SetJsonBody(value); return *this;}
+
+    /**
+     * <p>Inspect the request body as JSON. The request body immediately follows the
+     * request headers. This is the part of a request that contains any additional data
+     * that you want to send to your web server as the HTTP request body, such as data
+     * from a form. </p> <p>Note that only the first 8 KB (8192 bytes) of the request
+     * body are forwarded to AWS WAF for inspection by the underlying host service. If
+     * you don't need to inspect more than 8 KB, you can guarantee that you don't allow
+     * additional bytes in by combining a statement that inspects the body of the web
+     * request, such as <a>ByteMatchStatement</a> or
+     * <a>RegexPatternSetReferenceStatement</a>, with a <a>SizeConstraintStatement</a>
+     * that enforces an 8 KB size limit on the body of the request. AWS WAF doesn't
+     * support inspecting the entire contents of web requests whose bodies exceed the 8
+     * KB limit.</p>
+     */
+    inline FieldToMatch& WithJsonBody(JsonBody&& value) { SetJsonBody(std::move(value)); return *this;}
+
   private:
 
     SingleHeader m_singleHeader;
@@ -405,6 +516,9 @@ namespace Model
 
     Method m_method;
     bool m_methodHasBeenSet;
+
+    JsonBody m_jsonBody;
+    bool m_jsonBodyHasBeenSet;
   };
 
 } // namespace Model

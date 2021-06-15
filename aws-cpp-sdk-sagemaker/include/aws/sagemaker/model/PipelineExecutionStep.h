@@ -256,32 +256,32 @@ namespace Model
 
 
     /**
-     * <p>The metadata for the step execution.</p>
+     * <p>Metadata for the step execution.</p>
      */
     inline const PipelineExecutionStepMetadata& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The metadata for the step execution.</p>
+     * <p>Metadata for the step execution.</p>
      */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
-     * <p>The metadata for the step execution.</p>
+     * <p>Metadata for the step execution.</p>
      */
     inline void SetMetadata(const PipelineExecutionStepMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
-     * <p>The metadata for the step execution.</p>
+     * <p>Metadata for the step execution.</p>
      */
     inline void SetMetadata(PipelineExecutionStepMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
     /**
-     * <p>The metadata for the step execution.</p>
+     * <p>Metadata for the step execution.</p>
      */
     inline PipelineExecutionStep& WithMetadata(const PipelineExecutionStepMetadata& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The metadata for the step execution.</p>
+     * <p>Metadata for the step execution.</p>
      */
     inline PipelineExecutionStep& WithMetadata(PipelineExecutionStepMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 

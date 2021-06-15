@@ -40,81 +40,89 @@ namespace Model
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline void SetJsonPath(Aws::String&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::move(value); }
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline void SetJsonPath(const char* value) { m_jsonPathHasBeenSet = true; m_jsonPath.assign(value); }
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline Record& WithJsonPath(const Aws::String& value) { SetJsonPath(value); return *this;}
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline Record& WithJsonPath(Aws::String&& value) { SetJsonPath(std::move(value)); return *this;}
 
     /**
      * <p>The path, as a JSONPath expression, to the field in the record that contains
-     * the data.</p> <p>If the name of an element exceeds 20 characters, Amazon Macie
-     * truncates the name by removing characters from the beginning of the name. If the
-     * resulting full path exceeds 250 characters, Macie also truncates the path,
-     * starting with the first element in the path, until the path contains 250 or
-     * fewer characters.</p>
+     * the data. If Amazon Macie detects sensitive data in the name of any element in
+     * the path, Macie omits this field.</p> <p>If the name of an element exceeds 20
+     * characters, Macie truncates the name by removing characters from the beginning
+     * of the name. If the resulting full path exceeds 250 characters, Macie also
+     * truncates the path, starting with the first element in the path, until the path
+     * contains 250 or fewer characters.</p>
      */
     inline Record& WithJsonPath(const char* value) { SetJsonPath(value); return *this;}
 

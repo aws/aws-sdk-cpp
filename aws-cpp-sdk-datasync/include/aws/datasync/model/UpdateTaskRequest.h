@@ -179,7 +179,9 @@ namespace Model
      * destination location. You can configure your task to execute hourly, daily,
      * weekly or on specific days of the week. You control when in the day or hour you
      * want the task to execute. The time you specify is UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
 
@@ -188,7 +190,9 @@ namespace Model
      * destination location. You can configure your task to execute hourly, daily,
      * weekly or on specific days of the week. You control when in the day or hour you
      * want the task to execute. The time you specify is UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
@@ -197,7 +201,9 @@ namespace Model
      * destination location. You can configure your task to execute hourly, daily,
      * weekly or on specific days of the week. You control when in the day or hour you
      * want the task to execute. The time you specify is UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline void SetSchedule(const TaskSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
@@ -206,7 +212,9 @@ namespace Model
      * destination location. You can configure your task to execute hourly, daily,
      * weekly or on specific days of the week. You control when in the day or hour you
      * want the task to execute. The time you specify is UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline void SetSchedule(TaskSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
@@ -215,7 +223,9 @@ namespace Model
      * destination location. You can configure your task to execute hourly, daily,
      * weekly or on specific days of the week. You control when in the day or hour you
      * want the task to execute. The time you specify is UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline UpdateTaskRequest& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
 
@@ -224,7 +234,9 @@ namespace Model
      * destination location. You can configure your task to execute hourly, daily,
      * weekly or on specific days of the week. You control when in the day or hour you
      * want the task to execute. The time you specify is UTC time. For more
-     * information, see <a>task-scheduling</a>.</p>
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+     * your task</a>.</p>
      */
     inline UpdateTaskRequest& WithSchedule(TaskSchedule&& value) { SetSchedule(std::move(value)); return *this;}
 

@@ -39,7 +39,8 @@ Job::Job() :
     m_completedAtHasBeenSet(false),
     m_jobProcessDetailsHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_jobTemplateArnHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ Job::Job(JsonView jsonValue) :
     m_completedAtHasBeenSet(false),
     m_jobProcessDetailsHasBeenSet(false),
     m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_jobTemplateArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +202,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_namespaceIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jobTemplateArn"))
+  {
+    m_jobTemplateArn = jsonValue.GetString("jobTemplateArn");
+
+    m_jobTemplateArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -312,6 +321,12 @@ JsonValue Job::Jsonize() const
   if(m_namespaceIdHasBeenSet)
   {
    payload.WithString("namespaceId", m_namespaceId);
+
+  }
+
+  if(m_jobTemplateArnHasBeenSet)
+  {
+   payload.WithString("jobTemplateArn", m_jobTemplateArn);
 
   }
 

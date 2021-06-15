@@ -37,7 +37,10 @@ namespace Aws
         static const int Amplitude_HASH = HashingUtils::HashString("Amplitude");
         static const int Veeva_HASH = HashingUtils::HashString("Veeva");
         static const int EventBridge_HASH = HashingUtils::HashString("EventBridge");
+        static const int LookoutMetrics_HASH = HashingUtils::HashString("LookoutMetrics");
         static const int Upsolver_HASH = HashingUtils::HashString("Upsolver");
+        static const int Honeycode_HASH = HashingUtils::HashString("Honeycode");
+        static const int CustomerProfiles_HASH = HashingUtils::HashString("CustomerProfiles");
 
 
         ConnectorType GetConnectorTypeForName(const Aws::String& name)
@@ -111,9 +114,21 @@ namespace Aws
           {
             return ConnectorType::EventBridge;
           }
+          else if (hashCode == LookoutMetrics_HASH)
+          {
+            return ConnectorType::LookoutMetrics;
+          }
           else if (hashCode == Upsolver_HASH)
           {
             return ConnectorType::Upsolver;
+          }
+          else if (hashCode == Honeycode_HASH)
+          {
+            return ConnectorType::Honeycode;
+          }
+          else if (hashCode == CustomerProfiles_HASH)
+          {
+            return ConnectorType::CustomerProfiles;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -163,8 +178,14 @@ namespace Aws
             return "Veeva";
           case ConnectorType::EventBridge:
             return "EventBridge";
+          case ConnectorType::LookoutMetrics:
+            return "LookoutMetrics";
           case ConnectorType::Upsolver:
             return "Upsolver";
+          case ConnectorType::Honeycode:
+            return "Honeycode";
+          case ConnectorType::CustomerProfiles:
+            return "CustomerProfiles";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -35,73 +35,80 @@ namespace Model
 
 
     /**
-     * <p>Lists test suite information using List suite definition.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * definitions in the list.</p>
      */
     inline const Aws::Vector<SuiteDefinitionInformation>& GetSuiteDefinitionInformationList() const{ return m_suiteDefinitionInformationList; }
 
     /**
-     * <p>Lists test suite information using List suite definition.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * definitions in the list.</p>
      */
     inline void SetSuiteDefinitionInformationList(const Aws::Vector<SuiteDefinitionInformation>& value) { m_suiteDefinitionInformationList = value; }
 
     /**
-     * <p>Lists test suite information using List suite definition.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * definitions in the list.</p>
      */
     inline void SetSuiteDefinitionInformationList(Aws::Vector<SuiteDefinitionInformation>&& value) { m_suiteDefinitionInformationList = std::move(value); }
 
     /**
-     * <p>Lists test suite information using List suite definition.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * definitions in the list.</p>
      */
     inline ListSuiteDefinitionsResult& WithSuiteDefinitionInformationList(const Aws::Vector<SuiteDefinitionInformation>& value) { SetSuiteDefinitionInformationList(value); return *this;}
 
     /**
-     * <p>Lists test suite information using List suite definition.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * definitions in the list.</p>
      */
     inline ListSuiteDefinitionsResult& WithSuiteDefinitionInformationList(Aws::Vector<SuiteDefinitionInformation>&& value) { SetSuiteDefinitionInformationList(std::move(value)); return *this;}
 
     /**
-     * <p>Lists test suite information using List suite definition.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * definitions in the list.</p>
      */
     inline ListSuiteDefinitionsResult& AddSuiteDefinitionInformationList(const SuiteDefinitionInformation& value) { m_suiteDefinitionInformationList.push_back(value); return *this; }
 
     /**
-     * <p>Lists test suite information using List suite definition.</p>
+     * <p>An array of objects that provide summaries of information about the suite
+     * definitions in the list.</p>
      */
     inline ListSuiteDefinitionsResult& AddSuiteDefinitionInformationList(SuiteDefinitionInformation&& value) { m_suiteDefinitionInformationList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Creates a Device Advisor test suite.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Creates a Device Advisor test suite.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Creates a Device Advisor test suite.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Creates a Device Advisor test suite.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Creates a Device Advisor test suite.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline ListSuiteDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Creates a Device Advisor test suite.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline ListSuiteDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Creates a Device Advisor test suite.</p>
+     * <p>A token used to get the next set of results.</p>
      */
     inline ListSuiteDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

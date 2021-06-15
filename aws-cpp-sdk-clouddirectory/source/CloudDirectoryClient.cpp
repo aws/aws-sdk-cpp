@@ -134,7 +134,7 @@ CloudDirectoryClient::~CloudDirectoryClient()
 {
 }
 
-void CloudDirectoryClient::init(const ClientConfiguration& config)
+void CloudDirectoryClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("CloudDirectory");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -168,9 +168,7 @@ AddFacetToObjectOutcome CloudDirectoryClient::AddFacetToObject(const AddFacetToO
     return AddFacetToObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/facets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/facets");
   return AddFacetToObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -200,9 +198,7 @@ ApplySchemaOutcome CloudDirectoryClient::ApplySchema(const ApplySchemaRequest& r
     return ApplySchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/apply";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/apply");
   return ApplySchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -232,9 +228,7 @@ AttachObjectOutcome CloudDirectoryClient::AttachObject(const AttachObjectRequest
     return AttachObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/attach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/attach");
   return AttachObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -264,9 +258,7 @@ AttachPolicyOutcome CloudDirectoryClient::AttachPolicy(const AttachPolicyRequest
     return AttachPolicyOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/policy/attach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/policy/attach");
   return AttachPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -296,9 +288,7 @@ AttachToIndexOutcome CloudDirectoryClient::AttachToIndex(const AttachToIndexRequ
     return AttachToIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/index/attach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/index/attach");
   return AttachToIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -328,9 +318,7 @@ AttachTypedLinkOutcome CloudDirectoryClient::AttachTypedLink(const AttachTypedLi
     return AttachTypedLinkOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/attach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/attach");
   return AttachTypedLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -360,9 +348,7 @@ BatchReadOutcome CloudDirectoryClient::BatchRead(const BatchReadRequest& request
     return BatchReadOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/batchread";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/batchread");
   return BatchReadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -392,9 +378,7 @@ BatchWriteOutcome CloudDirectoryClient::BatchWrite(const BatchWriteRequest& requ
     return BatchWriteOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/batchwrite";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/batchwrite");
   return BatchWriteOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -424,9 +408,7 @@ CreateDirectoryOutcome CloudDirectoryClient::CreateDirectory(const CreateDirecto
     return CreateDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/directory/create";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/directory/create");
   return CreateDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -456,9 +438,7 @@ CreateFacetOutcome CloudDirectoryClient::CreateFacet(const CreateFacetRequest& r
     return CreateFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/facet/create";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/facet/create");
   return CreateFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -488,9 +468,7 @@ CreateIndexOutcome CloudDirectoryClient::CreateIndex(const CreateIndexRequest& r
     return CreateIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/index";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/index");
   return CreateIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -520,9 +498,7 @@ CreateObjectOutcome CloudDirectoryClient::CreateObject(const CreateObjectRequest
     return CreateObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object");
   return CreateObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -547,9 +523,7 @@ void CloudDirectoryClient::CreateObjectAsyncHelper(const CreateObjectRequest& re
 CreateSchemaOutcome CloudDirectoryClient::CreateSchema(const CreateSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/create";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/create");
   return CreateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -579,9 +553,7 @@ CreateTypedLinkFacetOutcome CloudDirectoryClient::CreateTypedLinkFacet(const Cre
     return CreateTypedLinkFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/create";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/create");
   return CreateTypedLinkFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -611,9 +583,7 @@ DeleteDirectoryOutcome CloudDirectoryClient::DeleteDirectory(const DeleteDirecto
     return DeleteDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/directory";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/directory");
   return DeleteDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -643,9 +613,7 @@ DeleteFacetOutcome CloudDirectoryClient::DeleteFacet(const DeleteFacetRequest& r
     return DeleteFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/facet/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/facet/delete");
   return DeleteFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -675,9 +643,7 @@ DeleteObjectOutcome CloudDirectoryClient::DeleteObject(const DeleteObjectRequest
     return DeleteObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/delete");
   return DeleteObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -707,9 +673,7 @@ DeleteSchemaOutcome CloudDirectoryClient::DeleteSchema(const DeleteSchemaRequest
     return DeleteSchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema");
   return DeleteSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -739,9 +703,7 @@ DeleteTypedLinkFacetOutcome CloudDirectoryClient::DeleteTypedLinkFacet(const Del
     return DeleteTypedLinkFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/delete");
   return DeleteTypedLinkFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -771,9 +733,7 @@ DetachFromIndexOutcome CloudDirectoryClient::DetachFromIndex(const DetachFromInd
     return DetachFromIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/index/detach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/index/detach");
   return DetachFromIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -803,9 +763,7 @@ DetachObjectOutcome CloudDirectoryClient::DetachObject(const DetachObjectRequest
     return DetachObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/detach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/detach");
   return DetachObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -835,9 +793,7 @@ DetachPolicyOutcome CloudDirectoryClient::DetachPolicy(const DetachPolicyRequest
     return DetachPolicyOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/policy/detach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/policy/detach");
   return DetachPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -867,9 +823,7 @@ DetachTypedLinkOutcome CloudDirectoryClient::DetachTypedLink(const DetachTypedLi
     return DetachTypedLinkOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/detach";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/detach");
   return DetachTypedLinkOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -899,9 +853,7 @@ DisableDirectoryOutcome CloudDirectoryClient::DisableDirectory(const DisableDire
     return DisableDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/directory/disable";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/directory/disable");
   return DisableDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -931,9 +883,7 @@ EnableDirectoryOutcome CloudDirectoryClient::EnableDirectory(const EnableDirecto
     return EnableDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/directory/enable";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/directory/enable");
   return EnableDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -958,9 +908,7 @@ void CloudDirectoryClient::EnableDirectoryAsyncHelper(const EnableDirectoryReque
 GetAppliedSchemaVersionOutcome CloudDirectoryClient::GetAppliedSchemaVersion(const GetAppliedSchemaVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/getappliedschema";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/getappliedschema");
   return GetAppliedSchemaVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -990,9 +938,7 @@ GetDirectoryOutcome CloudDirectoryClient::GetDirectory(const GetDirectoryRequest
     return GetDirectoryOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/directory/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/directory/get");
   return GetDirectoryOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1022,9 +968,7 @@ GetFacetOutcome CloudDirectoryClient::GetFacet(const GetFacetRequest& request) c
     return GetFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/facet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/facet");
   return GetFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1054,9 +998,7 @@ GetLinkAttributesOutcome CloudDirectoryClient::GetLinkAttributes(const GetLinkAt
     return GetLinkAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/attributes/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/attributes/get");
   return GetLinkAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1086,9 +1028,7 @@ GetObjectAttributesOutcome CloudDirectoryClient::GetObjectAttributes(const GetOb
     return GetObjectAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/attributes/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/attributes/get");
   return GetObjectAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1118,9 +1058,7 @@ GetObjectInformationOutcome CloudDirectoryClient::GetObjectInformation(const Get
     return GetObjectInformationOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/information";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/information");
   return GetObjectInformationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1150,9 +1088,7 @@ GetSchemaAsJsonOutcome CloudDirectoryClient::GetSchemaAsJson(const GetSchemaAsJs
     return GetSchemaAsJsonOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/json";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/json");
   return GetSchemaAsJsonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1182,9 +1118,7 @@ GetTypedLinkFacetInformationOutcome CloudDirectoryClient::GetTypedLinkFacetInfor
     return GetTypedLinkFacetInformationOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/get";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/get");
   return GetTypedLinkFacetInformationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1209,9 +1143,7 @@ void CloudDirectoryClient::GetTypedLinkFacetInformationAsyncHelper(const GetType
 ListAppliedSchemaArnsOutcome CloudDirectoryClient::ListAppliedSchemaArns(const ListAppliedSchemaArnsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/applied";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/applied");
   return ListAppliedSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1241,9 +1173,7 @@ ListAttachedIndicesOutcome CloudDirectoryClient::ListAttachedIndices(const ListA
     return ListAttachedIndicesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/indices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/indices");
   return ListAttachedIndicesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1268,9 +1198,7 @@ void CloudDirectoryClient::ListAttachedIndicesAsyncHelper(const ListAttachedIndi
 ListDevelopmentSchemaArnsOutcome CloudDirectoryClient::ListDevelopmentSchemaArns(const ListDevelopmentSchemaArnsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/development";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/development");
   return ListDevelopmentSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1295,9 +1223,7 @@ void CloudDirectoryClient::ListDevelopmentSchemaArnsAsyncHelper(const ListDevelo
 ListDirectoriesOutcome CloudDirectoryClient::ListDirectories(const ListDirectoriesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/directory/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/directory/list");
   return ListDirectoriesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1327,9 +1253,7 @@ ListFacetAttributesOutcome CloudDirectoryClient::ListFacetAttributes(const ListF
     return ListFacetAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/facet/attributes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/facet/attributes");
   return ListFacetAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1359,9 +1283,7 @@ ListFacetNamesOutcome CloudDirectoryClient::ListFacetNames(const ListFacetNamesR
     return ListFacetNamesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/facet/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/facet/list");
   return ListFacetNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1391,9 +1313,7 @@ ListIncomingTypedLinksOutcome CloudDirectoryClient::ListIncomingTypedLinks(const
     return ListIncomingTypedLinksOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/incoming";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/incoming");
   return ListIncomingTypedLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1423,9 +1343,7 @@ ListIndexOutcome CloudDirectoryClient::ListIndex(const ListIndexRequest& request
     return ListIndexOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/index/targets";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/index/targets");
   return ListIndexOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1450,9 +1368,7 @@ void CloudDirectoryClient::ListIndexAsyncHelper(const ListIndexRequest& request,
 ListManagedSchemaArnsOutcome CloudDirectoryClient::ListManagedSchemaArns(const ListManagedSchemaArnsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/managed";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/managed");
   return ListManagedSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1482,9 +1398,7 @@ ListObjectAttributesOutcome CloudDirectoryClient::ListObjectAttributes(const Lis
     return ListObjectAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/attributes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/attributes");
   return ListObjectAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1514,9 +1428,7 @@ ListObjectChildrenOutcome CloudDirectoryClient::ListObjectChildren(const ListObj
     return ListObjectChildrenOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/children";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/children");
   return ListObjectChildrenOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1546,9 +1458,7 @@ ListObjectParentPathsOutcome CloudDirectoryClient::ListObjectParentPaths(const L
     return ListObjectParentPathsOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/parentpaths";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/parentpaths");
   return ListObjectParentPathsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1578,9 +1488,7 @@ ListObjectParentsOutcome CloudDirectoryClient::ListObjectParents(const ListObjec
     return ListObjectParentsOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/parent";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/parent");
   return ListObjectParentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1610,9 +1518,7 @@ ListObjectPoliciesOutcome CloudDirectoryClient::ListObjectPolicies(const ListObj
     return ListObjectPoliciesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/policy";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/policy");
   return ListObjectPoliciesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1642,9 +1548,7 @@ ListOutgoingTypedLinksOutcome CloudDirectoryClient::ListOutgoingTypedLinks(const
     return ListOutgoingTypedLinksOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/outgoing";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/outgoing");
   return ListOutgoingTypedLinksOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1674,9 +1578,7 @@ ListPolicyAttachmentsOutcome CloudDirectoryClient::ListPolicyAttachments(const L
     return ListPolicyAttachmentsOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/policy/attachment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/policy/attachment");
   return ListPolicyAttachmentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1701,9 +1603,7 @@ void CloudDirectoryClient::ListPolicyAttachmentsAsyncHelper(const ListPolicyAtta
 ListPublishedSchemaArnsOutcome CloudDirectoryClient::ListPublishedSchemaArns(const ListPublishedSchemaArnsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/published";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/published");
   return ListPublishedSchemaArnsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1728,9 +1628,7 @@ void CloudDirectoryClient::ListPublishedSchemaArnsAsyncHelper(const ListPublishe
 ListTagsForResourceOutcome CloudDirectoryClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/tags";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/tags");
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1760,9 +1658,7 @@ ListTypedLinkFacetAttributesOutcome CloudDirectoryClient::ListTypedLinkFacetAttr
     return ListTypedLinkFacetAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/attributes";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/attributes");
   return ListTypedLinkFacetAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1792,9 +1688,7 @@ ListTypedLinkFacetNamesOutcome CloudDirectoryClient::ListTypedLinkFacetNames(con
     return ListTypedLinkFacetNamesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet/list";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet/list");
   return ListTypedLinkFacetNamesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1824,9 +1718,7 @@ LookupPolicyOutcome CloudDirectoryClient::LookupPolicy(const LookupPolicyRequest
     return LookupPolicyOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/policy/lookup";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/policy/lookup");
   return LookupPolicyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1856,9 +1748,7 @@ PublishSchemaOutcome CloudDirectoryClient::PublishSchema(const PublishSchemaRequ
     return PublishSchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DevelopmentSchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/publish";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/publish");
   return PublishSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1888,9 +1778,7 @@ PutSchemaFromJsonOutcome CloudDirectoryClient::PutSchemaFromJson(const PutSchema
     return PutSchemaFromJsonOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/json";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/json");
   return PutSchemaFromJsonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1920,9 +1808,7 @@ RemoveFacetFromObjectOutcome CloudDirectoryClient::RemoveFacetFromObject(const R
     return RemoveFacetFromObjectOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/facets/delete";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/facets/delete");
   return RemoveFacetFromObjectOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1947,9 +1833,7 @@ void CloudDirectoryClient::RemoveFacetFromObjectAsyncHelper(const RemoveFacetFro
 TagResourceOutcome CloudDirectoryClient::TagResource(const TagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/tags/add";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/tags/add");
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1974,9 +1858,7 @@ void CloudDirectoryClient::TagResourceAsyncHelper(const TagResourceRequest& requ
 UntagResourceOutcome CloudDirectoryClient::UntagResource(const UntagResourceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/tags/remove";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/tags/remove");
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2006,9 +1888,7 @@ UpdateFacetOutcome CloudDirectoryClient::UpdateFacet(const UpdateFacetRequest& r
     return UpdateFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/facet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/facet");
   return UpdateFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2038,9 +1918,7 @@ UpdateLinkAttributesOutcome CloudDirectoryClient::UpdateLinkAttributes(const Upd
     return UpdateLinkAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/attributes/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/attributes/update");
   return UpdateLinkAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2070,9 +1948,7 @@ UpdateObjectAttributesOutcome CloudDirectoryClient::UpdateObjectAttributes(const
     return UpdateObjectAttributesOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DirectoryArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/object/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/object/update");
   return UpdateObjectAttributesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2102,9 +1978,7 @@ UpdateSchemaOutcome CloudDirectoryClient::UpdateSchema(const UpdateSchemaRequest
     return UpdateSchemaOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/update");
   return UpdateSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2134,9 +2008,7 @@ UpdateTypedLinkFacetOutcome CloudDirectoryClient::UpdateTypedLinkFacet(const Upd
     return UpdateTypedLinkFacetOutcome(Aws::Client::AWSError<CloudDirectoryErrors>(CloudDirectoryErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SchemaArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/typedlink/facet";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/typedlink/facet");
   return UpdateTypedLinkFacetOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2161,9 +2033,7 @@ void CloudDirectoryClient::UpdateTypedLinkFacetAsyncHelper(const UpdateTypedLink
 UpgradeAppliedSchemaOutcome CloudDirectoryClient::UpgradeAppliedSchema(const UpgradeAppliedSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/upgradeapplied";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/upgradeapplied");
   return UpgradeAppliedSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2188,9 +2058,7 @@ void CloudDirectoryClient::UpgradeAppliedSchemaAsyncHelper(const UpgradeAppliedS
 UpgradePublishedSchemaOutcome CloudDirectoryClient::UpgradePublishedSchema(const UpgradePublishedSchemaRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/amazonclouddirectory/2017-01-11/schema/upgradepublished";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/amazonclouddirectory/2017-01-11/schema/upgradepublished");
   return UpgradePublishedSchemaOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

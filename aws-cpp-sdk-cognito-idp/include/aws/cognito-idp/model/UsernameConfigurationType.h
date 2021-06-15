@@ -40,7 +40,7 @@ namespace Model
      * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
      * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
      * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
+     * capitalization of their given username. For example, “UserName”. This is the
      * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
      * insensitivity for all username input. For example, when this option is set to
      * <code>False</code>, users will be able to sign in using either "username" or
@@ -55,7 +55,7 @@ namespace Model
      * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
      * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
      * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
+     * capitalization of their given username. For example, “UserName”. This is the
      * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
      * insensitivity for all username input. For example, when this option is set to
      * <code>False</code>, users will be able to sign in using either "username" or
@@ -70,7 +70,7 @@ namespace Model
      * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
      * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
      * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
+     * capitalization of their given username. For example, “UserName”. This is the
      * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
      * insensitivity for all username input. For example, when this option is set to
      * <code>False</code>, users will be able to sign in using either "username" or
@@ -85,7 +85,7 @@ namespace Model
      * the user pool through Cognito APIs.</p> <p>Valid values include:</p> <ul> <li>
      * <p> <b> <code>True</code> </b>: Enables case sensitivity for all username input.
      * When this option is set to <code>True</code>, users must sign in using the exact
-     * capitalization of their given username. For example, ��UserName”. This is the
+     * capitalization of their given username. For example, “UserName”. This is the
      * default value.</p> </li> <li> <p> <b> <code>False</code> </b>: Enables case
      * insensitivity for all username input. For example, when this option is set to
      * <code>False</code>, users will be able to sign in using either "username" or

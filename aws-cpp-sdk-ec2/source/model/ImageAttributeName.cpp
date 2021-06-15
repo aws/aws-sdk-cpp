@@ -27,6 +27,7 @@ namespace Aws
         static const int productCodes_HASH = HashingUtils::HashString("productCodes");
         static const int blockDeviceMapping_HASH = HashingUtils::HashString("blockDeviceMapping");
         static const int sriovNetSupport_HASH = HashingUtils::HashString("sriovNetSupport");
+        static const int bootMode_HASH = HashingUtils::HashString("bootMode");
 
 
         ImageAttributeName GetImageAttributeNameForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ImageAttributeName::sriovNetSupport;
           }
+          else if (hashCode == bootMode_HASH)
+          {
+            return ImageAttributeName::bootMode;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "blockDeviceMapping";
           case ImageAttributeName::sriovNetSupport:
             return "sriovNetSupport";
+          case ImageAttributeName::bootMode:
+            return "bootMode";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -899,9 +899,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -911,9 +911,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -923,9 +923,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -935,9 +935,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -947,9 +947,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -959,9 +959,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -971,9 +971,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -983,9 +983,9 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
-     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p> <ul>
+     * <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
      * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
      * least 30 minutes.</p> </li> </ul>
@@ -2385,25 +2385,41 @@ namespace Model
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline RestoreDBInstanceFromS3Request& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 

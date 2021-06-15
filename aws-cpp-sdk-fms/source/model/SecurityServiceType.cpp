@@ -27,6 +27,7 @@ namespace Aws
         static const int SECURITY_GROUPS_CONTENT_AUDIT_HASH = HashingUtils::HashString("SECURITY_GROUPS_CONTENT_AUDIT");
         static const int SECURITY_GROUPS_USAGE_AUDIT_HASH = HashingUtils::HashString("SECURITY_GROUPS_USAGE_AUDIT");
         static const int NETWORK_FIREWALL_HASH = HashingUtils::HashString("NETWORK_FIREWALL");
+        static const int DNS_FIREWALL_HASH = HashingUtils::HashString("DNS_FIREWALL");
 
 
         SecurityServiceType GetSecurityServiceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return SecurityServiceType::NETWORK_FIREWALL;
           }
+          else if (hashCode == DNS_FIREWALL_HASH)
+          {
+            return SecurityServiceType::DNS_FIREWALL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "SECURITY_GROUPS_USAGE_AUDIT";
           case SecurityServiceType::NETWORK_FIREWALL:
             return "NETWORK_FIREWALL";
+          case SecurityServiceType::DNS_FIREWALL:
+            return "DNS_FIREWALL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

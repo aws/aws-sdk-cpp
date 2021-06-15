@@ -684,65 +684,49 @@ namespace Model
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the <code>ApplyImmediately</code> parameter is
-     * set to <code>true</code>.</p>
+     * Modifying engine version is not supported on Amazon DocumentDB.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

@@ -521,7 +521,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -529,7 +530,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -537,7 +539,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -545,7 +548,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -553,7 +557,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -561,7 +566,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline SolutionVersion& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -569,7 +575,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline SolutionVersion& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -577,7 +584,8 @@ namespace Model
      * <p>The status of the solution version.</p> <p>A solution version can be in one
      * of the following states:</p> <ul> <li> <p>CREATE PENDING</p> </li> <li>
      * <p>CREATE IN_PROGRESS</p> </li> <li> <p>ACTIVE</p> </li> <li> <p>CREATE
-     * FAILED</p> </li> </ul>
+     * FAILED</p> </li> <li> <p>CREATE STOPPING</p> </li> <li> <p>CREATE STOPPED</p>
+     * </li> </ul>
      */
     inline SolutionVersion& WithStatus(const char* value) { SetStatus(value); return *this;}
 

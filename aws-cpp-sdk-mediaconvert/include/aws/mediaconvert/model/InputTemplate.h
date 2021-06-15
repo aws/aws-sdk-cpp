@@ -53,86 +53,98 @@ namespace Model
 
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline const Aws::Map<Aws::String, AudioSelectorGroup>& GetAudioSelectorGroups() const{ return m_audioSelectorGroups; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline bool AudioSelectorGroupsHasBeenSet() const { return m_audioSelectorGroupsHasBeenSet; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline void SetAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = value; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline void SetAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups = std::move(value); }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& WithAudioSelectorGroups(const Aws::Map<Aws::String, AudioSelectorGroup>& value) { SetAudioSelectorGroups(value); return *this;}
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& WithAudioSelectorGroups(Aws::Map<Aws::String, AudioSelectorGroup>&& value) { SetAudioSelectorGroups(std::move(value)); return *this;}
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const Aws::String& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(Aws::String&& key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), value); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const Aws::String& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(Aws::String&& key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const char* key, AudioSelectorGroup&& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have
-     * multiple audio selector groups. See "Audio Selector
-     * Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you
+     * can assign them to a single output audio tab (AudioDescription). Note that, if
+     * you're working with embedded audio, it's simpler to assign multiple input tracks
+     * into a single audio selector rather than use an audio selector group.
      */
     inline InputTemplate& AddAudioSelectorGroups(const char* key, const AudioSelectorGroup& value) { m_audioSelectorGroupsHasBeenSet = true; m_audioSelectorGroups.emplace(key, value); return *this; }
 
@@ -1015,32 +1027,38 @@ namespace Model
 
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline const VideoSelector& GetVideoSelector() const{ return m_videoSelector; }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline bool VideoSelectorHasBeenSet() const { return m_videoSelectorHasBeenSet; }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline void SetVideoSelector(const VideoSelector& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = value; }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline void SetVideoSelector(VideoSelector&& value) { m_videoSelectorHasBeenSet = true; m_videoSelector = std::move(value); }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline InputTemplate& WithVideoSelector(const VideoSelector& value) { SetVideoSelector(value); return *this;}
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your
+     * inputs can have up to one video selector.
      */
     inline InputTemplate& WithVideoSelector(VideoSelector&& value) { SetVideoSelector(std::move(value)); return *this;}
 

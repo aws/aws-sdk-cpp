@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/OutpostMode.h>
 #include <aws/elasticache/model/Tag.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -472,7 +473,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -482,7 +483,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -492,7 +493,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -502,7 +503,7 @@ namespace Model
     /**
      * <p>The initial number of cache nodes that the cluster has.</p> <p>For clusters
      * running Redis, this value must be 1. For clusters running Memcached, this value
-     * must be between 1 and 20.</p> <p>If you need more than 20 nodes for your
+     * must be between 1 and 40.</p> <p>If you need more than 40 nodes for your
      * Memcached cluster, please fill out the ElastiCache Limit Increase Request form
      * at <a
      * href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
@@ -1444,42 +1445,42 @@ namespace Model
 
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource.</p>
+     * <p>A list of tags to be added to this resource.</p>
      */
     inline CreateCacheClusterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -1644,15 +1645,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -1660,15 +1653,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -1676,15 +1661,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -1692,15 +1669,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -1708,15 +1677,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -1724,15 +1685,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1740,15 +1693,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -1756,15 +1701,7 @@ namespace Model
      * <p>Specifies the weekly time range during which maintenance on the cluster is
      * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
      * Clock UTC). The minimum maintenance window is a 60 minute period. Valid values
-     * for <code>ddd</code> are:</p> <p>Specifies the weekly time range during which
-     * maintenance on the cluster is performed. It is specified as a range in the
-     * format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-     * is a 60 minute period.</p> <p>Valid values for <code>ddd</code> are:</p> <ul>
-     * <li> <p> <code>sun</code> </p> </li> <li> <p> <code>mon</code> </p> </li> <li>
-     * <p> <code>tue</code> </p> </li> <li> <p> <code>wed</code> </p> </li> <li> <p>
-     * <code>thu</code> </p> </li> <li> <p> <code>fri</code> </p> </li> <li> <p>
-     * <code>sat</code> </p> </li> </ul> <p>Example: <code>sun:23:00-mon:01:30</code>
-     * </p>
+     * for <code>ddd</code> are:</p>
      */
     inline CreateCacheClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -2202,6 +2139,47 @@ namespace Model
      */
     inline CreateCacheClusterRequest& AddPreferredOutpostArns(const char* value) { m_preferredOutpostArnsHasBeenSet = true; m_preferredOutpostArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs. </p>
+     */
+    inline CreateCacheClusterRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cacheClusterId;
@@ -2281,6 +2259,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_preferredOutpostArns;
     bool m_preferredOutpostArnsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

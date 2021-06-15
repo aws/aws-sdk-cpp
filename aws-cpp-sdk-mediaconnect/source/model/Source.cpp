@@ -27,6 +27,7 @@ Source::Source() :
     m_ingestIpHasBeenSet(false),
     m_ingestPort(0),
     m_ingestPortHasBeenSet(false),
+    m_mediaStreamSourceConfigurationsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_transportHasBeenSet(false),
@@ -44,6 +45,7 @@ Source::Source(JsonView jsonValue) :
     m_ingestIpHasBeenSet(false),
     m_ingestPort(0),
     m_ingestPortHasBeenSet(false),
+    m_mediaStreamSourceConfigurationsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_transportHasBeenSet(false),
@@ -95,6 +97,16 @@ Source& Source::operator =(JsonView jsonValue)
     m_ingestPort = jsonValue.GetInteger("ingestPort");
 
     m_ingestPortHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaStreamSourceConfigurations"))
+  {
+    Array<JsonView> mediaStreamSourceConfigurationsJsonList = jsonValue.GetArray("mediaStreamSourceConfigurations");
+    for(unsigned mediaStreamSourceConfigurationsIndex = 0; mediaStreamSourceConfigurationsIndex < mediaStreamSourceConfigurationsJsonList.GetLength(); ++mediaStreamSourceConfigurationsIndex)
+    {
+      m_mediaStreamSourceConfigurations.push_back(mediaStreamSourceConfigurationsJsonList[mediaStreamSourceConfigurationsIndex].AsObject());
+    }
+    m_mediaStreamSourceConfigurationsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -172,6 +184,17 @@ JsonValue Source::Jsonize() const
   if(m_ingestPortHasBeenSet)
   {
    payload.WithInteger("ingestPort", m_ingestPort);
+
+  }
+
+  if(m_mediaStreamSourceConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> mediaStreamSourceConfigurationsJsonList(m_mediaStreamSourceConfigurations.size());
+   for(unsigned mediaStreamSourceConfigurationsIndex = 0; mediaStreamSourceConfigurationsIndex < mediaStreamSourceConfigurationsJsonList.GetLength(); ++mediaStreamSourceConfigurationsIndex)
+   {
+     mediaStreamSourceConfigurationsJsonList[mediaStreamSourceConfigurationsIndex].AsObject(m_mediaStreamSourceConfigurations[mediaStreamSourceConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("mediaStreamSourceConfigurations", std::move(mediaStreamSourceConfigurationsJsonList));
 
   }
 

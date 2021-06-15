@@ -7,6 +7,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/model/TestGridVpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +157,37 @@ namespace Model
      */
     inline UpdateTestGridProjectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline const TestGridVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(const TestGridVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline void SetVpcConfig(TestGridVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline UpdateTestGridProjectRequest& WithVpcConfig(const TestGridVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>The VPC security groups and subnets that are attached to a project.</p>
+     */
+    inline UpdateTestGridProjectRequest& WithVpcConfig(TestGridVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -166,6 +198,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    TestGridVpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
   };
 
 } // namespace Model

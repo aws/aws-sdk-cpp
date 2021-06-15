@@ -41,66 +41,66 @@ namespace Model
   public:
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
+     * The extension is only visible and usable within the account in which it is
+     * registered. Currently, AWS CloudFormation marks any extension you create as
+     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
      * default is <code>PRIVATE</code>.</p>
      */
     inline const Visibility& GetVisibility() const{ return m_visibility; }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
+     * The extension is only visible and usable within the account in which it is
+     * registered. Currently, AWS CloudFormation marks any extension you create as
+     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
      * default is <code>PRIVATE</code>.</p>
      */
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
+     * The extension is only visible and usable within the account in which it is
+     * registered. Currently, AWS CloudFormation marks any extension you create as
+     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
      * default is <code>PRIVATE</code>.</p>
      */
     inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
+     * The extension is only visible and usable within the account in which it is
+     * registered. Currently, AWS CloudFormation marks any extension you create as
+     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
      * default is <code>PRIVATE</code>.</p>
      */
     inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
+     * The extension is only visible and usable within the account in which it is
+     * registered. Currently, AWS CloudFormation marks any extension you create as
+     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
      * default is <code>PRIVATE</code>.</p>
      */
     inline ListTypesRequest& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
 
     /**
-     * <p>The scope at which the type is visible and usable in CloudFormation
+     * <p>The scope at which the extension is visible and usable in CloudFormation
      * operations.</p> <p>Valid values include:</p> <ul> <li> <p> <code>PRIVATE</code>:
-     * The type is only visible and usable within the account in which it is
-     * registered. Currently, AWS CloudFormation marks any types you create as
-     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The type is
+     * The extension is only visible and usable within the account in which it is
+     * registered. Currently, AWS CloudFormation marks any extension you create as
+     * <code>PRIVATE</code>.</p> </li> <li> <p> <code>PUBLIC</code>: The extension is
      * publically visible and usable within any Amazon account.</p> </li> </ul> <p>The
      * default is <code>PRIVATE</code>.</p>
      */
@@ -111,13 +111,13 @@ namespace Model
      * <p>The provisioning behavior of the type. AWS CloudFormation determines the
      * provisioning type during registration, based on the types of handlers in the
      * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process
+     * updates to the extension during stack update operations.</p> </li> <li> <p>
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the
+     * extension cannot be updated and must instead be replaced during stack update
+     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The extension
+     * does not include create, read, and delete handlers, and therefore cannot
+     * actually be provisioned.</p> </li> </ul>
      */
     inline const ProvisioningType& GetProvisioningType() const{ return m_provisioningType; }
 
@@ -125,13 +125,13 @@ namespace Model
      * <p>The provisioning behavior of the type. AWS CloudFormation determines the
      * provisioning type during registration, based on the types of handlers in the
      * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process
+     * updates to the extension during stack update operations.</p> </li> <li> <p>
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the
+     * extension cannot be updated and must instead be replaced during stack update
+     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The extension
+     * does not include create, read, and delete handlers, and therefore cannot
+     * actually be provisioned.</p> </li> </ul>
      */
     inline bool ProvisioningTypeHasBeenSet() const { return m_provisioningTypeHasBeenSet; }
 
@@ -139,13 +139,13 @@ namespace Model
      * <p>The provisioning behavior of the type. AWS CloudFormation determines the
      * provisioning type during registration, based on the types of handlers in the
      * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process
+     * updates to the extension during stack update operations.</p> </li> <li> <p>
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the
+     * extension cannot be updated and must instead be replaced during stack update
+     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The extension
+     * does not include create, read, and delete handlers, and therefore cannot
+     * actually be provisioned.</p> </li> </ul>
      */
     inline void SetProvisioningType(const ProvisioningType& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
 
@@ -153,13 +153,13 @@ namespace Model
      * <p>The provisioning behavior of the type. AWS CloudFormation determines the
      * provisioning type during registration, based on the types of handlers in the
      * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process
+     * updates to the extension during stack update operations.</p> </li> <li> <p>
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the
+     * extension cannot be updated and must instead be replaced during stack update
+     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The extension
+     * does not include create, read, and delete handlers, and therefore cannot
+     * actually be provisioned.</p> </li> </ul>
      */
     inline void SetProvisioningType(ProvisioningType&& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = std::move(value); }
 
@@ -167,13 +167,13 @@ namespace Model
      * <p>The provisioning behavior of the type. AWS CloudFormation determines the
      * provisioning type during registration, based on the types of handlers in the
      * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process
+     * updates to the extension during stack update operations.</p> </li> <li> <p>
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the
+     * extension cannot be updated and must instead be replaced during stack update
+     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The extension
+     * does not include create, read, and delete handlers, and therefore cannot
+     * actually be provisioned.</p> </li> </ul>
      */
     inline ListTypesRequest& WithProvisioningType(const ProvisioningType& value) { SetProvisioningType(value); return *this;}
 
@@ -181,68 +181,74 @@ namespace Model
      * <p>The provisioning behavior of the type. AWS CloudFormation determines the
      * provisioning type during registration, based on the types of handlers in the
      * schema handler package submitted.</p> <p>Valid values include:</p> <ul> <li> <p>
-     * <code>FULLY_MUTABLE</code>: The type includes an update handler to process
-     * updates to the type during stack update operations.</p> </li> <li> <p>
-     * <code>IMMUTABLE</code>: The type does not include an update handler, so the type
-     * cannot be updated and must instead be replaced during stack update
-     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The type does not
-     * include create, read, and delete handlers, and therefore cannot actually be
-     * provisioned.</p> </li> </ul>
+     * <code>FULLY_MUTABLE</code>: The extension includes an update handler to process
+     * updates to the extension during stack update operations.</p> </li> <li> <p>
+     * <code>IMMUTABLE</code>: The extension does not include an update handler, so the
+     * extension cannot be updated and must instead be replaced during stack update
+     * operations.</p> </li> <li> <p> <code>NON_PROVISIONABLE</code>: The extension
+     * does not include create, read, and delete handlers, and therefore cannot
+     * actually be provisioned.</p> </li> </ul>
      */
     inline ListTypesRequest& WithProvisioningType(ProvisioningType&& value) { SetProvisioningType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * </ul>
      */
     inline const DeprecatedStatus& GetDeprecatedStatus() const{ return m_deprecatedStatus; }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * </ul>
      */
     inline bool DeprecatedStatusHasBeenSet() const { return m_deprecatedStatusHasBeenSet; }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * </ul>
      */
     inline void SetDeprecatedStatus(const DeprecatedStatus& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = value; }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * </ul>
      */
     inline void SetDeprecatedStatus(DeprecatedStatus&& value) { m_deprecatedStatusHasBeenSet = true; m_deprecatedStatus = std::move(value); }
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * </ul>
      */
     inline ListTypesRequest& WithDeprecatedStatus(const DeprecatedStatus& value) { SetDeprecatedStatus(value); return *this;}
 
     /**
-     * <p>The deprecation status of the types that you want to get summary information
-     * about.</p> <p>Valid values include:</p> <ul> <li> <p> <code>LIVE</code>: The
-     * type is registered for use in CloudFormation operations.</p> </li> <li> <p>
-     * <code>DEPRECATED</code>: The type has been deregistered and can no longer be
-     * used in CloudFormation operations. </p> </li> </ul>
+     * <p>The deprecation status of the extension that you want to get summary
+     * information about.</p> <p>Valid values include:</p> <ul> <li> <p>
+     * <code>LIVE</code>: The extension is registered for use in CloudFormation
+     * operations.</p> </li> <li> <p> <code>DEPRECATED</code>: The extension has been
+     * deregistered and can no longer be used in CloudFormation operations. </p> </li>
+     * </ul>
      */
     inline ListTypesRequest& WithDeprecatedStatus(DeprecatedStatus&& value) { SetDeprecatedStatus(std::move(value)); return *this;}
 

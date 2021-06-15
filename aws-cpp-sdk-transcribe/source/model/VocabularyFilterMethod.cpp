@@ -22,6 +22,7 @@ namespace Aws
 
         static const int remove_HASH = HashingUtils::HashString("remove");
         static const int mask_HASH = HashingUtils::HashString("mask");
+        static const int tag_HASH = HashingUtils::HashString("tag");
 
 
         VocabularyFilterMethod GetVocabularyFilterMethodForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == mask_HASH)
           {
             return VocabularyFilterMethod::mask;
+          }
+          else if (hashCode == tag_HASH)
+          {
+            return VocabularyFilterMethod::tag;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "remove";
           case VocabularyFilterMethod::mask:
             return "mask";
+          case VocabularyFilterMethod::tag:
+            return "tag";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

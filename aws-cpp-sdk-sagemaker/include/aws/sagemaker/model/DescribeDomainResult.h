@@ -359,32 +359,32 @@ namespace Model
 
 
     /**
-     * <p>Settings which are applied to all UserProfiles in this domain, if settings
-     * are not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to UserProfiles in this domain if settings are not
+     * explicitly specified in a given UserProfile. </p>
      */
     inline const UserSettings& GetDefaultUserSettings() const{ return m_defaultUserSettings; }
 
     /**
-     * <p>Settings which are applied to all UserProfiles in this domain, if settings
-     * are not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to UserProfiles in this domain if settings are not
+     * explicitly specified in a given UserProfile. </p>
      */
     inline void SetDefaultUserSettings(const UserSettings& value) { m_defaultUserSettings = value; }
 
     /**
-     * <p>Settings which are applied to all UserProfiles in this domain, if settings
-     * are not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to UserProfiles in this domain if settings are not
+     * explicitly specified in a given UserProfile. </p>
      */
     inline void SetDefaultUserSettings(UserSettings&& value) { m_defaultUserSettings = std::move(value); }
 
     /**
-     * <p>Settings which are applied to all UserProfiles in this domain, if settings
-     * are not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to UserProfiles in this domain if settings are not
+     * explicitly specified in a given UserProfile. </p>
      */
     inline DescribeDomainResult& WithDefaultUserSettings(const UserSettings& value) { SetDefaultUserSettings(value); return *this;}
 
     /**
-     * <p>Settings which are applied to all UserProfiles in this domain, if settings
-     * are not explicitly specified in a given UserProfile. </p>
+     * <p>Settings which are applied to UserProfiles in this domain if settings are not
+     * explicitly specified in a given UserProfile. </p>
      */
     inline DescribeDomainResult& WithDefaultUserSettings(UserSettings&& value) { SetDefaultUserSettings(std::move(value)); return *this;}
 

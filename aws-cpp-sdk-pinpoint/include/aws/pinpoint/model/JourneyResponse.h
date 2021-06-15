@@ -824,6 +824,52 @@ namespace Model
      */
     inline JourneyResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline bool GetWaitForQuietTime() const{ return m_waitForQuietTime; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline bool WaitForQuietTimeHasBeenSet() const { return m_waitForQuietTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline void SetWaitForQuietTime(bool value) { m_waitForQuietTimeHasBeenSet = true; m_waitForQuietTime = value; }
+
+    /**
+     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
+     * of their quiet hours.</p>
+     */
+    inline JourneyResponse& WithWaitForQuietTime(bool value) { SetWaitForQuietTime(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline bool GetRefreshOnSegmentUpdate() const{ return m_refreshOnSegmentUpdate; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline bool RefreshOnSegmentUpdateHasBeenSet() const { return m_refreshOnSegmentUpdateHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline void SetRefreshOnSegmentUpdate(bool value) { m_refreshOnSegmentUpdateHasBeenSet = true; m_refreshOnSegmentUpdate = value; }
+
+    /**
+     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     */
+    inline JourneyResponse& WithRefreshOnSegmentUpdate(bool value) { SetRefreshOnSegmentUpdate(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Activity> m_activities;
@@ -870,6 +916,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    bool m_waitForQuietTime;
+    bool m_waitForQuietTimeHasBeenSet;
+
+    bool m_refreshOnSegmentUpdate;
+    bool m_refreshOnSegmentUpdateHasBeenSet;
   };
 
 } // namespace Model

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
@@ -84,6 +85,94 @@ namespace Model
      * <p>The name of the Systems Manager document.</p>
      */
     inline DocumentIdentifier& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline DocumentIdentifier& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
+
+    /**
+     * <p>The date the Systems Manager document was created.</p>
+     */
+    inline DocumentIdentifier& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentIdentifier& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentIdentifier& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional field where you can specify a friendly name for the Systems
+     * Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.</p>
+     */
+    inline DocumentIdentifier& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
@@ -372,7 +461,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -381,7 +470,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -390,7 +479,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -399,7 +488,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -408,7 +497,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -417,7 +506,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -426,7 +515,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -435,7 +524,7 @@ namespace Model
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
      * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User
      * Guide</i>. </p>
      */
@@ -615,6 +704,12 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Utils::DateTime m_createdDate;
+    bool m_createdDateHasBeenSet;
+
+    Aws::String m_displayName;
+    bool m_displayNameHasBeenSet;
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet;

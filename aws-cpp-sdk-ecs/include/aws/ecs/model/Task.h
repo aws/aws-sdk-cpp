@@ -13,6 +13,7 @@
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/ecs/model/TaskStopCode.h>
+#include <aws/ecs/model/EphemeralStorage.h>
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/Container.h>
@@ -700,6 +701,35 @@ namespace Model
 
 
     /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not execute command functionality is enabled for this task. If
+     * <code>true</code>, this enables execute command functionality on all containers
+     * in the task.</p>
+     */
+    inline Task& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
+
+    /**
      * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
@@ -967,49 +997,55 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline Task& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which your task is running. For more information, see <a
+     * <p>The infrastructure on which your task is running. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline Task& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
@@ -1895,6 +1931,37 @@ namespace Model
      */
     inline Task& WithVersion(long long value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline Task& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The ephemeral storage settings for the task.</p>
+     */
+    inline Task& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Attachment> m_attachments;
@@ -1932,6 +1999,9 @@ namespace Model
 
     Aws::String m_desiredStatus;
     bool m_desiredStatusHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
 
     Aws::Utils::DateTime m_executionStoppedAt;
     bool m_executionStoppedAtHasBeenSet;
@@ -1995,6 +2065,9 @@ namespace Model
 
     long long m_version;
     bool m_versionHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model

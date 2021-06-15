@@ -39,56 +39,65 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A unique identifier for a fleet(s) to retrieve capacity information for. You
-     * can use either the fleet ID or ARN value.</p>
+     * <p>A unique identifier for the fleet(s) to retrieve capacity information for.
+     * You can use either the fleet ID or ARN value. Leave this parameter empty to
+     * retrieve capacity information for all fleets.</p>
      */
     inline DescribeFleetCapacityRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
@@ -123,7 +132,7 @@ namespace Model
 
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
@@ -131,7 +140,7 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
@@ -139,7 +148,7 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
@@ -147,7 +156,7 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
@@ -155,7 +164,7 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
@@ -163,7 +172,7 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
@@ -171,7 +180,7 @@ namespace Model
     inline DescribeFleetCapacityRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>
@@ -179,7 +188,7 @@ namespace Model
     inline DescribeFleetCapacityRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value. This parameter is
      * ignored when the request specifies one or a list of fleet IDs.</p>

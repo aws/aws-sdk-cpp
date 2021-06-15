@@ -19,6 +19,8 @@ namespace Model
 {
 
 S3Bucket::S3Bucket() : 
+    m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
+    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_defaultServerSideEncryptionHasBeenSet(false),
@@ -30,6 +32,8 @@ S3Bucket::S3Bucket() :
 }
 
 S3Bucket::S3Bucket(JsonView jsonValue) : 
+    m_allowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads::NOT_SET),
+    m_allowsUnencryptedObjectUploadsHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_defaultServerSideEncryptionHasBeenSet(false),
@@ -43,6 +47,13 @@ S3Bucket::S3Bucket(JsonView jsonValue) :
 
 S3Bucket& S3Bucket::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("allowsUnencryptedObjectUploads"))
+  {
+    m_allowsUnencryptedObjectUploads = AllowsUnencryptedObjectUploadsMapper::GetAllowsUnencryptedObjectUploadsForName(jsonValue.GetString("allowsUnencryptedObjectUploads"));
+
+    m_allowsUnencryptedObjectUploadsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -101,6 +112,11 @@ S3Bucket& S3Bucket::operator =(JsonView jsonValue)
 JsonValue S3Bucket::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_allowsUnencryptedObjectUploadsHasBeenSet)
+  {
+   payload.WithString("allowsUnencryptedObjectUploads", AllowsUnencryptedObjectUploadsMapper::GetNameForAllowsUnencryptedObjectUploads(m_allowsUnencryptedObjectUploads));
+  }
 
   if(m_arnHasBeenSet)
   {

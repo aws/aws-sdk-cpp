@@ -29,7 +29,8 @@ namespace Model
     InsufficientFreeAddresses,
     ClusterUnreachable,
     InsufficientNumberOfReplicas,
-    ConfigurationConflict
+    ConfigurationConflict,
+    AdmissionRequestDenied
   };
 
 namespace ErrorCodeMapper

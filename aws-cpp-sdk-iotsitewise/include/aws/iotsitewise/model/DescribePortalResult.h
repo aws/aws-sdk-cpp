@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/iotsitewise/model/ImageLocation.h>
 #include <aws/iotsitewise/model/AuthMode.h>
+#include <aws/iotsitewise/model/Alarms.h>
 #include <utility>
 
 namespace Aws
@@ -563,6 +564,73 @@ namespace Model
      */
     inline DescribePortalResult& WithPortalAuthMode(AuthMode&& value) { SetPortalAuthMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline const Aws::String& GetNotificationSenderEmail() const{ return m_notificationSenderEmail; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(const Aws::String& value) { m_notificationSenderEmail = value; }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(Aws::String&& value) { m_notificationSenderEmail = std::move(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline void SetNotificationSenderEmail(const char* value) { m_notificationSenderEmail.assign(value); }
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline DescribePortalResult& WithNotificationSenderEmail(const Aws::String& value) { SetNotificationSenderEmail(value); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline DescribePortalResult& WithNotificationSenderEmail(Aws::String&& value) { SetNotificationSenderEmail(std::move(value)); return *this;}
+
+    /**
+     * <p>The email address that sends alarm notifications.</p>
+     */
+    inline DescribePortalResult& WithNotificationSenderEmail(const char* value) { SetNotificationSenderEmail(value); return *this;}
+
+
+    /**
+     * <p>Contains the configuration information of an alarm created in a AWS IoT
+     * SiteWise Monitor portal.</p>
+     */
+    inline const Alarms& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in a AWS IoT
+     * SiteWise Monitor portal.</p>
+     */
+    inline void SetAlarms(const Alarms& value) { m_alarms = value; }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in a AWS IoT
+     * SiteWise Monitor portal.</p>
+     */
+    inline void SetAlarms(Alarms&& value) { m_alarms = std::move(value); }
+
+    /**
+     * <p>Contains the configuration information of an alarm created in a AWS IoT
+     * SiteWise Monitor portal.</p>
+     */
+    inline DescribePortalResult& WithAlarms(const Alarms& value) { SetAlarms(value); return *this;}
+
+    /**
+     * <p>Contains the configuration information of an alarm created in a AWS IoT
+     * SiteWise Monitor portal.</p>
+     */
+    inline DescribePortalResult& WithAlarms(Alarms&& value) { SetAlarms(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_portalId;
@@ -590,6 +658,10 @@ namespace Model
     Aws::String m_roleArn;
 
     AuthMode m_portalAuthMode;
+
+    Aws::String m_notificationSenderEmail;
+
+    Alarms m_alarms;
   };
 
 } // namespace Model

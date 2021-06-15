@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline CreateStudioRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline CreateStudioRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A detailed description of the Studio.</p>
+     * <p>A detailed description of the Amazon EMR Studio.</p>
      */
     inline CreateStudioRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -206,65 +206,74 @@ namespace Model
 
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline CreateStudioRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline CreateStudioRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline CreateStudioRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline CreateStudioRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of subnet IDs to associate with the Studio. The subnets must belong to
-     * the VPC specified by <code>VpcId</code>. Studio users can create a Workspace in
-     * any of the specified subnets.</p>
+     * <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can
+     * have a maximum of 5 subnets. The subnets must belong to the VPC specified by
+     * <code>VpcId</code>. Studio users can create a Workspace in any of the specified
+     * subnets.</p>
      */
     inline CreateStudioRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -327,58 +336,58 @@ namespace Model
 
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline const Aws::String& GetUserRole() const{ return m_userRole; }
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline bool UserRoleHasBeenSet() const { return m_userRoleHasBeenSet; }
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline void SetUserRole(const Aws::String& value) { m_userRoleHasBeenSet = true; m_userRole = value; }
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline void SetUserRole(Aws::String&& value) { m_userRoleHasBeenSet = true; m_userRole = std::move(value); }
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline void SetUserRole(const char* value) { m_userRoleHasBeenSet = true; m_userRole.assign(value); }
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline CreateStudioRequest& WithUserRole(const Aws::String& value) { SetUserRole(value); return *this;}
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline CreateStudioRequest& WithUserRole(Aws::String&& value) { SetUserRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM user role that will be assumed by users and groups logged in to a
-     * Studio. The permissions attached to this IAM role can be scoped down for each
-     * user or group using session policies.</p>
+     * <p>The IAM user role that will be assumed by users and groups logged in to an
+     * Amazon EMR Studio. The permissions attached to this IAM role can be scoped down
+     * for each user or group using session policies.</p>
      */
     inline CreateStudioRequest& WithUserRole(const char* value) { SetUserRole(value); return *this;}
 
@@ -506,115 +515,107 @@ namespace Model
 
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline const Aws::String& GetDefaultS3Location() const{ return m_defaultS3Location; }
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline bool DefaultS3LocationHasBeenSet() const { return m_defaultS3LocationHasBeenSet; }
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(const Aws::String& value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location = value; }
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(Aws::String&& value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location = std::move(value); }
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline void SetDefaultS3Location(const char* value) { m_defaultS3LocationHasBeenSet = true; m_defaultS3Location.assign(value); }
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline CreateStudioRequest& WithDefaultS3Location(const Aws::String& value) { SetDefaultS3Location(value); return *this;}
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline CreateStudioRequest& WithDefaultS3Location(Aws::String&& value) { SetDefaultS3Location(std::move(value)); return *this;}
 
     /**
-     * <p>The default Amazon S3 location to back up EMR Studio Workspaces and notebook
-     * files. A Studio user can select an alternative Amazon S3 location when creating
-     * a Workspace.</p>
+     * <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook
+     * files.</p>
      */
     inline CreateStudioRequest& WithDefaultS3Location(const char* value) { SetDefaultS3Location(value); return *this;}
 
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline CreateStudioRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline CreateStudioRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline CreateStudioRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags to associate with the Studio. Tags are user-defined key-value
-     * pairs that consist of a required key string with a maximum of 128 characters,
-     * and an optional value string with a maximum of 256 characters.</p>
+     * <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined
+     * key-value pairs that consist of a required key string with a maximum of 128
+     * characters, and an optional value string with a maximum of 256 characters.</p>
      */
     inline CreateStudioRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

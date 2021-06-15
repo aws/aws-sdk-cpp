@@ -33,6 +33,7 @@ static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParam
 static const int PLATFORM_UNKNOWN_HASH = HashingUtils::HashString("PlatformUnknownException");
 static const int CLUSTER_NOT_FOUND_HASH = HashingUtils::HashString("ClusterNotFoundException");
 static const int CLUSTER_CONTAINS_SERVICES_HASH = HashingUtils::HashString("ClusterContainsServicesException");
+static const int TARGET_NOT_CONNECTED_HASH = HashingUtils::HashString("TargetNotConnectedException");
 static const int CLUSTER_CONTAINS_TASKS_HASH = HashingUtils::HashString("ClusterContainsTasksException");
 static const int TASK_SET_NOT_FOUND_HASH = HashingUtils::HashString("TaskSetNotFoundException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
@@ -104,6 +105,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLUSTER_CONTAINS_SERVICES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::CLUSTER_CONTAINS_SERVICES), false);
+  }
+  else if (hashCode == TARGET_NOT_CONNECTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECSErrors::TARGET_NOT_CONNECTED), false);
   }
   else if (hashCode == CLUSTER_CONTAINS_TASKS_HASH)
   {

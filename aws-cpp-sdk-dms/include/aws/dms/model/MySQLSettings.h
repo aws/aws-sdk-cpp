@@ -97,6 +97,39 @@ namespace Model
 
 
     /**
+     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+     * that is hosted as part of an Always On availability group cluster. If you need
+     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
+     * this attribute to <code>false</code>.</p>
+     */
+    inline bool GetCleanSourceMetadataOnMismatch() const{ return m_cleanSourceMetadataOnMismatch; }
+
+    /**
+     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+     * that is hosted as part of an Always On availability group cluster. If you need
+     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
+     * this attribute to <code>false</code>.</p>
+     */
+    inline bool CleanSourceMetadataOnMismatchHasBeenSet() const { return m_cleanSourceMetadataOnMismatchHasBeenSet; }
+
+    /**
+     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+     * that is hosted as part of an Always On availability group cluster. If you need
+     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
+     * this attribute to <code>false</code>.</p>
+     */
+    inline void SetCleanSourceMetadataOnMismatch(bool value) { m_cleanSourceMetadataOnMismatchHasBeenSet = true; m_cleanSourceMetadataOnMismatch = value; }
+
+    /**
+     * <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+     * that is hosted as part of an Always On availability group cluster. If you need
+     * DMS to poll all the nodes in the Always On cluster for transaction backups, set
+     * this attribute to <code>false</code>.</p>
+     */
+    inline MySQLSettings& WithCleanSourceMetadataOnMismatch(bool value) { SetCleanSourceMetadataOnMismatch(value); return *this;}
+
+
+    /**
      * <p>Database name for the endpoint.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
@@ -693,6 +726,9 @@ namespace Model
 
     Aws::String m_afterConnectScript;
     bool m_afterConnectScriptHasBeenSet;
+
+    bool m_cleanSourceMetadataOnMismatch;
+    bool m_cleanSourceMetadataOnMismatchHasBeenSet;
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet;

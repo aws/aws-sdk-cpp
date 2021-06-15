@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/ConnectivityType.h>
 #include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -40,58 +41,66 @@ namespace Model
   public:
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline CreateNatGatewayRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline CreateNatGatewayRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>The allocation ID of an Elastic IP address to associate with the NAT gateway.
-     * If the Elastic IP address is associated with another resource, you must first
-     * disassociate it.</p>
+     * <p>[Public NAT gateways only] The allocation ID of an Elastic IP address to
+     * associate with the NAT gateway. You cannot specify an Elastic IP address with a
+     * private NAT gateway. If the Elastic IP address is associated with another
+     * resource, you must first disassociate it.</p>
      */
     inline CreateNatGatewayRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
@@ -275,6 +284,43 @@ namespace Model
      */
     inline CreateNatGatewayRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private connectivity.
+     * The default is public connectivity.</p>
+     */
+    inline const ConnectivityType& GetConnectivityType() const{ return m_connectivityType; }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private connectivity.
+     * The default is public connectivity.</p>
+     */
+    inline bool ConnectivityTypeHasBeenSet() const { return m_connectivityTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private connectivity.
+     * The default is public connectivity.</p>
+     */
+    inline void SetConnectivityType(const ConnectivityType& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = value; }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private connectivity.
+     * The default is public connectivity.</p>
+     */
+    inline void SetConnectivityType(ConnectivityType&& value) { m_connectivityTypeHasBeenSet = true; m_connectivityType = std::move(value); }
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private connectivity.
+     * The default is public connectivity.</p>
+     */
+    inline CreateNatGatewayRequest& WithConnectivityType(const ConnectivityType& value) { SetConnectivityType(value); return *this;}
+
+    /**
+     * <p>Indicates whether the NAT gateway supports public or private connectivity.
+     * The default is public connectivity.</p>
+     */
+    inline CreateNatGatewayRequest& WithConnectivityType(ConnectivityType&& value) { SetConnectivityType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_allocationId;
@@ -291,6 +337,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;
+
+    ConnectivityType m_connectivityType;
+    bool m_connectivityTypeHasBeenSet;
   };
 
 } // namespace Model

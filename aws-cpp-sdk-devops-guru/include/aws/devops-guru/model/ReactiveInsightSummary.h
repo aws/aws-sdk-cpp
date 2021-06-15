@@ -10,6 +10,7 @@
 #include <aws/devops-guru/model/InsightStatus.h>
 #include <aws/devops-guru/model/InsightTimeRange.h>
 #include <aws/devops-guru/model/ResourceCollection.h>
+#include <aws/devops-guru/model/ServiceCollection.h>
 #include <utility>
 
 namespace Aws
@@ -223,6 +224,37 @@ namespace Model
     
     inline ReactiveInsightSummary& WithResourceCollection(ResourceCollection&& value) { SetResourceCollection(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of the names of AWS services.</p>
+     */
+    inline const ServiceCollection& GetServiceCollection() const{ return m_serviceCollection; }
+
+    /**
+     * <p>A collection of the names of AWS services.</p>
+     */
+    inline bool ServiceCollectionHasBeenSet() const { return m_serviceCollectionHasBeenSet; }
+
+    /**
+     * <p>A collection of the names of AWS services.</p>
+     */
+    inline void SetServiceCollection(const ServiceCollection& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = value; }
+
+    /**
+     * <p>A collection of the names of AWS services.</p>
+     */
+    inline void SetServiceCollection(ServiceCollection&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::move(value); }
+
+    /**
+     * <p>A collection of the names of AWS services.</p>
+     */
+    inline ReactiveInsightSummary& WithServiceCollection(const ServiceCollection& value) { SetServiceCollection(value); return *this;}
+
+    /**
+     * <p>A collection of the names of AWS services.</p>
+     */
+    inline ReactiveInsightSummary& WithServiceCollection(ServiceCollection&& value) { SetServiceCollection(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -242,6 +274,9 @@ namespace Model
 
     ResourceCollection m_resourceCollection;
     bool m_resourceCollectionHasBeenSet;
+
+    ServiceCollection m_serviceCollection;
+    bool m_serviceCollectionHasBeenSet;
   };
 
 } // namespace Model

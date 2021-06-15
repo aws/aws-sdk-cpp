@@ -25,7 +25,8 @@ FieldToMatch::FieldToMatch() :
     m_uriPathHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_bodyHasBeenSet(false),
-    m_methodHasBeenSet(false)
+    m_methodHasBeenSet(false),
+    m_jsonBodyHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ FieldToMatch::FieldToMatch(JsonView jsonValue) :
     m_uriPathHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_bodyHasBeenSet(false),
-    m_methodHasBeenSet(false)
+    m_methodHasBeenSet(false),
+    m_jsonBodyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
     m_methodHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("JsonBody"))
+  {
+    m_jsonBody = jsonValue.GetObject("JsonBody");
+
+    m_jsonBodyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue FieldToMatch::Jsonize() const
   if(m_methodHasBeenSet)
   {
    payload.WithObject("Method", m_method.Jsonize());
+
+  }
+
+  if(m_jsonBodyHasBeenSet)
+  {
+   payload.WithObject("JsonBody", m_jsonBody.Jsonize());
 
   }
 

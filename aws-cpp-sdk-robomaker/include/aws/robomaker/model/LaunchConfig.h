@@ -222,7 +222,7 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline bool GetStreamUI() const{ return m_streamUI; }
@@ -231,7 +231,7 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline bool StreamUIHasBeenSet() const { return m_streamUIHasBeenSet; }
@@ -240,7 +240,7 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline void SetStreamUI(bool value) { m_streamUIHasBeenSet = true; m_streamUI = value; }
@@ -249,7 +249,7 @@ namespace Model
      * <p>Boolean indicating whether a streaming session will be configured for the
      * application. If <code>True</code>, AWS RoboMaker will configure a connection so
      * you can interact with your application as it is running in the simulation. You
-     * must configure and luanch the component. It must have a graphical user
+     * must configure and launch the component. It must have a graphical user
      * interface. </p>
      */
     inline LaunchConfig& WithStreamUI(bool value) { SetStreamUI(value); return *this;}

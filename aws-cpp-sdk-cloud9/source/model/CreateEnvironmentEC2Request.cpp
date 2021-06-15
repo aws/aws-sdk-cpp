@@ -18,6 +18,7 @@ CreateEnvironmentEC2Request::CreateEnvironmentEC2Request() :
     m_clientRequestTokenHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_automaticStopTimeMinutes(0),
     m_automaticStopTimeMinutesHasBeenSet(false),
     m_ownerArnHasBeenSet(false),
@@ -58,6 +59,12 @@ Aws::String CreateEnvironmentEC2Request::SerializePayload() const
   if(m_subnetIdHasBeenSet)
   {
    payload.WithString("subnetId", m_subnetId);
+
+  }
+
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("imageId", m_imageId);
 
   }
 

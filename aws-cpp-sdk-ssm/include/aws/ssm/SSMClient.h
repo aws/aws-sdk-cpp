@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ssm/model/AddTagsToResourceResult.h>
+#include <aws/ssm/model/AssociateOpsItemRelatedItemResult.h>
 #include <aws/ssm/model/CancelCommandResult.h>
 #include <aws/ssm/model/CancelMaintenanceWindowExecutionResult.h>
 #include <aws/ssm/model/CreateActivationResult.h>
@@ -69,6 +70,7 @@
 #include <aws/ssm/model/DescribePatchGroupsResult.h>
 #include <aws/ssm/model/DescribePatchPropertiesResult.h>
 #include <aws/ssm/model/DescribeSessionsResult.h>
+#include <aws/ssm/model/DisassociateOpsItemRelatedItemResult.h>
 #include <aws/ssm/model/GetAutomationExecutionResult.h>
 #include <aws/ssm/model/GetCalendarStateResult.h>
 #include <aws/ssm/model/GetCommandInvocationResult.h>
@@ -105,6 +107,7 @@
 #include <aws/ssm/model/ListDocumentsResult.h>
 #include <aws/ssm/model/ListInventoryEntriesResult.h>
 #include <aws/ssm/model/ListOpsItemEventsResult.h>
+#include <aws/ssm/model/ListOpsItemRelatedItemsResult.h>
 #include <aws/ssm/model/ListOpsMetadataResult.h>
 #include <aws/ssm/model/ListResourceComplianceSummariesResult.h>
 #include <aws/ssm/model/ListResourceDataSyncResult.h>
@@ -128,6 +131,7 @@
 #include <aws/ssm/model/StartSessionResult.h>
 #include <aws/ssm/model/StopAutomationExecutionResult.h>
 #include <aws/ssm/model/TerminateSessionResult.h>
+#include <aws/ssm/model/UnlabelParameterVersionResult.h>
 #include <aws/ssm/model/UpdateAssociationResult.h>
 #include <aws/ssm/model/UpdateAssociationStatusResult.h>
 #include <aws/ssm/model/UpdateDocumentResult.h>
@@ -182,6 +186,7 @@ namespace SSM
 namespace Model
 {
         class AddTagsToResourceRequest;
+        class AssociateOpsItemRelatedItemRequest;
         class CancelCommandRequest;
         class CancelMaintenanceWindowExecutionRequest;
         class CreateActivationRequest;
@@ -239,6 +244,7 @@ namespace Model
         class DescribePatchGroupsRequest;
         class DescribePatchPropertiesRequest;
         class DescribeSessionsRequest;
+        class DisassociateOpsItemRelatedItemRequest;
         class GetAutomationExecutionRequest;
         class GetCalendarStateRequest;
         class GetCommandInvocationRequest;
@@ -275,6 +281,7 @@ namespace Model
         class ListDocumentsRequest;
         class ListInventoryEntriesRequest;
         class ListOpsItemEventsRequest;
+        class ListOpsItemRelatedItemsRequest;
         class ListOpsMetadataRequest;
         class ListResourceComplianceSummariesRequest;
         class ListResourceDataSyncRequest;
@@ -298,6 +305,7 @@ namespace Model
         class StartSessionRequest;
         class StopAutomationExecutionRequest;
         class TerminateSessionRequest;
+        class UnlabelParameterVersionRequest;
         class UpdateAssociationRequest;
         class UpdateAssociationStatusRequest;
         class UpdateDocumentRequest;
@@ -314,6 +322,7 @@ namespace Model
         class UpdateServiceSettingRequest;
 
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, SSMError> AddTagsToResourceOutcome;
+        typedef Aws::Utils::Outcome<AssociateOpsItemRelatedItemResult, SSMError> AssociateOpsItemRelatedItemOutcome;
         typedef Aws::Utils::Outcome<CancelCommandResult, SSMError> CancelCommandOutcome;
         typedef Aws::Utils::Outcome<CancelMaintenanceWindowExecutionResult, SSMError> CancelMaintenanceWindowExecutionOutcome;
         typedef Aws::Utils::Outcome<CreateActivationResult, SSMError> CreateActivationOutcome;
@@ -371,6 +380,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePatchGroupsResult, SSMError> DescribePatchGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribePatchPropertiesResult, SSMError> DescribePatchPropertiesOutcome;
         typedef Aws::Utils::Outcome<DescribeSessionsResult, SSMError> DescribeSessionsOutcome;
+        typedef Aws::Utils::Outcome<DisassociateOpsItemRelatedItemResult, SSMError> DisassociateOpsItemRelatedItemOutcome;
         typedef Aws::Utils::Outcome<GetAutomationExecutionResult, SSMError> GetAutomationExecutionOutcome;
         typedef Aws::Utils::Outcome<GetCalendarStateResult, SSMError> GetCalendarStateOutcome;
         typedef Aws::Utils::Outcome<GetCommandInvocationResult, SSMError> GetCommandInvocationOutcome;
@@ -407,6 +417,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDocumentsResult, SSMError> ListDocumentsOutcome;
         typedef Aws::Utils::Outcome<ListInventoryEntriesResult, SSMError> ListInventoryEntriesOutcome;
         typedef Aws::Utils::Outcome<ListOpsItemEventsResult, SSMError> ListOpsItemEventsOutcome;
+        typedef Aws::Utils::Outcome<ListOpsItemRelatedItemsResult, SSMError> ListOpsItemRelatedItemsOutcome;
         typedef Aws::Utils::Outcome<ListOpsMetadataResult, SSMError> ListOpsMetadataOutcome;
         typedef Aws::Utils::Outcome<ListResourceComplianceSummariesResult, SSMError> ListResourceComplianceSummariesOutcome;
         typedef Aws::Utils::Outcome<ListResourceDataSyncResult, SSMError> ListResourceDataSyncOutcome;
@@ -430,6 +441,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartSessionResult, SSMError> StartSessionOutcome;
         typedef Aws::Utils::Outcome<StopAutomationExecutionResult, SSMError> StopAutomationExecutionOutcome;
         typedef Aws::Utils::Outcome<TerminateSessionResult, SSMError> TerminateSessionOutcome;
+        typedef Aws::Utils::Outcome<UnlabelParameterVersionResult, SSMError> UnlabelParameterVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateAssociationResult, SSMError> UpdateAssociationOutcome;
         typedef Aws::Utils::Outcome<UpdateAssociationStatusResult, SSMError> UpdateAssociationStatusOutcome;
         typedef Aws::Utils::Outcome<UpdateDocumentResult, SSMError> UpdateDocumentOutcome;
@@ -446,6 +458,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateServiceSettingResult, SSMError> UpdateServiceSettingOutcome;
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
+        typedef std::future<AssociateOpsItemRelatedItemOutcome> AssociateOpsItemRelatedItemOutcomeCallable;
         typedef std::future<CancelCommandOutcome> CancelCommandOutcomeCallable;
         typedef std::future<CancelMaintenanceWindowExecutionOutcome> CancelMaintenanceWindowExecutionOutcomeCallable;
         typedef std::future<CreateActivationOutcome> CreateActivationOutcomeCallable;
@@ -503,6 +516,7 @@ namespace Model
         typedef std::future<DescribePatchGroupsOutcome> DescribePatchGroupsOutcomeCallable;
         typedef std::future<DescribePatchPropertiesOutcome> DescribePatchPropertiesOutcomeCallable;
         typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
+        typedef std::future<DisassociateOpsItemRelatedItemOutcome> DisassociateOpsItemRelatedItemOutcomeCallable;
         typedef std::future<GetAutomationExecutionOutcome> GetAutomationExecutionOutcomeCallable;
         typedef std::future<GetCalendarStateOutcome> GetCalendarStateOutcomeCallable;
         typedef std::future<GetCommandInvocationOutcome> GetCommandInvocationOutcomeCallable;
@@ -539,6 +553,7 @@ namespace Model
         typedef std::future<ListDocumentsOutcome> ListDocumentsOutcomeCallable;
         typedef std::future<ListInventoryEntriesOutcome> ListInventoryEntriesOutcomeCallable;
         typedef std::future<ListOpsItemEventsOutcome> ListOpsItemEventsOutcomeCallable;
+        typedef std::future<ListOpsItemRelatedItemsOutcome> ListOpsItemRelatedItemsOutcomeCallable;
         typedef std::future<ListOpsMetadataOutcome> ListOpsMetadataOutcomeCallable;
         typedef std::future<ListResourceComplianceSummariesOutcome> ListResourceComplianceSummariesOutcomeCallable;
         typedef std::future<ListResourceDataSyncOutcome> ListResourceDataSyncOutcomeCallable;
@@ -562,6 +577,7 @@ namespace Model
         typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
         typedef std::future<StopAutomationExecutionOutcome> StopAutomationExecutionOutcomeCallable;
         typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
+        typedef std::future<UnlabelParameterVersionOutcome> UnlabelParameterVersionOutcomeCallable;
         typedef std::future<UpdateAssociationOutcome> UpdateAssociationOutcomeCallable;
         typedef std::future<UpdateAssociationStatusOutcome> UpdateAssociationStatusOutcomeCallable;
         typedef std::future<UpdateDocumentOutcome> UpdateDocumentOutcomeCallable;
@@ -581,6 +597,7 @@ namespace Model
   class SSMClient;
 
     typedef std::function<void(const SSMClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::AssociateOpsItemRelatedItemRequest&, const Model::AssociateOpsItemRelatedItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateOpsItemRelatedItemResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CancelCommandRequest&, const Model::CancelCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCommandResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CancelMaintenanceWindowExecutionRequest&, const Model::CancelMaintenanceWindowExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelMaintenanceWindowExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::CreateActivationRequest&, const Model::CreateActivationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateActivationResponseReceivedHandler;
@@ -638,6 +655,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DescribePatchGroupsRequest&, const Model::DescribePatchGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchGroupsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribePatchPropertiesRequest&, const Model::DescribePatchPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchPropertiesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DisassociateOpsItemRelatedItemRequest&, const Model::DisassociateOpsItemRelatedItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateOpsItemRelatedItemResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetAutomationExecutionRequest&, const Model::GetAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetCalendarStateRequest&, const Model::GetCalendarStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalendarStateResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetCommandInvocationRequest&, const Model::GetCommandInvocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommandInvocationResponseReceivedHandler;
@@ -674,6 +692,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::ListDocumentsRequest&, const Model::ListDocumentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDocumentsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListInventoryEntriesRequest&, const Model::ListInventoryEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInventoryEntriesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListOpsItemEventsRequest&, const Model::ListOpsItemEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOpsItemEventsResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::ListOpsItemRelatedItemsRequest&, const Model::ListOpsItemRelatedItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOpsItemRelatedItemsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListOpsMetadataRequest&, const Model::ListOpsMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOpsMetadataResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListResourceComplianceSummariesRequest&, const Model::ListResourceComplianceSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceComplianceSummariesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListResourceDataSyncRequest&, const Model::ListResourceDataSyncOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceDataSyncResponseReceivedHandler;
@@ -697,6 +716,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::StopAutomationExecutionRequest&, const Model::StopAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutomationExecutionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::TerminateSessionRequest&, const Model::TerminateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateSessionResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::UnlabelParameterVersionRequest&, const Model::UnlabelParameterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnlabelParameterVersionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateAssociationRequest&, const Model::UpdateAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssociationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateAssociationStatusRequest&, const Model::UpdateAssociationStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssociationStatusResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateDocumentRequest&, const Model::UpdateDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDocumentResponseReceivedHandler;
@@ -727,12 +747,24 @@ namespace Model
    * Manager User Guide</a>.</p> <p>To get started, verify prerequisites and
    * configure managed instances. For more information, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting
-   * up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-   * <p>For information about other API actions you can perform on EC2 instances, see
-   * the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2
-   * API Reference</a>. For information about how to use a Query API, see <a
+   * up AWS Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.</p> <p
+   * class="title"> <b>Related resources</b> </p> <ul> <li> <p>For information about
+   * how to use a Query API, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making
-   * API requests</a>. </p>
+   * API requests</a>. </p> </li> <li> <p>For information about other API actions you
+   * can perform on EC2 instances, see the <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API
+   * Reference</a>.</p> </li> <li> <p>For information about AWS AppConfig, a
+   * capability of Systems Manager, see the <a
+   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig
+   * User Guide</a> and the <a
+   * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS
+   * AppConfig API Reference</a>.</p> </li> <li> <p>For information about AWS
+   * Incident Manager, a capability of Systems Manager, see the <a
+   * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS
+   * Incident Manager User Guide</a> and the <a
+   * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS
+   * Incident Manager API Reference</a>.</p> </li> </ul>
    */
   class AWS_SSM_API SSMClient : public Aws::Client::AWSJsonClient
   {
@@ -836,6 +868,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddTagsToResourceAsync(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
+         * example, you can associate an Incident Manager incident or analysis with an
+         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateOpsItemRelatedItemOutcome AssociateOpsItemRelatedItem(const Model::AssociateOpsItemRelatedItemRequest& request) const;
+
+        /**
+         * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
+         * example, you can associate an Incident Manager incident or analysis with an
+         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateOpsItemRelatedItemOutcomeCallable AssociateOpsItemRelatedItemCallable(const Model::AssociateOpsItemRelatedItemRequest& request) const;
+
+        /**
+         * <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For
+         * example, you can associate an Incident Manager incident or analysis with an
+         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateOpsItemRelatedItemAsync(const Model::AssociateOpsItemRelatedItemRequest& request, const AssociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to cancel the command specified by the Command ID. There is no
@@ -2827,6 +2893,40 @@ namespace Model
         virtual void DescribeSessionsAsync(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the association between an OpsItem and a related resource. For
+         * example, this API action can delete an Incident Manager incident from an
+         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateOpsItemRelatedItemOutcome DisassociateOpsItemRelatedItem(const Model::DisassociateOpsItemRelatedItemRequest& request) const;
+
+        /**
+         * <p>Deletes the association between an OpsItem and a related resource. For
+         * example, this API action can delete an Incident Manager incident from an
+         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateOpsItemRelatedItemOutcomeCallable DisassociateOpsItemRelatedItemCallable(const Model::DisassociateOpsItemRelatedItemRequest& request) const;
+
+        /**
+         * <p>Deletes the association between an OpsItem and a related resource. For
+         * example, this API action can delete an Incident Manager incident from an
+         * OpsItem. Incident Manager is a capability of AWS Systems Manager.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateOpsItemRelatedItemAsync(const Model::DisassociateOpsItemRelatedItemRequest& request, const DisassociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Get detailed information about a particular Automation
          * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetAutomationExecution">AWS
@@ -2920,7 +3020,11 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p><p><h3>See Also:</h3>   <a
+         * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
+         * status of a plugin in a document. To get the command execution status on a
+         * specific instance, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
          */
@@ -2928,7 +3032,11 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p><p><h3>See Also:</h3>   <a
+         * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
+         * status of a plugin in a document. To get the command execution status on a
+         * specific instance, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
          *
@@ -2938,7 +3046,11 @@ namespace Model
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
-         * plugin. </p><p><h3>See Also:</h3>   <a
+         * plugin.</p> <p> <code>GetCommandInvocation</code> only gives the execution
+         * status of a plugin in a document. To get the command execution status on a
+         * specific instance, use <a>ListCommandInvocations</a>. To get the command
+         * execution status across instances, use <a>ListCommands</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCommandInvocation">AWS
          * API Reference</a></p>
          *
@@ -3654,15 +3766,15 @@ namespace Model
          * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
          * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
          * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>You can't delete a parameter label. If
-         * you no longer want to use a parameter label, then you must move it to a
-         * different version of a parameter.</p> </li> <li> <p>A label can have a maximum
-         * of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
-         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
-         * <li> <p>Labels can't begin with a number, "aws," or "ssm" (not case sensitive).
-         * If a label fails to meet these requirements, then the label is not associated
-         * with a parameter and the system displays it in the list of InvalidLabels.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
+         * parameter label, then you can either delete it or move it to a different version
+         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
+         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
+         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
+         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
+         * fails to meet these requirements, then the label is not associated with a
+         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          */
@@ -3680,15 +3792,15 @@ namespace Model
          * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
          * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
          * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>You can't delete a parameter label. If
-         * you no longer want to use a parameter label, then you must move it to a
-         * different version of a parameter.</p> </li> <li> <p>A label can have a maximum
-         * of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
-         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
-         * <li> <p>Labels can't begin with a number, "aws," or "ssm" (not case sensitive).
-         * If a label fails to meet these requirements, then the label is not associated
-         * with a parameter and the system displays it in the list of InvalidLabels.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
+         * parameter label, then you can either delete it or move it to a different version
+         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
+         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
+         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
+         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
+         * fails to meet these requirements, then the label is not associated with a
+         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          *
@@ -3708,15 +3820,15 @@ namespace Model
          * you can't attach Production to version 2.</p> </li> <li> <p>You can move a label
          * from one version of a parameter to another.</p> </li> <li> <p>You can't create a
          * label when you create a new parameter. You must attach a label to a specific
-         * version of a parameter.</p> </li> <li> <p>You can't delete a parameter label. If
-         * you no longer want to use a parameter label, then you must move it to a
-         * different version of a parameter.</p> </li> <li> <p>A label can have a maximum
-         * of 100 characters.</p> </li> <li> <p>Labels can contain letters (case
-         * sensitive), numbers, periods (.), hyphens (-), or underscores (_).</p> </li>
-         * <li> <p>Labels can't begin with a number, "aws," or "ssm" (not case sensitive).
-         * If a label fails to meet these requirements, then the label is not associated
-         * with a parameter and the system displays it in the list of InvalidLabels.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * version of a parameter.</p> </li> <li> <p>If you no longer want to use a
+         * parameter label, then you can either delete it or move it to a different version
+         * of a parameter.</p> </li> <li> <p>A label can have a maximum of 100
+         * characters.</p> </li> <li> <p>Labels can contain letters (case sensitive),
+         * numbers, periods (.), hyphens (-), or underscores (_).</p> </li> <li> <p>Labels
+         * can't begin with a number, "aws," or "ssm" (not case sensitive). If a label
+         * fails to meet these requirements, then the label is not associated with a
+         * parameter and the system displays it in the list of InvalidLabels.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/LabelParameterVersion">AWS
          * API Reference</a></p>
          *
@@ -4058,6 +4170,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListOpsItemEventsAsync(const Model::ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all related-item resources associated with an OpsItem.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOpsItemRelatedItemsOutcome ListOpsItemRelatedItems(const Model::ListOpsItemRelatedItemsRequest& request) const;
+
+        /**
+         * <p>Lists all related-item resources associated with an OpsItem.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOpsItemRelatedItemsOutcomeCallable ListOpsItemRelatedItemsCallable(const Model::ListOpsItemRelatedItemsRequest& request) const;
+
+        /**
+         * <p>Lists all related-item resources associated with an OpsItem.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOpsItemRelatedItemsAsync(const Model::ListOpsItemRelatedItemsRequest& request, const ListOpsItemRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Systems Manager calls this API action when displaying all Application Manager
@@ -4878,6 +5018,31 @@ namespace Model
         virtual void TerminateSessionAsync(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UnlabelParameterVersionOutcome UnlabelParameterVersion(const Model::UnlabelParameterVersionRequest& request) const;
+
+        /**
+         * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UnlabelParameterVersionOutcomeCallable UnlabelParameterVersionCallable(const Model::UnlabelParameterVersionRequest& request) const;
+
+        /**
+         * <p>Remove a label or labels from a parameter.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UnlabelParameterVersionAsync(const Model::UnlabelParameterVersionRequest& request, const UnlabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an association. You can update the association name and version, the
          * document version, schedule, parameters, and Amazon S3 output. </p> <p>In order
          * to call this API action, your IAM user account, group, or role must be
@@ -5499,6 +5664,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateOpsItemRelatedItemAsyncHelper(const Model::AssociateOpsItemRelatedItemRequest& request, const AssociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelCommandAsyncHelper(const Model::CancelCommandRequest& request, const CancelCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelMaintenanceWindowExecutionAsyncHelper(const Model::CancelMaintenanceWindowExecutionRequest& request, const CancelMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateActivationAsyncHelper(const Model::CreateActivationRequest& request, const CreateActivationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5556,6 +5722,7 @@ namespace Model
         void DescribePatchGroupsAsyncHelper(const Model::DescribePatchGroupsRequest& request, const DescribePatchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePatchPropertiesAsyncHelper(const Model::DescribePatchPropertiesRequest& request, const DescribePatchPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSessionsAsyncHelper(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateOpsItemRelatedItemAsyncHelper(const Model::DisassociateOpsItemRelatedItemRequest& request, const DisassociateOpsItemRelatedItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAutomationExecutionAsyncHelper(const Model::GetAutomationExecutionRequest& request, const GetAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCalendarStateAsyncHelper(const Model::GetCalendarStateRequest& request, const GetCalendarStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommandInvocationAsyncHelper(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5592,6 +5759,7 @@ namespace Model
         void ListDocumentsAsyncHelper(const Model::ListDocumentsRequest& request, const ListDocumentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInventoryEntriesAsyncHelper(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOpsItemEventsAsyncHelper(const Model::ListOpsItemEventsRequest& request, const ListOpsItemEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOpsItemRelatedItemsAsyncHelper(const Model::ListOpsItemRelatedItemsRequest& request, const ListOpsItemRelatedItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOpsMetadataAsyncHelper(const Model::ListOpsMetadataRequest& request, const ListOpsMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceComplianceSummariesAsyncHelper(const Model::ListResourceComplianceSummariesRequest& request, const ListResourceComplianceSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceDataSyncAsyncHelper(const Model::ListResourceDataSyncRequest& request, const ListResourceDataSyncResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5615,6 +5783,7 @@ namespace Model
         void StartSessionAsyncHelper(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopAutomationExecutionAsyncHelper(const Model::StopAutomationExecutionRequest& request, const StopAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateSessionAsyncHelper(const Model::TerminateSessionRequest& request, const TerminateSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UnlabelParameterVersionAsyncHelper(const Model::UnlabelParameterVersionRequest& request, const UnlabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssociationAsyncHelper(const Model::UpdateAssociationRequest& request, const UpdateAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssociationStatusAsyncHelper(const Model::UpdateAssociationStatusRequest& request, const UpdateAssociationStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDocumentAsyncHelper(const Model::UpdateDocumentRequest& request, const UpdateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

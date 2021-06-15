@@ -19,14 +19,18 @@ using namespace Aws;
 DescribePredictorResult::DescribePredictorResult() : 
     m_forecastHorizon(0),
     m_performAutoML(false),
-    m_performHPO(false)
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
+    m_performHPO(false),
+    m_estimatedTimeRemainingInMinutes(0)
 {
 }
 
 DescribePredictorResult::DescribePredictorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_forecastHorizon(0),
     m_performAutoML(false),
-    m_performHPO(false)
+    m_autoMLOverrideStrategy(AutoMLOverrideStrategy::NOT_SET),
+    m_performHPO(false),
+    m_estimatedTimeRemainingInMinutes(0)
 {
   *this = result;
 }
@@ -70,6 +74,12 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("PerformAutoML"))
   {
     m_performAutoML = jsonValue.GetBool("PerformAutoML");
+
+  }
+
+  if(jsonValue.ValueExists("AutoMLOverrideStrategy"))
+  {
+    m_autoMLOverrideStrategy = AutoMLOverrideStrategyMapper::GetAutoMLOverrideStrategyForName(jsonValue.GetString("AutoMLOverrideStrategy"));
 
   }
 
@@ -121,6 +131,12 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("PredictorExecutionDetails"))
   {
     m_predictorExecutionDetails = jsonValue.GetObject("PredictorExecutionDetails");
+
+  }
+
+  if(jsonValue.ValueExists("EstimatedTimeRemainingInMinutes"))
+  {
+    m_estimatedTimeRemainingInMinutes = jsonValue.GetInt64("EstimatedTimeRemainingInMinutes");
 
   }
 

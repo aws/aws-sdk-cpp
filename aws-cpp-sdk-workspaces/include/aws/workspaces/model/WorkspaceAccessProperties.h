@@ -334,6 +334,37 @@ namespace Model
      */
     inline WorkspaceAccessProperties& WithDeviceTypeZeroClient(AccessPropertyValue&& value) { SetDeviceTypeZeroClient(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline const AccessPropertyValue& GetDeviceTypeLinux() const{ return m_deviceTypeLinux; }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline bool DeviceTypeLinuxHasBeenSet() const { return m_deviceTypeLinuxHasBeenSet; }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline void SetDeviceTypeLinux(const AccessPropertyValue& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = value; }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline void SetDeviceTypeLinux(AccessPropertyValue&& value) { m_deviceTypeLinuxHasBeenSet = true; m_deviceTypeLinux = std::move(value); }
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline WorkspaceAccessProperties& WithDeviceTypeLinux(const AccessPropertyValue& value) { SetDeviceTypeLinux(value); return *this;}
+
+    /**
+     * <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
+     */
+    inline WorkspaceAccessProperties& WithDeviceTypeLinux(AccessPropertyValue&& value) { SetDeviceTypeLinux(std::move(value)); return *this;}
+
   private:
 
     AccessPropertyValue m_deviceTypeWindows;
@@ -356,6 +387,9 @@ namespace Model
 
     AccessPropertyValue m_deviceTypeZeroClient;
     bool m_deviceTypeZeroClientHasBeenSet;
+
+    AccessPropertyValue m_deviceTypeLinux;
+    bool m_deviceTypeLinuxHasBeenSet;
   };
 
 } // namespace Model

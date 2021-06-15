@@ -31,6 +31,7 @@ ContainerService::ContainerService() :
     m_powerIdHasBeenSet(false),
     m_state(ContainerServiceState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_stateDetailHasBeenSet(false),
     m_scale(0),
     m_scaleHasBeenSet(false),
     m_currentDeploymentHasBeenSet(false),
@@ -57,6 +58,7 @@ ContainerService::ContainerService(JsonView jsonValue) :
     m_powerIdHasBeenSet(false),
     m_state(ContainerServiceState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_stateDetailHasBeenSet(false),
     m_scale(0),
     m_scaleHasBeenSet(false),
     m_currentDeploymentHasBeenSet(false),
@@ -137,6 +139,13 @@ ContainerService& ContainerService::operator =(JsonView jsonValue)
     m_state = ContainerServiceStateMapper::GetContainerServiceStateForName(jsonValue.GetString("state"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stateDetail"))
+  {
+    m_stateDetail = jsonValue.GetObject("stateDetail");
+
+    m_stateDetailHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scale"))
@@ -265,6 +274,12 @@ JsonValue ContainerService::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", ContainerServiceStateMapper::GetNameForContainerServiceState(m_state));
+  }
+
+  if(m_stateDetailHasBeenSet)
+  {
+   payload.WithObject("stateDetail", m_stateDetail.Jsonize());
+
   }
 
   if(m_scaleHasBeenSet)

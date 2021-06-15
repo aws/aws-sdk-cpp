@@ -11,6 +11,8 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/eks/model/AssociateEncryptionConfigResult.h>
+#include <aws/eks/model/AssociateIdentityProviderConfigResult.h>
 #include <aws/eks/model/CreateAddonResult.h>
 #include <aws/eks/model/CreateClusterResult.h>
 #include <aws/eks/model/CreateFargateProfileResult.h>
@@ -23,11 +25,14 @@
 #include <aws/eks/model/DescribeAddonVersionsResult.h>
 #include <aws/eks/model/DescribeClusterResult.h>
 #include <aws/eks/model/DescribeFargateProfileResult.h>
+#include <aws/eks/model/DescribeIdentityProviderConfigResult.h>
 #include <aws/eks/model/DescribeNodegroupResult.h>
 #include <aws/eks/model/DescribeUpdateResult.h>
+#include <aws/eks/model/DisassociateIdentityProviderConfigResult.h>
 #include <aws/eks/model/ListAddonsResult.h>
 #include <aws/eks/model/ListClustersResult.h>
 #include <aws/eks/model/ListFargateProfilesResult.h>
+#include <aws/eks/model/ListIdentityProviderConfigsResult.h>
 #include <aws/eks/model/ListNodegroupsResult.h>
 #include <aws/eks/model/ListTagsForResourceResult.h>
 #include <aws/eks/model/ListUpdatesResult.h>
@@ -77,6 +82,8 @@ namespace EKS
 
 namespace Model
 {
+        class AssociateEncryptionConfigRequest;
+        class AssociateIdentityProviderConfigRequest;
         class CreateAddonRequest;
         class CreateClusterRequest;
         class CreateFargateProfileRequest;
@@ -89,11 +96,14 @@ namespace Model
         class DescribeAddonVersionsRequest;
         class DescribeClusterRequest;
         class DescribeFargateProfileRequest;
+        class DescribeIdentityProviderConfigRequest;
         class DescribeNodegroupRequest;
         class DescribeUpdateRequest;
+        class DisassociateIdentityProviderConfigRequest;
         class ListAddonsRequest;
         class ListClustersRequest;
         class ListFargateProfilesRequest;
+        class ListIdentityProviderConfigsRequest;
         class ListNodegroupsRequest;
         class ListTagsForResourceRequest;
         class ListUpdatesRequest;
@@ -105,6 +115,8 @@ namespace Model
         class UpdateNodegroupConfigRequest;
         class UpdateNodegroupVersionRequest;
 
+        typedef Aws::Utils::Outcome<AssociateEncryptionConfigResult, EKSError> AssociateEncryptionConfigOutcome;
+        typedef Aws::Utils::Outcome<AssociateIdentityProviderConfigResult, EKSError> AssociateIdentityProviderConfigOutcome;
         typedef Aws::Utils::Outcome<CreateAddonResult, EKSError> CreateAddonOutcome;
         typedef Aws::Utils::Outcome<CreateClusterResult, EKSError> CreateClusterOutcome;
         typedef Aws::Utils::Outcome<CreateFargateProfileResult, EKSError> CreateFargateProfileOutcome;
@@ -117,11 +129,14 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeAddonVersionsResult, EKSError> DescribeAddonVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterResult, EKSError> DescribeClusterOutcome;
         typedef Aws::Utils::Outcome<DescribeFargateProfileResult, EKSError> DescribeFargateProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeIdentityProviderConfigResult, EKSError> DescribeIdentityProviderConfigOutcome;
         typedef Aws::Utils::Outcome<DescribeNodegroupResult, EKSError> DescribeNodegroupOutcome;
         typedef Aws::Utils::Outcome<DescribeUpdateResult, EKSError> DescribeUpdateOutcome;
+        typedef Aws::Utils::Outcome<DisassociateIdentityProviderConfigResult, EKSError> DisassociateIdentityProviderConfigOutcome;
         typedef Aws::Utils::Outcome<ListAddonsResult, EKSError> ListAddonsOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, EKSError> ListClustersOutcome;
         typedef Aws::Utils::Outcome<ListFargateProfilesResult, EKSError> ListFargateProfilesOutcome;
+        typedef Aws::Utils::Outcome<ListIdentityProviderConfigsResult, EKSError> ListIdentityProviderConfigsOutcome;
         typedef Aws::Utils::Outcome<ListNodegroupsResult, EKSError> ListNodegroupsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, EKSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUpdatesResult, EKSError> ListUpdatesOutcome;
@@ -133,6 +148,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateNodegroupConfigResult, EKSError> UpdateNodegroupConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateNodegroupVersionResult, EKSError> UpdateNodegroupVersionOutcome;
 
+        typedef std::future<AssociateEncryptionConfigOutcome> AssociateEncryptionConfigOutcomeCallable;
+        typedef std::future<AssociateIdentityProviderConfigOutcome> AssociateIdentityProviderConfigOutcomeCallable;
         typedef std::future<CreateAddonOutcome> CreateAddonOutcomeCallable;
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
         typedef std::future<CreateFargateProfileOutcome> CreateFargateProfileOutcomeCallable;
@@ -145,11 +162,14 @@ namespace Model
         typedef std::future<DescribeAddonVersionsOutcome> DescribeAddonVersionsOutcomeCallable;
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
         typedef std::future<DescribeFargateProfileOutcome> DescribeFargateProfileOutcomeCallable;
+        typedef std::future<DescribeIdentityProviderConfigOutcome> DescribeIdentityProviderConfigOutcomeCallable;
         typedef std::future<DescribeNodegroupOutcome> DescribeNodegroupOutcomeCallable;
         typedef std::future<DescribeUpdateOutcome> DescribeUpdateOutcomeCallable;
+        typedef std::future<DisassociateIdentityProviderConfigOutcome> DisassociateIdentityProviderConfigOutcomeCallable;
         typedef std::future<ListAddonsOutcome> ListAddonsOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
         typedef std::future<ListFargateProfilesOutcome> ListFargateProfilesOutcomeCallable;
+        typedef std::future<ListIdentityProviderConfigsOutcome> ListIdentityProviderConfigsOutcomeCallable;
         typedef std::future<ListNodegroupsOutcome> ListNodegroupsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
@@ -164,6 +184,8 @@ namespace Model
 
   class EKSClient;
 
+    typedef std::function<void(const EKSClient*, const Model::AssociateEncryptionConfigRequest&, const Model::AssociateEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEncryptionConfigResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::AssociateIdentityProviderConfigRequest&, const Model::AssociateIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIdentityProviderConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::CreateAddonRequest&, const Model::CreateAddonOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAddonResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::CreateFargateProfileRequest&, const Model::CreateFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFargateProfileResponseReceivedHandler;
@@ -176,11 +198,14 @@ namespace Model
     typedef std::function<void(const EKSClient*, const Model::DescribeAddonVersionsRequest&, const Model::DescribeAddonVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddonVersionsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeFargateProfileRequest&, const Model::DescribeFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFargateProfileResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DescribeIdentityProviderConfigRequest&, const Model::DescribeIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIdentityProviderConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeNodegroupRequest&, const Model::DescribeNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeUpdateRequest&, const Model::DescribeUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DisassociateIdentityProviderConfigRequest&, const Model::DisassociateIdentityProviderConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIdentityProviderConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListAddonsRequest&, const Model::ListAddonsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAddonsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListFargateProfilesRequest&, const Model::ListFargateProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFargateProfilesResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::ListIdentityProviderConfigsRequest&, const Model::ListIdentityProviderConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityProviderConfigsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListNodegroupsRequest&, const Model::ListNodegroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodegroupsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUpdatesResponseReceivedHandler;
@@ -233,6 +258,95 @@ namespace Model
 
 
         /**
+         * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
+         * this API to enable encryption on existing clusters which do not have encryption
+         * already enabled. This allows you to implement a defense-in-depth security
+         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateEncryptionConfigOutcome AssociateEncryptionConfig(const Model::AssociateEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
+         * this API to enable encryption on existing clusters which do not have encryption
+         * already enabled. This allows you to implement a defense-in-depth security
+         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateEncryptionConfigOutcomeCallable AssociateEncryptionConfigCallable(const Model::AssociateEncryptionConfigRequest& request) const;
+
+        /**
+         * <p>Associate encryption configuration to an existing cluster.</p> <p>You can use
+         * this API to enable encryption on existing clusters which do not have encryption
+         * already enabled. This allows you to implement a defense-in-depth security
+         * strategy without migrating applications to new EKS clusters.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateEncryptionConfigAsync(const Model::AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associate an identity provider configuration to a cluster.</p> <p>If you want
+         * to authenticate identities using an identity provider, you can create an
+         * identity provider configuration and associate it to your cluster. After
+         * configuring authentication to your cluster you can create Kubernetes
+         * <code>roles</code> and <code>clusterroles</code> to assign permissions to the
+         * roles, and then bind the roles to the identities using Kubernetes
+         * <code>rolebindings</code> and <code>clusterrolebindings</code>. For more
+         * information see <a
+         * href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
+         * Authorization</a> in the Kubernetes documentation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateIdentityProviderConfigOutcome AssociateIdentityProviderConfig(const Model::AssociateIdentityProviderConfigRequest& request) const;
+
+        /**
+         * <p>Associate an identity provider configuration to a cluster.</p> <p>If you want
+         * to authenticate identities using an identity provider, you can create an
+         * identity provider configuration and associate it to your cluster. After
+         * configuring authentication to your cluster you can create Kubernetes
+         * <code>roles</code> and <code>clusterroles</code> to assign permissions to the
+         * roles, and then bind the roles to the identities using Kubernetes
+         * <code>rolebindings</code> and <code>clusterrolebindings</code>. For more
+         * information see <a
+         * href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
+         * Authorization</a> in the Kubernetes documentation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateIdentityProviderConfigOutcomeCallable AssociateIdentityProviderConfigCallable(const Model::AssociateIdentityProviderConfigRequest& request) const;
+
+        /**
+         * <p>Associate an identity provider configuration to a cluster.</p> <p>If you want
+         * to authenticate identities using an identity provider, you can create an
+         * identity provider configuration and associate it to your cluster. After
+         * configuring authentication to your cluster you can create Kubernetes
+         * <code>roles</code> and <code>clusterroles</code> to assign permissions to the
+         * roles, and then bind the roles to the identities using Kubernetes
+         * <code>rolebindings</code> and <code>clusterrolebindings</code>. For more
+         * information see <a
+         * href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
+         * Authorization</a> in the Kubernetes documentation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateIdentityProviderConfigAsync(const Model::AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the
          * provisioning and lifecycle management of common operational software for Amazon
          * EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters
@@ -282,34 +396,18 @@ namespace Model
          * provisioned across multiple Availability Zones and fronted by an Elastic Load
          * Balancing Network Load Balancer. Amazon EKS also provisions elastic network
          * interfaces in your VPC subnets to provide connectivity from the control plane
-         * instances to the worker nodes (for example, to support <code>kubectl
-         * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
-         * <p>Amazon EKS worker nodes run in your AWS account and connect to your cluster's
-         * control plane via the Kubernetes API server endpoint and a certificate file that
-         * is created for your cluster.</p> <p>You can use the
-         * <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
-         * parameters to enable or disable public and private access to your cluster's
-         * Kubernetes API server endpoint. By default, public access is enabled, and
-         * private access is disabled. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <p>You can use the <code>logging</code> parameter to enable or
-         * disable exporting the Kubernetes control plane logs for your cluster to
-         * CloudWatch Logs. By default, cluster control plane logs aren't exported to
-         * CloudWatch Logs. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-         * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
-         * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
-         * minutes. After you create an Amazon EKS cluster, you must configure your
-         * Kubernetes tooling to communicate with the API server and launch worker nodes
-         * into your cluster. For more information, see <a
+         * instances to the nodes (for example, to support <code>kubectl exec</code>,
+         * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
+         * run in your AWS account and connect to your cluster's control plane via the
+         * Kubernetes API server endpoint and a certificate file that is created for your
+         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
+         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
+         * communicate with the API server and launch nodes into your cluster. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
-         * Amazon EKS Worker Nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
+         * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">AWS
          * API Reference</a></p>
@@ -326,34 +424,18 @@ namespace Model
          * provisioned across multiple Availability Zones and fronted by an Elastic Load
          * Balancing Network Load Balancer. Amazon EKS also provisions elastic network
          * interfaces in your VPC subnets to provide connectivity from the control plane
-         * instances to the worker nodes (for example, to support <code>kubectl
-         * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
-         * <p>Amazon EKS worker nodes run in your AWS account and connect to your cluster's
-         * control plane via the Kubernetes API server endpoint and a certificate file that
-         * is created for your cluster.</p> <p>You can use the
-         * <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
-         * parameters to enable or disable public and private access to your cluster's
-         * Kubernetes API server endpoint. By default, public access is enabled, and
-         * private access is disabled. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <p>You can use the <code>logging</code> parameter to enable or
-         * disable exporting the Kubernetes control plane logs for your cluster to
-         * CloudWatch Logs. By default, cluster control plane logs aren't exported to
-         * CloudWatch Logs. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-         * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
-         * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
-         * minutes. After you create an Amazon EKS cluster, you must configure your
-         * Kubernetes tooling to communicate with the API server and launch worker nodes
-         * into your cluster. For more information, see <a
+         * instances to the nodes (for example, to support <code>kubectl exec</code>,
+         * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
+         * run in your AWS account and connect to your cluster's control plane via the
+         * Kubernetes API server endpoint and a certificate file that is created for your
+         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
+         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
+         * communicate with the API server and launch nodes into your cluster. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
-         * Amazon EKS Worker Nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
+         * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">AWS
          * API Reference</a></p>
@@ -372,34 +454,18 @@ namespace Model
          * provisioned across multiple Availability Zones and fronted by an Elastic Load
          * Balancing Network Load Balancer. Amazon EKS also provisions elastic network
          * interfaces in your VPC subnets to provide connectivity from the control plane
-         * instances to the worker nodes (for example, to support <code>kubectl
-         * exec</code>, <code>logs</code>, and <code>proxy</code> data flows).</p>
-         * <p>Amazon EKS worker nodes run in your AWS account and connect to your cluster's
-         * control plane via the Kubernetes API server endpoint and a certificate file that
-         * is created for your cluster.</p> <p>You can use the
-         * <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
-         * parameters to enable or disable public and private access to your cluster's
-         * Kubernetes API server endpoint. By default, public access is enabled, and
-         * private access is disabled. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-         * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p> <p>You can use the <code>logging</code> parameter to enable or
-         * disable exporting the Kubernetes control plane logs for your cluster to
-         * CloudWatch Logs. By default, cluster control plane logs aren't exported to
-         * CloudWatch Logs. For more information, see <a
-         * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
-         * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>.</p>  <p>CloudWatch Logs ingestion, archive storage, and data
-         * scanning rates apply to exported control plane logs. For more information, see
-         * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-         * Pricing</a>.</p>  <p>Cluster creation typically takes between 10 and 15
-         * minutes. After you create an Amazon EKS cluster, you must configure your
-         * Kubernetes tooling to communicate with the API server and launch worker nodes
-         * into your cluster. For more information, see <a
+         * instances to the nodes (for example, to support <code>kubectl exec</code>,
+         * <code>logs</code>, and <code>proxy</code> data flows).</p> <p>Amazon EKS nodes
+         * run in your AWS account and connect to your cluster's control plane via the
+         * Kubernetes API server endpoint and a certificate file that is created for your
+         * cluster.</p> <p>Cluster creation typically takes several minutes. After you
+         * create an Amazon EKS cluster, you must configure your Kubernetes tooling to
+         * communicate with the API server and launch nodes into your cluster. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
          * Cluster Authentication</a> and <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
-         * Amazon EKS Worker Nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
+         * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">AWS
          * API Reference</a></p>
@@ -518,12 +584,12 @@ namespace Model
         virtual void CreateFargateProfileAsync(const Model::CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
-         * create a node group for your cluster that is equal to the current Kubernetes
-         * version for the cluster. All node groups are created with the latest AMI release
-         * version for the respective minor Kubernetes version of the cluster, unless you
-         * deploy a custom AMI using a launch template. For more information about using
-         * launch templates, see <a
+         * <p>Creates a managed node group for an Amazon EKS cluster. You can only create a
+         * node group for your cluster that is equal to the current Kubernetes version for
+         * the cluster. All node groups are created with the latest AMI release version for
+         * the respective minor Kubernetes version of the cluster, unless you deploy a
+         * custom AMI using a launch template. For more information about using launch
+         * templates, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
          * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
@@ -538,12 +604,12 @@ namespace Model
         virtual Model::CreateNodegroupOutcome CreateNodegroup(const Model::CreateNodegroupRequest& request) const;
 
         /**
-         * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
-         * create a node group for your cluster that is equal to the current Kubernetes
-         * version for the cluster. All node groups are created with the latest AMI release
-         * version for the respective minor Kubernetes version of the cluster, unless you
-         * deploy a custom AMI using a launch template. For more information about using
-         * launch templates, see <a
+         * <p>Creates a managed node group for an Amazon EKS cluster. You can only create a
+         * node group for your cluster that is equal to the current Kubernetes version for
+         * the cluster. All node groups are created with the latest AMI release version for
+         * the respective minor Kubernetes version of the cluster, unless you deploy a
+         * custom AMI using a launch template. For more information about using launch
+         * templates, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
          * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
@@ -560,12 +626,12 @@ namespace Model
         virtual Model::CreateNodegroupOutcomeCallable CreateNodegroupCallable(const Model::CreateNodegroupRequest& request) const;
 
         /**
-         * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
-         * create a node group for your cluster that is equal to the current Kubernetes
-         * version for the cluster. All node groups are created with the latest AMI release
-         * version for the respective minor Kubernetes version of the cluster, unless you
-         * deploy a custom AMI using a launch template. For more information about using
-         * launch templates, see <a
+         * <p>Creates a managed node group for an Amazon EKS cluster. You can only create a
+         * node group for your cluster that is equal to the current Kubernetes version for
+         * the cluster. All node groups are created with the latest AMI release version for
+         * the respective minor Kubernetes version of the cluster, unless you deploy a
+         * custom AMI using a launch template. For more information about using launch
+         * templates, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
          * template support</a>.</p> <p>An Amazon EKS managed node group is an Amazon EC2
          * Auto Scaling group and associated Amazon EC2 instances that are managed by AWS
@@ -863,6 +929,34 @@ namespace Model
         virtual void DescribeFargateProfileAsync(const Model::DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns descriptive information about an identity provider
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIdentityProviderConfigOutcome DescribeIdentityProviderConfig(const Model::DescribeIdentityProviderConfigRequest& request) const;
+
+        /**
+         * <p>Returns descriptive information about an identity provider
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIdentityProviderConfigOutcomeCallable DescribeIdentityProviderConfigCallable(const Model::DescribeIdentityProviderConfigRequest& request) const;
+
+        /**
+         * <p>Returns descriptive information about an identity provider
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIdentityProviderConfigAsync(const Model::DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns descriptive information about an Amazon EKS node group.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">AWS
@@ -926,6 +1020,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUpdateAsync(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates an identity provider configuration from a cluster. If you
+         * disassociate an identity provider from your cluster, users included in the
+         * provider can no longer access the cluster. However, you can still access the
+         * cluster with AWS IAM users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateIdentityProviderConfigOutcome DisassociateIdentityProviderConfig(const Model::DisassociateIdentityProviderConfigRequest& request) const;
+
+        /**
+         * <p>Disassociates an identity provider configuration from a cluster. If you
+         * disassociate an identity provider from your cluster, users included in the
+         * provider can no longer access the cluster. However, you can still access the
+         * cluster with AWS IAM users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateIdentityProviderConfigOutcomeCallable DisassociateIdentityProviderConfigCallable(const Model::DisassociateIdentityProviderConfigRequest& request) const;
+
+        /**
+         * <p>Disassociates an identity provider configuration from a cluster. If you
+         * disassociate an identity provider from your cluster, users included in the
+         * provider can no longer access the cluster. However, you can still access the
+         * cluster with AWS IAM users.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateIdentityProviderConfigAsync(const Model::DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the available add-ons.</p><p><h3>See Also:</h3>   <a
@@ -1007,6 +1135,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListFargateProfilesAsync(const Model::ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A list of identity provider configurations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIdentityProviderConfigsOutcome ListIdentityProviderConfigs(const Model::ListIdentityProviderConfigsRequest& request) const;
+
+        /**
+         * <p>A list of identity provider configurations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListIdentityProviderConfigsOutcomeCallable ListIdentityProviderConfigsCallable(const Model::ListIdentityProviderConfigsRequest& request) const;
+
+        /**
+         * <p>A list of identity provider configurations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListIdentityProviderConfigsAsync(const Model::ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon EKS managed node groups associated with the specified
@@ -1099,7 +1252,7 @@ namespace Model
          * tags associated with that resource are deleted as well. Tags that you create for
          * Amazon EKS resources do not propagate to any other resources associated with the
          * cluster. For example, if you tag a cluster with this operation, that tag does
-         * not automatically propagate to the subnets and worker nodes associated with the
+         * not automatically propagate to the subnets and nodes associated with the
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS API
          * Reference</a></p>
@@ -1113,7 +1266,7 @@ namespace Model
          * tags associated with that resource are deleted as well. Tags that you create for
          * Amazon EKS resources do not propagate to any other resources associated with the
          * cluster. For example, if you tag a cluster with this operation, that tag does
-         * not automatically propagate to the subnets and worker nodes associated with the
+         * not automatically propagate to the subnets and nodes associated with the
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS API
          * Reference</a></p>
@@ -1129,7 +1282,7 @@ namespace Model
          * tags associated with that resource are deleted as well. Tags that you create for
          * Amazon EKS resources do not propagate to any other resources associated with the
          * cluster. For example, if you tag a cluster with this operation, that tag does
-         * not automatically propagate to the subnets and worker nodes associated with the
+         * not automatically propagate to the subnets and nodes associated with the
          * cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS API
          * Reference</a></p>
@@ -1207,12 +1360,12 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p>  <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p>  <p>Cluster updates
-         * are asynchronous, and they should finish within a few minutes. During an update,
-         * the cluster status moves to <code>UPDATING</code> (this status transition is
-         * eventually consistent). When the update is complete (either <code>Failed</code>
-         * or <code>Successful</code>), the cluster status moves to
+         * </i>. </p>  <p>You can't update the subnets or security group IDs for
+         * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
+         * they should finish within a few minutes. During an update, the cluster status
+         * moves to <code>UPDATING</code> (this status transition is eventually
+         * consistent). When the update is complete (either <code>Failed</code> or
+         * <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>
@@ -1238,12 +1391,12 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p>  <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p>  <p>Cluster updates
-         * are asynchronous, and they should finish within a few minutes. During an update,
-         * the cluster status moves to <code>UPDATING</code> (this status transition is
-         * eventually consistent). When the update is complete (either <code>Failed</code>
-         * or <code>Successful</code>), the cluster status moves to
+         * </i>. </p>  <p>You can't update the subnets or security group IDs for
+         * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
+         * they should finish within a few minutes. During an update, the cluster status
+         * moves to <code>UPDATING</code> (this status transition is eventually
+         * consistent). When the update is complete (either <code>Failed</code> or
+         * <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>
@@ -1271,12 +1424,12 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
          * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
-         * </i>. </p>  <p>At this time, you can not update the subnets or
-         * security group IDs for an existing cluster.</p>  <p>Cluster updates
-         * are asynchronous, and they should finish within a few minutes. During an update,
-         * the cluster status moves to <code>UPDATING</code> (this status transition is
-         * eventually consistent). When the update is complete (either <code>Failed</code>
-         * or <code>Successful</code>), the cluster status moves to
+         * </i>. </p>  <p>You can't update the subnets or security group IDs for
+         * an existing cluster.</p>  <p>Cluster updates are asynchronous, and
+         * they should finish within a few minutes. During an update, the cluster status
+         * moves to <code>UPDATING</code> (this status transition is eventually
+         * consistent). When the update is complete (either <code>Failed</code> or
+         * <code>Successful</code>), the cluster status moves to
          * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterConfig">AWS
          * API Reference</a></p>
@@ -1466,6 +1619,8 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void AssociateEncryptionConfigAsyncHelper(const Model::AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateIdentityProviderConfigAsyncHelper(const Model::AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAddonAsyncHelper(const Model::CreateAddonRequest& request, const CreateAddonResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFargateProfileAsyncHelper(const Model::CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1478,11 +1633,14 @@ namespace Model
         void DescribeAddonVersionsAsyncHelper(const Model::DescribeAddonVersionsRequest& request, const DescribeAddonVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFargateProfileAsyncHelper(const Model::DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIdentityProviderConfigAsyncHelper(const Model::DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNodegroupAsyncHelper(const Model::DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUpdateAsyncHelper(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateIdentityProviderConfigAsyncHelper(const Model::DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAddonsAsyncHelper(const Model::ListAddonsRequest& request, const ListAddonsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFargateProfilesAsyncHelper(const Model::ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListIdentityProviderConfigsAsyncHelper(const Model::ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNodegroupsAsyncHelper(const Model::ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUpdatesAsyncHelper(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

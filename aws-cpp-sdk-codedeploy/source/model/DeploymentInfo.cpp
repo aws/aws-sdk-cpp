@@ -53,7 +53,8 @@ DeploymentInfo::DeploymentInfo() :
     m_deploymentStatusMessagesHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_relatedDeploymentsHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ DeploymentInfo::DeploymentInfo(JsonView jsonValue) :
     m_deploymentStatusMessagesHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
+    m_externalIdHasBeenSet(false),
+    m_relatedDeploymentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -298,6 +300,13 @@ DeploymentInfo& DeploymentInfo::operator =(JsonView jsonValue)
     m_externalIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("relatedDeployments"))
+  {
+    m_relatedDeployments = jsonValue.GetObject("relatedDeployments");
+
+    m_relatedDeploymentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -468,6 +477,12 @@ JsonValue DeploymentInfo::Jsonize() const
   if(m_externalIdHasBeenSet)
   {
    payload.WithString("externalId", m_externalId);
+
+  }
+
+  if(m_relatedDeploymentsHasBeenSet)
+  {
+   payload.WithObject("relatedDeployments", m_relatedDeployments.Jsonize());
 
   }
 

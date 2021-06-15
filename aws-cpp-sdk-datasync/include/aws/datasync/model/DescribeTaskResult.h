@@ -427,7 +427,9 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to operation. </p>
+     * specifying the overriding <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline const Options& GetOptions() const{ return m_options; }
 
@@ -437,7 +439,9 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to operation. </p>
+     * specifying the overriding <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline void SetOptions(const Options& value) { m_options = value; }
 
@@ -447,7 +451,9 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to operation. </p>
+     * specifying the overriding <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline void SetOptions(Options&& value) { m_options = std::move(value); }
 
@@ -457,7 +463,9 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to operation. </p>
+     * specifying the overriding <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline DescribeTaskResult& WithOptions(const Options& value) { SetOptions(value); return *this;}
 
@@ -467,7 +475,9 @@ namespace Model
      * You can configure these options to preserve metadata such as user ID (UID) and
      * group (GID), file permissions, data integrity verification, and so on.</p>
      * <p>For each individual task execution, you can override these options by
-     * specifying the overriding <code>OverrideOptions</code> value to operation. </p>
+     * specifying the overriding <code>OverrideOptions</code> value to <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation. </p>
      */
     inline DescribeTaskResult& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
 

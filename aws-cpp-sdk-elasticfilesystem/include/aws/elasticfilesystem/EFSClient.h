@@ -15,6 +15,7 @@
 #include <aws/elasticfilesystem/model/CreateFileSystemResult.h>
 #include <aws/elasticfilesystem/model/CreateMountTargetResult.h>
 #include <aws/elasticfilesystem/model/DescribeAccessPointsResult.h>
+#include <aws/elasticfilesystem/model/DescribeAccountPreferencesResult.h>
 #include <aws/elasticfilesystem/model/DescribeBackupPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsResult.h>
@@ -22,6 +23,7 @@
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
 #include <aws/elasticfilesystem/model/ListTagsForResourceResult.h>
+#include <aws/elasticfilesystem/model/PutAccountPreferencesResult.h>
 #include <aws/elasticfilesystem/model/PutBackupPolicyResult.h>
 #include <aws/elasticfilesystem/model/PutFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/PutLifecycleConfigurationResult.h>
@@ -74,6 +76,7 @@ namespace Model
         class DeleteFileSystemPolicyRequest;
         class DeleteMountTargetRequest;
         class DescribeAccessPointsRequest;
+        class DescribeAccountPreferencesRequest;
         class DescribeBackupPolicyRequest;
         class DescribeFileSystemPolicyRequest;
         class DescribeFileSystemsRequest;
@@ -82,6 +85,7 @@ namespace Model
         class DescribeMountTargetsRequest;
         class ListTagsForResourceRequest;
         class ModifyMountTargetSecurityGroupsRequest;
+        class PutAccountPreferencesRequest;
         class PutBackupPolicyRequest;
         class PutFileSystemPolicyRequest;
         class PutLifecycleConfigurationRequest;
@@ -97,6 +101,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> DeleteMountTargetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccessPointsResult, EFSError> DescribeAccessPointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccountPreferencesResult, EFSError> DescribeAccountPreferencesOutcome;
         typedef Aws::Utils::Outcome<DescribeBackupPolicyResult, EFSError> DescribeBackupPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemPolicyResult, EFSError> DescribeFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, EFSError> DescribeFileSystemsOutcome;
@@ -105,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeMountTargetsResult, EFSError> DescribeMountTargetsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, EFSError> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, EFSError> ModifyMountTargetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<PutAccountPreferencesResult, EFSError> PutAccountPreferencesOutcome;
         typedef Aws::Utils::Outcome<PutBackupPolicyResult, EFSError> PutBackupPolicyOutcome;
         typedef Aws::Utils::Outcome<PutFileSystemPolicyResult, EFSError> PutFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<PutLifecycleConfigurationResult, EFSError> PutLifecycleConfigurationOutcome;
@@ -120,6 +126,7 @@ namespace Model
         typedef std::future<DeleteFileSystemPolicyOutcome> DeleteFileSystemPolicyOutcomeCallable;
         typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
         typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
+        typedef std::future<DescribeAccountPreferencesOutcome> DescribeAccountPreferencesOutcomeCallable;
         typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
         typedef std::future<DescribeFileSystemPolicyOutcome> DescribeFileSystemPolicyOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
@@ -128,6 +135,7 @@ namespace Model
         typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyMountTargetSecurityGroupsOutcome> ModifyMountTargetSecurityGroupsOutcomeCallable;
+        typedef std::future<PutAccountPreferencesOutcome> PutAccountPreferencesOutcomeCallable;
         typedef std::future<PutBackupPolicyOutcome> PutBackupPolicyOutcomeCallable;
         typedef std::future<PutFileSystemPolicyOutcome> PutFileSystemPolicyOutcomeCallable;
         typedef std::future<PutLifecycleConfigurationOutcome> PutLifecycleConfigurationOutcomeCallable;
@@ -146,6 +154,7 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemPolicyRequest&, const Model::DeleteFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteMountTargetRequest&, const Model::DeleteMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMountTargetResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeAccessPointsRequest&, const Model::DescribeAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessPointsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DescribeAccountPreferencesRequest&, const Model::DescribeAccountPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountPreferencesResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeBackupPolicyRequest&, const Model::DescribeBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemPolicyRequest&, const Model::DescribeFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
@@ -154,6 +163,7 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetsRequest&, const Model::DescribeMountTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ModifyMountTargetSecurityGroupsRequest&, const Model::ModifyMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyMountTargetSecurityGroupsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::PutAccountPreferencesRequest&, const Model::PutAccountPreferencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountPreferencesResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutBackupPolicyRequest&, const Model::PutBackupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBackupPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutFileSystemPolicyRequest&, const Model::PutFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutLifecycleConfigurationRequest&, const Model::PutLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleConfigurationResponseReceivedHandler;
@@ -168,8 +178,10 @@ namespace Model
    * growing and shrinking automatically as you add and remove files, so your
    * applications have the storage they need, when they need it. For more
    * information, see the <a
-   * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User
-   * Guide</a>.</p>
+   * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">Amazon
+   * Elastic File System API Reference</a> and the <a
+   * href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html">Amazon Elastic
+   * File System User Guide</a>.</p>
    */
   class AWS_EFS_API EFSClient : public Aws::Client::AWSJsonClient
   {
@@ -207,7 +219,7 @@ namespace Model
          * directory. Applications using the access point can only access data in its own
          * directory and below. To learn more, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
-         * a File System Using EFS Access Points</a>.</p> <p>This operation requires
+         * a file system using EFS access points</a>.</p> <p>This operation requires
          * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
@@ -224,7 +236,7 @@ namespace Model
          * directory. Applications using the access point can only access data in its own
          * directory and below. To learn more, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
-         * a File System Using EFS Access Points</a>.</p> <p>This operation requires
+         * a file system using EFS access points</a>.</p> <p>This operation requires
          * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
@@ -243,7 +255,7 @@ namespace Model
          * directory. Applications using the access point can only access data in its own
          * directory and below. To learn more, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
-         * a File System Using EFS Access Points</a>.</p> <p>This operation requires
+         * a file system using EFS access points</a>.</p> <p>This operation requires
          * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
          * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
@@ -271,12 +283,15 @@ namespace Model
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html#creating-using-create-fs-part1">Creating
+         * a file system</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p>  <p>This operation also takes
-         * an optional <code>PerformanceMode</code> parameter that you choose for your file
+         * things returns the file system state.</p>  <p>This operation accepts an
+         * optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
          * higher levels of aggregate throughput and operations per second with a tradeoff
@@ -284,12 +299,13 @@ namespace Model
          * can't be changed after the file system has been created. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
-         * EFS: Performance Modes</a>.</p> <p>After the file system is fully created,
-         * Amazon EFS sets its lifecycle state to <code>available</code>, at which point
-         * you can create one or more mount targets for the file system in your VPC. For
-         * more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS file
-         * system on an EC2 instances in your VPC by using the mount target. For more
-         * information, see <a
+         * EFS performance modes</a>.</p> <p>You can set the throughput mode for the file
+         * system using the <code>ThroughputMode</code> parameter.</p> <p>After the file
+         * system is fully created, Amazon EFS sets its lifecycle state to
+         * <code>available</code>, at which point you can create one or more mount targets
+         * for the file system in your VPC. For more information, see
+         * <a>CreateMountTarget</a>. You mount your Amazon EFS file system on an EC2
+         * instances in your VPC by using the mount target. For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
          * <code>elasticfilesystem:CreateFileSystem</code> action. </p><p><h3>See
@@ -317,12 +333,15 @@ namespace Model
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html#creating-using-create-fs-part1">Creating
+         * a file system</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p>  <p>This operation also takes
-         * an optional <code>PerformanceMode</code> parameter that you choose for your file
+         * things returns the file system state.</p>  <p>This operation accepts an
+         * optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
          * higher levels of aggregate throughput and operations per second with a tradeoff
@@ -330,12 +349,13 @@ namespace Model
          * can't be changed after the file system has been created. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
-         * EFS: Performance Modes</a>.</p> <p>After the file system is fully created,
-         * Amazon EFS sets its lifecycle state to <code>available</code>, at which point
-         * you can create one or more mount targets for the file system in your VPC. For
-         * more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS file
-         * system on an EC2 instances in your VPC by using the mount target. For more
-         * information, see <a
+         * EFS performance modes</a>.</p> <p>You can set the throughput mode for the file
+         * system using the <code>ThroughputMode</code> parameter.</p> <p>After the file
+         * system is fully created, Amazon EFS sets its lifecycle state to
+         * <code>available</code>, at which point you can create one or more mount targets
+         * for the file system in your VPC. For more information, see
+         * <a>CreateMountTarget</a>. You mount your Amazon EFS file system on an EC2
+         * instances in your VPC by using the mount target. For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
          * <code>elasticfilesystem:CreateFileSystem</code> action. </p><p><h3>See
@@ -365,12 +385,15 @@ namespace Model
          * created. An example might be that a transport level timeout occurred or your
          * connection was reset. As long as you use the same creation token, if the initial
          * call had succeeded in creating a file system, the client can learn of its
-         * existence from the <code>FileSystemAlreadyExists</code> error.</p>  <p>The
+         * existence from the <code>FileSystemAlreadyExists</code> error.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/creating-using-create-fs.html#creating-using-create-fs-part1">Creating
+         * a file system</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>The
          * <code>CreateFileSystem</code> call returns while the file system's lifecycle
          * state is still <code>creating</code>. You can check the file system creation
          * status by calling the <a>DescribeFileSystems</a> operation, which among other
-         * things returns the file system state.</p>  <p>This operation also takes
-         * an optional <code>PerformanceMode</code> parameter that you choose for your file
+         * things returns the file system state.</p>  <p>This operation accepts an
+         * optional <code>PerformanceMode</code> parameter that you choose for your file
          * system. We recommend <code>generalPurpose</code> performance mode for most file
          * systems. File systems using the <code>maxIO</code> performance mode can scale to
          * higher levels of aggregate throughput and operations per second with a tradeoff
@@ -378,12 +401,13 @@ namespace Model
          * can't be changed after the file system has been created. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon
-         * EFS: Performance Modes</a>.</p> <p>After the file system is fully created,
-         * Amazon EFS sets its lifecycle state to <code>available</code>, at which point
-         * you can create one or more mount targets for the file system in your VPC. For
-         * more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS file
-         * system on an EC2 instances in your VPC by using the mount target. For more
-         * information, see <a
+         * EFS performance modes</a>.</p> <p>You can set the throughput mode for the file
+         * system using the <code>ThroughputMode</code> parameter.</p> <p>After the file
+         * system is fully created, Amazon EFS sets its lifecycle state to
+         * <code>available</code>, at which point you can create one or more mount targets
+         * for the file system in your VPC. For more information, see
+         * <a>CreateMountTarget</a>. You mount your Amazon EFS file system on an EC2
+         * instances in your VPC by using the mount target. For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
          * <code>elasticfilesystem:CreateFileSystem</code> action. </p><p><h3>See
@@ -402,23 +426,31 @@ namespace Model
          * a given Availability Zone share a single mount target for a given file system.
          * If you have multiple subnets in an Availability Zone, you create a mount target
          * in one of the subnets. EC2 instances do not need to be in the same subnet as the
-         * mount target in order to access their file system. For more information, see <a
+         * mount target in order to access their file system.</p> <p>You can create only
+         * one mount target for an EFS file system using One Zone storage classes. You must
+         * create that mount target in the same Availability Zone in which the file system
+         * is located. Use the <code>AvailabilityZoneName</code> and
+         * <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a>
+         * response object to get this information. Use the <code>subnetId</code>
+         * associated with the file system's Availability Zone when creating the mount
+         * target.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
-         * How it Works</a>. </p> <p>In the request, you also specify a file system ID for
-         * which you are creating the mount target and the file system's lifecycle state
-         * must be <code>available</code>. For more information, see
-         * <a>DescribeFileSystems</a>.</p> <p>In the request, you also provide a subnet ID,
-         * which determines the following:</p> <ul> <li> <p>VPC in which Amazon EFS creates
-         * the mount target</p> </li> <li> <p>Availability Zone in which Amazon EFS creates
-         * the mount target</p> </li> <li> <p>IP address range from which Amazon EFS
-         * selects the IP address of the mount target (if you don't specify an IP address
-         * in the request)</p> </li> </ul> <p>After creating the mount target, Amazon EFS
-         * returns a response that includes, a <code>MountTargetId</code> and an
-         * <code>IpAddress</code>. You use this IP address when mounting the file system in
-         * an EC2 instance. You can also use the mount target's DNS name when mounting the
-         * file system. The EC2 instance on which you mount the file system by using the
-         * mount target can resolve the mount target's DNS name to its IP address. For more
-         * information, see <a
+         * How it Works</a>. </p> <p>To create a mount target for a file system, the file
+         * system's lifecycle state must be <code>available</code>. For more information,
+         * see <a>DescribeFileSystems</a>.</p> <p>In the request, provide the
+         * following:</p> <ul> <li> <p>The file system ID for which you are creating the
+         * mount target.</p> </li> <li> <p>A subnet ID, which determines the following:</p>
+         * <ul> <li> <p>The VPC in which Amazon EFS creates the mount target</p> </li> <li>
+         * <p>The Availability Zone in which Amazon EFS creates the mount target</p> </li>
+         * <li> <p>The IP address range from which Amazon EFS selects the IP address of the
+         * mount target (if you don't specify an IP address in the request)</p> </li> </ul>
+         * </li> </ul> <p>After creating the mount target, Amazon EFS returns a response
+         * that includes, a <code>MountTargetId</code> and an <code>IpAddress</code>. You
+         * use this IP address when mounting the file system in an EC2 instance. You can
+         * also use the mount target's DNS name when mounting the file system. The EC2
+         * instance on which you mount the file system by using the mount target can
+         * resolve the mount target's DNS name to its IP address. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
          * it Works: Implementation Overview</a>. </p> <p>Note that you can create mount
          * targets for a file system in only one VPC, and there can be only one mount
@@ -480,23 +512,31 @@ namespace Model
          * a given Availability Zone share a single mount target for a given file system.
          * If you have multiple subnets in an Availability Zone, you create a mount target
          * in one of the subnets. EC2 instances do not need to be in the same subnet as the
-         * mount target in order to access their file system. For more information, see <a
+         * mount target in order to access their file system.</p> <p>You can create only
+         * one mount target for an EFS file system using One Zone storage classes. You must
+         * create that mount target in the same Availability Zone in which the file system
+         * is located. Use the <code>AvailabilityZoneName</code> and
+         * <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a>
+         * response object to get this information. Use the <code>subnetId</code>
+         * associated with the file system's Availability Zone when creating the mount
+         * target.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
-         * How it Works</a>. </p> <p>In the request, you also specify a file system ID for
-         * which you are creating the mount target and the file system's lifecycle state
-         * must be <code>available</code>. For more information, see
-         * <a>DescribeFileSystems</a>.</p> <p>In the request, you also provide a subnet ID,
-         * which determines the following:</p> <ul> <li> <p>VPC in which Amazon EFS creates
-         * the mount target</p> </li> <li> <p>Availability Zone in which Amazon EFS creates
-         * the mount target</p> </li> <li> <p>IP address range from which Amazon EFS
-         * selects the IP address of the mount target (if you don't specify an IP address
-         * in the request)</p> </li> </ul> <p>After creating the mount target, Amazon EFS
-         * returns a response that includes, a <code>MountTargetId</code> and an
-         * <code>IpAddress</code>. You use this IP address when mounting the file system in
-         * an EC2 instance. You can also use the mount target's DNS name when mounting the
-         * file system. The EC2 instance on which you mount the file system by using the
-         * mount target can resolve the mount target's DNS name to its IP address. For more
-         * information, see <a
+         * How it Works</a>. </p> <p>To create a mount target for a file system, the file
+         * system's lifecycle state must be <code>available</code>. For more information,
+         * see <a>DescribeFileSystems</a>.</p> <p>In the request, provide the
+         * following:</p> <ul> <li> <p>The file system ID for which you are creating the
+         * mount target.</p> </li> <li> <p>A subnet ID, which determines the following:</p>
+         * <ul> <li> <p>The VPC in which Amazon EFS creates the mount target</p> </li> <li>
+         * <p>The Availability Zone in which Amazon EFS creates the mount target</p> </li>
+         * <li> <p>The IP address range from which Amazon EFS selects the IP address of the
+         * mount target (if you don't specify an IP address in the request)</p> </li> </ul>
+         * </li> </ul> <p>After creating the mount target, Amazon EFS returns a response
+         * that includes, a <code>MountTargetId</code> and an <code>IpAddress</code>. You
+         * use this IP address when mounting the file system in an EC2 instance. You can
+         * also use the mount target's DNS name when mounting the file system. The EC2
+         * instance on which you mount the file system by using the mount target can
+         * resolve the mount target's DNS name to its IP address. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
          * it Works: Implementation Overview</a>. </p> <p>Note that you can create mount
          * targets for a file system in only one VPC, and there can be only one mount
@@ -560,23 +600,31 @@ namespace Model
          * a given Availability Zone share a single mount target for a given file system.
          * If you have multiple subnets in an Availability Zone, you create a mount target
          * in one of the subnets. EC2 instances do not need to be in the same subnet as the
-         * mount target in order to access their file system. For more information, see <a
+         * mount target in order to access their file system.</p> <p>You can create only
+         * one mount target for an EFS file system using One Zone storage classes. You must
+         * create that mount target in the same Availability Zone in which the file system
+         * is located. Use the <code>AvailabilityZoneName</code> and
+         * <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a>
+         * response object to get this information. Use the <code>subnetId</code>
+         * associated with the file system's Availability Zone when creating the mount
+         * target.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
-         * How it Works</a>. </p> <p>In the request, you also specify a file system ID for
-         * which you are creating the mount target and the file system's lifecycle state
-         * must be <code>available</code>. For more information, see
-         * <a>DescribeFileSystems</a>.</p> <p>In the request, you also provide a subnet ID,
-         * which determines the following:</p> <ul> <li> <p>VPC in which Amazon EFS creates
-         * the mount target</p> </li> <li> <p>Availability Zone in which Amazon EFS creates
-         * the mount target</p> </li> <li> <p>IP address range from which Amazon EFS
-         * selects the IP address of the mount target (if you don't specify an IP address
-         * in the request)</p> </li> </ul> <p>After creating the mount target, Amazon EFS
-         * returns a response that includes, a <code>MountTargetId</code> and an
-         * <code>IpAddress</code>. You use this IP address when mounting the file system in
-         * an EC2 instance. You can also use the mount target's DNS name when mounting the
-         * file system. The EC2 instance on which you mount the file system by using the
-         * mount target can resolve the mount target's DNS name to its IP address. For more
-         * information, see <a
+         * How it Works</a>. </p> <p>To create a mount target for a file system, the file
+         * system's lifecycle state must be <code>available</code>. For more information,
+         * see <a>DescribeFileSystems</a>.</p> <p>In the request, provide the
+         * following:</p> <ul> <li> <p>The file system ID for which you are creating the
+         * mount target.</p> </li> <li> <p>A subnet ID, which determines the following:</p>
+         * <ul> <li> <p>The VPC in which Amazon EFS creates the mount target</p> </li> <li>
+         * <p>The Availability Zone in which Amazon EFS creates the mount target</p> </li>
+         * <li> <p>The IP address range from which Amazon EFS selects the IP address of the
+         * mount target (if you don't specify an IP address in the request)</p> </li> </ul>
+         * </li> </ul> <p>After creating the mount target, Amazon EFS returns a response
+         * that includes, a <code>MountTargetId</code> and an <code>IpAddress</code>. You
+         * use this IP address when mounting the file system in an EC2 instance. You can
+         * also use the mount target's DNS name when mounting the file system. The EC2
+         * instance on which you mount the file system by using the mount target can
+         * resolve the mount target's DNS name to its IP address. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
          * it Works: Implementation Overview</a>. </p> <p>Note that you can create mount
          * targets for a file system in only one VPC, and there can be only one mount
@@ -898,6 +946,25 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::DescribeAccountPreferencesOutcome DescribeAccountPreferences(const Model::DescribeAccountPreferencesRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAccountPreferencesOutcomeCallable DescribeAccountPreferencesCallable(const Model::DescribeAccountPreferencesRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAccountPreferencesAsync(const Model::DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the backup policy for the specified EFS file system.</p><p><h3>See
@@ -1280,6 +1347,25 @@ namespace Model
         virtual void ModifyMountTargetSecurityGroupsAsync(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::PutAccountPreferencesOutcome PutAccountPreferences(const Model::PutAccountPreferencesRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccountPreferencesOutcomeCallable PutAccountPreferencesCallable(const Model::PutAccountPreferencesRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccountPreferencesAsync(const Model::PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the file system's backup policy. Use this action to start or stop
          * automatic backups of the file system. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutBackupPolicy">AWS
@@ -1312,11 +1398,12 @@ namespace Model
          * system. A file system policy is an IAM resource-based policy and can contain
          * multiple policy statements. A file system always has exactly one file system
          * policy, which can be the default policy or an explicit policy set or updated
-         * using this API operation. When an explicit policy is set, it overrides the
-         * default policy. For more information about the default file system policy, see
-         * <a
+         * using this API operation. EFS file system policies have a 20,000 character
+         * limit. When an explicit policy is set, it overrides the default policy. For more
+         * information about the default file system policy, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
-         * EFS File System Policy</a>. </p> <p>This operation requires permissions for the
+         * EFS File System Policy</a>. </p> <p>EFS file system policies have a 20,000
+         * character limit.</p> <p>This operation requires permissions for the
          * <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
@@ -1329,11 +1416,12 @@ namespace Model
          * system. A file system policy is an IAM resource-based policy and can contain
          * multiple policy statements. A file system always has exactly one file system
          * policy, which can be the default policy or an explicit policy set or updated
-         * using this API operation. When an explicit policy is set, it overrides the
-         * default policy. For more information about the default file system policy, see
-         * <a
+         * using this API operation. EFS file system policies have a 20,000 character
+         * limit. When an explicit policy is set, it overrides the default policy. For more
+         * information about the default file system policy, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
-         * EFS File System Policy</a>. </p> <p>This operation requires permissions for the
+         * EFS File System Policy</a>. </p> <p>EFS file system policies have a 20,000
+         * character limit.</p> <p>This operation requires permissions for the
          * <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
@@ -1348,11 +1436,12 @@ namespace Model
          * system. A file system policy is an IAM resource-based policy and can contain
          * multiple policy statements. A file system always has exactly one file system
          * policy, which can be the default policy or an explicit policy set or updated
-         * using this API operation. When an explicit policy is set, it overrides the
-         * default policy. For more information about the default file system policy, see
-         * <a
+         * using this API operation. EFS file system policies have a 20,000 character
+         * limit. When an explicit policy is set, it overrides the default policy. For more
+         * information about the default file system policy, see <a
          * href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default
-         * EFS File System Policy</a>. </p> <p>This operation requires permissions for the
+         * EFS File System Policy</a>. </p> <p>EFS file system policies have a 20,000
+         * character limit.</p> <p>This operation requires permissions for the
          * <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
@@ -1558,6 +1647,7 @@ namespace Model
         void DeleteFileSystemPolicyAsyncHelper(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMountTargetAsyncHelper(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccessPointsAsyncHelper(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAccountPreferencesAsyncHelper(const Model::DescribeAccountPreferencesRequest& request, const DescribeAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBackupPolicyAsyncHelper(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemPolicyAsyncHelper(const Model::DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1566,6 +1656,7 @@ namespace Model
         void DescribeMountTargetsAsyncHelper(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyMountTargetSecurityGroupsAsyncHelper(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccountPreferencesAsyncHelper(const Model::PutAccountPreferencesRequest& request, const PutAccountPreferencesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutBackupPolicyAsyncHelper(const Model::PutBackupPolicyRequest& request, const PutBackupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFileSystemPolicyAsyncHelper(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecycleConfigurationAsyncHelper(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

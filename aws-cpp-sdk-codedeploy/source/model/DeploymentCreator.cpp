@@ -24,6 +24,7 @@ namespace Aws
         static const int autoscaling_HASH = HashingUtils::HashString("autoscaling");
         static const int codeDeployRollback_HASH = HashingUtils::HashString("codeDeployRollback");
         static const int CodeDeploy_HASH = HashingUtils::HashString("CodeDeploy");
+        static const int CodeDeployAutoUpdate_HASH = HashingUtils::HashString("CodeDeployAutoUpdate");
         static const int CloudFormation_HASH = HashingUtils::HashString("CloudFormation");
         static const int CloudFormationRollback_HASH = HashingUtils::HashString("CloudFormationRollback");
 
@@ -46,6 +47,10 @@ namespace Aws
           else if (hashCode == CodeDeploy_HASH)
           {
             return DeploymentCreator::CodeDeploy;
+          }
+          else if (hashCode == CodeDeployAutoUpdate_HASH)
+          {
+            return DeploymentCreator::CodeDeployAutoUpdate;
           }
           else if (hashCode == CloudFormation_HASH)
           {
@@ -77,6 +82,8 @@ namespace Aws
             return "codeDeployRollback";
           case DeploymentCreator::CodeDeploy:
             return "CodeDeploy";
+          case DeploymentCreator::CodeDeployAutoUpdate:
+            return "CodeDeployAutoUpdate";
           case DeploymentCreator::CloudFormation:
             return "CloudFormation";
           case DeploymentCreator::CloudFormationRollback:

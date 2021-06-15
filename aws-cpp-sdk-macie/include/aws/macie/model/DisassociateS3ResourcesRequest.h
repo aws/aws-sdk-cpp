@@ -38,49 +38,49 @@ namespace Model
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline const Aws::String& GetMemberAccountId() const{ return m_memberAccountId; }
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline bool MemberAccountIdHasBeenSet() const { return m_memberAccountIdHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline void SetMemberAccountId(const Aws::String& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = value; }
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline void SetMemberAccountId(Aws::String&& value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId = std::move(value); }
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline void SetMemberAccountId(const char* value) { m_memberAccountIdHasBeenSet = true; m_memberAccountId.assign(value); }
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline DisassociateS3ResourcesRequest& WithMemberAccountId(const Aws::String& value) { SetMemberAccountId(value); return *this;}
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline DisassociateS3ResourcesRequest& WithMemberAccountId(Aws::String&& value) { SetMemberAccountId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Amazon Macie Classic member account whose resources you want to
-     * remove from being monitored by Amazon Macie Classic. </p>
+     * remove from being monitored by Macie Classic. </p>
      */
     inline DisassociateS3ResourcesRequest& WithMemberAccountId(const char* value) { SetMemberAccountId(value); return *this;}
 

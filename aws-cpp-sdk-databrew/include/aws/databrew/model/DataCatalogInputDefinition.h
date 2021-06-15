@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents how metadata stored in the AWS Glue Data Catalog is defined in an
-   * AWS Glue DataBrew dataset. </p><p><h3>See Also:</h3>   <a
+   * <p>Represents how metadata stored in the AWS Glue Data Catalog is defined in a
+   * DataBrew dataset. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/DataCatalogInputDefinition">AWS
    * API Reference</a></p>
    */

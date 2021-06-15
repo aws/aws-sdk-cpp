@@ -10,6 +10,7 @@
 #include <aws/dlm/model/Parameters.h>
 #include <aws/dlm/model/EventSource.h>
 #include <aws/dlm/model/ResourceTypeValues.h>
+#include <aws/dlm/model/ResourceLocationValues.h>
 #include <aws/dlm/model/Tag.h>
 #include <aws/dlm/model/Schedule.h>
 #include <aws/dlm/model/Action.h>
@@ -183,6 +184,87 @@ namespace Model
      * If you are creating an event-based policy, omit this parameter.</p>
      */
     inline PolicyDetails& AddResourceTypes(ResourceTypeValues&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline const Aws::Vector<ResourceLocationValues>& GetResourceLocations() const{ return m_resourceLocations; }
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline bool ResourceLocationsHasBeenSet() const { return m_resourceLocationsHasBeenSet; }
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline void SetResourceLocations(const Aws::Vector<ResourceLocationValues>& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations = value; }
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline void SetResourceLocations(Aws::Vector<ResourceLocationValues>&& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations = std::move(value); }
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline PolicyDetails& WithResourceLocations(const Aws::Vector<ResourceLocationValues>& value) { SetResourceLocations(value); return *this;}
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline PolicyDetails& WithResourceLocations(Aws::Vector<ResourceLocationValues>&& value) { SetResourceLocations(std::move(value)); return *this;}
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline PolicyDetails& AddResourceLocations(const ResourceLocationValues& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations.push_back(value); return *this; }
+
+    /**
+     * <p>The location of the resources to backup. If the source resources are located
+     * in an AWS Region, specify <code>CLOUD</code>. If the source resources are
+     * located on an AWS Outpost in your account, specify <code>OUTPOST</code>. </p>
+     * <p>If you specify <code>OUTPOST</code>, Amazon Data Lifecycle Manager backs up
+     * all resources of the specified type with matching target tags across all of the
+     * Outposts in your account.</p>
+     */
+    inline PolicyDetails& AddResourceLocations(ResourceLocationValues&& value) { m_resourceLocationsHasBeenSet = true; m_resourceLocations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -472,6 +554,9 @@ namespace Model
 
     Aws::Vector<ResourceTypeValues> m_resourceTypes;
     bool m_resourceTypesHasBeenSet;
+
+    Aws::Vector<ResourceLocationValues> m_resourceLocations;
+    bool m_resourceLocationsHasBeenSet;
 
     Aws::Vector<Tag> m_targetTags;
     bool m_targetTagsHasBeenSet;

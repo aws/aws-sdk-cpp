@@ -25,7 +25,8 @@ CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() :
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_mode(DocumentClassifierMode::NOT_SET),
-    m_modeHasBeenSet(false)
+    m_modeHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,12 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   if(m_modeHasBeenSet)
   {
    payload.WithString("Mode", DocumentClassifierModeMapper::GetNameForDocumentClassifierMode(m_mode));
+  }
+
+  if(m_modelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
+
   }
 
   return payload.View().WriteReadable();

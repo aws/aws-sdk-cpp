@@ -158,22 +158,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of endpoints to return in the response.</p>
+     * <p>The maximum number of endpoints to return in the response. This value
+     * defaults to 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of endpoints to return in the response.</p>
+     * <p>The maximum number of endpoints to return in the response. This value
+     * defaults to 10.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of endpoints to return in the response.</p>
+     * <p>The maximum number of endpoints to return in the response. This value
+     * defaults to 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of endpoints to return in the response.</p>
+     * <p>The maximum number of endpoints to return in the response. This value
+     * defaults to 10.</p>
      */
     inline ListEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -278,8 +278,7 @@ namespace Model
 
         /**
          * <p>Creates a new custom vocabulary that you can use to change the way Amazon
-         * Transcribe handles transcription of an audio file. </p><p><h3>See Also:</h3>  
-         * <a
+         * Transcribe handles transcription of an audio file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
          * API Reference</a></p>
          */
@@ -287,8 +286,7 @@ namespace Model
 
         /**
          * <p>Creates a new custom vocabulary that you can use to change the way Amazon
-         * Transcribe handles transcription of an audio file. </p><p><h3>See Also:</h3>  
-         * <a
+         * Transcribe handles transcription of an audio file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
          * API Reference</a></p>
          *
@@ -298,8 +296,7 @@ namespace Model
 
         /**
          * <p>Creates a new custom vocabulary that you can use to change the way Amazon
-         * Transcribe handles transcription of an audio file. </p><p><h3>See Also:</h3>  
-         * <a
+         * Transcribe handles transcription of an audio file.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary">AWS
          * API Reference</a></p>
          *
@@ -904,7 +901,7 @@ namespace Model
         virtual void StartMedicalTranscriptionJobAsync(const Model::StartMedicalTranscriptionJobRequest& request, const StartMedicalTranscriptionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text. </p><p><h3>See
+         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
          * API Reference</a></p>
@@ -912,7 +909,7 @@ namespace Model
         virtual Model::StartTranscriptionJobOutcome StartTranscriptionJob(const Model::StartTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text. </p><p><h3>See
+         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
          * API Reference</a></p>
@@ -922,7 +919,7 @@ namespace Model
         virtual Model::StartTranscriptionJobOutcomeCallable StartTranscriptionJobCallable(const Model::StartTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Starts an asynchronous job to transcribe speech to text. </p><p><h3>See
+         * <p>Starts an asynchronous job to transcribe speech to text.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob">AWS
          * API Reference</a></p>

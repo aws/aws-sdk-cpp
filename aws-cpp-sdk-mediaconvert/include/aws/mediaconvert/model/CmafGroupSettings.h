@@ -14,6 +14,7 @@
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
 #include <aws/mediaconvert/model/CmafMpdProfile.h>
+#include <aws/mediaconvert/model/CmafPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/CmafSegmentControl.h>
 #include <aws/mediaconvert/model/CmafStreamInfResolution.h>
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
@@ -38,9 +39,11 @@ namespace Model
 {
 
   /**
-   * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
-   * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
-   * single video, audio, or caption output.<p><h3>See Also:</h3>   <a
+   * Settings related to your CMAF output package. For more information, see
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When
+   * you work directly in your JSON job specification, include this object and any
+   * required children when you set Type, under OutputGroupSettings, to
+   * CMAF_GROUP_SETTINGS.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CmafGroupSettings">AWS
    * API Reference</a></p>
    */
@@ -675,6 +678,85 @@ namespace Model
 
 
     /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline const CmafPtsOffsetHandlingForBFrames& GetPtsOffsetHandlingForBFrames() const{ return m_ptsOffsetHandlingForBFrames; }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline bool PtsOffsetHandlingForBFramesHasBeenSet() const { return m_ptsOffsetHandlingForBFramesHasBeenSet; }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline void SetPtsOffsetHandlingForBFrames(const CmafPtsOffsetHandlingForBFrames& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = value; }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline void SetPtsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames&& value) { m_ptsOffsetHandlingForBFramesHasBeenSet = true; m_ptsOffsetHandlingForBFrames = std::move(value); }
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline CmafGroupSettings& WithPtsOffsetHandlingForBFrames(const CmafPtsOffsetHandlingForBFrames& value) { SetPtsOffsetHandlingForBFrames(value); return *this;}
+
+    /**
+     * Use this setting only when your output video stream has B-frames, which causes
+     * the initial presentation time stamp (PTS) to be offset from the initial decode
+     * time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps
+     * in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you
+     * want MediaConvert to use the initial PTS as the first time stamp in the
+     * manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial
+     * PTS in the video stream and instead write the initial time stamp as zero in the
+     * manifest. For outputs that don't have B-frames, the time stamps in your DASH
+     * manifests start at zero regardless of your choice here.
+     */
+    inline CmafGroupSettings& WithPtsOffsetHandlingForBFrames(CmafPtsOffsetHandlingForBFrames&& value) { SetPtsOffsetHandlingForBFrames(std::move(value)); return *this;}
+
+
+    /**
      * When set to SINGLE_FILE, a single output file is generated, which is internally
      * segmented using the Fragment Length and Segment Length. When set to
      * SEGMENTED_FILES, separate segment files will be created.
@@ -971,6 +1053,9 @@ namespace Model
 
     CmafMpdProfile m_mpdProfile;
     bool m_mpdProfileHasBeenSet;
+
+    CmafPtsOffsetHandlingForBFrames m_ptsOffsetHandlingForBFrames;
+    bool m_ptsOffsetHandlingForBFramesHasBeenSet;
 
     CmafSegmentControl m_segmentControl;
     bool m_segmentControlHasBeenSet;

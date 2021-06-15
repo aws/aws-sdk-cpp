@@ -31,7 +31,7 @@ namespace Model
    * if your Region began supporting these features within the last year. The role
    * might have been used more than 400 days ago. For more information, see <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-   * Where Data Is Tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is
+   * where data is tracked</a> in the <i>IAM User Guide</i>.</p> <p>This data type is
    * returned as a response element in the <a>GetRole</a> and
    * <a>GetAccountAuthorizationDetails</a> operations.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/RoleLastUsed">AWS
@@ -54,7 +54,7 @@ namespace Model
      * the role has not been used within the IAM tracking period. For more information
      * about the tracking period, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * Where Data Is Tracked</a> in the <i>IAM User Guide</i>. </p>
+     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::Utils::DateTime& GetLastUsedDate() const{ return m_lastUsedDate; }
 
@@ -64,7 +64,7 @@ namespace Model
      * the role has not been used within the IAM tracking period. For more information
      * about the tracking period, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * Where Data Is Tracked</a> in the <i>IAM User Guide</i>. </p>
+     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
     inline bool LastUsedDateHasBeenSet() const { return m_lastUsedDateHasBeenSet; }
 
@@ -74,7 +74,7 @@ namespace Model
      * the role has not been used within the IAM tracking period. For more information
      * about the tracking period, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * Where Data Is Tracked</a> in the <i>IAM User Guide</i>. </p>
+     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetLastUsedDate(const Aws::Utils::DateTime& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = value; }
 
@@ -84,7 +84,7 @@ namespace Model
      * the role has not been used within the IAM tracking period. For more information
      * about the tracking period, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * Where Data Is Tracked</a> in the <i>IAM User Guide</i>. </p>
+     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetLastUsedDate(Aws::Utils::DateTime&& value) { m_lastUsedDateHasBeenSet = true; m_lastUsedDate = std::move(value); }
 
@@ -94,7 +94,7 @@ namespace Model
      * the role has not been used within the IAM tracking period. For more information
      * about the tracking period, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * Where Data Is Tracked</a> in the <i>IAM User Guide</i>. </p>
+     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
     inline RoleLastUsed& WithLastUsedDate(const Aws::Utils::DateTime& value) { SetLastUsedDate(value); return *this;}
 
@@ -104,7 +104,7 @@ namespace Model
      * the role has not been used within the IAM tracking period. For more information
      * about the tracking period, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
-     * Where Data Is Tracked</a> in the <i>IAM User Guide</i>. </p>
+     * where data is tracked</a> in the <i>IAM User Guide</i>. </p>
      */
     inline RoleLastUsed& WithLastUsedDate(Aws::Utils::DateTime&& value) { SetLastUsedDate(std::move(value)); return *this;}
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     SERVICE_MANAGED,
-    API_GATEWAY
+    API_GATEWAY,
+    AWS_DIRECTORY_SERVICE
   };
 
 namespace IdentityProviderTypeMapper

@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information on the option groups the DB instance is a member
-   * of.</p><p><h3>See Also:</h3>   <a
+   * <p>Not supported by Neptune.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/OptionGroupMembership">AWS
    * API Reference</a></p>
    */
@@ -41,115 +40,83 @@ namespace Model
 
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline OptionGroupMembership& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline OptionGroupMembership& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the option group that the instance belongs to.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline OptionGroupMembership& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline OptionGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the DB instance's option group membership. Valid values are:
-     * <code>in-sync</code>, <code>pending-apply</code>, <code>pending-removal</code>,
-     * <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>,
-     * <code>removing</code>, and <code>failed</code>.</p>
+     * <p>Not supported by Neptune.</p>
      */
     inline OptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
 

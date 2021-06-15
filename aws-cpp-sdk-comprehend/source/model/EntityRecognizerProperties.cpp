@@ -33,7 +33,8 @@ EntityRecognizerProperties::EntityRecognizerProperties() :
     m_recognizerMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ EntityRecognizerProperties::EntityRecognizerProperties(JsonView jsonValue) :
     m_recognizerMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_modelKmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +152,13 @@ EntityRecognizerProperties& EntityRecognizerProperties::operator =(JsonView json
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelKmsKeyId"))
+  {
+    m_modelKmsKeyId = jsonValue.GetString("ModelKmsKeyId");
+
+    m_modelKmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -226,6 +235,12 @@ JsonValue EntityRecognizerProperties::Jsonize() const
   if(m_vpcConfigHasBeenSet)
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
+
+  }
+
+  if(m_modelKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ModelKmsKeyId", m_modelKmsKeyId);
 
   }
 

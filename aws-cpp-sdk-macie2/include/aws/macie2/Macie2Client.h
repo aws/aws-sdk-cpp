@@ -29,16 +29,19 @@
 #include <aws/macie2/model/DescribeOrganizationConfigurationResult.h>
 #include <aws/macie2/model/DisableMacieResult.h>
 #include <aws/macie2/model/DisableOrganizationAdminAccountResult.h>
+#include <aws/macie2/model/DisassociateFromAdministratorAccountResult.h>
 #include <aws/macie2/model/DisassociateFromMasterAccountResult.h>
 #include <aws/macie2/model/DisassociateMemberResult.h>
 #include <aws/macie2/model/EnableMacieResult.h>
 #include <aws/macie2/model/EnableOrganizationAdminAccountResult.h>
+#include <aws/macie2/model/GetAdministratorAccountResult.h>
 #include <aws/macie2/model/GetBucketStatisticsResult.h>
 #include <aws/macie2/model/GetClassificationExportConfigurationResult.h>
 #include <aws/macie2/model/GetCustomDataIdentifierResult.h>
 #include <aws/macie2/model/GetFindingStatisticsResult.h>
 #include <aws/macie2/model/GetFindingsResult.h>
 #include <aws/macie2/model/GetFindingsFilterResult.h>
+#include <aws/macie2/model/GetFindingsPublicationConfigurationResult.h>
 #include <aws/macie2/model/GetInvitationsCountResult.h>
 #include <aws/macie2/model/GetMacieSessionResult.h>
 #include <aws/macie2/model/GetMasterAccountResult.h>
@@ -54,6 +57,8 @@
 #include <aws/macie2/model/ListOrganizationAdminAccountsResult.h>
 #include <aws/macie2/model/ListTagsForResourceResult.h>
 #include <aws/macie2/model/PutClassificationExportConfigurationResult.h>
+#include <aws/macie2/model/PutFindingsPublicationConfigurationResult.h>
+#include <aws/macie2/model/SearchResourcesResult.h>
 #include <aws/macie2/model/TagResourceResult.h>
 #include <aws/macie2/model/TestCustomDataIdentifierResult.h>
 #include <aws/macie2/model/UntagResourceResult.h>
@@ -119,16 +124,19 @@ namespace Model
         class DescribeOrganizationConfigurationRequest;
         class DisableMacieRequest;
         class DisableOrganizationAdminAccountRequest;
+        class DisassociateFromAdministratorAccountRequest;
         class DisassociateFromMasterAccountRequest;
         class DisassociateMemberRequest;
         class EnableMacieRequest;
         class EnableOrganizationAdminAccountRequest;
+        class GetAdministratorAccountRequest;
         class GetBucketStatisticsRequest;
         class GetClassificationExportConfigurationRequest;
         class GetCustomDataIdentifierRequest;
         class GetFindingStatisticsRequest;
         class GetFindingsRequest;
         class GetFindingsFilterRequest;
+        class GetFindingsPublicationConfigurationRequest;
         class GetInvitationsCountRequest;
         class GetMacieSessionRequest;
         class GetMasterAccountRequest;
@@ -144,6 +152,8 @@ namespace Model
         class ListOrganizationAdminAccountsRequest;
         class ListTagsForResourceRequest;
         class PutClassificationExportConfigurationRequest;
+        class PutFindingsPublicationConfigurationRequest;
+        class SearchResourcesRequest;
         class TagResourceRequest;
         class TestCustomDataIdentifierRequest;
         class UntagResourceRequest;
@@ -171,16 +181,19 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeOrganizationConfigurationResult, Macie2Error> DescribeOrganizationConfigurationOutcome;
         typedef Aws::Utils::Outcome<DisableMacieResult, Macie2Error> DisableMacieOutcome;
         typedef Aws::Utils::Outcome<DisableOrganizationAdminAccountResult, Macie2Error> DisableOrganizationAdminAccountOutcome;
+        typedef Aws::Utils::Outcome<DisassociateFromAdministratorAccountResult, Macie2Error> DisassociateFromAdministratorAccountOutcome;
         typedef Aws::Utils::Outcome<DisassociateFromMasterAccountResult, Macie2Error> DisassociateFromMasterAccountOutcome;
         typedef Aws::Utils::Outcome<DisassociateMemberResult, Macie2Error> DisassociateMemberOutcome;
         typedef Aws::Utils::Outcome<EnableMacieResult, Macie2Error> EnableMacieOutcome;
         typedef Aws::Utils::Outcome<EnableOrganizationAdminAccountResult, Macie2Error> EnableOrganizationAdminAccountOutcome;
+        typedef Aws::Utils::Outcome<GetAdministratorAccountResult, Macie2Error> GetAdministratorAccountOutcome;
         typedef Aws::Utils::Outcome<GetBucketStatisticsResult, Macie2Error> GetBucketStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetClassificationExportConfigurationResult, Macie2Error> GetClassificationExportConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetCustomDataIdentifierResult, Macie2Error> GetCustomDataIdentifierOutcome;
         typedef Aws::Utils::Outcome<GetFindingStatisticsResult, Macie2Error> GetFindingStatisticsOutcome;
         typedef Aws::Utils::Outcome<GetFindingsResult, Macie2Error> GetFindingsOutcome;
         typedef Aws::Utils::Outcome<GetFindingsFilterResult, Macie2Error> GetFindingsFilterOutcome;
+        typedef Aws::Utils::Outcome<GetFindingsPublicationConfigurationResult, Macie2Error> GetFindingsPublicationConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetInvitationsCountResult, Macie2Error> GetInvitationsCountOutcome;
         typedef Aws::Utils::Outcome<GetMacieSessionResult, Macie2Error> GetMacieSessionOutcome;
         typedef Aws::Utils::Outcome<GetMasterAccountResult, Macie2Error> GetMasterAccountOutcome;
@@ -196,6 +209,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, Macie2Error> ListOrganizationAdminAccountsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Macie2Error> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutClassificationExportConfigurationResult, Macie2Error> PutClassificationExportConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutFindingsPublicationConfigurationResult, Macie2Error> PutFindingsPublicationConfigurationOutcome;
+        typedef Aws::Utils::Outcome<SearchResourcesResult, Macie2Error> SearchResourcesOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Macie2Error> TagResourceOutcome;
         typedef Aws::Utils::Outcome<TestCustomDataIdentifierResult, Macie2Error> TestCustomDataIdentifierOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Macie2Error> UntagResourceOutcome;
@@ -223,16 +238,19 @@ namespace Model
         typedef std::future<DescribeOrganizationConfigurationOutcome> DescribeOrganizationConfigurationOutcomeCallable;
         typedef std::future<DisableMacieOutcome> DisableMacieOutcomeCallable;
         typedef std::future<DisableOrganizationAdminAccountOutcome> DisableOrganizationAdminAccountOutcomeCallable;
+        typedef std::future<DisassociateFromAdministratorAccountOutcome> DisassociateFromAdministratorAccountOutcomeCallable;
         typedef std::future<DisassociateFromMasterAccountOutcome> DisassociateFromMasterAccountOutcomeCallable;
         typedef std::future<DisassociateMemberOutcome> DisassociateMemberOutcomeCallable;
         typedef std::future<EnableMacieOutcome> EnableMacieOutcomeCallable;
         typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
+        typedef std::future<GetAdministratorAccountOutcome> GetAdministratorAccountOutcomeCallable;
         typedef std::future<GetBucketStatisticsOutcome> GetBucketStatisticsOutcomeCallable;
         typedef std::future<GetClassificationExportConfigurationOutcome> GetClassificationExportConfigurationOutcomeCallable;
         typedef std::future<GetCustomDataIdentifierOutcome> GetCustomDataIdentifierOutcomeCallable;
         typedef std::future<GetFindingStatisticsOutcome> GetFindingStatisticsOutcomeCallable;
         typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
         typedef std::future<GetFindingsFilterOutcome> GetFindingsFilterOutcomeCallable;
+        typedef std::future<GetFindingsPublicationConfigurationOutcome> GetFindingsPublicationConfigurationOutcomeCallable;
         typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
         typedef std::future<GetMacieSessionOutcome> GetMacieSessionOutcomeCallable;
         typedef std::future<GetMasterAccountOutcome> GetMasterAccountOutcomeCallable;
@@ -248,6 +266,8 @@ namespace Model
         typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutClassificationExportConfigurationOutcome> PutClassificationExportConfigurationOutcomeCallable;
+        typedef std::future<PutFindingsPublicationConfigurationOutcome> PutFindingsPublicationConfigurationOutcomeCallable;
+        typedef std::future<SearchResourcesOutcome> SearchResourcesOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<TestCustomDataIdentifierOutcome> TestCustomDataIdentifierOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -278,16 +298,19 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::DisableMacieRequest&, const Model::DisableMacieOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableMacieResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::DisableOrganizationAdminAccountRequest&, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::DisassociateFromAdministratorAccountRequest&, const Model::DisassociateFromAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromAdministratorAccountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::DisassociateFromMasterAccountRequest&, const Model::DisassociateFromMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromMasterAccountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::DisassociateMemberRequest&, const Model::DisassociateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMemberResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::EnableMacieRequest&, const Model::EnableMacieOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableMacieResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetAdministratorAccountRequest&, const Model::GetAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdministratorAccountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetBucketStatisticsRequest&, const Model::GetBucketStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetClassificationExportConfigurationRequest&, const Model::GetClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetClassificationExportConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetCustomDataIdentifierRequest&, const Model::GetCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCustomDataIdentifierResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetFindingStatisticsRequest&, const Model::GetFindingStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingStatisticsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetFindingsFilterRequest&, const Model::GetFindingsFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsFilterResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::GetFindingsPublicationConfigurationRequest&, const Model::GetFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsPublicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetInvitationsCountRequest&, const Model::GetInvitationsCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationsCountResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMacieSessionRequest&, const Model::GetMacieSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMacieSessionResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::GetMasterAccountRequest&, const Model::GetMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMasterAccountResponseReceivedHandler;
@@ -303,6 +326,8 @@ namespace Model
     typedef std::function<void(const Macie2Client*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::PutClassificationExportConfigurationRequest&, const Model::PutClassificationExportConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutClassificationExportConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::PutFindingsPublicationConfigurationRequest&, const Model::PutFindingsPublicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFindingsPublicationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Macie2Client*, const Model::SearchResourcesRequest&, const Model::SearchResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResourcesResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::TestCustomDataIdentifierRequest&, const Model::TestCustomDataIdentifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestCustomDataIdentifierResponseReceivedHandler;
     typedef std::function<void(const Macie2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -518,16 +543,16 @@ namespace Model
         virtual void CreateInvitationsAsync(const Model::CreateInvitationsRequest& request, const CreateInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates an account with an Amazon Macie master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates an account with an Amazon Macie administrator
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateMemberOutcome CreateMember(const Model::CreateMemberRequest& request) const;
 
         /**
-         * <p>Associates an account with an Amazon Macie master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates an account with an Amazon Macie administrator
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">AWS
          * API Reference</a></p>
          *
@@ -536,8 +561,8 @@ namespace Model
         virtual Model::CreateMemberOutcomeCallable CreateMemberCallable(const Model::CreateMemberRequest& request) const;
 
         /**
-         * <p>Associates an account with an Amazon Macie master account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates an account with an Amazon Macie administrator
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CreateMember">AWS
          * API Reference</a></p>
          *
@@ -677,7 +702,7 @@ namespace Model
         virtual void DeleteInvitationsAsync(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the association between an Amazon Macie master account and an
+         * <p>Deletes the association between an Amazon Macie administrator account and an
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">AWS
          * API Reference</a></p>
@@ -685,7 +710,7 @@ namespace Model
         virtual Model::DeleteMemberOutcome DeleteMember(const Model::DeleteMemberRequest& request) const;
 
         /**
-         * <p>Deletes the association between an Amazon Macie master account and an
+         * <p>Deletes the association between an Amazon Macie administrator account and an
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">AWS
          * API Reference</a></p>
@@ -695,7 +720,7 @@ namespace Model
         virtual Model::DeleteMemberOutcomeCallable DeleteMemberCallable(const Model::DeleteMemberRequest& request) const;
 
         /**
-         * <p>Deletes the association between an Amazon Macie master account and an
+         * <p>Deletes the association between an Amazon Macie administrator account and an
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DeleteMember">AWS
          * API Reference</a></p>
@@ -848,16 +873,48 @@ namespace Model
         virtual void DisableOrganizationAdminAccountAsync(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates a member account from its Amazon Macie master
+         * <p>Disassociates a member account from its Amazon Macie administrator
          * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFromAdministratorAccountOutcome DisassociateFromAdministratorAccount(const Model::DisassociateFromAdministratorAccountRequest& request) const;
+
+        /**
+         * <p>Disassociates a member account from its Amazon Macie administrator
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateFromAdministratorAccountOutcomeCallable DisassociateFromAdministratorAccountCallable(const Model::DisassociateFromAdministratorAccountRequest& request) const;
+
+        /**
+         * <p>Disassociates a member account from its Amazon Macie administrator
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateFromAdministratorAccountAsync(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>(Deprecated) Disassociates a member account from its Amazon Macie
+         * administrator account. This operation has been replaced by the <link 
+         * linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::DisassociateFromMasterAccountOutcome DisassociateFromMasterAccount(const Model::DisassociateFromMasterAccountRequest& request) const;
 
         /**
-         * <p>Disassociates a member account from its Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>(Deprecated) Disassociates a member account from its Amazon Macie
+         * administrator account. This operation has been replaced by the <link 
+         * linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -866,8 +923,10 @@ namespace Model
         virtual Model::DisassociateFromMasterAccountOutcomeCallable DisassociateFromMasterAccountCallable(const Model::DisassociateFromMasterAccountRequest& request) const;
 
         /**
-         * <p>Disassociates a member account from its Amazon Macie master
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>(Deprecated) Disassociates a member account from its Amazon Macie
+         * administrator account. This operation has been replaced by the <link 
+         * linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -876,7 +935,7 @@ namespace Model
         virtual void DisassociateFromMasterAccountAsync(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates an Amazon Macie master account from a member
+         * <p>Disassociates an Amazon Macie administrator account from a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">AWS
          * API Reference</a></p>
@@ -884,7 +943,7 @@ namespace Model
         virtual Model::DisassociateMemberOutcome DisassociateMember(const Model::DisassociateMemberRequest& request) const;
 
         /**
-         * <p>Disassociates an Amazon Macie master account from a member
+         * <p>Disassociates an Amazon Macie administrator account from a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">AWS
          * API Reference</a></p>
@@ -894,7 +953,7 @@ namespace Model
         virtual Model::DisassociateMemberOutcomeCallable DisassociateMemberCallable(const Model::DisassociateMemberRequest& request) const;
 
         /**
-         * <p>Disassociates an Amazon Macie master account from a member
+         * <p>Disassociates an Amazon Macie administrator account from a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateMember">AWS
          * API Reference</a></p>
@@ -958,6 +1017,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableOrganizationAdminAccountAsync(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about the Amazon Macie administrator account for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAdministratorAccountOutcome GetAdministratorAccount(const Model::GetAdministratorAccountRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the Amazon Macie administrator account for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAdministratorAccountOutcomeCallable GetAdministratorAccountCallable(const Model::GetAdministratorAccountRequest& request) const;
+
+        /**
+         * <p>Retrieves information about the Amazon Macie administrator account for an
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAdministratorAccountAsync(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves (queries) aggregated statistical data for all the S3 buckets that
@@ -1125,6 +1212,34 @@ namespace Model
         virtual void GetFindingsFilterAsync(const Model::GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingsPublicationConfigurationOutcome GetFindingsPublicationConfiguration(const Model::GetFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFindingsPublicationConfigurationOutcomeCallable GetFindingsPublicationConfigurationCallable(const Model::GetFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Retrieves the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFindingsPublicationConfigurationAsync(const Model::GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the count of Amazon Macie membership invitations that were received
          * by an account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetInvitationsCount">AWS
@@ -1181,16 +1296,20 @@ namespace Model
         virtual void GetMacieSessionAsync(const Model::GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about the Amazon Macie master account for an
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>(Deprecated) Retrieves information about the Amazon Macie administrator
+         * account for an account. This operation has been replaced by the <link 
+         * linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMasterAccountOutcome GetMasterAccount(const Model::GetMasterAccountRequest& request) const;
 
         /**
-         * <p>Retrieves information about the Amazon Macie master account for an
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>(Deprecated) Retrieves information about the Amazon Macie administrator
+         * account for an account. This operation has been replaced by the <link 
+         * linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -1199,8 +1318,10 @@ namespace Model
         virtual Model::GetMasterAccountOutcomeCallable GetMasterAccountCallable(const Model::GetMasterAccountRequest& request) const;
 
         /**
-         * <p>Retrieves information about the Amazon Macie master account for an
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>(Deprecated) Retrieves information about the Amazon Macie administrator
+         * account for an account. This operation has been replaced by the <link 
+         * linkend="GetAdministratorAccount">GetAdministratorAccount</link>
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMasterAccount">AWS
          * API Reference</a></p>
          *
@@ -1209,16 +1330,16 @@ namespace Model
         virtual void GetMasterAccountAsync(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about a member account that's associated with an Amazon
-         * Macie master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about an account that's associated with an Amazon Macie
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMemberOutcome GetMember(const Model::GetMemberRequest& request) const;
 
         /**
-         * <p>Retrieves information about a member account that's associated with an Amazon
-         * Macie master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about an account that's associated with an Amazon Macie
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">AWS
          * API Reference</a></p>
          *
@@ -1227,8 +1348,8 @@ namespace Model
         virtual Model::GetMemberOutcomeCallable GetMemberCallable(const Model::GetMemberRequest& request) const;
 
         /**
-         * <p>Retrieves information about a member account that's associated with an Amazon
-         * Macie master account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about an account that's associated with an Amazon Macie
+         * administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetMember">AWS
          * API Reference</a></p>
          *
@@ -1434,7 +1555,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
-         * Macie master account.</p><p><h3>See Also:</h3>   <a
+         * Macie administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">AWS
          * API Reference</a></p>
          */
@@ -1442,7 +1563,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
-         * Macie master account.</p><p><h3>See Also:</h3>   <a
+         * Macie administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -1452,7 +1573,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the accounts that are associated with an Amazon
-         * Macie master account.</p><p><h3>See Also:</h3>   <a
+         * Macie administrator account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -1546,6 +1667,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutClassificationExportConfigurationAsync(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFindingsPublicationConfigurationOutcome PutFindingsPublicationConfiguration(const Model::PutFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutFindingsPublicationConfigurationOutcomeCallable PutFindingsPublicationConfigurationCallable(const Model::PutFindingsPublicationConfigurationRequest& request) const;
+
+        /**
+         * <p>Updates the configuration settings for publishing findings to AWS Security
+         * Hub.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutFindingsPublicationConfigurationAsync(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves (queries) statistical data and other information about AWS
+         * resources that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchResourcesOutcome SearchResources(const Model::SearchResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) statistical data and other information about AWS
+         * resources that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchResourcesOutcomeCallable SearchResourcesCallable(const Model::SearchResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves (queries) statistical data and other information about AWS
+         * resources that Amazon Macie monitors and analyzes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchResourcesAsync(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates one or more tags (keys and values) that are associated with a
@@ -1716,7 +1893,7 @@ namespace Model
         virtual void UpdateMacieSessionAsync(const Model::UpdateMacieSessionRequest& request, const UpdateMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables an Amazon Macie master account to suspend or re-enable a member
+         * <p>Enables an Amazon Macie administrator to suspend or re-enable a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
@@ -1724,7 +1901,7 @@ namespace Model
         virtual Model::UpdateMemberSessionOutcome UpdateMemberSession(const Model::UpdateMemberSessionRequest& request) const;
 
         /**
-         * <p>Enables an Amazon Macie master account to suspend or re-enable a member
+         * <p>Enables an Amazon Macie administrator to suspend or re-enable a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
@@ -1734,7 +1911,7 @@ namespace Model
         virtual Model::UpdateMemberSessionOutcomeCallable UpdateMemberSessionCallable(const Model::UpdateMemberSessionRequest& request) const;
 
         /**
-         * <p>Enables an Amazon Macie master account to suspend or re-enable a member
+         * <p>Enables an Amazon Macie administrator to suspend or re-enable a member
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateMemberSession">AWS
          * API Reference</a></p>
@@ -1793,16 +1970,19 @@ namespace Model
         void DescribeOrganizationConfigurationAsyncHelper(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableMacieAsyncHelper(const Model::DisableMacieRequest& request, const DisableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableOrganizationAdminAccountAsyncHelper(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateFromAdministratorAccountAsyncHelper(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateFromMasterAccountAsyncHelper(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateMemberAsyncHelper(const Model::DisassociateMemberRequest& request, const DisassociateMemberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableMacieAsyncHelper(const Model::EnableMacieRequest& request, const EnableMacieResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableOrganizationAdminAccountAsyncHelper(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAdministratorAccountAsyncHelper(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketStatisticsAsyncHelper(const Model::GetBucketStatisticsRequest& request, const GetBucketStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetClassificationExportConfigurationAsyncHelper(const Model::GetClassificationExportConfigurationRequest& request, const GetClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCustomDataIdentifierAsyncHelper(const Model::GetCustomDataIdentifierRequest& request, const GetCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingStatisticsAsyncHelper(const Model::GetFindingStatisticsRequest& request, const GetFindingStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsAsyncHelper(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsFilterAsyncHelper(const Model::GetFindingsFilterRequest& request, const GetFindingsFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFindingsPublicationConfigurationAsyncHelper(const Model::GetFindingsPublicationConfigurationRequest& request, const GetFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInvitationsCountAsyncHelper(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMacieSessionAsyncHelper(const Model::GetMacieSessionRequest& request, const GetMacieSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMasterAccountAsyncHelper(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1818,6 +1998,8 @@ namespace Model
         void ListOrganizationAdminAccountsAsyncHelper(const Model::ListOrganizationAdminAccountsRequest& request, const ListOrganizationAdminAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutClassificationExportConfigurationAsyncHelper(const Model::PutClassificationExportConfigurationRequest& request, const PutClassificationExportConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutFindingsPublicationConfigurationAsyncHelper(const Model::PutFindingsPublicationConfigurationRequest& request, const PutFindingsPublicationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchResourcesAsyncHelper(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestCustomDataIdentifierAsyncHelper(const Model::TestCustomDataIdentifierRequest& request, const TestCustomDataIdentifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

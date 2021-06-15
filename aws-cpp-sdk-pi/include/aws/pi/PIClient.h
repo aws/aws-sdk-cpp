@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/pi/model/DescribeDimensionKeysResult.h>
+#include <aws/pi/model/GetDimensionKeyDetailsResult.h>
 #include <aws/pi/model/GetResourceMetricsResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -53,18 +54,22 @@ namespace PI
 namespace Model
 {
         class DescribeDimensionKeysRequest;
+        class GetDimensionKeyDetailsRequest;
         class GetResourceMetricsRequest;
 
         typedef Aws::Utils::Outcome<DescribeDimensionKeysResult, PIError> DescribeDimensionKeysOutcome;
+        typedef Aws::Utils::Outcome<GetDimensionKeyDetailsResult, PIError> GetDimensionKeyDetailsOutcome;
         typedef Aws::Utils::Outcome<GetResourceMetricsResult, PIError> GetResourceMetricsOutcome;
 
         typedef std::future<DescribeDimensionKeysOutcome> DescribeDimensionKeysOutcomeCallable;
+        typedef std::future<GetDimensionKeyDetailsOutcome> GetDimensionKeyDetailsOutcomeCallable;
         typedef std::future<GetResourceMetricsOutcome> GetResourceMetricsOutcomeCallable;
 } // namespace Model
 
   class PIClient;
 
     typedef std::function<void(const PIClient*, const Model::DescribeDimensionKeysRequest&, const Model::DescribeDimensionKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDimensionKeysResponseReceivedHandler;
+    typedef std::function<void(const PIClient*, const Model::GetDimensionKeyDetailsRequest&, const Model::GetDimensionKeyDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDimensionKeyDetailsResponseReceivedHandler;
     typedef std::function<void(const PIClient*, const Model::GetResourceMetricsRequest&, const Model::GetResourceMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceMetricsResponseReceivedHandler;
 
   /**
@@ -151,6 +156,49 @@ namespace Model
         virtual void DescribeDimensionKeysAsync(const Model::DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Get the attributes of the specified dimension group for a DB instance or data
+         * source. For example, if you specify a SQL ID,
+         * <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension
+         * <code>db.sql.statement</code> associated with this ID. This operation is useful
+         * because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
+         * don't support retrieval of large SQL statement text.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDimensionKeyDetailsOutcome GetDimensionKeyDetails(const Model::GetDimensionKeyDetailsRequest& request) const;
+
+        /**
+         * <p>Get the attributes of the specified dimension group for a DB instance or data
+         * source. For example, if you specify a SQL ID,
+         * <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension
+         * <code>db.sql.statement</code> associated with this ID. This operation is useful
+         * because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
+         * don't support retrieval of large SQL statement text.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDimensionKeyDetailsOutcomeCallable GetDimensionKeyDetailsCallable(const Model::GetDimensionKeyDetailsRequest& request) const;
+
+        /**
+         * <p>Get the attributes of the specified dimension group for a DB instance or data
+         * source. For example, if you specify a SQL ID,
+         * <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension
+         * <code>db.sql.statement</code> associated with this ID. This operation is useful
+         * because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
+         * don't support retrieval of large SQL statement text.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDimensionKeyDetailsAsync(const Model::GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieve Performance Insights metrics for a set of data sources, over a time
          * period. You can provide specific dimension groups and dimensions, and provide
          * aggregation and filtering criteria for each group.</p>  <p>Each response
@@ -195,6 +243,7 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void DescribeDimensionKeysAsyncHelper(const Model::DescribeDimensionKeysRequest& request, const DescribeDimensionKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDimensionKeyDetailsAsyncHelper(const Model::GetDimensionKeyDetailsRequest& request, const GetDimensionKeyDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceMetricsAsyncHelper(const Model::GetResourceMetricsRequest& request, const GetResourceMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

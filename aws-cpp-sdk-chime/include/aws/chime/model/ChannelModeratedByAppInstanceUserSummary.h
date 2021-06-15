@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Returns the summary data for a moderated channel.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Summary of the details of a moderated channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ChannelModeratedByAppInstanceUserSummary">AWS
    * API Reference</a></p>
    */

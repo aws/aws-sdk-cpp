@@ -29,7 +29,8 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates() :
     m_removeBytesScannedCutoffPerQuery(false),
     m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
-    m_requesterPaysEnabledHasBeenSet(false)
+    m_requesterPaysEnabledHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ WorkGroupConfigurationUpdates::WorkGroupConfigurationUpdates(JsonView jsonValue)
     m_removeBytesScannedCutoffPerQuery(false),
     m_removeBytesScannedCutoffPerQueryHasBeenSet(false),
     m_requesterPaysEnabled(false),
-    m_requesterPaysEnabledHasBeenSet(false)
+    m_requesterPaysEnabledHasBeenSet(false),
+    m_engineVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,13 @@ WorkGroupConfigurationUpdates& WorkGroupConfigurationUpdates::operator =(JsonVie
     m_requesterPaysEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EngineVersion"))
+  {
+    m_engineVersion = jsonValue.GetObject("EngineVersion");
+
+    m_engineVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +142,12 @@ JsonValue WorkGroupConfigurationUpdates::Jsonize() const
   if(m_requesterPaysEnabledHasBeenSet)
   {
    payload.WithBool("RequesterPaysEnabled", m_requesterPaysEnabled);
+
+  }
+
+  if(m_engineVersionHasBeenSet)
+  {
+   payload.WithObject("EngineVersion", m_engineVersion.Jsonize());
 
   }
 

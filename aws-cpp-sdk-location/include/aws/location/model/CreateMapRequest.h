@@ -9,6 +9,7 @@
 #include <aws/location/model/MapConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/PricingPlan.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -108,8 +109,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -117,8 +118,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -126,8 +127,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -135,8 +136,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -144,8 +145,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -153,8 +154,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -162,8 +163,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -171,8 +172,8 @@ namespace Model
 
     /**
      * <p>The name for the map resource.</p> <p>Requirements:</p> <ul> <li> <p>Must
-     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), and
-     * underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
+     * contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.),
+     * and underscores (_). </p> </li> <li> <p>Must be a unique map resource name. </p>
      * </li> <li> <p>No spaces allowed. For example, <code>ExampleMap</code>.</p> </li>
      * </ul>
      */
@@ -180,12 +181,7 @@ namespace Model
 
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -193,12 +189,7 @@ namespace Model
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -206,12 +197,7 @@ namespace Model
     inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -219,12 +205,7 @@ namespace Model
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -232,12 +213,7 @@ namespace Model
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
@@ -245,17 +221,169 @@ namespace Model
     inline CreateMapRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * <p>Specifies the pricing plan for your map resource. There's three pricing plan
-     * options:</p> <ul> <li> <p> <code>RequestBasedUsage</code> — Selects the
-     * "Request-Based Usage" pricing plan.</p> </li> <li> <p>
-     * <code>MobileAssetTracking</code> — Selects the "Mobile Asset Tracking" pricing
-     * plan.</p> </li> <li> <p> <code>MobileAssetManagement</code> — Selects the
-     * "Mobile Asset Management" pricing plan.</p> </li> </ul> <p>For additional
+     * <p>Specifies the pricing plan for your map resource.</p> <p>For additional
      * details and restrictions on each pricing plan option, see the <a
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
      * page</a>.</p>
      */
     inline CreateMapRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Applies one or more tags to the map resource. A tag is a key-value pair helps
+     * manage, identify, search, and filter your resources by labelling them.</p>
+     * <p>Format: <code>"key" : "value"</code> </p> <p>Restrictions:</p> <ul> <li>
+     * <p>Maximum 50 tags per resource</p> </li> <li> <p>Each resource tag must be
+     * unique with a maximum of one value.</p> </li> <li> <p>Maximum key length: 128
+     * Unicode characters in UTF-8</p> </li> <li> <p>Maximum value length: 256 Unicode
+     * characters in UTF-8</p> </li> <li> <p>Can use alphanumeric characters (A–Z, a–z,
+     * 0–9), and the following characters: + - = . _ : / @. </p> </li> </ul>
+     */
+    inline CreateMapRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -270,6 +398,9 @@ namespace Model
 
     PricingPlan m_pricingPlan;
     bool m_pricingPlanHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

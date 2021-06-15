@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/PipelineExecutionStatus.h>
+#include <aws/sagemaker/model/PipelineExperimentConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/UserContext.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -237,6 +238,66 @@ namespace Model
     inline PipelineExecution& WithPipelineExecutionDescription(const char* value) { SetPipelineExecutionDescription(value); return *this;}
 
 
+    
+    inline const PipelineExperimentConfig& GetPipelineExperimentConfig() const{ return m_pipelineExperimentConfig; }
+
+    
+    inline bool PipelineExperimentConfigHasBeenSet() const { return m_pipelineExperimentConfigHasBeenSet; }
+
+    
+    inline void SetPipelineExperimentConfig(const PipelineExperimentConfig& value) { m_pipelineExperimentConfigHasBeenSet = true; m_pipelineExperimentConfig = value; }
+
+    
+    inline void SetPipelineExperimentConfig(PipelineExperimentConfig&& value) { m_pipelineExperimentConfigHasBeenSet = true; m_pipelineExperimentConfig = std::move(value); }
+
+    
+    inline PipelineExecution& WithPipelineExperimentConfig(const PipelineExperimentConfig& value) { SetPipelineExperimentConfig(value); return *this;}
+
+    
+    inline PipelineExecution& WithPipelineExperimentConfig(PipelineExperimentConfig&& value) { SetPipelineExperimentConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline PipelineExecution& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline PipelineExecution& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p>If the execution failed, a message describing why.</p>
+     */
+    inline PipelineExecution& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+
+
     /**
      * <p>The creation time of the pipeline execution.</p>
      */
@@ -393,6 +454,12 @@ namespace Model
 
     Aws::String m_pipelineExecutionDescription;
     bool m_pipelineExecutionDescriptionHasBeenSet;
+
+    PipelineExperimentConfig m_pipelineExperimentConfig;
+    bool m_pipelineExperimentConfigHasBeenSet;
+
+    Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet;
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;

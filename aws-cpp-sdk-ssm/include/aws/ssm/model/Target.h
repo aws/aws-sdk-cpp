@@ -133,7 +133,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
@@ -141,7 +143,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
@@ -149,7 +153,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
@@ -157,7 +163,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
@@ -165,7 +173,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline Target& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
@@ -173,7 +183,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline Target& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
@@ -181,7 +193,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline Target& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
@@ -189,7 +203,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline Target& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
@@ -197,7 +213,9 @@ namespace Model
      * <p>User-defined criteria that maps to <code>Key</code>. For example, if you
      * specified <code>tag:ServerRole</code>, you could specify
      * <code>value:WebServer</code> to run a command on instances that include EC2 tags
-     * of <code>ServerRole,WebServer</code>. </p>
+     * of <code>ServerRole,WebServer</code>. </p> <p>Depending on the type of
+     * <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     * be lower than the global maximum of 50.</p>
      */
     inline Target& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 

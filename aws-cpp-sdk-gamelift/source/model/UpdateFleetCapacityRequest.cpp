@@ -19,7 +19,8 @@ UpdateFleetCapacityRequest::UpdateFleetCapacityRequest() :
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
-    m_maxSizeHasBeenSet(false)
+    m_maxSizeHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String UpdateFleetCapacityRequest::SerializePayload() const
   if(m_maxSizeHasBeenSet)
   {
    payload.WithInteger("MaxSize", m_maxSize);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

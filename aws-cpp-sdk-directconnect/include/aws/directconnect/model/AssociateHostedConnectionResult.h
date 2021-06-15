@@ -11,6 +11,7 @@
 #include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/directconnect/model/Tag.h>
+#include <aws/directconnect/model/MacSecKey.h>
 #include <utility>
 
 namespace Aws
@@ -676,6 +677,158 @@ namespace Model
      */
     inline AssociateHostedConnectionResult& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+     */
+    inline bool GetMacSecCapable() const{ return m_macSecCapable; }
+
+    /**
+     * <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+     */
+    inline void SetMacSecCapable(bool value) { m_macSecCapable = value; }
+
+    /**
+     * <p>Indicates whether the connection supports MAC Security (MACsec).</p>
+     */
+    inline AssociateHostedConnectionResult& WithMacSecCapable(bool value) { SetMacSecCapable(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline const Aws::String& GetPortEncryptionStatus() const{ return m_portEncryptionStatus; }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline void SetPortEncryptionStatus(const Aws::String& value) { m_portEncryptionStatus = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline void SetPortEncryptionStatus(Aws::String&& value) { m_portEncryptionStatus = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline void SetPortEncryptionStatus(const char* value) { m_portEncryptionStatus.assign(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline AssociateHostedConnectionResult& WithPortEncryptionStatus(const Aws::String& value) { SetPortEncryptionStatus(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline AssociateHostedConnectionResult& WithPortEncryptionStatus(Aws::String&& value) { SetPortEncryptionStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) port link status of the connection.</p> <p>The
+     * valid values are <code>Encryption Up</code>, which means that there is an active
+     * Connection Key Name, or <code>Encryption Down</code>.</p>
+     */
+    inline AssociateHostedConnectionResult& WithPortEncryptionStatus(const char* value) { SetPortEncryptionStatus(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline const Aws::String& GetEncryptionMode() const{ return m_encryptionMode; }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const Aws::String& value) { m_encryptionMode = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(Aws::String&& value) { m_encryptionMode = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline void SetEncryptionMode(const char* value) { m_encryptionMode.assign(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline AssociateHostedConnectionResult& WithEncryptionMode(const Aws::String& value) { SetEncryptionMode(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline AssociateHostedConnectionResult& WithEncryptionMode(Aws::String&& value) { SetEncryptionMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values
+     * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
+     * <code>must_encrypt</code>.</p>
+     */
+    inline AssociateHostedConnectionResult& WithEncryptionMode(const char* value) { SetEncryptionMode(value); return *this;}
+
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const{ return m_macSecKeys; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline void SetMacSecKeys(const Aws::Vector<MacSecKey>& value) { m_macSecKeys = value; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline void SetMacSecKeys(Aws::Vector<MacSecKey>&& value) { m_macSecKeys = std::move(value); }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline AssociateHostedConnectionResult& WithMacSecKeys(const Aws::Vector<MacSecKey>& value) { SetMacSecKeys(value); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline AssociateHostedConnectionResult& WithMacSecKeys(Aws::Vector<MacSecKey>&& value) { SetMacSecKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline AssociateHostedConnectionResult& AddMacSecKeys(const MacSecKey& value) { m_macSecKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
+     */
+    inline AssociateHostedConnectionResult& AddMacSecKeys(MacSecKey&& value) { m_macSecKeys.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ownerAccount;
@@ -711,6 +864,14 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     Aws::String m_providerName;
+
+    bool m_macSecCapable;
+
+    Aws::String m_portEncryptionStatus;
+
+    Aws::String m_encryptionMode;
+
+    Aws::Vector<MacSecKey> m_macSecKeys;
   };
 
 } // namespace Model

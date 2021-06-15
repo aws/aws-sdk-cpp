@@ -32,6 +32,8 @@ AutoScalingGroup::AutoScalingGroup() :
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
     m_desiredCapacityHasBeenSet(false),
+    m_predictedCapacity(0),
+    m_predictedCapacityHasBeenSet(false),
     m_defaultCooldown(0),
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
@@ -55,7 +57,10 @@ AutoScalingGroup::AutoScalingGroup() :
     m_maxInstanceLifetime(0),
     m_maxInstanceLifetimeHasBeenSet(false),
     m_capacityRebalance(false),
-    m_capacityRebalanceHasBeenSet(false)
+    m_capacityRebalanceHasBeenSet(false),
+    m_warmPoolConfigurationHasBeenSet(false),
+    m_warmPoolSize(0),
+    m_warmPoolSizeHasBeenSet(false)
 {
 }
 
@@ -71,6 +76,8 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_maxSizeHasBeenSet(false),
     m_desiredCapacity(0),
     m_desiredCapacityHasBeenSet(false),
+    m_predictedCapacity(0),
+    m_predictedCapacityHasBeenSet(false),
     m_defaultCooldown(0),
     m_defaultCooldownHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false),
@@ -94,7 +101,10 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_maxInstanceLifetime(0),
     m_maxInstanceLifetimeHasBeenSet(false),
     m_capacityRebalance(false),
-    m_capacityRebalanceHasBeenSet(false)
+    m_capacityRebalanceHasBeenSet(false),
+    m_warmPoolConfigurationHasBeenSet(false),
+    m_warmPoolSize(0),
+    m_warmPoolSizeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -152,6 +162,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     {
       m_desiredCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(desiredCapacityNode.GetText()).c_str()).c_str());
       m_desiredCapacityHasBeenSet = true;
+    }
+    XmlNode predictedCapacityNode = resultNode.FirstChild("PredictedCapacity");
+    if(!predictedCapacityNode.IsNull())
+    {
+      m_predictedCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(predictedCapacityNode.GetText()).c_str()).c_str());
+      m_predictedCapacityHasBeenSet = true;
     }
     XmlNode defaultCooldownNode = resultNode.FirstChild("DefaultCooldown");
     if(!defaultCooldownNode.IsNull())
@@ -315,6 +331,18 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_capacityRebalance = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityRebalanceNode.GetText()).c_str()).c_str());
       m_capacityRebalanceHasBeenSet = true;
     }
+    XmlNode warmPoolConfigurationNode = resultNode.FirstChild("WarmPoolConfiguration");
+    if(!warmPoolConfigurationNode.IsNull())
+    {
+      m_warmPoolConfiguration = warmPoolConfigurationNode;
+      m_warmPoolConfigurationHasBeenSet = true;
+    }
+    XmlNode warmPoolSizeNode = resultNode.FirstChild("WarmPoolSize");
+    if(!warmPoolSizeNode.IsNull())
+    {
+      m_warmPoolSize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(warmPoolSizeNode.GetText()).c_str()).c_str());
+      m_warmPoolSizeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -364,6 +392,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+
+  if(m_predictedCapacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PredictedCapacity=" << m_predictedCapacity << "&";
   }
 
   if(m_defaultCooldownHasBeenSet)
@@ -501,6 +534,18 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
   }
 
+  if(m_warmPoolConfigurationHasBeenSet)
+  {
+      Aws::StringStream warmPoolConfigurationLocationAndMemberSs;
+      warmPoolConfigurationLocationAndMemberSs << location << index << locationValue << ".WarmPoolConfiguration";
+      m_warmPoolConfiguration.OutputToStream(oStream, warmPoolConfigurationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_warmPoolSizeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".WarmPoolSize=" << m_warmPoolSize << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -540,6 +585,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_desiredCapacityHasBeenSet)
   {
       oStream << location << ".DesiredCapacity=" << m_desiredCapacity << "&";
+  }
+  if(m_predictedCapacityHasBeenSet)
+  {
+      oStream << location << ".PredictedCapacity=" << m_predictedCapacity << "&";
   }
   if(m_defaultCooldownHasBeenSet)
   {
@@ -656,6 +705,16 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_capacityRebalanceHasBeenSet)
   {
       oStream << location << ".CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
+  }
+  if(m_warmPoolConfigurationHasBeenSet)
+  {
+      Aws::String warmPoolConfigurationLocationAndMember(location);
+      warmPoolConfigurationLocationAndMember += ".WarmPoolConfiguration";
+      m_warmPoolConfiguration.OutputToStream(oStream, warmPoolConfigurationLocationAndMember.c_str());
+  }
+  if(m_warmPoolSizeHasBeenSet)
+  {
+      oStream << location << ".WarmPoolSize=" << m_warmPoolSize << "&";
   }
 }
 

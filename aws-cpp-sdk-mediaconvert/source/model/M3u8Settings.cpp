@@ -24,6 +24,8 @@ M3u8Settings::M3u8Settings() :
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
+    m_maxPcrInterval(0),
+    m_maxPcrIntervalHasBeenSet(false),
     m_nielsenId3(M3u8NielsenId3::NOT_SET),
     m_nielsenId3HasBeenSet(false),
     m_patInterval(0),
@@ -61,6 +63,8 @@ M3u8Settings::M3u8Settings(JsonView jsonValue) :
     m_audioFramesPerPes(0),
     m_audioFramesPerPesHasBeenSet(false),
     m_audioPidsHasBeenSet(false),
+    m_maxPcrInterval(0),
+    m_maxPcrIntervalHasBeenSet(false),
     m_nielsenId3(M3u8NielsenId3::NOT_SET),
     m_nielsenId3HasBeenSet(false),
     m_patInterval(0),
@@ -117,6 +121,13 @@ M3u8Settings& M3u8Settings::operator =(JsonView jsonValue)
       m_audioPids.push_back(audioPidsJsonList[audioPidsIndex].AsInteger());
     }
     m_audioPidsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("maxPcrInterval"))
+  {
+    m_maxPcrInterval = jsonValue.GetInteger("maxPcrInterval");
+
+    m_maxPcrIntervalHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nielsenId3"))
@@ -243,6 +254,12 @@ JsonValue M3u8Settings::Jsonize() const
      audioPidsJsonList[audioPidsIndex].AsInteger(m_audioPids[audioPidsIndex]);
    }
    payload.WithArray("audioPids", std::move(audioPidsJsonList));
+
+  }
+
+  if(m_maxPcrIntervalHasBeenSet)
+  {
+   payload.WithInteger("maxPcrInterval", m_maxPcrInterval);
 
   }
 

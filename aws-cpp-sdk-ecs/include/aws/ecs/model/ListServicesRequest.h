@@ -37,58 +37,58 @@ namespace Model
 
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline ListServicesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline ListServicesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
 
     /**
-     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
-     * the services to list. If you do not specify a cluster, the default cluster is
-     * assumed.</p>
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when
+     * filtering the <code>ListServices</code> results. If you do not specify a
+     * cluster, the default cluster is assumed.</p>
      */
     inline ListServicesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
 
@@ -232,63 +232,75 @@ namespace Model
 
 
     /**
-     * <p>The launch type for the services to list.</p>
+     * <p>The launch type to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type for the services to list.</p>
+     * <p>The launch type to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type for the services to list.</p>
+     * <p>The launch type to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type for the services to list.</p>
+     * <p>The launch type to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type for the services to list.</p>
+     * <p>The launch type to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline ListServicesRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type for the services to list.</p>
+     * <p>The launch type to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline ListServicesRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The scheduling strategy for services to list.</p>
+     * <p>The scheduling strategy to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
 
     /**
-     * <p>The scheduling strategy for services to list.</p>
+     * <p>The scheduling strategy to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
 
     /**
-     * <p>The scheduling strategy for services to list.</p>
+     * <p>The scheduling strategy to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
 
     /**
-     * <p>The scheduling strategy for services to list.</p>
+     * <p>The scheduling strategy to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
 
     /**
-     * <p>The scheduling strategy for services to list.</p>
+     * <p>The scheduling strategy to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline ListServicesRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
 
     /**
-     * <p>The scheduling strategy for services to list.</p>
+     * <p>The scheduling strategy to use when filtering the <code>ListServices</code>
+     * results.</p>
      */
     inline ListServicesRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
 

@@ -19,6 +19,8 @@ namespace Model
     InternalServiceError,
     RobotApplicationCrash,
     SimulationApplicationCrash,
+    RobotApplicationHealthCheckFailure,
+    SimulationApplicationHealthCheckFailure,
     BadPermissionsRobotApplication,
     BadPermissionsSimulationApplication,
     BadPermissionsS3Object,
@@ -30,6 +32,7 @@ namespace Model
     InvalidBundleRobotApplication,
     InvalidBundleSimulationApplication,
     InvalidS3Resource,
+    ThrottlingError,
     LimitExceeded,
     MismatchedEtag,
     RobotApplicationVersionMismatchedEtag,
@@ -42,7 +45,8 @@ namespace Model
     WrongRegionS3Bucket,
     WrongRegionS3Output,
     WrongRegionRobotApplication,
-    WrongRegionSimulationApplication
+    WrongRegionSimulationApplication,
+    UploadContentMismatchError
   };
 
 namespace SimulationJobErrorCodeMapper

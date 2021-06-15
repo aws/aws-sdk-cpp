@@ -7,6 +7,7 @@
 #include <aws/devops-guru/DevOpsGuru_EXPORTS.h>
 #include <aws/devops-guru/DevOpsGuruRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devops-guru/model/Locale.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +122,37 @@ namespace Model
      */
     inline ListRecommendationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A locale that specifies the language to use for recommendations.</p>
+     */
+    inline const Locale& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>A locale that specifies the language to use for recommendations.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+
+    /**
+     * <p>A locale that specifies the language to use for recommendations.</p>
+     */
+    inline void SetLocale(const Locale& value) { m_localeHasBeenSet = true; m_locale = value; }
+
+    /**
+     * <p>A locale that specifies the language to use for recommendations.</p>
+     */
+    inline void SetLocale(Locale&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
+
+    /**
+     * <p>A locale that specifies the language to use for recommendations.</p>
+     */
+    inline ListRecommendationsRequest& WithLocale(const Locale& value) { SetLocale(value); return *this;}
+
+    /**
+     * <p>A locale that specifies the language to use for recommendations.</p>
+     */
+    inline ListRecommendationsRequest& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_insightId;
@@ -128,6 +160,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Locale m_locale;
+    bool m_localeHasBeenSet;
   };
 
 } // namespace Model

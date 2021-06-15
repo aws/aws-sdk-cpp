@@ -129,65 +129,65 @@ namespace Model
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline Service& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -484,61 +484,55 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which your service is running. If no value is specified,
-     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>. For more information, see <a
+     * <p>The infrastructure on which your service is running. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which your service is running. If no value is specified,
-     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>. For more information, see <a
+     * <p>The infrastructure on which your service is running. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type on which your service is running. If no value is specified,
-     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>. For more information, see <a
+     * <p>The infrastructure on which your service is running. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which your service is running. If no value is specified,
-     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>. For more information, see <a
+     * <p>The infrastructure on which your service is running. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which your service is running. If no value is specified,
-     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>. For more information, see <a
+     * <p>The infrastructure on which your service is running. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline Service& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which your service is running. If no value is specified,
-     * it will default to <code>EC2</code>. Valid values include <code>EC2</code> and
-     * <code>FARGATE</code>. For more information, see <a
+     * <p>The infrastructure on which your service is running. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline Service& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
@@ -1594,6 +1588,35 @@ namespace Model
      */
     inline Service& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, the execute command functionality is enabled for all
+     * containers in tasks as part of the service.</p>
+     */
+    inline Service& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -1682,6 +1705,9 @@ namespace Model
 
     PropagateTags m_propagateTags;
     bool m_propagateTagsHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
   };
 
 } // namespace Model

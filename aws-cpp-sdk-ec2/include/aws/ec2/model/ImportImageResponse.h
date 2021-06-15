@@ -529,37 +529,37 @@ namespace Model
 
 
     /**
-     * <p>Any tags assigned to the image being imported.</p>
+     * <p>Any tags assigned to the import image task.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Any tags assigned to the image being imported.</p>
+     * <p>Any tags assigned to the import image task.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>Any tags assigned to the image being imported.</p>
+     * <p>Any tags assigned to the import image task.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Any tags assigned to the image being imported.</p>
+     * <p>Any tags assigned to the import image task.</p>
      */
     inline ImportImageResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Any tags assigned to the image being imported.</p>
+     * <p>Any tags assigned to the import image task.</p>
      */
     inline ImportImageResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Any tags assigned to the image being imported.</p>
+     * <p>Any tags assigned to the import image task.</p>
      */
     inline ImportImageResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Any tags assigned to the image being imported.</p>
+     * <p>Any tags assigned to the import image task.</p>
      */
     inline ImportImageResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 

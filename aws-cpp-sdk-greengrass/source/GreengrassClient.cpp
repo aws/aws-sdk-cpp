@@ -160,7 +160,7 @@ GreengrassClient::~GreengrassClient()
 {
 }
 
-void GreengrassClient::init(const ClientConfiguration& config)
+void GreengrassClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Greengrass");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -194,11 +194,9 @@ AssociateRoleToGroupOutcome GreengrassClient::AssociateRoleToGroup(const Associa
     return AssociateRoleToGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/role";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/role");
   return AssociateRoleToGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -223,9 +221,7 @@ void GreengrassClient::AssociateRoleToGroupAsyncHelper(const AssociateRoleToGrou
 AssociateServiceRoleToAccountOutcome GreengrassClient::AssociateServiceRoleToAccount(const AssociateServiceRoleToAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/servicerole";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/servicerole");
   return AssociateServiceRoleToAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -250,9 +246,7 @@ void GreengrassClient::AssociateServiceRoleToAccountAsyncHelper(const AssociateS
 CreateConnectorDefinitionOutcome GreengrassClient::CreateConnectorDefinition(const CreateConnectorDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors");
   return CreateConnectorDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -282,11 +276,9 @@ CreateConnectorDefinitionVersionOutcome GreengrassClient::CreateConnectorDefinit
     return CreateConnectorDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors/";
-  ss << request.GetConnectorDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors/");
+  uri.AddPathSegment(request.GetConnectorDefinitionId());
+  uri.AddPathSegments("/versions");
   return CreateConnectorDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -311,9 +303,7 @@ void GreengrassClient::CreateConnectorDefinitionVersionAsyncHelper(const CreateC
 CreateCoreDefinitionOutcome GreengrassClient::CreateCoreDefinition(const CreateCoreDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores");
   return CreateCoreDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -343,11 +333,9 @@ CreateCoreDefinitionVersionOutcome GreengrassClient::CreateCoreDefinitionVersion
     return CreateCoreDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores/";
-  ss << request.GetCoreDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores/");
+  uri.AddPathSegment(request.GetCoreDefinitionId());
+  uri.AddPathSegments("/versions");
   return CreateCoreDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -377,11 +365,9 @@ CreateDeploymentOutcome GreengrassClient::CreateDeployment(const CreateDeploymen
     return CreateDeploymentOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/deployments");
   return CreateDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -406,9 +392,7 @@ void GreengrassClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest
 CreateDeviceDefinitionOutcome GreengrassClient::CreateDeviceDefinition(const CreateDeviceDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices");
   return CreateDeviceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -438,11 +422,9 @@ CreateDeviceDefinitionVersionOutcome GreengrassClient::CreateDeviceDefinitionVer
     return CreateDeviceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices/";
-  ss << request.GetDeviceDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices/");
+  uri.AddPathSegment(request.GetDeviceDefinitionId());
+  uri.AddPathSegments("/versions");
   return CreateDeviceDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -467,9 +449,7 @@ void GreengrassClient::CreateDeviceDefinitionVersionAsyncHelper(const CreateDevi
 CreateFunctionDefinitionOutcome GreengrassClient::CreateFunctionDefinition(const CreateFunctionDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions");
   return CreateFunctionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -499,11 +479,9 @@ CreateFunctionDefinitionVersionOutcome GreengrassClient::CreateFunctionDefinitio
     return CreateFunctionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions/";
-  ss << request.GetFunctionDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions/");
+  uri.AddPathSegment(request.GetFunctionDefinitionId());
+  uri.AddPathSegments("/versions");
   return CreateFunctionDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -528,9 +506,7 @@ void GreengrassClient::CreateFunctionDefinitionVersionAsyncHelper(const CreateFu
 CreateGroupOutcome GreengrassClient::CreateGroup(const CreateGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups");
   return CreateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -560,11 +536,9 @@ CreateGroupCertificateAuthorityOutcome GreengrassClient::CreateGroupCertificateA
     return CreateGroupCertificateAuthorityOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/certificateauthorities";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/certificateauthorities");
   return CreateGroupCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -594,11 +568,9 @@ CreateGroupVersionOutcome GreengrassClient::CreateGroupVersion(const CreateGroup
     return CreateGroupVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/versions");
   return CreateGroupVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -623,9 +595,7 @@ void GreengrassClient::CreateGroupVersionAsyncHelper(const CreateGroupVersionReq
 CreateLoggerDefinitionOutcome GreengrassClient::CreateLoggerDefinition(const CreateLoggerDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers");
   return CreateLoggerDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -655,11 +625,9 @@ CreateLoggerDefinitionVersionOutcome GreengrassClient::CreateLoggerDefinitionVer
     return CreateLoggerDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers/";
-  ss << request.GetLoggerDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers/");
+  uri.AddPathSegment(request.GetLoggerDefinitionId());
+  uri.AddPathSegments("/versions");
   return CreateLoggerDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -684,9 +652,7 @@ void GreengrassClient::CreateLoggerDefinitionVersionAsyncHelper(const CreateLogg
 CreateResourceDefinitionOutcome GreengrassClient::CreateResourceDefinition(const CreateResourceDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources");
   return CreateResourceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -716,11 +682,9 @@ CreateResourceDefinitionVersionOutcome GreengrassClient::CreateResourceDefinitio
     return CreateResourceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources/";
-  ss << request.GetResourceDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources/");
+  uri.AddPathSegment(request.GetResourceDefinitionId());
+  uri.AddPathSegments("/versions");
   return CreateResourceDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -745,9 +709,7 @@ void GreengrassClient::CreateResourceDefinitionVersionAsyncHelper(const CreateRe
 CreateSoftwareUpdateJobOutcome GreengrassClient::CreateSoftwareUpdateJob(const CreateSoftwareUpdateJobRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/updates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/updates");
   return CreateSoftwareUpdateJobOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -772,9 +734,7 @@ void GreengrassClient::CreateSoftwareUpdateJobAsyncHelper(const CreateSoftwareUp
 CreateSubscriptionDefinitionOutcome GreengrassClient::CreateSubscriptionDefinition(const CreateSubscriptionDefinitionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions");
   return CreateSubscriptionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -804,11 +764,9 @@ CreateSubscriptionDefinitionVersionOutcome GreengrassClient::CreateSubscriptionD
     return CreateSubscriptionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions/";
-  ss << request.GetSubscriptionDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions/");
+  uri.AddPathSegment(request.GetSubscriptionDefinitionId());
+  uri.AddPathSegments("/versions");
   return CreateSubscriptionDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -838,10 +796,8 @@ DeleteConnectorDefinitionOutcome GreengrassClient::DeleteConnectorDefinition(con
     return DeleteConnectorDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors/";
-  ss << request.GetConnectorDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors/");
+  uri.AddPathSegment(request.GetConnectorDefinitionId());
   return DeleteConnectorDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -871,10 +827,8 @@ DeleteCoreDefinitionOutcome GreengrassClient::DeleteCoreDefinition(const DeleteC
     return DeleteCoreDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores/";
-  ss << request.GetCoreDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores/");
+  uri.AddPathSegment(request.GetCoreDefinitionId());
   return DeleteCoreDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -904,10 +858,8 @@ DeleteDeviceDefinitionOutcome GreengrassClient::DeleteDeviceDefinition(const Del
     return DeleteDeviceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices/";
-  ss << request.GetDeviceDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices/");
+  uri.AddPathSegment(request.GetDeviceDefinitionId());
   return DeleteDeviceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -937,10 +889,8 @@ DeleteFunctionDefinitionOutcome GreengrassClient::DeleteFunctionDefinition(const
     return DeleteFunctionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions/";
-  ss << request.GetFunctionDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions/");
+  uri.AddPathSegment(request.GetFunctionDefinitionId());
   return DeleteFunctionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -970,10 +920,8 @@ DeleteGroupOutcome GreengrassClient::DeleteGroup(const DeleteGroupRequest& reque
     return DeleteGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
   return DeleteGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1003,10 +951,8 @@ DeleteLoggerDefinitionOutcome GreengrassClient::DeleteLoggerDefinition(const Del
     return DeleteLoggerDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers/";
-  ss << request.GetLoggerDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers/");
+  uri.AddPathSegment(request.GetLoggerDefinitionId());
   return DeleteLoggerDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1036,10 +982,8 @@ DeleteResourceDefinitionOutcome GreengrassClient::DeleteResourceDefinition(const
     return DeleteResourceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources/";
-  ss << request.GetResourceDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources/");
+  uri.AddPathSegment(request.GetResourceDefinitionId());
   return DeleteResourceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1069,10 +1013,8 @@ DeleteSubscriptionDefinitionOutcome GreengrassClient::DeleteSubscriptionDefiniti
     return DeleteSubscriptionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions/";
-  ss << request.GetSubscriptionDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions/");
+  uri.AddPathSegment(request.GetSubscriptionDefinitionId());
   return DeleteSubscriptionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1102,11 +1044,9 @@ DisassociateRoleFromGroupOutcome GreengrassClient::DisassociateRoleFromGroup(con
     return DisassociateRoleFromGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/role";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/role");
   return DisassociateRoleFromGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1131,9 +1071,7 @@ void GreengrassClient::DisassociateRoleFromGroupAsyncHelper(const DisassociateRo
 DisassociateServiceRoleFromAccountOutcome GreengrassClient::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/servicerole";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/servicerole");
   return DisassociateServiceRoleFromAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1163,11 +1101,9 @@ GetAssociatedRoleOutcome GreengrassClient::GetAssociatedRole(const GetAssociated
     return GetAssociatedRoleOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/role";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/role");
   return GetAssociatedRoleOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1197,11 +1133,9 @@ GetBulkDeploymentStatusOutcome GreengrassClient::GetBulkDeploymentStatus(const G
     return GetBulkDeploymentStatusOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BulkDeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/bulk/deployments/";
-  ss << request.GetBulkDeploymentId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/bulk/deployments/");
+  uri.AddPathSegment(request.GetBulkDeploymentId());
+  uri.AddPathSegments("/status");
   return GetBulkDeploymentStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1231,11 +1165,9 @@ GetConnectivityInfoOutcome GreengrassClient::GetConnectivityInfo(const GetConnec
     return GetConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/things/";
-  ss << request.GetThingName();
-  ss << "/connectivityInfo";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/connectivityInfo");
   return GetConnectivityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1265,10 +1197,8 @@ GetConnectorDefinitionOutcome GreengrassClient::GetConnectorDefinition(const Get
     return GetConnectorDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors/";
-  ss << request.GetConnectorDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors/");
+  uri.AddPathSegment(request.GetConnectorDefinitionId());
   return GetConnectorDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1303,12 +1233,10 @@ GetConnectorDefinitionVersionOutcome GreengrassClient::GetConnectorDefinitionVer
     return GetConnectorDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors/";
-  ss << request.GetConnectorDefinitionId();
-  ss << "/versions/";
-  ss << request.GetConnectorDefinitionVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors/");
+  uri.AddPathSegment(request.GetConnectorDefinitionId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetConnectorDefinitionVersionId());
   return GetConnectorDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1338,10 +1266,8 @@ GetCoreDefinitionOutcome GreengrassClient::GetCoreDefinition(const GetCoreDefini
     return GetCoreDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores/";
-  ss << request.GetCoreDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores/");
+  uri.AddPathSegment(request.GetCoreDefinitionId());
   return GetCoreDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1376,12 +1302,10 @@ GetCoreDefinitionVersionOutcome GreengrassClient::GetCoreDefinitionVersion(const
     return GetCoreDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores/";
-  ss << request.GetCoreDefinitionId();
-  ss << "/versions/";
-  ss << request.GetCoreDefinitionVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores/");
+  uri.AddPathSegment(request.GetCoreDefinitionId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetCoreDefinitionVersionId());
   return GetCoreDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1416,13 +1340,11 @@ GetDeploymentStatusOutcome GreengrassClient::GetDeploymentStatus(const GetDeploy
     return GetDeploymentStatusOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/deployments/";
-  ss << request.GetDeploymentId();
-  ss << "/status";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/deployments/");
+  uri.AddPathSegment(request.GetDeploymentId());
+  uri.AddPathSegments("/status");
   return GetDeploymentStatusOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1452,10 +1374,8 @@ GetDeviceDefinitionOutcome GreengrassClient::GetDeviceDefinition(const GetDevice
     return GetDeviceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices/";
-  ss << request.GetDeviceDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices/");
+  uri.AddPathSegment(request.GetDeviceDefinitionId());
   return GetDeviceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1490,12 +1410,10 @@ GetDeviceDefinitionVersionOutcome GreengrassClient::GetDeviceDefinitionVersion(c
     return GetDeviceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices/";
-  ss << request.GetDeviceDefinitionId();
-  ss << "/versions/";
-  ss << request.GetDeviceDefinitionVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices/");
+  uri.AddPathSegment(request.GetDeviceDefinitionId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetDeviceDefinitionVersionId());
   return GetDeviceDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1525,10 +1443,8 @@ GetFunctionDefinitionOutcome GreengrassClient::GetFunctionDefinition(const GetFu
     return GetFunctionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions/";
-  ss << request.GetFunctionDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions/");
+  uri.AddPathSegment(request.GetFunctionDefinitionId());
   return GetFunctionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1563,12 +1479,10 @@ GetFunctionDefinitionVersionOutcome GreengrassClient::GetFunctionDefinitionVersi
     return GetFunctionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions/";
-  ss << request.GetFunctionDefinitionId();
-  ss << "/versions/";
-  ss << request.GetFunctionDefinitionVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions/");
+  uri.AddPathSegment(request.GetFunctionDefinitionId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetFunctionDefinitionVersionId());
   return GetFunctionDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1598,10 +1512,8 @@ GetGroupOutcome GreengrassClient::GetGroup(const GetGroupRequest& request) const
     return GetGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
   return GetGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1636,12 +1548,10 @@ GetGroupCertificateAuthorityOutcome GreengrassClient::GetGroupCertificateAuthori
     return GetGroupCertificateAuthorityOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/certificateauthorities/";
-  ss << request.GetCertificateAuthorityId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/certificateauthorities/");
+  uri.AddPathSegment(request.GetCertificateAuthorityId());
   return GetGroupCertificateAuthorityOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1671,11 +1581,9 @@ GetGroupCertificateConfigurationOutcome GreengrassClient::GetGroupCertificateCon
     return GetGroupCertificateConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/certificateauthorities/configuration/expiry";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/certificateauthorities/configuration/expiry");
   return GetGroupCertificateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1710,12 +1618,10 @@ GetGroupVersionOutcome GreengrassClient::GetGroupVersion(const GetGroupVersionRe
     return GetGroupVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/versions/";
-  ss << request.GetGroupVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetGroupVersionId());
   return GetGroupVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1745,10 +1651,8 @@ GetLoggerDefinitionOutcome GreengrassClient::GetLoggerDefinition(const GetLogger
     return GetLoggerDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers/";
-  ss << request.GetLoggerDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers/");
+  uri.AddPathSegment(request.GetLoggerDefinitionId());
   return GetLoggerDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1783,12 +1687,10 @@ GetLoggerDefinitionVersionOutcome GreengrassClient::GetLoggerDefinitionVersion(c
     return GetLoggerDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers/";
-  ss << request.GetLoggerDefinitionId();
-  ss << "/versions/";
-  ss << request.GetLoggerDefinitionVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers/");
+  uri.AddPathSegment(request.GetLoggerDefinitionId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetLoggerDefinitionVersionId());
   return GetLoggerDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1818,10 +1720,8 @@ GetResourceDefinitionOutcome GreengrassClient::GetResourceDefinition(const GetRe
     return GetResourceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources/";
-  ss << request.GetResourceDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources/");
+  uri.AddPathSegment(request.GetResourceDefinitionId());
   return GetResourceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1856,12 +1756,10 @@ GetResourceDefinitionVersionOutcome GreengrassClient::GetResourceDefinitionVersi
     return GetResourceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources/";
-  ss << request.GetResourceDefinitionId();
-  ss << "/versions/";
-  ss << request.GetResourceDefinitionVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources/");
+  uri.AddPathSegment(request.GetResourceDefinitionId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetResourceDefinitionVersionId());
   return GetResourceDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1886,9 +1784,7 @@ void GreengrassClient::GetResourceDefinitionVersionAsyncHelper(const GetResource
 GetServiceRoleForAccountOutcome GreengrassClient::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/servicerole";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/servicerole");
   return GetServiceRoleForAccountOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1918,10 +1814,8 @@ GetSubscriptionDefinitionOutcome GreengrassClient::GetSubscriptionDefinition(con
     return GetSubscriptionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions/";
-  ss << request.GetSubscriptionDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions/");
+  uri.AddPathSegment(request.GetSubscriptionDefinitionId());
   return GetSubscriptionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1956,12 +1850,10 @@ GetSubscriptionDefinitionVersionOutcome GreengrassClient::GetSubscriptionDefinit
     return GetSubscriptionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionVersionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions/";
-  ss << request.GetSubscriptionDefinitionId();
-  ss << "/versions/";
-  ss << request.GetSubscriptionDefinitionVersionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions/");
+  uri.AddPathSegment(request.GetSubscriptionDefinitionId());
+  uri.AddPathSegments("/versions/");
+  uri.AddPathSegment(request.GetSubscriptionDefinitionVersionId());
   return GetSubscriptionDefinitionVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1991,11 +1883,9 @@ GetThingRuntimeConfigurationOutcome GreengrassClient::GetThingRuntimeConfigurati
     return GetThingRuntimeConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/things/";
-  ss << request.GetThingName();
-  ss << "/runtimeconfig";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/runtimeconfig");
   return GetThingRuntimeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2025,11 +1915,9 @@ ListBulkDeploymentDetailedReportsOutcome GreengrassClient::ListBulkDeploymentDet
     return ListBulkDeploymentDetailedReportsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BulkDeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/bulk/deployments/";
-  ss << request.GetBulkDeploymentId();
-  ss << "/detailed-reports";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/bulk/deployments/");
+  uri.AddPathSegment(request.GetBulkDeploymentId());
+  uri.AddPathSegments("/detailed-reports");
   return ListBulkDeploymentDetailedReportsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2054,9 +1942,7 @@ void GreengrassClient::ListBulkDeploymentDetailedReportsAsyncHelper(const ListBu
 ListBulkDeploymentsOutcome GreengrassClient::ListBulkDeployments(const ListBulkDeploymentsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/bulk/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/bulk/deployments");
   return ListBulkDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2086,11 +1972,9 @@ ListConnectorDefinitionVersionsOutcome GreengrassClient::ListConnectorDefinition
     return ListConnectorDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors/";
-  ss << request.GetConnectorDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors/");
+  uri.AddPathSegment(request.GetConnectorDefinitionId());
+  uri.AddPathSegments("/versions");
   return ListConnectorDefinitionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2115,9 +1999,7 @@ void GreengrassClient::ListConnectorDefinitionVersionsAsyncHelper(const ListConn
 ListConnectorDefinitionsOutcome GreengrassClient::ListConnectorDefinitions(const ListConnectorDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors");
   return ListConnectorDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2147,11 +2029,9 @@ ListCoreDefinitionVersionsOutcome GreengrassClient::ListCoreDefinitionVersions(c
     return ListCoreDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores/";
-  ss << request.GetCoreDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores/");
+  uri.AddPathSegment(request.GetCoreDefinitionId());
+  uri.AddPathSegments("/versions");
   return ListCoreDefinitionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2176,9 +2056,7 @@ void GreengrassClient::ListCoreDefinitionVersionsAsyncHelper(const ListCoreDefin
 ListCoreDefinitionsOutcome GreengrassClient::ListCoreDefinitions(const ListCoreDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores");
   return ListCoreDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2208,11 +2086,9 @@ ListDeploymentsOutcome GreengrassClient::ListDeployments(const ListDeploymentsRe
     return ListDeploymentsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/deployments");
   return ListDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2242,11 +2118,9 @@ ListDeviceDefinitionVersionsOutcome GreengrassClient::ListDeviceDefinitionVersio
     return ListDeviceDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices/";
-  ss << request.GetDeviceDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices/");
+  uri.AddPathSegment(request.GetDeviceDefinitionId());
+  uri.AddPathSegments("/versions");
   return ListDeviceDefinitionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2271,9 +2145,7 @@ void GreengrassClient::ListDeviceDefinitionVersionsAsyncHelper(const ListDeviceD
 ListDeviceDefinitionsOutcome GreengrassClient::ListDeviceDefinitions(const ListDeviceDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices");
   return ListDeviceDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2303,11 +2175,9 @@ ListFunctionDefinitionVersionsOutcome GreengrassClient::ListFunctionDefinitionVe
     return ListFunctionDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions/";
-  ss << request.GetFunctionDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions/");
+  uri.AddPathSegment(request.GetFunctionDefinitionId());
+  uri.AddPathSegments("/versions");
   return ListFunctionDefinitionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2332,9 +2202,7 @@ void GreengrassClient::ListFunctionDefinitionVersionsAsyncHelper(const ListFunct
 ListFunctionDefinitionsOutcome GreengrassClient::ListFunctionDefinitions(const ListFunctionDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions");
   return ListFunctionDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2364,11 +2232,9 @@ ListGroupCertificateAuthoritiesOutcome GreengrassClient::ListGroupCertificateAut
     return ListGroupCertificateAuthoritiesOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/certificateauthorities";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/certificateauthorities");
   return ListGroupCertificateAuthoritiesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2398,11 +2264,9 @@ ListGroupVersionsOutcome GreengrassClient::ListGroupVersions(const ListGroupVers
     return ListGroupVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/versions");
   return ListGroupVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2427,9 +2291,7 @@ void GreengrassClient::ListGroupVersionsAsyncHelper(const ListGroupVersionsReque
 ListGroupsOutcome GreengrassClient::ListGroups(const ListGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups");
   return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2459,11 +2321,9 @@ ListLoggerDefinitionVersionsOutcome GreengrassClient::ListLoggerDefinitionVersio
     return ListLoggerDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers/";
-  ss << request.GetLoggerDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers/");
+  uri.AddPathSegment(request.GetLoggerDefinitionId());
+  uri.AddPathSegments("/versions");
   return ListLoggerDefinitionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2488,9 +2348,7 @@ void GreengrassClient::ListLoggerDefinitionVersionsAsyncHelper(const ListLoggerD
 ListLoggerDefinitionsOutcome GreengrassClient::ListLoggerDefinitions(const ListLoggerDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers");
   return ListLoggerDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2520,11 +2378,9 @@ ListResourceDefinitionVersionsOutcome GreengrassClient::ListResourceDefinitionVe
     return ListResourceDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources/";
-  ss << request.GetResourceDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources/");
+  uri.AddPathSegment(request.GetResourceDefinitionId());
+  uri.AddPathSegments("/versions");
   return ListResourceDefinitionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2549,9 +2405,7 @@ void GreengrassClient::ListResourceDefinitionVersionsAsyncHelper(const ListResou
 ListResourceDefinitionsOutcome GreengrassClient::ListResourceDefinitions(const ListResourceDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources");
   return ListResourceDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2581,11 +2435,9 @@ ListSubscriptionDefinitionVersionsOutcome GreengrassClient::ListSubscriptionDefi
     return ListSubscriptionDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions/";
-  ss << request.GetSubscriptionDefinitionId();
-  ss << "/versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions/");
+  uri.AddPathSegment(request.GetSubscriptionDefinitionId());
+  uri.AddPathSegments("/versions");
   return ListSubscriptionDefinitionVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2610,9 +2462,7 @@ void GreengrassClient::ListSubscriptionDefinitionVersionsAsyncHelper(const ListS
 ListSubscriptionDefinitionsOutcome GreengrassClient::ListSubscriptionDefinitions(const ListSubscriptionDefinitionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions");
   return ListSubscriptionDefinitionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2642,10 +2492,8 @@ ListTagsForResourceOutcome GreengrassClient::ListTagsForResource(const ListTagsF
     return ListTagsForResourceOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2675,11 +2523,9 @@ ResetDeploymentsOutcome GreengrassClient::ResetDeployments(const ResetDeployment
     return ResetDeploymentsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/deployments/$reset";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/deployments/$reset");
   return ResetDeploymentsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2704,9 +2550,7 @@ void GreengrassClient::ResetDeploymentsAsyncHelper(const ResetDeploymentsRequest
 StartBulkDeploymentOutcome GreengrassClient::StartBulkDeployment(const StartBulkDeploymentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/bulk/deployments";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/bulk/deployments");
   return StartBulkDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2736,11 +2580,9 @@ StopBulkDeploymentOutcome GreengrassClient::StopBulkDeployment(const StopBulkDep
     return StopBulkDeploymentOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BulkDeploymentId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/bulk/deployments/";
-  ss << request.GetBulkDeploymentId();
-  ss << "/$stop";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/bulk/deployments/");
+  uri.AddPathSegment(request.GetBulkDeploymentId());
+  uri.AddPathSegments("/$stop");
   return StopBulkDeploymentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2770,10 +2612,8 @@ TagResourceOutcome GreengrassClient::TagResource(const TagResourceRequest& reque
     return TagResourceOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2808,10 +2648,8 @@ UntagResourceOutcome GreengrassClient::UntagResource(const UntagResourceRequest&
     return UntagResourceOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2841,11 +2679,9 @@ UpdateConnectivityInfoOutcome GreengrassClient::UpdateConnectivityInfo(const Upd
     return UpdateConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/things/";
-  ss << request.GetThingName();
-  ss << "/connectivityInfo";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/connectivityInfo");
   return UpdateConnectivityInfoOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2875,10 +2711,8 @@ UpdateConnectorDefinitionOutcome GreengrassClient::UpdateConnectorDefinition(con
     return UpdateConnectorDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/connectors/";
-  ss << request.GetConnectorDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/connectors/");
+  uri.AddPathSegment(request.GetConnectorDefinitionId());
   return UpdateConnectorDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2908,10 +2742,8 @@ UpdateCoreDefinitionOutcome GreengrassClient::UpdateCoreDefinition(const UpdateC
     return UpdateCoreDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/cores/";
-  ss << request.GetCoreDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/cores/");
+  uri.AddPathSegment(request.GetCoreDefinitionId());
   return UpdateCoreDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2941,10 +2773,8 @@ UpdateDeviceDefinitionOutcome GreengrassClient::UpdateDeviceDefinition(const Upd
     return UpdateDeviceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/devices/";
-  ss << request.GetDeviceDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/devices/");
+  uri.AddPathSegment(request.GetDeviceDefinitionId());
   return UpdateDeviceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -2974,10 +2804,8 @@ UpdateFunctionDefinitionOutcome GreengrassClient::UpdateFunctionDefinition(const
     return UpdateFunctionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/functions/";
-  ss << request.GetFunctionDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/functions/");
+  uri.AddPathSegment(request.GetFunctionDefinitionId());
   return UpdateFunctionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3007,10 +2835,8 @@ UpdateGroupOutcome GreengrassClient::UpdateGroup(const UpdateGroupRequest& reque
     return UpdateGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
   return UpdateGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3040,11 +2866,9 @@ UpdateGroupCertificateConfigurationOutcome GreengrassClient::UpdateGroupCertific
     return UpdateGroupCertificateConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/groups/";
-  ss << request.GetGroupId();
-  ss << "/certificateauthorities/configuration/expiry";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/groups/");
+  uri.AddPathSegment(request.GetGroupId());
+  uri.AddPathSegments("/certificateauthorities/configuration/expiry");
   return UpdateGroupCertificateConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3074,10 +2898,8 @@ UpdateLoggerDefinitionOutcome GreengrassClient::UpdateLoggerDefinition(const Upd
     return UpdateLoggerDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/loggers/";
-  ss << request.GetLoggerDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/loggers/");
+  uri.AddPathSegment(request.GetLoggerDefinitionId());
   return UpdateLoggerDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3107,10 +2929,8 @@ UpdateResourceDefinitionOutcome GreengrassClient::UpdateResourceDefinition(const
     return UpdateResourceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/resources/";
-  ss << request.GetResourceDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/resources/");
+  uri.AddPathSegment(request.GetResourceDefinitionId());
   return UpdateResourceDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3140,10 +2960,8 @@ UpdateSubscriptionDefinitionOutcome GreengrassClient::UpdateSubscriptionDefiniti
     return UpdateSubscriptionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/definition/subscriptions/";
-  ss << request.GetSubscriptionDefinitionId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/definition/subscriptions/");
+  uri.AddPathSegment(request.GetSubscriptionDefinitionId());
   return UpdateSubscriptionDefinitionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -3173,11 +2991,9 @@ UpdateThingRuntimeConfigurationOutcome GreengrassClient::UpdateThingRuntimeConfi
     return UpdateThingRuntimeConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/greengrass/things/";
-  ss << request.GetThingName();
-  ss << "/runtimeconfig";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/greengrass/things/");
+  uri.AddPathSegment(request.GetThingName());
+  uri.AddPathSegments("/runtimeconfig");
   return UpdateThingRuntimeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -67,6 +67,7 @@ OracleSettings::OracleSettings() :
     m_securityDbEncryptionHasBeenSet(false),
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
+    m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
@@ -124,6 +125,7 @@ OracleSettings::OracleSettings(JsonView jsonValue) :
     m_securityDbEncryptionHasBeenSet(false),
     m_securityDbEncryptionNameHasBeenSet(false),
     m_serverNameHasBeenSet(false),
+    m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
     m_secretsManagerSecretIdHasBeenSet(false),
@@ -338,6 +340,13 @@ OracleSettings& OracleSettings::operator =(JsonView jsonValue)
     m_serverNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SpatialDataOptionToGeoJsonFunctionName"))
+  {
+    m_spatialDataOptionToGeoJsonFunctionName = jsonValue.GetString("SpatialDataOptionToGeoJsonFunctionName");
+
+    m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
@@ -550,6 +559,12 @@ JsonValue OracleSettings::Jsonize() const
   if(m_serverNameHasBeenSet)
   {
    payload.WithString("ServerName", m_serverName);
+
+  }
+
+  if(m_spatialDataOptionToGeoJsonFunctionNameHasBeenSet)
+  {
+   payload.WithString("SpatialDataOptionToGeoJsonFunctionName", m_spatialDataOptionToGeoJsonFunctionName);
 
   }
 

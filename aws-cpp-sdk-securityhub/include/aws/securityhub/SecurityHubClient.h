@@ -11,7 +11,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/securityhub/model/AcceptInvitationResult.h>
+#include <aws/securityhub/model/AcceptAdministratorInvitationResult.h>
 #include <aws/securityhub/model/BatchDisableStandardsResult.h>
 #include <aws/securityhub/model/BatchEnableStandardsResult.h>
 #include <aws/securityhub/model/BatchImportFindingsResult.h>
@@ -33,17 +33,17 @@
 #include <aws/securityhub/model/DisableImportFindingsForProductResult.h>
 #include <aws/securityhub/model/DisableOrganizationAdminAccountResult.h>
 #include <aws/securityhub/model/DisableSecurityHubResult.h>
-#include <aws/securityhub/model/DisassociateFromMasterAccountResult.h>
+#include <aws/securityhub/model/DisassociateFromAdministratorAccountResult.h>
 #include <aws/securityhub/model/DisassociateMembersResult.h>
 #include <aws/securityhub/model/EnableImportFindingsForProductResult.h>
 #include <aws/securityhub/model/EnableOrganizationAdminAccountResult.h>
 #include <aws/securityhub/model/EnableSecurityHubResult.h>
+#include <aws/securityhub/model/GetAdministratorAccountResult.h>
 #include <aws/securityhub/model/GetEnabledStandardsResult.h>
 #include <aws/securityhub/model/GetFindingsResult.h>
 #include <aws/securityhub/model/GetInsightResultsResult.h>
 #include <aws/securityhub/model/GetInsightsResult.h>
 #include <aws/securityhub/model/GetInvitationsCountResult.h>
-#include <aws/securityhub/model/GetMasterAccountResult.h>
 #include <aws/securityhub/model/GetMembersResult.h>
 #include <aws/securityhub/model/InviteMembersResult.h>
 #include <aws/securityhub/model/ListEnabledProductsForImportResult.h>
@@ -98,7 +98,7 @@ namespace SecurityHub
 
 namespace Model
 {
-        class AcceptInvitationRequest;
+        class AcceptAdministratorInvitationRequest;
         class BatchDisableStandardsRequest;
         class BatchEnableStandardsRequest;
         class BatchImportFindingsRequest;
@@ -120,17 +120,17 @@ namespace Model
         class DisableImportFindingsForProductRequest;
         class DisableOrganizationAdminAccountRequest;
         class DisableSecurityHubRequest;
-        class DisassociateFromMasterAccountRequest;
+        class DisassociateFromAdministratorAccountRequest;
         class DisassociateMembersRequest;
         class EnableImportFindingsForProductRequest;
         class EnableOrganizationAdminAccountRequest;
         class EnableSecurityHubRequest;
+        class GetAdministratorAccountRequest;
         class GetEnabledStandardsRequest;
         class GetFindingsRequest;
         class GetInsightResultsRequest;
         class GetInsightsRequest;
         class GetInvitationsCountRequest;
-        class GetMasterAccountRequest;
         class GetMembersRequest;
         class InviteMembersRequest;
         class ListEnabledProductsForImportRequest;
@@ -147,7 +147,7 @@ namespace Model
         class UpdateSecurityHubConfigurationRequest;
         class UpdateStandardsControlRequest;
 
-        typedef Aws::Utils::Outcome<AcceptInvitationResult, SecurityHubError> AcceptInvitationOutcome;
+        typedef Aws::Utils::Outcome<AcceptAdministratorInvitationResult, SecurityHubError> AcceptAdministratorInvitationOutcome;
         typedef Aws::Utils::Outcome<BatchDisableStandardsResult, SecurityHubError> BatchDisableStandardsOutcome;
         typedef Aws::Utils::Outcome<BatchEnableStandardsResult, SecurityHubError> BatchEnableStandardsOutcome;
         typedef Aws::Utils::Outcome<BatchImportFindingsResult, SecurityHubError> BatchImportFindingsOutcome;
@@ -169,17 +169,17 @@ namespace Model
         typedef Aws::Utils::Outcome<DisableImportFindingsForProductResult, SecurityHubError> DisableImportFindingsForProductOutcome;
         typedef Aws::Utils::Outcome<DisableOrganizationAdminAccountResult, SecurityHubError> DisableOrganizationAdminAccountOutcome;
         typedef Aws::Utils::Outcome<DisableSecurityHubResult, SecurityHubError> DisableSecurityHubOutcome;
-        typedef Aws::Utils::Outcome<DisassociateFromMasterAccountResult, SecurityHubError> DisassociateFromMasterAccountOutcome;
+        typedef Aws::Utils::Outcome<DisassociateFromAdministratorAccountResult, SecurityHubError> DisassociateFromAdministratorAccountOutcome;
         typedef Aws::Utils::Outcome<DisassociateMembersResult, SecurityHubError> DisassociateMembersOutcome;
         typedef Aws::Utils::Outcome<EnableImportFindingsForProductResult, SecurityHubError> EnableImportFindingsForProductOutcome;
         typedef Aws::Utils::Outcome<EnableOrganizationAdminAccountResult, SecurityHubError> EnableOrganizationAdminAccountOutcome;
         typedef Aws::Utils::Outcome<EnableSecurityHubResult, SecurityHubError> EnableSecurityHubOutcome;
+        typedef Aws::Utils::Outcome<GetAdministratorAccountResult, SecurityHubError> GetAdministratorAccountOutcome;
         typedef Aws::Utils::Outcome<GetEnabledStandardsResult, SecurityHubError> GetEnabledStandardsOutcome;
         typedef Aws::Utils::Outcome<GetFindingsResult, SecurityHubError> GetFindingsOutcome;
         typedef Aws::Utils::Outcome<GetInsightResultsResult, SecurityHubError> GetInsightResultsOutcome;
         typedef Aws::Utils::Outcome<GetInsightsResult, SecurityHubError> GetInsightsOutcome;
         typedef Aws::Utils::Outcome<GetInvitationsCountResult, SecurityHubError> GetInvitationsCountOutcome;
-        typedef Aws::Utils::Outcome<GetMasterAccountResult, SecurityHubError> GetMasterAccountOutcome;
         typedef Aws::Utils::Outcome<GetMembersResult, SecurityHubError> GetMembersOutcome;
         typedef Aws::Utils::Outcome<InviteMembersResult, SecurityHubError> InviteMembersOutcome;
         typedef Aws::Utils::Outcome<ListEnabledProductsForImportResult, SecurityHubError> ListEnabledProductsForImportOutcome;
@@ -196,7 +196,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateSecurityHubConfigurationResult, SecurityHubError> UpdateSecurityHubConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateStandardsControlResult, SecurityHubError> UpdateStandardsControlOutcome;
 
-        typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
+        typedef std::future<AcceptAdministratorInvitationOutcome> AcceptAdministratorInvitationOutcomeCallable;
         typedef std::future<BatchDisableStandardsOutcome> BatchDisableStandardsOutcomeCallable;
         typedef std::future<BatchEnableStandardsOutcome> BatchEnableStandardsOutcomeCallable;
         typedef std::future<BatchImportFindingsOutcome> BatchImportFindingsOutcomeCallable;
@@ -218,17 +218,17 @@ namespace Model
         typedef std::future<DisableImportFindingsForProductOutcome> DisableImportFindingsForProductOutcomeCallable;
         typedef std::future<DisableOrganizationAdminAccountOutcome> DisableOrganizationAdminAccountOutcomeCallable;
         typedef std::future<DisableSecurityHubOutcome> DisableSecurityHubOutcomeCallable;
-        typedef std::future<DisassociateFromMasterAccountOutcome> DisassociateFromMasterAccountOutcomeCallable;
+        typedef std::future<DisassociateFromAdministratorAccountOutcome> DisassociateFromAdministratorAccountOutcomeCallable;
         typedef std::future<DisassociateMembersOutcome> DisassociateMembersOutcomeCallable;
         typedef std::future<EnableImportFindingsForProductOutcome> EnableImportFindingsForProductOutcomeCallable;
         typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
         typedef std::future<EnableSecurityHubOutcome> EnableSecurityHubOutcomeCallable;
+        typedef std::future<GetAdministratorAccountOutcome> GetAdministratorAccountOutcomeCallable;
         typedef std::future<GetEnabledStandardsOutcome> GetEnabledStandardsOutcomeCallable;
         typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
         typedef std::future<GetInsightResultsOutcome> GetInsightResultsOutcomeCallable;
         typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
         typedef std::future<GetInvitationsCountOutcome> GetInvitationsCountOutcomeCallable;
-        typedef std::future<GetMasterAccountOutcome> GetMasterAccountOutcomeCallable;
         typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
         typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
         typedef std::future<ListEnabledProductsForImportOutcome> ListEnabledProductsForImportOutcomeCallable;
@@ -248,7 +248,7 @@ namespace Model
 
   class SecurityHubClient;
 
-    typedef std::function<void(const SecurityHubClient*, const Model::AcceptInvitationRequest&, const Model::AcceptInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptInvitationResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::AcceptAdministratorInvitationRequest&, const Model::AcceptAdministratorInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptAdministratorInvitationResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchDisableStandardsRequest&, const Model::BatchDisableStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDisableStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchEnableStandardsRequest&, const Model::BatchEnableStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchEnableStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::BatchImportFindingsRequest&, const Model::BatchImportFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchImportFindingsResponseReceivedHandler;
@@ -270,17 +270,17 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::DisableImportFindingsForProductRequest&, const Model::DisableImportFindingsForProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImportFindingsForProductResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableOrganizationAdminAccountRequest&, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableSecurityHubRequest&, const Model::DisableSecurityHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSecurityHubResponseReceivedHandler;
-    typedef std::function<void(const SecurityHubClient*, const Model::DisassociateFromMasterAccountRequest&, const Model::DisassociateFromMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromMasterAccountResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::DisassociateFromAdministratorAccountRequest&, const Model::DisassociateFromAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromAdministratorAccountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisassociateMembersRequest&, const Model::DisassociateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::EnableImportFindingsForProductRequest&, const Model::EnableImportFindingsForProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableImportFindingsForProductResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::EnableSecurityHubRequest&, const Model::EnableSecurityHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableSecurityHubResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::GetAdministratorAccountRequest&, const Model::GetAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdministratorAccountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetEnabledStandardsRequest&, const Model::GetEnabledStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnabledStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInsightResultsRequest&, const Model::GetInsightResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightResultsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInsightsRequest&, const Model::GetInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInvitationsCountRequest&, const Model::GetInvitationsCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvitationsCountResponseReceivedHandler;
-    typedef std::function<void(const SecurityHubClient*, const Model::GetMasterAccountRequest&, const Model::GetMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMasterAccountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::ListEnabledProductsForImportRequest&, const Model::ListEnabledProductsForImportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEnabledProductsForImportResponseReceivedHandler;
@@ -314,9 +314,9 @@ namespace Model
    * command for each Region to apply the change to.</p> <p>For example, if your
    * Region is set to <code>us-west-2</code>, when you use <code>
    * <a>CreateMembers</a> </code> to add a member account to Security Hub, the
-   * association of the member account with the master account is created only in the
-   * <code>us-west-2</code> Region. Security Hub must be enabled for the member
-   * account in the same Region that the invitation was sent from.</p> <p>The
+   * association of the member account with the administrator account is created only
+   * in the <code>us-west-2</code> Region. Security Hub must be enabled for the
+   * member account in the same Region that the invitation was sent from.</p> <p>The
    * following throttling limits apply to using Security Hub API operations.</p> <ul>
    * <li> <p> <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of
    * 1 request per second, <code>BurstLimit</code> of 1 request per second.</p> </li>
@@ -358,43 +358,43 @@ namespace Model
 
         /**
          * <p>Accepts the invitation to be a member account and be monitored by the
-         * Security Hub master account that the invitation was sent from.</p> <p>This
-         * operation is only used by member accounts that are not added through
+         * Security Hub administrator account that the invitation was sent from.</p>
+         * <p>This operation is only used by member accounts that are not added through
          * Organizations.</p> <p>When the member account accepts the invitation, permission
-         * is granted to the master account to view findings generated in the member
+         * is granted to the administrator account to view findings generated in the member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation">AWS
          * API Reference</a></p>
          */
-        virtual Model::AcceptInvitationOutcome AcceptInvitation(const Model::AcceptInvitationRequest& request) const;
+        virtual Model::AcceptAdministratorInvitationOutcome AcceptAdministratorInvitation(const Model::AcceptAdministratorInvitationRequest& request) const;
 
         /**
          * <p>Accepts the invitation to be a member account and be monitored by the
-         * Security Hub master account that the invitation was sent from.</p> <p>This
-         * operation is only used by member accounts that are not added through
+         * Security Hub administrator account that the invitation was sent from.</p>
+         * <p>This operation is only used by member accounts that are not added through
          * Organizations.</p> <p>When the member account accepts the invitation, permission
-         * is granted to the master account to view findings generated in the member
+         * is granted to the administrator account to view findings generated in the member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::AcceptInvitationOutcomeCallable AcceptInvitationCallable(const Model::AcceptInvitationRequest& request) const;
+        virtual Model::AcceptAdministratorInvitationOutcomeCallable AcceptAdministratorInvitationCallable(const Model::AcceptAdministratorInvitationRequest& request) const;
 
         /**
          * <p>Accepts the invitation to be a member account and be monitored by the
-         * Security Hub master account that the invitation was sent from.</p> <p>This
-         * operation is only used by member accounts that are not added through
+         * Security Hub administrator account that the invitation was sent from.</p>
+         * <p>This operation is only used by member accounts that are not added through
          * Organizations.</p> <p>When the member account accepts the invitation, permission
-         * is granted to the master account to view findings generated in the member
+         * is granted to the administrator account to view findings generated in the member
          * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation">AWS
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void AcceptInvitationAsync(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void AcceptAdministratorInvitationAsync(const Model::AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the standards specified by the provided
@@ -474,46 +474,44 @@ namespace Model
         virtual void BatchEnableStandardsAsync(const Model::BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports security findings generated from an integrated third-party product
-         * into Security Hub. This action is requested by the integrated product to import
-         * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
-         * finding is created, <code>BatchImportFindings</code> cannot be used to update
-         * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
-         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <p>Imports security findings generated from an integrated product into Security
+         * Hub. This action is requested by the integrated product to import its findings
+         * into Security Hub.</p> <p>The maximum allowed size for a finding is 240 Kb. An
+         * error is returned for any finding larger than 240 Kb.</p> <p>After a finding is
+         * created, <code>BatchImportFindings</code> cannot be used to update the following
+         * finding fields and objects, which Security Hub customers use to manage their
+         * investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
-         * following finding fields and objects only if they have not been updated using
-         * <code>BatchUpdateFindings</code>. After they are updated using
-         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
-         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
-         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
-         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Finding providers also should not use
+         * <code>BatchImportFindings</code> to update the following attributes.</p> <ul>
+         * <li> <p> <code>Confidence</code> </p> </li> <li> <p> <code>Criticality</code>
+         * </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li> <li> <p>
+         * <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li> </ul>
+         * <p>Instead, finding providers use <code>FindingProviderFields</code> to provide
+         * values for these attributes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::BatchImportFindingsOutcome BatchImportFindings(const Model::BatchImportFindingsRequest& request) const;
 
         /**
-         * <p>Imports security findings generated from an integrated third-party product
-         * into Security Hub. This action is requested by the integrated product to import
-         * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
-         * finding is created, <code>BatchImportFindings</code> cannot be used to update
-         * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
-         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <p>Imports security findings generated from an integrated product into Security
+         * Hub. This action is requested by the integrated product to import its findings
+         * into Security Hub.</p> <p>The maximum allowed size for a finding is 240 Kb. An
+         * error is returned for any finding larger than 240 Kb.</p> <p>After a finding is
+         * created, <code>BatchImportFindings</code> cannot be used to update the following
+         * finding fields and objects, which Security Hub customers use to manage their
+         * investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
-         * following finding fields and objects only if they have not been updated using
-         * <code>BatchUpdateFindings</code>. After they are updated using
-         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
-         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
-         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
-         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Finding providers also should not use
+         * <code>BatchImportFindings</code> to update the following attributes.</p> <ul>
+         * <li> <p> <code>Confidence</code> </p> </li> <li> <p> <code>Criticality</code>
+         * </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li> <li> <p>
+         * <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li> </ul>
+         * <p>Instead, finding providers use <code>FindingProviderFields</code> to provide
+         * values for these attributes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
@@ -522,23 +520,22 @@ namespace Model
         virtual Model::BatchImportFindingsOutcomeCallable BatchImportFindingsCallable(const Model::BatchImportFindingsRequest& request) const;
 
         /**
-         * <p>Imports security findings generated from an integrated third-party product
-         * into Security Hub. This action is requested by the integrated product to import
-         * its findings into Security Hub.</p> <p>The maximum allowed size for a finding is
-         * 240 Kb. An error is returned for any finding larger than 240 Kb.</p> <p>After a
-         * finding is created, <code>BatchImportFindings</code> cannot be used to update
-         * the following finding fields and objects, which Security Hub customers use to
-         * manage their investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p>
-         * </li> <li> <p> <code>UserDefinedFields</code> </p> </li> <li> <p>
+         * <p>Imports security findings generated from an integrated product into Security
+         * Hub. This action is requested by the integrated product to import its findings
+         * into Security Hub.</p> <p>The maximum allowed size for a finding is 240 Kb. An
+         * error is returned for any finding larger than 240 Kb.</p> <p>After a finding is
+         * created, <code>BatchImportFindings</code> cannot be used to update the following
+         * finding fields and objects, which Security Hub customers use to manage their
+         * investigation workflow.</p> <ul> <li> <p> <code>Note</code> </p> </li> <li> <p>
+         * <code>UserDefinedFields</code> </p> </li> <li> <p>
          * <code>VerificationState</code> </p> </li> <li> <p> <code>Workflow</code> </p>
-         * </li> </ul> <p> <code>BatchImportFindings</code> can be used to update the
-         * following finding fields and objects only if they have not been updated using
-         * <code>BatchUpdateFindings</code>. After they are updated using
-         * <code>BatchUpdateFindings</code>, these fields cannot be updated using
-         * <code>BatchImportFindings</code>.</p> <ul> <li> <p> <code>Confidence</code> </p>
-         * </li> <li> <p> <code>Criticality</code> </p> </li> <li> <p>
-         * <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
-         * </li> <li> <p> <code>Types</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </li> </ul> <p>Finding providers also should not use
+         * <code>BatchImportFindings</code> to update the following attributes.</p> <ul>
+         * <li> <p> <code>Confidence</code> </p> </li> <li> <p> <code>Criticality</code>
+         * </p> </li> <li> <p> <code>RelatedFindings</code> </p> </li> <li> <p>
+         * <code>Severity</code> </p> </li> <li> <p> <code>Types</code> </p> </li> </ul>
+         * <p>Instead, finding providers use <code>FindingProviderFields</code> to provide
+         * values for these attributes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings">AWS
          * API Reference</a></p>
          *
@@ -548,13 +545,13 @@ namespace Model
 
         /**
          * <p>Used by Security Hub customers to update information about their
-         * investigation into a finding. Requested by master accounts or member accounts.
-         * Master accounts can update findings for their account and their member accounts.
-         * Member accounts can update findings for their account.</p> <p>Updates from
-         * <code>BatchUpdateFindings</code> do not affect the value of
-         * <code>UpdatedAt</code> for a finding.</p> <p>Master and member accounts can use
-         * <code>BatchUpdateFindings</code> to update the following finding fields and
-         * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
+         * investigation into a finding. Requested by administrator accounts or member
+         * accounts. Administrator accounts can update findings for their account and their
+         * member accounts. Member accounts can update findings for their account.</p>
+         * <p>Updates from <code>BatchUpdateFindings</code> do not affect the value of
+         * <code>UpdatedAt</code> for a finding.</p> <p>Administrator and member accounts
+         * can use <code>BatchUpdateFindings</code> to update the following finding fields
+         * and objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
          * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
          * <p> <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
          * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
@@ -573,13 +570,13 @@ namespace Model
 
         /**
          * <p>Used by Security Hub customers to update information about their
-         * investigation into a finding. Requested by master accounts or member accounts.
-         * Master accounts can update findings for their account and their member accounts.
-         * Member accounts can update findings for their account.</p> <p>Updates from
-         * <code>BatchUpdateFindings</code> do not affect the value of
-         * <code>UpdatedAt</code> for a finding.</p> <p>Master and member accounts can use
-         * <code>BatchUpdateFindings</code> to update the following finding fields and
-         * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
+         * investigation into a finding. Requested by administrator accounts or member
+         * accounts. Administrator accounts can update findings for their account and their
+         * member accounts. Member accounts can update findings for their account.</p>
+         * <p>Updates from <code>BatchUpdateFindings</code> do not affect the value of
+         * <code>UpdatedAt</code> for a finding.</p> <p>Administrator and member accounts
+         * can use <code>BatchUpdateFindings</code> to update the following finding fields
+         * and objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
          * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
          * <p> <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
          * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
@@ -600,13 +597,13 @@ namespace Model
 
         /**
          * <p>Used by Security Hub customers to update information about their
-         * investigation into a finding. Requested by master accounts or member accounts.
-         * Master accounts can update findings for their account and their member accounts.
-         * Member accounts can update findings for their account.</p> <p>Updates from
-         * <code>BatchUpdateFindings</code> do not affect the value of
-         * <code>UpdatedAt</code> for a finding.</p> <p>Master and member accounts can use
-         * <code>BatchUpdateFindings</code> to update the following finding fields and
-         * objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
+         * investigation into a finding. Requested by administrator accounts or member
+         * accounts. Administrator accounts can update findings for their account and their
+         * member accounts. Member accounts can update findings for their account.</p>
+         * <p>Updates from <code>BatchUpdateFindings</code> do not affect the value of
+         * <code>UpdatedAt</code> for a finding.</p> <p>Administrator and member accounts
+         * can use <code>BatchUpdateFindings</code> to update the following finding fields
+         * and objects.</p> <ul> <li> <p> <code>Confidence</code> </p> </li> <li> <p>
          * <code>Criticality</code> </p> </li> <li> <p> <code>Note</code> </p> </li> <li>
          * <p> <code>RelatedFindings</code> </p> </li> <li> <p> <code>Severity</code> </p>
          * </li> <li> <p> <code>Types</code> </p> </li> <li> <p>
@@ -692,28 +689,28 @@ namespace Model
 
         /**
          * <p>Creates a member association in Security Hub between the specified accounts
-         * and the account used to make the request, which is the master account. If you
-         * are integrated with Organizations, then the master account is the Security Hub
-         * administrator account that is designated by the organization management
-         * account.</p> <p> <code>CreateMembers</code> is always used to add accounts that
-         * are not organization members.</p> <p>For accounts that are part of an
-         * organization, <code>CreateMembers</code> is only used in the following
-         * cases:</p> <ul> <li> <p>Security Hub is not configured to automatically add new
-         * accounts in an organization.</p> </li> <li> <p>The account was disassociated or
-         * deleted in Security Hub.</p> </li> </ul> <p>This action can only be used by an
-         * account that has Security Hub enabled. To enable Security Hub, you can use the
-         * <code> <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are
-         * not organization members, you create the account association and then send an
+         * and the account used to make the request, which is the administrator account. If
+         * you are integrated with Organizations, then the administrator account is
+         * designated by the organization management account.</p> <p>
+         * <code>CreateMembers</code> is always used to add accounts that are not
+         * organization members.</p> <p>For accounts that are part of an organization,
+         * <code>CreateMembers</code> is only used in the following cases:</p> <ul> <li>
+         * <p>Security Hub is not configured to automatically add new accounts in an
+         * organization.</p> </li> <li> <p>The account was disassociated or deleted in
+         * Security Hub.</p> </li> </ul> <p>This action can only be used by an account that
+         * has Security Hub enabled. To enable Security Hub, you can use the <code>
+         * <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are not
+         * organization members, you create the account association and then send an
          * invitation to the member account. To send the invitation, you use the <code>
          * <a>InviteMembers</a> </code> operation. If the account owner accepts the
          * invitation, the account becomes a member account in Security Hub.</p>
          * <p>Accounts that are part of an organization do not receive an invitation. They
          * automatically become a member account in Security Hub.</p> <p>A permissions
-         * policy is added that permits the master account to view the findings generated
-         * in the member account. When Security Hub is enabled in a member account,
-         * findings are sent to both the member and master accounts. </p> <p>To remove the
-         * association between the master and member accounts, use the <code>
-         * <a>DisassociateFromMasterAccount</a> </code> or <code>
+         * policy is added that permits the administrator account to view the findings
+         * generated in the member account. When Security Hub is enabled in a member
+         * account, the member account findings are also visible to the administrator
+         * account. </p> <p>To remove the association between the administrator and member
+         * accounts, use the <code> <a>DisassociateFromMasterAccount</a> </code> or <code>
          * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
@@ -722,28 +719,28 @@ namespace Model
 
         /**
          * <p>Creates a member association in Security Hub between the specified accounts
-         * and the account used to make the request, which is the master account. If you
-         * are integrated with Organizations, then the master account is the Security Hub
-         * administrator account that is designated by the organization management
-         * account.</p> <p> <code>CreateMembers</code> is always used to add accounts that
-         * are not organization members.</p> <p>For accounts that are part of an
-         * organization, <code>CreateMembers</code> is only used in the following
-         * cases:</p> <ul> <li> <p>Security Hub is not configured to automatically add new
-         * accounts in an organization.</p> </li> <li> <p>The account was disassociated or
-         * deleted in Security Hub.</p> </li> </ul> <p>This action can only be used by an
-         * account that has Security Hub enabled. To enable Security Hub, you can use the
-         * <code> <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are
-         * not organization members, you create the account association and then send an
+         * and the account used to make the request, which is the administrator account. If
+         * you are integrated with Organizations, then the administrator account is
+         * designated by the organization management account.</p> <p>
+         * <code>CreateMembers</code> is always used to add accounts that are not
+         * organization members.</p> <p>For accounts that are part of an organization,
+         * <code>CreateMembers</code> is only used in the following cases:</p> <ul> <li>
+         * <p>Security Hub is not configured to automatically add new accounts in an
+         * organization.</p> </li> <li> <p>The account was disassociated or deleted in
+         * Security Hub.</p> </li> </ul> <p>This action can only be used by an account that
+         * has Security Hub enabled. To enable Security Hub, you can use the <code>
+         * <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are not
+         * organization members, you create the account association and then send an
          * invitation to the member account. To send the invitation, you use the <code>
          * <a>InviteMembers</a> </code> operation. If the account owner accepts the
          * invitation, the account becomes a member account in Security Hub.</p>
          * <p>Accounts that are part of an organization do not receive an invitation. They
          * automatically become a member account in Security Hub.</p> <p>A permissions
-         * policy is added that permits the master account to view the findings generated
-         * in the member account. When Security Hub is enabled in a member account,
-         * findings are sent to both the member and master accounts. </p> <p>To remove the
-         * association between the master and member accounts, use the <code>
-         * <a>DisassociateFromMasterAccount</a> </code> or <code>
+         * policy is added that permits the administrator account to view the findings
+         * generated in the member account. When Security Hub is enabled in a member
+         * account, the member account findings are also visible to the administrator
+         * account. </p> <p>To remove the association between the administrator and member
+         * accounts, use the <code> <a>DisassociateFromMasterAccount</a> </code> or <code>
          * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
@@ -754,28 +751,28 @@ namespace Model
 
         /**
          * <p>Creates a member association in Security Hub between the specified accounts
-         * and the account used to make the request, which is the master account. If you
-         * are integrated with Organizations, then the master account is the Security Hub
-         * administrator account that is designated by the organization management
-         * account.</p> <p> <code>CreateMembers</code> is always used to add accounts that
-         * are not organization members.</p> <p>For accounts that are part of an
-         * organization, <code>CreateMembers</code> is only used in the following
-         * cases:</p> <ul> <li> <p>Security Hub is not configured to automatically add new
-         * accounts in an organization.</p> </li> <li> <p>The account was disassociated or
-         * deleted in Security Hub.</p> </li> </ul> <p>This action can only be used by an
-         * account that has Security Hub enabled. To enable Security Hub, you can use the
-         * <code> <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are
-         * not organization members, you create the account association and then send an
+         * and the account used to make the request, which is the administrator account. If
+         * you are integrated with Organizations, then the administrator account is
+         * designated by the organization management account.</p> <p>
+         * <code>CreateMembers</code> is always used to add accounts that are not
+         * organization members.</p> <p>For accounts that are part of an organization,
+         * <code>CreateMembers</code> is only used in the following cases:</p> <ul> <li>
+         * <p>Security Hub is not configured to automatically add new accounts in an
+         * organization.</p> </li> <li> <p>The account was disassociated or deleted in
+         * Security Hub.</p> </li> </ul> <p>This action can only be used by an account that
+         * has Security Hub enabled. To enable Security Hub, you can use the <code>
+         * <a>EnableSecurityHub</a> </code> operation.</p> <p>For accounts that are not
+         * organization members, you create the account association and then send an
          * invitation to the member account. To send the invitation, you use the <code>
          * <a>InviteMembers</a> </code> operation. If the account owner accepts the
          * invitation, the account becomes a member account in Security Hub.</p>
          * <p>Accounts that are part of an organization do not receive an invitation. They
          * automatically become a member account in Security Hub.</p> <p>A permissions
-         * policy is added that permits the master account to view the findings generated
-         * in the member account. When Security Hub is enabled in a member account,
-         * findings are sent to both the member and master accounts. </p> <p>To remove the
-         * association between the master and member accounts, use the <code>
-         * <a>DisassociateFromMasterAccount</a> </code> or <code>
+         * policy is added that permits the administrator account to view the findings
+         * generated in the member account. When Security Hub is enabled in a member
+         * account, the member account findings are also visible to the administrator
+         * account. </p> <p>To remove the association between the administrator and member
+         * accounts, use the <code> <a>DisassociateFromMasterAccount</a> </code> or <code>
          * <a>DisassociateMembers</a> </code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateMembers">AWS
          * API Reference</a></p>
@@ -1030,18 +1027,22 @@ namespace Model
         virtual void DescribeOrganizationConfigurationAsync(const Model::DescribeOrganizationConfigurationRequest& request, const DescribeOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the available products that you can subscribe to
-         * and integrate with Security Hub in order to consolidate findings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about product integrations in Security Hub.</p> <p>You
+         * can optionally provide an integration ARN. If you provide an integration ARN,
+         * then the results only include that integration.</p> <p>If you do not provide an
+         * integration ARN, then the results include all of the available product
+         * integrations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest& request) const;
 
         /**
-         * <p>Returns information about the available products that you can subscribe to
-         * and integrate with Security Hub in order to consolidate findings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about product integrations in Security Hub.</p> <p>You
+         * can optionally provide an integration ARN. If you provide an integration ARN,
+         * then the results only include that integration.</p> <p>If you do not provide an
+         * integration ARN, then the results include all of the available product
+         * integrations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
          * API Reference</a></p>
          *
@@ -1050,9 +1051,11 @@ namespace Model
         virtual Model::DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request) const;
 
         /**
-         * <p>Returns information about the available products that you can subscribe to
-         * and integrate with Security Hub in order to consolidate findings.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about product integrations in Security Hub.</p> <p>You
+         * can optionally provide an integration ARN. If you provide an integration ARN,
+         * then the results only include that integration.</p> <p>If you do not provide an
+         * integration ARN, then the results include all of the available product
+         * integrations. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeProducts">AWS
          * API Reference</a></p>
          *
@@ -1184,13 +1187,13 @@ namespace Model
         /**
          * <p>Disables Security Hub in your account only in the current Region. To disable
          * Security Hub in all Regions, you must submit one request per Region where you
-         * have enabled Security Hub.</p> <p>When you disable Security Hub for a master
-         * account, it doesn't disable Security Hub for any associated member accounts.</p>
-         * <p>When you disable Security Hub, your existing findings and insights and any
-         * Security Hub configuration settings are deleted after 90 days and cannot be
-         * recovered. Any standards that were enabled are disabled, and your master and
-         * member account associations are removed.</p> <p>If you want to save your
-         * existing findings, you must export them before you disable Security
+         * have enabled Security Hub.</p> <p>When you disable Security Hub for an
+         * administrator account, it doesn't disable Security Hub for any associated member
+         * accounts.</p> <p>When you disable Security Hub, your existing findings and
+         * insights and any Security Hub configuration settings are deleted after 90 days
+         * and cannot be recovered. Any standards that were enabled are disabled, and your
+         * administrator and member account associations are removed.</p> <p>If you want to
+         * save your existing findings, you must export them before you disable Security
          * Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
          * API Reference</a></p>
@@ -1200,13 +1203,13 @@ namespace Model
         /**
          * <p>Disables Security Hub in your account only in the current Region. To disable
          * Security Hub in all Regions, you must submit one request per Region where you
-         * have enabled Security Hub.</p> <p>When you disable Security Hub for a master
-         * account, it doesn't disable Security Hub for any associated member accounts.</p>
-         * <p>When you disable Security Hub, your existing findings and insights and any
-         * Security Hub configuration settings are deleted after 90 days and cannot be
-         * recovered. Any standards that were enabled are disabled, and your master and
-         * member account associations are removed.</p> <p>If you want to save your
-         * existing findings, you must export them before you disable Security
+         * have enabled Security Hub.</p> <p>When you disable Security Hub for an
+         * administrator account, it doesn't disable Security Hub for any associated member
+         * accounts.</p> <p>When you disable Security Hub, your existing findings and
+         * insights and any Security Hub configuration settings are deleted after 90 days
+         * and cannot be recovered. Any standards that were enabled are disabled, and your
+         * administrator and member account associations are removed.</p> <p>If you want to
+         * save your existing findings, you must export them before you disable Security
          * Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
          * API Reference</a></p>
@@ -1218,13 +1221,13 @@ namespace Model
         /**
          * <p>Disables Security Hub in your account only in the current Region. To disable
          * Security Hub in all Regions, you must submit one request per Region where you
-         * have enabled Security Hub.</p> <p>When you disable Security Hub for a master
-         * account, it doesn't disable Security Hub for any associated member accounts.</p>
-         * <p>When you disable Security Hub, your existing findings and insights and any
-         * Security Hub configuration settings are deleted after 90 days and cannot be
-         * recovered. Any standards that were enabled are disabled, and your master and
-         * member account associations are removed.</p> <p>If you want to save your
-         * existing findings, you must export them before you disable Security
+         * have enabled Security Hub.</p> <p>When you disable Security Hub for an
+         * administrator account, it doesn't disable Security Hub for any associated member
+         * accounts.</p> <p>When you disable Security Hub, your existing findings and
+         * insights and any Security Hub configuration settings are deleted after 90 days
+         * and cannot be recovered. Any standards that were enabled are disabled, and your
+         * administrator and member account associations are removed.</p> <p>If you want to
+         * save your existing findings, you must export them before you disable Security
          * Hub.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableSecurityHub">AWS
          * API Reference</a></p>
@@ -1235,45 +1238,42 @@ namespace Model
 
         /**
          * <p>Disassociates the current Security Hub member account from the associated
-         * master account.</p> <p>This operation is only used by accounts that are not part
-         * of an organization. For organization accounts, only the master account (the
-         * designated Security Hub administrator) can disassociate a member
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount">AWS
+         * administrator account.</p> <p>This operation is only used by accounts that are
+         * not part of an organization. For organization accounts, only the administrator
+         * account can disassociate a member account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount">AWS
          * API Reference</a></p>
          */
-        virtual Model::DisassociateFromMasterAccountOutcome DisassociateFromMasterAccount(const Model::DisassociateFromMasterAccountRequest& request) const;
+        virtual Model::DisassociateFromAdministratorAccountOutcome DisassociateFromAdministratorAccount(const Model::DisassociateFromAdministratorAccountRequest& request) const;
 
         /**
          * <p>Disassociates the current Security Hub member account from the associated
-         * master account.</p> <p>This operation is only used by accounts that are not part
-         * of an organization. For organization accounts, only the master account (the
-         * designated Security Hub administrator) can disassociate a member
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount">AWS
+         * administrator account.</p> <p>This operation is only used by accounts that are
+         * not part of an organization. For organization accounts, only the administrator
+         * account can disassociate a member account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DisassociateFromMasterAccountOutcomeCallable DisassociateFromMasterAccountCallable(const Model::DisassociateFromMasterAccountRequest& request) const;
+        virtual Model::DisassociateFromAdministratorAccountOutcomeCallable DisassociateFromAdministratorAccountCallable(const Model::DisassociateFromAdministratorAccountRequest& request) const;
 
         /**
          * <p>Disassociates the current Security Hub member account from the associated
-         * master account.</p> <p>This operation is only used by accounts that are not part
-         * of an organization. For organization accounts, only the master account (the
-         * designated Security Hub administrator) can disassociate a member
-         * account.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount">AWS
+         * administrator account.</p> <p>This operation is only used by accounts that are
+         * not part of an organization. For organization accounts, only the administrator
+         * account can disassociate a member account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DisassociateFromMasterAccountAsync(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DisassociateFromAdministratorAccountAsync(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disassociates the specified member accounts from the associated master
-         * account.</p> <p>Can be used to disassociate both accounts that are in an
-         * organization and accounts that were invited manually.</p><p><h3>See Also:</h3>  
+         * <p>Disassociates the specified member accounts from the associated administrator
+         * account.</p> <p>Can be used to disassociate both accounts that are managed using
+         * Organizations and accounts that were invited manually.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateMembers">AWS
          * API Reference</a></p>
@@ -1281,9 +1281,9 @@ namespace Model
         virtual Model::DisassociateMembersOutcome DisassociateMembers(const Model::DisassociateMembersRequest& request) const;
 
         /**
-         * <p>Disassociates the specified member accounts from the associated master
-         * account.</p> <p>Can be used to disassociate both accounts that are in an
-         * organization and accounts that were invited manually.</p><p><h3>See Also:</h3>  
+         * <p>Disassociates the specified member accounts from the associated administrator
+         * account.</p> <p>Can be used to disassociate both accounts that are managed using
+         * Organizations and accounts that were invited manually.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateMembers">AWS
          * API Reference</a></p>
@@ -1293,9 +1293,9 @@ namespace Model
         virtual Model::DisassociateMembersOutcomeCallable DisassociateMembersCallable(const Model::DisassociateMembersRequest& request) const;
 
         /**
-         * <p>Disassociates the specified member accounts from the associated master
-         * account.</p> <p>Can be used to disassociate both accounts that are in an
-         * organization and accounts that were invited manually.</p><p><h3>See Also:</h3>  
+         * <p>Disassociates the specified member accounts from the associated administrator
+         * account.</p> <p>Can be used to disassociate both accounts that are managed using
+         * Organizations and accounts that were invited manually.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateMembers">AWS
          * API Reference</a></p>
@@ -1443,6 +1443,40 @@ namespace Model
         virtual void EnableSecurityHubAsync(const Model::EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides the details for the Security Hub administrator account for the
+         * current member account.</p> <p>Can be used by both member accounts that are
+         * managed using Organizations and accounts that were invited
+         * manually.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAdministratorAccountOutcome GetAdministratorAccount(const Model::GetAdministratorAccountRequest& request) const;
+
+        /**
+         * <p>Provides the details for the Security Hub administrator account for the
+         * current member account.</p> <p>Can be used by both member accounts that are
+         * managed using Organizations and accounts that were invited
+         * manually.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAdministratorAccountOutcomeCallable GetAdministratorAccountCallable(const Model::GetAdministratorAccountRequest& request) const;
+
+        /**
+         * <p>Provides the details for the Security Hub administrator account for the
+         * current member account.</p> <p>Can be used by both member accounts that are
+         * managed using Organizations and accounts that were invited
+         * manually.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAdministratorAccountAsync(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of the standards that are currently enabled.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">AWS
@@ -1586,46 +1620,12 @@ namespace Model
         virtual void GetInvitationsCountAsync(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides the details for the Security Hub master account for the current
-         * member account.</p> <p>Can be used by both member accounts that are in an
-         * organization and accounts that were invited manually.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::GetMasterAccountOutcome GetMasterAccount(const Model::GetMasterAccountRequest& request) const;
-
-        /**
-         * <p>Provides the details for the Security Hub master account for the current
-         * member account.</p> <p>Can be used by both member accounts that are in an
-         * organization and accounts that were invited manually.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount">AWS
-         * API Reference</a></p>
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::GetMasterAccountOutcomeCallable GetMasterAccountCallable(const Model::GetMasterAccountRequest& request) const;
-
-        /**
-         * <p>Provides the details for the Security Hub master account for the current
-         * member account.</p> <p>Can be used by both member accounts that are in an
-         * organization and accounts that were invited manually.</p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount">AWS
-         * API Reference</a></p>
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void GetMasterAccountAsync(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Returns the details for the Security Hub member accounts for the specified
-         * account IDs.</p> <p>A master account can be either a delegated Security Hub
-         * administrator account for an organization or a master account that enabled
-         * Security Hub manually.</p> <p>The results include both member accounts that are
-         * in an organization and accounts that were invited manually.</p><p><h3>See
-         * Also:</h3>   <a
+         * account IDs.</p> <p>An administrator account can be either the delegated
+         * Security Hub administrator account for an organization or an administrator
+         * account that enabled Security Hub manually.</p> <p>The results include both
+         * member accounts that are managed using Organizations and accounts that were
+         * invited manually.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          */
@@ -1633,11 +1633,11 @@ namespace Model
 
         /**
          * <p>Returns the details for the Security Hub member accounts for the specified
-         * account IDs.</p> <p>A master account can be either a delegated Security Hub
-         * administrator account for an organization or a master account that enabled
-         * Security Hub manually.</p> <p>The results include both member accounts that are
-         * in an organization and accounts that were invited manually.</p><p><h3>See
-         * Also:</h3>   <a
+         * account IDs.</p> <p>An administrator account can be either the delegated
+         * Security Hub administrator account for an organization or an administrator
+         * account that enabled Security Hub manually.</p> <p>The results include both
+         * member accounts that are managed using Organizations and accounts that were
+         * invited manually.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -1647,11 +1647,11 @@ namespace Model
 
         /**
          * <p>Returns the details for the Security Hub member accounts for the specified
-         * account IDs.</p> <p>A master account can be either a delegated Security Hub
-         * administrator account for an organization or a master account that enabled
-         * Security Hub manually.</p> <p>The results include both member accounts that are
-         * in an organization and accounts that were invited manually.</p><p><h3>See
-         * Also:</h3>   <a
+         * account IDs.</p> <p>An administrator account can be either the delegated
+         * Security Hub administrator account for an organization or an administrator
+         * account that enabled Security Hub manually.</p> <p>The results include both
+         * member accounts that are managed using Organizations and accounts that were
+         * invited manually.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMembers">AWS
          * API Reference</a></p>
          *
@@ -1661,14 +1661,14 @@ namespace Model
 
         /**
          * <p>Invites other AWS accounts to become member accounts for the Security Hub
-         * master account that the invitation is sent from.</p> <p>This operation is only
-         * used to invite accounts that do not belong to an organization. Organization
+         * administrator account that the invitation is sent from.</p> <p>This operation is
+         * only used to invite accounts that do not belong to an organization. Organization
          * accounts do not receive invitations.</p> <p>Before you can use this action to
          * invite a member, you must first use the <code> <a>CreateMembers</a> </code>
          * action to create the member account in Security Hub.</p> <p>When the account
          * owner enables Security Hub and accepts the invitation to become a member
-         * account, the master account can view the findings generated from the member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account, the administrator account can view the findings generated from the
+         * member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
          * API Reference</a></p>
          */
@@ -1676,14 +1676,14 @@ namespace Model
 
         /**
          * <p>Invites other AWS accounts to become member accounts for the Security Hub
-         * master account that the invitation is sent from.</p> <p>This operation is only
-         * used to invite accounts that do not belong to an organization. Organization
+         * administrator account that the invitation is sent from.</p> <p>This operation is
+         * only used to invite accounts that do not belong to an organization. Organization
          * accounts do not receive invitations.</p> <p>Before you can use this action to
          * invite a member, you must first use the <code> <a>CreateMembers</a> </code>
          * action to create the member account in Security Hub.</p> <p>When the account
          * owner enables Security Hub and accepts the invitation to become a member
-         * account, the master account can view the findings generated from the member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account, the administrator account can view the findings generated from the
+         * member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1693,14 +1693,14 @@ namespace Model
 
         /**
          * <p>Invites other AWS accounts to become member accounts for the Security Hub
-         * master account that the invitation is sent from.</p> <p>This operation is only
-         * used to invite accounts that do not belong to an organization. Organization
+         * administrator account that the invitation is sent from.</p> <p>This operation is
+         * only used to invite accounts that do not belong to an organization. Organization
          * accounts do not receive invitations.</p> <p>Before you can use this action to
          * invite a member, you must first use the <code> <a>CreateMembers</a> </code>
          * action to create the member account in Security Hub.</p> <p>When the account
          * owner enables Security Hub and accepts the invitation to become a member
-         * account, the master account can view the findings generated from the member
-         * account.</p><p><h3>See Also:</h3>   <a
+         * account, the administrator account can view the findings generated from the
+         * member account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/InviteMembers">AWS
          * API Reference</a></p>
          *
@@ -1738,9 +1738,9 @@ namespace Model
 
         /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
-         * AWS account.</p> <p>This operation is only used by accounts that do not belong
-         * to an organization. Organization accounts do not receive
-         * invitations.</p><p><h3>See Also:</h3>   <a
+         * AWS account.</p> <p>This operation is only used by accounts that are managed by
+         * invitation. Accounts that are managed using the integration with AWS
+         * Organizations do not receive invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          */
@@ -1748,9 +1748,9 @@ namespace Model
 
         /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
-         * AWS account.</p> <p>This operation is only used by accounts that do not belong
-         * to an organization. Organization accounts do not receive
-         * invitations.</p><p><h3>See Also:</h3>   <a
+         * AWS account.</p> <p>This operation is only used by accounts that are managed by
+         * invitation. Accounts that are managed using the integration with AWS
+         * Organizations do not receive invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -1760,9 +1760,9 @@ namespace Model
 
         /**
          * <p>Lists all Security Hub membership invitations that were sent to the current
-         * AWS account.</p> <p>This operation is only used by accounts that do not belong
-         * to an organization. Organization accounts do not receive
-         * invitations.</p><p><h3>See Also:</h3>   <a
+         * AWS account.</p> <p>This operation is only used by accounts that are managed by
+         * invitation. Accounts that are managed using the integration with AWS
+         * Organizations do not receive invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations">AWS
          * API Reference</a></p>
          *
@@ -1771,20 +1771,20 @@ namespace Model
         virtual void ListInvitationsAsync(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists details about all member accounts for the current Security Hub master
-         * account.</p> <p>The results include both member accounts that belong to an
-         * organization and member accounts that were invited manually.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current Security Hub
+         * administrator account.</p> <p>The results include both member accounts that
+         * belong to an organization and member accounts that were invited
+         * manually.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMembersOutcome ListMembers(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Lists details about all member accounts for the current Security Hub master
-         * account.</p> <p>The results include both member accounts that belong to an
-         * organization and member accounts that were invited manually.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current Security Hub
+         * administrator account.</p> <p>The results include both member accounts that
+         * belong to an organization and member accounts that were invited
+         * manually.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -1793,10 +1793,10 @@ namespace Model
         virtual Model::ListMembersOutcomeCallable ListMembersCallable(const Model::ListMembersRequest& request) const;
 
         /**
-         * <p>Lists details about all member accounts for the current Security Hub master
-         * account.</p> <p>The results include both member accounts that belong to an
-         * organization and member accounts that were invited manually.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists details about all member accounts for the current Security Hub
+         * administrator account.</p> <p>The results include both member accounts that
+         * belong to an organization and member accounts that were invited
+         * manually.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers">AWS
          * API Reference</a></p>
          *
@@ -2091,7 +2091,7 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-        void AcceptInvitationAsyncHelper(const Model::AcceptInvitationRequest& request, const AcceptInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AcceptAdministratorInvitationAsyncHelper(const Model::AcceptAdministratorInvitationRequest& request, const AcceptAdministratorInvitationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDisableStandardsAsyncHelper(const Model::BatchDisableStandardsRequest& request, const BatchDisableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchEnableStandardsAsyncHelper(const Model::BatchEnableStandardsRequest& request, const BatchEnableStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchImportFindingsAsyncHelper(const Model::BatchImportFindingsRequest& request, const BatchImportFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2113,17 +2113,17 @@ namespace Model
         void DisableImportFindingsForProductAsyncHelper(const Model::DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableOrganizationAdminAccountAsyncHelper(const Model::DisableOrganizationAdminAccountRequest& request, const DisableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableSecurityHubAsyncHelper(const Model::DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DisassociateFromMasterAccountAsyncHelper(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateFromAdministratorAccountAsyncHelper(const Model::DisassociateFromAdministratorAccountRequest& request, const DisassociateFromAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateMembersAsyncHelper(const Model::DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableImportFindingsForProductAsyncHelper(const Model::EnableImportFindingsForProductRequest& request, const EnableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableOrganizationAdminAccountAsyncHelper(const Model::EnableOrganizationAdminAccountRequest& request, const EnableOrganizationAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableSecurityHubAsyncHelper(const Model::EnableSecurityHubRequest& request, const EnableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAdministratorAccountAsyncHelper(const Model::GetAdministratorAccountRequest& request, const GetAdministratorAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEnabledStandardsAsyncHelper(const Model::GetEnabledStandardsRequest& request, const GetEnabledStandardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFindingsAsyncHelper(const Model::GetFindingsRequest& request, const GetFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInsightResultsAsyncHelper(const Model::GetInsightResultsRequest& request, const GetInsightResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInsightsAsyncHelper(const Model::GetInsightsRequest& request, const GetInsightsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInvitationsCountAsyncHelper(const Model::GetInvitationsCountRequest& request, const GetInvitationsCountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void GetMasterAccountAsyncHelper(const Model::GetMasterAccountRequest& request, const GetMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMembersAsyncHelper(const Model::GetMembersRequest& request, const GetMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteMembersAsyncHelper(const Model::InviteMembersRequest& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEnabledProductsForImportAsyncHelper(const Model::ListEnabledProductsForImportRequest& request, const ListEnabledProductsForImportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

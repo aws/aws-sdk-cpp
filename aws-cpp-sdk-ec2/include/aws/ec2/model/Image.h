@@ -16,6 +16,7 @@
 #include <aws/ec2/model/DeviceType.h>
 #include <aws/ec2/model/StateReason.h>
 #include <aws/ec2/model/VirtualizationType.h>
+#include <aws/ec2/model/BootModeValues.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/Tag.h>
@@ -1158,6 +1159,106 @@ namespace Model
      */
     inline Image& WithVirtualizationType(VirtualizationType&& value) { SetVirtualizationType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
+
+    /**
+     * <p>The boot mode of the image. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
+     * modes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline Image& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline const Aws::String& GetDeprecationTime() const{ return m_deprecationTime; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline bool DeprecationTimeHasBeenSet() const { return m_deprecationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(const Aws::String& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = value; }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(Aws::String&& value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime = std::move(value); }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline void SetDeprecationTime(const char* value) { m_deprecationTimeHasBeenSet = true; m_deprecationTime.assign(value); }
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(const Aws::String& value) { SetDeprecationTime(value); return *this;}
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(Aws::String&& value) { SetDeprecationTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The date and time to deprecate the AMI, in UTC, in the following format:
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specified
+     * a value for seconds, Amazon EC2 rounds the seconds to the nearest minute.</p>
+     */
+    inline Image& WithDeprecationTime(const char* value) { SetDeprecationTime(value); return *this;}
+
   private:
 
     ArchitectureValues m_architecture;
@@ -1237,6 +1338,12 @@ namespace Model
 
     VirtualizationType m_virtualizationType;
     bool m_virtualizationTypeHasBeenSet;
+
+    BootModeValues m_bootMode;
+    bool m_bootModeHasBeenSet;
+
+    Aws::String m_deprecationTime;
+    bool m_deprecationTimeHasBeenSet;
   };
 
 } // namespace Model

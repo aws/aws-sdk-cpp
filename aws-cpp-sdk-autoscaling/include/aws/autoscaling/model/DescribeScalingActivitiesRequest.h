@@ -38,74 +38,83 @@ namespace Model
   public:
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActivityIds() const{ return m_activityIds; }
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline bool ActivityIdsHasBeenSet() const { return m_activityIdsHasBeenSet; }
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline void SetActivityIds(const Aws::Vector<Aws::String>& value) { m_activityIdsHasBeenSet = true; m_activityIds = value; }
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline void SetActivityIds(Aws::Vector<Aws::String>&& value) { m_activityIdsHasBeenSet = true; m_activityIds = std::move(value); }
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline DescribeScalingActivitiesRequest& WithActivityIds(const Aws::Vector<Aws::String>& value) { SetActivityIds(value); return *this;}
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline DescribeScalingActivitiesRequest& WithActivityIds(Aws::Vector<Aws::String>&& value) { SetActivityIds(std::move(value)); return *this;}
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline DescribeScalingActivitiesRequest& AddActivityIds(const Aws::String& value) { m_activityIdsHasBeenSet = true; m_activityIds.push_back(value); return *this; }
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline DescribeScalingActivitiesRequest& AddActivityIds(Aws::String&& value) { m_activityIdsHasBeenSet = true; m_activityIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The activity IDs of the desired scaling activities. You can specify up to 50
-     * IDs. If you omit this parameter, all activities for the past six weeks are
-     * described. If unknown activities are requested, they are ignored with no error.
-     * If you specify an Auto Scaling group, the results are limited to that group.</p>
+     * <p>The activity IDs of the desired scaling activities. If you omit this
+     * parameter, all activities for the past six weeks are described. If unknown
+     * activities are requested, they are ignored with no error. If you specify an Auto
+     * Scaling group, the results are limited to that group.</p> <p>Array Members:
+     * Maximum number of 50 IDs.</p>
      */
     inline DescribeScalingActivitiesRequest& AddActivityIds(const char* value) { m_activityIdsHasBeenSet = true; m_activityIds.push_back(value); return *this; }
 
@@ -149,6 +158,31 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline DescribeScalingActivitiesRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline bool GetIncludeDeletedGroups() const{ return m_includeDeletedGroups; }
+
+    /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline bool IncludeDeletedGroupsHasBeenSet() const { return m_includeDeletedGroupsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline void SetIncludeDeletedGroups(bool value) { m_includeDeletedGroupsHasBeenSet = true; m_includeDeletedGroups = value; }
+
+    /**
+     * <p>Indicates whether to include scaling activity from deleted Auto Scaling
+     * groups.</p>
+     */
+    inline DescribeScalingActivitiesRequest& WithIncludeDeletedGroups(bool value) { SetIncludeDeletedGroups(value); return *this;}
 
 
     /**
@@ -231,6 +265,9 @@ namespace Model
 
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
+
+    bool m_includeDeletedGroups;
+    bool m_includeDeletedGroupsHasBeenSet;
 
     int m_maxRecords;
     bool m_maxRecordsHasBeenSet;

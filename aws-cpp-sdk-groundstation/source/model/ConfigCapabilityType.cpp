@@ -26,6 +26,7 @@ namespace Aws
         static const int dataflow_endpoint_HASH = HashingUtils::HashString("dataflow-endpoint");
         static const int tracking_HASH = HashingUtils::HashString("tracking");
         static const int uplink_echo_HASH = HashingUtils::HashString("uplink-echo");
+        static const int s3_recording_HASH = HashingUtils::HashString("s3-recording");
 
 
         ConfigCapabilityType GetConfigCapabilityTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ConfigCapabilityType::uplink_echo;
           }
+          else if (hashCode == s3_recording_HASH)
+          {
+            return ConfigCapabilityType::s3_recording;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "tracking";
           case ConfigCapabilityType::uplink_echo:
             return "uplink-echo";
+          case ConfigCapabilityType::s3_recording:
+            return "s3-recording";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

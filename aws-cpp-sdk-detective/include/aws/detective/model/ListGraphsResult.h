@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline const Aws::Vector<Graph>& GetGraphList() const{ return m_graphList; }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline void SetGraphList(const Aws::Vector<Graph>& value) { m_graphList = value; }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline void SetGraphList(Aws::Vector<Graph>&& value) { m_graphList = std::move(value); }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& WithGraphList(const Aws::Vector<Graph>& value) { SetGraphList(value); return *this;}
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& WithGraphList(Aws::Vector<Graph>&& value) { SetGraphList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& AddGraphList(const Graph& value) { m_graphList.push_back(value); return *this; }
 
     /**
-     * <p>A list of behavior graphs that the account is a master for.</p>
+     * <p>A list of behavior graphs that the account is an administrator account
+     * for.</p>
      */
     inline ListGraphsResult& AddGraphList(Graph&& value) { m_graphList.push_back(std::move(value)); return *this; }
 

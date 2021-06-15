@@ -65,6 +65,18 @@ namespace Aws
 
             };
 
+            class Sha1CommonCryptoImpl : public Hash
+            {
+            public:
+
+                Sha1CommonCryptoImpl() {}
+                virtual ~Sha1CommonCryptoImpl() {}
+
+                virtual HashResult Calculate(const Aws::String& str) override;
+
+                virtual HashResult Calculate(Aws::IStream& stream) override;
+            };
+
             class Sha256CommonCryptoImpl : public Hash
             {
             public:

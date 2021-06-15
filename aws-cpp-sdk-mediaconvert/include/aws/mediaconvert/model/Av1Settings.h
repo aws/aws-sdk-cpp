@@ -399,22 +399,30 @@ namespace Model
 
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we
+     * recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller
+     * file size; choose a smaller number for better video quality.
      */
     inline Av1Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 

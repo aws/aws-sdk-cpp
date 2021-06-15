@@ -26,6 +26,7 @@ DBProxy::DBProxy() :
     m_status(DBProxyStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_engineFamilyHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_vpcSubnetIdsHasBeenSet(false),
     m_authHasBeenSet(false),
@@ -48,6 +49,7 @@ DBProxy::DBProxy(const XmlNode& xmlNode) :
     m_status(DBProxyStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_engineFamilyHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_vpcSubnetIdsHasBeenSet(false),
     m_authHasBeenSet(false),
@@ -94,6 +96,12 @@ DBProxy& DBProxy::operator =(const XmlNode& xmlNode)
     {
       m_engineFamily = Aws::Utils::Xml::DecodeEscapedXmlText(engineFamilyNode.GetText());
       m_engineFamilyHasBeenSet = true;
+    }
+    XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
+    if(!vpcIdNode.IsNull())
+    {
+      m_vpcId = Aws::Utils::Xml::DecodeEscapedXmlText(vpcIdNode.GetText());
+      m_vpcIdHasBeenSet = true;
     }
     XmlNode vpcSecurityGroupIdsNode = resultNode.FirstChild("VpcSecurityGroupIds");
     if(!vpcSecurityGroupIdsNode.IsNull())
@@ -200,6 +208,11 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".EngineFamily=" << StringUtils::URLEncode(m_engineFamily.c_str()) << "&";
   }
 
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {
       unsigned vpcSecurityGroupIdsIdx = 1;
@@ -283,6 +296,10 @@ void DBProxy::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_engineFamilyHasBeenSet)
   {
       oStream << location << ".EngineFamily=" << StringUtils::URLEncode(m_engineFamily.c_str()) << "&";
+  }
+  if(m_vpcIdHasBeenSet)
+  {
+      oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
   if(m_vpcSecurityGroupIdsHasBeenSet)
   {

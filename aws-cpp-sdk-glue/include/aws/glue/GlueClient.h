@@ -3514,24 +3514,24 @@ namespace Model
         virtual void GetRegistryAsync(const Model::GetRegistryRequest& request, const GetRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the security configurations for the resource policies set on
-         * individual resources, and also the account-level policy.</p> <p>This operation
-         * also returns the Data Catalog resource policy. However, if you enabled metadata
-         * encryption in Data Catalog settings, and you do not have permission on the AWS
-         * KMS key, the operation can't return the Data Catalog resource
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource policies set on individual resources by AWS Resource
+         * Access Manager during cross-account permission grants. Also retrieves the Data
+         * Catalog resource policy.</p> <p>If you enabled metadata encryption in Data
+         * Catalog settings, and you do not have permission on the AWS KMS key, the
+         * operation can't return the Data Catalog resource policy.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves the security configurations for the resource policies set on
-         * individual resources, and also the account-level policy.</p> <p>This operation
-         * also returns the Data Catalog resource policy. However, if you enabled metadata
-         * encryption in Data Catalog settings, and you do not have permission on the AWS
-         * KMS key, the operation can't return the Data Catalog resource
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource policies set on individual resources by AWS Resource
+         * Access Manager during cross-account permission grants. Also retrieves the Data
+         * Catalog resource policy.</p> <p>If you enabled metadata encryption in Data
+         * Catalog settings, and you do not have permission on the AWS KMS key, the
+         * operation can't return the Data Catalog resource policy.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -3540,12 +3540,12 @@ namespace Model
         virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves the security configurations for the resource policies set on
-         * individual resources, and also the account-level policy.</p> <p>This operation
-         * also returns the Data Catalog resource policy. However, if you enabled metadata
-         * encryption in Data Catalog settings, and you do not have permission on the AWS
-         * KMS key, the operation can't return the Data Catalog resource
-         * policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the resource policies set on individual resources by AWS Resource
+         * Access Manager during cross-account permission grants. Also retrieves the Data
+         * Catalog resource policy.</p> <p>If you enabled metadata encryption in Data
+         * Catalog settings, and you do not have permission on the AWS KMS key, the
+         * operation can't return the Data Catalog resource policy.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          *

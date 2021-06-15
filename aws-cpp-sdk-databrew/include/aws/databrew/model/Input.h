@@ -7,6 +7,7 @@
 #include <aws/databrew/GlueDataBrew_EXPORTS.h>
 #include <aws/databrew/model/S3Location.h>
 #include <aws/databrew/model/DataCatalogInputDefinition.h>
+#include <aws/databrew/model/DatabaseInputDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -25,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Information on how AWS Glue DataBrew can find data, in either the AWS Glue
+   * <p>Represents information on how DataBrew can find data, in either the AWS Glue
    * Data Catalog or Amazon S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Input">AWS API
    * Reference</a></p>
@@ -100,6 +101,37 @@ namespace Model
      */
     inline Input& WithDataCatalogInputDefinition(DataCatalogInputDefinition&& value) { SetDataCatalogInputDefinition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Connection information for dataset input files stored in a database.</p>
+     */
+    inline const DatabaseInputDefinition& GetDatabaseInputDefinition() const{ return m_databaseInputDefinition; }
+
+    /**
+     * <p>Connection information for dataset input files stored in a database.</p>
+     */
+    inline bool DatabaseInputDefinitionHasBeenSet() const { return m_databaseInputDefinitionHasBeenSet; }
+
+    /**
+     * <p>Connection information for dataset input files stored in a database.</p>
+     */
+    inline void SetDatabaseInputDefinition(const DatabaseInputDefinition& value) { m_databaseInputDefinitionHasBeenSet = true; m_databaseInputDefinition = value; }
+
+    /**
+     * <p>Connection information for dataset input files stored in a database.</p>
+     */
+    inline void SetDatabaseInputDefinition(DatabaseInputDefinition&& value) { m_databaseInputDefinitionHasBeenSet = true; m_databaseInputDefinition = std::move(value); }
+
+    /**
+     * <p>Connection information for dataset input files stored in a database.</p>
+     */
+    inline Input& WithDatabaseInputDefinition(const DatabaseInputDefinition& value) { SetDatabaseInputDefinition(value); return *this;}
+
+    /**
+     * <p>Connection information for dataset input files stored in a database.</p>
+     */
+    inline Input& WithDatabaseInputDefinition(DatabaseInputDefinition&& value) { SetDatabaseInputDefinition(std::move(value)); return *this;}
+
   private:
 
     S3Location m_s3InputDefinition;
@@ -107,6 +139,9 @@ namespace Model
 
     DataCatalogInputDefinition m_dataCatalogInputDefinition;
     bool m_dataCatalogInputDefinitionHasBeenSet;
+
+    DatabaseInputDefinition m_databaseInputDefinition;
+    bool m_databaseInputDefinitionHasBeenSet;
   };
 
 } // namespace Model

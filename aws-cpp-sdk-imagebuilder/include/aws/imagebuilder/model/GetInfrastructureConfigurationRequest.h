@@ -21,8 +21,7 @@ namespace Model
 {
 
   /**
-   * <p> GetInfrastructureConfiguration request object. </p><p><h3>See Also:</h3>  
-   * <a
+   * <p> GetInfrastructureConfiguration request object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -44,49 +43,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline const Aws::String& GetInfrastructureConfigurationArn() const{ return m_infrastructureConfigurationArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline bool InfrastructureConfigurationArnHasBeenSet() const { return m_infrastructureConfigurationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline void SetInfrastructureConfigurationArn(const Aws::String& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline void SetInfrastructureConfigurationArn(Aws::String&& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline void SetInfrastructureConfigurationArn(const char* value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline GetInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(const Aws::String& value) { SetInfrastructureConfigurationArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline GetInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(Aws::String&& value) { SetInfrastructureConfigurationArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that you
-     * want to retrieve. </p>
+     * want to retrieve.</p>
      */
     inline GetInfrastructureConfigurationRequest& WithInfrastructureConfigurationArn(const char* value) { SetInfrastructureConfigurationArn(value); return *this;}
 

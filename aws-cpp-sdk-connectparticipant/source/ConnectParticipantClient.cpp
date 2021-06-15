@@ -76,7 +76,7 @@ ConnectParticipantClient::~ConnectParticipantClient()
 {
 }
 
-void ConnectParticipantClient::init(const ClientConfiguration& config)
+void ConnectParticipantClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("ConnectParticipant");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -110,9 +110,7 @@ CompleteAttachmentUploadOutcome ConnectParticipantClient::CompleteAttachmentUplo
     return CompleteAttachmentUploadOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/complete-attachment-upload";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/complete-attachment-upload");
   return CompleteAttachmentUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -142,9 +140,7 @@ CreateParticipantConnectionOutcome ConnectParticipantClient::CreateParticipantCo
     return CreateParticipantConnectionOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ParticipantToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/connection";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/connection");
   return CreateParticipantConnectionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -174,9 +170,7 @@ DisconnectParticipantOutcome ConnectParticipantClient::DisconnectParticipant(con
     return DisconnectParticipantOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/disconnect";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/disconnect");
   return DisconnectParticipantOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -206,9 +200,7 @@ GetAttachmentOutcome ConnectParticipantClient::GetAttachment(const GetAttachment
     return GetAttachmentOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/attachment";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/attachment");
   return GetAttachmentOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -238,9 +230,7 @@ GetTranscriptOutcome ConnectParticipantClient::GetTranscript(const GetTranscript
     return GetTranscriptOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/transcript";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/transcript");
   return GetTranscriptOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -270,9 +260,7 @@ SendEventOutcome ConnectParticipantClient::SendEvent(const SendEventRequest& req
     return SendEventOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/event";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/event");
   return SendEventOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -302,9 +290,7 @@ SendMessageOutcome ConnectParticipantClient::SendMessage(const SendMessageReques
     return SendMessageOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/message";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/message");
   return SendMessageOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -334,9 +320,7 @@ StartAttachmentUploadOutcome ConnectParticipantClient::StartAttachmentUpload(con
     return StartAttachmentUploadOutcome(Aws::Client::AWSError<ConnectParticipantErrors>(ConnectParticipantErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectionToken]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/participant/start-attachment-upload";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/participant/start-attachment-upload");
   return StartAttachmentUploadOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

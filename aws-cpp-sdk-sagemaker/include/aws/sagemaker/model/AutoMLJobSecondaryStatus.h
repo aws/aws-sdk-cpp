@@ -25,7 +25,12 @@ namespace Model
     Stopped,
     MaxAutoMLJobRuntimeReached,
     Stopping,
-    CandidateDefinitionsGenerated
+    CandidateDefinitionsGenerated,
+    GeneratingExplainabilityReport,
+    Completed,
+    ExplainabilityError,
+    DeployingModel,
+    ModelDeploymentError
   };
 
 namespace AutoMLJobSecondaryStatusMapper

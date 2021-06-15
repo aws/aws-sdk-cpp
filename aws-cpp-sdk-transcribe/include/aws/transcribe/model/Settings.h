@@ -334,7 +334,10 @@ namespace Model
      * <p>Set to <code>mask</code> to remove filtered text from the transcript and
      * replace it with three asterisks ("***") as placeholder text. Set to
      * <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.</p>
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription
+     * output that matches the vocabulary filter. When you set the filter method to
+     * <code>tag</code>, the words matching your vocabulary filter are not masked or
+     * removed.</p>
      */
     inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
 
@@ -342,7 +345,10 @@ namespace Model
      * <p>Set to <code>mask</code> to remove filtered text from the transcript and
      * replace it with three asterisks ("***") as placeholder text. Set to
      * <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.</p>
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription
+     * output that matches the vocabulary filter. When you set the filter method to
+     * <code>tag</code>, the words matching your vocabulary filter are not masked or
+     * removed.</p>
      */
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
 
@@ -350,7 +356,10 @@ namespace Model
      * <p>Set to <code>mask</code> to remove filtered text from the transcript and
      * replace it with three asterisks ("***") as placeholder text. Set to
      * <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.</p>
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription
+     * output that matches the vocabulary filter. When you set the filter method to
+     * <code>tag</code>, the words matching your vocabulary filter are not masked or
+     * removed.</p>
      */
     inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
 
@@ -358,7 +367,10 @@ namespace Model
      * <p>Set to <code>mask</code> to remove filtered text from the transcript and
      * replace it with three asterisks ("***") as placeholder text. Set to
      * <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.</p>
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription
+     * output that matches the vocabulary filter. When you set the filter method to
+     * <code>tag</code>, the words matching your vocabulary filter are not masked or
+     * removed.</p>
      */
     inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
 
@@ -366,7 +378,10 @@ namespace Model
      * <p>Set to <code>mask</code> to remove filtered text from the transcript and
      * replace it with three asterisks ("***") as placeholder text. Set to
      * <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.</p>
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription
+     * output that matches the vocabulary filter. When you set the filter method to
+     * <code>tag</code>, the words matching your vocabulary filter are not masked or
+     * removed.</p>
      */
     inline Settings& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
 
@@ -374,7 +389,10 @@ namespace Model
      * <p>Set to <code>mask</code> to remove filtered text from the transcript and
      * replace it with three asterisks ("***") as placeholder text. Set to
      * <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.</p>
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription
+     * output that matches the vocabulary filter. When you set the filter method to
+     * <code>tag</code>, the words matching your vocabulary filter are not masked or
+     * removed.</p>
      */
     inline Settings& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
 

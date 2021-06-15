@@ -14,9 +14,13 @@
 #include <aws/securityhub/model/AwsEc2VolumeDetails.h>
 #include <aws/securityhub/model/AwsEc2VpcDetails.h>
 #include <aws/securityhub/model/AwsEc2EipDetails.h>
+#include <aws/securityhub/model/AwsEc2SubnetDetails.h>
+#include <aws/securityhub/model/AwsEc2NetworkAclDetails.h>
 #include <aws/securityhub/model/AwsElbv2LoadBalancerDetails.h>
+#include <aws/securityhub/model/AwsElasticBeanstalkEnvironmentDetails.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainDetails.h>
 #include <aws/securityhub/model/AwsS3BucketDetails.h>
+#include <aws/securityhub/model/AwsS3AccountPublicAccessBlockDetails.h>
 #include <aws/securityhub/model/AwsS3ObjectDetails.h>
 #include <aws/securityhub/model/AwsSecretsManagerSecretDetails.h>
 #include <aws/securityhub/model/AwsIamAccessKeyDetails.h>
@@ -28,6 +32,7 @@
 #include <aws/securityhub/model/AwsApiGatewayStageDetails.h>
 #include <aws/securityhub/model/AwsApiGatewayRestApiDetails.h>
 #include <aws/securityhub/model/AwsCloudTrailTrailDetails.h>
+#include <aws/securityhub/model/AwsSsmPatchComplianceDetails.h>
 #include <aws/securityhub/model/AwsCertificateManagerCertificateDetails.h>
 #include <aws/securityhub/model/AwsRedshiftClusterDetails.h>
 #include <aws/securityhub/model/AwsElbLoadBalancerDetails.h>
@@ -365,6 +370,68 @@ namespace Model
 
 
     /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline const AwsEc2SubnetDetails& GetAwsEc2Subnet() const{ return m_awsEc2Subnet; }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline bool AwsEc2SubnetHasBeenSet() const { return m_awsEc2SubnetHasBeenSet; }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline void SetAwsEc2Subnet(const AwsEc2SubnetDetails& value) { m_awsEc2SubnetHasBeenSet = true; m_awsEc2Subnet = value; }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline void SetAwsEc2Subnet(AwsEc2SubnetDetails&& value) { m_awsEc2SubnetHasBeenSet = true; m_awsEc2Subnet = std::move(value); }
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Subnet(const AwsEc2SubnetDetails& value) { SetAwsEc2Subnet(value); return *this;}
+
+    /**
+     * <p>Details about a subnet in EC2.</p>
+     */
+    inline ResourceDetails& WithAwsEc2Subnet(AwsEc2SubnetDetails&& value) { SetAwsEc2Subnet(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline const AwsEc2NetworkAclDetails& GetAwsEc2NetworkAcl() const{ return m_awsEc2NetworkAcl; }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline bool AwsEc2NetworkAclHasBeenSet() const { return m_awsEc2NetworkAclHasBeenSet; }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline void SetAwsEc2NetworkAcl(const AwsEc2NetworkAclDetails& value) { m_awsEc2NetworkAclHasBeenSet = true; m_awsEc2NetworkAcl = value; }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline void SetAwsEc2NetworkAcl(AwsEc2NetworkAclDetails&& value) { m_awsEc2NetworkAclHasBeenSet = true; m_awsEc2NetworkAcl = std::move(value); }
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline ResourceDetails& WithAwsEc2NetworkAcl(const AwsEc2NetworkAclDetails& value) { SetAwsEc2NetworkAcl(value); return *this;}
+
+    /**
+     * <p>Details about an EC2 network access control list (ACL).</p>
+     */
+    inline ResourceDetails& WithAwsEc2NetworkAcl(AwsEc2NetworkAclDetails&& value) { SetAwsEc2NetworkAcl(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about a load balancer.</p>
      */
     inline const AwsElbv2LoadBalancerDetails& GetAwsElbv2LoadBalancer() const{ return m_awsElbv2LoadBalancer; }
@@ -393,6 +460,37 @@ namespace Model
      * <p>Details about a load balancer.</p>
      */
     inline ResourceDetails& WithAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetails&& value) { SetAwsElbv2LoadBalancer(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline const AwsElasticBeanstalkEnvironmentDetails& GetAwsElasticBeanstalkEnvironment() const{ return m_awsElasticBeanstalkEnvironment; }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline bool AwsElasticBeanstalkEnvironmentHasBeenSet() const { return m_awsElasticBeanstalkEnvironmentHasBeenSet; }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline void SetAwsElasticBeanstalkEnvironment(const AwsElasticBeanstalkEnvironmentDetails& value) { m_awsElasticBeanstalkEnvironmentHasBeenSet = true; m_awsElasticBeanstalkEnvironment = value; }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline void SetAwsElasticBeanstalkEnvironment(AwsElasticBeanstalkEnvironmentDetails&& value) { m_awsElasticBeanstalkEnvironmentHasBeenSet = true; m_awsElasticBeanstalkEnvironment = std::move(value); }
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline ResourceDetails& WithAwsElasticBeanstalkEnvironment(const AwsElasticBeanstalkEnvironmentDetails& value) { SetAwsElasticBeanstalkEnvironment(value); return *this;}
+
+    /**
+     * <p>Details about an Elastic Beanstalk environment.</p>
+     */
+    inline ResourceDetails& WithAwsElasticBeanstalkEnvironment(AwsElasticBeanstalkEnvironmentDetails&& value) { SetAwsElasticBeanstalkEnvironment(std::move(value)); return *this;}
 
 
     /**
@@ -455,6 +553,43 @@ namespace Model
      * <p>Details about an Amazon S3 bucket related to a finding.</p>
      */
     inline ResourceDetails& WithAwsS3Bucket(AwsS3BucketDetails&& value) { SetAwsS3Bucket(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline const AwsS3AccountPublicAccessBlockDetails& GetAwsS3AccountPublicAccessBlock() const{ return m_awsS3AccountPublicAccessBlock; }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline bool AwsS3AccountPublicAccessBlockHasBeenSet() const { return m_awsS3AccountPublicAccessBlockHasBeenSet; }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline void SetAwsS3AccountPublicAccessBlock(const AwsS3AccountPublicAccessBlockDetails& value) { m_awsS3AccountPublicAccessBlockHasBeenSet = true; m_awsS3AccountPublicAccessBlock = value; }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline void SetAwsS3AccountPublicAccessBlock(AwsS3AccountPublicAccessBlockDetails&& value) { m_awsS3AccountPublicAccessBlockHasBeenSet = true; m_awsS3AccountPublicAccessBlock = std::move(value); }
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline ResourceDetails& WithAwsS3AccountPublicAccessBlock(const AwsS3AccountPublicAccessBlockDetails& value) { SetAwsS3AccountPublicAccessBlock(value); return *this;}
+
+    /**
+     * <p>Details about the Amazon S3 Public Access Block configuration for an
+     * account.</p>
+     */
+    inline ResourceDetails& WithAwsS3AccountPublicAccessBlock(AwsS3AccountPublicAccessBlockDetails&& value) { SetAwsS3AccountPublicAccessBlock(std::move(value)); return *this;}
 
 
     /**
@@ -613,63 +748,63 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
      */
     inline const AwsApiGatewayV2StageDetails& GetAwsApiGatewayV2Stage() const{ return m_awsApiGatewayV2Stage; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
      */
     inline bool AwsApiGatewayV2StageHasBeenSet() const { return m_awsApiGatewayV2StageHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
      */
     inline void SetAwsApiGatewayV2Stage(const AwsApiGatewayV2StageDetails& value) { m_awsApiGatewayV2StageHasBeenSet = true; m_awsApiGatewayV2Stage = value; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
      */
     inline void SetAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetails&& value) { m_awsApiGatewayV2StageHasBeenSet = true; m_awsApiGatewayV2Stage = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayV2Stage(const AwsApiGatewayV2StageDetails& value) { SetAwsApiGatewayV2Stage(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 stage for Amazon API Gateway.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetails&& value) { SetAwsApiGatewayV2Stage(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 API in Amazon API Gateway.</p>
      */
     inline const AwsApiGatewayV2ApiDetails& GetAwsApiGatewayV2Api() const{ return m_awsApiGatewayV2Api; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 API in Amazon API Gateway.</p>
      */
     inline bool AwsApiGatewayV2ApiHasBeenSet() const { return m_awsApiGatewayV2ApiHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 API in Amazon API Gateway.</p>
      */
     inline void SetAwsApiGatewayV2Api(const AwsApiGatewayV2ApiDetails& value) { m_awsApiGatewayV2ApiHasBeenSet = true; m_awsApiGatewayV2Api = value; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 API in Amazon API Gateway.</p>
      */
     inline void SetAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetails&& value) { m_awsApiGatewayV2ApiHasBeenSet = true; m_awsApiGatewayV2Api = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 API in Amazon API Gateway.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayV2Api(const AwsApiGatewayV2ApiDetails& value) { SetAwsApiGatewayV2Api(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Provides information about a version 2 API in Amazon API Gateway.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetails&& value) { SetAwsApiGatewayV2Api(std::move(value)); return *this;}
 
@@ -706,218 +841,255 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Provides information about a version 1 Amazon API Gateway stage.</p>
      */
     inline const AwsApiGatewayStageDetails& GetAwsApiGatewayStage() const{ return m_awsApiGatewayStage; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 1 Amazon API Gateway stage.</p>
      */
     inline bool AwsApiGatewayStageHasBeenSet() const { return m_awsApiGatewayStageHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 1 Amazon API Gateway stage.</p>
      */
     inline void SetAwsApiGatewayStage(const AwsApiGatewayStageDetails& value) { m_awsApiGatewayStageHasBeenSet = true; m_awsApiGatewayStage = value; }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 1 Amazon API Gateway stage.</p>
      */
     inline void SetAwsApiGatewayStage(AwsApiGatewayStageDetails&& value) { m_awsApiGatewayStageHasBeenSet = true; m_awsApiGatewayStage = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Provides information about a version 1 Amazon API Gateway stage.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayStage(const AwsApiGatewayStageDetails& value) { SetAwsApiGatewayStage(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Provides information about a version 1 Amazon API Gateway stage.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayStage(AwsApiGatewayStageDetails&& value) { SetAwsApiGatewayStage(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
      */
     inline const AwsApiGatewayRestApiDetails& GetAwsApiGatewayRestApi() const{ return m_awsApiGatewayRestApi; }
 
     /**
-     * <p/>
+     * <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
      */
     inline bool AwsApiGatewayRestApiHasBeenSet() const { return m_awsApiGatewayRestApiHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
      */
     inline void SetAwsApiGatewayRestApi(const AwsApiGatewayRestApiDetails& value) { m_awsApiGatewayRestApiHasBeenSet = true; m_awsApiGatewayRestApi = value; }
 
     /**
-     * <p/>
+     * <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
      */
     inline void SetAwsApiGatewayRestApi(AwsApiGatewayRestApiDetails&& value) { m_awsApiGatewayRestApiHasBeenSet = true; m_awsApiGatewayRestApi = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayRestApi(const AwsApiGatewayRestApiDetails& value) { SetAwsApiGatewayRestApi(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Provides information about a REST API in version 1 of Amazon API Gateway.</p>
      */
     inline ResourceDetails& WithAwsApiGatewayRestApi(AwsApiGatewayRestApiDetails&& value) { SetAwsApiGatewayRestApi(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Provides details about a CloudTrail trail.</p>
      */
     inline const AwsCloudTrailTrailDetails& GetAwsCloudTrailTrail() const{ return m_awsCloudTrailTrail; }
 
     /**
-     * <p/>
+     * <p>Provides details about a CloudTrail trail.</p>
      */
     inline bool AwsCloudTrailTrailHasBeenSet() const { return m_awsCloudTrailTrailHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Provides details about a CloudTrail trail.</p>
      */
     inline void SetAwsCloudTrailTrail(const AwsCloudTrailTrailDetails& value) { m_awsCloudTrailTrailHasBeenSet = true; m_awsCloudTrailTrail = value; }
 
     /**
-     * <p/>
+     * <p>Provides details about a CloudTrail trail.</p>
      */
     inline void SetAwsCloudTrailTrail(AwsCloudTrailTrailDetails&& value) { m_awsCloudTrailTrailHasBeenSet = true; m_awsCloudTrailTrail = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Provides details about a CloudTrail trail.</p>
      */
     inline ResourceDetails& WithAwsCloudTrailTrail(const AwsCloudTrailTrailDetails& value) { SetAwsCloudTrailTrail(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Provides details about a CloudTrail trail.</p>
      */
     inline ResourceDetails& WithAwsCloudTrailTrail(AwsCloudTrailTrailDetails&& value) { SetAwsCloudTrailTrail(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Provides information about the state of a patch on an instance based on the
+     * patch baseline that was used to patch the instance.</p>
+     */
+    inline const AwsSsmPatchComplianceDetails& GetAwsSsmPatchCompliance() const{ return m_awsSsmPatchCompliance; }
+
+    /**
+     * <p>Provides information about the state of a patch on an instance based on the
+     * patch baseline that was used to patch the instance.</p>
+     */
+    inline bool AwsSsmPatchComplianceHasBeenSet() const { return m_awsSsmPatchComplianceHasBeenSet; }
+
+    /**
+     * <p>Provides information about the state of a patch on an instance based on the
+     * patch baseline that was used to patch the instance.</p>
+     */
+    inline void SetAwsSsmPatchCompliance(const AwsSsmPatchComplianceDetails& value) { m_awsSsmPatchComplianceHasBeenSet = true; m_awsSsmPatchCompliance = value; }
+
+    /**
+     * <p>Provides information about the state of a patch on an instance based on the
+     * patch baseline that was used to patch the instance.</p>
+     */
+    inline void SetAwsSsmPatchCompliance(AwsSsmPatchComplianceDetails&& value) { m_awsSsmPatchComplianceHasBeenSet = true; m_awsSsmPatchCompliance = std::move(value); }
+
+    /**
+     * <p>Provides information about the state of a patch on an instance based on the
+     * patch baseline that was used to patch the instance.</p>
+     */
+    inline ResourceDetails& WithAwsSsmPatchCompliance(const AwsSsmPatchComplianceDetails& value) { SetAwsSsmPatchCompliance(value); return *this;}
+
+    /**
+     * <p>Provides information about the state of a patch on an instance based on the
+     * patch baseline that was used to patch the instance.</p>
+     */
+    inline ResourceDetails& WithAwsSsmPatchCompliance(AwsSsmPatchComplianceDetails&& value) { SetAwsSsmPatchCompliance(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
      */
     inline const AwsCertificateManagerCertificateDetails& GetAwsCertificateManagerCertificate() const{ return m_awsCertificateManagerCertificate; }
 
     /**
-     * <p/>
+     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
      */
     inline bool AwsCertificateManagerCertificateHasBeenSet() const { return m_awsCertificateManagerCertificateHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
      */
     inline void SetAwsCertificateManagerCertificate(const AwsCertificateManagerCertificateDetails& value) { m_awsCertificateManagerCertificateHasBeenSet = true; m_awsCertificateManagerCertificate = value; }
 
     /**
-     * <p/>
+     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
      */
     inline void SetAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails&& value) { m_awsCertificateManagerCertificateHasBeenSet = true; m_awsCertificateManagerCertificate = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
      */
     inline ResourceDetails& WithAwsCertificateManagerCertificate(const AwsCertificateManagerCertificateDetails& value) { SetAwsCertificateManagerCertificate(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
      */
     inline ResourceDetails& WithAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails&& value) { SetAwsCertificateManagerCertificate(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Contains details about an Amazon Redshift cluster.</p>
      */
     inline const AwsRedshiftClusterDetails& GetAwsRedshiftCluster() const{ return m_awsRedshiftCluster; }
 
     /**
-     * <p/>
+     * <p>Contains details about an Amazon Redshift cluster.</p>
      */
     inline bool AwsRedshiftClusterHasBeenSet() const { return m_awsRedshiftClusterHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Contains details about an Amazon Redshift cluster.</p>
      */
     inline void SetAwsRedshiftCluster(const AwsRedshiftClusterDetails& value) { m_awsRedshiftClusterHasBeenSet = true; m_awsRedshiftCluster = value; }
 
     /**
-     * <p/>
+     * <p>Contains details about an Amazon Redshift cluster.</p>
      */
     inline void SetAwsRedshiftCluster(AwsRedshiftClusterDetails&& value) { m_awsRedshiftClusterHasBeenSet = true; m_awsRedshiftCluster = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Contains details about an Amazon Redshift cluster.</p>
      */
     inline ResourceDetails& WithAwsRedshiftCluster(const AwsRedshiftClusterDetails& value) { SetAwsRedshiftCluster(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains details about an Amazon Redshift cluster.</p>
      */
     inline ResourceDetails& WithAwsRedshiftCluster(AwsRedshiftClusterDetails&& value) { SetAwsRedshiftCluster(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>contains details about a Classic Load Balancer.</p>
      */
     inline const AwsElbLoadBalancerDetails& GetAwsElbLoadBalancer() const{ return m_awsElbLoadBalancer; }
 
     /**
-     * <p/>
+     * <p>contains details about a Classic Load Balancer.</p>
      */
     inline bool AwsElbLoadBalancerHasBeenSet() const { return m_awsElbLoadBalancerHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>contains details about a Classic Load Balancer.</p>
      */
     inline void SetAwsElbLoadBalancer(const AwsElbLoadBalancerDetails& value) { m_awsElbLoadBalancerHasBeenSet = true; m_awsElbLoadBalancer = value; }
 
     /**
-     * <p/>
+     * <p>contains details about a Classic Load Balancer.</p>
      */
     inline void SetAwsElbLoadBalancer(AwsElbLoadBalancerDetails&& value) { m_awsElbLoadBalancerHasBeenSet = true; m_awsElbLoadBalancer = std::move(value); }
 
     /**
-     * <p/>
+     * <p>contains details about a Classic Load Balancer.</p>
      */
     inline ResourceDetails& WithAwsElbLoadBalancer(const AwsElbLoadBalancerDetails& value) { SetAwsElbLoadBalancer(value); return *this;}
 
     /**
-     * <p/>
+     * <p>contains details about a Classic Load Balancer.</p>
      */
     inline ResourceDetails& WithAwsElbLoadBalancer(AwsElbLoadBalancerDetails&& value) { SetAwsElbLoadBalancer(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Contains details about an IAM group.</p>
      */
     inline const AwsIamGroupDetails& GetAwsIamGroup() const{ return m_awsIamGroup; }
 
     /**
-     * <p/>
+     * <p>Contains details about an IAM group.</p>
      */
     inline bool AwsIamGroupHasBeenSet() const { return m_awsIamGroupHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Contains details about an IAM group.</p>
      */
     inline void SetAwsIamGroup(const AwsIamGroupDetails& value) { m_awsIamGroupHasBeenSet = true; m_awsIamGroup = value; }
 
     /**
-     * <p/>
+     * <p>Contains details about an IAM group.</p>
      */
     inline void SetAwsIamGroup(AwsIamGroupDetails&& value) { m_awsIamGroupHasBeenSet = true; m_awsIamGroup = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Contains details about an IAM group.</p>
      */
     inline ResourceDetails& WithAwsIamGroup(const AwsIamGroupDetails& value) { SetAwsIamGroup(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains details about an IAM group.</p>
      */
     inline ResourceDetails& WithAwsIamGroup(AwsIamGroupDetails&& value) { SetAwsIamGroup(std::move(value)); return *this;}
 
@@ -1479,14 +1651,26 @@ namespace Model
     AwsEc2EipDetails m_awsEc2Eip;
     bool m_awsEc2EipHasBeenSet;
 
+    AwsEc2SubnetDetails m_awsEc2Subnet;
+    bool m_awsEc2SubnetHasBeenSet;
+
+    AwsEc2NetworkAclDetails m_awsEc2NetworkAcl;
+    bool m_awsEc2NetworkAclHasBeenSet;
+
     AwsElbv2LoadBalancerDetails m_awsElbv2LoadBalancer;
     bool m_awsElbv2LoadBalancerHasBeenSet;
+
+    AwsElasticBeanstalkEnvironmentDetails m_awsElasticBeanstalkEnvironment;
+    bool m_awsElasticBeanstalkEnvironmentHasBeenSet;
 
     AwsElasticsearchDomainDetails m_awsElasticsearchDomain;
     bool m_awsElasticsearchDomainHasBeenSet;
 
     AwsS3BucketDetails m_awsS3Bucket;
     bool m_awsS3BucketHasBeenSet;
+
+    AwsS3AccountPublicAccessBlockDetails m_awsS3AccountPublicAccessBlock;
+    bool m_awsS3AccountPublicAccessBlockHasBeenSet;
 
     AwsS3ObjectDetails m_awsS3Object;
     bool m_awsS3ObjectHasBeenSet;
@@ -1520,6 +1704,9 @@ namespace Model
 
     AwsCloudTrailTrailDetails m_awsCloudTrailTrail;
     bool m_awsCloudTrailTrailHasBeenSet;
+
+    AwsSsmPatchComplianceDetails m_awsSsmPatchCompliance;
+    bool m_awsSsmPatchComplianceHasBeenSet;
 
     AwsCertificateManagerCertificateDetails m_awsCertificateManagerCertificate;
     bool m_awsCertificateManagerCertificateHasBeenSet;

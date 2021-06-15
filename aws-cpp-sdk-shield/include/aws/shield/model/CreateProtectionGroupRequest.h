@@ -11,6 +11,7 @@
 #include <aws/shield/model/ProtectionGroupPattern.h>
 #include <aws/shield/model/ProtectedResourceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/shield/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -362,6 +363,47 @@ namespace Model
      */
     inline CreateProtectionGroupRequest& AddMembers(const char* value) { m_membersHasBeenSet = true; m_members.push_back(value); return *this; }
 
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline CreateProtectionGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline CreateProtectionGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline CreateProtectionGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>One or more tag key-value pairs for the protection group.</p>
+     */
+    inline CreateProtectionGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_protectionGroupId;
@@ -378,6 +420,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_members;
     bool m_membersHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

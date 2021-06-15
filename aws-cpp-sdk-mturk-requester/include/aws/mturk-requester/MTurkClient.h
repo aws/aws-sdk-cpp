@@ -935,16 +935,24 @@ namespace Model
         virtual void DisassociateQualificationFromWorkerAsync(const Model::DisassociateQualificationFromWorkerRequest& request, const DisassociateQualificationFromWorkerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>The <code>GetAccountBalance</code> operation retrieves the amount of money in
-         * your Amazon Mechanical Turk account.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs
+         * balance in your Amazon Mechanical Turk account if you are a Prepaid Requester.
+         * Alternatively, this operation will retrieve the remaining available AWS Billing
+         * usage if you have enabled AWS Billing. Note: If you have enabled AWS Billing and
+         * still have a remaining Prepaid HITs balance, this balance can be viewed on the
+         * My Account page in the Requester console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAccountBalanceOutcome GetAccountBalance(const Model::GetAccountBalanceRequest& request) const;
 
         /**
-         * <p>The <code>GetAccountBalance</code> operation retrieves the amount of money in
-         * your Amazon Mechanical Turk account.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs
+         * balance in your Amazon Mechanical Turk account if you are a Prepaid Requester.
+         * Alternatively, this operation will retrieve the remaining available AWS Billing
+         * usage if you have enabled AWS Billing. Note: If you have enabled AWS Billing and
+         * still have a remaining Prepaid HITs balance, this balance can be viewed on the
+         * My Account page in the Requester console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">AWS
          * API Reference</a></p>
          *
@@ -953,8 +961,12 @@ namespace Model
         virtual Model::GetAccountBalanceOutcomeCallable GetAccountBalanceCallable(const Model::GetAccountBalanceRequest& request) const;
 
         /**
-         * <p>The <code>GetAccountBalance</code> operation retrieves the amount of money in
-         * your Amazon Mechanical Turk account.</p><p><h3>See Also:</h3>   <a
+         * <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs
+         * balance in your Amazon Mechanical Turk account if you are a Prepaid Requester.
+         * Alternatively, this operation will retrieve the remaining available AWS Billing
+         * usage if you have enabled AWS Billing. Note: If you have enabled AWS Billing and
+         * still have a remaining Prepaid HITs balance, this balance can be viewed on the
+         * My Account page in the Requester console.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mturk-requester-2017-01-17/GetAccountBalance">AWS
          * API Reference</a></p>
          *

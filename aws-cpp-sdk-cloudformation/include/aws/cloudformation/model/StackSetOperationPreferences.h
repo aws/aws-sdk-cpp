@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/cloudformation/CloudFormation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/cloudformation/model/RegionConcurrencyType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -42,6 +43,43 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
+    inline const RegionConcurrencyType& GetRegionConcurrencyType() const{ return m_regionConcurrencyType; }
+
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
+    inline bool RegionConcurrencyTypeHasBeenSet() const { return m_regionConcurrencyTypeHasBeenSet; }
+
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
+    inline void SetRegionConcurrencyType(const RegionConcurrencyType& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = value; }
+
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
+    inline void SetRegionConcurrencyType(RegionConcurrencyType&& value) { m_regionConcurrencyTypeHasBeenSet = true; m_regionConcurrencyType = std::move(value); }
+
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
+    inline StackSetOperationPreferences& WithRegionConcurrencyType(const RegionConcurrencyType& value) { SetRegionConcurrencyType(value); return *this;}
+
+    /**
+     * <p>The concurrency type of deploying StackSets operations in regions, could be
+     * in parallel or one region at a time.</p>
+     */
+    inline StackSetOperationPreferences& WithRegionConcurrencyType(RegionConcurrencyType&& value) { SetRegionConcurrencyType(std::move(value)); return *this;}
 
 
     /**
@@ -299,6 +337,9 @@ namespace Model
     inline StackSetOperationPreferences& WithMaxConcurrentPercentage(int value) { SetMaxConcurrentPercentage(value); return *this;}
 
   private:
+
+    RegionConcurrencyType m_regionConcurrencyType;
+    bool m_regionConcurrencyTypeHasBeenSet;
 
     Aws::Vector<Aws::String> m_regionOrder;
     bool m_regionOrderHasBeenSet;

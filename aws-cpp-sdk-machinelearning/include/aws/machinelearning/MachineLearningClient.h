@@ -266,9 +266,9 @@ namespace Model
          * process exist in one or more data files referenced by a <code>DataSource</code>.
          * This operation creates a new <code>BatchPrediction</code>, and uses an
          * <code>MLModel</code> and the data files referenced by the
-         * <code>DataSource</code> as information sources. </p>
-         * <p><code>CreateBatchPrediction</code> is an asynchronous operation. In response
-         * to <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML)
+         * <code>DataSource</code> as information sources. </p> <p>
+         * <code>CreateBatchPrediction</code> is an asynchronous operation. In response to
+         * <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML)
          * immediately returns and sets the <code>BatchPrediction</code> status to
          * <code>PENDING</code>. After the <code>BatchPrediction</code> completes, Amazon
          * ML sets the status to <code>COMPLETED</code>. </p> <p>You can poll for status
@@ -286,9 +286,9 @@ namespace Model
          * process exist in one or more data files referenced by a <code>DataSource</code>.
          * This operation creates a new <code>BatchPrediction</code>, and uses an
          * <code>MLModel</code> and the data files referenced by the
-         * <code>DataSource</code> as information sources. </p>
-         * <p><code>CreateBatchPrediction</code> is an asynchronous operation. In response
-         * to <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML)
+         * <code>DataSource</code> as information sources. </p> <p>
+         * <code>CreateBatchPrediction</code> is an asynchronous operation. In response to
+         * <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML)
          * immediately returns and sets the <code>BatchPrediction</code> status to
          * <code>PENDING</code>. After the <code>BatchPrediction</code> completes, Amazon
          * ML sets the status to <code>COMPLETED</code>. </p> <p>You can poll for status
@@ -308,9 +308,9 @@ namespace Model
          * process exist in one or more data files referenced by a <code>DataSource</code>.
          * This operation creates a new <code>BatchPrediction</code>, and uses an
          * <code>MLModel</code> and the data files referenced by the
-         * <code>DataSource</code> as information sources. </p>
-         * <p><code>CreateBatchPrediction</code> is an asynchronous operation. In response
-         * to <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML)
+         * <code>DataSource</code> as information sources. </p> <p>
+         * <code>CreateBatchPrediction</code> is an asynchronous operation. In response to
+         * <code>CreateBatchPrediction</code>, Amazon Machine Learning (Amazon ML)
          * immediately returns and sets the <code>BatchPrediction</code> status to
          * <code>PENDING</code>. After the <code>BatchPrediction</code> completes, Amazon
          * ML sets the status to <code>COMPLETED</code>. </p> <p>You can poll for status
@@ -330,10 +330,10 @@ namespace Model
          * href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a>
          * (Amazon RDS). A <code>DataSource</code> references data that can be used to
          * perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
-         * <code>CreateBatchPrediction</code> operations.</p>
-         * <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In
-         * response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning
-         * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
+         * <code>CreateBatchPrediction</code> operations.</p> <p>
+         * <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response
+         * to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML)
+         * immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
          * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
          * <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code>
@@ -353,10 +353,10 @@ namespace Model
          * href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a>
          * (Amazon RDS). A <code>DataSource</code> references data that can be used to
          * perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
-         * <code>CreateBatchPrediction</code> operations.</p>
-         * <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In
-         * response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning
-         * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
+         * <code>CreateBatchPrediction</code> operations.</p> <p>
+         * <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response
+         * to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML)
+         * immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
          * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
          * <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code>
@@ -378,10 +378,10 @@ namespace Model
          * href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a>
          * (Amazon RDS). A <code>DataSource</code> references data that can be used to
          * perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
-         * <code>CreateBatchPrediction</code> operations.</p>
-         * <p><code>CreateDataSourceFromRDS</code> is an asynchronous operation. In
-         * response to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning
-         * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
+         * <code>CreateBatchPrediction</code> operations.</p> <p>
+         * <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response
+         * to <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML)
+         * immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
          * use, Amazon ML sets the <code>Status</code> parameter to <code>COMPLETED</code>.
          * <code>DataSource</code> in the <code>COMPLETED</code> or <code>PENDING</code>
@@ -402,8 +402,8 @@ namespace Model
          * <p>Creates a <code>DataSource</code> from a database hosted on an Amazon
          * Redshift cluster. A <code>DataSource</code> references data that can be used to
          * perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
-         * <code>CreateBatchPrediction</code> operations.</p>
-         * <p><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
+         * <code>CreateBatchPrediction</code> operations.</p> <p>
+         * <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
          * response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
@@ -427,14 +427,12 @@ namespace Model
          * variable be included or excluded from training? Will the variable be
          * manipulated; for example, will it be combined with another variable or will it
          * be split apart into word combinations? The recipe provides answers to these
-         * questions.</p> <?oxy_insert_start author="laurama"
-         * timestamp="20160406T153842-0700"><p>You can't change an existing datasource, but
-         * you can copy and modify the settings from an existing Amazon Redshift datasource
-         * to create a new datasource. To do so, call <code>GetDataSource</code> for an
-         * existing datasource and copy the values to a <code>CreateDataSource</code> call.
-         * Change the settings that you want to change and make sure that all required
-         * fields have the appropriate values.</p> <?oxy_insert_end><p><h3>See Also:</h3>  
-         * <a
+         * questions.</p> <p>You can't change an existing datasource, but you can copy and
+         * modify the settings from an existing Amazon Redshift datasource to create a new
+         * datasource. To do so, call <code>GetDataSource</code> for an existing datasource
+         * and copy the values to a <code>CreateDataSource</code> call. Change the settings
+         * that you want to change and make sure that all required fields have the
+         * appropriate values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">AWS
          * API Reference</a></p>
          */
@@ -444,8 +442,8 @@ namespace Model
          * <p>Creates a <code>DataSource</code> from a database hosted on an Amazon
          * Redshift cluster. A <code>DataSource</code> references data that can be used to
          * perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
-         * <code>CreateBatchPrediction</code> operations.</p>
-         * <p><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
+         * <code>CreateBatchPrediction</code> operations.</p> <p>
+         * <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
          * response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
@@ -469,14 +467,12 @@ namespace Model
          * variable be included or excluded from training? Will the variable be
          * manipulated; for example, will it be combined with another variable or will it
          * be split apart into word combinations? The recipe provides answers to these
-         * questions.</p> <?oxy_insert_start author="laurama"
-         * timestamp="20160406T153842-0700"><p>You can't change an existing datasource, but
-         * you can copy and modify the settings from an existing Amazon Redshift datasource
-         * to create a new datasource. To do so, call <code>GetDataSource</code> for an
-         * existing datasource and copy the values to a <code>CreateDataSource</code> call.
-         * Change the settings that you want to change and make sure that all required
-         * fields have the appropriate values.</p> <?oxy_insert_end><p><h3>See Also:</h3>  
-         * <a
+         * questions.</p> <p>You can't change an existing datasource, but you can copy and
+         * modify the settings from an existing Amazon Redshift datasource to create a new
+         * datasource. To do so, call <code>GetDataSource</code> for an existing datasource
+         * and copy the values to a <code>CreateDataSource</code> call. Change the settings
+         * that you want to change and make sure that all required fields have the
+         * appropriate values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">AWS
          * API Reference</a></p>
          *
@@ -488,8 +484,8 @@ namespace Model
          * <p>Creates a <code>DataSource</code> from a database hosted on an Amazon
          * Redshift cluster. A <code>DataSource</code> references data that can be used to
          * perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or
-         * <code>CreateBatchPrediction</code> operations.</p>
-         * <p><code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
+         * <code>CreateBatchPrediction</code> operations.</p> <p>
+         * <code>CreateDataSourceFromRedshift</code> is an asynchronous operation. In
          * response to <code>CreateDataSourceFromRedshift</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>DataSource</code> status to
          * <code>PENDING</code>. After the <code>DataSource</code> is created and ready for
@@ -513,14 +509,12 @@ namespace Model
          * variable be included or excluded from training? Will the variable be
          * manipulated; for example, will it be combined with another variable or will it
          * be split apart into word combinations? The recipe provides answers to these
-         * questions.</p> <?oxy_insert_start author="laurama"
-         * timestamp="20160406T153842-0700"><p>You can't change an existing datasource, but
-         * you can copy and modify the settings from an existing Amazon Redshift datasource
-         * to create a new datasource. To do so, call <code>GetDataSource</code> for an
-         * existing datasource and copy the values to a <code>CreateDataSource</code> call.
-         * Change the settings that you want to change and make sure that all required
-         * fields have the appropriate values.</p> <?oxy_insert_end><p><h3>See Also:</h3>  
-         * <a
+         * questions.</p> <p>You can't change an existing datasource, but you can copy and
+         * modify the settings from an existing Amazon Redshift datasource to create a new
+         * datasource. To do so, call <code>GetDataSource</code> for an existing datasource
+         * and copy the values to a <code>CreateDataSource</code> call. Change the settings
+         * that you want to change and make sure that all required fields have the
+         * appropriate values.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/CreateDataSourceFromRedshift">AWS
          * API Reference</a></p>
          *
@@ -532,7 +526,7 @@ namespace Model
          * <p>Creates a <code>DataSource</code> object. A <code>DataSource</code>
          * references data that can be used to perform <code>CreateMLModel</code>,
          * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
-         * operations.</p> <p><code>CreateDataSourceFromS3</code> is an asynchronous
+         * operations.</p> <p> <code>CreateDataSourceFromS3</code> is an asynchronous
          * operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine
          * Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
          * status to <code>PENDING</code>. After the <code>DataSource</code> has been
@@ -567,7 +561,7 @@ namespace Model
          * <p>Creates a <code>DataSource</code> object. A <code>DataSource</code>
          * references data that can be used to perform <code>CreateMLModel</code>,
          * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
-         * operations.</p> <p><code>CreateDataSourceFromS3</code> is an asynchronous
+         * operations.</p> <p> <code>CreateDataSourceFromS3</code> is an asynchronous
          * operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine
          * Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
          * status to <code>PENDING</code>. After the <code>DataSource</code> has been
@@ -604,7 +598,7 @@ namespace Model
          * <p>Creates a <code>DataSource</code> object. A <code>DataSource</code>
          * references data that can be used to perform <code>CreateMLModel</code>,
          * <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code>
-         * operations.</p> <p><code>CreateDataSourceFromS3</code> is an asynchronous
+         * operations.</p> <p> <code>CreateDataSourceFromS3</code> is an asynchronous
          * operation. In response to <code>CreateDataSourceFromS3</code>, Amazon Machine
          * Learning (Amazon ML) immediately returns and sets the <code>DataSource</code>
          * status to <code>PENDING</code>. After the <code>DataSource</code> has been
@@ -648,8 +642,8 @@ namespace Model
          * <code>MLModel</code> functions on the test data. Evaluation generates a relevant
          * performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore
          * based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
-         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p>
-         * <p><code>CreateEvaluation</code> is an asynchronous operation. In response to
+         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p> <p>
+         * <code>CreateEvaluation</code> is an asynchronous operation. In response to
          * <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately
          * returns and sets the evaluation status to <code>PENDING</code>. After the
          * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
@@ -672,8 +666,8 @@ namespace Model
          * <code>MLModel</code> functions on the test data. Evaluation generates a relevant
          * performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore
          * based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
-         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p>
-         * <p><code>CreateEvaluation</code> is an asynchronous operation. In response to
+         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p> <p>
+         * <code>CreateEvaluation</code> is an asynchronous operation. In response to
          * <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately
          * returns and sets the evaluation status to <code>PENDING</code>. After the
          * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
@@ -698,8 +692,8 @@ namespace Model
          * <code>MLModel</code> functions on the test data. Evaluation generates a relevant
          * performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore
          * based on the corresponding <code>MLModelType</code>: <code>BINARY</code>,
-         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p>
-         * <p><code>CreateEvaluation</code> is an asynchronous operation. In response to
+         * <code>REGRESSION</code> or <code>MULTICLASS</code>. </p> <p>
+         * <code>CreateEvaluation</code> is an asynchronous operation. In response to
          * <code>CreateEvaluation</code>, Amazon Machine Learning (Amazon ML) immediately
          * returns and sets the evaluation status to <code>PENDING</code>. After the
          * <code>Evaluation</code> is created and ready for use, Amazon ML sets the status
@@ -718,7 +712,7 @@ namespace Model
          * recipe as information sources. </p> <p>An <code>MLModel</code> is nearly
          * immutable. Users can update only the <code>MLModelName</code> and the
          * <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new
-         * <code>MLModel</code>. </p> <p><code>CreateMLModel</code> is an asynchronous
+         * <code>MLModel</code>. </p> <p> <code>CreateMLModel</code> is an asynchronous
          * operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>MLModel</code> status to
          * <code>PENDING</code>. After the <code>MLModel</code> has been created and ready
@@ -741,7 +735,7 @@ namespace Model
          * recipe as information sources. </p> <p>An <code>MLModel</code> is nearly
          * immutable. Users can update only the <code>MLModelName</code> and the
          * <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new
-         * <code>MLModel</code>. </p> <p><code>CreateMLModel</code> is an asynchronous
+         * <code>MLModel</code>. </p> <p> <code>CreateMLModel</code> is an asynchronous
          * operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>MLModel</code> status to
          * <code>PENDING</code>. After the <code>MLModel</code> has been created and ready
@@ -766,7 +760,7 @@ namespace Model
          * recipe as information sources. </p> <p>An <code>MLModel</code> is nearly
          * immutable. Users can update only the <code>MLModelName</code> and the
          * <code>ScoreThreshold</code> in an <code>MLModel</code> without creating a new
-         * <code>MLModel</code>. </p> <p><code>CreateMLModel</code> is an asynchronous
+         * <code>MLModel</code>. </p> <p> <code>CreateMLModel</code> is an asynchronous
          * operation. In response to <code>CreateMLModel</code>, Amazon Machine Learning
          * (Amazon ML) immediately returns and sets the <code>MLModel</code> status to
          * <code>PENDING</code>. After the <code>MLModel</code> has been created and ready
@@ -824,7 +818,7 @@ namespace Model
          * <p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it
          * unusable.</p> <p>After using the <code>DeleteBatchPrediction</code> operation,
          * you can use the <a>GetBatchPrediction</a> operation to verify that the status of
-         * the <code>BatchPrediction</code> changed to DELETED.</p> <p><b>Caution:</b> The
+         * the <code>BatchPrediction</code> changed to DELETED.</p> <p> <b>Caution:</b> The
          * result of the <code>DeleteBatchPrediction</code> operation is
          * irreversible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">AWS
@@ -836,7 +830,7 @@ namespace Model
          * <p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it
          * unusable.</p> <p>After using the <code>DeleteBatchPrediction</code> operation,
          * you can use the <a>GetBatchPrediction</a> operation to verify that the status of
-         * the <code>BatchPrediction</code> changed to DELETED.</p> <p><b>Caution:</b> The
+         * the <code>BatchPrediction</code> changed to DELETED.</p> <p> <b>Caution:</b> The
          * result of the <code>DeleteBatchPrediction</code> operation is
          * irreversible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">AWS
@@ -850,7 +844,7 @@ namespace Model
          * <p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it
          * unusable.</p> <p>After using the <code>DeleteBatchPrediction</code> operation,
          * you can use the <a>GetBatchPrediction</a> operation to verify that the status of
-         * the <code>BatchPrediction</code> changed to DELETED.</p> <p><b>Caution:</b> The
+         * the <code>BatchPrediction</code> changed to DELETED.</p> <p> <b>Caution:</b> The
          * result of the <code>DeleteBatchPrediction</code> operation is
          * irreversible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteBatchPrediction">AWS
@@ -864,7 +858,7 @@ namespace Model
          * <p>Assigns the DELETED status to a <code>DataSource</code>, rendering it
          * unusable.</p> <p>After using the <code>DeleteDataSource</code> operation, you
          * can use the <a>GetDataSource</a> operation to verify that the status of the
-         * <code>DataSource</code> changed to DELETED.</p> <p><b>Caution:</b> The results
+         * <code>DataSource</code> changed to DELETED.</p> <p> <b>Caution:</b> The results
          * of the <code>DeleteDataSource</code> operation are irreversible.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">AWS
@@ -876,7 +870,7 @@ namespace Model
          * <p>Assigns the DELETED status to a <code>DataSource</code>, rendering it
          * unusable.</p> <p>After using the <code>DeleteDataSource</code> operation, you
          * can use the <a>GetDataSource</a> operation to verify that the status of the
-         * <code>DataSource</code> changed to DELETED.</p> <p><b>Caution:</b> The results
+         * <code>DataSource</code> changed to DELETED.</p> <p> <b>Caution:</b> The results
          * of the <code>DeleteDataSource</code> operation are irreversible.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">AWS
@@ -890,7 +884,7 @@ namespace Model
          * <p>Assigns the DELETED status to a <code>DataSource</code>, rendering it
          * unusable.</p> <p>After using the <code>DeleteDataSource</code> operation, you
          * can use the <a>GetDataSource</a> operation to verify that the status of the
-         * <code>DataSource</code> changed to DELETED.</p> <p><b>Caution:</b> The results
+         * <code>DataSource</code> changed to DELETED.</p> <p> <b>Caution:</b> The results
          * of the <code>DeleteDataSource</code> operation are irreversible.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteDataSource">AWS
@@ -905,9 +899,8 @@ namespace Model
          * rendering it unusable.</p> <p>After invoking the <code>DeleteEvaluation</code>
          * operation, you can use the <code>GetEvaluation</code> operation to verify that
          * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-         * <caution><title>Caution</title> <p>The results of the
-         * <code>DeleteEvaluation</code> operation are
-         * irreversible.</p></caution><p><h3>See Also:</h3>   <a
+         * <p> <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation
+         * are irreversible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">AWS
          * API Reference</a></p>
          */
@@ -918,9 +911,8 @@ namespace Model
          * rendering it unusable.</p> <p>After invoking the <code>DeleteEvaluation</code>
          * operation, you can use the <code>GetEvaluation</code> operation to verify that
          * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-         * <caution><title>Caution</title> <p>The results of the
-         * <code>DeleteEvaluation</code> operation are
-         * irreversible.</p></caution><p><h3>See Also:</h3>   <a
+         * <p> <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation
+         * are irreversible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">AWS
          * API Reference</a></p>
          *
@@ -933,9 +925,8 @@ namespace Model
          * rendering it unusable.</p> <p>After invoking the <code>DeleteEvaluation</code>
          * operation, you can use the <code>GetEvaluation</code> operation to verify that
          * the status of the <code>Evaluation</code> changed to <code>DELETED</code>.</p>
-         * <caution><title>Caution</title> <p>The results of the
-         * <code>DeleteEvaluation</code> operation are
-         * irreversible.</p></caution><p><h3>See Also:</h3>   <a
+         * <p> <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation
+         * are irreversible.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteEvaluation">AWS
          * API Reference</a></p>
          *
@@ -947,7 +938,7 @@ namespace Model
          * <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering
          * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
          * can use the <code>GetMLModel</code> operation to verify that the status of the
-         * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
+         * <code>MLModel</code> changed to DELETED.</p> <p> <b>Caution:</b> The result of
          * the <code>DeleteMLModel</code> operation is irreversible.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">AWS
@@ -959,7 +950,7 @@ namespace Model
          * <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering
          * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
          * can use the <code>GetMLModel</code> operation to verify that the status of the
-         * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
+         * <code>MLModel</code> changed to DELETED.</p> <p> <b>Caution:</b> The result of
          * the <code>DeleteMLModel</code> operation is irreversible.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">AWS
@@ -973,7 +964,7 @@ namespace Model
          * <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering
          * it unusable.</p> <p>After using the <code>DeleteMLModel</code> operation, you
          * can use the <code>GetMLModel</code> operation to verify that the status of the
-         * <code>MLModel</code> changed to DELETED.</p> <p><b>Caution:</b> The result of
+         * <code>MLModel</code> changed to DELETED.</p> <p> <b>Caution:</b> The result of
          * the <code>DeleteMLModel</code> operation is irreversible.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteMLModel">AWS
@@ -1216,7 +1207,7 @@ namespace Model
         /**
          * <p>Returns a <code>DataSource</code> that includes metadata and data file
          * information, as well as the current status of the <code>DataSource</code>.</p>
-         * <p><code>GetDataSource</code> provides results in normal or verbose format. The
+         * <p> <code>GetDataSource</code> provides results in normal or verbose format. The
          * verbose format adds the schema description and the list of files pointed to by
          * the DataSource to the normal format.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">AWS
@@ -1227,7 +1218,7 @@ namespace Model
         /**
          * <p>Returns a <code>DataSource</code> that includes metadata and data file
          * information, as well as the current status of the <code>DataSource</code>.</p>
-         * <p><code>GetDataSource</code> provides results in normal or verbose format. The
+         * <p> <code>GetDataSource</code> provides results in normal or verbose format. The
          * verbose format adds the schema description and the list of files pointed to by
          * the DataSource to the normal format.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">AWS
@@ -1240,7 +1231,7 @@ namespace Model
         /**
          * <p>Returns a <code>DataSource</code> that includes metadata and data file
          * information, as well as the current status of the <code>DataSource</code>.</p>
-         * <p><code>GetDataSource</code> provides results in normal or verbose format. The
+         * <p> <code>GetDataSource</code> provides results in normal or verbose format. The
          * verbose format adds the schema description and the list of files pointed to by
          * the DataSource to the normal format.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetDataSource">AWS
@@ -1280,8 +1271,8 @@ namespace Model
 
         /**
          * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
-         * information, and the current status of the <code>MLModel</code>.</p>
-         * <p><code>GetMLModel</code> provides results in normal or verbose format.
+         * information, and the current status of the <code>MLModel</code>.</p> <p>
+         * <code>GetMLModel</code> provides results in normal or verbose format.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">AWS
          * API Reference</a></p>
@@ -1290,8 +1281,8 @@ namespace Model
 
         /**
          * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
-         * information, and the current status of the <code>MLModel</code>.</p>
-         * <p><code>GetMLModel</code> provides results in normal or verbose format.
+         * information, and the current status of the <code>MLModel</code>.</p> <p>
+         * <code>GetMLModel</code> provides results in normal or verbose format.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">AWS
          * API Reference</a></p>
@@ -1302,8 +1293,8 @@ namespace Model
 
         /**
          * <p>Returns an <code>MLModel</code> that includes detailed metadata, data source
-         * information, and the current status of the <code>MLModel</code>.</p>
-         * <p><code>GetMLModel</code> provides results in normal or verbose format.
+         * information, and the current status of the <code>MLModel</code>.</p> <p>
+         * <code>GetMLModel</code> provides results in normal or verbose format.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/GetMLModel">AWS
          * API Reference</a></p>
@@ -1314,8 +1305,8 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
-         * be populated. Whether a response parameter is populated depends on the type of
+         * Model</code>.</p> <p> <b>Note:</b> Not all response parameters will be
+         * populated. Whether a response parameter is populated depends on the type of
          * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
@@ -1324,8 +1315,8 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
-         * be populated. Whether a response parameter is populated depends on the type of
+         * Model</code>.</p> <p> <b>Note:</b> Not all response parameters will be
+         * populated. Whether a response parameter is populated depends on the type of
          * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>
@@ -1336,8 +1327,8 @@ namespace Model
 
         /**
          * <p>Generates a prediction for the observation using the specified <code>ML
-         * Model</code>.</p> <title>Note</title> <p>Not all response parameters will
-         * be populated. Whether a response parameter is populated depends on the type of
+         * Model</code>.</p> <p> <b>Note:</b> Not all response parameters will be
+         * populated. Whether a response parameter is populated depends on the type of
          * model requested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/Predict">AWS
          * API Reference</a></p>

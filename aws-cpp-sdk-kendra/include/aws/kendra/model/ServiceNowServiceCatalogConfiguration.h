@@ -66,102 +66,165 @@ namespace Model
 
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIncludeAttachmentFilePatterns() const{ return m_includeAttachmentFilePatterns; }
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline bool IncludeAttachmentFilePatternsHasBeenSet() const { return m_includeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = value; }
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline void SetIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithIncludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetIncludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithIncludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetIncludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddIncludeAttachmentFilePatterns(const Aws::String& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddIncludeAttachmentFilePatterns(Aws::String&& value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Determines the types of file attachments that are included in the index. </p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * included in the index. Documents that don't match the patterns are excluded from
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddIncludeAttachmentFilePatterns(const char* value) { m_includeAttachmentFilePatternsHasBeenSet = true; m_includeAttachmentFilePatterns.push_back(value); return *this; }
 
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeAttachmentFilePatterns() const{ return m_excludeAttachmentFilePatterns; }
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline bool ExcludeAttachmentFilePatternsHasBeenSet() const { return m_excludeAttachmentFilePatternsHasBeenSet; }
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = value; }
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline void SetExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns = std::move(value); }
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithExcludeAttachmentFilePatterns(const Aws::Vector<Aws::String>& value) { SetExcludeAttachmentFilePatterns(value); return *this;}
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& WithExcludeAttachmentFilePatterns(Aws::Vector<Aws::String>&& value) { SetExcludeAttachmentFilePatterns(std::move(value)); return *this;}
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddExcludeAttachmentFilePatterns(const Aws::String& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddExcludeAttachmentFilePatterns(Aws::String&& value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Determines the types of file attachments that are excluded from the
-     * index.</p>
+     * <p>A list of regular expression patterns. Documents that match the patterns are
+     * excluded from the index. Documents that don't match the patterns are included in
+     * the index. If a document matches both an exclusion pattern and an inclusion
+     * pattern, the document is not included in the index.</p> <p>The regex is applied
+     * to the file name of the attachment.</p>
      */
     inline ServiceNowServiceCatalogConfiguration& AddExcludeAttachmentFilePatterns(const char* value) { m_excludeAttachmentFilePatternsHasBeenSet = true; m_excludeAttachmentFilePatterns.push_back(value); return *this; }
 

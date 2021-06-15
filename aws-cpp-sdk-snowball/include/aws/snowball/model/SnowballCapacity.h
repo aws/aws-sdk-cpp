@@ -22,6 +22,7 @@ namespace Model
     T42,
     T98,
     T8,
+    T14,
     NoPreference
   };
 

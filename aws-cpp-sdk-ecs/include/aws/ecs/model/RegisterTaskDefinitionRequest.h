@@ -12,6 +12,7 @@
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/IpcMode.h>
 #include <aws/ecs/model/ProxyConfiguration.h>
+#include <aws/ecs/model/EphemeralStorage.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
@@ -49,7 +50,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline const Aws::String& GetFamily() const{ return m_family; }
 
@@ -57,7 +59,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
 
@@ -65,7 +68,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
@@ -73,7 +77,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
 
@@ -81,7 +86,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
 
@@ -89,7 +95,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
 
@@ -97,7 +104,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
 
@@ -105,7 +113,8 @@ namespace Model
      * <p>You must specify a <code>family</code> for a task definition, which allows
      * you to track multiple versions of the same task definition. The
      * <code>family</code> is used as a name for your task definition. Up to 255
-     * letters (uppercase and lowercase), numbers, and hyphens are allowed.</p>
+     * letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed.</p>
      */
     inline RegisterTaskDefinitionRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
 
@@ -678,65 +687,65 @@ namespace Model
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
      * <p>The task launch type that Amazon ECS should validate the task definition
-     * against. This ensures that the task definition parameters are compatible with
-     * the specified launch type. If no value is specified, it defaults to
-     * <code>EC2</code>.</p>
+     * against. A client exception is returned if the task definition doesn't validate
+     * against the compatibilities specified. If no value is specified, the parameter
+     * is omitted from the response.</p>
      */
     inline RegisterTaskDefinitionRequest& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 
@@ -1302,7 +1311,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline const PidMode& GetPidMode() const{ return m_pidMode; }
 
@@ -1320,7 +1329,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline bool PidModeHasBeenSet() const { return m_pidModeHasBeenSet; }
 
@@ -1338,7 +1347,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline void SetPidMode(const PidMode& value) { m_pidModeHasBeenSet = true; m_pidMode = value; }
 
@@ -1356,7 +1365,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline void SetPidMode(PidMode&& value) { m_pidModeHasBeenSet = true; m_pidMode = std::move(value); }
 
@@ -1374,7 +1383,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(const PidMode& value) { SetPidMode(value); return *this;}
 
@@ -1392,7 +1401,7 @@ namespace Model
      * namespace expose. For more information, see <a
      * href="https://docs.docker.com/engine/security/security/">Docker
      * security</a>.</p>  <p>This parameter is not supported for Windows
-     * containers or tasks using the Fargate launch type.</p> 
+     * containers or tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithPidMode(PidMode&& value) { SetPidMode(std::move(value)); return *this;}
 
@@ -1424,7 +1433,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline const IpcMode& GetIpcMode() const{ return m_ipcMode; }
 
@@ -1455,7 +1464,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline bool IpcModeHasBeenSet() const { return m_ipcModeHasBeenSet; }
 
@@ -1486,7 +1495,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetIpcMode(const IpcMode& value) { m_ipcModeHasBeenSet = true; m_ipcMode = value; }
 
@@ -1517,7 +1526,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline void SetIpcMode(IpcMode&& value) { m_ipcModeHasBeenSet = true; m_ipcMode = std::move(value); }
 
@@ -1548,7 +1557,7 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(const IpcMode& value) { SetIpcMode(value); return *this;}
 
@@ -1579,27 +1588,99 @@ namespace Model
      * tasks that use the <code>task</code> IPC mode, IPC namespace related
      * <code>systemControls</code> will apply to all containers within a task.</p>
      * </li> </ul>  <p>This parameter is not supported for Windows containers or
-     * tasks using the Fargate launch type.</p> 
+     * tasks run on AWS Fargate.</p> 
      */
     inline RegisterTaskDefinitionRequest& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline RegisterTaskDefinitionRequest& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The configuration details for the App Mesh proxy.</p> <p>For tasks hosted on
+     * Amazon EC2 instances, the container instances require at least version
+     * <code>1.26.0</code> of the container agent and at least version
+     * <code>1.26.0-1</code> of the <code>ecs-init</code> package to enable a proxy
+     * configuration. If your container instances are launched from the Amazon
+     * ECS-optimized AMI version <code>20190301</code> or later, then they contain the
+     * required versions of the container agent and <code>ecs-init</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-ami-versions.html">Amazon
+     * ECS-optimized AMI versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
     inline RegisterTaskDefinitionRequest& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
 
 
@@ -1642,6 +1723,73 @@ namespace Model
      * <p>The Elastic Inference accelerators to use for the containers in the task.</p>
      */
     inline RegisterTaskDefinitionRequest& AddInferenceAccelerators(InferenceAccelerator&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline RegisterTaskDefinitionRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
+
+    /**
+     * <p>The amount of ephemeral storage to allocate for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on AWS Fargate. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
+     * task storage</a> in the <i>Amazon ECS User Guide for AWS Fargate</i>.</p> 
+     * <p>This parameter is only supported for tasks hosted on AWS Fargate using
+     * platform version <code>1.4.0</code> or later.</p> 
+     */
+    inline RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
   private:
 
@@ -1689,6 +1837,9 @@ namespace Model
 
     Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
     bool m_inferenceAcceleratorsHasBeenSet;
+
+    EphemeralStorage m_ephemeralStorage;
+    bool m_ephemeralStorageHasBeenSet;
   };
 
 } // namespace Model

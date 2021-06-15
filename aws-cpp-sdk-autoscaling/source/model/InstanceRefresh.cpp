@@ -31,7 +31,8 @@ InstanceRefresh::InstanceRefresh() :
     m_percentageComplete(0),
     m_percentageCompleteHasBeenSet(false),
     m_instancesToUpdate(0),
-    m_instancesToUpdateHasBeenSet(false)
+    m_instancesToUpdateHasBeenSet(false),
+    m_progressDetailsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ InstanceRefresh::InstanceRefresh(const XmlNode& xmlNode) :
     m_percentageComplete(0),
     m_percentageCompleteHasBeenSet(false),
     m_instancesToUpdate(0),
-    m_instancesToUpdateHasBeenSet(false)
+    m_instancesToUpdateHasBeenSet(false),
+    m_progressDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,12 @@ InstanceRefresh& InstanceRefresh::operator =(const XmlNode& xmlNode)
       m_instancesToUpdate = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instancesToUpdateNode.GetText()).c_str()).c_str());
       m_instancesToUpdateHasBeenSet = true;
     }
+    XmlNode progressDetailsNode = resultNode.FirstChild("ProgressDetails");
+    if(!progressDetailsNode.IsNull())
+    {
+      m_progressDetails = progressDetailsNode;
+      m_progressDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -152,6 +160,13 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".InstancesToUpdate=" << m_instancesToUpdate << "&";
   }
 
+  if(m_progressDetailsHasBeenSet)
+  {
+      Aws::StringStream progressDetailsLocationAndMemberSs;
+      progressDetailsLocationAndMemberSs << location << index << locationValue << ".ProgressDetails";
+      m_progressDetails.OutputToStream(oStream, progressDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -187,6 +202,12 @@ void InstanceRefresh::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_instancesToUpdateHasBeenSet)
   {
       oStream << location << ".InstancesToUpdate=" << m_instancesToUpdate << "&";
+  }
+  if(m_progressDetailsHasBeenSet)
+  {
+      Aws::String progressDetailsLocationAndMember(location);
+      progressDetailsLocationAndMember += ".ProgressDetails";
+      m_progressDetails.OutputToStream(oStream, progressDetailsLocationAndMember.c_str());
   }
 }
 

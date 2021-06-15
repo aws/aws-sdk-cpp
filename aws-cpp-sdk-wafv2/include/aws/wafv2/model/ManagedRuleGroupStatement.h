@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/ExcludedRule.h>
 #include <utility>
+#include <memory>
 
 namespace Aws
 {
@@ -24,16 +25,13 @@ namespace WAFV2
 {
 namespace Model
 {
+  class Statement;
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>A rule statement used to run the rules
-   * that are defined in a managed rule group. To use this, provide the vendor name
-   * and the name of the rule group in this statement. You can retrieve the required
-   * names by calling <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+   * <p>A rule statement used to run the rules that are defined in a managed rule
+   * group. To use this, provide the vendor name and the name of the rule group in
+   * this statement. You can retrieve the required names by calling
+   * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
    * <code>ManagedRuleGroupStatement</code>, for example for use inside a
    * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
    * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
@@ -203,6 +201,25 @@ namespace Model
      */
     inline ManagedRuleGroupStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
 
+
+    
+    const Statement& GetScopeDownStatement() const;
+
+    
+    bool ScopeDownStatementHasBeenSet() const;
+
+    
+    void SetScopeDownStatement(const Statement& value);
+
+    
+    void SetScopeDownStatement(Statement&& value);
+
+    
+    ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
+
+    
+    ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
+
   private:
 
     Aws::String m_vendorName;
@@ -213,6 +230,9 @@ namespace Model
 
     Aws::Vector<ExcludedRule> m_excludedRules;
     bool m_excludedRulesHasBeenSet;
+
+    std::shared_ptr<Statement> m_scopeDownStatement;
+    bool m_scopeDownStatementHasBeenSet;
   };
 
 } // namespace Model

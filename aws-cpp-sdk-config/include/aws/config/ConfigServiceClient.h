@@ -19,6 +19,7 @@
 #include <aws/config/model/DeleteStoredQueryResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
 #include <aws/config/model/DescribeAggregateComplianceByConfigRulesResult.h>
+#include <aws/config/model/DescribeAggregateComplianceByConformancePacksResult.h>
 #include <aws/config/model/DescribeAggregationAuthorizationsResult.h>
 #include <aws/config/model/DescribeComplianceByConfigRuleResult.h>
 #include <aws/config/model/DescribeComplianceByResourceResult.h>
@@ -44,6 +45,7 @@
 #include <aws/config/model/DescribeRetentionConfigurationsResult.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleResult.h>
 #include <aws/config/model/GetAggregateConfigRuleComplianceSummaryResult.h>
+#include <aws/config/model/GetAggregateConformancePackComplianceSummaryResult.h>
 #include <aws/config/model/GetAggregateDiscoveredResourceCountsResult.h>
 #include <aws/config/model/GetAggregateResourceConfigResult.h>
 #include <aws/config/model/GetComplianceDetailsByConfigRuleResult.h>
@@ -135,6 +137,7 @@ namespace Model
         class DeleteStoredQueryRequest;
         class DeliverConfigSnapshotRequest;
         class DescribeAggregateComplianceByConfigRulesRequest;
+        class DescribeAggregateComplianceByConformancePacksRequest;
         class DescribeAggregationAuthorizationsRequest;
         class DescribeComplianceByConfigRuleRequest;
         class DescribeComplianceByResourceRequest;
@@ -160,6 +163,7 @@ namespace Model
         class DescribeRetentionConfigurationsRequest;
         class GetAggregateComplianceDetailsByConfigRuleRequest;
         class GetAggregateConfigRuleComplianceSummaryRequest;
+        class GetAggregateConformancePackComplianceSummaryRequest;
         class GetAggregateDiscoveredResourceCountsRequest;
         class GetAggregateResourceConfigRequest;
         class GetComplianceDetailsByConfigRuleRequest;
@@ -219,6 +223,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteStoredQueryResult, ConfigServiceError> DeleteStoredQueryOutcome;
         typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, ConfigServiceError> DeliverConfigSnapshotOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, ConfigServiceError> DescribeAggregateComplianceByConfigRulesOutcome;
+        typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConformancePacksResult, ConfigServiceError> DescribeAggregateComplianceByConformancePacksOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregationAuthorizationsResult, ConfigServiceError> DescribeAggregationAuthorizationsOutcome;
         typedef Aws::Utils::Outcome<DescribeComplianceByConfigRuleResult, ConfigServiceError> DescribeComplianceByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<DescribeComplianceByResourceResult, ConfigServiceError> DescribeComplianceByResourceOutcome;
@@ -244,6 +249,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, ConfigServiceError> DescribeRetentionConfigurationsOutcome;
         typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, ConfigServiceError> GetAggregateComplianceDetailsByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<GetAggregateConfigRuleComplianceSummaryResult, ConfigServiceError> GetAggregateConfigRuleComplianceSummaryOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateConformancePackComplianceSummaryResult, ConfigServiceError> GetAggregateConformancePackComplianceSummaryOutcome;
         typedef Aws::Utils::Outcome<GetAggregateDiscoveredResourceCountsResult, ConfigServiceError> GetAggregateDiscoveredResourceCountsOutcome;
         typedef Aws::Utils::Outcome<GetAggregateResourceConfigResult, ConfigServiceError> GetAggregateResourceConfigOutcome;
         typedef Aws::Utils::Outcome<GetComplianceDetailsByConfigRuleResult, ConfigServiceError> GetComplianceDetailsByConfigRuleOutcome;
@@ -304,6 +310,7 @@ namespace Model
         typedef std::future<DeleteStoredQueryOutcome> DeleteStoredQueryOutcomeCallable;
         typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
         typedef std::future<DescribeAggregateComplianceByConfigRulesOutcome> DescribeAggregateComplianceByConfigRulesOutcomeCallable;
+        typedef std::future<DescribeAggregateComplianceByConformancePacksOutcome> DescribeAggregateComplianceByConformancePacksOutcomeCallable;
         typedef std::future<DescribeAggregationAuthorizationsOutcome> DescribeAggregationAuthorizationsOutcomeCallable;
         typedef std::future<DescribeComplianceByConfigRuleOutcome> DescribeComplianceByConfigRuleOutcomeCallable;
         typedef std::future<DescribeComplianceByResourceOutcome> DescribeComplianceByResourceOutcomeCallable;
@@ -329,6 +336,7 @@ namespace Model
         typedef std::future<DescribeRetentionConfigurationsOutcome> DescribeRetentionConfigurationsOutcomeCallable;
         typedef std::future<GetAggregateComplianceDetailsByConfigRuleOutcome> GetAggregateComplianceDetailsByConfigRuleOutcomeCallable;
         typedef std::future<GetAggregateConfigRuleComplianceSummaryOutcome> GetAggregateConfigRuleComplianceSummaryOutcomeCallable;
+        typedef std::future<GetAggregateConformancePackComplianceSummaryOutcome> GetAggregateConformancePackComplianceSummaryOutcomeCallable;
         typedef std::future<GetAggregateDiscoveredResourceCountsOutcome> GetAggregateDiscoveredResourceCountsOutcomeCallable;
         typedef std::future<GetAggregateResourceConfigOutcome> GetAggregateResourceConfigOutcomeCallable;
         typedef std::future<GetComplianceDetailsByConfigRuleOutcome> GetComplianceDetailsByConfigRuleOutcomeCallable;
@@ -392,6 +400,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteStoredQueryRequest&, const Model::DeleteStoredQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStoredQueryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConfigRulesRequest&, const Model::DescribeAggregateComplianceByConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConfigRulesResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConformancePacksRequest&, const Model::DescribeAggregateComplianceByConformancePacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConformancePacksResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregationAuthorizationsRequest&, const Model::DescribeAggregationAuthorizationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregationAuthorizationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByConfigRuleRequest&, const Model::DescribeComplianceByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeComplianceByResourceRequest&, const Model::DescribeComplianceByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeComplianceByResourceResponseReceivedHandler;
@@ -417,6 +426,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRetentionConfigurationsRequest&, const Model::DescribeRetentionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRetentionConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateComplianceDetailsByConfigRuleRequest&, const Model::GetAggregateComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConfigRuleComplianceSummaryRequest&, const Model::GetAggregateConfigRuleComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConformancePackComplianceSummaryRequest&, const Model::GetAggregateConformancePackComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConformancePackComplianceSummaryResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateDiscoveredResourceCountsRequest&, const Model::GetAggregateDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateDiscoveredResourceCountsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateResourceConfigRequest&, const Model::GetAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByConfigRuleRequest&, const Model::GetComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByConfigRuleResponseReceivedHandler;
@@ -1093,16 +1103,16 @@ namespace Model
         virtual void DeleteRetentionConfigurationAsync(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the stored query for a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteStoredQueryOutcome DeleteStoredQuery(const Model::DeleteStoredQueryRequest& request) const;
 
         /**
-         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the stored query for a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
          * API Reference</a></p>
          *
@@ -1111,8 +1121,8 @@ namespace Model
         virtual Model::DeleteStoredQueryOutcomeCallable DeleteStoredQueryCallable(const Model::DeleteStoredQueryRequest& request) const;
 
         /**
-         * <p>Deletes the stored query for an AWS account in an AWS Region. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes the stored query for a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery">AWS
          * API Reference</a></p>
          *
@@ -1196,6 +1206,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAggregateComplianceByConfigRulesAsync(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of the conformance packs and their associated compliance
+         * status with the count of compliant and noncompliant AWS Config rules within each
+         * conformance pack. Also returns the total rule count which includes compliant
+         * rules, noncompliant rules, and rules that cannot be evaluated due to
+         * insufficient data.</p>  <p>The results can return an empty result page,
+         * but if you have a <code>nextToken</code>, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAggregateComplianceByConformancePacksOutcome DescribeAggregateComplianceByConformancePacks(const Model::DescribeAggregateComplianceByConformancePacksRequest& request) const;
+
+        /**
+         * <p>Returns a list of the conformance packs and their associated compliance
+         * status with the count of compliant and noncompliant AWS Config rules within each
+         * conformance pack. Also returns the total rule count which includes compliant
+         * rules, noncompliant rules, and rules that cannot be evaluated due to
+         * insufficient data.</p>  <p>The results can return an empty result page,
+         * but if you have a <code>nextToken</code>, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAggregateComplianceByConformancePacksOutcomeCallable DescribeAggregateComplianceByConformancePacksCallable(const Model::DescribeAggregateComplianceByConformancePacksRequest& request) const;
+
+        /**
+         * <p>Returns a list of the conformance packs and their associated compliance
+         * status with the count of compliant and noncompliant AWS Config rules within each
+         * conformance pack. Also returns the total rule count which includes compliant
+         * rules, noncompliant rules, and rules that cannot be evaluated due to
+         * insufficient data.</p>  <p>The results can return an empty result page,
+         * but if you have a <code>nextToken</code>, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAggregateComplianceByConformancePacksAsync(const Model::DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of authorizations granted to various aggregator accounts and
@@ -2174,6 +2227,43 @@ namespace Model
         virtual void GetAggregateConfigRuleComplianceSummaryAsync(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the count of compliant and noncompliant conformance packs across all
+         * AWS Accounts and AWS Regions in an aggregator. You can filter based on AWS
+         * Account ID or AWS Region.</p>  <p>The results can return an empty result
+         * page, but if you have a nextToken, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAggregateConformancePackComplianceSummaryOutcome GetAggregateConformancePackComplianceSummary(const Model::GetAggregateConformancePackComplianceSummaryRequest& request) const;
+
+        /**
+         * <p>Returns the count of compliant and noncompliant conformance packs across all
+         * AWS Accounts and AWS Regions in an aggregator. You can filter based on AWS
+         * Account ID or AWS Region.</p>  <p>The results can return an empty result
+         * page, but if you have a nextToken, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAggregateConformancePackComplianceSummaryOutcomeCallable GetAggregateConformancePackComplianceSummaryCallable(const Model::GetAggregateConformancePackComplianceSummaryRequest& request) const;
+
+        /**
+         * <p>Returns the count of compliant and noncompliant conformance packs across all
+         * AWS Accounts and AWS Regions in an aggregator. You can filter based on AWS
+         * Account ID or AWS Region.</p>  <p>The results can return an empty result
+         * page, but if you have a nextToken, the results are displayed on the next
+         * page.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAggregateConformancePackComplianceSummaryAsync(const Model::GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the resource counts across accounts and regions that are present in
          * your AWS Config aggregator. You can request the resource counts by providing
          * filters and GroupByKey.</p> <p>For example, if the input contains accountID
@@ -2776,16 +2866,16 @@ namespace Model
         virtual void ListDiscoveredResourcesAsync(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>List the stored queries for an AWS account in an AWS Region. The default is
-         * 100. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the stored queries for a single AWS account and a single AWS Region.
+         * The default is 100. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
          * API Reference</a></p>
          */
         virtual Model::ListStoredQueriesOutcome ListStoredQueries(const Model::ListStoredQueriesRequest& request) const;
 
         /**
-         * <p>List the stored queries for an AWS account in an AWS Region. The default is
-         * 100. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the stored queries for a single AWS account and a single AWS Region.
+         * The default is 100. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
          * API Reference</a></p>
          *
@@ -2794,8 +2884,8 @@ namespace Model
         virtual Model::ListStoredQueriesOutcomeCallable ListStoredQueriesCallable(const Model::ListStoredQueriesRequest& request) const;
 
         /**
-         * <p>List the stored queries for an AWS account in an AWS Region. The default is
-         * 100. </p><p><h3>See Also:</h3>   <a
+         * <p>Lists the stored queries for a single AWS account and a single AWS Region.
+         * The default is 100. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">AWS
          * API Reference</a></p>
          *
@@ -2971,11 +3061,21 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p>  <p>AWS Config should be enabled in source accounts and
-         * regions you want to aggregate.</p> <p>If your source type is an organization,
-         * you must be signed in to the master account and all features must be enabled in
-         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
-         * enable integration between AWS Config and AWS Organizations. </p>
+         * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
+         * with existing accounts. If you want to add additional accounts into the
+         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
+         * and then append new ones.</p>  <p>AWS Config should be enabled in source
+         * accounts and regions you want to aggregate.</p> <p>If your source type is an
+         * organization, you must be signed in to the management account or a registered
+         * delegated administrator and all the features must be enabled in your
+         * organization. If the caller is a management account, AWS Config calls
+         * <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config
+         * and AWS Organizations. If the caller is a registered delegated administrator,
+         * AWS Config calls <code>ListDelegatedAdministrators</code> API to verify whether
+         * the caller is a valid delegated administrator.</p> <p>To register a delegated
+         * administrator, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
+         * a Delegated Administrator</a> in the AWS Config developer guide. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
@@ -2985,11 +3085,21 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p>  <p>AWS Config should be enabled in source accounts and
-         * regions you want to aggregate.</p> <p>If your source type is an organization,
-         * you must be signed in to the master account and all features must be enabled in
-         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
-         * enable integration between AWS Config and AWS Organizations. </p>
+         * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
+         * with existing accounts. If you want to add additional accounts into the
+         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
+         * and then append new ones.</p>  <p>AWS Config should be enabled in source
+         * accounts and regions you want to aggregate.</p> <p>If your source type is an
+         * organization, you must be signed in to the management account or a registered
+         * delegated administrator and all the features must be enabled in your
+         * organization. If the caller is a management account, AWS Config calls
+         * <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config
+         * and AWS Organizations. If the caller is a registered delegated administrator,
+         * AWS Config calls <code>ListDelegatedAdministrators</code> API to verify whether
+         * the caller is a valid delegated administrator.</p> <p>To register a delegated
+         * administrator, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
+         * a Delegated Administrator</a> in the AWS Config developer guide. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
@@ -3001,11 +3111,21 @@ namespace Model
         /**
          * <p>Creates and updates the configuration aggregator with the selected source
          * accounts and regions. The source account can be individual account(s) or an
-         * organization.</p>  <p>AWS Config should be enabled in source accounts and
-         * regions you want to aggregate.</p> <p>If your source type is an organization,
-         * you must be signed in to the master account and all features must be enabled in
-         * your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to
-         * enable integration between AWS Config and AWS Organizations. </p>
+         * organization.</p> <p> <code>accountIds</code> that are passed will be replaced
+         * with existing accounts. If you want to add additional accounts into the
+         * aggregator, call <code>DescribeAggregator</code> to get the previous accounts
+         * and then append new ones.</p>  <p>AWS Config should be enabled in source
+         * accounts and regions you want to aggregate.</p> <p>If your source type is an
+         * organization, you must be signed in to the management account or a registered
+         * delegated administrator and all the features must be enabled in your
+         * organization. If the caller is a management account, AWS Config calls
+         * <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config
+         * and AWS Organizations. If the caller is a registered delegated administrator,
+         * AWS Config calls <code>ListDelegatedAdministrators</code> API to verify whether
+         * the caller is a valid delegated administrator.</p> <p>To register a delegated
+         * administrator, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli">Register
+         * a Delegated Administrator</a> in the AWS Config developer guide. </p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationAggregator">AWS
          * API Reference</a></p>
@@ -3196,19 +3316,31 @@ namespace Model
         virtual void PutEvaluationsAsync(const Model::PutEvaluationsRequest& request, const PutEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Add or updates the evaluations for process checks. This API checks if the
+         * rule is a process check when the name of the AWS Config rule is
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutExternalEvaluationOutcome PutExternalEvaluation(const Model::PutExternalEvaluationRequest& request) const;
 
         /**
-         * 
+         * <p>Add or updates the evaluations for process checks. This API checks if the
+         * rule is a process check when the name of the AWS Config rule is
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::PutExternalEvaluationOutcomeCallable PutExternalEvaluationCallable(const Model::PutExternalEvaluationRequest& request) const;
 
         /**
-         * 
+         * <p>Add or updates the evaluations for process checks. This API checks if the
+         * rule is a process check when the name of the AWS Config rule is
+         * provided.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -3344,9 +3476,9 @@ namespace Model
          * <code>TemplateBody</code> parameter.</p> <p>AWS Config sets the state of a
          * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
          * conformance pack is created or updated. You cannot update a conformance pack
-         * while it is in this state.</p> <p>You can create 6 conformance packs with 25 AWS
-         * Config rules in each pack and 3 delegated administrator per organization. </p>
-         * <p><h3>See Also:</h3>   <a
+         * while it is in this state.</p> <p>You can create 50 conformance packs with 25
+         * AWS Config rules in each pack and 3 delegated administrator per organization.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          */
@@ -3373,9 +3505,9 @@ namespace Model
          * <code>TemplateBody</code> parameter.</p> <p>AWS Config sets the state of a
          * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
          * conformance pack is created or updated. You cannot update a conformance pack
-         * while it is in this state.</p> <p>You can create 6 conformance packs with 25 AWS
-         * Config rules in each pack and 3 delegated administrator per organization. </p>
-         * <p><h3>See Also:</h3>   <a
+         * while it is in this state.</p> <p>You can create 50 conformance packs with 25
+         * AWS Config rules in each pack and 3 delegated administrator per organization.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -3404,9 +3536,9 @@ namespace Model
          * <code>TemplateBody</code> parameter.</p> <p>AWS Config sets the state of a
          * conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
          * conformance pack is created or updated. You cannot update a conformance pack
-         * while it is in this state.</p> <p>You can create 6 conformance packs with 25 AWS
-         * Config rules in each pack and 3 delegated administrator per organization. </p>
-         * <p><h3>See Also:</h3>   <a
+         * while it is in this state.</p> <p>You can create 50 conformance packs with 25
+         * AWS Config rules in each pack and 3 delegated administrator per organization.
+         * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -3471,7 +3603,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3484,7 +3616,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3499,7 +3631,7 @@ namespace Model
 
         /**
          * <p>A remediation exception is when a specific resource is no longer considered
-         * for auto-remediation. This API adds a new exception or updates an exisiting
+         * for auto-remediation. This API adds a new exception or updates an existing
          * exception for a specific resource with a specific AWS Config rule. </p> 
          * <p>AWS Config generates a remediation exception when a problem occurs executing
          * a remediation action to a specific resource. Remediation exceptions blocks
@@ -3612,9 +3744,9 @@ namespace Model
 
         /**
          * <p>Saves a new query or updates an existing saved query. The
-         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
-         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>QueryName</code> must be unique for a single AWS account and a single AWS
+         * Region. You can create upto 300 queries in a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
          * API Reference</a></p>
          */
@@ -3622,9 +3754,9 @@ namespace Model
 
         /**
          * <p>Saves a new query or updates an existing saved query. The
-         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
-         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>QueryName</code> must be unique for a single AWS account and a single AWS
+         * Region. You can create upto 300 queries in a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
          * API Reference</a></p>
          *
@@ -3634,9 +3766,9 @@ namespace Model
 
         /**
          * <p>Saves a new query or updates an existing saved query. The
-         * <code>QueryName</code> must be unique for an AWS account in an AWS Region. You
-         * can create upto 300 queries in an AWS account in an AWS Region.</p><p><h3>See
-         * Also:</h3>   <a
+         * <code>QueryName</code> must be unique for a single AWS account and a single AWS
+         * Region. You can create upto 300 queries in a single AWS account and a single AWS
+         * Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">AWS
          * API Reference</a></p>
          *
@@ -4005,6 +4137,7 @@ namespace Model
         void DeleteStoredQueryAsyncHelper(const Model::DeleteStoredQueryRequest& request, const DeleteStoredQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateComplianceByConfigRulesAsyncHelper(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAggregateComplianceByConformancePacksAsyncHelper(const Model::DescribeAggregateComplianceByConformancePacksRequest& request, const DescribeAggregateComplianceByConformancePacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregationAuthorizationsAsyncHelper(const Model::DescribeAggregationAuthorizationsRequest& request, const DescribeAggregationAuthorizationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComplianceByConfigRuleAsyncHelper(const Model::DescribeComplianceByConfigRuleRequest& request, const DescribeComplianceByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeComplianceByResourceAsyncHelper(const Model::DescribeComplianceByResourceRequest& request, const DescribeComplianceByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4030,6 +4163,7 @@ namespace Model
         void DescribeRetentionConfigurationsAsyncHelper(const Model::DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAggregateComplianceDetailsByConfigRuleAsyncHelper(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAggregateConfigRuleComplianceSummaryAsyncHelper(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAggregateConformancePackComplianceSummaryAsyncHelper(const Model::GetAggregateConformancePackComplianceSummaryRequest& request, const GetAggregateConformancePackComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAggregateDiscoveredResourceCountsAsyncHelper(const Model::GetAggregateDiscoveredResourceCountsRequest& request, const GetAggregateDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAggregateResourceConfigAsyncHelper(const Model::GetAggregateResourceConfigRequest& request, const GetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceDetailsByConfigRuleAsyncHelper(const Model::GetComplianceDetailsByConfigRuleRequest& request, const GetComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -16,7 +16,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/eks/model/NodegroupResources.h>
 #include <aws/eks/model/NodegroupHealth.h>
+#include <aws/eks/model/NodegroupUpdateConfig.h>
 #include <aws/eks/model/LaunchTemplateSpecification.h>
+#include <aws/eks/model/Taint.h>
 #include <utility>
 
 namespace Aws
@@ -663,64 +665,64 @@ namespace Model
 
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline const Aws::String& GetNodeRole() const{ return m_nodeRole; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline bool NodeRoleHasBeenSet() const { return m_nodeRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline void SetNodeRole(const Aws::String& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = value; }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline void SetNodeRole(Aws::String&& value) { m_nodeRoleHasBeenSet = true; m_nodeRole = std::move(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline void SetNodeRole(const char* value) { m_nodeRoleHasBeenSet = true; m_nodeRole.assign(value); }
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(const Aws::String& value) { SetNodeRole(value); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
     inline Nodegroup& WithNodeRole(Aws::String&& value) { SetNodeRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role associated with your node group. The Amazon EKS worker node
-     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Worker nodes
+     * <p>The IAM role associated with your node group. The Amazon EKS node
+     * <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes
      * receive permissions for these API calls through an IAM instance profile and
      * associated policies.</p>
      */
@@ -817,6 +819,79 @@ namespace Model
      * may be other Kubernetes labels applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline const Aws::Vector<Taint>& GetTaints() const{ return m_taints; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline void SetTaints(const Aws::Vector<Taint>& value) { m_taintsHasBeenSet = true; m_taints = value; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline void SetTaints(Aws::Vector<Taint>&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& WithTaints(const Aws::Vector<Taint>& value) { SetTaints(value); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& WithTaints(Aws::Vector<Taint>&& value) { SetTaints(std::move(value)); return *this;}
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& AddTaints(const Taint& value) { m_taintsHasBeenSet = true; m_taints.push_back(value); return *this; }
+
+    /**
+     * <p>The Kubernetes taints to be applied to the nodes in the node group when they
+     * are created. Effect is one of <code>NoSchedule</code>,
+     * <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     * be used together with tolerations to control how workloads are scheduled to your
+     * nodes.</p>
+     */
+    inline Nodegroup& AddTaints(Taint&& value) { m_taintsHasBeenSet = true; m_taints.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -920,6 +995,25 @@ namespace Model
      * group's health, they are listed here.</p>
      */
     inline Nodegroup& WithHealth(NodegroupHealth&& value) { SetHealth(std::move(value)); return *this;}
+
+
+    
+    inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
+
+    
+    inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
+
+    
+    inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
+
+    
+    inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
+
+    
+    inline Nodegroup& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
+
+    
+    inline Nodegroup& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
 
 
     /**
@@ -1113,6 +1207,9 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_labels;
     bool m_labelsHasBeenSet;
 
+    Aws::Vector<Taint> m_taints;
+    bool m_taintsHasBeenSet;
+
     NodegroupResources m_resources;
     bool m_resourcesHasBeenSet;
 
@@ -1121,6 +1218,9 @@ namespace Model
 
     NodegroupHealth m_health;
     bool m_healthHasBeenSet;
+
+    NodegroupUpdateConfig m_updateConfig;
+    bool m_updateConfigHasBeenSet;
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;

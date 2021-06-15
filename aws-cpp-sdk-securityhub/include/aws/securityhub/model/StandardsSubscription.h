@@ -197,32 +197,68 @@ namespace Model
 
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline const StandardsStatus& GetStandardsStatus() const{ return m_standardsStatus; }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline bool StandardsStatusHasBeenSet() const { return m_standardsStatusHasBeenSet; }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline void SetStandardsStatus(const StandardsStatus& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = value; }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline void SetStandardsStatus(StandardsStatus&& value) { m_standardsStatusHasBeenSet = true; m_standardsStatus = std::move(value); }
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline StandardsSubscription& WithStandardsStatus(const StandardsStatus& value) { SetStandardsStatus(value); return *this;}
 
     /**
-     * <p>The status of the standards subscription.</p>
+     * <p>The status of the standard subscription.</p> <p>The status values are as
+     * follows:</p> <ul> <li> <p> <code>PENDING</code> - Standard is in the process of
+     * being enabled.</p> </li> <li> <p> <code>READY</code> - Standard is enabled.</p>
+     * </li> <li> <p> <code>INCOMPLETE</code> - Standard could not be enabled
+     * completely. Some controls may not be available.</p> </li> <li> <p>
+     * <code>DELETING</code> - Standard is in the process of being disabled.</p> </li>
+     * <li> <p> <code>FAILED</code> - Standard could not be disabled.</p> </li> </ul>
      */
     inline StandardsSubscription& WithStandardsStatus(StandardsStatus&& value) { SetStandardsStatus(std::move(value)); return *this;}
 

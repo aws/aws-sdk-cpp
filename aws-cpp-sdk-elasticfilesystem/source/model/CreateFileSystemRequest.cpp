@@ -24,6 +24,9 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_throughputModeHasBeenSet(false),
     m_provisionedThroughputInMibps(0.0),
     m_provisionedThroughputInMibpsHasBeenSet(false),
+    m_availabilityZoneNameHasBeenSet(false),
+    m_backup(false),
+    m_backupHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -63,6 +66,18 @@ Aws::String CreateFileSystemRequest::SerializePayload() const
   if(m_provisionedThroughputInMibpsHasBeenSet)
   {
    payload.WithDouble("ProvisionedThroughputInMibps", m_provisionedThroughputInMibps);
+
+  }
+
+  if(m_availabilityZoneNameHasBeenSet)
+  {
+   payload.WithString("AvailabilityZoneName", m_availabilityZoneName);
+
+  }
+
+  if(m_backupHasBeenSet)
+  {
+   payload.WithBool("Backup", m_backup);
 
   }
 

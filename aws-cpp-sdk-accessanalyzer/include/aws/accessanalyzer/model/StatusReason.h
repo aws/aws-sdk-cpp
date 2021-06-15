@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>Provides more details about the current status of the analyzer. For example,
    * if the creation for the analyzer fails, a <code>Failed</code> status is
-   * displayed. For an analyzer with organization as the type, this failure can be
-   * due to an issue with creating the service-linked roles required in the member
+   * returned. For an analyzer with organization as the type, this failure can be due
+   * to an issue with creating the service-linked roles required in the member
    * accounts of the AWS organization.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StatusReason">AWS
    * API Reference</a></p>

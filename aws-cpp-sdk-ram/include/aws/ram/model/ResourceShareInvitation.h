@@ -306,6 +306,55 @@ namespace Model
      */
     inline ResourceShareInvitation& WithStatus(ResourceShareInvitationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline const Aws::String& GetReceiverArn() const{ return m_receiverArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline bool ReceiverArnHasBeenSet() const { return m_receiverArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline void SetReceiverArn(const Aws::String& value) { m_receiverArnHasBeenSet = true; m_receiverArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline void SetReceiverArn(Aws::String&& value) { m_receiverArnHasBeenSet = true; m_receiverArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline void SetReceiverArn(const char* value) { m_receiverArnHasBeenSet = true; m_receiverArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline ResourceShareInvitation& WithReceiverArn(const Aws::String& value) { SetReceiverArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline ResourceShareInvitation& WithReceiverArn(Aws::String&& value) { SetReceiverArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM user or IAM role that received the
+     * invitation.</p>
+     */
+    inline ResourceShareInvitation& WithReceiverArn(const char* value) { SetReceiverArn(value); return *this;}
+
   private:
 
     Aws::String m_resourceShareInvitationArn;
@@ -328,6 +377,9 @@ namespace Model
 
     ResourceShareInvitationStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_receiverArn;
+    bool m_receiverArnHasBeenSet;
   };
 
 } // namespace Model

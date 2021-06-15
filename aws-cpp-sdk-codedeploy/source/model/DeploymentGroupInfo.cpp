@@ -32,6 +32,8 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_alarmConfigurationHasBeenSet(false),
     m_autoRollbackConfigurationHasBeenSet(false),
     m_deploymentStyleHasBeenSet(false),
+    m_outdatedInstancesStrategy(OutdatedInstancesStrategy::NOT_SET),
+    m_outdatedInstancesStrategyHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
     m_loadBalancerInfoHasBeenSet(false),
     m_lastSuccessfulDeploymentHasBeenSet(false),
@@ -58,6 +60,8 @@ DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue) :
     m_alarmConfigurationHasBeenSet(false),
     m_autoRollbackConfigurationHasBeenSet(false),
     m_deploymentStyleHasBeenSet(false),
+    m_outdatedInstancesStrategy(OutdatedInstancesStrategy::NOT_SET),
+    m_outdatedInstancesStrategyHasBeenSet(false),
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
     m_loadBalancerInfoHasBeenSet(false),
     m_lastSuccessfulDeploymentHasBeenSet(false),
@@ -174,6 +178,13 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     m_deploymentStyle = jsonValue.GetObject("deploymentStyle");
 
     m_deploymentStyleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outdatedInstancesStrategy"))
+  {
+    m_outdatedInstancesStrategy = OutdatedInstancesStrategyMapper::GetOutdatedInstancesStrategyForName(jsonValue.GetString("outdatedInstancesStrategy"));
+
+    m_outdatedInstancesStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("blueGreenDeploymentConfiguration"))
@@ -338,6 +349,11 @@ JsonValue DeploymentGroupInfo::Jsonize() const
   {
    payload.WithObject("deploymentStyle", m_deploymentStyle.Jsonize());
 
+  }
+
+  if(m_outdatedInstancesStrategyHasBeenSet)
+  {
+   payload.WithString("outdatedInstancesStrategy", OutdatedInstancesStrategyMapper::GetNameForOutdatedInstancesStrategy(m_outdatedInstancesStrategy));
   }
 
   if(m_blueGreenDeploymentConfigurationHasBeenSet)

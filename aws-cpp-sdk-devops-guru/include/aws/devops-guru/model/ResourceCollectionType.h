@@ -16,7 +16,8 @@ namespace Model
   enum class ResourceCollectionType
   {
     NOT_SET,
-    AWS_CLOUD_FORMATION
+    AWS_CLOUD_FORMATION,
+    AWS_SERVICE
   };
 
 namespace ResourceCollectionTypeMapper

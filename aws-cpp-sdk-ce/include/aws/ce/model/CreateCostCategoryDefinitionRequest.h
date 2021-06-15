@@ -137,6 +137,31 @@ namespace Model
      */
     inline CreateCostCategoryDefinitionRequest& AddRules(CostCategoryRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    
+    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+
+    
+    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+
+    
+    inline CreateCostCategoryDefinitionRequest& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    
+    inline CreateCostCategoryDefinitionRequest& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+
+    
+    inline CreateCostCategoryDefinitionRequest& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -147,6 +172,9 @@ namespace Model
 
     Aws::Vector<CostCategoryRule> m_rules;
     bool m_rulesHasBeenSet;
+
+    Aws::String m_defaultValue;
+    bool m_defaultValueHasBeenSet;
   };
 
 } // namespace Model

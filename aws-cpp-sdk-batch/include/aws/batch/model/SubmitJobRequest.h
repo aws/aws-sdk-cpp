@@ -102,50 +102,50 @@ namespace Model
 
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
-     * <p>The job queue into which the job is submitted. You can specify either the
-     * name or the Amazon Resource Name (ARN) of the queue.</p>
+     * <p>The job queue where the job is submitted. You can specify either the name or
+     * the Amazon Resource Name (ARN) of the queue.</p>
      */
     inline SubmitJobRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
@@ -465,68 +465,62 @@ namespace Model
 
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
+     * <p>A list of container overrides in the JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that's specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * You can override the default command for a container, which is specified in the
+     * job definition or the Docker image, with a <code>command</code> override. You
+     * can also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
+     * <p>A list of container overrides in the JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that's specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * You can override the default command for a container, which is specified in the
+     * job definition or the Docker image, with a <code>command</code> override. You
+     * can also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
+     * <p>A list of container overrides in the JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that's specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * You can override the default command for a container, which is specified in the
+     * job definition or the Docker image, with a <code>command</code> override. You
+     * can also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
+     * <p>A list of container overrides in the JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that's specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * You can override the default command for a container, which is specified in the
+     * job definition or the Docker image, with a <code>command</code> override. You
+     * can also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
+     * <p>A list of container overrides in the JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that's specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * You can override the default command for a container, which is specified in the
+     * job definition or the Docker image, with a <code>command</code> override. You
+     * can also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
 
     /**
-     * <p>A list of container overrides in JSON format that specify the name of a
+     * <p>A list of container overrides in the JSON format that specify the name of a
      * container in the specified job definition and the overrides it should receive.
-     * You can override the default command for a container (that's specified in the
-     * job definition or the Docker image) with a <code>command</code> override. You
-     * can also override existing environment variables (that are specified in the job
-     * definition or Docker image) on a container or add new environment variables to
-     * it with an <code>environment</code> override.</p>
+     * You can override the default command for a container, which is specified in the
+     * job definition or the Docker image, with a <code>command</code> override. You
+     * can also override existing environment variables on a container or add new
+     * environment variables to it with an <code>environment</code> override.</p>
      */
     inline SubmitJobRequest& WithContainerOverrides(ContainerOverrides&& value) { SetContainerOverrides(std::move(value)); return *this;}
 

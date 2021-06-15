@@ -209,7 +209,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
@@ -232,7 +232,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
@@ -255,7 +255,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
@@ -278,7 +278,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
@@ -301,7 +301,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
@@ -324,7 +324,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
@@ -347,7 +347,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
@@ -370,7 +370,7 @@ namespace Model
      * cluster snapshots are returned. You can include shared cluster snapshots with
      * these results by setting the <code>IncludeShared</code> parameter to
      * <code>true</code>. You can include public cluster snapshots with these results
-     * by setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
+     * by setting the<code>IncludePublic</code> parameter to <code>true</code>.</p>
      * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
      * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply

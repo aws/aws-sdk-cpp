@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 DescribeTableRequest::DescribeTableRequest() : 
     m_clusterIdentifierHasBeenSet(false),
+    m_connectedDatabaseHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_dbUserHasBeenSet(false),
     m_maxResults(0),
@@ -32,6 +33,12 @@ Aws::String DescribeTableRequest::SerializePayload() const
   if(m_clusterIdentifierHasBeenSet)
   {
    payload.WithString("ClusterIdentifier", m_clusterIdentifier);
+
+  }
+
+  if(m_connectedDatabaseHasBeenSet)
+  {
+   payload.WithString("ConnectedDatabase", m_connectedDatabase);
 
   }
 

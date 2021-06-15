@@ -40,8 +40,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
@@ -49,8 +48,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
@@ -58,8 +56,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
@@ -67,8 +64,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
@@ -76,8 +72,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
@@ -85,8 +80,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline DeletePolicyVersionRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
@@ -94,8 +88,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline DeletePolicyVersionRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
@@ -103,8 +96,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM policy from which you want to
      * delete a version.</p> <p>For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
-     * Reference</i>.</p>
+     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
     inline DeletePolicyVersionRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
@@ -116,7 +108,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
@@ -127,7 +119,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
@@ -138,7 +130,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
@@ -149,7 +141,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
@@ -160,7 +152,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
@@ -171,7 +163,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline DeletePolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
@@ -182,7 +174,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline DeletePolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
@@ -193,7 +185,7 @@ namespace Model
      * optionally followed by a period '.' and a string of letters and digits.</p>
      * <p>For more information about managed policy versions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
-     * for Managed Policies</a> in the <i>IAM User Guide</i>.</p>
+     * for managed policies</a> in the <i>IAM User Guide</i>.</p>
      */
     inline DeletePolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

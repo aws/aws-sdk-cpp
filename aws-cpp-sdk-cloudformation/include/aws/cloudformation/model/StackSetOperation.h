@@ -191,10 +191,9 @@ namespace Model
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
      * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -214,10 +213,9 @@ namespace Model
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
      * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -237,10 +235,9 @@ namespace Model
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
      * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -260,10 +257,9 @@ namespace Model
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
      * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -283,10 +279,9 @@ namespace Model
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
      * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -306,10 +301,9 @@ namespace Model
      * the failure tolerance, the status of the operation in the Region is set to
      * <code>FAILED</code>. This in turn sets the status of the operation as a whole to
      * <code>FAILED</code>, and AWS CloudFormation cancels the operation in any
-     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>:
-     * [<code>Service-managed</code> permissions] For automatic deployments that
-     * require a sequence of operations, the operation is queued to be performed. For
-     * more information, see the <a
+     * remaining Regions.</p> </li> <li> <p> <code>QUEUED</code>: [Service-managed
+     * permissions] For automatic deployments that require a sequence of operations,
+     * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
      * set operation status codes</a> in the AWS CloudFormation User Guide.</p> </li>
      * <li> <p> <code>RUNNING</code>: The operation is currently being performed.</p>
@@ -637,38 +631,38 @@ namespace Model
 
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts
-     * affected by the stack operation.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * stack operation.</p>
      */
     inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts
-     * affected by the stack operation.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * stack operation.</p>
      */
     inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts
-     * affected by the stack operation.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * stack operation.</p>
      */
     inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts
-     * affected by the stack operation.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * stack operation.</p>
      */
     inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts
-     * affected by the stack operation.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * stack operation.</p>
      */
     inline StackSetOperation& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
 
     /**
-     * <p>[<code>Service-managed</code> permissions] The AWS Organizations accounts
-     * affected by the stack operation.</p>
+     * <p>[Service-managed permissions] The AWS Organizations accounts affected by the
+     * stack operation.</p>
      */
     inline StackSetOperation& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
 

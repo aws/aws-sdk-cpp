@@ -853,6 +853,110 @@ namespace Model
 
 
     /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline const Aws::String& GetReplicationSourceIdentifier() const{ return m_replicationSourceIdentifier; }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline bool ReplicationSourceIdentifierHasBeenSet() const { return m_replicationSourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline void SetReplicationSourceIdentifier(const Aws::String& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = value; }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline void SetReplicationSourceIdentifier(Aws::String&& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = std::move(value); }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline void SetReplicationSourceIdentifier(const char* value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier.assign(value); }
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline DBCluster& WithReplicationSourceIdentifier(const Aws::String& value) { SetReplicationSourceIdentifier(value); return *this;}
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline DBCluster& WithReplicationSourceIdentifier(Aws::String&& value) { SetReplicationSourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the identifier of the source cluster if this cluster is a secondary
+     * cluster.</p>
+     */
+    inline DBCluster& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
+
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReadReplicaIdentifiers() const{ return m_readReplicaIdentifiers; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline bool ReadReplicaIdentifiersHasBeenSet() const { return m_readReplicaIdentifiersHasBeenSet; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline void SetReadReplicaIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers = value; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline void SetReadReplicaIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers = std::move(value); }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& WithReadReplicaIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaIdentifiers(value); return *this;}
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& WithReadReplicaIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& AddReadReplicaIdentifiers(const Aws::String& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& AddReadReplicaIdentifiers(Aws::String&& value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Contains one or more identifiers of the secondary clusters that are
+     * associated with this cluster.</p>
+     */
+    inline DBCluster& AddReadReplicaIdentifiers(const char* value) { m_readReplicaIdentifiersHasBeenSet = true; m_readReplicaIdentifiers.push_back(value); return *this; }
+
+
+    /**
      * <p>Provides the list of instances that make up the cluster.</p>
      */
     inline const Aws::Vector<DBClusterMember>& GetDBClusterMembers() const{ return m_dBClusterMembers; }
@@ -1407,6 +1511,12 @@ namespace Model
 
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;
+
+    Aws::String m_replicationSourceIdentifier;
+    bool m_replicationSourceIdentifierHasBeenSet;
+
+    Aws::Vector<Aws::String> m_readReplicaIdentifiers;
+    bool m_readReplicaIdentifiersHasBeenSet;
 
     Aws::Vector<DBClusterMember> m_dBClusterMembers;
     bool m_dBClusterMembersHasBeenSet;

@@ -15,6 +15,7 @@ using namespace Aws::Utils;
 SearchGameSessionsRequest::SearchGameSessionsRequest() : 
     m_fleetIdHasBeenSet(false),
     m_aliasIdHasBeenSet(false),
+    m_locationHasBeenSet(false),
     m_filterExpressionHasBeenSet(false),
     m_sortExpressionHasBeenSet(false),
     m_limit(0),
@@ -36,6 +37,12 @@ Aws::String SearchGameSessionsRequest::SerializePayload() const
   if(m_aliasIdHasBeenSet)
   {
    payload.WithString("AliasId", m_aliasId);
+
+  }
+
+  if(m_locationHasBeenSet)
+  {
+   payload.WithString("Location", m_location);
 
   }
 

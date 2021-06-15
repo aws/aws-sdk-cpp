@@ -218,135 +218,129 @@ namespace Model
 
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time.</p>
+     * <p>The date and time for the recurring schedule to end, in UTC.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. This
-     * format consists of five fields separated by white spaces: [Minute] [Hour]
-     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value must be in quotes (for
-     * example, <code>"30 0 1 1,6,12 *"</code>). For more information about this
-     * format, see <a href="http://crontab.org">Crontab</a>.</p> <p>When
-     * <code>StartTime</code> and <code>EndTime</code> are specified with
-     * <code>Recurrence</code>, they form the boundaries of when the recurring action
-     * starts and stops.</p>
+     * <p>The recurring schedule for this action. This format consists of five fields
+     * separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year]
+     * [Day_of_Week]. The value must be in quotes (for example, <code>"30 0 1 1,6,12
+     * *"</code>). For more information about this format, see <a
+     * href="http://crontab.org">Crontab</a>.</p> <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
+     * boundaries of when the recurring action starts and stops.</p> <p>Cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 
@@ -421,6 +415,87 @@ namespace Model
      */
     inline PutScheduledUpdateGroupActionRequest& WithDesiredCapacity(int value) { SetDesiredCapacity(value); return *this;}
 
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline const Aws::String& GetTimeZone() const{ return m_timeZone; }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline bool TimeZoneHasBeenSet() const { return m_timeZoneHasBeenSet; }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline void SetTimeZone(const Aws::String& value) { m_timeZoneHasBeenSet = true; m_timeZone = value; }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline void SetTimeZone(Aws::String&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::move(value); }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline void SetTimeZone(const char* value) { m_timeZoneHasBeenSet = true; m_timeZone.assign(value); }
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithTimeZone(const Aws::String& value) { SetTimeZone(value); return *this;}
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithTimeZone(Aws::String&& value) { SetTimeZone(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the time zone for a cron expression. If a time zone is not
+     * provided, UTC is used by default. </p> <p>Valid values are the canonical names
+     * of the IANA time zones, derived from the IANA Time Zone Database (such as
+     * <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For more information,
+     * see <a
+     * href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
+     */
+    inline PutScheduledUpdateGroupActionRequest& WithTimeZone(const char* value) { SetTimeZone(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -449,6 +524,9 @@ namespace Model
 
     int m_desiredCapacity;
     bool m_desiredCapacityHasBeenSet;
+
+    Aws::String m_timeZone;
+    bool m_timeZoneHasBeenSet;
   };
 
 } // namespace Model

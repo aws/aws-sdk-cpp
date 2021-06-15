@@ -18,6 +18,13 @@
 
 namespace Aws
 {
+    namespace Crt
+    {
+        namespace Http
+        {
+            class HttpRequest;
+        }
+    }
     namespace Http
     {
         extern AWS_CORE_API const char DATE_HEADER[];
@@ -525,6 +532,8 @@ namespace Aws
 
             bool IsEventStreamRequest() { return m_isEvenStreamRequest; }
             void SetEventStreamRequest(bool eventStreamRequest) { m_isEvenStreamRequest = eventStreamRequest; }
+
+            virtual std::shared_ptr<Aws::Crt::Http::HttpRequest> ToCrtHttpRequest();
         private:
             URI m_uri;
             HttpMethod m_method;

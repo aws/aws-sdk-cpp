@@ -235,6 +235,63 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline const Aws::String& GetS3KmsKeyArn() const{ return m_s3KmsKeyArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline bool S3KmsKeyArnHasBeenSet() const { return m_s3KmsKeyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline void SetS3KmsKeyArn(const Aws::String& value) { m_s3KmsKeyArnHasBeenSet = true; m_s3KmsKeyArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline void SetS3KmsKeyArn(Aws::String&& value) { m_s3KmsKeyArnHasBeenSet = true; m_s3KmsKeyArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline void SetS3KmsKeyArn(const char* value) { m_s3KmsKeyArnHasBeenSet = true; m_s3KmsKeyArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline DeliveryChannel& WithS3KmsKeyArn(const Aws::String& value) { SetS3KmsKeyArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline DeliveryChannel& WithS3KmsKeyArn(Aws::String&& value) { SetS3KmsKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS)
+     * customer managed key (CMK) used to encrypt objects delivered by AWS Config. Must
+     * belong to the same Region as the destination S3 bucket.</p>
+     */
+    inline DeliveryChannel& WithS3KmsKeyArn(const char* value) { SetS3KmsKeyArn(value); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
@@ -361,6 +418,9 @@ namespace Model
 
     Aws::String m_s3KeyPrefix;
     bool m_s3KeyPrefixHasBeenSet;
+
+    Aws::String m_s3KmsKeyArn;
+    bool m_s3KmsKeyArnHasBeenSet;
 
     Aws::String m_snsTopicARN;
     bool m_snsTopicARNHasBeenSet;

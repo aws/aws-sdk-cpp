@@ -70,37 +70,37 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the secret that is now scheduled for deletion.</p>
+     * <p>The friendly name of the secret currently scheduled for deletion.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the secret that is now scheduled for deletion.</p>
+     * <p>The friendly name of the secret currently scheduled for deletion.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The friendly name of the secret that is now scheduled for deletion.</p>
+     * <p>The friendly name of the secret currently scheduled for deletion.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the secret that is now scheduled for deletion.</p>
+     * <p>The friendly name of the secret currently scheduled for deletion.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the secret that is now scheduled for deletion.</p>
+     * <p>The friendly name of the secret currently scheduled for deletion.</p>
      */
     inline DeleteSecretResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the secret that is now scheduled for deletion.</p>
+     * <p>The friendly name of the secret currently scheduled for deletion.</p>
      */
     inline DeleteSecretResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the secret that is now scheduled for deletion.</p>
+     * <p>The friendly name of the secret currently scheduled for deletion.</p>
      */
     inline DeleteSecretResult& WithName(const char* value) { SetName(value); return *this;}
 

@@ -91,70 +91,88 @@ namespace Model
     inline ListedServer& WithArn(const char* value) { SetArn(value); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline const Domain& GetDomain() const{ return m_domain; }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline ListedServer& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the domain of the storage system that is used for file
+     * transfers.</p>
+     */
     inline ListedServer& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), user name and password
-     * combinations, or your own custom authentication method. Valid values include
-     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
+     * was specified. This can include Secure Shell (SSH), Active Directory groups,
+     * user name and password combinations, or your own custom authentication method.
+     * </p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
     /**
      * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), user name and password
-     * combinations, or your own custom authentication method. Valid values include
-     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
+     * was specified. This can include Secure Shell (SSH), Active Directory groups,
+     * user name and password combinations, or your own custom authentication method.
+     * </p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
      * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), user name and password
-     * combinations, or your own custom authentication method. Valid values include
-     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
+     * was specified. This can include Secure Shell (SSH), Active Directory groups,
+     * user name and password combinations, or your own custom authentication method.
+     * </p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
     /**
      * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), user name and password
-     * combinations, or your own custom authentication method. Valid values include
-     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
+     * was specified. This can include Secure Shell (SSH), Active Directory groups,
+     * user name and password combinations, or your own custom authentication method.
+     * </p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
     /**
      * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), user name and password
-     * combinations, or your own custom authentication method. Valid values include
-     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
+     * was specified. This can include Secure Shell (SSH), Active Directory groups,
+     * user name and password combinations, or your own custom authentication method.
+     * </p>
      */
     inline ListedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
     /**
      * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), user name and password
-     * combinations, or your own custom authentication method. Valid values include
-     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.</p>
+     * was specified. This can include Secure Shell (SSH), Active Directory groups,
+     * user name and password combinations, or your own custom authentication method.
+     * </p>
      */
     inline ListedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
 

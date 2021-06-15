@@ -34,6 +34,18 @@ UpdateFleetCapacityResult& UpdateFleetCapacityResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+  }
+
+  if(jsonValue.ValueExists("Location"))
+  {
+    m_location = jsonValue.GetString("Location");
+
+  }
+
 
 
   return *this;

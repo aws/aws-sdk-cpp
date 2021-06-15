@@ -60,6 +60,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.add(generateClientSourceFile(serviceModel));
         fileList.add(generateARNHeaderFile(serviceModel));
         fileList.add(generateARNSourceFile(serviceModel));
+        fileList.add(generateClientConfigurationFile(serviceModel));
         fileList.add(generateRegionHeaderFile(serviceModel));
         fileList.add(generateRegionSourceFile(serviceModel));
         fileList.add(generateErrorsHeaderFile(serviceModel));
@@ -325,6 +326,11 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return null;
     }
 
+    protected SdkFileEntry generateClientConfigurationFile(final ServiceModel serviceModel) throws Exception {
+        // no-op for services other than S3Crt.
+        return null;
+    }
+
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {
 
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/AbstractServiceRequest.vm", StandardCharsets.UTF_8.name());
@@ -377,7 +383,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
             serviceModel.getMetadata().setGlobalEndpoint("ce.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("chime")) {
-            serviceModel.getMetadata().setGlobalEndpoint("service.chime.aws.amazon.com");
+            serviceModel.getMetadata().setGlobalEndpoint("chime.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("iam")) {
             endpoints.put("cn-north-1", "iam.cn-north-1.amazonaws.com.cn");
@@ -394,14 +400,20 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
+            endpoints.put("fips-aws-global", "organizations-fips.us-east-1.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("route53")) {
             endpoints.put("us-gov-west-1", "route53.us-gov.amazonaws.com");
             endpoints.put("us-iso-east-1", "route53.c2s.ic.gov");
+            endpoints.put("fips-aws-global", "route53-fips.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("route53.amazonaws.com");
 
-        } else if (serviceModel.getServiceName().equals("sts")) {
+        } else if (serviceModel.getServiceName().equals("shield")) {
+            endpoints.put("fips-aws-global", "shield-fips.us-east-1.amazonaws.com");
+        }
+
+        else if (serviceModel.getServiceName().equals("sts")) {
              serviceModel.getMetadata().setGlobalEndpoint(null);
         }
 

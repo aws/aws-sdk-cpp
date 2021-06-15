@@ -106,65 +106,65 @@ namespace Model
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
-     * numbers, and hyphens are allowed. Service names must be unique within a cluster,
-     * but you can have similarly named services in multiple clusters within a Region
-     * or across multiple Regions.</p>
+     * numbers, underscores, and hyphens are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
      */
     inline CreateServiceRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
@@ -261,7 +261,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -309,7 +309,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -357,7 +357,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -405,7 +405,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -453,7 +453,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -501,7 +501,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -549,7 +549,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -597,7 +597,7 @@ namespace Model
      * service. The service-linked role is required for services that make use of
      * multiple target groups. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> <p>If the service is using the
      * <code>CODE_DEPLOY</code> deployment controller, the service is required to use
      * either an Application Load Balancer or Network Load Balancer. When creating an
@@ -636,90 +636,74 @@ namespace Model
 
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
     /**
-     * <p>The details of the service discovery registries to assign to this service.
+     * <p>The details of the service discovery registry to associate with this service.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
-     * Discovery</a>.</p>  <p>Service discovery is supported for Fargate tasks if
-     * you are using platform version v1.1.0 or later. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a>.</p> 
+     * discovery</a>.</p>  <p>Each service may be associated with one service
+     * registry. Multiple service registries per service isn't supported.</p> 
      */
     inline CreateServiceRequest& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -811,249 +795,195 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which to run your service. For more information, see <a
+     * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
-     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
+     * available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
+     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
+     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
+     * Amazon EC2 instances registered to your cluster.</p> <p>The
+     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
+     * use either a launch type or a capacity provider strategy. If a
+     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+     * parameter must be omitted.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which to run your service. For more information, see <a
+     * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
-     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
+     * available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
+     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
+     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
+     * Amazon EC2 instances registered to your cluster.</p> <p>The
+     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
+     * use either a launch type or a capacity provider strategy. If a
+     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+     * parameter must be omitted.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
-     * <p>The launch type on which to run your service. For more information, see <a
+     * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
-     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
+     * available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
+     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
+     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
+     * Amazon EC2 instances registered to your cluster.</p> <p>The
+     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
+     * use either a launch type or a capacity provider strategy. If a
+     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+     * parameter must be omitted.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which to run your service. For more information, see <a
+     * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
-     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
+     * available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
+     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
+     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
+     * Amazon EC2 instances registered to your cluster.</p> <p>The
+     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
+     * use either a launch type or a capacity provider strategy. If a
+     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+     * parameter must be omitted.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which to run your service. For more information, see <a
+     * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
-     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
+     * available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
+     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
+     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
+     * Amazon EC2 instances registered to your cluster.</p> <p>The
+     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
+     * use either a launch type or a capacity provider strategy. If a
+     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+     * parameter must be omitted.</p>
      */
     inline CreateServiceRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which to run your service. For more information, see <a
+     * <p>The infrastructure on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
-     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
-     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p> <p>The <code>FARGATE</code> launch type runs your tasks on AWS
+     * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
+     * available for use but a capacity provider strategy must be used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">AWS
+     * Fargate capacity providers</a> in the <i>Amazon ECS User Guide for AWS
+     * Fargate</i>.</p>  <p>The <code>EC2</code> launch type runs your tasks on
+     * Amazon EC2 instances registered to your cluster.</p> <p>The
+     * <code>EXTERNAL</code> launch type runs your tasks on your on-premise server or
+     * virtual machine (VM) capacity registered to your cluster.</p> <p>A service can
+     * use either a launch type or a capacity provider strategy. If a
+     * <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
+     * parameter must be omitted.</p>
      */
     inline CreateServiceRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline CreateServiceRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline CreateServiceRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline CreateServiceRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
 
     /**
-     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
-     * provider strategy consists of one or more capacity providers along with the
-     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-     * must be associated with the cluster to be used in a capacity provider strategy.
-     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
-     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
-     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <p>The capacity provider strategy to use for the service.</p> <p>If a
      * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
      * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
      * <code>launchType</code> is specified, the
-     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
-     * specifying a capacity provider that uses an Auto Scaling group, the capacity
-     * provider must already be created. New capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
-     * capacity provider, specify either the <code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
-     * are available to all accounts and only need to be associated with a cluster to
-     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
-     * update the list of available capacity providers for a cluster after the cluster
-     * is created.</p>
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
      */
     inline CreateServiceRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
@@ -1064,7 +994,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
@@ -1075,7 +1005,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
@@ -1086,7 +1016,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
@@ -1097,7 +1027,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
@@ -1108,7 +1038,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
@@ -1119,7 +1049,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline CreateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
@@ -1130,7 +1060,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline CreateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
@@ -1141,7 +1071,7 @@ namespace Model
      * one isn't specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
-     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Fargate platform versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline CreateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
@@ -1161,7 +1091,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1169,7 +1099,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
@@ -1187,7 +1117,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1195,7 +1125,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
@@ -1213,7 +1143,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1221,7 +1151,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
@@ -1239,7 +1169,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1247,7 +1177,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
@@ -1265,7 +1195,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1273,7 +1203,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
@@ -1291,7 +1221,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1299,7 +1229,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
@@ -1317,7 +1247,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1325,7 +1255,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
@@ -1343,7 +1273,7 @@ namespace Model
      * controller, multiple target groups, or Elastic Inference accelerators in which
      * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
-     * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
+     * service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p>  <p>If your specified role has a
      * path other than <code>/</code>, then you must either specify the full role ARN
      * (this is recommended) or prefix the role name with the path. For example, if a
@@ -1351,7 +1281,7 @@ namespace Model
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
-     * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
+     * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
@@ -1505,7 +1435,7 @@ namespace Model
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
@@ -1516,7 +1446,7 @@ namespace Model
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
@@ -1527,7 +1457,7 @@ namespace Model
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
@@ -1538,7 +1468,7 @@ namespace Model
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
@@ -1549,7 +1479,7 @@ namespace Model
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline CreateServiceRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
@@ -1560,7 +1490,7 @@ namespace Model
      * own elastic network interface, and it is not supported for other network modes.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
-     * Networking</a> in the <i>Amazon Elastic Container Service Developer
+     * networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline CreateServiceRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
@@ -1767,32 +1697,38 @@ namespace Model
 
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline const DeploymentController& GetDeploymentController() const{ return m_deploymentController; }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline bool DeploymentControllerHasBeenSet() const { return m_deploymentControllerHasBeenSet; }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline void SetDeploymentController(const DeploymentController& value) { m_deploymentControllerHasBeenSet = true; m_deploymentController = value; }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline void SetDeploymentController(DeploymentController&& value) { m_deploymentControllerHasBeenSet = true; m_deploymentController = std::move(value); }
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline CreateServiceRequest& WithDeploymentController(const DeploymentController& value) { SetDeploymentController(value); return *this;}
 
     /**
-     * <p>The deployment controller to use for the service.</p>
+     * <p>The deployment controller to use for the service. If no deployment controller
+     * is specified, the default value of <code>ECS</code> is used.</p>
      */
     inline CreateServiceRequest& WithDeploymentController(DeploymentController&& value) { SetDeploymentController(std::move(value)); return *this;}
 
@@ -2057,6 +1993,35 @@ namespace Model
      */
     inline CreateServiceRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the service tasks.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the service tasks.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the service tasks.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not the execute command functionality is enabled for the service.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the service tasks.</p>
+     */
+    inline CreateServiceRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
   private:
 
     Aws::String m_cluster;
@@ -2121,6 +2086,9 @@ namespace Model
 
     PropagateTags m_propagateTags;
     bool m_propagateTagsHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
   };
 
 } // namespace Model

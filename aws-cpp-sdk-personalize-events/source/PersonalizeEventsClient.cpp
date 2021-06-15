@@ -71,7 +71,7 @@ PersonalizeEventsClient::~PersonalizeEventsClient()
 {
 }
 
-void PersonalizeEventsClient::init(const ClientConfiguration& config)
+void PersonalizeEventsClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("Personalize Events");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -100,9 +100,7 @@ void PersonalizeEventsClient::OverrideEndpoint(const Aws::String& endpoint)
 PutEventsOutcome PersonalizeEventsClient::PutEvents(const PutEventsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/events";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/events");
   return PutEventsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -127,9 +125,7 @@ void PersonalizeEventsClient::PutEventsAsyncHelper(const PutEventsRequest& reque
 PutItemsOutcome PersonalizeEventsClient::PutItems(const PutItemsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/items";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/items");
   return PutItemsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -154,9 +150,7 @@ void PersonalizeEventsClient::PutItemsAsyncHelper(const PutItemsRequest& request
 PutUsersOutcome PersonalizeEventsClient::PutUsers(const PutUsersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/users";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/users");
   return PutUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

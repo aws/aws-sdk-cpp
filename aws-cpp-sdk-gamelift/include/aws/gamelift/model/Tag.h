@@ -29,9 +29,10 @@ namespace Model
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * AWS Resources</a> in the <i>AWS General Reference</i> </p> <p> <a
    * href="http://aws.amazon.com/answers/account-management/aws-tagging-strategies/">
-   * AWS Tagging Strategies</a> </p> <p> <b>Related operations</b> </p> <ul> <li> <p>
-   * <a>TagResource</a> </p> </li> <li> <p> <a>UntagResource</a> </p> </li> <li> <p>
-   * <a>ListTagsForResource</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * AWS Tagging Strategies</a> </p> <p> <b>Related actions</b> </p> <p>
+   * <a>TagResource</a> | <a>UntagResource</a> | <a>ListTagsForResource</a> | <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets">All
+   * APIs by task</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Tag">AWS API
    * Reference</a></p>
    */

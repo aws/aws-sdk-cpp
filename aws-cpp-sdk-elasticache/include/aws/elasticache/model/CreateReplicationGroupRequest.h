@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticache/model/NodeGroupConfiguration.h>
 #include <aws/elasticache/model/Tag.h>
+#include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -158,42 +159,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Global Datastore</p>
+     * <p>The name of the Global datastore</p>
      */
     inline CreateReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
 
@@ -1171,49 +1172,49 @@ namespace Model
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the cache engine to be used for the clusters in this replication
-     * group.</p>
+     * group. Must be Redis.</p>
      */
     inline CreateReplicationGroupRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1326,12 +1327,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1343,12 +1341,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1360,12 +1355,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1377,12 +1369,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1394,12 +1383,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1411,12 +1397,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1428,12 +1411,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1445,12 +1425,9 @@ namespace Model
     /**
      * <p>The name of the parameter group to associate with this replication group. If
      * this argument is omitted, the default cache parameter group for the specified
-     * engine is used.</p>  <p>If you are restoring to an engine version that is
-     * different than the original, you must specify the default version of that
-     * version. For example, <code>CacheParameterGroupName=default.redis4.0</code>.</p>
-     *  <p>If you are running Redis version 3.2.4 or later, only one node group
-     * (shard), and want to use a default parameter group, we recommend that you
-     * specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
+     * engine is used.</p> <p>If you are running Redis version 3.2.4 or later, only one
+     * node group (shard), and want to use a default parameter group, we recommend that
+     * you specify the parameter group by name. </p> <ul> <li> <p>To create a Redis
      * (cluster mode disabled) replication group, use
      * <code>CacheParameterGroupName=default.redis3.2</code>.</p> </li> <li> <p>To
      * create a Redis (cluster mode enabled) replication group, use
@@ -1661,74 +1638,82 @@ namespace Model
 
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of cost allocation tags to be added to this resource. Tags are
-     * comma-separated key,value pairs (e.g. Key=<code>myKey</code>,
-     * Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
-     * Key=<code>myKey</code>, Value=<code>myKeyValue</code>
-     * Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>.</p>
+     * <p>A list of tags to be added to this resource. Tags are comma-separated
+     * key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You
+     * can include multiple tags as shown following: Key=<code>myKey</code>,
+     * Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>,
+     * Value=<code>mySecondKeyValue</code>. Tags on replication groups will be
+     * replicated to all nodes.</p>
      */
     inline CreateReplicationGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -2530,49 +2515,90 @@ namespace Model
 
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline bool UserGroupIdsHasBeenSet() const { return m_userGroupIdsHasBeenSet; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = value; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::move(value); }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& AddUserGroupIds(const Aws::String& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& AddUserGroupIds(Aws::String&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of user groups to associate with the replication group.</p>
+     * <p>The user group to associate with the replication group.</p>
      */
     inline CreateReplicationGroupRequest& AddUserGroupIds(const char* value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline const Aws::Vector<LogDeliveryConfigurationRequest>& GetLogDeliveryConfigurations() const{ return m_logDeliveryConfigurations; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline bool LogDeliveryConfigurationsHasBeenSet() const { return m_logDeliveryConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = value; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline void SetLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations = std::move(value); }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& WithLogDeliveryConfigurations(const Aws::Vector<LogDeliveryConfigurationRequest>& value) { SetLogDeliveryConfigurations(value); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& WithLogDeliveryConfigurations(Aws::Vector<LogDeliveryConfigurationRequest>&& value) { SetLogDeliveryConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& AddLogDeliveryConfigurations(const LogDeliveryConfigurationRequest& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the destination, format and type of the logs.</p>
+     */
+    inline CreateReplicationGroupRequest& AddLogDeliveryConfigurations(LogDeliveryConfigurationRequest&& value) { m_logDeliveryConfigurationsHasBeenSet = true; m_logDeliveryConfigurations.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -2671,6 +2697,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userGroupIds;
     bool m_userGroupIdsHasBeenSet;
+
+    Aws::Vector<LogDeliveryConfigurationRequest> m_logDeliveryConfigurations;
+    bool m_logDeliveryConfigurationsHasBeenSet;
   };
 
 } // namespace Model

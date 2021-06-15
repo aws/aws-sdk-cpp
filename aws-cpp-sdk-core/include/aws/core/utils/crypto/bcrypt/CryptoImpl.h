@@ -114,6 +114,20 @@ namespace Aws
                 BCryptHashImpl m_impl;
             };
 
+            class Sha1BcryptImpl : public Hash
+            {
+            public:
+
+                Sha1BcryptImpl();
+                virtual ~Sha1BcryptImpl() {}
+
+                virtual HashResult Calculate(const Aws::String& str) override;
+
+                virtual HashResult Calculate(Aws::IStream& stream) override;
+            private:
+                BCryptHashImpl m_impl;
+            };
+
             /**
             * Bcrypt based sha256 hash implementation.
             */

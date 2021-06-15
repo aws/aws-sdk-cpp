@@ -16,10 +16,11 @@ namespace Model
   enum class ModelHostingStatus
   {
     NOT_SET,
-    RUNNING,
-    STARTING,
-    STOPPED,
-    FAILED
+    STARTING_HOSTING,
+    HOSTED,
+    HOSTING_FAILED,
+    STOPPING_HOSTING,
+    SYSTEM_UPDATING
   };
 
 namespace ModelHostingStatusMapper

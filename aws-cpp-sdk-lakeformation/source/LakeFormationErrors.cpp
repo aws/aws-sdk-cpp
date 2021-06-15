@@ -19,6 +19,8 @@ namespace LakeFormationErrorMapper
 {
 
 static const int OPERATION_TIMEOUT_HASH = HashingUtils::HashString("OperationTimeoutException");
+static const int GLUE_ENCRYPTION_HASH = HashingUtils::HashString("GlueEncryptionException");
+static const int RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceNumberLimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputException");
@@ -33,6 +35,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == OPERATION_TIMEOUT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::OPERATION_TIMEOUT), false);
+  }
+  else if (hashCode == GLUE_ENCRYPTION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::GLUE_ENCRYPTION), false);
+  }
+  else if (hashCode == RESOURCE_NUMBER_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LakeFormationErrors::RESOURCE_NUMBER_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {

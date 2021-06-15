@@ -112,9 +112,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
@@ -138,9 +142,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
@@ -164,9 +172,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
@@ -190,9 +202,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
@@ -216,9 +232,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
@@ -242,9 +262,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
@@ -268,9 +292,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>
@@ -294,9 +322,13 @@ namespace Model
 
     /**
      * <p>The targets to register with the maintenance window. In other words, the
-     * instances to run commands on when the maintenance window runs.</p> <p>You can
-     * specify targets using instance IDs, resource group names, or tags that have been
-     * applied to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
+     * instances to run commands on when the maintenance window runs.</p>  <p>If
+     * a single maintenance window task is registered with multiple targets, its task
+     * invocations occur sequentially and not in parallel. If your task must run on
+     * multiple targets at the same time, register a task for each target individually
+     * and assign each task the same priority level.</p>  <p>You can specify
+     * targets using instance IDs, resource group names, or tags that have been applied
+     * to instances.</p> <p> <b>Example 1</b>: Specify instance IDs</p> <p>
      * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i>
      * </code> </p> <p> <b>Example 2</b>: Use tag key-pairs applied to instances</p>
      * <p>

@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The current status of the account as a delegated administrator of Amazon
+     * <p>The current status of the account as the delegated administrator of Amazon
      * Macie for the organization.</p>
      */
     inline const AdminStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The current status of the account as a delegated administrator of Amazon
+     * <p>The current status of the account as the delegated administrator of Amazon
      * Macie for the organization.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The current status of the account as a delegated administrator of Amazon
+     * <p>The current status of the account as the delegated administrator of Amazon
      * Macie for the organization.</p>
      */
     inline void SetStatus(const AdminStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The current status of the account as a delegated administrator of Amazon
+     * <p>The current status of the account as the delegated administrator of Amazon
      * Macie for the organization.</p>
      */
     inline void SetStatus(AdminStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The current status of the account as a delegated administrator of Amazon
+     * <p>The current status of the account as the delegated administrator of Amazon
      * Macie for the organization.</p>
      */
     inline AdminAccount& WithStatus(const AdminStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The current status of the account as a delegated administrator of Amazon
+     * <p>The current status of the account as the delegated administrator of Amazon
      * Macie for the organization.</p>
      */
     inline AdminAccount& WithStatus(AdminStatus&& value) { SetStatus(std::move(value)); return *this;}

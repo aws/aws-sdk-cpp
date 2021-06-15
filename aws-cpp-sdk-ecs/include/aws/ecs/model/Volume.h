@@ -52,7 +52,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -68,7 +68,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -100,7 +100,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -108,7 +108,7 @@ namespace Model
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * and hyphens are allowed. This name is referenced in the
+     * underscores, and hyphens are allowed. This name is referenced in the
      * <code>sourceVolume</code> parameter of container definition
      * <code>mountPoints</code>.</p>
      */
@@ -207,50 +207,50 @@ namespace Model
 
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you are using Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes are not supported by tasks run on AWS Fargate.</p> 
      */
     inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you are using Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes are not supported by tasks run on AWS Fargate.</p> 
      */
     inline bool DockerVolumeConfigurationHasBeenSet() const { return m_dockerVolumeConfigurationHasBeenSet; }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you are using Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes are not supported by tasks run on AWS Fargate.</p> 
      */
     inline void SetDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = value; }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you are using Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes are not supported by tasks run on AWS Fargate.</p> 
      */
     inline void SetDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::move(value); }
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you are using Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes are not supported by tasks run on AWS Fargate.</p> 
      */
     inline Volume& WithDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { SetDockerVolumeConfiguration(value); return *this;}
 
     /**
-     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
-     * are only supported when you are using the EC2 launch type. Windows containers
-     * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify the <code>host</code> parameter instead.</p>
+     * <p>This parameter is specified when you are using Docker volumes.</p> <p>Windows
+     * containers only support the use of the <code>local</code> driver. To use bind
+     * mounts, specify the <code>host</code> parameter instead.</p>  <p>Docker
+     * volumes are not supported by tasks run on AWS Fargate.</p> 
      */
     inline Volume& WithDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { SetDockerVolumeConfiguration(std::move(value)); return *this;}
 

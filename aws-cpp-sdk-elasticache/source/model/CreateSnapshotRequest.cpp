@@ -14,7 +14,8 @@ CreateSnapshotRequest::CreateSnapshotRequest() :
     m_replicationGroupIdHasBeenSet(false),
     m_cacheClusterIdHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ Aws::String CreateSnapshotRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2015-02-02";

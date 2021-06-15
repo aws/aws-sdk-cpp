@@ -71,7 +71,7 @@ MigrationHubConfigClient::~MigrationHubConfigClient()
 {
 }
 
-void MigrationHubConfigClient::init(const ClientConfiguration& config)
+void MigrationHubConfigClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("MigrationHub Config");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -100,9 +100,6 @@ void MigrationHubConfigClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateHomeRegionControlOutcome MigrationHubConfigClient::CreateHomeRegionControl(const CreateHomeRegionControlRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return CreateHomeRegionControlOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -127,9 +124,6 @@ void MigrationHubConfigClient::CreateHomeRegionControlAsyncHelper(const CreateHo
 DescribeHomeRegionControlsOutcome MigrationHubConfigClient::DescribeHomeRegionControls(const DescribeHomeRegionControlsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeHomeRegionControlsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -154,9 +148,6 @@ void MigrationHubConfigClient::DescribeHomeRegionControlsAsyncHelper(const Descr
 GetHomeRegionOutcome MigrationHubConfigClient::GetHomeRegion(const GetHomeRegionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return GetHomeRegionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

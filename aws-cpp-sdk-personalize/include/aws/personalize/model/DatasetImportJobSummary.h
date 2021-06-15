@@ -211,32 +211,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline DatasetImportJobSummary& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
 
     /**
-     * <p>The date and time (in Unix time) that the dataset was last updated.</p>
+     * <p>The date and time (in Unix time) that the dataset import job status was last
+     * updated.</p>
      */
     inline DatasetImportJobSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 

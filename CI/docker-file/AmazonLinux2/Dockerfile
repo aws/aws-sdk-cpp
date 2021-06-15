@@ -16,6 +16,10 @@ RUN yum install curl-devel -y && \
     yum install openssl-devel -y && \
     yum install ninja-build -y
 
+#Install Java and Maven
+RUN yum install java-1.8.0-openjdk-devel -y && \
+    yum install maven -y
+
 #Install awscli
 RUN yum install python-pip -y && \
     pip install awscli

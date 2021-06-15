@@ -291,6 +291,159 @@ namespace Model
 
 
     /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
+
+    /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
+
+    /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
+
+    /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentEC2Request& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
+
+    /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentEC2Request& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the Amazon Machine Image (AMI) that's used to create the
+     * EC2 instance. To choose an AMI for the instance, you must specify a valid AMI
+     * alias or a valid AWS Systems Manager (SSM) path.</p> <p>The default AMI is used
+     * if the parameter isn't explicitly assigned a value in the request. </p> <p>
+     * <b>AMI aliases </b> </p> <ul> <li> <p> <b>Amazon Linux (default):
+     * <code>amazonlinux-1-x86_64</code> </b> </p> </li> <li> <p>Amazon Linux 2:
+     * <code>amazonlinux-2-x86_64</code> </p> </li> <li> <p>Ubuntu 18.04:
+     * <code>ubuntu-18.04-x86_64</code> </p> </li> </ul> <p> <b>SSM paths</b> </p> <ul>
+     * <li> <p> <b>Amazon Linux (default):
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p>
+     * </li> <li> <p>Amazon Linux 2:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p>
+     * </li> <li> <p>Ubuntu 18.04:
+     * <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
+     * </ul>
+     */
+    inline CreateEnvironmentEC2Request& WithImageId(const char* value) { SetImageId(value); return *this;}
+
+
+    /**
      * <p>The number of minutes until the running instance is shut down after the
      * environment has last been used.</p>
      */
@@ -422,32 +575,62 @@ namespace Model
 
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment. Valid
+     * values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code>
+     * (connected through AWS Systems Manager).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User
+     * Guide</i>.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment. Valid
+     * values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code>
+     * (connected through AWS Systems Manager).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User
+     * Guide</i>.</p>
      */
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment. Valid
+     * values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code>
+     * (connected through AWS Systems Manager).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User
+     * Guide</i>.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment. Valid
+     * values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code>
+     * (connected through AWS Systems Manager).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User
+     * Guide</i>.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment. Valid
+     * values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code>
+     * (connected through AWS Systems Manager).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User
+     * Guide</i>.</p>
      */
     inline CreateEnvironmentEC2Request& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
     /**
-     * <p>The connection type used for connecting to an Amazon EC2 environment.</p>
+     * <p>The connection type used for connecting to an Amazon EC2 environment. Valid
+     * values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code>
+     * (connected through AWS Systems Manager).</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User
+     * Guide</i>.</p>
      */
     inline CreateEnvironmentEC2Request& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 
@@ -467,6 +650,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    Aws::String m_imageId;
+    bool m_imageIdHasBeenSet;
 
     int m_automaticStopTimeMinutes;
     bool m_automaticStopTimeMinutesHasBeenSet;

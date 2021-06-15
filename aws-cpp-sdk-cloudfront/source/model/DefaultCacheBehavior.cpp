@@ -32,6 +32,7 @@ DefaultCacheBehavior::DefaultCacheBehavior() :
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
+    m_functionAssociationsHasBeenSet(false),
     m_fieldLevelEncryptionIdHasBeenSet(false),
     m_realtimeLogConfigArnHasBeenSet(false),
     m_cachePolicyIdHasBeenSet(false),
@@ -51,6 +52,7 @@ DefaultCacheBehavior::DefaultCacheBehavior(const XmlNode& xmlNode) :
     m_compress(false),
     m_compressHasBeenSet(false),
     m_lambdaFunctionAssociationsHasBeenSet(false),
+    m_functionAssociationsHasBeenSet(false),
     m_fieldLevelEncryptionIdHasBeenSet(false),
     m_realtimeLogConfigArnHasBeenSet(false),
     m_cachePolicyIdHasBeenSet(false),
@@ -112,6 +114,12 @@ DefaultCacheBehavior& DefaultCacheBehavior::operator =(const XmlNode& xmlNode)
     {
       m_lambdaFunctionAssociations = lambdaFunctionAssociationsNode;
       m_lambdaFunctionAssociationsHasBeenSet = true;
+    }
+    XmlNode functionAssociationsNode = resultNode.FirstChild("FunctionAssociations");
+    if(!functionAssociationsNode.IsNull())
+    {
+      m_functionAssociations = functionAssociationsNode;
+      m_functionAssociationsHasBeenSet = true;
     }
     XmlNode fieldLevelEncryptionIdNode = resultNode.FirstChild("FieldLevelEncryptionId");
     if(!fieldLevelEncryptionIdNode.IsNull())
@@ -195,6 +203,12 @@ void DefaultCacheBehavior::AddToNode(XmlNode& parentNode) const
   {
    XmlNode lambdaFunctionAssociationsNode = parentNode.CreateChildElement("LambdaFunctionAssociations");
    m_lambdaFunctionAssociations.AddToNode(lambdaFunctionAssociationsNode);
+  }
+
+  if(m_functionAssociationsHasBeenSet)
+  {
+   XmlNode functionAssociationsNode = parentNode.CreateChildElement("FunctionAssociations");
+   m_functionAssociations.AddToNode(functionAssociationsNode);
   }
 
   if(m_fieldLevelEncryptionIdHasBeenSet)

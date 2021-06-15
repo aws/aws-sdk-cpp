@@ -96,8 +96,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
@@ -109,8 +109,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
@@ -122,8 +122,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100
@@ -135,8 +135,8 @@ namespace Model
      * <p>The maximum number of results returned by <code>DescribeJobDefinitions</code>
      * in paginated output. When this parameter is used,
      * <code>DescribeJobDefinitions</code> only returns <code>maxResults</code> results
-     * in a single page along with a <code>nextToken</code> response element. The
-     * remaining results of the initial request can be seen by sending another
+     * in a single page and a <code>nextToken</code> response element. The remaining
+     * results of the initial request can be seen by sending another
      * <code>DescribeJobDefinitions</code> request with the returned
      * <code>nextToken</code> value. This value can be between 1 and 100. If this
      * parameter isn't used, then <code>DescribeJobDefinitions</code> returns up to 100

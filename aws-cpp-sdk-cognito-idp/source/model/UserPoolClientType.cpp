@@ -45,7 +45,9 @@ UserPoolClientType::UserPoolClientType() :
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
     m_analyticsConfigurationHasBeenSet(false),
     m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
-    m_preventUserExistenceErrorsHasBeenSet(false)
+    m_preventUserExistenceErrorsHasBeenSet(false),
+    m_enableTokenRevocation(false),
+    m_enableTokenRevocationHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,9 @@ UserPoolClientType::UserPoolClientType(JsonView jsonValue) :
     m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
     m_analyticsConfigurationHasBeenSet(false),
     m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
-    m_preventUserExistenceErrorsHasBeenSet(false)
+    m_preventUserExistenceErrorsHasBeenSet(false),
+    m_enableTokenRevocation(false),
+    m_enableTokenRevocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -261,6 +265,13 @@ UserPoolClientType& UserPoolClientType::operator =(JsonView jsonValue)
     m_preventUserExistenceErrorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableTokenRevocation"))
+  {
+    m_enableTokenRevocation = jsonValue.GetBool("EnableTokenRevocation");
+
+    m_enableTokenRevocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -435,6 +446,12 @@ JsonValue UserPoolClientType::Jsonize() const
   if(m_preventUserExistenceErrorsHasBeenSet)
   {
    payload.WithString("PreventUserExistenceErrors", PreventUserExistenceErrorTypesMapper::GetNameForPreventUserExistenceErrorTypes(m_preventUserExistenceErrors));
+  }
+
+  if(m_enableTokenRevocationHasBeenSet)
+  {
+   payload.WithBool("EnableTokenRevocation", m_enableTokenRevocation);
+
   }
 
   return payload;

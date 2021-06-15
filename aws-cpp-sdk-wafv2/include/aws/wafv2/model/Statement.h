@@ -13,7 +13,7 @@
 #include <aws/wafv2/model/RuleGroupReferenceStatement.h>
 #include <aws/wafv2/model/IPSetReferenceStatement.h>
 #include <aws/wafv2/model/RegexPatternSetReferenceStatement.h>
-#include <aws/wafv2/model/ManagedRuleGroupStatement.h>
+#include <aws/wafv2/model/LabelMatchStatement.h>
 #include <utility>
 #include <memory>
 
@@ -35,15 +35,11 @@ namespace Model
   class AndStatement;
   class OrStatement;
   class NotStatement;
+  class ManagedRuleGroupStatement;
 
   /**
-   *  <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
-   * released in November, 2019. For information, including how to migrate your AWS
-   * WAF resources from the prior release, see the <a
-   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-   * WAF Developer Guide</a>. </p>  <p>The processing guidance for a
-   * <a>Rule</a>, used by AWS WAF to determine whether a web request matches the
-   * rule. </p><p><h3>See Also:</h3>   <a
+   * <p>The processing guidance for a <a>Rule</a>, used by AWS WAF to determine
+   * whether a web request matches the rule. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement">AWS API
    * Reference</a></p>
    */
@@ -881,7 +877,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const{ return m_managedRuleGroupStatement; }
+    const ManagedRuleGroupStatement& GetManagedRuleGroupStatement() const;
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -892,7 +888,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline bool ManagedRuleGroupStatementHasBeenSet() const { return m_managedRuleGroupStatementHasBeenSet; }
+    bool ManagedRuleGroupStatementHasBeenSet() const;
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -903,7 +899,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = value; }
+    void SetManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -914,7 +910,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { m_managedRuleGroupStatementHasBeenSet = true; m_managedRuleGroupStatement = std::move(value); }
+    void SetManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -925,7 +921,7 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value) { SetManagedRuleGroupStatement(value); return *this;}
+    Statement& WithManagedRuleGroupStatement(const ManagedRuleGroupStatement& value);
 
     /**
      * <p>A rule statement used to run the rules that are defined in a managed rule
@@ -936,7 +932,92 @@ namespace Model
      * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
      * as a top-level statement within a rule.</p>
      */
-    inline Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value) { SetManagedRuleGroupStatement(std::move(value)); return *this;}
+    Statement& WithManagedRuleGroupStatement(ManagedRuleGroupStatement&& value);
+
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, AWS WAF performs the search
+     * for labels that were added in the same context as the label match statement.
+     * </p>
+     */
+    inline const LabelMatchStatement& GetLabelMatchStatement() const{ return m_labelMatchStatement; }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, AWS WAF performs the search
+     * for labels that were added in the same context as the label match statement.
+     * </p>
+     */
+    inline bool LabelMatchStatementHasBeenSet() const { return m_labelMatchStatementHasBeenSet; }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, AWS WAF performs the search
+     * for labels that were added in the same context as the label match statement.
+     * </p>
+     */
+    inline void SetLabelMatchStatement(const LabelMatchStatement& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = value; }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, AWS WAF performs the search
+     * for labels that were added in the same context as the label match statement.
+     * </p>
+     */
+    inline void SetLabelMatchStatement(LabelMatchStatement&& value) { m_labelMatchStatementHasBeenSet = true; m_labelMatchStatement = std::move(value); }
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, AWS WAF performs the search
+     * for labels that were added in the same context as the label match statement.
+     * </p>
+     */
+    inline Statement& WithLabelMatchStatement(const LabelMatchStatement& value) { SetLabelMatchStatement(value); return *this;}
+
+    /**
+     * <p>A rule statement that defines a string match search against labels that have
+     * been added to the web request by rules that have already run in the web ACL.
+     * </p> <p>The label match statement provides the label or namespace string to
+     * search for. The label string can represent a part or all of the fully qualified
+     * label name that had been added to the web request. Fully qualified labels have a
+     * prefix, optional namespaces, and label name. The prefix identifies the rule
+     * group or web ACL context of the rule that added the label. If you do not provide
+     * the fully qualified name in your label match string, AWS WAF performs the search
+     * for labels that were added in the same context as the label match statement.
+     * </p>
+     */
+    inline Statement& WithLabelMatchStatement(LabelMatchStatement&& value) { SetLabelMatchStatement(std::move(value)); return *this;}
 
   private:
 
@@ -976,8 +1057,11 @@ namespace Model
     std::shared_ptr<NotStatement> m_notStatement;
     bool m_notStatementHasBeenSet;
 
-    ManagedRuleGroupStatement m_managedRuleGroupStatement;
+    std::shared_ptr<ManagedRuleGroupStatement> m_managedRuleGroupStatement;
     bool m_managedRuleGroupStatementHasBeenSet;
+
+    LabelMatchStatement m_labelMatchStatement;
+    bool m_labelMatchStatementHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,8 @@
 #include <aws/eks/EKSClient.h>
 #include <aws/eks/EKSEndpoint.h>
 #include <aws/eks/EKSErrorMarshaller.h>
+#include <aws/eks/model/AssociateEncryptionConfigRequest.h>
+#include <aws/eks/model/AssociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/CreateAddonRequest.h>
 #include <aws/eks/model/CreateClusterRequest.h>
 #include <aws/eks/model/CreateFargateProfileRequest.h>
@@ -32,11 +34,14 @@
 #include <aws/eks/model/DescribeAddonVersionsRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
 #include <aws/eks/model/DescribeFargateProfileRequest.h>
+#include <aws/eks/model/DescribeIdentityProviderConfigRequest.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
 #include <aws/eks/model/DescribeUpdateRequest.h>
+#include <aws/eks/model/DisassociateIdentityProviderConfigRequest.h>
 #include <aws/eks/model/ListAddonsRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
 #include <aws/eks/model/ListFargateProfilesRequest.h>
+#include <aws/eks/model/ListIdentityProviderConfigsRequest.h>
 #include <aws/eks/model/ListNodegroupsRequest.h>
 #include <aws/eks/model/ListTagsForResourceRequest.h>
 #include <aws/eks/model/ListUpdatesRequest.h>
@@ -95,7 +100,7 @@ EKSClient::~EKSClient()
 {
 }
 
-void EKSClient::init(const ClientConfiguration& config)
+void EKSClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("EKS");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -121,6 +126,70 @@ void EKSClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateEncryptionConfigOutcome EKSClient::AssociateEncryptionConfig(const AssociateEncryptionConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateEncryptionConfig", "Required field: ClusterName, is not set");
+    return AssociateEncryptionConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/encryption-config/associate");
+  return AssociateEncryptionConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateEncryptionConfigOutcomeCallable EKSClient::AssociateEncryptionConfigCallable(const AssociateEncryptionConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateEncryptionConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateEncryptionConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::AssociateEncryptionConfigAsync(const AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateEncryptionConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::AssociateEncryptionConfigAsyncHelper(const AssociateEncryptionConfigRequest& request, const AssociateEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateEncryptionConfig(request), context);
+}
+
+AssociateIdentityProviderConfigOutcome EKSClient::AssociateIdentityProviderConfig(const AssociateIdentityProviderConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateIdentityProviderConfig", "Required field: ClusterName, is not set");
+    return AssociateIdentityProviderConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/identity-provider-configs/associate");
+  return AssociateIdentityProviderConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateIdentityProviderConfigOutcomeCallable EKSClient::AssociateIdentityProviderConfigCallable(const AssociateIdentityProviderConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateIdentityProviderConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateIdentityProviderConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::AssociateIdentityProviderConfigAsync(const AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateIdentityProviderConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::AssociateIdentityProviderConfigAsyncHelper(const AssociateIdentityProviderConfigRequest& request, const AssociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateIdentityProviderConfig(request), context);
+}
+
 CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) const
 {
   if (!request.ClusterNameHasBeenSet())
@@ -129,11 +198,9 @@ CreateAddonOutcome EKSClient::CreateAddon(const CreateAddonRequest& request) con
     return CreateAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/addons";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/addons");
   return CreateAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -158,9 +225,7 @@ void EKSClient::CreateAddonAsyncHelper(const CreateAddonRequest& request, const 
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters");
   return CreateClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -190,11 +255,9 @@ CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateP
     return CreateFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/fargate-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/fargate-profiles");
   return CreateFargateProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -224,11 +287,9 @@ CreateNodegroupOutcome EKSClient::CreateNodegroup(const CreateNodegroupRequest& 
     return CreateNodegroupOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/node-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/node-groups");
   return CreateNodegroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -263,12 +324,10 @@ DeleteAddonOutcome EKSClient::DeleteAddon(const DeleteAddonRequest& request) con
     return DeleteAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/addons/";
-  ss << request.GetAddonName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/addons/");
+  uri.AddPathSegment(request.GetAddonName());
   return DeleteAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -298,10 +357,8 @@ DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& reques
     return DeleteClusterOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetName());
   return DeleteClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -336,12 +393,10 @@ DeleteFargateProfileOutcome EKSClient::DeleteFargateProfile(const DeleteFargateP
     return DeleteFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FargateProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/fargate-profiles/";
-  ss << request.GetFargateProfileName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/fargate-profiles/");
+  uri.AddPathSegment(request.GetFargateProfileName());
   return DeleteFargateProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -376,12 +431,10 @@ DeleteNodegroupOutcome EKSClient::DeleteNodegroup(const DeleteNodegroupRequest& 
     return DeleteNodegroupOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodegroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/node-groups/";
-  ss << request.GetNodegroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/node-groups/");
+  uri.AddPathSegment(request.GetNodegroupName());
   return DeleteNodegroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -416,12 +469,10 @@ DescribeAddonOutcome EKSClient::DescribeAddon(const DescribeAddonRequest& reques
     return DescribeAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/addons/";
-  ss << request.GetAddonName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/addons/");
+  uri.AddPathSegment(request.GetAddonName());
   return DescribeAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -446,9 +497,7 @@ void EKSClient::DescribeAddonAsyncHelper(const DescribeAddonRequest& request, co
 DescribeAddonVersionsOutcome EKSClient::DescribeAddonVersions(const DescribeAddonVersionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/addons/supported-versions";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/addons/supported-versions");
   return DescribeAddonVersionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -478,10 +527,8 @@ DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& 
     return DescribeClusterOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetName());
   return DescribeClusterOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -516,12 +563,10 @@ DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFa
     return DescribeFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FargateProfileName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/fargate-profiles/";
-  ss << request.GetFargateProfileName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/fargate-profiles/");
+  uri.AddPathSegment(request.GetFargateProfileName());
   return DescribeFargateProfileOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -543,6 +588,38 @@ void EKSClient::DescribeFargateProfileAsyncHelper(const DescribeFargateProfileRe
   handler(this, request, DescribeFargateProfile(request), context);
 }
 
+DescribeIdentityProviderConfigOutcome EKSClient::DescribeIdentityProviderConfig(const DescribeIdentityProviderConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeIdentityProviderConfig", "Required field: ClusterName, is not set");
+    return DescribeIdentityProviderConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/identity-provider-configs/describe");
+  return DescribeIdentityProviderConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeIdentityProviderConfigOutcomeCallable EKSClient::DescribeIdentityProviderConfigCallable(const DescribeIdentityProviderConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeIdentityProviderConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIdentityProviderConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DescribeIdentityProviderConfigAsync(const DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeIdentityProviderConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DescribeIdentityProviderConfigAsyncHelper(const DescribeIdentityProviderConfigRequest& request, const DescribeIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeIdentityProviderConfig(request), context);
+}
+
 DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupRequest& request) const
 {
   if (!request.ClusterNameHasBeenSet())
@@ -556,12 +633,10 @@ DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupReq
     return DescribeNodegroupOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodegroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/node-groups/";
-  ss << request.GetNodegroupName();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/node-groups/");
+  uri.AddPathSegment(request.GetNodegroupName());
   return DescribeNodegroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -596,12 +671,10 @@ DescribeUpdateOutcome EKSClient::DescribeUpdate(const DescribeUpdateRequest& req
     return DescribeUpdateOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UpdateId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetName();
-  ss << "/updates/";
-  ss << request.GetUpdateId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/updates/");
+  uri.AddPathSegment(request.GetUpdateId());
   return DescribeUpdateOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -623,6 +696,38 @@ void EKSClient::DescribeUpdateAsyncHelper(const DescribeUpdateRequest& request, 
   handler(this, request, DescribeUpdate(request), context);
 }
 
+DisassociateIdentityProviderConfigOutcome EKSClient::DisassociateIdentityProviderConfig(const DisassociateIdentityProviderConfigRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateIdentityProviderConfig", "Required field: ClusterName, is not set");
+    return DisassociateIdentityProviderConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/identity-provider-configs/disassociate");
+  return DisassociateIdentityProviderConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateIdentityProviderConfigOutcomeCallable EKSClient::DisassociateIdentityProviderConfigCallable(const DisassociateIdentityProviderConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateIdentityProviderConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateIdentityProviderConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DisassociateIdentityProviderConfigAsync(const DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateIdentityProviderConfigAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DisassociateIdentityProviderConfigAsyncHelper(const DisassociateIdentityProviderConfigRequest& request, const DisassociateIdentityProviderConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateIdentityProviderConfig(request), context);
+}
+
 ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const
 {
   if (!request.ClusterNameHasBeenSet())
@@ -631,11 +736,9 @@ ListAddonsOutcome EKSClient::ListAddons(const ListAddonsRequest& request) const
     return ListAddonsOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/addons";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/addons");
   return ListAddonsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -660,9 +763,7 @@ void EKSClient::ListAddonsAsyncHelper(const ListAddonsRequest& request, const Li
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters");
   return ListClustersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -692,11 +793,9 @@ ListFargateProfilesOutcome EKSClient::ListFargateProfiles(const ListFargateProfi
     return ListFargateProfilesOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/fargate-profiles";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/fargate-profiles");
   return ListFargateProfilesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -718,6 +817,38 @@ void EKSClient::ListFargateProfilesAsyncHelper(const ListFargateProfilesRequest&
   handler(this, request, ListFargateProfiles(request), context);
 }
 
+ListIdentityProviderConfigsOutcome EKSClient::ListIdentityProviderConfigs(const ListIdentityProviderConfigsRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListIdentityProviderConfigs", "Required field: ClusterName, is not set");
+    return ListIdentityProviderConfigsOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/identity-provider-configs");
+  return ListIdentityProviderConfigsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListIdentityProviderConfigsOutcomeCallable EKSClient::ListIdentityProviderConfigsCallable(const ListIdentityProviderConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListIdentityProviderConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListIdentityProviderConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::ListIdentityProviderConfigsAsync(const ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListIdentityProviderConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::ListIdentityProviderConfigsAsyncHelper(const ListIdentityProviderConfigsRequest& request, const ListIdentityProviderConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListIdentityProviderConfigs(request), context);
+}
+
 ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& request) const
 {
   if (!request.ClusterNameHasBeenSet())
@@ -726,11 +857,9 @@ ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& req
     return ListNodegroupsOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/node-groups";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/node-groups");
   return ListNodegroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -760,10 +889,8 @@ ListTagsForResourceOutcome EKSClient::ListTagsForResource(const ListTagsForResou
     return ListTagsForResourceOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -793,11 +920,9 @@ ListUpdatesOutcome EKSClient::ListUpdates(const ListUpdatesRequest& request) con
     return ListUpdatesOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetName();
-  ss << "/updates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/updates");
   return ListUpdatesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -827,10 +952,8 @@ TagResourceOutcome EKSClient::TagResource(const TagResourceRequest& request) con
     return TagResourceOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return TagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -865,10 +988,8 @@ UntagResourceOutcome EKSClient::UntagResource(const UntagResourceRequest& reques
     return UntagResourceOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/tags/";
-  ss << request.GetResourceArn();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/tags/");
+  uri.AddPathSegment(request.GetResourceArn());
   return UntagResourceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -903,13 +1024,11 @@ UpdateAddonOutcome EKSClient::UpdateAddon(const UpdateAddonRequest& request) con
     return UpdateAddonOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AddonName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/addons/";
-  ss << request.GetAddonName();
-  ss << "/update";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/addons/");
+  uri.AddPathSegment(request.GetAddonName());
+  uri.AddPathSegments("/update");
   return UpdateAddonOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -939,11 +1058,9 @@ UpdateClusterConfigOutcome EKSClient::UpdateClusterConfig(const UpdateClusterCon
     return UpdateClusterConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetName();
-  ss << "/update-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/update-config");
   return UpdateClusterConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -973,11 +1090,9 @@ UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterV
     return UpdateClusterVersionOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetName();
-  ss << "/updates";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetName());
+  uri.AddPathSegments("/updates");
   return UpdateClusterVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1012,13 +1127,11 @@ UpdateNodegroupConfigOutcome EKSClient::UpdateNodegroupConfig(const UpdateNodegr
     return UpdateNodegroupConfigOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodegroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/node-groups/";
-  ss << request.GetNodegroupName();
-  ss << "/update-config";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/node-groups/");
+  uri.AddPathSegment(request.GetNodegroupName());
+  uri.AddPathSegments("/update-config");
   return UpdateNodegroupConfigOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -1053,13 +1166,11 @@ UpdateNodegroupVersionOutcome EKSClient::UpdateNodegroupVersion(const UpdateNode
     return UpdateNodegroupVersionOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodegroupName]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/clusters/";
-  ss << request.GetClusterName();
-  ss << "/node-groups/";
-  ss << request.GetNodegroupName();
-  ss << "/update-version";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/clusters/");
+  uri.AddPathSegment(request.GetClusterName());
+  uri.AddPathSegments("/node-groups/");
+  uri.AddPathSegment(request.GetNodegroupName());
+  uri.AddPathSegments("/update-version");
   return UpdateNodegroupVersionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -259,7 +259,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -320,7 +333,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline bool ConnectionPropertiesHasBeenSet() const { return m_connectionPropertiesHasBeenSet; }
 
@@ -381,7 +407,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -442,7 +481,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -503,7 +555,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -564,7 +629,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -625,7 +703,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -686,7 +777,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -747,7 +851,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -808,7 +925,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -869,7 +999,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -930,7 +1073,20 @@ namespace Model
      * The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
      * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM
      * connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector
-     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> </ul>
+     * class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client
+     * keystore file for Kafka client side authentication (Optional).</p> </li> <li>
+     * <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the
+     * provided keystore (Optional).</p> </li> <li> <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple
+     * keys, so this is the password to access the client key to be used with the Kafka
+     * server side key (Optional).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of
+     * the Kafka client keystore password (if the user has the AWS Glue encrypt
+     * passwords setting selected).</p> </li> <li> <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the
+     * Kafka client key password (if the user has the AWS Glue encrypt passwords
+     * setting selected).</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 

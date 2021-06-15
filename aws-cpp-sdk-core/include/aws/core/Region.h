@@ -47,6 +47,9 @@ namespace Aws
 
         // If a pseudo region, for example, aws-global or us-east-1-fips is provided, it should be converted to the region name used for signing.
         Aws::String AWS_CORE_API ComputeSignerRegion(const Aws::String& region);
+
+        // A FIPs region starts with "fips-" or ends with "-fips".
+        bool AWS_CORE_API IsFipsRegion(const Aws::String& region);
     }
 
 } // namespace Aws

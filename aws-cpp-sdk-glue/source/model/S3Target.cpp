@@ -21,14 +21,18 @@ namespace Model
 S3Target::S3Target() : 
     m_pathHasBeenSet(false),
     m_exclusionsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_sampleSize(0),
+    m_sampleSizeHasBeenSet(false)
 {
 }
 
 S3Target::S3Target(JsonView jsonValue) : 
     m_pathHasBeenSet(false),
     m_exclusionsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false)
+    m_connectionNameHasBeenSet(false),
+    m_sampleSize(0),
+    m_sampleSizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,13 @@ S3Target& S3Target::operator =(JsonView jsonValue)
     m_connectionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SampleSize"))
+  {
+    m_sampleSize = jsonValue.GetInteger("SampleSize");
+
+    m_sampleSizeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -86,6 +97,12 @@ JsonValue S3Target::Jsonize() const
   if(m_connectionNameHasBeenSet)
   {
    payload.WithString("ConnectionName", m_connectionName);
+
+  }
+
+  if(m_sampleSizeHasBeenSet)
+  {
+   payload.WithInteger("SampleSize", m_sampleSize);
 
   }
 

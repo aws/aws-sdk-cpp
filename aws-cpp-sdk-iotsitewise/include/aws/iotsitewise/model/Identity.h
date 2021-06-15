@@ -8,6 +8,7 @@
 #include <aws/iotsitewise/model/UserIdentity.h>
 #include <aws/iotsitewise/model/GroupIdentity.h>
 #include <aws/iotsitewise/model/IAMUserIdentity.h>
+#include <aws/iotsitewise/model/IAMRoleIdentity.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +136,37 @@ namespace Model
      */
     inline Identity& WithIamUser(IAMUserIdentity&& value) { SetIamUser(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An IAM role identity.</p>
+     */
+    inline const IAMRoleIdentity& GetIamRole() const{ return m_iamRole; }
+
+    /**
+     * <p>An IAM role identity.</p>
+     */
+    inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
+
+    /**
+     * <p>An IAM role identity.</p>
+     */
+    inline void SetIamRole(const IAMRoleIdentity& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
+
+    /**
+     * <p>An IAM role identity.</p>
+     */
+    inline void SetIamRole(IAMRoleIdentity&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
+
+    /**
+     * <p>An IAM role identity.</p>
+     */
+    inline Identity& WithIamRole(const IAMRoleIdentity& value) { SetIamRole(value); return *this;}
+
+    /**
+     * <p>An IAM role identity.</p>
+     */
+    inline Identity& WithIamRole(IAMRoleIdentity&& value) { SetIamRole(std::move(value)); return *this;}
+
   private:
 
     UserIdentity m_user;
@@ -145,6 +177,9 @@ namespace Model
 
     IAMUserIdentity m_iamUser;
     bool m_iamUserHasBeenSet;
+
+    IAMRoleIdentity m_iamRole;
+    bool m_iamRoleHasBeenSet;
   };
 
 } // namespace Model

@@ -97,6 +97,7 @@ namespace Model
     AWS_SSM_PatchCompliance,
     AWS_Shield_Protection,
     AWS_ShieldRegional_Protection,
+    AWS_Config_ConformancePackCompliance,
     AWS_Config_ResourceCompliance,
     AWS_ApiGateway_Stage,
     AWS_ApiGateway_RestApi,

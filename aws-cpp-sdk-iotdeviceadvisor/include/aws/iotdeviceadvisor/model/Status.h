@@ -21,6 +21,8 @@ namespace Model
     CANCELED,
     PENDING,
     RUNNING,
+    STOPPING,
+    STOPPED,
     PASS_WITH_WARNINGS,
     ERROR_
   };

@@ -22,6 +22,7 @@
 #include <aws/medialive/model/CreateInputSecurityGroupResult.h>
 #include <aws/medialive/model/CreateMultiplexResult.h>
 #include <aws/medialive/model/CreateMultiplexProgramResult.h>
+#include <aws/medialive/model/CreatePartnerInputResult.h>
 #include <aws/medialive/model/DeleteChannelResult.h>
 #include <aws/medialive/model/DeleteInputResult.h>
 #include <aws/medialive/model/DeleteInputSecurityGroupResult.h>
@@ -115,6 +116,7 @@ namespace Model
         class CreateInputSecurityGroupRequest;
         class CreateMultiplexRequest;
         class CreateMultiplexProgramRequest;
+        class CreatePartnerInputRequest;
         class CreateTagsRequest;
         class DeleteChannelRequest;
         class DeleteInputRequest;
@@ -171,6 +173,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateInputSecurityGroupResult, MediaLiveError> CreateInputSecurityGroupOutcome;
         typedef Aws::Utils::Outcome<CreateMultiplexResult, MediaLiveError> CreateMultiplexOutcome;
         typedef Aws::Utils::Outcome<CreateMultiplexProgramResult, MediaLiveError> CreateMultiplexProgramOutcome;
+        typedef Aws::Utils::Outcome<CreatePartnerInputResult, MediaLiveError> CreatePartnerInputOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, MediaLiveError> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteChannelResult, MediaLiveError> DeleteChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteInputResult, MediaLiveError> DeleteInputOutcome;
@@ -227,6 +230,7 @@ namespace Model
         typedef std::future<CreateInputSecurityGroupOutcome> CreateInputSecurityGroupOutcomeCallable;
         typedef std::future<CreateMultiplexOutcome> CreateMultiplexOutcomeCallable;
         typedef std::future<CreateMultiplexProgramOutcome> CreateMultiplexProgramOutcomeCallable;
+        typedef std::future<CreatePartnerInputOutcome> CreatePartnerInputOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
         typedef std::future<DeleteInputOutcome> DeleteInputOutcomeCallable;
@@ -286,6 +290,7 @@ namespace Model
     typedef std::function<void(const MediaLiveClient*, const Model::CreateInputSecurityGroupRequest&, const Model::CreateInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputSecurityGroupResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateMultiplexRequest&, const Model::CreateMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiplexResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateMultiplexProgramRequest&, const Model::CreateMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiplexProgramResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::CreatePartnerInputRequest&, const Model::CreatePartnerInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePartnerInputResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteInputRequest&, const Model::DeleteInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInputResponseReceivedHandler;
@@ -641,6 +646,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateMultiplexProgramAsync(const Model::CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Create a partner input<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePartnerInputOutcome CreatePartnerInput(const Model::CreatePartnerInputRequest& request) const;
+
+        /**
+         * Create a partner input<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePartnerInputOutcomeCallable CreatePartnerInputCallable(const Model::CreatePartnerInputRequest& request) const;
+
+        /**
+         * Create a partner input<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePartnerInputAsync(const Model::CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Create tags for a resource<p><h3>See Also:</h3>   <a
@@ -1790,6 +1820,7 @@ namespace Model
         void CreateInputSecurityGroupAsyncHelper(const Model::CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMultiplexAsyncHelper(const Model::CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMultiplexProgramAsyncHelper(const Model::CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePartnerInputAsyncHelper(const Model::CreatePartnerInputRequest& request, const CreatePartnerInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInputAsyncHelper(const Model::DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -206,6 +206,81 @@ namespace Model
      */
     inline DescribePatchGroupStateResult& WithInstancesWithUnreportedNotApplicablePatches(int value) { SetInstancesWithUnreportedNotApplicablePatches(value); return *this;}
 
+
+    /**
+     * <p>The number of instances where patches that are specified as "Critical" for
+     * compliance reporting in the patch baseline are not installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
+     */
+    inline int GetInstancesWithCriticalNonCompliantPatches() const{ return m_instancesWithCriticalNonCompliantPatches; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Critical" for
+     * compliance reporting in the patch baseline are not installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
+     */
+    inline void SetInstancesWithCriticalNonCompliantPatches(int value) { m_instancesWithCriticalNonCompliantPatches = value; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Critical" for
+     * compliance reporting in the patch baseline are not installed. These patches
+     * might be missing, have failed installation, were rejected, or were installed but
+     * awaiting a required instance reboot. The status of these instances is
+     * <code>NON_COMPLIANT</code>.</p>
+     */
+    inline DescribePatchGroupStateResult& WithInstancesWithCriticalNonCompliantPatches(int value) { SetInstancesWithCriticalNonCompliantPatches(value); return *this;}
+
+
+    /**
+     * <p>The number of instances where patches that are specified as "Security" in a
+     * patch advisory are not installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required instance
+     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     */
+    inline int GetInstancesWithSecurityNonCompliantPatches() const{ return m_instancesWithSecurityNonCompliantPatches; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Security" in a
+     * patch advisory are not installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required instance
+     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     */
+    inline void SetInstancesWithSecurityNonCompliantPatches(int value) { m_instancesWithSecurityNonCompliantPatches = value; }
+
+    /**
+     * <p>The number of instances where patches that are specified as "Security" in a
+     * patch advisory are not installed. These patches might be missing, have failed
+     * installation, were rejected, or were installed but awaiting a required instance
+     * reboot. The status of these instances is <code>NON_COMPLIANT</code>.</p>
+     */
+    inline DescribePatchGroupStateResult& WithInstancesWithSecurityNonCompliantPatches(int value) { SetInstancesWithSecurityNonCompliantPatches(value); return *this;}
+
+
+    /**
+     * <p>The number of instances with patches installed that are specified as other
+     * than "Critical" or "Security" but are not compliant with the patch baseline. The
+     * status of these instances is NON_COMPLIANT.</p>
+     */
+    inline int GetInstancesWithOtherNonCompliantPatches() const{ return m_instancesWithOtherNonCompliantPatches; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified as other
+     * than "Critical" or "Security" but are not compliant with the patch baseline. The
+     * status of these instances is NON_COMPLIANT.</p>
+     */
+    inline void SetInstancesWithOtherNonCompliantPatches(int value) { m_instancesWithOtherNonCompliantPatches = value; }
+
+    /**
+     * <p>The number of instances with patches installed that are specified as other
+     * than "Critical" or "Security" but are not compliant with the patch baseline. The
+     * status of these instances is NON_COMPLIANT.</p>
+     */
+    inline DescribePatchGroupStateResult& WithInstancesWithOtherNonCompliantPatches(int value) { SetInstancesWithOtherNonCompliantPatches(value); return *this;}
+
   private:
 
     int m_instances;
@@ -225,6 +300,12 @@ namespace Model
     int m_instancesWithNotApplicablePatches;
 
     int m_instancesWithUnreportedNotApplicablePatches;
+
+    int m_instancesWithCriticalNonCompliantPatches;
+
+    int m_instancesWithSecurityNonCompliantPatches;
+
+    int m_instancesWithOtherNonCompliantPatches;
   };
 
 } // namespace Model

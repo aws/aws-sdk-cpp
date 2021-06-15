@@ -14,6 +14,7 @@
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/medialive/model/ChannelState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/medialive/model/VpcOutputSettingsDescription.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/ChannelEgressEndpoint.h>
 #include <aws/medialive/model/InputAttachment.h>
@@ -589,6 +590,32 @@ one destination per
      */
     inline DeleteChannelResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * Settings for VPC output
+     */
+    inline const VpcOutputSettingsDescription& GetVpc() const{ return m_vpc; }
+
+    /**
+     * Settings for VPC output
+     */
+    inline void SetVpc(const VpcOutputSettingsDescription& value) { m_vpc = value; }
+
+    /**
+     * Settings for VPC output
+     */
+    inline void SetVpc(VpcOutputSettingsDescription&& value) { m_vpc = std::move(value); }
+
+    /**
+     * Settings for VPC output
+     */
+    inline DeleteChannelResult& WithVpc(const VpcOutputSettingsDescription& value) { SetVpc(value); return *this;}
+
+    /**
+     * Settings for VPC output
+     */
+    inline DeleteChannelResult& WithVpc(VpcOutputSettingsDescription&& value) { SetVpc(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -622,6 +649,8 @@ one destination per
     ChannelState m_state;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    VpcOutputSettingsDescription m_vpc;
   };
 
 } // namespace Model

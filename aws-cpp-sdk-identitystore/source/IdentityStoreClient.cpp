@@ -72,7 +72,7 @@ IdentityStoreClient::~IdentityStoreClient()
 {
 }
 
-void IdentityStoreClient::init(const ClientConfiguration& config)
+void IdentityStoreClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("identitystore");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -101,9 +101,6 @@ void IdentityStoreClient::OverrideEndpoint(const Aws::String& endpoint)
 DescribeGroupOutcome IdentityStoreClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeGroupOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -128,9 +125,6 @@ void IdentityStoreClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& r
 DescribeUserOutcome IdentityStoreClient::DescribeUser(const DescribeUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return DescribeUserOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -155,9 +149,6 @@ void IdentityStoreClient::DescribeUserAsyncHelper(const DescribeUserRequest& req
 ListGroupsOutcome IdentityStoreClient::ListGroups(const ListGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListGroupsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -182,9 +173,6 @@ void IdentityStoreClient::ListGroupsAsyncHelper(const ListGroupsRequest& request
 ListUsersOutcome IdentityStoreClient::ListUsers(const ListUsersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
   return ListUsersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

@@ -22,7 +22,8 @@ InputConfig::InputConfig() :
     m_s3UriHasBeenSet(false),
     m_dataInputConfigHasBeenSet(false),
     m_framework(Framework::NOT_SET),
-    m_frameworkHasBeenSet(false)
+    m_frameworkHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ InputConfig::InputConfig(JsonView jsonValue) :
     m_s3UriHasBeenSet(false),
     m_dataInputConfigHasBeenSet(false),
     m_framework(Framework::NOT_SET),
-    m_frameworkHasBeenSet(false)
+    m_frameworkHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ InputConfig& InputConfig::operator =(JsonView jsonValue)
     m_frameworkHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FrameworkVersion"))
+  {
+    m_frameworkVersion = jsonValue.GetString("FrameworkVersion");
+
+    m_frameworkVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue InputConfig::Jsonize() const
   if(m_frameworkHasBeenSet)
   {
    payload.WithString("Framework", FrameworkMapper::GetNameForFramework(m_framework));
+  }
+
+  if(m_frameworkVersionHasBeenSet)
+  {
+   payload.WithString("FrameworkVersion", m_frameworkVersion);
+
   }
 
   return payload;

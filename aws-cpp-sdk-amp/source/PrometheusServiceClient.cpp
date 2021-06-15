@@ -73,7 +73,7 @@ PrometheusServiceClient::~PrometheusServiceClient()
 {
 }
 
-void PrometheusServiceClient::init(const ClientConfiguration& config)
+void PrometheusServiceClient::init(const Client::ClientConfiguration& config)
 {
   SetServiceClientName("amp");
   m_configScheme = SchemeMapper::ToString(config.scheme);
@@ -102,9 +102,7 @@ void PrometheusServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 CreateWorkspaceOutcome PrometheusServiceClient::CreateWorkspace(const CreateWorkspaceRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workspaces";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workspaces");
   return CreateWorkspaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -134,10 +132,8 @@ DeleteWorkspaceOutcome PrometheusServiceClient::DeleteWorkspace(const DeleteWork
     return DeleteWorkspaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workspaces/";
-  ss << request.GetWorkspaceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workspaces/");
+  uri.AddPathSegment(request.GetWorkspaceId());
   return DeleteWorkspaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -167,10 +163,8 @@ DescribeWorkspaceOutcome PrometheusServiceClient::DescribeWorkspace(const Descri
     return DescribeWorkspaceOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workspaces/";
-  ss << request.GetWorkspaceId();
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workspaces/");
+  uri.AddPathSegment(request.GetWorkspaceId());
   return DescribeWorkspaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -195,9 +189,7 @@ void PrometheusServiceClient::DescribeWorkspaceAsyncHelper(const DescribeWorkspa
 ListWorkspacesOutcome PrometheusServiceClient::ListWorkspaces(const ListWorkspacesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workspaces";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workspaces");
   return ListWorkspacesOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
@@ -227,11 +219,9 @@ UpdateWorkspaceAliasOutcome PrometheusServiceClient::UpdateWorkspaceAlias(const 
     return UpdateWorkspaceAliasOutcome(Aws::Client::AWSError<PrometheusServiceErrors>(PrometheusServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkspaceId]", false));
   }
   Aws::Http::URI uri = m_uri;
-  Aws::StringStream ss;
-  ss << "/workspaces/";
-  ss << request.GetWorkspaceId();
-  ss << "/alias";
-  uri.SetPath(uri.GetPath() + ss.str());
+  uri.AddPathSegments("/workspaces/");
+  uri.AddPathSegment(request.GetWorkspaceId());
+  uri.AddPathSegments("/alias");
   return UpdateWorkspaceAliasOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 

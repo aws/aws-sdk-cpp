@@ -167,15 +167,18 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
 
@@ -186,15 +189,18 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
@@ -205,15 +211,18 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
@@ -224,15 +233,18 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
 
@@ -243,15 +255,18 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
 
@@ -262,15 +277,18 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline ScheduledAction& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
 
@@ -281,15 +299,18 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline ScheduledAction& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
 
@@ -300,17 +321,69 @@ namespace Model
      * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
      * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
      * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
-     * for one-time schedules. Specify the time in UTC.</p> <p>For rate expressions,
+     * for one-time schedules. Cron expressions are useful for scheduled actions that
+     * run periodically at a specified date and time, and rate expressions are useful
+     * for scheduled actions that run at a regular interval.</p> <p>At and cron
+     * expressions use Universal Coordinated Time (UTC) by default.</p> <p>The cron
+     * format consists of six fields separated by white spaces: [Minutes] [Hours]
+     * [Day_of_Month] [Month] [Day_of_Week] [Year].</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
-     * | <code>days</code>.</p> <p>For cron expressions, <i>fields</i> is a cron
-     * expression. The supported cron format consists of six fields separated by white
-     * spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
-     * <p>For more information and examples, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html">Scheduled
-     * Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
+     * | <code>days</code>.</p> <p>For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example
+     * scheduled actions for Application Auto Scaling</a> in the <i>Application Auto
+     * Scaling User Guide</i>.</p>
      */
     inline ScheduledAction& WithSchedule(const char* value) { SetSchedule(value); return *this;}
+
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline ScheduledAction& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline ScheduledAction& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
+
+    /**
+     * <p>The time zone used when referring to the date and time of a scheduled action,
+     * when the scheduled action uses an at or cron expression.</p>
+     */
+    inline ScheduledAction& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
 
     /**
@@ -962,63 +1035,63 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the action is scheduled to begin.</p>
+     * <p>The date and time that the action is scheduled to begin, in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin.</p>
+     * <p>The date and time that the action is scheduled to begin, in UTC.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin.</p>
+     * <p>The date and time that the action is scheduled to begin, in UTC.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin.</p>
+     * <p>The date and time that the action is scheduled to begin, in UTC.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The date and time that the action is scheduled to begin.</p>
+     * <p>The date and time that the action is scheduled to begin, in UTC.</p>
      */
     inline ScheduledAction& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The date and time that the action is scheduled to begin.</p>
+     * <p>The date and time that the action is scheduled to begin, in UTC.</p>
      */
     inline ScheduledAction& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the action is scheduled to end.</p>
+     * <p>The date and time that the action is scheduled to end, in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time that the action is scheduled to end.</p>
+     * <p>The date and time that the action is scheduled to end, in UTC.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The date and time that the action is scheduled to end.</p>
+     * <p>The date and time that the action is scheduled to end, in UTC.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time that the action is scheduled to end.</p>
+     * <p>The date and time that the action is scheduled to end, in UTC.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time that the action is scheduled to end.</p>
+     * <p>The date and time that the action is scheduled to end, in UTC.</p>
      */
     inline ScheduledAction& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time that the action is scheduled to end.</p>
+     * <p>The date and time that the action is scheduled to end, in UTC.</p>
      */
     inline ScheduledAction& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -1121,6 +1194,9 @@ namespace Model
 
     Aws::String m_schedule;
     bool m_scheduleHasBeenSet;
+
+    Aws::String m_timezone;
+    bool m_timezoneHasBeenSet;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;

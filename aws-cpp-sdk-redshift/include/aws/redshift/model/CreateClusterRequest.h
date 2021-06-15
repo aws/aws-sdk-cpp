@@ -8,6 +8,7 @@
 #include <aws/redshift/RedshiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/AquaConfigurationStatus.h>
 #include <aws/redshift/model/Tag.h>
 #include <utility>
 
@@ -1102,8 +1103,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: <code>1</code> </p>
-     * <p>Constraints: Must be a value from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to
+     * 35.</p>
      */
     inline int GetAutomatedSnapshotRetentionPeriod() const{ return m_automatedSnapshotRetentionPeriod; }
 
@@ -1111,8 +1114,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: <code>1</code> </p>
-     * <p>Constraints: Must be a value from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to
+     * 35.</p>
      */
     inline bool AutomatedSnapshotRetentionPeriodHasBeenSet() const { return m_automatedSnapshotRetentionPeriodHasBeenSet; }
 
@@ -1120,8 +1125,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: <code>1</code> </p>
-     * <p>Constraints: Must be a value from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to
+     * 35.</p>
      */
     inline void SetAutomatedSnapshotRetentionPeriod(int value) { m_automatedSnapshotRetentionPeriodHasBeenSet = true; m_automatedSnapshotRetentionPeriod = value; }
 
@@ -1129,8 +1136,10 @@ namespace Model
      * <p>The number of days that automated snapshots are retained. If the value is 0,
      * automated snapshots are disabled. Even if automated snapshots are disabled, you
      * can still create manual snapshots when you want with
-     * <a>CreateClusterSnapshot</a>. </p> <p>Default: <code>1</code> </p>
-     * <p>Constraints: Must be a value from 0 to 35.</p>
+     * <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for
+     * RA3 node types. Set the automated retention period from 1-35 days.</p>
+     * <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to
+     * 35.</p>
      */
     inline CreateClusterRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
@@ -1969,6 +1978,67 @@ namespace Model
      */
     inline CreateClusterRequest& WithAvailabilityZoneRelocation(bool value) { SetAvailabilityZoneRelocation(value); return *this;}
 
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) when it is created. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
+     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
+     * use AQUA.</p> </li> </ul>
+     */
+    inline const AquaConfigurationStatus& GetAquaConfigurationStatus() const{ return m_aquaConfigurationStatus; }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) when it is created. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
+     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
+     * use AQUA.</p> </li> </ul>
+     */
+    inline bool AquaConfigurationStatusHasBeenSet() const { return m_aquaConfigurationStatusHasBeenSet; }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) when it is created. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
+     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
+     * use AQUA.</p> </li> </ul>
+     */
+    inline void SetAquaConfigurationStatus(const AquaConfigurationStatus& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = value; }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) when it is created. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
+     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
+     * use AQUA.</p> </li> </ul>
+     */
+    inline void SetAquaConfigurationStatus(AquaConfigurationStatus&& value) { m_aquaConfigurationStatusHasBeenSet = true; m_aquaConfigurationStatus = std::move(value); }
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) when it is created. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
+     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
+     * use AQUA.</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithAquaConfigurationStatus(const AquaConfigurationStatus& value) { SetAquaConfigurationStatus(value); return *this;}
+
+    /**
+     * <p>The value represents how the cluster is configured to use AQUA (Advanced
+     * Query Accelerator) when it is created. Possible values include the
+     * following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the
+     * current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled -
+     * Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to
+     * use AQUA.</p> </li> </ul>
+     */
+    inline CreateClusterRequest& WithAquaConfigurationStatus(AquaConfigurationStatus&& value) { SetAquaConfigurationStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -2063,6 +2133,9 @@ namespace Model
 
     bool m_availabilityZoneRelocation;
     bool m_availabilityZoneRelocationHasBeenSet;
+
+    AquaConfigurationStatus m_aquaConfigurationStatus;
+    bool m_aquaConfigurationStatusHasBeenSet;
   };
 
 } // namespace Model

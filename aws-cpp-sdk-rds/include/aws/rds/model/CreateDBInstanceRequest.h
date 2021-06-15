@@ -57,21 +57,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
@@ -91,21 +100,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
@@ -125,21 +143,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
@@ -159,21 +186,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
@@ -193,21 +229,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
@@ -227,21 +272,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
@@ -261,21 +315,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
@@ -295,21 +358,30 @@ namespace Model
      * be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
      * reserved by the specified database engine</p> </li> </ul> <p> <b>PostgreSQL</b>
      * </p> <p>The name of the database to create when the DB instance is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine</p> </li> </ul> <p> <b>Oracle</b> </p>
-     * <p>The Oracle System ID (SID) of the created DB instance. If you specify
-     * <code>null</code>, the default value <code>ORCL</code> is used. You can't
-     * specify the string NULL, or any other reserved word, for <code>DBName</code>.
-     * </p> <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't
-     * be longer than 8 characters</p> </li> </ul> <p> <b>SQL Server</b> </p> <p>Not
-     * applicable. Must be null.</p> <p> <b>Amazon Aurora</b> </p> <p>The name of the
-     * database to create when the primary instance of the DB cluster is created. If
-     * this parameter isn't specified, no database is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * this parameter isn't specified, a database named <code>postgres</code> is
+     * created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1
+     * to 63 letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a
+     * letter. Subsequent characters can be letters, underscores, or digits (0-9).</p>
      * </li> <li> <p>Can't be a word reserved by the specified database engine</p>
+     * </li> </ul> <p> <b>Oracle</b> </p> <p>The Oracle System ID (SID) of the created
+     * DB instance. If you specify <code>null</code>, the default value
+     * <code>ORCL</code> is used. You can't specify the string NULL, or any other
+     * reserved word, for <code>DBName</code>. </p> <p>Default: <code>ORCL</code> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters</p> </li>
+     * </ul> <p> <b>SQL Server</b> </p> <p>Not applicable. Must be null.</p> <p>
+     * <b>Amazon Aurora MySQL</b> </p> <p>The name of the database to create when the
+     * primary DB instance of the Aurora MySQL DB cluster is created. If this parameter
+     * isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     * cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 64
+     * alphanumeric characters.</p> </li> <li> <p>It can't be a word reserved by the
+     * database engine.</p> </li> </ul> <p> <b>Amazon Aurora PostgreSQL</b> </p> <p>The
+     * name of the database to create when the primary DB instance of the Aurora
+     * PostgreSQL DB cluster is created. If this parameter isn't specified for an
+     * Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is created
+     * in the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>It must contain 1 to 63
+     * alphanumeric characters.</p> </li> <li> <p>It must begin with a letter or an
+     * underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).</p> </li> <li> <p>It can't be a word reserved by the database engine.</p>
      * </li> </ul>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
@@ -1592,153 +1664,129 @@ namespace Model
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
 
     /**
      * <p> The daily time range during which automated backups are created if automated
-     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
-     * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
-     * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
-     * backups is managed by the DB cluster.</p> <p> The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
-     * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
-     * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
-     * Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred maintenance
-     * window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
+     * default is a 30-minute window selected at random from an 8-hour block of time
+     * for each AWS Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+     * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
+     * </p> <p>Not applicable. The daily time range for creating automated backups is
+     * managed by the DB cluster.</p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
+     * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
+     * maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
+     * </ul>
      */
     inline CreateDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
 
@@ -3728,25 +3776,41 @@ namespace Model
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
 
     /**
      * <p>The upper limit to which Amazon RDS can automatically scale the storage of
-     * the DB instance.</p>
+     * the DB instance.</p> <p>For more information about this setting, including
+     * limitations that apply to it, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the
+     * <i>Amazon RDS User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
 

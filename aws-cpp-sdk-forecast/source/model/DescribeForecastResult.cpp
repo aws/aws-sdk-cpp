@@ -16,11 +16,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeForecastResult::DescribeForecastResult()
+DescribeForecastResult::DescribeForecastResult() : 
+    m_estimatedTimeRemainingInMinutes(0)
 {
 }
 
-DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeForecastResult::DescribeForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_estimatedTimeRemainingInMinutes(0)
 {
   *this = result;
 }
@@ -58,6 +60,12 @@ DescribeForecastResult& DescribeForecastResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("DatasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("DatasetGroupArn");
+
+  }
+
+  if(jsonValue.ValueExists("EstimatedTimeRemainingInMinutes"))
+  {
+    m_estimatedTimeRemainingInMinutes = jsonValue.GetInt64("EstimatedTimeRemainingInMinutes");
 
   }
 

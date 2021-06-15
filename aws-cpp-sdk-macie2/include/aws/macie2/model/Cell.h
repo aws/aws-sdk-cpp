@@ -125,42 +125,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline const Aws::String& GetColumnName() const{ return m_columnName; }
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline Cell& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline Cell& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the column that contains the data, if available.</p>
+     * <p>The name of the column that contains the data, if available. This value is
+     * also null if Amazon Macie detects sensitive data in the name of any column in
+     * the file.</p>
      */
     inline Cell& WithColumnName(const char* value) { SetColumnName(value); return *this;}
 

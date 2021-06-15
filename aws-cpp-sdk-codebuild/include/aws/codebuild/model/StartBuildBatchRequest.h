@@ -201,11 +201,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -224,11 +224,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -247,11 +247,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -270,11 +270,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -293,11 +293,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -316,11 +316,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -339,11 +339,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -362,11 +362,11 @@ namespace Model
      * <p>The commit ID, branch name, or tag name that corresponds to the version of
      * the source code you want to build. If a branch name is specified, the branch's
      * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
-     * used.</p> </dd> <dt>Amazon Simple Storage Service (Amazon S3)</dt> <dd> <p>The
-     * version ID of the object that represents the build input ZIP file to use.</p>
-     * </dd> </dl> <p>If <code>sourceVersion</code> is specified at the project level,
-     * then this <code>sourceVersion</code> (at the build level) takes precedence. </p>
-     * <p>For more information, see <a
+     * used.</p> </dd> <dt>Amazon S3</dt> <dd> <p>The version ID of the object that
+     * represents the build input ZIP file to use.</p> </dd> </dl> <p>If
+     * <code>sourceVersion</code> is specified at the project level, then this
+     * <code>sourceVersion</code> (at the build level) takes precedence. </p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
      * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
      */
@@ -1568,6 +1568,43 @@ namespace Model
      */
     inline StartBuildBatchRequest& WithBuildBatchConfigOverride(ProjectBuildBatchConfig&& value) { SetBuildBatchConfigOverride(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool GetDebugSessionEnabled() const{ return m_debugSessionEnabled; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline bool DebugSessionEnabledHasBeenSet() const { return m_debugSessionEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline void SetDebugSessionEnabled(bool value) { m_debugSessionEnabledHasBeenSet = true; m_debugSessionEnabled = value; }
+
+    /**
+     * <p>Specifies if session debugging is enabled for this batch build. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing
+     * a running build in Session Manager</a>. Batch session debugging is not supported
+     * for matrix batch builds.</p>
+     */
+    inline StartBuildBatchRequest& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -1659,6 +1696,9 @@ namespace Model
 
     ProjectBuildBatchConfig m_buildBatchConfigOverride;
     bool m_buildBatchConfigOverrideHasBeenSet;
+
+    bool m_debugSessionEnabled;
+    bool m_debugSessionEnabledHasBeenSet;
   };
 
 } // namespace Model

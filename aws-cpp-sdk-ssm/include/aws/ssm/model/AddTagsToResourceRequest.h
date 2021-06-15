@@ -89,7 +89,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -100,7 +107,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -111,7 +125,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -122,7 +143,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -133,7 +161,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -144,7 +179,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -155,7 +197,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -166,7 +215,14 @@ namespace Model
     /**
      * <p>The resource ID you want to tag.</p> <p>Use the ID of the resource. Here are
      * some examples:</p> <p>ManagedInstance: mi-012345abcde</p> <p>MaintenanceWindow:
-     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>For the Document and
+     * mw-012345abcde</p> <p>PatchBaseline: pb-012345abcde</p> <p>OpsMetadata object:
+     * <code>ResourceID</code> for tagging is created from the Amazon Resource Name
+     * (ARN) for the object. Specifically, <code>ResourceID</code> is created from the
+     * strings that come after the word <code>opsmetadata</code> in the ARN. For
+     * example, an OpsMetadata object with an ARN of
+     * <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
+     * has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code>
+     * or <code>/aws/ssm/MyGroup/appmanager</code>.</p> <p>For the Document and
      * Parameter values, use the name of the resource.</p>  <p>The
      * ManagedInstance type for this API action is only for on-premises managed
      * instances. You must specify the name of the managed instance in the following
@@ -176,66 +232,50 @@ namespace Model
 
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline AddTagsToResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline AddTagsToResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline AddTagsToResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p> One or more tags. The value parameter is required, but if you don't want the
-     * tag to have a value, specify the parameter with no value, and we set the value
-     * to an empty string. </p>  <p>Do not enter personally identifiable
-     * information in this field.</p> 
+     * <p>One or more tags. The value parameter is required.</p>  <p>Do not
+     * enter personally identifiable information in this field.</p> 
      */
     inline AddTagsToResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
