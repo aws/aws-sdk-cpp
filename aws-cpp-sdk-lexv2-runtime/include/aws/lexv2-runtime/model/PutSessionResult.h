@@ -182,49 +182,49 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex. These are the same as the <code>requestAttribute</code> parameter in the
+     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
      * call to the <code>PutSession</code> operation.</p>
      */
     inline const Aws::String& GetRequestAttributes() const{ return m_requestAttributes; }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex. These are the same as the <code>requestAttribute</code> parameter in the
+     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
      * call to the <code>PutSession</code> operation.</p>
      */
     inline void SetRequestAttributes(const Aws::String& value) { m_requestAttributes = value; }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex. These are the same as the <code>requestAttribute</code> parameter in the
+     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
      * call to the <code>PutSession</code> operation.</p>
      */
     inline void SetRequestAttributes(Aws::String&& value) { m_requestAttributes = std::move(value); }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex. These are the same as the <code>requestAttribute</code> parameter in the
+     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
      * call to the <code>PutSession</code> operation.</p>
      */
     inline void SetRequestAttributes(const char* value) { m_requestAttributes.assign(value); }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex. These are the same as the <code>requestAttribute</code> parameter in the
+     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
      * call to the <code>PutSession</code> operation.</p>
      */
     inline PutSessionResult& WithRequestAttributes(const Aws::String& value) { SetRequestAttributes(value); return *this;}
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex. These are the same as the <code>requestAttribute</code> parameter in the
+     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
      * call to the <code>PutSession</code> operation.</p>
      */
     inline PutSessionResult& WithRequestAttributes(Aws::String&& value) { SetRequestAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex. These are the same as the <code>requestAttribute</code> parameter in the
+     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
      * call to the <code>PutSession</code> operation.</p>
      */
     inline PutSessionResult& WithRequestAttributes(const char* value) { SetRequestAttributes(value); return *this;}

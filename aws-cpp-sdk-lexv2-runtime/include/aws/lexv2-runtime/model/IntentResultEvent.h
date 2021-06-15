@@ -30,7 +30,7 @@ namespace Model
 
   /**
    * <p>Contains the current state of the conversation between the client application
-   * and Amazon Lex.</p><p><h3>See Also:</h3>   <a
+   * and Amazon Lex V2.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/IntentResultEvent">AWS
    * API Reference</a></p>
    */
@@ -75,72 +75,72 @@ namespace Model
 
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline const Aws::Vector<Interpretation>& GetInterpretations() const{ return m_interpretations; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline bool InterpretationsHasBeenSet() const { return m_interpretationsHasBeenSet; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline void SetInterpretations(const Aws::Vector<Interpretation>& value) { m_interpretationsHasBeenSet = true; m_interpretations = value; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline void SetInterpretations(Aws::Vector<Interpretation>&& value) { m_interpretationsHasBeenSet = true; m_interpretations = std::move(value); }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline IntentResultEvent& WithInterpretations(const Aws::Vector<Interpretation>& value) { SetInterpretations(value); return *this;}
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline IntentResultEvent& WithInterpretations(Aws::Vector<Interpretation>&& value) { SetInterpretations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline IntentResultEvent& AddInterpretations(const Interpretation& value) { m_interpretationsHasBeenSet = true; m_interpretations.push_back(value); return *this; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
@@ -274,58 +274,58 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline IntentResultEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline IntentResultEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline IntentResultEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 

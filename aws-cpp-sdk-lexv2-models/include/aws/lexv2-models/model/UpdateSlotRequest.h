@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lexv2-models/model/SlotValueElicitationSetting.h>
 #include <aws/lexv2-models/model/ObfuscationSetting.h>
+#include <aws/lexv2-models/model/MultipleValuesSetting.h>
 #include <utility>
 
 namespace Aws
@@ -467,6 +468,67 @@ namespace Model
      */
     inline UpdateSlotRequest& WithIntentId(const char* value) { SetIntentId(value); return *this;}
 
+
+    /**
+     * <p>Determines whether the slot accepts multiple values in one response. Multiple
+     * value slots are only available in the en-US locale. If you set this value to
+     * <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.</p> <p>If the
+     * <code>multipleValuesSetting</code> is not set, the default value is
+     * <code>false</code>.</p>
+     */
+    inline const MultipleValuesSetting& GetMultipleValuesSetting() const{ return m_multipleValuesSetting; }
+
+    /**
+     * <p>Determines whether the slot accepts multiple values in one response. Multiple
+     * value slots are only available in the en-US locale. If you set this value to
+     * <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.</p> <p>If the
+     * <code>multipleValuesSetting</code> is not set, the default value is
+     * <code>false</code>.</p>
+     */
+    inline bool MultipleValuesSettingHasBeenSet() const { return m_multipleValuesSettingHasBeenSet; }
+
+    /**
+     * <p>Determines whether the slot accepts multiple values in one response. Multiple
+     * value slots are only available in the en-US locale. If you set this value to
+     * <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.</p> <p>If the
+     * <code>multipleValuesSetting</code> is not set, the default value is
+     * <code>false</code>.</p>
+     */
+    inline void SetMultipleValuesSetting(const MultipleValuesSetting& value) { m_multipleValuesSettingHasBeenSet = true; m_multipleValuesSetting = value; }
+
+    /**
+     * <p>Determines whether the slot accepts multiple values in one response. Multiple
+     * value slots are only available in the en-US locale. If you set this value to
+     * <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.</p> <p>If the
+     * <code>multipleValuesSetting</code> is not set, the default value is
+     * <code>false</code>.</p>
+     */
+    inline void SetMultipleValuesSetting(MultipleValuesSetting&& value) { m_multipleValuesSettingHasBeenSet = true; m_multipleValuesSetting = std::move(value); }
+
+    /**
+     * <p>Determines whether the slot accepts multiple values in one response. Multiple
+     * value slots are only available in the en-US locale. If you set this value to
+     * <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.</p> <p>If the
+     * <code>multipleValuesSetting</code> is not set, the default value is
+     * <code>false</code>.</p>
+     */
+    inline UpdateSlotRequest& WithMultipleValuesSetting(const MultipleValuesSetting& value) { SetMultipleValuesSetting(value); return *this;}
+
+    /**
+     * <p>Determines whether the slot accepts multiple values in one response. Multiple
+     * value slots are only available in the en-US locale. If you set this value to
+     * <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>ValidationException</code>.</p> <p>If the
+     * <code>multipleValuesSetting</code> is not set, the default value is
+     * <code>false</code>.</p>
+     */
+    inline UpdateSlotRequest& WithMultipleValuesSetting(MultipleValuesSetting&& value) { SetMultipleValuesSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotId;
@@ -498,6 +560,9 @@ namespace Model
 
     Aws::String m_intentId;
     bool m_intentIdHasBeenSet;
+
+    MultipleValuesSetting m_multipleValuesSetting;
+    bool m_multipleValuesSettingHasBeenSet;
   };
 
 } // namespace Model

@@ -199,42 +199,42 @@ namespace Model
 
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline RecognizeTextRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline RecognizeTextRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>The text that the user entered. Amazon Lex interprets this text.</p>
+     * <p>The text that the user entered. Amazon Lex V2 interprets this text.</p>
      */
     inline RecognizeTextRequest& WithText(const char* value) { SetText(value); return *this;}
 
@@ -272,7 +272,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -280,7 +280,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -288,7 +288,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -296,7 +296,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -304,7 +304,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -312,7 +312,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -320,7 +320,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -328,7 +328,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -336,7 +336,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -344,7 +344,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -352,7 +352,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -360,7 +360,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */
@@ -368,7 +368,7 @@ namespace Model
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
      */

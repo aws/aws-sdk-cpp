@@ -7,6 +7,8 @@
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/redshift-data/RedshiftDataAPIServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift-data/model/SqlParameter.h>
 #include <utility>
 
 namespace Aws
@@ -182,6 +184,47 @@ namespace Model
 
 
     /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline const Aws::Vector<SqlParameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline void SetParameters(const Aws::Vector<SqlParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline void SetParameters(Aws::Vector<SqlParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline ExecuteStatementRequest& WithParameters(const Aws::Vector<SqlParameter>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline ExecuteStatementRequest& WithParameters(Aws::Vector<SqlParameter>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline ExecuteStatementRequest& AddParameters(const SqlParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline ExecuteStatementRequest& AddParameters(SqlParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name or ARN of the secret that enables access to the database. This
      * parameter is required when authenticating using AWS Secrets Manager. </p>
      */
@@ -354,6 +397,9 @@ namespace Model
 
     Aws::String m_dbUser;
     bool m_dbUserHasBeenSet;
+
+    Aws::Vector<SqlParameter> m_parameters;
+    bool m_parametersHasBeenSet;
 
     Aws::String m_secretArn;
     bool m_secretArnHasBeenSet;

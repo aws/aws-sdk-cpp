@@ -173,42 +173,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartOutboundVoiceContactRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartOutboundVoiceContactRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon Connect instance.</p>
+     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
+     * the ARN of the instance.</p>
      */
     inline StartOutboundVoiceContactRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
@@ -216,64 +224,56 @@ namespace Model
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline StartOutboundVoiceContactRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline StartOutboundVoiceContactRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. The token is valid for 7 days after creation. If a
-     * contact is already started, the contact ID is returned. If the contact is
-     * disconnected, a new contact is started.</p>
+     * contact is already started, the contact ID is returned. </p>
      */
     inline StartOutboundVoiceContactRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

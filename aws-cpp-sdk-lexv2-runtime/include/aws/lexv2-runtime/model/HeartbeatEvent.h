@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Event that Amazon Lex sends to indicate that the stream is still open between
-   * the client application and Amazon Lex </p><p><h3>See Also:</h3>   <a
+   * <p>Event that Amazon Lex V2 sends to indicate that the stream is still open
+   * between the client application and Amazon Lex V2 </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/HeartbeatEvent">AWS
    * API Reference</a></p>
    */
@@ -39,58 +39,58 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline HeartbeatEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline HeartbeatEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline HeartbeatEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a chunk of audio sent from the client application to Amazon Lex.
-   * The audio is all or part of an utterance from the user.</p> <p>Amazon Lex
+   * <p>Represents a chunk of audio sent from the client application to Amazon Lex
+   * V2. The audio is all or part of an utterance from the user.</p> <p>Amazon Lex V2
    * accumulates audio chunks until it recognizes a natural pause in speech before
    * processing the input.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/AudioInputEvent">AWS
@@ -188,25 +188,25 @@ namespace Model
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline long long GetClientTimestampMillis() const{ return m_clientTimestampMillis; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline bool ClientTimestampMillisHasBeenSet() const { return m_clientTimestampMillisHasBeenSet; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline void SetClientTimestampMillis(long long value) { m_clientTimestampMillisHasBeenSet = true; m_clientTimestampMillis = value; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline AudioInputEvent& WithClientTimestampMillis(long long value) { SetClientTimestampMillis(value); return *this;}
 

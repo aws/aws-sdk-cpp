@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents a stream of events between Amazon Lex and your
+   * <p>Represents a stream of events between Amazon Lex V2 and your
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/StartConversationResponseEventStream">AWS
    * API Reference</a></p>
@@ -90,38 +90,38 @@ namespace Model
 
 
     /**
-     * <p>Event sent from Amazon Lex to the client application containing the current
-     * state of the conversation between the user and Amazon Lex.</p>
+     * <p>Event sent from Amazon Lex V2 to the client application containing the
+     * current state of the conversation between the user and Amazon Lex V2.</p>
      */
     inline const IntentResultEvent& GetIntentResultEvent() const{ return m_intentResultEvent; }
 
     /**
-     * <p>Event sent from Amazon Lex to the client application containing the current
-     * state of the conversation between the user and Amazon Lex.</p>
+     * <p>Event sent from Amazon Lex V2 to the client application containing the
+     * current state of the conversation between the user and Amazon Lex V2.</p>
      */
     inline bool IntentResultEventHasBeenSet() const { return m_intentResultEventHasBeenSet; }
 
     /**
-     * <p>Event sent from Amazon Lex to the client application containing the current
-     * state of the conversation between the user and Amazon Lex.</p>
+     * <p>Event sent from Amazon Lex V2 to the client application containing the
+     * current state of the conversation between the user and Amazon Lex V2.</p>
      */
     inline void SetIntentResultEvent(const IntentResultEvent& value) { m_intentResultEventHasBeenSet = true; m_intentResultEvent = value; }
 
     /**
-     * <p>Event sent from Amazon Lex to the client application containing the current
-     * state of the conversation between the user and Amazon Lex.</p>
+     * <p>Event sent from Amazon Lex V2 to the client application containing the
+     * current state of the conversation between the user and Amazon Lex V2.</p>
      */
     inline void SetIntentResultEvent(IntentResultEvent&& value) { m_intentResultEventHasBeenSet = true; m_intentResultEvent = std::move(value); }
 
     /**
-     * <p>Event sent from Amazon Lex to the client application containing the current
-     * state of the conversation between the user and Amazon Lex.</p>
+     * <p>Event sent from Amazon Lex V2 to the client application containing the
+     * current state of the conversation between the user and Amazon Lex V2.</p>
      */
     inline StartConversationResponseEventStream& WithIntentResultEvent(const IntentResultEvent& value) { SetIntentResultEvent(value); return *this;}
 
     /**
-     * <p>Event sent from Amazon Lex to the client application containing the current
-     * state of the conversation between the user and Amazon Lex.</p>
+     * <p>Event sent from Amazon Lex V2 to the client application containing the
+     * current state of the conversation between the user and Amazon Lex V2.</p>
      */
     inline StartConversationResponseEventStream& WithIntentResultEvent(IntentResultEvent&& value) { SetIntentResultEvent(std::move(value)); return *this;}
 
@@ -338,69 +338,69 @@ namespace Model
 
 
     /**
-     * <p>An error occurred with Amazon Lex.</p>
+     * <p>An error occurred with Amazon Lex V2.</p>
      */
     inline const InternalServerException& GetInternalServerException() const{ return m_internalServerException; }
 
     /**
-     * <p>An error occurred with Amazon Lex.</p>
+     * <p>An error occurred with Amazon Lex V2.</p>
      */
     inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
 
     /**
-     * <p>An error occurred with Amazon Lex.</p>
+     * <p>An error occurred with Amazon Lex V2.</p>
      */
     inline void SetInternalServerException(const InternalServerException& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = value; }
 
     /**
-     * <p>An error occurred with Amazon Lex.</p>
+     * <p>An error occurred with Amazon Lex V2.</p>
      */
     inline void SetInternalServerException(InternalServerException&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::move(value); }
 
     /**
-     * <p>An error occurred with Amazon Lex.</p>
+     * <p>An error occurred with Amazon Lex V2.</p>
      */
     inline StartConversationResponseEventStream& WithInternalServerException(const InternalServerException& value) { SetInternalServerException(value); return *this;}
 
     /**
-     * <p>An error occurred with Amazon Lex.</p>
+     * <p>An error occurred with Amazon Lex V2.</p>
      */
     inline StartConversationResponseEventStream& WithInternalServerException(InternalServerException&& value) { SetInternalServerException(std::move(value)); return *this;}
 
 
     /**
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
-     * bot, and session ID.</p>
+     * V2 bot, and session ID.</p>
      */
     inline const ConflictException& GetConflictException() const{ return m_conflictException; }
 
     /**
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
-     * bot, and session ID.</p>
+     * V2 bot, and session ID.</p>
      */
     inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
 
     /**
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
-     * bot, and session ID.</p>
+     * V2 bot, and session ID.</p>
      */
     inline void SetConflictException(const ConflictException& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = value; }
 
     /**
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
-     * bot, and session ID.</p>
+     * V2 bot, and session ID.</p>
      */
     inline void SetConflictException(ConflictException&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::move(value); }
 
     /**
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
-     * bot, and session ID.</p>
+     * V2 bot, and session ID.</p>
      */
     inline StartConversationResponseEventStream& WithConflictException(const ConflictException& value) { SetConflictException(value); return *this;}
 
     /**
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
-     * bot, and session ID.</p>
+     * V2 bot, and session ID.</p>
      */
     inline StartConversationResponseEventStream& WithConflictException(ConflictException&& value) { SetConflictException(std::move(value)); return *this;}
 

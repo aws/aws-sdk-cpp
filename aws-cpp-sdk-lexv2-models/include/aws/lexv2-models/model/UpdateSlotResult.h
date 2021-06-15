@@ -9,6 +9,7 @@
 #include <aws/lexv2-models/model/SlotValueElicitationSetting.h>
 #include <aws/lexv2-models/model/ObfuscationSetting.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/MultipleValuesSetting.h>
 #include <utility>
 
 namespace Aws
@@ -450,6 +451,32 @@ namespace Model
      */
     inline UpdateSlotResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the slot accepts multiple values in one response.</p>
+     */
+    inline const MultipleValuesSetting& GetMultipleValuesSetting() const{ return m_multipleValuesSetting; }
+
+    /**
+     * <p>Indicates whether the slot accepts multiple values in one response.</p>
+     */
+    inline void SetMultipleValuesSetting(const MultipleValuesSetting& value) { m_multipleValuesSetting = value; }
+
+    /**
+     * <p>Indicates whether the slot accepts multiple values in one response.</p>
+     */
+    inline void SetMultipleValuesSetting(MultipleValuesSetting&& value) { m_multipleValuesSetting = std::move(value); }
+
+    /**
+     * <p>Indicates whether the slot accepts multiple values in one response.</p>
+     */
+    inline UpdateSlotResult& WithMultipleValuesSetting(const MultipleValuesSetting& value) { SetMultipleValuesSetting(value); return *this;}
+
+    /**
+     * <p>Indicates whether the slot accepts multiple values in one response.</p>
+     */
+    inline UpdateSlotResult& WithMultipleValuesSetting(MultipleValuesSetting&& value) { SetMultipleValuesSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_slotId;
@@ -475,6 +502,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDateTime;
 
     Aws::Utils::DateTime m_lastUpdatedDateTime;
+
+    MultipleValuesSetting m_multipleValuesSetting;
   };
 
 } // namespace Model

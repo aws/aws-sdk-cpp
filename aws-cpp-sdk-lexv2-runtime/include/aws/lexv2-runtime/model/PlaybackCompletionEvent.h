@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Event sent from the client application to Amazon Lex to indicate that
-   * playback of audio is complete and that Amazon Lex should start processing the
+   * <p>Event sent from the client application to Amazon Lex V2 to indicate that
+   * playback of audio is complete and that Amazon Lex V2 should start processing the
    * user's input.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/PlaybackCompletionEvent">AWS
    * API Reference</a></p>
@@ -90,25 +90,25 @@ namespace Model
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline long long GetClientTimestampMillis() const{ return m_clientTimestampMillis; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline bool ClientTimestampMillisHasBeenSet() const { return m_clientTimestampMillisHasBeenSet; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline void SetClientTimestampMillis(long long value) { m_clientTimestampMillisHasBeenSet = true; m_clientTimestampMillis = value; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline PlaybackCompletionEvent& WithClientTimestampMillis(long long value) { SetClientTimestampMillis(value); return *this;}
 

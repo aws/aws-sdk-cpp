@@ -7,7 +7,9 @@
 #include <aws/redshift-data/RedshiftDataAPIService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift-data/model/StatusString.h>
+#include <aws/redshift-data/model/SqlParameter.h>
 #include <utility>
 
 namespace Aws
@@ -290,6 +292,42 @@ namespace Model
 
 
     /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline const Aws::Vector<SqlParameter>& GetQueryParameters() const{ return m_queryParameters; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline void SetQueryParameters(const Aws::Vector<SqlParameter>& value) { m_queryParameters = value; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline void SetQueryParameters(Aws::Vector<SqlParameter>&& value) { m_queryParameters = std::move(value); }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline DescribeStatementResult& WithQueryParameters(const Aws::Vector<SqlParameter>& value) { SetQueryParameters(value); return *this;}
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline DescribeStatementResult& WithQueryParameters(Aws::Vector<SqlParameter>&& value) { SetQueryParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline DescribeStatementResult& AddQueryParameters(const SqlParameter& value) { m_queryParameters.push_back(value); return *this; }
+
+    /**
+     * <p>The parameters for the SQL statement.</p>
+     */
+    inline DescribeStatementResult& AddQueryParameters(SqlParameter&& value) { m_queryParameters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The SQL statement text. </p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
@@ -555,6 +593,8 @@ namespace Model
     bool m_hasResultSet;
 
     Aws::String m_id;
+
+    Aws::Vector<SqlParameter> m_queryParameters;
 
     Aws::String m_queryString;
 

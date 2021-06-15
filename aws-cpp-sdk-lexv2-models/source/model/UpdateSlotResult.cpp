@@ -100,6 +100,12 @@ UpdateSlotResult& UpdateSlotResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("multipleValuesSetting"))
+  {
+    m_multipleValuesSetting = jsonValue.GetObject("multipleValuesSetting");
+
+  }
+
 
 
   return *this;

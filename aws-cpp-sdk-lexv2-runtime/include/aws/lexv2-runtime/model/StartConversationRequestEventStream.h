@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a stream of events between your application and Amazon
-   * Lex.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a stream of events between your application and Amazon Lex
+   * V2.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/StartConversationRequestEventStream">AWS
    * API Reference</a></p>
    */
