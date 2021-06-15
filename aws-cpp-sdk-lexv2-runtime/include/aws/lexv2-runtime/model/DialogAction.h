@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The next action that Amazon Lex should take.</p><p><h3>See Also:</h3>   <a
+   * <p>The next action that Amazon Lex V2 should take.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/DialogAction">AWS
    * API Reference</a></p>
    */
@@ -46,8 +46,8 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action is
-     * to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
+     * is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline const DialogActionType& GetType() const{ return m_type; }
 
@@ -59,8 +59,8 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action is
-     * to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
+     * is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -72,8 +72,8 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action is
-     * to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
+     * is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline void SetType(const DialogActionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -85,8 +85,8 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action is
-     * to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
+     * is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline void SetType(DialogActionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -98,8 +98,8 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action is
-     * to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
+     * is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline DialogAction& WithType(const DialogActionType& value) { SetType(value); return *this;}
 
@@ -111,8 +111,8 @@ namespace Model
      * <code>ConfirmIntent</code> - The next action is asking the user if the intent is
      * complete and ready to be fulfilled. This is a yes/no question such as "Place the
      * order?"</p> </li> <li> <p> <code>Delegate</code> - The next action is determined
-     * by Amazon Lex.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action is
-     * to elicit a slot value from the user.</p> </li> </ul>
+     * by Amazon Lex V2.</p> </li> <li> <p> <code>ElicitSlot</code> - The next action
+     * is to elicit a slot value from the user.</p> </li> </ul>
      */
     inline DialogAction& WithType(DialogActionType&& value) { SetType(std::move(value)); return *this;}
 

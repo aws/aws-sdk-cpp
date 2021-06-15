@@ -21,6 +21,7 @@
 #include <aws/connect/ConnectEndpoint.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
 #include <aws/connect/model/AssociateApprovedOriginRequest.h>
+#include <aws/connect/model/AssociateBotRequest.h>
 #include <aws/connect/model/AssociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/AssociateLambdaFunctionRequest.h>
 #include <aws/connect/model/AssociateLexBotRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureRequest.h>
 #include <aws/connect/model/DisassociateApprovedOriginRequest.h>
+#include <aws/connect/model/DisassociateBotRequest.h>
 #include <aws/connect/model/DisassociateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/DisassociateLambdaFunctionRequest.h>
 #include <aws/connect/model/DisassociateLexBotRequest.h>
@@ -65,6 +67,7 @@
 #include <aws/connect/model/GetFederationTokenRequest.h>
 #include <aws/connect/model/GetMetricDataRequest.h>
 #include <aws/connect/model/ListApprovedOriginsRequest.h>
+#include <aws/connect/model/ListBotsRequest.h>
 #include <aws/connect/model/ListContactFlowsRequest.h>
 #include <aws/connect/model/ListHoursOfOperationsRequest.h>
 #include <aws/connect/model/ListInstanceAttributesRequest.h>
@@ -223,6 +226,38 @@ void ConnectClient::AssociateApprovedOriginAsync(const AssociateApprovedOriginRe
 void ConnectClient::AssociateApprovedOriginAsyncHelper(const AssociateApprovedOriginRequest& request, const AssociateApprovedOriginResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateApprovedOrigin(request), context);
+}
+
+AssociateBotOutcome ConnectClient::AssociateBot(const AssociateBotRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateBot", "Required field: InstanceId, is not set");
+    return AssociateBotOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/bot");
+  return AssociateBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateBotOutcomeCallable ConnectClient::AssociateBotCallable(const AssociateBotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateBotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateBot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::AssociateBotAsync(const AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateBotAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::AssociateBotAsyncHelper(const AssociateBotRequest& request, const AssociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateBot(request), context);
 }
 
 AssociateInstanceStorageConfigOutcome ConnectClient::AssociateInstanceStorageConfig(const AssociateInstanceStorageConfigRequest& request) const
@@ -1375,6 +1410,38 @@ void ConnectClient::DisassociateApprovedOriginAsyncHelper(const DisassociateAppr
   handler(this, request, DisassociateApprovedOrigin(request), context);
 }
 
+DisassociateBotOutcome ConnectClient::DisassociateBot(const DisassociateBotRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateBot", "Required field: InstanceId, is not set");
+    return DisassociateBotOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/bot");
+  return DisassociateBotOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateBotOutcomeCallable ConnectClient::DisassociateBotCallable(const DisassociateBotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateBotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateBot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::DisassociateBotAsync(const DisassociateBotRequest& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateBotAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::DisassociateBotAsyncHelper(const DisassociateBotRequest& request, const DisassociateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateBot(request), context);
+}
+
 DisassociateInstanceStorageConfigOutcome ConnectClient::DisassociateInstanceStorageConfig(const DisassociateInstanceStorageConfigRequest& request) const
 {
   if (!request.InstanceIdHasBeenSet())
@@ -1771,6 +1838,43 @@ void ConnectClient::ListApprovedOriginsAsync(const ListApprovedOriginsRequest& r
 void ConnectClient::ListApprovedOriginsAsyncHelper(const ListApprovedOriginsRequest& request, const ListApprovedOriginsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListApprovedOrigins(request), context);
+}
+
+ListBotsOutcome ConnectClient::ListBots(const ListBotsRequest& request) const
+{
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBots", "Required field: InstanceId, is not set");
+    return ListBotsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.LexVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBots", "Required field: LexVersion, is not set");
+    return ListBotsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LexVersion]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/instance/");
+  uri.AddPathSegment(request.GetInstanceId());
+  uri.AddPathSegments("/bots");
+  return ListBotsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListBotsOutcomeCallable ConnectClient::ListBotsCallable(const ListBotsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBotsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBots(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::ListBotsAsync(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBotsAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::ListBotsAsyncHelper(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBots(request), context);
 }
 
 ListContactFlowsOutcome ConnectClient::ListContactFlows(const ListContactFlowsRequest& request) const

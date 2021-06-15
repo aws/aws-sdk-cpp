@@ -90,6 +90,15 @@ DescribeStatementResult& DescribeStatementResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("QueryParameters"))
+  {
+    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
+    for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+    {
+      m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");

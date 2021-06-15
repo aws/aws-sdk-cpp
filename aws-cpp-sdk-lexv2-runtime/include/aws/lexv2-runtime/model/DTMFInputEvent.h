@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>A DTMF character sent from the client application. DTMF characters are
    * typically sent from a phone keypad to represent numbers. For example, you can
-   * have Amazon Lex process a credit card number input from a phone.</p><p><h3>See
-   * Also:</h3>   <a
+   * have Amazon Lex V2 process a credit card number input from a
+   * phone.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/DTMFInputEvent">AWS
    * API Reference</a></p>
    */
@@ -140,25 +140,25 @@ namespace Model
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline long long GetClientTimestampMillis() const{ return m_clientTimestampMillis; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline bool ClientTimestampMillisHasBeenSet() const { return m_clientTimestampMillisHasBeenSet; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline void SetClientTimestampMillis(long long value) { m_clientTimestampMillisHasBeenSet = true; m_clientTimestampMillis = value; }
 
     /**
      * <p>A timestamp set by the client of the date and time that the event was sent to
-     * Amazon Lex.</p>
+     * Amazon Lex V2.</p>
      */
     inline DTMFInputEvent& WithClientTimestampMillis(long long value) { SetClientTimestampMillis(value); return *this;}
 

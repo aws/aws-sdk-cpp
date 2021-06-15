@@ -124,63 +124,63 @@ namespace Model
 
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance. </p> <p>Each interpretation includes the intent, a score that
-     * indicates now confident Amazon Lex is that the interpretation is the correct
+     * indicates now confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline const Aws::Vector<Interpretation>& GetInterpretations() const{ return m_interpretations; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance. </p> <p>Each interpretation includes the intent, a score that
-     * indicates now confident Amazon Lex is that the interpretation is the correct
+     * indicates now confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline void SetInterpretations(const Aws::Vector<Interpretation>& value) { m_interpretations = value; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance. </p> <p>Each interpretation includes the intent, a score that
-     * indicates now confident Amazon Lex is that the interpretation is the correct
+     * indicates now confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline void SetInterpretations(Aws::Vector<Interpretation>&& value) { m_interpretations = std::move(value); }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance. </p> <p>Each interpretation includes the intent, a score that
-     * indicates now confident Amazon Lex is that the interpretation is the correct
+     * indicates now confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline RecognizeTextResult& WithInterpretations(const Aws::Vector<Interpretation>& value) { SetInterpretations(value); return *this;}
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance. </p> <p>Each interpretation includes the intent, a score that
-     * indicates now confident Amazon Lex is that the interpretation is the correct
+     * indicates now confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline RecognizeTextResult& WithInterpretations(Aws::Vector<Interpretation>&& value) { SetInterpretations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance. </p> <p>Each interpretation includes the intent, a score that
-     * indicates now confident Amazon Lex is that the interpretation is the correct
+     * indicates now confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */
     inline RecognizeTextResult& AddInterpretations(const Interpretation& value) { m_interpretations.push_back(value); return *this; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance. </p> <p>Each interpretation includes the intent, a score that
-     * indicates now confident Amazon Lex is that the interpretation is the correct
+     * indicates now confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
      * in the utterance.</p>
      */

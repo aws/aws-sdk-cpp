@@ -202,129 +202,153 @@ namespace Model
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline const Aws::String& GetSessionState() const{ return m_sessionState; }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline void SetSessionState(const Aws::String& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline void SetSessionState(Aws::String&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline void SetSessionState(const char* value) { m_sessionStateHasBeenSet = true; m_sessionState.assign(value); }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline RecognizeUtteranceRequest& WithSessionState(const Aws::String& value) { SetSessionState(value); return *this;}
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline RecognizeUtteranceRequest& WithSessionState(Aws::String&& value) { SetSessionState(std::move(value)); return *this;}
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p> <p>The <code>sessionState</code> field must be compressed using
+     * gzip and then base64 encoded before sending to Amazon Lex V2.</p>
      */
     inline RecognizeUtteranceRequest& WithSessionState(const char* value) { SetSessionState(value); return *this;}
 
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline const Aws::String& GetRequestAttributes() const{ return m_requestAttributes; }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline void SetRequestAttributes(const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline void SetRequestAttributes(Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline void SetRequestAttributes(const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.assign(value); }
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline RecognizeUtteranceRequest& WithRequestAttributes(const Aws::String& value) { SetRequestAttributes(value); return *this;}
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline RecognizeUtteranceRequest& WithRequestAttributes(Aws::String&& value) { SetRequestAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Request-specific information passed between the client application and Amazon
-     * Lex </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
+     * Lex V2 </p> <p>The namespace <code>x-amz-lex:</code> is reserved for special
      * attributes. Don't create any request attributes for prefix
-     * <code>x-amz-lex:</code>.</p>
+     * <code>x-amz-lex:</code>.</p> <p>The <code>requestAttributes</code> field must be
+     * compressed using gzip and then base64 encoded before sending to Amazon Lex
+     * V2.</p>
      */
     inline RecognizeUtteranceRequest& WithRequestAttributes(const char* value) { SetRequestAttributes(value); return *this;}
 
@@ -443,14 +467,14 @@ namespace Model
 
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>
@@ -461,14 +485,14 @@ namespace Model
     inline const Aws::String& GetResponseContentType() const{ return m_responseContentType; }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>
@@ -479,14 +503,14 @@ namespace Model
     inline bool ResponseContentTypeHasBeenSet() const { return m_responseContentTypeHasBeenSet; }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>
@@ -497,14 +521,14 @@ namespace Model
     inline void SetResponseContentType(const Aws::String& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = value; }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>
@@ -515,14 +539,14 @@ namespace Model
     inline void SetResponseContentType(Aws::String&& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = std::move(value); }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>
@@ -533,14 +557,14 @@ namespace Model
     inline void SetResponseContentType(const char* value) { m_responseContentTypeHasBeenSet = true; m_responseContentType.assign(value); }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>
@@ -551,14 +575,14 @@ namespace Model
     inline RecognizeUtteranceRequest& WithResponseContentType(const Aws::String& value) { SetResponseContentType(value); return *this;}
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>
@@ -569,14 +593,14 @@ namespace Model
     inline RecognizeUtteranceRequest& WithResponseContentType(Aws::String&& value) { SetResponseContentType(std::move(value)); return *this;}
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech based on the <code>responseContentType</code> value.</p> <ul> <li> <p>If
-     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex returns text in
-     * the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
-     * Amazon Lex returns speech in the response. Amazon Lex uses Amazon Polly to
+     * the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
+     * in the response.</p> </li> <li> <p>If the value begins with <code>audio/</code>,
+     * Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to
      * generate the speech using the configuration that you specified in the
      * <code>requestContentType</code> parameter. For example, if you specify
-     * <code>audio/mpeg</code> as the value, Amazon Lex returns speech in the MPEG
+     * <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech in the MPEG
      * format.</p> </li> <li> <p>If the value is <code>audio/pcm</code>, the speech
      * returned is <code>audio/pcm</code> at 16 KHz in 16-bit, little-endian
      * format.</p> </li> <li> <p>The following are the accepted values:</p> <ul> <li>

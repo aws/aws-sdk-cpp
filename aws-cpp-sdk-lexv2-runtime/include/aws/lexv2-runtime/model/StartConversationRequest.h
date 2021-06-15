@@ -227,62 +227,62 @@ namespace Model
 
 
     /**
-     * <p>The conversation type that you are using the Amazon Lex. If the conversation
-     * mode is <code>AUDIO</code> you can send both audio and DTMF information. If the
-     * mode is <code>TEXT</code> you can only send text.</p>
+     * <p>The conversation type that you are using the Amazon Lex V2. If the
+     * conversation mode is <code>AUDIO</code> you can send both audio and DTMF
+     * information. If the mode is <code>TEXT</code> you can only send text.</p>
      */
     inline const ConversationMode& GetConversationMode() const{ return m_conversationMode; }
 
     /**
-     * <p>The conversation type that you are using the Amazon Lex. If the conversation
-     * mode is <code>AUDIO</code> you can send both audio and DTMF information. If the
-     * mode is <code>TEXT</code> you can only send text.</p>
+     * <p>The conversation type that you are using the Amazon Lex V2. If the
+     * conversation mode is <code>AUDIO</code> you can send both audio and DTMF
+     * information. If the mode is <code>TEXT</code> you can only send text.</p>
      */
     inline bool ConversationModeHasBeenSet() const { return m_conversationModeHasBeenSet; }
 
     /**
-     * <p>The conversation type that you are using the Amazon Lex. If the conversation
-     * mode is <code>AUDIO</code> you can send both audio and DTMF information. If the
-     * mode is <code>TEXT</code> you can only send text.</p>
+     * <p>The conversation type that you are using the Amazon Lex V2. If the
+     * conversation mode is <code>AUDIO</code> you can send both audio and DTMF
+     * information. If the mode is <code>TEXT</code> you can only send text.</p>
      */
     inline void SetConversationMode(const ConversationMode& value) { m_conversationModeHasBeenSet = true; m_conversationMode = value; }
 
     /**
-     * <p>The conversation type that you are using the Amazon Lex. If the conversation
-     * mode is <code>AUDIO</code> you can send both audio and DTMF information. If the
-     * mode is <code>TEXT</code> you can only send text.</p>
+     * <p>The conversation type that you are using the Amazon Lex V2. If the
+     * conversation mode is <code>AUDIO</code> you can send both audio and DTMF
+     * information. If the mode is <code>TEXT</code> you can only send text.</p>
      */
     inline void SetConversationMode(ConversationMode&& value) { m_conversationModeHasBeenSet = true; m_conversationMode = std::move(value); }
 
     /**
-     * <p>The conversation type that you are using the Amazon Lex. If the conversation
-     * mode is <code>AUDIO</code> you can send both audio and DTMF information. If the
-     * mode is <code>TEXT</code> you can only send text.</p>
+     * <p>The conversation type that you are using the Amazon Lex V2. If the
+     * conversation mode is <code>AUDIO</code> you can send both audio and DTMF
+     * information. If the mode is <code>TEXT</code> you can only send text.</p>
      */
     inline StartConversationRequest& WithConversationMode(const ConversationMode& value) { SetConversationMode(value); return *this;}
 
     /**
-     * <p>The conversation type that you are using the Amazon Lex. If the conversation
-     * mode is <code>AUDIO</code> you can send both audio and DTMF information. If the
-     * mode is <code>TEXT</code> you can only send text.</p>
+     * <p>The conversation type that you are using the Amazon Lex V2. If the
+     * conversation mode is <code>AUDIO</code> you can send both audio and DTMF
+     * information. If the mode is <code>TEXT</code> you can only send text.</p>
      */
     inline StartConversationRequest& WithConversationMode(ConversationMode&& value) { SetConversationMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>Represents the stream of events to Amazon Lex from your application. The
+     * <p>Represents the stream of events to Amazon Lex V2 from your application. The
      * events are encoded as HTTP/2 data frames.</p>
      */
     std::shared_ptr<StartConversationRequestEventStream> GetRequestEventStream() const { return m_requestEventStream; }
 
     /**
-     * <p>Represents the stream of events to Amazon Lex from your application. The
+     * <p>Represents the stream of events to Amazon Lex V2 from your application. The
      * events are encoded as HTTP/2 data frames.</p>
      */
     void SetRequestEventStream(const std::shared_ptr<StartConversationRequestEventStream>& value) { m_requestEventStream = value; }
 
     /**
-     * <p>Represents the stream of events to Amazon Lex from your application. The
+     * <p>Represents the stream of events to Amazon Lex V2 from your application. The
      * events are encoded as HTTP/2 data frames.</p>
      */
     StartConversationRequest& WithRequestEventStream(const std::shared_ptr<StartConversationRequestEventStream>& value) { SetRequestEventStream(value); return *this;}

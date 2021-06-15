@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides a score that indicates the confidence that Amazon Lex has that an
+   * <p>Provides a score that indicates the confidence that Amazon Lex V2 has that an
    * intent is the one that satisfies the user's intent.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/ConfidenceScore">AWS
@@ -38,30 +38,30 @@ namespace Model
 
 
     /**
-     * <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-     * the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher
-     * confidence.</p>
+     * <p>A score that indicates how confident Amazon Lex V2 is that an intent
+     * satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores
+     * indicate higher confidence.</p>
      */
     inline double GetScore() const{ return m_score; }
 
     /**
-     * <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-     * the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher
-     * confidence.</p>
+     * <p>A score that indicates how confident Amazon Lex V2 is that an intent
+     * satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores
+     * indicate higher confidence.</p>
      */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
-     * <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-     * the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher
-     * confidence.</p>
+     * <p>A score that indicates how confident Amazon Lex V2 is that an intent
+     * satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores
+     * indicate higher confidence.</p>
      */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
-     * <p>A score that indicates how confident Amazon Lex is that an intent satisfies
-     * the user's intent. Ranges between 0.00 and 1.00. Higher scores indicate higher
-     * confidence.</p>
+     * <p>A score that indicates how confident Amazon Lex V2 is that an intent
+     * satisfies the user's intent. Ranges between 0.00 and 1.00. Higher scores
+     * indicate higher confidence.</p>
      */
     inline ConfidenceScore& WithScore(double value) { SetScore(value); return *this;}
 

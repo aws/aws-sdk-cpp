@@ -100,6 +100,12 @@ DescribeSlotResult& DescribeSlotResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("multipleValuesSetting"))
+  {
+    m_multipleValuesSetting = jsonValue.GetObject("multipleValuesSetting");
+
+  }
+
 
 
   return *this;

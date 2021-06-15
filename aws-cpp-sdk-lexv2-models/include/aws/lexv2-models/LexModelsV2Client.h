@@ -682,8 +682,9 @@ namespace Model
         /**
          * <p>Adds a new resource policy statement to a bot or bot alias. If a resource
          * policy exists, the statement is added to the current resource policy. If a
-         * policy doesn't exist, a new policy is created.</p> <p>You can create a resource
-         * policy statement that allows cross-account access.</p><p><h3>See Also:</h3>   <a
+         * policy doesn't exist, a new policy is created.</p> <p>You can't create a
+         * resource policy statement that allows cross-account access.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">AWS
          * API Reference</a></p>
          */
@@ -692,8 +693,9 @@ namespace Model
         /**
          * <p>Adds a new resource policy statement to a bot or bot alias. If a resource
          * policy exists, the statement is added to the current resource policy. If a
-         * policy doesn't exist, a new policy is created.</p> <p>You can create a resource
-         * policy statement that allows cross-account access.</p><p><h3>See Also:</h3>   <a
+         * policy doesn't exist, a new policy is created.</p> <p>You can't create a
+         * resource policy statement that allows cross-account access.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">AWS
          * API Reference</a></p>
          *
@@ -704,8 +706,9 @@ namespace Model
         /**
          * <p>Adds a new resource policy statement to a bot or bot alias. If a resource
          * policy exists, the statement is added to the current resource policy. If a
-         * policy doesn't exist, a new policy is created.</p> <p>You can create a resource
-         * policy statement that allows cross-account access.</p><p><h3>See Also:</h3>   <a
+         * policy doesn't exist, a new policy is created.</p> <p>You can't create a
+         * resource policy statement that allows cross-account access.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateResourcePolicyStatement">AWS
          * API Reference</a></p>
          *
@@ -1923,7 +1926,10 @@ namespace Model
         virtual void UpdateBotLocaleAsync(const Model::UpdateBotLocaleRequest& request, const UpdateBotLocaleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the password used to encrypt an export zip archive.</p><p><h3>See
+         * <p>Updates the password used to protect an export zip archive.</p> <p>The
+         * password is not required. If you don't supply a password, Amazon Lex generates a
+         * zip file that is not protected by a password. This is the archive that is
+         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
@@ -1931,7 +1937,10 @@ namespace Model
         virtual Model::UpdateExportOutcome UpdateExport(const Model::UpdateExportRequest& request) const;
 
         /**
-         * <p>Updates the password used to encrypt an export zip archive.</p><p><h3>See
+         * <p>Updates the password used to protect an export zip archive.</p> <p>The
+         * password is not required. If you don't supply a password, Amazon Lex generates a
+         * zip file that is not protected by a password. This is the archive that is
+         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>
@@ -1941,7 +1950,10 @@ namespace Model
         virtual Model::UpdateExportOutcomeCallable UpdateExportCallable(const Model::UpdateExportRequest& request) const;
 
         /**
-         * <p>Updates the password used to encrypt an export zip archive.</p><p><h3>See
+         * <p>Updates the password used to protect an export zip archive.</p> <p>The
+         * password is not required. If you don't supply a password, Amazon Lex generates a
+         * zip file that is not protected by a password. This is the archive that is
+         * available at the pre-signed S3 URL provided by the operation.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateExport">AWS
          * API Reference</a></p>

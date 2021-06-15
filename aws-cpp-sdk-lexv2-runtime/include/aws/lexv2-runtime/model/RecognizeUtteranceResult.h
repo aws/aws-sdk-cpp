@@ -119,113 +119,162 @@ namespace Model
     /**
      * <p>A list of messages that were last sent to the user. The messages are ordered
      * based on the order that you returned the messages from your Lambda function or
-     * the order that the messages are defined in the bot.</p>
+     * the order that the messages are defined in the bot.</p> <p>The
+     * <code>messages</code> field is compressed with gzip and then base64 encoded.
+     * Before you can use the contents of the field, you must decode and decompress the
+     * contents. See the example for a simple function to decode and decompress the
+     * contents.</p>
      */
     inline const Aws::String& GetMessages() const{ return m_messages; }
 
     /**
      * <p>A list of messages that were last sent to the user. The messages are ordered
      * based on the order that you returned the messages from your Lambda function or
-     * the order that the messages are defined in the bot.</p>
+     * the order that the messages are defined in the bot.</p> <p>The
+     * <code>messages</code> field is compressed with gzip and then base64 encoded.
+     * Before you can use the contents of the field, you must decode and decompress the
+     * contents. See the example for a simple function to decode and decompress the
+     * contents.</p>
      */
     inline void SetMessages(const Aws::String& value) { m_messages = value; }
 
     /**
      * <p>A list of messages that were last sent to the user. The messages are ordered
      * based on the order that you returned the messages from your Lambda function or
-     * the order that the messages are defined in the bot.</p>
+     * the order that the messages are defined in the bot.</p> <p>The
+     * <code>messages</code> field is compressed with gzip and then base64 encoded.
+     * Before you can use the contents of the field, you must decode and decompress the
+     * contents. See the example for a simple function to decode and decompress the
+     * contents.</p>
      */
     inline void SetMessages(Aws::String&& value) { m_messages = std::move(value); }
 
     /**
      * <p>A list of messages that were last sent to the user. The messages are ordered
      * based on the order that you returned the messages from your Lambda function or
-     * the order that the messages are defined in the bot.</p>
+     * the order that the messages are defined in the bot.</p> <p>The
+     * <code>messages</code> field is compressed with gzip and then base64 encoded.
+     * Before you can use the contents of the field, you must decode and decompress the
+     * contents. See the example for a simple function to decode and decompress the
+     * contents.</p>
      */
     inline void SetMessages(const char* value) { m_messages.assign(value); }
 
     /**
      * <p>A list of messages that were last sent to the user. The messages are ordered
      * based on the order that you returned the messages from your Lambda function or
-     * the order that the messages are defined in the bot.</p>
+     * the order that the messages are defined in the bot.</p> <p>The
+     * <code>messages</code> field is compressed with gzip and then base64 encoded.
+     * Before you can use the contents of the field, you must decode and decompress the
+     * contents. See the example for a simple function to decode and decompress the
+     * contents.</p>
      */
     inline RecognizeUtteranceResult& WithMessages(const Aws::String& value) { SetMessages(value); return *this;}
 
     /**
      * <p>A list of messages that were last sent to the user. The messages are ordered
      * based on the order that you returned the messages from your Lambda function or
-     * the order that the messages are defined in the bot.</p>
+     * the order that the messages are defined in the bot.</p> <p>The
+     * <code>messages</code> field is compressed with gzip and then base64 encoded.
+     * Before you can use the contents of the field, you must decode and decompress the
+     * contents. See the example for a simple function to decode and decompress the
+     * contents.</p>
      */
     inline RecognizeUtteranceResult& WithMessages(Aws::String&& value) { SetMessages(std::move(value)); return *this;}
 
     /**
      * <p>A list of messages that were last sent to the user. The messages are ordered
      * based on the order that you returned the messages from your Lambda function or
-     * the order that the messages are defined in the bot.</p>
+     * the order that the messages are defined in the bot.</p> <p>The
+     * <code>messages</code> field is compressed with gzip and then base64 encoded.
+     * Before you can use the contents of the field, you must decode and decompress the
+     * contents. See the example for a simple function to decode and decompress the
+     * contents.</p>
      */
     inline RecognizeUtteranceResult& WithMessages(const char* value) { SetMessages(value); return *this;}
 
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
-     * in the utterance.</p>
+     * in the utterance.</p> <p>The <code>interpretations</code> field is compressed
+     * with gzip and then base64 encoded. Before you can use the contents of the field,
+     * you must decode and decompress the contents. See the example for a simple
+     * function to decode and decompress the contents.</p>
      */
     inline const Aws::String& GetInterpretations() const{ return m_interpretations; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
-     * in the utterance.</p>
+     * in the utterance.</p> <p>The <code>interpretations</code> field is compressed
+     * with gzip and then base64 encoded. Before you can use the contents of the field,
+     * you must decode and decompress the contents. See the example for a simple
+     * function to decode and decompress the contents.</p>
      */
     inline void SetInterpretations(const Aws::String& value) { m_interpretations = value; }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
-     * in the utterance.</p>
+     * in the utterance.</p> <p>The <code>interpretations</code> field is compressed
+     * with gzip and then base64 encoded. Before you can use the contents of the field,
+     * you must decode and decompress the contents. See the example for a simple
+     * function to decode and decompress the contents.</p>
      */
     inline void SetInterpretations(Aws::String&& value) { m_interpretations = std::move(value); }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
-     * in the utterance.</p>
+     * in the utterance.</p> <p>The <code>interpretations</code> field is compressed
+     * with gzip and then base64 encoded. Before you can use the contents of the field,
+     * you must decode and decompress the contents. See the example for a simple
+     * function to decode and decompress the contents.</p>
      */
     inline void SetInterpretations(const char* value) { m_interpretations.assign(value); }
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
-     * in the utterance.</p>
+     * in the utterance.</p> <p>The <code>interpretations</code> field is compressed
+     * with gzip and then base64 encoded. Before you can use the contents of the field,
+     * you must decode and decompress the contents. See the example for a simple
+     * function to decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithInterpretations(const Aws::String& value) { SetInterpretations(value); return *this;}
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
-     * in the utterance.</p>
+     * in the utterance.</p> <p>The <code>interpretations</code> field is compressed
+     * with gzip and then base64 encoded. Before you can use the contents of the field,
+     * you must decode and decompress the contents. See the example for a simple
+     * function to decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithInterpretations(Aws::String&& value) { SetInterpretations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of intents that Amazon Lex determined might satisfy the user's
+     * <p>A list of intents that Amazon Lex V2 determined might satisfy the user's
      * utterance.</p> <p>Each interpretation includes the intent, a score that
-     * indicates how confident Amazon Lex is that the interpretation is the correct
+     * indicates how confident Amazon Lex V2 is that the interpretation is the correct
      * one, and an optional sentiment response that indicates the sentiment expressed
-     * in the utterance.</p>
+     * in the utterance.</p> <p>The <code>interpretations</code> field is compressed
+     * with gzip and then base64 encoded. Before you can use the contents of the field,
+     * you must decode and decompress the contents. See the example for a simple
+     * function to decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithInterpretations(const char* value) { SetInterpretations(value); return *this;}
 
@@ -233,85 +282,120 @@ namespace Model
     /**
      * <p>Represents the current state of the dialog between the user and the bot.</p>
      * <p>Use this to determine the progress of the conversation and what the next
-     * action might be.</p>
+     * action might be.</p> <p>The <code>sessionState</code> field is compressed with
+     * gzip and then base64 encoded. Before you can use the contents of the field, you
+     * must decode and decompress the contents. See the example for a simple function
+     * to decode and decompress the contents.</p>
      */
     inline const Aws::String& GetSessionState() const{ return m_sessionState; }
 
     /**
      * <p>Represents the current state of the dialog between the user and the bot.</p>
      * <p>Use this to determine the progress of the conversation and what the next
-     * action might be.</p>
+     * action might be.</p> <p>The <code>sessionState</code> field is compressed with
+     * gzip and then base64 encoded. Before you can use the contents of the field, you
+     * must decode and decompress the contents. See the example for a simple function
+     * to decode and decompress the contents.</p>
      */
     inline void SetSessionState(const Aws::String& value) { m_sessionState = value; }
 
     /**
      * <p>Represents the current state of the dialog between the user and the bot.</p>
      * <p>Use this to determine the progress of the conversation and what the next
-     * action might be.</p>
+     * action might be.</p> <p>The <code>sessionState</code> field is compressed with
+     * gzip and then base64 encoded. Before you can use the contents of the field, you
+     * must decode and decompress the contents. See the example for a simple function
+     * to decode and decompress the contents.</p>
      */
     inline void SetSessionState(Aws::String&& value) { m_sessionState = std::move(value); }
 
     /**
      * <p>Represents the current state of the dialog between the user and the bot.</p>
      * <p>Use this to determine the progress of the conversation and what the next
-     * action might be.</p>
+     * action might be.</p> <p>The <code>sessionState</code> field is compressed with
+     * gzip and then base64 encoded. Before you can use the contents of the field, you
+     * must decode and decompress the contents. See the example for a simple function
+     * to decode and decompress the contents.</p>
      */
     inline void SetSessionState(const char* value) { m_sessionState.assign(value); }
 
     /**
      * <p>Represents the current state of the dialog between the user and the bot.</p>
      * <p>Use this to determine the progress of the conversation and what the next
-     * action might be.</p>
+     * action might be.</p> <p>The <code>sessionState</code> field is compressed with
+     * gzip and then base64 encoded. Before you can use the contents of the field, you
+     * must decode and decompress the contents. See the example for a simple function
+     * to decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithSessionState(const Aws::String& value) { SetSessionState(value); return *this;}
 
     /**
      * <p>Represents the current state of the dialog between the user and the bot.</p>
      * <p>Use this to determine the progress of the conversation and what the next
-     * action might be.</p>
+     * action might be.</p> <p>The <code>sessionState</code> field is compressed with
+     * gzip and then base64 encoded. Before you can use the contents of the field, you
+     * must decode and decompress the contents. See the example for a simple function
+     * to decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithSessionState(Aws::String&& value) { SetSessionState(std::move(value)); return *this;}
 
     /**
      * <p>Represents the current state of the dialog between the user and the bot.</p>
      * <p>Use this to determine the progress of the conversation and what the next
-     * action might be.</p>
+     * action might be.</p> <p>The <code>sessionState</code> field is compressed with
+     * gzip and then base64 encoded. Before you can use the contents of the field, you
+     * must decode and decompress the contents. See the example for a simple function
+     * to decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithSessionState(const char* value) { SetSessionState(value); return *this;}
 
 
     /**
-     * <p>The attributes sent in the request.</p>
+     * <p>The attributes sent in the request.</p> <p>The <code>requestAttributes</code>
+     * field is compressed with gzip and then base64 encoded. Before you can use the
+     * contents of the field, you must decode and decompress the contents.</p>
      */
     inline const Aws::String& GetRequestAttributes() const{ return m_requestAttributes; }
 
     /**
-     * <p>The attributes sent in the request.</p>
+     * <p>The attributes sent in the request.</p> <p>The <code>requestAttributes</code>
+     * field is compressed with gzip and then base64 encoded. Before you can use the
+     * contents of the field, you must decode and decompress the contents.</p>
      */
     inline void SetRequestAttributes(const Aws::String& value) { m_requestAttributes = value; }
 
     /**
-     * <p>The attributes sent in the request.</p>
+     * <p>The attributes sent in the request.</p> <p>The <code>requestAttributes</code>
+     * field is compressed with gzip and then base64 encoded. Before you can use the
+     * contents of the field, you must decode and decompress the contents.</p>
      */
     inline void SetRequestAttributes(Aws::String&& value) { m_requestAttributes = std::move(value); }
 
     /**
-     * <p>The attributes sent in the request.</p>
+     * <p>The attributes sent in the request.</p> <p>The <code>requestAttributes</code>
+     * field is compressed with gzip and then base64 encoded. Before you can use the
+     * contents of the field, you must decode and decompress the contents.</p>
      */
     inline void SetRequestAttributes(const char* value) { m_requestAttributes.assign(value); }
 
     /**
-     * <p>The attributes sent in the request.</p>
+     * <p>The attributes sent in the request.</p> <p>The <code>requestAttributes</code>
+     * field is compressed with gzip and then base64 encoded. Before you can use the
+     * contents of the field, you must decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithRequestAttributes(const Aws::String& value) { SetRequestAttributes(value); return *this;}
 
     /**
-     * <p>The attributes sent in the request.</p>
+     * <p>The attributes sent in the request.</p> <p>The <code>requestAttributes</code>
+     * field is compressed with gzip and then base64 encoded. Before you can use the
+     * contents of the field, you must decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithRequestAttributes(Aws::String&& value) { SetRequestAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The attributes sent in the request.</p>
+     * <p>The attributes sent in the request.</p> <p>The <code>requestAttributes</code>
+     * field is compressed with gzip and then base64 encoded. Before you can use the
+     * contents of the field, you must decode and decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithRequestAttributes(const char* value) { SetRequestAttributes(value); return *this;}
 
@@ -357,7 +441,11 @@ namespace Model
      * stream, the <code>inputTranscript</code> field contains the text extracted from
      * the audio stream. This is the text that is actually processed to recognize
      * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * V2 is correctly processing the audio that you send.</p> <p>The
+     * <code>inputTranscript</code> field is compressed with gzip and then base64
+     * encoded. Before you can use the contents of the field, you must decode and
+     * decompress the contents. See the example for a simple function to decode and
+     * decompress the contents.</p>
      */
     inline const Aws::String& GetInputTranscript() const{ return m_inputTranscript; }
 
@@ -366,7 +454,11 @@ namespace Model
      * stream, the <code>inputTranscript</code> field contains the text extracted from
      * the audio stream. This is the text that is actually processed to recognize
      * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * V2 is correctly processing the audio that you send.</p> <p>The
+     * <code>inputTranscript</code> field is compressed with gzip and then base64
+     * encoded. Before you can use the contents of the field, you must decode and
+     * decompress the contents. See the example for a simple function to decode and
+     * decompress the contents.</p>
      */
     inline void SetInputTranscript(const Aws::String& value) { m_inputTranscript = value; }
 
@@ -375,7 +467,11 @@ namespace Model
      * stream, the <code>inputTranscript</code> field contains the text extracted from
      * the audio stream. This is the text that is actually processed to recognize
      * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * V2 is correctly processing the audio that you send.</p> <p>The
+     * <code>inputTranscript</code> field is compressed with gzip and then base64
+     * encoded. Before you can use the contents of the field, you must decode and
+     * decompress the contents. See the example for a simple function to decode and
+     * decompress the contents.</p>
      */
     inline void SetInputTranscript(Aws::String&& value) { m_inputTranscript = std::move(value); }
 
@@ -384,7 +480,11 @@ namespace Model
      * stream, the <code>inputTranscript</code> field contains the text extracted from
      * the audio stream. This is the text that is actually processed to recognize
      * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * V2 is correctly processing the audio that you send.</p> <p>The
+     * <code>inputTranscript</code> field is compressed with gzip and then base64
+     * encoded. Before you can use the contents of the field, you must decode and
+     * decompress the contents. See the example for a simple function to decode and
+     * decompress the contents.</p>
      */
     inline void SetInputTranscript(const char* value) { m_inputTranscript.assign(value); }
 
@@ -393,7 +493,11 @@ namespace Model
      * stream, the <code>inputTranscript</code> field contains the text extracted from
      * the audio stream. This is the text that is actually processed to recognize
      * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * V2 is correctly processing the audio that you send.</p> <p>The
+     * <code>inputTranscript</code> field is compressed with gzip and then base64
+     * encoded. Before you can use the contents of the field, you must decode and
+     * decompress the contents. See the example for a simple function to decode and
+     * decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithInputTranscript(const Aws::String& value) { SetInputTranscript(value); return *this;}
 
@@ -402,7 +506,11 @@ namespace Model
      * stream, the <code>inputTranscript</code> field contains the text extracted from
      * the audio stream. This is the text that is actually processed to recognize
      * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * V2 is correctly processing the audio that you send.</p> <p>The
+     * <code>inputTranscript</code> field is compressed with gzip and then base64
+     * encoded. Before you can use the contents of the field, you must decode and
+     * decompress the contents. See the example for a simple function to decode and
+     * decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithInputTranscript(Aws::String&& value) { SetInputTranscript(std::move(value)); return *this;}
 
@@ -411,30 +519,34 @@ namespace Model
      * stream, the <code>inputTranscript</code> field contains the text extracted from
      * the audio stream. This is the text that is actually processed to recognize
      * intents and slot values. You can use this information to determine if Amazon Lex
-     * is correctly processing the audio that you send.</p>
+     * V2 is correctly processing the audio that you send.</p> <p>The
+     * <code>inputTranscript</code> field is compressed with gzip and then base64
+     * encoded. Before you can use the contents of the field, you must decode and
+     * decompress the contents. See the example for a simple function to decode and
+     * decompress the contents.</p>
      */
     inline RecognizeUtteranceResult& WithInputTranscript(const char* value) { SetInputTranscript(value); return *this;}
 
 
     /**
      * <p>The prompt or statement to send to the user. This is based on the bot
-     * configuration and context. For example, if Amazon Lex did not understand the
+     * configuration and context. For example, if Amazon Lex V2 did not understand the
      * user intent, it sends the <code>clarificationPrompt</code> configured for the
      * bot. If the intent requires confirmation before taking the fulfillment action,
      * it sends the <code>confirmationPrompt</code>. Another example: Suppose that the
      * Lambda function successfully fulfilled the intent, and sent a message to convey
-     * to the user. Then Amazon Lex sends that message in the response.</p>
+     * to the user. Then Amazon Lex V2 sends that message in the response.</p>
      */
     inline Aws::IOStream& GetAudioStream() { return m_audioStream.GetUnderlyingStream(); }
 
     /**
      * <p>The prompt or statement to send to the user. This is based on the bot
-     * configuration and context. For example, if Amazon Lex did not understand the
+     * configuration and context. For example, if Amazon Lex V2 did not understand the
      * user intent, it sends the <code>clarificationPrompt</code> configured for the
      * bot. If the intent requires confirmation before taking the fulfillment action,
      * it sends the <code>confirmationPrompt</code>. Another example: Suppose that the
      * Lambda function successfully fulfilled the intent, and sent a message to convey
-     * to the user. Then Amazon Lex sends that message in the response.</p>
+     * to the user. Then Amazon Lex V2 sends that message in the response.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_audioStream = Aws::Utils::Stream::ResponseStream(body); }
 

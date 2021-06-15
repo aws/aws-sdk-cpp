@@ -21,6 +21,7 @@ namespace Model
 StatementData::StatementData() : 
     m_createdAtHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_queryParametersHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_statementNameHasBeenSet(false),
@@ -33,6 +34,7 @@ StatementData::StatementData() :
 StatementData::StatementData(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_queryParametersHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_secretArnHasBeenSet(false),
     m_statementNameHasBeenSet(false),
@@ -57,6 +59,16 @@ StatementData& StatementData::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueryParameters"))
+  {
+    Array<JsonView> queryParametersJsonList = jsonValue.GetArray("QueryParameters");
+    for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+    {
+      m_queryParameters.push_back(queryParametersJsonList[queryParametersIndex].AsObject());
+    }
+    m_queryParametersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("QueryString"))
@@ -109,6 +121,17 @@ JsonValue StatementData::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("Id", m_id);
+
+  }
+
+  if(m_queryParametersHasBeenSet)
+  {
+   Array<JsonValue> queryParametersJsonList(m_queryParameters.size());
+   for(unsigned queryParametersIndex = 0; queryParametersIndex < queryParametersJsonList.GetLength(); ++queryParametersIndex)
+   {
+     queryParametersJsonList[queryParametersIndex].AsObject(m_queryParameters[queryParametersIndex].Jsonize());
+   }
+   payload.WithArray("QueryParameters", std::move(queryParametersJsonList));
 
   }
 

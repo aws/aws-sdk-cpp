@@ -25,12 +25,12 @@ namespace Model
 {
 
   /**
-   * <p>Event sent from Amazon Lex to indicate to the client application should stop
-   * playback of audio. For example, if the client is playing a prompt that asks for
-   * the user's telephone number, the user might start to say the phone number before
-   * the prompt is complete. Amazon Lex sends this event to the client application to
-   * indicate that the user is responding and that Amazon Lex is processing their
-   * input.</p><p><h3>See Also:</h3>   <a
+   * <p>Event sent from Amazon Lex V2 to indicate to the client application should
+   * stop playback of audio. For example, if the client is playing a prompt that asks
+   * for the user's telephone number, the user might start to say the phone number
+   * before the prompt is complete. Amazon Lex V2 sends this event to the client
+   * application to indicate that the user is responding and that Amazon Lex V2 is
+   * processing their input.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/PlaybackInterruptionEvent">AWS
    * API Reference</a></p>
    */
@@ -44,32 +44,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates the type of user input that Amazon Lex detected.</p>
+     * <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
      */
     inline const PlaybackInterruptionReason& GetEventReason() const{ return m_eventReason; }
 
     /**
-     * <p>Indicates the type of user input that Amazon Lex detected.</p>
+     * <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
      */
     inline bool EventReasonHasBeenSet() const { return m_eventReasonHasBeenSet; }
 
     /**
-     * <p>Indicates the type of user input that Amazon Lex detected.</p>
+     * <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
      */
     inline void SetEventReason(const PlaybackInterruptionReason& value) { m_eventReasonHasBeenSet = true; m_eventReason = value; }
 
     /**
-     * <p>Indicates the type of user input that Amazon Lex detected.</p>
+     * <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
      */
     inline void SetEventReason(PlaybackInterruptionReason&& value) { m_eventReasonHasBeenSet = true; m_eventReason = std::move(value); }
 
     /**
-     * <p>Indicates the type of user input that Amazon Lex detected.</p>
+     * <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
      */
     inline PlaybackInterruptionEvent& WithEventReason(const PlaybackInterruptionReason& value) { SetEventReason(value); return *this;}
 
     /**
-     * <p>Indicates the type of user input that Amazon Lex detected.</p>
+     * <p>Indicates the type of user input that Amazon Lex V2 detected.</p>
      */
     inline PlaybackInterruptionEvent& WithEventReason(PlaybackInterruptionReason&& value) { SetEventReason(std::move(value)); return *this;}
 
@@ -124,58 +124,58 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline PlaybackInterruptionEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline PlaybackInterruptionEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier of the event sent by Amazon Lex. The identifier is in the
-     * form <code>RESPONSE-N</code>, where N is a number starting with one and
-     * incremented for each event sent by Amazon Lex in the current session.</p>
+     * <p>A unique identifier of the event sent by Amazon Lex V2. The identifier is in
+     * the form <code>RESPONSE-N</code>, where N is a number starting with one and
+     * incremented for each event sent by Amazon Lex V2 in the current session.</p>
      */
     inline PlaybackInterruptionEvent& WithEventId(const char* value) { SetEventId(value); return *this;}
 

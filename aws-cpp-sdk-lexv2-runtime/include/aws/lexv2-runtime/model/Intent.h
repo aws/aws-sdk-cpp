@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>The current intent that Amazon Lex is attempting to fulfill.</p><p><h3>See
+   * <p>The current intent that Amazon Lex V2 is attempting to fulfill.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Intent">AWS
    * API Reference</a></p>

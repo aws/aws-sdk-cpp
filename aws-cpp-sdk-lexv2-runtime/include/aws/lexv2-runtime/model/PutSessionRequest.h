@@ -254,54 +254,54 @@ namespace Model
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p>
      */
     inline const SessionState& GetSessionState() const{ return m_sessionState; }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p>
      */
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p>
      */
     inline void SetSessionState(const SessionState& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p>
      */
     inline void SetSessionState(SessionState&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p>
      */
     inline PutSessionRequest& WithSessionState(const SessionState& value) { SetSessionState(value); return *this;}
 
     /**
      * <p>Sets the state of the session with the user. You can use this to set the
      * current intent, attributes, context, and dialog action. Use the dialog action to
-     * determine the next step that Amazon Lex should use in the conversation with the
-     * user.</p>
+     * determine the next step that Amazon Lex V2 should use in the conversation with
+     * the user.</p>
      */
     inline PutSessionRequest& WithSessionState(SessionState&& value) { SetSessionState(std::move(value)); return *this;}
 
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -309,7 +309,7 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const{ return m_requestAttributes; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -317,7 +317,7 @@ namespace Model
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -325,7 +325,7 @@ namespace Model
     inline void SetRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -333,7 +333,7 @@ namespace Model
     inline void SetRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -341,7 +341,7 @@ namespace Model
     inline PutSessionRequest& WithRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestAttributes(value); return *this;}
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -349,7 +349,7 @@ namespace Model
     inline PutSessionRequest& WithRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -357,7 +357,7 @@ namespace Model
     inline PutSessionRequest& AddRequestAttributes(const Aws::String& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -365,7 +365,7 @@ namespace Model
     inline PutSessionRequest& AddRequestAttributes(Aws::String&& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -373,7 +373,7 @@ namespace Model
     inline PutSessionRequest& AddRequestAttributes(const Aws::String& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -381,7 +381,7 @@ namespace Model
     inline PutSessionRequest& AddRequestAttributes(Aws::String&& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -389,7 +389,7 @@ namespace Model
     inline PutSessionRequest& AddRequestAttributes(const char* key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -397,7 +397,7 @@ namespace Model
     inline PutSessionRequest& AddRequestAttributes(Aws::String&& key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Request-specific information passed between Amazon Lex and the client
+     * <p>Request-specific information passed between Amazon Lex V2 and the client
      * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
      * special attributes. Don't create any request attributes with the prefix
      * <code>x-amz-lex:</code>.</p>
@@ -406,65 +406,65 @@ namespace Model
 
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline const Aws::String& GetResponseContentType() const{ return m_responseContentType; }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline bool ResponseContentTypeHasBeenSet() const { return m_responseContentTypeHasBeenSet; }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline void SetResponseContentType(const Aws::String& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = value; }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline void SetResponseContentType(Aws::String&& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = std::move(value); }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline void SetResponseContentType(const char* value) { m_responseContentTypeHasBeenSet = true; m_responseContentType.assign(value); }
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline PutSessionRequest& WithResponseContentType(const Aws::String& value) { SetResponseContentType(value); return *this;}
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline PutSessionRequest& WithResponseContentType(Aws::String&& value) { SetResponseContentType(std::move(value)); return *this;}
 
     /**
-     * <p>The message that Amazon Lex returns in the response can be either text or
+     * <p>The message that Amazon Lex V2 returns in the response can be either text or
      * speech depending on the value of this parameter. </p> <ul> <li> <p>If the value
-     * is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in the
+     * is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text in the
      * response.</p> </li> </ul>
      */
     inline PutSessionRequest& WithResponseContentType(const char* value) { SetResponseContentType(value); return *this;}
