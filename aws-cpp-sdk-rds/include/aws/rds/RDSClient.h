@@ -4637,9 +4637,12 @@ namespace Aws
          * parameters can be modified in a single request. </p> <p>For more information on
          * Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
-         *  <p>After you create a DB cluster parameter group, you should wait at
-         * least 5 minutes before creating your first DB cluster that uses that DB cluster
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
+         * <p>Changes to dynamic parameters are applied immediately. Changes to static
+         * parameters require a reboot without failover to the DB cluster associated with
+         * the parameter group before the change can take effect.</p>  
+         * <p>After you create a DB cluster parameter group, you should wait at least 5
+         * minutes before creating your first DB cluster that uses that DB cluster
          * parameter group as the default parameter group. This allows Amazon RDS to fully
          * complete the create action before the parameter group is used as the default for
          * a new DB cluster. This is especially important for parameters that are critical
@@ -4667,9 +4670,12 @@ namespace Aws
          * parameters can be modified in a single request. </p> <p>For more information on
          * Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
-         *  <p>After you create a DB cluster parameter group, you should wait at
-         * least 5 minutes before creating your first DB cluster that uses that DB cluster
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
+         * <p>Changes to dynamic parameters are applied immediately. Changes to static
+         * parameters require a reboot without failover to the DB cluster associated with
+         * the parameter group before the change can take effect.</p>  
+         * <p>After you create a DB cluster parameter group, you should wait at least 5
+         * minutes before creating your first DB cluster that uses that DB cluster
          * parameter group as the default parameter group. This allows Amazon RDS to fully
          * complete the create action before the parameter group is used as the default for
          * a new DB cluster. This is especially important for parameters that are critical
@@ -4699,9 +4705,12 @@ namespace Aws
          * parameters can be modified in a single request. </p> <p>For more information on
          * Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p>
-         *  <p>After you create a DB cluster parameter group, you should wait at
-         * least 5 minutes before creating your first DB cluster that uses that DB cluster
+         * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> 
+         * <p>Changes to dynamic parameters are applied immediately. Changes to static
+         * parameters require a reboot without failover to the DB cluster associated with
+         * the parameter group before the change can take effect.</p>  
+         * <p>After you create a DB cluster parameter group, you should wait at least 5
+         * minutes before creating your first DB cluster that uses that DB cluster
          * parameter group as the default parameter group. This allows Amazon RDS to fully
          * complete the create action before the parameter group is used as the default for
          * a new DB cluster. This is especially important for parameters that are critical
@@ -4841,18 +4850,21 @@ namespace Aws
          * <p> Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p>  <p>After you
-         * modify a DB parameter group, you should wait at least 5 minutes before creating
-         * your first DB instance that uses that DB parameter group as the default
-         * parameter group. This allows Amazon RDS to fully complete the modify action
-         * before the parameter group is used as the default for a new DB instance. This is
-         * especially important for parameters that are critical when creating the default
-         * database for a DB instance, such as the character set for the default database
-         * defined by the <code>character_set_database</code> parameter. You can use the
-         * <i>Parameter Groups</i> option of the <a
-         * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
-         * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> <p><h3>See Also:</h3>   <a
+         * parameters can be modified in a single request. </p>  <p>Changes to
+         * dynamic parameters are applied immediately. Changes to static parameters require
+         * a reboot without failover to the DB instance associated with the parameter group
+         * before the change can take effect.</p>   <p>After you modify a
+         * DB parameter group, you should wait at least 5 minutes before creating your
+         * first DB instance that uses that DB parameter group as the default parameter
+         * group. This allows Amazon RDS to fully complete the modify action before the
+         * parameter group is used as the default for a new DB instance. This is especially
+         * important for parameters that are critical when creating the default database
+         * for a DB instance, such as the character set for the default database defined by
+         * the <code>character_set_database</code> parameter. You can use the <i>Parameter
+         * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
+         * RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your
+         * DB parameter group has been created or modified.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          */
@@ -4862,18 +4874,21 @@ namespace Aws
          * <p> Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p>  <p>After you
-         * modify a DB parameter group, you should wait at least 5 minutes before creating
-         * your first DB instance that uses that DB parameter group as the default
-         * parameter group. This allows Amazon RDS to fully complete the modify action
-         * before the parameter group is used as the default for a new DB instance. This is
-         * especially important for parameters that are critical when creating the default
-         * database for a DB instance, such as the character set for the default database
-         * defined by the <code>character_set_database</code> parameter. You can use the
-         * <i>Parameter Groups</i> option of the <a
-         * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
-         * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> <p><h3>See Also:</h3>   <a
+         * parameters can be modified in a single request. </p>  <p>Changes to
+         * dynamic parameters are applied immediately. Changes to static parameters require
+         * a reboot without failover to the DB instance associated with the parameter group
+         * before the change can take effect.</p>   <p>After you modify a
+         * DB parameter group, you should wait at least 5 minutes before creating your
+         * first DB instance that uses that DB parameter group as the default parameter
+         * group. This allows Amazon RDS to fully complete the modify action before the
+         * parameter group is used as the default for a new DB instance. This is especially
+         * important for parameters that are critical when creating the default database
+         * for a DB instance, such as the character set for the default database defined by
+         * the <code>character_set_database</code> parameter. You can use the <i>Parameter
+         * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
+         * RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your
+         * DB parameter group has been created or modified.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          *
@@ -4885,18 +4900,21 @@ namespace Aws
          * <p> Modifies the parameters of a DB parameter group. To modify more than one
          * parameter, submit a list of the following: <code>ParameterName</code>,
          * <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
-         * parameters can be modified in a single request. </p>  <p>After you
-         * modify a DB parameter group, you should wait at least 5 minutes before creating
-         * your first DB instance that uses that DB parameter group as the default
-         * parameter group. This allows Amazon RDS to fully complete the modify action
-         * before the parameter group is used as the default for a new DB instance. This is
-         * especially important for parameters that are critical when creating the default
-         * database for a DB instance, such as the character set for the default database
-         * defined by the <code>character_set_database</code> parameter. You can use the
-         * <i>Parameter Groups</i> option of the <a
-         * href="https://console.aws.amazon.com/rds/">Amazon RDS console</a> or the
-         * <i>DescribeDBParameters</i> command to verify that your DB parameter group has
-         * been created or modified.</p> <p><h3>See Also:</h3>   <a
+         * parameters can be modified in a single request. </p>  <p>Changes to
+         * dynamic parameters are applied immediately. Changes to static parameters require
+         * a reboot without failover to the DB instance associated with the parameter group
+         * before the change can take effect.</p>   <p>After you modify a
+         * DB parameter group, you should wait at least 5 minutes before creating your
+         * first DB instance that uses that DB parameter group as the default parameter
+         * group. This allows Amazon RDS to fully complete the modify action before the
+         * parameter group is used as the default for a new DB instance. This is especially
+         * important for parameters that are critical when creating the default database
+         * for a DB instance, such as the character set for the default database defined by
+         * the <code>character_set_database</code> parameter. You can use the <i>Parameter
+         * Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
+         * RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your
+         * DB parameter group has been created or modified.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBParameterGroup">AWS
          * API Reference</a></p>
          *

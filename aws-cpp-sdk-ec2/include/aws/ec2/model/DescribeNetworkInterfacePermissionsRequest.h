@@ -94,9 +94,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
@@ -108,9 +108,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
@@ -122,9 +122,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
@@ -136,9 +136,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
@@ -150,9 +150,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
@@ -164,9 +164,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
@@ -178,9 +178,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */
@@ -192,9 +192,9 @@ namespace Model
      * ID of the permission.</p> </li> <li> <p>
      * <code>network-interface-permission.network-interface-id</code> - The ID of the
      * network interface.</p> </li> <li> <p>
-     * <code>network-interface-permission.aws-account-id</code> - The AWS account
-     * ID.</p> </li> <li> <p> <code>network-interface-permission.aws-service</code> -
-     * The AWS service.</p> </li> <li> <p>
+     * <code>network-interface-permission.aws-account-id</code> - The account ID.</p>
+     * </li> <li> <p> <code>network-interface-permission.aws-service</code> - The
+     * Amazon Web Service.</p> </li> <li> <p>
      * <code>network-interface-permission.permission</code> - The type of permission
      * (<code>INSTANCE-ATTACH</code> | <code>EIP-ASSOCIATE</code>).</p> </li> </ul>
      */

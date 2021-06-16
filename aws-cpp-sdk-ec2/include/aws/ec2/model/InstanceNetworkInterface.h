@@ -320,42 +320,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline InstanceNetworkInterface& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline InstanceNetworkInterface& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that created the network interface.</p>
+     * <p>The ID of the account that created the network interface.</p>
      */
     inline InstanceNetworkInterface& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -619,49 +619,49 @@ namespace Model
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline InstanceNetworkInterface& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline InstanceNetworkInterface& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
 
     /**
      * <p>Describes the type of network interface.</p> <p>Valid values:
-     * <code>interface</code> | <code>efa</code> </p>
+     * <code>interface</code> | <code>efa</code> | <code>trunk</code> </p>
      */
     inline InstanceNetworkInterface& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
 

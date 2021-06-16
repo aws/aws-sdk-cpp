@@ -16,7 +16,8 @@ namespace Model
   enum class AccessType
   {
     NOT_SET,
-    S3_SIGV4
+    S3_SIGV4,
+    SECRETS_MANAGER_ACCESS_TOKEN
   };
 
 namespace AccessTypeMapper

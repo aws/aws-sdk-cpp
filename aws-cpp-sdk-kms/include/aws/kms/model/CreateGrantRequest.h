@@ -38,10 +38,10 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -50,10 +50,10 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -62,10 +62,10 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -74,10 +74,10 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -86,10 +86,10 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -98,10 +98,10 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -110,10 +110,10 @@ namespace Model
     inline CreateGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -122,10 +122,10 @@ namespace Model
     inline CreateGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the customer master key (CMK) that the grant
-     * applies to.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the
-     * CMK. To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) for the grant. The grant gives
+     * principals permission to use this CMK.</p> <p>Specify the key ID or key ARN of
+     * the CMK. To specify a CMK in a different AWS account, you must use the key
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -135,8 +135,8 @@ namespace Model
 
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -148,8 +148,8 @@ namespace Model
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -161,8 +161,8 @@ namespace Model
     inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -174,8 +174,8 @@ namespace Model
     inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -187,8 +187,8 @@ namespace Model
     inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -200,8 +200,8 @@ namespace Model
     inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -213,8 +213,8 @@ namespace Model
     inline CreateGrantRequest& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -226,8 +226,8 @@ namespace Model
     inline CreateGrantRequest& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The principal that is given permission to perform the operations that the
-     * grant permits.</p> <p>To specify the principal, use the <a
+     * <p>The identity that gets the permissions specified in the grant.</p> <p>To
+     * specify the principal, use the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an AWS principal. Valid AWS principals include AWS
      * accounts (root), IAM users, IAM roles, federated users, and assumed role users.
@@ -345,191 +345,311 @@ namespace Model
 
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<GrantOperation>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetOperations(const Aws::Vector<GrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetOperations(Aws::Vector<GrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithOperations(Aws::Vector<GrantOperation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddOperations(const GrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
     /**
-     * <p>A list of operations that the grant permits.</p>
+     * <p>A list of operations that the grant permits. </p> <p>The operation must be
+     * supported on the CMK. For example, you cannot create a grant for a symmetric CMK
+     * that allows the <a>Sign</a> operation, or a grant for an asymmetric CMK that
+     * allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+     * <code>ValidationError</code> exception. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+     * operations</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Allows a <a
+     * <p>Specifies a grant constraint. </p> <p>AWS KMS supports the
+     * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
+     * grant constraints. Each constraint value can include up to 8 encryption context
+     * pairs. The encryption context value in each constraint cannot exceed 384
+     * characters.</p> <p>These grant constraints allow a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> only when the encryption context matches or includes the
-     * encryption context specified in this structure. For more information about
-     * encryption context, see <a
+     * operation</a> only when the encryption context in the request matches
+     * (<code>EncryptionContextEquals</code>) or includes
+     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
+     * structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
-     * an encryption context, such as cryptographic operations with asymmetric CMKs and
-     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The encryption context grant constraints are supported only on
+     * operations that include an encryption context. You cannot use an encryption
+     * context grant constraint for cryptographic operations with asymmetric CMKs or
+     * for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
     /**
-     * <p>Allows a <a
+     * <p>Specifies a grant constraint. </p> <p>AWS KMS supports the
+     * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
+     * grant constraints. Each constraint value can include up to 8 encryption context
+     * pairs. The encryption context value in each constraint cannot exceed 384
+     * characters.</p> <p>These grant constraints allow a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> only when the encryption context matches or includes the
-     * encryption context specified in this structure. For more information about
-     * encryption context, see <a
+     * operation</a> only when the encryption context in the request matches
+     * (<code>EncryptionContextEquals</code>) or includes
+     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
+     * structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
-     * an encryption context, such as cryptographic operations with asymmetric CMKs and
-     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The encryption context grant constraints are supported only on
+     * operations that include an encryption context. You cannot use an encryption
+     * context grant constraint for cryptographic operations with asymmetric CMKs or
+     * for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
     /**
-     * <p>Allows a <a
+     * <p>Specifies a grant constraint. </p> <p>AWS KMS supports the
+     * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
+     * grant constraints. Each constraint value can include up to 8 encryption context
+     * pairs. The encryption context value in each constraint cannot exceed 384
+     * characters.</p> <p>These grant constraints allow a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> only when the encryption context matches or includes the
-     * encryption context specified in this structure. For more information about
-     * encryption context, see <a
+     * operation</a> only when the encryption context in the request matches
+     * (<code>EncryptionContextEquals</code>) or includes
+     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
+     * structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
-     * an encryption context, such as cryptographic operations with asymmetric CMKs and
-     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The encryption context grant constraints are supported only on
+     * operations that include an encryption context. You cannot use an encryption
+     * context grant constraint for cryptographic operations with asymmetric CMKs or
+     * for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
-     * <p>Allows a <a
+     * <p>Specifies a grant constraint. </p> <p>AWS KMS supports the
+     * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
+     * grant constraints. Each constraint value can include up to 8 encryption context
+     * pairs. The encryption context value in each constraint cannot exceed 384
+     * characters.</p> <p>These grant constraints allow a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> only when the encryption context matches or includes the
-     * encryption context specified in this structure. For more information about
-     * encryption context, see <a
+     * operation</a> only when the encryption context in the request matches
+     * (<code>EncryptionContextEquals</code>) or includes
+     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
+     * structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
-     * an encryption context, such as cryptographic operations with asymmetric CMKs and
-     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The encryption context grant constraints are supported only on
+     * operations that include an encryption context. You cannot use an encryption
+     * context grant constraint for cryptographic operations with asymmetric CMKs or
+     * for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
     /**
-     * <p>Allows a <a
+     * <p>Specifies a grant constraint. </p> <p>AWS KMS supports the
+     * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
+     * grant constraints. Each constraint value can include up to 8 encryption context
+     * pairs. The encryption context value in each constraint cannot exceed 384
+     * characters.</p> <p>These grant constraints allow a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> only when the encryption context matches or includes the
-     * encryption context specified in this structure. For more information about
-     * encryption context, see <a
+     * operation</a> only when the encryption context in the request matches
+     * (<code>EncryptionContextEquals</code>) or includes
+     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
+     * structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
-     * an encryption context, such as cryptographic operations with asymmetric CMKs and
-     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The encryption context grant constraints are supported only on
+     * operations that include an encryption context. You cannot use an encryption
+     * context grant constraint for cryptographic operations with asymmetric CMKs or
+     * for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>Allows a <a
+     * <p>Specifies a grant constraint. </p> <p>AWS KMS supports the
+     * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
+     * grant constraints. Each constraint value can include up to 8 encryption context
+     * pairs. The encryption context value in each constraint cannot exceed 384
+     * characters.</p> <p>These grant constraints allow a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operation</a> only when the encryption context matches or includes the
-     * encryption context specified in this structure. For more information about
-     * encryption context, see <a
+     * operation</a> only when the encryption context in the request matches
+     * (<code>EncryptionContextEquals</code>) or includes
+     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
+     * structure. For more information about encryption context, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i>
-     * </i>.</p> <p>Grant constraints are not applied to operations that do not support
-     * an encryption context, such as cryptographic operations with asymmetric CMKs and
-     * management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+     * Context</a> in the <i> <i>AWS Key Management Service Developer Guide</i> </i>.
+     * For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The encryption context grant constraints are supported only on
+     * operations that include an encryption context. You cannot use an encryption
+     * context grant constraint for cryptographic operations with asymmetric CMKs or
+     * for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
      */
     inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens. </p> <p>Use a grant token when your permission to
+     * call this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline CreateGrantRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 

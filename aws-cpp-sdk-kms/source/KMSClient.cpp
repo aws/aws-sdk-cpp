@@ -56,6 +56,7 @@
 #include <aws/kms/model/ListRetirableGrantsRequest.h>
 #include <aws/kms/model/PutKeyPolicyRequest.h>
 #include <aws/kms/model/ReEncryptRequest.h>
+#include <aws/kms/model/ReplicateKeyRequest.h>
 #include <aws/kms/model/RetireGrantRequest.h>
 #include <aws/kms/model/RevokeGrantRequest.h>
 #include <aws/kms/model/ScheduleKeyDeletionRequest.h>
@@ -65,6 +66,7 @@
 #include <aws/kms/model/UpdateAliasRequest.h>
 #include <aws/kms/model/UpdateCustomKeyStoreRequest.h>
 #include <aws/kms/model/UpdateKeyDescriptionRequest.h>
+#include <aws/kms/model/UpdatePrimaryRegionRequest.h>
 #include <aws/kms/model/VerifyRequest.h>
 
 using namespace Aws;
@@ -1004,6 +1006,30 @@ void KMSClient::ReEncryptAsyncHelper(const ReEncryptRequest& request, const ReEn
   handler(this, request, ReEncrypt(request), context);
 }
 
+ReplicateKeyOutcome KMSClient::ReplicateKey(const ReplicateKeyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ReplicateKeyOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ReplicateKeyOutcomeCallable KMSClient::ReplicateKeyCallable(const ReplicateKeyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ReplicateKeyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReplicateKey(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KMSClient::ReplicateKeyAsync(const ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ReplicateKeyAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::ReplicateKeyAsyncHelper(const ReplicateKeyRequest& request, const ReplicateKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ReplicateKey(request), context);
+}
+
 RetireGrantOutcome KMSClient::RetireGrant(const RetireGrantRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1218,6 +1244,30 @@ void KMSClient::UpdateKeyDescriptionAsync(const UpdateKeyDescriptionRequest& req
 void KMSClient::UpdateKeyDescriptionAsyncHelper(const UpdateKeyDescriptionRequest& request, const UpdateKeyDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateKeyDescription(request), context);
+}
+
+UpdatePrimaryRegionOutcome KMSClient::UpdatePrimaryRegion(const UpdatePrimaryRegionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return UpdatePrimaryRegionOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePrimaryRegionOutcomeCallable KMSClient::UpdatePrimaryRegionCallable(const UpdatePrimaryRegionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePrimaryRegionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePrimaryRegion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KMSClient::UpdatePrimaryRegionAsync(const UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePrimaryRegionAsyncHelper( request, handler, context ); } );
+}
+
+void KMSClient::UpdatePrimaryRegionAsyncHelper(const UpdatePrimaryRegionRequest& request, const UpdatePrimaryRegionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePrimaryRegion(request), context);
 }
 
 VerifyOutcome KMSClient::Verify(const VerifyRequest& request) const

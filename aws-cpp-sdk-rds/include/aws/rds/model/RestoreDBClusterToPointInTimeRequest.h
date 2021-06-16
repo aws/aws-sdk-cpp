@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rds/model/ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
 
@@ -1153,6 +1154,124 @@ namespace Model
      */
     inline RestoreDBClusterToPointInTimeRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
 
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline const ScalingConfiguration& GetScalingConfiguration() const{ return m_scalingConfiguration; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline bool ScalingConfigurationHasBeenSet() const { return m_scalingConfigurationHasBeenSet; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline void SetScalingConfiguration(const ScalingConfiguration& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = value; }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline void SetScalingConfiguration(ScalingConfiguration&& value) { m_scalingConfigurationHasBeenSet = true; m_scalingConfiguration = std::move(value); }
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithScalingConfiguration(const ScalingConfiguration& value) { SetScalingConfiguration(value); return *this;}
+
+    /**
+     * <p>For DB clusters in <code>serverless</code> DB engine mode, the scaling
+     * properties of the DB cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithScalingConfiguration(ScalingConfiguration&& value) { SetScalingConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The engine mode of the new cluster. Specify <code>provisioned</code> or
+     * <code>serverless</code>, depending on the type of the cluster you are creating.
+     * You can create an Aurora Serverless clone from a provisioned cluster, or a
+     * provisioned clone from an Aurora Serverless cluster. To create a clone that is
+     * an Aurora Serverless cluster, the original cluster must be an Aurora Serverless
+     * cluster or an encrypted provisioned cluster.</p>
+     */
+    inline RestoreDBClusterToPointInTimeRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -1211,6 +1330,12 @@ namespace Model
 
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet;
+
+    ScalingConfiguration m_scalingConfiguration;
+    bool m_scalingConfigurationHasBeenSet;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet;
   };
 
 } // namespace Model

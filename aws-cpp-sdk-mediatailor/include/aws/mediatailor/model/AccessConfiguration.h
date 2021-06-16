@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/model/AccessType.h>
+#include <aws/mediatailor/model/SecretsManagerAccessTokenConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -157,10 +158,44 @@ namespace Model
      */
     inline AccessConfiguration& WithAccessType(AccessType&& value) { SetAccessType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>AWS Secrets Manager access token configuration parameters.</p>
+     */
+    inline const SecretsManagerAccessTokenConfiguration& GetSecretsManagerAccessTokenConfiguration() const{ return m_secretsManagerAccessTokenConfiguration; }
+
+    /**
+     * <p>AWS Secrets Manager access token configuration parameters.</p>
+     */
+    inline bool SecretsManagerAccessTokenConfigurationHasBeenSet() const { return m_secretsManagerAccessTokenConfigurationHasBeenSet; }
+
+    /**
+     * <p>AWS Secrets Manager access token configuration parameters.</p>
+     */
+    inline void SetSecretsManagerAccessTokenConfiguration(const SecretsManagerAccessTokenConfiguration& value) { m_secretsManagerAccessTokenConfigurationHasBeenSet = true; m_secretsManagerAccessTokenConfiguration = value; }
+
+    /**
+     * <p>AWS Secrets Manager access token configuration parameters.</p>
+     */
+    inline void SetSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfiguration&& value) { m_secretsManagerAccessTokenConfigurationHasBeenSet = true; m_secretsManagerAccessTokenConfiguration = std::move(value); }
+
+    /**
+     * <p>AWS Secrets Manager access token configuration parameters.</p>
+     */
+    inline AccessConfiguration& WithSecretsManagerAccessTokenConfiguration(const SecretsManagerAccessTokenConfiguration& value) { SetSecretsManagerAccessTokenConfiguration(value); return *this;}
+
+    /**
+     * <p>AWS Secrets Manager access token configuration parameters.</p>
+     */
+    inline AccessConfiguration& WithSecretsManagerAccessTokenConfiguration(SecretsManagerAccessTokenConfiguration&& value) { SetSecretsManagerAccessTokenConfiguration(std::move(value)); return *this;}
+
   private:
 
     AccessType m_accessType;
     bool m_accessTypeHasBeenSet;
+
+    SecretsManagerAccessTokenConfiguration m_secretsManagerAccessTokenConfiguration;
+    bool m_secretsManagerAccessTokenConfigurationHasBeenSet;
   };
 
 } // namespace Model

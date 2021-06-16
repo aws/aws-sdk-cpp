@@ -39,11 +39,11 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -55,11 +55,11 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -71,11 +71,11 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -87,11 +87,11 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -103,11 +103,11 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -119,11 +119,11 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -135,11 +135,11 @@ namespace Model
     inline EncryptRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -151,11 +151,11 @@ namespace Model
     inline EncryptRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key (CMK).</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
+     * <p>Identifies the customer master key (CMK) to use in the encryption
+     * operation.</p> <p>To specify a CMK, use its key ID, key ARN, alias name, or
+     * alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -421,65 +421,83 @@ namespace Model
 
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 

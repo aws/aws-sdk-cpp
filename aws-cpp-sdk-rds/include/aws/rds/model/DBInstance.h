@@ -199,64 +199,64 @@ namespace Model
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetDBInstanceStatus() const{ return m_dBInstanceStatus; }
 
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline bool DBInstanceStatusHasBeenSet() const { return m_dBInstanceStatusHasBeenSet; }
 
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceStatus(const Aws::String& value) { m_dBInstanceStatusHasBeenSet = true; m_dBInstanceStatus = value; }
 
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceStatus(Aws::String&& value) { m_dBInstanceStatusHasBeenSet = true; m_dBInstanceStatus = std::move(value); }
 
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceStatus(const char* value) { m_dBInstanceStatusHasBeenSet = true; m_dBInstanceStatus.assign(value); }
 
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithDBInstanceStatus(const Aws::String& value) { SetDBInstanceStatus(value); return *this;}
 
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithDBInstanceStatus(Aws::String&& value) { SetDBInstanceStatus(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the current state of this database.</p> <p>For information about DB
      * instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status">Viewing
-     * DB instance status</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB
+     * Instance Status</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithDBInstanceStatus(const char* value) { SetDBInstanceStatus(value); return *this;}
 

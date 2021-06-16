@@ -184,25 +184,25 @@ namespace Model
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
+     * mode is paused.</p>
      */
     inline int GetSecondsUntilAutoPause() const{ return m_secondsUntilAutoPause; }
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
+     * mode is paused.</p>
      */
     inline bool SecondsUntilAutoPauseHasBeenSet() const { return m_secondsUntilAutoPauseHasBeenSet; }
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
+     * mode is paused.</p>
      */
     inline void SetSecondsUntilAutoPause(int value) { m_secondsUntilAutoPauseHasBeenSet = true; m_secondsUntilAutoPause = value; }
 
     /**
      * <p>The time, in seconds, before an Aurora DB cluster in <code>serverless</code>
-     * mode is paused.</p> <p>Specify a value between 300 and 86,400 seconds.</p>
+     * mode is paused.</p>
      */
     inline ScalingConfiguration& WithSecondsUntilAutoPause(int value) { SetSecondsUntilAutoPause(value); return *this;}
 

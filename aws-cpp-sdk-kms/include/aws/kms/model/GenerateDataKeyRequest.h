@@ -39,11 +39,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -55,11 +55,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -71,11 +71,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -87,11 +87,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -103,11 +103,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -119,11 +119,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -135,11 +135,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -151,11 +151,11 @@ namespace Model
 
     /**
      * <p>Identifies the symmetric CMK that encrypts the data key.</p> <p>To specify a
-     * CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When
-     * using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
-     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias
+     * name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
+     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -429,65 +429,83 @@ namespace Model
 
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of grant tokens.</p> <p>For more information, see <a
+     * <p>A list of grant tokens.</p> <p>Use a grant token when your permission to call
+     * this operation comes from a new grant that has not yet achieved <i>eventual
+     * consistency</i>. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant
-     * Tokens</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+     * token</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
