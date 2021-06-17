@@ -45,12 +45,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
@@ -58,12 +58,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
@@ -71,12 +71,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
@@ -84,12 +84,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
@@ -97,12 +97,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
@@ -110,12 +110,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
@@ -123,12 +123,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
@@ -136,12 +136,12 @@ namespace Model
      * <p>A required parameter. Options available for the given engine name are
      * described.</p> <p>Valid Values: </p> <ul> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOptionGroupOptionsRequest& WithEngineName(const char* value) { SetEngineName(value); return *this;}
 

@@ -42,42 +42,42 @@ namespace Model
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
      */
     inline const TransformInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
      */
     inline void SetInstanceType(const TransformInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
      */
     inline void SetInstanceType(TransformInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
      */
     inline TransformResources& WithInstanceType(const TransformInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
      * <p>The ML compute instance type for the transform job. If you are using built-in
      * algorithms to transform moderately sized datasets, we recommend using
-     * ml.m4.xlarge or <code>ml.m5.large</code> instance types.</p>
+     * ml.m4.xlarge or <code>ml.m5.large</code>instance types.</p>
      */
     inline TransformResources& WithInstanceType(TransformInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -114,8 +114,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -128,8 +137,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -142,8 +160,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -156,8 +183,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -170,8 +206,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -184,8 +229,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -198,8 +252,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -212,8 +275,17 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
      * encrypt model data on the storage volume attached to the ML compute instance(s)
-     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
-     * the following formats:</p> <ul> <li> <p>Key ID:
+     * that run the batch transform job.</p>  <p>Certain Nitro-based instances
+     * include local storage, dependent on the instance type. Local storage volumes are
+     * encrypted using a hardware module on the instance. You can't request a
+     * <code>VolumeKmsKeyId</code> when using an instance type with local storage.</p>
+     * <p>For a list of instance types that support local instance storage, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes">Instance
+     * Store Volumes</a>.</p> <p>For more information about local instance storage
+     * encryption, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html">SSD
+     * Instance Store Volumes</a>.</p>  <p> The <code>VolumeKmsKeyId</code> can
+     * be any of the following formats:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>

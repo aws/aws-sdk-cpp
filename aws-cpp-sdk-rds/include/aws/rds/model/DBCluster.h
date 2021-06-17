@@ -1342,115 +1342,123 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for
-     * the encrypted DB cluster.</p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster.</p> <p>The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK).</p>
      */
     inline DBCluster& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline const Aws::String& GetDbClusterResourceId() const{ return m_dbClusterResourceId; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline bool DbClusterResourceIdHasBeenSet() const { return m_dbClusterResourceIdHasBeenSet; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const Aws::String& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = value; }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(Aws::String&& value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId = std::move(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline void SetDbClusterResourceId(const char* value) { m_dbClusterResourceIdHasBeenSet = true; m_dbClusterResourceId.assign(value); }
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const Aws::String& value) { SetDbClusterResourceId(value); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(Aws::String&& value) { SetDbClusterResourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region-unique, immutable identifier for the DB cluster. This
-     * identifier is found in AWS CloudTrail log entries whenever the AWS KMS CMK for
-     * the DB cluster is accessed.</p>
+     * <p>The Amazon Web Services Region-unique, immutable identifier for the DB
+     * cluster. This identifier is found in Amazon Web Services CloudTrail log entries
+     * whenever the Amazon Web Services KMS CMK for the DB cluster is accessed.</p>
      */
     inline DBCluster& WithDbClusterResourceId(const char* value) { SetDbClusterResourceId(value); return *this;}
 
@@ -1497,91 +1505,91 @@ namespace Model
 
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline const Aws::Vector<DBClusterRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline bool AssociatedRolesHasBeenSet() const { return m_associatedRolesHasBeenSet; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline void SetAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline void SetAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::move(value); }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(const Aws::Vector<DBClusterRole>& value) { SetAssociatedRoles(value); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& WithAssociatedRoles(Aws::Vector<DBClusterRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(const DBClusterRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
 
     /**
-     * <p>Provides a list of the AWS Identity and Access Management (IAM) roles that
-     * are associated with the DB cluster. IAM roles that are associated with a DB
-     * cluster grant permission for the DB cluster to access other AWS services on your
-     * behalf.</p>
+     * <p>Provides a list of the Amazon Web Services Identity and Access Management
+     * (IAM) roles that are associated with the DB cluster. IAM roles that are
+     * associated with a DB cluster grant permission for the DB cluster to access other
+     * Amazon Web Services on your behalf.</p>
      */
     inline DBCluster& AddAssociatedRoles(DBClusterRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>A value that indicates whether the mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts is enabled.</p>
+     * <p>A value that indicates whether the mapping of Amazon Web Services Identity
+     * and Access Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline DBCluster& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -2105,58 +2113,66 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline const Aws::String& GetActivityStreamKmsKeyId() const{ return m_activityStreamKmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline bool ActivityStreamKmsKeyIdHasBeenSet() const { return m_activityStreamKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline void SetActivityStreamKmsKeyId(const Aws::String& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline void SetActivityStreamKmsKeyId(Aws::String&& value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline void SetActivityStreamKmsKeyId(const char* value) { m_activityStreamKmsKeyIdHasBeenSet = true; m_activityStreamKmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(const Aws::String& value) { SetActivityStreamKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(Aws::String&& value) { SetActivityStreamKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier used for encrypting messages in the database
-     * activity stream.</p> <p>The AWS KMS key identifier is the key ARN, key ID, alias
-     * ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier used for encrypting messages in
+     * the database activity stream.</p> <p>The Amazon Web Services KMS key identifier
+     * is the key ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS
+     * customer master key (CMK).</p>
      */
     inline DBCluster& WithActivityStreamKmsKeyId(const char* value) { SetActivityStreamKmsKeyId(value); return *this;}
 
@@ -2237,25 +2253,25 @@ namespace Model
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline bool GetCrossAccountClone() const{ return m_crossAccountClone; }
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline bool CrossAccountCloneHasBeenSet() const { return m_crossAccountCloneHasBeenSet; }
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline void SetCrossAccountClone(bool value) { m_crossAccountCloneHasBeenSet = true; m_crossAccountClone = value; }
 
     /**
      * <p>Specifies whether the DB cluster is a clone of a DB cluster owned by a
-     * different AWS account.</p>
+     * different Amazon Web Services account.</p>
      */
     inline DBCluster& WithCrossAccountClone(bool value) { SetCrossAccountClone(value); return *this;}
 

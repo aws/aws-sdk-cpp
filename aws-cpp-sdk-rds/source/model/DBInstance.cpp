@@ -102,7 +102,15 @@ DBInstance::DBInstance() :
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
     m_customerOwnedIpEnabled(false),
     m_customerOwnedIpEnabledHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_activityStreamStatus(ActivityStreamStatus::NOT_SET),
+    m_activityStreamStatusHasBeenSet(false),
+    m_activityStreamKmsKeyIdHasBeenSet(false),
+    m_activityStreamKinesisStreamNameHasBeenSet(false),
+    m_activityStreamMode(ActivityStreamMode::NOT_SET),
+    m_activityStreamModeHasBeenSet(false),
+    m_activityStreamEngineNativeAuditFieldsIncluded(false),
+    m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet(false)
 {
 }
 
@@ -188,7 +196,15 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_dBInstanceAutomatedBackupsReplicationsHasBeenSet(false),
     m_customerOwnedIpEnabled(false),
     m_customerOwnedIpEnabledHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_activityStreamStatus(ActivityStreamStatus::NOT_SET),
+    m_activityStreamStatusHasBeenSet(false),
+    m_activityStreamKmsKeyIdHasBeenSet(false),
+    m_activityStreamKinesisStreamNameHasBeenSet(false),
+    m_activityStreamMode(ActivityStreamMode::NOT_SET),
+    m_activityStreamModeHasBeenSet(false),
+    m_activityStreamEngineNativeAuditFieldsIncluded(false),
+    m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -661,6 +677,36 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
       m_awsBackupRecoveryPointArnHasBeenSet = true;
     }
+    XmlNode activityStreamStatusNode = resultNode.FirstChild("ActivityStreamStatus");
+    if(!activityStreamStatusNode.IsNull())
+    {
+      m_activityStreamStatus = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamStatusNode.GetText()).c_str()).c_str());
+      m_activityStreamStatusHasBeenSet = true;
+    }
+    XmlNode activityStreamKmsKeyIdNode = resultNode.FirstChild("ActivityStreamKmsKeyId");
+    if(!activityStreamKmsKeyIdNode.IsNull())
+    {
+      m_activityStreamKmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamKmsKeyIdNode.GetText());
+      m_activityStreamKmsKeyIdHasBeenSet = true;
+    }
+    XmlNode activityStreamKinesisStreamNameNode = resultNode.FirstChild("ActivityStreamKinesisStreamName");
+    if(!activityStreamKinesisStreamNameNode.IsNull())
+    {
+      m_activityStreamKinesisStreamName = Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamKinesisStreamNameNode.GetText());
+      m_activityStreamKinesisStreamNameHasBeenSet = true;
+    }
+    XmlNode activityStreamModeNode = resultNode.FirstChild("ActivityStreamMode");
+    if(!activityStreamModeNode.IsNull())
+    {
+      m_activityStreamMode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamModeNode.GetText()).c_str()).c_str());
+      m_activityStreamModeHasBeenSet = true;
+    }
+    XmlNode activityStreamEngineNativeAuditFieldsIncludedNode = resultNode.FirstChild("ActivityStreamEngineNativeAuditFieldsIncluded");
+    if(!activityStreamEngineNativeAuditFieldsIncludedNode.IsNull())
+    {
+      m_activityStreamEngineNativeAuditFieldsIncluded = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamEngineNativeAuditFieldsIncludedNode.GetText()).c_str()).c_str());
+      m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1068,6 +1114,31 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
+  if(m_activityStreamStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+  }
+
+  if(m_activityStreamKmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamKmsKeyId=" << StringUtils::URLEncode(m_activityStreamKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_activityStreamKinesisStreamNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamKinesisStreamName=" << StringUtils::URLEncode(m_activityStreamKinesisStreamName.c_str()) << "&";
+  }
+
+  if(m_activityStreamModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+  }
+
+  if(m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ActivityStreamEngineNativeAuditFieldsIncluded=" << std::boolalpha << m_activityStreamEngineNativeAuditFieldsIncluded << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1407,6 +1478,26 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
       oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+  if(m_activityStreamStatusHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamStatus=" << ActivityStreamStatusMapper::GetNameForActivityStreamStatus(m_activityStreamStatus) << "&";
+  }
+  if(m_activityStreamKmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamKmsKeyId=" << StringUtils::URLEncode(m_activityStreamKmsKeyId.c_str()) << "&";
+  }
+  if(m_activityStreamKinesisStreamNameHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamKinesisStreamName=" << StringUtils::URLEncode(m_activityStreamKinesisStreamName.c_str()) << "&";
+  }
+  if(m_activityStreamModeHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamMode=" << ActivityStreamModeMapper::GetNameForActivityStreamMode(m_activityStreamMode) << "&";
+  }
+  if(m_activityStreamEngineNativeAuditFieldsIncludedHasBeenSet)
+  {
+      oStream << location << ".ActivityStreamEngineNativeAuditFieldsIncluded=" << std::boolalpha << m_activityStreamEngineNativeAuditFieldsIncluded << "&";
   }
 }
 

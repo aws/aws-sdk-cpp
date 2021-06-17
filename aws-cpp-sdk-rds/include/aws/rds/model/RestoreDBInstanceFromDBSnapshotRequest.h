@@ -190,9 +190,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -201,9 +201,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -212,9 +212,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -223,9 +223,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -234,9 +234,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -245,9 +245,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -256,9 +256,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -267,9 +267,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the Amazon RDS DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default: The
      * same DBInstanceClass as the original DB instance.</p>
@@ -647,12 +647,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
@@ -662,12 +662,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
@@ -677,12 +677,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
@@ -692,12 +692,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
@@ -707,12 +707,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
@@ -722,12 +722,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
@@ -737,12 +737,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -752,12 +752,12 @@ namespace Model
      * example, you can restore a MariaDB 10.1 DB instance from a MySQL 5.6
      * snapshot.</p> <p>Valid Values:</p> <ul> <li> <p> <code>mariadb</code> </p> </li>
      * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
-     * </li> <li> <p> <code>oracle-se2</code> </p> </li> <li> <p>
-     * <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p> </li>
-     * <li> <p> <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code>
-     * </p> </li> <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p>
-     * <code>sqlserver-ex</code> </p> </li> <li> <p> <code>sqlserver-web</code> </p>
-     * </li> </ul>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
+     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
+     * <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1300,9 +1300,10 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>For more information about IAM database
+     * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1310,9 +1311,10 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>For more information about IAM database
+     * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1320,9 +1322,10 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>For more information about IAM database
+     * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1330,9 +1333,10 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>For more information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>For more information about IAM database
+     * authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -1639,10 +1643,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
 
@@ -1654,10 +1658,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
 
@@ -1669,10 +1673,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
 
@@ -1684,10 +1688,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline RestoreDBInstanceFromDBSnapshotRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
 

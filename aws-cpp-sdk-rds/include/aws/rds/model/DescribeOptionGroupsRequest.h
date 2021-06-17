@@ -229,9 +229,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -242,9 +242,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -255,9 +255,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -268,9 +268,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -281,9 +281,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -294,9 +294,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -307,9 +307,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -320,9 +320,9 @@ namespace Model
      * <p>Filters the list of option groups to only include groups associated with a
      * specific database engine.</p> <p>Valid Values: </p> <ul> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>

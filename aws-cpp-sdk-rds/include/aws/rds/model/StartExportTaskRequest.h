@@ -218,13 +218,14 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
@@ -234,13 +235,14 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
@@ -250,13 +252,14 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
@@ -266,13 +269,14 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
@@ -282,13 +286,14 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
@@ -298,13 +303,14 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
@@ -314,13 +320,14 @@ namespace Model
     inline StartExportTaskRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>
@@ -330,13 +337,14 @@ namespace Model
     inline StartExportTaskRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS KMS customer master key (CMK) to use to encrypt the
-     * snapshot exported to Amazon S3. The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
-     * caller of this operation must be authorized to execute the following operations.
-     * These can be set in the AWS KMS key policy: </p> <ul> <li>
-     * <p>GrantOperation.Encrypt</p> </li> <li> <p>GrantOperation.Decrypt</p> </li>
-     * <li> <p>GrantOperation.GenerateDataKey</p> </li> <li>
+     * <p>The ID of the Amazon Web Services KMS customer master key (CMK) to use to
+     * encrypt the snapshot exported to Amazon S3. The Amazon Web Services KMS key
+     * identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon Web
+     * Services KMS customer master key (CMK). The caller of this operation must be
+     * authorized to execute the following operations. These can be set in the Amazon
+     * Web Services KMS key policy: </p> <ul> <li> <p>GrantOperation.Encrypt</p> </li>
+     * <li> <p>GrantOperation.Decrypt</p> </li> <li>
+     * <p>GrantOperation.GenerateDataKey</p> </li> <li>
      * <p>GrantOperation.GenerateDataKeyWithoutPlaintext</p> </li> <li>
      * <p>GrantOperation.ReEncryptFrom</p> </li> <li> <p>GrantOperation.ReEncryptTo</p>
      * </li> <li> <p>GrantOperation.CreateGrant</p> </li> <li>

@@ -130,58 +130,66 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline StartActivityStreamRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline StartActivityStreamRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encrypting messages in the database activity
-     * stream. The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias
-     * name for the AWS KMS customer master key (CMK).</p>
+     * <p>The Amazon Web Services KMS key identifier for encrypting messages in the
+     * database activity stream. The Amazon Web Services KMS key identifier is the key
+     * ARN, key ID, alias ARN, or alias name for the Amazon Web Services KMS customer
+     * master key (CMK).</p>
      */
     inline StartActivityStreamRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -210,6 +218,35 @@ namespace Model
      */
     inline StartActivityStreamRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the database activity stream includes engine-native audit
+     * fields. This option only applies to an Oracle DB instance. By default, no
+     * engine-native audit fields are included.</p>
+     */
+    inline bool GetEngineNativeAuditFieldsIncluded() const{ return m_engineNativeAuditFieldsIncluded; }
+
+    /**
+     * <p>Specifies whether the database activity stream includes engine-native audit
+     * fields. This option only applies to an Oracle DB instance. By default, no
+     * engine-native audit fields are included.</p>
+     */
+    inline bool EngineNativeAuditFieldsIncludedHasBeenSet() const { return m_engineNativeAuditFieldsIncludedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the database activity stream includes engine-native audit
+     * fields. This option only applies to an Oracle DB instance. By default, no
+     * engine-native audit fields are included.</p>
+     */
+    inline void SetEngineNativeAuditFieldsIncluded(bool value) { m_engineNativeAuditFieldsIncludedHasBeenSet = true; m_engineNativeAuditFieldsIncluded = value; }
+
+    /**
+     * <p>Specifies whether the database activity stream includes engine-native audit
+     * fields. This option only applies to an Oracle DB instance. By default, no
+     * engine-native audit fields are included.</p>
+     */
+    inline StartActivityStreamRequest& WithEngineNativeAuditFieldsIncluded(bool value) { SetEngineNativeAuditFieldsIncluded(value); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -223,6 +260,9 @@ namespace Model
 
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
+
+    bool m_engineNativeAuditFieldsIncluded;
+    bool m_engineNativeAuditFieldsIncludedHasBeenSet;
   };
 
 } // namespace Model

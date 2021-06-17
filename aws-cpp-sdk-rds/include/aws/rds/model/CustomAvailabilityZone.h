@@ -177,37 +177,37 @@ namespace Model
 
     /**
      * <p>Information about the virtual private network (VPN) between the VMware
-     * vSphere cluster and the AWS website.</p>
+     * vSphere cluster and the Amazon Web Services website.</p>
      */
     inline const VpnDetails& GetVpnDetails() const{ return m_vpnDetails; }
 
     /**
      * <p>Information about the virtual private network (VPN) between the VMware
-     * vSphere cluster and the AWS website.</p>
+     * vSphere cluster and the Amazon Web Services website.</p>
      */
     inline bool VpnDetailsHasBeenSet() const { return m_vpnDetailsHasBeenSet; }
 
     /**
      * <p>Information about the virtual private network (VPN) between the VMware
-     * vSphere cluster and the AWS website.</p>
+     * vSphere cluster and the Amazon Web Services website.</p>
      */
     inline void SetVpnDetails(const VpnDetails& value) { m_vpnDetailsHasBeenSet = true; m_vpnDetails = value; }
 
     /**
      * <p>Information about the virtual private network (VPN) between the VMware
-     * vSphere cluster and the AWS website.</p>
+     * vSphere cluster and the Amazon Web Services website.</p>
      */
     inline void SetVpnDetails(VpnDetails&& value) { m_vpnDetailsHasBeenSet = true; m_vpnDetails = std::move(value); }
 
     /**
      * <p>Information about the virtual private network (VPN) between the VMware
-     * vSphere cluster and the AWS website.</p>
+     * vSphere cluster and the Amazon Web Services website.</p>
      */
     inline CustomAvailabilityZone& WithVpnDetails(const VpnDetails& value) { SetVpnDetails(value); return *this;}
 
     /**
      * <p>Information about the virtual private network (VPN) between the VMware
-     * vSphere cluster and the AWS website.</p>
+     * vSphere cluster and the Amazon Web Services website.</p>
      */
     inline CustomAvailabilityZone& WithVpnDetails(VpnDetails&& value) { SetVpnDetails(std::move(value)); return *this;}
 

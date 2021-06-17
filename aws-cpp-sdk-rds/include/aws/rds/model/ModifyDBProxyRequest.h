@@ -282,49 +282,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline ModifyDBProxyRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline ModifyDBProxyRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access
-     * secrets in AWS Secrets Manager.</p>
+     * secrets in Amazon Web Services Secrets Manager.</p>
      */
     inline ModifyDBProxyRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

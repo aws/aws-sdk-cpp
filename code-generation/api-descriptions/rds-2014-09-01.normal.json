@@ -2646,7 +2646,7 @@
       "type":"structure",
       "members":{
       },
-      "documentation":"<p>The quota of 20 option groups was exceeded for this AWS account.</p>",
+      "documentation":"<p>The quota of 20 option groups was exceeded for this Amazon Web Services account.</p>",
       "error":{
         "code":"OptionGroupQuotaExceededFault",
         "httpStatusCode":400,

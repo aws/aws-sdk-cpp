@@ -143,9 +143,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -156,9 +156,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -169,9 +169,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -182,9 +182,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -195,9 +195,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -208,9 +208,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -221,9 +221,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -234,9 +234,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
@@ -956,8 +956,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -974,8 +974,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -992,8 +992,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1010,8 +1010,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1028,8 +1028,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1046,8 +1046,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1064,8 +1064,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1082,8 +1082,8 @@ namespace Model
      * backups are enabled, as determined by the <code>BackupRetentionPeriod</code>
      * parameter. Changing this parameter doesn't result in an outage and the change is
      * asynchronously applied as soon as possible. The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region. For more
-     * information, see <a
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide.</i> </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -2654,11 +2654,11 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2666,11 +2666,11 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2678,11 +2678,11 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2690,11 +2690,11 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information about IAM database authentication, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information about IAM database authentication, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -2740,82 +2740,98 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -3232,10 +3248,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
 
@@ -3247,10 +3263,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
 
@@ -3262,10 +3278,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
 
@@ -3277,51 +3293,59 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline ModifyDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline const Aws::String& GetAwsBackupRecoveryPointArn() const{ return m_awsBackupRecoveryPointArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline bool AwsBackupRecoveryPointArnHasBeenSet() const { return m_awsBackupRecoveryPointArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline void SetAwsBackupRecoveryPointArn(const Aws::String& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline void SetAwsBackupRecoveryPointArn(Aws::String&& value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline void SetAwsBackupRecoveryPointArn(const char* value) { m_awsBackupRecoveryPointArnHasBeenSet = true; m_awsBackupRecoveryPointArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(const Aws::String& value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(Aws::String&& value) { SetAwsBackupRecoveryPointArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the recovery point in AWS Backup.</p>
+     * <p>The Amazon Resource Name (ARN) of the recovery point in Amazon Web Services
+     * Backup.</p>
      */
     inline ModifyDBInstanceRequest& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 

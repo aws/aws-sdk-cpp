@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Information about the virtual private network (VPN) between the VMware
-   * vSphere cluster and the AWS website.</p> <p>For more information about RDS on
-   * VMware, see the <a
+   * vSphere cluster and the Amazon Web Services website.</p> <p>For more information
+   * about RDS on VMware, see the <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
    * RDS on VMware User Guide.</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/VpnDetails">AWS API
@@ -134,50 +134,50 @@ namespace Model
 
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline const Aws::String& GetVpnGatewayIp() const{ return m_vpnGatewayIp; }
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline bool VpnGatewayIpHasBeenSet() const { return m_vpnGatewayIpHasBeenSet; }
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline void SetVpnGatewayIp(const Aws::String& value) { m_vpnGatewayIpHasBeenSet = true; m_vpnGatewayIp = value; }
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline void SetVpnGatewayIp(Aws::String&& value) { m_vpnGatewayIpHasBeenSet = true; m_vpnGatewayIp = std::move(value); }
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline void SetVpnGatewayIp(const char* value) { m_vpnGatewayIpHasBeenSet = true; m_vpnGatewayIp.assign(value); }
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline VpnDetails& WithVpnGatewayIp(const Aws::String& value) { SetVpnGatewayIp(value); return *this;}
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline VpnDetails& WithVpnGatewayIp(Aws::String&& value) { SetVpnGatewayIp(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of network traffic from AWS to your on-premises data
-     * center.</p>
+     * <p>The IP address of network traffic from Amazon Web Services to your
+     * on-premises data center.</p>
      */
     inline VpnDetails& WithVpnGatewayIp(const char* value) { SetVpnGatewayIp(value); return *this;}
 

@@ -619,9 +619,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -629,9 +629,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -639,9 +639,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -649,9 +649,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -659,9 +659,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -669,9 +669,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -679,9 +679,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -689,9 +689,9 @@ namespace Model
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
-     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
-     * Regions, or for all database engines. For the full list of DB instance classes,
-     * and availability for your engine, see <a
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all
+     * Amazon Web Services Regions, or for all database engines. For the full list of
+     * DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
@@ -700,129 +700,129 @@ namespace Model
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Not
-     * every database engine is available for every AWS Region. </p> <p>Valid Values:
-     * </p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora)</p>
-     * </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * every database engine is available for every Amazon Web Services Region. </p>
+     * <p>Valid Values: </p> <ul> <li> <p> <code>aurora</code> (for MySQL
+     * 5.6-compatible Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p>
+     * </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p>
+     * </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 
@@ -1255,16 +1255,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1272,16 +1273,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1289,16 +1291,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1306,16 +1309,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1323,16 +1327,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1340,16 +1345,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1357,16 +1363,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1374,16 +1381,17 @@ namespace Model
 
     /**
      * <p> The Availability Zone (AZ) where the database will be created. For
-     * information on AWS Regions and Availability Zones, see <a
+     * information on Amazon Web Services Regions and Availability Zones, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
-     * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
+     * Availability Zone in the endpoint's Amazon Web Services Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The <code>AvailabilityZone</code>
      * parameter can't be specified if the DB instance is a Multi-AZ deployment. The
-     * specified Availability Zone must be in the same AWS Region as the current
-     * endpoint. </p>  <p>If you're creating a DB instance in an RDS on VMware
-     * environment, specify the identifier of the custom Availability Zone to create
-     * the DB instance in.</p> <p>For more information about RDS on VMware, see the <a
+     * specified Availability Zone must be in the same Amazon Web Services Region as
+     * the current endpoint. </p>  <p>If you're creating a DB instance in an RDS
+     * on VMware environment, specify the identifier of the custom Availability Zone to
+     * create the DB instance in.</p> <p>For more information about RDS on VMware, see
+     * the <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html">
      * RDS on VMware User Guide.</a> </p> 
      */
@@ -1445,9 +1453,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
@@ -1457,9 +1465,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
@@ -1469,9 +1477,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
@@ -1481,9 +1489,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
@@ -1493,9 +1501,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
@@ -1505,9 +1513,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1517,9 +1525,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
@@ -1529,9 +1537,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
-     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     * selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week. </p> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
@@ -1666,7 +1674,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1682,7 +1690,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1698,7 +1706,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1714,7 +1722,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1730,7 +1738,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1746,7 +1754,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1762,7 +1770,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1778,7 +1786,7 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. The
      * default is a 30-minute window selected at random from an 8-hour block of time
-     * for each AWS Region. For more information, see <a
+     * for each Amazon Web Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
      * window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon Aurora</b>
      * </p> <p>Not applicable. The daily time range for creating automated backups is
@@ -1894,9 +1902,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -1920,9 +1929,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -1946,9 +1956,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -1972,9 +1983,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -1998,9 +2010,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2024,9 +2037,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2050,9 +2064,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2076,9 +2091,10 @@ namespace Model
      * engine versions, use the <code>DescribeDBEngineVersions</code> action.</p>
      * <p>The following are the database engines and links to information about the
      * major and minor versions that are available with Amazon RDS. Not every database
-     * engine is available for every AWS Region.</p> <p> <b>Amazon Aurora</b> </p>
-     * <p>Not applicable. The version number of the database engine to be used by the
-     * DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b> </p> <p>See <a
+     * engine is available for every Amazon Web Services Region.</p> <p> <b>Amazon
+     * Aurora</b> </p> <p>Not applicable. The version number of the database engine to
+     * be used by the DB instance is managed by the DB cluster.</p> <p> <b>MariaDB</b>
+     * </p> <p>See <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
@@ -2796,106 +2812,122 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The AWS KMS
-     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS
-     * customer master key (CMK). To use a CMK in a different AWS account, specify the
-     * key ARN or alias ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The
-     * AWS KMS key identifier is managed by the DB cluster. For more information, see
-     * <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
+     * <p>The Amazon Web Services KMS key identifier for an encrypted DB instance.</p>
+     * <p>The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN,
+     * or alias name for the Amazon Web Services KMS customer master key (CMK). To use
+     * a CMK in a different Amazon Web Services account, specify the key ARN or alias
+     * ARN.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The Amazon Web
+     * Services KMS key identifier is managed by the DB cluster. For more information,
+     * see <code>CreateDBCluster</code>.</p> <p>If <code>StorageEncrypted</code> is
      * enabled, and you do not specify a value for the <code>KmsKeyId</code> parameter,
-     * then Amazon RDS uses your default CMK. There is a default CMK for your AWS
-     * account. Your AWS account has a different default CMK for each AWS Region.</p>
+     * then Amazon RDS uses your default CMK. There is a default CMK for your Amazon
+     * Web Services account. Your Amazon Web Services account has a different default
+     * CMK for each Amazon Web Services Region.</p>
      */
     inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -3300,11 +3332,11 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3312,11 +3344,11 @@ namespace Model
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3324,11 +3356,11 @@ namespace Model
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3336,11 +3368,11 @@ namespace Model
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
-     * <p>A value that indicates whether to enable mapping of AWS Identity and Access
-     * Management (IAM) accounts to database accounts. By default, mapping is
-     * disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping AWS IAM
-     * accounts to database accounts is managed by the DB cluster.</p> <p>For more
-     * information, see <a
+     * <p>A value that indicates whether to enable mapping of Amazon Web Services
+     * Identity and Access Management (IAM) accounts to database accounts. By default,
+     * mapping is disabled.</p> <p>This setting doesn't apply to Amazon Aurora. Mapping
+     * Amazon Web Services IAM accounts to database accounts is managed by the DB
+     * cluster.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html">
      * IAM Database Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
@@ -3386,82 +3418,98 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data.</p>
-     * <p>The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name
-     * for the AWS KMS customer master key (CMK).</p> <p>If you do not specify a value
-     * for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * CMK. There is a default CMK for your AWS account. Your AWS account has a
-     * different default CMK for each AWS Region.</p>
+     * <p>The Amazon Web Services KMS key identifier for encryption of Performance
+     * Insights data.</p> <p>The Amazon Web Services KMS key identifier is the key ARN,
+     * key ID, alias ARN, or alias name for the Amazon Web Services KMS customer master
+     * key (CMK).</p> <p>If you do not specify a value for
+     * <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default CMK.
+     * There is a default CMK for your Amazon Web Services account. Your Amazon Web
+     * Services account has a different default CMK for each Amazon Web Services
+     * Region.</p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -3823,10 +3871,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
 
@@ -3838,10 +3886,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
 
@@ -3853,10 +3901,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
 
@@ -3868,10 +3916,10 @@ namespace Model
      * connections to the DB instance from outside of its virtual private cloud (VPC)
      * on your local network.</p> <p>For more information about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working
-     * with Amazon RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.</p>
-     * <p>For more information about CoIPs, see <a
+     * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>For more information about CoIPs, see <a
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing">Customer-owned
-     * IP addresses</a> in the <i>AWS Outposts User Guide</i>.</p>
+     * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
     inline CreateDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
 

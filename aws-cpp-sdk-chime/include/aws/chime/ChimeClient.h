@@ -154,6 +154,7 @@
 #include <aws/chime/model/UpdateRoomResult.h>
 #include <aws/chime/model/UpdateRoomMembershipResult.h>
 #include <aws/chime/model/UpdateSipMediaApplicationResult.h>
+#include <aws/chime/model/UpdateSipMediaApplicationCallResult.h>
 #include <aws/chime/model/UpdateSipRuleResult.h>
 #include <aws/chime/model/UpdateUserResult.h>
 #include <aws/chime/model/UpdateVoiceConnectorResult.h>
@@ -374,6 +375,7 @@ namespace Model
         class UpdateRoomRequest;
         class UpdateRoomMembershipRequest;
         class UpdateSipMediaApplicationRequest;
+        class UpdateSipMediaApplicationCallRequest;
         class UpdateSipRuleRequest;
         class UpdateUserRequest;
         class UpdateUserSettingsRequest;
@@ -558,6 +560,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateRoomResult, ChimeError> UpdateRoomOutcome;
         typedef Aws::Utils::Outcome<UpdateRoomMembershipResult, ChimeError> UpdateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<UpdateSipMediaApplicationResult, ChimeError> UpdateSipMediaApplicationOutcome;
+        typedef Aws::Utils::Outcome<UpdateSipMediaApplicationCallResult, ChimeError> UpdateSipMediaApplicationCallOutcome;
         typedef Aws::Utils::Outcome<UpdateSipRuleResult, ChimeError> UpdateSipRuleOutcome;
         typedef Aws::Utils::Outcome<UpdateUserResult, ChimeError> UpdateUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, ChimeError> UpdateUserSettingsOutcome;
@@ -742,6 +745,7 @@ namespace Model
         typedef std::future<UpdateRoomOutcome> UpdateRoomOutcomeCallable;
         typedef std::future<UpdateRoomMembershipOutcome> UpdateRoomMembershipOutcomeCallable;
         typedef std::future<UpdateSipMediaApplicationOutcome> UpdateSipMediaApplicationOutcomeCallable;
+        typedef std::future<UpdateSipMediaApplicationCallOutcome> UpdateSipMediaApplicationCallOutcomeCallable;
         typedef std::future<UpdateSipRuleOutcome> UpdateSipRuleOutcomeCallable;
         typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
         typedef std::future<UpdateUserSettingsOutcome> UpdateUserSettingsOutcomeCallable;
@@ -929,6 +933,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::UpdateRoomRequest&, const Model::UpdateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateRoomMembershipRequest&, const Model::UpdateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateSipMediaApplicationRequest&, const Model::UpdateSipMediaApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSipMediaApplicationResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateSipMediaApplicationCallRequest&, const Model::UpdateSipMediaApplicationCallOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSipMediaApplicationCallResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateSipRuleRequest&, const Model::UpdateSipRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSipRuleResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserSettingsRequest&, const Model::UpdateUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserSettingsResponseReceivedHandler;
@@ -4294,8 +4299,8 @@ namespace Model
 
         /**
          * <p> Retrieves details for the specified Amazon Chime Voice Connector group, such
-         * as timestamps,name, and associated <code>VoiceConnectorItems</code> .
-         * </p><p><h3>See Also:</h3>   <a
+         * as timestamps,name, and associated
+         * <code>VoiceConnectorItems</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">AWS
          * API Reference</a></p>
          */
@@ -4303,8 +4308,8 @@ namespace Model
 
         /**
          * <p> Retrieves details for the specified Amazon Chime Voice Connector group, such
-         * as timestamps,name, and associated <code>VoiceConnectorItems</code> .
-         * </p><p><h3>See Also:</h3>   <a
+         * as timestamps,name, and associated
+         * <code>VoiceConnectorItems</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -4314,8 +4319,8 @@ namespace Model
 
         /**
          * <p> Retrieves details for the specified Amazon Chime Voice Connector group, such
-         * as timestamps,name, and associated <code>VoiceConnectorItems</code> .
-         * </p><p><h3>See Also:</h3>   <a
+         * as timestamps,name, and associated
+         * <code>VoiceConnectorItems</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorGroup">AWS
          * API Reference</a></p>
          *
@@ -5048,7 +5053,7 @@ namespace Model
          * <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about
          * the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
          * API Reference</a></p>
@@ -5059,7 +5064,7 @@ namespace Model
          * <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about
          * the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
          * API Reference</a></p>
@@ -5072,7 +5077,7 @@ namespace Model
          * <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about
          * the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
          * API Reference</a></p>
@@ -5575,13 +5580,13 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
          * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
-         * Administration Guide</i> . </p> <p> To turn off existing retention settings,
+         * Administration Guide</i>.</p> <p> To turn off existing retention settings,
          * remove the number of days from the corresponding <b>RetentionDays</b> field in
          * the <b>RetentionSettings</b> object. For more information about retention
          * settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
-         * </p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
          * API Reference</a></p>
          */
@@ -5593,13 +5598,13 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
          * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
-         * Administration Guide</i> . </p> <p> To turn off existing retention settings,
+         * Administration Guide</i>.</p> <p> To turn off existing retention settings,
          * remove the number of days from the corresponding <b>RetentionDays</b> field in
          * the <b>RetentionSettings</b> object. For more information about retention
          * settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
-         * </p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -5613,13 +5618,13 @@ namespace Model
          * For more information, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging
          * Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime
-         * Administration Guide</i> . </p> <p> To turn off existing retention settings,
+         * Administration Guide</i>.</p> <p> To turn off existing retention settings,
          * remove the number of days from the corresponding <b>RetentionDays</b> field in
          * the <b>RetentionSettings</b> object. For more information about retention
          * settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
-         * </p><p><h3>See Also:</h3>   <a
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutRetentionSettings">AWS
          * API Reference</a></p>
          *
@@ -6796,6 +6801,37 @@ namespace Model
         virtual void UpdateSipMediaApplicationAsync(const Model::UpdateSipMediaApplicationRequest& request, const UpdateSipMediaApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Allows you to trigger a Lambda function at any time while a call is active,
+         * and replace the current actions with new actions returned by the
+         * invocation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSipMediaApplicationCallOutcome UpdateSipMediaApplicationCall(const Model::UpdateSipMediaApplicationCallRequest& request) const;
+
+        /**
+         * <p>Allows you to trigger a Lambda function at any time while a call is active,
+         * and replace the current actions with new actions returned by the
+         * invocation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateSipMediaApplicationCallOutcomeCallable UpdateSipMediaApplicationCallCallable(const Model::UpdateSipMediaApplicationCallRequest& request) const;
+
+        /**
+         * <p>Allows you to trigger a Lambda function at any time while a call is active,
+         * and replace the current actions with new actions returned by the
+         * invocation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplicationCall">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateSipMediaApplicationCallAsync(const Model::UpdateSipMediaApplicationCallRequest& request, const UpdateSipMediaApplicationCallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the details of the specified SIP rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule">AWS
          * API Reference</a></p>
@@ -7120,6 +7156,7 @@ namespace Model
         void UpdateRoomAsyncHelper(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRoomMembershipAsyncHelper(const Model::UpdateRoomMembershipRequest& request, const UpdateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSipMediaApplicationAsyncHelper(const Model::UpdateSipMediaApplicationRequest& request, const UpdateSipMediaApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateSipMediaApplicationCallAsyncHelper(const Model::UpdateSipMediaApplicationCallRequest& request, const UpdateSipMediaApplicationCallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSipRuleAsyncHelper(const Model::UpdateSipRuleRequest& request, const UpdateSipRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserSettingsAsyncHelper(const Model::UpdateUserSettingsRequest& request, const UpdateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

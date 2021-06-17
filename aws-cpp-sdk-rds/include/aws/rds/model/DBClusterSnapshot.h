@@ -688,58 +688,66 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB cluster snapshot.</p> <p>The AWS KMS key identifier is the key ARN,
-     * key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p>If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB cluster snapshot.</p> <p>The Amazon Web Services
+     * KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the
+     * Amazon Web Services KMS customer master key (CMK).</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -843,26 +851,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline DBClusterSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
