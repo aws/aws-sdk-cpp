@@ -140,7 +140,7 @@ TEST(HttpClientTest, TestRandomURLWithSocksProxy)
 {
     ClientConfiguration configuration = makeClientConfigurationWithSocksProxy();
     auto httpClient = CreateHttpClient(configuration);
-    makeRandomHttpRequest(httpClient, false); // we expect it to try to use proxy that is invalid
+    makeRandomHttpRequest(httpClient, false); // we expect it to try to use proxy that is valid
 }
 
 TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredAsNonProxyHost)
