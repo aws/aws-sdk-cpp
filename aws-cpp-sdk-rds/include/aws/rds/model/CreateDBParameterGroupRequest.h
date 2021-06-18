@@ -130,9 +130,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -155,9 +155,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -180,9 +180,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -205,9 +205,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -230,9 +230,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -255,9 +255,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -280,9 +280,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -305,9 +305,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>

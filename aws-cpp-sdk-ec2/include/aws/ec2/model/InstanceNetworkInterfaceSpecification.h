@@ -640,8 +640,8 @@ namespace Model
      * <p>Indicates whether to assign a carrier IP address to the network
      * interface.</p> <p>You can only assign a carrier IP address to a network
      * interface that is in a subnet in a Wavelength Zone. For more information about
-     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     * Guide.</p>
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
      */
     inline bool GetAssociateCarrierIpAddress() const{ return m_associateCarrierIpAddress; }
 
@@ -649,8 +649,8 @@ namespace Model
      * <p>Indicates whether to assign a carrier IP address to the network
      * interface.</p> <p>You can only assign a carrier IP address to a network
      * interface that is in a subnet in a Wavelength Zone. For more information about
-     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     * Guide.</p>
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
      */
     inline bool AssociateCarrierIpAddressHasBeenSet() const { return m_associateCarrierIpAddressHasBeenSet; }
 
@@ -658,8 +658,8 @@ namespace Model
      * <p>Indicates whether to assign a carrier IP address to the network
      * interface.</p> <p>You can only assign a carrier IP address to a network
      * interface that is in a subnet in a Wavelength Zone. For more information about
-     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     * Guide.</p>
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
      */
     inline void SetAssociateCarrierIpAddress(bool value) { m_associateCarrierIpAddressHasBeenSet = true; m_associateCarrierIpAddress = value; }
 
@@ -667,8 +667,8 @@ namespace Model
      * <p>Indicates whether to assign a carrier IP address to the network
      * interface.</p> <p>You can only assign a carrier IP address to a network
      * interface that is in a subnet in a Wavelength Zone. For more information about
-     * carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
-     * Guide.</p>
+     * carrier IP addresses, see Carrier IP addresses in the Amazon Web Services
+     * Wavelength Developer Guide.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithAssociateCarrierIpAddress(bool value) { SetAssociateCarrierIpAddress(value); return *this;}
 
@@ -678,8 +678,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline const Aws::String& GetInterfaceType() const{ return m_interfaceType; }
 
@@ -688,8 +687,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline bool InterfaceTypeHasBeenSet() const { return m_interfaceTypeHasBeenSet; }
 
@@ -698,8 +696,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline void SetInterfaceType(const Aws::String& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = value; }
 
@@ -708,8 +705,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline void SetInterfaceType(Aws::String&& value) { m_interfaceTypeHasBeenSet = true; m_interfaceType = std::move(value); }
 
@@ -718,8 +714,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline void SetInterfaceType(const char* value) { m_interfaceTypeHasBeenSet = true; m_interfaceType.assign(value); }
 
@@ -728,8 +723,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const Aws::String& value) { SetInterfaceType(value); return *this;}
 
@@ -738,8 +732,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(Aws::String&& value) { SetInterfaceType(std::move(value)); return *this;}
 
@@ -748,8 +741,7 @@ namespace Model
      * (EFA), specify <code>efa</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
      * Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>If you are not creating an EFA, specify <code>interface</code> or omit this
-     * parameter.</p> <p>Valid values: <code>interface</code> | <code>efa</code> </p>
+     * <p>Valid values: <code>interface</code> | <code>efa</code> </p>
      */
     inline InstanceNetworkInterfaceSpecification& WithInterfaceType(const char* value) { SetInterfaceType(value); return *this;}
 

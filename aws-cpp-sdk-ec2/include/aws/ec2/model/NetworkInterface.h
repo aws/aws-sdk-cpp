@@ -435,42 +435,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline NetworkInterface& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline NetworkInterface& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID of the owner of the network interface.</p>
+     * <p>The account ID of the owner of the network interface.</p>
      */
     inline NetworkInterface& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
@@ -599,71 +599,75 @@ namespace Model
 
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline const Aws::String& GetRequesterId() const{ return m_requesterId; }
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline bool RequesterIdHasBeenSet() const { return m_requesterIdHasBeenSet; }
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline void SetRequesterId(const Aws::String& value) { m_requesterIdHasBeenSet = true; m_requesterId = value; }
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline void SetRequesterId(Aws::String&& value) { m_requesterIdHasBeenSet = true; m_requesterId = std::move(value); }
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline void SetRequesterId(const char* value) { m_requesterIdHasBeenSet = true; m_requesterId.assign(value); }
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline NetworkInterface& WithRequesterId(const Aws::String& value) { SetRequesterId(value); return *this;}
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline NetworkInterface& WithRequesterId(Aws::String&& value) { SetRequesterId(std::move(value)); return *this;}
 
     /**
-     * <p>The alias or AWS account ID of the principal or service that created the
-     * network interface.</p>
+     * <p>The alias or account ID of the principal or service that created the network
+     * interface.</p>
      */
     inline NetworkInterface& WithRequesterId(const char* value) { SetRequesterId(value); return *this;}
 
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline bool GetRequesterManaged() const{ return m_requesterManaged; }
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline bool RequesterManagedHasBeenSet() const { return m_requesterManagedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline void SetRequesterManaged(bool value) { m_requesterManagedHasBeenSet = true; m_requesterManaged = value; }
 
     /**
-     * <p>Indicates whether the network interface is being managed by AWS.</p>
+     * <p>Indicates whether the network interface is being managed by Amazon Web
+     * Services.</p>
      */
     inline NetworkInterface& WithRequesterManaged(bool value) { SetRequesterManaged(value); return *this;}
 

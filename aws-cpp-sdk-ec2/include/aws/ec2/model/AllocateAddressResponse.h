@@ -71,44 +71,44 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID that AWS assigns to represent the allocation of the Elastic
-     * IP address for use with instances in a VPC.</p>
+     * <p>[EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation
+     * of the Elastic IP address for use with instances in a VPC.</p>
      */
     inline AllocateAddressResponse& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 

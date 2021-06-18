@@ -20,13 +20,15 @@ namespace Model
 
 AccessConfiguration::AccessConfiguration() : 
     m_accessType(AccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false)
+    m_accessTypeHasBeenSet(false),
+    m_secretsManagerAccessTokenConfigurationHasBeenSet(false)
 {
 }
 
 AccessConfiguration::AccessConfiguration(JsonView jsonValue) : 
     m_accessType(AccessType::NOT_SET),
-    m_accessTypeHasBeenSet(false)
+    m_accessTypeHasBeenSet(false),
+    m_secretsManagerAccessTokenConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ AccessConfiguration& AccessConfiguration::operator =(JsonView jsonValue)
     m_accessTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SecretsManagerAccessTokenConfiguration"))
+  {
+    m_secretsManagerAccessTokenConfiguration = jsonValue.GetObject("SecretsManagerAccessTokenConfiguration");
+
+    m_secretsManagerAccessTokenConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue AccessConfiguration::Jsonize() const
   if(m_accessTypeHasBeenSet)
   {
    payload.WithString("AccessType", AccessTypeMapper::GetNameForAccessType(m_accessType));
+  }
+
+  if(m_secretsManagerAccessTokenConfigurationHasBeenSet)
+  {
+   payload.WithObject("SecretsManagerAccessTokenConfiguration", m_secretsManagerAccessTokenConfiguration.Jsonize());
+
   }
 
   return payload;

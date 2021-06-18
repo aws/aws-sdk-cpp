@@ -14,6 +14,7 @@
 #include <aws/kms/model/KeyManagerType.h>
 #include <aws/kms/model/CustomerMasterKeySpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kms/model/MultiRegionConfiguration.h>
 #include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <aws/kms/model/SigningAlgorithmSpec.h>
 #include <utility>
@@ -392,38 +393,68 @@ namespace Model
 
 
     /**
-     * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     * <p>The date and time after which AWS KMS deletes this CMK. This value is present
+     * only when the CMK is scheduled for deletion, that is, when its
+     * <code>KeyState</code> is <code>PendingDeletion</code>.</p> <p>When the primary
+     * key in a multi-Region key is scheduled for deletion but still has replica keys,
+     * its key state is <code>PendingReplicaDeletion</code> and the length of its
+     * waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
+     * field.</p>
      */
     inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
 
     /**
-     * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     * <p>The date and time after which AWS KMS deletes this CMK. This value is present
+     * only when the CMK is scheduled for deletion, that is, when its
+     * <code>KeyState</code> is <code>PendingDeletion</code>.</p> <p>When the primary
+     * key in a multi-Region key is scheduled for deletion but still has replica keys,
+     * its key state is <code>PendingReplicaDeletion</code> and the length of its
+     * waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
+     * field.</p>
      */
     inline bool DeletionDateHasBeenSet() const { return m_deletionDateHasBeenSet; }
 
     /**
-     * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     * <p>The date and time after which AWS KMS deletes this CMK. This value is present
+     * only when the CMK is scheduled for deletion, that is, when its
+     * <code>KeyState</code> is <code>PendingDeletion</code>.</p> <p>When the primary
+     * key in a multi-Region key is scheduled for deletion but still has replica keys,
+     * its key state is <code>PendingReplicaDeletion</code> and the length of its
+     * waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
+     * field.</p>
      */
     inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
 
     /**
-     * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     * <p>The date and time after which AWS KMS deletes this CMK. This value is present
+     * only when the CMK is scheduled for deletion, that is, when its
+     * <code>KeyState</code> is <code>PendingDeletion</code>.</p> <p>When the primary
+     * key in a multi-Region key is scheduled for deletion but still has replica keys,
+     * its key state is <code>PendingReplicaDeletion</code> and the length of its
+     * waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
+     * field.</p>
      */
     inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = std::move(value); }
 
     /**
-     * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     * <p>The date and time after which AWS KMS deletes this CMK. This value is present
+     * only when the CMK is scheduled for deletion, that is, when its
+     * <code>KeyState</code> is <code>PendingDeletion</code>.</p> <p>When the primary
+     * key in a multi-Region key is scheduled for deletion but still has replica keys,
+     * its key state is <code>PendingReplicaDeletion</code> and the length of its
+     * waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
+     * field.</p>
      */
     inline KeyMetadata& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
 
     /**
-     * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
+     * <p>The date and time after which AWS KMS deletes this CMK. This value is present
+     * only when the CMK is scheduled for deletion, that is, when its
+     * <code>KeyState</code> is <code>PendingDeletion</code>.</p> <p>When the primary
+     * key in a multi-Region key is scheduled for deletion but still has replica keys,
+     * its key state is <code>PendingReplicaDeletion</code> and the length of its
+     * waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
+     * field.</p>
      */
     inline KeyMetadata& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(std::move(value)); return *this;}
 
@@ -815,57 +846,57 @@ namespace Model
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline const Aws::Vector<EncryptionAlgorithmSpec>& GetEncryptionAlgorithms() const{ return m_encryptionAlgorithms; }
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline bool EncryptionAlgorithmsHasBeenSet() const { return m_encryptionAlgorithmsHasBeenSet; }
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline void SetEncryptionAlgorithms(const Aws::Vector<EncryptionAlgorithmSpec>& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms = value; }
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline void SetEncryptionAlgorithms(Aws::Vector<EncryptionAlgorithmSpec>&& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms = std::move(value); }
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& WithEncryptionAlgorithms(const Aws::Vector<EncryptionAlgorithmSpec>& value) { SetEncryptionAlgorithms(value); return *this;}
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& WithEncryptionAlgorithms(Aws::Vector<EncryptionAlgorithmSpec>&& value) { SetEncryptionAlgorithms(std::move(value)); return *this;}
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& AddEncryptionAlgorithms(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms.push_back(value); return *this; }
 
     /**
      * <p>The encryption algorithms that the CMK supports. You cannot use the CMK with
-     * other encryption algorithms within AWS KMS.</p> <p>This field appears only when
-     * the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
+     * other encryption algorithms within AWS KMS.</p> <p>This value is present only
+     * when the <code>KeyUsage</code> of the CMK is <code>ENCRYPT_DECRYPT</code>.</p>
      */
     inline KeyMetadata& AddEncryptionAlgorithms(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithmsHasBeenSet = true; m_encryptionAlgorithms.push_back(std::move(value)); return *this; }
 
@@ -926,6 +957,209 @@ namespace Model
      */
     inline KeyMetadata& AddSigningAlgorithms(SigningAlgorithmSpec&& value) { m_signingAlgorithmsHasBeenSet = true; m_signingAlgorithms.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether the CMK is a multi-Region (<code>True</code>) or regional
+     * (<code>False</code>) key. This value is <code>True</code> for multi-Region
+     * primary and replica CMKs and <code>False</code> for regional CMKs.</p> <p>For
+     * more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool GetMultiRegion() const{ return m_multiRegion; }
+
+    /**
+     * <p>Indicates whether the CMK is a multi-Region (<code>True</code>) or regional
+     * (<code>False</code>) key. This value is <code>True</code> for multi-Region
+     * primary and replica CMKs and <code>False</code> for regional CMKs.</p> <p>For
+     * more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool MultiRegionHasBeenSet() const { return m_multiRegionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the CMK is a multi-Region (<code>True</code>) or regional
+     * (<code>False</code>) key. This value is <code>True</code> for multi-Region
+     * primary and replica CMKs and <code>False</code> for regional CMKs.</p> <p>For
+     * more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
+     */
+    inline void SetMultiRegion(bool value) { m_multiRegionHasBeenSet = true; m_multiRegion = value; }
+
+    /**
+     * <p>Indicates whether the CMK is a multi-Region (<code>True</code>) or regional
+     * (<code>False</code>) key. This value is <code>True</code> for multi-Region
+     * primary and replica CMKs and <code>False</code> for regional CMKs.</p> <p>For
+     * more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     * multi-Region keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
+     */
+    inline KeyMetadata& WithMultiRegion(bool value) { SetMultiRegion(value); return *this;}
+
+
+    /**
+     * <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is
+     * present only when the value of the <code>MultiRegion</code> field is
+     * <code>True</code>.</p> <p>For more information about any listed CMK, use the
+     * <a>DescribeKey</a> operation.</p> <ul> <li> <p> <code>MultiRegionKeyType</code>
+     * indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code>
+     * key.</p> </li> <li> <p> <code>PrimaryKey</code> displays the key ARN and Region
+     * of the primary key. This field displays the current CMK if it is the primary
+     * key.</p> </li> <li> <p> <code>ReplicaKeys</code> displays the key ARNs and
+     * Regions of all replica keys. This field includes the current CMK if it is a
+     * replica key.</p> </li> </ul>
+     */
+    inline const MultiRegionConfiguration& GetMultiRegionConfiguration() const{ return m_multiRegionConfiguration; }
+
+    /**
+     * <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is
+     * present only when the value of the <code>MultiRegion</code> field is
+     * <code>True</code>.</p> <p>For more information about any listed CMK, use the
+     * <a>DescribeKey</a> operation.</p> <ul> <li> <p> <code>MultiRegionKeyType</code>
+     * indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code>
+     * key.</p> </li> <li> <p> <code>PrimaryKey</code> displays the key ARN and Region
+     * of the primary key. This field displays the current CMK if it is the primary
+     * key.</p> </li> <li> <p> <code>ReplicaKeys</code> displays the key ARNs and
+     * Regions of all replica keys. This field includes the current CMK if it is a
+     * replica key.</p> </li> </ul>
+     */
+    inline bool MultiRegionConfigurationHasBeenSet() const { return m_multiRegionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is
+     * present only when the value of the <code>MultiRegion</code> field is
+     * <code>True</code>.</p> <p>For more information about any listed CMK, use the
+     * <a>DescribeKey</a> operation.</p> <ul> <li> <p> <code>MultiRegionKeyType</code>
+     * indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code>
+     * key.</p> </li> <li> <p> <code>PrimaryKey</code> displays the key ARN and Region
+     * of the primary key. This field displays the current CMK if it is the primary
+     * key.</p> </li> <li> <p> <code>ReplicaKeys</code> displays the key ARNs and
+     * Regions of all replica keys. This field includes the current CMK if it is a
+     * replica key.</p> </li> </ul>
+     */
+    inline void SetMultiRegionConfiguration(const MultiRegionConfiguration& value) { m_multiRegionConfigurationHasBeenSet = true; m_multiRegionConfiguration = value; }
+
+    /**
+     * <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is
+     * present only when the value of the <code>MultiRegion</code> field is
+     * <code>True</code>.</p> <p>For more information about any listed CMK, use the
+     * <a>DescribeKey</a> operation.</p> <ul> <li> <p> <code>MultiRegionKeyType</code>
+     * indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code>
+     * key.</p> </li> <li> <p> <code>PrimaryKey</code> displays the key ARN and Region
+     * of the primary key. This field displays the current CMK if it is the primary
+     * key.</p> </li> <li> <p> <code>ReplicaKeys</code> displays the key ARNs and
+     * Regions of all replica keys. This field includes the current CMK if it is a
+     * replica key.</p> </li> </ul>
+     */
+    inline void SetMultiRegionConfiguration(MultiRegionConfiguration&& value) { m_multiRegionConfigurationHasBeenSet = true; m_multiRegionConfiguration = std::move(value); }
+
+    /**
+     * <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is
+     * present only when the value of the <code>MultiRegion</code> field is
+     * <code>True</code>.</p> <p>For more information about any listed CMK, use the
+     * <a>DescribeKey</a> operation.</p> <ul> <li> <p> <code>MultiRegionKeyType</code>
+     * indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code>
+     * key.</p> </li> <li> <p> <code>PrimaryKey</code> displays the key ARN and Region
+     * of the primary key. This field displays the current CMK if it is the primary
+     * key.</p> </li> <li> <p> <code>ReplicaKeys</code> displays the key ARNs and
+     * Regions of all replica keys. This field includes the current CMK if it is a
+     * replica key.</p> </li> </ul>
+     */
+    inline KeyMetadata& WithMultiRegionConfiguration(const MultiRegionConfiguration& value) { SetMultiRegionConfiguration(value); return *this;}
+
+    /**
+     * <p>Lists the primary and replica CMKs in same multi-Region CMK. This field is
+     * present only when the value of the <code>MultiRegion</code> field is
+     * <code>True</code>.</p> <p>For more information about any listed CMK, use the
+     * <a>DescribeKey</a> operation.</p> <ul> <li> <p> <code>MultiRegionKeyType</code>
+     * indicates whether the CMK is a <code>PRIMARY</code> or <code>REPLICA</code>
+     * key.</p> </li> <li> <p> <code>PrimaryKey</code> displays the key ARN and Region
+     * of the primary key. This field displays the current CMK if it is the primary
+     * key.</p> </li> <li> <p> <code>ReplicaKeys</code> displays the key ARNs and
+     * Regions of all replica keys. This field includes the current CMK if it is a
+     * replica key.</p> </li> </ul>
+     */
+    inline KeyMetadata& WithMultiRegionConfiguration(MultiRegionConfiguration&& value) { SetMultiRegionConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The waiting period before the primary key in a multi-Region key is deleted.
+     * This waiting period begins when the last of its replica keys is deleted. This
+     * value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary
+     * key in a multi-Region key, it is scheduled for deletion, and it still has
+     * existing replica keys.</p> <p>When a regional CMK or a replica key in a
+     * multi-Region key is scheduled for deletion, its deletion date is displayed in
+     * the <code>DeletionDate</code> field. However, when the primary key in a
+     * multi-Region key is scheduled for deletion, its waiting period doesn't begin
+     * until all of its replica keys are deleted. This value displays that waiting
+     * period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from
+     * <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the
+     * deletion date appears in the <code>DeletionDate</code> field.</p>
+     */
+    inline int GetPendingDeletionWindowInDays() const{ return m_pendingDeletionWindowInDays; }
+
+    /**
+     * <p>The waiting period before the primary key in a multi-Region key is deleted.
+     * This waiting period begins when the last of its replica keys is deleted. This
+     * value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary
+     * key in a multi-Region key, it is scheduled for deletion, and it still has
+     * existing replica keys.</p> <p>When a regional CMK or a replica key in a
+     * multi-Region key is scheduled for deletion, its deletion date is displayed in
+     * the <code>DeletionDate</code> field. However, when the primary key in a
+     * multi-Region key is scheduled for deletion, its waiting period doesn't begin
+     * until all of its replica keys are deleted. This value displays that waiting
+     * period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from
+     * <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the
+     * deletion date appears in the <code>DeletionDate</code> field.</p>
+     */
+    inline bool PendingDeletionWindowInDaysHasBeenSet() const { return m_pendingDeletionWindowInDaysHasBeenSet; }
+
+    /**
+     * <p>The waiting period before the primary key in a multi-Region key is deleted.
+     * This waiting period begins when the last of its replica keys is deleted. This
+     * value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary
+     * key in a multi-Region key, it is scheduled for deletion, and it still has
+     * existing replica keys.</p> <p>When a regional CMK or a replica key in a
+     * multi-Region key is scheduled for deletion, its deletion date is displayed in
+     * the <code>DeletionDate</code> field. However, when the primary key in a
+     * multi-Region key is scheduled for deletion, its waiting period doesn't begin
+     * until all of its replica keys are deleted. This value displays that waiting
+     * period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from
+     * <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the
+     * deletion date appears in the <code>DeletionDate</code> field.</p>
+     */
+    inline void SetPendingDeletionWindowInDays(int value) { m_pendingDeletionWindowInDaysHasBeenSet = true; m_pendingDeletionWindowInDays = value; }
+
+    /**
+     * <p>The waiting period before the primary key in a multi-Region key is deleted.
+     * This waiting period begins when the last of its replica keys is deleted. This
+     * value is present only when the <code>KeyState</code> of the CMK is
+     * <code>PendingReplicaDeletion</code>. That indicates that the CMK is the primary
+     * key in a multi-Region key, it is scheduled for deletion, and it still has
+     * existing replica keys.</p> <p>When a regional CMK or a replica key in a
+     * multi-Region key is scheduled for deletion, its deletion date is displayed in
+     * the <code>DeletionDate</code> field. However, when the primary key in a
+     * multi-Region key is scheduled for deletion, its waiting period doesn't begin
+     * until all of its replica keys are deleted. This value displays that waiting
+     * period. When the last replica key in the multi-Region key is deleted, the
+     * <code>KeyState</code> of the scheduled primary key changes from
+     * <code>PendingReplicaDeletion</code> to <code>PendingDeletion</code> and the
+     * deletion date appears in the <code>DeletionDate</code> field.</p>
+     */
+    inline KeyMetadata& WithPendingDeletionWindowInDays(int value) { SetPendingDeletionWindowInDays(value); return *this;}
+
   private:
 
     Aws::String m_aWSAccountId;
@@ -981,6 +1215,15 @@ namespace Model
 
     Aws::Vector<SigningAlgorithmSpec> m_signingAlgorithms;
     bool m_signingAlgorithmsHasBeenSet;
+
+    bool m_multiRegion;
+    bool m_multiRegionHasBeenSet;
+
+    MultiRegionConfiguration m_multiRegionConfiguration;
+    bool m_multiRegionConfigurationHasBeenSet;
+
+    int m_pendingDeletionWindowInDays;
+    bool m_pendingDeletionWindowInDaysHasBeenSet;
   };
 
 } // namespace Model

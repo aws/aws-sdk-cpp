@@ -93,37 +93,44 @@ namespace Model
 
 
     /**
-     * <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+     * <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<InstallationMedia>& GetInstallationMedia() const{ return m_installationMedia; }
 
     /**
-     * <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+     * <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetInstallationMedia(const Aws::Vector<InstallationMedia>& value) { m_installationMedia = value; }
 
     /**
-     * <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+     * <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetInstallationMedia(Aws::Vector<InstallationMedia>&& value) { m_installationMedia = std::move(value); }
 
     /**
-     * <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+     * <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeInstallationMediaResult& WithInstallationMedia(const Aws::Vector<InstallationMedia>& value) { SetInstallationMedia(value); return *this;}
 
     /**
-     * <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+     * <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeInstallationMediaResult& WithInstallationMedia(Aws::Vector<InstallationMedia>&& value) { SetInstallationMedia(std::move(value)); return *this;}
 
     /**
-     * <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+     * <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeInstallationMediaResult& AddInstallationMedia(const InstallationMedia& value) { m_installationMedia.push_back(value); return *this; }
 
     /**
-     * <p>The list of <a>InstallationMedia</a> objects for the AWS account.</p>
+     * <p>The list of <a>InstallationMedia</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeInstallationMediaResult& AddInstallationMedia(InstallationMedia&& value) { m_installationMedia.push_back(std::move(value)); return *this; }
 

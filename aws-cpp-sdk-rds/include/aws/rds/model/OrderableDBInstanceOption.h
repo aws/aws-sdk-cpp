@@ -775,7 +775,8 @@ namespace Model
      * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
      * about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline bool GetOutpostCapable() const{ return m_outpostCapable; }
 
@@ -783,7 +784,8 @@ namespace Model
      * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
      * about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline bool OutpostCapableHasBeenSet() const { return m_outpostCapableHasBeenSet; }
 
@@ -791,7 +793,8 @@ namespace Model
      * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
      * about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline void SetOutpostCapable(bool value) { m_outpostCapableHasBeenSet = true; m_outpostCapable = value; }
 
@@ -799,9 +802,83 @@ namespace Model
      * <p>Whether a DB instance supports RDS on Outposts.</p> <p>For more information
      * about RDS on Outposts, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon
-     * RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     inline OrderableDBInstanceOption& WithOutpostCapable(bool value) { SetOutpostCapable(value); return *this;}
+
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedActivityStreamModes() const{ return m_supportedActivityStreamModes; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline bool SupportedActivityStreamModesHasBeenSet() const { return m_supportedActivityStreamModesHasBeenSet; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline void SetSupportedActivityStreamModes(const Aws::Vector<Aws::String>& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes = value; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline void SetSupportedActivityStreamModes(Aws::Vector<Aws::String>&& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes = std::move(value); }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedActivityStreamModes(const Aws::Vector<Aws::String>& value) { SetSupportedActivityStreamModes(value); return *this;}
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& WithSupportedActivityStreamModes(Aws::Vector<Aws::String>&& value) { SetSupportedActivityStreamModes(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedActivityStreamModes(const Aws::String& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes.push_back(value); return *this; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedActivityStreamModes(Aws::String&& value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of supported modes for Database Activity Streams. Aurora PostgreSQL
+     * returns the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle
+     * return <code>[async]</code> only. If Database Activity Streams isn't supported,
+     * the return value is an empty list.</p>
+     */
+    inline OrderableDBInstanceOption& AddSupportedActivityStreamModes(const char* value) { m_supportedActivityStreamModesHasBeenSet = true; m_supportedActivityStreamModes.push_back(value); return *this; }
 
 
     /**
@@ -907,6 +984,9 @@ namespace Model
 
     bool m_outpostCapable;
     bool m_outpostCapableHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedActivityStreamModes;
+    bool m_supportedActivityStreamModesHasBeenSet;
 
     bool m_supportsGlobalDatabases;
     bool m_supportsGlobalDatabasesHasBeenSet;

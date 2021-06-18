@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     interface,
     natGateway,
-    efa
+    efa,
+    trunk
   };
 
 namespace NetworkInterfaceTypeMapper

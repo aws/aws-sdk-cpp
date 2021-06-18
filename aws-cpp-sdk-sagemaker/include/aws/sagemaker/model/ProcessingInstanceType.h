@@ -53,7 +53,13 @@ namespace Model
     ml_r5_8xlarge,
     ml_r5_12xlarge,
     ml_r5_16xlarge,
-    ml_r5_24xlarge
+    ml_r5_24xlarge,
+    ml_g4dn_xlarge,
+    ml_g4dn_2xlarge,
+    ml_g4dn_4xlarge,
+    ml_g4dn_8xlarge,
+    ml_g4dn_12xlarge,
+    ml_g4dn_16xlarge
   };
 
 namespace ProcessingInstanceTypeMapper

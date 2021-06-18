@@ -16,7 +16,9 @@ namespace Model
   enum class NetworkInterfaceCreationType
   {
     NOT_SET,
-    efa
+    efa,
+    branch,
+    trunk
   };
 
 namespace NetworkInterfaceCreationTypeMapper

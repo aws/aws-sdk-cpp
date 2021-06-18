@@ -93,37 +93,44 @@ namespace Model
 
 
     /**
-     * <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+     * <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<CustomAvailabilityZone>& GetCustomAvailabilityZones() const{ return m_customAvailabilityZones; }
 
     /**
-     * <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+     * <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetCustomAvailabilityZones(const Aws::Vector<CustomAvailabilityZone>& value) { m_customAvailabilityZones = value; }
 
     /**
-     * <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+     * <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetCustomAvailabilityZones(Aws::Vector<CustomAvailabilityZone>&& value) { m_customAvailabilityZones = std::move(value); }
 
     /**
-     * <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+     * <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCustomAvailabilityZonesResult& WithCustomAvailabilityZones(const Aws::Vector<CustomAvailabilityZone>& value) { SetCustomAvailabilityZones(value); return *this;}
 
     /**
-     * <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+     * <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCustomAvailabilityZonesResult& WithCustomAvailabilityZones(Aws::Vector<CustomAvailabilityZone>&& value) { SetCustomAvailabilityZones(std::move(value)); return *this;}
 
     /**
-     * <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+     * <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCustomAvailabilityZonesResult& AddCustomAvailabilityZones(const CustomAvailabilityZone& value) { m_customAvailabilityZones.push_back(value); return *this; }
 
     /**
-     * <p>The list of <a>CustomAvailabilityZone</a> objects for the AWS account.</p>
+     * <p>The list of <a>CustomAvailabilityZone</a> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCustomAvailabilityZonesResult& AddCustomAvailabilityZones(CustomAvailabilityZone&& value) { m_customAvailabilityZones.push_back(std::move(value)); return *this; }
 

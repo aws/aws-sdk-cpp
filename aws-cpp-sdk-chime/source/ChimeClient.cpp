@@ -196,6 +196,7 @@
 #include <aws/chime/model/UpdateRoomRequest.h>
 #include <aws/chime/model/UpdateRoomMembershipRequest.h>
 #include <aws/chime/model/UpdateSipMediaApplicationRequest.h>
+#include <aws/chime/model/UpdateSipMediaApplicationCallRequest.h>
 #include <aws/chime/model/UpdateSipRuleRequest.h>
 #include <aws/chime/model/UpdateUserRequest.h>
 #include <aws/chime/model/UpdateUserSettingsRequest.h>
@@ -6538,6 +6539,44 @@ void ChimeClient::UpdateSipMediaApplicationAsync(const UpdateSipMediaApplication
 void ChimeClient::UpdateSipMediaApplicationAsyncHelper(const UpdateSipMediaApplicationRequest& request, const UpdateSipMediaApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSipMediaApplication(request), context);
+}
+
+UpdateSipMediaApplicationCallOutcome ChimeClient::UpdateSipMediaApplicationCall(const UpdateSipMediaApplicationCallRequest& request) const
+{
+  if (!request.SipMediaApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSipMediaApplicationCall", "Required field: SipMediaApplicationId, is not set");
+    return UpdateSipMediaApplicationCallOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SipMediaApplicationId]", false));
+  }
+  if (!request.TransactionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSipMediaApplicationCall", "Required field: TransactionId, is not set");
+    return UpdateSipMediaApplicationCallOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TransactionId]", false));
+  }
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  uri.AddPathSegments("/sip-media-applications/");
+  uri.AddPathSegment(request.GetSipMediaApplicationId());
+  uri.AddPathSegments("/calls/");
+  uri.AddPathSegment(request.GetTransactionId());
+  return UpdateSipMediaApplicationCallOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSipMediaApplicationCallOutcomeCallable ChimeClient::UpdateSipMediaApplicationCallCallable(const UpdateSipMediaApplicationCallRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSipMediaApplicationCallOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSipMediaApplicationCall(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::UpdateSipMediaApplicationCallAsync(const UpdateSipMediaApplicationCallRequest& request, const UpdateSipMediaApplicationCallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSipMediaApplicationCallAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::UpdateSipMediaApplicationCallAsyncHelper(const UpdateSipMediaApplicationCallRequest& request, const UpdateSipMediaApplicationCallResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSipMediaApplicationCall(request), context);
 }
 
 UpdateSipRuleOutcome ChimeClient::UpdateSipRule(const UpdateSipRuleRequest& request) const

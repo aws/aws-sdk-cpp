@@ -29,6 +29,7 @@ namespace Aws
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
         static const int CONFLUENCE_HASH = HashingUtils::HashString("CONFLUENCE");
         static const int GOOGLEDRIVE_HASH = HashingUtils::HashString("GOOGLEDRIVE");
+        static const int WEBCRAWLER_HASH = HashingUtils::HashString("WEBCRAWLER");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return DataSourceType::GOOGLEDRIVE;
           }
+          else if (hashCode == WEBCRAWLER_HASH)
+          {
+            return DataSourceType::WEBCRAWLER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "CONFLUENCE";
           case DataSourceType::GOOGLEDRIVE:
             return "GOOGLEDRIVE";
+          case DataSourceType::WEBCRAWLER:
+            return "WEBCRAWLER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

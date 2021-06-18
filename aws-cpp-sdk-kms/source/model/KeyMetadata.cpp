@@ -43,7 +43,12 @@ KeyMetadata::KeyMetadata() :
     m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
     m_customerMasterKeySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
-    m_signingAlgorithmsHasBeenSet(false)
+    m_signingAlgorithmsHasBeenSet(false),
+    m_multiRegion(false),
+    m_multiRegionHasBeenSet(false),
+    m_multiRegionConfigurationHasBeenSet(false),
+    m_pendingDeletionWindowInDays(0),
+    m_pendingDeletionWindowInDaysHasBeenSet(false)
 {
 }
 
@@ -72,7 +77,12 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
     m_customerMasterKeySpecHasBeenSet(false),
     m_encryptionAlgorithmsHasBeenSet(false),
-    m_signingAlgorithmsHasBeenSet(false)
+    m_signingAlgorithmsHasBeenSet(false),
+    m_multiRegion(false),
+    m_multiRegionHasBeenSet(false),
+    m_multiRegionConfigurationHasBeenSet(false),
+    m_pendingDeletionWindowInDays(0),
+    m_pendingDeletionWindowInDaysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -211,6 +221,27 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     m_signingAlgorithmsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MultiRegion"))
+  {
+    m_multiRegion = jsonValue.GetBool("MultiRegion");
+
+    m_multiRegionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MultiRegionConfiguration"))
+  {
+    m_multiRegionConfiguration = jsonValue.GetObject("MultiRegionConfiguration");
+
+    m_multiRegionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PendingDeletionWindowInDays"))
+  {
+    m_pendingDeletionWindowInDays = jsonValue.GetInteger("PendingDeletionWindowInDays");
+
+    m_pendingDeletionWindowInDaysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -324,6 +355,24 @@ JsonValue KeyMetadata::Jsonize() const
      signingAlgorithmsJsonList[signingAlgorithmsIndex].AsString(SigningAlgorithmSpecMapper::GetNameForSigningAlgorithmSpec(m_signingAlgorithms[signingAlgorithmsIndex]));
    }
    payload.WithArray("SigningAlgorithms", std::move(signingAlgorithmsJsonList));
+
+  }
+
+  if(m_multiRegionHasBeenSet)
+  {
+   payload.WithBool("MultiRegion", m_multiRegion);
+
+  }
+
+  if(m_multiRegionConfigurationHasBeenSet)
+  {
+   payload.WithObject("MultiRegionConfiguration", m_multiRegionConfiguration.Jsonize());
+
+  }
+
+  if(m_pendingDeletionWindowInDaysHasBeenSet)
+  {
+   payload.WithInteger("PendingDeletionWindowInDays", m_pendingDeletionWindowInDays);
 
   }
 

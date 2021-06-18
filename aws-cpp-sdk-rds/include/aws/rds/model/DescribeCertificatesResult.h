@@ -42,37 +42,44 @@ namespace Model
 
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificates = value; }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificates = std::move(value); }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(const Certificate& value) { m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The list of <code>Certificate</code> objects for the AWS account.</p>
+     * <p>The list of <code>Certificate</code> objects for the Amazon Web Services
+     * account.</p>
      */
     inline DescribeCertificatesResult& AddCertificates(Certificate&& value) { m_certificates.push_back(std::move(value)); return *this; }
 

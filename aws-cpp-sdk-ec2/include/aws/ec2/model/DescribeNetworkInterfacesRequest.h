@@ -84,14 +84,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
@@ -157,14 +157,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
@@ -230,14 +230,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
@@ -303,14 +303,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
@@ -376,14 +376,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
@@ -449,14 +449,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
@@ -522,14 +522,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>
@@ -595,14 +595,14 @@ namespace Model
      * network interface.</p> </li> <li> <p> <code>mac-address</code> - The MAC address
      * of the network interface.</p> </li> <li> <p> <code>network-interface-id</code> -
      * The ID of the network interface.</p> </li> <li> <p> <code>owner-id</code> - The
-     * AWS account ID of the network interface owner.</p> </li> <li> <p>
+     * account ID of the network interface owner.</p> </li> <li> <p>
      * <code>private-ip-address</code> - The private IPv4 address or addresses of the
      * network interface.</p> </li> <li> <p> <code>private-dns-name</code> - The
      * private DNS name of the network interface (IPv4).</p> </li> <li> <p>
-     * <code>requester-id</code> - The alias or AWS account ID of the principal or
-     * service that created the network interface.</p> </li> <li> <p>
+     * <code>requester-id</code> - The alias or account ID of the principal or service
+     * that created the network interface.</p> </li> <li> <p>
      * <code>requester-managed</code> - Indicates whether the network interface is
-     * being managed by an AWS service (for example, AWS Management Console, Auto
+     * being managed by an Amazon Web Service (for example, Management Console, Auto
      * Scaling, and so on).</p> </li> <li> <p> <code>source-dest-check</code> -
      * Indicates whether the network interface performs source/destination checking. A
      * value of <code>true</code> means checking is enabled, and <code>false</code>

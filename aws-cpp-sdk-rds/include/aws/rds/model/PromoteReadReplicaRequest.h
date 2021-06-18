@@ -137,7 +137,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -151,7 +152,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -165,7 +167,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -179,7 +182,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -193,7 +197,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -207,7 +212,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -221,7 +227,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
@@ -235,7 +242,8 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter.
      * </p> <p> The default is a 30-minute window selected at random from an 8-hour
-     * block of time for each AWS Region. To see the time blocks available, see <a
+     * block of time for each Amazon Web Services Region. To see the time blocks
+     * available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      * Adjusting the Preferred Maintenance Window</a> in the <i>Amazon RDS User
      * Guide.</i> </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format

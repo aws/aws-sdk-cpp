@@ -26,7 +26,8 @@ DataSourceConfiguration::DataSourceConfiguration() :
     m_oneDriveConfigurationHasBeenSet(false),
     m_serviceNowConfigurationHasBeenSet(false),
     m_confluenceConfigurationHasBeenSet(false),
-    m_googleDriveConfigurationHasBeenSet(false)
+    m_googleDriveConfigurationHasBeenSet(false),
+    m_webCrawlerConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue) :
     m_oneDriveConfigurationHasBeenSet(false),
     m_serviceNowConfigurationHasBeenSet(false),
     m_confluenceConfigurationHasBeenSet(false),
-    m_googleDriveConfigurationHasBeenSet(false)
+    m_googleDriveConfigurationHasBeenSet(false),
+    m_webCrawlerConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +103,13 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
     m_googleDriveConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WebCrawlerConfiguration"))
+  {
+    m_webCrawlerConfiguration = jsonValue.GetObject("WebCrawlerConfiguration");
+
+    m_webCrawlerConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +162,12 @@ JsonValue DataSourceConfiguration::Jsonize() const
   if(m_googleDriveConfigurationHasBeenSet)
   {
    payload.WithObject("GoogleDriveConfiguration", m_googleDriveConfiguration.Jsonize());
+
+  }
+
+  if(m_webCrawlerConfigurationHasBeenSet)
+  {
+   payload.WithObject("WebCrawlerConfiguration", m_webCrawlerConfiguration.Jsonize());
 
   }
 

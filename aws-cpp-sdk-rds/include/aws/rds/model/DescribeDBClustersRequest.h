@@ -279,25 +279,25 @@ namespace Model
 
     /**
      * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other AWS accounts.</p>
+     * information about clusters shared from other Amazon Web Services accounts.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
      * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other AWS accounts.</p>
+     * information about clusters shared from other Amazon Web Services accounts.</p>
      */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
 
     /**
      * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other AWS accounts.</p>
+     * information about clusters shared from other Amazon Web Services accounts.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
      * <p>Optional Boolean parameter that specifies whether the output includes
-     * information about clusters shared from other AWS accounts.</p>
+     * information about clusters shared from other Amazon Web Services accounts.</p>
      */
     inline DescribeDBClustersRequest& WithIncludeShared(bool value) { SetIncludeShared(value); return *this;}
 

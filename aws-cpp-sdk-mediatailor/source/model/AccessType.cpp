@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int S3_SIGV4_HASH = HashingUtils::HashString("S3_SIGV4");
+        static const int SECRETS_MANAGER_ACCESS_TOKEN_HASH = HashingUtils::HashString("SECRETS_MANAGER_ACCESS_TOKEN");
 
 
         AccessType GetAccessTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == S3_SIGV4_HASH)
           {
             return AccessType::S3_SIGV4;
+          }
+          else if (hashCode == SECRETS_MANAGER_ACCESS_TOKEN_HASH)
+          {
+            return AccessType::SECRETS_MANAGER_ACCESS_TOKEN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case AccessType::S3_SIGV4:
             return "S3_SIGV4";
+          case AccessType::SECRETS_MANAGER_ACCESS_TOKEN:
+            return "SECRETS_MANAGER_ACCESS_TOKEN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

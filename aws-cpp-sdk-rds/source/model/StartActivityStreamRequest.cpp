@@ -16,7 +16,9 @@ StartActivityStreamRequest::StartActivityStreamRequest() :
     m_modeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
+    m_applyImmediatelyHasBeenSet(false),
+    m_engineNativeAuditFieldsIncluded(false),
+    m_engineNativeAuditFieldsIncludedHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,11 @@ Aws::String StartActivityStreamRequest::SerializePayload() const
   if(m_applyImmediatelyHasBeenSet)
   {
     ss << "ApplyImmediately=" << std::boolalpha << m_applyImmediately << "&";
+  }
+
+  if(m_engineNativeAuditFieldsIncludedHasBeenSet)
+  {
+    ss << "EngineNativeAuditFieldsIncluded=" << std::boolalpha << m_engineNativeAuditFieldsIncluded << "&";
   }
 
   ss << "Version=2014-10-31";

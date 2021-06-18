@@ -679,42 +679,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline DBSnapshot& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline DBSnapshot& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     * <p>The Amazon Web Services Region that the DB snapshot was created in or copied
+     * from.</p>
      */
     inline DBSnapshot& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
 
@@ -880,58 +888,66 @@ namespace Model
 
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline DBSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline DBSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
-     * encrypted DB snapshot. </p> <p>The AWS KMS key identifier is the key ARN, key
-     * ID, alias ARN, or alias name for the AWS KMS customer master key (CMK).</p>
+     * <p> If <code>Encrypted</code> is true, the Amazon Web Services KMS key
+     * identifier for the encrypted DB snapshot. </p> <p>The Amazon Web Services KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the Amazon
+     * Web Services KMS customer master key (CMK).</p>
      */
     inline DBSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -1043,26 +1059,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled, and otherwise false.</p>
+     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled, and otherwise false.</p>
      */
     inline DBSnapshot& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -1118,49 +1134,49 @@ namespace Model
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBSnapshot& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBSnapshot& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which
-     * is unique to an AWS Region.</p>
+     * is unique to an Amazon Web Services Region.</p>
      */
     inline DBSnapshot& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
 

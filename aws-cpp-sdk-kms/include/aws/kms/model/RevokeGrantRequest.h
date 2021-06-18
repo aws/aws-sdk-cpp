@@ -35,10 +35,11 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -47,10 +48,11 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -59,10 +61,11 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -71,10 +74,11 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -83,10 +87,11 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -95,10 +100,11 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -107,10 +113,11 @@ namespace Model
     inline RevokeGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -119,10 +126,11 @@ namespace Model
     inline RevokeGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the customer master key associated with the
-     * grant.</p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
-     * To specify a CMK in a different AWS account, you must use the key ARN.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
+     * <p>A unique identifier for the customer master key (CMK) associated with the
+     * grant. To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or
+     * <a>DescribeKey</a>.</p> <p>Specify the key ID or key ARN of the CMK. To specify
+     * a CMK in a different AWS account, you must use the key ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
@@ -132,42 +140,50 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline const Aws::String& GetGrantId() const{ return m_grantId; }
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline bool GrantIdHasBeenSet() const { return m_grantIdHasBeenSet; }
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline void SetGrantId(Aws::String&& value) { m_grantIdHasBeenSet = true; m_grantId = std::move(value); }
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline void SetGrantId(const char* value) { m_grantIdHasBeenSet = true; m_grantId.assign(value); }
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline RevokeGrantRequest& WithGrantId(const Aws::String& value) { SetGrantId(value); return *this;}
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline RevokeGrantRequest& WithGrantId(Aws::String&& value) { SetGrantId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the grant to be revoked.</p>
+     * <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
+     * <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
      */
     inline RevokeGrantRequest& WithGrantId(const char* value) { SetGrantId(value); return *this;}
 

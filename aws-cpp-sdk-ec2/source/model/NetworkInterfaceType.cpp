@@ -23,6 +23,7 @@ namespace Aws
         static const int interface_HASH = HashingUtils::HashString("interface");
         static const int natGateway_HASH = HashingUtils::HashString("natGateway");
         static const int efa_HASH = HashingUtils::HashString("efa");
+        static const int trunk_HASH = HashingUtils::HashString("trunk");
 
 
         NetworkInterfaceType GetNetworkInterfaceTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == efa_HASH)
           {
             return NetworkInterfaceType::efa;
+          }
+          else if (hashCode == trunk_HASH)
+          {
+            return NetworkInterfaceType::trunk;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "natGateway";
           case NetworkInterfaceType::efa:
             return "efa";
+          case NetworkInterfaceType::trunk:
+            return "trunk";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

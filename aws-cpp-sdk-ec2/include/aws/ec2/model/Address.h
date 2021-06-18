@@ -300,42 +300,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceOwnerId() const{ return m_networkInterfaceOwnerId; }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline bool NetworkInterfaceOwnerIdHasBeenSet() const { return m_networkInterfaceOwnerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(const Aws::String& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = value; }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(Aws::String&& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = std::move(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline void SetNetworkInterfaceOwnerId(const char* value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId.assign(value); }
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline Address& WithNetworkInterfaceOwnerId(const Aws::String& value) { SetNetworkInterfaceOwnerId(value); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline Address& WithNetworkInterfaceOwnerId(Aws::String&& value) { SetNetworkInterfaceOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AWS account that owns the network interface.</p>
+     * <p>The ID of the account that owns the network interface.</p>
      */
     inline Address& WithNetworkInterfaceOwnerId(const char* value) { SetNetworkInterfaceOwnerId(value); return *this;}
 

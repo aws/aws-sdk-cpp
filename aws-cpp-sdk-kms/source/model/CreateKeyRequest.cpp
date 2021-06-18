@@ -24,7 +24,9 @@ CreateKeyRequest::CreateKeyRequest() :
     m_customKeyStoreIdHasBeenSet(false),
     m_bypassPolicyLockoutSafetyCheck(false),
     m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_multiRegion(false),
+    m_multiRegionHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,12 @@ Aws::String CreateKeyRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_multiRegionHasBeenSet)
+  {
+   payload.WithBool("MultiRegion", m_multiRegion);
 
   }
 

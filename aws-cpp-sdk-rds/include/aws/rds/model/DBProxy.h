@@ -47,49 +47,57 @@ namespace Model
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline const Aws::String& GetDBProxyName() const{ return m_dBProxyName; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline bool DBProxyNameHasBeenSet() const { return m_dBProxyNameHasBeenSet; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline void SetDBProxyName(const Aws::String& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = value; }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline void SetDBProxyName(Aws::String&& value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName = std::move(value); }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline void SetDBProxyName(const char* value) { m_dBProxyNameHasBeenSet = true; m_dBProxyName.assign(value); }
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline DBProxy& WithDBProxyName(const Aws::String& value) { SetDBProxyName(value); return *this;}
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline DBProxy& WithDBProxyName(Aws::String&& value) { SetDBProxyName(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the proxy. This name must be unique for all proxies owned
-     * by your AWS account in the specified AWS Region.</p>
+     * by your Amazon Web Services account in the specified Amazon Web Services
+     * Region.</p>
      */
     inline DBProxy& WithDBProxyName(const char* value) { SetDBProxyName(value); return *this;}
 

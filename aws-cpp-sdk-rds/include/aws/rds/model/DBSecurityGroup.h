@@ -45,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline DBSecurityGroup& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline DBSecurityGroup& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the AWS ID of the owner of a specific DB security group.</p>
+     * <p>Provides the Amazon Web Services ID of the owner of a specific DB security
+     * group.</p>
      */
     inline DBSecurityGroup& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

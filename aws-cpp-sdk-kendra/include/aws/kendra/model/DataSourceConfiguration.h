@@ -13,6 +13,7 @@
 #include <aws/kendra/model/ServiceNowConfiguration.h>
 #include <aws/kendra/model/ConfluenceConfiguration.h>
 #include <aws/kendra/model/GoogleDriveConfiguration.h>
+#include <aws/kendra/model/WebCrawlerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -334,6 +335,25 @@ namespace Model
      */
     inline DataSourceConfiguration& WithGoogleDriveConfiguration(GoogleDriveConfiguration&& value) { SetGoogleDriveConfiguration(std::move(value)); return *this;}
 
+
+    
+    inline const WebCrawlerConfiguration& GetWebCrawlerConfiguration() const{ return m_webCrawlerConfiguration; }
+
+    
+    inline bool WebCrawlerConfigurationHasBeenSet() const { return m_webCrawlerConfigurationHasBeenSet; }
+
+    
+    inline void SetWebCrawlerConfiguration(const WebCrawlerConfiguration& value) { m_webCrawlerConfigurationHasBeenSet = true; m_webCrawlerConfiguration = value; }
+
+    
+    inline void SetWebCrawlerConfiguration(WebCrawlerConfiguration&& value) { m_webCrawlerConfigurationHasBeenSet = true; m_webCrawlerConfiguration = std::move(value); }
+
+    
+    inline DataSourceConfiguration& WithWebCrawlerConfiguration(const WebCrawlerConfiguration& value) { SetWebCrawlerConfiguration(value); return *this;}
+
+    
+    inline DataSourceConfiguration& WithWebCrawlerConfiguration(WebCrawlerConfiguration&& value) { SetWebCrawlerConfiguration(std::move(value)); return *this;}
+
   private:
 
     S3DataSourceConfiguration m_s3Configuration;
@@ -359,6 +379,9 @@ namespace Model
 
     GoogleDriveConfiguration m_googleDriveConfiguration;
     bool m_googleDriveConfigurationHasBeenSet;
+
+    WebCrawlerConfiguration m_webCrawlerConfiguration;
+    bool m_webCrawlerConfigurationHasBeenSet;
   };
 
 } // namespace Model

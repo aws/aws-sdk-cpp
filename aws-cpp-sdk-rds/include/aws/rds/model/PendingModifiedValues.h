@@ -566,26 +566,26 @@ namespace Model
 
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>Whether mapping of AWS Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.</p>
+     * <p>Whether mapping of Amazon Web Services Identity and Access Management (IAM)
+     * accounts to database accounts is enabled.</p>
      */
     inline PendingModifiedValues& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

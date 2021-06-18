@@ -47,10 +47,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
@@ -74,10 +74,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
@@ -101,10 +101,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
@@ -128,10 +128,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
@@ -155,10 +155,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
@@ -182,10 +182,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
@@ -209,10 +209,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>
@@ -236,10 +236,10 @@ namespace Model
      * or in a VPC (<code>vpc</code>).</p> </li> <li> <p> <code>instance-id</code> -
      * The ID of the instance the address is associated with, if any.</p> </li> <li>
      * <p> <code>network-border-group</code> - A unique set of Availability Zones,
-     * Local Zones, or Wavelength Zones from where AWS advertises IP addresses. </p>
-     * </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The ID of the
-     * network interface that the address is associated with, if any.</p> </li> <li>
-     * <p> <code>network-interface-owner-id</code> - The AWS account ID of the
+     * Local Zones, or Wavelength Zones from where Amazon Web Services advertises IP
+     * addresses. </p> </li> <li> <p> <code>network-interface-id</code> - [EC2-VPC] The
+     * ID of the network interface that the address is associated with, if any.</p>
+     * </li> <li> <p> <code>network-interface-owner-id</code> - The account ID of the
      * owner.</p> </li> <li> <p> <code>private-ip-address</code> - [EC2-VPC] The
      * private IP address associated with the Elastic IP address.</p> </li> <li> <p>
      * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.</p>

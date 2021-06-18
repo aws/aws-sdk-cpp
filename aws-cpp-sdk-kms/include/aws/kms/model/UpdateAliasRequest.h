@@ -108,9 +108,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
@@ -127,9 +127,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
@@ -146,9 +146,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
@@ -165,9 +165,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
@@ -184,9 +184,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
@@ -203,9 +203,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
@@ -222,9 +222,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct
@@ -241,9 +241,9 @@ namespace Model
      * managed CMK</a>.</p> <p>The CMK must be in the same AWS account and Region as
      * the alias. Also, the new target CMK must be the same type as the current target
      * CMK (both symmetric or both asymmetric) and they must have the same key usage.
-     * </p> <p>Specify the key ID or the Amazon Resource Name (ARN) of the CMK.</p>
-     * <p>For example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * </p> <p>Specify the key ID or key ARN of the CMK.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p> <p>To verify that the alias is mapped to the correct

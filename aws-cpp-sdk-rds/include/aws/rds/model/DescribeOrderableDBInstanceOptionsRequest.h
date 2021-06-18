@@ -47,9 +47,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -62,9 +62,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -77,9 +77,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -92,9 +92,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -107,9 +107,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -122,9 +122,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -137,9 +137,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -152,9 +152,9 @@ namespace Model
      * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
      * Aurora)</p> </li> <li> <p> <code>aurora-postgresql</code> </p> </li> <li> <p>
      * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-se2</code> </p> </li>
-     * <li> <p> <code>oracle-se1</code> </p> </li> <li> <p> <code>oracle-se</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
+     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
+     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -312,64 +312,64 @@ namespace Model
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
 
     /**
      * <p>The Availability Zone group associated with a Local Zone. Specify this
      * parameter to retrieve available offerings for the Local Zones in the group.</p>
-     * <p>Omit this parameter to show the available offerings in the specified AWS
-     * Region.</p>
+     * <p>Omit this parameter to show the available offerings in the specified Amazon
+     * Web Services Region.</p>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
 
