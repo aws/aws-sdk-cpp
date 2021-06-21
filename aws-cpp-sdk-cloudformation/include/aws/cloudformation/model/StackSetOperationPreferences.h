@@ -143,7 +143,7 @@ namespace Model
      * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
      * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p>
+     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline int GetFailureToleranceCount() const{ return m_failureToleranceCount; }
 
@@ -153,7 +153,7 @@ namespace Model
      * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
      * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p>
+     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline bool FailureToleranceCountHasBeenSet() const { return m_failureToleranceCountHasBeenSet; }
 
@@ -163,7 +163,7 @@ namespace Model
      * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
      * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p>
+     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline void SetFailureToleranceCount(int value) { m_failureToleranceCountHasBeenSet = true; m_failureToleranceCount = value; }
 
@@ -173,7 +173,7 @@ namespace Model
      * stopped in a Region, AWS CloudFormation doesn't attempt the operation in any
      * subsequent Regions.</p> <p>Conditional: You must specify either
      * <code>FailureToleranceCount</code> or <code>FailureTolerancePercentage</code>
-     * (but not both).</p>
+     * (but not both).</p> <p>By default, <code>0</code> is specified.</p>
      */
     inline StackSetOperationPreferences& WithFailureToleranceCount(int value) { SetFailureToleranceCount(value); return *this;}
 
@@ -186,7 +186,8 @@ namespace Model
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p>
+     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
+     * <code>0</code> is specified.</p>
      */
     inline int GetFailureTolerancePercentage() const{ return m_failureTolerancePercentage; }
 
@@ -198,7 +199,8 @@ namespace Model
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p>
+     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
+     * <code>0</code> is specified.</p>
      */
     inline bool FailureTolerancePercentageHasBeenSet() const { return m_failureTolerancePercentageHasBeenSet; }
 
@@ -210,7 +212,8 @@ namespace Model
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p>
+     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
+     * <code>0</code> is specified.</p>
      */
     inline void SetFailureTolerancePercentage(int value) { m_failureTolerancePercentageHasBeenSet = true; m_failureTolerancePercentage = value; }
 
@@ -222,7 +225,8 @@ namespace Model
      * accounts based on the specified percentage, AWS CloudFormation rounds
      * <i>down</i> to the next whole number.</p> <p>Conditional: You must specify
      * either <code>FailureToleranceCount</code> or
-     * <code>FailureTolerancePercentage</code>, but not both.</p>
+     * <code>FailureTolerancePercentage</code>, but not both.</p> <p>By default,
+     * <code>0</code> is specified.</p>
      */
     inline StackSetOperationPreferences& WithFailureTolerancePercentage(int value) { SetFailureTolerancePercentage(value); return *this;}
 
@@ -236,7 +240,7 @@ namespace Model
      * circumstances the actual number of accounts acted upon concurrently may be lower
      * due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline int GetMaxConcurrentCount() const{ return m_maxConcurrentCount; }
 
@@ -249,7 +253,7 @@ namespace Model
      * circumstances the actual number of accounts acted upon concurrently may be lower
      * due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline bool MaxConcurrentCountHasBeenSet() const { return m_maxConcurrentCountHasBeenSet; }
 
@@ -262,7 +266,7 @@ namespace Model
      * circumstances the actual number of accounts acted upon concurrently may be lower
      * due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline void SetMaxConcurrentCount(int value) { m_maxConcurrentCountHasBeenSet = true; m_maxConcurrentCount = value; }
 
@@ -275,7 +279,7 @@ namespace Model
      * circumstances the actual number of accounts acted upon concurrently may be lower
      * due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline StackSetOperationPreferences& WithMaxConcurrentCount(int value) { SetMaxConcurrentCount(value); return *this;}
 
@@ -290,7 +294,7 @@ namespace Model
      * certain circumstances the actual number of accounts acted upon concurrently may
      * be lower due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline int GetMaxConcurrentPercentage() const{ return m_maxConcurrentPercentage; }
 
@@ -304,7 +308,7 @@ namespace Model
      * certain circumstances the actual number of accounts acted upon concurrently may
      * be lower due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline bool MaxConcurrentPercentageHasBeenSet() const { return m_maxConcurrentPercentageHasBeenSet; }
 
@@ -318,7 +322,7 @@ namespace Model
      * certain circumstances the actual number of accounts acted upon concurrently may
      * be lower due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline void SetMaxConcurrentPercentage(int value) { m_maxConcurrentPercentageHasBeenSet = true; m_maxConcurrentPercentage = value; }
 
@@ -332,7 +336,7 @@ namespace Model
      * certain circumstances the actual number of accounts acted upon concurrently may
      * be lower due to service throttling.</p> <p>Conditional: You must specify either
      * <code>MaxConcurrentCount</code> or <code>MaxConcurrentPercentage</code>, but not
-     * both.</p>
+     * both.</p> <p>By default, <code>1</code> is specified.</p>
      */
     inline StackSetOperationPreferences& WithMaxConcurrentPercentage(int value) { SetMaxConcurrentPercentage(value); return *this;}
 

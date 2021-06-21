@@ -12,17 +12,21 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/cloudformation/model/ActivateTypeResult.h>
+#include <aws/cloudformation/model/BatchDescribeTypeConfigurationsResult.h>
 #include <aws/cloudformation/model/ContinueUpdateRollbackResult.h>
 #include <aws/cloudformation/model/CreateChangeSetResult.h>
 #include <aws/cloudformation/model/CreateStackResult.h>
 #include <aws/cloudformation/model/CreateStackInstancesResult.h>
 #include <aws/cloudformation/model/CreateStackSetResult.h>
+#include <aws/cloudformation/model/DeactivateTypeResult.h>
 #include <aws/cloudformation/model/DeleteChangeSetResult.h>
 #include <aws/cloudformation/model/DeleteStackInstancesResult.h>
 #include <aws/cloudformation/model/DeleteStackSetResult.h>
 #include <aws/cloudformation/model/DeregisterTypeResult.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
+#include <aws/cloudformation/model/DescribePublisherResult.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusResult.h>
 #include <aws/cloudformation/model/DescribeStackEventsResult.h>
 #include <aws/cloudformation/model/DescribeStackInstanceResult.h>
@@ -54,10 +58,14 @@
 #include <aws/cloudformation/model/ListTypeRegistrationsResult.h>
 #include <aws/cloudformation/model/ListTypeVersionsResult.h>
 #include <aws/cloudformation/model/ListTypesResult.h>
+#include <aws/cloudformation/model/PublishTypeResult.h>
 #include <aws/cloudformation/model/RecordHandlerProgressResult.h>
+#include <aws/cloudformation/model/RegisterPublisherResult.h>
 #include <aws/cloudformation/model/RegisterTypeResult.h>
+#include <aws/cloudformation/model/SetTypeConfigurationResult.h>
 #include <aws/cloudformation/model/SetTypeDefaultVersionResult.h>
 #include <aws/cloudformation/model/StopStackSetOperationResult.h>
+#include <aws/cloudformation/model/TestTypeResult.h>
 #include <aws/cloudformation/model/UpdateStackResult.h>
 #include <aws/cloudformation/model/UpdateStackInstancesResult.h>
 #include <aws/cloudformation/model/UpdateStackSetResult.h>
@@ -109,12 +117,15 @@ namespace CloudFormation
 
 namespace Model
 {
+        class ActivateTypeRequest;
+        class BatchDescribeTypeConfigurationsRequest;
         class CancelUpdateStackRequest;
         class ContinueUpdateRollbackRequest;
         class CreateChangeSetRequest;
         class CreateStackRequest;
         class CreateStackInstancesRequest;
         class CreateStackSetRequest;
+        class DeactivateTypeRequest;
         class DeleteChangeSetRequest;
         class DeleteStackRequest;
         class DeleteStackInstancesRequest;
@@ -122,6 +133,7 @@ namespace Model
         class DeregisterTypeRequest;
         class DescribeAccountLimitsRequest;
         class DescribeChangeSetRequest;
+        class DescribePublisherRequest;
         class DescribeStackDriftDetectionStatusRequest;
         class DescribeStackEventsRequest;
         class DescribeStackInstanceRequest;
@@ -153,24 +165,31 @@ namespace Model
         class ListTypeRegistrationsRequest;
         class ListTypeVersionsRequest;
         class ListTypesRequest;
+        class PublishTypeRequest;
         class RecordHandlerProgressRequest;
+        class RegisterPublisherRequest;
         class RegisterTypeRequest;
         class SetStackPolicyRequest;
+        class SetTypeConfigurationRequest;
         class SetTypeDefaultVersionRequest;
         class SignalResourceRequest;
         class StopStackSetOperationRequest;
+        class TestTypeRequest;
         class UpdateStackRequest;
         class UpdateStackInstancesRequest;
         class UpdateStackSetRequest;
         class UpdateTerminationProtectionRequest;
         class ValidateTemplateRequest;
 
+        typedef Aws::Utils::Outcome<ActivateTypeResult, CloudFormationError> ActivateTypeOutcome;
+        typedef Aws::Utils::Outcome<BatchDescribeTypeConfigurationsResult, CloudFormationError> BatchDescribeTypeConfigurationsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> CancelUpdateStackOutcome;
         typedef Aws::Utils::Outcome<ContinueUpdateRollbackResult, CloudFormationError> ContinueUpdateRollbackOutcome;
         typedef Aws::Utils::Outcome<CreateChangeSetResult, CloudFormationError> CreateChangeSetOutcome;
         typedef Aws::Utils::Outcome<CreateStackResult, CloudFormationError> CreateStackOutcome;
         typedef Aws::Utils::Outcome<CreateStackInstancesResult, CloudFormationError> CreateStackInstancesOutcome;
         typedef Aws::Utils::Outcome<CreateStackSetResult, CloudFormationError> CreateStackSetOutcome;
+        typedef Aws::Utils::Outcome<DeactivateTypeResult, CloudFormationError> DeactivateTypeOutcome;
         typedef Aws::Utils::Outcome<DeleteChangeSetResult, CloudFormationError> DeleteChangeSetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> DeleteStackOutcome;
         typedef Aws::Utils::Outcome<DeleteStackInstancesResult, CloudFormationError> DeleteStackInstancesOutcome;
@@ -178,6 +197,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeregisterTypeResult, CloudFormationError> DeregisterTypeOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, CloudFormationError> DescribeAccountLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeChangeSetResult, CloudFormationError> DescribeChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribePublisherResult, CloudFormationError> DescribePublisherOutcome;
         typedef Aws::Utils::Outcome<DescribeStackDriftDetectionStatusResult, CloudFormationError> DescribeStackDriftDetectionStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeStackEventsResult, CloudFormationError> DescribeStackEventsOutcome;
         typedef Aws::Utils::Outcome<DescribeStackInstanceResult, CloudFormationError> DescribeStackInstanceOutcome;
@@ -209,24 +229,31 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTypeRegistrationsResult, CloudFormationError> ListTypeRegistrationsOutcome;
         typedef Aws::Utils::Outcome<ListTypeVersionsResult, CloudFormationError> ListTypeVersionsOutcome;
         typedef Aws::Utils::Outcome<ListTypesResult, CloudFormationError> ListTypesOutcome;
+        typedef Aws::Utils::Outcome<PublishTypeResult, CloudFormationError> PublishTypeOutcome;
         typedef Aws::Utils::Outcome<RecordHandlerProgressResult, CloudFormationError> RecordHandlerProgressOutcome;
+        typedef Aws::Utils::Outcome<RegisterPublisherResult, CloudFormationError> RegisterPublisherOutcome;
         typedef Aws::Utils::Outcome<RegisterTypeResult, CloudFormationError> RegisterTypeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> SetStackPolicyOutcome;
+        typedef Aws::Utils::Outcome<SetTypeConfigurationResult, CloudFormationError> SetTypeConfigurationOutcome;
         typedef Aws::Utils::Outcome<SetTypeDefaultVersionResult, CloudFormationError> SetTypeDefaultVersionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, CloudFormationError> SignalResourceOutcome;
         typedef Aws::Utils::Outcome<StopStackSetOperationResult, CloudFormationError> StopStackSetOperationOutcome;
+        typedef Aws::Utils::Outcome<TestTypeResult, CloudFormationError> TestTypeOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, CloudFormationError> UpdateStackOutcome;
         typedef Aws::Utils::Outcome<UpdateStackInstancesResult, CloudFormationError> UpdateStackInstancesOutcome;
         typedef Aws::Utils::Outcome<UpdateStackSetResult, CloudFormationError> UpdateStackSetOutcome;
         typedef Aws::Utils::Outcome<UpdateTerminationProtectionResult, CloudFormationError> UpdateTerminationProtectionOutcome;
         typedef Aws::Utils::Outcome<ValidateTemplateResult, CloudFormationError> ValidateTemplateOutcome;
 
+        typedef std::future<ActivateTypeOutcome> ActivateTypeOutcomeCallable;
+        typedef std::future<BatchDescribeTypeConfigurationsOutcome> BatchDescribeTypeConfigurationsOutcomeCallable;
         typedef std::future<CancelUpdateStackOutcome> CancelUpdateStackOutcomeCallable;
         typedef std::future<ContinueUpdateRollbackOutcome> ContinueUpdateRollbackOutcomeCallable;
         typedef std::future<CreateChangeSetOutcome> CreateChangeSetOutcomeCallable;
         typedef std::future<CreateStackOutcome> CreateStackOutcomeCallable;
         typedef std::future<CreateStackInstancesOutcome> CreateStackInstancesOutcomeCallable;
         typedef std::future<CreateStackSetOutcome> CreateStackSetOutcomeCallable;
+        typedef std::future<DeactivateTypeOutcome> DeactivateTypeOutcomeCallable;
         typedef std::future<DeleteChangeSetOutcome> DeleteChangeSetOutcomeCallable;
         typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
         typedef std::future<DeleteStackInstancesOutcome> DeleteStackInstancesOutcomeCallable;
@@ -234,6 +261,7 @@ namespace Model
         typedef std::future<DeregisterTypeOutcome> DeregisterTypeOutcomeCallable;
         typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
         typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
+        typedef std::future<DescribePublisherOutcome> DescribePublisherOutcomeCallable;
         typedef std::future<DescribeStackDriftDetectionStatusOutcome> DescribeStackDriftDetectionStatusOutcomeCallable;
         typedef std::future<DescribeStackEventsOutcome> DescribeStackEventsOutcomeCallable;
         typedef std::future<DescribeStackInstanceOutcome> DescribeStackInstanceOutcomeCallable;
@@ -265,12 +293,16 @@ namespace Model
         typedef std::future<ListTypeRegistrationsOutcome> ListTypeRegistrationsOutcomeCallable;
         typedef std::future<ListTypeVersionsOutcome> ListTypeVersionsOutcomeCallable;
         typedef std::future<ListTypesOutcome> ListTypesOutcomeCallable;
+        typedef std::future<PublishTypeOutcome> PublishTypeOutcomeCallable;
         typedef std::future<RecordHandlerProgressOutcome> RecordHandlerProgressOutcomeCallable;
+        typedef std::future<RegisterPublisherOutcome> RegisterPublisherOutcomeCallable;
         typedef std::future<RegisterTypeOutcome> RegisterTypeOutcomeCallable;
         typedef std::future<SetStackPolicyOutcome> SetStackPolicyOutcomeCallable;
+        typedef std::future<SetTypeConfigurationOutcome> SetTypeConfigurationOutcomeCallable;
         typedef std::future<SetTypeDefaultVersionOutcome> SetTypeDefaultVersionOutcomeCallable;
         typedef std::future<SignalResourceOutcome> SignalResourceOutcomeCallable;
         typedef std::future<StopStackSetOperationOutcome> StopStackSetOperationOutcomeCallable;
+        typedef std::future<TestTypeOutcome> TestTypeOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
         typedef std::future<UpdateStackInstancesOutcome> UpdateStackInstancesOutcomeCallable;
         typedef std::future<UpdateStackSetOutcome> UpdateStackSetOutcomeCallable;
@@ -280,12 +312,15 @@ namespace Model
 
   class CloudFormationClient;
 
+    typedef std::function<void(const CloudFormationClient*, const Model::ActivateTypeRequest&, const Model::ActivateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ActivateTypeResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::BatchDescribeTypeConfigurationsRequest&, const Model::BatchDescribeTypeConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeTypeConfigurationsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CancelUpdateStackRequest&, const Model::CancelUpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelUpdateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ContinueUpdateRollbackRequest&, const Model::ContinueUpdateRollbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ContinueUpdateRollbackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateChangeSetRequest&, const Model::CreateChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackRequest&, const Model::CreateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackInstancesRequest&, const Model::CreateStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackInstancesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::CreateStackSetRequest&, const Model::CreateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStackSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DeactivateTypeRequest&, const Model::DeactivateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeactivateTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteChangeSetRequest&, const Model::DeleteChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackInstancesRequest&, const Model::DeleteStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackInstancesResponseReceivedHandler;
@@ -293,6 +328,7 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::DeregisterTypeRequest&, const Model::DeregisterTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeChangeSetRequest&, const Model::DescribeChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChangeSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribePublisherRequest&, const Model::DescribePublisherOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePublisherResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackDriftDetectionStatusRequest&, const Model::DescribeStackDriftDetectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackDriftDetectionStatusResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackEventsRequest&, const Model::DescribeStackEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackEventsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackInstanceRequest&, const Model::DescribeStackInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackInstanceResponseReceivedHandler;
@@ -324,12 +360,16 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::ListTypeRegistrationsRequest&, const Model::ListTypeRegistrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypeRegistrationsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListTypeVersionsRequest&, const Model::ListTypeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypeVersionsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListTypesRequest&, const Model::ListTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::PublishTypeRequest&, const Model::PublishTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::RecordHandlerProgressRequest&, const Model::RecordHandlerProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecordHandlerProgressResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::RegisterPublisherRequest&, const Model::RegisterPublisherOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterPublisherResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::RegisterTypeRequest&, const Model::RegisterTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetStackPolicyRequest&, const Model::SetStackPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetStackPolicyResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::SetTypeConfigurationRequest&, const Model::SetTypeConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTypeConfigurationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetTypeDefaultVersionRequest&, const Model::SetTypeDefaultVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTypeDefaultVersionResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SignalResourceRequest&, const Model::SignalResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignalResourceResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::StopStackSetOperationRequest&, const Model::StopStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStackSetOperationResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::TestTypeRequest&, const Model::TestTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackInstancesRequest&, const Model::UpdateStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackInstancesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackSetRequest&, const Model::UpdateStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackSetResponseReceivedHandler;
@@ -386,6 +426,101 @@ namespace Model
         */
         Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
 
+
+        /**
+         * <p>Activates a public third-party extension, making it available for use in
+         * stack templates. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
+         * public extensions</a> in the <i>CloudFormation User Guide</i>.</p> <p>Once you
+         * have activated a public third-party extension in your account and region, use <a
+         * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+         * to specify configuration properties for the extension. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ActivateTypeOutcome ActivateType(const Model::ActivateTypeRequest& request) const;
+
+        /**
+         * <p>Activates a public third-party extension, making it available for use in
+         * stack templates. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
+         * public extensions</a> in the <i>CloudFormation User Guide</i>.</p> <p>Once you
+         * have activated a public third-party extension in your account and region, use <a
+         * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+         * to specify configuration properties for the extension. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ActivateTypeOutcomeCallable ActivateTypeCallable(const Model::ActivateTypeRequest& request) const;
+
+        /**
+         * <p>Activates a public third-party extension, making it available for use in
+         * stack templates. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
+         * public extensions</a> in the <i>CloudFormation User Guide</i>.</p> <p>Once you
+         * have activated a public third-party extension in your account and region, use <a
+         * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+         * to specify configuration properties for the extension. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ActivateTypeAsync(const Model::ActivateTypeRequest& request, const ActivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns configuration data for the specified CloudFormation extensions, from
+         * the CloudFormation registry for the account and region.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDescribeTypeConfigurationsOutcome BatchDescribeTypeConfigurations(const Model::BatchDescribeTypeConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns configuration data for the specified CloudFormation extensions, from
+         * the CloudFormation registry for the account and region.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDescribeTypeConfigurationsOutcomeCallable BatchDescribeTypeConfigurationsCallable(const Model::BatchDescribeTypeConfigurationsRequest& request) const;
+
+        /**
+         * <p>Returns configuration data for the specified CloudFormation extensions, from
+         * the CloudFormation registry for the account and region.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/BatchDescribeTypeConfigurations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDescribeTypeConfigurationsAsync(const Model::BatchDescribeTypeConfigurationsRequest& request, const BatchDescribeTypeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels an update on the specified stack. If the call completes successfully,
@@ -664,6 +799,46 @@ namespace Model
         virtual void CreateStackSetAsync(const Model::CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deactivates a public extension that was previously activated in this account
+         * and region.</p> <p>Once deactivated, an extension cannot be used in any
+         * CloudFormation operation. This includes stack update operations where the stack
+         * template includes the extension, even if no updates are being made to the
+         * extension. In addition, deactivated extensions are not automatically updated if
+         * a new version of the extension is released.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeactivateTypeOutcome DeactivateType(const Model::DeactivateTypeRequest& request) const;
+
+        /**
+         * <p>Deactivates a public extension that was previously activated in this account
+         * and region.</p> <p>Once deactivated, an extension cannot be used in any
+         * CloudFormation operation. This includes stack update operations where the stack
+         * template includes the extension, even if no updates are being made to the
+         * extension. In addition, deactivated extensions are not automatically updated if
+         * a new version of the extension is released.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeactivateTypeOutcomeCallable DeactivateTypeCallable(const Model::DeactivateTypeRequest& request) const;
+
+        /**
+         * <p>Deactivates a public extension that was previously activated in this account
+         * and region.</p> <p>Once deactivated, an extension cannot be used in any
+         * CloudFormation operation. This includes stack update operations where the stack
+         * template includes the extension, even if no updates are being made to the
+         * extension. In addition, deactivated extensions are not automatically updated if
+         * a new version of the extension is released.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeactivateTypeAsync(const Model::DeactivateTypeRequest& request, const DeactivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified change set. Deleting change sets ensures that no one
          * executes the wrong change set.</p> <p>If the call successfully completes, AWS
          * CloudFormation successfully deleted the change set.</p> <p>If
@@ -939,6 +1114,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeChangeSetAsync(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about a CloudFormation extension publisher.</p> <p>If you
+         * do not supply a <code>PublisherId</code>, and you have registered as an
+         * extension publisher, <code>DescribePublisher</code> returns information about
+         * your own publisher account. </p> <p>For more information on registering as a
+         * publisher, see:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePublisherOutcome DescribePublisher(const Model::DescribePublisherRequest& request) const;
+
+        /**
+         * <p>Returns information about a CloudFormation extension publisher.</p> <p>If you
+         * do not supply a <code>PublisherId</code>, and you have registered as an
+         * extension publisher, <code>DescribePublisher</code> returns information about
+         * your own publisher account. </p> <p>For more information on registering as a
+         * publisher, see:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePublisherOutcomeCallable DescribePublisherCallable(const Model::DescribePublisherRequest& request) const;
+
+        /**
+         * <p>Returns information about a CloudFormation extension publisher.</p> <p>If you
+         * do not supply a <code>PublisherId</code>, and you have registered as an
+         * extension publisher, <code>DescribePublisher</code> returns information about
+         * your own publisher account. </p> <p>For more information on registering as a
+         * publisher, see:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribePublisher">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePublisherAsync(const Model::DescribePublisherRequest& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a stack drift detection operation. A stack drift
@@ -2310,6 +2537,55 @@ namespace Model
         virtual void ListTypesAsync(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Publishes the specified extension to the CloudFormation registry as a public
+         * extension in this region. Public extensions are available for use by all
+         * CloudFormation users. For more information on publishing extensions, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p> <p>To publish an extension, you must be registered as a
+         * publisher with CloudFormation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PublishTypeOutcome PublishType(const Model::PublishTypeRequest& request) const;
+
+        /**
+         * <p>Publishes the specified extension to the CloudFormation registry as a public
+         * extension in this region. Public extensions are available for use by all
+         * CloudFormation users. For more information on publishing extensions, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p> <p>To publish an extension, you must be registered as a
+         * publisher with CloudFormation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PublishTypeOutcomeCallable PublishTypeCallable(const Model::PublishTypeRequest& request) const;
+
+        /**
+         * <p>Publishes the specified extension to the CloudFormation registry as a public
+         * extension in this region. Public extensions are available for use by all
+         * CloudFormation users. For more information on publishing extensions, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p> <p>To publish an extension, you must be registered as a
+         * publisher with CloudFormation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PublishTypeAsync(const Model::PublishTypeRequest& request, const PublishTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Reports progress of a resource handler to CloudFormation.</p> <p>Reserved for
          * use by the <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
@@ -2344,6 +2620,52 @@ namespace Model
         virtual void RecordHandlerProgressAsync(const Model::RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Registers your account as a publisher of public extensions in the
+         * CloudFormation registry. Public extensions are available for use by all
+         * CloudFormation users. This publisher ID applies to your account in all AWS
+         * regions.</p> <p>For information on requirements for registering as a public
+         * extension publisher, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
+         * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterPublisherOutcome RegisterPublisher(const Model::RegisterPublisherRequest& request) const;
+
+        /**
+         * <p>Registers your account as a publisher of public extensions in the
+         * CloudFormation registry. Public extensions are available for use by all
+         * CloudFormation users. This publisher ID applies to your account in all AWS
+         * regions.</p> <p>For information on requirements for registering as a public
+         * extension publisher, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
+         * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterPublisherOutcomeCallable RegisterPublisherCallable(const Model::RegisterPublisherRequest& request) const;
+
+        /**
+         * <p>Registers your account as a publisher of public extensions in the
+         * CloudFormation registry. Public extensions are available for use by all
+         * CloudFormation users. This publisher ID applies to your account in all AWS
+         * regions.</p> <p>For information on requirements for registering as a public
+         * extension publisher, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering
+         * your account to publish CloudFormation extensions</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p> <p/><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterPublisher">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterPublisherAsync(const Model::RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Registers an extension with the CloudFormation service. Registering an
          * extension makes it available for use in CloudFormation templates in your AWS
          * account, and includes:</p> <ul> <li> <p>Validating the extension schema</p>
@@ -2359,7 +2681,14 @@ namespace Model
          * to deregister specific extension versions if necessary.</p> <p>Once you have
          * initiated a registration request using <code> <a>RegisterType</a> </code>, you
          * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * of the registration request.</p> <p>Once you have registered a private extension
+         * in your account and region, use <a
+         * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+         * to specify configuration properties for the extension. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
          * API Reference</a></p>
          */
@@ -2381,7 +2710,14 @@ namespace Model
          * to deregister specific extension versions if necessary.</p> <p>Once you have
          * initiated a registration request using <code> <a>RegisterType</a> </code>, you
          * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * of the registration request.</p> <p>Once you have registered a private extension
+         * in your account and region, use <a
+         * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+         * to specify configuration properties for the extension. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
          * API Reference</a></p>
          *
@@ -2405,7 +2741,14 @@ namespace Model
          * to deregister specific extension versions if necessary.</p> <p>Once you have
          * initiated a registration request using <code> <a>RegisterType</a> </code>, you
          * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * of the registration request.</p> <p>Once you have registered a private extension
+         * in your account and region, use <a
+         * href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+         * to specify configuration properties for the extension. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
          * API Reference</a></p>
          *
@@ -2437,6 +2780,67 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetStackPolicyAsync(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Specifies the configuration data for a registered CloudFormation extension,
+         * in the given account and region.</p> <p>To view the current configuration data
+         * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
+         * href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
+         *  <p>It is strongly recommended that you use dynamic references to
+         * restrict sensitive configuration definitions, such as third-party credentials.
+         * For more details on dynamic references, see <a
+         * href="https://docs.aws.amazon.com/">Using dynamic references to specify template
+         * values</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetTypeConfigurationOutcome SetTypeConfiguration(const Model::SetTypeConfigurationRequest& request) const;
+
+        /**
+         * <p>Specifies the configuration data for a registered CloudFormation extension,
+         * in the given account and region.</p> <p>To view the current configuration data
+         * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
+         * href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
+         *  <p>It is strongly recommended that you use dynamic references to
+         * restrict sensitive configuration definitions, such as third-party credentials.
+         * For more details on dynamic references, see <a
+         * href="https://docs.aws.amazon.com/">Using dynamic references to specify template
+         * values</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetTypeConfigurationOutcomeCallable SetTypeConfigurationCallable(const Model::SetTypeConfigurationRequest& request) const;
+
+        /**
+         * <p>Specifies the configuration data for a registered CloudFormation extension,
+         * in the given account and region.</p> <p>To view the current configuration data
+         * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
+         * href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+         * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
+         *  <p>It is strongly recommended that you use dynamic references to
+         * restrict sensitive configuration definitions, such as third-party credentials.
+         * For more details on dynamic references, see <a
+         * href="https://docs.aws.amazon.com/">Using dynamic references to specify template
+         * values</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetTypeConfigurationAsync(const Model::SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specify the default version of an extension. The default version of an
@@ -2539,6 +2943,94 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopStackSetOperationAsync(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Tests a registered extension to make sure it meets all necessary requirements
+         * for being published in the CloudFormation registry.</p> <ul> <li> <p>For
+         * resource types, this includes passing all contracts tests defined for the
+         * type.</p> </li> <li> <p>For modules, this includes determining if the module's
+         * model meets all necessary requirements.</p> </li> </ul> <p>For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
+         * your public extension prior to publishing</a> in the <i>CloudFormation CLI User
+         * Guide</i>.</p> <p>If you do not specify a version, CloudFormation uses the
+         * default version of the extension in your account and region for testing.</p>
+         * <p>To perform testing, CloudFormation assumes the execution role specified when
+         * the test was registered. For more information, see <a
+         * href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+         * <p>Once you've initiated testing on an extension using <code>TestType</code>,
+         * you can use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+         * to monitor the current test status and test status description for the
+         * extension.</p> <p>An extension must have a test status of <code>PASSED</code>
+         * before it can be published. For more information, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TestTypeOutcome TestType(const Model::TestTypeRequest& request) const;
+
+        /**
+         * <p>Tests a registered extension to make sure it meets all necessary requirements
+         * for being published in the CloudFormation registry.</p> <ul> <li> <p>For
+         * resource types, this includes passing all contracts tests defined for the
+         * type.</p> </li> <li> <p>For modules, this includes determining if the module's
+         * model meets all necessary requirements.</p> </li> </ul> <p>For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
+         * your public extension prior to publishing</a> in the <i>CloudFormation CLI User
+         * Guide</i>.</p> <p>If you do not specify a version, CloudFormation uses the
+         * default version of the extension in your account and region for testing.</p>
+         * <p>To perform testing, CloudFormation assumes the execution role specified when
+         * the test was registered. For more information, see <a
+         * href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+         * <p>Once you've initiated testing on an extension using <code>TestType</code>,
+         * you can use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+         * to monitor the current test status and test status description for the
+         * extension.</p> <p>An extension must have a test status of <code>PASSED</code>
+         * before it can be published. For more information, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TestTypeOutcomeCallable TestTypeCallable(const Model::TestTypeRequest& request) const;
+
+        /**
+         * <p>Tests a registered extension to make sure it meets all necessary requirements
+         * for being published in the CloudFormation registry.</p> <ul> <li> <p>For
+         * resource types, this includes passing all contracts tests defined for the
+         * type.</p> </li> <li> <p>For modules, this includes determining if the module's
+         * model meets all necessary requirements.</p> </li> </ul> <p>For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-testing">Testing
+         * your public extension prior to publishing</a> in the <i>CloudFormation CLI User
+         * Guide</i>.</p> <p>If you do not specify a version, CloudFormation uses the
+         * default version of the extension in your account and region for testing.</p>
+         * <p>To perform testing, CloudFormation assumes the execution role specified when
+         * the test was registered. For more information, see <a
+         * href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+         * <p>Once you've initiated testing on an extension using <code>TestType</code>,
+         * you can use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+         * to monitor the current test status and test status description for the
+         * extension.</p> <p>An extension must have a test status of <code>PASSED</code>
+         * before it can be published. For more information, see <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
+         * extensions to make them available for public use</a> in the <i>CloudFormation
+         * CLI User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/TestType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TestTypeAsync(const Model::TestTypeRequest& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a stack as specified in the template. After the call completes
@@ -2789,12 +3281,15 @@ namespace Model
         void OverrideEndpoint(const Aws::String& endpoint);
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void ActivateTypeAsyncHelper(const Model::ActivateTypeRequest& request, const ActivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchDescribeTypeConfigurationsAsyncHelper(const Model::BatchDescribeTypeConfigurationsRequest& request, const BatchDescribeTypeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelUpdateStackAsyncHelper(const Model::CancelUpdateStackRequest& request, const CancelUpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ContinueUpdateRollbackAsyncHelper(const Model::ContinueUpdateRollbackRequest& request, const ContinueUpdateRollbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateChangeSetAsyncHelper(const Model::CreateChangeSetRequest& request, const CreateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackAsyncHelper(const Model::CreateStackRequest& request, const CreateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackInstancesAsyncHelper(const Model::CreateStackInstancesRequest& request, const CreateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStackSetAsyncHelper(const Model::CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeactivateTypeAsyncHelper(const Model::DeactivateTypeRequest& request, const DeactivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChangeSetAsyncHelper(const Model::DeleteChangeSetRequest& request, const DeleteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackInstancesAsyncHelper(const Model::DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2802,6 +3297,7 @@ namespace Model
         void DeregisterTypeAsyncHelper(const Model::DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChangeSetAsyncHelper(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePublisherAsyncHelper(const Model::DescribePublisherRequest& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackDriftDetectionStatusAsyncHelper(const Model::DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackEventsAsyncHelper(const Model::DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackInstanceAsyncHelper(const Model::DescribeStackInstanceRequest& request, const DescribeStackInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2833,12 +3329,16 @@ namespace Model
         void ListTypeRegistrationsAsyncHelper(const Model::ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTypeVersionsAsyncHelper(const Model::ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTypesAsyncHelper(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PublishTypeAsyncHelper(const Model::PublishTypeRequest& request, const PublishTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RecordHandlerProgressAsyncHelper(const Model::RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterPublisherAsyncHelper(const Model::RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTypeAsyncHelper(const Model::RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetStackPolicyAsyncHelper(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetTypeConfigurationAsyncHelper(const Model::SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetTypeDefaultVersionAsyncHelper(const Model::SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SignalResourceAsyncHelper(const Model::SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStackSetOperationAsyncHelper(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TestTypeAsyncHelper(const Model::TestTypeRequest& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackInstancesAsyncHelper(const Model::UpdateStackInstancesRequest& request, const UpdateStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackSetAsyncHelper(const Model::UpdateStackSetRequest& request, const UpdateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

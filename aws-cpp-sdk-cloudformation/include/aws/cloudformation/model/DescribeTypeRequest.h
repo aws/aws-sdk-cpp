@@ -260,6 +260,96 @@ namespace Model
      */
     inline DescribeTypeRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline const Aws::String& GetPublisherId() const{ return m_publisherId; }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline bool PublisherIdHasBeenSet() const { return m_publisherIdHasBeenSet; }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline void SetPublisherId(const Aws::String& value) { m_publisherIdHasBeenSet = true; m_publisherId = value; }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline void SetPublisherId(Aws::String&& value) { m_publisherIdHasBeenSet = true; m_publisherId = std::move(value); }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline void SetPublisherId(const char* value) { m_publisherIdHasBeenSet = true; m_publisherId.assign(value); }
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline DescribeTypeRequest& WithPublisherId(const Aws::String& value) { SetPublisherId(value); return *this;}
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline DescribeTypeRequest& WithPublisherId(Aws::String&& value) { SetPublisherId(std::move(value)); return *this;}
+
+    /**
+     * <p>The publisher ID of the extension publisher.</p> <p>Extensions provided by
+     * Amazon are not assigned a publisher ID.</p>
+     */
+    inline DescribeTypeRequest& WithPublisherId(const char* value) { SetPublisherId(value); return *this;}
+
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline const Aws::String& GetPublicVersionNumber() const{ return m_publicVersionNumber; }
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline bool PublicVersionNumberHasBeenSet() const { return m_publicVersionNumberHasBeenSet; }
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline void SetPublicVersionNumber(const Aws::String& value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber = value; }
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline void SetPublicVersionNumber(Aws::String&& value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber = std::move(value); }
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline void SetPublicVersionNumber(const char* value) { m_publicVersionNumberHasBeenSet = true; m_publicVersionNumber.assign(value); }
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline DescribeTypeRequest& WithPublicVersionNumber(const Aws::String& value) { SetPublicVersionNumber(value); return *this;}
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline DescribeTypeRequest& WithPublicVersionNumber(Aws::String&& value) { SetPublicVersionNumber(std::move(value)); return *this;}
+
+    /**
+     * <p>The version number of a public third-party extension.</p>
+     */
+    inline DescribeTypeRequest& WithPublicVersionNumber(const char* value) { SetPublicVersionNumber(value); return *this;}
+
   private:
 
     RegistryType m_type;
@@ -273,6 +363,12 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet;
+
+    Aws::String m_publisherId;
+    bool m_publisherIdHasBeenSet;
+
+    Aws::String m_publicVersionNumber;
+    bool m_publicVersionNumberHasBeenSet;
   };
 
 } // namespace Model

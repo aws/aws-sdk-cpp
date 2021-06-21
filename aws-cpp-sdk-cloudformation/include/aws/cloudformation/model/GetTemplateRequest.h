@@ -177,7 +177,7 @@ namespace Model
      * processed all transforms, specify <code>Processed</code>. </p> <p>If the
      * template doesn't include transforms, <code>Original</code> and
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
-     * specifies <code>Original</code>. </p>
+     * specifies <code>Processed</code>.</p>
      */
     inline const TemplateStage& GetTemplateStage() const{ return m_templateStage; }
 
@@ -188,7 +188,7 @@ namespace Model
      * processed all transforms, specify <code>Processed</code>. </p> <p>If the
      * template doesn't include transforms, <code>Original</code> and
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
-     * specifies <code>Original</code>. </p>
+     * specifies <code>Processed</code>.</p>
      */
     inline bool TemplateStageHasBeenSet() const { return m_templateStageHasBeenSet; }
 
@@ -199,7 +199,7 @@ namespace Model
      * processed all transforms, specify <code>Processed</code>. </p> <p>If the
      * template doesn't include transforms, <code>Original</code> and
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
-     * specifies <code>Original</code>. </p>
+     * specifies <code>Processed</code>.</p>
      */
     inline void SetTemplateStage(const TemplateStage& value) { m_templateStageHasBeenSet = true; m_templateStage = value; }
 
@@ -210,7 +210,7 @@ namespace Model
      * processed all transforms, specify <code>Processed</code>. </p> <p>If the
      * template doesn't include transforms, <code>Original</code> and
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
-     * specifies <code>Original</code>. </p>
+     * specifies <code>Processed</code>.</p>
      */
     inline void SetTemplateStage(TemplateStage&& value) { m_templateStageHasBeenSet = true; m_templateStage = std::move(value); }
 
@@ -221,7 +221,7 @@ namespace Model
      * processed all transforms, specify <code>Processed</code>. </p> <p>If the
      * template doesn't include transforms, <code>Original</code> and
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
-     * specifies <code>Original</code>. </p>
+     * specifies <code>Processed</code>.</p>
      */
     inline GetTemplateRequest& WithTemplateStage(const TemplateStage& value) { SetTemplateStage(value); return *this;}
 
@@ -232,7 +232,7 @@ namespace Model
      * processed all transforms, specify <code>Processed</code>. </p> <p>If the
      * template doesn't include transforms, <code>Original</code> and
      * <code>Processed</code> return the same template. By default, AWS CloudFormation
-     * specifies <code>Original</code>. </p>
+     * specifies <code>Processed</code>.</p>
      */
     inline GetTemplateRequest& WithTemplateStage(TemplateStage&& value) { SetTemplateStage(std::move(value)); return *this;}
 

@@ -20,12 +20,15 @@
 #include <aws/cloudformation/CloudFormationClient.h>
 #include <aws/cloudformation/CloudFormationEndpoint.h>
 #include <aws/cloudformation/CloudFormationErrorMarshaller.h>
+#include <aws/cloudformation/model/ActivateTypeRequest.h>
+#include <aws/cloudformation/model/BatchDescribeTypeConfigurationsRequest.h>
 #include <aws/cloudformation/model/CancelUpdateStackRequest.h>
 #include <aws/cloudformation/model/ContinueUpdateRollbackRequest.h>
 #include <aws/cloudformation/model/CreateChangeSetRequest.h>
 #include <aws/cloudformation/model/CreateStackRequest.h>
 #include <aws/cloudformation/model/CreateStackInstancesRequest.h>
 #include <aws/cloudformation/model/CreateStackSetRequest.h>
+#include <aws/cloudformation/model/DeactivateTypeRequest.h>
 #include <aws/cloudformation/model/DeleteChangeSetRequest.h>
 #include <aws/cloudformation/model/DeleteStackRequest.h>
 #include <aws/cloudformation/model/DeleteStackInstancesRequest.h>
@@ -33,6 +36,7 @@
 #include <aws/cloudformation/model/DeregisterTypeRequest.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
 #include <aws/cloudformation/model/DescribeChangeSetRequest.h>
+#include <aws/cloudformation/model/DescribePublisherRequest.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusRequest.h>
 #include <aws/cloudformation/model/DescribeStackEventsRequest.h>
 #include <aws/cloudformation/model/DescribeStackInstanceRequest.h>
@@ -64,12 +68,16 @@
 #include <aws/cloudformation/model/ListTypeRegistrationsRequest.h>
 #include <aws/cloudformation/model/ListTypeVersionsRequest.h>
 #include <aws/cloudformation/model/ListTypesRequest.h>
+#include <aws/cloudformation/model/PublishTypeRequest.h>
 #include <aws/cloudformation/model/RecordHandlerProgressRequest.h>
+#include <aws/cloudformation/model/RegisterPublisherRequest.h>
 #include <aws/cloudformation/model/RegisterTypeRequest.h>
 #include <aws/cloudformation/model/SetStackPolicyRequest.h>
+#include <aws/cloudformation/model/SetTypeConfigurationRequest.h>
 #include <aws/cloudformation/model/SetTypeDefaultVersionRequest.h>
 #include <aws/cloudformation/model/SignalResourceRequest.h>
 #include <aws/cloudformation/model/StopStackSetOperationRequest.h>
+#include <aws/cloudformation/model/TestTypeRequest.h>
 #include <aws/cloudformation/model/UpdateStackRequest.h>
 #include <aws/cloudformation/model/UpdateStackInstancesRequest.h>
 #include <aws/cloudformation/model/UpdateStackSetRequest.h>
@@ -158,6 +166,54 @@ Aws::String CloudFormationClient::ConvertRequestToPresignedUrl(const AmazonSeria
 
   URI uri(ss.str());
   return GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, region, 3600);
+}
+
+ActivateTypeOutcome CloudFormationClient::ActivateType(const ActivateTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return ActivateTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+ActivateTypeOutcomeCallable CloudFormationClient::ActivateTypeCallable(const ActivateTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ActivateTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ActivateType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::ActivateTypeAsync(const ActivateTypeRequest& request, const ActivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ActivateTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::ActivateTypeAsyncHelper(const ActivateTypeRequest& request, const ActivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ActivateType(request), context);
+}
+
+BatchDescribeTypeConfigurationsOutcome CloudFormationClient::BatchDescribeTypeConfigurations(const BatchDescribeTypeConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return BatchDescribeTypeConfigurationsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+BatchDescribeTypeConfigurationsOutcomeCallable CloudFormationClient::BatchDescribeTypeConfigurationsCallable(const BatchDescribeTypeConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDescribeTypeConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDescribeTypeConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::BatchDescribeTypeConfigurationsAsync(const BatchDescribeTypeConfigurationsRequest& request, const BatchDescribeTypeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDescribeTypeConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::BatchDescribeTypeConfigurationsAsyncHelper(const BatchDescribeTypeConfigurationsRequest& request, const BatchDescribeTypeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDescribeTypeConfigurations(request), context);
 }
 
 CancelUpdateStackOutcome CloudFormationClient::CancelUpdateStack(const CancelUpdateStackRequest& request) const
@@ -302,6 +358,30 @@ void CloudFormationClient::CreateStackSetAsync(const CreateStackSetRequest& requ
 void CloudFormationClient::CreateStackSetAsyncHelper(const CreateStackSetRequest& request, const CreateStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateStackSet(request), context);
+}
+
+DeactivateTypeOutcome CloudFormationClient::DeactivateType(const DeactivateTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DeactivateTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DeactivateTypeOutcomeCallable CloudFormationClient::DeactivateTypeCallable(const DeactivateTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeactivateTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeactivateType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DeactivateTypeAsync(const DeactivateTypeRequest& request, const DeactivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeactivateTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DeactivateTypeAsyncHelper(const DeactivateTypeRequest& request, const DeactivateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeactivateType(request), context);
 }
 
 DeleteChangeSetOutcome CloudFormationClient::DeleteChangeSet(const DeleteChangeSetRequest& request) const
@@ -470,6 +550,30 @@ void CloudFormationClient::DescribeChangeSetAsync(const DescribeChangeSetRequest
 void CloudFormationClient::DescribeChangeSetAsyncHelper(const DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeChangeSet(request), context);
+}
+
+DescribePublisherOutcome CloudFormationClient::DescribePublisher(const DescribePublisherRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return DescribePublisherOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+DescribePublisherOutcomeCallable CloudFormationClient::DescribePublisherCallable(const DescribePublisherRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePublisherOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePublisher(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DescribePublisherAsync(const DescribePublisherRequest& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePublisherAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DescribePublisherAsyncHelper(const DescribePublisherRequest& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePublisher(request), context);
 }
 
 DescribeStackDriftDetectionStatusOutcome CloudFormationClient::DescribeStackDriftDetectionStatus(const DescribeStackDriftDetectionStatusRequest& request) const
@@ -1216,6 +1320,30 @@ void CloudFormationClient::ListTypesAsyncHelper(const ListTypesRequest& request,
   handler(this, request, ListTypes(request), context);
 }
 
+PublishTypeOutcome CloudFormationClient::PublishType(const PublishTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return PublishTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+PublishTypeOutcomeCallable CloudFormationClient::PublishTypeCallable(const PublishTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PublishTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::PublishTypeAsync(const PublishTypeRequest& request, const PublishTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PublishTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::PublishTypeAsyncHelper(const PublishTypeRequest& request, const PublishTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PublishType(request), context);
+}
+
 RecordHandlerProgressOutcome CloudFormationClient::RecordHandlerProgress(const RecordHandlerProgressRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1238,6 +1366,30 @@ void CloudFormationClient::RecordHandlerProgressAsync(const RecordHandlerProgres
 void CloudFormationClient::RecordHandlerProgressAsyncHelper(const RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RecordHandlerProgress(request), context);
+}
+
+RegisterPublisherOutcome CloudFormationClient::RegisterPublisher(const RegisterPublisherRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return RegisterPublisherOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+RegisterPublisherOutcomeCallable CloudFormationClient::RegisterPublisherCallable(const RegisterPublisherRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterPublisherOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterPublisher(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::RegisterPublisherAsync(const RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterPublisherAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::RegisterPublisherAsyncHelper(const RegisterPublisherRequest& request, const RegisterPublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterPublisher(request), context);
 }
 
 RegisterTypeOutcome CloudFormationClient::RegisterType(const RegisterTypeRequest& request) const
@@ -1286,6 +1438,30 @@ void CloudFormationClient::SetStackPolicyAsync(const SetStackPolicyRequest& requ
 void CloudFormationClient::SetStackPolicyAsyncHelper(const SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetStackPolicy(request), context);
+}
+
+SetTypeConfigurationOutcome CloudFormationClient::SetTypeConfiguration(const SetTypeConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return SetTypeConfigurationOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+SetTypeConfigurationOutcomeCallable CloudFormationClient::SetTypeConfigurationCallable(const SetTypeConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetTypeConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetTypeConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::SetTypeConfigurationAsync(const SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetTypeConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::SetTypeConfigurationAsyncHelper(const SetTypeConfigurationRequest& request, const SetTypeConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetTypeConfiguration(request), context);
 }
 
 SetTypeDefaultVersionOutcome CloudFormationClient::SetTypeDefaultVersion(const SetTypeDefaultVersionRequest& request) const
@@ -1358,6 +1534,30 @@ void CloudFormationClient::StopStackSetOperationAsync(const StopStackSetOperatio
 void CloudFormationClient::StopStackSetOperationAsyncHelper(const StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StopStackSetOperation(request), context);
+}
+
+TestTypeOutcome CloudFormationClient::TestType(const TestTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  return TestTypeOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST));
+}
+
+TestTypeOutcomeCallable CloudFormationClient::TestTypeCallable(const TestTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TestTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TestType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::TestTypeAsync(const TestTypeRequest& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TestTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::TestTypeAsyncHelper(const TestTypeRequest& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TestType(request), context);
 }
 
 UpdateStackOutcome CloudFormationClient::UpdateStack(const UpdateStackRequest& request) const
