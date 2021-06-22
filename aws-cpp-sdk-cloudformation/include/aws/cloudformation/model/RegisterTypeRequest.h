@@ -71,97 +71,113 @@ namespace Model
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the extension being registered.</p> <p>We recommend that
-     * extension names adhere to the following pattern:
-     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>  <p>The
-     * following organization namespaces are reserved and cannot be used in your
-     * extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li> <li> <p>
-     * <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li> <li> <p>
-     * <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li> <li> <p>
-     * <code>Dev</code> </p> </li> </ul> 
+     * extension names adhere to the following patterns: </p> <ul> <li> <p>For resource
+     * types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p> </li>
+     * <li> <p>For modules,
+     * <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p> </li>
+     * </ul>  <p>The following organization namespaces are reserved and cannot be
+     * used in your extension names:</p> <ul> <li> <p> <code>Alexa</code> </p> </li>
+     * <li> <p> <code>AMZN</code> </p> </li> <li> <p> <code>Amazon</code> </p> </li>
+     * <li> <p> <code>AWS</code> </p> </li> <li> <p> <code>Custom</code> </p> </li>
+     * <li> <p> <code>Dev</code> </p> </li> </ul> 
      */
     inline RegisterTypeRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
@@ -336,105 +352,169 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
-     * when invoking the extension. If your extension calls AWS APIs in any of its
-     * handlers, you must create an <i> <a
+     * when invoking the extension.</p> <p>For CloudFormation to assume the specified
+     * execution role, the role must contain a trust relationship with the
+     * CloudFormation service principle
+     * (<code>resources.cloudformation.amazonaws.com</code>). For more information on
+     * adding trust relationships, see <a
+     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
+     * a role trust policy</a> in the <i>AWS Identity and Access Management User
+     * Guide</i>.</p> <p>If your extension calls AWS APIs in any of its handlers, you
+     * must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
      * execution role</a> </i> that includes the necessary permissions to call those
      * AWS APIs, and provision that execution role in your account. When CloudFormation
-     * needs to invoke the extension handler, CloudFormation assumes this execution
-     * role to create a temporary session token, which it then passes to the extension
-     * handler, thereby supplying your extension with the appropriate credentials.</p>
+     * needs to invoke the resource type handler, CloudFormation assumes this execution
+     * role to create a temporary session token, which it then passes to the resource
+     * type handler, thereby supplying your resource type with the appropriate
+     * credentials.</p>
      */
     inline RegisterTypeRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
 

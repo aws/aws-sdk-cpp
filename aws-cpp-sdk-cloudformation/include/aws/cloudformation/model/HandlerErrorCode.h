@@ -29,7 +29,8 @@ namespace Model
     GeneralServiceException,
     ServiceInternalError,
     NetworkFailure,
-    InternalFailure
+    InternalFailure,
+    InvalidTypeConfiguration
   };
 
 namespace HandlerErrorCodeMapper

@@ -27,7 +27,16 @@ TypeSummary::TypeSummary() :
     m_defaultVersionIdHasBeenSet(false),
     m_typeArnHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_publisherIdHasBeenSet(false),
+    m_originalTypeNameHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false),
+    m_latestPublicVersionHasBeenSet(false),
+    m_publisherIdentity(IdentityProvider::NOT_SET),
+    m_publisherIdentityHasBeenSet(false),
+    m_publisherNameHasBeenSet(false),
+    m_isActivated(false),
+    m_isActivatedHasBeenSet(false)
 {
 }
 
@@ -38,7 +47,16 @@ TypeSummary::TypeSummary(const XmlNode& xmlNode) :
     m_defaultVersionIdHasBeenSet(false),
     m_typeArnHasBeenSet(false),
     m_lastUpdatedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_publisherIdHasBeenSet(false),
+    m_originalTypeNameHasBeenSet(false),
+    m_publicVersionNumberHasBeenSet(false),
+    m_latestPublicVersionHasBeenSet(false),
+    m_publisherIdentity(IdentityProvider::NOT_SET),
+    m_publisherIdentityHasBeenSet(false),
+    m_publisherNameHasBeenSet(false),
+    m_isActivated(false),
+    m_isActivatedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +103,48 @@ TypeSummary& TypeSummary::operator =(const XmlNode& xmlNode)
       m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode publisherIdNode = resultNode.FirstChild("PublisherId");
+    if(!publisherIdNode.IsNull())
+    {
+      m_publisherId = Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdNode.GetText());
+      m_publisherIdHasBeenSet = true;
+    }
+    XmlNode originalTypeNameNode = resultNode.FirstChild("OriginalTypeName");
+    if(!originalTypeNameNode.IsNull())
+    {
+      m_originalTypeName = Aws::Utils::Xml::DecodeEscapedXmlText(originalTypeNameNode.GetText());
+      m_originalTypeNameHasBeenSet = true;
+    }
+    XmlNode publicVersionNumberNode = resultNode.FirstChild("PublicVersionNumber");
+    if(!publicVersionNumberNode.IsNull())
+    {
+      m_publicVersionNumber = Aws::Utils::Xml::DecodeEscapedXmlText(publicVersionNumberNode.GetText());
+      m_publicVersionNumberHasBeenSet = true;
+    }
+    XmlNode latestPublicVersionNode = resultNode.FirstChild("LatestPublicVersion");
+    if(!latestPublicVersionNode.IsNull())
+    {
+      m_latestPublicVersion = Aws::Utils::Xml::DecodeEscapedXmlText(latestPublicVersionNode.GetText());
+      m_latestPublicVersionHasBeenSet = true;
+    }
+    XmlNode publisherIdentityNode = resultNode.FirstChild("PublisherIdentity");
+    if(!publisherIdentityNode.IsNull())
+    {
+      m_publisherIdentity = IdentityProviderMapper::GetIdentityProviderForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(publisherIdentityNode.GetText()).c_str()).c_str());
+      m_publisherIdentityHasBeenSet = true;
+    }
+    XmlNode publisherNameNode = resultNode.FirstChild("PublisherName");
+    if(!publisherNameNode.IsNull())
+    {
+      m_publisherName = Aws::Utils::Xml::DecodeEscapedXmlText(publisherNameNode.GetText());
+      m_publisherNameHasBeenSet = true;
+    }
+    XmlNode isActivatedNode = resultNode.FirstChild("IsActivated");
+    if(!isActivatedNode.IsNull())
+    {
+      m_isActivated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isActivatedNode.GetText()).c_str()).c_str());
+      m_isActivatedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -122,6 +182,41 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_publisherIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
+  }
+
+  if(m_originalTypeNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OriginalTypeName=" << StringUtils::URLEncode(m_originalTypeName.c_str()) << "&";
+  }
+
+  if(m_publicVersionNumberHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
+  }
+
+  if(m_latestPublicVersionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LatestPublicVersion=" << StringUtils::URLEncode(m_latestPublicVersion.c_str()) << "&";
+  }
+
+  if(m_publisherIdentityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublisherIdentity=" << IdentityProviderMapper::GetNameForIdentityProvider(m_publisherIdentity) << "&";
+  }
+
+  if(m_publisherNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublisherName=" << StringUtils::URLEncode(m_publisherName.c_str()) << "&";
+  }
+
+  if(m_isActivatedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IsActivated=" << std::boolalpha << m_isActivated << "&";
+  }
+
 }
 
 void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -149,6 +244,34 @@ void TypeSummary::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_publisherIdHasBeenSet)
+  {
+      oStream << location << ".PublisherId=" << StringUtils::URLEncode(m_publisherId.c_str()) << "&";
+  }
+  if(m_originalTypeNameHasBeenSet)
+  {
+      oStream << location << ".OriginalTypeName=" << StringUtils::URLEncode(m_originalTypeName.c_str()) << "&";
+  }
+  if(m_publicVersionNumberHasBeenSet)
+  {
+      oStream << location << ".PublicVersionNumber=" << StringUtils::URLEncode(m_publicVersionNumber.c_str()) << "&";
+  }
+  if(m_latestPublicVersionHasBeenSet)
+  {
+      oStream << location << ".LatestPublicVersion=" << StringUtils::URLEncode(m_latestPublicVersion.c_str()) << "&";
+  }
+  if(m_publisherIdentityHasBeenSet)
+  {
+      oStream << location << ".PublisherIdentity=" << IdentityProviderMapper::GetNameForIdentityProvider(m_publisherIdentity) << "&";
+  }
+  if(m_publisherNameHasBeenSet)
+  {
+      oStream << location << ".PublisherName=" << StringUtils::URLEncode(m_publisherName.c_str()) << "&";
+  }
+  if(m_isActivatedHasBeenSet)
+  {
+      oStream << location << ".IsActivated=" << std::boolalpha << m_isActivated << "&";
   }
 }
 
