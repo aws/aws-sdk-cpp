@@ -154,8 +154,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
@@ -165,8 +164,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
@@ -176,8 +174,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
@@ -187,8 +184,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
@@ -198,8 +194,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
@@ -209,8 +204,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
@@ -220,8 +214,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
@@ -231,8 +224,7 @@ namespace Model
      * <code>db-instance</code>. If this value is not specified, all events are
      * returned.</p> <p>Valid values: <code>db-instance</code>,
      * <code>db-cluster</code>, <code>db-parameter-group</code>,
-     * <code>db-security-group</code>, <code>db-snapshot</code>,
-     * <code>db-cluster-snapshot</code> </p>
+     * <code>db-security-group</code>, <code>db-cluster-snapshot</code> </p>
      */
     inline CreateEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

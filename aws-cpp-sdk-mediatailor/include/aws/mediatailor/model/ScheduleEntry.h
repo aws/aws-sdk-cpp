@@ -7,6 +7,8 @@
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediatailor/model/ScheduleAdBreak.h>
 #include <utility>
 
 namespace Aws
@@ -214,6 +216,47 @@ namespace Model
 
 
     /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline const Aws::Vector<ScheduleAdBreak>& GetScheduleAdBreaks() const{ return m_scheduleAdBreaks; }
+
+    /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline bool ScheduleAdBreaksHasBeenSet() const { return m_scheduleAdBreaksHasBeenSet; }
+
+    /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline void SetScheduleAdBreaks(const Aws::Vector<ScheduleAdBreak>& value) { m_scheduleAdBreaksHasBeenSet = true; m_scheduleAdBreaks = value; }
+
+    /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline void SetScheduleAdBreaks(Aws::Vector<ScheduleAdBreak>&& value) { m_scheduleAdBreaksHasBeenSet = true; m_scheduleAdBreaks = std::move(value); }
+
+    /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline ScheduleEntry& WithScheduleAdBreaks(const Aws::Vector<ScheduleAdBreak>& value) { SetScheduleAdBreaks(value); return *this;}
+
+    /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline ScheduleEntry& WithScheduleAdBreaks(Aws::Vector<ScheduleAdBreak>&& value) { SetScheduleAdBreaks(std::move(value)); return *this;}
+
+    /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline ScheduleEntry& AddScheduleAdBreaks(const ScheduleAdBreak& value) { m_scheduleAdBreaksHasBeenSet = true; m_scheduleAdBreaks.push_back(value); return *this; }
+
+    /**
+     * <p>The schedule's ad break properties.</p>
+     */
+    inline ScheduleEntry& AddScheduleAdBreaks(ScheduleAdBreak&& value) { m_scheduleAdBreaksHasBeenSet = true; m_scheduleAdBreaks.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name of the source location.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
@@ -310,6 +353,9 @@ namespace Model
 
     Aws::String m_programName;
     bool m_programNameHasBeenSet;
+
+    Aws::Vector<ScheduleAdBreak> m_scheduleAdBreaks;
+    bool m_scheduleAdBreaksHasBeenSet;
 
     Aws::String m_sourceLocationName;
     bool m_sourceLocationNameHasBeenSet;

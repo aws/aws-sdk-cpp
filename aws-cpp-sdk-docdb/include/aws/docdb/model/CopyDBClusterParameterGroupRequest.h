@@ -46,10 +46,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
@@ -59,10 +59,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
@@ -72,10 +72,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
@@ -85,10 +85,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
@@ -98,10 +98,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
@@ -111,10 +111,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
@@ -124,10 +124,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */
@@ -137,10 +137,10 @@ namespace Model
      * <p>The identifier or Amazon Resource Name (ARN) for the source cluster parameter
      * group.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid cluster
      * parameter group.</p> </li> <li> <p>If the source cluster parameter group is in
-     * the same AWS Region as the copy, specify a valid parameter group identifier; for
+     * the same Region as the copy, specify a valid parameter group identifier; for
      * example, <code>my-db-cluster-param-group</code>, or a valid ARN.</p> </li> <li>
-     * <p>If the source parameter group is in a different AWS Region than the copy,
-     * specify a valid cluster parameter group ARN; for example,
+     * <p>If the source parameter group is in a different Region than the copy, specify
+     * a valid cluster parameter group ARN; for example,
      * <code>arn:aws:rds:us-east-1:123456789012:sample-cluster:sample-parameter-group</code>.</p>
      * </li> </ul>
      */

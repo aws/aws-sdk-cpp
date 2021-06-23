@@ -19,6 +19,7 @@ CreateGrantVersionRequest::CreateGrantVersionRequest() :
     m_allowedOperationsHasBeenSet(false),
     m_status(GrantStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_sourceVersionHasBeenSet(false)
 {
 }
@@ -59,6 +60,12 @@ Aws::String CreateGrantVersionRequest::SerializePayload() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", GrantStatusMapper::GetNameForGrantStatus(m_status));
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("StatusReason", m_statusReason);
+
   }
 
   if(m_sourceVersionHasBeenSet)

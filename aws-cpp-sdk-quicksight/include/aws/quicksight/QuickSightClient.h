@@ -17,6 +17,8 @@
 #include <aws/quicksight/model/CreateDashboardResult.h>
 #include <aws/quicksight/model/CreateDataSetResult.h>
 #include <aws/quicksight/model/CreateDataSourceResult.h>
+#include <aws/quicksight/model/CreateFolderResult.h>
+#include <aws/quicksight/model/CreateFolderMembershipResult.h>
 #include <aws/quicksight/model/CreateGroupResult.h>
 #include <aws/quicksight/model/CreateGroupMembershipResult.h>
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentResult.h>
@@ -31,6 +33,8 @@
 #include <aws/quicksight/model/DeleteDashboardResult.h>
 #include <aws/quicksight/model/DeleteDataSetResult.h>
 #include <aws/quicksight/model/DeleteDataSourceResult.h>
+#include <aws/quicksight/model/DeleteFolderResult.h>
+#include <aws/quicksight/model/DeleteFolderMembershipResult.h>
 #include <aws/quicksight/model/DeleteGroupResult.h>
 #include <aws/quicksight/model/DeleteGroupMembershipResult.h>
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentResult.h>
@@ -51,6 +55,9 @@
 #include <aws/quicksight/model/DescribeDataSetPermissionsResult.h>
 #include <aws/quicksight/model/DescribeDataSourceResult.h>
 #include <aws/quicksight/model/DescribeDataSourcePermissionsResult.h>
+#include <aws/quicksight/model/DescribeFolderResult.h>
+#include <aws/quicksight/model/DescribeFolderPermissionsResult.h>
+#include <aws/quicksight/model/DescribeFolderResolvedPermissionsResult.h>
 #include <aws/quicksight/model/DescribeGroupResult.h>
 #include <aws/quicksight/model/DescribeIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/DescribeIngestionResult.h>
@@ -69,6 +76,8 @@
 #include <aws/quicksight/model/ListDashboardsResult.h>
 #include <aws/quicksight/model/ListDataSetsResult.h>
 #include <aws/quicksight/model/ListDataSourcesResult.h>
+#include <aws/quicksight/model/ListFolderMembersResult.h>
+#include <aws/quicksight/model/ListFoldersResult.h>
 #include <aws/quicksight/model/ListGroupMembershipsResult.h>
 #include <aws/quicksight/model/ListGroupsResult.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsResult.h>
@@ -88,6 +97,7 @@
 #include <aws/quicksight/model/RestoreAnalysisResult.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
 #include <aws/quicksight/model/SearchDashboardsResult.h>
+#include <aws/quicksight/model/SearchFoldersResult.h>
 #include <aws/quicksight/model/TagResourceResult.h>
 #include <aws/quicksight/model/UntagResourceResult.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationResult.h>
@@ -101,6 +111,8 @@
 #include <aws/quicksight/model/UpdateDataSetPermissionsResult.h>
 #include <aws/quicksight/model/UpdateDataSourceResult.h>
 #include <aws/quicksight/model/UpdateDataSourcePermissionsResult.h>
+#include <aws/quicksight/model/UpdateFolderResult.h>
+#include <aws/quicksight/model/UpdateFolderPermissionsResult.h>
 #include <aws/quicksight/model/UpdateGroupResult.h>
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/UpdateTemplateResult.h>
@@ -155,6 +167,8 @@ namespace Model
         class CreateDashboardRequest;
         class CreateDataSetRequest;
         class CreateDataSourceRequest;
+        class CreateFolderRequest;
+        class CreateFolderMembershipRequest;
         class CreateGroupRequest;
         class CreateGroupMembershipRequest;
         class CreateIAMPolicyAssignmentRequest;
@@ -169,6 +183,8 @@ namespace Model
         class DeleteDashboardRequest;
         class DeleteDataSetRequest;
         class DeleteDataSourceRequest;
+        class DeleteFolderRequest;
+        class DeleteFolderMembershipRequest;
         class DeleteGroupRequest;
         class DeleteGroupMembershipRequest;
         class DeleteIAMPolicyAssignmentRequest;
@@ -189,6 +205,9 @@ namespace Model
         class DescribeDataSetPermissionsRequest;
         class DescribeDataSourceRequest;
         class DescribeDataSourcePermissionsRequest;
+        class DescribeFolderRequest;
+        class DescribeFolderPermissionsRequest;
+        class DescribeFolderResolvedPermissionsRequest;
         class DescribeGroupRequest;
         class DescribeIAMPolicyAssignmentRequest;
         class DescribeIngestionRequest;
@@ -207,6 +226,8 @@ namespace Model
         class ListDashboardsRequest;
         class ListDataSetsRequest;
         class ListDataSourcesRequest;
+        class ListFolderMembersRequest;
+        class ListFoldersRequest;
         class ListGroupMembershipsRequest;
         class ListGroupsRequest;
         class ListIAMPolicyAssignmentsRequest;
@@ -226,6 +247,7 @@ namespace Model
         class RestoreAnalysisRequest;
         class SearchAnalysesRequest;
         class SearchDashboardsRequest;
+        class SearchFoldersRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateAccountCustomizationRequest;
@@ -239,6 +261,8 @@ namespace Model
         class UpdateDataSetPermissionsRequest;
         class UpdateDataSourceRequest;
         class UpdateDataSourcePermissionsRequest;
+        class UpdateFolderRequest;
+        class UpdateFolderPermissionsRequest;
         class UpdateGroupRequest;
         class UpdateIAMPolicyAssignmentRequest;
         class UpdateTemplateRequest;
@@ -255,6 +279,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateDashboardResult, QuickSightError> CreateDashboardOutcome;
         typedef Aws::Utils::Outcome<CreateDataSetResult, QuickSightError> CreateDataSetOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceResult, QuickSightError> CreateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<CreateFolderResult, QuickSightError> CreateFolderOutcome;
+        typedef Aws::Utils::Outcome<CreateFolderMembershipResult, QuickSightError> CreateFolderMembershipOutcome;
         typedef Aws::Utils::Outcome<CreateGroupResult, QuickSightError> CreateGroupOutcome;
         typedef Aws::Utils::Outcome<CreateGroupMembershipResult, QuickSightError> CreateGroupMembershipOutcome;
         typedef Aws::Utils::Outcome<CreateIAMPolicyAssignmentResult, QuickSightError> CreateIAMPolicyAssignmentOutcome;
@@ -269,6 +295,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteDashboardResult, QuickSightError> DeleteDashboardOutcome;
         typedef Aws::Utils::Outcome<DeleteDataSetResult, QuickSightError> DeleteDataSetOutcome;
         typedef Aws::Utils::Outcome<DeleteDataSourceResult, QuickSightError> DeleteDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteFolderResult, QuickSightError> DeleteFolderOutcome;
+        typedef Aws::Utils::Outcome<DeleteFolderMembershipResult, QuickSightError> DeleteFolderMembershipOutcome;
         typedef Aws::Utils::Outcome<DeleteGroupResult, QuickSightError> DeleteGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteGroupMembershipResult, QuickSightError> DeleteGroupMembershipOutcome;
         typedef Aws::Utils::Outcome<DeleteIAMPolicyAssignmentResult, QuickSightError> DeleteIAMPolicyAssignmentOutcome;
@@ -289,6 +317,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeDataSetPermissionsResult, QuickSightError> DescribeDataSetPermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeDataSourceResult, QuickSightError> DescribeDataSourceOutcome;
         typedef Aws::Utils::Outcome<DescribeDataSourcePermissionsResult, QuickSightError> DescribeDataSourcePermissionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFolderResult, QuickSightError> DescribeFolderOutcome;
+        typedef Aws::Utils::Outcome<DescribeFolderPermissionsResult, QuickSightError> DescribeFolderPermissionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFolderResolvedPermissionsResult, QuickSightError> DescribeFolderResolvedPermissionsOutcome;
         typedef Aws::Utils::Outcome<DescribeGroupResult, QuickSightError> DescribeGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeIAMPolicyAssignmentResult, QuickSightError> DescribeIAMPolicyAssignmentOutcome;
         typedef Aws::Utils::Outcome<DescribeIngestionResult, QuickSightError> DescribeIngestionOutcome;
@@ -307,6 +338,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListDashboardsResult, QuickSightError> ListDashboardsOutcome;
         typedef Aws::Utils::Outcome<ListDataSetsResult, QuickSightError> ListDataSetsOutcome;
         typedef Aws::Utils::Outcome<ListDataSourcesResult, QuickSightError> ListDataSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListFolderMembersResult, QuickSightError> ListFolderMembersOutcome;
+        typedef Aws::Utils::Outcome<ListFoldersResult, QuickSightError> ListFoldersOutcome;
         typedef Aws::Utils::Outcome<ListGroupMembershipsResult, QuickSightError> ListGroupMembershipsOutcome;
         typedef Aws::Utils::Outcome<ListGroupsResult, QuickSightError> ListGroupsOutcome;
         typedef Aws::Utils::Outcome<ListIAMPolicyAssignmentsResult, QuickSightError> ListIAMPolicyAssignmentsOutcome;
@@ -326,6 +359,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RestoreAnalysisResult, QuickSightError> RestoreAnalysisOutcome;
         typedef Aws::Utils::Outcome<SearchAnalysesResult, QuickSightError> SearchAnalysesOutcome;
         typedef Aws::Utils::Outcome<SearchDashboardsResult, QuickSightError> SearchDashboardsOutcome;
+        typedef Aws::Utils::Outcome<SearchFoldersResult, QuickSightError> SearchFoldersOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, QuickSightError> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, QuickSightError> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAccountCustomizationResult, QuickSightError> UpdateAccountCustomizationOutcome;
@@ -339,6 +373,8 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateDataSetPermissionsResult, QuickSightError> UpdateDataSetPermissionsOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSourceResult, QuickSightError> UpdateDataSourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSourcePermissionsResult, QuickSightError> UpdateDataSourcePermissionsOutcome;
+        typedef Aws::Utils::Outcome<UpdateFolderResult, QuickSightError> UpdateFolderOutcome;
+        typedef Aws::Utils::Outcome<UpdateFolderPermissionsResult, QuickSightError> UpdateFolderPermissionsOutcome;
         typedef Aws::Utils::Outcome<UpdateGroupResult, QuickSightError> UpdateGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateIAMPolicyAssignmentResult, QuickSightError> UpdateIAMPolicyAssignmentOutcome;
         typedef Aws::Utils::Outcome<UpdateTemplateResult, QuickSightError> UpdateTemplateOutcome;
@@ -355,6 +391,8 @@ namespace Model
         typedef std::future<CreateDashboardOutcome> CreateDashboardOutcomeCallable;
         typedef std::future<CreateDataSetOutcome> CreateDataSetOutcomeCallable;
         typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
+        typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
+        typedef std::future<CreateFolderMembershipOutcome> CreateFolderMembershipOutcomeCallable;
         typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
         typedef std::future<CreateGroupMembershipOutcome> CreateGroupMembershipOutcomeCallable;
         typedef std::future<CreateIAMPolicyAssignmentOutcome> CreateIAMPolicyAssignmentOutcomeCallable;
@@ -369,6 +407,8 @@ namespace Model
         typedef std::future<DeleteDashboardOutcome> DeleteDashboardOutcomeCallable;
         typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
+        typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
+        typedef std::future<DeleteFolderMembershipOutcome> DeleteFolderMembershipOutcomeCallable;
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
         typedef std::future<DeleteGroupMembershipOutcome> DeleteGroupMembershipOutcomeCallable;
         typedef std::future<DeleteIAMPolicyAssignmentOutcome> DeleteIAMPolicyAssignmentOutcomeCallable;
@@ -389,6 +429,9 @@ namespace Model
         typedef std::future<DescribeDataSetPermissionsOutcome> DescribeDataSetPermissionsOutcomeCallable;
         typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
         typedef std::future<DescribeDataSourcePermissionsOutcome> DescribeDataSourcePermissionsOutcomeCallable;
+        typedef std::future<DescribeFolderOutcome> DescribeFolderOutcomeCallable;
+        typedef std::future<DescribeFolderPermissionsOutcome> DescribeFolderPermissionsOutcomeCallable;
+        typedef std::future<DescribeFolderResolvedPermissionsOutcome> DescribeFolderResolvedPermissionsOutcomeCallable;
         typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
         typedef std::future<DescribeIAMPolicyAssignmentOutcome> DescribeIAMPolicyAssignmentOutcomeCallable;
         typedef std::future<DescribeIngestionOutcome> DescribeIngestionOutcomeCallable;
@@ -407,6 +450,8 @@ namespace Model
         typedef std::future<ListDashboardsOutcome> ListDashboardsOutcomeCallable;
         typedef std::future<ListDataSetsOutcome> ListDataSetsOutcomeCallable;
         typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+        typedef std::future<ListFolderMembersOutcome> ListFolderMembersOutcomeCallable;
+        typedef std::future<ListFoldersOutcome> ListFoldersOutcomeCallable;
         typedef std::future<ListGroupMembershipsOutcome> ListGroupMembershipsOutcomeCallable;
         typedef std::future<ListGroupsOutcome> ListGroupsOutcomeCallable;
         typedef std::future<ListIAMPolicyAssignmentsOutcome> ListIAMPolicyAssignmentsOutcomeCallable;
@@ -426,6 +471,7 @@ namespace Model
         typedef std::future<RestoreAnalysisOutcome> RestoreAnalysisOutcomeCallable;
         typedef std::future<SearchAnalysesOutcome> SearchAnalysesOutcomeCallable;
         typedef std::future<SearchDashboardsOutcome> SearchDashboardsOutcomeCallable;
+        typedef std::future<SearchFoldersOutcome> SearchFoldersOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAccountCustomizationOutcome> UpdateAccountCustomizationOutcomeCallable;
@@ -439,6 +485,8 @@ namespace Model
         typedef std::future<UpdateDataSetPermissionsOutcome> UpdateDataSetPermissionsOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
         typedef std::future<UpdateDataSourcePermissionsOutcome> UpdateDataSourcePermissionsOutcomeCallable;
+        typedef std::future<UpdateFolderOutcome> UpdateFolderOutcomeCallable;
+        typedef std::future<UpdateFolderPermissionsOutcome> UpdateFolderPermissionsOutcomeCallable;
         typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateIAMPolicyAssignmentOutcome> UpdateIAMPolicyAssignmentOutcomeCallable;
         typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
@@ -458,6 +506,8 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::CreateDashboardRequest&, const Model::CreateDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDashboardResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateDataSetRequest&, const Model::CreateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSetResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateFolderRequest&, const Model::CreateFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFolderResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateFolderMembershipRequest&, const Model::CreateFolderMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFolderMembershipResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateGroupMembershipRequest&, const Model::CreateGroupMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupMembershipResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateIAMPolicyAssignmentRequest&, const Model::CreateIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIAMPolicyAssignmentResponseReceivedHandler;
@@ -472,6 +522,8 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDashboardRequest&, const Model::DeleteDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSetRequest&, const Model::DeleteDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSetResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteFolderRequest&, const Model::DeleteFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFolderResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteFolderMembershipRequest&, const Model::DeleteFolderMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFolderMembershipResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteGroupMembershipRequest&, const Model::DeleteGroupMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupMembershipResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteIAMPolicyAssignmentRequest&, const Model::DeleteIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIAMPolicyAssignmentResponseReceivedHandler;
@@ -492,6 +544,9 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetPermissionsRequest&, const Model::DescribeDataSetPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSourceRequest&, const Model::DescribeDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSourcePermissionsRequest&, const Model::DescribeDataSourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourcePermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeFolderRequest&, const Model::DescribeFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFolderResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeFolderPermissionsRequest&, const Model::DescribeFolderPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFolderPermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeFolderResolvedPermissionsRequest&, const Model::DescribeFolderResolvedPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFolderResolvedPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeGroupRequest&, const Model::DescribeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeIAMPolicyAssignmentRequest&, const Model::DescribeIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeIngestionRequest&, const Model::DescribeIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIngestionResponseReceivedHandler;
@@ -510,6 +565,8 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::ListDashboardsRequest&, const Model::ListDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDashboardsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListDataSetsRequest&, const Model::ListDataSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSetsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListFolderMembersRequest&, const Model::ListFolderMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFolderMembersResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListFoldersRequest&, const Model::ListFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFoldersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListGroupMembershipsRequest&, const Model::ListGroupMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupMembershipsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListGroupsRequest&, const Model::ListGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListIAMPolicyAssignmentsRequest&, const Model::ListIAMPolicyAssignmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIAMPolicyAssignmentsResponseReceivedHandler;
@@ -529,6 +586,7 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::RestoreAnalysisRequest&, const Model::RestoreAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchAnalysesRequest&, const Model::SearchAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAnalysesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchDashboardsRequest&, const Model::SearchDashboardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchDashboardsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::SearchFoldersRequest&, const Model::SearchFoldersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchFoldersResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateAccountCustomizationRequest&, const Model::UpdateAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountCustomizationResponseReceivedHandler;
@@ -542,6 +600,8 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSetPermissionsRequest&, const Model::UpdateDataSetPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSetPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateDataSourcePermissionsRequest&, const Model::UpdateDataSourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourcePermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateFolderRequest&, const Model::UpdateFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFolderResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateFolderPermissionsRequest&, const Model::UpdateFolderPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFolderPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateIAMPolicyAssignmentRequest&, const Model::UpdateIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;
@@ -813,6 +873,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDataSourceAsync(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an empty shared folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFolderOutcome CreateFolder(const Model::CreateFolderRequest& request) const;
+
+        /**
+         * <p>Creates an empty shared folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFolderOutcomeCallable CreateFolderCallable(const Model::CreateFolderRequest& request) const;
+
+        /**
+         * <p>Creates an empty shared folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolder">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFolderAsync(const Model::CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds an asset, such as a dashboard, analysis, or dataset into a
+         * folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFolderMembershipOutcome CreateFolderMembership(const Model::CreateFolderMembershipRequest& request) const;
+
+        /**
+         * <p>Adds an asset, such as a dashboard, analysis, or dataset into a
+         * folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFolderMembershipOutcomeCallable CreateFolderMembershipCallable(const Model::CreateFolderMembershipRequest& request) const;
+
+        /**
+         * <p>Adds an asset, such as a dashboard, analysis, or dataset into a
+         * folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateFolderMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFolderMembershipAsync(const Model::CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon QuickSight group.</p> <p>The permissions resource is
@@ -1304,6 +1417,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an empty folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFolderOutcome DeleteFolder(const Model::DeleteFolderRequest& request) const;
+
+        /**
+         * <p>Deletes an empty folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFolderOutcomeCallable DeleteFolderCallable(const Model::DeleteFolderRequest& request) const;
+
+        /**
+         * <p>Deletes an empty folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolder">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes an asset, such as a dashboard, analysis, or dataset, from a
+         * folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFolderMembershipOutcome DeleteFolderMembership(const Model::DeleteFolderMembershipRequest& request) const;
+
+        /**
+         * <p>Removes an asset, such as a dashboard, analysis, or dataset, from a
+         * folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFolderMembershipOutcomeCallable DeleteFolderMembershipCallable(const Model::DeleteFolderMembershipRequest& request) const;
+
+        /**
+         * <p>Removes an asset, such as a dashboard, analysis, or dataset, from a
+         * folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteFolderMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFolderMembershipAsync(const Model::DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a user group from Amazon QuickSight. </p><p><h3>See Also:</h3>   <a
@@ -1968,6 +2134,87 @@ namespace Model
         virtual void DescribeDataSourcePermissionsAsync(const Model::DescribeDataSourcePermissionsRequest& request, const DescribeDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFolderOutcome DescribeFolder(const Model::DescribeFolderRequest& request) const;
+
+        /**
+         * <p>Describes a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFolderOutcomeCallable DescribeFolderCallable(const Model::DescribeFolderRequest& request) const;
+
+        /**
+         * <p>Describes a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolder">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFolderAsync(const Model::DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes permissions for a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFolderPermissionsOutcome DescribeFolderPermissions(const Model::DescribeFolderPermissionsRequest& request) const;
+
+        /**
+         * <p>Describes permissions for a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFolderPermissionsOutcomeCallable DescribeFolderPermissionsCallable(const Model::DescribeFolderPermissionsRequest& request) const;
+
+        /**
+         * <p>Describes permissions for a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderPermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFolderPermissionsAsync(const Model::DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the folder resolved permissions. Permissions consists of both
+         * folder direct permissions and the inherited permissions from the ancestor
+         * folders.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFolderResolvedPermissionsOutcome DescribeFolderResolvedPermissions(const Model::DescribeFolderResolvedPermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the folder resolved permissions. Permissions consists of both
+         * folder direct permissions and the inherited permissions from the ancestor
+         * folders.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFolderResolvedPermissionsOutcomeCallable DescribeFolderResolvedPermissionsCallable(const Model::DescribeFolderResolvedPermissionsRequest& request) const;
+
+        /**
+         * <p>Describes the folder resolved permissions. Permissions consists of both
+         * folder direct permissions and the inherited permissions from the ancestor
+         * folders.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeFolderResolvedPermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFolderResolvedPermissionsAsync(const Model::DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns an Amazon QuickSight group's description and Amazon Resource Name
          * (ARN). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroup">AWS
@@ -2532,6 +2779,59 @@ namespace Model
         virtual void ListDataSourcesAsync(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and
+         * <code>DATASET</code>) in a folder. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFolderMembersOutcome ListFolderMembers(const Model::ListFolderMembersRequest& request) const;
+
+        /**
+         * <p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and
+         * <code>DATASET</code>) in a folder. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFolderMembersOutcomeCallable ListFolderMembersCallable(const Model::ListFolderMembersRequest& request) const;
+
+        /**
+         * <p>List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and
+         * <code>DATASET</code>) in a folder. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolderMembers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFolderMembersAsync(const Model::ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all folders in an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFoldersOutcome ListFolders(const Model::ListFoldersRequest& request) const;
+
+        /**
+         * <p>Lists all folders in an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFoldersOutcomeCallable ListFoldersCallable(const Model::ListFoldersRequest& request) const;
+
+        /**
+         * <p>Lists all folders in an account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListFolders">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFoldersAsync(const Model::ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists member users in a group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroupMemberships">AWS
          * API Reference</a></p>
@@ -3049,6 +3349,31 @@ namespace Model
         virtual void SearchDashboardsAsync(const Model::SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Searches the subfolders in a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchFoldersOutcome SearchFolders(const Model::SearchFoldersRequest& request) const;
+
+        /**
+         * <p>Searches the subfolders in a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchFoldersOutcomeCallable SearchFoldersCallable(const Model::SearchFoldersRequest& request) const;
+
+        /**
+         * <p>Searches the subfolders in a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchFolders">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchFoldersAsync(const Model::SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Assigns one or more tags (key-value pairs) to the specified QuickSight
          * resource. </p> <p>Tags can help you organize and categorize your resources. You
          * can also use them to scope user permissions, by granting a user permission to
@@ -3452,6 +3777,56 @@ namespace Model
         virtual void UpdateDataSourcePermissionsAsync(const Model::UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the name of a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFolderOutcome UpdateFolder(const Model::UpdateFolderRequest& request) const;
+
+        /**
+         * <p>Updates the name of a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFolderOutcomeCallable UpdateFolderCallable(const Model::UpdateFolderRequest& request) const;
+
+        /**
+         * <p>Updates the name of a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolder">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFolderAsync(const Model::UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates permissions of a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFolderPermissionsOutcome UpdateFolderPermissions(const Model::UpdateFolderPermissionsRequest& request) const;
+
+        /**
+         * <p>Updates permissions of a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFolderPermissionsOutcomeCallable UpdateFolderPermissionsCallable(const Model::UpdateFolderPermissionsRequest& request) const;
+
+        /**
+         * <p>Updates permissions of a folder.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateFolderPermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFolderPermissionsAsync(const Model::UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes a group description. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateGroup">AWS
          * API Reference</a></p>
@@ -3764,6 +4139,8 @@ namespace Model
         void CreateDashboardAsyncHelper(const Model::CreateDashboardRequest& request, const CreateDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSetAsyncHelper(const Model::CreateDataSetRequest& request, const CreateDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceAsyncHelper(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFolderAsyncHelper(const Model::CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFolderMembershipAsyncHelper(const Model::CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGroupMembershipAsyncHelper(const Model::CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIAMPolicyAssignmentAsyncHelper(const Model::CreateIAMPolicyAssignmentRequest& request, const CreateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3778,6 +4155,8 @@ namespace Model
         void DeleteDashboardAsyncHelper(const Model::DeleteDashboardRequest& request, const DeleteDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSetAsyncHelper(const Model::DeleteDataSetRequest& request, const DeleteDataSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFolderAsyncHelper(const Model::DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFolderMembershipAsyncHelper(const Model::DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupMembershipAsyncHelper(const Model::DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteIAMPolicyAssignmentAsyncHelper(const Model::DeleteIAMPolicyAssignmentRequest& request, const DeleteIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3798,6 +4177,9 @@ namespace Model
         void DescribeDataSetPermissionsAsyncHelper(const Model::DescribeDataSetPermissionsRequest& request, const DescribeDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataSourceAsyncHelper(const Model::DescribeDataSourceRequest& request, const DescribeDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDataSourcePermissionsAsyncHelper(const Model::DescribeDataSourcePermissionsRequest& request, const DescribeDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFolderAsyncHelper(const Model::DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFolderPermissionsAsyncHelper(const Model::DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFolderResolvedPermissionsAsyncHelper(const Model::DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGroupAsyncHelper(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIAMPolicyAssignmentAsyncHelper(const Model::DescribeIAMPolicyAssignmentRequest& request, const DescribeIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIngestionAsyncHelper(const Model::DescribeIngestionRequest& request, const DescribeIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3816,6 +4198,8 @@ namespace Model
         void ListDashboardsAsyncHelper(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSetsAsyncHelper(const Model::ListDataSetsRequest& request, const ListDataSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourcesAsyncHelper(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFolderMembersAsyncHelper(const Model::ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFoldersAsyncHelper(const Model::ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupMembershipsAsyncHelper(const Model::ListGroupMembershipsRequest& request, const ListGroupMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGroupsAsyncHelper(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListIAMPolicyAssignmentsAsyncHelper(const Model::ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3835,6 +4219,7 @@ namespace Model
         void RestoreAnalysisAsyncHelper(const Model::RestoreAnalysisRequest& request, const RestoreAnalysisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAnalysesAsyncHelper(const Model::SearchAnalysesRequest& request, const SearchAnalysesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchDashboardsAsyncHelper(const Model::SearchDashboardsRequest& request, const SearchDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchFoldersAsyncHelper(const Model::SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountCustomizationAsyncHelper(const Model::UpdateAccountCustomizationRequest& request, const UpdateAccountCustomizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3848,6 +4233,8 @@ namespace Model
         void UpdateDataSetPermissionsAsyncHelper(const Model::UpdateDataSetPermissionsRequest& request, const UpdateDataSetPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourcePermissionsAsyncHelper(const Model::UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFolderAsyncHelper(const Model::UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFolderPermissionsAsyncHelper(const Model::UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIAMPolicyAssignmentAsyncHelper(const Model::UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTemplateAsyncHelper(const Model::UpdateTemplateRequest& request, const UpdateTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

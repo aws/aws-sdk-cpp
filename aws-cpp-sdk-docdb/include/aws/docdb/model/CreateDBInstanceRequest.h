@@ -215,56 +215,56 @@ namespace Model
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone that the instance is created in. </p>
-     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's
      * Region.</p> <p>Example: <code>us-east-1d</code> </p>
      */
     inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
@@ -274,8 +274,8 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
@@ -284,8 +284,8 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
@@ -294,8 +294,8 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
@@ -304,8 +304,8 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
@@ -314,8 +314,8 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
@@ -324,8 +324,8 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -334,8 +334,8 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
@@ -344,34 +344,38 @@ namespace Model
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC).</p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
-     * selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * selected at random from an 8-hour block of time for each Region, occurring on a
+     * random day of the week. </p> <p>Valid days: Mon, Tue, Wed, Thu, Fri, Sat,
      * Sun</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
 
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor engine upgrades are applied automatically to the
-     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p> <p>Default:
+     * <code>false</code> </p>
      */
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 

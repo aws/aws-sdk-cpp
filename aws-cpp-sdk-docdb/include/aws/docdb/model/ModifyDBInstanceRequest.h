@@ -99,9 +99,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -109,9 +109,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -119,9 +119,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -129,9 +129,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -139,9 +139,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -149,9 +149,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -159,9 +159,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -169,9 +169,9 @@ namespace Model
 
     /**
      * <p>The new compute and memory capacity of the instance; for example,
-     * <code>db.r5.large</code>. Not all instance classes are available in all AWS
-     * Regions. </p> <p>If you modify the instance class, an outage occurs during the
-     * change. The change is applied during the next maintenance window, unless
+     * <code>db.r5.large</code>. Not all instance classes are available in all Regions.
+     * </p> <p>If you modify the instance class, an outage occurs during the change.
+     * The change is applied during the next maintenance window, unless
      * <code>ApplyImmediately</code> is specified as <code>true</code> for this
      * request. </p> <p>Default: Uses existing setting.</p>
      */
@@ -341,46 +341,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p>Indicates that minor version upgrades are applied automatically to the
-     * instance during the maintenance window. Changing this parameter doesn't result
-     * in an outage except in the following case, and the change is asynchronously
-     * applied as soon as possible. An outage results if this parameter is set to
-     * <code>true</code> during the maintenance window, and a newer minor version is
-     * available, and Amazon DocumentDB has enabled automatic patching for that engine
-     * version. </p>
+     * <p>This parameter does not apply to Amazon DocumentDB. Amazon DocumentDB does
+     * not perform minor version upgrades regardless of the value set.</p>
      */
     inline ModifyDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 

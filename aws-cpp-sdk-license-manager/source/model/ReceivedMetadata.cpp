@@ -21,6 +21,7 @@ namespace Model
 ReceivedMetadata::ReceivedMetadata() : 
     m_receivedStatus(ReceivedStatus::NOT_SET),
     m_receivedStatusHasBeenSet(false),
+    m_receivedStatusReasonHasBeenSet(false),
     m_allowedOperationsHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ ReceivedMetadata::ReceivedMetadata() :
 ReceivedMetadata::ReceivedMetadata(JsonView jsonValue) : 
     m_receivedStatus(ReceivedStatus::NOT_SET),
     m_receivedStatusHasBeenSet(false),
+    m_receivedStatusReasonHasBeenSet(false),
     m_allowedOperationsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -40,6 +42,13 @@ ReceivedMetadata& ReceivedMetadata::operator =(JsonView jsonValue)
     m_receivedStatus = ReceivedStatusMapper::GetReceivedStatusForName(jsonValue.GetString("ReceivedStatus"));
 
     m_receivedStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReceivedStatusReason"))
+  {
+    m_receivedStatusReason = jsonValue.GetString("ReceivedStatusReason");
+
+    m_receivedStatusReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AllowedOperations"))
@@ -62,6 +71,12 @@ JsonValue ReceivedMetadata::Jsonize() const
   if(m_receivedStatusHasBeenSet)
   {
    payload.WithString("ReceivedStatus", ReceivedStatusMapper::GetNameForReceivedStatus(m_receivedStatus));
+  }
+
+  if(m_receivedStatusReasonHasBeenSet)
+  {
+   payload.WithString("ReceivedStatusReason", m_receivedStatusReason);
+
   }
 
   if(m_allowedOperationsHasBeenSet)

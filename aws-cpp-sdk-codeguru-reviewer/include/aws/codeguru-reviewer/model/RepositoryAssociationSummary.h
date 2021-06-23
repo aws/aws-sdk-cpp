@@ -336,7 +336,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
@@ -344,7 +345,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
@@ -352,7 +354,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
@@ -360,7 +363,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
@@ -368,7 +372,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
@@ -376,7 +381,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline RepositoryAssociationSummary& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
@@ -384,7 +390,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline RepositoryAssociationSummary& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
@@ -392,7 +399,8 @@ namespace Model
      * <p>The owner of the repository. For an AWS CodeCommit repository, this is the
      * AWS account ID of the account that owns the repository. For a GitHub, GitHub
      * Enterprise Server, or Bitbucket repository, this is the username for the account
-     * that owns the repository.</p>
+     * that owns the repository. For an S3 repository, it can be the username or AWS
+     * account ID.</p>
      */
     inline RepositoryAssociationSummary& WithOwner(const char* value) { SetOwner(value); return *this;}
 

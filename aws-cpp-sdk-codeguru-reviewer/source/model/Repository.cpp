@@ -21,14 +21,16 @@ namespace Model
 Repository::Repository() : 
     m_codeCommitHasBeenSet(false),
     m_bitbucketHasBeenSet(false),
-    m_gitHubEnterpriseServerHasBeenSet(false)
+    m_gitHubEnterpriseServerHasBeenSet(false),
+    m_s3BucketHasBeenSet(false)
 {
 }
 
 Repository::Repository(JsonView jsonValue) : 
     m_codeCommitHasBeenSet(false),
     m_bitbucketHasBeenSet(false),
-    m_gitHubEnterpriseServerHasBeenSet(false)
+    m_gitHubEnterpriseServerHasBeenSet(false),
+    m_s3BucketHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ Repository& Repository::operator =(JsonView jsonValue)
     m_gitHubEnterpriseServerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3Bucket"))
+  {
+    m_s3Bucket = jsonValue.GetObject("S3Bucket");
+
+    m_s3BucketHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue Repository::Jsonize() const
   if(m_gitHubEnterpriseServerHasBeenSet)
   {
    payload.WithObject("GitHubEnterpriseServer", m_gitHubEnterpriseServer.Jsonize());
+
+  }
+
+  if(m_s3BucketHasBeenSet)
+  {
+   payload.WithObject("S3Bucket", m_s3Bucket.Jsonize());
 
   }
 

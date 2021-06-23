@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an AWS Cloud9 development environment.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about an Cloud9 development environment.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/Environment">AWS
    * API Reference</a></p>
    */
@@ -365,8 +365,8 @@ namespace Model
 
 
     /**
-     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
-     * environment. Available values are:</p> <ul> <li> <p>
+     * <p>Describes the status of Amazon Web Services managed temporary credentials for
+     * the Cloud9 environment. Available values are:</p> <ul> <li> <p>
      * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
      * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
      * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
@@ -380,8 +380,8 @@ namespace Model
     inline const ManagedCredentialsStatus& GetManagedCredentialsStatus() const{ return m_managedCredentialsStatus; }
 
     /**
-     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
-     * environment. Available values are:</p> <ul> <li> <p>
+     * <p>Describes the status of Amazon Web Services managed temporary credentials for
+     * the Cloud9 environment. Available values are:</p> <ul> <li> <p>
      * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
      * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
      * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
@@ -395,8 +395,8 @@ namespace Model
     inline bool ManagedCredentialsStatusHasBeenSet() const { return m_managedCredentialsStatusHasBeenSet; }
 
     /**
-     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
-     * environment. Available values are:</p> <ul> <li> <p>
+     * <p>Describes the status of Amazon Web Services managed temporary credentials for
+     * the Cloud9 environment. Available values are:</p> <ul> <li> <p>
      * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
      * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
      * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
@@ -410,8 +410,8 @@ namespace Model
     inline void SetManagedCredentialsStatus(const ManagedCredentialsStatus& value) { m_managedCredentialsStatusHasBeenSet = true; m_managedCredentialsStatus = value; }
 
     /**
-     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
-     * environment. Available values are:</p> <ul> <li> <p>
+     * <p>Describes the status of Amazon Web Services managed temporary credentials for
+     * the Cloud9 environment. Available values are:</p> <ul> <li> <p>
      * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
      * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
      * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
@@ -425,8 +425,8 @@ namespace Model
     inline void SetManagedCredentialsStatus(ManagedCredentialsStatus&& value) { m_managedCredentialsStatusHasBeenSet = true; m_managedCredentialsStatus = std::move(value); }
 
     /**
-     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
-     * environment. Available values are:</p> <ul> <li> <p>
+     * <p>Describes the status of Amazon Web Services managed temporary credentials for
+     * the Cloud9 environment. Available values are:</p> <ul> <li> <p>
      * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
      * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
      * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>
@@ -440,8 +440,8 @@ namespace Model
     inline Environment& WithManagedCredentialsStatus(const ManagedCredentialsStatus& value) { SetManagedCredentialsStatus(value); return *this;}
 
     /**
-     * <p>Describes the status of AWS managed temporary credentials for the AWS Cloud9
-     * environment. Available values are:</p> <ul> <li> <p>
+     * <p>Describes the status of Amazon Web Services managed temporary credentials for
+     * the Cloud9 environment. Available values are:</p> <ul> <li> <p>
      * <code>ENABLED_ON_CREATE</code> </p> </li> <li> <p> <code>ENABLED_BY_OWNER</code>
      * </p> </li> <li> <p> <code>DISABLED_BY_DEFAULT</code> </p> </li> <li> <p>
      * <code>DISABLED_BY_OWNER</code> </p> </li> <li> <p>

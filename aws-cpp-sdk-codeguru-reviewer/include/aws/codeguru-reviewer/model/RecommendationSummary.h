@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codeguru-reviewer/model/RecommendationCategory.h>
 #include <utility>
 
 namespace Aws
@@ -229,6 +230,37 @@ namespace Model
      */
     inline RecommendationSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline const RecommendationCategory& GetRecommendationCategory() const{ return m_recommendationCategory; }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline bool RecommendationCategoryHasBeenSet() const { return m_recommendationCategoryHasBeenSet; }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline void SetRecommendationCategory(const RecommendationCategory& value) { m_recommendationCategoryHasBeenSet = true; m_recommendationCategory = value; }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline void SetRecommendationCategory(RecommendationCategory&& value) { m_recommendationCategoryHasBeenSet = true; m_recommendationCategory = std::move(value); }
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline RecommendationSummary& WithRecommendationCategory(const RecommendationCategory& value) { SetRecommendationCategory(value); return *this;}
+
+    /**
+     * <p>The type of a recommendation.</p>
+     */
+    inline RecommendationSummary& WithRecommendationCategory(RecommendationCategory&& value) { SetRecommendationCategory(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_filePath;
@@ -245,6 +277,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    RecommendationCategory m_recommendationCategory;
+    bool m_recommendationCategoryHasBeenSet;
   };
 
 } // namespace Model

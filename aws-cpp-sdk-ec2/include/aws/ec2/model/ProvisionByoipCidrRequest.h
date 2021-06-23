@@ -280,6 +280,27 @@ namespace Model
      */
     inline ProvisionByoipCidrRequest& AddPoolTagSpecifications(TagSpecification&& value) { m_poolTagSpecificationsHasBeenSet = true; m_poolTagSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <para>Reserved.</para>
+     */
+    inline bool GetMultiRegion() const{ return m_multiRegion; }
+
+    /**
+     * <para>Reserved.</para>
+     */
+    inline bool MultiRegionHasBeenSet() const { return m_multiRegionHasBeenSet; }
+
+    /**
+     * <para>Reserved.</para>
+     */
+    inline void SetMultiRegion(bool value) { m_multiRegionHasBeenSet = true; m_multiRegion = value; }
+
+    /**
+     * <para>Reserved.</para>
+     */
+    inline ProvisionByoipCidrRequest& WithMultiRegion(bool value) { SetMultiRegion(value); return *this;}
+
   private:
 
     Aws::String m_cidr;
@@ -299,6 +320,9 @@ namespace Model
 
     Aws::Vector<TagSpecification> m_poolTagSpecifications;
     bool m_poolTagSpecificationsHasBeenSet;
+
+    bool m_multiRegion;
+    bool m_multiRegionHasBeenSet;
   };
 
 } // namespace Model

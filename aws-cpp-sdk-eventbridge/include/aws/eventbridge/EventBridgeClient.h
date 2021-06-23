@@ -827,12 +827,14 @@ namespace Model
          * <p>Deletes the specified rule.</p> <p>Before you can delete the rule, you must
          * remove all targets, using <a>RemoveTargets</a>.</p> <p>When you delete a rule,
          * incoming events might continue to match to the deleted rule. Allow a short
-         * period of time for changes to take effect.</p> <p>Managed rules are rules
-         * created and managed by another AWS service on your behalf. These rules are
-         * created by those other AWS services to support functionality in those services.
-         * You can delete these rules using the <code>Force</code> option, but you should
-         * do so only if you are sure the other service is not still using that
-         * rule.</p><p><h3>See Also:</h3>   <a
+         * period of time for changes to take effect.</p> <p>If you call delete rule
+         * multiple times for the same rule, all calls will succeed. When you call delete
+         * rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code>
+         * is returned.</p> <p>Managed rules are rules created and managed by another AWS
+         * service on your behalf. These rules are created by those other AWS services to
+         * support functionality in those services. You can delete these rules using the
+         * <code>Force</code> option, but you should do so only if you are sure the other
+         * service is not still using that rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteRule">AWS
          * API Reference</a></p>
          */
@@ -842,12 +844,14 @@ namespace Model
          * <p>Deletes the specified rule.</p> <p>Before you can delete the rule, you must
          * remove all targets, using <a>RemoveTargets</a>.</p> <p>When you delete a rule,
          * incoming events might continue to match to the deleted rule. Allow a short
-         * period of time for changes to take effect.</p> <p>Managed rules are rules
-         * created and managed by another AWS service on your behalf. These rules are
-         * created by those other AWS services to support functionality in those services.
-         * You can delete these rules using the <code>Force</code> option, but you should
-         * do so only if you are sure the other service is not still using that
-         * rule.</p><p><h3>See Also:</h3>   <a
+         * period of time for changes to take effect.</p> <p>If you call delete rule
+         * multiple times for the same rule, all calls will succeed. When you call delete
+         * rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code>
+         * is returned.</p> <p>Managed rules are rules created and managed by another AWS
+         * service on your behalf. These rules are created by those other AWS services to
+         * support functionality in those services. You can delete these rules using the
+         * <code>Force</code> option, but you should do so only if you are sure the other
+         * service is not still using that rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteRule">AWS
          * API Reference</a></p>
          *
@@ -859,12 +863,14 @@ namespace Model
          * <p>Deletes the specified rule.</p> <p>Before you can delete the rule, you must
          * remove all targets, using <a>RemoveTargets</a>.</p> <p>When you delete a rule,
          * incoming events might continue to match to the deleted rule. Allow a short
-         * period of time for changes to take effect.</p> <p>Managed rules are rules
-         * created and managed by another AWS service on your behalf. These rules are
-         * created by those other AWS services to support functionality in those services.
-         * You can delete these rules using the <code>Force</code> option, but you should
-         * do so only if you are sure the other service is not still using that
-         * rule.</p><p><h3>See Also:</h3>   <a
+         * period of time for changes to take effect.</p> <p>If you call delete rule
+         * multiple times for the same rule, all calls will succeed. When you call delete
+         * rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code>
+         * is returned.</p> <p>Managed rules are rules created and managed by another AWS
+         * service on your behalf. These rules are created by those other AWS services to
+         * support functionality in those services. You can delete these rules using the
+         * <code>Force</code> option, but you should do so only if you are sure the other
+         * service is not still using that rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/DeleteRule">AWS
          * API Reference</a></p>
          *
@@ -1853,34 +1859,41 @@ namespace Model
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
          * are invoked when a rule is triggered.</p> <p>You can configure the following as
-         * targets for Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>SSM Run
-         * Command</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>AWS Lambda
-         * functions</p> </li> <li> <p>Data streams in Amazon Kinesis Data Streams</p>
-         * </li> <li> <p>Data delivery streams in Amazon Kinesis Data Firehose</p> </li>
-         * <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>AWS CodeBuild projects</p> </li>
-         * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
-         * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
-         * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
-         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> <li>
-         * <p>Amazon SageMaker Model Building Pipelines</p> </li> </ul> <p>Creating rules
-         * with built-in targets is supported only in the AWS Management Console. The
-         * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2
-         * RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and
-         * <code>EC2 TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
-         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
-         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
-         * streams, AWS Step Functions state machines and API Gateway REST APIs,
-         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
-         * argument in <code>PutTargets</code>. For more information, see <a
+         * targets for Events:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
+         * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
+         * </li> <li> <p>API Gateway</p> </li> <li> <p>AWS Batch job queue</p> </li> <li>
+         * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
+         * <p>CodePineline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
+         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
+         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
+         * ECS tasks</p> </li> <li> <p>Event bus in a different AWS account or Region.</p>
+         * <p>You can use an event bus in the US East (N. Virginia) us-east-1, US West
+         * (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a
+         * rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data Firehose)</p>
+         * </li> <li> <p>Inspector assessment template (Amazon Inspector)</p> </li> <li>
+         * <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>AWS Lambda
+         * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
+         * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
+         * FIFO queues</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
+         * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
+         * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
+         * only in the AWS Management Console. The built-in targets are <code>EC2
+         * CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+         * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API
+         * call</code>. </p> <p>For some target types, <code>PutTargets</code> provides
+         * target-specific parameters. If the target is a Kinesis data stream, you can
+         * optionally specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon EventBridge (CloudWatch Events) needs the appropriate permissions. For
+         * AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based
+         * policies. For EC2 instances, Kinesis data streams, AWS Step Functions state
+         * machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
+         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -1934,34 +1947,41 @@ namespace Model
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
          * are invoked when a rule is triggered.</p> <p>You can configure the following as
-         * targets for Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>SSM Run
-         * Command</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>AWS Lambda
-         * functions</p> </li> <li> <p>Data streams in Amazon Kinesis Data Streams</p>
-         * </li> <li> <p>Data delivery streams in Amazon Kinesis Data Firehose</p> </li>
-         * <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>AWS CodeBuild projects</p> </li>
-         * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
-         * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
-         * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
-         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> <li>
-         * <p>Amazon SageMaker Model Building Pipelines</p> </li> </ul> <p>Creating rules
-         * with built-in targets is supported only in the AWS Management Console. The
-         * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2
-         * RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and
-         * <code>EC2 TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
-         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
-         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
-         * streams, AWS Step Functions state machines and API Gateway REST APIs,
-         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
-         * argument in <code>PutTargets</code>. For more information, see <a
+         * targets for Events:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
+         * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
+         * </li> <li> <p>API Gateway</p> </li> <li> <p>AWS Batch job queue</p> </li> <li>
+         * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
+         * <p>CodePineline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
+         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
+         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
+         * ECS tasks</p> </li> <li> <p>Event bus in a different AWS account or Region.</p>
+         * <p>You can use an event bus in the US East (N. Virginia) us-east-1, US West
+         * (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a
+         * rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data Firehose)</p>
+         * </li> <li> <p>Inspector assessment template (Amazon Inspector)</p> </li> <li>
+         * <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>AWS Lambda
+         * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
+         * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
+         * FIFO queues</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
+         * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
+         * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
+         * only in the AWS Management Console. The built-in targets are <code>EC2
+         * CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+         * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API
+         * call</code>. </p> <p>For some target types, <code>PutTargets</code> provides
+         * target-specific parameters. If the target is a Kinesis data stream, you can
+         * optionally specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon EventBridge (CloudWatch Events) needs the appropriate permissions. For
+         * AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based
+         * policies. For EC2 instances, Kinesis data streams, AWS Step Functions state
+         * machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
+         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -2017,34 +2037,41 @@ namespace Model
          * <p>Adds the specified targets to the specified rule, or updates the targets if
          * they are already associated with the rule.</p> <p>Targets are the resources that
          * are invoked when a rule is triggered.</p> <p>You can configure the following as
-         * targets for Events:</p> <ul> <li> <p>EC2 instances</p> </li> <li> <p>SSM Run
-         * Command</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>AWS Lambda
-         * functions</p> </li> <li> <p>Data streams in Amazon Kinesis Data Streams</p>
-         * </li> <li> <p>Data delivery streams in Amazon Kinesis Data Firehose</p> </li>
-         * <li> <p>Amazon ECS tasks</p> </li> <li> <p>AWS Step Functions state machines</p>
-         * </li> <li> <p>AWS Batch jobs</p> </li> <li> <p>AWS CodeBuild projects</p> </li>
-         * <li> <p>Pipelines in AWS CodePipeline</p> </li> <li> <p>Amazon Inspector
-         * assessment templates</p> </li> <li> <p>Amazon SNS topics</p> </li> <li>
-         * <p>Amazon SQS queues, including FIFO queues</p> </li> <li> <p>The default event
-         * bus of another AWS account</p> </li> <li> <p>Amazon API Gateway REST APIs</p>
-         * </li> <li> <p>Redshift Clusters to invoke Data API ExecuteStatement on</p> </li>
-         * <li> <p>Custom/SaaS HTTPS APIs via EventBridge API Destinations</p> </li> <li>
-         * <p>Amazon SageMaker Model Building Pipelines</p> </li> </ul> <p>Creating rules
-         * with built-in targets is supported only in the AWS Management Console. The
-         * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2
-         * RebootInstances API call</code>, <code>EC2 StopInstances API call</code>, and
-         * <code>EC2 TerminateInstances API call</code>. </p> <p>For some target types,
-         * <code>PutTargets</code> provides target-specific parameters. If the target is a
-         * Kinesis data stream, you can optionally specify which shard the event goes to by
-         * using the <code>KinesisParameters</code> argument. To invoke a command on
-         * multiple EC2 instances with one rule, you can use the
-         * <code>RunCommandParameters</code> field.</p> <p>To be able to make API calls
-         * against the resources that you own, Amazon EventBridge (CloudWatch Events) needs
-         * the appropriate permissions. For AWS Lambda and Amazon SNS resources,
-         * EventBridge relies on resource-based policies. For EC2 instances, Kinesis data
-         * streams, AWS Step Functions state machines and API Gateway REST APIs,
-         * EventBridge relies on IAM roles that you specify in the <code>RoleARN</code>
-         * argument in <code>PutTargets</code>. For more information, see <a
+         * targets for Events:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-api-destinations.html">API
+         * destination</a> </p> </li> <li> <p>Amazon API Gateway REST API endpoints</p>
+         * </li> <li> <p>API Gateway</p> </li> <li> <p>AWS Batch job queue</p> </li> <li>
+         * <p>CloudWatch Logs group</p> </li> <li> <p>CodeBuild project</p> </li> <li>
+         * <p>CodePineline</p> </li> <li> <p>Amazon EC2 <code>CreateSnapshot</code> API
+         * call</p> </li> <li> <p>Amazon EC2 <code>RebootInstances</code> API call</p>
+         * </li> <li> <p>Amazon EC2 <code>StopInstances</code> API call</p> </li> <li>
+         * <p>Amazon EC2 <code>TerminateInstances</code> API call</p> </li> <li> <p>Amazon
+         * ECS tasks</p> </li> <li> <p>Event bus in a different AWS account or Region.</p>
+         * <p>You can use an event bus in the US East (N. Virginia) us-east-1, US West
+         * (Oregon) us-west-2, or Europe (Ireland) eu-west-1 Regions as a target for a
+         * rule.</p> </li> <li> <p>Firehose delivery stream (Kinesis Data Firehose)</p>
+         * </li> <li> <p>Inspector assessment template (Amazon Inspector)</p> </li> <li>
+         * <p>Kinesis stream (Kinesis Data Stream)</p> </li> <li> <p>AWS Lambda
+         * function</p> </li> <li> <p>Redshift clusters (Data API statement execution)</p>
+         * </li> <li> <p>Amazon SNS topic</p> </li> <li> <p>Amazon SQS queues (includes
+         * FIFO queues</p> </li> <li> <p>SSM Automation</p> </li> <li> <p>SSM OpsItem</p>
+         * </li> <li> <p>SSM Run Command</p> </li> <li> <p>Step Functions state
+         * machines</p> </li> </ul> <p>Creating rules with built-in targets is supported
+         * only in the AWS Management Console. The built-in targets are <code>EC2
+         * CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+         * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API
+         * call</code>. </p> <p>For some target types, <code>PutTargets</code> provides
+         * target-specific parameters. If the target is a Kinesis data stream, you can
+         * optionally specify which shard the event goes to by using the
+         * <code>KinesisParameters</code> argument. To invoke a command on multiple EC2
+         * instances with one rule, you can use the <code>RunCommandParameters</code>
+         * field.</p> <p>To be able to make API calls against the resources that you own,
+         * Amazon EventBridge (CloudWatch Events) needs the appropriate permissions. For
+         * AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based
+         * policies. For EC2 instances, Kinesis data streams, AWS Step Functions state
+         * machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
+         * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
          * and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.</p> <p>If
          * another AWS account is in the same region and has granted you permission (using
@@ -2334,7 +2361,7 @@ namespace Model
 
         /**
          * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
-         * EventBridge (CloudWatch Events, rules and event buses can be
+         * EventBridge (CloudWatch Events), rules and event buses can be
          * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
@@ -2343,7 +2370,7 @@ namespace Model
 
         /**
          * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
-         * EventBridge (CloudWatch Events, rules and event buses can be
+         * EventBridge (CloudWatch Events), rules and event buses can be
          * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">AWS
          * API Reference</a></p>
@@ -2354,7 +2381,7 @@ namespace Model
 
         /**
          * <p>Removes one or more tags from the specified EventBridge resource. In Amazon
-         * EventBridge (CloudWatch Events, rules and event buses can be
+         * EventBridge (CloudWatch Events), rules and event buses can be
          * tagged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/UntagResource">AWS
          * API Reference</a></p>

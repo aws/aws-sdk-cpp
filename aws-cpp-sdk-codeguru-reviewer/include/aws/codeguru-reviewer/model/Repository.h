@@ -7,6 +7,7 @@
 #include <aws/codeguru-reviewer/CodeGuruReviewer_EXPORTS.h>
 #include <aws/codeguru-reviewer/model/CodeCommitRepository.h>
 #include <aws/codeguru-reviewer/model/ThirdPartySourceRepository.h>
+#include <aws/codeguru-reviewer/model/S3Repository.h>
 #include <utility>
 
 namespace Aws
@@ -133,6 +134,25 @@ namespace Model
      */
     inline Repository& WithGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { SetGitHubEnterpriseServer(std::move(value)); return *this;}
 
+
+    
+    inline const S3Repository& GetS3Bucket() const{ return m_s3Bucket; }
+
+    
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    
+    inline void SetS3Bucket(const S3Repository& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+
+    
+    inline void SetS3Bucket(S3Repository&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
+
+    
+    inline Repository& WithS3Bucket(const S3Repository& value) { SetS3Bucket(value); return *this;}
+
+    
+    inline Repository& WithS3Bucket(S3Repository&& value) { SetS3Bucket(std::move(value)); return *this;}
+
   private:
 
     CodeCommitRepository m_codeCommit;
@@ -143,6 +163,9 @@ namespace Model
 
     ThirdPartySourceRepository m_gitHubEnterpriseServer;
     bool m_gitHubEnterpriseServerHasBeenSet;
+
+    S3Repository m_s3Bucket;
+    bool m_s3BucketHasBeenSet;
   };
 
 } // namespace Model

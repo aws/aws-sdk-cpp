@@ -25,7 +25,9 @@ RecommendationSummary::RecommendationSummary() :
     m_startLineHasBeenSet(false),
     m_endLine(0),
     m_endLineHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_recommendationCategory(RecommendationCategory::NOT_SET),
+    m_recommendationCategoryHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ RecommendationSummary::RecommendationSummary(JsonView jsonValue) :
     m_startLineHasBeenSet(false),
     m_endLine(0),
     m_endLineHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_recommendationCategory(RecommendationCategory::NOT_SET),
+    m_recommendationCategoryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +82,13 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecommendationCategory"))
+  {
+    m_recommendationCategory = RecommendationCategoryMapper::GetRecommendationCategoryForName(jsonValue.GetString("RecommendationCategory"));
+
+    m_recommendationCategoryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +124,11 @@ JsonValue RecommendationSummary::Jsonize() const
   {
    payload.WithString("Description", m_description);
 
+  }
+
+  if(m_recommendationCategoryHasBeenSet)
+  {
+   payload.WithString("RecommendationCategory", RecommendationCategoryMapper::GetNameForRecommendationCategory(m_recommendationCategory));
   }
 
   return payload;
