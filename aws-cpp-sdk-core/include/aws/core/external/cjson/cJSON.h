@@ -55,6 +55,17 @@ then using the CJSON_API_VISIBILITY flag to "export" the same symbols the way CJ
 #define CJSON_CDECL __cdecl
 #define CJSON_STDCALL __stdcall
 
+/* Decide calling convention based on the cmake parameters defined in C++ SDK. */
+#ifdef USE_IMPORT_EXPORT
+#ifdef AWS_CORE_EXPORTS
+#define CJSON_EXPORT_SYMBOLS
+#else
+#define CJSON_IMPORT_SYMBOLS
+#endif // AWS_CORE_EXPORTS
+#else
+#define CJSON_HIDE_SYMBOLS
+#endif // USE_IMPORT_EXPORT
+
 /* export symbols by default, this is necessary for copy pasting the C and header file */
 #if !defined(CJSON_HIDE_SYMBOLS) && !defined(CJSON_IMPORT_SYMBOLS) && !defined(CJSON_EXPORT_SYMBOLS)
 #define CJSON_EXPORT_SYMBOLS
@@ -197,6 +208,7 @@ CJSON_PUBLIC(cJSON *) cJSON_CreateTrue(void);
 CJSON_PUBLIC(cJSON *) cJSON_CreateFalse(void);
 CJSON_PUBLIC(cJSON *) cJSON_CreateBool(cJSON_bool boolean);
 CJSON_PUBLIC(cJSON *) cJSON_CreateNumber(double num);
+CJSON_PUBLIC(cJSON *) cJSON_CreateInt64(long long num);
 CJSON_PUBLIC(cJSON *) cJSON_CreateString(const char *string);
 /* raw json */
 CJSON_PUBLIC(cJSON *) cJSON_CreateRaw(const char *raw);
@@ -256,7 +268,7 @@ CJSON_PUBLIC(cJSON_bool) cJSON_Compare(const cJSON * const a, const cJSON * cons
 
 /* Minify a strings, remove blank characters(such as ' ', '\t', '\r', '\n') from strings.
  * The input pointer json cannot point to a read-only address area, such as a string constant,
- * but should point to a readable and writable adress area. */
+ * but should point to a readable and writable address area. */
 CJSON_PUBLIC(void) cJSON_Minify(char *json);
 
 /* Helper functions for creating and adding items to an object at the same time.
