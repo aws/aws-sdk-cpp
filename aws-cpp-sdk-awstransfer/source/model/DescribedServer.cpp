@@ -21,6 +21,7 @@ namespace Model
 DescribedServer::DescribedServer() : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_domain(Domain::NOT_SET),
     m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
@@ -45,6 +46,7 @@ DescribedServer::DescribedServer() :
 DescribedServer::DescribedServer(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_domain(Domain::NOT_SET),
     m_domainHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
@@ -81,6 +83,13 @@ DescribedServer& DescribedServer::operator =(JsonView jsonValue)
     m_certificate = jsonValue.GetString("Certificate");
 
     m_certificateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProtocolDetails"))
+  {
+    m_protocolDetails = jsonValue.GetObject("ProtocolDetails");
+
+    m_protocolDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Domain"))
@@ -196,6 +205,12 @@ JsonValue DescribedServer::Jsonize() const
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
 
   }
 

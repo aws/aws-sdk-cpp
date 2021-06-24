@@ -100,14 +100,15 @@ namespace Model
 
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -116,14 +117,15 @@ namespace Model
     inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -132,14 +134,15 @@ namespace Model
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -148,14 +151,15 @@ namespace Model
     inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -164,14 +168,15 @@ namespace Model
     inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -180,14 +185,15 @@ namespace Model
     inline DescribedAccess& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -196,14 +202,15 @@ namespace Model
     inline DescribedAccess& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -212,14 +219,15 @@ namespace Model
     inline DescribedAccess& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or
-     * Amazon EFS paths and keys should be visible to the associated access and how you
-     * want to make them visible. You must specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You also must ensure that your AWS
-     * Identity and Access Management (IAM) role provides access to paths in
-     * <code>Target</code>.</p> <p>In most cases, you can use this value instead of the
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
      * scope-down policy to lock down the associated access to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
      * '/' and set <code>Target</code> to the <code>HomeDirectory</code> parameter
@@ -473,120 +481,120 @@ namespace Model
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
 
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
 
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
 
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline DescribedAccess& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
 
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline DescribedAccess& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier that is required to identify specific groups within your
      * directory. The users of the group that you associate have access to your Amazon
-     * S3 or Amazon EFS resources over the enabled protocols using AWS Transfer Family.
-     * If you know the group name, you can view the SID values by running the following
-     * command using Windows PowerShell.</p> <p> <code>Get-ADGroup -Filter
-     * {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select
-     * SamAccountName,ObjectSid</code> </p> <p>In that command, replace
-     * <i>YourGroupName</i> with the name of your Active Directory group.</p> <p>The
-     * regex used to validate this parameter is a string of characters consisting of
-     * uppercase and lowercase alphanumeric characters with no spaces. You can also
-     * include underscores or any of the following characters: =,.@:/-</p>
+     * S3 or Amazon EFS resources over the enabled protocols using Amazon Web Services
+     * Transfer Family. If you know the group name, you can view the SID values by
+     * running the following command using Windows PowerShell.</p> <p>
+     * <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"}
+     * -Properties * | Select SamAccountName,ObjectSid</code> </p> <p>In that command,
+     * replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+     * <p>The regex used to validate this parameter is a string of characters
+     * consisting of uppercase and lowercase alphanumeric characters with no spaces.
+     * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
     inline DescribedAccess& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 

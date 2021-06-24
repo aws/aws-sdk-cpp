@@ -30,7 +30,7 @@ namespace Model
    * to extract data from your database. To allow or block web requests that appear
    * to contain malicious SQL code, create one or more SQL injection match
    * conditions. An SQL injection match condition identifies the part of web
-   * requests, such as the URI or the query string, that you want AWS WAF to inspect.
+   * requests, such as the URI or the query string, that you want WAF to inspect.
    * Later in the process, when you create a web ACL, you specify whether to allow or
    * block requests that appear to contain malicious SQL code.</p><p><h3>See
    * Also:</h3>   <a
@@ -47,38 +47,38 @@ namespace Model
 
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline SqliMatchStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline SqliMatchStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -156,7 +156,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>

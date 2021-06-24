@@ -88,68 +88,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline CreateIPSetRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline CreateIPSetRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -228,17 +234,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -250,17 +255,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -272,17 +276,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -294,17 +297,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -316,17 +318,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -338,17 +339,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -360,17 +360,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -382,17 +381,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For
@@ -404,17 +402,16 @@ namespace Model
 
     /**
      * <p>Contains an array of strings that specify one or more IP addresses or blocks
-     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. AWS WAF
-     * supports all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p>
-     * <ul> <li> <p>To configure AWS WAF to allow, block, or count requests that
-     * originated from the IP address 192.0.2.44, specify
-     * <code>192.0.2.44/32</code>.</p> </li> <li> <p>To configure AWS WAF to allow,
-     * block, or count requests that originated from IP addresses from 192.0.2.0 to
-     * 192.0.2.255, specify <code>192.0.2.0/24</code>.</p> </li> <li> <p>To configure
-     * AWS WAF to allow, block, or count requests that originated from the IP address
-     * 1111:0000:0000:0000:0000:0000:0000:0111, specify
+     * of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports
+     * all IPv4 and IPv6 CIDR ranges except for /0. </p> <p>Examples: </p> <ul> <li>
+     * <p>To configure WAF to allow, block, or count requests that originated from the
+     * IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p> </li> <li> <p>To
+     * configure WAF to allow, block, or count requests that originated from IP
+     * addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+     * </li> <li> <p>To configure WAF to allow, block, or count requests that
+     * originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.</p> </li> <li> <p>To
-     * configure AWS WAF to allow, block, or count requests that originated from IP
+     * configure WAF to allow, block, or count requests that originated from IP
      * addresses 1111:0000:0000:0000:0000:0000:0000:0000 to
      * 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify
      * <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p> </li> </ul> <p>For

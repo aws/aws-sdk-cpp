@@ -102,7 +102,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline const ForwardedIPConfig& GetForwardedIPConfig() const{ return m_forwardedIPConfig; }
 
@@ -111,7 +111,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline bool ForwardedIPConfigHasBeenSet() const { return m_forwardedIPConfigHasBeenSet; }
 
@@ -120,7 +120,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline void SetForwardedIPConfig(const ForwardedIPConfig& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = value; }
 
@@ -129,7 +129,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline void SetForwardedIPConfig(ForwardedIPConfig&& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = std::move(value); }
 
@@ -138,7 +138,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline GeoMatchStatement& WithForwardedIPConfig(const ForwardedIPConfig& value) { SetForwardedIPConfig(value); return *this;}
 
@@ -147,7 +147,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline GeoMatchStatement& WithForwardedIPConfig(ForwardedIPConfig&& value) { SetForwardedIPConfig(std::move(value)); return *this;}
 

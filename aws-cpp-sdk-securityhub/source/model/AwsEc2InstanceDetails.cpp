@@ -27,7 +27,8 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails() :
     m_iamInstanceProfileArnHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_launchedAtHasBeenSet(false)
+    m_launchedAtHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue) :
     m_iamInstanceProfileArnHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_launchedAtHasBeenSet(false)
+    m_launchedAtHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,16 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     m_launchedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkInterfaces"))
+  {
+    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("NetworkInterfaces");
+    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+    {
+      m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
+    }
+    m_networkInterfacesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -184,6 +196,17 @@ JsonValue AwsEc2InstanceDetails::Jsonize() const
   if(m_launchedAtHasBeenSet)
   {
    payload.WithString("LaunchedAt", m_launchedAt);
+
+  }
+
+  if(m_networkInterfacesHasBeenSet)
+  {
+   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+   {
+     networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
+   }
+   payload.WithArray("NetworkInterfaces", std::move(networkInterfacesJsonList));
 
   }
 

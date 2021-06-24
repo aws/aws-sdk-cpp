@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/codebuild/model/BucketOwnerAccess.h>
+#include <aws/dax/model/ClusterEndpointEncryptionType.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,53 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace CodeBuild
+  namespace DAX
   {
     namespace Model
     {
-      namespace BucketOwnerAccessMapper
+      namespace ClusterEndpointEncryptionTypeMapper
       {
 
         static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
+        static const int TLS_HASH = HashingUtils::HashString("TLS");
 
 
-        BucketOwnerAccess GetBucketOwnerAccessForName(const Aws::String& name)
+        ClusterEndpointEncryptionType GetClusterEndpointEncryptionTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
           if (hashCode == NONE_HASH)
           {
-            return BucketOwnerAccess::NONE;
+            return ClusterEndpointEncryptionType::NONE;
           }
-          else if (hashCode == READ_ONLY_HASH)
+          else if (hashCode == TLS_HASH)
           {
-            return BucketOwnerAccess::READ_ONLY;
-          }
-          else if (hashCode == FULL_HASH)
-          {
-            return BucketOwnerAccess::FULL;
+            return ClusterEndpointEncryptionType::TLS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BucketOwnerAccess>(hashCode);
+            return static_cast<ClusterEndpointEncryptionType>(hashCode);
           }
 
-          return BucketOwnerAccess::NOT_SET;
+          return ClusterEndpointEncryptionType::NOT_SET;
         }
 
-        Aws::String GetNameForBucketOwnerAccess(BucketOwnerAccess enumValue)
+        Aws::String GetNameForClusterEndpointEncryptionType(ClusterEndpointEncryptionType enumValue)
         {
           switch(enumValue)
           {
-          case BucketOwnerAccess::NONE:
+          case ClusterEndpointEncryptionType::NONE:
             return "NONE";
-          case BucketOwnerAccess::READ_ONLY:
-            return "READ_ONLY";
-          case BucketOwnerAccess::FULL:
-            return "FULL";
+          case ClusterEndpointEncryptionType::TLS:
+            return "TLS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace BucketOwnerAccessMapper
+      } // namespace ClusterEndpointEncryptionTypeMapper
     } // namespace Model
-  } // namespace CodeBuild
+  } // namespace DAX
 } // namespace Aws

@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. </p>
      */
     inline const Aws::String& GetQuickConnectId() const{ return m_quickConnectId; }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. </p>
      */
     inline void SetQuickConnectId(const Aws::String& value) { m_quickConnectId = value; }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. </p>
      */
     inline void SetQuickConnectId(Aws::String&& value) { m_quickConnectId = std::move(value); }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. </p>
      */
     inline void SetQuickConnectId(const char* value) { m_quickConnectId.assign(value); }
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. </p>
      */
     inline CreateQuickConnectResult& WithQuickConnectId(const Aws::String& value) { SetQuickConnectId(value); return *this;}
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. </p>
      */
     inline CreateQuickConnectResult& WithQuickConnectId(Aws::String&& value) { SetQuickConnectId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the quick connect.</p>
+     * <p>The identifier for the quick connect. </p>
      */
     inline CreateQuickConnectResult& WithQuickConnectId(const char* value) { SetQuickConnectId(value); return *this;}
 

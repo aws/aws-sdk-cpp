@@ -36,32 +36,32 @@ namespace Model
 
 
     /**
-     * <p>The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses
-     * web ACL capacity units (WCU) to calculate and control the operating resources
-     * that are used to run your rules, rule groups, and web ACLs. AWS WAF calculates
-     * capacity differently for each rule type, to reflect each rule's relative cost.
-     * Rule group capacity is fixed at creation, so users can plan their web ACL WCU
-     * usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+     * <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web
+     * ACL capacity units (WCU) to calculate and control the operating resources that
+     * are used to run your rules, rule groups, and web ACLs. WAF calculates capacity
+     * differently for each rule type, to reflect each rule's relative cost. Rule group
+     * capacity is fixed at creation, so users can plan their web ACL WCU usage when
+     * they use a rule group. The WCU limit for web ACLs is 1,500. </p>
      */
     inline long long GetCapacity() const{ return m_capacity; }
 
     /**
-     * <p>The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses
-     * web ACL capacity units (WCU) to calculate and control the operating resources
-     * that are used to run your rules, rule groups, and web ACLs. AWS WAF calculates
-     * capacity differently for each rule type, to reflect each rule's relative cost.
-     * Rule group capacity is fixed at creation, so users can plan their web ACL WCU
-     * usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+     * <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web
+     * ACL capacity units (WCU) to calculate and control the operating resources that
+     * are used to run your rules, rule groups, and web ACLs. WAF calculates capacity
+     * differently for each rule type, to reflect each rule's relative cost. Rule group
+     * capacity is fixed at creation, so users can plan their web ACL WCU usage when
+     * they use a rule group. The WCU limit for web ACLs is 1,500. </p>
      */
     inline void SetCapacity(long long value) { m_capacity = value; }
 
     /**
-     * <p>The web ACL capacity units (WCUs) required for this rule group. AWS WAF uses
-     * web ACL capacity units (WCU) to calculate and control the operating resources
-     * that are used to run your rules, rule groups, and web ACLs. AWS WAF calculates
-     * capacity differently for each rule type, to reflect each rule's relative cost.
-     * Rule group capacity is fixed at creation, so users can plan their web ACL WCU
-     * usage when they use a rule group. The WCU limit for web ACLs is 1,500. </p>
+     * <p>The web ACL capacity units (WCUs) required for this rule group. WAF uses web
+     * ACL capacity units (WCU) to calculate and control the operating resources that
+     * are used to run your rules, rule groups, and web ACLs. WAF calculates capacity
+     * differently for each rule type, to reflect each rule's relative cost. Rule group
+     * capacity is fixed at creation, so users can plan their web ACL WCU usage when
+     * they use a rule group. The WCU limit for web ACLs is 1,500. </p>
      */
     inline DescribeManagedRuleGroupResult& WithCapacity(long long value) { SetCapacity(value); return *this;}
 
@@ -107,7 +107,7 @@ namespace Model
      * this rule group have this prefix. </p> <ul> <li> <p>The syntax for the label
      * namespace prefix for a managed rule group is the following: </p> <p>
      * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:</p> </li>
-     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * <li> <p>When a rule with a label matches a web request, WAF adds the fully
      * qualified label to the request. A fully qualified label is made up of the label
      * namespace from the rule group or web ACL where the rule is defined and the label
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
@@ -120,7 +120,7 @@ namespace Model
      * this rule group have this prefix. </p> <ul> <li> <p>The syntax for the label
      * namespace prefix for a managed rule group is the following: </p> <p>
      * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:</p> </li>
-     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * <li> <p>When a rule with a label matches a web request, WAF adds the fully
      * qualified label to the request. A fully qualified label is made up of the label
      * namespace from the rule group or web ACL where the rule is defined and the label
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
@@ -133,7 +133,7 @@ namespace Model
      * this rule group have this prefix. </p> <ul> <li> <p>The syntax for the label
      * namespace prefix for a managed rule group is the following: </p> <p>
      * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:</p> </li>
-     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * <li> <p>When a rule with a label matches a web request, WAF adds the fully
      * qualified label to the request. A fully qualified label is made up of the label
      * namespace from the rule group or web ACL where the rule is defined and the label
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
@@ -146,7 +146,7 @@ namespace Model
      * this rule group have this prefix. </p> <ul> <li> <p>The syntax for the label
      * namespace prefix for a managed rule group is the following: </p> <p>
      * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:</p> </li>
-     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * <li> <p>When a rule with a label matches a web request, WAF adds the fully
      * qualified label to the request. A fully qualified label is made up of the label
      * namespace from the rule group or web ACL where the rule is defined and the label
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
@@ -159,7 +159,7 @@ namespace Model
      * this rule group have this prefix. </p> <ul> <li> <p>The syntax for the label
      * namespace prefix for a managed rule group is the following: </p> <p>
      * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:</p> </li>
-     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * <li> <p>When a rule with a label matches a web request, WAF adds the fully
      * qualified label to the request. A fully qualified label is made up of the label
      * namespace from the rule group or web ACL where the rule is defined and the label
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
@@ -172,7 +172,7 @@ namespace Model
      * this rule group have this prefix. </p> <ul> <li> <p>The syntax for the label
      * namespace prefix for a managed rule group is the following: </p> <p>
      * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:</p> </li>
-     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * <li> <p>When a rule with a label matches a web request, WAF adds the fully
      * qualified label to the request. A fully qualified label is made up of the label
      * namespace from the rule group or web ACL where the rule is defined and the label
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
@@ -185,7 +185,7 @@ namespace Model
      * this rule group have this prefix. </p> <ul> <li> <p>The syntax for the label
      * namespace prefix for a managed rule group is the following: </p> <p>
      * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:</p> </li>
-     * <li> <p>When a rule with a label matches a web request, AWS WAF adds the fully
+     * <li> <p>When a rule with a label matches a web request, WAF adds the fully
      * qualified label to the request. A fully qualified label is made up of the label
      * namespace from the rule group or web ACL where the rule is defined and the label
      * from the rule, separated by a colon: </p> <p> <code>&lt;label
@@ -196,49 +196,49 @@ namespace Model
 
     /**
      * <p>The labels that one or more rules in this rule group add to matching web
-     * ACLs. These labels are defined in the <code>RuleLabels</code> for a
+     * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
     inline const Aws::Vector<LabelSummary>& GetAvailableLabels() const{ return m_availableLabels; }
 
     /**
      * <p>The labels that one or more rules in this rule group add to matching web
-     * ACLs. These labels are defined in the <code>RuleLabels</code> for a
+     * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
     inline void SetAvailableLabels(const Aws::Vector<LabelSummary>& value) { m_availableLabels = value; }
 
     /**
      * <p>The labels that one or more rules in this rule group add to matching web
-     * ACLs. These labels are defined in the <code>RuleLabels</code> for a
+     * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
     inline void SetAvailableLabels(Aws::Vector<LabelSummary>&& value) { m_availableLabels = std::move(value); }
 
     /**
      * <p>The labels that one or more rules in this rule group add to matching web
-     * ACLs. These labels are defined in the <code>RuleLabels</code> for a
+     * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
     inline DescribeManagedRuleGroupResult& WithAvailableLabels(const Aws::Vector<LabelSummary>& value) { SetAvailableLabels(value); return *this;}
 
     /**
      * <p>The labels that one or more rules in this rule group add to matching web
-     * ACLs. These labels are defined in the <code>RuleLabels</code> for a
+     * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
     inline DescribeManagedRuleGroupResult& WithAvailableLabels(Aws::Vector<LabelSummary>&& value) { SetAvailableLabels(std::move(value)); return *this;}
 
     /**
      * <p>The labels that one or more rules in this rule group add to matching web
-     * ACLs. These labels are defined in the <code>RuleLabels</code> for a
+     * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
     inline DescribeManagedRuleGroupResult& AddAvailableLabels(const LabelSummary& value) { m_availableLabels.push_back(value); return *this; }
 
     /**
      * <p>The labels that one or more rules in this rule group add to matching web
-     * ACLs. These labels are defined in the <code>RuleLabels</code> for a
+     * requests. These labels are defined in the <code>RuleLabels</code> for a
      * <a>Rule</a>.</p>
      */
     inline DescribeManagedRuleGroupResult& AddAvailableLabels(LabelSummary&& value) { m_availableLabels.push_back(std::move(value)); return *this; }

@@ -32,8 +32,8 @@ namespace Model
    * label name that had been added to the web request. Fully qualified labels have a
    * prefix, optional namespaces, and label name. The prefix identifies the rule
    * group or web ACL context of the rule that added the label. If you do not provide
-   * the fully qualified name in your label match string, AWS WAF performs the search
-   * for labels that were added in the same context as the label match statement.
+   * the fully qualified name in your label match string, WAF performs the search for
+   * labels that were added in the same context as the label match statement.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LabelMatchStatement">AWS
    * API Reference</a></p>
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>
@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>
@@ -146,7 +146,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>
@@ -161,7 +161,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>
@@ -176,7 +176,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>
@@ -191,7 +191,7 @@ namespace Model
 
     /**
      * <p>The string to match against. The setting you provide for this depends on the
-     * match statement's <code>Scope</code> settings: </p> <ul> <li> <p>If the
+     * match statement's <code>Scope</code> setting: </p> <ul> <li> <p>If the
      * <code>Scope</code> indicates <code>LABEL</code>, then this specification must
      * include the name and can include any number of preceding namespace
      * specifications and prefix up to providing the fully qualified label name. </p>

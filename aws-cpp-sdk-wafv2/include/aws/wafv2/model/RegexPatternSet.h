@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains one or more regular expressions. </p> <p>AWS WAF assigns an ARN to
-   * each <code>RegexPatternSet</code> that you create. To use a set in a rule, you
+   * <p>Contains one or more regular expressions. </p> <p>WAF assigns an ARN to each
+   * <code>RegexPatternSet</code> that you create. To use a set in a rule, you
    * provide the ARN to the <a>Rule</a> statement
    * <a>RegexPatternSetReferenceStatement</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexPatternSet">AWS

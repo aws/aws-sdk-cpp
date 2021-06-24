@@ -23,9 +23,7 @@ S3LogsConfig::S3LogsConfig() :
     m_statusHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
-    m_bucketOwnerAccessHasBeenSet(false)
+    m_encryptionDisabledHasBeenSet(false)
 {
 }
 
@@ -34,9 +32,7 @@ S3LogsConfig::S3LogsConfig(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false),
-    m_bucketOwnerAccess(BucketOwnerAccess::NOT_SET),
-    m_bucketOwnerAccessHasBeenSet(false)
+    m_encryptionDisabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -64,13 +60,6 @@ S3LogsConfig& S3LogsConfig::operator =(JsonView jsonValue)
     m_encryptionDisabledHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("bucketOwnerAccess"))
-  {
-    m_bucketOwnerAccess = BucketOwnerAccessMapper::GetBucketOwnerAccessForName(jsonValue.GetString("bucketOwnerAccess"));
-
-    m_bucketOwnerAccessHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -93,11 +82,6 @@ JsonValue S3LogsConfig::Jsonize() const
   {
    payload.WithBool("encryptionDisabled", m_encryptionDisabled);
 
-  }
-
-  if(m_bucketOwnerAccessHasBeenSet)
-  {
-   payload.WithString("bucketOwnerAccess", BucketOwnerAccessMapper::GetNameForBucketOwnerAccess(m_bucketOwnerAccess));
   }
 
   return payload;

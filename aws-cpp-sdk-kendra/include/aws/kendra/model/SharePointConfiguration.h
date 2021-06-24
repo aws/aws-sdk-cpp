@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/DataSourceVpcConfiguration.h>
+#include <aws/kendra/model/S3Path.h>
 #include <aws/kendra/model/DataSourceToIndexFieldMapping.h>
 #include <utility>
 
@@ -130,7 +131,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -142,7 +145,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -154,7 +159,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -166,7 +173,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -178,7 +187,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -190,7 +201,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -202,7 +215,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -214,7 +229,9 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of credentials stored in AWS Secrets Manager.
-     * The credentials should be a user/password pair. For more information, see <a
+     * The credentials should be a user/password pair. If you use SharePoint Sever, you
+     * also need to provide the sever domain name as part of the credentials. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
      * a Microsoft SharePoint Data Source</a>. For more information about AWS Secrets
      * Manager, see <a
@@ -624,6 +641,25 @@ namespace Model
      */
     inline SharePointConfiguration& WithDisableLocalGroups(bool value) { SetDisableLocalGroups(value); return *this;}
 
+
+    
+    inline const S3Path& GetSslCertificateS3Path() const{ return m_sslCertificateS3Path; }
+
+    
+    inline bool SslCertificateS3PathHasBeenSet() const { return m_sslCertificateS3PathHasBeenSet; }
+
+    
+    inline void SetSslCertificateS3Path(const S3Path& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = value; }
+
+    
+    inline void SetSslCertificateS3Path(S3Path&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::move(value); }
+
+    
+    inline SharePointConfiguration& WithSslCertificateS3Path(const S3Path& value) { SetSslCertificateS3Path(value); return *this;}
+
+    
+    inline SharePointConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
+
   private:
 
     SharePointVersion m_sharePointVersion;
@@ -658,6 +694,9 @@ namespace Model
 
     bool m_disableLocalGroups;
     bool m_disableLocalGroupsHasBeenSet;
+
+    S3Path m_sslCertificateS3Path;
+    bool m_sslCertificateS3PathHasBeenSet;
   };
 
 } // namespace Model

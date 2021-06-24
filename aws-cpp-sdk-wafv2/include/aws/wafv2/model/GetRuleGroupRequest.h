@@ -85,68 +85,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline GetRuleGroupRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline GetRuleGroupRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -207,6 +213,47 @@ namespace Model
      */
     inline GetRuleGroupRequest& WithId(const char* value) { SetId(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline GetRuleGroupRequest& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline GetRuleGroupRequest& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the entity.</p>
+     */
+    inline GetRuleGroupRequest& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -217,6 +264,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
   };
 
 } // namespace Model

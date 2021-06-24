@@ -25,8 +25,7 @@ namespace Model
 
   /**
    * <p>Represents the information required for client programs to connect to the
-   * configuration endpoint for a DAX cluster, or to an individual node within the
-   * cluster.</p><p><h3>See Also:</h3>   <a
+   * endpoint for a DAX cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dax-2017-04-19/Endpoint">AWS API
    * Reference</a></p>
    */
@@ -100,6 +99,55 @@ namespace Model
      */
     inline Endpoint& WithPort(int value) { SetPort(value); return *this;}
 
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline const Aws::String& GetURL() const{ return m_uRL; }
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline bool URLHasBeenSet() const { return m_uRLHasBeenSet; }
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline void SetURL(const Aws::String& value) { m_uRLHasBeenSet = true; m_uRL = value; }
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline void SetURL(Aws::String&& value) { m_uRLHasBeenSet = true; m_uRL = std::move(value); }
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline void SetURL(const char* value) { m_uRLHasBeenSet = true; m_uRL.assign(value); }
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline Endpoint& WithURL(const Aws::String& value) { SetURL(value); return *this;}
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline Endpoint& WithURL(Aws::String&& value) { SetURL(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL that applications should use to connect to the endpoint. The default
+     * ports are 8111 for the "dax" protocol and 9111 for the "daxs" protocol.</p>
+     */
+    inline Endpoint& WithURL(const char* value) { SetURL(value); return *this;}
+
   private:
 
     Aws::String m_address;
@@ -107,6 +155,9 @@ namespace Model
 
     int m_port;
     bool m_portHasBeenSet;
+
+    Aws::String m_uRL;
+    bool m_uRLHasBeenSet;
   };
 
 } // namespace Model

@@ -976,8 +976,7 @@ namespace Model
         virtual void CreateQueueAsync(const Model::CreateQueueRequest& request, const CreateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates a quick connect for the specified Amazon Connect
+         * <p>Creates a quick connect for the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">AWS
          * API Reference</a></p>
@@ -985,8 +984,7 @@ namespace Model
         virtual Model::CreateQuickConnectOutcome CreateQuickConnect(const Model::CreateQuickConnectRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates a quick connect for the specified Amazon Connect
+         * <p>Creates a quick connect for the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">AWS
          * API Reference</a></p>
@@ -996,8 +994,7 @@ namespace Model
         virtual Model::CreateQuickConnectOutcomeCallable CreateQuickConnectCallable(const Model::CreateQuickConnectRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Creates a quick connect for the specified Amazon Connect
+         * <p>Creates a quick connect for the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateQuickConnect">AWS
          * API Reference</a></p>
@@ -1199,16 +1196,14 @@ namespace Model
         virtual void DeleteIntegrationAssociationAsync(const Model::DeleteIntegrationAssociationRequest& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteQuickConnectOutcome DeleteQuickConnect(const Model::DeleteQuickConnectRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
          * API Reference</a></p>
          *
@@ -1217,8 +1212,7 @@ namespace Model
         virtual Model::DeleteQuickConnectOutcomeCallable DeleteQuickConnectCallable(const Model::DeleteQuickConnectRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a quick connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteQuickConnect">AWS
          * API Reference</a></p>
          *
@@ -1518,16 +1512,14 @@ namespace Model
         virtual void DescribeQueueAsync(const Model::DescribeQueueRequest& request, const DescribeQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeQuickConnectOutcome DescribeQuickConnect(const Model::DescribeQuickConnectRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">AWS
          * API Reference</a></p>
          *
@@ -1536,8 +1528,7 @@ namespace Model
         virtual Model::DescribeQuickConnectOutcomeCallable DescribeQuickConnectCallable(const Model::DescribeQuickConnectRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the quick connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeQuickConnect">AWS
          * API Reference</a></p>
          *
@@ -2524,18 +2515,16 @@ namespace Model
         virtual void ListQueuesAsync(const Model::ListQueuesRequest& request, const ListQueuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Provides information about the quick connects for the specified
-         * Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about the quick connects for the specified Amazon
+         * Connect instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">AWS
          * API Reference</a></p>
          */
         virtual Model::ListQuickConnectsOutcome ListQuickConnects(const Model::ListQuickConnectsRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Provides information about the quick connects for the specified
-         * Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about the quick connects for the specified Amazon
+         * Connect instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">AWS
          * API Reference</a></p>
          *
@@ -2544,9 +2533,8 @@ namespace Model
         virtual Model::ListQuickConnectsOutcomeCallable ListQuickConnectsCallable(const Model::ListQuickConnectsRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Provides information about the quick connects for the specified
-         * Amazon Connect instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Provides information about the quick connects for the specified Amazon
+         * Connect instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListQuickConnects">AWS
          * API Reference</a></p>
          *
@@ -3615,8 +3603,7 @@ namespace Model
         virtual void UpdateQueueStatusAsync(const Model::UpdateQueueStatusRequest& request, const UpdateQueueStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the configuration settings for the specified quick
+         * <p>Updates the configuration settings for the specified quick
          * connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">AWS
          * API Reference</a></p>
@@ -3624,8 +3611,7 @@ namespace Model
         virtual Model::UpdateQuickConnectConfigOutcome UpdateQuickConnectConfig(const Model::UpdateQuickConnectConfigRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the configuration settings for the specified quick
+         * <p>Updates the configuration settings for the specified quick
          * connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">AWS
          * API Reference</a></p>
@@ -3635,8 +3621,7 @@ namespace Model
         virtual Model::UpdateQuickConnectConfigOutcomeCallable UpdateQuickConnectConfigCallable(const Model::UpdateQuickConnectConfigRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the configuration settings for the specified quick
+         * <p>Updates the configuration settings for the specified quick
          * connect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectConfig">AWS
          * API Reference</a></p>
@@ -3646,9 +3631,8 @@ namespace Model
         virtual void UpdateQuickConnectConfigAsync(const Model::UpdateQuickConnectConfigRequest& request, const UpdateQuickConnectConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the name and description of a quick connect. The request
-         * accepts the following data in JSON format. At least <code>Name</code> or
+         * <p>Updates the name and description of a quick connect. The request accepts the
+         * following data in JSON format. At least <code>Name</code> or
          * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
          * API Reference</a></p>
@@ -3656,9 +3640,8 @@ namespace Model
         virtual Model::UpdateQuickConnectNameOutcome UpdateQuickConnectName(const Model::UpdateQuickConnectNameRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the name and description of a quick connect. The request
-         * accepts the following data in JSON format. At least <code>Name</code> or
+         * <p>Updates the name and description of a quick connect. The request accepts the
+         * following data in JSON format. At least <code>Name</code> or
          * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
          * API Reference</a></p>
@@ -3668,9 +3651,8 @@ namespace Model
         virtual Model::UpdateQuickConnectNameOutcomeCallable UpdateQuickConnectNameCallable(const Model::UpdateQuickConnectNameRequest& request) const;
 
         /**
-         * <p>This API is in preview release for Amazon Connect and is subject to
-         * change.</p> <p>Updates the name and description of a quick connect. The request
-         * accepts the following data in JSON format. At least <code>Name</code> or
+         * <p>Updates the name and description of a quick connect. The request accepts the
+         * following data in JSON format. At least <code>Name</code> or
          * <code>Description</code> must be provided.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateQuickConnectName">AWS
          * API Reference</a></p>

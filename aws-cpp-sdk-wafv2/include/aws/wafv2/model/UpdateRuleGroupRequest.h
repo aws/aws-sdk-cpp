@@ -90,68 +90,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline UpdateRuleGroupRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an API Gateway REST API, or an AppSync GraphQL API. </p> <p>To work with
-     * CloudFront, you must also specify the Region US East (N. Virginia) as follows:
-     * </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront scope:
-     * <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li> <p>API and
-     * SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> </ul>
+     * (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p> <p>To
+     * work with CloudFront, you must also specify the Region US East (N. Virginia) as
+     * follows: </p> <ul> <li> <p>CLI - Specify the Region when you use the CloudFront
+     * scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> <li>
+     * <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
+     * </ul>
      */
     inline UpdateRuleGroupRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -256,65 +262,65 @@ namespace Model
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline UpdateRuleGroupRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline UpdateRuleGroupRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline UpdateRuleGroupRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that AWS WAF
-     * uses to identify matching web requests, and parameters that govern how AWS WAF
-     * handles them. </p>
+     * allow, block, or count. Each rule includes one top-level statement that WAF uses
+     * to identify matching web requests, and parameters that govern how WAF handles
+     * them. </p>
      */
     inline UpdateRuleGroupRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
@@ -357,98 +363,98 @@ namespace Model
 
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline const Aws::String& GetLockToken() const{ return m_lockToken; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline bool LockTokenHasBeenSet() const { return m_lockTokenHasBeenSet; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline void SetLockToken(const Aws::String& value) { m_lockTokenHasBeenSet = true; m_lockToken = value; }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline void SetLockToken(Aws::String&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::move(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline void SetLockToken(const char* value) { m_lockTokenHasBeenSet = true; m_lockToken.assign(value); }
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline UpdateRuleGroupRequest& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline UpdateRuleGroupRequest& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used for optimistic locking. AWS WAF returns a token to your get and
-     * list requests, to mark the state of the entity at the time of the request. To
-     * make changes to the entity associated with the token, you provide the token to
-     * operations like update and delete. AWS WAF uses the token to ensure that no
-     * changes have been made to the entity since you last retrieved it. If a change
-     * has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-     * If this happens, perform another get, and use the new token returned by that
-     * operation. </p>
+     * <p>A token used for optimistic locking. WAF returns a token to your get and list
+     * requests, to mark the state of the entity at the time of the request. To make
+     * changes to the entity associated with the token, you provide the token to
+     * operations like update and delete. WAF uses the token to ensure that no changes
+     * have been made to the entity since you last retrieved it. If a change has been
+     * made, the update fails with a <code>WAFOptimisticLockException</code>. If this
+     * happens, perform another get, and use the new token returned by that operation.
+     * </p>
      */
     inline UpdateRuleGroupRequest& WithLockToken(const char* value) { SetLockToken(value); return *this;}
 
@@ -460,14 +466,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const Aws::Map<Aws::String, CustomResponseBody>& GetCustomResponseBodies() const{ return m_customResponseBodies; }
 
@@ -478,14 +484,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool CustomResponseBodiesHasBeenSet() const { return m_customResponseBodiesHasBeenSet; }
 
@@ -496,14 +502,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = value; }
 
@@ -514,14 +520,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = std::move(value); }
 
@@ -532,14 +538,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& WithCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { SetCustomResponseBodies(value); return *this;}
 
@@ -550,14 +556,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& WithCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { SetCustomResponseBodies(std::move(value)); return *this;}
 
@@ -568,14 +574,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const Aws::String& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
 
@@ -586,14 +592,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(Aws::String&& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), value); return *this; }
 
@@ -604,14 +610,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const Aws::String& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
 
@@ -622,14 +628,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(Aws::String&& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -640,14 +646,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const char* key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
 
@@ -658,14 +664,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p> <p>For information about the limits on count and
-     * size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const char* key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
 

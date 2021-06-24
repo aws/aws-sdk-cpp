@@ -31,7 +31,7 @@ namespace Model
    * <p>A rule statement used to run the rules that are defined in a managed rule
    * group. To use this, provide the vendor name and the name of the rule group in
    * this statement. You can retrieve the required names by calling
-   * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You can't nest a
+   * <a>ListAvailableManagedRuleGroups</a>.</p> <p>You cannot nest a
    * <code>ManagedRuleGroupStatement</code>, for example for use inside a
    * <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced
    * as a top-level statement within a rule.</p><p><h3>See Also:</h3>   <a
@@ -202,22 +202,58 @@ namespace Model
     inline ManagedRuleGroupStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
     const Statement& GetScopeDownStatement() const;
 
-    
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
     bool ScopeDownStatementHasBeenSet() const;
 
-    
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
     void SetScopeDownStatement(const Statement& value);
 
-    
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
     void SetScopeDownStatement(Statement&& value);
 
-    
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
     ManagedRuleGroupStatement& WithScopeDownStatement(const Statement& value);
 
-    
+    /**
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the managed rule group. Requests are only evaluated by the rule
+     * group if they match the scope-down statement. You can use any nestable
+     * <a>Statement</a> in the scope-down statement, and you can nest statements at any
+     * level, the same as you can for a rule statement. </p>
+     */
     ManagedRuleGroupStatement& WithScopeDownStatement(Statement&& value);
 
   private:

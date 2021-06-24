@@ -32,9 +32,9 @@ namespace Model
   /**
    * <p>A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to
    * identify web requests that you want to allow, block, or count. Each rule
-   * includes one top-level <a>Statement</a> that AWS WAF uses to identify matching
-   * web requests, and parameters that govern how AWS WAF handles them.
-   * </p><p><h3>See Also:</h3>   <a
+   * includes one top-level <a>Statement</a> that WAF uses to identify matching web
+   * requests, and parameters that govern how WAF handles them. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Rule">AWS API
    * Reference</a></p>
    */
@@ -97,81 +97,77 @@ namespace Model
 
 
     /**
-     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS
-     * WAF evaluates each request against the <code>Rules</code> in order based on the
-     * value of <code>Priority</code>. AWS WAF processes rules with lower priority
-     * first. The priorities don't need to be consecutive, but they must all be
-     * different.</p>
+     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
+     * evaluates each request against the <code>Rules</code> in order based on the
+     * value of <code>Priority</code>. WAF processes rules with lower priority first.
+     * The priorities don't need to be consecutive, but they must all be different.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS
-     * WAF evaluates each request against the <code>Rules</code> in order based on the
-     * value of <code>Priority</code>. AWS WAF processes rules with lower priority
-     * first. The priorities don't need to be consecutive, but they must all be
-     * different.</p>
+     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
+     * evaluates each request against the <code>Rules</code> in order based on the
+     * value of <code>Priority</code>. WAF processes rules with lower priority first.
+     * The priorities don't need to be consecutive, but they must all be different.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS
-     * WAF evaluates each request against the <code>Rules</code> in order based on the
-     * value of <code>Priority</code>. AWS WAF processes rules with lower priority
-     * first. The priorities don't need to be consecutive, but they must all be
-     * different.</p>
+     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
+     * evaluates each request against the <code>Rules</code> in order based on the
+     * value of <code>Priority</code>. WAF processes rules with lower priority first.
+     * The priorities don't need to be consecutive, but they must all be different.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, AWS
-     * WAF evaluates each request against the <code>Rules</code> in order based on the
-     * value of <code>Priority</code>. AWS WAF processes rules with lower priority
-     * first. The priorities don't need to be consecutive, but they must all be
-     * different.</p>
+     * <p>If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF
+     * evaluates each request against the <code>Rules</code> in order based on the
+     * value of <code>Priority</code>. WAF processes rules with lower priority first.
+     * The priorities don't need to be consecutive, but they must all be different.</p>
      */
     inline Rule& WithPriority(int value) { SetPriority(value); return *this;}
 
 
     /**
-     * <p>The AWS WAF processing statement for the rule, for example
+     * <p>The WAF processing statement for the rule, for example
      * <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
      */
     inline const Statement& GetStatement() const{ return m_statement; }
 
     /**
-     * <p>The AWS WAF processing statement for the rule, for example
+     * <p>The WAF processing statement for the rule, for example
      * <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
      */
     inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
 
     /**
-     * <p>The AWS WAF processing statement for the rule, for example
+     * <p>The WAF processing statement for the rule, for example
      * <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
      */
     inline void SetStatement(const Statement& value) { m_statementHasBeenSet = true; m_statement = value; }
 
     /**
-     * <p>The AWS WAF processing statement for the rule, for example
+     * <p>The WAF processing statement for the rule, for example
      * <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
      */
     inline void SetStatement(Statement&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
 
     /**
-     * <p>The AWS WAF processing statement for the rule, for example
+     * <p>The WAF processing statement for the rule, for example
      * <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
      */
     inline Rule& WithStatement(const Statement& value) { SetStatement(value); return *this;}
 
     /**
-     * <p>The AWS WAF processing statement for the rule, for example
+     * <p>The WAF processing statement for the rule, for example
      * <a>ByteMatchStatement</a> or <a>SizeConstraintStatement</a>. </p>
      */
     inline Rule& WithStatement(Statement&& value) { SetStatement(std::move(value)); return *this;}
 
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * <p>The action that WAF should take on a web request when it matches the rule
      * statement. Settings at the web ACL level can override the rule action setting.
      * </p> <p>This is used only for rules whose statements do not reference a rule
      * group. Rule statements that reference a rule group include
@@ -186,7 +182,7 @@ namespace Model
     inline const RuleAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * <p>The action that WAF should take on a web request when it matches the rule
      * statement. Settings at the web ACL level can override the rule action setting.
      * </p> <p>This is used only for rules whose statements do not reference a rule
      * group. Rule statements that reference a rule group include
@@ -201,7 +197,7 @@ namespace Model
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * <p>The action that WAF should take on a web request when it matches the rule
      * statement. Settings at the web ACL level can override the rule action setting.
      * </p> <p>This is used only for rules whose statements do not reference a rule
      * group. Rule statements that reference a rule group include
@@ -216,7 +212,7 @@ namespace Model
     inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * <p>The action that WAF should take on a web request when it matches the rule
      * statement. Settings at the web ACL level can override the rule action setting.
      * </p> <p>This is used only for rules whose statements do not reference a rule
      * group. Rule statements that reference a rule group include
@@ -231,7 +227,7 @@ namespace Model
     inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * <p>The action that WAF should take on a web request when it matches the rule
      * statement. Settings at the web ACL level can override the rule action setting.
      * </p> <p>This is used only for rules whose statements do not reference a rule
      * group. Rule statements that reference a rule group include
@@ -246,7 +242,7 @@ namespace Model
     inline Rule& WithAction(const RuleAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The action that AWS WAF should take on a web request when it matches the rule
+     * <p>The action that WAF should take on a web request when it matches the rule
      * statement. Settings at the web ACL level can override the rule action setting.
      * </p> <p>This is used only for rules whose statements do not reference a rule
      * group. Rule statements that reference a rule group include
@@ -359,7 +355,7 @@ namespace Model
 
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this
@@ -378,7 +374,7 @@ namespace Model
     inline const Aws::Vector<Label>& GetRuleLabels() const{ return m_ruleLabels; }
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this
@@ -397,7 +393,7 @@ namespace Model
     inline bool RuleLabelsHasBeenSet() const { return m_ruleLabelsHasBeenSet; }
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this
@@ -416,7 +412,7 @@ namespace Model
     inline void SetRuleLabels(const Aws::Vector<Label>& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels = value; }
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this
@@ -435,7 +431,7 @@ namespace Model
     inline void SetRuleLabels(Aws::Vector<Label>&& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels = std::move(value); }
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this
@@ -454,7 +450,7 @@ namespace Model
     inline Rule& WithRuleLabels(const Aws::Vector<Label>& value) { SetRuleLabels(value); return *this;}
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this
@@ -473,7 +469,7 @@ namespace Model
     inline Rule& WithRuleLabels(Aws::Vector<Label>&& value) { SetRuleLabels(std::move(value)); return *this;}
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this
@@ -492,7 +488,7 @@ namespace Model
     inline Rule& AddRuleLabels(const Label& value) { m_ruleLabelsHasBeenSet = true; m_ruleLabels.push_back(value); return *this; }
 
     /**
-     * <p>Labels to apply to web requests that match the rule match statement. AWS WAF
+     * <p>Labels to apply to web requests that match the rule match statement. WAF
      * applies fully qualified labels to matching web requests. A fully qualified label
      * is the concatenation of a label namespace and a rule label. The rule's rule
      * group or web ACL defines the label namespace. </p> <p>Rules that run after this

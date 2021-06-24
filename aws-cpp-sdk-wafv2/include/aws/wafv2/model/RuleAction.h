@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>The action that AWS WAF should take on a web request when it matches a rule's
+   * <p>The action that WAF should take on a web request when it matches a rule's
    * statement. Settings at the web ACL level can override the rule action setting.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleAction">AWS
@@ -42,94 +42,94 @@ namespace Model
 
 
     /**
-     * <p>Instructs AWS WAF to block the web request.</p>
+     * <p>Instructs WAF to block the web request.</p>
      */
     inline const BlockAction& GetBlock() const{ return m_block; }
 
     /**
-     * <p>Instructs AWS WAF to block the web request.</p>
+     * <p>Instructs WAF to block the web request.</p>
      */
     inline bool BlockHasBeenSet() const { return m_blockHasBeenSet; }
 
     /**
-     * <p>Instructs AWS WAF to block the web request.</p>
+     * <p>Instructs WAF to block the web request.</p>
      */
     inline void SetBlock(const BlockAction& value) { m_blockHasBeenSet = true; m_block = value; }
 
     /**
-     * <p>Instructs AWS WAF to block the web request.</p>
+     * <p>Instructs WAF to block the web request.</p>
      */
     inline void SetBlock(BlockAction&& value) { m_blockHasBeenSet = true; m_block = std::move(value); }
 
     /**
-     * <p>Instructs AWS WAF to block the web request.</p>
+     * <p>Instructs WAF to block the web request.</p>
      */
     inline RuleAction& WithBlock(const BlockAction& value) { SetBlock(value); return *this;}
 
     /**
-     * <p>Instructs AWS WAF to block the web request.</p>
+     * <p>Instructs WAF to block the web request.</p>
      */
     inline RuleAction& WithBlock(BlockAction&& value) { SetBlock(std::move(value)); return *this;}
 
 
     /**
-     * <p>Instructs AWS WAF to allow the web request.</p>
+     * <p>Instructs WAF to allow the web request.</p>
      */
     inline const AllowAction& GetAllow() const{ return m_allow; }
 
     /**
-     * <p>Instructs AWS WAF to allow the web request.</p>
+     * <p>Instructs WAF to allow the web request.</p>
      */
     inline bool AllowHasBeenSet() const { return m_allowHasBeenSet; }
 
     /**
-     * <p>Instructs AWS WAF to allow the web request.</p>
+     * <p>Instructs WAF to allow the web request.</p>
      */
     inline void SetAllow(const AllowAction& value) { m_allowHasBeenSet = true; m_allow = value; }
 
     /**
-     * <p>Instructs AWS WAF to allow the web request.</p>
+     * <p>Instructs WAF to allow the web request.</p>
      */
     inline void SetAllow(AllowAction&& value) { m_allowHasBeenSet = true; m_allow = std::move(value); }
 
     /**
-     * <p>Instructs AWS WAF to allow the web request.</p>
+     * <p>Instructs WAF to allow the web request.</p>
      */
     inline RuleAction& WithAllow(const AllowAction& value) { SetAllow(value); return *this;}
 
     /**
-     * <p>Instructs AWS WAF to allow the web request.</p>
+     * <p>Instructs WAF to allow the web request.</p>
      */
     inline RuleAction& WithAllow(AllowAction&& value) { SetAllow(std::move(value)); return *this;}
 
 
     /**
-     * <p>Instructs AWS WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and allow it.</p>
      */
     inline const CountAction& GetCount() const{ return m_count; }
 
     /**
-     * <p>Instructs AWS WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and allow it.</p>
      */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
-     * <p>Instructs AWS WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and allow it.</p>
      */
     inline void SetCount(const CountAction& value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
-     * <p>Instructs AWS WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and allow it.</p>
      */
     inline void SetCount(CountAction&& value) { m_countHasBeenSet = true; m_count = std::move(value); }
 
     /**
-     * <p>Instructs AWS WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and allow it.</p>
      */
     inline RuleAction& WithCount(const CountAction& value) { SetCount(value); return *this;}
 
     /**
-     * <p>Instructs AWS WAF to count the web request and allow it.</p>
+     * <p>Instructs WAF to count the web request and allow it.</p>
      */
     inline RuleAction& WithCount(CountAction&& value) { SetCount(std::move(value)); return *this;}
 

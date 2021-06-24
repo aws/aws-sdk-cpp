@@ -31,11 +31,12 @@ namespace Model
    * incoming internet traffic, invoke the <code>UpdateServer</code> API and attach
    * an Elastic IP address to your server's endpoint.</p>  <p> After May 19,
    * 2021, you won't be able to create a server using
-   * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
-   * hasn't already done so before May 19, 2021. If you have already created servers
-   * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
-   * 19, 2021, you will not be affected. After this date, use
-   * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+   * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+   * your account hasn't already done so before May 19, 2021. If you have already
+   * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+   * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+   * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+   * information, see
    * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/EndpointDetails">AWS
