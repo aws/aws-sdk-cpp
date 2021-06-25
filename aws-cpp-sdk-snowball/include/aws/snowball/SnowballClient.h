@@ -365,7 +365,7 @@ namespace Model
          * other job attributes are inherited from the cluster. </p>  <p>Only the
          * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
          * device capacity is optional.</p> <p>Availability of device types differ by AWS
-         * Region. For more information about region availability, see <a
+         * Region. For more information about Region availability, see <a
          * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
          * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
          * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
@@ -402,7 +402,7 @@ namespace Model
          * other job attributes are inherited from the cluster. </p>  <p>Only the
          * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
          * device capacity is optional.</p> <p>Availability of device types differ by AWS
-         * Region. For more information about region availability, see <a
+         * Region. For more information about Region availability, see <a
          * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
          * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
          * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
@@ -441,7 +441,7 @@ namespace Model
          * other job attributes are inherited from the cluster. </p>  <p>Only the
          * Snowball; Edge device type is supported when ordering clustered jobs.</p> <p>The
          * device capacity is optional.</p> <p>Availability of device types differ by AWS
-         * Region. For more information about region availability, see <a
+         * Region. For more information about Region availability, see <a
          * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">AWS
          * Regional Services</a>.</p>  <p/> <p class="title"> <b>AWS Snow Family
          * device types and their capacities.</b> </p> <ul> <li> <p>Snow Family device
@@ -473,20 +473,20 @@ namespace Model
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a job with long term usage option for a device. The long term usage
-         * is a one year or three year long term pricing type for the device. You are
-         * billed upfront and AWS give discounts for long term pricing. For detailed
-         * information see XXXXXXXX</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job with the long-term usage option for a device. The long-term
+         * usage is a 1-year or 3-year long-term pricing type for the device. You are
+         * billed upfront, and AWS provides discounts for long-term pricing. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLongTermPricingOutcome CreateLongTermPricing(const Model::CreateLongTermPricingRequest& request) const;
 
         /**
-         * <p>Creates a job with long term usage option for a device. The long term usage
-         * is a one year or three year long term pricing type for the device. You are
-         * billed upfront and AWS give discounts for long term pricing. For detailed
-         * information see XXXXXXXX</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job with the long-term usage option for a device. The long-term
+         * usage is a 1-year or 3-year long-term pricing type for the device. You are
+         * billed upfront, and AWS provides discounts for long-term pricing. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
          * API Reference</a></p>
          *
@@ -495,10 +495,10 @@ namespace Model
         virtual Model::CreateLongTermPricingOutcomeCallable CreateLongTermPricingCallable(const Model::CreateLongTermPricingRequest& request) const;
 
         /**
-         * <p>Creates a job with long term usage option for a device. The long term usage
-         * is a one year or three year long term pricing type for the device. You are
-         * billed upfront and AWS give discounts for long term pricing. For detailed
-         * information see XXXXXXXX</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a job with the long-term usage option for a device. The long-term
+         * usage is a 1-year or 3-year long-term pricing type for the device. You are
+         * billed upfront, and AWS provides discounts for long-term pricing. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateLongTermPricing">AWS
          * API Reference</a></p>
          *
@@ -1013,14 +1013,14 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all long term pricing types.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all long-term pricing types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">AWS
          * API Reference</a></p>
          */
         virtual Model::ListLongTermPricingOutcome ListLongTermPricing(const Model::ListLongTermPricingRequest& request) const;
 
         /**
-         * <p>Lists all long term pricing types.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all long-term pricing types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">AWS
          * API Reference</a></p>
          *
@@ -1029,7 +1029,7 @@ namespace Model
         virtual Model::ListLongTermPricingOutcomeCallable ListLongTermPricingCallable(const Model::ListLongTermPricingRequest& request) const;
 
         /**
-         * <p>Lists all long term pricing types.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all long-term pricing types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListLongTermPricing">AWS
          * API Reference</a></p>
          *
@@ -1109,7 +1109,7 @@ namespace Model
         virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the state when a the shipment states changes to a different
+         * <p>Updates the state when a shipment state changes to a different
          * state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState">AWS
          * API Reference</a></p>
@@ -1117,7 +1117,7 @@ namespace Model
         virtual Model::UpdateJobShipmentStateOutcome UpdateJobShipmentState(const Model::UpdateJobShipmentStateRequest& request) const;
 
         /**
-         * <p>Updates the state when a the shipment states changes to a different
+         * <p>Updates the state when a shipment state changes to a different
          * state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState">AWS
          * API Reference</a></p>
@@ -1127,7 +1127,7 @@ namespace Model
         virtual Model::UpdateJobShipmentStateOutcomeCallable UpdateJobShipmentStateCallable(const Model::UpdateJobShipmentStateRequest& request) const;
 
         /**
-         * <p>Updates the state when a the shipment states changes to a different
+         * <p>Updates the state when a shipment state changes to a different
          * state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateJobShipmentState">AWS
          * API Reference</a></p>
@@ -1137,14 +1137,14 @@ namespace Model
         virtual void UpdateJobShipmentStateAsync(const Model::UpdateJobShipmentStateRequest& request, const UpdateJobShipmentStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the long term pricing type.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the long-term pricing type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateLongTermPricingOutcome UpdateLongTermPricing(const Model::UpdateLongTermPricingRequest& request) const;
 
         /**
-         * <p>Updates the long term pricing type.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the long-term pricing type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">AWS
          * API Reference</a></p>
          *
@@ -1153,7 +1153,7 @@ namespace Model
         virtual Model::UpdateLongTermPricingOutcomeCallable UpdateLongTermPricingCallable(const Model::UpdateLongTermPricingRequest& request) const;
 
         /**
-         * <p>Updates the long term pricing type.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the long-term pricing type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/UpdateLongTermPricing">AWS
          * API Reference</a></p>
          *

@@ -16,6 +16,7 @@ CreateJobRequest::CreateJobRequest() :
     m_jobType(JobType::NOT_SET),
     m_jobTypeHasBeenSet(false),
     m_resourcesHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_addressIdHasBeenSet(false),
     m_kmsKeyARNHasBeenSet(false),
@@ -31,6 +32,8 @@ CreateJobRequest::CreateJobRequest() :
     m_forwardingAddressIdHasBeenSet(false),
     m_taxDocumentsHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
+    m_remoteManagement(RemoteManagement::NOT_SET),
+    m_remoteManagementHasBeenSet(false),
     m_longTermPricingIdHasBeenSet(false)
 {
 }
@@ -47,6 +50,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_resourcesHasBeenSet)
   {
    payload.WithObject("Resources", m_resources.Jsonize());
+
+  }
+
+  if(m_onDeviceServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
 
   }
 
@@ -117,6 +126,11 @@ Aws::String CreateJobRequest::SerializePayload() const
   {
    payload.WithObject("DeviceConfiguration", m_deviceConfiguration.Jsonize());
 
+  }
+
+  if(m_remoteManagementHasBeenSet)
+  {
+   payload.WithString("RemoteManagement", RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement));
   }
 
   if(m_longTermPricingIdHasBeenSet)

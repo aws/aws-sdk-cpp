@@ -20,13 +20,15 @@ namespace Model
 
 S3Resource::S3Resource() : 
     m_bucketArnHasBeenSet(false),
-    m_keyRangeHasBeenSet(false)
+    m_keyRangeHasBeenSet(false),
+    m_targetOnDeviceServicesHasBeenSet(false)
 {
 }
 
 S3Resource::S3Resource(JsonView jsonValue) : 
     m_bucketArnHasBeenSet(false),
-    m_keyRangeHasBeenSet(false)
+    m_keyRangeHasBeenSet(false),
+    m_targetOnDeviceServicesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,16 @@ S3Resource& S3Resource::operator =(JsonView jsonValue)
     m_keyRangeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetOnDeviceServices"))
+  {
+    Array<JsonView> targetOnDeviceServicesJsonList = jsonValue.GetArray("TargetOnDeviceServices");
+    for(unsigned targetOnDeviceServicesIndex = 0; targetOnDeviceServicesIndex < targetOnDeviceServicesJsonList.GetLength(); ++targetOnDeviceServicesIndex)
+    {
+      m_targetOnDeviceServices.push_back(targetOnDeviceServicesJsonList[targetOnDeviceServicesIndex].AsObject());
+    }
+    m_targetOnDeviceServicesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +75,17 @@ JsonValue S3Resource::Jsonize() const
   if(m_keyRangeHasBeenSet)
   {
    payload.WithObject("KeyRange", m_keyRange.Jsonize());
+
+  }
+
+  if(m_targetOnDeviceServicesHasBeenSet)
+  {
+   Array<JsonValue> targetOnDeviceServicesJsonList(m_targetOnDeviceServices.size());
+   for(unsigned targetOnDeviceServicesIndex = 0; targetOnDeviceServicesIndex < targetOnDeviceServicesJsonList.GetLength(); ++targetOnDeviceServicesIndex)
+   {
+     targetOnDeviceServicesJsonList[targetOnDeviceServicesIndex].AsObject(m_targetOnDeviceServices[targetOnDeviceServicesIndex].Jsonize());
+   }
+   payload.WithArray("TargetOnDeviceServices", std::move(targetOnDeviceServicesJsonList));
 
   }
 

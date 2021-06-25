@@ -8,11 +8,13 @@
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/snowball/model/JobType.h>
 #include <aws/snowball/model/JobResource.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/SnowballType.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/TaxDocuments.h>
+#include <aws/snowball/model/RemoteManagement.h>
 #include <utility>
 
 namespace Aws
@@ -142,6 +144,49 @@ namespace Model
      * </p>
      */
     inline CreateClusterRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline CreateClusterRequest& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline CreateClusterRequest& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -441,7 +486,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
      * shipping. Typically, devices shipped express are delivered in about a day.</p>
@@ -449,8 +494,8 @@ namespace Model
      * Typically, Snow devices shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the US, you
+     * have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
@@ -464,7 +509,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
      * shipping. Typically, devices shipped express are delivered in about a day.</p>
@@ -472,8 +517,8 @@ namespace Model
      * Typically, Snow devices shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the US, you
+     * have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
 
@@ -487,7 +532,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
      * shipping. Typically, devices shipped express are delivered in about a day.</p>
@@ -495,8 +540,8 @@ namespace Model
      * Typically, Snow devices shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the US, you
+     * have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
@@ -510,7 +555,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
      * shipping. Typically, devices shipped express are delivered in about a day.</p>
@@ -518,8 +563,8 @@ namespace Model
      * Typically, Snow devices shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the US, you
+     * have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
@@ -533,7 +578,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
      * shipping. Typically, devices shipped express are delivered in about a day.</p>
@@ -541,8 +586,8 @@ namespace Model
      * Typically, Snow devices shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the US, you
+     * have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
@@ -556,7 +601,7 @@ namespace Model
      * shipping. Typically, Snow devices shipped express are delivered in about a day.
      * In addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the United
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the United
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul> <ul> <li> <p>In Australia, you have access to express
      * shipping. Typically, devices shipped express are delivered in about a day.</p>
@@ -564,8 +609,8 @@ namespace Model
      * Typically, Snow devices shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
      * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snow
-     * device are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * devices are delivered in one to seven days.</p> </li> <li> <p>In the US, you
+     * have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 
@@ -686,6 +731,61 @@ namespace Model
      */
     inline CreateClusterRequest& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Allows you to securely operate and manage Snow devices in a cluster remotely
+     * from outside of your internal network. When set to
+     * <code>INSTALLED_AUTOSTART</code>, remote management will automatically be
+     * available when the device arrives at your location. Otherwise, you need to use
+     * the Snowball Client to manage the device.</p>
+     */
+    inline const RemoteManagement& GetRemoteManagement() const{ return m_remoteManagement; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snow devices in a cluster remotely
+     * from outside of your internal network. When set to
+     * <code>INSTALLED_AUTOSTART</code>, remote management will automatically be
+     * available when the device arrives at your location. Otherwise, you need to use
+     * the Snowball Client to manage the device.</p>
+     */
+    inline bool RemoteManagementHasBeenSet() const { return m_remoteManagementHasBeenSet; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snow devices in a cluster remotely
+     * from outside of your internal network. When set to
+     * <code>INSTALLED_AUTOSTART</code>, remote management will automatically be
+     * available when the device arrives at your location. Otherwise, you need to use
+     * the Snowball Client to manage the device.</p>
+     */
+    inline void SetRemoteManagement(const RemoteManagement& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = value; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snow devices in a cluster remotely
+     * from outside of your internal network. When set to
+     * <code>INSTALLED_AUTOSTART</code>, remote management will automatically be
+     * available when the device arrives at your location. Otherwise, you need to use
+     * the Snowball Client to manage the device.</p>
+     */
+    inline void SetRemoteManagement(RemoteManagement&& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = std::move(value); }
+
+    /**
+     * <p>Allows you to securely operate and manage Snow devices in a cluster remotely
+     * from outside of your internal network. When set to
+     * <code>INSTALLED_AUTOSTART</code>, remote management will automatically be
+     * available when the device arrives at your location. Otherwise, you need to use
+     * the Snowball Client to manage the device.</p>
+     */
+    inline CreateClusterRequest& WithRemoteManagement(const RemoteManagement& value) { SetRemoteManagement(value); return *this;}
+
+    /**
+     * <p>Allows you to securely operate and manage Snow devices in a cluster remotely
+     * from outside of your internal network. When set to
+     * <code>INSTALLED_AUTOSTART</code>, remote management will automatically be
+     * available when the device arrives at your location. Otherwise, you need to use
+     * the Snowball Client to manage the device.</p>
+     */
+    inline CreateClusterRequest& WithRemoteManagement(RemoteManagement&& value) { SetRemoteManagement(std::move(value)); return *this;}
+
   private:
 
     JobType m_jobType;
@@ -693,6 +793,9 @@ namespace Model
 
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
@@ -720,6 +823,9 @@ namespace Model
 
     TaxDocuments m_taxDocuments;
     bool m_taxDocumentsHasBeenSet;
+
+    RemoteManagement m_remoteManagement;
+    bool m_remoteManagementHasBeenSet;
   };
 
 } // namespace Model

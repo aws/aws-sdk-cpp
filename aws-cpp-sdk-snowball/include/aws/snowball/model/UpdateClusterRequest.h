@@ -8,6 +8,7 @@
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/JobResource.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
 #include <utility>
@@ -230,6 +231,49 @@ namespace Model
 
 
     /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline UpdateClusterRequest& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline UpdateClusterRequest& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>The ID of the updated <a>Address</a> object.</p>
      */
     inline const Aws::String& GetAddressId() const{ return m_addressId; }
@@ -399,6 +443,9 @@ namespace Model
 
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
 
     Aws::String m_addressId;
     bool m_addressIdHasBeenSet;

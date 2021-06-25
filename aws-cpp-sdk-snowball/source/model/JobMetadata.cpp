@@ -42,7 +42,10 @@ JobMetadata::JobMetadata() :
     m_forwardingAddressIdHasBeenSet(false),
     m_taxDocumentsHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
-    m_longTermPricingIdHasBeenSet(false)
+    m_remoteManagement(RemoteManagement::NOT_SET),
+    m_remoteManagementHasBeenSet(false),
+    m_longTermPricingIdHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false)
 {
 }
 
@@ -70,7 +73,10 @@ JobMetadata::JobMetadata(JsonView jsonValue) :
     m_forwardingAddressIdHasBeenSet(false),
     m_taxDocumentsHasBeenSet(false),
     m_deviceConfigurationHasBeenSet(false),
-    m_longTermPricingIdHasBeenSet(false)
+    m_remoteManagement(RemoteManagement::NOT_SET),
+    m_remoteManagementHasBeenSet(false),
+    m_longTermPricingIdHasBeenSet(false),
+    m_onDeviceServiceConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -210,11 +216,25 @@ JobMetadata& JobMetadata::operator =(JsonView jsonValue)
     m_deviceConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RemoteManagement"))
+  {
+    m_remoteManagement = RemoteManagementMapper::GetRemoteManagementForName(jsonValue.GetString("RemoteManagement"));
+
+    m_remoteManagementHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LongTermPricingId"))
   {
     m_longTermPricingId = jsonValue.GetString("LongTermPricingId");
 
     m_longTermPricingIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OnDeviceServiceConfiguration"))
+  {
+    m_onDeviceServiceConfiguration = jsonValue.GetObject("OnDeviceServiceConfiguration");
+
+    m_onDeviceServiceConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -333,9 +353,20 @@ JsonValue JobMetadata::Jsonize() const
 
   }
 
+  if(m_remoteManagementHasBeenSet)
+  {
+   payload.WithString("RemoteManagement", RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement));
+  }
+
   if(m_longTermPricingIdHasBeenSet)
   {
    payload.WithString("LongTermPricingId", m_longTermPricingId);
+
+  }
+
+  if(m_onDeviceServiceConfigurationHasBeenSet)
+  {
+   payload.WithObject("OnDeviceServiceConfiguration", m_onDeviceServiceConfiguration.Jsonize());
 
   }
 
