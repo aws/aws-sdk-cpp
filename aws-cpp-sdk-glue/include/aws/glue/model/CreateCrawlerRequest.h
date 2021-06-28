@@ -131,49 +131,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline CreateCrawlerRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline CreateCrawlerRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Glue database where results are written, such as:
+     * <p>The Glue database where results are written, such as:
      * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
      */
     inline CreateCrawlerRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
@@ -636,105 +636,105 @@ namespace Model
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags to use with this crawler request. You may use tags to limit access
-     * to the crawler. For more information about tags in AWS Glue, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-     * AWS Glue</a> in the developer guide.</p>
+     * to the crawler. For more information about tags in Glue, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+     * Services Tags in Glue</a> in the developer guide.</p>
      */
     inline CreateCrawlerRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

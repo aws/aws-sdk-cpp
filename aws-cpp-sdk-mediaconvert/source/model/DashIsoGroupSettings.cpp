@@ -30,6 +30,8 @@ DashIsoGroupSettings::DashIsoGroupSettings() :
     m_fragmentLengthHasBeenSet(false),
     m_hbbtvCompliance(DashIsoHbbtvCompliance::NOT_SET),
     m_hbbtvComplianceHasBeenSet(false),
+    m_imageBasedTrickPlay(DashIsoImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
@@ -59,6 +61,8 @@ DashIsoGroupSettings::DashIsoGroupSettings(JsonView jsonValue) :
     m_fragmentLengthHasBeenSet(false),
     m_hbbtvCompliance(DashIsoHbbtvCompliance::NOT_SET),
     m_hbbtvComplianceHasBeenSet(false),
+    m_imageBasedTrickPlay(DashIsoImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
     m_minBufferTime(0),
     m_minBufferTimeHasBeenSet(false),
     m_minFinalSegmentLength(0.0),
@@ -136,6 +140,13 @@ DashIsoGroupSettings& DashIsoGroupSettings::operator =(JsonView jsonValue)
     m_hbbtvCompliance = DashIsoHbbtvComplianceMapper::GetDashIsoHbbtvComplianceForName(jsonValue.GetString("hbbtvCompliance"));
 
     m_hbbtvComplianceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageBasedTrickPlay"))
+  {
+    m_imageBasedTrickPlay = DashIsoImageBasedTrickPlayMapper::GetDashIsoImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
+
+    m_imageBasedTrickPlayHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("minBufferTime"))
@@ -243,6 +254,11 @@ JsonValue DashIsoGroupSettings::Jsonize() const
   if(m_hbbtvComplianceHasBeenSet)
   {
    payload.WithString("hbbtvCompliance", DashIsoHbbtvComplianceMapper::GetNameForDashIsoHbbtvCompliance(m_hbbtvCompliance));
+  }
+
+  if(m_imageBasedTrickPlayHasBeenSet)
+  {
+   payload.WithString("imageBasedTrickPlay", DashIsoImageBasedTrickPlayMapper::GetNameForDashIsoImageBasedTrickPlay(m_imageBasedTrickPlay));
   }
 
   if(m_minBufferTimeHasBeenSet)

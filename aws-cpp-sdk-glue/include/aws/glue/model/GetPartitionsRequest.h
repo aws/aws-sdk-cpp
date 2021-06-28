@@ -37,49 +37,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline GetPartitionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline GetPartitionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
-     * is provided, the AWS account ID is used by default.</p>
+     * is provided, the Amazon Web Services account ID is used by default.</p>
      */
     inline GetPartitionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -196,8 +196,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -234,8 +234,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -272,8 +272,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -310,8 +310,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -348,8 +348,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -386,8 +386,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -424,8 +424,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>
@@ -462,8 +462,8 @@ namespace Model
      * <p> <code>int</code> </p> </li> <li> <p> <code>bigint</code> </p> </li> <li> <p>
      * <code>long</code> </p> </li> <li> <p> <code>tinyint</code> </p> </li> <li> <p>
      * <code>smallint</code> </p> </li> <li> <p> <code>decimal</code> </p> </li> </ul>
-     * <p>If an invalid type is encountered, an exception is thrown. </p> <p>The
-     * following list shows the valid operators on each type. When you define a
+     * <p>If an type is encountered that is not valid, an exception is thrown. </p>
+     * <p>The following list shows the valid operators on each type. When you define a
      * crawler, the <code>partitionKey</code> type is created as a <code>STRING</code>,
      * to be compatible with the catalog partitions. </p> <p> <i>Sample API Call</i>:
      * </p>

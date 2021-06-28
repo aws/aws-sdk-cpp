@@ -8,6 +8,7 @@
 #include <aws/mediaconvert/model/ColorCorrector.h>
 #include <aws/mediaconvert/model/Deinterlacer.h>
 #include <aws/mediaconvert/model/DolbyVision.h>
+#include <aws/mediaconvert/model/Hdr10Plus.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/mediaconvert/model/NoiseReducer.h>
 #include <aws/mediaconvert/model/PartnerWatermarking.h>
@@ -160,6 +161,37 @@ namespace Model
      * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
      */
     inline VideoPreprocessor& WithDolbyVision(DolbyVision&& value) { SetDolbyVision(std::move(value)); return *this;}
+
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline const Hdr10Plus& GetHdr10Plus() const{ return m_hdr10Plus; }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline bool Hdr10PlusHasBeenSet() const { return m_hdr10PlusHasBeenSet; }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline void SetHdr10Plus(const Hdr10Plus& value) { m_hdr10PlusHasBeenSet = true; m_hdr10Plus = value; }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline void SetHdr10Plus(Hdr10Plus&& value) { m_hdr10PlusHasBeenSet = true; m_hdr10Plus = std::move(value); }
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline VideoPreprocessor& WithHdr10Plus(const Hdr10Plus& value) { SetHdr10Plus(value); return *this;}
+
+    /**
+     * Enable HDR10+ analyis and metadata injection. Compatible with HEVC only.
+     */
+    inline VideoPreprocessor& WithHdr10Plus(Hdr10Plus&& value) { SetHdr10Plus(std::move(value)); return *this;}
 
 
     /**
@@ -331,6 +363,9 @@ namespace Model
 
     DolbyVision m_dolbyVision;
     bool m_dolbyVisionHasBeenSet;
+
+    Hdr10Plus m_hdr10Plus;
+    bool m_hdr10PlusHasBeenSet;
 
     ImageInserter m_imageInserter;
     bool m_imageInserterHasBeenSet;

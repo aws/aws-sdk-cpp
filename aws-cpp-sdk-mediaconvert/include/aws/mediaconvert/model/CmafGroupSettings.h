@@ -11,6 +11,7 @@
 #include <aws/mediaconvert/model/CmafCodecSpecification.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/CmafEncryptionSettings.h>
+#include <aws/mediaconvert/model/CmafImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/CmafManifestCompression.h>
 #include <aws/mediaconvert/model/CmafManifestDurationFormat.h>
 #include <aws/mediaconvert/model/CmafMpdProfile.h>
@@ -454,6 +455,109 @@ namespace Model
      * types.
      */
     inline CmafGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
+
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline const CmafImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(const CmafImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(CmafImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlay(const CmafImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. When you enable Write HLS manifest (WriteHlsManifest),
+     * MediaConvert creates a child manifest for each set of images that you generate
+     * and adds corresponding entries to the parent manifest. When you enable Write
+     * DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd
+     * manifest for each set of images that you generate. A common application for
+     * these images is Roku trick mode. The thumbnails and full-frame images that
+     * MediaConvert creates with this feature are compatible with this Roku
+     * specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline CmafGroupSettings& WithImageBasedTrickPlay(CmafImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
 
 
     /**
@@ -1038,6 +1142,9 @@ namespace Model
 
     int m_fragmentLength;
     bool m_fragmentLengthHasBeenSet;
+
+    CmafImageBasedTrickPlay m_imageBasedTrickPlay;
+    bool m_imageBasedTrickPlayHasBeenSet;
 
     CmafManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;

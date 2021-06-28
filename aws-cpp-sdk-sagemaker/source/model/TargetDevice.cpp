@@ -45,6 +45,7 @@ namespace Aws
         static const int qcs603_HASH = HashingUtils::HashString("qcs603");
         static const int sitara_am57x_HASH = HashingUtils::HashString("sitara_am57x");
         static const int amba_cv22_HASH = HashingUtils::HashString("amba_cv22");
+        static const int amba_cv25_HASH = HashingUtils::HashString("amba_cv25");
         static const int x86_win32_HASH = HashingUtils::HashString("x86_win32");
         static const int x86_win64_HASH = HashingUtils::HashString("x86_win64");
         static const int coreml_HASH = HashingUtils::HashString("coreml");
@@ -154,6 +155,10 @@ namespace Aws
           {
             return TargetDevice::amba_cv22;
           }
+          else if (hashCode == amba_cv25_HASH)
+          {
+            return TargetDevice::amba_cv25;
+          }
           else if (hashCode == x86_win32_HASH)
           {
             return TargetDevice::x86_win32;
@@ -234,6 +239,8 @@ namespace Aws
             return "sitara_am57x";
           case TargetDevice::amba_cv22:
             return "amba_cv22";
+          case TargetDevice::amba_cv25:
+            return "amba_cv25";
           case TargetDevice::x86_win32:
             return "x86_win32";
           case TargetDevice::x86_win64:

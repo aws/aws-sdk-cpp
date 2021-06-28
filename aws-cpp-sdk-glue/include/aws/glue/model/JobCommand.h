@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies code executed when a job is run.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies code that runs when a job is run.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/JobCommand">AWS API
    * Reference</a></p>
    */
@@ -104,98 +104,98 @@ namespace Model
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline const Aws::String& GetScriptLocation() const{ return m_scriptLocation; }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline bool ScriptLocationHasBeenSet() const { return m_scriptLocationHasBeenSet; }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline void SetScriptLocation(const Aws::String& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = value; }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline void SetScriptLocation(Aws::String&& value) { m_scriptLocationHasBeenSet = true; m_scriptLocation = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline void SetScriptLocation(const char* value) { m_scriptLocationHasBeenSet = true; m_scriptLocation.assign(value); }
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline JobCommand& WithScriptLocation(const Aws::String& value) { SetScriptLocation(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline JobCommand& WithScriptLocation(Aws::String&& value) { SetScriptLocation(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Simple Storage Service (Amazon S3) path to a script that
-     * executes a job.</p>
+     * runs a job.</p>
      */
     inline JobCommand& WithScriptLocation(const char* value) { SetScriptLocation(value); return *this;}
 
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline const Aws::String& GetPythonVersion() const{ return m_pythonVersion; }
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline bool PythonVersionHasBeenSet() const { return m_pythonVersionHasBeenSet; }
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline void SetPythonVersion(const Aws::String& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = value; }
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline void SetPythonVersion(Aws::String&& value) { m_pythonVersionHasBeenSet = true; m_pythonVersion = std::move(value); }
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline void SetPythonVersion(const char* value) { m_pythonVersionHasBeenSet = true; m_pythonVersion.assign(value); }
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline JobCommand& WithPythonVersion(const Aws::String& value) { SetPythonVersion(value); return *this;}
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline JobCommand& WithPythonVersion(Aws::String&& value) { SetPythonVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Python version being used to execute a Python shell job. Allowed values
-     * are 2 or 3.</p>
+     * <p>The Python version being used to run a Python shell job. Allowed values are 2
+     * or 3.</p>
      */
     inline JobCommand& WithPythonVersion(const char* value) { SetPythonVersion(value); return *this;}
 

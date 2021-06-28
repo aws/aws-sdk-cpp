@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     D_10,
     XDCAM,
-    OP1A
+    OP1A,
+    XAVC
   };
 
 namespace MxfProfileMapper

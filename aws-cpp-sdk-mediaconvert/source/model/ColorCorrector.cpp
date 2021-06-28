@@ -28,6 +28,8 @@ ColorCorrector::ColorCorrector() :
     m_hdr10MetadataHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
+    m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
+    m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
     m_saturationHasBeenSet(false)
 {
@@ -43,6 +45,8 @@ ColorCorrector::ColorCorrector(JsonView jsonValue) :
     m_hdr10MetadataHasBeenSet(false),
     m_hue(0),
     m_hueHasBeenSet(false),
+    m_sampleRangeConversion(SampleRangeConversion::NOT_SET),
+    m_sampleRangeConversionHasBeenSet(false),
     m_saturation(0),
     m_saturationHasBeenSet(false)
 {
@@ -86,6 +90,13 @@ ColorCorrector& ColorCorrector::operator =(JsonView jsonValue)
     m_hueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sampleRangeConversion"))
+  {
+    m_sampleRangeConversion = SampleRangeConversionMapper::GetSampleRangeConversionForName(jsonValue.GetString("sampleRangeConversion"));
+
+    m_sampleRangeConversionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("saturation"))
   {
     m_saturation = jsonValue.GetInteger("saturation");
@@ -127,6 +138,11 @@ JsonValue ColorCorrector::Jsonize() const
   {
    payload.WithInteger("hue", m_hue);
 
+  }
+
+  if(m_sampleRangeConversionHasBeenSet)
+  {
+   payload.WithString("sampleRangeConversion", SampleRangeConversionMapper::GetNameForSampleRangeConversion(m_sampleRangeConversion));
   }
 
   if(m_saturationHasBeenSet)

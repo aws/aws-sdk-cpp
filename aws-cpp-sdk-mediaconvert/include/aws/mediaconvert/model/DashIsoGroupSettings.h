@@ -11,6 +11,7 @@
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
+#include <aws/mediaconvert/model/DashIsoImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/DashIsoMpdProfile.h>
 #include <aws/mediaconvert/model/DashIsoPtsOffsetHandlingForBFrames.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
@@ -466,6 +467,85 @@ namespace Model
 
 
     /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
+     * each set of images that you generate. A common application for these images is
+     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
+     * with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline const DashIsoImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
+     * each set of images that you generate. A common application for these images is
+     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
+     * with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
+     * each set of images that you generate. A common application for these images is
+     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
+     * with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(const DashIsoImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
+     * each set of images that you generate. A common application for these images is
+     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
+     * with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(DashIsoImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
+     * each set of images that you generate. A common application for these images is
+     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
+     * with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline DashIsoGroupSettings& WithImageBasedTrickPlay(const DashIsoImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert adds an entry in the .mpd manifest for
+     * each set of images that you generate. A common application for these images is
+     * Roku trick mode. The thumbnails and full-frame images that MediaConvert creates
+     * with this feature are compatible with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline DashIsoGroupSettings& WithImageBasedTrickPlay(DashIsoImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
+
+
+    /**
      * Minimum time of initially buffered media that is needed to ensure smooth
      * playout.
      */
@@ -862,6 +942,9 @@ namespace Model
 
     DashIsoHbbtvCompliance m_hbbtvCompliance;
     bool m_hbbtvComplianceHasBeenSet;
+
+    DashIsoImageBasedTrickPlay m_imageBasedTrickPlay;
+    bool m_imageBasedTrickPlayHasBeenSet;
 
     int m_minBufferTime;
     bool m_minBufferTimeHasBeenSet;

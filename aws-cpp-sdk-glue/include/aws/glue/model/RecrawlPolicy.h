@@ -28,7 +28,7 @@ namespace Model
    * specifies whether to crawl the entire dataset again or to crawl only folders
    * that were added since the last crawler run. For more information, see <a
    * href="https://docs.aws.amazon.com/glue/latest/dg/incremental-crawls.html">Incremental
-   * Crawls in AWS Glue</a> in the developer guide.</p><p><h3>See Also:</h3>   <a
+   * Crawls in Glue</a> in the developer guide.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/RecrawlPolicy">AWS
    * API Reference</a></p>
    */

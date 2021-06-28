@@ -732,22 +732,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline bool GetIsRegisteredWithLakeFormation() const{ return m_isRegisteredWithLakeFormation; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline bool IsRegisteredWithLakeFormationHasBeenSet() const { return m_isRegisteredWithLakeFormationHasBeenSet; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline void SetIsRegisteredWithLakeFormation(bool value) { m_isRegisteredWithLakeFormationHasBeenSet = true; m_isRegisteredWithLakeFormation = value; }
 
     /**
-     * <p>Indicates whether the table has been registered with AWS Lake Formation.</p>
+     * <p>Indicates whether the table has been registered with Lake Formation.</p>
      */
     inline Table& WithIsRegisteredWithLakeFormation(bool value) { SetIsRegisteredWithLakeFormation(value); return *this;}
 

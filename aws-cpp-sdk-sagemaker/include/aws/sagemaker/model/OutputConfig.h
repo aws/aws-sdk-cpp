@@ -755,12 +755,16 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -770,12 +774,16 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -785,12 +793,16 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -800,12 +812,16 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -815,12 +831,16 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -830,12 +850,16 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -845,12 +869,16 @@ namespace Model
     inline OutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:
@@ -860,12 +888,16 @@ namespace Model
     inline OutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume after compilation job. If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     * role's account</p> <p>The KmsKeyId can be any of the following formats: </p>
-     * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
-     * </li> <li> <p>Key ARN:
+     * <p>The Amazon Web Services Key Management Service key (Amazon Web Services KMS)
+     * that Amazon SageMaker uses to encrypt your output models with Amazon S3
+     * server-side encryption after compilation job. If you don't provide a KMS key ID,
+     * Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KmsKeyId can be any of the following formats: </p> <ul> <li> <p>Key
+     * ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key
+     * ARN:
      * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias name ARN:

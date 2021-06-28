@@ -843,7 +843,7 @@ namespace Model
     typedef std::function<void(const GlueClient*, const Model::UpdateWorkflowRequest&, const Model::UpdateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkflowResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Glue</fullname> <p>Defines the public endpoint for the AWS Glue
+   * <fullname>Glue</fullname> <p>Defines the public endpoint for the Glue
    * service.</p>
    */
   class AWS_GLUE_API GlueClient : public Aws::Client::AWSJsonClient
@@ -960,7 +960,7 @@ namespace Model
         /**
          * <p>Deletes multiple tables at once.</p>  <p>After completing this
          * operation, you no longer have access to the table versions and partitions that
-         * belong to the deleted table. AWS Glue deletes these "orphaned" resources
+         * belong to the deleted table. Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
          * ensure the immediate deletion of all related resources, before calling
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
@@ -975,7 +975,7 @@ namespace Model
         /**
          * <p>Deletes multiple tables at once.</p>  <p>After completing this
          * operation, you no longer have access to the table versions and partitions that
-         * belong to the deleted table. AWS Glue deletes these "orphaned" resources
+         * belong to the deleted table. Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
          * ensure the immediate deletion of all related resources, before calling
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
@@ -992,7 +992,7 @@ namespace Model
         /**
          * <p>Deletes multiple tables at once.</p>  <p>After completing this
          * operation, you no longer have access to the table versions and partitions that
-         * belong to the deleted table. AWS Glue deletes these "orphaned" resources
+         * belong to the deleted table. Glue deletes these "orphaned" resources
          * asynchronously in a timely manner, at the discretion of the service.</p> <p>To
          * ensure the immediate deletion of all related resources, before calling
          * <code>BatchDeleteTable</code>, use <code>DeleteTableVersion</code> or
@@ -1302,8 +1302,8 @@ namespace Model
 
         /**
          * <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks
-         * that AWS Glue runs on your behalf as part of various machine learning workflows.
-         * You can cancel a machine learning task run at any time by calling
+         * that Glue runs on your behalf as part of various machine learning workflows. You
+         * can cancel a machine learning task run at any time by calling
          * <code>CancelMLTaskRun</code> with a task run's parent transform's
          * <code>TransformID</code> and the task run's <code>TaskRunId</code>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1314,8 +1314,8 @@ namespace Model
 
         /**
          * <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks
-         * that AWS Glue runs on your behalf as part of various machine learning workflows.
-         * You can cancel a machine learning task run at any time by calling
+         * that Glue runs on your behalf as part of various machine learning workflows. You
+         * can cancel a machine learning task run at any time by calling
          * <code>CancelMLTaskRun</code> with a task run's parent transform's
          * <code>TransformID</code> and the task run's <code>TaskRunId</code>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1328,8 +1328,8 @@ namespace Model
 
         /**
          * <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks
-         * that AWS Glue runs on your behalf as part of various machine learning workflows.
-         * You can cancel a machine learning task run at any time by calling
+         * that Glue runs on your behalf as part of various machine learning workflows. You
+         * can cancel a machine learning task run at any time by calling
          * <code>CancelMLTaskRun</code> with a task run's parent transform's
          * <code>TransformID</code> and the task run's <code>TaskRunId</code>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1546,14 +1546,14 @@ namespace Model
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an AWS Glue machine learning transform. This operation creates the
+         * <p>Creates an Glue machine learning transform. This operation creates the
          * transform and all the necessary parameters to train it.</p> <p>Call this
          * operation as the first step in the process of using a machine learning transform
          * (such as the <code>FindMatches</code> transform) for deduplicating data. You can
          * provide an optional <code>Description</code>, in addition to the parameters that
          * you want to use for your algorithm.</p> <p>You must also specify certain
-         * parameters for the tasks that AWS Glue runs on your behalf as part of learning
-         * from your data and creating a high-quality machine learning transform. These
+         * parameters for the tasks that Glue runs on your behalf as part of learning from
+         * your data and creating a high-quality machine learning transform. These
          * parameters include <code>Role</code>, and optionally,
          * <code>AllocatedCapacity</code>, <code>Timeout</code>, and
          * <code>MaxRetries</code>. For more information, see <a
@@ -1565,14 +1565,14 @@ namespace Model
         virtual Model::CreateMLTransformOutcome CreateMLTransform(const Model::CreateMLTransformRequest& request) const;
 
         /**
-         * <p>Creates an AWS Glue machine learning transform. This operation creates the
+         * <p>Creates an Glue machine learning transform. This operation creates the
          * transform and all the necessary parameters to train it.</p> <p>Call this
          * operation as the first step in the process of using a machine learning transform
          * (such as the <code>FindMatches</code> transform) for deduplicating data. You can
          * provide an optional <code>Description</code>, in addition to the parameters that
          * you want to use for your algorithm.</p> <p>You must also specify certain
-         * parameters for the tasks that AWS Glue runs on your behalf as part of learning
-         * from your data and creating a high-quality machine learning transform. These
+         * parameters for the tasks that Glue runs on your behalf as part of learning from
+         * your data and creating a high-quality machine learning transform. These
          * parameters include <code>Role</code>, and optionally,
          * <code>AllocatedCapacity</code>, <code>Timeout</code>, and
          * <code>MaxRetries</code>. For more information, see <a
@@ -1586,14 +1586,14 @@ namespace Model
         virtual Model::CreateMLTransformOutcomeCallable CreateMLTransformCallable(const Model::CreateMLTransformRequest& request) const;
 
         /**
-         * <p>Creates an AWS Glue machine learning transform. This operation creates the
+         * <p>Creates an Glue machine learning transform. This operation creates the
          * transform and all the necessary parameters to train it.</p> <p>Call this
          * operation as the first step in the process of using a machine learning transform
          * (such as the <code>FindMatches</code> transform) for deduplicating data. You can
          * provide an optional <code>Description</code>, in addition to the parameters that
          * you want to use for your algorithm.</p> <p>You must also specify certain
-         * parameters for the tasks that AWS Glue runs on your behalf as part of learning
-         * from your data and creating a high-quality machine learning transform. These
+         * parameters for the tasks that Glue runs on your behalf as part of learning from
+         * your data and creating a high-quality machine learning transform. These
          * parameters include <code>Role</code>, and optionally,
          * <code>AllocatedCapacity</code>, <code>Timeout</code>, and
          * <code>MaxRetries</code>. For more information, see <a
@@ -1769,9 +1769,9 @@ namespace Model
 
         /**
          * <p>Creates a new security configuration. A security configuration is a set of
-         * security properties that can be used by AWS Glue. You can use a security
+         * security properties that can be used by Glue. You can use a security
          * configuration to encrypt data at rest. For information about using security
-         * configurations in AWS Glue, see <a
+         * configurations in Glue, see <a
          * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
          * Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1782,9 +1782,9 @@ namespace Model
 
         /**
          * <p>Creates a new security configuration. A security configuration is a set of
-         * security properties that can be used by AWS Glue. You can use a security
+         * security properties that can be used by Glue. You can use a security
          * configuration to encrypt data at rest. For information about using security
-         * configurations in AWS Glue, see <a
+         * configurations in Glue, see <a
          * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
          * Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -1797,9 +1797,9 @@ namespace Model
 
         /**
          * <p>Creates a new security configuration. A security configuration is a set of
-         * security properties that can be used by AWS Glue. You can use a security
+         * security properties that can be used by Glue. You can use a security
          * configuration to encrypt data at rest. For information about using security
-         * configurations in AWS Glue, see <a
+         * configurations in Glue, see <a
          * href="https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html">Encrypting
          * Data Written by Crawlers, Jobs, and Development Endpoints</a>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2026,16 +2026,16 @@ namespace Model
         virtual void DeleteConnectionAsync(const Model::DeleteConnectionRequest& request, const DeleteConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes a specified crawler from the AWS Glue Data Catalog, unless the
-         * crawler state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler
+         * state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteCrawlerOutcome DeleteCrawler(const Model::DeleteCrawlerRequest& request) const;
 
         /**
-         * <p>Removes a specified crawler from the AWS Glue Data Catalog, unless the
-         * crawler state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler
+         * state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          *
@@ -2044,8 +2044,8 @@ namespace Model
         virtual Model::DeleteCrawlerOutcomeCallable DeleteCrawlerCallable(const Model::DeleteCrawlerRequest& request) const;
 
         /**
-         * <p>Removes a specified crawler from the AWS Glue Data Catalog, unless the
-         * crawler state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a specified crawler from the Glue Data Catalog, unless the crawler
+         * state is <code>RUNNING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteCrawler">AWS
          * API Reference</a></p>
          *
@@ -2057,8 +2057,8 @@ namespace Model
          * <p>Removes a specified database from a Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
-         * user-defined functions in the deleted database. AWS Glue deletes these
-         * "orphaned" resources asynchronously in a timely manner, at the discretion of the
+         * user-defined functions in the deleted database. Glue deletes these "orphaned"
+         * resources asynchronously in a timely manner, at the discretion of the
          * service.</p> <p>To ensure the immediate deletion of all related resources,
          * before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code>
          * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
@@ -2074,8 +2074,8 @@ namespace Model
          * <p>Removes a specified database from a Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
-         * user-defined functions in the deleted database. AWS Glue deletes these
-         * "orphaned" resources asynchronously in a timely manner, at the discretion of the
+         * user-defined functions in the deleted database. Glue deletes these "orphaned"
+         * resources asynchronously in a timely manner, at the discretion of the
          * service.</p> <p>To ensure the immediate deletion of all related resources,
          * before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code>
          * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
@@ -2093,8 +2093,8 @@ namespace Model
          * <p>Removes a specified database from a Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the tables (and all
          * table versions and partitions that might belong to the tables) and the
-         * user-defined functions in the deleted database. AWS Glue deletes these
-         * "orphaned" resources asynchronously in a timely manner, at the discretion of the
+         * user-defined functions in the deleted database. Glue deletes these "orphaned"
+         * resources asynchronously in a timely manner, at the discretion of the
          * service.</p> <p>To ensure the immediate deletion of all related resources,
          * before calling <code>DeleteDatabase</code>, use <code>DeleteTableVersion</code>
          * or <code>BatchDeleteTableVersion</code>, <code>DeletePartition</code> or
@@ -2162,26 +2162,26 @@ namespace Model
         virtual void DeleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Glue machine learning transform. Machine learning transforms
-         * are a special type of transform that use machine learning to learn the details
-         * of the transformation to be performed by learning from examples provided by
-         * humans. These transformations are then saved by AWS Glue. If you no longer need
-         * a transform, you can delete it by calling <code>DeleteMLTransforms</code>.
-         * However, any AWS Glue jobs that still reference the deleted transform will no
-         * longer succeed.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Glue machine learning transform. Machine learning transforms are a
+         * special type of transform that use machine learning to learn the details of the
+         * transformation to be performed by learning from examples provided by humans.
+         * These transformations are then saved by Glue. If you no longer need a transform,
+         * you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue
+         * jobs that still reference the deleted transform will no longer
+         * succeed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteMLTransformOutcome DeleteMLTransform(const Model::DeleteMLTransformRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Glue machine learning transform. Machine learning transforms
-         * are a special type of transform that use machine learning to learn the details
-         * of the transformation to be performed by learning from examples provided by
-         * humans. These transformations are then saved by AWS Glue. If you no longer need
-         * a transform, you can delete it by calling <code>DeleteMLTransforms</code>.
-         * However, any AWS Glue jobs that still reference the deleted transform will no
-         * longer succeed.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Glue machine learning transform. Machine learning transforms are a
+         * special type of transform that use machine learning to learn the details of the
+         * transformation to be performed by learning from examples provided by humans.
+         * These transformations are then saved by Glue. If you no longer need a transform,
+         * you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue
+         * jobs that still reference the deleted transform will no longer
+         * succeed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">AWS
          * API Reference</a></p>
          *
@@ -2190,13 +2190,13 @@ namespace Model
         virtual Model::DeleteMLTransformOutcomeCallable DeleteMLTransformCallable(const Model::DeleteMLTransformRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Glue machine learning transform. Machine learning transforms
-         * are a special type of transform that use machine learning to learn the details
-         * of the transformation to be performed by learning from examples provided by
-         * humans. These transformations are then saved by AWS Glue. If you no longer need
-         * a transform, you can delete it by calling <code>DeleteMLTransforms</code>.
-         * However, any AWS Glue jobs that still reference the deleted transform will no
-         * longer succeed.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Glue machine learning transform. Machine learning transforms are a
+         * special type of transform that use machine learning to learn the details of the
+         * transformation to be performed by learning from examples provided by humans.
+         * These transformations are then saved by Glue. If you no longer need a transform,
+         * you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue
+         * jobs that still reference the deleted transform will no longer
+         * succeed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteMLTransform">AWS
          * API Reference</a></p>
          *
@@ -2260,7 +2260,7 @@ namespace Model
         /**
          * <p>Delete the entire registry including schema and all of its versions. To get
          * the status of the delete operation, you can call the <code>GetRegistry</code>
-         * API after the asynchronous call. Deleting a registry will disable all online
+         * API after the asynchronous call. Deleting a registry will deactivate all online
          * operations for the registry such as the <code>UpdateRegistry</code>,
          * <code>CreateSchema</code>, <code>UpdateSchema</code>, and
          * <code>RegisterSchemaVersion</code> APIs. </p><p><h3>See Also:</h3>   <a
@@ -2272,7 +2272,7 @@ namespace Model
         /**
          * <p>Delete the entire registry including schema and all of its versions. To get
          * the status of the delete operation, you can call the <code>GetRegistry</code>
-         * API after the asynchronous call. Deleting a registry will disable all online
+         * API after the asynchronous call. Deleting a registry will deactivate all online
          * operations for the registry such as the <code>UpdateRegistry</code>,
          * <code>CreateSchema</code>, <code>UpdateSchema</code>, and
          * <code>RegisterSchemaVersion</code> APIs. </p><p><h3>See Also:</h3>   <a
@@ -2286,7 +2286,7 @@ namespace Model
         /**
          * <p>Delete the entire registry including schema and all of its versions. To get
          * the status of the delete operation, you can call the <code>GetRegistry</code>
-         * API after the asynchronous call. Deleting a registry will disable all online
+         * API after the asynchronous call. Deleting a registry will deactivate all online
          * operations for the registry such as the <code>UpdateRegistry</code>,
          * <code>CreateSchema</code>, <code>UpdateSchema</code>, and
          * <code>RegisterSchemaVersion</code> APIs. </p><p><h3>See Also:</h3>   <a
@@ -2326,7 +2326,7 @@ namespace Model
          * <p>Deletes the entire schema set, including the schema set and all of its
          * versions. To get the status of the delete operation, you can call
          * <code>GetSchema</code> API after the asynchronous call. Deleting a registry will
-         * disable all online operations for the schema, such as the
+         * deactivate all online operations for the schema, such as the
          * <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
          * APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">AWS
@@ -2338,7 +2338,7 @@ namespace Model
          * <p>Deletes the entire schema set, including the schema set and all of its
          * versions. To get the status of the delete operation, you can call
          * <code>GetSchema</code> API after the asynchronous call. Deleting a registry will
-         * disable all online operations for the schema, such as the
+         * deactivate all online operations for the schema, such as the
          * <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
          * APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">AWS
@@ -2352,7 +2352,7 @@ namespace Model
          * <p>Deletes the entire schema set, including the schema set and all of its
          * versions. To get the status of the delete operation, you can call
          * <code>GetSchema</code> API after the asynchronous call. Deleting a registry will
-         * disable all online operations for the schema, such as the
+         * deactivate all online operations for the schema, such as the
          * <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code>
          * APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteSchema">AWS
@@ -2457,7 +2457,7 @@ namespace Model
         /**
          * <p>Removes a table definition from the Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the table versions and
-         * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+         * partitions that belong to the deleted table. Glue deletes these "orphaned"
          * resources asynchronously in a timely manner, at the discretion of the
          * service.</p> <p>To ensure the immediate deletion of all related resources,
          * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
@@ -2472,7 +2472,7 @@ namespace Model
         /**
          * <p>Removes a table definition from the Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the table versions and
-         * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+         * partitions that belong to the deleted table. Glue deletes these "orphaned"
          * resources asynchronously in a timely manner, at the discretion of the
          * service.</p> <p>To ensure the immediate deletion of all related resources,
          * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
@@ -2489,7 +2489,7 @@ namespace Model
         /**
          * <p>Removes a table definition from the Data Catalog.</p>  <p>After
          * completing this operation, you no longer have access to the table versions and
-         * partitions that belong to the deleted table. AWS Glue deletes these "orphaned"
+         * partitions that belong to the deleted table. Glue deletes these "orphaned"
          * resources asynchronously in a timely manner, at the discretion of the
          * service.</p> <p>To ensure the immediate deletion of all related resources,
          * before calling <code>DeleteTable</code>, use <code>DeleteTableVersion</code> or
@@ -2994,10 +2994,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about a specified development endpoint.</p> 
-         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
-         * Glue returns only a private IP address, and the public IP address field is not
-         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> <p><h3>See Also:</h3>   <a
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), Glue
+         * returns only a private IP address, and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, Glue returns only a
+         * public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          */
@@ -3005,10 +3005,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about a specified development endpoint.</p> 
-         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
-         * Glue returns only a private IP address, and the public IP address field is not
-         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> <p><h3>See Also:</h3>   <a
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), Glue
+         * returns only a private IP address, and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, Glue returns only a
+         * public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3018,10 +3018,10 @@ namespace Model
 
         /**
          * <p>Retrieves information about a specified development endpoint.</p> 
-         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
-         * Glue returns only a private IP address, and the public IP address field is not
-         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> <p><h3>See Also:</h3>   <a
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), Glue
+         * returns only a private IP address, and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, Glue returns only a
+         * public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoint">AWS
          * API Reference</a></p>
          *
@@ -3031,10 +3031,10 @@ namespace Model
 
         /**
          * <p>Retrieves all the development endpoints in this AWS account.</p> 
-         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
-         * Glue returns only a private IP address and the public IP address field is not
-         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> <p><h3>See Also:</h3>   <a
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), Glue
+         * returns only a private IP address and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, Glue returns only a
+         * public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          */
@@ -3042,10 +3042,10 @@ namespace Model
 
         /**
          * <p>Retrieves all the development endpoints in this AWS account.</p> 
-         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
-         * Glue returns only a private IP address and the public IP address field is not
-         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> <p><h3>See Also:</h3>   <a
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), Glue
+         * returns only a private IP address and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, Glue returns only a
+         * public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -3055,10 +3055,10 @@ namespace Model
 
         /**
          * <p>Retrieves all the development endpoints in this AWS account.</p> 
-         * <p>When you create a development endpoint in a virtual private cloud (VPC), AWS
-         * Glue returns only a private IP address and the public IP address field is not
-         * populated. When you create a non-VPC development endpoint, AWS Glue returns only
-         * a public IP address.</p> <p><h3>See Also:</h3>   <a
+         * <p>When you create a development endpoint in a virtual private cloud (VPC), Glue
+         * returns only a private IP address and the public IP address field is not
+         * populated. When you create a non-VPC development endpoint, Glue returns only a
+         * public IP address.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -3196,9 +3196,9 @@ namespace Model
 
         /**
          * <p>Gets details for a specific task run on a machine learning transform. Machine
-         * learning task runs are asynchronous tasks that AWS Glue runs on your behalf as
-         * part of various machine learning workflows. You can check the stats of any task
-         * run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
+         * learning task runs are asynchronous tasks that Glue runs on your behalf as part
+         * of various machine learning workflows. You can check the stats of any task run
+         * by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
          * parent transform's <code>TransformID</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">AWS
          * API Reference</a></p>
@@ -3207,9 +3207,9 @@ namespace Model
 
         /**
          * <p>Gets details for a specific task run on a machine learning transform. Machine
-         * learning task runs are asynchronous tasks that AWS Glue runs on your behalf as
-         * part of various machine learning workflows. You can check the stats of any task
-         * run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
+         * learning task runs are asynchronous tasks that Glue runs on your behalf as part
+         * of various machine learning workflows. You can check the stats of any task run
+         * by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
          * parent transform's <code>TransformID</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">AWS
          * API Reference</a></p>
@@ -3220,9 +3220,9 @@ namespace Model
 
         /**
          * <p>Gets details for a specific task run on a machine learning transform. Machine
-         * learning task runs are asynchronous tasks that AWS Glue runs on your behalf as
-         * part of various machine learning workflows. You can check the stats of any task
-         * run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
+         * learning task runs are asynchronous tasks that Glue runs on your behalf as part
+         * of various machine learning workflows. You can check the stats of any task run
+         * by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its
          * parent transform's <code>TransformID</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTaskRun">AWS
          * API Reference</a></p>
@@ -3233,7 +3233,7 @@ namespace Model
 
         /**
          * <p>Gets a list of runs for a machine learning transform. Machine learning task
-         * runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+         * runs are asynchronous tasks that Glue runs on your behalf as part of various
          * machine learning workflows. You can get a sortable, filterable list of machine
          * learning task runs by calling <code>GetMLTaskRuns</code> with their parent
          * transform's <code>TransformID</code> and other optional parameters as documented
@@ -3246,7 +3246,7 @@ namespace Model
 
         /**
          * <p>Gets a list of runs for a machine learning transform. Machine learning task
-         * runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+         * runs are asynchronous tasks that Glue runs on your behalf as part of various
          * machine learning workflows. You can get a sortable, filterable list of machine
          * learning task runs by calling <code>GetMLTaskRuns</code> with their parent
          * transform's <code>TransformID</code> and other optional parameters as documented
@@ -3261,7 +3261,7 @@ namespace Model
 
         /**
          * <p>Gets a list of runs for a machine learning transform. Machine learning task
-         * runs are asynchronous tasks that AWS Glue runs on your behalf as part of various
+         * runs are asynchronous tasks that Glue runs on your behalf as part of various
          * machine learning workflows. You can get a sortable, filterable list of machine
          * learning task runs by calling <code>GetMLTaskRuns</code> with their parent
          * transform's <code>TransformID</code> and other optional parameters as documented
@@ -3275,24 +3275,24 @@ namespace Model
         virtual void GetMLTaskRunsAsync(const Model::GetMLTaskRunsRequest& request, const GetMLTaskRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets an AWS Glue machine learning transform artifact and all its
-         * corresponding metadata. Machine learning transforms are a special type of
-         * transform that use machine learning to learn the details of the transformation
-         * to be performed by learning from examples provided by humans. These
-         * transformations are then saved by AWS Glue. You can retrieve their metadata by
-         * calling <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an Glue machine learning transform artifact and all its corresponding
+         * metadata. Machine learning transforms are a special type of transform that use
+         * machine learning to learn the details of the transformation to be performed by
+         * learning from examples provided by humans. These transformations are then saved
+         * by Glue. You can retrieve their metadata by calling
+         * <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMLTransformOutcome GetMLTransform(const Model::GetMLTransformRequest& request) const;
 
         /**
-         * <p>Gets an AWS Glue machine learning transform artifact and all its
-         * corresponding metadata. Machine learning transforms are a special type of
-         * transform that use machine learning to learn the details of the transformation
-         * to be performed by learning from examples provided by humans. These
-         * transformations are then saved by AWS Glue. You can retrieve their metadata by
-         * calling <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an Glue machine learning transform artifact and all its corresponding
+         * metadata. Machine learning transforms are a special type of transform that use
+         * machine learning to learn the details of the transformation to be performed by
+         * learning from examples provided by humans. These transformations are then saved
+         * by Glue. You can retrieve their metadata by calling
+         * <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">AWS
          * API Reference</a></p>
          *
@@ -3301,12 +3301,12 @@ namespace Model
         virtual Model::GetMLTransformOutcomeCallable GetMLTransformCallable(const Model::GetMLTransformRequest& request) const;
 
         /**
-         * <p>Gets an AWS Glue machine learning transform artifact and all its
-         * corresponding metadata. Machine learning transforms are a special type of
-         * transform that use machine learning to learn the details of the transformation
-         * to be performed by learning from examples provided by humans. These
-         * transformations are then saved by AWS Glue. You can retrieve their metadata by
-         * calling <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an Glue machine learning transform artifact and all its corresponding
+         * metadata. Machine learning transforms are a special type of transform that use
+         * machine learning to learn the details of the transformation to be performed by
+         * learning from examples provided by humans. These transformations are then saved
+         * by Glue. You can retrieve their metadata by calling
+         * <code>GetMLTransform</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransform">AWS
          * API Reference</a></p>
          *
@@ -3315,11 +3315,11 @@ namespace Model
         virtual void GetMLTransformAsync(const Model::GetMLTransformRequest& request, const GetMLTransformResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a sortable, filterable list of existing AWS Glue machine learning
+         * <p>Gets a sortable, filterable list of existing Glue machine learning
          * transforms. Machine learning transforms are a special type of transform that use
          * machine learning to learn the details of the transformation to be performed by
          * learning from examples provided by humans. These transformations are then saved
-         * by AWS Glue, and you can retrieve their metadata by calling
+         * by Glue, and you can retrieve their metadata by calling
          * <code>GetMLTransforms</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">AWS
          * API Reference</a></p>
@@ -3327,11 +3327,11 @@ namespace Model
         virtual Model::GetMLTransformsOutcome GetMLTransforms(const Model::GetMLTransformsRequest& request) const;
 
         /**
-         * <p>Gets a sortable, filterable list of existing AWS Glue machine learning
+         * <p>Gets a sortable, filterable list of existing Glue machine learning
          * transforms. Machine learning transforms are a special type of transform that use
          * machine learning to learn the details of the transformation to be performed by
          * learning from examples provided by humans. These transformations are then saved
-         * by AWS Glue, and you can retrieve their metadata by calling
+         * by Glue, and you can retrieve their metadata by calling
          * <code>GetMLTransforms</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">AWS
          * API Reference</a></p>
@@ -3341,11 +3341,11 @@ namespace Model
         virtual Model::GetMLTransformsOutcomeCallable GetMLTransformsCallable(const Model::GetMLTransformsRequest& request) const;
 
         /**
-         * <p>Gets a sortable, filterable list of existing AWS Glue machine learning
+         * <p>Gets a sortable, filterable list of existing Glue machine learning
          * transforms. Machine learning transforms are a special type of transform that use
          * machine learning to learn the details of the transformation to be performed by
          * learning from examples provided by humans. These transformations are then saved
-         * by AWS Glue, and you can retrieve their metadata by calling
+         * by Glue, and you can retrieve their metadata by calling
          * <code>GetMLTransforms</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMLTransforms">AWS
          * API Reference</a></p>
@@ -3514,24 +3514,22 @@ namespace Model
         virtual void GetRegistryAsync(const Model::GetRegistryRequest& request, const GetRegistryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the resource policies set on individual resources by AWS Resource
+         * <p>Retrieves the resource policies set on individual resources by Resource
          * Access Manager during cross-account permission grants. Also retrieves the Data
          * Catalog resource policy.</p> <p>If you enabled metadata encryption in Data
-         * Catalog settings, and you do not have permission on the AWS KMS key, the
-         * operation can't return the Data Catalog resource policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * Catalog settings, and you do not have permission on the KMS key, the operation
+         * can't return the Data Catalog resource policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          */
         virtual Model::GetResourcePoliciesOutcome GetResourcePolicies(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves the resource policies set on individual resources by AWS Resource
+         * <p>Retrieves the resource policies set on individual resources by Resource
          * Access Manager during cross-account permission grants. Also retrieves the Data
          * Catalog resource policy.</p> <p>If you enabled metadata encryption in Data
-         * Catalog settings, and you do not have permission on the AWS KMS key, the
-         * operation can't return the Data Catalog resource policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * Catalog settings, and you do not have permission on the KMS key, the operation
+         * can't return the Data Catalog resource policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -3540,12 +3538,11 @@ namespace Model
         virtual Model::GetResourcePoliciesOutcomeCallable GetResourcePoliciesCallable(const Model::GetResourcePoliciesRequest& request) const;
 
         /**
-         * <p>Retrieves the resource policies set on individual resources by AWS Resource
+         * <p>Retrieves the resource policies set on individual resources by Resource
          * Access Manager during cross-account permission grants. Also retrieves the Data
          * Catalog resource policy.</p> <p>If you enabled metadata encryption in Data
-         * Catalog settings, and you do not have permission on the AWS KMS key, the
-         * operation can't return the Data Catalog resource policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * Catalog settings, and you do not have permission on the KMS key, the operation
+         * can't return the Data Catalog resource policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetResourcePolicies">AWS
          * API Reference</a></p>
          *
@@ -4114,7 +4111,7 @@ namespace Model
         virtual void GetWorkflowRunsAsync(const Model::GetWorkflowRunsRequest& request, const GetWorkflowRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports an existing Amazon Athena Data Catalog to AWS Glue</p><p><h3>See
+         * <p>Imports an existing Amazon Athena Data Catalog to Glue.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">AWS
          * API Reference</a></p>
@@ -4122,7 +4119,7 @@ namespace Model
         virtual Model::ImportCatalogToGlueOutcome ImportCatalogToGlue(const Model::ImportCatalogToGlueRequest& request) const;
 
         /**
-         * <p>Imports an existing Amazon Athena Data Catalog to AWS Glue</p><p><h3>See
+         * <p>Imports an existing Amazon Athena Data Catalog to Glue.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">AWS
          * API Reference</a></p>
@@ -4132,7 +4129,7 @@ namespace Model
         virtual Model::ImportCatalogToGlueOutcomeCallable ImportCatalogToGlueCallable(const Model::ImportCatalogToGlueRequest& request) const;
 
         /**
-         * <p>Imports an existing Amazon Athena Data Catalog to AWS Glue</p><p><h3>See
+         * <p>Imports an existing Amazon Athena Data Catalog to Glue.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ImportCatalogToGlue">AWS
          * API Reference</a></p>
@@ -4142,26 +4139,26 @@ namespace Model
         virtual void ImportCatalogToGlueAsync(const Model::ImportCatalogToGlueRequest& request, const ImportCatalogToGlueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the names of all crawler resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field, which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all crawler resources in this Amazon Web Services
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListCrawlersOutcome ListCrawlers(const Model::ListCrawlersRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all crawler resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field, which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all crawler resources in this Amazon Web Services
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">AWS
          * API Reference</a></p>
          *
@@ -4170,13 +4167,13 @@ namespace Model
         virtual Model::ListCrawlersOutcomeCallable ListCrawlersCallable(const Model::ListCrawlersRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all crawler resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field, which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all crawler resources in this Amazon Web Services
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListCrawlers">AWS
          * API Reference</a></p>
          *
@@ -4185,26 +4182,26 @@ namespace Model
         virtual void ListCrawlersAsync(const Model::ListCrawlersRequest& request, const ListCrawlersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this AWS
-         * account, or the resources with the specified tag. This operation allows you to
-         * see which resources are available in your account, and their names.</p> <p>This
-         * operation takes the optional <code>Tags</code> field, which you can use as a
-         * filter on the response so that tagged resources can be retrieved as a group. If
-         * you choose to use tags filtering, only resources with the tag are
-         * retrieved.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon
+         * Web Services account, or the resources with the specified tag. This operation
+         * allows you to see which resources are available in your account, and their
+         * names.</p> <p>This operation takes the optional <code>Tags</code> field, which
+         * you can use as a filter on the response so that tagged resources can be
+         * retrieved as a group. If you choose to use tags filtering, only resources with
+         * the tag are retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDevEndpointsOutcome ListDevEndpoints(const Model::ListDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this AWS
-         * account, or the resources with the specified tag. This operation allows you to
-         * see which resources are available in your account, and their names.</p> <p>This
-         * operation takes the optional <code>Tags</code> field, which you can use as a
-         * filter on the response so that tagged resources can be retrieved as a group. If
-         * you choose to use tags filtering, only resources with the tag are
-         * retrieved.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon
+         * Web Services account, or the resources with the specified tag. This operation
+         * allows you to see which resources are available in your account, and their
+         * names.</p> <p>This operation takes the optional <code>Tags</code> field, which
+         * you can use as a filter on the response so that tagged resources can be
+         * retrieved as a group. If you choose to use tags filtering, only resources with
+         * the tag are retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -4213,13 +4210,13 @@ namespace Model
         virtual Model::ListDevEndpointsOutcomeCallable ListDevEndpointsCallable(const Model::ListDevEndpointsRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this AWS
-         * account, or the resources with the specified tag. This operation allows you to
-         * see which resources are available in your account, and their names.</p> <p>This
-         * operation takes the optional <code>Tags</code> field, which you can use as a
-         * filter on the response so that tagged resources can be retrieved as a group. If
-         * you choose to use tags filtering, only resources with the tag are
-         * retrieved.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon
+         * Web Services account, or the resources with the specified tag. This operation
+         * allows you to see which resources are available in your account, and their
+         * names.</p> <p>This operation takes the optional <code>Tags</code> field, which
+         * you can use as a filter on the response so that tagged resources can be
+         * retrieved as a group. If you choose to use tags filtering, only resources with
+         * the tag are retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDevEndpoints">AWS
          * API Reference</a></p>
          *
@@ -4228,8 +4225,8 @@ namespace Model
         virtual void ListDevEndpointsAsync(const Model::ListDevEndpointsRequest& request, const ListDevEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the names of all job resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
+         * <p>Retrieves the names of all job resources in this Amazon Web Services account,
+         * or the resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
          * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
@@ -4241,8 +4238,8 @@ namespace Model
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all job resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
+         * <p>Retrieves the names of all job resources in this Amazon Web Services account,
+         * or the resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
          * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
@@ -4256,8 +4253,8 @@ namespace Model
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all job resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
+         * <p>Retrieves the names of all job resources in this Amazon Web Services account,
+         * or the resources with the specified tag. This operation allows you to see which
          * resources are available in your account, and their names.</p> <p>This operation
          * takes the optional <code>Tags</code> field, which you can use as a filter on the
          * response so that tagged resources can be retrieved as a group. If you choose to
@@ -4271,24 +4268,24 @@ namespace Model
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Retrieves a sortable, filterable list of existing AWS Glue machine learning
-         * transforms in this AWS account, or the resources with the specified tag. This
-         * operation takes the optional <code>Tags</code> field, which you can use as a
-         * filter of the responses so that tagged resources can be retrieved as a group. If
-         * you choose to use tag filtering, only resources with the tags are retrieved.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves a sortable, filterable list of existing Glue machine learning
+         * transforms in this Amazon Web Services account, or the resources with the
+         * specified tag. This operation takes the optional <code>Tags</code> field, which
+         * you can use as a filter of the responses so that tagged resources can be
+         * retrieved as a group. If you choose to use tag filtering, only resources with
+         * the tags are retrieved. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">AWS
          * API Reference</a></p>
          */
         virtual Model::ListMLTransformsOutcome ListMLTransforms(const Model::ListMLTransformsRequest& request) const;
 
         /**
-         * <p> Retrieves a sortable, filterable list of existing AWS Glue machine learning
-         * transforms in this AWS account, or the resources with the specified tag. This
-         * operation takes the optional <code>Tags</code> field, which you can use as a
-         * filter of the responses so that tagged resources can be retrieved as a group. If
-         * you choose to use tag filtering, only resources with the tags are retrieved.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves a sortable, filterable list of existing Glue machine learning
+         * transforms in this Amazon Web Services account, or the resources with the
+         * specified tag. This operation takes the optional <code>Tags</code> field, which
+         * you can use as a filter of the responses so that tagged resources can be
+         * retrieved as a group. If you choose to use tag filtering, only resources with
+         * the tags are retrieved. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">AWS
          * API Reference</a></p>
          *
@@ -4297,12 +4294,12 @@ namespace Model
         virtual Model::ListMLTransformsOutcomeCallable ListMLTransformsCallable(const Model::ListMLTransformsRequest& request) const;
 
         /**
-         * <p> Retrieves a sortable, filterable list of existing AWS Glue machine learning
-         * transforms in this AWS account, or the resources with the specified tag. This
-         * operation takes the optional <code>Tags</code> field, which you can use as a
-         * filter of the responses so that tagged resources can be retrieved as a group. If
-         * you choose to use tag filtering, only resources with the tags are retrieved.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves a sortable, filterable list of existing Glue machine learning
+         * transforms in this Amazon Web Services account, or the resources with the
+         * specified tag. This operation takes the optional <code>Tags</code> field, which
+         * you can use as a filter of the responses so that tagged resources can be
+         * retrieved as a group. If you choose to use tag filtering, only resources with
+         * the tags are retrieved. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListMLTransforms">AWS
          * API Reference</a></p>
          *
@@ -4416,26 +4413,26 @@ namespace Model
         virtual void ListSchemasAsync(const Model::ListSchemasRequest& request, const ListSchemasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the names of all trigger resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field, which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all trigger resources in this Amazon Web Services
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTriggersOutcome ListTriggers(const Model::ListTriggersRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all trigger resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field, which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all trigger resources in this Amazon Web Services
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">AWS
          * API Reference</a></p>
          *
@@ -4444,13 +4441,13 @@ namespace Model
         virtual Model::ListTriggersOutcomeCallable ListTriggersCallable(const Model::ListTriggersRequest& request) const;
 
         /**
-         * <p>Retrieves the names of all trigger resources in this AWS account, or the
-         * resources with the specified tag. This operation allows you to see which
-         * resources are available in your account, and their names.</p> <p>This operation
-         * takes the optional <code>Tags</code> field, which you can use as a filter on the
-         * response so that tagged resources can be retrieved as a group. If you choose to
-         * use tags filtering, only resources with the tag are retrieved.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the names of all trigger resources in this Amazon Web Services
+         * account, or the resources with the specified tag. This operation allows you to
+         * see which resources are available in your account, and their names.</p> <p>This
+         * operation takes the optional <code>Tags</code> field, which you can use as a
+         * filter on the response so that tagged resources can be retrieved as a group. If
+         * you choose to use tags filtering, only resources with the tag are
+         * retrieved.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListTriggers">AWS
          * API Reference</a></p>
          *
@@ -4952,7 +4949,7 @@ namespace Model
          * is generally used as part of the active learning workflow that starts with the
          * <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately
          * results in improving the quality of your machine learning transform. </p>
-         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue
          * machine learning will have generated a series of questions for humans to answer.
          * (Answering these questions is often called 'labeling' in the machine learning
          * workflows). In the case of the <code>FindMatches</code> transform, these
@@ -4983,7 +4980,7 @@ namespace Model
          * is generally used as part of the active learning workflow that starts with the
          * <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately
          * results in improving the quality of your machine learning transform. </p>
-         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue
          * machine learning will have generated a series of questions for humans to answer.
          * (Answering these questions is often called 'labeling' in the machine learning
          * workflows). In the case of the <code>FindMatches</code> transform, these
@@ -5016,7 +5013,7 @@ namespace Model
          * is generally used as part of the active learning workflow that starts with the
          * <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately
          * results in improving the quality of your machine learning transform. </p>
-         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
+         * <p>After the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue
          * machine learning will have generated a series of questions for humans to answer.
          * (Answering these questions is often called 'labeling' in the machine learning
          * workflows). In the case of the <code>FindMatches</code> transform, these
@@ -5070,7 +5067,7 @@ namespace Model
 
         /**
          * <p>Starts a task to estimate the quality of the transform. </p> <p>When you
-         * provide label sets as examples of truth, AWS Glue machine learning uses some of
+         * provide label sets as examples of truth, Glue machine learning uses some of
          * those examples to learn from them. The rest of the labels are used as a test to
          * estimate quality.</p> <p>Returns a unique identifier for the run. You can call
          * <code>GetMLTaskRun</code> to get more information about the stats of the
@@ -5082,7 +5079,7 @@ namespace Model
 
         /**
          * <p>Starts a task to estimate the quality of the transform. </p> <p>When you
-         * provide label sets as examples of truth, AWS Glue machine learning uses some of
+         * provide label sets as examples of truth, Glue machine learning uses some of
          * those examples to learn from them. The rest of the labels are used as a test to
          * estimate quality.</p> <p>Returns a unique identifier for the run. You can call
          * <code>GetMLTaskRun</code> to get more information about the stats of the
@@ -5096,7 +5093,7 @@ namespace Model
 
         /**
          * <p>Starts a task to estimate the quality of the transform. </p> <p>When you
-         * provide label sets as examples of truth, AWS Glue machine learning uses some of
+         * provide label sets as examples of truth, Glue machine learning uses some of
          * those examples to learn from them. The rest of the labels are used as a test to
          * estimate quality.</p> <p>Returns a unique identifier for the run. You can call
          * <code>GetMLTaskRun</code> to get more information about the stats of the
@@ -5111,12 +5108,12 @@ namespace Model
         /**
          * <p>Starts the active learning workflow for your machine learning transform to
          * improve the transform's quality by generating label sets and adding labels.</p>
-         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
-         * will have generated a "labeling set" or a set of questions for humans to
-         * answer.</p> <p>In the case of the <code>FindMatches</code> transform, these
-         * questions are of the form, “What is the correct way to group these rows together
-         * into groups composed entirely of matching records?” </p> <p>After the labeling
-         * process is finished, you can upload your labels with a call to
+         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will
+         * have generated a "labeling set" or a set of questions for humans to answer.</p>
+         * <p>In the case of the <code>FindMatches</code> transform, these questions are of
+         * the form, “What is the correct way to group these rows together into groups
+         * composed entirely of matching records?” </p> <p>After the labeling process is
+         * finished, you can upload your labels with a call to
          * <code>StartImportLabelsTaskRun</code>. After
          * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
          * learning transform will use the new and improved labels and perform a
@@ -5129,12 +5126,12 @@ namespace Model
         /**
          * <p>Starts the active learning workflow for your machine learning transform to
          * improve the transform's quality by generating label sets and adding labels.</p>
-         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
-         * will have generated a "labeling set" or a set of questions for humans to
-         * answer.</p> <p>In the case of the <code>FindMatches</code> transform, these
-         * questions are of the form, “What is the correct way to group these rows together
-         * into groups composed entirely of matching records?” </p> <p>After the labeling
-         * process is finished, you can upload your labels with a call to
+         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will
+         * have generated a "labeling set" or a set of questions for humans to answer.</p>
+         * <p>In the case of the <code>FindMatches</code> transform, these questions are of
+         * the form, “What is the correct way to group these rows together into groups
+         * composed entirely of matching records?” </p> <p>After the labeling process is
+         * finished, you can upload your labels with a call to
          * <code>StartImportLabelsTaskRun</code>. After
          * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
          * learning transform will use the new and improved labels and perform a
@@ -5149,12 +5146,12 @@ namespace Model
         /**
          * <p>Starts the active learning workflow for your machine learning transform to
          * improve the transform's quality by generating label sets and adding labels.</p>
-         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, AWS Glue
-         * will have generated a "labeling set" or a set of questions for humans to
-         * answer.</p> <p>In the case of the <code>FindMatches</code> transform, these
-         * questions are of the form, “What is the correct way to group these rows together
-         * into groups composed entirely of matching records?” </p> <p>After the labeling
-         * process is finished, you can upload your labels with a call to
+         * <p>When the <code>StartMLLabelingSetGenerationTaskRun</code> finishes, Glue will
+         * have generated a "labeling set" or a set of questions for humans to answer.</p>
+         * <p>In the case of the <code>FindMatches</code> transform, these questions are of
+         * the form, “What is the correct way to group these rows together into groups
+         * composed entirely of matching records?” </p> <p>After the labeling process is
+         * finished, you can upload your labels with a call to
          * <code>StartImportLabelsTaskRun</code>. After
          * <code>StartImportLabelsTaskRun</code> finishes, all future runs of the machine
          * learning transform will use the new and improved labels and perform a
@@ -5338,22 +5335,22 @@ namespace Model
         virtual void StopWorkflowRunAsync(const Model::StopWorkflowRunRequest& request, const StopWorkflowRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds tags to a resource. A tag is a label you can assign to an AWS resource.
-         * In AWS Glue, you can tag only certain resources. For information about what
-         * resources you can tag, see <a
-         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-         * AWS Glue</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web
+         * Services resource. In Glue, you can tag only certain resources. For information
+         * about what resources you can tag, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+         * Services Tags in Glue</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to a resource. A tag is a label you can assign to an AWS resource.
-         * In AWS Glue, you can tag only certain resources. For information about what
-         * resources you can tag, see <a
-         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-         * AWS Glue</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web
+         * Services resource. In Glue, you can tag only certain resources. For information
+         * about what resources you can tag, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+         * Services Tags in Glue</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">AWS
          * API Reference</a></p>
          *
@@ -5362,11 +5359,11 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Adds tags to a resource. A tag is a label you can assign to an AWS resource.
-         * In AWS Glue, you can tag only certain resources. For information about what
-         * resources you can tag, see <a
-         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
-         * AWS Glue</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds tags to a resource. A tag is a label you can assign to an Amazon Web
+         * Services resource. In Glue, you can tag only certain resources. For information
+         * about what resources you can tag, see <a
+         * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
+         * Services Tags in Glue</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/TagResource">AWS
          * API Reference</a></p>
          *

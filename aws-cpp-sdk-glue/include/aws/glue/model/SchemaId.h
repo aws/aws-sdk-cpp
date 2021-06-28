@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The unique ID of the schema in the AWS Glue schema registry.</p><p><h3>See
+   * <p>The unique ID of the schema in the Glue schema registry.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/SchemaId">AWS API
    * Reference</a></p>

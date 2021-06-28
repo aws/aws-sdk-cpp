@@ -27,10 +27,14 @@ Eac3AtmosSettings::Eac3AtmosSettings() :
     m_codingModeHasBeenSet(false),
     m_dialogueIntelligence(Eac3AtmosDialogueIntelligence::NOT_SET),
     m_dialogueIntelligenceHasBeenSet(false),
+    m_downmixControl(Eac3AtmosDownmixControl::NOT_SET),
+    m_downmixControlHasBeenSet(false),
     m_dynamicRangeCompressionLine(Eac3AtmosDynamicRangeCompressionLine::NOT_SET),
     m_dynamicRangeCompressionLineHasBeenSet(false),
     m_dynamicRangeCompressionRf(Eac3AtmosDynamicRangeCompressionRf::NOT_SET),
     m_dynamicRangeCompressionRfHasBeenSet(false),
+    m_dynamicRangeControl(Eac3AtmosDynamicRangeControl::NOT_SET),
+    m_dynamicRangeControlHasBeenSet(false),
     m_loRoCenterMixLevel(0.0),
     m_loRoCenterMixLevelHasBeenSet(false),
     m_loRoSurroundMixLevel(0.0),
@@ -61,10 +65,14 @@ Eac3AtmosSettings::Eac3AtmosSettings(JsonView jsonValue) :
     m_codingModeHasBeenSet(false),
     m_dialogueIntelligence(Eac3AtmosDialogueIntelligence::NOT_SET),
     m_dialogueIntelligenceHasBeenSet(false),
+    m_downmixControl(Eac3AtmosDownmixControl::NOT_SET),
+    m_downmixControlHasBeenSet(false),
     m_dynamicRangeCompressionLine(Eac3AtmosDynamicRangeCompressionLine::NOT_SET),
     m_dynamicRangeCompressionLineHasBeenSet(false),
     m_dynamicRangeCompressionRf(Eac3AtmosDynamicRangeCompressionRf::NOT_SET),
     m_dynamicRangeCompressionRfHasBeenSet(false),
+    m_dynamicRangeControl(Eac3AtmosDynamicRangeControl::NOT_SET),
+    m_dynamicRangeControlHasBeenSet(false),
     m_loRoCenterMixLevel(0.0),
     m_loRoCenterMixLevelHasBeenSet(false),
     m_loRoSurroundMixLevel(0.0),
@@ -117,6 +125,13 @@ Eac3AtmosSettings& Eac3AtmosSettings::operator =(JsonView jsonValue)
     m_dialogueIntelligenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("downmixControl"))
+  {
+    m_downmixControl = Eac3AtmosDownmixControlMapper::GetEac3AtmosDownmixControlForName(jsonValue.GetString("downmixControl"));
+
+    m_downmixControlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("dynamicRangeCompressionLine"))
   {
     m_dynamicRangeCompressionLine = Eac3AtmosDynamicRangeCompressionLineMapper::GetEac3AtmosDynamicRangeCompressionLineForName(jsonValue.GetString("dynamicRangeCompressionLine"));
@@ -129,6 +144,13 @@ Eac3AtmosSettings& Eac3AtmosSettings::operator =(JsonView jsonValue)
     m_dynamicRangeCompressionRf = Eac3AtmosDynamicRangeCompressionRfMapper::GetEac3AtmosDynamicRangeCompressionRfForName(jsonValue.GetString("dynamicRangeCompressionRf"));
 
     m_dynamicRangeCompressionRfHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dynamicRangeControl"))
+  {
+    m_dynamicRangeControl = Eac3AtmosDynamicRangeControlMapper::GetEac3AtmosDynamicRangeControlForName(jsonValue.GetString("dynamicRangeControl"));
+
+    m_dynamicRangeControlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("loRoCenterMixLevel"))
@@ -222,6 +244,11 @@ JsonValue Eac3AtmosSettings::Jsonize() const
    payload.WithString("dialogueIntelligence", Eac3AtmosDialogueIntelligenceMapper::GetNameForEac3AtmosDialogueIntelligence(m_dialogueIntelligence));
   }
 
+  if(m_downmixControlHasBeenSet)
+  {
+   payload.WithString("downmixControl", Eac3AtmosDownmixControlMapper::GetNameForEac3AtmosDownmixControl(m_downmixControl));
+  }
+
   if(m_dynamicRangeCompressionLineHasBeenSet)
   {
    payload.WithString("dynamicRangeCompressionLine", Eac3AtmosDynamicRangeCompressionLineMapper::GetNameForEac3AtmosDynamicRangeCompressionLine(m_dynamicRangeCompressionLine));
@@ -230,6 +257,11 @@ JsonValue Eac3AtmosSettings::Jsonize() const
   if(m_dynamicRangeCompressionRfHasBeenSet)
   {
    payload.WithString("dynamicRangeCompressionRf", Eac3AtmosDynamicRangeCompressionRfMapper::GetNameForEac3AtmosDynamicRangeCompressionRf(m_dynamicRangeCompressionRf));
+  }
+
+  if(m_dynamicRangeControlHasBeenSet)
+  {
+   payload.WithString("dynamicRangeControl", Eac3AtmosDynamicRangeControlMapper::GetNameForEac3AtmosDynamicRangeControl(m_dynamicRangeControl));
   }
 
   if(m_loRoCenterMixLevelHasBeenSet)

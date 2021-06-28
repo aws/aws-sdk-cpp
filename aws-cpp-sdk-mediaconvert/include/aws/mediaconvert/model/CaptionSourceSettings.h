@@ -12,6 +12,7 @@
 #include <aws/mediaconvert/model/CaptionSourceType.h>
 #include <aws/mediaconvert/model/TeletextSourceSettings.h>
 #include <aws/mediaconvert/model/TrackSourceSettings.h>
+#include <aws/mediaconvert/model/WebvttHlsSourceSettings.h>
 #include <utility>
 
 namespace Aws
@@ -304,6 +305,79 @@ namespace Model
      */
     inline CaptionSourceSettings& WithTrackSourceSettings(TrackSourceSettings&& value) { SetTrackSourceSettings(std::move(value)); return *this;}
 
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline const WebvttHlsSourceSettings& GetWebvttHlsSourceSettings() const{ return m_webvttHlsSourceSettings; }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline bool WebvttHlsSourceSettingsHasBeenSet() const { return m_webvttHlsSourceSettingsHasBeenSet; }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline void SetWebvttHlsSourceSettings(const WebvttHlsSourceSettings& value) { m_webvttHlsSourceSettingsHasBeenSet = true; m_webvttHlsSourceSettings = value; }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline void SetWebvttHlsSourceSettings(WebvttHlsSourceSettings&& value) { m_webvttHlsSourceSettingsHasBeenSet = true; m_webvttHlsSourceSettings = std::move(value); }
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline CaptionSourceSettings& WithWebvttHlsSourceSettings(const WebvttHlsSourceSettings& value) { SetWebvttHlsSourceSettings(value); return *this;}
+
+    /**
+     * Settings specific to WebVTT sources in HLS alternative rendition group. Specify
+     * the properties (renditionGroupId, renditionName or renditionLanguageCode) to
+     * identify the unique subtitle track among the alternative rendition groups
+     * present in the HLS manifest. If no unique track is found, or multiple tracks
+     * match the specified properties, the job fails. If there is only one subtitle
+     * track in the rendition group, the settings can be left empty and the default
+     * subtitle track will be chosen. If your caption source is a sidecar file, use
+     * FileSourceSettings instead of WebvttHlsSourceSettings.
+     */
+    inline CaptionSourceSettings& WithWebvttHlsSourceSettings(WebvttHlsSourceSettings&& value) { SetWebvttHlsSourceSettings(std::move(value)); return *this;}
+
   private:
 
     AncillarySourceSettings m_ancillarySourceSettings;
@@ -326,6 +400,9 @@ namespace Model
 
     TrackSourceSettings m_trackSourceSettings;
     bool m_trackSourceSettingsHasBeenSet;
+
+    WebvttHlsSourceSettings m_webvttHlsSourceSettings;
+    bool m_webvttHlsSourceSettingsHasBeenSet;
   };
 
 } // namespace Model

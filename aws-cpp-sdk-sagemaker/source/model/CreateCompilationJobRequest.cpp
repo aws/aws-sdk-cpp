@@ -17,6 +17,7 @@ CreateCompilationJobRequest::CreateCompilationJobRequest() :
     m_roleArnHasBeenSet(false),
     m_inputConfigHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
+    m_vpcConfigHasBeenSet(false),
     m_stoppingConditionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -47,6 +48,12 @@ Aws::String CreateCompilationJobRequest::SerializePayload() const
   if(m_outputConfigHasBeenSet)
   {
    payload.WithObject("OutputConfig", m_outputConfig.Jsonize());
+
+  }
+
+  if(m_vpcConfigHasBeenSet)
+  {
+   payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
   }
 

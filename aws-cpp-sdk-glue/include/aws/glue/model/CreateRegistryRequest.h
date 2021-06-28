@@ -142,80 +142,80 @@ namespace Model
 
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>AWS tags that contain a key value pair and may be searched by console,
-     * command line, or API.</p>
+     * <p>Amazon Web Services tags that contain a key value pair and may be searched by
+     * console, command line, or API.</p>
      */
     inline CreateRegistryRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

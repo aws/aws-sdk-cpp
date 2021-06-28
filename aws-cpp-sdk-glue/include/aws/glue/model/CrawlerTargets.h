@@ -207,42 +207,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline const Aws::Vector<CatalogTarget>& GetCatalogTargets() const{ return m_catalogTargets; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline bool CatalogTargetsHasBeenSet() const { return m_catalogTargetsHasBeenSet; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline void SetCatalogTargets(const Aws::Vector<CatalogTarget>& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets = value; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline void SetCatalogTargets(Aws::Vector<CatalogTarget>&& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets = std::move(value); }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& WithCatalogTargets(const Aws::Vector<CatalogTarget>& value) { SetCatalogTargets(value); return *this;}
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& WithCatalogTargets(Aws::Vector<CatalogTarget>&& value) { SetCatalogTargets(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& AddCatalogTargets(const CatalogTarget& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets.push_back(value); return *this; }
 
     /**
-     * <p>Specifies AWS Glue Data Catalog targets.</p>
+     * <p>Specifies Glue Data Catalog targets.</p>
      */
     inline CrawlerTargets& AddCatalogTargets(CatalogTarget&& value) { m_catalogTargetsHasBeenSet = true; m_catalogTargets.push_back(std::move(value)); return *this; }
 
