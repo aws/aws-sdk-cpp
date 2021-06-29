@@ -7,6 +7,10 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
+#if defined(_WIN32) && defined(IN)
+#undef IN
+#endif
+
 namespace Aws
 {
 namespace DynamoDB

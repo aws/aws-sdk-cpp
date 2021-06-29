@@ -7,7 +7,7 @@
 #include <aws/s3-crt/S3Crt_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
-#ifdef IGNORE
+#if defined(_WIN32) && defined(IGNORE)
 #undef IGNORE
 #endif
 

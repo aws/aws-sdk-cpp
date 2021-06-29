@@ -125,7 +125,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
         }
         else if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelEnumHeader.vm", StandardCharsets.UTF_8.name());
-            EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
+            EnumModel enumModel = new EnumModel(serviceModel.getMetadata().getNamespace(), shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
         }
         else if (shape.isEvent() && shape.getEventPayloadType().equals("blob")) {
@@ -208,7 +208,7 @@ public abstract class CppClientGenerator implements ClientGenerator {
 
         if (shape.isEnum()) {
             template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EnumSource.vm", StandardCharsets.UTF_8.name());
-            EnumModel enumModel = new EnumModel(shapeEntry.getKey(), shape.getEnumValues());
+            EnumModel enumModel = new EnumModel(serviceModel.getMetadata().getNamespace(), shapeEntry.getKey(), shape.getEnumValues());
             context.put("enumModel", enumModel);
 
             context.put("shape", shape);
