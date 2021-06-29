@@ -184,7 +184,7 @@ Aws::String URI::GetPath() const
         path.append(segment);
     }
 
-    if (m_pathSegments.empty())
+    if (m_pathSegments.empty() || m_pathHasTrailingSlash)
     {
         path.push_back('/');
     }
@@ -201,7 +201,7 @@ Aws::String URI::GetURLEncodedPath() const
         ss << '/' << StringUtils::URLEncode(segment.c_str());
     }
 
-    if (m_pathSegments.empty())
+    if (m_pathSegments.empty() || m_pathHasTrailingSlash)
     {
         ss << '/';
     }
@@ -244,7 +244,7 @@ Aws::String URI::GetURLEncodedPathRFC3986() const
         }
     }
 
-    if (m_pathSegments.empty())
+    if (m_pathSegments.empty() || m_pathHasTrailingSlash)
     {
         ss << '/';
     }
@@ -254,8 +254,8 @@ Aws::String URI::GetURLEncodedPathRFC3986() const
 
 void URI::SetPath(const Aws::String& value)
 {
-    const Aws::Vector<Aws::String> pathParts = StringUtils::Split(value, '/');
-    m_pathSegments = std::move(pathParts);
+    m_pathSegments.clear();
+    AddPathSegments(value);
 }
 
 //ugh, this isn't even part of the canonicalization spec. It is part of how our services have implemented their signers though....
