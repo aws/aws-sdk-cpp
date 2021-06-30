@@ -42,162 +42,154 @@ namespace Model
 
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline CreateServiceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline CreateServiceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name that you want to assign to the service.</p> <p>If you want AWS Cloud
-     * Map to create an <code>SRV</code> record when you register an instance and
-     * you're using a system that requires a specific <code>SRV</code> format, such as
-     * <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for
+     * <p>The name that you want to assign to the service.</p> <p>If you want Cloud Map
+     * to create an <code>SRV</code> record when you register an instance and you're
+     * using a system that requires a specific <code>SRV</code> format, such as <a
+     * href="http://www.haproxy.org/">HAProxy</a>, specify the following for
      * <code>Name</code>:</p> <ul> <li> <p>Start the name with an underscore (_), such
      * as <code>_exampleservice</code>.</p> </li> <li> <p>End the name with
      * <i>._protocol</i>, such as <code>._tcp</code>.</p> </li> </ul> <p>When you
-     * register an instance, AWS Cloud Map creates an <code>SRV</code> record and
-     * assigns a name to the record by concatenating the service name and the namespace
-     * name (for example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p>
-     *  <p>For services that are accessible by DNS queries, you can't create
-     * multiple services with names that differ only by case (such as EXAMPLE and
-     * example). Otherwise, these services have the same DNS name and can't be
-     * distinguished. However, if you use a namespace that's only accessible by API
-     * calls, then you can create services that with names that differ only by
-     * case.</p> 
+     * register an instance, Cloud Map creates an <code>SRV</code> record and assigns a
+     * name to the record by concatenating the service name and the namespace name (for
+     * example,</p> <p> <code>_exampleservice._tcp.example.com</code>).</p> 
+     * <p>For services that are accessible by DNS queries, you can't create multiple
+     * services with names that differ only by case (such as EXAMPLE and example).
+     * Otherwise, these services have the same DNS name and can't be distinguished.
+     * However, if you use a namespace that's only accessible by API calls, then you
+     * can create services that with names that differ only by case.</p> 
      */
     inline CreateServiceRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -366,116 +358,116 @@ namespace Model
 
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
-     * that you want AWS Cloud Map to create when you register an instance. </p>
+     * <p>A complex type that contains information about the Amazon Route 53 records
+     * that you want Cloud Map to create when you register an instance. </p>
      */
     inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
-     * that you want AWS Cloud Map to create when you register an instance. </p>
+     * <p>A complex type that contains information about the Amazon Route 53 records
+     * that you want Cloud Map to create when you register an instance. </p>
      */
     inline bool DnsConfigHasBeenSet() const { return m_dnsConfigHasBeenSet; }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
-     * that you want AWS Cloud Map to create when you register an instance. </p>
+     * <p>A complex type that contains information about the Amazon Route 53 records
+     * that you want Cloud Map to create when you register an instance. </p>
      */
     inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
-     * that you want AWS Cloud Map to create when you register an instance. </p>
+     * <p>A complex type that contains information about the Amazon Route 53 records
+     * that you want Cloud Map to create when you register an instance. </p>
      */
     inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
-     * that you want AWS Cloud Map to create when you register an instance. </p>
+     * <p>A complex type that contains information about the Amazon Route 53 records
+     * that you want Cloud Map to create when you register an instance. </p>
      */
     inline CreateServiceRequest& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
 
     /**
-     * <p>A complex type that contains information about the Amazon Route 53 records
-     * that you want AWS Cloud Map to create when you register an instance. </p>
+     * <p>A complex type that contains information about the Amazon Route 53 records
+     * that you want Cloud Map to create when you register an instance. </p>
      */
     inline CreateServiceRequest& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
 
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
-     * you specify a health check configuration, you can specify either
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
+     * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p>  <p>For information about the charges for health checks,
-     * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
+     * see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map
      * Pricing</a>.</p>
      */
     inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
-     * you specify a health check configuration, you can specify either
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
+     * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p>  <p>For information about the charges for health checks,
-     * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
+     * see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map
      * Pricing</a>.</p>
      */
     inline bool HealthCheckConfigHasBeenSet() const { return m_healthCheckConfigHasBeenSet; }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
-     * you specify a health check configuration, you can specify either
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
+     * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p>  <p>For information about the charges for health checks,
-     * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
+     * see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map
      * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
-     * you specify a health check configuration, you can specify either
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
+     * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p>  <p>For information about the charges for health checks,
-     * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
+     * see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map
      * Pricing</a>.</p>
      */
     inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
-     * you specify a health check configuration, you can specify either
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
+     * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p>  <p>For information about the charges for health checks,
-     * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
+     * see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map
      * Pricing</a>.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
 
     /**
      * <p> <i>Public DNS and HTTP namespaces only.</i> A complex type that contains
-     * settings for an optional Route 53 health check. If you specify settings for a
-     * health check, AWS Cloud Map associates the health check with all the Route 53
-     * DNS records that you specify in <code>DnsConfig</code>.</p>  <p>If
-     * you specify a health check configuration, you can specify either
+     * settings for an optional Route 53 health check. If you specify settings for a
+     * health check, Cloud Map associates the health check with all the Route 53 DNS
+     * records that you specify in <code>DnsConfig</code>.</p>  <p>If you
+     * specify a health check configuration, you can specify either
      * <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not
      * both.</p>  <p>For information about the charges for health checks,
-     * see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS Cloud Map
+     * see <a href="http://aws.amazon.com/cloud-map/pricing/">Cloud Map
      * Pricing</a>.</p>
      */
     inline CreateServiceRequest& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}

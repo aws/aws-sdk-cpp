@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents information on how DataBrew can find data, in either the AWS Glue
-   * Data Catalog or Amazon S3.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents information on how DataBrew can find data, in either the Glue Data
+   * Catalog or Amazon S3.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/Input">AWS API
    * Reference</a></p>
    */
@@ -72,32 +72,32 @@ namespace Model
 
 
     /**
-     * <p>The AWS Glue Data Catalog parameters for the data.</p>
+     * <p>The Glue Data Catalog parameters for the data.</p>
      */
     inline const DataCatalogInputDefinition& GetDataCatalogInputDefinition() const{ return m_dataCatalogInputDefinition; }
 
     /**
-     * <p>The AWS Glue Data Catalog parameters for the data.</p>
+     * <p>The Glue Data Catalog parameters for the data.</p>
      */
     inline bool DataCatalogInputDefinitionHasBeenSet() const { return m_dataCatalogInputDefinitionHasBeenSet; }
 
     /**
-     * <p>The AWS Glue Data Catalog parameters for the data.</p>
+     * <p>The Glue Data Catalog parameters for the data.</p>
      */
     inline void SetDataCatalogInputDefinition(const DataCatalogInputDefinition& value) { m_dataCatalogInputDefinitionHasBeenSet = true; m_dataCatalogInputDefinition = value; }
 
     /**
-     * <p>The AWS Glue Data Catalog parameters for the data.</p>
+     * <p>The Glue Data Catalog parameters for the data.</p>
      */
     inline void SetDataCatalogInputDefinition(DataCatalogInputDefinition&& value) { m_dataCatalogInputDefinitionHasBeenSet = true; m_dataCatalogInputDefinition = std::move(value); }
 
     /**
-     * <p>The AWS Glue Data Catalog parameters for the data.</p>
+     * <p>The Glue Data Catalog parameters for the data.</p>
      */
     inline Input& WithDataCatalogInputDefinition(const DataCatalogInputDefinition& value) { SetDataCatalogInputDefinition(value); return *this;}
 
     /**
-     * <p>The AWS Glue Data Catalog parameters for the data.</p>
+     * <p>The Glue Data Catalog parameters for the data.</p>
      */
     inline Input& WithDataCatalogInputDefinition(DataCatalogInputDefinition&& value) { SetDataCatalogInputDefinition(std::move(value)); return *this;}
 

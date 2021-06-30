@@ -18,7 +18,8 @@ CreatePrivateDnsNamespaceRequest::CreatePrivateDnsNamespaceRequest() :
     m_creatorRequestIdHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_vpcHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_propertiesHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,12 @@ Aws::String CreatePrivateDnsNamespaceRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_propertiesHasBeenSet)
+  {
+   payload.WithObject("Properties", m_properties.Jsonize());
 
   }
 

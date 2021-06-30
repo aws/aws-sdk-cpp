@@ -41,7 +41,10 @@
 #include <aws/servicediscovery/model/RegisterInstanceRequest.h>
 #include <aws/servicediscovery/model/TagResourceRequest.h>
 #include <aws/servicediscovery/model/UntagResourceRequest.h>
+#include <aws/servicediscovery/model/UpdateHttpNamespaceRequest.h>
 #include <aws/servicediscovery/model/UpdateInstanceCustomHealthStatusRequest.h>
+#include <aws/servicediscovery/model/UpdatePrivateDnsNamespaceRequest.h>
+#include <aws/servicediscovery/model/UpdatePublicDnsNamespaceRequest.h>
 #include <aws/servicediscovery/model/UpdateServiceRequest.h>
 
 using namespace Aws;
@@ -639,6 +642,30 @@ void ServiceDiscoveryClient::UntagResourceAsyncHelper(const UntagResourceRequest
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateHttpNamespaceOutcome ServiceDiscoveryClient::UpdateHttpNamespace(const UpdateHttpNamespaceRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  return UpdateHttpNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateHttpNamespaceOutcomeCallable ServiceDiscoveryClient::UpdateHttpNamespaceCallable(const UpdateHttpNamespaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateHttpNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateHttpNamespace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceDiscoveryClient::UpdateHttpNamespaceAsync(const UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateHttpNamespaceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceDiscoveryClient::UpdateHttpNamespaceAsyncHelper(const UpdateHttpNamespaceRequest& request, const UpdateHttpNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateHttpNamespace(request), context);
+}
+
 UpdateInstanceCustomHealthStatusOutcome ServiceDiscoveryClient::UpdateInstanceCustomHealthStatus(const UpdateInstanceCustomHealthStatusRequest& request) const
 {
   Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
@@ -661,6 +688,54 @@ void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsync(const UpdateI
 void ServiceDiscoveryClient::UpdateInstanceCustomHealthStatusAsyncHelper(const UpdateInstanceCustomHealthStatusRequest& request, const UpdateInstanceCustomHealthStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInstanceCustomHealthStatus(request), context);
+}
+
+UpdatePrivateDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePrivateDnsNamespace(const UpdatePrivateDnsNamespaceRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  return UpdatePrivateDnsNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePrivateDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePrivateDnsNamespaceCallable(const UpdatePrivateDnsNamespaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePrivateDnsNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePrivateDnsNamespace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceDiscoveryClient::UpdatePrivateDnsNamespaceAsync(const UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePrivateDnsNamespaceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceDiscoveryClient::UpdatePrivateDnsNamespaceAsyncHelper(const UpdatePrivateDnsNamespaceRequest& request, const UpdatePrivateDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePrivateDnsNamespace(request), context);
+}
+
+UpdatePublicDnsNamespaceOutcome ServiceDiscoveryClient::UpdatePublicDnsNamespace(const UpdatePublicDnsNamespaceRequest& request) const
+{
+  Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+  return UpdatePublicDnsNamespaceOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePublicDnsNamespaceOutcomeCallable ServiceDiscoveryClient::UpdatePublicDnsNamespaceCallable(const UpdatePublicDnsNamespaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePublicDnsNamespaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePublicDnsNamespace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceDiscoveryClient::UpdatePublicDnsNamespaceAsync(const UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePublicDnsNamespaceAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceDiscoveryClient::UpdatePublicDnsNamespaceAsyncHelper(const UpdatePublicDnsNamespaceRequest& request, const UpdatePublicDnsNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePublicDnsNamespace(request), context);
 }
 
 UpdateServiceOutcome ServiceDiscoveryClient::UpdateService(const UpdateServiceRequest& request) const

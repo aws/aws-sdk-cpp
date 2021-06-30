@@ -121,6 +121,15 @@ DescribeJobResult& DescribeJobResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
+  if(jsonValue.ValueExists("DataCatalogOutputs"))
+  {
+    Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
+    for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
+    {
+      m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("ProjectName"))
   {
     m_projectName = jsonValue.GetString("ProjectName");

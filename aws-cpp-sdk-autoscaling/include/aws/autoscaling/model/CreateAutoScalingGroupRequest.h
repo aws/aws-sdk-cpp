@@ -1488,8 +1488,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1499,8 +1499,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1510,8 +1510,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1521,8 +1521,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1532,8 +1532,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1543,8 +1543,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1554,8 +1554,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1565,8 +1565,8 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto
      * Scaling group uses to call other Amazon Web Services on your behalf. By default,
      * Amazon EC2 Auto Scaling uses a service-linked role named
-     * AWSServiceRoleForAutoScaling, which it creates if it does not exist. For more
-     * information, see <a
+     * <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not
+     * exist. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
      * roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
@@ -1612,6 +1612,47 @@ namespace Model
      * EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithContext(const char* value) { SetContext(value); return *this;}
 
   private:
 
@@ -1683,6 +1724,9 @@ namespace Model
 
     int m_maxInstanceLifetime;
     bool m_maxInstanceLifetimeHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
   };
 
 } // namespace Model

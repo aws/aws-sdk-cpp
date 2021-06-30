@@ -253,7 +253,7 @@ namespace Model
     typedef std::function<void(const GlueDataBrewClient*, const Model::UpdateScheduleRequest&, const Model::UpdateScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateScheduleResponseReceivedHandler;
 
   /**
-   * <p>AWS Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew
+   * <p>Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew
    * simplifies data preparation tasks, targeting data issues that are hard to spot
    * and time-consuming to fix. DataBrew empowers users of all technical levels to
    * visualize the data and perform one-click data transformations, with no coding
@@ -455,7 +455,7 @@ namespace Model
 
         /**
          * <p>Creates a new job to transform input data, using steps defined in an existing
-         * AWS Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
+         * Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob">AWS
          * API Reference</a></p>
          */
@@ -463,7 +463,7 @@ namespace Model
 
         /**
          * <p>Creates a new job to transform input data, using steps defined in an existing
-         * AWS Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
+         * Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob">AWS
          * API Reference</a></p>
          *
@@ -473,7 +473,7 @@ namespace Model
 
         /**
          * <p>Creates a new job to transform input data, using steps defined in an existing
-         * AWS Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
+         * Glue DataBrew recipe</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob">AWS
          * API Reference</a></p>
          *

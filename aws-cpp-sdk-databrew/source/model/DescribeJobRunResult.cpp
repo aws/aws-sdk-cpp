@@ -105,6 +105,15 @@ DescribeJobRunResult& DescribeJobRunResult::operator =(const Aws::AmazonWebServi
     }
   }
 
+  if(jsonValue.ValueExists("DataCatalogOutputs"))
+  {
+    Array<JsonView> dataCatalogOutputsJsonList = jsonValue.GetArray("DataCatalogOutputs");
+    for(unsigned dataCatalogOutputsIndex = 0; dataCatalogOutputsIndex < dataCatalogOutputsJsonList.GetLength(); ++dataCatalogOutputsIndex)
+    {
+      m_dataCatalogOutputs.push_back(dataCatalogOutputsJsonList[dataCatalogOutputsIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("RecipeReference"))
   {
     m_recipeReference = jsonValue.GetObject("RecipeReference");

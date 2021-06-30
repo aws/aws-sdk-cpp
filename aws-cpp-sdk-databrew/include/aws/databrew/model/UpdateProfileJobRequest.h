@@ -87,7 +87,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -95,7 +95,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -103,7 +103,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -111,7 +111,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -119,7 +119,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -127,7 +127,7 @@ namespace Model
 
     /**
      * <p>The encryption mode for the job, which can be one of the following:</p> <ul>
-     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by AWS
+     * <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by
      * KMS.</p> </li> <li> <p> <code>SSE-S3</code> - Server-side encryption with keys
      * managed by Amazon S3.</p> </li> </ul>
      */
@@ -278,50 +278,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline UpdateProfileJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline UpdateProfileJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management
-     * (IAM) role to be assumed when DataBrew runs the job.</p>
+     * <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM)
+     * role to be assumed when DataBrew runs the job.</p>
      */
     inline UpdateProfileJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

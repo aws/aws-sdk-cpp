@@ -36,7 +36,8 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_maxInstanceLifetime(0),
     m_maxInstanceLifetimeHasBeenSet(false),
     m_capacityRebalance(false),
-    m_capacityRebalanceHasBeenSet(false)
+    m_capacityRebalanceHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_capacityRebalanceHasBeenSet)
   {
     ss << "CapacityRebalance=" << std::boolalpha << m_capacityRebalance << "&";
+  }
+
+  if(m_contextHasBeenSet)
+  {
+    ss << "Context=" << StringUtils::URLEncode(m_context.c_str()) << "&";
   }
 
   ss << "Version=2011-01-01";

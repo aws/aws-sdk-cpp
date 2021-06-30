@@ -40,49 +40,49 @@ namespace Model
 
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline const Aws::String& GetGlueConnectionName() const{ return m_glueConnectionName; }
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline void SetGlueConnectionName(const Aws::String& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = value; }
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline void SetGlueConnectionName(Aws::String&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::move(value); }
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline void SetGlueConnectionName(const char* value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName.assign(value); }
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline DatabaseInputDefinition& WithGlueConnectionName(const Aws::String& value) { SetGlueConnectionName(value); return *this;}
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline DatabaseInputDefinition& WithGlueConnectionName(Aws::String&& value) { SetGlueConnectionName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Glue Connection that stores the connection information for the target
+     * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
     inline DatabaseInputDefinition& WithGlueConnectionName(const char* value) { SetGlueConnectionName(value); return *this;}

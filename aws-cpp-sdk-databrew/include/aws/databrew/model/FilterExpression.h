@@ -25,8 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents a structure for defining parameter conditions.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents a structure for defining parameter conditions. Supported
+   * conditions are described here: <a
+   * href="https://docs-aws.amazon.com/databrew/latest/dg/datasets.multiple-files.html#conditions.for.dynamic.datasets">Supported
+   * conditions for dynamic datasets</a> in the <i>Glue DataBrew Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/FilterExpression">AWS
    * API Reference</a></p>
    */
