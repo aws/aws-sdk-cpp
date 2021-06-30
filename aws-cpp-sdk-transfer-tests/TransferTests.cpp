@@ -542,6 +542,68 @@ protected:
         Aws::FileSystem::RemoveFileIfExists(downloadFileName.c_str());
     }
 
+    static void VerifyUploadedFileDownloadStreamableBytesReport(
+        TransferManager& transferManager,
+        const Aws::String& sourceFileName,
+        const Aws::String& bucket,
+        const Aws::String& key,
+        const Aws::String& contentType,
+        const Aws::Map<Aws::String, Aws::String>& metadata)
+    {
+        {
+            // read source file for length
+            #ifdef _MSC_VER
+            auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(sourceFileName.c_str()).c_str(), std::ios_base::in | std::ios_base::binary);
+#else
+            auto fileStream = Aws::MakeShared<Aws::FStream>(ALLOCATION_TAG, sourceFileName.c_str(), std::ios_base::in | std::ios_base::binary);
+#endif
+            ASSERT_TRUE(fileStream->good());
+
+            fileStream->seekg(0, std::ios_base::end);
+            size_t sourceLength = static_cast<size_t>(fileStream->tellg());
+            fileStream->close();
+            fileStream = nullptr;
+
+            auto downloadFileName = MakeDownloadFileName(sourceFileName) + "_downloaded";
+            auto createStreamFn = [=](){
+#ifdef _MSC_VER
+            return Aws::New<Aws::FStream>(ALLOCATION_TAG, Aws::Utils::StringUtils::ToWString(downloadFileName.c_str()).c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+#else
+            return Aws::New<Aws::FStream>(ALLOCATION_TAG, downloadFileName.c_str(), std::ios_base::out | std::ios_base::in | std::ios_base::binary | std::ios_base::trunc);
+#endif
+            };
+            std::shared_ptr<TransferHandle> downloadPtr = transferManager.DownloadFile(bucket, key, createStreamFn);
+
+            ASSERT_EQ(true, downloadPtr->ShouldContinue());
+            ASSERT_EQ(TransferDirection::DOWNLOAD, downloadPtr->GetTransferDirection());
+            downloadPtr->WaitUntilFinished();
+
+            size_t retries = 0;
+            //just make sure we don't fail because of failing to download a part for occasional reasons like network problem or s3 eventual consistency.
+            while (downloadPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+            {
+                transferManager.RetryDownload(downloadPtr);
+                downloadPtr->WaitUntilFinished();
+            }
+
+            // Verify download is successful before checking streamable bytes.
+            ASSERT_EQ(TransferStatus::COMPLETED, downloadPtr->GetStatus());
+            ASSERT_EQ(0u, downloadPtr->GetFailedParts().size());
+            ASSERT_STREQ(contentType.c_str(), downloadPtr->GetContentType().c_str());
+
+            auto copyMetadata = metadata;
+            // ETag will be added to Metadata when finished uploading/downloading
+            copyMetadata["ETag"] = downloadPtr->GetMetadata().find("ETag")->second;
+            ASSERT_EQ(copyMetadata, downloadPtr->GetMetadata());
+            // Verify streamable bytes
+            ASSERT_EQ(sourceLength, downloadPtr->GetBytesAvailableFromStart());
+            Aws::FileSystem::RemoveFileIfExists(downloadFileName.c_str());
+        }
+
+        Aws::FileSystem::RemoveFileIfExists(MakeDownloadFileName(sourceFileName).c_str());
+    }
+
+
     static void SetUpTestCase()
     {
         // Create a client
@@ -1472,6 +1534,50 @@ TEST_F(TransferTests, TransferManager_MultiPartContentTest)
                                       "text/plain",
                                       Aws::Map<Aws::String, Aws::String>());
 }
+
+// Due the racy nature of reporting streamable bytes, only test a completed download
+// which should return streamable bytes the same as file size.
+TEST_F(TransferTests, TransferManager_MultiPartStreamableByteTest)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String multiPartContentFileName = MakeFilePath(RandomFileName.c_str());
+    ScopedTestFile testFile(multiPartContentFileName, MEDIUM_TEST_SIZE, MULTI_PART_CONTENT_TEXT);
+
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Client;
+    auto transferManager = TransferManager::Create(transferManagerConfig);
+
+    std::shared_ptr<TransferHandle> requestPtr = transferManager->UploadFile(multiPartContentFileName, GetTestBucketName(), MULTI_PART_CONTENT_KEY, "text/plain", Aws::Map<Aws::String, Aws::String>());
+
+    requestPtr->WaitUntilFinished();
+
+    size_t retries = 0;
+    //just make sure we don't fail because an upload part failed. (e.g. network problems or interuptions)
+    while (requestPtr->GetStatus() == TransferStatus::FAILED && retries++ < 5)
+    {
+        transferManager->RetryUpload(multiPartContentFileName, requestPtr);
+        requestPtr->WaitUntilFinished();
+    }
+
+    ASSERT_EQ(TransferStatus::COMPLETED, requestPtr->GetStatus());
+    ASSERT_EQ(PARTS_IN_MEDIUM_TEST, requestPtr->GetCompletedParts().size()); // > 1 part
+    ASSERT_EQ(requestPtr->GetBytesTotalSize(), requestPtr->GetBytesTransferred());
+
+    VerifyUploadedFile(*transferManager,
+                       multiPartContentFileName,
+                       GetTestBucketName(),
+                       MULTI_PART_CONTENT_KEY,
+                       "text/plain",
+                       Aws::Map<Aws::String, Aws::String>());
+
+    VerifyUploadedFileDownloadStreamableBytesReport(*transferManager,
+                                      multiPartContentFileName,
+                                      GetTestBucketName(),
+                                      MULTI_PART_CONTENT_KEY,
+                                      "text/plain",
+                                      Aws::Map<Aws::String, Aws::String>());
+}
+
 
 // Single part upload with metadata specified
 TEST_F(TransferTests, TransferManager_SinglePartUploadWithMetadataTest)
