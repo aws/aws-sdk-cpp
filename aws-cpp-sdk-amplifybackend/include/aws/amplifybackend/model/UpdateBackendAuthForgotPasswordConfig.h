@@ -41,38 +41,38 @@ namespace Model
 
 
     /**
-     * <p>Describes which method to use (either SMS or email) to deliver messages to
-     * app users that want to recover their password.</p>
+     * <p>Describes which mode to use (either SMS or email) to deliver messages to app
+     * users that want to recover their password.</p>
      */
     inline const DeliveryMethod& GetDeliveryMethod() const{ return m_deliveryMethod; }
 
     /**
-     * <p>Describes which method to use (either SMS or email) to deliver messages to
-     * app users that want to recover their password.</p>
+     * <p>Describes which mode to use (either SMS or email) to deliver messages to app
+     * users that want to recover their password.</p>
      */
     inline bool DeliveryMethodHasBeenSet() const { return m_deliveryMethodHasBeenSet; }
 
     /**
-     * <p>Describes which method to use (either SMS or email) to deliver messages to
-     * app users that want to recover their password.</p>
+     * <p>Describes which mode to use (either SMS or email) to deliver messages to app
+     * users that want to recover their password.</p>
      */
     inline void SetDeliveryMethod(const DeliveryMethod& value) { m_deliveryMethodHasBeenSet = true; m_deliveryMethod = value; }
 
     /**
-     * <p>Describes which method to use (either SMS or email) to deliver messages to
-     * app users that want to recover their password.</p>
+     * <p>Describes which mode to use (either SMS or email) to deliver messages to app
+     * users that want to recover their password.</p>
      */
     inline void SetDeliveryMethod(DeliveryMethod&& value) { m_deliveryMethodHasBeenSet = true; m_deliveryMethod = std::move(value); }
 
     /**
-     * <p>Describes which method to use (either SMS or email) to deliver messages to
-     * app users that want to recover their password.</p>
+     * <p>Describes which mode to use (either SMS or email) to deliver messages to app
+     * users that want to recover their password.</p>
      */
     inline UpdateBackendAuthForgotPasswordConfig& WithDeliveryMethod(const DeliveryMethod& value) { SetDeliveryMethod(value); return *this;}
 
     /**
-     * <p>Describes which method to use (either SMS or email) to deliver messages to
-     * app users that want to recover their password.</p>
+     * <p>Describes which mode to use (either SMS or email) to deliver messages to app
+     * users that want to recover their password.</p>
      */
     inline UpdateBackendAuthForgotPasswordConfig& WithDeliveryMethod(DeliveryMethod&& value) { SetDeliveryMethod(std::move(value)); return *this;}
 

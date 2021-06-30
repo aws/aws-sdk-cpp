@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether to apply multi-factor authentication (MFA) policies for
-   * your Amazon Cognito user pool that's configured as a part of your Amplify
+   * <p>Describes whether multi-factor authentication policies should be applied for
+   * your Amazon Cognito user pool configured as a part of your Amplify
    * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthMFAConfig">AWS
    * API Reference</a></p>
@@ -41,37 +41,37 @@ namespace Model
 
 
     /**
-     * <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in
+     * <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in
      * your Amplify project.</p>
      */
     inline const MFAMode& GetMFAMode() const{ return m_mFAMode; }
 
     /**
-     * <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in
+     * <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in
      * your Amplify project.</p>
      */
     inline bool MFAModeHasBeenSet() const { return m_mFAModeHasBeenSet; }
 
     /**
-     * <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in
+     * <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in
      * your Amplify project.</p>
      */
     inline void SetMFAMode(const MFAMode& value) { m_mFAModeHasBeenSet = true; m_mFAMode = value; }
 
     /**
-     * <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in
+     * <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in
      * your Amplify project.</p>
      */
     inline void SetMFAMode(MFAMode&& value) { m_mFAModeHasBeenSet = true; m_mFAMode = std::move(value); }
 
     /**
-     * <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in
+     * <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in
      * your Amplify project.</p>
      */
     inline CreateBackendAuthMFAConfig& WithMFAMode(const MFAMode& value) { SetMFAMode(value); return *this;}
 
     /**
-     * <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in
+     * <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in
      * your Amplify project.</p>
      */
     inline CreateBackendAuthMFAConfig& WithMFAMode(MFAMode&& value) { SetMFAMode(std::move(value)); return *this;}

@@ -111,38 +111,38 @@ namespace Model
 
 
     /**
-     * <p>The time at which AWS WAF received the request from your AWS resource, in
-     * Unix time format (in seconds).</p>
+     * <p>The time at which WAF received the request from your Amazon Web Services
+     * resource, in Unix time format (in seconds).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The time at which AWS WAF received the request from your AWS resource, in
-     * Unix time format (in seconds).</p>
+     * <p>The time at which WAF received the request from your Amazon Web Services
+     * resource, in Unix time format (in seconds).</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
-     * <p>The time at which AWS WAF received the request from your AWS resource, in
-     * Unix time format (in seconds).</p>
+     * <p>The time at which WAF received the request from your Amazon Web Services
+     * resource, in Unix time format (in seconds).</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The time at which AWS WAF received the request from your AWS resource, in
-     * Unix time format (in seconds).</p>
+     * <p>The time at which WAF received the request from your Amazon Web Services
+     * resource, in Unix time format (in seconds).</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>The time at which AWS WAF received the request from your AWS resource, in
-     * Unix time format (in seconds).</p>
+     * <p>The time at which WAF received the request from your Amazon Web Services
+     * resource, in Unix time format (in seconds).</p>
      */
     inline SampledHTTPRequest& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The time at which AWS WAF received the request from your AWS resource, in
-     * Unix time format (in seconds).</p>
+     * <p>The time at which WAF received the request from your Amazon Web Services
+     * resource, in Unix time format (in seconds).</p>
      */
     inline SampledHTTPRequest& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
@@ -270,49 +270,49 @@ namespace Model
 
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline const Aws::Vector<HTTPHeader>& GetRequestHeadersInserted() const{ return m_requestHeadersInserted; }
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline bool RequestHeadersInsertedHasBeenSet() const { return m_requestHeadersInsertedHasBeenSet; }
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline void SetRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = value; }
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline void SetRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted = std::move(value); }
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline SampledHTTPRequest& WithRequestHeadersInserted(const Aws::Vector<HTTPHeader>& value) { SetRequestHeadersInserted(value); return *this;}
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline SampledHTTPRequest& WithRequestHeadersInserted(Aws::Vector<HTTPHeader>&& value) { SetRequestHeadersInserted(std::move(value)); return *this;}
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline SampledHTTPRequest& AddRequestHeadersInserted(const HTTPHeader& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(value); return *this; }
 
     /**
-     * <p>Custom request headers inserted by AWS WAF into the request, according to the
+     * <p>Custom request headers inserted by WAF into the request, according to the
      * custom request configuration for the matching rule action.</p>
      */
     inline SampledHTTPRequest& AddRequestHeadersInserted(HTTPHeader&& value) { m_requestHeadersInsertedHasBeenSet = true; m_requestHeadersInserted.push_back(std::move(value)); return *this; }
@@ -340,7 +340,7 @@ namespace Model
 
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,
@@ -350,7 +350,7 @@ namespace Model
     inline const Aws::Vector<Label>& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,
@@ -360,7 +360,7 @@ namespace Model
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,
@@ -370,7 +370,7 @@ namespace Model
     inline void SetLabels(const Aws::Vector<Label>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,
@@ -380,7 +380,7 @@ namespace Model
     inline void SetLabels(Aws::Vector<Label>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,
@@ -390,7 +390,7 @@ namespace Model
     inline SampledHTTPRequest& WithLabels(const Aws::Vector<Label>& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,
@@ -400,7 +400,7 @@ namespace Model
     inline SampledHTTPRequest& WithLabels(Aws::Vector<Label>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,
@@ -410,7 +410,7 @@ namespace Model
     inline SampledHTTPRequest& AddLabels(const Label& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
 
     /**
-     * <p>Labels applied to the web request by matching rules. AWS WAF applies fully
+     * <p>Labels applied to the web request by matching rules. WAF applies fully
      * qualified labels to matching web requests. A fully qualified label is the
      * concatenation of a label namespace and a rule label. The rule's rule group or
      * web ACL defines the label namespace. </p> <p>For example,

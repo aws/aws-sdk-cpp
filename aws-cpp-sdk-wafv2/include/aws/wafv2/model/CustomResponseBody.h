@@ -82,10 +82,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
@@ -94,10 +94,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
@@ -106,10 +106,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
@@ -118,10 +118,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
@@ -130,10 +130,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
@@ -142,10 +142,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponseBody& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
@@ -154,10 +154,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponseBody& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
@@ -166,10 +166,10 @@ namespace Model
      * in JSON content. To do this, you must specify JSON content in the
      * <code>ContentType</code> setting. </p> <p>For information about the limits on
      * count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
      * quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponseBody& WithContent(const char* value) { SetContent(value); return *this;}
 

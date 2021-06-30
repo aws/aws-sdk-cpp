@@ -23,6 +23,7 @@ namespace Aws
         static const int D_10_HASH = HashingUtils::HashString("D_10");
         static const int XDCAM_HASH = HashingUtils::HashString("XDCAM");
         static const int OP1A_HASH = HashingUtils::HashString("OP1A");
+        static const int XAVC_HASH = HashingUtils::HashString("XAVC");
 
 
         MxfProfile GetMxfProfileForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == OP1A_HASH)
           {
             return MxfProfile::OP1A;
+          }
+          else if (hashCode == XAVC_HASH)
+          {
+            return MxfProfile::XAVC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "XDCAM";
           case MxfProfile::OP1A:
             return "OP1A";
+          case MxfProfile::XAVC:
+            return "XAVC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

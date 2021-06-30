@@ -26,10 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>The patterns to look for in the JSON body. AWS WAF inspects the results of
-   * these pattern matches against the rule inspection criteria. This is used with
-   * the <a>FieldToMatch</a> option <code>JsonBody</code>. </p><p><h3>See Also:</h3> 
-   * <a
+   * <p>The patterns to look for in the JSON body. WAF inspects the results of these
+   * pattern matches against the rule inspection criteria. This is used with the
+   * <a>FieldToMatch</a> option <code>JsonBody</code>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/JsonMatchPattern">AWS
    * API Reference</a></p>
    */

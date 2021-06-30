@@ -19,12 +19,14 @@ namespace Model
 {
 
 RepositoryAnalysis::RepositoryAnalysis() : 
-    m_repositoryHeadHasBeenSet(false)
+    m_repositoryHeadHasBeenSet(false),
+    m_sourceCodeTypeHasBeenSet(false)
 {
 }
 
 RepositoryAnalysis::RepositoryAnalysis(JsonView jsonValue) : 
-    m_repositoryHeadHasBeenSet(false)
+    m_repositoryHeadHasBeenSet(false),
+    m_sourceCodeTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ RepositoryAnalysis& RepositoryAnalysis::operator =(JsonView jsonValue)
     m_repositoryHeadHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceCodeType"))
+  {
+    m_sourceCodeType = jsonValue.GetObject("SourceCodeType");
+
+    m_sourceCodeTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue RepositoryAnalysis::Jsonize() const
   if(m_repositoryHeadHasBeenSet)
   {
    payload.WithObject("RepositoryHead", m_repositoryHead.Jsonize());
+
+  }
+
+  if(m_sourceCodeTypeHasBeenSet)
+  {
+   payload.WithObject("SourceCodeType", m_sourceCodeType.Jsonize());
 
   }
 

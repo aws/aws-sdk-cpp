@@ -393,9 +393,9 @@ namespace Model
         /**
          * <p>Adds metadata tags to an Amazon DocumentDB resource. You can use these tags
          * with cost allocation reporting to track costs that are associated with Amazon
-         * DocumentDB resources. or in a <code>Condition</code> statement in an AWS
-         * Identity and Access Management (IAM) policy for Amazon DocumentDB.</p><p><h3>See
-         * Also:</h3>   <a
+         * DocumentDB resources or in a <code>Condition</code> statement in an Identity and
+         * Access Management (IAM) policy for Amazon DocumentDB.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddTagsToResource">AWS
          * API Reference</a></p>
          */
@@ -404,9 +404,9 @@ namespace Model
         /**
          * <p>Adds metadata tags to an Amazon DocumentDB resource. You can use these tags
          * with cost allocation reporting to track costs that are associated with Amazon
-         * DocumentDB resources. or in a <code>Condition</code> statement in an AWS
-         * Identity and Access Management (IAM) policy for Amazon DocumentDB.</p><p><h3>See
-         * Also:</h3>   <a
+         * DocumentDB resources or in a <code>Condition</code> statement in an Identity and
+         * Access Management (IAM) policy for Amazon DocumentDB.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddTagsToResource">AWS
          * API Reference</a></p>
          *
@@ -417,9 +417,9 @@ namespace Model
         /**
          * <p>Adds metadata tags to an Amazon DocumentDB resource. You can use these tags
          * with cost allocation reporting to track costs that are associated with Amazon
-         * DocumentDB resources. or in a <code>Condition</code> statement in an AWS
-         * Identity and Access Management (IAM) policy for Amazon DocumentDB.</p><p><h3>See
-         * Also:</h3>   <a
+         * DocumentDB resources or in a <code>Condition</code> statement in an Identity and
+         * Access Management (IAM) policy for Amazon DocumentDB.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddTagsToResource">AWS
          * API Reference</a></p>
          *
@@ -485,8 +485,8 @@ namespace Model
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
          * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
          * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
-         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
-         * the target cluster snapshot identified by
+         * Region.</p> <p>To cancel the copy operation after it is in progress, delete the
+         * target cluster snapshot identified by
          * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
          * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
@@ -499,8 +499,8 @@ namespace Model
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
          * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
          * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
-         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
-         * the target cluster snapshot identified by
+         * Region.</p> <p>To cancel the copy operation after it is in progress, delete the
+         * target cluster snapshot identified by
          * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
          * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
@@ -515,8 +515,8 @@ namespace Model
          * shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
          * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can
          * only copy a shared DB cluster snapshot, whether encrypted or not, in the same
-         * AWS Region.</p> <p>To cancel the copy operation after it is in progress, delete
-         * the target cluster snapshot identified by
+         * Region.</p> <p>To cancel the copy operation after it is in progress, delete the
+         * target cluster snapshot identified by
          * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in
          * the <i>copying</i> status.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CopyDBClusterSnapshot">AWS
@@ -676,7 +676,7 @@ namespace Model
 
         /**
          * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
-         * at least two Availability Zones in the AWS Region.</p><p><h3>See Also:</h3>   <a
+         * at least two Availability Zones in the Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          */
@@ -684,7 +684,7 @@ namespace Model
 
         /**
          * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
-         * at least two Availability Zones in the AWS Region.</p><p><h3>See Also:</h3>   <a
+         * at least two Availability Zones in the Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -694,7 +694,7 @@ namespace Model
 
         /**
          * <p>Creates a new subnet group. subnet groups must contain at least one subnet in
-         * at least two Availability Zones in the AWS Region.</p><p><h3>See Also:</h3>   <a
+         * at least two Availability Zones in the Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateDBSubnetGroup">AWS
          * API Reference</a></p>
          *
@@ -789,7 +789,7 @@ namespace Model
 
         /**
          * <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple
-         * AWS Regions. The global cluster contains one primary cluster with read-write
+         * Regions. The global cluster contains one primary cluster with read-write
          * capability, and up-to give read-only secondary clusters. Global clusters uses
          * storage-based fast replication across regions with latencies less than one
          * second, using dedicated infrastructure with no impact to your workload’s
@@ -805,7 +805,7 @@ namespace Model
 
         /**
          * <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple
-         * AWS Regions. The global cluster contains one primary cluster with read-write
+         * Regions. The global cluster contains one primary cluster with read-write
          * capability, and up-to give read-only secondary clusters. Global clusters uses
          * storage-based fast replication across regions with latencies less than one
          * second, using dedicated infrastructure with no impact to your workload’s
@@ -823,7 +823,7 @@ namespace Model
 
         /**
          * <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple
-         * AWS Regions. The global cluster contains one primary cluster with read-write
+         * Regions. The global cluster contains one primary cluster with read-write
          * capability, and up-to give read-only secondary clusters. Global clusters uses
          * storage-based fast replication across regions with latencies less than one
          * second, using dedicated infrastructure with no impact to your workload’s
@@ -936,14 +936,14 @@ namespace Model
         virtual void DeleteDBClusterSnapshotAsync(const Model::DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a previously provisioned instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDBInstanceOutcome DeleteDBInstance(const Model::DeleteDBInstanceRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -952,7 +952,7 @@ namespace Model
         virtual Model::DeleteDBInstanceOutcomeCallable DeleteDBInstanceCallable(const Model::DeleteDBInstanceRequest& request) const;
 
         /**
-         * <p>Deletes a previously provisioned instance. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a previously provisioned instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteDBInstance">AWS
          * API Reference</a></p>
          *
@@ -1055,7 +1055,7 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * DocumentDB for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          */
@@ -1063,7 +1063,7 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * DocumentDB for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          *
@@ -1073,7 +1073,7 @@ namespace Model
 
         /**
          * <p>Returns a list of certificate authority (CA) certificates provided by Amazon
-         * DocumentDB for this AWS account.</p><p><h3>See Also:</h3>   <a
+         * DocumentDB for this account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeCertificates">AWS
          * API Reference</a></p>
          *
@@ -1145,12 +1145,12 @@ namespace Model
 
         /**
          * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
-         * cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
+         * cluster snapshot.</p> <p>When you share snapshots with other accounts,
          * <code>DescribeDBClusterSnapshotAttributes</code> returns the
-         * <code>restore</code> attribute and a list of IDs for the AWS accounts that are
+         * <code>restore</code> attribute and a list of IDs for the accounts that are
          * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
          * is included in the list of values for the <code>restore</code> attribute, then
-         * the manual cluster snapshot is public and can be copied or restored by all AWS
+         * the manual cluster snapshot is public and can be copied or restored by all
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
@@ -1159,12 +1159,12 @@ namespace Model
 
         /**
          * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
-         * cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
+         * cluster snapshot.</p> <p>When you share snapshots with other accounts,
          * <code>DescribeDBClusterSnapshotAttributes</code> returns the
-         * <code>restore</code> attribute and a list of IDs for the AWS accounts that are
+         * <code>restore</code> attribute and a list of IDs for the accounts that are
          * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
          * is included in the list of values for the <code>restore</code> attribute, then
-         * the manual cluster snapshot is public and can be copied or restored by all AWS
+         * the manual cluster snapshot is public and can be copied or restored by all
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
@@ -1175,12 +1175,12 @@ namespace Model
 
         /**
          * <p>Returns a list of cluster snapshot attribute names and values for a manual DB
-         * cluster snapshot.</p> <p>When you share snapshots with other AWS accounts,
+         * cluster snapshot.</p> <p>When you share snapshots with other accounts,
          * <code>DescribeDBClusterSnapshotAttributes</code> returns the
-         * <code>restore</code> attribute and a list of IDs for the AWS accounts that are
+         * <code>restore</code> attribute and a list of IDs for the accounts that are
          * authorized to copy or restore the manual cluster snapshot. If <code>all</code>
          * is included in the list of values for the <code>restore</code> attribute, then
-         * the manual cluster snapshot is public and can be copied or restored by all AWS
+         * the manual cluster snapshot is public and can be copied or restored by all
          * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeDBClusterSnapshotAttributes">AWS
          * API Reference</a></p>
@@ -1732,18 +1732,17 @@ namespace Model
 
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
-         * manual DB cluster snapshot.</p> <p>To share a manual cluster snapshot with other
-         * AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>,
-         * and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
-         * accounts that are authorized to restore the manual cluster snapshot. Use the
-         * value <code>all</code> to make the manual cluster snapshot public, which means
-         * that it can be copied or restored by all AWS accounts. Do not add the
-         * <code>all</code> value for any manual DB cluster snapshots that contain private
-         * information that you don't want available to all AWS accounts. If a manual
-         * cluster snapshot is encrypted, it can be shared, but only by specifying a list
-         * of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
-         * can't use <code>all</code> as a value for that parameter in this
-         * case.</p><p><h3>See Also:</h3>   <a
+         * manual cluster snapshot.</p> <p>To share a manual cluster snapshot with other
+         * accounts, specify <code>restore</code> as the <code>AttributeName</code>, and
+         * use the <code>ValuesToAdd</code> parameter to add a list of IDs of the accounts
+         * that are authorized to restore the manual cluster snapshot. Use the value
+         * <code>all</code> to make the manual cluster snapshot public, which means that it
+         * can be copied or restored by all accounts. Do not add the <code>all</code> value
+         * for any manual cluster snapshots that contain private information that you don't
+         * want available to all accounts. If a manual cluster snapshot is encrypted, it
+         * can be shared, but only by specifying a list of authorized account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -1751,18 +1750,17 @@ namespace Model
 
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
-         * manual DB cluster snapshot.</p> <p>To share a manual cluster snapshot with other
-         * AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>,
-         * and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
-         * accounts that are authorized to restore the manual cluster snapshot. Use the
-         * value <code>all</code> to make the manual cluster snapshot public, which means
-         * that it can be copied or restored by all AWS accounts. Do not add the
-         * <code>all</code> value for any manual DB cluster snapshots that contain private
-         * information that you don't want available to all AWS accounts. If a manual
-         * cluster snapshot is encrypted, it can be shared, but only by specifying a list
-         * of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
-         * can't use <code>all</code> as a value for that parameter in this
-         * case.</p><p><h3>See Also:</h3>   <a
+         * manual cluster snapshot.</p> <p>To share a manual cluster snapshot with other
+         * accounts, specify <code>restore</code> as the <code>AttributeName</code>, and
+         * use the <code>ValuesToAdd</code> parameter to add a list of IDs of the accounts
+         * that are authorized to restore the manual cluster snapshot. Use the value
+         * <code>all</code> to make the manual cluster snapshot public, which means that it
+         * can be copied or restored by all accounts. Do not add the <code>all</code> value
+         * for any manual cluster snapshots that contain private information that you don't
+         * want available to all accounts. If a manual cluster snapshot is encrypted, it
+         * can be shared, but only by specifying a list of authorized account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -1772,18 +1770,17 @@ namespace Model
 
         /**
          * <p>Adds an attribute and values to, or removes an attribute and values from, a
-         * manual DB cluster snapshot.</p> <p>To share a manual cluster snapshot with other
-         * AWS accounts, specify <code>restore</code> as the <code>AttributeName</code>,
-         * and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
-         * accounts that are authorized to restore the manual cluster snapshot. Use the
-         * value <code>all</code> to make the manual cluster snapshot public, which means
-         * that it can be copied or restored by all AWS accounts. Do not add the
-         * <code>all</code> value for any manual DB cluster snapshots that contain private
-         * information that you don't want available to all AWS accounts. If a manual
-         * cluster snapshot is encrypted, it can be shared, but only by specifying a list
-         * of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You
-         * can't use <code>all</code> as a value for that parameter in this
-         * case.</p><p><h3>See Also:</h3>   <a
+         * manual cluster snapshot.</p> <p>To share a manual cluster snapshot with other
+         * accounts, specify <code>restore</code> as the <code>AttributeName</code>, and
+         * use the <code>ValuesToAdd</code> parameter to add a list of IDs of the accounts
+         * that are authorized to restore the manual cluster snapshot. Use the value
+         * <code>all</code> to make the manual cluster snapshot public, which means that it
+         * can be copied or restored by all accounts. Do not add the <code>all</code> value
+         * for any manual cluster snapshots that contain private information that you don't
+         * want available to all accounts. If a manual cluster snapshot is encrypted, it
+         * can be shared, but only by specifying a list of authorized account IDs for the
+         * <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
+         * for that parameter in this case.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBClusterSnapshotAttribute">AWS
          * API Reference</a></p>
          *
@@ -1824,7 +1821,7 @@ namespace Model
 
         /**
          * <p>Modifies an existing subnet group. subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
+         * subnet in at least two Availability Zones in the Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1833,7 +1830,7 @@ namespace Model
 
         /**
          * <p>Modifies an existing subnet group. subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
+         * subnet in at least two Availability Zones in the Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>
@@ -1844,7 +1841,7 @@ namespace Model
 
         /**
          * <p>Modifies an existing subnet group. subnet groups must contain at least one
-         * subnet in at least two Availability Zones in the AWS Region.</p><p><h3>See
+         * subnet in at least two Availability Zones in the Region.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyDBSubnetGroup">AWS
          * API Reference</a></p>

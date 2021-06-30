@@ -25,14 +25,14 @@ namespace Model
 {
 
   /**
-   * <p>The operation failed because AWS WAF didn't recognize a parameter in the
-   * request. For example: </p> <ul> <li> <p>You specified an invalid parameter name
-   * or value.</p> </li> <li> <p>Your nested statement isn't valid. You might have
+   * <p>The operation failed because WAF didn't recognize a parameter in the request.
+   * For example: </p> <ul> <li> <p>You specified a parameter name or value that
+   * isn't valid.</p> </li> <li> <p>Your nested statement isn't valid. You might have
    * tried to nest a statement that can’t be nested. </p> </li> <li> <p>You tried to
    * update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among
    * the types available at <a>DefaultAction</a>.</p> </li> <li> <p>Your request
    * references an ARN that is malformed, or corresponds to a resource with which a
-   * Web ACL cannot be associated.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * web ACL can't be associated.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WAFInvalidParameterException">AWS
    * API Reference</a></p>
    */

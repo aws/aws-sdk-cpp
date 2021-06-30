@@ -97,10 +97,10 @@ namespace Model
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -111,16 +111,16 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -131,16 +131,16 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -151,16 +151,16 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -171,16 +171,16 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -191,16 +191,16 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -211,16 +211,16 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline ProjectSourceVersion& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -231,16 +231,16 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline ProjectSourceVersion& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
 
     /**
      * <p>The source version for the corresponding source identifier. If specified,
-     * must be one of:</p> <ul> <li> <p>For AWS CodeCommit: the commit ID, branch, or
-     * Git tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID,
-     * branch name, or tag name that corresponds to the version of the source code you
-     * want to build. If a pull request ID is specified, it must use the format
+     * must be one of:</p> <ul> <li> <p>For CodeCommit: the commit ID, branch, or Git
+     * tag to use.</p> </li> <li> <p>For GitHub: the commit ID, pull request ID, branch
+     * name, or tag name that corresponds to the version of the source code you want to
+     * build. If a pull request ID is specified, it must use the format
      * <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If a branch
      * name is specified, the branch's HEAD commit ID is used. If not specified, the
      * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Bitbucket: the
@@ -251,7 +251,7 @@ namespace Model
      * represents the build input ZIP file to use.</p> </li> </ul> <p> For more
      * information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source
-     * Version Sample with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+     * Version Sample with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
      */
     inline ProjectSourceVersion& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 

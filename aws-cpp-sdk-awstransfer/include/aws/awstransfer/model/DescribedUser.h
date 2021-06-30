@@ -151,120 +151,128 @@ namespace Model
 
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */
     inline const Aws::Vector<HomeDirectoryMapEntry>& GetHomeDirectoryMappings() const{ return m_homeDirectoryMappings; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */
     inline bool HomeDirectoryMappingsHasBeenSet() const { return m_homeDirectoryMappingsHasBeenSet; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */
     inline void SetHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = value; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */
     inline void SetHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings = std::move(value); }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */
     inline DescribedUser& WithHomeDirectoryMappings(const Aws::Vector<HomeDirectoryMapEntry>& value) { SetHomeDirectoryMappings(value); return *this;}
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */
     inline DescribedUser& WithHomeDirectoryMappings(Aws::Vector<HomeDirectoryMapEntry>&& value) { SetHomeDirectoryMappings(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */
     inline DescribedUser& AddHomeDirectoryMappings(const HomeDirectoryMapEntry& value) { m_homeDirectoryMappingsHasBeenSet = true; m_homeDirectoryMappings.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the logical directory mappings that specify what Amazon S3 or EFS
-     * paths and keys should be visible to your user and how you want to make them
-     * visible. You will need to specify the "<code>Entry</code>" and
-     * "<code>Target</code>" pair, where <code>Entry</code> shows how the path is made
-     * visible and <code>Target</code> is the actual Amazon S3 or EFS path. If you only
-     * specify a target, it will be displayed as is. You will need to also make sure
-     * that your AWS Identity and Access Management (IAM) role provides access to paths
-     * in <code>Target</code>.</p> <p>In most cases, you can use this value instead of
-     * the scope-down policy to lock your user down to the designated home directory
+     * <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths
+     * and keys should be visible to your user and how you want to make them visible.
+     * You must specify the <code>Entry</code> and <code>Target</code> pair, where
+     * <code>Entry</code> shows how the path is made visible and <code>Target</code> is
+     * the actual Amazon S3 or Amazon EFS path. If you only specify a target, it is
+     * displayed as is. You also must ensure that your Amazon Web Services Identity and
+     * Access Management (IAM) role provides access to paths in <code>Target</code>.
+     * This value can only be set when <code>HomeDirectoryType</code> is set to
+     * <i>LOGICAL</i>.</p> <p>In most cases, you can use this value instead of the
+     * scope-down policy to lock your user down to the designated home directory
      * ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to '/' and
      * set <code>Target</code> to the HomeDirectory parameter value.</p>
      */

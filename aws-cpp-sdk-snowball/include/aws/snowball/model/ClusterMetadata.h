@@ -14,6 +14,7 @@
 #include <aws/snowball/model/ShippingOption.h>
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/TaxDocuments.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -676,6 +677,43 @@ namespace Model
      */
     inline ClusterMetadata& WithTaxDocuments(TaxDocuments&& value) { SetTaxDocuments(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline ClusterMetadata& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline ClusterMetadata& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterId;
@@ -719,6 +757,9 @@ namespace Model
 
     TaxDocuments m_taxDocuments;
     bool m_taxDocumentsHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
   };
 
 } // namespace Model

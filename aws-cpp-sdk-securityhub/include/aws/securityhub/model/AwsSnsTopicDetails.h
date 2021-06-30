@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A wrapper type for the topic's Amazon Resource Name (ARN).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A wrapper type for the topic's ARN.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSnsTopicDetails">AWS
    * API Reference</a></p>
    */

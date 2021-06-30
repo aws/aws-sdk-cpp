@@ -170,49 +170,57 @@ namespace Model
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline ThirdPartySourceRepository& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline ThirdPartySourceRepository& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
      * <p> The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket
-     * repository, this is the username for the account that owns the repository. </p>
+     * repository, this is the username for the account that owns the repository. For
+     * an S3 repository, this can be the username or AWS account ID. </p>
      */
     inline ThirdPartySourceRepository& WithOwner(const char* value) { SetOwner(value); return *this;}
 

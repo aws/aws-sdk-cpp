@@ -7,6 +7,7 @@
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/awstransfer/TransferRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/ProtocolDetails.h>
 #include <aws/awstransfer/model/EndpointDetails.h>
 #include <aws/awstransfer/model/EndpointType.h>
 #include <aws/awstransfer/model/IdentityProviderDetails.h>
@@ -40,21 +41,21 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -64,21 +65,21 @@ namespace Model
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -88,21 +89,21 @@ namespace Model
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -112,21 +113,21 @@ namespace Model
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -136,21 +137,21 @@ namespace Model
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -160,21 +161,21 @@ namespace Model
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -184,21 +185,21 @@ namespace Model
     inline UpdateServerRequest& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -208,21 +209,21 @@ namespace Model
     inline UpdateServerRequest& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM)
-     * certificate. Required when <code>Protocols</code> is set to
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager
+     * (ACM) certificate. Required when <code>Protocols</code> is set to
      * <code>FTPS</code>.</p> <p>To request a new public certificate, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request
-     * a public certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To import an existing certificate into ACM, see <a
+     * a public certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To import an existing certificate into ACM, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
-     * certificates into ACM</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>To request a private certificate to use FTPS through private IP addresses,
-     * see <a
+     * certificates into ACM</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>To request a private certificate to use FTPS through private
+     * IP addresses, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request
-     * a private certificate</a> in the <i> AWS Certificate Manager User Guide</i>.</p>
-     * <p>Certificates with the following cryptographic algorithms and key sizes are
-     * supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li> <p>4096-bit
-     * RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
+     * a private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+     * Guide</i>.</p> <p>Certificates with the following cryptographic algorithms and
+     * key sizes are supported:</p> <ul> <li> <p>2048-bit RSA (RSA_2048)</p> </li> <li>
+     * <p>4096-bit RSA (RSA_4096)</p> </li> <li> <p>Elliptic Prime Curve 256 bit
      * (EC_prime256v1)</p> </li> <li> <p>Elliptic Prime Curve 384 bit
      * (EC_secp384r1)</p> </li> <li> <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
      * </li> </ul>  <p>The certificate must be a valid SSL/TLS X.509 version 3
@@ -233,56 +234,105 @@ namespace Model
 
 
     /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p>
+     */
+    inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p>
+     */
+    inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p>
+     */
+    inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p>
+     */
+    inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p>
+     */
+    inline UpdateServerRequest& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS
+     * protocols). Enter a single dotted-quad IPv4 address, such as the external IP
+     * address of a firewall, router, or load balancer. </p>
+     */
+    inline UpdateServerRequest& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. With a VPC endpoint, you can restrict access to your server to
-     * resources only within your VPC. To control incoming internet traffic, you will
-     * need to associate one or more Elastic IP addresses with your server's
-     * endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. With a VPC endpoint, you can restrict access to your server to
-     * resources only within your VPC. To control incoming internet traffic, you will
-     * need to associate one or more Elastic IP addresses with your server's
-     * endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. With a VPC endpoint, you can restrict access to your server to
-     * resources only within your VPC. To control incoming internet traffic, you will
-     * need to associate one or more Elastic IP addresses with your server's
-     * endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. With a VPC endpoint, you can restrict access to your server to
-     * resources only within your VPC. To control incoming internet traffic, you will
-     * need to associate one or more Elastic IP addresses with your server's
-     * endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. With a VPC endpoint, you can restrict access to your server to
-     * resources only within your VPC. To control incoming internet traffic, you will
-     * need to associate one or more Elastic IP addresses with your server's
-     * endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline UpdateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your server. With a VPC endpoint, you can restrict access to your server to
-     * resources only within your VPC. To control incoming internet traffic, you will
-     * need to associate one or more Elastic IP addresses with your server's
-     * endpoint.</p>
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline UpdateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
@@ -294,11 +344,12 @@ namespace Model
      * and resources only within your VPC or choose to make it internet facing by
      * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
      * 2021, you won't be able to create a server using
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
-     * hasn't already done so before May 19, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
-     * 19, 2021, you will not be affected. After this date, use
-     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+     * your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+     * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+     * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+     * information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
@@ -316,11 +367,12 @@ namespace Model
      * and resources only within your VPC or choose to make it internet facing by
      * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
      * 2021, you won't be able to create a server using
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
-     * hasn't already done so before May 19, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
-     * 19, 2021, you will not be affected. After this date, use
-     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+     * your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+     * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+     * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+     * information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
@@ -338,11 +390,12 @@ namespace Model
      * and resources only within your VPC or choose to make it internet facing by
      * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
      * 2021, you won't be able to create a server using
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
-     * hasn't already done so before May 19, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
-     * 19, 2021, you will not be affected. After this date, use
-     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+     * your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+     * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+     * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+     * information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
@@ -360,11 +413,12 @@ namespace Model
      * and resources only within your VPC or choose to make it internet facing by
      * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
      * 2021, you won't be able to create a server using
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
-     * hasn't already done so before May 19, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
-     * 19, 2021, you will not be affected. After this date, use
-     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+     * your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+     * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+     * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+     * information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
@@ -382,11 +436,12 @@ namespace Model
      * and resources only within your VPC or choose to make it internet facing by
      * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
      * 2021, you won't be able to create a server using
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
-     * hasn't already done so before May 19, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
-     * 19, 2021, you will not be affected. After this date, use
-     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+     * your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+     * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+     * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+     * information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
@@ -404,11 +459,12 @@ namespace Model
      * and resources only within your VPC or choose to make it internet facing by
      * attaching Elastic IP addresses directly to it.</p>  <p> After May 19,
      * 2021, you won't be able to create a server using
-     * <code>EndpointType=VPC_ENDPOINT</code> in your AWS account if your account
-     * hasn't already done so before May 19, 2021. If you have already created servers
-     * with <code>EndpointType=VPC_ENDPOINT</code> in your AWS account on or before May
-     * 19, 2021, you will not be affected. After this date, use
-     * <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more information, see
+     * <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if
+     * your account hasn't already done so before May 19, 2021. If you have already
+     * created servers with <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web
+     * Servicesaccount on or before May 19, 2021, you will not be affected. After this
+     * date, use <code>EndpointType</code>=<code>VPC</code>.</p> <p>For more
+     * information, see
      * https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
      * <p>It is recommended that you use <code>VPC</code> as the
      * <code>EndpointType</code>. With this endpoint type, you have the option to
@@ -427,8 +483,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline const Aws::String& GetHostKey() const{ return m_hostKey; }
 
@@ -439,8 +495,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline bool HostKeyHasBeenSet() const { return m_hostKeyHasBeenSet; }
 
@@ -451,8 +507,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline void SetHostKey(const Aws::String& value) { m_hostKeyHasBeenSet = true; m_hostKey = value; }
 
@@ -463,8 +519,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline void SetHostKey(Aws::String&& value) { m_hostKeyHasBeenSet = true; m_hostKey = std::move(value); }
 
@@ -475,8 +531,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline void SetHostKey(const char* value) { m_hostKeyHasBeenSet = true; m_hostKey.assign(value); }
 
@@ -487,8 +543,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(const Aws::String& value) { SetHostKey(value); return *this;}
 
@@ -499,8 +555,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(Aws::String&& value) { SetHostKey(std::move(value)); return *this;}
 
@@ -511,8 +567,8 @@ namespace Model
      * key. Accidentally changing a server's host key can be disruptive.</p>
      *  <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change
-     * the host key for your SFTP-enabled server</a> in the <i>AWS Transfer Family User
-     * Guide</i>.</p>
+     * the host key for your SFTP-enabled server</a> in the <i>Amazon Web
+     * ServicesTransfer Family User Guide</i>.</p>
      */
     inline UpdateServerRequest& WithHostKey(const char* value) { SetHostKey(value); return *this;}
 
@@ -555,58 +611,66 @@ namespace Model
 
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Changes the AWS Identity and Access Management (IAM) role that allows Amazon
-     * S3 or Amazon EFS events to be logged in Amazon CloudWatch, turning logging on or
-     * off.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline UpdateServerRequest& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
@@ -618,11 +682,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -640,11 +704,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -662,11 +726,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -684,11 +748,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -706,11 +770,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -728,11 +792,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -750,11 +814,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -772,11 +836,11 @@ namespace Model
      * (SFTP): File transfer over SSH</p> </li> <li> <p>File Transfer Protocol Secure
      * (FTPS): File transfer with TLS encryption</p> </li> <li> <p>File Transfer
      * Protocol (FTP): Unencrypted file transfer</p> </li> </ul>  <p>If you
-     * select <code>FTPS</code>, you must choose a certificate stored in AWS
-     * Certificate Manager (ACM) which will be used to identify your server when
-     * clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes either
-     * <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code> must
-     * be <code>VPC</code> and the <code>IdentityProviderType</code> must be
+     * select <code>FTPS</code>, you must choose a certificate stored in Amazon Web
+     * ServicesCertificate Manager (ACM) which will be used to identify your server
+     * when clients connect to it over FTPS.</p> <p>If <code>Protocol</code> includes
+     * either <code>FTP</code> or <code>FTPS</code>, then the <code>EndpointType</code>
+     * must be <code>VPC</code> and the <code>IdentityProviderType</code> must be
      * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p> <p>If
      * <code>Protocol</code> includes <code>FTP</code>, then
      * <code>AddressAllocationIds</code> cannot be associated.</p> <p>If
@@ -881,6 +945,9 @@ namespace Model
 
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
+    ProtocolDetails m_protocolDetails;
+    bool m_protocolDetailsHasBeenSet;
 
     EndpointDetails m_endpointDetails;
     bool m_endpointDetailsHasBeenSet;

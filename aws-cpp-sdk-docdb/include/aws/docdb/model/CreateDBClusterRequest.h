@@ -393,66 +393,66 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to use. The --engine-version will
-     * default to the latest major engine version. For production workloads, we
-     * recommend explicitly declaring this parameter with the intended major engine
-     * version.</p>
+     * <p>The version number of the database engine to use. The
+     * <code>--engine-version</code> will default to the latest major engine version.
+     * For production workloads, we recommend explicitly declaring this parameter with
+     * the intended major engine version.</p>
      */
     inline CreateDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -604,7 +604,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -616,7 +616,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -628,7 +628,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -640,7 +640,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -652,7 +652,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -664,7 +664,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -676,7 +676,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -688,7 +688,7 @@ namespace Model
      * <p>The daily time range during which automated backups are created if automated
      * backups are enabled using the <code>BackupRetentionPeriod</code> parameter. </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
+     * time for each Region. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the
      * format <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal
      * Coordinated Time (UTC).</p> </li> <li> <p>Must not conflict with the preferred
      * maintenance window. </p> </li> <li> <p>Must be at least 30 minutes.</p> </li>
@@ -701,8 +701,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
@@ -711,8 +711,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
@@ -721,8 +721,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
@@ -731,8 +731,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
@@ -741,8 +741,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
@@ -751,8 +751,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -761,8 +761,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
@@ -771,8 +771,8 @@ namespace Model
      * <p>The weekly time range during which system maintenance can occur, in Universal
      * Coordinated Time (UTC).</p> <p>Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
      * <p>The default is a 30-minute window selected at random from an 8-hour block of
-     * time for each AWS Region, occurring on a random day of the week.</p> <p>Valid
-     * days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
+     * time for each Region, occurring on a random day of the week.</p> <p>Valid days:
+     * Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p>Constraints: Minimum 30-minute
      * window.</p>
      */
     inline CreateDBClusterRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
@@ -841,114 +841,114 @@ namespace Model
 
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for an encrypted cluster.</p> <p>The AWS KMS key
-     * identifier is the Amazon Resource Name (ARN) for the AWS KMS encryption key. If
-     * you are creating a cluster using the same AWS account that owns the AWS KMS
-     * encryption key that is used to encrypt the new cluster, you can use the AWS KMS
-     * key alias instead of the ARN for the AWS KMS encryption key.</p> <p>If an
-     * encryption key is not specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If
-     * the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon
-     * DocumentDB uses your default encryption key. </p> </li> </ul> <p>AWS KMS creates
-     * the default encryption key for your AWS account. Your AWS account has a
-     * different default encryption key for each AWS Region.</p>
+     * <p>The KMS key identifier for an encrypted cluster.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a cluster using the same account that owns the KMS encryption key
+     * that is used to encrypt the new cluster, you can use the KMS key alias instead
+     * of the ARN for the KMS encryption key.</p> <p>If an encryption key is not
+     * specified in <code>KmsKeyId</code>: </p> <ul> <li> <p>If the
+     * <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
+     * uses your default encryption key. </p> </li> </ul> <p>KMS creates the default
+     * encryption key for your account. Your account has a different default encryption
+     * key for each Regions.</p>
      */
     inline CreateDBClusterRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

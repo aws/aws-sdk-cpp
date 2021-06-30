@@ -35,7 +35,8 @@ CodeReview::CodeReview() :
     m_pullRequestIdHasBeenSet(false),
     m_sourceCodeTypeHasBeenSet(false),
     m_associationArnHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_analysisTypesHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ CodeReview::CodeReview(JsonView jsonValue) :
     m_pullRequestIdHasBeenSet(false),
     m_sourceCodeTypeHasBeenSet(false),
     m_associationArnHasBeenSet(false),
-    m_metricsHasBeenSet(false)
+    m_metricsHasBeenSet(false),
+    m_analysisTypesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +163,16 @@ CodeReview& CodeReview::operator =(JsonView jsonValue)
     m_metricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AnalysisTypes"))
+  {
+    Array<JsonView> analysisTypesJsonList = jsonValue.GetArray("AnalysisTypes");
+    for(unsigned analysisTypesIndex = 0; analysisTypesIndex < analysisTypesJsonList.GetLength(); ++analysisTypesIndex)
+    {
+      m_analysisTypes.push_back(AnalysisTypeMapper::GetAnalysisTypeForName(analysisTypesJsonList[analysisTypesIndex].AsString()));
+    }
+    m_analysisTypesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -244,6 +256,17 @@ JsonValue CodeReview::Jsonize() const
   if(m_metricsHasBeenSet)
   {
    payload.WithObject("Metrics", m_metrics.Jsonize());
+
+  }
+
+  if(m_analysisTypesHasBeenSet)
+  {
+   Array<JsonValue> analysisTypesJsonList(m_analysisTypes.size());
+   for(unsigned analysisTypesIndex = 0; analysisTypesIndex < analysisTypesJsonList.GetLength(); ++analysisTypesIndex)
+   {
+     analysisTypesJsonList[analysisTypesIndex].AsString(AnalysisTypeMapper::GetNameForAnalysisType(m_analysisTypes[analysisTypesIndex]));
+   }
+   payload.WithArray("AnalysisTypes", std::move(analysisTypesJsonList));
 
   }
 

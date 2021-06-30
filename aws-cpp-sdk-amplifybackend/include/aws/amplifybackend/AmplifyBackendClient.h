@@ -28,6 +28,7 @@
 #include <aws/amplifybackend/model/GetBackendAuthResult.h>
 #include <aws/amplifybackend/model/GetBackendJobResult.h>
 #include <aws/amplifybackend/model/GetTokenResult.h>
+#include <aws/amplifybackend/model/ImportBackendAuthResult.h>
 #include <aws/amplifybackend/model/ListBackendJobsResult.h>
 #include <aws/amplifybackend/model/RemoveAllBackendsResult.h>
 #include <aws/amplifybackend/model/RemoveBackendConfigResult.h>
@@ -91,6 +92,7 @@ namespace Model
         class GetBackendAuthRequest;
         class GetBackendJobRequest;
         class GetTokenRequest;
+        class ImportBackendAuthRequest;
         class ListBackendJobsRequest;
         class RemoveAllBackendsRequest;
         class RemoveBackendConfigRequest;
@@ -116,6 +118,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetBackendAuthResult, AmplifyBackendError> GetBackendAuthOutcome;
         typedef Aws::Utils::Outcome<GetBackendJobResult, AmplifyBackendError> GetBackendJobOutcome;
         typedef Aws::Utils::Outcome<GetTokenResult, AmplifyBackendError> GetTokenOutcome;
+        typedef Aws::Utils::Outcome<ImportBackendAuthResult, AmplifyBackendError> ImportBackendAuthOutcome;
         typedef Aws::Utils::Outcome<ListBackendJobsResult, AmplifyBackendError> ListBackendJobsOutcome;
         typedef Aws::Utils::Outcome<RemoveAllBackendsResult, AmplifyBackendError> RemoveAllBackendsOutcome;
         typedef Aws::Utils::Outcome<RemoveBackendConfigResult, AmplifyBackendError> RemoveBackendConfigOutcome;
@@ -141,6 +144,7 @@ namespace Model
         typedef std::future<GetBackendAuthOutcome> GetBackendAuthOutcomeCallable;
         typedef std::future<GetBackendJobOutcome> GetBackendJobOutcomeCallable;
         typedef std::future<GetTokenOutcome> GetTokenOutcomeCallable;
+        typedef std::future<ImportBackendAuthOutcome> ImportBackendAuthOutcomeCallable;
         typedef std::future<ListBackendJobsOutcome> ListBackendJobsOutcomeCallable;
         typedef std::future<RemoveAllBackendsOutcome> RemoveAllBackendsOutcomeCallable;
         typedef std::future<RemoveBackendConfigOutcome> RemoveBackendConfigOutcomeCallable;
@@ -169,6 +173,7 @@ namespace Model
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetBackendAuthRequest&, const Model::GetBackendAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendAuthResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetBackendJobRequest&, const Model::GetBackendJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendJobResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::GetTokenRequest&, const Model::GetTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTokenResponseReceivedHandler;
+    typedef std::function<void(const AmplifyBackendClient*, const Model::ImportBackendAuthRequest&, const Model::ImportBackendAuthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportBackendAuthResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::ListBackendJobsRequest&, const Model::ListBackendJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackendJobsResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::RemoveAllBackendsRequest&, const Model::RemoveAllBackendsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAllBackendsResponseReceivedHandler;
     typedef std::function<void(const AmplifyBackendClient*, const Model::RemoveBackendConfigRequest&, const Model::RemoveBackendConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveBackendConfigResponseReceivedHandler;
@@ -582,14 +587,14 @@ namespace Model
         virtual void GetBackendAPIModelsAsync(const Model::GetBackendAPIModelsRequest& request, const GetBackendAPIModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets backend auth details.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a backend auth details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBackendAuthOutcome GetBackendAuth(const Model::GetBackendAuthRequest& request) const;
 
         /**
-         * <p>Gets backend auth details.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a backend auth details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">AWS
          * API Reference</a></p>
          *
@@ -598,7 +603,7 @@ namespace Model
         virtual Model::GetBackendAuthOutcomeCallable GetBackendAuthCallable(const Model::GetBackendAuthRequest& request) const;
 
         /**
-         * <p>Gets backend auth details.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a backend auth details.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/GetBackendAuth">AWS
          * API Reference</a></p>
          *
@@ -660,6 +665,34 @@ namespace Model
         virtual void GetTokenAsync(const Model::GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Imports an existing backend authentication resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportBackendAuthOutcome ImportBackendAuth(const Model::ImportBackendAuthRequest& request) const;
+
+        /**
+         * <p>Imports an existing backend authentication resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportBackendAuthOutcomeCallable ImportBackendAuthCallable(const Model::ImportBackendAuthRequest& request) const;
+
+        /**
+         * <p>Imports an existing backend authentication resource.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ImportBackendAuth">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportBackendAuthAsync(const Model::ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the jobs for the backend of an Amplify app.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/ListBackendJobs">AWS
@@ -716,7 +749,7 @@ namespace Model
         virtual void RemoveAllBackendsAsync(const Model::RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the AWS resources that are required to access the Amplify Admin
+         * <p>Removes the AWS resources required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">AWS
          * API Reference</a></p>
@@ -724,7 +757,7 @@ namespace Model
         virtual Model::RemoveBackendConfigOutcome RemoveBackendConfig(const Model::RemoveBackendConfigRequest& request) const;
 
         /**
-         * <p>Removes the AWS resources that are required to access the Amplify Admin
+         * <p>Removes the AWS resources required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">AWS
          * API Reference</a></p>
@@ -734,7 +767,7 @@ namespace Model
         virtual Model::RemoveBackendConfigOutcomeCallable RemoveBackendConfigCallable(const Model::RemoveBackendConfigRequest& request) const;
 
         /**
-         * <p>Removes the AWS resources that are required to access the Amplify Admin
+         * <p>Removes the AWS resources required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/RemoveBackendConfig">AWS
          * API Reference</a></p>
@@ -797,7 +830,7 @@ namespace Model
         virtual void UpdateBackendAuthAsync(const Model::UpdateBackendAuthRequest& request, const UpdateBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the AWS resources that are required to access the Amplify Admin
+         * <p>Updates the AWS resources required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">AWS
          * API Reference</a></p>
@@ -805,7 +838,7 @@ namespace Model
         virtual Model::UpdateBackendConfigOutcome UpdateBackendConfig(const Model::UpdateBackendConfigRequest& request) const;
 
         /**
-         * <p>Updates the AWS resources that are required to access the Amplify Admin
+         * <p>Updates the AWS resources required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">AWS
          * API Reference</a></p>
@@ -815,7 +848,7 @@ namespace Model
         virtual Model::UpdateBackendConfigOutcomeCallable UpdateBackendConfigCallable(const Model::UpdateBackendConfigRequest& request) const;
 
         /**
-         * <p>Updates the AWS resources that are required to access the Amplify Admin
+         * <p>Updates the AWS resources required to access the Amplify Admin
          * UI.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/UpdateBackendConfig">AWS
          * API Reference</a></p>
@@ -870,6 +903,7 @@ namespace Model
         void GetBackendAuthAsyncHelper(const Model::GetBackendAuthRequest& request, const GetBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBackendJobAsyncHelper(const Model::GetBackendJobRequest& request, const GetBackendJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTokenAsyncHelper(const Model::GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportBackendAuthAsyncHelper(const Model::ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBackendJobsAsyncHelper(const Model::ListBackendJobsRequest& request, const ListBackendJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAllBackendsAsyncHelper(const Model::RemoveAllBackendsRequest& request, const RemoveAllBackendsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveBackendConfigAsyncHelper(const Model::RemoveBackendConfigRequest& request, const RemoveBackendConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

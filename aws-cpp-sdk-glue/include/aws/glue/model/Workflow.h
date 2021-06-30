@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>A workflow represents a flow in which AWS Glue components should be executed
-   * to complete a logical task.</p><p><h3>See Also:</h3>   <a
+   * <p>A workflow represents a flow in which Glue components should be run to
+   * complete a logical task.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/Workflow">AWS API
    * Reference</a></p>
    */
@@ -297,38 +297,38 @@ namespace Model
 
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline const WorkflowGraph& GetGraph() const{ return m_graph; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline bool GraphHasBeenSet() const { return m_graphHasBeenSet; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(const WorkflowGraph& value) { m_graphHasBeenSet = true; m_graph = value; }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline void SetGraph(WorkflowGraph&& value) { m_graphHasBeenSet = true; m_graph = std::move(value); }
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline Workflow& WithGraph(const WorkflowGraph& value) { SetGraph(value); return *this;}
 
     /**
-     * <p>The graph representing all the AWS Glue components that belong to the
-     * workflow as nodes and directed connections between them as edges.</p>
+     * <p>The graph representing all the Glue components that belong to the workflow as
+     * nodes and directed connections between them as edges.</p>
      */
     inline Workflow& WithGraph(WorkflowGraph&& value) { SetGraph(std::move(value)); return *this;}
 

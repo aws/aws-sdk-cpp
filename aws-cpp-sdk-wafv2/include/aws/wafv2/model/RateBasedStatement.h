@@ -31,12 +31,12 @@ namespace Model
    * address, and triggers the rule action when the rate exceeds a limit that you
    * specify on the number of requests in any 5-minute time span. You can use this to
    * put a temporary block on requests from an IP address that is sending excessive
-   * requests.</p> <p>When the rule action triggers, AWS WAF blocks additional
-   * requests from the IP address until the request rate falls below the limit.</p>
-   * <p>You can optionally nest another statement inside the rate-based statement, to
-   * narrow the scope of the rule so that it only counts requests that match the
-   * nested statement. For example, based on recent requests that you have seen from
-   * an attacker, you might create a rate-based rule with a nested AND rule statement
+   * requests.</p> <p>When the rule action triggers, WAF blocks additional requests
+   * from the IP address until the request rate falls below the limit.</p> <p>You can
+   * optionally nest another statement inside the rate-based statement, to narrow the
+   * scope of the rule so that it only counts requests that match the nested
+   * statement. For example, based on recent requests that you have seen from an
+   * attacker, you might create a rate-based rule with a nested AND rule statement
    * that contains the following nested statements:</p> <ul> <li> <p>An IP match
    * statement with an IP set that specified the address 192.0.2.44.</p> </li> <li>
    * <p>A string match statement that searches in the User-Agent header for the
@@ -152,44 +152,56 @@ namespace Model
 
 
     /**
-     * <p>An optional nested statement that narrows the scope of the rate-based
-     * statement to matching web requests. This can be any nestable statement, and you
-     * can nest statements at any level below this scope-down statement.</p>
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the rate-based statement. Requests are only tracked by the
+     * rate-based statement if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest
+     * statements at any level, the same as you can for a rule statement. </p>
      */
     const Statement& GetScopeDownStatement() const;
 
     /**
-     * <p>An optional nested statement that narrows the scope of the rate-based
-     * statement to matching web requests. This can be any nestable statement, and you
-     * can nest statements at any level below this scope-down statement.</p>
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the rate-based statement. Requests are only tracked by the
+     * rate-based statement if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest
+     * statements at any level, the same as you can for a rule statement. </p>
      */
     bool ScopeDownStatementHasBeenSet() const;
 
     /**
-     * <p>An optional nested statement that narrows the scope of the rate-based
-     * statement to matching web requests. This can be any nestable statement, and you
-     * can nest statements at any level below this scope-down statement.</p>
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the rate-based statement. Requests are only tracked by the
+     * rate-based statement if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest
+     * statements at any level, the same as you can for a rule statement. </p>
      */
     void SetScopeDownStatement(const Statement& value);
 
     /**
-     * <p>An optional nested statement that narrows the scope of the rate-based
-     * statement to matching web requests. This can be any nestable statement, and you
-     * can nest statements at any level below this scope-down statement.</p>
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the rate-based statement. Requests are only tracked by the
+     * rate-based statement if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest
+     * statements at any level, the same as you can for a rule statement. </p>
      */
     void SetScopeDownStatement(Statement&& value);
 
     /**
-     * <p>An optional nested statement that narrows the scope of the rate-based
-     * statement to matching web requests. This can be any nestable statement, and you
-     * can nest statements at any level below this scope-down statement.</p>
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the rate-based statement. Requests are only tracked by the
+     * rate-based statement if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest
+     * statements at any level, the same as you can for a rule statement. </p>
      */
     RateBasedStatement& WithScopeDownStatement(const Statement& value);
 
     /**
-     * <p>An optional nested statement that narrows the scope of the rate-based
-     * statement to matching web requests. This can be any nestable statement, and you
-     * can nest statements at any level below this scope-down statement.</p>
+     * <p>An optional nested statement that narrows the scope of the web requests that
+     * are evaluated by the rate-based statement. Requests are only tracked by the
+     * rate-based statement if they match the scope-down statement. You can use any
+     * nestable <a>Statement</a> in the scope-down statement, and you can nest
+     * statements at any level, the same as you can for a rule statement. </p>
      */
     RateBasedStatement& WithScopeDownStatement(Statement&& value);
 
@@ -199,7 +211,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      * <p>This is required if <code>AggregateKeyType</code> is set to
      * <code>FORWARDED_IP</code>.</p>
      */
@@ -210,7 +222,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      * <p>This is required if <code>AggregateKeyType</code> is set to
      * <code>FORWARDED_IP</code>.</p>
      */
@@ -221,7 +233,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      * <p>This is required if <code>AggregateKeyType</code> is set to
      * <code>FORWARDED_IP</code>.</p>
      */
@@ -232,7 +244,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      * <p>This is required if <code>AggregateKeyType</code> is set to
      * <code>FORWARDED_IP</code>.</p>
      */
@@ -243,7 +255,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      * <p>This is required if <code>AggregateKeyType</code> is set to
      * <code>FORWARDED_IP</code>.</p>
      */
@@ -254,7 +266,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      * <p>This is required if <code>AggregateKeyType</code> is set to
      * <code>FORWARDED_IP</code>.</p>
      */

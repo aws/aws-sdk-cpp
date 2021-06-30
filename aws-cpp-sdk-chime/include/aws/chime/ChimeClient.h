@@ -1319,11 +1319,12 @@ namespace Model
          * specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on
          * <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For
          * more information about different account types, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
-         * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p> <p> Previously suspended users who are unsuspended using this
-         * action are returned to <code>Registered</code> status. Users who are not
-         * previously suspended are ignored. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">
+         * Managing Your Amazon Chime Accounts </a> in the account types, in the <i>Amazon
+         * Chime Administration Guide</i>. </p> <p> Previously suspended users who are
+         * unsuspended using this action are returned to <code>Registered</code> status.
+         * Users who are not previously suspended are ignored. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">AWS
          * API Reference</a></p>
          */
@@ -1334,11 +1335,12 @@ namespace Model
          * specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on
          * <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For
          * more information about different account types, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
-         * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p> <p> Previously suspended users who are unsuspended using this
-         * action are returned to <code>Registered</code> status. Users who are not
-         * previously suspended are ignored. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">
+         * Managing Your Amazon Chime Accounts </a> in the account types, in the <i>Amazon
+         * Chime Administration Guide</i>. </p> <p> Previously suspended users who are
+         * unsuspended using this action are returned to <code>Registered</code> status.
+         * Users who are not previously suspended are ignored. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">AWS
          * API Reference</a></p>
          *
@@ -1351,11 +1353,12 @@ namespace Model
          * specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on
          * <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For
          * more information about different account types, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
-         * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
-         * Guide</i>.</p> <p> Previously suspended users who are unsuspended using this
-         * action are returned to <code>Registered</code> status. Users who are not
-         * previously suspended are ignored. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">
+         * Managing Your Amazon Chime Accounts </a> in the account types, in the <i>Amazon
+         * Chime Administration Guide</i>. </p> <p> Previously suspended users who are
+         * unsuspended using this action are returned to <code>Registered</code> status.
+         * Users who are not previously suspended are ignored. </p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchUnsuspendUser">AWS
          * API Reference</a></p>
          *
@@ -3599,8 +3602,8 @@ namespace Model
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
          * remote control and dialout settings. For more information about these settings,
          * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
-         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -3610,8 +3613,8 @@ namespace Model
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
          * remote control and dialout settings. For more information about these settings,
          * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
-         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -3623,8 +3626,8 @@ namespace Model
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
          * remote control and dialout settings. For more information about these settings,
          * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
-         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -4031,7 +4034,7 @@ namespace Model
          * <p> Gets the retention settings for the specified Amazon Chime Enterprise
          * account. For more information about retention settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
          * API Reference</a></p>
@@ -4042,7 +4045,7 @@ namespace Model
          * <p> Gets the retention settings for the specified Amazon Chime Enterprise
          * account. For more information about retention settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
          * API Reference</a></p>
@@ -4055,7 +4058,7 @@ namespace Model
          * <p> Gets the retention settings for the specified Amazon Chime Enterprise
          * account. For more information about retention settings, see <a
          * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing
-         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
+         * Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRetentionSettings">AWS
          * API Reference</a></p>
@@ -4689,7 +4692,7 @@ namespace Model
          * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
          * API Reference</a></p>
@@ -4700,7 +4703,7 @@ namespace Model
          * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
          * API Reference</a></p>
@@ -4713,7 +4716,7 @@ namespace Model
          * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
          * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
          * API Reference</a></p>
@@ -6857,8 +6860,8 @@ namespace Model
         virtual void UpdateSipRuleAsync(const Model::UpdateSipRuleRequest& request, const UpdateSipRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates user details for a specified user ID. Currently, only
-         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
+         * <p>Updates user details for a specified user ID. Currently, only
+         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">AWS
          * API Reference</a></p>
@@ -6866,8 +6869,8 @@ namespace Model
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p> Updates user details for a specified user ID. Currently, only
-         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
+         * <p>Updates user details for a specified user ID. Currently, only
+         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">AWS
          * API Reference</a></p>
@@ -6877,8 +6880,8 @@ namespace Model
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p> Updates user details for a specified user ID. Currently, only
-         * <code>LicenseType</code> updates are supported for this action. </p><p><h3>See
+         * <p>Updates user details for a specified user ID. Currently, only
+         * <code>LicenseType</code> updates are supported for this action.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateUser">AWS
          * API Reference</a></p>

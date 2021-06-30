@@ -80,56 +80,56 @@ namespace Model
 
 
     /**
-     * <p> The criterion to be used to list report groups shared with the current AWS
-     * account or user. Valid values include: </p> <ul> <li> <p> <code>ARN</code>: List
-     * based on the ARN. </p> </li> <li> <p> <code>MODIFIED_TIME</code>: List based on
-     * when information about the shared report group was last changed. </p> </li>
-     * </ul>
+     * <p> The criterion to be used to list report groups shared with the current
+     * Amazon Web Services account or user. Valid values include: </p> <ul> <li> <p>
+     * <code>ARN</code>: List based on the ARN. </p> </li> <li> <p>
+     * <code>MODIFIED_TIME</code>: List based on when information about the shared
+     * report group was last changed. </p> </li> </ul>
      */
     inline const SharedResourceSortByType& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p> The criterion to be used to list report groups shared with the current AWS
-     * account or user. Valid values include: </p> <ul> <li> <p> <code>ARN</code>: List
-     * based on the ARN. </p> </li> <li> <p> <code>MODIFIED_TIME</code>: List based on
-     * when information about the shared report group was last changed. </p> </li>
-     * </ul>
+     * <p> The criterion to be used to list report groups shared with the current
+     * Amazon Web Services account or user. Valid values include: </p> <ul> <li> <p>
+     * <code>ARN</code>: List based on the ARN. </p> </li> <li> <p>
+     * <code>MODIFIED_TIME</code>: List based on when information about the shared
+     * report group was last changed. </p> </li> </ul>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p> The criterion to be used to list report groups shared with the current AWS
-     * account or user. Valid values include: </p> <ul> <li> <p> <code>ARN</code>: List
-     * based on the ARN. </p> </li> <li> <p> <code>MODIFIED_TIME</code>: List based on
-     * when information about the shared report group was last changed. </p> </li>
-     * </ul>
+     * <p> The criterion to be used to list report groups shared with the current
+     * Amazon Web Services account or user. Valid values include: </p> <ul> <li> <p>
+     * <code>ARN</code>: List based on the ARN. </p> </li> <li> <p>
+     * <code>MODIFIED_TIME</code>: List based on when information about the shared
+     * report group was last changed. </p> </li> </ul>
      */
     inline void SetSortBy(const SharedResourceSortByType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p> The criterion to be used to list report groups shared with the current AWS
-     * account or user. Valid values include: </p> <ul> <li> <p> <code>ARN</code>: List
-     * based on the ARN. </p> </li> <li> <p> <code>MODIFIED_TIME</code>: List based on
-     * when information about the shared report group was last changed. </p> </li>
-     * </ul>
+     * <p> The criterion to be used to list report groups shared with the current
+     * Amazon Web Services account or user. Valid values include: </p> <ul> <li> <p>
+     * <code>ARN</code>: List based on the ARN. </p> </li> <li> <p>
+     * <code>MODIFIED_TIME</code>: List based on when information about the shared
+     * report group was last changed. </p> </li> </ul>
      */
     inline void SetSortBy(SharedResourceSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p> The criterion to be used to list report groups shared with the current AWS
-     * account or user. Valid values include: </p> <ul> <li> <p> <code>ARN</code>: List
-     * based on the ARN. </p> </li> <li> <p> <code>MODIFIED_TIME</code>: List based on
-     * when information about the shared report group was last changed. </p> </li>
-     * </ul>
+     * <p> The criterion to be used to list report groups shared with the current
+     * Amazon Web Services account or user. Valid values include: </p> <ul> <li> <p>
+     * <code>ARN</code>: List based on the ARN. </p> </li> <li> <p>
+     * <code>MODIFIED_TIME</code>: List based on when information about the shared
+     * report group was last changed. </p> </li> </ul>
      */
     inline ListSharedReportGroupsRequest& WithSortBy(const SharedResourceSortByType& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p> The criterion to be used to list report groups shared with the current AWS
-     * account or user. Valid values include: </p> <ul> <li> <p> <code>ARN</code>: List
-     * based on the ARN. </p> </li> <li> <p> <code>MODIFIED_TIME</code>: List based on
-     * when information about the shared report group was last changed. </p> </li>
-     * </ul>
+     * <p> The criterion to be used to list report groups shared with the current
+     * Amazon Web Services account or user. Valid values include: </p> <ul> <li> <p>
+     * <code>ARN</code>: List based on the ARN. </p> </li> <li> <p>
+     * <code>MODIFIED_TIME</code>: List based on when information about the shared
+     * report group was last changed. </p> </li> </ul>
      */
     inline ListSharedReportGroupsRequest& WithSortBy(SharedResourceSortByType&& value) { SetSortBy(std::move(value)); return *this;}
 

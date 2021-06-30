@@ -26,7 +26,7 @@ namespace Model
   /**
    * <p>Information about an AWS CodeCommit repository. The CodeCommit repository
    * must be in the same AWS Region and AWS account where its CodeGuru Reviewer code
-   * reviews are configured. </p><p><h3>See Also:</h3>   <a
+   * reviews are configured.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CodeCommitRepository">AWS
    * API Reference</a></p>
    */

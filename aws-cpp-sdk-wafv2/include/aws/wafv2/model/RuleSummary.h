@@ -83,22 +83,46 @@ namespace Model
     inline RuleSummary& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * <p>The action that WAF should take on a web request when it matches a rule's
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p>
+     */
     inline const RuleAction& GetAction() const{ return m_action; }
 
-    
+    /**
+     * <p>The action that WAF should take on a web request when it matches a rule's
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p>
+     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
-    
+    /**
+     * <p>The action that WAF should take on a web request when it matches a rule's
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p>
+     */
     inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
-    
+    /**
+     * <p>The action that WAF should take on a web request when it matches a rule's
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p>
+     */
     inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
-    
+    /**
+     * <p>The action that WAF should take on a web request when it matches a rule's
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p>
+     */
     inline RuleSummary& WithAction(const RuleAction& value) { SetAction(value); return *this;}
 
-    
+    /**
+     * <p>The action that WAF should take on a web request when it matches a rule's
+     * statement. Settings at the web ACL level can override the rule action setting.
+     * </p>
+     */
     inline RuleSummary& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
 
   private:

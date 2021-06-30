@@ -24,10 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Specifies that AWS WAF should allow the request and optionally defines
-   * additional custom handling for the request.</p> <p>This is used in the context
-   * of other settings, for example to specify values for <a>RuleAction</a> and web
-   * ACL <a>DefaultAction</a>. </p><p><h3>See Also:</h3>   <a
+   * <p>Specifies that WAF should allow the request and optionally defines additional
+   * custom handling for the request.</p> <p>This is used in the context of other
+   * settings, for example to specify values for <a>RuleAction</a> and web ACL
+   * <a>DefaultAction</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AllowAction">AWS
    * API Reference</a></p>
    */
@@ -44,9 +44,9 @@ namespace Model
      * <p>Defines custom handling for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const CustomRequestHandling& GetCustomRequestHandling() const{ return m_customRequestHandling; }
 
@@ -54,9 +54,9 @@ namespace Model
      * <p>Defines custom handling for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool CustomRequestHandlingHasBeenSet() const { return m_customRequestHandlingHasBeenSet; }
 
@@ -64,9 +64,9 @@ namespace Model
      * <p>Defines custom handling for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomRequestHandling(const CustomRequestHandling& value) { m_customRequestHandlingHasBeenSet = true; m_customRequestHandling = value; }
 
@@ -74,9 +74,9 @@ namespace Model
      * <p>Defines custom handling for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomRequestHandling(CustomRequestHandling&& value) { m_customRequestHandlingHasBeenSet = true; m_customRequestHandling = std::move(value); }
 
@@ -84,9 +84,9 @@ namespace Model
      * <p>Defines custom handling for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline AllowAction& WithCustomRequestHandling(const CustomRequestHandling& value) { SetCustomRequestHandling(value); return *this;}
 
@@ -94,9 +94,9 @@ namespace Model
      * <p>Defines custom handling for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in AWS WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
-     * WAF Developer Guide</a>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline AllowAction& WithCustomRequestHandling(CustomRequestHandling&& value) { SetCustomRequestHandling(std::move(value)); return *this;}
 

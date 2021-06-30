@@ -30,14 +30,14 @@ namespace Model
    * <p>A rule statement that compares a number of bytes against the size of a
    * request component, using a comparison operator, such as greater than (&gt;) or
    * less than (&lt;). For example, you can use a size constraint statement to look
-   * for query strings that are longer than 100 bytes. </p> <p>If you configure AWS
-   * WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8
-   * KB). If the request body for your web requests never exceeds 8192 bytes, you can
-   * create a size constraint condition and block requests that have a request body
-   * greater than 8192 bytes.</p> <p>If you choose URI for the value of Part of the
-   * request to filter on, the slash (/) in the URI counts as one character. For
-   * example, the URI <code>/logo.jpg</code> is nine characters long.</p><p><h3>See
-   * Also:</h3>   <a
+   * for query strings that are longer than 100 bytes. </p> <p>If you configure WAF
+   * to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If
+   * the request body for your web requests never exceeds 8192 bytes, you can create
+   * a size constraint condition and block requests that have a request body greater
+   * than 8192 bytes.</p> <p>If you choose URI for the value of Part of the request
+   * to filter on, the slash (/) in the URI counts as one character. For example, the
+   * URI <code>/logo.jpg</code> is nine characters long.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/SizeConstraintStatement">AWS
    * API Reference</a></p>
    */
@@ -51,38 +51,38 @@ namespace Model
 
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline SizeConstraintStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
 
     /**
-     * <p>The part of a web request that you want AWS WAF to inspect. For more
-     * information, see <a>FieldToMatch</a>. </p>
+     * <p>The part of a web request that you want WAF to inspect. For more information,
+     * see <a>FieldToMatch</a>. </p>
      */
     inline SizeConstraintStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
 
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -156,7 +156,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -166,7 +166,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -176,7 +176,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -186,7 +186,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -196,7 +196,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -206,7 +206,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>
@@ -216,7 +216,7 @@ namespace Model
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. If you specify one or more
-     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * transformations in a rule statement, WAF performs all transformations on the
      * content of the request component identified by <code>FieldToMatch</code>,
      * starting from the lowest priority setting, before inspecting the content for a
      * match.</p>

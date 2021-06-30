@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/OutputConfig.h>
+#include <aws/sagemaker/model/NeoVpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/Tag.h>
@@ -290,6 +291,61 @@ namespace Model
 
 
     /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline const NeoVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(const NeoVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(NeoVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline CreateCompilationJobRequest& WithVpcConfig(const NeoVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline CreateCompilationJobRequest& WithVpcConfig(NeoVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies a limit to how long a model compilation job can run. When the job
      * reaches the time limit, Amazon SageMaker ends the compilation job. Use this API
      * to cap model training costs.</p>
@@ -417,6 +473,9 @@ namespace Model
 
     OutputConfig m_outputConfig;
     bool m_outputConfigHasBeenSet;
+
+    NeoVpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet;
 
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet;

@@ -41,6 +41,7 @@ namespace Model
     qcs603,
     sitara_am57x,
     amba_cv22,
+    amba_cv25,
     x86_win32,
     x86_win64,
     coreml,

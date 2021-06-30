@@ -240,6 +240,31 @@ namespace Model
     inline CreateGrantVersionRequest& WithStatus(GrantStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+
+    
+    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+
+    
+    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
+
+    
+    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
+
+    
+    inline CreateGrantVersionRequest& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
+
+    
+    inline CreateGrantVersionRequest& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
+
+    
+    inline CreateGrantVersionRequest& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+
+
     /**
      * <p>Current version of the grant.</p>
      */
@@ -296,6 +321,9 @@ namespace Model
 
     GrantStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_statusReason;
+    bool m_statusReasonHasBeenSet;
 
     Aws::String m_sourceVersion;
     bool m_sourceVersionHasBeenSet;

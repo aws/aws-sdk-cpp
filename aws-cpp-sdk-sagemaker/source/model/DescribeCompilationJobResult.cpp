@@ -66,6 +66,12 @@ DescribeCompilationJobResult& DescribeCompilationJobResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("InferenceImage"))
+  {
+    m_inferenceImage = jsonValue.GetString("InferenceImage");
+
+  }
+
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
@@ -111,6 +117,12 @@ DescribeCompilationJobResult& DescribeCompilationJobResult::operator =(const Aws
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
+
+  }
+
+  if(jsonValue.ValueExists("VpcConfig"))
+  {
+    m_vpcConfig = jsonValue.GetObject("VpcConfig");
 
   }
 

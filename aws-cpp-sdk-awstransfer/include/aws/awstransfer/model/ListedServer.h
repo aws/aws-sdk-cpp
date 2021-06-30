@@ -129,50 +129,98 @@ namespace Model
 
 
     /**
-     * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), Active Directory groups,
-     * user name and password combinations, or your own custom authentication method.
-     * </p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
     /**
-     * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), Active Directory groups,
-     * user name and password combinations, or your own custom authentication method.
-     * </p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), Active Directory groups,
-     * user name and password combinations, or your own custom authentication method.
-     * </p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
     /**
-     * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), Active Directory groups,
-     * user name and password combinations, or your own custom authentication method.
-     * </p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
     /**
-     * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), Active Directory groups,
-     * user name and password combinations, or your own custom authentication method.
-     * </p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline ListedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
     /**
-     * <p>Specifies the authentication method used to validate a user for a server that
-     * was specified. This can include Secure Shell (SSH), Active Directory groups,
-     * user name and password combinations, or your own custom authentication method.
-     * </p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline ListedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
 
@@ -221,50 +269,66 @@ namespace Model
 
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline ListedServer& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline ListedServer& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline ListedServer& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 

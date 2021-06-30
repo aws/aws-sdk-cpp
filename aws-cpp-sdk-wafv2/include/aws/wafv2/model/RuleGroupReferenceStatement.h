@@ -87,49 +87,49 @@ namespace Model
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline RuleGroupReferenceStatement& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline RuleGroupReferenceStatement& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline RuleGroupReferenceStatement& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
 
     /**
      * <p>The names of rules that are in the referenced rule group, but that you want
-     * AWS WAF to exclude from processing for this rule statement. </p>
+     * WAF to exclude from processing for this rule statement. </p>
      */
     inline RuleGroupReferenceStatement& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
 

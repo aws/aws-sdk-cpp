@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/awstransfer/model/ProtocolDetails.h>
 #include <aws/awstransfer/model/Domain.h>
 #include <aws/awstransfer/model/EndpointDetails.h>
 #include <aws/awstransfer/model/EndpointType.h>
@@ -89,52 +90,109 @@ namespace Model
 
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline DescribedServer& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline DescribedServer& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required
-     * when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+     * <p>Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM)
+     * certificate. Required when <code>Protocols</code> is set to
+     * <code>FTPS</code>.</p>
      */
     inline DescribedServer& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline const ProtocolDetails& GetProtocolDetails() const{ return m_protocolDetails; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline bool ProtocolDetailsHasBeenSet() const { return m_protocolDetailsHasBeenSet; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline void SetProtocolDetails(const ProtocolDetails& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = value; }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline void SetProtocolDetails(ProtocolDetails&& value) { m_protocolDetailsHasBeenSet = true; m_protocolDetails = std::move(value); }
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline DescribedServer& WithProtocolDetails(const ProtocolDetails& value) { SetProtocolDetails(value); return *this;}
+
+    /**
+     * <p> The protocol settings that are configured for your server. </p> <p> Use the
+     * <code>PassiveIp</code> parameter to indicate passive mode. Enter a single
+     * dotted-quad IPv4 address, such as the external IP address of a firewall, router,
+     * or load balancer. </p>
+     */
+    inline DescribedServer& WithProtocolDetails(ProtocolDetails&& value) { SetProtocolDetails(std::move(value)); return *this;}
 
 
     /**
@@ -175,38 +233,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline DescribedServer& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
-     * <p>Specifies the virtual private cloud (VPC) endpoint settings that you
-     * configured for your server.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your server. When you host your endpoint within your VPC, you can make it
+     * accessible only to resources within your VPC, or you can attach Elastic IP
+     * addresses and make it accessible to clients over the internet. Your VPC's
+     * default security groups are automatically assigned to your endpoint.</p>
      */
     inline DescribedServer& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
@@ -355,131 +431,163 @@ namespace Model
 
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
-     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
-     * Directory in your on-premises environment or in AWS using AD Connectors. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
-     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
-     * Directory in your on-premises environment or in AWS using AD Connectors. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
-     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
-     * Directory in your on-premises environment or in AWS using AD Connectors. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
-     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
-     * Directory in your on-premises environment or in AWS using AD Connectors. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
-     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
-     * Directory in your on-premises environment or in AWS using AD Connectors. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline DescribedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
 
     /**
-     * <p>Specifies the mode of authentication method enabled for this service. A value
-     * of <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to
-     * Active Directory groups in AWS Managed Active Directory or Microsoft Active
-     * Directory in your on-premises environment or in AWS using AD Connectors. A value
-     * of <code>SERVICE_MANAGED</code> means that you are using this server to store
-     * and access user credentials within the service. A value of
-     * <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
-     * endpoint that will be invoked for authenticating your user into the service.</p>
+     * <p>Specifies the mode of authentication for a server. The default value is
+     * <code>SERVICE_MANAGED</code>, which allows you to store and access user
+     * credentials within the Amazon Web Services Transfer Family service.</p> <p>Use
+     * <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
+     * in Amazon Web Services Managed Active Directory or Microsoft Active Directory in
+     * your on-premises environment or in Amazon Web Services using AD Connectors. This
+     * option also requires you to provide a Directory ID using the
+     * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
+     * <code>API_GATEWAY</code> value to integrate with an identity provider of your
+     * choosing. The <code>API_GATEWAY</code> setting requires you to provide an API
+     * Gateway endpoint URL to call for authentication using the
+     * <code>IdentityProviderDetails</code> parameter.</p>
      */
     inline DescribedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline const Aws::String& GetLoggingRole() const{ return m_loggingRole; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline bool LoggingRoleHasBeenSet() const { return m_loggingRoleHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const Aws::String& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = value; }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(Aws::String&& value) { m_loggingRoleHasBeenSet = true; m_loggingRole = std::move(value); }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline void SetLoggingRole(const char* value) { m_loggingRoleHasBeenSet = true; m_loggingRole.assign(value); }
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const Aws::String& value) { SetLoggingRole(value); return *this;}
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(Aws::String&& value) { SetLoggingRole(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS Identity and Access Management (IAM) role that allows a
-     * server to turn on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events.
-     * When set, user activity can be viewed in your CloudWatch logs.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity
+     * and Access Management (IAM) role that allows a server to turn on Amazon
+     * CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity
+     * can be viewed in your CloudWatch logs.</p>
      */
     inline DescribedServer& WithLoggingRole(const char* value) { SetLoggingRole(value); return *this;}
 
@@ -816,6 +924,9 @@ namespace Model
 
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
+    ProtocolDetails m_protocolDetails;
+    bool m_protocolDetailsHasBeenSet;
 
     Domain m_domain;
     bool m_domainHasBeenSet;

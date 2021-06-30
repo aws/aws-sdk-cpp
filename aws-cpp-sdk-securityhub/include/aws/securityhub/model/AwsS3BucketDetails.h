@@ -7,6 +7,7 @@
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsS3BucketServerSideEncryptionConfiguration.h>
+#include <aws/securityhub/model/AwsS3BucketBucketLifecycleConfigurationDetails.h>
 #include <aws/securityhub/model/AwsS3AccountPublicAccessBlockDetails.h>
 #include <utility>
 
@@ -226,6 +227,37 @@ namespace Model
 
 
     /**
+     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     */
+    inline const AwsS3BucketBucketLifecycleConfigurationDetails& GetBucketLifecycleConfiguration() const{ return m_bucketLifecycleConfiguration; }
+
+    /**
+     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     */
+    inline bool BucketLifecycleConfigurationHasBeenSet() const { return m_bucketLifecycleConfigurationHasBeenSet; }
+
+    /**
+     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     */
+    inline void SetBucketLifecycleConfiguration(const AwsS3BucketBucketLifecycleConfigurationDetails& value) { m_bucketLifecycleConfigurationHasBeenSet = true; m_bucketLifecycleConfiguration = value; }
+
+    /**
+     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     */
+    inline void SetBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetails&& value) { m_bucketLifecycleConfigurationHasBeenSet = true; m_bucketLifecycleConfiguration = std::move(value); }
+
+    /**
+     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketLifecycleConfiguration(const AwsS3BucketBucketLifecycleConfigurationDetails& value) { SetBucketLifecycleConfiguration(value); return *this;}
+
+    /**
+     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     */
+    inline AwsS3BucketDetails& WithBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetails&& value) { SetBucketLifecycleConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Provides information about the Amazon S3 Public Access Block configuration
      * for the S3 bucket.</p>
      */
@@ -274,6 +306,9 @@ namespace Model
 
     AwsS3BucketServerSideEncryptionConfiguration m_serverSideEncryptionConfiguration;
     bool m_serverSideEncryptionConfigurationHasBeenSet;
+
+    AwsS3BucketBucketLifecycleConfigurationDetails m_bucketLifecycleConfiguration;
+    bool m_bucketLifecycleConfigurationHasBeenSet;
 
     AwsS3AccountPublicAccessBlockDetails m_publicAccessBlockConfiguration;
     bool m_publicAccessBlockConfigurationHasBeenSet;

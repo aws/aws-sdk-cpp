@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/codebuild/model/BucketOwnerAccess.h>
+#include <aws/mediaconvert/model/SampleRangeConversion.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -13,53 +13,46 @@ using namespace Aws::Utils;
 
 namespace Aws
 {
-  namespace CodeBuild
+  namespace MediaConvert
   {
     namespace Model
     {
-      namespace BucketOwnerAccessMapper
+      namespace SampleRangeConversionMapper
       {
 
+        static const int LIMITED_RANGE_SQUEEZE_HASH = HashingUtils::HashString("LIMITED_RANGE_SQUEEZE");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int READ_ONLY_HASH = HashingUtils::HashString("READ_ONLY");
-        static const int FULL_HASH = HashingUtils::HashString("FULL");
 
 
-        BucketOwnerAccess GetBucketOwnerAccessForName(const Aws::String& name)
+        SampleRangeConversion GetSampleRangeConversionForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == NONE_HASH)
+          if (hashCode == LIMITED_RANGE_SQUEEZE_HASH)
           {
-            return BucketOwnerAccess::NONE;
+            return SampleRangeConversion::LIMITED_RANGE_SQUEEZE;
           }
-          else if (hashCode == READ_ONLY_HASH)
+          else if (hashCode == NONE_HASH)
           {
-            return BucketOwnerAccess::READ_ONLY;
-          }
-          else if (hashCode == FULL_HASH)
-          {
-            return BucketOwnerAccess::FULL;
+            return SampleRangeConversion::NONE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<BucketOwnerAccess>(hashCode);
+            return static_cast<SampleRangeConversion>(hashCode);
           }
 
-          return BucketOwnerAccess::NOT_SET;
+          return SampleRangeConversion::NOT_SET;
         }
 
-        Aws::String GetNameForBucketOwnerAccess(BucketOwnerAccess enumValue)
+        Aws::String GetNameForSampleRangeConversion(SampleRangeConversion enumValue)
         {
           switch(enumValue)
           {
-          case BucketOwnerAccess::NONE:
+          case SampleRangeConversion::LIMITED_RANGE_SQUEEZE:
+            return "LIMITED_RANGE_SQUEEZE";
+          case SampleRangeConversion::NONE:
             return "NONE";
-          case BucketOwnerAccess::READ_ONLY:
-            return "READ_ONLY";
-          case BucketOwnerAccess::FULL:
-            return "FULL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace BucketOwnerAccessMapper
+      } // namespace SampleRangeConversionMapper
     } // namespace Model
-  } // namespace CodeBuild
+  } // namespace MediaConvert
 } // namespace Aws

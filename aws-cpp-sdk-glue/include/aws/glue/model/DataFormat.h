@@ -16,7 +16,8 @@ namespace Model
   enum class DataFormat
   {
     NOT_SET,
-    AVRO
+    AVRO,
+    JSON
   };
 
 namespace DataFormatMapper

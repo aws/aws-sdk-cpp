@@ -28,9 +28,9 @@ namespace Model
 
   /**
    * <p>Defines an association between Amazon Kinesis Data Firehose destinations and
-   * a web ACL resource, for logging from AWS WAF. As part of the association, you
-   * can specify parts of the standard logging fields to keep out of the logs and you
-   * can specify filters so that you log only a subset of the logging records.
+   * a web ACL resource, for logging from WAF. As part of the association, you can
+   * specify parts of the standard logging fields to keep out of the logs and you can
+   * specify filters so that you log only a subset of the logging records.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration">AWS
    * API Reference</a></p>
@@ -222,30 +222,30 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the logging configuration was created by AWS Firewall
-     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
-     * Manager can modify or delete the configuration. </p>
+     * <p>Indicates whether the logging configuration was created by Firewall Manager,
+     * as part of an WAF policy configuration. If true, only Firewall Manager can
+     * modify or delete the configuration. </p>
      */
     inline bool GetManagedByFirewallManager() const{ return m_managedByFirewallManager; }
 
     /**
-     * <p>Indicates whether the logging configuration was created by AWS Firewall
-     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
-     * Manager can modify or delete the configuration. </p>
+     * <p>Indicates whether the logging configuration was created by Firewall Manager,
+     * as part of an WAF policy configuration. If true, only Firewall Manager can
+     * modify or delete the configuration. </p>
      */
     inline bool ManagedByFirewallManagerHasBeenSet() const { return m_managedByFirewallManagerHasBeenSet; }
 
     /**
-     * <p>Indicates whether the logging configuration was created by AWS Firewall
-     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
-     * Manager can modify or delete the configuration. </p>
+     * <p>Indicates whether the logging configuration was created by Firewall Manager,
+     * as part of an WAF policy configuration. If true, only Firewall Manager can
+     * modify or delete the configuration. </p>
      */
     inline void SetManagedByFirewallManager(bool value) { m_managedByFirewallManagerHasBeenSet = true; m_managedByFirewallManager = value; }
 
     /**
-     * <p>Indicates whether the logging configuration was created by AWS Firewall
-     * Manager, as part of an AWS WAF policy configuration. If true, only Firewall
-     * Manager can modify or delete the configuration. </p>
+     * <p>Indicates whether the logging configuration was created by Firewall Manager,
+     * as part of an WAF policy configuration. If true, only Firewall Manager can
+     * modify or delete the configuration. </p>
      */
     inline LoggingConfiguration& WithManagedByFirewallManager(bool value) { SetManagedByFirewallManager(value); return *this;}
 

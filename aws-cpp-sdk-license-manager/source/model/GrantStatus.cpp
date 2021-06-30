@@ -28,6 +28,7 @@ namespace Aws
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
         static const int PENDING_DELETE_HASH = HashingUtils::HashString("PENDING_DELETE");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
+        static const int WORKFLOW_COMPLETED_HASH = HashingUtils::HashString("WORKFLOW_COMPLETED");
 
 
         GrantStatus GetGrantStatusForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return GrantStatus::DISABLED;
           }
+          else if (hashCode == WORKFLOW_COMPLETED_HASH)
+          {
+            return GrantStatus::WORKFLOW_COMPLETED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "PENDING_DELETE";
           case GrantStatus::DISABLED:
             return "DISABLED";
+          case GrantStatus::WORKFLOW_COMPLETED:
+            return "WORKFLOW_COMPLETED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

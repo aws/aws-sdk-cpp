@@ -81,9 +81,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -97,9 +97,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -113,9 +113,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -129,9 +129,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -145,9 +145,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -161,9 +161,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -177,9 +177,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -193,9 +193,9 @@ namespace Model
     /**
      * <p>A string that specifies the location of the file system created by Amazon
      * EFS. Its format is <code>efs-dns-name:/directory-path</code>. You can find the
-     * DNS name of file system when you view it in the AWS EFS console. The directory
-     * path is a path to a directory in the file system that CodeBuild mounts. For
-     * example, if the DNS name of a file system is
+     * DNS name of file system when you view it in the Amazon EFS console. The
+     * directory path is a path to a directory in the file system that CodeBuild
+     * mounts. For example, if the DNS name of a file system is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount directory is
      * <code>my-efs-mount-directory</code>, then the <code>location</code> is
      * <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>.
@@ -330,7 +330,7 @@ namespace Model
 
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a
@@ -340,7 +340,7 @@ namespace Model
     inline const Aws::String& GetMountOptions() const{ return m_mountOptions; }
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a
@@ -350,7 +350,7 @@ namespace Model
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a
@@ -360,7 +360,7 @@ namespace Model
     inline void SetMountOptions(const Aws::String& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a
@@ -370,7 +370,7 @@ namespace Model
     inline void SetMountOptions(Aws::String&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a
@@ -380,7 +380,7 @@ namespace Model
     inline void SetMountOptions(const char* value) { m_mountOptionsHasBeenSet = true; m_mountOptions.assign(value); }
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a
@@ -390,7 +390,7 @@ namespace Model
     inline ProjectFileSystemLocation& WithMountOptions(const Aws::String& value) { SetMountOptions(value); return *this;}
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a
@@ -400,7 +400,7 @@ namespace Model
     inline ProjectFileSystemLocation& WithMountOptions(Aws::String&& value) { SetMountOptions(std::move(value)); return *this;}
 
     /**
-     * <p> The mount options for a file system created by AWS EFS. The default mount
+     * <p> The mount options for a file system created by Amazon EFS. The default mount
      * options used by CodeBuild are
      * <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
      * For more information, see <a

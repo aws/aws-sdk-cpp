@@ -8,6 +8,12 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/events/model/LaunchType.h>
 #include <aws/events/model/NetworkConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/events/model/PropagateTags.h>
+#include <aws/events/model/CapacityProviderStrategyItem.h>
+#include <aws/events/model/PlacementConstraint.h>
+#include <aws/events/model/PlacementStrategy.h>
+#include <aws/events/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -385,6 +391,414 @@ namespace Model
      */
     inline EcsParameters& WithGroup(const char* value) { SetGroup(value); return *this;}
 
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline EcsParameters& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline EcsParameters& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline EcsParameters& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The capacity provider strategy to use for the task.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * launchType is specified, the <code>defaultCapacityProviderStrategy</code> for
+     * the cluster is used. </p>
+     */
+    inline EcsParameters& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
+     * Guide. </p>
+     */
+    inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
+     * Guide. </p>
+     */
+    inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
+     * Guide. </p>
+     */
+    inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the Amazon Elastic Container Service Developer
+     * Guide. </p>
+     */
+    inline EcsParameters& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
+
+
+    /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If true, this enables execute command functionality on all
+     * containers in the task.</p>
+     */
+    inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
+
+    /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If true, this enables execute command functionality on all
+     * containers in the task.</p>
+     */
+    inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
+
+    /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If true, this enables execute command functionality on all
+     * containers in the task.</p>
+     */
+    inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
+
+    /**
+     * <p>Whether or not to enable the execute command functionality for the containers
+     * in this task. If true, this enables execute command functionality on all
+     * containers in the task.</p>
+     */
+    inline EcsParameters& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
+
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline EcsParameters& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline EcsParameters& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline EcsParameters& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
+
+    /**
+     * <p>An array of placement constraint objects to use for the task. You can specify
+     * up to 10 constraints per task (including constraints in the task definition and
+     * those specified at runtime).</p>
+     */
+    inline EcsParameters& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline void SetPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = value; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline void SetPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy = std::move(value); }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline EcsParameters& WithPlacementStrategy(const Aws::Vector<PlacementStrategy>& value) { SetPlacementStrategy(value); return *this;}
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline EcsParameters& WithPlacementStrategy(Aws::Vector<PlacementStrategy>&& value) { SetPlacementStrategy(std::move(value)); return *this;}
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline EcsParameters& AddPlacementStrategy(const PlacementStrategy& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The placement strategy objects to use for the task. You can specify a maximum
+     * of five strategy rules per task. </p>
+     */
+    inline EcsParameters& AddPlacementStrategy(PlacementStrategy&& value) { m_placementStrategyHasBeenSet = true; m_placementStrategy.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the TagResource API action. </p>
+     */
+    inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the TagResource API action. </p>
+     */
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the TagResource API action. </p>
+     */
+    inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the TagResource API action. </p>
+     */
+    inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the TagResource API action. </p>
+     */
+    inline EcsParameters& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the TagResource API action. </p>
+     */
+    inline EcsParameters& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline EcsParameters& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline EcsParameters& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline EcsParameters& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
+
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline EcsParameters& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline EcsParameters& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline EcsParameters& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html#ECS-RunTask-request-tags">RunTask</a>
+     * in the Amazon ECS API Reference.</p>
+     */
+    inline EcsParameters& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_taskDefinitionArn;
@@ -404,6 +818,30 @@ namespace Model
 
     Aws::String m_group;
     bool m_groupHasBeenSet;
+
+    Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
+    bool m_capacityProviderStrategyHasBeenSet;
+
+    bool m_enableECSManagedTags;
+    bool m_enableECSManagedTagsHasBeenSet;
+
+    bool m_enableExecuteCommand;
+    bool m_enableExecuteCommandHasBeenSet;
+
+    Aws::Vector<PlacementConstraint> m_placementConstraints;
+    bool m_placementConstraintsHasBeenSet;
+
+    Aws::Vector<PlacementStrategy> m_placementStrategy;
+    bool m_placementStrategyHasBeenSet;
+
+    PropagateTags m_propagateTags;
+    bool m_propagateTagsHasBeenSet;
+
+    Aws::String m_referenceId;
+    bool m_referenceIdHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -48,6 +48,8 @@
 #include <aws/securityhub/model/AwsRdsDbSnapshotDetails.h>
 #include <aws/securityhub/model/AwsRdsDbClusterSnapshotDetails.h>
 #include <aws/securityhub/model/AwsRdsDbClusterDetails.h>
+#include <aws/securityhub/model/AwsEcsClusterDetails.h>
+#include <aws/securityhub/model/AwsEcsTaskDefinitionDetails.h>
 #include <aws/securityhub/model/ContainerDetails.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -184,32 +186,32 @@ namespace Model
 
 
     /**
-     * <p>Details about an Amazon EC2 instance related to a finding.</p>
+     * <p>Details about an EC2 instance related to a finding.</p>
      */
     inline const AwsEc2InstanceDetails& GetAwsEc2Instance() const{ return m_awsEc2Instance; }
 
     /**
-     * <p>Details about an Amazon EC2 instance related to a finding.</p>
+     * <p>Details about an EC2 instance related to a finding.</p>
      */
     inline bool AwsEc2InstanceHasBeenSet() const { return m_awsEc2InstanceHasBeenSet; }
 
     /**
-     * <p>Details about an Amazon EC2 instance related to a finding.</p>
+     * <p>Details about an EC2 instance related to a finding.</p>
      */
     inline void SetAwsEc2Instance(const AwsEc2InstanceDetails& value) { m_awsEc2InstanceHasBeenSet = true; m_awsEc2Instance = value; }
 
     /**
-     * <p>Details about an Amazon EC2 instance related to a finding.</p>
+     * <p>Details about an EC2 instance related to a finding.</p>
      */
     inline void SetAwsEc2Instance(AwsEc2InstanceDetails&& value) { m_awsEc2InstanceHasBeenSet = true; m_awsEc2Instance = std::move(value); }
 
     /**
-     * <p>Details about an Amazon EC2 instance related to a finding.</p>
+     * <p>Details about an EC2 instance related to a finding.</p>
      */
     inline ResourceDetails& WithAwsEc2Instance(const AwsEc2InstanceDetails& value) { SetAwsEc2Instance(value); return *this;}
 
     /**
-     * <p>Details about an Amazon EC2 instance related to a finding.</p>
+     * <p>Details about an EC2 instance related to a finding.</p>
      */
     inline ResourceDetails& WithAwsEc2Instance(AwsEc2InstanceDetails&& value) { SetAwsEc2Instance(std::move(value)); return *this;}
 
@@ -1436,6 +1438,74 @@ namespace Model
 
 
     /**
+     * <p>Details about an ECS cluster.</p>
+     */
+    inline const AwsEcsClusterDetails& GetAwsEcsCluster() const{ return m_awsEcsCluster; }
+
+    /**
+     * <p>Details about an ECS cluster.</p>
+     */
+    inline bool AwsEcsClusterHasBeenSet() const { return m_awsEcsClusterHasBeenSet; }
+
+    /**
+     * <p>Details about an ECS cluster.</p>
+     */
+    inline void SetAwsEcsCluster(const AwsEcsClusterDetails& value) { m_awsEcsClusterHasBeenSet = true; m_awsEcsCluster = value; }
+
+    /**
+     * <p>Details about an ECS cluster.</p>
+     */
+    inline void SetAwsEcsCluster(AwsEcsClusterDetails&& value) { m_awsEcsClusterHasBeenSet = true; m_awsEcsCluster = std::move(value); }
+
+    /**
+     * <p>Details about an ECS cluster.</p>
+     */
+    inline ResourceDetails& WithAwsEcsCluster(const AwsEcsClusterDetails& value) { SetAwsEcsCluster(value); return *this;}
+
+    /**
+     * <p>Details about an ECS cluster.</p>
+     */
+    inline ResourceDetails& WithAwsEcsCluster(AwsEcsClusterDetails&& value) { SetAwsEcsCluster(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Details about a task definition. A task definition describes the container
+     * and volume definitions of an Amazon Elastic Container Service task.</p>
+     */
+    inline const AwsEcsTaskDefinitionDetails& GetAwsEcsTaskDefinition() const{ return m_awsEcsTaskDefinition; }
+
+    /**
+     * <p>Details about a task definition. A task definition describes the container
+     * and volume definitions of an Amazon Elastic Container Service task.</p>
+     */
+    inline bool AwsEcsTaskDefinitionHasBeenSet() const { return m_awsEcsTaskDefinitionHasBeenSet; }
+
+    /**
+     * <p>Details about a task definition. A task definition describes the container
+     * and volume definitions of an Amazon Elastic Container Service task.</p>
+     */
+    inline void SetAwsEcsTaskDefinition(const AwsEcsTaskDefinitionDetails& value) { m_awsEcsTaskDefinitionHasBeenSet = true; m_awsEcsTaskDefinition = value; }
+
+    /**
+     * <p>Details about a task definition. A task definition describes the container
+     * and volume definitions of an Amazon Elastic Container Service task.</p>
+     */
+    inline void SetAwsEcsTaskDefinition(AwsEcsTaskDefinitionDetails&& value) { m_awsEcsTaskDefinitionHasBeenSet = true; m_awsEcsTaskDefinition = std::move(value); }
+
+    /**
+     * <p>Details about a task definition. A task definition describes the container
+     * and volume definitions of an Amazon Elastic Container Service task.</p>
+     */
+    inline ResourceDetails& WithAwsEcsTaskDefinition(const AwsEcsTaskDefinitionDetails& value) { SetAwsEcsTaskDefinition(value); return *this;}
+
+    /**
+     * <p>Details about a task definition. A task definition describes the container
+     * and volume definitions of an Amazon Elastic Container Service task.</p>
+     */
+    inline ResourceDetails& WithAwsEcsTaskDefinition(AwsEcsTaskDefinitionDetails&& value) { SetAwsEcsTaskDefinition(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about a container resource related to a finding.</p>
      */
     inline const ContainerDetails& GetContainer() const{ return m_container; }
@@ -1752,6 +1822,12 @@ namespace Model
 
     AwsRdsDbClusterDetails m_awsRdsDbCluster;
     bool m_awsRdsDbClusterHasBeenSet;
+
+    AwsEcsClusterDetails m_awsEcsCluster;
+    bool m_awsEcsClusterHasBeenSet;
+
+    AwsEcsTaskDefinitionDetails m_awsEcsTaskDefinition;
+    bool m_awsEcsTaskDefinitionHasBeenSet;
 
     ContainerDetails m_container;
     bool m_containerHasBeenSet;

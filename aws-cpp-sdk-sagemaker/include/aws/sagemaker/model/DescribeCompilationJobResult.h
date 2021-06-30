@@ -13,6 +13,7 @@
 #include <aws/sagemaker/model/ModelDigests.h>
 #include <aws/sagemaker/model/InputConfig.h>
 #include <aws/sagemaker/model/OutputConfig.h>
+#include <aws/sagemaker/model/NeoVpcConfig.h>
 #include <utility>
 
 namespace Aws
@@ -268,6 +269,28 @@ namespace Model
      * to cap model training costs.</p>
      */
     inline DescribeCompilationJobResult& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
+
+
+    
+    inline const Aws::String& GetInferenceImage() const{ return m_inferenceImage; }
+
+    
+    inline void SetInferenceImage(const Aws::String& value) { m_inferenceImage = value; }
+
+    
+    inline void SetInferenceImage(Aws::String&& value) { m_inferenceImage = std::move(value); }
+
+    
+    inline void SetInferenceImage(const char* value) { m_inferenceImage.assign(value); }
+
+    
+    inline DescribeCompilationJobResult& WithInferenceImage(const Aws::String& value) { SetInferenceImage(value); return *this;}
+
+    
+    inline DescribeCompilationJobResult& WithInferenceImage(Aws::String&& value) { SetInferenceImage(std::move(value)); return *this;}
+
+    
+    inline DescribeCompilationJobResult& WithInferenceImage(const char* value) { SetInferenceImage(value); return *this;}
 
 
     /**
@@ -529,6 +552,52 @@ namespace Model
      */
     inline DescribeCompilationJobResult& WithOutputConfig(OutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline const NeoVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(const NeoVpcConfig& value) { m_vpcConfig = value; }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline void SetVpcConfig(NeoVpcConfig&& value) { m_vpcConfig = std::move(value); }
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline DescribeCompilationJobResult& WithVpcConfig(const NeoVpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    /**
+     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
+     * compilation job to connect to. Control access to your models by configuring the
+     * VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline DescribeCompilationJobResult& WithVpcConfig(NeoVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_compilationJobName;
@@ -542,6 +611,8 @@ namespace Model
     Aws::Utils::DateTime m_compilationEndTime;
 
     StoppingCondition m_stoppingCondition;
+
+    Aws::String m_inferenceImage;
 
     Aws::Utils::DateTime m_creationTime;
 
@@ -558,6 +629,8 @@ namespace Model
     InputConfig m_inputConfig;
 
     OutputConfig m_outputConfig;
+
+    NeoVpcConfig m_vpcConfig;
   };
 
 } // namespace Model

@@ -9,7 +9,9 @@
 #include <aws/securityhub/model/AwsElasticsearchDomainDomainEndpointOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainEncryptionAtRestOptions.h>
+#include <aws/securityhub/model/AwsElasticsearchDomainLogPublishingOptions.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainNodeToNodeEncryptionOptions.h>
+#include <aws/securityhub/model/AwsElasticsearchDomainServiceSoftwareOptions.h>
 #include <aws/securityhub/model/AwsElasticsearchDomainVPCOptions.h>
 #include <utility>
 
@@ -429,6 +431,37 @@ namespace Model
 
 
     /**
+     * <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
+     */
+    inline const AwsElasticsearchDomainLogPublishingOptions& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+
+    /**
+     * <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
+     */
+    inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
+
+    /**
+     * <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
+     */
+    inline void SetLogPublishingOptions(const AwsElasticsearchDomainLogPublishingOptions& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
+
+    /**
+     * <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
+     */
+    inline void SetLogPublishingOptions(AwsElasticsearchDomainLogPublishingOptions&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
+
+    /**
+     * <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
+     */
+    inline AwsElasticsearchDomainDetails& WithLogPublishingOptions(const AwsElasticsearchDomainLogPublishingOptions& value) { SetLogPublishingOptions(value); return *this;}
+
+    /**
+     * <p>Configures the CloudWatch Logs to publish for the Elasticsearch domain.</p>
+     */
+    inline AwsElasticsearchDomainDetails& WithLogPublishingOptions(AwsElasticsearchDomainLogPublishingOptions&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>Details about the configuration for node-to-node encryption.</p>
      */
     inline const AwsElasticsearchDomainNodeToNodeEncryptionOptions& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
@@ -457,6 +490,43 @@ namespace Model
      * <p>Details about the configuration for node-to-node encryption.</p>
      */
     inline AwsElasticsearchDomainDetails& WithNodeToNodeEncryptionOptions(AwsElasticsearchDomainNodeToNodeEncryptionOptions&& value) { SetNodeToNodeEncryptionOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the status of a domain relative to the latest service
+     * software.</p>
+     */
+    inline const AwsElasticsearchDomainServiceSoftwareOptions& GetServiceSoftwareOptions() const{ return m_serviceSoftwareOptions; }
+
+    /**
+     * <p>Information about the status of a domain relative to the latest service
+     * software.</p>
+     */
+    inline bool ServiceSoftwareOptionsHasBeenSet() const { return m_serviceSoftwareOptionsHasBeenSet; }
+
+    /**
+     * <p>Information about the status of a domain relative to the latest service
+     * software.</p>
+     */
+    inline void SetServiceSoftwareOptions(const AwsElasticsearchDomainServiceSoftwareOptions& value) { m_serviceSoftwareOptionsHasBeenSet = true; m_serviceSoftwareOptions = value; }
+
+    /**
+     * <p>Information about the status of a domain relative to the latest service
+     * software.</p>
+     */
+    inline void SetServiceSoftwareOptions(AwsElasticsearchDomainServiceSoftwareOptions&& value) { m_serviceSoftwareOptionsHasBeenSet = true; m_serviceSoftwareOptions = std::move(value); }
+
+    /**
+     * <p>Information about the status of a domain relative to the latest service
+     * software.</p>
+     */
+    inline AwsElasticsearchDomainDetails& WithServiceSoftwareOptions(const AwsElasticsearchDomainServiceSoftwareOptions& value) { SetServiceSoftwareOptions(value); return *this;}
+
+    /**
+     * <p>Information about the status of a domain relative to the latest service
+     * software.</p>
+     */
+    inline AwsElasticsearchDomainDetails& WithServiceSoftwareOptions(AwsElasticsearchDomainServiceSoftwareOptions&& value) { SetServiceSoftwareOptions(std::move(value)); return *this;}
 
 
     /**
@@ -521,8 +591,14 @@ namespace Model
     AwsElasticsearchDomainEncryptionAtRestOptions m_encryptionAtRestOptions;
     bool m_encryptionAtRestOptionsHasBeenSet;
 
+    AwsElasticsearchDomainLogPublishingOptions m_logPublishingOptions;
+    bool m_logPublishingOptionsHasBeenSet;
+
     AwsElasticsearchDomainNodeToNodeEncryptionOptions m_nodeToNodeEncryptionOptions;
     bool m_nodeToNodeEncryptionOptionsHasBeenSet;
+
+    AwsElasticsearchDomainServiceSoftwareOptions m_serviceSoftwareOptions;
+    bool m_serviceSoftwareOptionsHasBeenSet;
 
     AwsElasticsearchDomainVPCOptions m_vPCOptions;
     bool m_vPCOptionsHasBeenSet;

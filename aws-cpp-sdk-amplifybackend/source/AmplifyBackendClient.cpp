@@ -37,6 +37,7 @@
 #include <aws/amplifybackend/model/GetBackendAuthRequest.h>
 #include <aws/amplifybackend/model/GetBackendJobRequest.h>
 #include <aws/amplifybackend/model/GetTokenRequest.h>
+#include <aws/amplifybackend/model/ImportBackendAuthRequest.h>
 #include <aws/amplifybackend/model/ListBackendJobsRequest.h>
 #include <aws/amplifybackend/model/RemoveAllBackendsRequest.h>
 #include <aws/amplifybackend/model/RemoveBackendConfigRequest.h>
@@ -734,6 +735,45 @@ void AmplifyBackendClient::GetTokenAsync(const GetTokenRequest& request, const G
 void AmplifyBackendClient::GetTokenAsyncHelper(const GetTokenRequest& request, const GetTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetToken(request), context);
+}
+
+ImportBackendAuthOutcome AmplifyBackendClient::ImportBackendAuth(const ImportBackendAuthRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ImportBackendAuth", "Required field: AppId, is not set");
+    return ImportBackendAuthOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.BackendEnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ImportBackendAuth", "Required field: BackendEnvironmentName, is not set");
+    return ImportBackendAuthOutcome(Aws::Client::AWSError<AmplifyBackendErrors>(AmplifyBackendErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BackendEnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/backend/");
+  uri.AddPathSegment(request.GetAppId());
+  uri.AddPathSegments("/auth/");
+  uri.AddPathSegment(request.GetBackendEnvironmentName());
+  uri.AddPathSegments("/import");
+  return ImportBackendAuthOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ImportBackendAuthOutcomeCallable AmplifyBackendClient::ImportBackendAuthCallable(const ImportBackendAuthRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportBackendAuthOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportBackendAuth(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyBackendClient::ImportBackendAuthAsync(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportBackendAuthAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyBackendClient::ImportBackendAuthAsyncHelper(const ImportBackendAuthRequest& request, const ImportBackendAuthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportBackendAuth(request), context);
 }
 
 ListBackendJobsOutcome AmplifyBackendClient::ListBackendJobs(const ListBackendJobsRequest& request) const

@@ -26,6 +26,8 @@
 #include <aws/quicksight/model/CreateDashboardRequest.h>
 #include <aws/quicksight/model/CreateDataSetRequest.h>
 #include <aws/quicksight/model/CreateDataSourceRequest.h>
+#include <aws/quicksight/model/CreateFolderRequest.h>
+#include <aws/quicksight/model/CreateFolderMembershipRequest.h>
 #include <aws/quicksight/model/CreateGroupRequest.h>
 #include <aws/quicksight/model/CreateGroupMembershipRequest.h>
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentRequest.h>
@@ -40,6 +42,8 @@
 #include <aws/quicksight/model/DeleteDashboardRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRequest.h>
 #include <aws/quicksight/model/DeleteDataSourceRequest.h>
+#include <aws/quicksight/model/DeleteFolderRequest.h>
+#include <aws/quicksight/model/DeleteFolderMembershipRequest.h>
 #include <aws/quicksight/model/DeleteGroupRequest.h>
 #include <aws/quicksight/model/DeleteGroupMembershipRequest.h>
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentRequest.h>
@@ -60,6 +64,9 @@
 #include <aws/quicksight/model/DescribeDataSetPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSourceRequest.h>
 #include <aws/quicksight/model/DescribeDataSourcePermissionsRequest.h>
+#include <aws/quicksight/model/DescribeFolderRequest.h>
+#include <aws/quicksight/model/DescribeFolderPermissionsRequest.h>
+#include <aws/quicksight/model/DescribeFolderResolvedPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeGroupRequest.h>
 #include <aws/quicksight/model/DescribeIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/DescribeIngestionRequest.h>
@@ -78,6 +85,8 @@
 #include <aws/quicksight/model/ListDashboardsRequest.h>
 #include <aws/quicksight/model/ListDataSetsRequest.h>
 #include <aws/quicksight/model/ListDataSourcesRequest.h>
+#include <aws/quicksight/model/ListFolderMembersRequest.h>
+#include <aws/quicksight/model/ListFoldersRequest.h>
 #include <aws/quicksight/model/ListGroupMembershipsRequest.h>
 #include <aws/quicksight/model/ListGroupsRequest.h>
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsRequest.h>
@@ -97,6 +106,7 @@
 #include <aws/quicksight/model/RestoreAnalysisRequest.h>
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
 #include <aws/quicksight/model/SearchDashboardsRequest.h>
+#include <aws/quicksight/model/SearchFoldersRequest.h>
 #include <aws/quicksight/model/TagResourceRequest.h>
 #include <aws/quicksight/model/UntagResourceRequest.h>
 #include <aws/quicksight/model/UpdateAccountCustomizationRequest.h>
@@ -110,6 +120,8 @@
 #include <aws/quicksight/model/UpdateDataSetPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateDataSourceRequest.h>
 #include <aws/quicksight/model/UpdateDataSourcePermissionsRequest.h>
+#include <aws/quicksight/model/UpdateFolderRequest.h>
+#include <aws/quicksight/model/UpdateFolderPermissionsRequest.h>
 #include <aws/quicksight/model/UpdateGroupRequest.h>
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/UpdateTemplateRequest.h>
@@ -408,6 +420,95 @@ void QuickSightClient::CreateDataSourceAsync(const CreateDataSourceRequest& requ
 void QuickSightClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateDataSource(request), context);
+}
+
+CreateFolderOutcome QuickSightClient::CreateFolder(const CreateFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolder", "Required field: AwsAccountId, is not set");
+    return CreateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolder", "Required field: FolderId, is not set");
+    return CreateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return CreateFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFolderOutcomeCallable QuickSightClient::CreateFolderCallable(const CreateFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::CreateFolderAsyncHelper(const CreateFolderRequest& request, const CreateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFolder(request), context);
+}
+
+CreateFolderMembershipOutcome QuickSightClient::CreateFolderMembership(const CreateFolderMembershipRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: AwsAccountId, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: FolderId, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  if (!request.MemberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: MemberId, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
+  }
+  if (!request.MemberTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFolderMembership", "Required field: MemberType, is not set");
+    return CreateFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(MemberTypeMapper::GetNameForMemberType(request.GetMemberType()));
+  uri.AddPathSegment(request.GetMemberId());
+  return CreateFolderMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFolderMembershipOutcomeCallable QuickSightClient::CreateFolderMembershipCallable(const CreateFolderMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFolderMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFolderMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::CreateFolderMembershipAsync(const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFolderMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::CreateFolderMembershipAsyncHelper(const CreateFolderMembershipRequest& request, const CreateFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFolderMembership(request), context);
 }
 
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const
@@ -964,6 +1065,95 @@ void QuickSightClient::DeleteDataSourceAsync(const DeleteDataSourceRequest& requ
 void QuickSightClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteDataSource(request), context);
+}
+
+DeleteFolderOutcome QuickSightClient::DeleteFolder(const DeleteFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolder", "Required field: AwsAccountId, is not set");
+    return DeleteFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolder", "Required field: FolderId, is not set");
+    return DeleteFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return DeleteFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFolderOutcomeCallable QuickSightClient::DeleteFolderCallable(const DeleteFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteFolderAsync(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteFolderAsyncHelper(const DeleteFolderRequest& request, const DeleteFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFolder(request), context);
+}
+
+DeleteFolderMembershipOutcome QuickSightClient::DeleteFolderMembership(const DeleteFolderMembershipRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: AwsAccountId, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: FolderId, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  if (!request.MemberIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: MemberId, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberId]", false));
+  }
+  if (!request.MemberTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderMembership", "Required field: MemberType, is not set");
+    return DeleteFolderMembershipOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MemberType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/members/");
+  uri.AddPathSegment(MemberTypeMapper::GetNameForMemberType(request.GetMemberType()));
+  uri.AddPathSegment(request.GetMemberId());
+  return DeleteFolderMembershipOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteFolderMembershipOutcomeCallable QuickSightClient::DeleteFolderMembershipCallable(const DeleteFolderMembershipRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFolderMembershipOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFolderMembership(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteFolderMembershipAsync(const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFolderMembershipAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteFolderMembershipAsyncHelper(const DeleteFolderMembershipRequest& request, const DeleteFolderMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFolderMembership(request), context);
 }
 
 DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& request) const
@@ -1774,6 +1964,122 @@ void QuickSightClient::DescribeDataSourcePermissionsAsyncHelper(const DescribeDa
   handler(this, request, DescribeDataSourcePermissions(request), context);
 }
 
+DescribeFolderOutcome QuickSightClient::DescribeFolder(const DescribeFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolder", "Required field: AwsAccountId, is not set");
+    return DescribeFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolder", "Required field: FolderId, is not set");
+    return DescribeFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return DescribeFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFolderOutcomeCallable QuickSightClient::DescribeFolderCallable(const DescribeFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeFolderAsync(const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeFolderAsyncHelper(const DescribeFolderRequest& request, const DescribeFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFolder(request), context);
+}
+
+DescribeFolderPermissionsOutcome QuickSightClient::DescribeFolderPermissions(const DescribeFolderPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderPermissions", "Required field: AwsAccountId, is not set");
+    return DescribeFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderPermissions", "Required field: FolderId, is not set");
+    return DescribeFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/permissions");
+  return DescribeFolderPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFolderPermissionsOutcomeCallable QuickSightClient::DescribeFolderPermissionsCallable(const DescribeFolderPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFolderPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFolderPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeFolderPermissionsAsync(const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeFolderPermissionsAsyncHelper(const DescribeFolderPermissionsRequest& request, const DescribeFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFolderPermissions(request), context);
+}
+
+DescribeFolderResolvedPermissionsOutcome QuickSightClient::DescribeFolderResolvedPermissions(const DescribeFolderResolvedPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderResolvedPermissions", "Required field: AwsAccountId, is not set");
+    return DescribeFolderResolvedPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderResolvedPermissions", "Required field: FolderId, is not set");
+    return DescribeFolderResolvedPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/resolved-permissions");
+  return DescribeFolderResolvedPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFolderResolvedPermissionsOutcomeCallable QuickSightClient::DescribeFolderResolvedPermissionsCallable(const DescribeFolderResolvedPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFolderResolvedPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFolderResolvedPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DescribeFolderResolvedPermissionsAsync(const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFolderResolvedPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DescribeFolderResolvedPermissionsAsyncHelper(const DescribeFolderResolvedPermissionsRequest& request, const DescribeFolderResolvedPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFolderResolvedPermissions(request), context);
+}
+
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
   if (!request.GroupNameHasBeenSet())
@@ -2477,6 +2783,77 @@ void QuickSightClient::ListDataSourcesAsync(const ListDataSourcesRequest& reques
 void QuickSightClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListDataSources(request), context);
+}
+
+ListFolderMembersOutcome QuickSightClient::ListFolderMembers(const ListFolderMembersRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFolderMembers", "Required field: AwsAccountId, is not set");
+    return ListFolderMembersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFolderMembers", "Required field: FolderId, is not set");
+    return ListFolderMembersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/members");
+  return ListFolderMembersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFolderMembersOutcomeCallable QuickSightClient::ListFolderMembersCallable(const ListFolderMembersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFolderMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFolderMembers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::ListFolderMembersAsync(const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFolderMembersAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::ListFolderMembersAsyncHelper(const ListFolderMembersRequest& request, const ListFolderMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFolderMembers(request), context);
+}
+
+ListFoldersOutcome QuickSightClient::ListFolders(const ListFoldersRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFolders", "Required field: AwsAccountId, is not set");
+    return ListFoldersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders");
+  return ListFoldersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListFoldersOutcomeCallable QuickSightClient::ListFoldersCallable(const ListFoldersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFoldersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFolders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::ListFoldersAsync(const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFoldersAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::ListFoldersAsyncHelper(const ListFoldersRequest& request, const ListFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFolders(request), context);
 }
 
 ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
@@ -3198,6 +3575,38 @@ void QuickSightClient::SearchDashboardsAsyncHelper(const SearchDashboardsRequest
   handler(this, request, SearchDashboards(request), context);
 }
 
+SearchFoldersOutcome QuickSightClient::SearchFolders(const SearchFoldersRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SearchFolders", "Required field: AwsAccountId, is not set");
+    return SearchFoldersOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/search/folders");
+  return SearchFoldersOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchFoldersOutcomeCallable QuickSightClient::SearchFoldersCallable(const SearchFoldersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchFoldersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchFolders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::SearchFoldersAsync(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchFoldersAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::SearchFoldersAsyncHelper(const SearchFoldersRequest& request, const SearchFoldersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchFolders(request), context);
+}
+
 TagResourceOutcome QuickSightClient::TagResource(const TagResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -3682,6 +4091,83 @@ void QuickSightClient::UpdateDataSourcePermissionsAsync(const UpdateDataSourcePe
 void QuickSightClient::UpdateDataSourcePermissionsAsyncHelper(const UpdateDataSourcePermissionsRequest& request, const UpdateDataSourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataSourcePermissions(request), context);
+}
+
+UpdateFolderOutcome QuickSightClient::UpdateFolder(const UpdateFolderRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolder", "Required field: AwsAccountId, is not set");
+    return UpdateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolder", "Required field: FolderId, is not set");
+    return UpdateFolderOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  return UpdateFolderOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFolderOutcomeCallable QuickSightClient::UpdateFolderCallable(const UpdateFolderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFolderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFolder(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateFolderAsync(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFolderAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateFolderAsyncHelper(const UpdateFolderRequest& request, const UpdateFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFolder(request), context);
+}
+
+UpdateFolderPermissionsOutcome QuickSightClient::UpdateFolderPermissions(const UpdateFolderPermissionsRequest& request) const
+{
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolderPermissions", "Required field: AwsAccountId, is not set");
+    return UpdateFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolderPermissions", "Required field: FolderId, is not set");
+    return UpdateFolderPermissionsOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  uri.AddPathSegments("/accounts/");
+  uri.AddPathSegment(request.GetAwsAccountId());
+  uri.AddPathSegments("/folders/");
+  uri.AddPathSegment(request.GetFolderId());
+  uri.AddPathSegments("/permissions");
+  return UpdateFolderPermissionsOutcome(MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFolderPermissionsOutcomeCallable QuickSightClient::UpdateFolderPermissionsCallable(const UpdateFolderPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFolderPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFolderPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::UpdateFolderPermissionsAsync(const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFolderPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::UpdateFolderPermissionsAsyncHelper(const UpdateFolderPermissionsRequest& request, const UpdateFolderPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFolderPermissions(request), context);
 }
 
 UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& request) const

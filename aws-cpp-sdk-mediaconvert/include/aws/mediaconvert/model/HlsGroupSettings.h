@@ -14,6 +14,7 @@
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/HlsDirectoryStructure.h>
 #include <aws/mediaconvert/model/HlsEncryptionSettings.h>
+#include <aws/mediaconvert/model/HlsImageBasedTrickPlay.h>
 #include <aws/mediaconvert/model/HlsManifestCompression.h>
 #include <aws/mediaconvert/model/HlsManifestDurationFormat.h>
 #include <aws/mediaconvert/model/HlsOutputSelection.h>
@@ -660,6 +661,91 @@ namespace Model
 
 
     /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline const HlsImageBasedTrickPlay& GetImageBasedTrickPlay() const{ return m_imageBasedTrickPlay; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline bool ImageBasedTrickPlayHasBeenSet() const { return m_imageBasedTrickPlayHasBeenSet; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(const HlsImageBasedTrickPlay& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = value; }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline void SetImageBasedTrickPlay(HlsImageBasedTrickPlay&& value) { m_imageBasedTrickPlayHasBeenSet = true; m_imageBasedTrickPlay = std::move(value); }
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlay(const HlsImageBasedTrickPlay& value) { SetImageBasedTrickPlay(value); return *this;}
+
+    /**
+     * Specify whether MediaConvert generates images for trick play. Keep the default
+     * value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to
+     * generate tiled thumbnails. Choose Thumbnail and full frame
+     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution
+     * images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest.
+     * A common application for these images is Roku trick mode. The thumbnails and
+     * full-frame images that MediaConvert creates with this feature are compatible
+     * with this Roku specification:
+     * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     */
+    inline HlsGroupSettings& WithImageBasedTrickPlay(HlsImageBasedTrickPlay&& value) { SetImageBasedTrickPlay(std::move(value)); return *this;}
+
+
+    /**
      * When set to GZIP, compresses HLS playlist.
      */
     inline const HlsManifestCompression& GetManifestCompression() const{ return m_manifestCompression; }
@@ -1157,6 +1243,9 @@ namespace Model
 
     HlsEncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet;
+
+    HlsImageBasedTrickPlay m_imageBasedTrickPlay;
+    bool m_imageBasedTrickPlayHasBeenSet;
 
     HlsManifestCompression m_manifestCompression;
     bool m_manifestCompressionHasBeenSet;

@@ -81,7 +81,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
@@ -90,7 +90,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
@@ -99,7 +99,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
@@ -108,7 +108,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
@@ -117,7 +117,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
@@ -126,7 +126,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline RetryBuildBatchRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
@@ -135,7 +135,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline RetryBuildBatchRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
@@ -144,7 +144,7 @@ namespace Model
      * the <code>RetryBuildBatch</code> request. The token is included in the
      * <code>RetryBuildBatch</code> request and is valid for five minutes. If you
      * repeat the <code>RetryBuildBatch</code> request with the same token, but change
-     * a parameter, AWS CodeBuild returns a parameter mismatch error.</p>
+     * a parameter, CodeBuild returns a parameter mismatch error.</p>
      */
     inline RetryBuildBatchRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

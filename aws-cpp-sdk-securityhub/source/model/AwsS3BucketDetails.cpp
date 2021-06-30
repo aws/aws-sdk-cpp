@@ -23,6 +23,7 @@ AwsS3BucketDetails::AwsS3BucketDetails() :
     m_ownerNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
+    m_bucketLifecycleConfigurationHasBeenSet(false),
     m_publicAccessBlockConfigurationHasBeenSet(false)
 {
 }
@@ -32,6 +33,7 @@ AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) :
     m_ownerNameHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
+    m_bucketLifecycleConfigurationHasBeenSet(false),
     m_publicAccessBlockConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
@@ -65,6 +67,13 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
     m_serverSideEncryptionConfiguration = jsonValue.GetObject("ServerSideEncryptionConfiguration");
 
     m_serverSideEncryptionConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BucketLifecycleConfiguration"))
+  {
+    m_bucketLifecycleConfiguration = jsonValue.GetObject("BucketLifecycleConfiguration");
+
+    m_bucketLifecycleConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PublicAccessBlockConfiguration"))
@@ -102,6 +111,12 @@ JsonValue AwsS3BucketDetails::Jsonize() const
   if(m_serverSideEncryptionConfigurationHasBeenSet)
   {
    payload.WithObject("ServerSideEncryptionConfiguration", m_serverSideEncryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_bucketLifecycleConfigurationHasBeenSet)
+  {
+   payload.WithObject("BucketLifecycleConfiguration", m_bucketLifecycleConfiguration.Jsonize());
 
   }
 

@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 UpdateServerRequest::UpdateServerRequest() : 
     m_certificateHasBeenSet(false),
+    m_protocolDetailsHasBeenSet(false),
     m_endpointDetailsHasBeenSet(false),
     m_endpointType(EndpointType::NOT_SET),
     m_endpointTypeHasBeenSet(false),
@@ -33,6 +34,12 @@ Aws::String UpdateServerRequest::SerializePayload() const
   if(m_certificateHasBeenSet)
   {
    payload.WithString("Certificate", m_certificate);
+
+  }
+
+  if(m_protocolDetailsHasBeenSet)
+  {
+   payload.WithObject("ProtocolDetails", m_protocolDetails.Jsonize());
 
   }
 

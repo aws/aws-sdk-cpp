@@ -11,7 +11,6 @@
 #include <aws/securityhub/model/NumberFilter.h>
 #include <aws/securityhub/model/MapFilter.h>
 #include <aws/securityhub/model/IpFilter.h>
-#include <aws/securityhub/model/KeywordFilter.h>
 #include <utility>
 
 namespace Aws
@@ -3713,47 +3712,6 @@ namespace Model
 
 
     /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline const Aws::Vector<KeywordFilter>& GetKeyword() const{ return m_keyword; }
-
-    /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
-
-    /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline void SetKeyword(const Aws::Vector<KeywordFilter>& value) { m_keywordHasBeenSet = true; m_keyword = value; }
-
-    /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline void SetKeyword(Aws::Vector<KeywordFilter>&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
-
-    /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithKeyword(const Aws::Vector<KeywordFilter>& value) { SetKeyword(value); return *this;}
-
-    /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& WithKeyword(Aws::Vector<KeywordFilter>&& value) { SetKeyword(std::move(value)); return *this;}
-
-    /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddKeyword(const KeywordFilter& value) { m_keywordHasBeenSet = true; m_keyword.push_back(value); return *this; }
-
-    /**
-     * <p>A keyword for a finding.</p>
-     */
-    inline AwsSecurityFindingFilters& AddKeyword(KeywordFilter&& value) { m_keywordHasBeenSet = true; m_keyword.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The finding provider value for the finding confidence. Confidence is defined
      * as the likelihood that a finding accurately identifies the behavior or issue
      * that it was intended to identify.</p> <p>Confidence is scored on a 0-100 basis
@@ -4379,9 +4337,6 @@ namespace Model
 
     Aws::Vector<StringFilter> m_noteUpdatedBy;
     bool m_noteUpdatedByHasBeenSet;
-
-    Aws::Vector<KeywordFilter> m_keyword;
-    bool m_keywordHasBeenSet;
 
     Aws::Vector<NumberFilter> m_findingProviderFieldsConfidence;
     bool m_findingProviderFieldsConfidenceHasBeenSet;

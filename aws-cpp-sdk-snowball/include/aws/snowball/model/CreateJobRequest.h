@@ -8,6 +8,7 @@
 #include <aws/snowball/SnowballRequest.h>
 #include <aws/snowball/model/JobType.h>
 #include <aws/snowball/model/JobResource.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/snowball/model/SnowballCapacity.h>
 #include <aws/snowball/model/ShippingOption.h>
@@ -15,6 +16,7 @@
 #include <aws/snowball/model/SnowballType.h>
 #include <aws/snowball/model/TaxDocuments.h>
 #include <aws/snowball/model/DeviceConfiguration.h>
+#include <aws/snowball/model/RemoteManagement.h>
 #include <utility>
 
 namespace Aws
@@ -144,6 +146,49 @@ namespace Model
      * value, or both. Ranges are UTF-8 binary sorted.</p>
      */
     inline CreateJobRequest& WithResources(JobResource&& value) { SetResources(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline CreateJobRequest& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies the service or services on the Snow Family device that your
+     * transferred data will be exported from or imported into. AWS Snow Family
+     * supports Amazon S3 and NFS (Network File System).</p>
+     */
+    inline CreateJobRequest& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -717,49 +762,49 @@ namespace Model
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline bool ForwardingAddressIdHasBeenSet() const { return m_forwardingAddressIdHasBeenSet; }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline void SetForwardingAddressId(const Aws::String& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = value; }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline void SetForwardingAddressId(Aws::String&& value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId = std::move(value); }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline void SetForwardingAddressId(const char* value) { m_forwardingAddressIdHasBeenSet = true; m_forwardingAddressId.assign(value); }
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline CreateJobRequest& WithForwardingAddressId(const Aws::String& value) { SetForwardingAddressId(value); return *this;}
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline CreateJobRequest& WithForwardingAddressId(Aws::String&& value) { SetForwardingAddressId(std::move(value)); return *this;}
 
     /**
      * <p>The forwarding address ID for a job. This field is not supported in most
-     * regions.</p>
+     * Regions.</p>
      */
     inline CreateJobRequest& WithForwardingAddressId(const char* value) { SetForwardingAddressId(value); return *this;}
 
@@ -857,42 +902,97 @@ namespace Model
 
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline const RemoteManagement& GetRemoteManagement() const{ return m_remoteManagement; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline bool RemoteManagementHasBeenSet() const { return m_remoteManagementHasBeenSet; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(const RemoteManagement& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = value; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(RemoteManagement&& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = std::move(value); }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline CreateJobRequest& WithRemoteManagement(const RemoteManagement& value) { SetRemoteManagement(value); return *this;}
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline CreateJobRequest& WithRemoteManagement(RemoteManagement&& value) { SetRemoteManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline const Aws::String& GetLongTermPricingId() const{ return m_longTermPricingId; }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline bool LongTermPricingIdHasBeenSet() const { return m_longTermPricingIdHasBeenSet; }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline void SetLongTermPricingId(const Aws::String& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = value; }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline void SetLongTermPricingId(Aws::String&& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = std::move(value); }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline void SetLongTermPricingId(const char* value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId.assign(value); }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline CreateJobRequest& WithLongTermPricingId(const Aws::String& value) { SetLongTermPricingId(value); return *this;}
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline CreateJobRequest& WithLongTermPricingId(Aws::String&& value) { SetLongTermPricingId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline CreateJobRequest& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
 
@@ -903,6 +1003,9 @@ namespace Model
 
     JobResource m_resources;
     bool m_resourcesHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
@@ -939,6 +1042,9 @@ namespace Model
 
     DeviceConfiguration m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
+
+    RemoteManagement m_remoteManagement;
+    bool m_remoteManagementHasBeenSet;
 
     Aws::String m_longTermPricingId;
     bool m_longTermPricingIdHasBeenSet;

@@ -465,22 +465,22 @@ namespace Model
 
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline int GetMemorySize() const{ return m_memorySize; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline bool MemorySizeHasBeenSet() const { return m_memorySizeHasBeenSet; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline void SetMemorySize(int value) { m_memorySizeHasBeenSet = true; m_memorySize = value; }
 
     /**
-     * <p>The memory that's allocated to the function.</p>
+     * <p>The memory that is allocated to the function.</p>
      */
     inline AwsLambdaFunctionDetails& WithMemorySize(int value) { SetMemorySize(value); return *this;}
 

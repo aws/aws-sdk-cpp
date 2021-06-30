@@ -53,7 +53,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
 
@@ -64,7 +64,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
 
@@ -75,7 +75,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
 
@@ -86,7 +86,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
 
@@ -97,7 +97,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
 
@@ -108,7 +108,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline Notification& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
 
@@ -119,7 +119,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline Notification& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
 
@@ -130,7 +130,7 @@ namespace Model
      * Amazon SNS API action.</p> <p>You can subscribe email addresses to an Amazon SNS
      * topic through the AWS Management Console, or by using the <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html">Subscribe</a>
-     * AWS Simple Notification Service (SNS) API action.</p>
+     * Amazon Simple Notification Service (Amazon SNS) API action.</p>
      */
     inline Notification& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
 

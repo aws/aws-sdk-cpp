@@ -18,6 +18,8 @@
 #include <aws/snowball/model/JobLogs.h>
 #include <aws/snowball/model/TaxDocuments.h>
 #include <aws/snowball/model/DeviceConfiguration.h>
+#include <aws/snowball/model/RemoteManagement.h>
+#include <aws/snowball/model/OnDeviceServiceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -878,44 +880,136 @@ namespace Model
 
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline const RemoteManagement& GetRemoteManagement() const{ return m_remoteManagement; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline bool RemoteManagementHasBeenSet() const { return m_remoteManagementHasBeenSet; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(const RemoteManagement& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = value; }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline void SetRemoteManagement(RemoteManagement&& value) { m_remoteManagementHasBeenSet = true; m_remoteManagement = std::move(value); }
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline JobMetadata& WithRemoteManagement(const RemoteManagement& value) { SetRemoteManagement(value); return *this;}
+
+    /**
+     * <p>Allows you to securely operate and manage Snowcone devices remotely from
+     * outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>,
+     * remote management will automatically be available when the device arrives at
+     * your location. Otherwise, you need to use the Snowball Client to manage the
+     * device.</p>
+     */
+    inline JobMetadata& WithRemoteManagement(RemoteManagement&& value) { SetRemoteManagement(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline const Aws::String& GetLongTermPricingId() const{ return m_longTermPricingId; }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline bool LongTermPricingIdHasBeenSet() const { return m_longTermPricingIdHasBeenSet; }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline void SetLongTermPricingId(const Aws::String& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = value; }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline void SetLongTermPricingId(Aws::String&& value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId = std::move(value); }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline void SetLongTermPricingId(const char* value) { m_longTermPricingIdHasBeenSet = true; m_longTermPricingId.assign(value); }
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline JobMetadata& WithLongTermPricingId(const Aws::String& value) { SetLongTermPricingId(value); return *this;}
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline JobMetadata& WithLongTermPricingId(Aws::String&& value) { SetLongTermPricingId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the long term pricing type for the device.</p>
+     * <p>The ID of the long-term pricing type for the device.</p>
      */
     inline JobMetadata& WithLongTermPricingId(const char* value) { SetLongTermPricingId(value); return *this;}
+
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline const OnDeviceServiceConfiguration& GetOnDeviceServiceConfiguration() const{ return m_onDeviceServiceConfiguration; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline bool OnDeviceServiceConfigurationHasBeenSet() const { return m_onDeviceServiceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = value; }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline void SetOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { m_onDeviceServiceConfigurationHasBeenSet = true; m_onDeviceServiceConfiguration = std::move(value); }
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline JobMetadata& WithOnDeviceServiceConfiguration(const OnDeviceServiceConfiguration& value) { SetOnDeviceServiceConfiguration(value); return *this;}
+
+    /**
+     * <p>Represents metadata and configuration settings for services on an AWS Snow
+     * Family device.</p>
+     */
+    inline JobMetadata& WithOnDeviceServiceConfiguration(OnDeviceServiceConfiguration&& value) { SetOnDeviceServiceConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -976,8 +1070,14 @@ namespace Model
     DeviceConfiguration m_deviceConfiguration;
     bool m_deviceConfigurationHasBeenSet;
 
+    RemoteManagement m_remoteManagement;
+    bool m_remoteManagementHasBeenSet;
+
     Aws::String m_longTermPricingId;
     bool m_longTermPricingIdHasBeenSet;
+
+    OnDeviceServiceConfiguration m_onDeviceServiceConfiguration;
+    bool m_onDeviceServiceConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -62,6 +62,8 @@ ResourceDetails::ResourceDetails() :
     m_awsRdsDbSnapshotHasBeenSet(false),
     m_awsRdsDbClusterSnapshotHasBeenSet(false),
     m_awsRdsDbClusterHasBeenSet(false),
+    m_awsEcsClusterHasBeenSet(false),
+    m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false)
 {
@@ -111,6 +113,8 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsRdsDbSnapshotHasBeenSet(false),
     m_awsRdsDbClusterSnapshotHasBeenSet(false),
     m_awsRdsDbClusterHasBeenSet(false),
+    m_awsEcsClusterHasBeenSet(false),
+    m_awsEcsTaskDefinitionHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false)
 {
@@ -420,6 +424,20 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsRdsDbClusterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEcsCluster"))
+  {
+    m_awsEcsCluster = jsonValue.GetObject("AwsEcsCluster");
+
+    m_awsEcsClusterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEcsTaskDefinition"))
+  {
+    m_awsEcsTaskDefinition = jsonValue.GetObject("AwsEcsTaskDefinition");
+
+    m_awsEcsTaskDefinitionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Container"))
   {
     m_container = jsonValue.GetObject("Container");
@@ -699,6 +717,18 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsRdsDbClusterHasBeenSet)
   {
    payload.WithObject("AwsRdsDbCluster", m_awsRdsDbCluster.Jsonize());
+
+  }
+
+  if(m_awsEcsClusterHasBeenSet)
+  {
+   payload.WithObject("AwsEcsCluster", m_awsEcsCluster.Jsonize());
+
+  }
+
+  if(m_awsEcsTaskDefinitionHasBeenSet)
+  {
+   payload.WithObject("AwsEcsTaskDefinition", m_awsEcsTaskDefinition.Jsonize());
 
   }
 

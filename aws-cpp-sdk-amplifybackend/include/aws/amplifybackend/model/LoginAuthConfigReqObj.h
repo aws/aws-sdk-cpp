@@ -38,49 +38,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline const Aws::String& GetAwsCognitoIdentityPoolId() const{ return m_awsCognitoIdentityPoolId; }
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline bool AwsCognitoIdentityPoolIdHasBeenSet() const { return m_awsCognitoIdentityPoolIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline void SetAwsCognitoIdentityPoolId(const Aws::String& value) { m_awsCognitoIdentityPoolIdHasBeenSet = true; m_awsCognitoIdentityPoolId = value; }
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline void SetAwsCognitoIdentityPoolId(Aws::String&& value) { m_awsCognitoIdentityPoolIdHasBeenSet = true; m_awsCognitoIdentityPoolId = std::move(value); }
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline void SetAwsCognitoIdentityPoolId(const char* value) { m_awsCognitoIdentityPoolIdHasBeenSet = true; m_awsCognitoIdentityPoolId.assign(value); }
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline LoginAuthConfigReqObj& WithAwsCognitoIdentityPoolId(const Aws::String& value) { SetAwsCognitoIdentityPoolId(value); return *this;}
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline LoginAuthConfigReqObj& WithAwsCognitoIdentityPoolId(Aws::String&& value) { SetAwsCognitoIdentityPoolId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Cognito identity pool ID used for Amplify Admin UI login
+     * <p>The Amazon Cognito identity pool ID used for the Amplify Admin UI login
      * authorization.</p>
      */
     inline LoginAuthConfigReqObj& WithAwsCognitoIdentityPoolId(const char* value) { SetAwsCognitoIdentityPoolId(value); return *this;}

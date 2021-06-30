@@ -36,6 +36,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_imageBasedTrickPlay(HlsImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
     m_manifestCompression(HlsManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
@@ -85,6 +87,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_directoryStructure(HlsDirectoryStructure::NOT_SET),
     m_directoryStructureHasBeenSet(false),
     m_encryptionHasBeenSet(false),
+    m_imageBasedTrickPlay(HlsImageBasedTrickPlay::NOT_SET),
+    m_imageBasedTrickPlayHasBeenSet(false),
     m_manifestCompression(HlsManifestCompression::NOT_SET),
     m_manifestCompressionHasBeenSet(false),
     m_manifestDurationFormat(HlsManifestDurationFormat::NOT_SET),
@@ -210,6 +214,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_encryption = jsonValue.GetObject("encryption");
 
     m_encryptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageBasedTrickPlay"))
+  {
+    m_imageBasedTrickPlay = HlsImageBasedTrickPlayMapper::GetHlsImageBasedTrickPlayForName(jsonValue.GetString("imageBasedTrickPlay"));
+
+    m_imageBasedTrickPlayHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manifestCompression"))
@@ -397,6 +408,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
 
+  }
+
+  if(m_imageBasedTrickPlayHasBeenSet)
+  {
+   payload.WithString("imageBasedTrickPlay", HlsImageBasedTrickPlayMapper::GetNameForHlsImageBasedTrickPlay(m_imageBasedTrickPlay));
   }
 
   if(m_manifestCompressionHasBeenSet)

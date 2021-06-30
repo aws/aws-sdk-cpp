@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/license-manager/LicenseManager_EXPORTS.h>
 #include <aws/license-manager/model/ReceivedStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/model/AllowedOperation.h>
 #include <utility>
@@ -71,6 +72,31 @@ namespace Model
     inline ReceivedMetadata& WithReceivedStatus(ReceivedStatus&& value) { SetReceivedStatus(std::move(value)); return *this;}
 
 
+    
+    inline const Aws::String& GetReceivedStatusReason() const{ return m_receivedStatusReason; }
+
+    
+    inline bool ReceivedStatusReasonHasBeenSet() const { return m_receivedStatusReasonHasBeenSet; }
+
+    
+    inline void SetReceivedStatusReason(const Aws::String& value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason = value; }
+
+    
+    inline void SetReceivedStatusReason(Aws::String&& value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason = std::move(value); }
+
+    
+    inline void SetReceivedStatusReason(const char* value) { m_receivedStatusReasonHasBeenSet = true; m_receivedStatusReason.assign(value); }
+
+    
+    inline ReceivedMetadata& WithReceivedStatusReason(const Aws::String& value) { SetReceivedStatusReason(value); return *this;}
+
+    
+    inline ReceivedMetadata& WithReceivedStatusReason(Aws::String&& value) { SetReceivedStatusReason(std::move(value)); return *this;}
+
+    
+    inline ReceivedMetadata& WithReceivedStatusReason(const char* value) { SetReceivedStatusReason(value); return *this;}
+
+
     /**
      * <p>Allowed operations.</p>
      */
@@ -115,6 +141,9 @@ namespace Model
 
     ReceivedStatus m_receivedStatus;
     bool m_receivedStatusHasBeenSet;
+
+    Aws::String m_receivedStatusReason;
+    bool m_receivedStatusReasonHasBeenSet;
 
     Aws::Vector<AllowedOperation> m_allowedOperations;
     bool m_allowedOperationsHasBeenSet;

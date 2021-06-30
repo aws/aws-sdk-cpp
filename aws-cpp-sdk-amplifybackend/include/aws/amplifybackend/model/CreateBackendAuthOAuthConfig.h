@@ -121,49 +121,49 @@ namespace Model
 
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline const Aws::Vector<OAuthScopesElement>& GetOAuthScopes() const{ return m_oAuthScopes; }
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline bool OAuthScopesHasBeenSet() const { return m_oAuthScopesHasBeenSet; }
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline void SetOAuthScopes(const Aws::Vector<OAuthScopesElement>& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = value; }
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline void SetOAuthScopes(Aws::Vector<OAuthScopesElement>&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes = std::move(value); }
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithOAuthScopes(const Aws::Vector<OAuthScopesElement>& value) { SetOAuthScopes(value); return *this;}
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithOAuthScopes(Aws::Vector<OAuthScopesElement>&& value) { SetOAuthScopes(std::move(value)); return *this;}
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddOAuthScopes(const OAuthScopesElement& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(value); return *this; }
 
     /**
-     * <p>List of OAuth-related flows that allow your app users to authenticate from
+     * <p>List of OAuth-related flows used to allow your app users to authenticate from
      * your Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddOAuthScopes(OAuthScopesElement&& value) { m_oAuthScopesHasBeenSet = true; m_oAuthScopes.push_back(std::move(value)); return *this; }
@@ -216,84 +216,78 @@ namespace Model
 
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRedirectSignOutURIs() const{ return m_redirectSignOutURIs; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline bool RedirectSignOutURIsHasBeenSet() const { return m_redirectSignOutURIsHasBeenSet; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline void SetRedirectSignOutURIs(const Aws::Vector<Aws::String>& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs = value; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline void SetRedirectSignOutURIs(Aws::Vector<Aws::String>&& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs = std::move(value); }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithRedirectSignOutURIs(const Aws::Vector<Aws::String>& value) { SetRedirectSignOutURIs(value); return *this;}
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithRedirectSignOutURIs(Aws::Vector<Aws::String>&& value) { SetRedirectSignOutURIs(std::move(value)); return *this;}
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddRedirectSignOutURIs(const Aws::String& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(value); return *this; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddRedirectSignOutURIs(Aws::String&& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& AddRedirectSignOutURIs(const char* value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(value); return *this; }
 
 
     /**
-     * <p>The settings for using social identity providers for access to your Amplify
-     * app.</p>
+     * <p>The settings for using social providers to access your Amplify app.</p>
      */
     inline const SocialProviderSettings& GetSocialProviderSettings() const{ return m_socialProviderSettings; }
 
     /**
-     * <p>The settings for using social identity providers for access to your Amplify
-     * app.</p>
+     * <p>The settings for using social providers to access your Amplify app.</p>
      */
     inline bool SocialProviderSettingsHasBeenSet() const { return m_socialProviderSettingsHasBeenSet; }
 
     /**
-     * <p>The settings for using social identity providers for access to your Amplify
-     * app.</p>
+     * <p>The settings for using social providers to access your Amplify app.</p>
      */
     inline void SetSocialProviderSettings(const SocialProviderSettings& value) { m_socialProviderSettingsHasBeenSet = true; m_socialProviderSettings = value; }
 
     /**
-     * <p>The settings for using social identity providers for access to your Amplify
-     * app.</p>
+     * <p>The settings for using social providers to access your Amplify app.</p>
      */
     inline void SetSocialProviderSettings(SocialProviderSettings&& value) { m_socialProviderSettingsHasBeenSet = true; m_socialProviderSettings = std::move(value); }
 
     /**
-     * <p>The settings for using social identity providers for access to your Amplify
-     * app.</p>
+     * <p>The settings for using social providers to access your Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithSocialProviderSettings(const SocialProviderSettings& value) { SetSocialProviderSettings(value); return *this;}
 
     /**
-     * <p>The settings for using social identity providers for access to your Amplify
-     * app.</p>
+     * <p>The settings for using social providers to access your Amplify app.</p>
      */
     inline CreateBackendAuthOAuthConfig& WithSocialProviderSettings(SocialProviderSettings&& value) { SetSocialProviderSettings(std::move(value)); return *this;}
 

@@ -278,17 +278,17 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateWebhookRequest&, const Model::UpdateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWebhookResponseReceivedHandler;
 
   /**
-   * <fullname>AWS CodeBuild</fullname> <p>AWS CodeBuild is a fully managed build
-   * service in the cloud. AWS CodeBuild compiles your source code, runs unit tests,
-   * and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the
-   * need to provision, manage, and scale your own build servers. It provides
-   * prepackaged build environments for the most popular programming languages and
-   * build tools, such as Apache Maven, Gradle, and more. You can also fully
-   * customize build environments in AWS CodeBuild to use your own build tools. AWS
-   * CodeBuild scales automatically to meet peak build requests. You pay only for the
-   * build time you consume. For more information about AWS CodeBuild, see the <i> <a
-   * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS
-   * CodeBuild User Guide</a>.</i> </p>
+   * <p>CodeBuild is a fully managed build service in the cloud. CodeBuild compiles
+   * your source code, runs unit tests, and produces artifacts that are ready to
+   * deploy. CodeBuild eliminates the need to provision, manage, and scale your own
+   * build servers. It provides prepackaged build environments for the most popular
+   * programming languages and build tools, such as Apache Maven, Gradle, and more.
+   * You can also fully customize build environments in CodeBuild to use your own
+   * build tools. CodeBuild scales automatically to meet peak build requests. You pay
+   * only for the build time you consume. For more information about CodeBuild, see
+   * the <i> <a
+   * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">CodeBuild
+   * User Guide</a>.</i> </p>
    */
   class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient
   {
@@ -527,16 +527,16 @@ namespace Model
         virtual void CreateReportGroupAsync(const Model::CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding
-         * the source code every time a code change is pushed to the repository.</p>
-         *  <p>If you enable webhooks for an AWS CodeBuild project, and the
-         * project is used as a build step in AWS CodePipeline, then two identical builds
-         * are created for each commit. One build is triggered through webhooks, and one
-         * through AWS CodePipeline. Because billing is on a per-build basis, you are
-         * billed for both builds. Therefore, if you are using AWS CodePipeline, we
-         * recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild
-         * console, clear the Webhook box. For more information, see step 5 in <a
+         * <p>For an existing CodeBuild build project that has its source code stored in a
+         * GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source
+         * code every time a code change is pushed to the repository.</p>  <p>If
+         * you enable webhooks for an CodeBuild project, and the project is used as a build
+         * step in CodePipeline, then two identical builds are created for each commit. One
+         * build is triggered through webhooks, and one through CodePipeline. Because
+         * billing is on a per-build basis, you are billed for both builds. Therefore, if
+         * you are using CodePipeline, we recommend that you disable webhooks in CodeBuild.
+         * In the CodeBuild console, clear the Webhook box. For more information, see step
+         * 5 in <a
          * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
@@ -545,16 +545,16 @@ namespace Model
         virtual Model::CreateWebhookOutcome CreateWebhook(const Model::CreateWebhookRequest& request) const;
 
         /**
-         * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding
-         * the source code every time a code change is pushed to the repository.</p>
-         *  <p>If you enable webhooks for an AWS CodeBuild project, and the
-         * project is used as a build step in AWS CodePipeline, then two identical builds
-         * are created for each commit. One build is triggered through webhooks, and one
-         * through AWS CodePipeline. Because billing is on a per-build basis, you are
-         * billed for both builds. Therefore, if you are using AWS CodePipeline, we
-         * recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild
-         * console, clear the Webhook box. For more information, see step 5 in <a
+         * <p>For an existing CodeBuild build project that has its source code stored in a
+         * GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source
+         * code every time a code change is pushed to the repository.</p>  <p>If
+         * you enable webhooks for an CodeBuild project, and the project is used as a build
+         * step in CodePipeline, then two identical builds are created for each commit. One
+         * build is triggered through webhooks, and one through CodePipeline. Because
+         * billing is on a per-build basis, you are billed for both builds. Therefore, if
+         * you are using CodePipeline, we recommend that you disable webhooks in CodeBuild.
+         * In the CodeBuild console, clear the Webhook box. For more information, see step
+         * 5 in <a
          * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
@@ -565,16 +565,16 @@ namespace Model
         virtual Model::CreateWebhookOutcomeCallable CreateWebhookCallable(const Model::CreateWebhookRequest& request) const;
 
         /**
-         * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding
-         * the source code every time a code change is pushed to the repository.</p>
-         *  <p>If you enable webhooks for an AWS CodeBuild project, and the
-         * project is used as a build step in AWS CodePipeline, then two identical builds
-         * are created for each commit. One build is triggered through webhooks, and one
-         * through AWS CodePipeline. Because billing is on a per-build basis, you are
-         * billed for both builds. Therefore, if you are using AWS CodePipeline, we
-         * recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild
-         * console, clear the Webhook box. For more information, see step 5 in <a
+         * <p>For an existing CodeBuild build project that has its source code stored in a
+         * GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source
+         * code every time a code change is pushed to the repository.</p>  <p>If
+         * you enable webhooks for an CodeBuild project, and the project is used as a build
+         * step in CodePipeline, then two identical builds are created for each commit. One
+         * build is triggered through webhooks, and one through CodePipeline. Because
+         * billing is on a per-build basis, you are billed for both builds. Therefore, if
+         * you are using CodePipeline, we recommend that you disable webhooks in CodeBuild.
+         * In the CodeBuild console, clear the Webhook box. For more information, see step
+         * 5 in <a
          * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
@@ -747,20 +747,20 @@ namespace Model
         virtual void DeleteSourceCredentialsAsync(const Model::DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the
-         * source code every time a code change is pushed to the repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>For an existing CodeBuild build project that has its source code stored in a
+         * GitHub or Bitbucket repository, stops CodeBuild from rebuilding the source code
+         * every time a code change is pushed to the repository.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteWebhookOutcome DeleteWebhook(const Model::DeleteWebhookRequest& request) const;
 
         /**
-         * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the
-         * source code every time a code change is pushed to the repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>For an existing CodeBuild build project that has its source code stored in a
+         * GitHub or Bitbucket repository, stops CodeBuild from rebuilding the source code
+         * every time a code change is pushed to the repository.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
          * API Reference</a></p>
          *
@@ -769,10 +769,10 @@ namespace Model
         virtual Model::DeleteWebhookOutcomeCallable DeleteWebhookCallable(const Model::DeleteWebhookRequest& request) const;
 
         /**
-         * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the
-         * source code every time a code change is pushed to the repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>For an existing CodeBuild build project that has its source code stored in a
+         * GitHub or Bitbucket repository, stops CodeBuild from rebuilding the source code
+         * every time a code change is pushed to the repository.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
          * API Reference</a></p>
          *
@@ -890,18 +890,18 @@ namespace Model
         virtual void GetResourcePolicyAsync(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Imports the source repository credentials for an AWS CodeBuild project that
-         * has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket
-         * repository. </p><p><h3>See Also:</h3>   <a
+         * <p> Imports the source repository credentials for an CodeBuild project that has
+         * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">AWS
          * API Reference</a></p>
          */
         virtual Model::ImportSourceCredentialsOutcome ImportSourceCredentials(const Model::ImportSourceCredentialsRequest& request) const;
 
         /**
-         * <p> Imports the source repository credentials for an AWS CodeBuild project that
-         * has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket
-         * repository. </p><p><h3>See Also:</h3>   <a
+         * <p> Imports the source repository credentials for an CodeBuild project that has
+         * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">AWS
          * API Reference</a></p>
          *
@@ -910,9 +910,9 @@ namespace Model
         virtual Model::ImportSourceCredentialsOutcomeCallable ImportSourceCredentialsCallable(const Model::ImportSourceCredentialsRequest& request) const;
 
         /**
-         * <p> Imports the source repository credentials for an AWS CodeBuild project that
-         * has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket
-         * repository. </p><p><h3>See Also:</h3>   <a
+         * <p> Imports the source repository credentials for an CodeBuild project that has
+         * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">AWS
          * API Reference</a></p>
          *
@@ -1058,7 +1058,7 @@ namespace Model
         virtual void ListBuildsForProjectAsync(const Model::ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about Docker images that are managed by AWS
+         * <p>Gets information about Docker images that are managed by
          * CodeBuild.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">AWS
          * API Reference</a></p>
@@ -1066,7 +1066,7 @@ namespace Model
         virtual Model::ListCuratedEnvironmentImagesOutcome ListCuratedEnvironmentImages(const Model::ListCuratedEnvironmentImagesRequest& request) const;
 
         /**
-         * <p>Gets information about Docker images that are managed by AWS
+         * <p>Gets information about Docker images that are managed by
          * CodeBuild.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">AWS
          * API Reference</a></p>
@@ -1076,7 +1076,7 @@ namespace Model
         virtual Model::ListCuratedEnvironmentImagesOutcomeCallable ListCuratedEnvironmentImagesCallable(const Model::ListCuratedEnvironmentImagesRequest& request) const;
 
         /**
-         * <p>Gets information about Docker images that are managed by AWS
+         * <p>Gets information about Docker images that are managed by
          * CodeBuild.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListCuratedEnvironmentImages">AWS
          * API Reference</a></p>
@@ -1114,16 +1114,16 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets a list ARNs for the report groups in the current AWS account.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list ARNs for the report groups in the current Amazon Web Services
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListReportGroupsOutcome ListReportGroups(const Model::ListReportGroupsRequest& request) const;
 
         /**
-         * <p> Gets a list ARNs for the report groups in the current AWS account.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list ARNs for the report groups in the current Amazon Web Services
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">AWS
          * API Reference</a></p>
          *
@@ -1132,8 +1132,8 @@ namespace Model
         virtual Model::ListReportGroupsOutcomeCallable ListReportGroupsCallable(const Model::ListReportGroupsRequest& request) const;
 
         /**
-         * <p> Gets a list ARNs for the report groups in the current AWS account.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list ARNs for the report groups in the current Amazon Web Services
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">AWS
          * API Reference</a></p>
          *
@@ -1142,16 +1142,16 @@ namespace Model
         virtual void ListReportGroupsAsync(const Model::ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Returns a list of ARNs for the reports in the current AWS account.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of ARNs for the reports in the current Amazon Web Services
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">AWS
          * API Reference</a></p>
          */
         virtual Model::ListReportsOutcome ListReports(const Model::ListReportsRequest& request) const;
 
         /**
-         * <p> Returns a list of ARNs for the reports in the current AWS account.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of ARNs for the reports in the current Amazon Web Services
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">AWS
          * API Reference</a></p>
          *
@@ -1160,8 +1160,8 @@ namespace Model
         virtual Model::ListReportsOutcomeCallable ListReportsCallable(const Model::ListReportsRequest& request) const;
 
         /**
-         * <p> Returns a list of ARNs for the reports in the current AWS account.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Returns a list of ARNs for the reports in the current Amazon Web Services
+         * account. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">AWS
          * API Reference</a></p>
          *
@@ -1198,16 +1198,16 @@ namespace Model
         virtual void ListReportsForReportGroupAsync(const Model::ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets a list of projects that are shared with other AWS accounts or users.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of projects that are shared with other Amazon Web Services
+         * accounts or users. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSharedProjectsOutcome ListSharedProjects(const Model::ListSharedProjectsRequest& request) const;
 
         /**
-         * <p> Gets a list of projects that are shared with other AWS accounts or users.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of projects that are shared with other Amazon Web Services
+         * accounts or users. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">AWS
          * API Reference</a></p>
          *
@@ -1216,8 +1216,8 @@ namespace Model
         virtual Model::ListSharedProjectsOutcomeCallable ListSharedProjectsCallable(const Model::ListSharedProjectsRequest& request) const;
 
         /**
-         * <p> Gets a list of projects that are shared with other AWS accounts or users.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of projects that are shared with other Amazon Web Services
+         * accounts or users. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">AWS
          * API Reference</a></p>
          *
@@ -1226,16 +1226,16 @@ namespace Model
         virtual void ListSharedProjectsAsync(const Model::ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Gets a list of report groups that are shared with other AWS accounts or
-         * users. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of report groups that are shared with other Amazon Web Services
+         * accounts or users. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSharedReportGroupsOutcome ListSharedReportGroups(const Model::ListSharedReportGroupsRequest& request) const;
 
         /**
-         * <p> Gets a list of report groups that are shared with other AWS accounts or
-         * users. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of report groups that are shared with other Amazon Web Services
+         * accounts or users. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">AWS
          * API Reference</a></p>
          *
@@ -1244,8 +1244,8 @@ namespace Model
         virtual Model::ListSharedReportGroupsOutcomeCallable ListSharedReportGroupsCallable(const Model::ListSharedReportGroupsRequest& request) const;
 
         /**
-         * <p> Gets a list of report groups that are shared with other AWS accounts or
-         * users. </p><p><h3>See Also:</h3>   <a
+         * <p> Gets a list of report groups that are shared with other Amazon Web Services
+         * accounts or users. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">AWS
          * API Reference</a></p>
          *
@@ -1513,18 +1513,18 @@ namespace Model
         virtual void UpdateReportGroupAsync(const Model::UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the webhook associated with an AWS CodeBuild build project. </p>
-         *  <p> If you use Bitbucket for your repository, <code>rotateSecret</code>
-         * is ignored. </p> <p><h3>See Also:</h3>   <a
+         * <p> Updates the webhook associated with an CodeBuild build project. </p> 
+         * <p> If you use Bitbucket for your repository, <code>rotateSecret</code> is
+         * ignored. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateWebhookOutcome UpdateWebhook(const Model::UpdateWebhookRequest& request) const;
 
         /**
-         * <p> Updates the webhook associated with an AWS CodeBuild build project. </p>
-         *  <p> If you use Bitbucket for your repository, <code>rotateSecret</code>
-         * is ignored. </p> <p><h3>See Also:</h3>   <a
+         * <p> Updates the webhook associated with an CodeBuild build project. </p> 
+         * <p> If you use Bitbucket for your repository, <code>rotateSecret</code> is
+         * ignored. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">AWS
          * API Reference</a></p>
          *
@@ -1533,9 +1533,9 @@ namespace Model
         virtual Model::UpdateWebhookOutcomeCallable UpdateWebhookCallable(const Model::UpdateWebhookRequest& request) const;
 
         /**
-         * <p> Updates the webhook associated with an AWS CodeBuild build project. </p>
-         *  <p> If you use Bitbucket for your repository, <code>rotateSecret</code>
-         * is ignored. </p> <p><h3>See Also:</h3>   <a
+         * <p> Updates the webhook associated with an CodeBuild build project. </p> 
+         * <p> If you use Bitbucket for your repository, <code>rotateSecret</code> is
+         * ignored. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">AWS
          * API Reference</a></p>
          *

@@ -100,7 +100,6 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters() :
     m_noteTextHasBeenSet(false),
     m_noteUpdatedAtHasBeenSet(false),
     m_noteUpdatedByHasBeenSet(false),
-    m_keywordHasBeenSet(false),
     m_findingProviderFieldsConfidenceHasBeenSet(false),
     m_findingProviderFieldsCriticalityHasBeenSet(false),
     m_findingProviderFieldsRelatedFindingsIdHasBeenSet(false),
@@ -193,7 +192,6 @@ AwsSecurityFindingFilters::AwsSecurityFindingFilters(JsonView jsonValue) :
     m_noteTextHasBeenSet(false),
     m_noteUpdatedAtHasBeenSet(false),
     m_noteUpdatedByHasBeenSet(false),
-    m_keywordHasBeenSet(false),
     m_findingProviderFieldsConfidenceHasBeenSet(false),
     m_findingProviderFieldsCriticalityHasBeenSet(false),
     m_findingProviderFieldsRelatedFindingsIdHasBeenSet(false),
@@ -1015,16 +1013,6 @@ AwsSecurityFindingFilters& AwsSecurityFindingFilters::operator =(JsonView jsonVa
       m_noteUpdatedBy.push_back(noteUpdatedByJsonList[noteUpdatedByIndex].AsObject());
     }
     m_noteUpdatedByHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Keyword"))
-  {
-    Array<JsonView> keywordJsonList = jsonValue.GetArray("Keyword");
-    for(unsigned keywordIndex = 0; keywordIndex < keywordJsonList.GetLength(); ++keywordIndex)
-    {
-      m_keyword.push_back(keywordJsonList[keywordIndex].AsObject());
-    }
-    m_keywordHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("FindingProviderFieldsConfidence"))
@@ -1992,17 +1980,6 @@ JsonValue AwsSecurityFindingFilters::Jsonize() const
      noteUpdatedByJsonList[noteUpdatedByIndex].AsObject(m_noteUpdatedBy[noteUpdatedByIndex].Jsonize());
    }
    payload.WithArray("NoteUpdatedBy", std::move(noteUpdatedByJsonList));
-
-  }
-
-  if(m_keywordHasBeenSet)
-  {
-   Array<JsonValue> keywordJsonList(m_keyword.size());
-   for(unsigned keywordIndex = 0; keywordIndex < keywordJsonList.GetLength(); ++keywordIndex)
-   {
-     keywordJsonList[keywordIndex].AsObject(m_keyword[keywordIndex].Jsonize());
-   }
-   payload.WithArray("Keyword", std::move(keywordJsonList));
 
   }
 

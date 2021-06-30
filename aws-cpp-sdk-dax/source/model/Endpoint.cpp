@@ -21,14 +21,16 @@ namespace Model
 Endpoint::Endpoint() : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_uRLHasBeenSet(false)
 {
 }
 
 Endpoint::Endpoint(JsonView jsonValue) : 
     m_addressHasBeenSet(false),
     m_port(0),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_uRLHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     m_portHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("URL"))
+  {
+    m_uRL = jsonValue.GetString("URL");
+
+    m_uRLHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +74,12 @@ JsonValue Endpoint::Jsonize() const
   if(m_portHasBeenSet)
   {
    payload.WithInteger("Port", m_port);
+
+  }
+
+  if(m_uRLHasBeenSet)
+  {
+   payload.WithString("URL", m_uRL);
 
   }
 

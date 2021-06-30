@@ -31,8 +31,8 @@ namespace Model
    * statement. To create an IP set, see <a>CreateIPSet</a>.</p> <p>Each IP set rule
    * statement references an IP set. You create and maintain the set independent of
    * your rules. This allows you to use the single set in multiple rules. When you
-   * update the referenced set, AWS WAF automatically updates all rules that
-   * reference it.</p><p><h3>See Also:</h3>   <a
+   * update the referenced set, WAF automatically updates all rules that reference
+   * it.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/IPSetReferenceStatement">AWS
    * API Reference</a></p>
    */
@@ -99,7 +99,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline const IPSetForwardedIPConfig& GetIPSetForwardedIPConfig() const{ return m_iPSetForwardedIPConfig; }
 
@@ -108,7 +108,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline bool IPSetForwardedIPConfigHasBeenSet() const { return m_iPSetForwardedIPConfigHasBeenSet; }
 
@@ -117,7 +117,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline void SetIPSetForwardedIPConfig(const IPSetForwardedIPConfig& value) { m_iPSetForwardedIPConfigHasBeenSet = true; m_iPSetForwardedIPConfig = value; }
 
@@ -126,7 +126,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline void SetIPSetForwardedIPConfig(IPSetForwardedIPConfig&& value) { m_iPSetForwardedIPConfigHasBeenSet = true; m_iPSetForwardedIPConfig = std::move(value); }
 
@@ -135,7 +135,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline IPSetReferenceStatement& WithIPSetForwardedIPConfig(const IPSetForwardedIPConfig& value) { SetIPSetForwardedIPConfig(value); return *this;}
 
@@ -144,7 +144,7 @@ namespace Model
      * specify, instead of using the IP address that's reported by the web request
      * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
      * any header name. </p>  <p>If the specified header isn't present in the
-     * request, AWS WAF doesn't apply the rule to the web request at all.</p> 
+     * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline IPSetReferenceStatement& WithIPSetForwardedIPConfig(IPSetForwardedIPConfig&& value) { SetIPSetForwardedIPConfig(std::move(value)); return *this;}
 

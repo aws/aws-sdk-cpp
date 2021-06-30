@@ -16,6 +16,7 @@
 #include <aws/mediaconvert/model/Vc3Settings.h>
 #include <aws/mediaconvert/model/Vp8Settings.h>
 #include <aws/mediaconvert/model/Vp9Settings.h>
+#include <aws/mediaconvert/model/XavcSettings.h>
 #include <utility>
 
 namespace Aws
@@ -41,7 +42,8 @@ namespace Model
    * lists the codec enum, settings object pairs. * AV1, Av1Settings * AVC_INTRA,
    * AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings * H_264, H264Settings *
    * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VC3,
-   * Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings<p><h3>See Also:</h3>   <a
+   * Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -472,6 +474,43 @@ namespace Model
      */
     inline VideoCodecSettings& WithVp9Settings(Vp9Settings&& value) { SetVp9Settings(std::move(value)); return *this;}
 
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline const XavcSettings& GetXavcSettings() const{ return m_xavcSettings; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline bool XavcSettingsHasBeenSet() const { return m_xavcSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline void SetXavcSettings(const XavcSettings& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = value; }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline void SetXavcSettings(XavcSettings&& value) { m_xavcSettingsHasBeenSet = true; m_xavcSettings = std::move(value); }
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline VideoCodecSettings& WithXavcSettings(const XavcSettings& value) { SetXavcSettings(value); return *this;}
+
+    /**
+     * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the
+     * value XAVC.
+     */
+    inline VideoCodecSettings& WithXavcSettings(XavcSettings&& value) { SetXavcSettings(std::move(value)); return *this;}
+
   private:
 
     Av1Settings m_av1Settings;
@@ -506,6 +545,9 @@ namespace Model
 
     Vp9Settings m_vp9Settings;
     bool m_vp9SettingsHasBeenSet;
+
+    XavcSettings m_xavcSettings;
+    bool m_xavcSettingsHasBeenSet;
   };
 
 } // namespace Model

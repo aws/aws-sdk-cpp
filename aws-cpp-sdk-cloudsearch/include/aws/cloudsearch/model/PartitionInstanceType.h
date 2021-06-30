@@ -28,7 +28,11 @@ namespace Model
     search_medium,
     search_large,
     search_xlarge,
-    search_2xlarge
+    search_2xlarge,
+    search_previousgeneration_small,
+    search_previousgeneration_large,
+    search_previousgeneration_xlarge,
+    search_previousgeneration_2xlarge
   };
 
 namespace PartitionInstanceTypeMapper

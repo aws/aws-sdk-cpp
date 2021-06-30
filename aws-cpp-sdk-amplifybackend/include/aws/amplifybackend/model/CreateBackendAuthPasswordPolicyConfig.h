@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The password policy configuration for the backend of your Amplify
+   * <p>The password policy configuration for the backend to your Amplify
    * project.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplifybackend-2020-08-11/CreateBackendAuthPasswordPolicyConfig">AWS
    * API Reference</a></p>

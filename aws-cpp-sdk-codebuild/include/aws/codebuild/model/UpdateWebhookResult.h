@@ -34,31 +34,31 @@ namespace Model
 
     /**
      * <p> Information about a repository's webhook that is associated with a project
-     * in AWS CodeBuild. </p>
+     * in CodeBuild. </p>
      */
     inline const Webhook& GetWebhook() const{ return m_webhook; }
 
     /**
      * <p> Information about a repository's webhook that is associated with a project
-     * in AWS CodeBuild. </p>
+     * in CodeBuild. </p>
      */
     inline void SetWebhook(const Webhook& value) { m_webhook = value; }
 
     /**
      * <p> Information about a repository's webhook that is associated with a project
-     * in AWS CodeBuild. </p>
+     * in CodeBuild. </p>
      */
     inline void SetWebhook(Webhook&& value) { m_webhook = std::move(value); }
 
     /**
      * <p> Information about a repository's webhook that is associated with a project
-     * in AWS CodeBuild. </p>
+     * in CodeBuild. </p>
      */
     inline UpdateWebhookResult& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
 
     /**
      * <p> Information about a repository's webhook that is associated with a project
-     * in AWS CodeBuild. </p>
+     * in CodeBuild. </p>
      */
     inline UpdateWebhookResult& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
 

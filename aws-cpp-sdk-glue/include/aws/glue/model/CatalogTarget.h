@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies an AWS Glue Data Catalog target.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies an Glue Data Catalog target.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CatalogTarget">AWS
    * API Reference</a></p>
    */

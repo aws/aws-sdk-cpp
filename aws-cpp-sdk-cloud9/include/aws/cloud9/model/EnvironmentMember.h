@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about an environment member for an AWS Cloud9 development
+   * <p>Information about an environment member for an Cloud9 development
    * environment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/EnvironmentMember">AWS
    * API Reference</a></p>
@@ -96,50 +96,50 @@ namespace Model
 
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline EnvironmentMember& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline EnvironmentMember& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
-     * environment member.</p>
+     * <p>The user ID in Identity and Access Management (IAM) of the environment
+     * member.</p>
      */
     inline EnvironmentMember& WithUserId(const char* value) { SetUserId(value); return *this;}
 

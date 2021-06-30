@@ -178,93 +178,93 @@ namespace Model
 
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRedirectSignInURIs() const{ return m_redirectSignInURIs; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline bool RedirectSignInURIsHasBeenSet() const { return m_redirectSignInURIsHasBeenSet; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline void SetRedirectSignInURIs(const Aws::Vector<Aws::String>& value) { m_redirectSignInURIsHasBeenSet = true; m_redirectSignInURIs = value; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline void SetRedirectSignInURIs(Aws::Vector<Aws::String>&& value) { m_redirectSignInURIsHasBeenSet = true; m_redirectSignInURIs = std::move(value); }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& WithRedirectSignInURIs(const Aws::Vector<Aws::String>& value) { SetRedirectSignInURIs(value); return *this;}
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& WithRedirectSignInURIs(Aws::Vector<Aws::String>&& value) { SetRedirectSignInURIs(std::move(value)); return *this;}
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& AddRedirectSignInURIs(const Aws::String& value) { m_redirectSignInURIsHasBeenSet = true; m_redirectSignInURIs.push_back(value); return *this; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& AddRedirectSignInURIs(Aws::String&& value) { m_redirectSignInURIsHasBeenSet = true; m_redirectSignInURIs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& AddRedirectSignInURIs(const char* value) { m_redirectSignInURIsHasBeenSet = true; m_redirectSignInURIs.push_back(value); return *this; }
 
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRedirectSignOutURIs() const{ return m_redirectSignOutURIs; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline bool RedirectSignOutURIsHasBeenSet() const { return m_redirectSignOutURIsHasBeenSet; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline void SetRedirectSignOutURIs(const Aws::Vector<Aws::String>& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs = value; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline void SetRedirectSignOutURIs(Aws::Vector<Aws::String>&& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs = std::move(value); }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& WithRedirectSignOutURIs(const Aws::Vector<Aws::String>& value) { SetRedirectSignOutURIs(value); return *this;}
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& WithRedirectSignOutURIs(Aws::Vector<Aws::String>&& value) { SetRedirectSignOutURIs(std::move(value)); return *this;}
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& AddRedirectSignOutURIs(const Aws::String& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(value); return *this; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& AddRedirectSignOutURIs(Aws::String&& value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
+     * <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
      */
     inline UpdateBackendAuthOAuthConfig& AddRedirectSignOutURIs(const char* value) { m_redirectSignOutURIsHasBeenSet = true; m_redirectSignOutURIs.push_back(value); return *this; }
 

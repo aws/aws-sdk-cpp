@@ -576,50 +576,50 @@ namespace Model
 
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the AWS KMS key
-     * identifier for the encrypted cluster snapshot.</p>
+     * <p>If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier
+     * for the encrypted cluster snapshot.</p>
      */
     inline DBClusterSnapshot& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
