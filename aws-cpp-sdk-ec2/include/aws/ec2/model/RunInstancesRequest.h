@@ -632,9 +632,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -643,9 +644,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -654,9 +656,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -665,9 +668,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -676,9 +680,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -687,9 +692,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -698,9 +704,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -709,9 +716,10 @@ namespace Model
     /**
      * <p>The ID of the RAM disk to select. Some kernels require additional drivers at
      * launch. Check the kernel requirements for information about whether you need to
-     * specify a RAM disk. To find kernel requirements, go to the AWS Resource Center
-     * and search for the kernel ID.</p>  <p>We recommend that you use
-     * PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * specify a RAM disk. To find kernel requirements, go to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>  <p>We recommend
+     * that you use PV-GRUB instead of kernels and RAM disks. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">
      * PV-GRUB</a> in the <i>Amazon EC2 User Guide</i>.</p> 
      */
@@ -1948,7 +1956,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
-     * hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
      */
     inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
 
@@ -1957,7 +1965,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
-     * hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
      */
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
 
@@ -1966,7 +1974,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
-     * hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
      */
     inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
 
@@ -1975,7 +1983,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
-     * hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
      */
     inline void SetHibernationOptions(HibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
 
@@ -1984,7 +1992,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
-     * hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(const HibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
 
@@ -1993,7 +2001,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>You can't enable
-     * hibernation and AWS Nitro Enclaves on the same instance.</p>
+     * hibernation and Amazon Web Services Nitro Enclaves on the same instance.</p>
      */
     inline RunInstancesRequest& WithHibernationOptions(HibernationOptionsRequest&& value) { SetHibernationOptions(std::move(value)); return *this;}
 
@@ -2083,56 +2091,62 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline const EnclaveOptionsRequest& GetEnclaveOptions() const{ return m_enclaveOptions; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline void SetEnclaveOptions(const EnclaveOptionsRequest& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline void SetEnclaveOptions(EnclaveOptionsRequest&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline RunInstancesRequest& WithEnclaveOptions(const EnclaveOptionsRequest& value) { SetEnclaveOptions(value); return *this;}
 
     /**
-     * <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more
-     * information, see <a
+     * <p>Indicates whether the instance is enabled for Amazon Web Services Nitro
+     * Enclaves. For more information, see <a
      * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What
-     * is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
-     * <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+     * is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro
+     * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
+     * Enclaves and hibernation on the same instance.</p>
      */
     inline RunInstancesRequest& WithEnclaveOptions(EnclaveOptionsRequest&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 

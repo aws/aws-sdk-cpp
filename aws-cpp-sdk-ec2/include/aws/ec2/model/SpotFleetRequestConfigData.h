@@ -450,7 +450,7 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -464,7 +464,7 @@ namespace Model
     inline const Aws::String& GetIamFleetRole() const{ return m_iamFleetRole; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -478,7 +478,7 @@ namespace Model
     inline bool IamFleetRoleHasBeenSet() const { return m_iamFleetRoleHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -492,7 +492,7 @@ namespace Model
     inline void SetIamFleetRole(const Aws::String& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -506,7 +506,7 @@ namespace Model
     inline void SetIamFleetRole(Aws::String&& value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -520,7 +520,7 @@ namespace Model
     inline void SetIamFleetRole(const char* value) { m_iamFleetRoleHasBeenSet = true; m_iamFleetRole.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -534,7 +534,7 @@ namespace Model
     inline SpotFleetRequestConfigData& WithIamFleetRole(const Aws::String& value) { SetIamFleetRole(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -548,7 +548,7 @@ namespace Model
     inline SpotFleetRequestConfigData& WithIamFleetRole(Aws::String&& value) { SetIamFleetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM)
+     * <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM)
      * role that grants the Spot Fleet the permission to request, launch, terminate,
      * and tag instances on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#spot-fleet-prerequisites">Spot
@@ -1341,7 +1341,14 @@ namespace Model
      * Valid only when Spot <b>AllocationStrategy</b> is set to
      * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
      * allocates your target Spot capacity across the number of Spot pools that you
-     * specify.</p>
+     * specify.</p> <p>Note that Spot Fleet attempts to draw Spot Instances from the
+     * number of pools that you specify on a best effort basis. If a pool runs out of
+     * Spot capacity before fulfilling your target capacity, Spot Fleet will continue
+     * to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your target capacity is met, you might receive Spot Instances from more than the
+     * number of pools that you specified. Similarly, if most of the pools have no Spot
+     * capacity, you might receive your full target capacity from fewer than the number
+     * of pools that you specified.</p>
      */
     inline int GetInstancePoolsToUseCount() const{ return m_instancePoolsToUseCount; }
 
@@ -1350,7 +1357,14 @@ namespace Model
      * Valid only when Spot <b>AllocationStrategy</b> is set to
      * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
      * allocates your target Spot capacity across the number of Spot pools that you
-     * specify.</p>
+     * specify.</p> <p>Note that Spot Fleet attempts to draw Spot Instances from the
+     * number of pools that you specify on a best effort basis. If a pool runs out of
+     * Spot capacity before fulfilling your target capacity, Spot Fleet will continue
+     * to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your target capacity is met, you might receive Spot Instances from more than the
+     * number of pools that you specified. Similarly, if most of the pools have no Spot
+     * capacity, you might receive your full target capacity from fewer than the number
+     * of pools that you specified.</p>
      */
     inline bool InstancePoolsToUseCountHasBeenSet() const { return m_instancePoolsToUseCountHasBeenSet; }
 
@@ -1359,7 +1373,14 @@ namespace Model
      * Valid only when Spot <b>AllocationStrategy</b> is set to
      * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
      * allocates your target Spot capacity across the number of Spot pools that you
-     * specify.</p>
+     * specify.</p> <p>Note that Spot Fleet attempts to draw Spot Instances from the
+     * number of pools that you specify on a best effort basis. If a pool runs out of
+     * Spot capacity before fulfilling your target capacity, Spot Fleet will continue
+     * to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your target capacity is met, you might receive Spot Instances from more than the
+     * number of pools that you specified. Similarly, if most of the pools have no Spot
+     * capacity, you might receive your full target capacity from fewer than the number
+     * of pools that you specified.</p>
      */
     inline void SetInstancePoolsToUseCount(int value) { m_instancePoolsToUseCountHasBeenSet = true; m_instancePoolsToUseCount = value; }
 
@@ -1368,9 +1389,57 @@ namespace Model
      * Valid only when Spot <b>AllocationStrategy</b> is set to
      * <code>lowest-price</code>. Spot Fleet selects the cheapest Spot pools and evenly
      * allocates your target Spot capacity across the number of Spot pools that you
-     * specify.</p>
+     * specify.</p> <p>Note that Spot Fleet attempts to draw Spot Instances from the
+     * number of pools that you specify on a best effort basis. If a pool runs out of
+     * Spot capacity before fulfilling your target capacity, Spot Fleet will continue
+     * to fulfill your request by drawing from the next cheapest pool. To ensure that
+     * your target capacity is met, you might receive Spot Instances from more than the
+     * number of pools that you specified. Similarly, if most of the pools have no Spot
+     * capacity, you might receive your full target capacity from fewer than the number
+     * of pools that you specified.</p>
      */
     inline SpotFleetRequestConfigData& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
+
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline const Aws::String& GetContext() const{ return m_context; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const Aws::String& value) { m_contextHasBeenSet = true; m_context = value; }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(Aws::String&& value) { m_contextHasBeenSet = true; m_context = std::move(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline void SetContext(const char* value) { m_contextHasBeenSet = true; m_context.assign(value); }
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline SpotFleetRequestConfigData& WithContext(const Aws::String& value) { SetContext(value); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline SpotFleetRequestConfigData& WithContext(Aws::String&& value) { SetContext(std::move(value)); return *this;}
+
+    /**
+     * <p>Reserved.</p>
+     */
+    inline SpotFleetRequestConfigData& WithContext(const char* value) { SetContext(value); return *this;}
 
 
     /**
@@ -1579,6 +1648,9 @@ namespace Model
 
     int m_instancePoolsToUseCount;
     bool m_instancePoolsToUseCountHasBeenSet;
+
+    Aws::String m_context;
+    bool m_contextHasBeenSet;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet;

@@ -410,34 +410,38 @@ namespace Model
 
 
     /**
-     * <p>Whether the model package is to be certified to be listed on AWS Marketplace.
-     * For information about listing model packages on AWS Marketplace, see <a
+     * <p>Whether the model package is to be certified to be listed on Amazon Web
+     * Services Marketplace. For information about listing model packages on Amazon Web
+     * Services Marketplace, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List
-     * Your Algorithm or Model Package on AWS Marketplace</a>.</p>
+     * Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether the model package is to be certified to be listed on AWS Marketplace.
-     * For information about listing model packages on AWS Marketplace, see <a
+     * <p>Whether the model package is to be certified to be listed on Amazon Web
+     * Services Marketplace. For information about listing model packages on Amazon Web
+     * Services Marketplace, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List
-     * Your Algorithm or Model Package on AWS Marketplace</a>.</p>
+     * Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>
      */
     inline bool CertifyForMarketplaceHasBeenSet() const { return m_certifyForMarketplaceHasBeenSet; }
 
     /**
-     * <p>Whether the model package is to be certified to be listed on AWS Marketplace.
-     * For information about listing model packages on AWS Marketplace, see <a
+     * <p>Whether the model package is to be certified to be listed on Amazon Web
+     * Services Marketplace. For information about listing model packages on Amazon Web
+     * Services Marketplace, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List
-     * Your Algorithm or Model Package on AWS Marketplace</a>.</p>
+     * Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplaceHasBeenSet = true; m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether the model package is to be certified to be listed on AWS Marketplace.
-     * For information about listing model packages on AWS Marketplace, see <a
+     * <p>Whether the model package is to be certified to be listed on Amazon Web
+     * Services Marketplace. For information about listing model packages on Amazon Web
+     * Services Marketplace, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-mkt-list.html">List
-     * Your Algorithm or Model Package on AWS Marketplace</a>.</p>
+     * Your Algorithm or Model Package on Amazon Web Services Marketplace</a>.</p>
      */
     inline ModelPackage& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 
@@ -661,7 +665,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -669,7 +674,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -677,7 +683,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -685,7 +692,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -693,7 +701,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackage& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -701,7 +710,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackage& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -709,7 +719,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackage& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -717,7 +728,8 @@ namespace Model
      * <p>A list of the tags associated with the model package. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackage& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

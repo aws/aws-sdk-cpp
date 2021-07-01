@@ -157,22 +157,20 @@ namespace Model
     typedef std::function<void(const SQSClient*, const Model::UntagQueueRequest&, const Model::UntagQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagQueueResponseReceivedHandler;
 
   /**
-   * <p>Welcome to the <i>Amazon Simple Queue Service API Reference</i>.</p>
-   * <p>Amazon Simple Queue Service (Amazon SQS) is a reliable, highly-scalable
-   * hosted queue for storing messages as they travel between applications or
-   * microservices. Amazon SQS moves data between distributed application components
-   * and helps you decouple these components.</p> <p>For information on the
-   * permissions you need to use this API, see <a
+   * <p>Welcome to the <i>Amazon SQS API Reference</i>.</p> <p>Amazon SQS is a
+   * reliable, highly-scalable hosted queue for storing messages as they travel
+   * between applications or microservices. Amazon SQS moves data between distributed
+   * application components and helps you decouple these components.</p> <p>For
+   * information on the permissions you need to use this API, see <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-authentication-and-access-control.html">Identity
-   * and access management</a> in the <i>Amazon Simple Queue Service Developer
-   * Guide.</i> </p> <p>You can use <a href="http://aws.amazon.com/tools/#sdk">AWS
-   * SDKs</a> to access Amazon SQS using your favorite programming language. The SDKs
-   * perform tasks such as the following automatically:</p> <ul> <li>
-   * <p>Cryptographically sign your service requests</p> </li> <li> <p>Retry
-   * requests</p> </li> <li> <p>Handle error responses</p> </li> </ul> <p>
-   * <b>Additional information</b> </p> <ul> <li> <p> <a
-   * href="http://aws.amazon.com/sqs/">Amazon SQS Product Page</a> </p> </li> <li>
-   * <p> <i>Amazon Simple Queue Service Developer Guide</i> </p> <ul> <li> <p> <a
+   * and access management</a> in the <i>Amazon SQS Developer Guide.</i> </p> <p>You
+   * can use <a href="http://aws.amazon.com/tools/#sdk">Amazon Web Services SDKs</a>
+   * to access Amazon SQS using your favorite programming language. The SDKs perform
+   * tasks such as the following automatically:</p> <ul> <li> <p>Cryptographically
+   * sign your service requests</p> </li> <li> <p>Retry requests</p> </li> <li>
+   * <p>Handle error responses</p> </li> </ul> <p> <b>Additional information</b> </p>
+   * <ul> <li> <p> <a href="http://aws.amazon.com/sqs/">Amazon SQS Product Page</a>
+   * </p> </li> <li> <p> <i>Amazon SQS Developer Guide</i> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html">Making
    * API Requests</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
@@ -180,7 +178,7 @@ namespace Model
    * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Amazon
    * SQS Dead-Letter Queues</a> </p> </li> </ul> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/cli/latest/reference/sqs/index.html">Amazon SQS
-   * in the <i>AWS CLI Command Reference</i> </a> </p> </li> <li> <p> <i>Amazon Web
+   * in the <i>Command Line Interface</i> </a> </p> </li> <li> <p> <i>Amazon Web
    * Services General Reference</i> </p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region">Regions
    * and Endpoints</a> </p> </li> </ul> </li> </ul>
@@ -226,26 +224,26 @@ namespace Model
          * can grant or deny permissions to the queue. For more information about these
          * permissions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
+         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
          * generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code>
          * to upload your policy. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
          * Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon
-         * Simple Queue Service Developer Guide</i>.</p> </li> <li> <p>An Amazon SQS policy
-         * can have a maximum of 7 actions.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         *  <p>Some actions take lists of parameters. These lists are specified
-         * using the <code>param.n</code> notation. Values of <code>n</code> are integers
-         * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * SQS Developer Guide</i>.</p> </li> <li> <p>An Amazon SQS policy can have a
+         * maximum of 7 actions.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul>  <p>Some actions take lists of
+         * parameters. These lists are specified using the <code>param.n</code> notation.
+         * Values of <code>n</code> are integers starting from 1. For example, a parameter
+         * list with two elements looks like this:</p> <p>
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          */
@@ -259,26 +257,26 @@ namespace Model
          * can grant or deny permissions to the queue. For more information about these
          * permissions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
+         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
          * generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code>
          * to upload your policy. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
          * Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon
-         * Simple Queue Service Developer Guide</i>.</p> </li> <li> <p>An Amazon SQS policy
-         * can have a maximum of 7 actions.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         *  <p>Some actions take lists of parameters. These lists are specified
-         * using the <code>param.n</code> notation. Values of <code>n</code> are integers
-         * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * SQS Developer Guide</i>.</p> </li> <li> <p>An Amazon SQS policy can have a
+         * maximum of 7 actions.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul>  <p>Some actions take lists of
+         * parameters. These lists are specified using the <code>param.n</code> notation.
+         * Values of <code>n</code> are integers starting from 1. For example, a parameter
+         * list with two elements looks like this:</p> <p>
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          *
@@ -294,26 +292,26 @@ namespace Model
          * can grant or deny permissions to the queue. For more information about these
          * permissions, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
+         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p>  <ul> <li> <p> <code>AddPermission</code>
          * generates a policy for you. You can use <code> <a>SetQueueAttributes</a> </code>
          * to upload your policy. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
          * Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon
-         * Simple Queue Service Developer Guide</i>.</p> </li> <li> <p>An Amazon SQS policy
-         * can have a maximum of 7 actions.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         *  <p>Some actions take lists of parameters. These lists are specified
-         * using the <code>param.n</code> notation. Values of <code>n</code> are integers
-         * starting from 1. For example, a parameter list with two elements looks like
-         * this:</p> <p> <code>&amp;AttributeName.1=first</code> </p> <p>
+         * SQS Developer Guide</i>.</p> </li> <li> <p>An Amazon SQS policy can have a
+         * maximum of 7 actions.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul>  <p>Some actions take lists of
+         * parameters. These lists are specified using the <code>param.n</code> notation.
+         * Values of <code>n</code> are integers starting from 1. For example, a parameter
+         * list with two elements looks like this:</p> <p>
+         * <code>&amp;AttributeName.1=first</code> </p> <p>
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">AWS
          * API Reference</a></p>
          *
@@ -326,29 +324,29 @@ namespace Model
          * value. The default visibility timeout for a message is 30 seconds. The minimum
          * is 0 seconds. The maximum is 12 hours. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-         * <p>For example, you have a message with a visibility timeout of 5 minutes. After
-         * 3 minutes, you call <code>ChangeMessageVisibility</code> with a timeout of 10
-         * minutes. You can continue to call <code>ChangeMessageVisibility</code> to extend
-         * the visibility timeout to the maximum allowed time. If you try to extend the
-         * visibility timeout beyond the maximum, your request is rejected.</p> <p>An
-         * Amazon SQS message has three basic states:</p> <ol> <li> <p>Sent to a queue by a
-         * producer.</p> </li> <li> <p>Received from the queue by a consumer.</p> </li>
-         * <li> <p>Deleted from the queue.</p> </li> </ol> <p>A message is considered to be
-         * <i>stored</i> after it is sent to a queue by a producer, but not yet received
-         * from the queue by a consumer (that is, between states 1 and 2). There is no
-         * limit to the number of stored messages. A message is considered to be <i>in
-         * flight</i> after it is received from a queue by a consumer, but not yet deleted
-         * from the queue (that is, between states 2 and 3). There is a limit to the number
-         * of inflight messages.</p> <p>Limits that apply to inflight messages are
-         * unrelated to the <i>unlimited</i> number of stored messages.</p> <p>For most
-         * standard queues (depending on queue traffic and message backlog), there can be a
-         * maximum of approximately 120,000 inflight messages (received from a queue by a
-         * consumer, but not yet deleted from the queue). If you reach this limit, Amazon
-         * SQS returns the <code>OverLimit</code> error message. To avoid reaching the
-         * limit, you should delete messages from the queue after they're processed. You
-         * can also increase the number of queues you use to process your messages. To
-         * request a limit increase, <a
+         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
+         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
+         * <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+         * continue to call <code>ChangeMessageVisibility</code> to extend the visibility
+         * timeout to the maximum allowed time. If you try to extend the visibility timeout
+         * beyond the maximum, your request is rejected.</p> <p>An Amazon SQS message has
+         * three basic states:</p> <ol> <li> <p>Sent to a queue by a producer.</p> </li>
+         * <li> <p>Received from the queue by a consumer.</p> </li> <li> <p>Deleted from
+         * the queue.</p> </li> </ol> <p>A message is considered to be <i>stored</i> after
+         * it is sent to a queue by a producer, but not yet received from the queue by a
+         * consumer (that is, between states 1 and 2). There is no limit to the number of
+         * stored messages. A message is considered to be <i>in flight</i> after it is
+         * received from a queue by a consumer, but not yet deleted from the queue (that
+         * is, between states 2 and 3). There is a limit to the number of inflight
+         * messages.</p> <p>Limits that apply to inflight messages are unrelated to the
+         * <i>unlimited</i> number of stored messages.</p> <p>For most standard queues
+         * (depending on queue traffic and message backlog), there can be a maximum of
+         * approximately 120,000 inflight messages (received from a queue by a consumer,
+         * but not yet deleted from the queue). If you reach this limit, Amazon SQS returns
+         * the <code>OverLimit</code> error message. To avoid reaching the limit, you
+         * should delete messages from the queue after they're processed. You can also
+         * increase the number of queues you use to process your messages. To request a
+         * limit increase, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
          * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
          * inflight messages (received from a queue by a consumer, but not yet deleted from
@@ -373,29 +371,29 @@ namespace Model
          * value. The default visibility timeout for a message is 30 seconds. The minimum
          * is 0 seconds. The maximum is 12 hours. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-         * <p>For example, you have a message with a visibility timeout of 5 minutes. After
-         * 3 minutes, you call <code>ChangeMessageVisibility</code> with a timeout of 10
-         * minutes. You can continue to call <code>ChangeMessageVisibility</code> to extend
-         * the visibility timeout to the maximum allowed time. If you try to extend the
-         * visibility timeout beyond the maximum, your request is rejected.</p> <p>An
-         * Amazon SQS message has three basic states:</p> <ol> <li> <p>Sent to a queue by a
-         * producer.</p> </li> <li> <p>Received from the queue by a consumer.</p> </li>
-         * <li> <p>Deleted from the queue.</p> </li> </ol> <p>A message is considered to be
-         * <i>stored</i> after it is sent to a queue by a producer, but not yet received
-         * from the queue by a consumer (that is, between states 1 and 2). There is no
-         * limit to the number of stored messages. A message is considered to be <i>in
-         * flight</i> after it is received from a queue by a consumer, but not yet deleted
-         * from the queue (that is, between states 2 and 3). There is a limit to the number
-         * of inflight messages.</p> <p>Limits that apply to inflight messages are
-         * unrelated to the <i>unlimited</i> number of stored messages.</p> <p>For most
-         * standard queues (depending on queue traffic and message backlog), there can be a
-         * maximum of approximately 120,000 inflight messages (received from a queue by a
-         * consumer, but not yet deleted from the queue). If you reach this limit, Amazon
-         * SQS returns the <code>OverLimit</code> error message. To avoid reaching the
-         * limit, you should delete messages from the queue after they're processed. You
-         * can also increase the number of queues you use to process your messages. To
-         * request a limit increase, <a
+         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
+         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
+         * <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+         * continue to call <code>ChangeMessageVisibility</code> to extend the visibility
+         * timeout to the maximum allowed time. If you try to extend the visibility timeout
+         * beyond the maximum, your request is rejected.</p> <p>An Amazon SQS message has
+         * three basic states:</p> <ol> <li> <p>Sent to a queue by a producer.</p> </li>
+         * <li> <p>Received from the queue by a consumer.</p> </li> <li> <p>Deleted from
+         * the queue.</p> </li> </ol> <p>A message is considered to be <i>stored</i> after
+         * it is sent to a queue by a producer, but not yet received from the queue by a
+         * consumer (that is, between states 1 and 2). There is no limit to the number of
+         * stored messages. A message is considered to be <i>in flight</i> after it is
+         * received from a queue by a consumer, but not yet deleted from the queue (that
+         * is, between states 2 and 3). There is a limit to the number of inflight
+         * messages.</p> <p>Limits that apply to inflight messages are unrelated to the
+         * <i>unlimited</i> number of stored messages.</p> <p>For most standard queues
+         * (depending on queue traffic and message backlog), there can be a maximum of
+         * approximately 120,000 inflight messages (received from a queue by a consumer,
+         * but not yet deleted from the queue). If you reach this limit, Amazon SQS returns
+         * the <code>OverLimit</code> error message. To avoid reaching the limit, you
+         * should delete messages from the queue after they're processed. You can also
+         * increase the number of queues you use to process your messages. To request a
+         * limit increase, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
          * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
          * inflight messages (received from a queue by a consumer, but not yet deleted from
@@ -422,29 +420,29 @@ namespace Model
          * value. The default visibility timeout for a message is 30 seconds. The minimum
          * is 0 seconds. The maximum is 12 hours. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-         * <p>For example, you have a message with a visibility timeout of 5 minutes. After
-         * 3 minutes, you call <code>ChangeMessageVisibility</code> with a timeout of 10
-         * minutes. You can continue to call <code>ChangeMessageVisibility</code> to extend
-         * the visibility timeout to the maximum allowed time. If you try to extend the
-         * visibility timeout beyond the maximum, your request is rejected.</p> <p>An
-         * Amazon SQS message has three basic states:</p> <ol> <li> <p>Sent to a queue by a
-         * producer.</p> </li> <li> <p>Received from the queue by a consumer.</p> </li>
-         * <li> <p>Deleted from the queue.</p> </li> </ol> <p>A message is considered to be
-         * <i>stored</i> after it is sent to a queue by a producer, but not yet received
-         * from the queue by a consumer (that is, between states 1 and 2). There is no
-         * limit to the number of stored messages. A message is considered to be <i>in
-         * flight</i> after it is received from a queue by a consumer, but not yet deleted
-         * from the queue (that is, between states 2 and 3). There is a limit to the number
-         * of inflight messages.</p> <p>Limits that apply to inflight messages are
-         * unrelated to the <i>unlimited</i> number of stored messages.</p> <p>For most
-         * standard queues (depending on queue traffic and message backlog), there can be a
-         * maximum of approximately 120,000 inflight messages (received from a queue by a
-         * consumer, but not yet deleted from the queue). If you reach this limit, Amazon
-         * SQS returns the <code>OverLimit</code> error message. To avoid reaching the
-         * limit, you should delete messages from the queue after they're processed. You
-         * can also increase the number of queues you use to process your messages. To
-         * request a limit increase, <a
+         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>For example, you
+         * have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
+         * <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+         * continue to call <code>ChangeMessageVisibility</code> to extend the visibility
+         * timeout to the maximum allowed time. If you try to extend the visibility timeout
+         * beyond the maximum, your request is rejected.</p> <p>An Amazon SQS message has
+         * three basic states:</p> <ol> <li> <p>Sent to a queue by a producer.</p> </li>
+         * <li> <p>Received from the queue by a consumer.</p> </li> <li> <p>Deleted from
+         * the queue.</p> </li> </ol> <p>A message is considered to be <i>stored</i> after
+         * it is sent to a queue by a producer, but not yet received from the queue by a
+         * consumer (that is, between states 1 and 2). There is no limit to the number of
+         * stored messages. A message is considered to be <i>in flight</i> after it is
+         * received from a queue by a consumer, but not yet deleted from the queue (that
+         * is, between states 2 and 3). There is a limit to the number of inflight
+         * messages.</p> <p>Limits that apply to inflight messages are unrelated to the
+         * <i>unlimited</i> number of stored messages.</p> <p>For most standard queues
+         * (depending on queue traffic and message backlog), there can be a maximum of
+         * approximately 120,000 inflight messages (received from a queue by a consumer,
+         * but not yet deleted from the queue). If you reach this limit, Amazon SQS returns
+         * the <code>OverLimit</code> error message. To avoid reaching the limit, you
+         * should delete messages from the queue after they're processed. You can also
+         * increase the number of queues you use to process your messages. To request a
+         * limit increase, <a
          * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
          * a support request</a>.</p> <p>For FIFO queues, there can be a maximum of 20,000
          * inflight messages (received from a queue by a consumer, but not yet deleted from
@@ -536,9 +534,9 @@ namespace Model
          * new FIFO queue for your application or delete your existing standard queue and
          * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
-         * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>. </p>  </li> <li> <p>If you don't provide a value for
-         * an attribute, the queue is created with the default value for the attribute.</p>
+         * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
+         * Guide</i>. </p>  </li> <li> <p>If you don't provide a value for an
+         * attribute, the queue is created with the default value for the attribute.</p>
          * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
@@ -560,8 +558,8 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
          */
@@ -576,9 +574,9 @@ namespace Model
          * new FIFO queue for your application or delete your existing standard queue and
          * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
-         * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>. </p>  </li> <li> <p>If you don't provide a value for
-         * an attribute, the queue is created with the default value for the attribute.</p>
+         * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
+         * Guide</i>. </p>  </li> <li> <p>If you don't provide a value for an
+         * attribute, the queue is created with the default value for the attribute.</p>
          * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
@@ -600,8 +598,8 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
          *
@@ -618,9 +616,9 @@ namespace Model
          * new FIFO queue for your application or delete your existing standard queue and
          * recreate it as a FIFO queue. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-moving">Moving
-         * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>. </p>  </li> <li> <p>If you don't provide a value for
-         * an attribute, the queue is created with the default value for the attribute.</p>
+         * From a Standard Queue to a FIFO Queue</a> in the <i>Amazon SQS Developer
+         * Guide</i>. </p>  </li> <li> <p>If you don't provide a value for an
+         * attribute, the queue is created with the default value for the attribute.</p>
          * </li> <li> <p>If you delete a queue, you must wait at least 60 seconds before
          * creating a queue with the same name.</p> </li> </ul> <p>To successfully create a
          * new queue, you must provide a queue name that adheres to the <a
@@ -642,8 +640,8 @@ namespace Model
          * <code>&amp;AttributeName.2=second</code> </p>  <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">AWS API
          * Reference</a></p>
          *
@@ -795,8 +793,8 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
          */
@@ -815,8 +813,8 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
          *
@@ -837,8 +835,8 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">AWS API
          * Reference</a></p>
          *
@@ -890,8 +888,8 @@ namespace Model
          * grant you permission to access the queue. For more information about shared
          * queue access, see <code> <a>AddPermission</a> </code> or see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS API
          * Reference</a></p>
          */
@@ -904,8 +902,8 @@ namespace Model
          * grant you permission to access the queue. For more information about shared
          * queue access, see <code> <a>AddPermission</a> </code> or see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS API
          * Reference</a></p>
          *
@@ -920,8 +918,8 @@ namespace Model
          * grant you permission to access the queue. For more information about shared
          * queue access, see <code> <a>AddPermission</a> </code> or see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
-         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon Simple Queue
-         * Service Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS
+         * Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">AWS API
          * Reference</a></p>
          *
@@ -942,8 +940,8 @@ namespace Model
          * to receive the next page of results. </p> <p>For more information about using
          * dead-letter queues, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
          */
@@ -962,8 +960,8 @@ namespace Model
          * to receive the next page of results. </p> <p>For more information about using
          * dead-letter queues, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
          *
@@ -984,8 +982,8 @@ namespace Model
          * to receive the next page of results. </p> <p>For more information about using
          * dead-letter queues, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
-         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service
-         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">AWS
          * API Reference</a></p>
          *
@@ -997,12 +995,12 @@ namespace Model
          * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
          */
@@ -1012,12 +1010,12 @@ namespace Model
          * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
          *
@@ -1029,12 +1027,12 @@ namespace Model
          * <p>List all cost allocation tags added to the specified Amazon SQS queue. For an
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">AWS
          * API Reference</a></p>
          *
@@ -1057,8 +1055,8 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          */
@@ -1079,8 +1077,8 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          *
@@ -1103,8 +1101,8 @@ namespace Model
          * <p>Cross-account permissions don't apply to this action. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">AWS API
          * Reference</a></p>
          *
@@ -1166,13 +1164,13 @@ namespace Model
          * the <code>WaitTimeSeconds</code> parameter enables long-poll support. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
-         * </p> <p>Short poll is the default behavior where a weighted random set of
-         * machines is sampled on a <code>ReceiveMessage</code> call. Thus, only the
-         * messages on the sampled machines are returned. If the number of messages in the
-         * queue is small (fewer than 1,000), you most likely get fewer messages than you
-         * requested per <code>ReceiveMessage</code> call. If the number of messages in the
-         * queue is extremely small, you might not receive any messages in a particular
+         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>Short
+         * poll is the default behavior where a weighted random set of machines is sampled
+         * on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled
+         * machines are returned. If the number of messages in the queue is small (fewer
+         * than 1,000), you most likely get fewer messages than you requested per
+         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
+         * extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response. If this happens, repeat the request. </p>
          * <p>For each message returned, the response includes the following:</p> <ul> <li>
          * <p>The message body.</p> </li> <li> <p>An MD5 digest of the message body. For
@@ -1184,20 +1182,19 @@ namespace Model
          * receipt handle is the identifier you must provide when deleting the message. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-         * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <p>You can provide the <code>VisibilityTimeout</code> parameter
-         * in your request. The parameter is applied to the messages that Amazon SQS
-         * returns in the response. If you don't include the parameter, the overall
-         * visibility timeout for the queue is used for the returned messages. For more
-         * information, see <a
+         * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>You
+         * can provide the <code>VisibilityTimeout</code> parameter in your request. The
+         * parameter is applied to the messages that Amazon SQS returns in the response. If
+         * you don't include the parameter, the overall visibility timeout for the queue is
+         * used for the returned messages. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>A
-         * message that isn't deleted or a message whose visibility isn't extended before
-         * the visibility timeout expires counts as a failed receive. Depending on the
-         * configuration of the queue, the message might be sent to the dead-letter
-         * queue.</p>  <p>In the future, new attributes might be added. If you write
-         * code that calls this action, we recommend that you structure your code so that
-         * it can handle new attributes gracefully.</p> <p><h3>See Also:</h3>   <a
+         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
+         * isn't deleted or a message whose visibility isn't extended before the visibility
+         * timeout expires counts as a failed receive. Depending on the configuration of
+         * the queue, the message might be sent to the dead-letter queue.</p>  <p>In
+         * the future, new attributes might be added. If you write code that calls this
+         * action, we recommend that you structure your code so that it can handle new
+         * attributes gracefully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          */
@@ -1208,13 +1205,13 @@ namespace Model
          * the <code>WaitTimeSeconds</code> parameter enables long-poll support. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
-         * </p> <p>Short poll is the default behavior where a weighted random set of
-         * machines is sampled on a <code>ReceiveMessage</code> call. Thus, only the
-         * messages on the sampled machines are returned. If the number of messages in the
-         * queue is small (fewer than 1,000), you most likely get fewer messages than you
-         * requested per <code>ReceiveMessage</code> call. If the number of messages in the
-         * queue is extremely small, you might not receive any messages in a particular
+         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>Short
+         * poll is the default behavior where a weighted random set of machines is sampled
+         * on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled
+         * machines are returned. If the number of messages in the queue is small (fewer
+         * than 1,000), you most likely get fewer messages than you requested per
+         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
+         * extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response. If this happens, repeat the request. </p>
          * <p>For each message returned, the response includes the following:</p> <ul> <li>
          * <p>The message body.</p> </li> <li> <p>An MD5 digest of the message body. For
@@ -1226,20 +1223,19 @@ namespace Model
          * receipt handle is the identifier you must provide when deleting the message. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-         * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <p>You can provide the <code>VisibilityTimeout</code> parameter
-         * in your request. The parameter is applied to the messages that Amazon SQS
-         * returns in the response. If you don't include the parameter, the overall
-         * visibility timeout for the queue is used for the returned messages. For more
-         * information, see <a
+         * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>You
+         * can provide the <code>VisibilityTimeout</code> parameter in your request. The
+         * parameter is applied to the messages that Amazon SQS returns in the response. If
+         * you don't include the parameter, the overall visibility timeout for the queue is
+         * used for the returned messages. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>A
-         * message that isn't deleted or a message whose visibility isn't extended before
-         * the visibility timeout expires counts as a failed receive. Depending on the
-         * configuration of the queue, the message might be sent to the dead-letter
-         * queue.</p>  <p>In the future, new attributes might be added. If you write
-         * code that calls this action, we recommend that you structure your code so that
-         * it can handle new attributes gracefully.</p> <p><h3>See Also:</h3>   <a
+         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
+         * isn't deleted or a message whose visibility isn't extended before the visibility
+         * timeout expires counts as a failed receive. Depending on the configuration of
+         * the queue, the message might be sent to the dead-letter queue.</p>  <p>In
+         * the future, new attributes might be added. If you write code that calls this
+         * action, we recommend that you structure your code so that it can handle new
+         * attributes gracefully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          *
@@ -1252,13 +1248,13 @@ namespace Model
          * the <code>WaitTimeSeconds</code> parameter enables long-poll support. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
-         * SQS Long Polling</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
-         * </p> <p>Short poll is the default behavior where a weighted random set of
-         * machines is sampled on a <code>ReceiveMessage</code> call. Thus, only the
-         * messages on the sampled machines are returned. If the number of messages in the
-         * queue is small (fewer than 1,000), you most likely get fewer messages than you
-         * requested per <code>ReceiveMessage</code> call. If the number of messages in the
-         * queue is extremely small, you might not receive any messages in a particular
+         * SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p> <p>Short
+         * poll is the default behavior where a weighted random set of machines is sampled
+         * on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled
+         * machines are returned. If the number of messages in the queue is small (fewer
+         * than 1,000), you most likely get fewer messages than you requested per
+         * <code>ReceiveMessage</code> call. If the number of messages in the queue is
+         * extremely small, you might not receive any messages in a particular
          * <code>ReceiveMessage</code> response. If this happens, repeat the request. </p>
          * <p>For each message returned, the response includes the following:</p> <ul> <li>
          * <p>The message body.</p> </li> <li> <p>An MD5 digest of the message body. For
@@ -1270,20 +1266,19 @@ namespace Model
          * receipt handle is the identifier you must provide when deleting the message. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
-         * and Message Identifiers</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <p>You can provide the <code>VisibilityTimeout</code> parameter
-         * in your request. The parameter is applied to the messages that Amazon SQS
-         * returns in the response. If you don't include the parameter, the overall
-         * visibility timeout for the queue is used for the returned messages. For more
-         * information, see <a
+         * and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>You
+         * can provide the <code>VisibilityTimeout</code> parameter in your request. The
+         * parameter is applied to the messages that Amazon SQS returns in the response. If
+         * you don't include the parameter, the overall visibility timeout for the queue is
+         * used for the returned messages. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-         * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p> <p>A
-         * message that isn't deleted or a message whose visibility isn't extended before
-         * the visibility timeout expires counts as a failed receive. Depending on the
-         * configuration of the queue, the message might be sent to the dead-letter
-         * queue.</p>  <p>In the future, new attributes might be added. If you write
-         * code that calls this action, we recommend that you structure your code so that
-         * it can handle new attributes gracefully.</p> <p><h3>See Also:</h3>   <a
+         * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>A message that
+         * isn't deleted or a message whose visibility isn't extended before the visibility
+         * timeout expires counts as a failed receive. Depending on the configuration of
+         * the queue, the message might be sent to the dead-letter queue.</p>  <p>In
+         * the future, new attributes might be added. If you write code that calls this
+         * action, we recommend that you structure your code so that it can handle new
+         * attributes gracefully.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">AWS
          * API Reference</a></p>
          *
@@ -1297,12 +1292,11 @@ namespace Model
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">AWS
          * API Reference</a></p>
          */
@@ -1314,12 +1308,11 @@ namespace Model
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">AWS
          * API Reference</a></p>
          *
@@ -1333,12 +1326,11 @@ namespace Model
          * can remove permissions from it.</p> </li> <li> <p>Cross-account permissions
          * don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">AWS
          * API Reference</a></p>
          *
@@ -1493,12 +1485,11 @@ namespace Model
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">AWS
          * API Reference</a></p>
          */
@@ -1514,12 +1505,11 @@ namespace Model
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -1537,12 +1527,11 @@ namespace Model
          * it can handle new attributes gracefully.</p> </li> <li> <p>Cross-account
          * permissions don't apply to this action. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> </li> <li> <p>To remove the ability to
-         * change queue permissions, you must deny permission to the
-         * <code>AddPermission</code>, <code>RemovePermission</code>, and
-         * <code>SetQueueAttributes</code> actions in your IAM policy.</p> </li> </ul>
-         * <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> </li> <li> <p>To remove the ability to change queue
+         * permissions, you must deny permission to the <code>AddPermission</code>,
+         * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in
+         * your IAM policy.</p> </li> </ul> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">AWS
          * API Reference</a></p>
          *
@@ -1554,21 +1543,20 @@ namespace Model
          * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
-         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
-         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
-         * interprets tags as character strings.</p> </li> <li> <p>Tags are
-         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
-         * existing tag overwrites the existing tag.</p> </li> </ul> <p>For a full list of
-         * tag restrictions, see <a
-         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
-         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>When
+         * you use queue tags, keep the following guidelines in mind:</p> <ul> <li>
+         * <p>Adding more than 50 tags to a queue isn't recommended.</p> </li> <li> <p>Tags
+         * don't have any semantic meaning. Amazon SQS interprets tags as character
+         * strings.</p> </li> <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag
+         * with a key identical to that of an existing tag overwrites the existing tag.</p>
+         * </li> </ul> <p>For a full list of tag restrictions, see <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas
+         * related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
          */
@@ -1578,21 +1566,20 @@ namespace Model
          * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
-         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
-         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
-         * interprets tags as character strings.</p> </li> <li> <p>Tags are
-         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
-         * existing tag overwrites the existing tag.</p> </li> </ul> <p>For a full list of
-         * tag restrictions, see <a
-         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
-         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>When
+         * you use queue tags, keep the following guidelines in mind:</p> <ul> <li>
+         * <p>Adding more than 50 tags to a queue isn't recommended.</p> </li> <li> <p>Tags
+         * don't have any semantic meaning. Amazon SQS interprets tags as character
+         * strings.</p> </li> <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag
+         * with a key identical to that of an existing tag overwrites the existing tag.</p>
+         * </li> </ul> <p>For a full list of tag restrictions, see <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas
+         * related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
          *
@@ -1604,21 +1591,20 @@ namespace Model
          * <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview,
          * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p> <p>When you use queue tags, keep the following guidelines in
-         * mind:</p> <ul> <li> <p>Adding more than 50 tags to a queue isn't
-         * recommended.</p> </li> <li> <p>Tags don't have any semantic meaning. Amazon SQS
-         * interprets tags as character strings.</p> </li> <li> <p>Tags are
-         * case-sensitive.</p> </li> <li> <p>A new tag with a key identical to that of an
-         * existing tag overwrites the existing tag.</p> </li> </ul> <p>For a full list of
-         * tag restrictions, see <a
-         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Limits
-         * Related to Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <p>When
+         * you use queue tags, keep the following guidelines in mind:</p> <ul> <li>
+         * <p>Adding more than 50 tags to a queue isn't recommended.</p> </li> <li> <p>Tags
+         * don't have any semantic meaning. Amazon SQS interprets tags as character
+         * strings.</p> </li> <li> <p>Tags are case-sensitive.</p> </li> <li> <p>A new tag
+         * with a key identical to that of an existing tag overwrites the existing tag.</p>
+         * </li> </ul> <p>For a full list of tag restrictions, see <a
+         * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues">Quotas
+         * related to queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">AWS API
          * Reference</a></p>
          *
@@ -1630,12 +1616,12 @@ namespace Model
          * <p>Remove cost allocation tags from the specified Amazon SQS queue. For an
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
          */
@@ -1645,12 +1631,12 @@ namespace Model
          * <p>Remove cost allocation tags from the specified Amazon SQS queue. For an
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
          *
@@ -1662,12 +1648,12 @@ namespace Model
          * <p>Remove cost allocation tags from the specified Amazon SQS queue. For an
          * overview, see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
-         * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer
-         * Guide</i>.</p>  <p>Cross-account permissions don't apply to this action.
-         * For more information, see <a
+         * Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+         * <p>Cross-account permissions don't apply to this action. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-         * cross-account permissions to a role and a user name</a> in the <i>Amazon Simple
-         * Queue Service Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
+         * Developer Guide</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">AWS API
          * Reference</a></p>
          *

@@ -175,32 +175,32 @@ namespace Model
 
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
      */
     inline const EnclaveOptions& GetEnclaveOptions() const{ return m_enclaveOptions; }
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
      */
     inline void SetEnclaveOptions(const EnclaveOptions& value) { m_enclaveOptions = value; }
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
      */
     inline void SetEnclaveOptions(EnclaveOptions&& value) { m_enclaveOptions = std::move(value); }
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEnclaveOptions(const EnclaveOptions& value) { SetEnclaveOptions(value); return *this;}
 
     /**
-     * <p>To enable the instance for AWS Nitro Enclaves, set this parameter to
-     * <code>true</code>; otherwise, set it to <code>false</code>.</p>
+     * <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this
+     * parameter to <code>true</code>; otherwise, set it to <code>false</code>.</p>
      */
     inline DescribeInstanceAttributeResponse& WithEnclaveOptions(EnclaveOptions&& value) { SetEnclaveOptions(std::move(value)); return *this;}
 

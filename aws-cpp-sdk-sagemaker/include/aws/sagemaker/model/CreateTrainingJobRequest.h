@@ -52,50 +52,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline const Aws::String& GetTrainingJobName() const{ return m_trainingJobName; }
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline bool TrainingJobNameHasBeenSet() const { return m_trainingJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline void SetTrainingJobName(const Aws::String& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = value; }
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline void SetTrainingJobName(Aws::String&& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = std::move(value); }
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline void SetTrainingJobName(const char* value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName.assign(value); }
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline CreateTrainingJobRequest& WithTrainingJobName(const Aws::String& value) { SetTrainingJobName(value); return *this;}
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline CreateTrainingJobRequest& WithTrainingJobName(Aws::String&& value) { SetTrainingJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the training job. The name must be unique within an AWS Region in
-     * an AWS account. </p>
+     * <p>The name of the training job. The name must be unique within an Amazon Web
+     * Services Region in an Amazon Web Services account. </p>
      */
     inline CreateTrainingJobRequest& WithTrainingJobName(const char* value) { SetTrainingJobName(value); return *this;}
 
@@ -796,74 +796,74 @@ namespace Model
 
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline CreateTrainingJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

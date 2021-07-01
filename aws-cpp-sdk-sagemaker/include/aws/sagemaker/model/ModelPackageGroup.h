@@ -298,56 +298,64 @@ namespace Model
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackageGroup& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackageGroup& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackageGroup& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of the tags associated with the model group. For more information, see
      * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline ModelPackageGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

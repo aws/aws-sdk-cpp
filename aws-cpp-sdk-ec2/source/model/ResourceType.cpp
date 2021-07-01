@@ -44,6 +44,7 @@ namespace Aws
         static const int network_acl_HASH = HashingUtils::HashString("network-acl");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
         static const int network_insights_analysis_HASH = HashingUtils::HashString("network-insights-analysis");
+        static const int network_insights_boundary_HASH = HashingUtils::HashString("network-insights-boundary");
         static const int network_insights_path_HASH = HashingUtils::HashString("network-insights-path");
         static const int placement_group_HASH = HashingUtils::HashString("placement-group");
         static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
@@ -167,6 +168,10 @@ namespace Aws
           else if (hashCode == network_insights_analysis_HASH)
           {
             return ResourceType::network_insights_analysis;
+          }
+          else if (hashCode == network_insights_boundary_HASH)
+          {
+            return ResourceType::network_insights_boundary;
           }
           else if (hashCode == network_insights_path_HASH)
           {
@@ -322,6 +327,8 @@ namespace Aws
             return "network-interface";
           case ResourceType::network_insights_analysis:
             return "network-insights-analysis";
+          case ResourceType::network_insights_boundary:
+            return "network-insights-boundary";
           case ResourceType::network_insights_path:
             return "network-insights-path";
           case ResourceType::placement_group:

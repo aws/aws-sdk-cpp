@@ -98,7 +98,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -124,7 +124,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -150,7 +150,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -176,7 +176,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -202,7 +202,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -228,7 +228,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -254,7 +254,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -280,7 +280,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a> in
      * milliseconds).</p> </li> <li> <p> <code>ApproximateReceiveCount</code> – Returns
      * the number of times a message has been received across all queues but not
-     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the AWS X-Ray
+     * deleted.</p> </li> <li> <p> <code>AWSTraceHeader</code> – Returns the X-Ray
      * trace header string. </p> </li> <li> <p> <code>SenderId</code> </p> <ul> <li>
      * <p>For an IAM user, returns the IAM user ID, for example
      * <code>ABCDEFGHI1JKLMNOPQ23R</code>.</p> </li> <li> <p>For an IAM role, returns
@@ -607,21 +607,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -631,8 +630,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetReceiveRequestAttemptId() const{ return m_receiveRequestAttemptId; }
 
@@ -658,21 +657,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -682,8 +680,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline bool ReceiveRequestAttemptIdHasBeenSet() const { return m_receiveRequestAttemptIdHasBeenSet; }
 
@@ -709,21 +707,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -733,8 +730,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline void SetReceiveRequestAttemptId(const Aws::String& value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId = value; }
 
@@ -760,21 +757,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -784,8 +780,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline void SetReceiveRequestAttemptId(Aws::String&& value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId = std::move(value); }
 
@@ -811,21 +807,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -835,8 +830,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline void SetReceiveRequestAttemptId(const char* value) { m_receiveRequestAttemptIdHasBeenSet = true; m_receiveRequestAttemptId.assign(value); }
 
@@ -862,21 +857,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -886,8 +880,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline ReceiveMessageRequest& WithReceiveRequestAttemptId(const Aws::String& value) { SetReceiveRequestAttemptId(value); return *this;}
 
@@ -913,21 +907,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -937,8 +930,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline ReceiveMessageRequest& WithReceiveRequestAttemptId(Aws::String&& value) { SetReceiveRequestAttemptId(std::move(value)); return *this;}
 
@@ -964,21 +957,20 @@ namespace Model
      * deduplication interval, it resets the visibility timeout. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
-     *  <p>If a caller of the <code>ReceiveMessage</code> action still
-     * processes messages when the visibility timeout expires and messages become
-     * visible, another worker consuming from the same queue can receive the same
-     * messages and therefore process duplicates. Also, if a consumer whose message
-     * processing time is longer than the visibility timeout tries to delete the
-     * processed messages, the action fails with an error.</p> <p>To mitigate this
-     * effect, ensure that your application observes a safe threshold before the
-     * visibility timeout expires and extend the visibility timeout as necessary.</p>
-     *  </li> <li> <p>While messages with a particular
-     * <code>MessageGroupId</code> are invisible, no more messages belonging to the
-     * same <code>MessageGroupId</code> are returned until the visibility timeout
-     * expires. You can still receive messages with another <code>MessageGroupId</code>
-     * as long as it is also visible.</p> </li> <li> <p>If a caller of
-     * <code>ReceiveMessage</code> can't track the
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>  <p>If a
+     * caller of the <code>ReceiveMessage</code> action still processes messages when
+     * the visibility timeout expires and messages become visible, another worker
+     * consuming from the same queue can receive the same messages and therefore
+     * process duplicates. Also, if a consumer whose message processing time is longer
+     * than the visibility timeout tries to delete the processed messages, the action
+     * fails with an error.</p> <p>To mitigate this effect, ensure that your
+     * application observes a safe threshold before the visibility timeout expires and
+     * extend the visibility timeout as necessary.</p>  </li> <li> <p>While
+     * messages with a particular <code>MessageGroupId</code> are invisible, no more
+     * messages belonging to the same <code>MessageGroupId</code> are returned until
+     * the visibility timeout expires. You can still receive messages with another
+     * <code>MessageGroupId</code> as long as it is also visible.</p> </li> <li> <p>If
+     * a caller of <code>ReceiveMessage</code> can't track the
      * <code>ReceiveRequestAttemptId</code>, no retries work until the original
      * visibility timeout expires. As a result, delays might occur but the messages in
      * the queue remain in a strict order.</p> </li> </ul> <p>The maximum length of
@@ -988,8 +980,8 @@ namespace Model
      * (<code>!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~</code>).</p> <p>For best
      * practices of using <code>ReceiveRequestAttemptId</code>, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-receiverequestattemptid-request-parameter.html">Using
-     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon Simple Queue
-     * Service Developer Guide</i>.</p>
+     * the ReceiveRequestAttemptId Request Parameter</a> in the <i>Amazon SQS Developer
+     * Guide</i>.</p>
      */
     inline ReceiveMessageRequest& WithReceiveRequestAttemptId(const char* value) { SetReceiveRequestAttemptId(value); return *this;}
 

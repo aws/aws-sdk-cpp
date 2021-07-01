@@ -45,49 +45,49 @@ namespace Model
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetJobDefinitionName() const{ return m_jobDefinitionName; }
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline bool JobDefinitionNameHasBeenSet() const { return m_jobDefinitionNameHasBeenSet; }
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline void SetJobDefinitionName(const Aws::String& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = value; }
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline void SetJobDefinitionName(Aws::String&& value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName = std::move(value); }
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline void SetJobDefinitionName(const char* value) { m_jobDefinitionNameHasBeenSet = true; m_jobDefinitionName.assign(value); }
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline CreateModelExplainabilityJobDefinitionRequest& WithJobDefinitionName(const Aws::String& value) { SetJobDefinitionName(value); return *this;}
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline CreateModelExplainabilityJobDefinitionRequest& WithJobDefinitionName(Aws::String&& value) { SetJobDefinitionName(std::move(value)); return *this;}
 
     /**
      * <p> The name of the model explainability job definition. The name must be unique
-     * within an AWS Region in the AWS account.</p>
+     * within an Amazon Web Services Region in the Amazon Web Services account.</p>
      */
     inline CreateModelExplainabilityJobDefinitionRequest& WithJobDefinitionName(const char* value) { SetJobDefinitionName(value); return *this;}
 
@@ -331,64 +331,64 @@ namespace Model
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateModelExplainabilityJobDefinitionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateModelExplainabilityJobDefinitionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateModelExplainabilityJobDefinitionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
-     * Guide</i>.</p>
+     * Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost
+     * Management User Guide</i>.</p>
      */
     inline CreateModelExplainabilityJobDefinitionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

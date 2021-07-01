@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -307,44 +308,136 @@ namespace Model
 
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline ModelPackageContainerDefinition& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline ModelPackageContainerDefinition& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Marketplace product ID of the model package.</p>
+     * <p>The Amazon Web Services Marketplace product ID of the model package.</p>
      */
     inline ModelPackageContainerDefinition& WithProductId(const char* value) { SetProductId(value); return *this;}
+
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map.</p>
+     */
+    inline ModelPackageContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
   private:
 
@@ -362,6 +455,9 @@ namespace Model
 
     Aws::String m_productId;
     bool m_productIdHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_environment;
+    bool m_environmentHasBeenSet;
   };
 
 } // namespace Model

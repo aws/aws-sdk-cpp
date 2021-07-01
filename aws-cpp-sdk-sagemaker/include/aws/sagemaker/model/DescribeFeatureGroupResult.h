@@ -327,36 +327,36 @@ namespace Model
 
     /**
      * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue
-     * configurations, and the security configuration.</p>
+     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
+     * Services Hive data catalogue configurations, and the security configuration.</p>
      */
     inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
 
     /**
      * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue
-     * configurations, and the security configuration.</p>
+     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
+     * Services Hive data catalogue configurations, and the security configuration.</p>
      */
     inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfig = value; }
 
     /**
      * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue
-     * configurations, and the security configuration.</p>
+     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
+     * Services Hive data catalogue configurations, and the security configuration.</p>
      */
     inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfig = std::move(value); }
 
     /**
      * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue
-     * configurations, and the security configuration.</p>
+     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
+     * Services Hive data catalogue configurations, and the security configuration.</p>
      */
     inline DescribeFeatureGroupResult& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
 
     /**
      * <p>The configuration of the <code>OfflineStore</code>, inducing the S3 location
-     * of the <code>OfflineStore</code>, AWS Glue or AWS Hive data catalogue
-     * configurations, and the security configuration.</p>
+     * of the <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web
+     * Services Hive data catalogue configurations, and the security configuration.</p>
      */
     inline DescribeFeatureGroupResult& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
 

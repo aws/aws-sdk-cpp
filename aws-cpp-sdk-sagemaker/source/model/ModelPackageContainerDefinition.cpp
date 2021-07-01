@@ -23,7 +23,8 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition() :
     m_imageHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition(JsonView jsonVa
     m_imageHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +76,16 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator =(Jso
     m_productIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Environment"))
+  {
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    for(auto& environmentItem : environmentJsonMap)
+    {
+      m_environment[environmentItem.first] = environmentItem.second.AsString();
+    }
+    m_environmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +120,17 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const
   if(m_productIdHasBeenSet)
   {
    payload.WithString("ProductId", m_productId);
+
+  }
+
+  if(m_environmentHasBeenSet)
+  {
+   JsonValue environmentJsonMap;
+   for(auto& environmentItem : m_environment)
+   {
+     environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+   }
+   payload.WithObject("Environment", std::move(environmentJsonMap));
 
   }
 

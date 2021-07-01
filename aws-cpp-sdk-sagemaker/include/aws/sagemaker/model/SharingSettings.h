@@ -130,58 +130,58 @@ namespace Model
 
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetS3KmsKeyId() const{ return m_s3KmsKeyId; }
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline bool S3KmsKeyIdHasBeenSet() const { return m_s3KmsKeyIdHasBeenSet; }
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline void SetS3KmsKeyId(const Aws::String& value) { m_s3KmsKeyIdHasBeenSet = true; m_s3KmsKeyId = value; }
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline void SetS3KmsKeyId(Aws::String&& value) { m_s3KmsKeyIdHasBeenSet = true; m_s3KmsKeyId = std::move(value); }
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline void SetS3KmsKeyId(const char* value) { m_s3KmsKeyIdHasBeenSet = true; m_s3KmsKeyId.assign(value); }
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline SharingSettings& WithS3KmsKeyId(const Aws::String& value) { SetS3KmsKeyId(value); return *this;}
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline SharingSettings& WithS3KmsKeyId(Aws::String&& value) { SetS3KmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the AWS Key
-     * Management Service (KMS) encryption key ID used to encrypt the notebook cell
-     * output in the Amazon S3 bucket.</p>
+     * <p>When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon
+     * Web Services Key Management Service (KMS) encryption key ID used to encrypt the
+     * notebook cell output in the Amazon S3 bucket.</p>
      */
     inline SharingSettings& WithS3KmsKeyId(const char* value) { SetS3KmsKeyId(value); return *this;}
 

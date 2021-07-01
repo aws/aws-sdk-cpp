@@ -80,17 +80,17 @@ namespace Model
 
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
@@ -98,17 +98,17 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
@@ -116,17 +116,17 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
@@ -134,17 +134,17 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
@@ -152,17 +152,17 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
@@ -170,17 +170,17 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
@@ -188,17 +188,17 @@ namespace Model
     inline LabelingJobOutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
@@ -206,17 +206,17 @@ namespace Model
     inline LabelingJobOutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Key Management Service ID of the key used to encrypt the output data,
-     * if any.</p> <p>If you provide your own KMS key ID, you must add the required
-     * permissions to your KMS key described in <a
+     * <p>The Amazon Web Services Key Management Service ID of the key used to encrypt
+     * the output data, if any.</p> <p>If you provide your own KMS key ID, you must add
+     * the required permissions to your KMS key described in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security-permission.html#sms-security-kms-permissions">Encrypt
-     * Output Data and Storage Volume with AWS KMS</a>.</p> <p>If you don't provide a
-     * KMS key ID, Amazon SageMaker uses the default AWS KMS key for Amazon S3 for your
-     * role's account to encrypt your output data.</p> <p>If you use a bucket policy
-     * with an <code>s3:PutObject</code> permission that only allows objects with
-     * server-side encryption, set the condition key of
-     * <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     * information, see <a
+     * Output Data and Storage Volume with Amazon Web Services KMS</a>.</p> <p>If you
+     * don't provide a KMS key ID, Amazon SageMaker uses the default Amazon Web
+     * Services KMS key for Amazon S3 for your role's account to encrypt your output
+     * data.</p> <p>If you use a bucket policy with an <code>s3:PutObject</code>
+     * permission that only allows objects with server-side encryption, set the
+     * condition key of <code>s3:x-amz-server-side-encryption</code> to
+     * <code>"aws:kms"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>

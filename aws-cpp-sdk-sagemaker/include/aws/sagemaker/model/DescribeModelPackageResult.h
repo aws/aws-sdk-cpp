@@ -376,17 +376,20 @@ namespace Model
 
 
     /**
-     * <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+     * <p>Whether the model package is certified for listing on Amazon Web Services
+     * Marketplace.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+     * <p>Whether the model package is certified for listing on Amazon Web Services
+     * Marketplace.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether the model package is certified for listing on AWS Marketplace.</p>
+     * <p>Whether the model package is certified for listing on Amazon Web Services
+     * Marketplace.</p>
      */
     inline DescribeModelPackageResult& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 

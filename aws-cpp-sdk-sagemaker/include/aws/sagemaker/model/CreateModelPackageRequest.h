@@ -334,30 +334,30 @@ namespace Model
 
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline bool CertifyForMarketplaceHasBeenSet() const { return m_certifyForMarketplaceHasBeenSet; }
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplaceHasBeenSet = true; m_certifyForMarketplace = value; }
 
     /**
-     * <p>Whether to certify the model package for listing on AWS Marketplace.</p>
-     * <p>This parameter is optional for unversioned models, and does not apply to
-     * versioned models.</p>
+     * <p>Whether to certify the model package for listing on Amazon Web Services
+     * Marketplace.</p> <p>This parameter is optional for unversioned models, and does
+     * not apply to versioned models.</p>
      */
     inline CreateModelPackageRequest& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 
@@ -366,7 +366,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -374,7 +375,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -382,7 +384,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -390,7 +393,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -398,7 +402,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -406,7 +411,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -414,7 +420,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -422,7 +429,8 @@ namespace Model
      * <p>A list of key value pairs associated with the model. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS resources</a> in the <i>AWS General Reference Guide</i>.</p>
+     * Amazon Web Services resources</a> in the <i>Amazon Web Services General
+     * Reference Guide</i>.</p>
      */
     inline CreateModelPackageRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

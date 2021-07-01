@@ -165,7 +165,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -174,11 +174,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is
@@ -219,7 +219,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -228,11 +228,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is
@@ -273,7 +273,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -282,11 +282,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is
@@ -327,7 +327,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -336,11 +336,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is
@@ -381,7 +381,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -390,11 +390,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is
@@ -435,7 +435,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -444,11 +444,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is
@@ -489,7 +489,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -498,11 +498,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is
@@ -543,7 +543,7 @@ namespace Model
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-type</code> - The type
      * of instance for which the Capacity Reservation reserves capacity.</p> </li> <li>
-     * <p> <code>owner-id</code> - The ID of the AWS account that owns the Capacity
+     * <p> <code>owner-id</code> - The ID of the account that owns the Capacity
      * Reservation.</p> </li> <li> <p> <code>availability-zone-id</code> - The
      * Availability Zone ID of the Capacity Reservation.</p> </li> <li> <p>
      * <code>instance-platform</code> - The type of operating system for which the
@@ -552,11 +552,11 @@ namespace Model
      * Reservation.</p> </li> <li> <p> <code>tenancy</code> - Indicates the tenancy of
      * the Capacity Reservation. A Capacity Reservation can have one of the following
      * tenancy settings:</p> <ul> <li> <p> <code>default</code> - The Capacity
-     * Reservation is created on hardware that is shared with other AWS accounts.</p>
-     * </li> <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
-     * single-tenant hardware that is dedicated to a single AWS account.</p> </li>
-     * </ul> </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN)
-     * of the Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
+     * Reservation is created on hardware that is shared with other accounts.</p> </li>
+     * <li> <p> <code>dedicated</code> - The Capacity Reservation is created on
+     * single-tenant hardware that is dedicated to a single account.</p> </li> </ul>
+     * </li> <li> <p> <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the
+     * Outpost on which the Capacity Reservation was created.</p> </li> <li> <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity
      * Reservation can be in one of the following states:</p> <ul> <li> <p>
      * <code>active</code>- The Capacity Reservation is active and the capacity is

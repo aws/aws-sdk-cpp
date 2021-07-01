@@ -6336,8 +6336,8 @@ namespace Model
 
         /**
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
-         * usage logs. You can create one data feed per AWS account. For more information,
-         * see <a
+         * usage logs. You can create one data feed per account. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -6348,8 +6348,8 @@ namespace Model
 
         /**
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
-         * usage logs. You can create one data feed per AWS account. For more information,
-         * see <a
+         * usage logs. You can create one data feed per account. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -6362,8 +6362,8 @@ namespace Model
 
         /**
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
-         * usage logs. You can create one data feed per AWS account. For more information,
-         * see <a
+         * usage logs. You can create one data feed per account. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
@@ -9932,7 +9932,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your Capacity Reservations. The results describe
-         * only the Capacity Reservations in the AWS Region that you're currently
+         * only the Capacity Reservations in the Region that you're currently
          * using.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">AWS
          * API Reference</a></p>
@@ -9941,7 +9941,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your Capacity Reservations. The results describe
-         * only the Capacity Reservations in the AWS Region that you're currently
+         * only the Capacity Reservations in the Region that you're currently
          * using.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">AWS
          * API Reference</a></p>
@@ -9952,7 +9952,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your Capacity Reservations. The results describe
-         * only the Capacity Reservations in the AWS Region that you're currently
+         * only the Capacity Reservations in the Region that you're currently
          * using.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityReservations">AWS
          * API Reference</a></p>
@@ -15781,7 +15781,7 @@ namespace Model
         /**
          * <p>Gets usage information about a Capacity Reservation. If the Capacity
          * Reservation is shared, it shows usage information for the Capacity Reservation
-         * owner and each AWS account that is currently using the shared capacity. If the
+         * owner and each account that is currently using the shared capacity. If the
          * Capacity Reservation is not shared, it shows only the Capacity Reservation
          * owner's usage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">AWS
@@ -15792,7 +15792,7 @@ namespace Model
         /**
          * <p>Gets usage information about a Capacity Reservation. If the Capacity
          * Reservation is shared, it shows usage information for the Capacity Reservation
-         * owner and each AWS account that is currently using the shared capacity. If the
+         * owner and each account that is currently using the shared capacity. If the
          * Capacity Reservation is not shared, it shows only the Capacity Reservation
          * owner's usage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">AWS
@@ -15805,7 +15805,7 @@ namespace Model
         /**
          * <p>Gets usage information about a Capacity Reservation. If the Capacity
          * Reservation is shared, it shows usage information for the Capacity Reservation
-         * owner and each AWS account that is currently using the shared capacity. If the
+         * owner and each account that is currently using the shared capacity. If the
          * Capacity Reservation is not shared, it shows only the Capacity Reservation
          * owner's usage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCapacityReservationUsage">AWS
@@ -16975,11 +16975,11 @@ namespace Model
 
         /**
          * <p>Modifies the default credit option for CPU usage of burstable performance
-         * instances. The default credit option is set at the account level per AWS Region,
-         * and is specified per instance family. All new burstable performance instances in
-         * the account launch using the default credit option.</p> <p>
+         * instances. The default credit option is set at the account level per Region, and
+         * is specified per instance family. All new burstable performance instances in the
+         * account launch using the default credit option.</p> <p>
          * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation,
-         * which works at an AWS Region level and modifies the credit option for each
+         * which works at an Region level and modifies the credit option for each
          * Availability Zone. All zones in a Region are updated within five minutes. But if
          * instances are launched during this operation, they might not get the new credit
          * option until the zone is updated. To verify whether the update has occurred, you
@@ -16996,11 +16996,11 @@ namespace Model
 
         /**
          * <p>Modifies the default credit option for CPU usage of burstable performance
-         * instances. The default credit option is set at the account level per AWS Region,
-         * and is specified per instance family. All new burstable performance instances in
-         * the account launch using the default credit option.</p> <p>
+         * instances. The default credit option is set at the account level per Region, and
+         * is specified per instance family. All new burstable performance instances in the
+         * account launch using the default credit option.</p> <p>
          * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation,
-         * which works at an AWS Region level and modifies the credit option for each
+         * which works at an Region level and modifies the credit option for each
          * Availability Zone. All zones in a Region are updated within five minutes. But if
          * instances are launched during this operation, they might not get the new credit
          * option until the zone is updated. To verify whether the update has occurred, you
@@ -17019,11 +17019,11 @@ namespace Model
 
         /**
          * <p>Modifies the default credit option for CPU usage of burstable performance
-         * instances. The default credit option is set at the account level per AWS Region,
-         * and is specified per instance family. All new burstable performance instances in
-         * the account launch using the default credit option.</p> <p>
+         * instances. The default credit option is set at the account level per Region, and
+         * is specified per instance family. All new burstable performance instances in the
+         * account launch using the default credit option.</p> <p>
          * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation,
-         * which works at an AWS Region level and modifies the credit option for each
+         * which works at an Region level and modifies the credit option for each
          * Availability Zone. All zones in a Region are updated within five minutes. But if
          * instances are launched during this operation, they might not get the new credit
          * option until the zone is updated. To verify whether the update has occurred, you
@@ -21157,11 +21157,7 @@ namespace Model
          * released and you are not billed for instance usage. However, your root partition
          * Amazon EBS volume remains and continues to persist your data, and you are
          * charged for Amazon EBS volume usage. You can restart your instance at any time.
-         * Every time you start your Windows instance, Amazon EC2 charges you for a full
-         * instance hour. If you stop and restart your Windows instance, a new instance
-         * hour begins and Amazon EC2 charges you for another full instance hour even if
-         * you are still within the same 60-minute period when it was stopped. Every time
-         * you start your Linux instance, Amazon EC2 charges a one-minute minimum for
+         * Every time you start your instance, Amazon EC2 charges a one-minute minimum for
          * instance usage, and thereafter charges per second for instance usage.</p>
          * <p>Before stopping an instance, make sure it is in a state from which it can be
          * restarted. Stopping an instance does not preserve data stored in RAM.</p>
@@ -21181,11 +21177,7 @@ namespace Model
          * released and you are not billed for instance usage. However, your root partition
          * Amazon EBS volume remains and continues to persist your data, and you are
          * charged for Amazon EBS volume usage. You can restart your instance at any time.
-         * Every time you start your Windows instance, Amazon EC2 charges you for a full
-         * instance hour. If you stop and restart your Windows instance, a new instance
-         * hour begins and Amazon EC2 charges you for another full instance hour even if
-         * you are still within the same 60-minute period when it was stopped. Every time
-         * you start your Linux instance, Amazon EC2 charges a one-minute minimum for
+         * Every time you start your instance, Amazon EC2 charges a one-minute minimum for
          * instance usage, and thereafter charges per second for instance usage.</p>
          * <p>Before stopping an instance, make sure it is in a state from which it can be
          * restarted. Stopping an instance does not preserve data stored in RAM.</p>
@@ -21207,11 +21199,7 @@ namespace Model
          * released and you are not billed for instance usage. However, your root partition
          * Amazon EBS volume remains and continues to persist your data, and you are
          * charged for Amazon EBS volume usage. You can restart your instance at any time.
-         * Every time you start your Windows instance, Amazon EC2 charges you for a full
-         * instance hour. If you stop and restart your Windows instance, a new instance
-         * hour begins and Amazon EC2 charges you for another full instance hour even if
-         * you are still within the same 60-minute period when it was stopped. Every time
-         * you start your Linux instance, Amazon EC2 charges a one-minute minimum for
+         * Every time you start your instance, Amazon EC2 charges a one-minute minimum for
          * instance usage, and thereafter charges per second for instance usage.</p>
          * <p>Before stopping an instance, make sure it is in a state from which it can be
          * restarted. Stopping an instance does not preserve data stored in RAM.</p>
@@ -21311,11 +21299,7 @@ namespace Model
          * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We don't charge
          * usage for a stopped instance, or data transfer fees; however, your root
          * partition Amazon EBS volume remains and continues to persist your data, and you
-         * are charged for Amazon EBS volume usage. Every time you start your Windows
-         * instance, Amazon EC2 charges you for a full instance hour. If you stop and
-         * restart your Windows instance, a new instance hour begins and Amazon EC2 charges
-         * you for another full instance hour even if you are still within the same
-         * 60-minute period when it was stopped. Every time you start your Linux instance,
+         * are charged for Amazon EBS volume usage. Every time you start your instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
          * charges per second for instance usage.</p> <p>You can't stop or hibernate
          * instance store-backed instances. You can't use the Stop action to hibernate Spot
@@ -21359,11 +21343,7 @@ namespace Model
          * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We don't charge
          * usage for a stopped instance, or data transfer fees; however, your root
          * partition Amazon EBS volume remains and continues to persist your data, and you
-         * are charged for Amazon EBS volume usage. Every time you start your Windows
-         * instance, Amazon EC2 charges you for a full instance hour. If you stop and
-         * restart your Windows instance, a new instance hour begins and Amazon EC2 charges
-         * you for another full instance hour even if you are still within the same
-         * 60-minute period when it was stopped. Every time you start your Linux instance,
+         * are charged for Amazon EBS volume usage. Every time you start your instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
          * charges per second for instance usage.</p> <p>You can't stop or hibernate
          * instance store-backed instances. You can't use the Stop action to hibernate Spot
@@ -21409,11 +21389,7 @@ namespace Model
          * your instance</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>We don't charge
          * usage for a stopped instance, or data transfer fees; however, your root
          * partition Amazon EBS volume remains and continues to persist your data, and you
-         * are charged for Amazon EBS volume usage. Every time you start your Windows
-         * instance, Amazon EC2 charges you for a full instance hour. If you stop and
-         * restart your Windows instance, a new instance hour begins and Amazon EC2 charges
-         * you for another full instance hour even if you are still within the same
-         * 60-minute period when it was stopped. Every time you start your Linux instance,
+         * are charged for Amazon EBS volume usage. Every time you start your instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
          * charges per second for instance usage.</p> <p>You can't stop or hibernate
          * instance store-backed instances. You can't use the Stop action to hibernate Spot
@@ -21483,18 +21459,36 @@ namespace Model
          * <p>Shuts down the specified instances. This operation is idempotent; if you
          * terminate an instance more than once, each call succeeds. </p> <p>If you specify
          * multiple instances and the request fails (for example, because of a single
-         * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
-         * instances remain visible after termination (for approximately one hour).</p>
-         * <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the
-         * instance launched. Volumes attached after instance launch continue running.</p>
-         * <p>You can stop, start, and terminate EBS-backed instances. You can only
-         * terminate instance store-backed instances. What happens to an instance differs
-         * if you stop it or terminate it. For example, when you stop an instance, the root
-         * device and any other devices attached to the instance persist. When you
-         * terminate an instance, any attached EBS volumes with the
-         * <code>DeleteOnTermination</code> block device mapping parameter set to
-         * <code>true</code> are automatically deleted. For more information about the
-         * differences between stopping and terminating instances, see <a
+         * incorrect instance ID), none of the instances are terminated.</p> <p>If you
+         * terminate multiple instances across multiple Availability Zones, and one or more
+         * of the specified instances are enabled for termination protection, the request
+         * fails with the following results:</p> <ul> <li> <p>The specified instances that
+         * are in the same Availability Zone as the protected instance are not
+         * terminated.</p> </li> <li> <p>The specified instances that are in different
+         * Availability Zones, where no other specified instances are protected, are
+         * successfully terminated.</p> </li> </ul> <p>For example, say you have the
+         * following instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
+         * protected</p> </li> <li> <p>Instance B: <code>us-east-1a</code>; Not
+         * protected</p> </li> <li> <p>Instance C: <code>us-east-1b</code>; Protected</p>
+         * </li> <li> <p>Instance D: <code>us-east-1b</code>; not protected</p> </li> </ul>
+         * <p>If you attempt to terminate all of these instances in the same request, the
+         * request reports failure with the following results:</p> <ul> <li> <p>Instance A
+         * and Instance B are successfully terminated because none of the specified
+         * instances in <code>us-east-1a</code> are enabled for termination protection.</p>
+         * </li> <li> <p>Instance C and Instance D fail to terminate because at least one
+         * of the specified instances in <code>us-east-1b</code> (Instance C) is enabled
+         * for termination protection.</p> </li> </ul> <p>Terminated instances remain
+         * visible after termination (for approximately one hour).</p> <p>By default,
+         * Amazon EC2 deletes all EBS volumes that were attached when the instance
+         * launched. Volumes attached after instance launch continue running.</p> <p>You
+         * can stop, start, and terminate EBS-backed instances. You can only terminate
+         * instance store-backed instances. What happens to an instance differs if you stop
+         * it or terminate it. For example, when you stop an instance, the root device and
+         * any other devices attached to the instance persist. When you terminate an
+         * instance, any attached EBS volumes with the <code>DeleteOnTermination</code>
+         * block device mapping parameter set to <code>true</code> are automatically
+         * deleted. For more information about the differences between stopping and
+         * terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
          * about troubleshooting, see <a
@@ -21510,18 +21504,36 @@ namespace Model
          * <p>Shuts down the specified instances. This operation is idempotent; if you
          * terminate an instance more than once, each call succeeds. </p> <p>If you specify
          * multiple instances and the request fails (for example, because of a single
-         * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
-         * instances remain visible after termination (for approximately one hour).</p>
-         * <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the
-         * instance launched. Volumes attached after instance launch continue running.</p>
-         * <p>You can stop, start, and terminate EBS-backed instances. You can only
-         * terminate instance store-backed instances. What happens to an instance differs
-         * if you stop it or terminate it. For example, when you stop an instance, the root
-         * device and any other devices attached to the instance persist. When you
-         * terminate an instance, any attached EBS volumes with the
-         * <code>DeleteOnTermination</code> block device mapping parameter set to
-         * <code>true</code> are automatically deleted. For more information about the
-         * differences between stopping and terminating instances, see <a
+         * incorrect instance ID), none of the instances are terminated.</p> <p>If you
+         * terminate multiple instances across multiple Availability Zones, and one or more
+         * of the specified instances are enabled for termination protection, the request
+         * fails with the following results:</p> <ul> <li> <p>The specified instances that
+         * are in the same Availability Zone as the protected instance are not
+         * terminated.</p> </li> <li> <p>The specified instances that are in different
+         * Availability Zones, where no other specified instances are protected, are
+         * successfully terminated.</p> </li> </ul> <p>For example, say you have the
+         * following instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
+         * protected</p> </li> <li> <p>Instance B: <code>us-east-1a</code>; Not
+         * protected</p> </li> <li> <p>Instance C: <code>us-east-1b</code>; Protected</p>
+         * </li> <li> <p>Instance D: <code>us-east-1b</code>; not protected</p> </li> </ul>
+         * <p>If you attempt to terminate all of these instances in the same request, the
+         * request reports failure with the following results:</p> <ul> <li> <p>Instance A
+         * and Instance B are successfully terminated because none of the specified
+         * instances in <code>us-east-1a</code> are enabled for termination protection.</p>
+         * </li> <li> <p>Instance C and Instance D fail to terminate because at least one
+         * of the specified instances in <code>us-east-1b</code> (Instance C) is enabled
+         * for termination protection.</p> </li> </ul> <p>Terminated instances remain
+         * visible after termination (for approximately one hour).</p> <p>By default,
+         * Amazon EC2 deletes all EBS volumes that were attached when the instance
+         * launched. Volumes attached after instance launch continue running.</p> <p>You
+         * can stop, start, and terminate EBS-backed instances. You can only terminate
+         * instance store-backed instances. What happens to an instance differs if you stop
+         * it or terminate it. For example, when you stop an instance, the root device and
+         * any other devices attached to the instance persist. When you terminate an
+         * instance, any attached EBS volumes with the <code>DeleteOnTermination</code>
+         * block device mapping parameter set to <code>true</code> are automatically
+         * deleted. For more information about the differences between stopping and
+         * terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
          * about troubleshooting, see <a
@@ -21539,18 +21551,36 @@ namespace Model
          * <p>Shuts down the specified instances. This operation is idempotent; if you
          * terminate an instance more than once, each call succeeds. </p> <p>If you specify
          * multiple instances and the request fails (for example, because of a single
-         * incorrect instance ID), none of the instances are terminated.</p> <p>Terminated
-         * instances remain visible after termination (for approximately one hour).</p>
-         * <p>By default, Amazon EC2 deletes all EBS volumes that were attached when the
-         * instance launched. Volumes attached after instance launch continue running.</p>
-         * <p>You can stop, start, and terminate EBS-backed instances. You can only
-         * terminate instance store-backed instances. What happens to an instance differs
-         * if you stop it or terminate it. For example, when you stop an instance, the root
-         * device and any other devices attached to the instance persist. When you
-         * terminate an instance, any attached EBS volumes with the
-         * <code>DeleteOnTermination</code> block device mapping parameter set to
-         * <code>true</code> are automatically deleted. For more information about the
-         * differences between stopping and terminating instances, see <a
+         * incorrect instance ID), none of the instances are terminated.</p> <p>If you
+         * terminate multiple instances across multiple Availability Zones, and one or more
+         * of the specified instances are enabled for termination protection, the request
+         * fails with the following results:</p> <ul> <li> <p>The specified instances that
+         * are in the same Availability Zone as the protected instance are not
+         * terminated.</p> </li> <li> <p>The specified instances that are in different
+         * Availability Zones, where no other specified instances are protected, are
+         * successfully terminated.</p> </li> </ul> <p>For example, say you have the
+         * following instances:</p> <ul> <li> <p>Instance A: <code>us-east-1a</code>; Not
+         * protected</p> </li> <li> <p>Instance B: <code>us-east-1a</code>; Not
+         * protected</p> </li> <li> <p>Instance C: <code>us-east-1b</code>; Protected</p>
+         * </li> <li> <p>Instance D: <code>us-east-1b</code>; not protected</p> </li> </ul>
+         * <p>If you attempt to terminate all of these instances in the same request, the
+         * request reports failure with the following results:</p> <ul> <li> <p>Instance A
+         * and Instance B are successfully terminated because none of the specified
+         * instances in <code>us-east-1a</code> are enabled for termination protection.</p>
+         * </li> <li> <p>Instance C and Instance D fail to terminate because at least one
+         * of the specified instances in <code>us-east-1b</code> (Instance C) is enabled
+         * for termination protection.</p> </li> </ul> <p>Terminated instances remain
+         * visible after termination (for approximately one hour).</p> <p>By default,
+         * Amazon EC2 deletes all EBS volumes that were attached when the instance
+         * launched. Volumes attached after instance launch continue running.</p> <p>You
+         * can stop, start, and terminate EBS-backed instances. You can only terminate
+         * instance store-backed instances. What happens to an instance differs if you stop
+         * it or terminate it. For example, when you stop an instance, the root device and
+         * any other devices attached to the instance persist. When you terminate an
+         * instance, any attached EBS volumes with the <code>DeleteOnTermination</code>
+         * block device mapping parameter set to <code>true</code> are automatically
+         * deleted. For more information about the differences between stopping and
+         * terminating instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>For more information
          * about troubleshooting, see <a

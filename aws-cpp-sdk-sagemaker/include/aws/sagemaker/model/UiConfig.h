@@ -116,11 +116,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -147,11 +147,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -178,11 +178,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -209,11 +209,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -240,11 +240,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -271,11 +271,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -302,11 +302,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.
@@ -333,11 +333,11 @@ namespace Model
      * for labeling job tasks.</p> <p>Use this parameter when you are creating a
      * labeling job for 3D point cloud and video fram labeling jobs. Use your labeling
      * job task type to select one of the following ARNs and use it with this parameter
-     * when you create a labeling job. Replace <code>aws-region</code> with the AWS
-     * region you are creating your labeling job in.</p> <p> <b>3D Point Cloud
-     * HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D point
-     * cloud object detection and 3D point cloud object detection adjustment labeling
-     * jobs. </p> <ul> <li> <p>
+     * when you create a labeling job. Replace <code>aws-region</code> with the Amazon
+     * Web Services region you are creating your labeling job in.</p> <p> <b>3D Point
+     * Cloud HumanTaskUiArns</b> </p> <p>Use this <code>HumanTaskUiArn</code> for 3D
+     * point cloud object detection and 3D point cloud object detection adjustment
+     * labeling jobs. </p> <ul> <li> <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudObjectDetection</code>
      * </p> </li> </ul> <p> Use this <code>HumanTaskUiArn</code> for 3D point cloud
      * object tracking and 3D point cloud object tracking adjustment labeling jobs.

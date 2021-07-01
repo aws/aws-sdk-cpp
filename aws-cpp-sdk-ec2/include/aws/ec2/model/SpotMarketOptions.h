@@ -149,8 +149,8 @@ namespace Model
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
      * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * Amazon Web Services are not eligible for Spot Instances with a defined duration
+     * (also known as Spot blocks).</p>
      */
     inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
 
@@ -163,8 +163,8 @@ namespace Model
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
      * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * Amazon Web Services are not eligible for Spot Instances with a defined duration
+     * (also known as Spot blocks).</p>
      */
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
 
@@ -177,8 +177,8 @@ namespace Model
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
      * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * Amazon Web Services are not eligible for Spot Instances with a defined duration
+     * (also known as Spot blocks).</p>
      */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
@@ -191,8 +191,8 @@ namespace Model
      * gives the instance a two-minute warning before it terminates.</p> <p>You can't
      * specify an Availability Zone group or a launch group if you specify a
      * duration.</p> <p>New accounts or accounts with no previous billing history with
-     * AWS are not eligible for Spot Instances with a defined duration (also known as
-     * Spot blocks).</p>
+     * Amazon Web Services are not eligible for Spot Instances with a defined duration
+     * (also known as Spot blocks).</p>
      */
     inline SpotMarketOptions& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
 

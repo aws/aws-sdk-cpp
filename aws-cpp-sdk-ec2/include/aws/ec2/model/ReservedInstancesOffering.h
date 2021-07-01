@@ -348,29 +348,29 @@ namespace Model
 
     /**
      * <p>Indicates whether the offering is available through the Reserved Instance
-     * Marketplace (resale) or AWS. If it's a Reserved Instance Marketplace offering,
-     * this is <code>true</code>.</p>
+     * Marketplace (resale) or Amazon Web Services. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.</p>
      */
     inline bool GetMarketplace() const{ return m_marketplace; }
 
     /**
      * <p>Indicates whether the offering is available through the Reserved Instance
-     * Marketplace (resale) or AWS. If it's a Reserved Instance Marketplace offering,
-     * this is <code>true</code>.</p>
+     * Marketplace (resale) or Amazon Web Services. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.</p>
      */
     inline bool MarketplaceHasBeenSet() const { return m_marketplaceHasBeenSet; }
 
     /**
      * <p>Indicates whether the offering is available through the Reserved Instance
-     * Marketplace (resale) or AWS. If it's a Reserved Instance Marketplace offering,
-     * this is <code>true</code>.</p>
+     * Marketplace (resale) or Amazon Web Services. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.</p>
      */
     inline void SetMarketplace(bool value) { m_marketplaceHasBeenSet = true; m_marketplace = value; }
 
     /**
      * <p>Indicates whether the offering is available through the Reserved Instance
-     * Marketplace (resale) or AWS. If it's a Reserved Instance Marketplace offering,
-     * this is <code>true</code>.</p>
+     * Marketplace (resale) or Amazon Web Services. If it's a Reserved Instance
+     * Marketplace offering, this is <code>true</code>.</p>
      */
     inline ReservedInstancesOffering& WithMarketplace(bool value) { SetMarketplace(value); return *this;}
 

@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline const Aws::String& GetProcessingJobName() const{ return m_processingJobName; }
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline bool ProcessingJobNameHasBeenSet() const { return m_processingJobNameHasBeenSet; }
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline void SetProcessingJobName(const Aws::String& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = value; }
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline void SetProcessingJobName(Aws::String&& value) { m_processingJobNameHasBeenSet = true; m_processingJobName = std::move(value); }
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline void SetProcessingJobName(const char* value) { m_processingJobNameHasBeenSet = true; m_processingJobName.assign(value); }
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline DescribeProcessingJobRequest& WithProcessingJobName(const Aws::String& value) { SetProcessingJobName(value); return *this;}
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline DescribeProcessingJobRequest& WithProcessingJobName(Aws::String&& value) { SetProcessingJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the processing job. The name must be unique within an AWS Region
-     * in the AWS account.</p>
+     * <p>The name of the processing job. The name must be unique within an Amazon Web
+     * Services Region in the Amazon Web Services account.</p>
      */
     inline DescribeProcessingJobRequest& WithProcessingJobName(const char* value) { SetProcessingJobName(value); return *this;}
 

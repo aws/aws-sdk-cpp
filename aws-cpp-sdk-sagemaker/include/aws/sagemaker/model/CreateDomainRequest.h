@@ -400,58 +400,58 @@ namespace Model
 
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with
-     * an AWS managed customer master key (CMK) by default. For more control, specify a
-     * customer managed CMK.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
+     * the domain with an Amazon Web Services managed customer master key (CMK) by
+     * default. For more control, specify a customer managed CMK.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

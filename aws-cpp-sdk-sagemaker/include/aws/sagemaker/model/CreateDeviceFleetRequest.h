@@ -79,50 +79,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline CreateDeviceFleetRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline CreateDeviceFleetRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that has access to AWS Internet of Things
-     * (IoT).</p>
+     * <p>The Amazon Resource Name (ARN) that has access to Amazon Web Services
+     * Internet of Things (IoT).</p>
      */
     inline CreateDeviceFleetRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -241,8 +241,8 @@ namespace Model
 
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>
@@ -250,8 +250,8 @@ namespace Model
     inline bool GetEnableIotRoleAlias() const{ return m_enableIotRoleAlias; }
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>
@@ -259,8 +259,8 @@ namespace Model
     inline bool EnableIotRoleAliasHasBeenSet() const { return m_enableIotRoleAliasHasBeenSet; }
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>
@@ -268,8 +268,8 @@ namespace Model
     inline void SetEnableIotRoleAlias(bool value) { m_enableIotRoleAliasHasBeenSet = true; m_enableIotRoleAlias = value; }
 
     /**
-     * <p>Whether to create an AWS IoT Role Alias during device fleet creation. The
-     * name of the role alias generated will match this pattern:
+     * <p>Whether to create an Amazon Web Services IoT Role Alias during device fleet
+     * creation. The name of the role alias generated will match this pattern:
      * "SageMakerEdge-{DeviceFleetName}".</p> <p>For example, if your device fleet is
      * called "demo-fleet", the name of the role alias will be
      * "SageMakerEdge-demo-fleet".</p>

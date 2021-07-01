@@ -592,64 +592,64 @@ namespace Model
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the RAM disk. Some kernels require additional drivers at launch.
      * Check the kernel requirements for information about whether you need to specify
-     * a RAM disk. To find kernel requirements, refer to the AWS Resource Center and
-     * search for the kernel ID.</p>
+     * a RAM disk. To find kernel requirements, refer to the Amazon Web Services
+     * Resource Center and search for the kernel ID.</p>
      */
     inline SpotFleetLaunchSpecification& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
 

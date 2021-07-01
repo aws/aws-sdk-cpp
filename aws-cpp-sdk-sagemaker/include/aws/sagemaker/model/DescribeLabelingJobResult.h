@@ -374,32 +374,37 @@ namespace Model
 
 
     /**
-     * <p>The location of the job's output data and the AWS Key Management Service key
-     * ID for the key used to encrypt the output data, if any.</p>
+     * <p>The location of the job's output data and the Amazon Web Services Key
+     * Management Service key ID for the key used to encrypt the output data, if
+     * any.</p>
      */
     inline const LabelingJobOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
 
     /**
-     * <p>The location of the job's output data and the AWS Key Management Service key
-     * ID for the key used to encrypt the output data, if any.</p>
+     * <p>The location of the job's output data and the Amazon Web Services Key
+     * Management Service key ID for the key used to encrypt the output data, if
+     * any.</p>
      */
     inline void SetOutputConfig(const LabelingJobOutputConfig& value) { m_outputConfig = value; }
 
     /**
-     * <p>The location of the job's output data and the AWS Key Management Service key
-     * ID for the key used to encrypt the output data, if any.</p>
+     * <p>The location of the job's output data and the Amazon Web Services Key
+     * Management Service key ID for the key used to encrypt the output data, if
+     * any.</p>
      */
     inline void SetOutputConfig(LabelingJobOutputConfig&& value) { m_outputConfig = std::move(value); }
 
     /**
-     * <p>The location of the job's output data and the AWS Key Management Service key
-     * ID for the key used to encrypt the output data, if any.</p>
+     * <p>The location of the job's output data and the Amazon Web Services Key
+     * Management Service key ID for the key used to encrypt the output data, if
+     * any.</p>
      */
     inline DescribeLabelingJobResult& WithOutputConfig(const LabelingJobOutputConfig& value) { SetOutputConfig(value); return *this;}
 
     /**
-     * <p>The location of the job's output data and the AWS Key Management Service key
-     * ID for the key used to encrypt the output data, if any.</p>
+     * <p>The location of the job's output data and the Amazon Web Services Key
+     * Management Service key ID for the key used to encrypt the output data, if
+     * any.</p>
      */
     inline DescribeLabelingJobResult& WithOutputConfig(LabelingJobOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
 
@@ -649,65 +654,65 @@ namespace Model
 
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline DescribeLabelingJobResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline DescribeLabelingJobResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline DescribeLabelingJobResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. You can use tags to categorize your AWS
-     * resources in different ways, for example, by purpose, owner, or environment. For
-     * more information, see <a
+     * <p>An array of key-value pairs. You can use tags to categorize your Amazon Web
+     * Services resources in different ways, for example, by purpose, owner, or
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     * AWS Resources</a>.</p>
+     * Amazon Web Services Resources</a>.</p>
      */
     inline DescribeLabelingJobResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
