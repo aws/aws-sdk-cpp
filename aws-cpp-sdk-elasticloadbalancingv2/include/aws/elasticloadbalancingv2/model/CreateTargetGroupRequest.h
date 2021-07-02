@@ -485,7 +485,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
 
@@ -493,7 +494,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
@@ -501,7 +503,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
 
@@ -509,7 +512,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
 
@@ -517,7 +521,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
 
@@ -525,7 +530,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
 
@@ -533,7 +539,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
 
@@ -541,7 +548,8 @@ namespace Model
      * <p>[HTTP/HTTPS health checks] The destination for health checks on the
      * targets.</p> <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is
      * /.</p> <p>[GRPC protocol version] The path of a custom health check method with
-     * the format /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+     * the format /package.service/method. The default is /Amazon Web
+     * Services.ALB/healthcheck.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about an Elastic Load Balancing resource limit for your AWS
-   * account.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about an Elastic Load Balancing resource limit for your Amazon
+   * Web Services account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Limit">AWS
    * API Reference</a></p>
    */

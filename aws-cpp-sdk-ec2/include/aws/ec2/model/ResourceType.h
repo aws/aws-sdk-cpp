@@ -40,7 +40,6 @@ namespace Model
     network_acl,
     network_interface,
     network_insights_analysis,
-    network_insights_boundary,
     network_insights_path,
     placement_group,
     reserved_instances,
