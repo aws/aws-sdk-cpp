@@ -322,50 +322,50 @@ namespace Model
 
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline const Aws::String& GetDockerfileTemplateUri() const{ return m_dockerfileTemplateUri; }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline bool DockerfileTemplateUriHasBeenSet() const { return m_dockerfileTemplateUriHasBeenSet; }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline void SetDockerfileTemplateUri(const Aws::String& value) { m_dockerfileTemplateUriHasBeenSet = true; m_dockerfileTemplateUri = value; }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline void SetDockerfileTemplateUri(Aws::String&& value) { m_dockerfileTemplateUriHasBeenSet = true; m_dockerfileTemplateUri = std::move(value); }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline void SetDockerfileTemplateUri(const char* value) { m_dockerfileTemplateUriHasBeenSet = true; m_dockerfileTemplateUri.assign(value); }
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline CreateContainerRecipeRequest& WithDockerfileTemplateUri(const Aws::String& value) { SetDockerfileTemplateUri(value); return *this;}
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline CreateContainerRecipeRequest& WithDockerfileTemplateUri(Aws::String&& value) { SetDockerfileTemplateUri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 URI for the Dockerfile that will be used to build your container
-     * image.</p>
+     * <p>The Amazon S3 URI for the Dockerfile that will be used to build your
+     * container image.</p>
      */
     inline CreateContainerRecipeRequest& WithDockerfileTemplateUri(const char* value) { SetDockerfileTemplateUri(value); return *this;}
 

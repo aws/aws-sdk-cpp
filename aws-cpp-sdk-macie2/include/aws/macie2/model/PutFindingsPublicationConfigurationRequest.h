@@ -84,37 +84,37 @@ namespace Model
 
 
     /**
-     * <p>The configuration settings that determine which findings to publish to AWS
+     * <p>The configuration settings that determine which findings to publish to
      * Security Hub.</p>
      */
     inline const SecurityHubConfiguration& GetSecurityHubConfiguration() const{ return m_securityHubConfiguration; }
 
     /**
-     * <p>The configuration settings that determine which findings to publish to AWS
+     * <p>The configuration settings that determine which findings to publish to
      * Security Hub.</p>
      */
     inline bool SecurityHubConfigurationHasBeenSet() const { return m_securityHubConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration settings that determine which findings to publish to AWS
+     * <p>The configuration settings that determine which findings to publish to
      * Security Hub.</p>
      */
     inline void SetSecurityHubConfiguration(const SecurityHubConfiguration& value) { m_securityHubConfigurationHasBeenSet = true; m_securityHubConfiguration = value; }
 
     /**
-     * <p>The configuration settings that determine which findings to publish to AWS
+     * <p>The configuration settings that determine which findings to publish to
      * Security Hub.</p>
      */
     inline void SetSecurityHubConfiguration(SecurityHubConfiguration&& value) { m_securityHubConfigurationHasBeenSet = true; m_securityHubConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration settings that determine which findings to publish to AWS
+     * <p>The configuration settings that determine which findings to publish to
      * Security Hub.</p>
      */
     inline PutFindingsPublicationConfigurationRequest& WithSecurityHubConfiguration(const SecurityHubConfiguration& value) { SetSecurityHubConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration settings that determine which findings to publish to AWS
+     * <p>The configuration settings that determine which findings to publish to
      * Security Hub.</p>
      */
     inline PutFindingsPublicationConfigurationRequest& WithSecurityHubConfiguration(SecurityHubConfiguration&& value) { SetSecurityHubConfiguration(std::move(value)); return *this;}

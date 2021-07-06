@@ -101,22 +101,22 @@ namespace Model
 
 
     /**
-     * <p>The page number of the page that contains the data.</p>
+     * <p>The page number of the page that contains the sensitive data.</p>
      */
     inline long long GetPageNumber() const{ return m_pageNumber; }
 
     /**
-     * <p>The page number of the page that contains the data.</p>
+     * <p>The page number of the page that contains the sensitive data.</p>
      */
     inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
 
     /**
-     * <p>The page number of the page that contains the data.</p>
+     * <p>The page number of the page that contains the sensitive data.</p>
      */
     inline void SetPageNumber(long long value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
 
     /**
-     * <p>The page number of the page that contains the data.</p>
+     * <p>The page number of the page that contains the sensitive data.</p>
      */
     inline Page& WithPageNumber(long long value) { SetPageNumber(value); return *this;}
 

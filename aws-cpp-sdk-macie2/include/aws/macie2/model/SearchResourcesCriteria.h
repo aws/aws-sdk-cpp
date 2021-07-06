@@ -26,7 +26,8 @@ namespace Model
 
   /**
    * <p>Specifies a property- or tag-based filter condition for including or
-   * excluding AWS resources from the query results.</p><p><h3>See Also:</h3>   <a
+   * excluding Amazon Web Services resources from the query results.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResourcesCriteria">AWS
    * API Reference</a></p>
    */

@@ -152,32 +152,32 @@ namespace Model
 
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another AWS
-     * account.</p>
+     * <p>The total number of buckets that are or aren't shared with another Amazon Web
+     * Services account.</p>
      */
     inline const BucketCountBySharedAccessType& GetBucketCountBySharedAccessType() const{ return m_bucketCountBySharedAccessType; }
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another AWS
-     * account.</p>
+     * <p>The total number of buckets that are or aren't shared with another Amazon Web
+     * Services account.</p>
      */
     inline void SetBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { m_bucketCountBySharedAccessType = value; }
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another AWS
-     * account.</p>
+     * <p>The total number of buckets that are or aren't shared with another Amazon Web
+     * Services account.</p>
      */
     inline void SetBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { m_bucketCountBySharedAccessType = std::move(value); }
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another AWS
-     * account.</p>
+     * <p>The total number of buckets that are or aren't shared with another Amazon Web
+     * Services account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(const BucketCountBySharedAccessType& value) { SetBucketCountBySharedAccessType(value); return *this;}
 
     /**
-     * <p>The total number of buckets that are or aren't shared with another AWS
-     * account.</p>
+     * <p>The total number of buckets that are or aren't shared with another Amazon Web
+     * Services account.</p>
      */
     inline GetBucketStatisticsResult& WithBucketCountBySharedAccessType(BucketCountBySharedAccessType&& value) { SetBucketCountBySharedAccessType(std::move(value)); return *this;}
 

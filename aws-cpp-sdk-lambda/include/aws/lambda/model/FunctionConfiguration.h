@@ -556,32 +556,44 @@ namespace Model
 
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline const EnvironmentResponse& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline void SetEnvironment(const EnvironmentResponse& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline void SetEnvironment(EnvironmentResponse&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline FunctionConfiguration& WithEnvironment(const EnvironmentResponse& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>The function's environment variables.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
+     * variables</a>.</p>
      */
     inline FunctionConfiguration& WithEnvironment(EnvironmentResponse&& value) { SetEnvironment(std::move(value)); return *this;}
 
@@ -636,32 +648,32 @@ namespace Model
 
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline const TracingConfigResponse& GetTracingConfig() const{ return m_tracingConfig; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline bool TracingConfigHasBeenSet() const { return m_tracingConfigHasBeenSet; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(const TracingConfigResponse& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = value; }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline void SetTracingConfig(TracingConfigResponse&& value) { m_tracingConfigHasBeenSet = true; m_tracingConfig = std::move(value); }
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline FunctionConfiguration& WithTracingConfig(const TracingConfigResponse& value) { SetTracingConfig(value); return *this;}
 
     /**
-     * <p>The function's AWS X-Ray tracing configuration.</p>
+     * <p>The function's X-Ray tracing configuration.</p>
      */
     inline FunctionConfiguration& WithTracingConfig(TracingConfigResponse&& value) { SetTracingConfig(std::move(value)); return *this;}
 
@@ -1030,42 +1042,58 @@ namespace Model
 
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline const Aws::Vector<FileSystemConfig>& GetFileSystemConfigs() const{ return m_fileSystemConfigs; }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline bool FileSystemConfigsHasBeenSet() const { return m_fileSystemConfigsHasBeenSet; }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline void SetFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = value; }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline void SetFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs = std::move(value); }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline FunctionConfiguration& WithFileSystemConfigs(const Aws::Vector<FileSystemConfig>& value) { SetFileSystemConfigs(value); return *this;}
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline FunctionConfiguration& WithFileSystemConfigs(Aws::Vector<FileSystemConfig>&& value) { SetFileSystemConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline FunctionConfiguration& AddFileSystemConfigs(const FileSystemConfig& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(value); return *this; }
 
     /**
-     * <p>Connection settings for an Amazon EFS file system.</p>
+     * <p>Connection settings for an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
+     * EFS file system</a>.</p>
      */
     inline FunctionConfiguration& AddFileSystemConfigs(FileSystemConfig&& value) { m_fileSystemConfigsHasBeenSet = true; m_fileSystemConfigs.push_back(std::move(value)); return *this; }
 

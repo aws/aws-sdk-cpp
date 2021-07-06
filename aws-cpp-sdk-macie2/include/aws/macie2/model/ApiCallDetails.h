@@ -89,49 +89,49 @@ namespace Model
 
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline const Aws::String& GetApiServiceName() const{ return m_apiServiceName; }
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline bool ApiServiceNameHasBeenSet() const { return m_apiServiceNameHasBeenSet; }
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline void SetApiServiceName(const Aws::String& value) { m_apiServiceNameHasBeenSet = true; m_apiServiceName = value; }
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline void SetApiServiceName(Aws::String&& value) { m_apiServiceNameHasBeenSet = true; m_apiServiceName = std::move(value); }
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline void SetApiServiceName(const char* value) { m_apiServiceNameHasBeenSet = true; m_apiServiceName.assign(value); }
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline ApiCallDetails& WithApiServiceName(const Aws::String& value) { SetApiServiceName(value); return *this;}
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline ApiCallDetails& WithApiServiceName(Aws::String&& value) { SetApiServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the AWS service that provides the operation, for example:
+     * <p>The URL of the Amazon Web Service that provides the operation, for example:
      * s3.amazonaws.com.</p>
      */
     inline ApiCallDetails& WithApiServiceName(const char* value) { SetApiServiceName(value); return *this;}

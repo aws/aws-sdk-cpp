@@ -10,6 +10,7 @@
 #include <aws/imagebuilder/model/Platform.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/ComponentParameterDetail.h>
 #include <utility>
 
 namespace Aws
@@ -379,6 +380,55 @@ namespace Model
 
 
     /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline const Aws::Vector<ComponentParameterDetail>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline void SetParameters(const Aws::Vector<ComponentParameterDetail>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline void SetParameters(Aws::Vector<ComponentParameterDetail>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& WithParameters(const Aws::Vector<ComponentParameterDetail>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& WithParameters(Aws::Vector<ComponentParameterDetail>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& AddParameters(const ComponentParameterDetail& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
+
+    /**
+     * <p>Contains parameter details for each of the parameters that are defined for
+     * the component.</p>
+     */
+    inline Component& AddParameters(ComponentParameterDetail&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The owner of the component.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
@@ -653,6 +703,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedOsVersions;
     bool m_supportedOsVersionsHasBeenSet;
+
+    Aws::Vector<ComponentParameterDetail> m_parameters;
+    bool m_parametersHasBeenSet;
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet;

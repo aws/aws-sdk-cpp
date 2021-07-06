@@ -203,32 +203,32 @@ namespace Model
 
 
     /**
-     * <p>The status and other details for the finding.</p>
+     * <p>The status and other details of the finding.</p>
      */
     inline const ClassificationResult& GetResult() const{ return m_result; }
 
     /**
-     * <p>The status and other details for the finding.</p>
+     * <p>The status and other details of the finding.</p>
      */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
-     * <p>The status and other details for the finding.</p>
+     * <p>The status and other details of the finding.</p>
      */
     inline void SetResult(const ClassificationResult& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
-     * <p>The status and other details for the finding.</p>
+     * <p>The status and other details of the finding.</p>
      */
     inline void SetResult(ClassificationResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
 
     /**
-     * <p>The status and other details for the finding.</p>
+     * <p>The status and other details of the finding.</p>
      */
     inline ClassificationDetails& WithResult(const ClassificationResult& value) { SetResult(value); return *this;}
 
     /**
-     * <p>The status and other details for the finding.</p>
+     * <p>The status and other details of the finding.</p>
      */
     inline ClassificationDetails& WithResult(ClassificationResult&& value) { SetResult(std::move(value)); return *this;}
 

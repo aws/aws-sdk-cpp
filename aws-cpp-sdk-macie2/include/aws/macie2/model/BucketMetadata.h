@@ -50,42 +50,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline BucketMetadata& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline BucketMetadata& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the AWS account that owns the bucket.</p>
+     * <p>The unique identifier for the Amazon Web Services account that owns the
+     * bucket.</p>
      */
     inline BucketMetadata& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
@@ -574,79 +582,85 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline BucketMetadata& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline BucketMetadata& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region that hosts the bucket.</p>
+     * <p>The Amazon Web Services Region that hosts the bucket.</p>
      */
     inline BucketMetadata& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline const ReplicationDetails& GetReplicationDetails() const{ return m_replicationDetails; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline bool ReplicationDetailsHasBeenSet() const { return m_replicationDetailsHasBeenSet; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline void SetReplicationDetails(const ReplicationDetails& value) { m_replicationDetailsHasBeenSet = true; m_replicationDetails = value; }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline void SetReplicationDetails(ReplicationDetails&& value) { m_replicationDetailsHasBeenSet = true; m_replicationDetails = std::move(value); }
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline BucketMetadata& WithReplicationDetails(const ReplicationDetails& value) { SetReplicationDetails(value); return *this;}
 
     /**
      * <p>Specifies whether the bucket is configured to replicate one or more objects
-     * to buckets for other AWS accounts and, if so, which accounts.</p>
+     * to buckets for other Amazon Web Services accounts and, if so, which
+     * accounts.</p>
      */
     inline BucketMetadata& WithReplicationDetails(ReplicationDetails&& value) { SetReplicationDetails(std::move(value)); return *this;}
 
@@ -689,67 +703,73 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline const SharedAccess& GetSharedAccess() const{ return m_sharedAccess; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline bool SharedAccessHasBeenSet() const { return m_sharedAccessHasBeenSet; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline void SetSharedAccess(const SharedAccess& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = value; }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline void SetSharedAccess(SharedAccess&& value) { m_sharedAccessHasBeenSet = true; m_sharedAccess = std::move(value); }
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline BucketMetadata& WithSharedAccess(const SharedAccess& value) { SetSharedAccess(value); return *this;}
 
     /**
-     * <p>Specifies whether the bucket is shared with another AWS account. Possible
-     * values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account
-     * that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL
-     * - The bucket is shared with an AWS account that's part of the same Amazon Macie
-     * organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other
-     * AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
+     * <p>Specifies whether the bucket is shared with another Amazon Web Services
+     * account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared
+     * with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web
+     * Services account that's part of the same Amazon Macie organization.</p></li>
+     * <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services
+     * accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the
      * shared access settings for the bucket.</p></li></ul>
      */
     inline BucketMetadata& WithSharedAccess(SharedAccess&& value) { SetSharedAccess(std::move(value)); return *this;}

@@ -333,13 +333,13 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionEventInvokeConfigRequest&, const Model::UpdateFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionEventInvokeConfigResponseReceivedHandler;
 
   /**
-   * <fullname>AWS Lambda</fullname> <p> <b>Overview</b> </p> <p>This is the <i>AWS
-   * Lambda API Reference</i>. The AWS Lambda Developer Guide provides additional
-   * information. For the service overview, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS
+   * <fullname>Lambda</fullname> <p> <b>Overview</b> </p> <p>This is the <i>Lambda
+   * API Reference</i>. The Lambda Developer Guide provides additional information.
+   * For the service overview, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is
    * Lambda</a>, and for information about how the service works, see <a
-   * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS
-   * Lambda: How it Works</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">Lambda:
+   * How it Works</a> in the <b>Lambda Developer Guide</b>.</p>
    */
   class AWS_LAMBDA_API LambdaClient : public Aws::Client::AWSJsonClient
   {
@@ -370,10 +370,10 @@ namespace Model
 
         /**
          * <p>Adds permissions to the resource-based policy of a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Use this action to grant layer usage permission to other
-         * accounts. You can grant permission to a single account, all AWS accounts, or all
-         * accounts in an organization.</p> <p>To revoke permission, call
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Use this action to grant layer usage permission to other accounts.
+         * You can grant permission to a single account, all accounts in an organization,
+         * or all Amazon Web Services accounts. </p> <p>To revoke permission, call
          * <a>RemoveLayerVersionPermission</a> with the statement ID that you specified
          * when you added it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">AWS
@@ -383,10 +383,10 @@ namespace Model
 
         /**
          * <p>Adds permissions to the resource-based policy of a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Use this action to grant layer usage permission to other
-         * accounts. You can grant permission to a single account, all AWS accounts, or all
-         * accounts in an organization.</p> <p>To revoke permission, call
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Use this action to grant layer usage permission to other accounts.
+         * You can grant permission to a single account, all accounts in an organization,
+         * or all Amazon Web Services accounts. </p> <p>To revoke permission, call
          * <a>RemoveLayerVersionPermission</a> with the statement ID that you specified
          * when you added it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">AWS
@@ -398,10 +398,10 @@ namespace Model
 
         /**
          * <p>Adds permissions to the resource-based policy of a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Use this action to grant layer usage permission to other
-         * accounts. You can grant permission to a single account, all AWS accounts, or all
-         * accounts in an organization.</p> <p>To revoke permission, call
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Use this action to grant layer usage permission to other accounts.
+         * You can grant permission to a single account, all accounts in an organization,
+         * or all Amazon Web Services accounts. </p> <p>To revoke permission, call
          * <a>RemoveLayerVersionPermission</a> with the statement ID that you specified
          * when you added it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">AWS
@@ -412,19 +412,20 @@ namespace Model
         virtual void AddLayerVersionPermissionAsync(const Model::AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Grants an AWS service or another account permission to use a function. You
-         * can apply the policy at the function level, or specify a qualifier to restrict
-         * access to a single version or alias. If you use a qualifier, the invoker must
-         * use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-         * function.</p> <p>To grant permission to another account, specify the account ID
-         * as the <code>Principal</code>. For AWS services, the principal is a domain-style
-         * identifier defined by the service, like <code>s3.amazonaws.com</code> or
-         * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN
-         * of the associated resource as the <code>SourceArn</code>. If you grant
-         * permission to a service principal without specifying the source, other accounts
-         * could potentially configure resources in their account to invoke your Lambda
-         * function.</p> <p>This action adds a statement to a resource-based permissions
-         * policy for the function. For more information about function policies, see <a
+         * <p>Grants an Amazon Web Services service or another account permission to use a
+         * function. You can apply the policy at the function level, or specify a qualifier
+         * to restrict access to a single version or alias. If you use a qualifier, the
+         * invoker must use the full Amazon Resource Name (ARN) of that version or alias to
+         * invoke the function.</p> <p>To grant permission to another account, specify the
+         * account ID as the <code>Principal</code>. For Amazon Web Services services, the
+         * principal is a domain-style identifier defined by the service, like
+         * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web
+         * Services services, you can also specify the ARN of the associated resource as
+         * the <code>SourceArn</code>. If you grant permission to a service principal
+         * without specifying the source, other accounts could potentially configure
+         * resources in their account to invoke your Lambda function.</p> <p>This action
+         * adds a statement to a resource-based permissions policy for the function. For
+         * more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -433,19 +434,20 @@ namespace Model
         virtual Model::AddPermissionOutcome AddPermission(const Model::AddPermissionRequest& request) const;
 
         /**
-         * <p>Grants an AWS service or another account permission to use a function. You
-         * can apply the policy at the function level, or specify a qualifier to restrict
-         * access to a single version or alias. If you use a qualifier, the invoker must
-         * use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-         * function.</p> <p>To grant permission to another account, specify the account ID
-         * as the <code>Principal</code>. For AWS services, the principal is a domain-style
-         * identifier defined by the service, like <code>s3.amazonaws.com</code> or
-         * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN
-         * of the associated resource as the <code>SourceArn</code>. If you grant
-         * permission to a service principal without specifying the source, other accounts
-         * could potentially configure resources in their account to invoke your Lambda
-         * function.</p> <p>This action adds a statement to a resource-based permissions
-         * policy for the function. For more information about function policies, see <a
+         * <p>Grants an Amazon Web Services service or another account permission to use a
+         * function. You can apply the policy at the function level, or specify a qualifier
+         * to restrict access to a single version or alias. If you use a qualifier, the
+         * invoker must use the full Amazon Resource Name (ARN) of that version or alias to
+         * invoke the function.</p> <p>To grant permission to another account, specify the
+         * account ID as the <code>Principal</code>. For Amazon Web Services services, the
+         * principal is a domain-style identifier defined by the service, like
+         * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web
+         * Services services, you can also specify the ARN of the associated resource as
+         * the <code>SourceArn</code>. If you grant permission to a service principal
+         * without specifying the source, other accounts could potentially configure
+         * resources in their account to invoke your Lambda function.</p> <p>This action
+         * adds a statement to a resource-based permissions policy for the function. For
+         * more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -456,19 +458,20 @@ namespace Model
         virtual Model::AddPermissionOutcomeCallable AddPermissionCallable(const Model::AddPermissionRequest& request) const;
 
         /**
-         * <p>Grants an AWS service or another account permission to use a function. You
-         * can apply the policy at the function level, or specify a qualifier to restrict
-         * access to a single version or alias. If you use a qualifier, the invoker must
-         * use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-         * function.</p> <p>To grant permission to another account, specify the account ID
-         * as the <code>Principal</code>. For AWS services, the principal is a domain-style
-         * identifier defined by the service, like <code>s3.amazonaws.com</code> or
-         * <code>sns.amazonaws.com</code>. For AWS services, you can also specify the ARN
-         * of the associated resource as the <code>SourceArn</code>. If you grant
-         * permission to a service principal without specifying the source, other accounts
-         * could potentially configure resources in their account to invoke your Lambda
-         * function.</p> <p>This action adds a statement to a resource-based permissions
-         * policy for the function. For more information about function policies, see <a
+         * <p>Grants an Amazon Web Services service or another account permission to use a
+         * function. You can apply the policy at the function level, or specify a qualifier
+         * to restrict access to a single version or alias. If you use a qualifier, the
+         * invoker must use the full Amazon Resource Name (ARN) of that version or alias to
+         * invoke the function.</p> <p>To grant permission to another account, specify the
+         * account ID as the <code>Principal</code>. For Amazon Web Services services, the
+         * principal is a domain-style identifier defined by the service, like
+         * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web
+         * Services services, you can also specify the ARN of the associated resource as
+         * the <code>SourceArn</code>. If you grant permission to a service principal
+         * without specifying the source, other accounts could potentially configure
+         * resources in their account to invoke your Lambda function.</p> <p>This action
+         * adds a statement to a resource-based permissions policy for the function. For
+         * more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission">AWS
@@ -562,23 +565,25 @@ namespace Model
         virtual void CreateCodeSigningConfigAsync(const Model::CreateCodeSigningConfigRequest& request, const CreateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a mapping between an event source and an AWS Lambda function. Lambda
+         * <p>Creates a mapping between an event source and an Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
-         * about each event source type, see the following topics.</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
-         * Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
-         * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
-         * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
-         * Lambda with Amazon MSK</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
-         * Lambda with Self-Managed Apache Kafka</a> </p> </li> </ul> <p>The following
-         * error handling options are only available for stream sources (DynamoDB and
-         * Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * about each event source type, see the following topics. In particular, each of
+         * the topics describes the required and optional parameters for the specific event
+         * source. </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
+         * Configuring a Dynamo DB stream as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
+         * Configuring a Kinesis stream as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
+         * Configuring an SQS queue as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
+         * Configuring an MQ broker as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring
+         * MSK as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Configuring
+         * Self-Managed Apache Kafka as an event source</a> </p> </li> </ul> <p>The
+         * following error handling options are only available for stream sources (DynamoDB
+         * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
@@ -595,23 +600,25 @@ namespace Model
         virtual Model::CreateEventSourceMappingOutcome CreateEventSourceMapping(const Model::CreateEventSourceMappingRequest& request) const;
 
         /**
-         * <p>Creates a mapping between an event source and an AWS Lambda function. Lambda
+         * <p>Creates a mapping between an event source and an Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
-         * about each event source type, see the following topics.</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
-         * Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
-         * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
-         * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
-         * Lambda with Amazon MSK</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
-         * Lambda with Self-Managed Apache Kafka</a> </p> </li> </ul> <p>The following
-         * error handling options are only available for stream sources (DynamoDB and
-         * Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * about each event source type, see the following topics. In particular, each of
+         * the topics describes the required and optional parameters for the specific event
+         * source. </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
+         * Configuring a Dynamo DB stream as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
+         * Configuring a Kinesis stream as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
+         * Configuring an SQS queue as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
+         * Configuring an MQ broker as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring
+         * MSK as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Configuring
+         * Self-Managed Apache Kafka as an event source</a> </p> </li> </ul> <p>The
+         * following error handling options are only available for stream sources (DynamoDB
+         * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
@@ -630,23 +637,25 @@ namespace Model
         virtual Model::CreateEventSourceMappingOutcomeCallable CreateEventSourceMappingCallable(const Model::CreateEventSourceMappingRequest& request) const;
 
         /**
-         * <p>Creates a mapping between an event source and an AWS Lambda function. Lambda
+         * <p>Creates a mapping between an event source and an Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
-         * about each event source type, see the following topics.</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
-         * Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
-         * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS
-         * Lambda with Amazon MQ</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS
-         * Lambda with Amazon MSK</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS
-         * Lambda with Self-Managed Apache Kafka</a> </p> </li> </ul> <p>The following
-         * error handling options are only available for stream sources (DynamoDB and
-         * Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * about each event source type, see the following topics. In particular, each of
+         * the topics describes the required and optional parameters for the specific event
+         * source. </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html#services-dynamodb-eventsourcemapping">
+         * Configuring a Dynamo DB stream as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html#services-kinesis-eventsourcemapping">
+         * Configuring a Kinesis stream as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-eventsource">
+         * Configuring an SQS queue as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html#services-mq-eventsourcemapping">
+         * Configuring an MQ broker as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Configuring
+         * MSK as an event source</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Configuring
+         * Self-Managed Apache Kafka as an event source</a> </p> </li> </ul> <p>The
+         * following error handling options are only available for stream sources (DynamoDB
+         * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
          * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
@@ -671,14 +680,24 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package is a .zip file archive or container image that
          * contains your function code. The execution role grants the function permission
-         * to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS
-         * X-Ray for request tracing.</p> <p>When you create a function, Lambda provisions
-         * an instance of the function and its supporting resources. If your function
-         * connects to a VPC, this process can take a minute or so. During this time, you
-         * can't invoke or modify the function. The <code>State</code>,
-         * <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
-         * response from <a>GetFunctionConfiguration</a> indicate when the function is
-         * ready to invoke. For more information, see <a
+         * to use Amazon Web Services services, such as Amazon CloudWatch Logs for log
+         * streaming and X-Ray for request tracing.</p> <p>You set the package type to
+         * <code>Image</code> if the deployment package is a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+         * image</a>. For a container image, the code property must include the URI of a
+         * container image in the Amazon ECR registry. You do not need to specify the
+         * handler and runtime properties. </p> <p>You set the package type to
+         * <code>Zip</code> if the deployment package is a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+         * file archive</a>. For a .zip file archive, the code property specifies the
+         * location of the .zip file. You must also specify the handler and runtime
+         * properties.</p> <p>When you create a function, Lambda provisions an instance of
+         * the function and its supporting resources. If your function connects to a VPC,
+         * this process can take a minute or so. During this time, you can't invoke or
+         * modify the function. The <code>State</code>, <code>StateReason</code>, and
+         * <code>StateReasonCode</code> fields in the response from
+         * <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
          * States</a>.</p> <p>A function has an unpublished version, and can have published
          * versions and aliases. The unpublished version changes when you update your
@@ -697,13 +716,14 @@ namespace Model
          * to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks that the
          * code package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set set of signing profiles, which define the trusted
-         * publishers for this function.</p> <p>If another account or an AWS service
-         * invokes your function, use <a>AddPermission</a> to grant permission by creating
-         * a resource-based IAM policy. You can grant permissions at the function level, on
-         * a version, or on an alias.</p> <p>To invoke your function directly, use
-         * <a>Invoke</a>. To invoke your function in response to events in other AWS
-         * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or
-         * configure a function trigger in the other service. For more information, see <a
+         * publishers for this function.</p> <p>If another account or an Amazon Web
+         * Services service invokes your function, use <a>AddPermission</a> to grant
+         * permission by creating a resource-based IAM policy. You can grant permissions at
+         * the function level, on a version, or on an alias.</p> <p>To invoke your function
+         * directly, use <a>Invoke</a>. To invoke your function in response to events in
+         * other Amazon Web Services services, create an event source mapping
+         * (<a>CreateEventSourceMapping</a>), or configure a function trigger in the other
+         * service. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
@@ -718,14 +738,24 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package is a .zip file archive or container image that
          * contains your function code. The execution role grants the function permission
-         * to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS
-         * X-Ray for request tracing.</p> <p>When you create a function, Lambda provisions
-         * an instance of the function and its supporting resources. If your function
-         * connects to a VPC, this process can take a minute or so. During this time, you
-         * can't invoke or modify the function. The <code>State</code>,
-         * <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
-         * response from <a>GetFunctionConfiguration</a> indicate when the function is
-         * ready to invoke. For more information, see <a
+         * to use Amazon Web Services services, such as Amazon CloudWatch Logs for log
+         * streaming and X-Ray for request tracing.</p> <p>You set the package type to
+         * <code>Image</code> if the deployment package is a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+         * image</a>. For a container image, the code property must include the URI of a
+         * container image in the Amazon ECR registry. You do not need to specify the
+         * handler and runtime properties. </p> <p>You set the package type to
+         * <code>Zip</code> if the deployment package is a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+         * file archive</a>. For a .zip file archive, the code property specifies the
+         * location of the .zip file. You must also specify the handler and runtime
+         * properties.</p> <p>When you create a function, Lambda provisions an instance of
+         * the function and its supporting resources. If your function connects to a VPC,
+         * this process can take a minute or so. During this time, you can't invoke or
+         * modify the function. The <code>State</code>, <code>StateReason</code>, and
+         * <code>StateReasonCode</code> fields in the response from
+         * <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
          * States</a>.</p> <p>A function has an unpublished version, and can have published
          * versions and aliases. The unpublished version changes when you update your
@@ -744,13 +774,14 @@ namespace Model
          * to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks that the
          * code package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set set of signing profiles, which define the trusted
-         * publishers for this function.</p> <p>If another account or an AWS service
-         * invokes your function, use <a>AddPermission</a> to grant permission by creating
-         * a resource-based IAM policy. You can grant permissions at the function level, on
-         * a version, or on an alias.</p> <p>To invoke your function directly, use
-         * <a>Invoke</a>. To invoke your function in response to events in other AWS
-         * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or
-         * configure a function trigger in the other service. For more information, see <a
+         * publishers for this function.</p> <p>If another account or an Amazon Web
+         * Services service invokes your function, use <a>AddPermission</a> to grant
+         * permission by creating a resource-based IAM policy. You can grant permissions at
+         * the function level, on a version, or on an alias.</p> <p>To invoke your function
+         * directly, use <a>Invoke</a>. To invoke your function in response to events in
+         * other Amazon Web Services services, create an event source mapping
+         * (<a>CreateEventSourceMapping</a>), or configure a function trigger in the other
+         * service. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
@@ -767,14 +798,24 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package is a .zip file archive or container image that
          * contains your function code. The execution role grants the function permission
-         * to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS
-         * X-Ray for request tracing.</p> <p>When you create a function, Lambda provisions
-         * an instance of the function and its supporting resources. If your function
-         * connects to a VPC, this process can take a minute or so. During this time, you
-         * can't invoke or modify the function. The <code>State</code>,
-         * <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
-         * response from <a>GetFunctionConfiguration</a> indicate when the function is
-         * ready to invoke. For more information, see <a
+         * to use Amazon Web Services services, such as Amazon CloudWatch Logs for log
+         * streaming and X-Ray for request tracing.</p> <p>You set the package type to
+         * <code>Image</code> if the deployment package is a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+         * image</a>. For a container image, the code property must include the URI of a
+         * container image in the Amazon ECR registry. You do not need to specify the
+         * handler and runtime properties. </p> <p>You set the package type to
+         * <code>Zip</code> if the deployment package is a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
+         * file archive</a>. For a .zip file archive, the code property specifies the
+         * location of the .zip file. You must also specify the handler and runtime
+         * properties.</p> <p>When you create a function, Lambda provisions an instance of
+         * the function and its supporting resources. If your function connects to a VPC,
+         * this process can take a minute or so. During this time, you can't invoke or
+         * modify the function. The <code>State</code>, <code>StateReason</code>, and
+         * <code>StateReasonCode</code> fields in the response from
+         * <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
          * States</a>.</p> <p>A function has an unpublished version, and can have published
          * versions and aliases. The unpublished version changes when you update your
@@ -793,13 +834,14 @@ namespace Model
          * to deploy a code package with <a>UpdateFunctionCode</a>, Lambda checks that the
          * code package has a valid signature from a trusted publisher. The code-signing
          * configuration includes set set of signing profiles, which define the trusted
-         * publishers for this function.</p> <p>If another account or an AWS service
-         * invokes your function, use <a>AddPermission</a> to grant permission by creating
-         * a resource-based IAM policy. You can grant permissions at the function level, on
-         * a version, or on an alias.</p> <p>To invoke your function directly, use
-         * <a>Invoke</a>. To invoke your function in response to events in other AWS
-         * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or
-         * configure a function trigger in the other service. For more information, see <a
+         * publishers for this function.</p> <p>If another account or an Amazon Web
+         * Services service invokes your function, use <a>AddPermission</a> to grant
+         * permission by creating a resource-based IAM policy. You can grant permissions at
+         * the function level, on a version, or on an alias.</p> <p>To invoke your function
+         * directly, use <a>Invoke</a>. To invoke your function in response to events in
+         * other Amazon Web Services services, create an event source mapping
+         * (<a>CreateEventSourceMapping</a>), or configure a function trigger in the other
+         * service. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
@@ -912,9 +954,9 @@ namespace Model
          * <p>Deletes a Lambda function. To delete a specific function version, use the
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
          * deleted.</p> <p>To delete Lambda event source mappings that invoke a function,
-         * use <a>DeleteEventSourceMapping</a>. For AWS services and resources that invoke
-         * your function directly, delete the trigger in the service where you originally
-         * configured it.</p><p><h3>See Also:</h3>   <a
+         * use <a>DeleteEventSourceMapping</a>. For Amazon Web Services services and
+         * resources that invoke your function directly, delete the trigger in the service
+         * where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          */
@@ -924,9 +966,9 @@ namespace Model
          * <p>Deletes a Lambda function. To delete a specific function version, use the
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
          * deleted.</p> <p>To delete Lambda event source mappings that invoke a function,
-         * use <a>DeleteEventSourceMapping</a>. For AWS services and resources that invoke
-         * your function directly, delete the trigger in the service where you originally
-         * configured it.</p><p><h3>See Also:</h3>   <a
+         * use <a>DeleteEventSourceMapping</a>. For Amazon Web Services services and
+         * resources that invoke your function directly, delete the trigger in the service
+         * where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          *
@@ -938,9 +980,9 @@ namespace Model
          * <p>Deletes a Lambda function. To delete a specific function version, use the
          * <code>Qualifier</code> parameter. Otherwise, all versions and aliases are
          * deleted.</p> <p>To delete Lambda event source mappings that invoke a function,
-         * use <a>DeleteEventSourceMapping</a>. For AWS services and resources that invoke
-         * your function directly, delete the trigger in the service where you originally
-         * configured it.</p><p><h3>See Also:</h3>   <a
+         * use <a>DeleteEventSourceMapping</a>. For Amazon Web Services services and
+         * resources that invoke your function directly, delete the trigger in the service
+         * where you originally configured it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunction">AWS
          * API Reference</a></p>
          *
@@ -1037,10 +1079,10 @@ namespace Model
 
         /**
          * <p>Deletes a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Deleted versions can no longer be viewed or added to
-         * functions. To avoid breaking functions, a copy of the version remains in Lambda
-         * until no functions refer to it.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Deleted versions can no longer be viewed or added to functions. To
+         * avoid breaking functions, a copy of the version remains in Lambda until no
+         * functions refer to it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">AWS
          * API Reference</a></p>
          */
@@ -1048,10 +1090,10 @@ namespace Model
 
         /**
          * <p>Deletes a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Deleted versions can no longer be viewed or added to
-         * functions. To avoid breaking functions, a copy of the version remains in Lambda
-         * until no functions refer to it.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Deleted versions can no longer be viewed or added to functions. To
+         * avoid breaking functions, a copy of the version remains in Lambda until no
+         * functions refer to it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">AWS
          * API Reference</a></p>
          *
@@ -1061,10 +1103,10 @@ namespace Model
 
         /**
          * <p>Deletes a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Deleted versions can no longer be viewed or added to
-         * functions. To avoid breaking functions, a copy of the version remains in Lambda
-         * until no functions refer to it.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Deleted versions can no longer be viewed or added to functions. To
+         * avoid breaking functions, a copy of the version remains in Lambda until no
+         * functions refer to it.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">AWS
          * API Reference</a></p>
          *
@@ -1103,7 +1145,7 @@ namespace Model
         /**
          * <p>Retrieves details about your account's <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
-         * usage in an AWS Region.</p><p><h3>See Also:</h3>   <a
+         * usage in an Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          */
@@ -1112,7 +1154,7 @@ namespace Model
         /**
          * <p>Retrieves details about your account's <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
-         * usage in an AWS Region.</p><p><h3>See Also:</h3>   <a
+         * usage in an Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -1123,7 +1165,7 @@ namespace Model
         /**
          * <p>Retrieves details about your account's <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
-         * usage in an AWS Region.</p><p><h3>See Also:</h3>   <a
+         * usage in an Amazon Web Services Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -1384,8 +1426,8 @@ namespace Model
 
         /**
          * <p>Returns information about a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>, with a link to download the layer archive that's valid for 10
          * minutes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">AWS
          * API Reference</a></p>
@@ -1394,8 +1436,8 @@ namespace Model
 
         /**
          * <p>Returns information about a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>, with a link to download the layer archive that's valid for 10
          * minutes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">AWS
          * API Reference</a></p>
@@ -1406,8 +1448,8 @@ namespace Model
 
         /**
          * <p>Returns information about a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>, with a link to download the layer archive that's valid for 10
          * minutes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">AWS
          * API Reference</a></p>
@@ -1418,8 +1460,8 @@ namespace Model
 
         /**
          * <p>Returns information about a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>, with a link to download the layer archive that's valid for 10
          * minutes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">AWS
          * API Reference</a></p>
@@ -1428,8 +1470,8 @@ namespace Model
 
         /**
          * <p>Returns information about a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>, with a link to download the layer archive that's valid for 10
          * minutes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">AWS
          * API Reference</a></p>
@@ -1440,8 +1482,8 @@ namespace Model
 
         /**
          * <p>Returns information about a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>, with a link to download the layer archive that's valid for 10
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>, with a link to download the layer archive that's valid for 10
          * minutes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionByArn">AWS
          * API Reference</a></p>
@@ -1452,8 +1494,8 @@ namespace Model
 
         /**
          * <p>Returns the permission policy for a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. For more information, see
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. For more information, see
          * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">AWS
          * API Reference</a></p>
@@ -1462,8 +1504,8 @@ namespace Model
 
         /**
          * <p>Returns the permission policy for a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. For more information, see
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. For more information, see
          * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">AWS
          * API Reference</a></p>
@@ -1474,8 +1516,8 @@ namespace Model
 
         /**
          * <p>Returns the permission policy for a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. For more information, see
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. For more information, see
          * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">AWS
          * API Reference</a></p>
@@ -1894,8 +1936,8 @@ namespace Model
 
         /**
          * <p>Lists the versions of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Versions that have been deleted aren't listed. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only versions that indicate that they're compatible with
          * that runtime.</p><p><h3>See Also:</h3>   <a
@@ -1906,8 +1948,8 @@ namespace Model
 
         /**
          * <p>Lists the versions of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Versions that have been deleted aren't listed. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only versions that indicate that they're compatible with
          * that runtime.</p><p><h3>See Also:</h3>   <a
@@ -1920,8 +1962,8 @@ namespace Model
 
         /**
          * <p>Lists the versions of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. Versions that have been deleted aren't listed. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only versions that indicate that they're compatible with
          * that runtime.</p><p><h3>See Also:</h3>   <a
@@ -1934,9 +1976,8 @@ namespace Model
 
         /**
          * <p>Lists <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layers</a> and shows information about the latest version of each.
-         * Specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layers</a> and shows information about the latest version of each. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only layers that indicate that they're compatible with
          * that runtime.</p><p><h3>See Also:</h3>   <a
@@ -1947,9 +1988,8 @@ namespace Model
 
         /**
          * <p>Lists <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layers</a> and shows information about the latest version of each.
-         * Specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layers</a> and shows information about the latest version of each. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only layers that indicate that they're compatible with
          * that runtime.</p><p><h3>See Also:</h3>   <a
@@ -1962,9 +2002,8 @@ namespace Model
 
         /**
          * <p>Lists <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layers</a> and shows information about the latest version of each.
-         * Specify a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layers</a> and shows information about the latest version of each. Specify a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
          * identifier</a> to list only layers that indicate that they're compatible with
          * that runtime.</p><p><h3>See Also:</h3>   <a
@@ -2070,8 +2109,8 @@ namespace Model
 
         /**
          * <p>Creates an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a> from a ZIP archive. Each time you call
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a> from a ZIP archive. Each time you call
          * <code>PublishLayerVersion</code> with the same layer name, a new version is
          * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
          * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
@@ -2082,8 +2121,8 @@ namespace Model
 
         /**
          * <p>Creates an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a> from a ZIP archive. Each time you call
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a> from a ZIP archive. Each time you call
          * <code>PublishLayerVersion</code> with the same layer name, a new version is
          * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
          * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
@@ -2096,8 +2135,8 @@ namespace Model
 
         /**
          * <p>Creates an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a> from a ZIP archive. Each time you call
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a> from a ZIP archive. Each time you call
          * <code>PublishLayerVersion</code> with the same layer name, a new version is
          * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
          * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
@@ -2112,8 +2151,8 @@ namespace Model
          * <p>Creates a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
          * from the current code and configuration of a function. Use versions to create a
-         * snapshot of your function code and configuration that doesn't change.</p> <p>AWS
-         * Lambda doesn't publish a version if the function's configuration and code
+         * snapshot of your function code and configuration that doesn't change.</p>
+         * <p>Lambda doesn't publish a version if the function's configuration and code
          * haven't changed since the last version. Use <a>UpdateFunctionCode</a> or
          * <a>UpdateFunctionConfiguration</a> to update the function before publishing a
          * version.</p> <p>Clients can invoke versions directly or with an alias. To create
@@ -2127,8 +2166,8 @@ namespace Model
          * <p>Creates a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
          * from the current code and configuration of a function. Use versions to create a
-         * snapshot of your function code and configuration that doesn't change.</p> <p>AWS
-         * Lambda doesn't publish a version if the function's configuration and code
+         * snapshot of your function code and configuration that doesn't change.</p>
+         * <p>Lambda doesn't publish a version if the function's configuration and code
          * haven't changed since the last version. Use <a>UpdateFunctionCode</a> or
          * <a>UpdateFunctionConfiguration</a> to update the function before publishing a
          * version.</p> <p>Clients can invoke versions directly or with an alias. To create
@@ -2144,8 +2183,8 @@ namespace Model
          * <p>Creates a <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a>
          * from the current code and configuration of a function. Use versions to create a
-         * snapshot of your function code and configuration that doesn't change.</p> <p>AWS
-         * Lambda doesn't publish a version if the function's configuration and code
+         * snapshot of your function code and configuration that doesn't change.</p>
+         * <p>Lambda doesn't publish a version if the function's configuration and code
          * haven't changed since the last version. Use <a>UpdateFunctionCode</a> or
          * <a>UpdateFunctionConfiguration</a> to update the function before publishing a
          * version.</p> <p>Clients can invoke versions directly or with an alias. To create
@@ -2355,8 +2394,8 @@ namespace Model
 
         /**
          * <p>Removes a statement from the permissions policy for a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. For more information, see
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. For more information, see
          * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">AWS
          * API Reference</a></p>
@@ -2365,8 +2404,8 @@ namespace Model
 
         /**
          * <p>Removes a statement from the permissions policy for a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. For more information, see
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. For more information, see
          * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">AWS
          * API Reference</a></p>
@@ -2377,8 +2416,8 @@ namespace Model
 
         /**
          * <p>Removes a statement from the permissions policy for a version of an <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
-         * Lambda layer</a>. For more information, see
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
+         * layer</a>. For more information, see
          * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">AWS
          * API Reference</a></p>
@@ -2388,8 +2427,8 @@ namespace Model
         virtual void RemoveLayerVersionPermissionAsync(const Model::RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Revokes function-use permission from an AWS service or another account. You
-         * can get the ID of the statement from the output of
+         * <p>Revokes function-use permission from an Amazon Web Services service or
+         * another account. You can get the ID of the statement from the output of
          * <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
@@ -2397,8 +2436,8 @@ namespace Model
         virtual Model::RemovePermissionOutcome RemovePermission(const Model::RemovePermissionRequest& request) const;
 
         /**
-         * <p>Revokes function-use permission from an AWS service or another account. You
-         * can get the ID of the statement from the output of
+         * <p>Revokes function-use permission from an Amazon Web Services service or
+         * another account. You can get the ID of the statement from the output of
          * <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
@@ -2408,8 +2447,8 @@ namespace Model
         virtual Model::RemovePermissionOutcomeCallable RemovePermissionCallable(const Model::RemovePermissionRequest& request) const;
 
         /**
-         * <p>Revokes function-use permission from an AWS service or another account. You
-         * can get the ID of the statement from the output of
+         * <p>Revokes function-use permission from an Amazon Web Services service or
+         * another account. You can get the ID of the statement from the output of
          * <a>GetPolicy</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission">AWS
          * API Reference</a></p>
@@ -2543,7 +2582,7 @@ namespace Model
         virtual void UpdateCodeSigningConfigAsync(const Model::UpdateCodeSigningConfigRequest& request, const UpdateCodeSigningConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an event source mapping. You can change the function that AWS Lambda
+         * <p>Updates an event source mapping. You can change the function that Lambda
          * invokes, or pause invocation and resume later from the same location.</p> <p>The
          * following error handling options are only available for stream sources (DynamoDB
          * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
@@ -2563,7 +2602,7 @@ namespace Model
         virtual Model::UpdateEventSourceMappingOutcome UpdateEventSourceMapping(const Model::UpdateEventSourceMappingRequest& request) const;
 
         /**
-         * <p>Updates an event source mapping. You can change the function that AWS Lambda
+         * <p>Updates an event source mapping. You can change the function that Lambda
          * invokes, or pause invocation and resume later from the same location.</p> <p>The
          * following error handling options are only available for stream sources (DynamoDB
          * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
@@ -2585,7 +2624,7 @@ namespace Model
         virtual Model::UpdateEventSourceMappingOutcomeCallable UpdateEventSourceMappingCallable(const Model::UpdateEventSourceMappingRequest& request) const;
 
         /**
-         * <p>Updates an event source mapping. You can change the function that AWS Lambda
+         * <p>Updates an event source mapping. You can change the function that Lambda
          * invokes, or pause invocation and resume later from the same location.</p> <p>The
          * following error handling options are only available for stream sources (DynamoDB
          * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
@@ -2673,8 +2712,8 @@ namespace Model
          * are locked when you publish a version. You can't modify the configuration of a
          * published version, only the unpublished version.</p> <p>To configure function
          * concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to
-         * an account or AWS service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * an account or Amazon Web Services service, use
+         * <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2695,8 +2734,8 @@ namespace Model
          * are locked when you publish a version. You can't modify the configuration of a
          * published version, only the unpublished version.</p> <p>To configure function
          * concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to
-         * an account or AWS service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * an account or Amazon Web Services service, use
+         * <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2719,8 +2758,8 @@ namespace Model
          * are locked when you publish a version. You can't modify the configuration of a
          * published version, only the unpublished version.</p> <p>To configure function
          * concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to
-         * an account or AWS service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * an account or Amazon Web Services service, use
+         * <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          *

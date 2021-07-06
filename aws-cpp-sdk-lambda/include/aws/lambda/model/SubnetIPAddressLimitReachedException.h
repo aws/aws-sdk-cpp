@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>AWS Lambda was not able to set up VPC access for the Lambda function because
-   * one or more configured subnets has no available IP addresses.</p><p><h3>See
+   * <p>Lambda was not able to set up VPC access for the Lambda function because one
+   * or more configured subnets has no available IP addresses.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/SubnetIPAddressLimitReachedException">AWS
    * API Reference</a></p>

@@ -82,57 +82,57 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline const Aws::String& GetJobImminentExpirationHealthEventArn() const{ return m_jobImminentExpirationHealthEventArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline bool JobImminentExpirationHealthEventArnHasBeenSet() const { return m_jobImminentExpirationHealthEventArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline void SetJobImminentExpirationHealthEventArn(const Aws::String& value) { m_jobImminentExpirationHealthEventArnHasBeenSet = true; m_jobImminentExpirationHealthEventArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline void SetJobImminentExpirationHealthEventArn(Aws::String&& value) { m_jobImminentExpirationHealthEventArnHasBeenSet = true; m_jobImminentExpirationHealthEventArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline void SetJobImminentExpirationHealthEventArn(const char* value) { m_jobImminentExpirationHealthEventArnHasBeenSet = true; m_jobImminentExpirationHealthEventArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline UserPausedDetails& WithJobImminentExpirationHealthEventArn(const Aws::String& value) { SetJobImminentExpirationHealthEventArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline UserPausedDetails& WithJobImminentExpirationHealthEventArn(Aws::String&& value) { SetJobImminentExpirationHealthEventArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent
-     * to notify you of the job or job run's pending expiration and cancellation. This
+     * <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to
+     * notify you of the job or job run's pending expiration and cancellation. This
      * value is null if a job has been paused for less than 23 days.</p>
      */
     inline UserPausedDetails& WithJobImminentExpirationHealthEventArn(const char* value) { SetJobImminentExpirationHealthEventArn(value); return *this;}

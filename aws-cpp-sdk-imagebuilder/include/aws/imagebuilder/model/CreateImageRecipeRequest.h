@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/AdditionalInstanceConfiguration.h>
 #include <aws/imagebuilder/model/ComponentConfiguration.h>
 #include <aws/imagebuilder/model/InstanceBlockDeviceMapping.h>
 #include <utility>
@@ -398,44 +399,75 @@ namespace Model
 
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline CreateImageRecipeRequest& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline CreateImageRecipeRequest& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
 
     /**
-     * <p>The working directory to be used during build and test workflows.</p>
+     * <p>The working directory used during build and test workflows.</p>
      */
     inline CreateImageRecipeRequest& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+
+
+    /**
+     * <p>Specify additional settings and launch scripts for your build instances.</p>
+     */
+    inline const AdditionalInstanceConfiguration& GetAdditionalInstanceConfiguration() const{ return m_additionalInstanceConfiguration; }
+
+    /**
+     * <p>Specify additional settings and launch scripts for your build instances.</p>
+     */
+    inline bool AdditionalInstanceConfigurationHasBeenSet() const { return m_additionalInstanceConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specify additional settings and launch scripts for your build instances.</p>
+     */
+    inline void SetAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = value; }
+
+    /**
+     * <p>Specify additional settings and launch scripts for your build instances.</p>
+     */
+    inline void SetAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { m_additionalInstanceConfigurationHasBeenSet = true; m_additionalInstanceConfiguration = std::move(value); }
+
+    /**
+     * <p>Specify additional settings and launch scripts for your build instances.</p>
+     */
+    inline CreateImageRecipeRequest& WithAdditionalInstanceConfiguration(const AdditionalInstanceConfiguration& value) { SetAdditionalInstanceConfiguration(value); return *this;}
+
+    /**
+     * <p>Specify additional settings and launch scripts for your build instances.</p>
+     */
+    inline CreateImageRecipeRequest& WithAdditionalInstanceConfiguration(AdditionalInstanceConfiguration&& value) { SetAdditionalInstanceConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -503,6 +535,9 @@ namespace Model
 
     Aws::String m_workingDirectory;
     bool m_workingDirectoryHasBeenSet;
+
+    AdditionalInstanceConfiguration m_additionalInstanceConfiguration;
+    bool m_additionalInstanceConfigurationHasBeenSet;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;

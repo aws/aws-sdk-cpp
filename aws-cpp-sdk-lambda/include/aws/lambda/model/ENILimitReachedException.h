@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>AWS Lambda was not able to create an elastic network interface in the VPC,
+   * <p>Lambda was not able to create an elastic network interface in the VPC,
    * specified as part of Lambda function configuration, because the limit for
    * network interfaces has been reached.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ENILimitReachedException">AWS

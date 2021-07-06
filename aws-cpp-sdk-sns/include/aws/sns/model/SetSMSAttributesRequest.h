@@ -86,7 +86,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -140,7 +140,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -194,7 +194,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -248,7 +248,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -302,7 +302,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -356,7 +356,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -410,7 +410,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -464,7 +464,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -518,7 +518,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -572,7 +572,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -626,7 +626,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -680,7 +680,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS
@@ -734,7 +734,7 @@ namespace Model
      * price (in USD)</p> </li> <li> <p>Part number (a message is split into multiple
      * parts if it is too long for a single message)</p> </li> <li> <p>Total number of
      * parts</p> </li> </ul> <p>To receive the report, the bucket must have a policy
-     * that allows the Amazon SNS service principle to perform the
+     * that allows the Amazon SNS service principal to perform the
      * <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code> actions.</p>
      * <p>For an example bucket policy and usage report, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS

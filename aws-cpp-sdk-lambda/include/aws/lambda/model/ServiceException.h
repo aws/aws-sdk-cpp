@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The AWS Lambda service encountered an internal error.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The Lambda service encountered an internal error.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ServiceException">AWS
    * API Reference</a></p>
    */

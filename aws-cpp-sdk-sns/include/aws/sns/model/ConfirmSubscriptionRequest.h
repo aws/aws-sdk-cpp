@@ -131,65 +131,73 @@ namespace Model
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline const Aws::String& GetAuthenticateOnUnsubscribe() const{ return m_authenticateOnUnsubscribe; }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline bool AuthenticateOnUnsubscribeHasBeenSet() const { return m_authenticateOnUnsubscribeHasBeenSet; }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline void SetAuthenticateOnUnsubscribe(const Aws::String& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = value; }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline void SetAuthenticateOnUnsubscribe(Aws::String&& value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe = std::move(value); }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline void SetAuthenticateOnUnsubscribe(const char* value) { m_authenticateOnUnsubscribeHasBeenSet = true; m_authenticateOnUnsubscribe.assign(value); }
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const Aws::String& value) { SetAuthenticateOnUnsubscribe(value); return *this;}
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(Aws::String&& value) { SetAuthenticateOnUnsubscribe(std::move(value)); return *this;}
 
     /**
      * <p>Disallows unauthenticated unsubscribes of the subscription. If the value of
-     * this parameter is <code>true</code> and the request has an AWS signature, then
-     * only the topic owner and the subscription owner can unsubscribe the endpoint.
-     * The unsubscribe action requires AWS authentication. </p>
+     * this parameter is <code>true</code> and the request has an Amazon Web Services
+     * signature, then only the topic owner and the subscription owner can unsubscribe
+     * the endpoint. The unsubscribe action requires Amazon Web Services
+     * authentication. </p>
      */
     inline ConfirmSubscriptionRequest& WithAuthenticateOnUnsubscribe(const char* value) { SetAuthenticateOnUnsubscribe(value); return *this;}
 

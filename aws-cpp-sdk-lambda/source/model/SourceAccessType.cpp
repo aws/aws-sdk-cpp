@@ -25,6 +25,7 @@ namespace Aws
         static const int VPC_SECURITY_GROUP_HASH = HashingUtils::HashString("VPC_SECURITY_GROUP");
         static const int SASL_SCRAM_512_AUTH_HASH = HashingUtils::HashString("SASL_SCRAM_512_AUTH");
         static const int SASL_SCRAM_256_AUTH_HASH = HashingUtils::HashString("SASL_SCRAM_256_AUTH");
+        static const int VIRTUAL_HOST_HASH = HashingUtils::HashString("VIRTUAL_HOST");
 
 
         SourceAccessType GetSourceAccessTypeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return SourceAccessType::SASL_SCRAM_256_AUTH;
           }
+          else if (hashCode == VIRTUAL_HOST_HASH)
+          {
+            return SourceAccessType::VIRTUAL_HOST;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "SASL_SCRAM_512_AUTH";
           case SourceAccessType::SASL_SCRAM_256_AUTH:
             return "SASL_SCRAM_256_AUTH";
+          case SourceAccessType::VIRTUAL_HOST:
+            return "VIRTUAL_HOST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

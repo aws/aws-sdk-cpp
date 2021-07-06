@@ -47,66 +47,74 @@ namespace Model
 
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline const Aws::Vector<S3BucketDefinitionForJob>& GetBucketDefinitions() const{ return m_bucketDefinitions; }
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline bool BucketDefinitionsHasBeenSet() const { return m_bucketDefinitionsHasBeenSet; }
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline void SetBucketDefinitions(const Aws::Vector<S3BucketDefinitionForJob>& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = value; }
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline void SetBucketDefinitions(Aws::Vector<S3BucketDefinitionForJob>&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions = std::move(value); }
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline JobSummary& WithBucketDefinitions(const Aws::Vector<S3BucketDefinitionForJob>& value) { SetBucketDefinitions(value); return *this;}
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline JobSummary& WithBucketDefinitions(Aws::Vector<S3BucketDefinitionForJob>&& value) { SetBucketDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline JobSummary& AddBucketDefinitions(const S3BucketDefinitionForJob& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects, one for each AWS account that owns specific S3 buckets
-     * for the job to analyze. Each object specifies the account ID for an account and
-     * one or more buckets to analyze for that account. A job's definition can contain
-     * a bucketDefinitions array or a bucketCriteria object, not both.</p>
+     * <p>An array of objects, one for each Amazon Web Services account that owns
+     * specific S3 buckets for the job to analyze. Each object specifies the account ID
+     * for an account and one or more buckets to analyze for that account. A job's
+     * definition can contain a bucketDefinitions array or a bucketCriteria object, not
+     * both.</p>
      */
     inline JobSummary& AddBucketDefinitions(S3BucketDefinitionForJob&& value) { m_bucketDefinitionsHasBeenSet = true; m_bucketDefinitions.push_back(std::move(value)); return *this; }
 

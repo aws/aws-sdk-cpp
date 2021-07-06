@@ -34,56 +34,56 @@ namespace Model
 
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline CreateInvitationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline CreateInvitationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline CreateInvitationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline CreateInvitationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array that lists AWS account IDs, one for each account to send the
-     * invitation to.</p>
+     * <p>An array that lists Amazon Web Services account IDs, one for each account to
+     * send the invitation to.</p>
      */
     inline CreateInvitationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
 
@@ -91,36 +91,32 @@ namespace Model
     /**
      * <p>Specifies whether to send an email notification to the root user of each
      * account that the invitation will be sent to. This notification is in addition to
-     * an alert that the root user receives in AWS Personal Health Dashboard. To send
-     * an email notification to the root user of each account, set this value to
-     * true.</p>
+     * an alert that the root user receives in Personal Health Dashboard. To send an
+     * email notification to the root user of each account, set this value to true.</p>
      */
     inline bool GetDisableEmailNotification() const{ return m_disableEmailNotification; }
 
     /**
      * <p>Specifies whether to send an email notification to the root user of each
      * account that the invitation will be sent to. This notification is in addition to
-     * an alert that the root user receives in AWS Personal Health Dashboard. To send
-     * an email notification to the root user of each account, set this value to
-     * true.</p>
+     * an alert that the root user receives in Personal Health Dashboard. To send an
+     * email notification to the root user of each account, set this value to true.</p>
      */
     inline bool DisableEmailNotificationHasBeenSet() const { return m_disableEmailNotificationHasBeenSet; }
 
     /**
      * <p>Specifies whether to send an email notification to the root user of each
      * account that the invitation will be sent to. This notification is in addition to
-     * an alert that the root user receives in AWS Personal Health Dashboard. To send
-     * an email notification to the root user of each account, set this value to
-     * true.</p>
+     * an alert that the root user receives in Personal Health Dashboard. To send an
+     * email notification to the root user of each account, set this value to true.</p>
      */
     inline void SetDisableEmailNotification(bool value) { m_disableEmailNotificationHasBeenSet = true; m_disableEmailNotification = value; }
 
     /**
      * <p>Specifies whether to send an email notification to the root user of each
      * account that the invitation will be sent to. This notification is in addition to
-     * an alert that the root user receives in AWS Personal Health Dashboard. To send
-     * an email notification to the root user of each account, set this value to
-     * true.</p>
+     * an alert that the root user receives in Personal Health Dashboard. To send an
+     * email notification to the root user of each account, set this value to true.</p>
      */
     inline CreateInvitationsRequest& WithDisableEmailNotification(bool value) { SetDisableEmailNotification(value); return *this;}
 

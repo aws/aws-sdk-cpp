@@ -35,6 +35,7 @@ namespace Aws
         static const int InsufficientNumberOfReplicas_HASH = HashingUtils::HashString("InsufficientNumberOfReplicas");
         static const int ConfigurationConflict_HASH = HashingUtils::HashString("ConfigurationConflict");
         static const int AdmissionRequestDenied_HASH = HashingUtils::HashString("AdmissionRequestDenied");
+        static const int UnsupportedAddonModification_HASH = HashingUtils::HashString("UnsupportedAddonModification");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -100,6 +101,10 @@ namespace Aws
           {
             return ErrorCode::AdmissionRequestDenied;
           }
+          else if (hashCode == UnsupportedAddonModification_HASH)
+          {
+            return ErrorCode::UnsupportedAddonModification;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -144,6 +149,8 @@ namespace Aws
             return "ConfigurationConflict";
           case ErrorCode::AdmissionRequestDenied:
             return "AdmissionRequestDenied";
+          case ErrorCode::UnsupportedAddonModification:
+            return "UnsupportedAddonModification";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

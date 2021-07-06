@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The infrastructure used when building EC2 AMIs.</p><p><h3>See Also:</h3>   <a
+   * <p>The infrastructure used when building Amazon EC2 AMIs.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/InfrastructureConfigurationSummary">AWS
    * API Reference</a></p>
    */

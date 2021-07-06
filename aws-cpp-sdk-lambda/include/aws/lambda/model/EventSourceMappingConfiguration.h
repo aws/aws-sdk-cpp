@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>A mapping between an AWS resource and an AWS Lambda function. See
+   * <p>A mapping between an Amazon Web Services resource and an Lambda function. See
    * <a>CreateEventSourceMapping</a> for details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EventSourceMappingConfiguration">AWS
    * API Reference</a></p>
@@ -213,26 +213,26 @@ namespace Model
 
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently. The
-     * default value is 1.</p>
+     * <p>(Streams only) The number of batches to process from each shard concurrently.
+     * The default value is 1.</p>
      */
     inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently. The
-     * default value is 1.</p>
+     * <p>(Streams only) The number of batches to process from each shard concurrently.
+     * The default value is 1.</p>
      */
     inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently. The
-     * default value is 1.</p>
+     * <p>(Streams only) The number of batches to process from each shard concurrently.
+     * The default value is 1.</p>
      */
     inline void SetParallelizationFactor(int value) { m_parallelizationFactorHasBeenSet = true; m_parallelizationFactor = value; }
 
     /**
-     * <p>(Streams) The number of batches to process from each shard concurrently. The
-     * default value is 1.</p>
+     * <p>(Streams only) The number of batches to process from each shard concurrently.
+     * The default value is 1.</p>
      */
     inline EventSourceMappingConfiguration& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
@@ -357,42 +357,42 @@ namespace Model
 
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline const Aws::String& GetLastProcessingResult() const{ return m_lastProcessingResult; }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline bool LastProcessingResultHasBeenSet() const { return m_lastProcessingResultHasBeenSet; }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline void SetLastProcessingResult(const Aws::String& value) { m_lastProcessingResultHasBeenSet = true; m_lastProcessingResult = value; }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline void SetLastProcessingResult(Aws::String&& value) { m_lastProcessingResultHasBeenSet = true; m_lastProcessingResult = std::move(value); }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline void SetLastProcessingResult(const char* value) { m_lastProcessingResultHasBeenSet = true; m_lastProcessingResult.assign(value); }
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline EventSourceMappingConfiguration& WithLastProcessingResult(const Aws::String& value) { SetLastProcessingResult(value); return *this;}
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline EventSourceMappingConfiguration& WithLastProcessingResult(Aws::String&& value) { SetLastProcessingResult(std::move(value)); return *this;}
 
     /**
-     * <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+     * <p>The result of the last Lambda invocation of your Lambda function.</p>
      */
     inline EventSourceMappingConfiguration& WithLastProcessingResult(const char* value) { SetLastProcessingResult(value); return *this;}
 
@@ -512,38 +512,38 @@ namespace Model
 
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline EventSourceMappingConfiguration& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
     /**
-     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
-     * records.</p>
+     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
+     * discarded records.</p>
      */
     inline EventSourceMappingConfiguration& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 
@@ -721,158 +721,162 @@ namespace Model
 
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1). When set to infinite (-1), failed records are retried until the
-     * record expires.</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is -1, which sets the maximum age to infinite. When the value is set to
+     * infinite, Lambda never discards old records. </p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1). When set to infinite (-1), failed records are retried until the
-     * record expires.</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is -1, which sets the maximum age to infinite. When the value is set to
+     * infinite, Lambda never discards old records. </p>
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1). When set to infinite (-1), failed records are retried until the
-     * record expires.</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is -1, which sets the maximum age to infinite. When the value is set to
+     * infinite, Lambda never discards old records. </p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams) Discard records older than the specified age. The default value is
-     * infinite (-1). When set to infinite (-1), failed records are retried until the
-     * record expires.</p>
+     * <p>(Streams only) Discard records older than the specified age. The default
+     * value is -1, which sets the maximum age to infinite. When the value is set to
+     * infinite, Lambda never discards old records. </p>
      */
     inline EventSourceMappingConfiguration& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and retry.
-     * The default value is false.</p>
+     * <p>(Streams only) If the function returns an error, split the batch in two and
+     * retry. The default value is false.</p>
      */
     inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and retry.
-     * The default value is false.</p>
+     * <p>(Streams only) If the function returns an error, split the batch in two and
+     * retry. The default value is false.</p>
      */
     inline bool BisectBatchOnFunctionErrorHasBeenSet() const { return m_bisectBatchOnFunctionErrorHasBeenSet; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and retry.
-     * The default value is false.</p>
+     * <p>(Streams only) If the function returns an error, split the batch in two and
+     * retry. The default value is false.</p>
      */
     inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionErrorHasBeenSet = true; m_bisectBatchOnFunctionError = value; }
 
     /**
-     * <p>(Streams) If the function returns an error, split the batch in two and retry.
-     * The default value is false.</p>
+     * <p>(Streams only) If the function returns an error, split the batch in two and
+     * retry. The default value is false.</p>
      */
     inline EventSourceMappingConfiguration& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
 
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records are retried
-     * until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is -1, which sets the maximum number of retries to infinite. When
+     * MaximumRetryAttempts is infinite, Lambda retries failed records until the record
+     * expires in the event source.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records are retried
-     * until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is -1, which sets the maximum number of retries to infinite. When
+     * MaximumRetryAttempts is infinite, Lambda retries failed records until the record
+     * expires in the event source.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records are retried
-     * until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is -1, which sets the maximum number of retries to infinite. When
+     * MaximumRetryAttempts is infinite, Lambda retries failed records until the record
+     * expires in the event source.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams) Discard records after the specified number of retries. The default
-     * value is infinite (-1). When set to infinite (-1), failed records are retried
-     * until the record expires.</p>
+     * <p>(Streams only) Discard records after the specified number of retries. The
+     * default value is -1, which sets the maximum number of retries to infinite. When
+     * MaximumRetryAttempts is infinite, Lambda retries failed records until the record
+     * expires in the event source.</p>
      */
     inline EventSourceMappingConfiguration& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams) The duration in seconds of a processing window. The range is
+     * <p>(Streams only) The duration in seconds of a processing window. The range is
      * between 1 second up to 900 seconds.</p>
      */
     inline EventSourceMappingConfiguration& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline EventSourceMappingConfiguration& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline EventSourceMappingConfiguration& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline EventSourceMappingConfiguration& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Streams) A list of current response type enums applied to the event source
-     * mapping.</p>
+     * <p>(Streams only) A list of current response type enums applied to the event
+     * source mapping.</p>
      */
     inline EventSourceMappingConfiguration& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 

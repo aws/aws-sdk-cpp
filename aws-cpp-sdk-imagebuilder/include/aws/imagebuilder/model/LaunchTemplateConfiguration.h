@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Identifies an EC2 launch template to use for a specific
+   * <p>Identifies an Amazon EC2 launch template to use for a specific
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/LaunchTemplateConfiguration">AWS
    * API Reference</a></p>
@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline LaunchTemplateConfiguration& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline LaunchTemplateConfiguration& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the EC2 launch template to use.</p>
+     * <p>Identifies the Amazon EC2 launch template to use.</p>
      */
     inline LaunchTemplateConfiguration& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
 
@@ -121,26 +121,26 @@ namespace Model
 
 
     /**
-     * <p>Set the specified EC2 launch template as the default launch template for the
-     * specified account.</p>
+     * <p>Set the specified Amazon EC2 launch template as the default launch template
+     * for the specified account.</p>
      */
     inline bool GetSetDefaultVersion() const{ return m_setDefaultVersion; }
 
     /**
-     * <p>Set the specified EC2 launch template as the default launch template for the
-     * specified account.</p>
+     * <p>Set the specified Amazon EC2 launch template as the default launch template
+     * for the specified account.</p>
      */
     inline bool SetDefaultVersionHasBeenSet() const { return m_setDefaultVersionHasBeenSet; }
 
     /**
-     * <p>Set the specified EC2 launch template as the default launch template for the
-     * specified account.</p>
+     * <p>Set the specified Amazon EC2 launch template as the default launch template
+     * for the specified account.</p>
      */
     inline void SetSetDefaultVersion(bool value) { m_setDefaultVersionHasBeenSet = true; m_setDefaultVersion = value; }
 
     /**
-     * <p>Set the specified EC2 launch template as the default launch template for the
-     * specified account.</p>
+     * <p>Set the specified Amazon EC2 launch template as the default launch template
+     * for the specified account.</p>
      */
     inline LaunchTemplateConfiguration& WithSetDefaultVersion(bool value) { SetSetDefaultVersion(value); return *this;}
 

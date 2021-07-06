@@ -63,30 +63,30 @@ namespace Model
 
 
     /**
-     * <p>The total number of objects that are encrypted with an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p>
+     * <p>The total number of objects that are encrypted with an Key Management Service
+     * (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS
+     * encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
      */
     inline long long GetKmsManaged() const{ return m_kmsManaged; }
 
     /**
-     * <p>The total number of objects that are encrypted with an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p>
+     * <p>The total number of objects that are encrypted with an Key Management Service
+     * (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS
+     * encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
      */
     inline bool KmsManagedHasBeenSet() const { return m_kmsManagedHasBeenSet; }
 
     /**
-     * <p>The total number of objects that are encrypted with an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p>
+     * <p>The total number of objects that are encrypted with an Key Management Service
+     * (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS
+     * encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
      */
     inline void SetKmsManaged(long long value) { m_kmsManagedHasBeenSet = true; m_kmsManaged = value; }
 
     /**
-     * <p>The total number of objects that are encrypted with an AWS Key Management
-     * Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS
-     * encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p>
+     * <p>The total number of objects that are encrypted with an Key Management Service
+     * (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS
+     * encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
      */
     inline ObjectCountByEncryptionType& WithKmsManaged(long long value) { SetKmsManaged(value); return *this;}
 

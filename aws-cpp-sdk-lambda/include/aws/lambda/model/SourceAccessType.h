@@ -20,7 +20,8 @@ namespace Model
     VPC_SUBNET,
     VPC_SECURITY_GROUP,
     SASL_SCRAM_512_AUTH,
-    SASL_SCRAM_256_AUTH
+    SASL_SCRAM_256_AUTH,
+    VIRTUAL_HOST
   };
 
 namespace SourceAccessTypeMapper
